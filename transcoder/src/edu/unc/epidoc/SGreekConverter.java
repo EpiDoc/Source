@@ -65,24 +65,19 @@ public class SGreekConverter implements Converter {
 
     public String convertToString(String in) {
         if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            if (elements[1] == "isub") {
-				if (elements[0] == "alpha")
-					strb.append("#");
-				else if (elements[1] == "eta")
-					strb.append("$");
-				else
-					strb.append("%");
-				//for (int i=2;i<elements.length;i++)
-            	//	strb.append(sgp.getProperty(elements[i]));
-			}
-			else {
-            	for (int i=0;i<elements.length;i++)
-            		strb.append(sgp.getProperty(elements[i]));
-			}
-            return strb.toString();
-        }
+	    String[] elements = split(in);
+	    if (elements[1].equals("isub")) {
+		for (int i=2;i<elements.length;i++)
+		    strb.append(sgp.getProperty(elements[i]));
+		return (sgp.getProperty(in, in) + strb.toString());
+	    }
+	    else {
+		strb.delete(0,strb.length());
+		for (int i=0;i<elements.length;i++)
+		    strb.append(sgp.getProperty(elements[i]));
+		return strb.toString();
+	    }
+	}
         else
             return sgp.getProperty(in, in);
     }
