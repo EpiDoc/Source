@@ -15,6 +15,7 @@
 
 package edu.unc.epidoc.transcoder.jEdit;
 
+import edu.unc.epidoc.transcoder.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
