@@ -20,17 +20,19 @@ package edu.unc.epidoc;
  */
 public interface Parser {
         
-    public String getParameter(String name);
-    
     public boolean hasNext();
     
     public String next();
     
     public void setString(String in);        
     
-    public void setParameter(String name, String param);
+    public Object getProperty(String name);
     
-    public String toString();
+    public void setProperty(String name, Object value);
     
+    public String getEncoding();
+    
+    public boolean supportsLanguage(String lang);
+        
 }
 

@@ -24,8 +24,12 @@ public interface Converter {
     
     public String convertToCharacterEntity(String in);     
     
-    public void setParameter(String name, String param);
+    public void setProperty(String name, Object value);
     
-    public void getParameter(String name);
+    public Object getProperty(String name);
+    
+    public String getEncoding();
+    
+    public boolean supportsLanguage(String lang);
 
 }

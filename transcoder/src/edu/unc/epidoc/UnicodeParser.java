@@ -15,10 +15,10 @@ import java.util.TreeMap;
 /**
  *
  * @author  Hugh A. Cayless
- * @version 
+ * @version
  */
-public class UnicodeParser implements Parser { 
-
+public class UnicodeParser implements Parser {
+    
     /** Creates new UnicodeParser */
     public UnicodeParser() {
         up = new Properties();
@@ -33,8 +33,9 @@ public class UnicodeParser implements Parser {
         }
     }
     
-    private static String ENCODING = "UTF-8";
-        
+    private static final String ENCODING = "UTF8";
+    private static final String LANGUAGE = "grc";
+    
     private Properties up;
     private Properties ga;
     private char[] chArray;
@@ -42,7 +43,7 @@ public class UnicodeParser implements Parser {
     private String in;
     private StringBuffer strb = new StringBuffer();
     private TreeMap map = new TreeMap();
-
+    
     public boolean hasNext() {
         if (index < chArray.length)
             return true;
@@ -51,30 +52,37 @@ public class UnicodeParser implements Parser {
     }
     
     public String next() {
-        strb.delete(0,strb.length());        
-        if (in != null && hasNext()) {            
+        strb.delete(0,strb.length());
+        if (in != null && hasNext()) {
             strb.append(lookup(chArray[index]));
             index++;
             if (chArray[index - 1] == '\u03C3' || chArray[index - 1] == '\u03C2') {
-                if(!hasNext() || !Character.isLetter(chArray[index]))                    
-                    strb.append("Fixed");
+                switch (chArray[index - 1]) {
+                    case '\u03C3':
+                        if(!hasNext() || !Character.isLetter(chArray[index]))
+                            strb.append("Fixed");
+                        break;
+                    case '\u03C2':
+                        if(hasNext() && Character.isLetter(chArray[index]))
+                            strb.append("Fixed");
+                }
             } else {
-            if (hasNext() && isCombiningDiacritical(chArray[index])) {                  
-                map.clear();
-                while (isCombiningDiacritical(chArray[index])) {
-                    map.put(lookupAccent(chArray[index]), lookup(chArray[index]));
-                    index++;
+                if (hasNext() && isCombiningDiacritical(chArray[index])) {
+                    map.clear();
+                    while (isCombiningDiacritical(chArray[index])) {
+                        map.put(lookupAccent(chArray[index]), lookup(chArray[index]));
+                        index++;
+                    }
+                    while (!map.isEmpty()) {
+                        strb.append("_" + (String)map.remove(map.firstKey()));
+                    }
                 }
-                while (!map.isEmpty()) {
-                    strb.append("_" + (String)map.remove(map.firstKey()));
-                }
-            }            
             }
         }
         return strb.toString();
     }
     
-    public void setString(String in) {        
+    public void setString(String in) {
         this.in = in;
         chArray = in.toCharArray();
         index = 0;
@@ -87,6 +95,8 @@ public class UnicodeParser implements Parser {
     
     private String lookupAccent(char ch) {
         String key = String.valueOf(ch);
+        int i = (int)ch;
+        String result = lookup(ch);
         return ga.getProperty(lookup(ch));
     }
     
@@ -106,13 +116,19 @@ public class UnicodeParser implements Parser {
         }
     }
     
-    public String getParameter(String name) {
-        if (name.equals("ENCODING"))
-            return ENCODING;
+    public Object getProperty(String name) {
         return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, Object value) {
+    }
+    
+    public String getEncoding() {
+        return new String(ENCODING);
+    }
+    
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
     }
     
 }

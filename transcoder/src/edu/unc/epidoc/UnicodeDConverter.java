@@ -31,7 +31,9 @@ public class UnicodeDConverter implements Converter {
     }
     
     private Properties unfdc;
-    StringBuffer strb = new StringBuffer();
+    private StringBuffer strb = new StringBuffer();
+    private static final String ENCODING = "UTF8";
+    private static final String LANGUAGE = "grc";
 
     public String convertToCharacterEntity(String in) {
         String out;
@@ -78,10 +80,21 @@ public class UnicodeDConverter implements Converter {
         return result;
     }
     
-    public void getParameter(String name) {
+    public Object getProperty(String name) {
+        if (name.equals("ENCODING"))
+            return new String(ENCODING);
+        return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, Object value) {
+    }
+    
+    public String getEncoding() {
+        return new String(ENCODING);        
+    }
+    
+    public boolean supportsLanguage(String lang) {
+       return LANGUAGE.equals(lang);
     }
     
 }

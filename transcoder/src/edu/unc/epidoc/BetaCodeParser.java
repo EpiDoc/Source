@@ -34,7 +34,8 @@ public class BetaCodeParser implements Parser {
         }
     }
     
-    private static String ENCODING = "US-ASCII";
+    private static final String ENCODING = "ASCII";
+    private static final String LANGUAGE = "grc";
     
     private Properties bcp;
     private Properties ga;
@@ -102,7 +103,6 @@ public class BetaCodeParser implements Parser {
                         escape.append(chArray[index]);
                         index++;
                         strb.append(lookup(escape.toString())+"Fixed");
-                        System.out.println(strb.toString());
                     } else {
                         if (index >= chArray.length-1 || !Character.isLetter(chArray[index]))
                             strb.append(lookup(String.valueOf(ch)+"2"));
@@ -167,13 +167,21 @@ public class BetaCodeParser implements Parser {
         }
     }
     
-    public String getParameter(String name) {
+    public String getEncoding() {
+        return new String(ENCODING);
+    }
+    
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
+    }
+    
+    public Object getProperty(String name) {
         if (name.equals("ENCODING"))
-            return ENCODING;
+            return new String(ENCODING);
         return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, Object value) {
     }
     
 }

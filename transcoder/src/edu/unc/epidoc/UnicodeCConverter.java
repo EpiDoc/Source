@@ -1,5 +1,5 @@
 /*
- * UnicodeNormalizationFormCConverter.java
+ * UnicodeCConverter.java
  *
  * (c) Hugh A. Cayless <hcayless@email.unc.edu>
  * This software is licensed under the terms of the GNU LGPL.
@@ -31,7 +31,9 @@ public class UnicodeCConverter implements Converter {
     }
     
     private Properties unfcc;
-    StringBuffer strb = new StringBuffer();
+    private StringBuffer strb = new StringBuffer();
+    private static final String ENCODING = "UTF8";
+    private static final String LANGUAGE = "grc";
 
     public String convertToCharacterEntity(String in) {
         String str = unfcc.getProperty(in, in);
@@ -53,10 +55,19 @@ public class UnicodeCConverter implements Converter {
         return unfcc.getProperty(in, in);
     } 
     
-    public void getParameter(String name) {
+    public Object getProperty(String name) {
+        return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, Object value) {
+    }
+    
+    public String getEncoding() {
+        return new String(ENCODING);
+    }
+    
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
     }
     
 }

@@ -13,10 +13,9 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version
+/** Handles the conversion from the internal format to Beta Code.
+ * @author Hugh A. Cayless
+ * @version 0.8
  */
 public class BetaCodeConverter implements Converter {
     
@@ -31,7 +30,8 @@ public class BetaCodeConverter implements Converter {
     }
     
     private Properties bcc;
-    StringBuffer strb = new StringBuffer();
+    private StringBuffer strb = new StringBuffer();
+    private static final String ENCODING = "ASCII";
     
     public String convertToCharacterEntity(String in) {
         String out;
@@ -94,10 +94,13 @@ public class BetaCodeConverter implements Converter {
         return result;
     }
     
-    public void getParameter(String name) {
+    public String getProperty(String name) {
+        if (name.equals("ENCODING"))
+            return new String(ENCODING);
+        return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, String param) {
     }
     
 }
