@@ -52,6 +52,21 @@ public class TranscodingTransformer extends AbstractTransformer {
         try {
             tc.setParser(parameters.getParameter("parser", "BetaCode"));
             tc.setConverter(parameters.getParameter("converter", "Unicode"));
+            
+            attributeName = parameters.getParameter("useAttribute", "lang");
+            String setLanguage = parameters.getParameter("setLanguage");
+            if (setLanguage != null) {
+                String[] arr = (String[])tc.getParser().getProperty("supported-languages");
+                String[] arr2 = new String[arr.length + 1];
+                System.arraycopy(arr, 0, arr2, 0, arr.length);
+                arr2[arr.length] = setLanguage;
+                tc.getParser().setProperty("supported-languages", arr2);
+                arr = (String[])tc.getConverter().getProperty("supported-languages");
+                arr2 = new String[arr.length + 1];
+                System.arraycopy(arr, 0, arr2, 0, arr.length);
+                arr2[arr.length] = setLanguage;
+                tc.getConverter().setProperty("supported-languages", arr2);
+            }
         } catch (Exception e) {
             getLogger().error("TranscodingTransformer setup", e);
         }
@@ -77,8 +92,8 @@ public class TranscodingTransformer extends AbstractTransformer {
             language = attributes.getValue("lang");
             languages.push(attributes.getValue("lang"));
         } else {
-            if (attributes.getValue("lang") != null) {
-                language = attributes.getValue("lang");
+            if (attributes.getValue(attributeName) != null) {
+                language = attributes.getValue(attributeName);
                 elements.push(new String[] {name, language});
             }
             this.contentHandler.startElement(uri, name, raw, attributes);
@@ -132,6 +147,7 @@ public class TranscodingTransformer extends AbstractTransformer {
     
     private static String DEFAULT_LANG = "eng";
     private String language;
+    private String attributeName = "lang";
     private TransCoder tc;
     private Stack elements;
     private Stack languages;
