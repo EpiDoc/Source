@@ -1,3 +1,80 @@
+<!-- EpiDoc-specific TEI customization file
+     Copyright (C) 2002-2005  EpiDoc Collaborative
+      
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
+      
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+      
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+     
+     Filename: tei-epidoc-ext.dtd
+
+     Must be used with the TEI Pizza Chef and the entities customization file tei-epidoc-ext.ent
+
+     This file was last modified on 25 November 2002 by Tom Elliott
+
+     This file has three major sections:
+     1: New elements added by EpiDoc, together with their attributes 
+     2: EpiDoc-specific attributes (to override or make more stringent those specified by the TEI
+     3. EpiDoc-specific character entities 
+     
+     REVISION HISTORY:
+
+     04 April 2005
+           (GB and JG)
+         * made <figure> a little more forgiving (for InsAph compatibility)
+         * added <w> and <rs> (added %paracontent; to content model of <w>)
+         * made the @from and @to in <app> CDATA #IMPLIED
+         * made @cert CDATA #IMPLIED (globally)
+         * made <date> @precision ( exact | circa )
+         * made <div> @type CDATA #IMPLIED
+         * added 'superscript' to values of @rend in <hi>
+         * added @type to place-names
+         * added 'abbreviation' to @reason in <supplied>
+
+     25 November 2002
+         * Added an "href" attribute to the figure tag to support 'quick-and-dirty' direct linkage
+           of images and EpiDoc documents. This is a stop-gap until both TEI and EpiDoc finally 
+           decide on new, fully robust XML-based handling for image linkage.
+         * Altered the content model for figure to require a head and a figDesc child at least. <text>
+           children are not allowed.
+
+     22 August 2002 (many thanks to Gabriel Bodard, Charles Crowther and Jessica Ratcliff)
+         * Added attribute customization for <persName> and <placeName>
+         * Added enumeration for values for the "dim" attribute on the <gap> tag to reflect G.B.'s 
+           recommendation of 11 September 2002 to reconcile usage between EPAPP and Vindolanda
+         * Added "precision", "notBefore", "notAfter", and "exact" attributes to the <date> and 
+           <dateStruct> tags to support recommendations made by G.B.
+         * Added "cert" attribute to the <supplied> tag to support EPAPP
+         * Added "value" attribute to the <measure> tag to support EPAPP
+     17 August 2002 (many thanks to Gabriel Bodard for identifying these needs to support EPAPP)
+         * added GNU public license
+         * modified attributes for <mark> to include all the global ones, not just type
+         * modified some of the attributes for <measure> so that type, dim and value are all CDATA
+           and #IMPLIED, nothing more stringent. Note that "dim" is an extension used by EPAPP
+         * removed the epidoc.cert parameter entity entirely to allow the less restrictive "cert" 
+           attribute that is the default in TEI to remain on all relevant elements until we reach 
+           a consensus on how to do certainty in epidoc
+         * added dim attribute to value tag until EPAPP and Vindolanda can develop a consensus on
+           how to deal with various gap issues ... and that consensus has been vetted via the markup
+           list
+           
+     12 August 2002 (many thanks to Jessica Ratcliff for identifying these needs)
+         * modified the attribute list for the <gap> element to make the 'reason' attribute optional,
+           on the following grounds (Ratcliff): "it may be difficult for us [Vindolanda project] to 
+           give data for REASON, which is currently required. Since we are not working with the actual 
+           tablets but Bowman and Thomas' book, we do not necessarily have the info for why a gap 
+           exists. I can imagine other similar situations, and wonder whether or not REASON should be 
+           required." THIS CHANGE NEEDS TO BE VETTED VIA THE MARKUP LIST. -->
+
 <!ELEMENT TEI.2 
 	(teiHeader, text) >
 
@@ -13,11 +90,12 @@
 <!ELEMENT ab 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST ab 
 	TEIform CDATA "ab"
@@ -34,10 +112,11 @@
 <!ELEMENT abbr 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST abbr 
 	TEIform CDATA "abbr"
@@ -55,12 +134,12 @@
 <!ELEMENT add 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST add 
 	TEIform CDATA "add"
@@ -78,10 +157,11 @@
 <!ELEMENT addrLine 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST addrLine 
 	TEIform CDATA "addrLine"
@@ -93,10 +173,11 @@
 	 >
 
 <!ELEMENT address 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	((addrLine, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)+ | ((name | postBox | postCode | street), (gap 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)*)) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, ((addrLine, (gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)*)+ | ((name | postBox | postCode 
+	| street), (gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)*)*)) >
 
 <!ATTLIST address 
 	TEIform CDATA "address"
@@ -108,8 +189,8 @@
 	 >
 
 <!ELEMENT analytic 
-	(author | editor | respStmt | title | gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)* >
+	(author | editor | respStmt | title | gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST analytic 
 	TEIform CDATA "analytic"
@@ -121,35 +202,37 @@
 	 >
 
 <!ELEMENT app 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(lem, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*, (wit, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)?)?, ((rdg, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)?) | (rdgGrp, (gap | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, (wit, (gap | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*)?))+) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, (lem, (gap | figure | certainty | fs | link | 
+	linkGrp | cb | lb | pb)*, (wit, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*)?)?, ((rdg, (gap 
+	| figure | certainty | fs | link | linkGrp | cb | lb | pb)*, 
+	(wit, (gap | figure | certainty | fs | link | linkGrp | 
+	cb | lb | pb)*)?) | (rdgGrp, (gap | figure | certainty | 
+	fs | link | linkGrp | cb | lb | pb)*, (wit, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*)?))+) >
 
 <!ATTLIST app 
 	TEIform CDATA "app"
 	ana IDREFS #IMPLIED
-	from IDREF "ROOT"
+	from IDREF #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	loc CDATA #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	to IDREF "DITTO"
+	to IDREF #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT author 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST author 
 	TEIform CDATA "author"
@@ -163,10 +246,11 @@
 <!ELEMENT authority 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST authority 
 	TEIform CDATA "authority"
@@ -193,12 +277,13 @@
 <!ELEMENT bibl 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | analytic | author 
-	| biblScope | edition | editor | extent | idno | imprint 
-	| monogr | note | pubPlace | publisher | respStmt | series 
-	| gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| analytic | author | biblScope | edition | editor | extent 
+	| idno | imprint | monogr | note | pubPlace | publisher 
+	| respStmt | series | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)* >
 
 <!ATTLIST bibl 
 	TEIform CDATA "bibl"
@@ -212,14 +297,14 @@
 	 >
 
 <!ELEMENT biblFull 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	titleStmt, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (editionStmt, (gap | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)?, (extent, (gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*)?, publicationStmt, 
-	(gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(sourceDesc, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, titleStmt, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*, (editionStmt, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*)?, (extent, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| pb)*)?, publicationStmt, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)*, (sourceDesc, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*)*) >
 
 <!ATTLIST biblFull 
 	TEIform CDATA "biblFull"
@@ -235,10 +320,11 @@
 <!ELEMENT biblScope 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST biblScope 
 	TEIform CDATA "biblScope"
@@ -251,13 +337,14 @@
 	 >
 
 <!ELEMENT biblStruct 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(analytic, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*)?, (monogr, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (series, (gap | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)*)+, ((note, (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*) | (idno, (gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)*))*) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, (analytic, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*)?, (monogr, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*, (series, (gap | 
+	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)*)+, 
+	((note, (gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)*) | (idno, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)*))*) >
 
 <!ATTLIST biblStruct 
 	TEIform CDATA "biblStruct"
@@ -273,10 +360,11 @@
 <!ELEMENT bloc 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST bloc 
 	TEIform CDATA "bloc"
@@ -293,13 +381,13 @@
 	 >
 
 <!ELEMENT body 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, ((((bibl | biblFull | biblStruct | ab 
-	| l | lg | p | figure | list | listBibl | note), (gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
-	(div | gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*)?) | (div, (div | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*))) >
+	((docAuthor | head | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*, ((((bibl | biblFull | biblStruct 
+	| ab | l | lg | p | list | listBibl | note), (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
+	(div | gap | figure | certainty | fs | link | linkGrp | 
+	cb | lb | pb)*)?) | (div, (div | gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*))) >
 
 <!ATTLIST body 
 	TEIform CDATA "body"
@@ -314,9 +402,9 @@
 <!ELEMENT catDesc 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w)* >
 
 <!ATTLIST catDesc 
 	TEIform CDATA "catDesc"
@@ -399,10 +487,11 @@
 <!ELEMENT classCode 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST classCode 
 	TEIform CDATA "classCode"
@@ -429,12 +518,12 @@
 <!ELEMENT corr 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST corr 
 	TEIform CDATA "corr"
@@ -451,11 +540,12 @@
 <!ELEMENT country 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST country 
 	TEIform CDATA "country"
@@ -474,10 +564,11 @@
 <!ELEMENT creation 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST creation 
 	TEIform CDATA "creation"
@@ -491,15 +582,17 @@
 <!ELEMENT date 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST date 
 	TEIform CDATA "date"
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
+	cert CDATA #IMPLIED
 	certainty CDATA #IMPLIED
 	exact (notBefore | notAfter | both | none) #IMPLIED
 	id ID #IMPLIED
@@ -507,7 +600,7 @@
 	n CDATA #IMPLIED
 	notAfter CDATA #IMPLIED
 	notBefore CDATA #IMPLIED
-	precision (exact | approximate) #IMPLIED
+	precision (exact | circa) #IMPLIED
 	rend CDATA #IMPLIED
 	value CDATA #IMPLIED
 	 >
@@ -515,10 +608,11 @@
 <!ELEMENT dateRange 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST dateRange 
 	TEIform CDATA "dateRange"
@@ -535,8 +629,8 @@
 
 <!ELEMENT dateStruct 
 	(#PCDATA | dateStruct | day | distance | month | occasion 
-	| offset | week | year | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| offset | week | year | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST dateStruct 
 	TEIform CDATA "dateStruct"
@@ -574,10 +668,11 @@
 <!ELEMENT del 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST del 
 	TEIform CDATA "del"
@@ -596,10 +691,11 @@
 <!ELEMENT distance 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST distance 
 	TEIform CDATA "distance"
@@ -619,10 +715,11 @@
 <!ELEMENT distributor 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST distributor 
 	TEIform CDATA "distributor"
@@ -634,12 +731,13 @@
 	 >
 
 <!ELEMENT div 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, ((div, (gap | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)+ | (((bibl | biblFull | biblStruct 
-	| ab | l | lg | p | figure | list | listBibl | note), (gap 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
-	(gap | certainty | fs | link | linkGrp | cb | lb | pb)*)*))) >
+	((docAuthor | head | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*, ((div, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*)+ | (((bibl | biblFull 
+	| biblStruct | ab | l | lg | p | list | listBibl | note), 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| pb)*)+, (div, (gap | figure | certainty | fs | link | 
+	linkGrp | cb | lb | pb)*)*))) >
 
 <!ATTLIST div 
 	TEIform CDATA "div"
@@ -655,16 +753,17 @@
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
 	sample (initial | medial | final | unknown | complete) "complete"
-	type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation) #IMPLIED
+	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT docAuthor 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST docAuthor 
 	TEIform CDATA "docAuthor"
@@ -678,10 +777,11 @@
 <!ELEMENT edition 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST edition 
 	TEIform CDATA "edition"
@@ -707,10 +807,11 @@
 <!ELEMENT editor 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST editor 
 	TEIform CDATA "editor"
@@ -725,11 +826,12 @@
 <!ELEMENT emph 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST emph 
 	TEIform CDATA "emph"
@@ -755,10 +857,11 @@
 <!ELEMENT expan 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST expan 
 	TEIform CDATA "expan"
@@ -776,10 +879,11 @@
 <!ELEMENT extent 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST extent 
 	TEIform CDATA "extent"
@@ -809,11 +913,12 @@
 <!ELEMENT figDesc 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST figDesc 
 	TEIform CDATA "figDesc"
@@ -825,7 +930,7 @@
 	 >
 
 <!ELEMENT figure 
-	(head, p*, figDesc) >
+	(head?, p*, figDesc) >
 
 <!ATTLIST figure 
 	ana IDREFS #IMPLIED
@@ -852,11 +957,12 @@
 <!ELEMENT foreign 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST foreign 
 	TEIform CDATA "foreign"
@@ -885,10 +991,11 @@
 <!ELEMENT funder 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST funder 
 	TEIform CDATA "funder"
@@ -937,8 +1044,8 @@
 	 >
 
 <!ELEMENT geogName 
-	(#PCDATA | geog | name | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	(#PCDATA | geog | name | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST geogName 
 	TEIform CDATA "geogName"
@@ -956,10 +1063,11 @@
 <!ELEMENT gloss 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST gloss 
 	TEIform CDATA "gloss"
@@ -1024,11 +1132,12 @@
 <!ELEMENT head 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST head 
 	TEIform CDATA "head"
@@ -1043,11 +1152,12 @@
 <!ELEMENT hi 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST hi 
 	TEIform CDATA "hi"
@@ -1055,7 +1165,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	rend (apex | intraline | ligature | longa | reversed | supraline | tall) #REQUIRED
+	rend (apex | intraline | ligature | longa | reversed | supraline | tall | superscript) #REQUIRED
 	type CDATA #IMPLIED
 	 >
 
@@ -1073,8 +1183,8 @@
 	 >
 
 <!ELEMENT imprint 
-	(pubPlace | publisher | date | biblScope | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	(pubPlace | publisher | date | biblScope | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST imprint 
 	TEIform CDATA "imprint"
@@ -1088,12 +1198,12 @@
 <!ELEMENT item 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST item 
 	TEIform CDATA "item"
@@ -1120,11 +1230,12 @@
 <!ELEMENT l 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST l 
 	TEIform CDATA "l"
@@ -1156,10 +1267,11 @@
 <!ELEMENT language 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST language 
 	TEIform CDATA "language"
@@ -1168,7 +1280,7 @@
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	usage CDATA #IMPLIED
+	usage NMTOKEN #IMPLIED
 	wsd ENTITY #IMPLIED
 	 >
 
@@ -1189,11 +1301,12 @@
 <!ELEMENT lem 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST lem 
 	TEIform CDATA "lem"
@@ -1211,9 +1324,9 @@
 	 >
 
 <!ELEMENT lg 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (l | lg), (l | lg | gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*) >
+	((docAuthor | head | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*, (l | lg), (l | lg | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST lg 
 	TEIform CDATA "lg"
@@ -1271,10 +1384,10 @@
 	 >
 
 <!ELEMENT list 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(head, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, (item, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)*) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, (head, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*)?, (item, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*)*) >
 
 <!ATTLIST list 
 	TEIform CDATA "list"
@@ -1287,11 +1400,11 @@
 	 >
 
 <!ELEMENT listBibl 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(head, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, (bibl | biblStruct | biblFull), (bibl | biblStruct 
-	| biblFull | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, (head, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*)?, (bibl | biblStruct | biblFull), 
+	(bibl | biblStruct | biblFull | gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST listBibl 
 	TEIform CDATA "listBibl"
@@ -1318,10 +1431,11 @@
 <!ELEMENT measure 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST measure 
 	TEIform CDATA "measure"
@@ -1340,11 +1454,12 @@
 <!ELEMENT meeting 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST meeting 
 	TEIform CDATA "meeting"
@@ -1356,19 +1471,21 @@
 	 >
 
 <!ELEMENT monogr 
-	(((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(((author | editor | respStmt), (author | editor | respStmt 
-	| gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(title, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)+, ((editor | respStmt), (gap | certainty | fs | 
-	link | linkGrp | cb | lb | pb)*)*) | ((title, (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)+, ((author | editor 
-	| respStmt), (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*)))?, ((note | meeting), (gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*)*, (edition, (editor 
-	| respStmt | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*, imprint, (imprint | extent | biblScope | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)*) >
+	(((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, (((author | editor | respStmt), (author | editor 
+	| respStmt | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)*, (title, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)*)+, ((editor | respStmt), 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| pb)*)*) | ((title, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*)+, ((author | editor | respStmt), 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| pb)*)*)))?, ((note | meeting), (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*)*, (edition, (editor 
+	| respStmt | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)*)*, imprint, (imprint | extent | biblScope 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*) >
 
 <!ATTLIST monogr 
 	TEIform CDATA "monogr"
@@ -1399,10 +1516,11 @@
 <!ELEMENT name 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST name 
 	TEIform CDATA "name"
@@ -1419,12 +1537,12 @@
 <!ELEMENT note 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST note 
 	TEIform CDATA "note"
@@ -1444,10 +1562,11 @@
 <!ELEMENT num 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST num 
 	TEIform CDATA "num"
@@ -1463,10 +1582,11 @@
 <!ELEMENT occasion 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST occasion 
 	TEIform CDATA "occasion"
@@ -1483,8 +1603,8 @@
 	 >
 
 <!ELEMENT offset 
-	(#PCDATA | gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	(#PCDATA | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST offset 
 	TEIform CDATA "offset"
@@ -1503,10 +1623,11 @@
 <!ELEMENT orig 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST orig 
 	TEIform CDATA "orig"
@@ -1522,11 +1643,12 @@
 <!ELEMENT p 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST p 
 	TEIform CDATA "p"
@@ -1553,10 +1675,11 @@
 <!ELEMENT persName 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST persName 
 	TEIform CDATA "persName"
@@ -1575,11 +1698,11 @@
 	(#PCDATA | bloc | country | distance | geog | offset | region 
 	| settlement | mark | abbr | address | date | dateRange 
 	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | add | app | corr | del | orig | reg 
-	| sic | space | supplied | unclear | handShift | emph | 
-	foreign | gloss | hi | term | title | ptr | ref | xptr | 
-	xref | seg | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)* >
+	persName | placeName | rs | add | app | corr | del | orig 
+	| reg | sic | space | supplied | unclear | handShift | emph 
+	| foreign | gloss | hi | term | title | ptr | ref | xptr 
+	| xref | seg | w | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)* >
 
 <!ATTLIST placeName 
 	TEIform CDATA "placeName"
@@ -1591,6 +1714,7 @@
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
 	rend CDATA #IMPLIED
+	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT postBox 
@@ -1620,10 +1744,11 @@
 <!ELEMENT principal 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST principal 
 	TEIform CDATA "principal"
@@ -1668,10 +1793,11 @@
 <!ELEMENT pubPlace 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST pubPlace 
 	TEIform CDATA "pubPlace"
@@ -1685,10 +1811,10 @@
 	 >
 
 <!ELEMENT publicationStmt 
-	((p, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*)+ | ((publisher | distributor | authority | pubPlace 
-	| address | idno | availability | date), (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)+) >
+	((p, (gap | figure | certainty | fs | link | linkGrp | cb 
+	| lb | pb)*)+ | ((publisher | distributor | authority | 
+	pubPlace | address | idno | availability | date), (gap | 
+	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)+) >
 
 <!ATTLIST publicationStmt 
 	TEIform CDATA "publicationStmt"
@@ -1702,10 +1828,11 @@
 <!ELEMENT publisher 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST publisher 
 	TEIform CDATA "publisher"
@@ -1719,11 +1846,12 @@
 <!ELEMENT rdg 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST rdg 
 	TEIform CDATA "rdg"
@@ -1741,11 +1869,11 @@
 	 >
 
 <!ELEMENT rdgGrp 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	((rdgGrp, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*) | (rdg, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)?))+) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, ((rdgGrp, (gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | pb)*) | (rdg, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | pb)*, (wit, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)*)?))+) >
 
 <!ATTLIST rdgGrp 
 	TEIform CDATA "rdgGrp"
@@ -1765,11 +1893,12 @@
 <!ELEMENT ref 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST ref 
 	TEIform CDATA "ref"
@@ -1790,10 +1919,11 @@
 <!ELEMENT reg 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST reg 
 	TEIform CDATA "reg"
@@ -1809,11 +1939,12 @@
 <!ELEMENT region 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST region 
 	TEIform CDATA "region"
@@ -1832,10 +1963,11 @@
 <!ELEMENT resp 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST resp 
 	TEIform CDATA "resp"
@@ -1847,8 +1979,8 @@
 	 >
 
 <!ELEMENT respStmt 
-	(resp | name | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)+ >
+	(resp | name | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)+ >
 
 <!ATTLIST respStmt 
 	TEIform CDATA "respStmt"
@@ -1871,19 +2003,41 @@
 	rend CDATA #IMPLIED
 	 >
 
+<!ELEMENT rs 
+	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
+	| expan | geogName | measure | name | num | persName | placeName 
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
+
+<!ATTLIST rs 
+	TEIform CDATA "rs"
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	key CDATA #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	reg CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	type CDATA #IMPLIED
+	 >
+
 <!ELEMENT seg 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST seg 
 	TEIform CDATA "seg"
 	ana IDREFS #IMPLIED
-	cert (uncertain | doubtful) #IMPLIED
+	cert CDATA #IMPLIED
 	function CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1899,7 +2053,7 @@
 
 <!ELEMENT series 
 	(#PCDATA | title | editor | respStmt | biblScope | gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	figure | certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST series 
 	TEIform CDATA "series"
@@ -1913,10 +2067,11 @@
 <!ELEMENT settlement 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST settlement 
 	TEIform CDATA "settlement"
@@ -1935,12 +2090,12 @@
 <!ELEMENT sic 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST sic 
 	TEIform CDATA "sic"
@@ -1986,10 +2141,11 @@
 <!ELEMENT sponsor 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST sponsor 
 	TEIform CDATA "sponsor"
@@ -2016,10 +2172,11 @@
 <!ELEMENT street 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST street 
 	TEIform CDATA "street"
@@ -2033,22 +2190,23 @@
 <!ELEMENT supplied 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST supplied 
 	TEIform CDATA "supplied"
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
-	cert (uncertain | doubtful) #IMPLIED
+	cert CDATA #IMPLIED
 	hand CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	reason (lost | omitted | subaudible | explanation) #REQUIRED
+	reason (lost | omitted | subaudible | explanation | abbreviation) #REQUIRED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	source CDATA #IMPLIED
@@ -2098,10 +2256,11 @@
 <!ELEMENT term 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)* >
 
 <!ATTLIST term 
 	TEIform CDATA "term"
@@ -2114,9 +2273,9 @@
 	 >
 
 <!ELEMENT text 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	body, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*) >
+	((gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | pb)*, body, (gap | figure | certainty | fs | link | 
+	linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST text 
 	TEIform CDATA "text"
@@ -2144,11 +2303,12 @@
 <!ELEMENT title 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST title 
 	TEIform CDATA "title"
@@ -2177,11 +2337,12 @@
 <!ELEMENT unclear 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST unclear 
 	TEIform CDATA "unclear"
@@ -2195,6 +2356,31 @@
 	reason (damage | execution) #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
+	 >
+
+<!ELEMENT w 
+	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
+	| expan | geogName | measure | name | num | persName | placeName 
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
+
+<!ATTLIST w 
+	ana IDREFS #IMPLIED
+	function CDATA #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	lemma CDATA #IMPLIED
+	met CDATA #IMPLIED
+	n CDATA #IMPLIED
+	part (Y | N | I | M | F) "N"
+	real CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	rhyme CDATA #IMPLIED
+	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT week 
@@ -2217,11 +2403,12 @@
 <!ELEMENT wit 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST wit 
 	TEIform CDATA "wit"
@@ -2256,11 +2443,12 @@
 <!ELEMENT xref 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
-	| add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | term | title | ptr | ref | xptr | xref | seg | w 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | pb)* >
 
 <!ATTLIST xref 
 	TEIform CDATA "xref"
@@ -2297,7 +2485,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza19965 on 25 Nov 2002 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza6649 on 4 Apr 2005 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 
@@ -2895,7 +3083,7 @@
 
 <!ENTITY copy  "&#x00A9;" >
 
-<!ENTITY reg  "&#x00AF;" >
+<!ENTITY reg  "&#x00AE;" >
 
 <!ENTITY trade  "&#x2122;" >
 
@@ -2921,7 +3109,7 @@
 
 <!ENTITY lowbar  "&#x005F;" >
 
-<!ENTITY hyphen  "&#xE4F8;" >
+<!ENTITY hyphen  "&#x2010;" >
 
 <!ENTITY period  "&#x002E;" >
 

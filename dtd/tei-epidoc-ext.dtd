@@ -1,5 +1,5 @@
 <!-- EpiDoc-specific TEI customization file
-     Copyright (C) 2002  EpiDoc Collaborative
+     Copyright (C) 2002-2005  EpiDoc Collaborative
       
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -27,7 +27,19 @@
      3. EpiDoc-specific character entities 
      
      REVISION HISTORY:
-     
+
+     04 April 2005
+           (GB and JG)
+         * made <figure> a little more forgiving (for InsAph compatibility)
+         * Added <w> and <rs> (added %paracontent; to content model of <w>)
+         * made the @from and @to in <app> CDATA #IMPLIED
+         * made @cert CDATA #IMPLIED (globally)
+         * made <date> @precision ( exact | circa )
+         * made <div> @type CDATA #IMPLIED
+         * added 'superscript' to values of @rend in <hi>
+         * added @type to place-names
+         * added 'abbreviation' to @reason in <supplied>
+
      25 November 2002
          * Added an "href" attribute to the figure tag to support 'quick-and-dirty' direct linkage
            of images and EpiDoc documents. This is a stop-gap until both TEI and EpiDoc finally 
@@ -71,12 +83,17 @@
 <!ATTLIST mark 
           %a.global; 
           type CDATA #IMPLIED >
-<!ELEMENT figure (head, p*, figDesc) >
+<!ELEMENT figure (head?, p*, figDesc) >
 <!ATTLIST figure
 	%a.global
 	entity	ENTITY	#IMPLIED
 	href	CDATA	#IMPLIED >
 
+<!ELEMENT w %om.RR;  %paraContent;>
+<!ATTLIST w  
+      %a.global;
+      %a.seg;
+      lemma CDATA #IMPLIED>
 
 <!-- *********************************************************************
      EpiDoc-specific attributes. Where they coincide with TEI attribute definitions, these will be binding
@@ -84,7 +101,7 @@
      
 <!-- define parameter entities to facilitate uniformity where the same attribute appears on multiple elements -->
 
-<!ENTITY % epidoc.cert "cert (uncertain | doubtful) #IMPLIED" >
+<!ENTITY % epidoc.cert "cert CDATA #IMPLIED" >
 <!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
 <!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
 <!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
@@ -93,7 +110,8 @@
         "targOrder (Y | N | U) 'Y'
          evaluate (all | one | none) 'all' " >
 <!ENTITY % epidoc.a.date
-       "precision (exact | approximate) #IMPLIED 
+       "cert CDATA #IMPLIED
+       	precision (exact | circa) #IMPLIED 
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
         exact (notBefore | notAfter | both | none) #IMPLIED " >
@@ -105,8 +123,8 @@
         %epidoc.resp;
         %epidoc.hand; >
 <!ATTLIST %n.app;
-        from IDREF 'ROOT'
-        to IDREF 'DITTO' >
+        from IDREF #IMPLIED
+        to IDREF #IMPLIED >
 <!ATTLIST %n.availability;
         status (free | unknown | restricted) 'unknown' >
 <!ATTLIST %n.bibl;
@@ -126,7 +144,7 @@
 <!ATTLIST %n.distance;
         %epidoc.exact; >
 <!ATTLIST %n.div;
-        type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation ) #IMPLIED >
+        type CDATA #IMPLIED >
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #IMPLIED
         unit CDATA #IMPLIED
@@ -140,7 +158,7 @@
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
 <!ATTLIST %n.hi;
-        rend (apex | intraline | ligature | longa | reversed | supraline | tall) #REQUIRED
+        rend (apex | intraline | ligature | longa | reversed | supraline | tall | superscript) #REQUIRED
         type CDATA #IMPLIED >
 <!ATTLIST %n.idno;
         type (ISSN | ISBN | URL | OCLC) #REQUIRED >
@@ -156,7 +174,8 @@
 <!ATTLIST %n.persName;
         %epidoc.full; >
 <!ATTLIST %n.placeName;
-        %epidoc.full; >
+        %epidoc.full;
+        type CDATA #IMPLIED >
 <!ATTLIST %n.ptr;
         %epidoc.a.pointer; >
 <!ATTLIST %n.ref;
@@ -173,7 +192,7 @@
 <!ATTLIST %n.supplied;
         %epidoc.hand;
         %epidoc.cert; 
-        reason (lost | omitted | subaudible | explanation) #REQUIRED >
+        reason (lost | omitted | subaudible | explanation | abbreviation) #REQUIRED >
 <!ATTLIST %n.title;
         type (main | subordinate | parallel | abbreviated) 'main'
         level (a | m | j | s | u) 'm' >
