@@ -11,6 +11,11 @@
       <xsl:call-template name="outputLangAttributes"/>
 	    <xsl:attribute name="class">edition</xsl:attribute>
 	    <xsl:apply-templates/>
+      <xsl:if test="descendant::sic[@corr] | descendant::corr[@sic]">
+        <div>
+            <xsl:call-template name="enumerateCorrections"/>
+        </div>
+      </xsl:if>
       <xsl:if test="descendant::app">
         <div>
           <xsl:variable name="headlevel"><xsl:value-of select="count(ancestor::div)+2"/></xsl:variable>
