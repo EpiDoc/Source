@@ -97,23 +97,23 @@ public SPIonicParser() {
             case ')':
 	    case '9':
 	    case '(':
-            case '\1':
+            case '1':
             case '!':
-            case '\2':
+            case '2':
             case '@':
 	    case ']':
 	    case '}':
-	    case '\3':
+	    case '3':
 	    case '#':
-	    case '\4':
+	    case '4':
 	    case '$':
             case '[':
             case '{':
             case '+':
-            case '\"':
-	    case '\5':
+            case '"':
+	    case '5':
 	    case '%':
-	    case '\6':
+	    case '6':
 	    case '^':
 	    case '<':
 	    case '>':
