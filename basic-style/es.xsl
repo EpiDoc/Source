@@ -40,7 +40,6 @@
     </xsl:text>
   			  <h1><xsl:apply-templates select="TEI.2/teiHeader/fileDesc/titleStmt/title"/></h1>
   			  <xsl:apply-templates select="TEI.2/text/body/div"/>
-			  <xsl:call-template name="enumerateCorrections"/>
   			</xsl:element>
 			</body>
 		</html>
