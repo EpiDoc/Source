@@ -18,8 +18,8 @@ import java.util.StringTokenizer;
  * @author  Michael Jones
  * @version
  */
-public class GreekXLitConverter implements Converter {
-
+public class GreekXLitConverter extends AbstractConverter {
+    
     /** Creates new GreekXLitConverter */
     public GreekXLitConverter() {
         sgp = new Properties();
@@ -30,87 +30,95 @@ public class GreekXLitConverter implements Converter {
         catch (Exception e) {
         }
     }
-
+    
     private Properties sgp;
-    StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "ASCII";
     private static final String LANGUAGE = "grc";
-
-    public String convertToCharacterEntity(String in) {
-        String out;
-        if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            String temp = sgp.getProperty(elements[0]);
-            for (int i=0;i<elements.length;i++)
-               strb.append(sgp.getProperty(elements[i]));
-            out = strb.toString();
-        }
-        else
-            out = sgp.getProperty(in, in);
-        strb.delete(0,strb.length());
-        char[] chars = out.toCharArray();
-        for (int i=0;i<chars.length;i++) {
-            if (Character.getNumericValue(chars[i]) > 126) {
-                strb.append("&#");
-                strb.append(Character.getNumericValue(chars[i]));
-                strb.append(";");
-            }
-            else {
-                strb.append(chars[i]);
-            }
-        }
-        return strb.toString();
-    }
-
-    public String convertToString(String in) {
-        if (in.indexOf('_')>0 && in.length()>1) {
-	    String[] elements = split(in);
-	    strb.delete(0,strb.length());
-	    if (elements[1].equals("asper")) {
-		if (Character.isUpperCase(elements[0].charAt(0))) {
-		    strb.append("H");
-		    strb.append((sgp.getProperty(elements[0], "")).toLowerCase());
-		}
-		else {
-		    strb.append("h");
-		    strb.append(sgp.getProperty(elements[0], ""));
-		}
-	    }
-	    else 
-		strb.append(sgp.getProperty(elements[0], ""));
-	    return strb.toString();
-	}
-        else {
-            if (in.length() > 1)
-                return sgp.getProperty(in, "");
+    
+    /** Convert the input String to a String in transliterated Greek with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */ 
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
             else
-                return sgp.getProperty(in, in);
+                result.append(chars[i]);        
         }
-    }
-
-    private String[] split(String str) {
-        StringTokenizer st = new StringTokenizer(str, "_");
-        int tokenCount = st.countTokens();
-        String[] result = new String[tokenCount];
-        for (int i = 0; i < tokenCount; i++) {
-            result[i] = st.nextToken();
-        }
-        return result;
-    }
-  
-    public Object getProperty(String name) {
-        return null;
+        return result.toString();
     }
     
-    public void setProperty(String name, Object value) {
-    }
-
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
+    /** Convert the input String to a String in transliterated Greek.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */ 
+    public String convertToString(Parser in) {
+        StringBuffer result = new StringBuffer();
+        String last = "";
+        while (in.hasNext()) {
+            String convert = in.next();
+            if (convert.indexOf('_')>0 && convert.length()>1) {
+                String[] elements = split(convert);
+                if (elements[1].equals("asper")) {
+                    if (isDiphthong(last, elements[0]) && convert.indexOf("diaer") < 0) {
+                        if (Character.isUpperCase(elements[0].charAt(0))) {
+                            result.insert(result.length()-1, "H");
+                            result.append((sgp.getProperty(elements[0], "")).toLowerCase());
+                        }
+                        else {
+                            result.insert(result.length()-1, "h");
+                            result.append(sgp.getProperty(elements[0], ""));
+                        }
+                    } else {
+                        if (Character.isUpperCase(elements[0].charAt(0))) {
+                            result.append("H");
+                            result.append((sgp.getProperty(elements[0], "")).toLowerCase());
+                        }
+                        else {
+                            result.append("h");
+                            result.append(sgp.getProperty(elements[0], ""));
+                        }
+                    }
+                }
+                else
+                    result.append(sgp.getProperty(elements[0], ""));
+            } else {
+                if (convert.length() > 1)
+                    result.append(sgp.getProperty(convert, ""));
+                else
+                    result.append(sgp.getProperty(convert, convert));
+            }
+            last = convert;
+        }
+        return result.toString();
+    }  
     
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
+    private boolean isDiphthong(String first, String second) {
+        if ("iota".equalsIgnoreCase(second)) {
+            if ("alpha".equalsIgnoreCase(first))
+                return true;
+            if ("epsilon".equalsIgnoreCase(first))
+                return true;
+            if ("omicron".equalsIgnoreCase(first))
+                return true;
+            if ("upsilon".equalsIgnoreCase(first))
+                return true;
+        }
+        if ("upsilon".equalsIgnoreCase(second)) {
+            if ("alpha".equalsIgnoreCase(first))
+                return true;
+            if ("epsilon".equalsIgnoreCase(first))
+                return true;
+            if ("omicron".equalsIgnoreCase(first))
+                return true;
+            if ("eta".equalsIgnoreCase(first))
+                return true;
+        }
+        return false;
     }
 }

@@ -18,8 +18,8 @@ import java.util.StringTokenizer;
  * @author  Michael Jones
  * @version
  */
-public class SPIonicConverter implements Converter {
-
+public class SPIonicConverter extends AbstractConverter {
+    
     /** Creates new SPIonicConverter */
     public SPIonicConverter() {
         sgp = new Properties();
@@ -30,123 +30,88 @@ public class SPIonicConverter implements Converter {
         catch (Exception e) {
         }
     }
-
+    
     private Properties sgp;
-    StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "ASCII";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = "?";
-    private String unrec = UNRECOGNIZED_CHAR;
-
-    public String convertToCharacterEntity(String in) {
-        String out;
-        if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            String temp = sgp.getProperty(elements[0]);
-            for (int i=0;i<elements.length;i++)
-               strb.append(sgp.getProperty(elements[i]));
-            out = strb.toString();
+    
+    /** Convert the input String to a String in SPIonic with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
+            else
+                result.append(chars[i]);
         }
-        else
-            out = sgp.getProperty(in, in);
-        strb.delete(0,strb.length());
-        char[] chars = out.toCharArray();
-        for (int i=0;i<chars.length;i++) {
-            if (Character.getNumericValue(chars[i]) > 126) {
-                strb.append("&#");
-                strb.append(Character.getNumericValue(chars[i]));
-                strb.append(";");
+        return result.toString();
+    }
+    
+    /** Convert the input String to a String in SPIonic.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */
+    public String convertToString(Parser in) {
+        StringBuffer result = new StringBuffer();
+        while (in.hasNext()) {
+            String convert = in.next();
+            if (convert.indexOf('_')>0 && convert.length()>1) {
+                String temp;
+                String narrowWide;
+                String[] elements = split(convert);
+                if (isCharacterNarrow(elements[0]))
+                    narrowWide = "narrow";
+                else
+                    narrowWide = "wide";
+                temp = elements[1];
+                if (elements.length == 2) {
+                    temp += "_" + narrowWide;
+                    if (sgp.getProperty(temp) != null) {
+                        result.append(sgp.getProperty(elements[0], unrec) + sgp.getProperty(temp, unrec));
+                        for (int i=2;i<elements.length;i++)
+                            result.append(sgp.getProperty(elements[i], unrec));
+                    }
+                    else {
+                        for (int i=0; i<elements.length;i++)
+                            result.append(sgp.getProperty(elements[i], unrec));
+                    }
+                }
+                else {
+                    temp += "_" + elements[2] + "_" + narrowWide;
+                    if (sgp.getProperty(temp) != null) {
+                        result.append(sgp.getProperty(elements[0], unrec) + sgp.getProperty(temp, unrec));
+                        for (int i=3;i<elements.length;i++)
+                            result.append(sgp.getProperty(elements[i], unrec));
+                    }
+                    else {
+                        for (int i=0; i<elements.length;i++)
+                            result.append(sgp.getProperty(elements[i], unrec));
+                    }
+                }
             }
             else {
-                strb.append(chars[i]);
+                if (convert.length() > 1)
+                    result.append(sgp.getProperty(convert, unrec));
+                else
+                    result.append(sgp.getProperty(convert, convert));
             }
         }
-        return strb.toString();
+        return result.toString();
     }
-
-    public String convertToString(String in) {
-        if (in.indexOf('_')>0 && in.length()>1) {
-	    String temp;
-	    String narrowWide;
-	    String[] elements = split(in);
-	    strb.delete(0,strb.length());
-	    if (isCharacterNarrow(elements[0])) 
-		narrowWide = "narrow";
-	    else
-		narrowWide = "wide";
-	    temp = elements[1];
-	    if (elements.length == 2) {
-		temp += "_" + narrowWide;
-		if (sgp.getProperty(temp) != null) {
-		    strb.append(sgp.getProperty(elements[0], unrec) + sgp.getProperty(temp, unrec));
-		    for (int i=2;i<elements.length;i++)
-			strb.append(sgp.getProperty(elements[i], unrec));
-		}
-		else {
-		    for (int i=0; i<elements.length;i++)
-			strb.append(sgp.getProperty(elements[i], unrec));
-		}
-	    }
-	    else {
-		temp += "_" + elements[2] + "_" + narrowWide;
-		if (sgp.getProperty(temp) != null) {
-		    strb.append(sgp.getProperty(elements[0], unrec) + sgp.getProperty(temp, unrec));
-		    for (int i=3;i<elements.length;i++)
-			strb.append(sgp.getProperty(elements[i], unrec));
-		}
-		else {
-		    for (int i=0; i<elements.length;i++)
-			strb.append(sgp.getProperty(elements[i], unrec));
-		}
-	    }
-	    return strb.toString();
-	}
-        else {
-            if (in.length() > 1)
-                return sgp.getProperty(in, unrec);
-            else
-                return sgp.getProperty(in, in);
-        }
-    }
-
-    private String[] split(String str) {
-        StringTokenizer st = new StringTokenizer(str, "_");
-        int tokenCount = st.countTokens();
-        String[] result = new String[tokenCount];
-        for (int i = 0; i < tokenCount; i++) {
-            result[i] = st.nextToken();
-        }
-        return result;
-    }
-
+    
+    
     private boolean isCharacterNarrow(String ch) {
-	if (ch.equals("iota") || ch.equals("epsilon")) {
-	    return true;
-	}
-	else
-	    return false;
-    }
-  
-    public Object getProperty(String name) {
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-        if (name.equals("suppress-unrecognized-characters")) {
-            String val = (String)value;
-            if (val.equals("true"))
-                unrec = "";
-            else
-                val = UNRECOGNIZED_CHAR;
+        if (ch.equals("iota") || ch.equals("epsilon")) {
+            return true;
         }
-    }
-
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
+        else
+            return false;
     }
 }

@@ -17,10 +17,10 @@ import java.util.TreeMap;
  * @author  Michael Jones
  * @version
  */
-public class SGreekParser implements Parser {
-
+public class SGreekParser extends AbstractParser {
+    
     /** Creates new SGreekParser */
-public SGreekParser() {
+    public SGreekParser() {
         bcp = new Properties();
         ga = new Properties();
         try {
@@ -32,31 +32,18 @@ public SGreekParser() {
             e.printStackTrace(System.out);
         }
     }
-
+    
     private static String ENCODING = "ISO8859_1";
     private static final String LANGUAGE = "grc";
-
+    
     private Properties bcp;
     private Properties ga;
-    private char[] chArray;
-    private int index;
-    private String in;
     private StringBuffer strb = new StringBuffer();
     private TreeMap map = new TreeMap();
-
-    public boolean hasNext() {
-        if (index < chArray.length)
-            return true;
-        else
-            return false;
-    }
-
-    public void setString(String in) {
-        this.in = in;
-        chArray = in.toCharArray();
-        index = 0;
-    }
-
+    
+    /** Returns the next parsed character as a String.
+     * @return The name of the parsed character.
+     */ 
     public String next() {
         strb.delete(0,strb.length());
         if (in != null) {
@@ -75,16 +62,16 @@ public SGreekParser() {
         }
         return strb.toString();
     }
-
+    
     private String lookup(char ch) {
         String key = String.valueOf(ch);
         return bcp.getProperty(key, key);
     }
-
+    
     private String lookupAccent(char ch) {
-	    return ga.getProperty(lookup(ch));
+        return ga.getProperty(lookup(ch));
     }
-
+    
     private boolean isSGreekDiacritical(char ch) {
         switch (ch) {
             case ')':
@@ -97,23 +84,6 @@ public SGreekParser() {
                 return false;
         }
     }
-
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
-    
-    public Object getProperty(String name) {
-        if (name.equals("ENCODING"))
-            return new String(ENCODING);
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-    }   
 }
 
 

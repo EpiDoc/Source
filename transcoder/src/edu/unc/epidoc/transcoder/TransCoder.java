@@ -163,13 +163,8 @@ public class TransCoder {
      *  has been read in properly.
      */
     public String getString(String in) throws UnsupportedEncodingException {
-        out.delete(0,out.length());
         p.setString(in);
-        while (p.hasNext()) {
-            out.append(conv.convertToString(p.next()));
-            char c = out.charAt(out.length()-1);
-        }
-        return out.toString();
+        return conv.convertToString(p);
     }
     
     /** Get the result as a String from an input File.  Should work with any type
@@ -186,21 +181,13 @@ public class TransCoder {
         isw.close();
         out.delete(0,out.length());
         p.setString(strb.toString());
-        while (p.hasNext()) {
-            String temp = conv.convertToString(p.next());
-//            System.out.println((int)temp.charAt(0));
-            out.append(temp);
-        }
-        return out.toString();
+        return conv.convertToString(p);
     }
     
     public String getCharacterEntities(String in) throws UnsupportedEncodingException {
         out.delete(0,out.length());
         p.setString(in);
-        while (p.hasNext()) {
-            out.append(conv.convertToCharacterEntity(p.next()));
-        }
-        return out.toString();
+        return conv.convertToCharacterEntities(p);
     }
     
 }

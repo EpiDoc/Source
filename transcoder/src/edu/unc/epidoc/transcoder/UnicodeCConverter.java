@@ -16,10 +16,10 @@ import java.util.StringTokenizer;
 /**
  *
  * @author  Hugh A. Cayless
- * @version 
+ * @version
  */
-public class UnicodeCConverter implements Converter {
-
+public class UnicodeCConverter extends AbstractConverter {
+    
     /** Creates new UnicodeNormalizationFormCConverter */
     public UnicodeCConverter() {
         unfcc = new Properties();
@@ -31,55 +31,41 @@ public class UnicodeCConverter implements Converter {
     }
     
     private Properties unfcc;
-    private StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "UTF8";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = "?";
-    private String unrec = UNRECOGNIZED_CHAR;
-
-    public String convertToCharacterEntity(String in) {
-        String str = unfcc.getProperty(in, in);
-        strb.delete(0,strb.length());
-        char[] chars = str.toCharArray();
-        for (int i=0;i<chars.length;i++) {  
-            if (chars[i] > 0x7F) {
-                strb.append("&#");
-                strb.append(Integer.toString(chars[i]));
-                strb.append(";");
-            } else {
-                strb.append(chars[i]);
-            }
-        }
-        return strb.toString();
-    }
     
-    public String convertToString(String in) {
-        if (in.length() > 1)
-            return unfcc.getProperty(in, unrec);
-        else
-            return unfcc.getProperty(in, in);
-    } 
-    
-    public Object getProperty(String name) {
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-        if (name.equals("suppress-unrecognized-characters")) {
-            String val = (String)value;
-            if (val.equals("true"))
-                unrec = "";
+    /** Convert the input String to a String in Unicode Form C with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
             else
-                val = UNRECOGNIZED_CHAR;
+                result.append(chars[i]);
         }
+        return result.toString();
     }
     
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
-    
+    /** Convert the input String to a String in Unicode Form C.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */ 
+    public String convertToString(Parser in) {
+        StringBuffer result = new StringBuffer();
+        while (in.hasNext()) {
+            String convert = in.next();
+            if (convert.length() > 1)
+                result.append(unfcc.getProperty(convert, unrec));
+            else
+                result.append(unfcc.getProperty(convert, convert));
+        }
+        return result.toString();
+    }        
 }

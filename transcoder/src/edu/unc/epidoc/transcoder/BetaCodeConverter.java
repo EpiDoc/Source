@@ -13,11 +13,11 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-/** Handles the conversion from the internal format to Beta Code.
+/** Handles the conversion to Beta Code.
  * @author Hugh A. Cayless
  * @version 0.8
  */
-public class BetaCodeConverter implements Converter {
+public class BetaCodeConverter extends AbstractConverter {
     
     /** Creates new BetaCodeConverter */
     public BetaCodeConverter() {
@@ -30,96 +30,55 @@ public class BetaCodeConverter implements Converter {
     }
     
     private Properties bcc;
-    private StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "ASCII";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = "?";
-    private String unrec = UNRECOGNIZED_CHAR;
     
-    public String convertToCharacterEntity(String in) {
-        String out;
-        if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            String temp = bcc.getProperty(elements[0]);
-            if (temp.charAt(0) == '*') {
-                strb.append(temp.charAt(0));
-                for (int i=1;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-                strb.append(temp.substring(1));
-            } else {
-                for (int i=0;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-            }
-            out = strb.toString();
-        } else
-            out = bcc.getProperty(in, in);
-        strb.delete(0,strb.length());
-        char[] chars = out.toCharArray();
-        for (int i=0;i<chars.length;i++) {
-            if (Character.getNumericValue(chars[i]) > 126) {
-                strb.append("&#");
-                strb.append(Character.getNumericValue(chars[i]));
-                strb.append(";");
-            } else {
-                strb.append(chars[i]);
-            }
+    /** Convert the input String to a String in Beta Code with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */ 
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
+            else
+                result.append(chars[i]);        
         }
-        return strb.toString();
+        return result.toString();
     }
     
-    public String convertToString(String in) {
-        if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
+    /** Convert the input String to a String in Beta Code.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */   
+    public String convertToString(Parser in) {
+        StringBuffer result = new StringBuffer();
+        while (in.hasNext()) {
+            String convert = in.next();
+        if (convert.indexOf('_')>0 && convert.length()>1) {
+            String[] elements = split(convert);
             String temp = bcc.getProperty(elements[0], unrec);
             if (temp.charAt(0) == '*') {
-                strb.append(temp.charAt(0));
+                result.append(temp.charAt(0));
                 for (int i=1;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i], unrec));
-                strb.append(temp.substring(1));
+                    result.append(bcc.getProperty(elements[i], unrec));
+                result.append(temp.substring(1));
             } else {
                 for (int i=0;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i], unrec));
+                    result.append(bcc.getProperty(elements[i], unrec));
             }
-            return strb.toString();
         } else {
-            if (in.length() > 1)
-                return bcc.getProperty(in, unrec);
+            if (convert.length() > 1)
+                result.append(bcc.getProperty(convert, unrec));
             else
-                return bcc.getProperty(in, in);
+                result.append(bcc.getProperty(convert, convert));
         }
-    }
-    
-    private String[] split(String str) {
-        StringTokenizer st = new StringTokenizer(str, "_");
-        int tokenCount = st.countTokens();
-        String[] result = new String[tokenCount];
-        for (int i = 0; i < tokenCount; i++) {
-            result[i] = st.nextToken();
         }
-        return result;
-    }
-    
-    public Object getProperty(String name) {
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-        if (name.equals("suppress-unrecognized-characters")) {
-            String val = (String)value;
-            if (val.equals("true"))
-                unrec = "";
-            else
-                val = UNRECOGNIZED_CHAR;
-        }
-    }
-    
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
+        return result.toString();
+    }    
 }

@@ -17,10 +17,10 @@ import java.util.TreeMap;
  * @author  Michael Jones
  * @version
  */
-public class SPIonicParser implements Parser {
-
+public class SPIonicParser extends AbstractParser {
+    
     /** Creates new SPIonicParser */
-public SPIonicParser() {
+    public SPIonicParser() {
         bcp = new Properties();
         ga = new Properties();
         try {
@@ -32,31 +32,18 @@ public SPIonicParser() {
             e.printStackTrace(System.out);
         }
     }
-
+    
     private static String ENCODING = "US-ASCII";
     private static final String LANGUAGE = "grc";
-
+    
     private Properties bcp;
     private Properties ga;
-    private char[] chArray;
-    private int index;
-    private String in;
     private StringBuffer strb = new StringBuffer();
     private TreeMap map = new TreeMap();
-
-    public boolean hasNext() {
-        if (index < chArray.length)
-            return true;
-        else
-            return false;
-    }
-
-    public void setString(String in) {
-        this.in = in;
-        chArray = in.toCharArray();
-        index = 0;
-    }
-
+    
+    /** Returns the next parsed character as a String.
+     * @return The name of the parsed character.
+     */ 
     public String next() {
         strb.delete(0,strb.length());
         if (in != null) {
@@ -65,81 +52,61 @@ public SPIonicParser() {
             map.clear();
             strb.append(lookup(ch));
             while (hasNext() && isSPIonicDiacritical(chArray[index])) {
-                map.put(lookupAccent(chArray[index]), lookup(chArray[index]));
+                strb.append("_" + lookup(chArray[index]));
                 index++;
             }
-            while (map.size()>0) {
-                String str = (String)map.remove(map.firstKey());
-                strb.append("_"+str);
-            }
+            
         }
         return strb.toString();
     }
-
+    
     private String lookup(char ch) {
         String key = String.valueOf(ch);
         return bcp.getProperty(key, key);
     }
-
+    
     private String lookupAccent(char ch) {
-	    return ga.getProperty(lookup(ch));
+        return ga.getProperty(lookup(ch));
     }
-
+    
     private boolean isSPIonicDiacritical(char ch) {
         switch (ch) {
             case '/':
-	    case '&':
-	    case '\\':
-	    case '_':
+            case '&':
+            case '\\':
+            case '_':
             case '=':
             case '~':
             case '0':
             case ')':
-	    case '9':
-	    case '(':
+            case '9':
+            case '(':
             case '1':
             case '!':
             case '2':
             case '@':
-	    case ']':
-	    case '}':
-	    case '3':
-	    case '#':
-	    case '4':
-	    case '$':
+            case ']':
+            case '}':
+            case '3':
+            case '#':
+            case '4':
+            case '$':
             case '[':
             case '{':
             case '+':
             case '"':
-	    case '5':
-	    case '%':
-	    case '6':
-	    case '^':
-	    case '<':
-	    case '>':
-	    case '|':
+            case '5':
+            case '%':
+            case '6':
+            case '^':
+            case '<':
+            case '>':
+            case '|':
                 return true;
             default:
                 return false;
         }
     }
-
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
-    
-    public Object getProperty(String name) {
-        if (name.equals("ENCODING"))
-            return new String(ENCODING);
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-    }   
 }
 
 

@@ -19,12 +19,6 @@ public class MapReader {
     public MapReader() {
     }
     
-    public static void main(String[] args) {
-        MapReader mr = new MapReader();
-        mr.load("GreekKeysConverter.properties", "Cp1252"); //jenny and grace were here bye
-        System.out.println("done");
-    }
-    
     public void load (String file, String encoding) {
         map = new HashMap();
                 try {

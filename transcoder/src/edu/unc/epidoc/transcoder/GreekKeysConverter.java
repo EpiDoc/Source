@@ -12,12 +12,11 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version
+/** Handles conversion to the GreekKeys encoding.
+ * @author Hugh A. Cayless
+ * @version 0.8
  */
-public class GreekKeysConverter implements Converter {
+public class GreekKeysConverter extends AbstractConverter {
     
     /** Creates new GreekKeysConverter */
     public GreekKeysConverter() {
@@ -26,29 +25,26 @@ public class GreekKeysConverter implements Converter {
     }
     
     private MapReader reader;
-    private StringBuffer strb = new StringBuffer();
-    /* Hack alert: The font isn't really ISO 8859-1, but using Cp1252
-     * causes some characters not to be properly converted. */
-    private static final String ENCODING = "ISO8859_1";
+    private static final String ENCODING = "Cp1252";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = "?";
-    private String unrec = UNRECOGNIZED_CHAR;
     
-    
-    public String convertToCharacterEntity(String in) {
-        String temp = reader.get(in);
-        strb.delete(0,strb.length());
-        if (temp != null) {
-            char c = temp.charAt(0);
-            if (c > 0x7F) {
-                strb.append("&#");
-                strb.append(Integer.toString(c));
-                strb.append(";");
-            } else {
-                strb.append(c);
-            }
+    /** Convert the input String to a String in the desired encoding with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
+            else
+                result.append(chars[i]);        
         }
-        return strb.toString();
+        return result.toString();
     }
     
     private byte[] doConversion(String in) {
@@ -76,48 +72,34 @@ public class GreekKeysConverter implements Converter {
         return result;
     }
     
-    public String convertToString(String in) {
-        
-        byte[] result = null;
-        strb.delete(0, strb.length());
-        char[] chars = in.toCharArray();
-        if (Character.isUpperCase(chars[0]) && in.indexOf('_') > 0) {
-            String letter = in.substring(0, in.indexOf('_'));
-            String diacriticals = in.substring(in.indexOf('_') + 1);
-            byte[] d = doConversion(diacriticals);
-            byte[] l = doConversion(letter);
-            result = new byte[d.length + l.length];
-            System.arraycopy(d, 0, result, 0, d.length);
-            System.arraycopy(l, 0, result, d.length, l.length);
-        } else
-            result = doConversion(in);
-        try {
-            return new String(result, ENCODING);
-        } catch (UnsupportedEncodingException e) {
-            return null;
+    /** Convert the input String to a String in GreekKeys.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */
+    public String convertToString(Parser in) {
+        byte[] b = null;
+        StringBuffer result = new StringBuffer();
+        while (in.hasNext()) {
+            String convert = in.next();
+            char[] chars = convert.toCharArray();
+            if (Character.isUpperCase(chars[0]) && convert.indexOf('_') > 0) {
+                String letter = convert.substring(0, convert.indexOf('_'));
+                String diacriticals = convert.substring(convert.indexOf('_') + 1);
+                byte[] d = doConversion(diacriticals);
+                byte[] l = doConversion(letter);
+                b = new byte[d.length + l.length];
+                System.arraycopy(d, 0, b, 0, d.length);
+                System.arraycopy(l, 0, b, d.length, l.length);
+            } else
+                b = doConversion(convert);
+            try {
+                result.append(new String(b, "ISO8859_1"));
+            } catch (UnsupportedEncodingException e) {
+                return null;
+            }
         }
+        return result.toString();
     }
     
-    public Object getProperty(String name) {
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-        if (name.equals("suppress-unrecognized-characters")) {
-            String val = (String)value;
-            if (val.equals("true"))
-                unrec = "";
-            else
-                val = UNRECOGNIZED_CHAR;
-        }
-    }
-    
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
-    
+
 }

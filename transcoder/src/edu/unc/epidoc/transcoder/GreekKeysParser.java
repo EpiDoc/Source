@@ -17,7 +17,7 @@ import java.util.TreeMap;
  * @author  Hugh A. Cayless
  * @version
  */
-public class GreekKeysParser implements Parser {
+public class GreekKeysParser extends AbstractParser {
     
     /** Creates new UnicodeParser */
     public GreekKeysParser() {
@@ -40,19 +40,12 @@ public class GreekKeysParser implements Parser {
     
     private Properties gkp;
     private Properties ga;
-    private char[] chArray;
-    private int index;
-    private String in;
     private StringBuffer strb = new StringBuffer();
     private TreeMap map = new TreeMap();
     
-    public boolean hasNext() {
-        if (index < chArray.length)
-            return true;
-        else
-            return false;
-    }
-    
+    /** Returns the next parsed character as a String.
+     * @return The name of the parsed character.
+     */ 
     public String next() {
         strb.delete(0,strb.length());
         if (in != null && hasNext()) {
@@ -85,15 +78,7 @@ public class GreekKeysParser implements Parser {
             }
         }
         return strb.toString();
-    }
-    
-    public void setString(String in) {
-        try {
-            this.in = new String(in.getBytes(), ENCODING);
-        } catch (Exception e) {}
-        chArray = in.toCharArray();
-        index = 0;
-    }
+    }    
     
     private String lookup(char ch) {
         String key = String.valueOf(ch);
@@ -133,21 +118,5 @@ public class GreekKeysParser implements Parser {
             default:
                 return false;
         }
-    }
-    
-    public Object getProperty(String name) {
-        return null;
-    }
-    
-    public void setProperty(String name, Object value) {
-    }
-    
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
-    
+    }    
 }

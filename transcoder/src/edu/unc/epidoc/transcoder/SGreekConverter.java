@@ -18,8 +18,8 @@ import java.util.StringTokenizer;
  * @author  Michael Jones
  * @version
  */
-public class SGreekConverter implements Converter {
-
+public class SGreekConverter extends AbstractConverter {
+    
     /** Creates new SGreekConverter */
     public SGreekConverter() {
         sgp = new Properties();
@@ -30,93 +30,58 @@ public class SGreekConverter implements Converter {
         catch (Exception e) {
         }
     }
-
+    
     private Properties sgp;
-    StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "Cp1252";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = String.valueOf('\u0081');
-    private String unrec = UNRECOGNIZED_CHAR;
-
-    public String convertToCharacterEntity(String in) {
-        String out;
-        if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            String temp = sgp.getProperty(elements[0]);
-            for (int i=0;i<elements.length;i++)
-               strb.append(sgp.getProperty(elements[i]));
-            out = strb.toString();
-        }
-        else
-            out = sgp.getProperty(in, in);
-        strb.delete(0,strb.length());
-        char[] chars = out.toCharArray();
-        for (int i=0;i<chars.length;i++) {
-            if (Character.getNumericValue(chars[i]) > 126) {
-                strb.append("&#");
-                strb.append(Character.getNumericValue(chars[i]));
-                strb.append(";");
-            }
-            else {
-                strb.append(chars[i]);
-            }
-        }
-        return strb.toString();
-    }
-
-    public String convertToString(String in) {
-        if (in.indexOf('_')>0 && in.length()>1) {
-	    String[] elements = split(in);
-	    if (elements[1].equals("isub")) {
-		for (int i=2;i<elements.length;i++)
-		    strb.append(sgp.getProperty(elements[i], unrec));
-		return (sgp.getProperty(in, in) + strb.toString());
-	    }
-	    else {
-		strb.delete(0,strb.length());
-		for (int i=0;i<elements.length;i++)
-		    strb.append(sgp.getProperty(elements[i], unrec));
-		return strb.toString();
-	    }
-	}
-        else {
-            if (in.length() > 1) 
-                return sgp.getProperty(in, unrec);
+    
+    /** Convert the input String to a String in SGreek with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */
+    public String convertToCharacterEntities(Parser in) {
+        StringBuffer result = new StringBuffer();
+        char[] chars = convertToString(in).toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int ch = (int)chars[i];
+            if (ch > 127)
+                result.append("&#x"+Integer.toHexString(ch)+";");
             else
-                return sgp.getProperty(in, in);
+                result.append(chars[i]);
         }
-    }
-
-    private String[] split(String str) {
-        StringTokenizer st = new StringTokenizer(str, "_");
-        int tokenCount = st.countTokens();
-        String[] result = new String[tokenCount];
-        for (int i = 0; i < tokenCount; i++) {
-            result[i] = st.nextToken();
-        }
-        return result;
-    }
-  
-    public Object getProperty(String name) {
-        return null;
+        return result.toString();
     }
     
-    public void setProperty(String name, Object value) {
-        if (name.equals("suppress-unrecognized-characters")) {
-            String val = (String)value;
-            if (val.equals("true"))
-                unrec = "";
-            else
-                val = UNRECOGNIZED_CHAR;
+    /** Convert the input String to a String in SGreek.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */ 
+    public String convertToString(Parser in) {
+        StringBuffer result = new StringBuffer();
+        StringBuffer strb = new StringBuffer();
+        while (in.hasNext()) {
+            String convert = in.next();
+            if (convert.indexOf('_')>0 && convert.length()>1) {
+                String[] elements = split(convert);
+                if (elements[1].equals("isub")) {
+                    strb.delete(0, strb.length());
+                    for (int i=2;i<elements.length;i++)
+                        strb.append(sgp.getProperty(elements[i], unrec));
+                    result.append(sgp.getProperty(convert, convert) + strb.toString());
+                }
+                else {
+                    for (int i=0;i<elements.length;i++)
+                        result.append(sgp.getProperty(elements[i], unrec));
+                }
+            } else {
+                if (convert.length() > 1)
+                    result.append(sgp.getProperty(convert, unrec));
+                else
+                    result.append(sgp.getProperty(convert, convert));
+            }
         }
-    }
-
-    public String getEncoding() {
-        return new String(ENCODING);
-    }
-    
-    public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
-    }
+        return result.toString();
+    }    
 }
