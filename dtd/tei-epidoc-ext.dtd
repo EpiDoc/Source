@@ -1,0 +1,148 @@
+<!-- EpiDoc-specific TEI customization file
+     tei-epidoc-ext.dtd
+     Must be used with the TEI Pizza Chef and the entities customization file tei-epidoc-ext.ent
+     By Tom Elliott, with help from John Lavagnino
+     This is version 1.1 dated 13 August 2002
+
+     This file has three major sections:
+     1: New elements added by EpiDoc, together with their attributes 
+     2: EpiDoc-specific attributes (to override or make more stringent those specified by the TEI
+     3. EpiDoc-specific character entities 
+     
+     REVISION HISTORY:
+     
+     version 1.3 (many thanks to Gabriel Bodard for identifying these needs to support EPAPP)
+         * modified attributes for <mark> to include all the global ones, not just type
+         * modified some of the attributes for <measure> so that type, dim and value are all CDATA
+           and #IMPLIED, nothing more stringent
+     version 1.2
+         * no changes -- it's long, complicated and boring, and involves CVS and a contemporary avatar
+           of a certain nasty demoness mentioned in the Aeneid. I'll say no more ...
+           
+     version 1.1 (many thanks to Jessica Ratcliff for identifying these needs)
+         * modified the attribute list for the <gap> element to make the 'reason' attribute optional,
+           on the following grounds (Ratcliff): "it may be difficult for us [Vindolanda project] to 
+           give data for REASON, which is currently required. Since we are not working with the actual 
+           tablets but Bowman and Thomas' book, we do not necessarily have the info for why a gap 
+           exists. I can imagine other similar situations, and wonder whether or not REASON should be 
+           required." THIS CHANGE NEEDS TO BE VETTED VIA THE MARKUP LIST.
+
+ -->
+     
+<!-- *********************************************************************
+     New elements added by EpiDoc, together with their attributes
+     ********************************************************************* -->
+     
+<!ELEMENT mark EMPTY >
+<!ATTLIST mark %a.global; >
+
+
+
+<!-- *********************************************************************
+     EpiDoc-specific attributes. Where they coincide with TEI attribute definitions, these will be binding
+     ********************************************************************* -->
+     
+<!-- define parameter entities to facilitate uniformity where the same attribute appears on multiple elements -->
+
+<!ENTITY % epidoc.cert "cert (certain | possible) 'certain'" >
+<!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
+<!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
+<!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
+<!ENTITY % epidoc.resp "resp CDATA #IMPLIED" >
+<!ENTITY % epidoc.a.pointer
+        "targOrder (Y | N | U) 'Y'
+         evaluate (all | one | none) 'all' " >
+
+<!-- define the attributes for each element, as necessary -->         
+
+<!ATTLIST %n.abbr;
+        %epidoc.cert; >
+<!ATTLIST %n.add;
+        place ( inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed ) #IMPLIED
+        %epidoc.resp;
+        %epidoc.cert;
+        %epidoc.hand; >
+<!ATTLIST %n.app;
+        from IDREF 'ROOT'
+        to IDREF 'DITTO' >
+<!ATTLIST %n.availability;
+        status (free | unknown | restricted) 'unknown' >
+<!ATTLIST %n.biblScope;
+        type (volume | pages | chapter | parts | fascicle | numbers | plates | issue ) #IMPLIED >
+<!ATTLIST %n.bloc;
+        %epidoc.full; >
+<!ATTLIST %n.country;
+        %epidoc.full; >
+<!ATTLIST %n.dateStruct;
+        %epidoc.exact; >
+<!ATTLIST %n.distance;
+        %epidoc.exact; >
+<!ATTLIST %n.div;
+        type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation ) #IMPLIED >
+<!ATTLIST %n.gap;
+        reason (ellipsis | illegible | lost | omitted) #IMPLIED
+        unit CDATA #IMPLIED
+        %epidoc.resp;
+        %epidoc.hand;
+        %epidoc.cert; >
+<!ATTLIST %n.geog;
+        %epidoc.full; >
+<!ATTLIST %n.geogName;
+        %epidoc.full; >
+<!ATTLIST %n.gloss;
+        target CDATA #IMPLIED >
+<!ATTLIST %n.hi;
+        rend (apex | intraline | ligature | longa | reversed | supraline | tall) #REQUIRED
+        type CDATA #IMPLIED >
+<!ATTLIST %n.idno;
+        type (ISSN | ISBN | URL | OCLC) #REQUIRED >
+<!ATTLIST %n.lb;
+        type (worddiv) #IMPLIED >
+<!ATTLIST %n.measure;
+        dim CDATA #IMPLIED
+        type CDATA #REQUIRED
+        value CDATA #REQUIRED >
+<!ATTLIST %n.note;
+        place CDATA 'not specified'
+        target CDATA #IMPLIED
+        targetEnd CDATA #IMPLIED >
+<!ATTLIST %n.ptr;
+        %epidoc.a.pointer; >
+<!ATTLIST %n.ref;
+        %epidoc.a.pointer; >
+<!ATTLIST %n.region;
+        %epidoc.full; >
+<!ATTLIST %n.seg;
+        %epidoc.cert; >
+<!ATTLIST %n.settlement;
+        %epidoc.full; >
+<!ATTLIST %n.sic;
+        %epidoc.cert; >
+<!ATTLIST %n.space;
+        dim (horizontal | vertical) 'horizontal'
+        unit CDATA #IMPLIED
+        %epidoc.cert; >
+<!ATTLIST %n.supplied;
+        %epidoc.cert;
+        %epidoc.hand;
+        reason (lost | omitted | subaudible | explanation) #REQUIRED >
+<!ATTLIST %n.title;
+        type (main | subordinate | parallel | abbreviated) 'main'
+        level (a | m | j | s | u) 'm' >
+<!ATTLIST %n.unclear;
+        reason (damage | execution) #IMPLIED
+        %epidoc.cert;
+        %epidoc.hand;
+        %epidoc.resp; >
+<!ATTLIST %n.xptr;
+        %epidoc.a.pointer; >
+<!ATTLIST %n.xref;
+        %epidoc.a.pointer; >
+        
+        
+        
+<!-- *********************************************************************
+     EpiDoc-specific character entities
+     ********************************************************************* -->
+     
+<!ENTITY times '&#x00D7;' >

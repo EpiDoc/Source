@@ -1,0 +1,213 @@
+<!-- EpiDoc-specific TEI customization file (entities)
+     tei-epidoc-ext.ent
+     Must be used with the TEI Pizza Chef and the dtd customization file tei-epidoc-ext.dtd
+     By Tom Elliott, with help from John Lavagnino
+     This is version 1.1 dated 13 August 2002
+
+     This file has three major sections:
+     1: Suppression of TEI standard attribute models that EpiDoc does not use 
+     2: EpiDoc-specific attributes (to override or make more stringent those specified by the TEI
+     3. EpiDoc-specific character entities 
+     
+     REVISION HISTORY:
+     
+     version 1.1 (many thanks to Jessica Ratcliff for identifying these needs)
+         Allowed the following elements, to support the Vindolanda Project at CSAD (and everyone else eventually):
+             <editionStmt>
+                 <edition>
+                 <respStmt>
+             <encodingDesc>
+                 <classDecl>
+                     <taxonomy>
+                         <category>
+                             <catDesc>
+                                 NB: <textDesc> is still disabled, since it's not clear it will be needed
+             <textClass>
+                 <classCode>
+                 <catRef>
+                 <keywords>
+                     NB: <list>, <term> and their descendents were already available
+             <pb> (to signify transitions between leaves)
+             <handShift> (mistakenly omitted from earlier version)
+     -->
+
+
+<!-- *********************************************************************
+     Suppression of TEI standard attribute models that EpiDoc does not use
+     ********************************************************************* -->
+     
+<!ENTITY % a.linking '' >
+
+
+<!-- *********************************************************************
+     Insertion of EpiDoc-unique elements into appropriate content models
+     using the standard TEI extension mechanisms
+     ********************************************************************* -->
+
+<!ENTITY % x.phrase 'mark |' >
+
+
+<!-- *********************************************************************
+     Suppression of standard TEI elements that EpiDoc does not use     
+     ********************************************************************* -->
+
+<!ENTITY % actor 'IGNORE' >
+<!ENTITY % addName 'IGNORE' >
+<!ENTITY % addSpan 'IGNORE' >
+<!ENTITY % alt 'IGNORE' >
+<!ENTITY % altGrp 'IGNORE' >
+<!ENTITY % anchor 'IGNORE' >
+<!ENTITY % any 'IGNORE' >
+<!ENTITY % argument 'IGNORE' >
+<!ENTITY % back 'IGNORE' >
+<!ENTITY % broadcast 'IGNORE' >
+<!ENTITY % byline 'IGNORE' >
+<!ENTITY % c 'IGNORE' >
+<!ENTITY % caesura 'IGNORE' >
+<!ENTITY % camera 'IGNORE' >
+<!ENTITY % caption 'IGNORE' >
+<!ENTITY % castGroup 'IGNORE' >
+<!ENTITY % castItem 'IGNORE' >
+<!ENTITY % castList 'IGNORE' >
+<!ENTITY % cell 'IGNORE' >
+<!ENTITY % cit 'IGNORE' >
+<!ENTITY % cl 'IGNORE' >
+<!ENTITY % closer 'IGNORE' >
+<!ENTITY % correction 'IGNORE' >
+<!ENTITY % damage 'IGNORE' >
+<!ENTITY % dateline 'IGNORE' >
+<!ENTITY % delSpan 'IGNORE' >
+<!ENTITY % dft 'IGNORE' >
+<!ENTITY % distinct 'IGNORE' >
+<!ENTITY % div0 'IGNORE' >
+<!ENTITY % div1 'IGNORE' >
+<!ENTITY % div2 'IGNORE' >
+<!ENTITY % div3 'IGNORE' >
+<!ENTITY % div4 'IGNORE' >
+<!ENTITY % div5 'IGNORE' >
+<!ENTITY % div6 'IGNORE' >
+<!ENTITY % div7 'IGNORE' >
+<!ENTITY % divGen 'IGNORE' >
+<!ENTITY % docDate 'IGNORE' >
+<!ENTITY % docEdition 'IGNORE' >
+<!ENTITY % docImprint 'IGNORE' >
+<!ENTITY % docTitle 'IGNORE' >
+<!ENTITY % editorialDecl 'IGNORE' >
+<!ENTITY % epigraph 'IGNORE' >
+<!ENTITY % epilogue 'IGNORE' >
+<!ENTITY % equipment 'IGNORE' >
+<!ENTITY % fAlt 'IGNORE' >
+<!ENTITY % fLib 'IGNORE' >
+<!ENTITY % foreName 'IGNORE' >
+<!ENTITY % formula 'IGNORE' >
+<!ENTITY % front 'IGNORE' >
+<!ENTITY % fsLib 'IGNORE' >
+<!ENTITY % fsdDecl 'IGNORE' >
+<!ENTITY % fvLib 'IGNORE' >
+<!ENTITY % fw 'IGNORE' >
+<!ENTITY % genName 'IGNORE' >
+<!ENTITY % group 'IGNORE' >
+<!ENTITY % headItem 'IGNORE' >
+<!ENTITY % headLabel 'IGNORE' >
+<!ENTITY % hour 'IGNORE' >
+<!ENTITY % hyphenation 'IGNORE' >
+<!ENTITY % imprimatur 'IGNORE' >
+<!ENTITY % index 'IGNORE' >
+<!ENTITY % interp 'IGNORE' >
+<!ENTITY % interpGrp 'IGNORE' >
+<!ENTITY % interpretation 'IGNORE' >
+<!ENTITY % join 'IGNORE' >
+<!ENTITY % joinGrp 'IGNORE' >
+<!ENTITY % label 'IGNORE' >
+<!ENTITY % lacunaEnd 'IGNORE' >
+<!ENTITY % lacunaStart 'IGNORE' >
+<!ENTITY % lg1 'IGNORE' >
+<!ENTITY % lg2 'IGNORE' >
+<!ENTITY % lg3 'IGNORE' >
+<!ENTITY % lg4 'IGNORE' >
+<!ENTITY % lg5 'IGNORE' >
+<!ENTITY % m 'IGNORE' >
+<!ENTITY % mentioned 'IGNORE' >
+<!ENTITY % metDecl 'IGNORE' >
+<!ENTITY % milestone 'IGNORE' >
+<!ENTITY % minus 'IGNORE' >
+<!ENTITY % minute 'IGNORE' >
+<!ENTITY % move 'IGNORE' >
+<!ENTITY % msr 'IGNORE' >
+<!ENTITY % nameLink 'IGNORE' >
+<!ENTITY % nbr 'IGNORE' >
+<!ENTITY % none 'IGNORE' >
+<!ENTITY % normalization 'IGNORE' >
+<!ENTITY % notesStmt 'IGNORE' >
+<!ENTITY % null 'IGNORE' >
+<!ENTITY % opener 'IGNORE' >
+<!ENTITY % orgDivn 'IGNORE' >
+<!ENTITY % orgName 'IGNORE' >
+<!ENTITY % orgTitle 'IGNORE' >
+<!ENTITY % orgType 'IGNORE' >
+<!ENTITY % performance 'IGNORE' >
+<!ENTITY % persName 'IGNORE' >
+<!ENTITY % phr 'IGNORE' >
+<!ENTITY % plus 'IGNORE' >
+<!ENTITY % projectDesc 'IGNORE' >
+<!ENTITY % prologue 'IGNORE' >
+<!ENTITY % q 'IGNORE' >
+<!ENTITY % quotation 'IGNORE' >
+<!ENTITY % quote 'IGNORE' >
+<!ENTITY % rate 'IGNORE' >
+<!ENTITY % recording 'IGNORE' >
+<!ENTITY % recordingStmt 'IGNORE' >
+<!ENTITY % refsDecl 'IGNORE' >
+<!ENTITY % rendition 'IGNORE' >
+<!ENTITY % respons 'IGNORE' >
+<!ENTITY % restore 'IGNORE' >
+<!ENTITY % role 'IGNORE' >
+<!ENTITY % roleDesc 'IGNORE' >
+<!ENTITY % roleName 'IGNORE' >
+<!ENTITY % row 'IGNORE' >
+<!ENTITY % rs 'IGNORE' >
+<!ENTITY % s 'IGNORE' >
+<!ENTITY % salute 'IGNORE' >
+<!ENTITY % samplingDecl 'IGNORE' >
+<!ENTITY % scriptStmt 'IGNORE' >
+<!ENTITY % second 'IGNORE' >
+<!ENTITY % segmentation 'IGNORE' >
+<!ENTITY % seriesStmt 'IGNORE' >
+<!ENTITY % set 'IGNORE' >
+<!ENTITY % signed 'IGNORE' >
+<!ENTITY % soCalled 'IGNORE' >
+<!ENTITY % sound 'IGNORE' >
+<!ENTITY % sp 'IGNORE' >
+<!ENTITY % span 'IGNORE' >
+<!ENTITY % spanGrp 'IGNORE' >
+<!ENTITY % speaker 'IGNORE' >
+<!ENTITY % stage 'IGNORE' >
+<!ENTITY % state 'IGNORE' >
+<!ENTITY % stdVals 'IGNORE' >
+<!ENTITY % step 'IGNORE' >
+<!ENTITY % surname 'IGNORE' >
+<!ENTITY % sym 'IGNORE' >
+<!ENTITY % symbol 'IGNORE' >
+<!ENTITY % table 'IGNORE' >
+<!ENTITY % tagUsage 'IGNORE' >
+<!ENTITY % tagsDecl 'IGNORE' >
+<!ENTITY % tech 'IGNORE' >
+<!ENTITY % textDesc 'IGNORE' >
+<!ENTITY % time 'IGNORE' >
+<!ENTITY % timeRange 'IGNORE' >
+<!ENTITY % timeStruct 'IGNORE' >
+<!ENTITY % timeline 'IGNORE' >
+<!ENTITY % titlePage 'IGNORE' >
+<!ENTITY % titlePart 'IGNORE' >
+<!ENTITY % trailer 'IGNORE' >
+<!ENTITY % uncertain 'IGNORE' >
+<!ENTITY % vAlt 'IGNORE' >
+<!ENTITY % variantEncoding 'IGNORE' >
+<!ENTITY % view 'IGNORE' >
+<!ENTITY % w 'IGNORE' >
+<!ENTITY % when 'IGNORE' >
+<!ENTITY % witDetail 'IGNORE' >
+<!ENTITY % witEnd 'IGNORE' >
+<!ENTITY % witList 'IGNORE' >
+<!ENTITY % witStart 'IGNORE' >
+<!ENTITY % witness 'IGNORE' >
