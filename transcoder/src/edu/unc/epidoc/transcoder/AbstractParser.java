@@ -1,0 +1,89 @@
+/*
+ * AbstractParser.java
+ *
+ * Created on March 28, 2003, 8:44 AM
+ */
+
+package edu.unc.epidoc.transcoder;
+
+import java.util.*;
+import java.io.UnsupportedEncodingException;
+
+/**
+ *
+ * @author  hcayless
+ */
+public abstract class AbstractParser implements Parser {    
+    
+    protected static final String ENCODING = "UTF8";
+    protected static final String LANGUAGE = "grc";
+    
+    protected char[] chArray;
+    protected int index;
+    protected String in;
+    
+    /** Returns the encoding method supported by this <CODE>Parser</CODE>.
+     * @return The encoding.
+     *
+     */
+    public String getEncoding() {
+        return new String(ENCODING);
+    }
+    
+    /** Provides a means of querying the <CODE>Parser</CODE>'s properties.
+     * @param name The name of the property to be queried.
+     * @return The value of the property.
+     *
+     */
+    public Object getProperty(String name) {
+        return null;
+    }
+    
+    /** Provides a means of checking whether anything remains to
+     * be parsed from the input String.
+     * @return Whether or not anything remains to be parsed.
+     *
+     */
+    public boolean hasNext() {
+        if (index < chArray.length)
+            return true;
+        else
+            return false;
+    }
+    
+    /** Returns the next parsed character as a String.
+     * @return The name of the parsed character.
+     *
+     */
+    public abstract String next();
+    
+    /** Provides a mechanism for setting properties that alter the
+     * processing behavior of the <CODE>Converter</CODE>.
+     * @param name The property name.
+     * @param value The property value.
+     *
+     */
+    public void setProperty(String name, Object value) {
+    }
+    
+    /** Sets the <CODE>String</CODE> to be parsed.
+     * @param in The <CODE>String</CODE> to be parsed.
+     *
+     */
+    public void setString(String in) throws UnsupportedEncodingException{
+        this.in = new String(in.getBytes(), ENCODING);
+        chArray = in.toCharArray();
+        index = 0;
+    }
+    
+    /** Provides a method of checking whether the <CODE>Parser</CODE> supports a
+     * particular language.
+     * @param lang The language code.
+     * @return Whether the language is supported.
+     *
+     */
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
+    }
+    
+}
