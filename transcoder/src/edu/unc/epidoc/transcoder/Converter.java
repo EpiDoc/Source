@@ -17,16 +17,16 @@ package edu.unc.epidoc.transcoder;
  */
 public interface Converter {
     
-    /** Convert the input String to a String in the desired encoding.
-     * @param in The String to be converted.
-     * @return The converted String.
+    /** Convert the input <CODE>Parser</CODE> to a <CODE>String</CODE> in the desired encoding.
+     * @param in The <CODE>Parser</CODE> to be converted.
+     * @return The converted <CODE>String</CODE>.
      */    
     public String convertToString(Parser in); 
     
-    /** Convert the input String to a String in the desired encoding with
+    /** Convert the input <CODE>Parser</CODE> to a <CODE>String</CODE> in the desired encoding with
      * characters greater than 127 escaped as XML character entities.
-     * @param in The String to be converted
-     * @return The converted String.
+     * @param in The <CODE>Parser</CODE> to be converted
+     * @return The converted <CODE>String</CODE>.
      */    
     public String convertToCharacterEntities(Parser in);     
     
