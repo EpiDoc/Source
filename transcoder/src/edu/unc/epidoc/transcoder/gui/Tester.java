@@ -321,20 +321,26 @@ public class Tester extends javax.swing.JFrame {
     private void transformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformActionPerformed
         // Add your handling code here:
         try {
-            String s = null;
-            if (source != null)
-                s = tc.getString(source);
-            else
-                s = tc.getString(conversionArea.getText());
-            if (result != null) {
-                if (!result.exists())
-                    result.createNewFile();
-                FileOutputStream fos = new FileOutputStream(result);
-                fos.write(s.getBytes(tc.getConverter().getEncoding()));
-                fos.flush();
-                fos.close();
+            if (source == null && result == null) 
+                conversionArea.setText(tc.getString(conversionArea.getText()));
+            else {
+                if (result != null) {
+                    if (!result.exists())
+                        result.createNewFile();
+                    FileOutputStream fos = new FileOutputStream(result);
+                    if (source != null) 
+                        tc.write(new FileInputStream(source), fos);
+                    else {
+                        String s = tc.getString(conversionArea.getText());
+                        fos.write(s.getBytes(tc.getConverter().getEncoding()));
+                        fos.flush();
+                        fos.close();
+                        conversionArea.setText(s);
+                    }
+                } else
+                    conversionArea.setText(tc.getString(source));
             }
-            conversionArea.setText(s);
+            
             source = null;
             result = null;
         } catch (Exception e) {
