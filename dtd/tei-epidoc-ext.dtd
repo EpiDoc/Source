@@ -1,5 +1,5 @@
 <!-- EpiDoc-specific TEI customization file
-     Copyright (C) 2002  Tom Elliott, John Lavagnino, Jessica Ratcliff, Gabriel Bodard
+     Copyright (C) 2002  EpiDoc Collaborative
       
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -15,21 +15,11 @@
      along with this program; if not, write to the Free Software
      Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
      
-     Filename: tei-epidoc-ext.ent
-     
-     Must be used with the TEI Pizza Chef and the dtd customization file tei-epidoc-ext.dtd
-     This file was last modified on 17 August 2002 by Tom Elliott
-
-     This file has three major sections:
-     1: Suppression of TEI standard attribute models that EpiDoc does not use 
-     2: EpiDoc-specific attributes (to override or make more stringent those specified by the TEI
-     3. EpiDoc-specific character entities 
-     
      Filename: tei-epidoc-ext.dtd
 
      Must be used with the TEI Pizza Chef and the entities customization file tei-epidoc-ext.ent
 
-     This file was last modified on 17 August 2002 by Tom Elliott
+     This file was last modified on 22 September 2002 by Tom Elliott
 
      This file has three major sections:
      1: New elements added by EpiDoc, together with their attributes 
@@ -38,6 +28,14 @@
      
      REVISION HISTORY:
      
+     22 August 2002 (many thanks to Gabriel Bodard, Charles Crowther and Jessica Ratcliff)
+         * Added attribute customization for <persName> and <placeName>
+         * Added enumeration for values for the "dim" attribute on the <gap> tag to reflect G.B.'s 
+           recommendation of 11 September 2002 to reconcile usage between EPAPP and Vindolanda
+         * Added "precision", "notBefore", "notAfter", and "exact" attributes to the <date> and 
+           <dateStruct> tags to support recommendations made by G.B.
+         * Added "cert" attribute to the <supplied> tag to support EPAPP
+         * Added "value" attribute to the <measure> tag to support EPAPP
      17 August 2002 (many thanks to Gabriel Bodard for identifying these needs to support EPAPP)
          * added GNU public license
          * modified attributes for <mark> to include all the global ones, not just type
@@ -75,6 +73,7 @@
      
 <!-- define parameter entities to facilitate uniformity where the same attribute appears on multiple elements -->
 
+<!ENTITY % epidoc.cert "cert (uncertain | doubtful) #IMPLIED" >
 <!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
 <!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
 <!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
@@ -82,7 +81,12 @@
 <!ENTITY % epidoc.a.pointer
         "targOrder (Y | N | U) 'Y'
          evaluate (all | one | none) 'all' " >
-
+<!ENTITY % epidoc.a.date
+       "precision (exact | approximate) #IMPLIED 
+        notBefore CDATA #IMPLIED
+        notAfter CDATA #IMPLIED
+        exact (notBefore | notAfter | both | none) #IMPLIED " >
+        
 <!-- define the attributes for each element, as necessary -->         
 
 <!ATTLIST %n.add;
@@ -106,8 +110,8 @@
         %epidoc.full; >
 <!ATTLIST %n.country;
         %epidoc.full; >
-<!ATTLIST %n.dateStruct;
-        %epidoc.exact; >
+<!ATTLIST %n.date;
+        %epidoc.a.date; >
 <!ATTLIST %n.distance;
         %epidoc.exact; >
 <!ATTLIST %n.div;
@@ -115,7 +119,7 @@
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #IMPLIED
         unit CDATA #IMPLIED
-        dim CDATA #IMPLIED
+        dim (left | right | top | bottom | internal) #IMPLIED
         %epidoc.resp;
         %epidoc.hand; >
 <!ATTLIST %n.geog;
@@ -132,17 +136,24 @@
 <!ATTLIST %n.lb;
         type (worddiv) #IMPLIED >
 <!ATTLIST %n.measure;
-        dim (height | width | depth | none) "none" >
+        dim (height | width | depth | diameter | none) "none" 
+        value CDATA #IMPLIED >
 <!ATTLIST %n.note;
         place CDATA 'not specified'
         target CDATA #IMPLIED
         targetEnd CDATA #IMPLIED >
+<!ATTLIST %n.persName;
+        %epidoc.full; >
+<!ATTLIST %n.placeName;
+        %epidoc.full; >
 <!ATTLIST %n.ptr;
         %epidoc.a.pointer; >
 <!ATTLIST %n.ref;
         %epidoc.a.pointer; >
 <!ATTLIST %n.region;
         %epidoc.full; >
+<!ATTLIST %n.seg;
+        %epidoc.cert; >
 <!ATTLIST %n.settlement;
         %epidoc.full; >
 <!ATTLIST %n.space;
@@ -150,6 +161,7 @@
         unit CDATA #IMPLIED >
 <!ATTLIST %n.supplied;
         %epidoc.hand;
+        %epidoc.cert; 
         reason (lost | omitted | subaudible | explanation) #REQUIRED >
 <!ATTLIST %n.title;
         type (main | subordinate | parallel | abbreviated) 'main'

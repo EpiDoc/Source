@@ -1,5 +1,5 @@
 <!-- EpiDoc-specific TEI customization file (entities)
-     Copyright (C) 2002  Tom Elliott, John Lavagnino, Jessica Ratcliff, Gabriel Bodard
+     Copyright (C) 2002  EpiDoc Collaborative
       
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -18,7 +18,7 @@
      Filename: tei-epidoc-ext.ent
      
      Must be used with the TEI Pizza Chef and the dtd customization file tei-epidoc-ext.dtd
-     This file was last modified on 17 August 2002 by Tom Elliott
+     This file was last modified on 22 September 2002 by Tom Elliott
 
      This file has three major sections:
      1: Suppression of TEI standard attribute models that EpiDoc does not use 
@@ -27,6 +27,9 @@
      
      REVISION HISTORY:
      
+     22 September 2002
+        * Removed guarding element for <persName> to allow it to appear in the DTD
+        
      17 August 2002
         * Added GNU public license
      
@@ -164,7 +167,6 @@
 <!ENTITY % orgTitle 'IGNORE' >
 <!ENTITY % orgType 'IGNORE' >
 <!ENTITY % performance 'IGNORE' >
-<!ENTITY % persName 'IGNORE' >
 <!ENTITY % phr 'IGNORE' >
 <!ENTITY % plus 'IGNORE' >
 <!ENTITY % projectDesc 'IGNORE' >
