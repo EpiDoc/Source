@@ -19,7 +19,7 @@
 
      Must be used with the TEI Pizza Chef and the entities customization file tei-epidoc-ext.ent
 
-     This file was last modified on 22 September 2002 by Tom Elliott
+     This file was last modified on 25 November 2002 by Tom Elliott
 
      This file has three major sections:
      1: New elements added by EpiDoc, together with their attributes 
@@ -28,6 +28,11 @@
      
      REVISION HISTORY:
      
+     25 November 2002
+         * Added an "href" attribute to the figure tag to support 'quick-and-dirty' direct linkage
+           of images and EpiDoc documents. This is a stop-gap until both TEI and EpiDoc finally 
+           decide on new, fully robust XML-based handling for image linkage.
+
      22 August 2002 (many thanks to Gabriel Bodard, Charles Crowther and Jessica Ratcliff)
          * Added attribute customization for <persName> and <placeName>
          * Added enumeration for values for the "dim" attribute on the <gap> tag to reflect G.B.'s 
@@ -116,6 +121,8 @@
         %epidoc.exact; >
 <!ATTLIST %n.div;
         type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation ) #IMPLIED >
+<!ATTLIST %n.figure;
+	href CDATA #IMPLIED >
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #IMPLIED
         unit CDATA #IMPLIED
