@@ -15,12 +15,12 @@ import java.util.TreeMap;
 
 /** Parses sources encoded in Beta Code.
  * @author Hugh A. Cayless
- * @version 0.8
  */
 public class BetaCodeParser extends AbstractParser {
     
     /** Creates new BetaCodeParser */
     public BetaCodeParser() {
+        encoding = "US-ASCII";
         bcp = new Properties();
         ga = new Properties();
         try {
@@ -32,10 +32,7 @@ public class BetaCodeParser extends AbstractParser {
             e.printStackTrace(System.out);
         }
     }
-    
-    private static final String ENCODING = "ASCII";
-    private static final String LANGUAGE = "grc";
-    
+        
     private Properties bcp;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();

@@ -15,7 +15,7 @@ import java.io.UnsupportedEncodingException;
  * The nature of a chunk will vary depending on the encoding scheme
  * and font with which the string was constructed.
  * @author Hugh A. Cayless
- * @version 0.1
+ * @version 0.9
  *
  *
  */

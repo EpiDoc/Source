@@ -12,10 +12,8 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/**
- *
+/** Parses sources encoded in SPIonic.
  * @author  Michael Jones
- * @version
  */
 public class SPIonicParser extends AbstractParser {
     
@@ -33,8 +31,7 @@ public class SPIonicParser extends AbstractParser {
         }
     }
     
-    private static String ENCODING = "US-ASCII";
-    private static final String LANGUAGE = "grc";
+    protected static final String ENCODING = "US-ASCII";
     
     private Properties bcp;
     private Properties ga;

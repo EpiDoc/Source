@@ -12,15 +12,14 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version
+/** Parses sources encoded in GreekKeys format.
+ * @author Hugh A. Cayless
  */
 public class GreekKeysParser extends AbstractParser {
     
     /** Creates new UnicodeParser */
     public GreekKeysParser() {
+        encoding = "ISO8859_1";
         gkp = new Properties();
         ga = new Properties();
         try {
@@ -32,11 +31,6 @@ public class GreekKeysParser extends AbstractParser {
             e.printStackTrace(System.out);
         }
     }
-    
-    /* Hack alert: The font isn't really ISO 8859-1, but using Cp1252
-     * causes some characters not to be properly converted. */
-    private static final String ENCODING = "ISO8859_1";
-    private static final String LANGUAGE = "grc";
     
     private Properties gkp;
     private Properties ga;

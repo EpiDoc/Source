@@ -9,14 +9,14 @@ package edu.unc.epidoc.transcoder;
 import java.util.*;
 import java.io.UnsupportedEncodingException;
 
-/**
- *
- * @author  hcayless
+/** Abstract class which implements most of the <CODE>Parser</CODE> interface.
+ * New <CODE>Parser</CODE>s can be created by extending this class.
+ * @author Hugh A. Cayless (hcayless@email.unc.edu)
  */
 public abstract class AbstractParser implements Parser {    
     
-    protected static final String ENCODING = "UTF8";
-    protected static final String LANGUAGE = "grc";
+    protected String encoding = "UTF8";
+    protected String language = "grc";
     
     protected char[] chArray;
     protected int index;
@@ -27,7 +27,7 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public String getEncoding() {
-        return new String(ENCODING);
+        return new String(encoding);
     }
     
     /** Provides a means of querying the <CODE>Parser</CODE>'s properties.
@@ -71,7 +71,7 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public void setString(String in) throws UnsupportedEncodingException{
-        this.in = new String(in.getBytes(), ENCODING);
+        this.in = new String(in.getBytes(), encoding);
         chArray = in.toCharArray();
         index = 0;
     }
@@ -83,7 +83,7 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
+        return language.equals(lang);
     }
     
 }

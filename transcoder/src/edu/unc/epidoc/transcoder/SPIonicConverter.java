@@ -1,7 +1,7 @@
 /*
  * SPIonicConverter.java
  *
- * (c) Michael Jones <mdjone2@uky.edu>
+ * (c) Michael Jones (mdjone2@uky.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
@@ -13,10 +13,8 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-/**
- *
+/** Handles conversion to the SPIonic encoding.
  * @author  Michael Jones
- * @version
  */
 public class SPIonicConverter extends AbstractConverter {
     
@@ -32,9 +30,7 @@ public class SPIonicConverter extends AbstractConverter {
     }
     
     private Properties sgp;
-    private static final String ENCODING = "ASCII";
-    private static final String LANGUAGE = "grc";
-    private static final String UNRECOGNIZED_CHAR = "?";
+    protected static final String ENCODING = "US-ASCII";
     
     /** Convert the input String to a String in SPIonic with
      * characters greater than 127 escaped as XML character entities.

@@ -1,7 +1,7 @@
 /*
  * UnicodeCConverter.java
  *
- * (c) Hugh A. Cayless <hcayless@email.unc.edu>
+ * (c) Hugh A. Cayless (hcayless@email.unc.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
@@ -13,10 +13,8 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version
+/** Handles conversion to the Unicode Form C encoding (with composed diacriticals).
+ * @author Hugh A. Cayless
  */
 public class UnicodeCConverter extends AbstractConverter {
     
@@ -31,9 +29,6 @@ public class UnicodeCConverter extends AbstractConverter {
     }
     
     private Properties unfcc;
-    private static final String ENCODING = "UTF8";
-    private static final String LANGUAGE = "grc";
-    private static final String UNRECOGNIZED_CHAR = "?";
     
     /** Convert the input String to a String in Unicode Form C with
      * characters greater than 127 escaped as XML character entities.

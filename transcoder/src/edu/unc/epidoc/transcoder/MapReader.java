@@ -9,9 +9,9 @@ package edu.unc.epidoc.transcoder;
 import java.util.*;
 import java.io.*;
 
-/**
- *
- * @author  hcayless
+/** Convenience class for reading <CODE>Transcoder</CODE> properties files where the character
+ * value is given as an <CODE>Integer</CODE>.
+ * @author Hugh A. Cayless
  */
 public class MapReader {
     
@@ -19,6 +19,10 @@ public class MapReader {
     public MapReader() {
     }
     
+    /** Load the properties file specified.
+     * @param file The name of the properties file.
+     * @param encoding The encoding that should be used in reading the file.
+     */    
     public void load (String file, String encoding) {
         map = new HashMap();
                 try {
@@ -48,10 +52,19 @@ public class MapReader {
         }
     }
     
+    /** Method for retrieving a specific character's value.
+     * @param key The character.
+     * @return The translation of the character
+     */    
     public String get(String key) {
         return (String)map.get(key);
     }
     
+    /** Method for checking whether the loaded properties file contains a mapping
+     * for the specified character.
+     * @param key The character.
+     * @return Whether the character exists in the properties file.
+     */    
     public boolean contains(String key) {
         return map.containsKey(key);
     }

@@ -1,7 +1,7 @@
 /*
  * BetaCodeConverter.java
  *
- * (c) Hugh A. Cayless <hcayless@email.unc.edu>
+ * (c) Hugh A. Cayless (hcayless@email.unc.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
@@ -30,9 +30,7 @@ public class BetaCodeConverter extends AbstractConverter {
     }
     
     private Properties bcc;
-    private static final String ENCODING = "ASCII";
-    private static final String LANGUAGE = "grc";
-    private static final String UNRECOGNIZED_CHAR = "?";
+    protected static final String ENCODING = "US-ASCII";
     
     /** Convert the input String to a String in Beta Code with
      * characters greater than 127 escaped as XML character entities.

@@ -1,7 +1,7 @@
 /*
  * UnicodeNormalizationFormCConverter.java
  *
- * (c) Hugh A. Cayless <hcayless@email.unc.edu>
+ * (c) Hugh A. Cayless (hcayless@email.unc.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
@@ -13,10 +13,8 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer; 
 
-/**
- *
- * @author  hcayless
- * @version 
+/** Handles conversion to the Unicode Form D encoding (with combining diacriticals).
+ * @author Hugh A. Cayless
  */
 public class UnicodeDConverter extends AbstractConverter {
 
@@ -31,9 +29,6 @@ public class UnicodeDConverter extends AbstractConverter {
     }
     
     private Properties unfdc;
-    private static final String ENCODING = "UTF8";
-    private static final String LANGUAGE = "grc";
-    private static final String UNRECOGNIZED_CHAR = "?";
     
     /** Convert the input String to a String in Unicode Form D with
      * characters greater than 127 escaped as XML character entities.

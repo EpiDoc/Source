@@ -12,10 +12,8 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version
+/** Parses sources encoded in Unicode.
+ * @author Hugh A. Cayless
  */
 public class UnicodeParser extends AbstractParser {
     
@@ -32,10 +30,7 @@ public class UnicodeParser extends AbstractParser {
             e.printStackTrace(System.out);
         }
     }
-    
-    private static final String ENCODING = "UTF8";
-    private static final String LANGUAGE = "grc";
-    
+       
     private Properties up;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();

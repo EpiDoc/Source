@@ -12,15 +12,14 @@ import java.lang.*;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/**
- *
+/** Parses sources encoded in SGreek.
  * @author  Michael Jones
- * @version
  */
 public class SGreekParser extends AbstractParser {
     
     /** Creates new SGreekParser */
     public SGreekParser() {
+        encoding = "ISO8859_1";
         bcp = new Properties();
         ga = new Properties();
         try {
@@ -32,10 +31,7 @@ public class SGreekParser extends AbstractParser {
             e.printStackTrace(System.out);
         }
     }
-    
-    private static String ENCODING = "ISO8859_1";
-    private static final String LANGUAGE = "grc";
-    
+        
     private Properties bcp;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();

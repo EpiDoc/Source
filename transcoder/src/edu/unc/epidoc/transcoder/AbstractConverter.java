@@ -1,16 +1,18 @@
 /*
  * AbstractConverter.java
  *
- * Created on March 28, 2003, 4:31 PM
+ * (c) Hugh A. Cayless (hcayless@email.unc.edu)
+ * This software is licensed under the terms of the GNU LGPL.
+ * See http://www.gnu.org/licenses/lgpl.html for details.
  */
 
 package edu.unc.epidoc.transcoder;
 
 import java.util.*;
 
-/**
- *
- * @author  hcayless
+/** Abstract class which implements most of the <CODE>Converter</CODE> interface.
+ * New <CODE>Converter</CODE>s can be created by extending this class.
+ * @author Hugh A. Cayless (hcayless@email.unc.edu)
  */
 public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Converter {
     

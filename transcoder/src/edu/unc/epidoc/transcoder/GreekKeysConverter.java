@@ -1,7 +1,7 @@
 /*
  * GreekKeysConverter.java
  *
- * (c) Hugh A. Cayless <hcayless@email.unc.edu>
+ * (c) Hugh A. Cayless (hcayless@email.unc.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
@@ -14,7 +14,6 @@ import java.util.*;
 
 /** Handles conversion to the GreekKeys encoding.
  * @author Hugh A. Cayless
- * @version 0.8
  */
 public class GreekKeysConverter extends AbstractConverter {
     
@@ -25,9 +24,7 @@ public class GreekKeysConverter extends AbstractConverter {
     }
     
     private MapReader reader;
-    private static final String ENCODING = "Cp1252";
-    private static final String LANGUAGE = "grc";
-    private static final String UNRECOGNIZED_CHAR = "?";
+    protected static final String ENCODING = "Cp1252";
     
     /** Convert the input String to a String in the desired encoding with
      * characters greater than 127 escaped as XML character entities.

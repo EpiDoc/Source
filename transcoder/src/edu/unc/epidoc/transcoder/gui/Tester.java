@@ -12,9 +12,8 @@ import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-/**
- *
- * @author  hcayless
+/** This class provides a GUI test interface to the <CODE>Transcoder</CODE>.
+ * @author Hugh A. Cayless (hcayless@email.unc.edu)
  */
 public class Tester extends javax.swing.JFrame {
     
@@ -348,7 +347,7 @@ public class Tester extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitForm
     
-    /**
+    /** The main class, making the <CODE>Tester</CODE> executable.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -384,7 +383,7 @@ public class Tester extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private TransCoder tc;
     private ArrayList fontItems;
-    private int fontSize;
+    private int fontSize = 12;
     private int[] fontSizes = new int[] {10, 12, 14, 16};
     private File source;
     private File result;
@@ -424,6 +423,8 @@ public class Tester extends javax.swing.JFrame {
         public FontSizeMenuItem(int name) {
             this.setText(Integer.toString(name));
             size = name;
+            if (size == fontSize)
+                select();
             addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     itemSelected(evt);

@@ -13,7 +13,7 @@ package edu.unc.epidoc.transcoder;
  * the named character, then the converter will return the
  * character it is passed.
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
- * @version 0.5
+ * @version 0.9
  */
 public interface Converter {
     
