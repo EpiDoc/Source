@@ -18,6 +18,7 @@
 
 <!--ABBREVIATIONS-->
 <xsl:template match="abbr"><abbr><xsl:if test="@expan"><xsl:attribute name="expan"><xsl:value-of select="@expan"/></xsl:attribute></xsl:if><xsl:apply-templates/></abbr></xsl:template>
+<xsl:template match="expan"><expan><xsl:apply-templates/></expan></xsl:template>
 
 <!-- VARIOUS UTILITY FUNCTIONS, NEEDED IN A VARIETY OF PLACES -->
 <xsl:include href="MMMUtility.xsl"/>
