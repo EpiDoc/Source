@@ -44,7 +44,6 @@ import java.util.*;
 public class TransCoder {
     private Parser p;
     private Converter conv;
-    private StringBuffer out = new StringBuffer();
     private Properties parsers;
     private Properties converters;
     private String[] ps;
@@ -238,9 +237,22 @@ public class TransCoder {
             chr = isw.read();
         }
         isw.close();
-        out.delete(0,out.length());
         p.setString(strb.toString());
         return conv.convertToString(p);
+    }
+    
+    public void write(InputStream in, OutputStream out) throws FileNotFoundException, IOException, UnsupportedEncodingException {
+        BufferedReader br = new BufferedReader(
+                                new InputStreamReader(in, p.getEncoding()));
+        PrintStream output = new PrintStream(new BufferedOutputStream(out));
+        String line = null;
+        while ((line = br.readLine()) != null) {
+            p.setString(line);
+            output.write(conv.convertToString(p).getBytes(conv.getEncoding()));
+            output.println();
+        }
+        output.flush();
+        output.close();
     }
     
     /** Get the result <CODE>String</CODE> from the input <CODE>String</CODE>.
@@ -250,7 +262,6 @@ public class TransCoder {
      * @return The result of the transcoding operation.
      */    
     public String getCharacterEntities(String in) throws UnsupportedEncodingException {
-        out.delete(0,out.length());
         p.setString(in);
         return conv.convertToCharacterEntities(p);
     }
