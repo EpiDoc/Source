@@ -21,14 +21,17 @@ public class UnicodeCConverter extends AbstractGreekConverter {
     /** Creates new UnicodeNormalizationFormCConverter */
     public UnicodeCConverter() {
         unfcc = new Properties();
+        unfdc = new Properties();
         try {
             Class c = this.getClass();
             unfcc.load(c.getResourceAsStream("UnicodeCConverter.properties"));
+            unfdc.load(c.getResourceAsStream("UnicodeDConverter.properties"));
         } catch (Exception e) {
         }
     }
     
     private Properties unfcc;
+    private Properties unfdc;
     
     /** Convert the input String to a String in Unicode Form C with
      * characters greater than 127 escaped as XML character entities.
@@ -51,16 +54,29 @@ public class UnicodeCConverter extends AbstractGreekConverter {
     /** Convert the input String to a String in Unicode Form C.
      * @param in The String to be converted.
      * @return The converted String.
-     */ 
+     */
     public String convertToString(Parser in) {
         StringBuffer result = new StringBuffer();
         while (in.hasNext()) {
             String convert = in.next();
-            if (convert.length() > 1)
-                result.append(unfcc.getProperty(convert, unrec));
-            else
+            if (convert.length() > 1) {
+                if (unfcc.getProperty(convert) != null)
+                    result.append(unfcc.getProperty(convert));
+                else {
+                    if (convert.indexOf('_')>0 && convert.length()>1) {
+                        String[] elements = split(convert);
+                        for (int i=0;i<elements.length;i++)
+                            result.append(unfdc.getProperty(elements[i], unrec));
+                    } else {
+                        if (convert.length() > 1)
+                            result.append(unfdc.getProperty(convert, unrec));
+                        else
+                            result.append(unfdc.getProperty(convert, convert));
+                    }
+                }
+            } else
                 result.append(unfcc.getProperty(convert, convert));
         }
         return result.toString();
-    }        
+    }
 }
