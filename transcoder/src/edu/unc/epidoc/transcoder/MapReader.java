@@ -41,15 +41,10 @@ public class MapReader {
                 st = new StringTokenizer(reader.readLine(), "=");
                 if (st.hasMoreTokens())
                     key = st.nextToken().trim();
+                else
+                    break;
                 if (st.hasMoreTokens()) {
                     value = st.nextToken().trim();
-                    if (value.startsWith("\\u")) {
-                        temp = Integer.valueOf(value.substring(2),16).intValue();
-                        if (temp == 144)
-                            System.out.println("gotcha");
-                        b[0] = (byte)temp;
-                        value = new String(b, encoding);
-                    }
                     map.put(key, value);
                 } else
                     map.put(key, "");
