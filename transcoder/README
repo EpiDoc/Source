@@ -1,0 +1,28 @@
+********************************************************************************
+* TransCoder README                                                            *
+********************************************************************************
+What it is:
+	A library of Java classes designed to translate Ancient Greek from one encoding to another.
+	
+License:
+	This software is copyright Hugh A. Cayless.  It is licensed under the terms of the GNU LGPL, see
+	See http://www.gnu.org/licenses/lgpl.html for details.
+	
+Supported encodings:
+	At the moment, there are classes for reading Beta Code, GreekKeys, and Unicode and for outputting Beta Code, precomposed Unicode (form C) and Unicode with combining diacriticals (form D).
+	
+How to use it:
+	The classes that do the work are implement the Parser and Converter interfaces.  These may be loaded and accessed by the TransCoder class. The following code snippet creates a TransCoder and uses it to transform a Greek text file written in GreekKeys to a Unicode string.
+	
+	<code>
+	    TransCoder tc = new TransCoder("GreekKeys", "UnicodeC");
+	    String result = tc.getString(new File("C:/temp/test.txt"));
+	</code>
+	
+To Do:
+	Documentation needs to be improved.  
+	Need Parsers and Converters for SGreek, SuperGreek, and others
+	
+	
+Issues:
+	With the implementation of the GreekKeysParser, I have found that the issue of character encoding is more important than I had at first suspected.  A Parser in most cases needs to get text in the encoding it expects (this can be determined by the getEncoding() method).  I strongly suspect that Converters will need to have a similar method added.  GreekKeys uses virtually all of the available space in the ISO-8859-1 (8 bit) encoding, while Unicode expects that some of that range will be used for control characters.  Therefore if a GreekKeys file is read in as UTF-8, some of its characters will be garbled.  It therefore matters a great deal how text gets to the TransCoder.  If it is read directly from a file, then the method illustrated in the example above will work well, but if it is delivered as a String, that String must have been properly interpreted in order for it to construct the correct output.  
