@@ -15,7 +15,7 @@ import java.util.TreeMap;
 /** Parses sources encoded in SGreek.
  * @author  Michael Jones
  */
-public class SGreekParser extends AbstractParser {
+public class SGreekParser extends AbstractGreekParser {
     
     /** Creates new SGreekParser */
     public SGreekParser() {

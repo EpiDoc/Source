@@ -16,7 +16,7 @@ import java.util.TreeMap;
 /** Parses sources encoded in Beta Code.
  * @author Hugh A. Cayless
  */
-public class BetaCodeParser extends AbstractParser {
+public class BetaCodeParser extends AbstractGreekParser {
     
     /** Creates new BetaCodeParser */
     public BetaCodeParser() {

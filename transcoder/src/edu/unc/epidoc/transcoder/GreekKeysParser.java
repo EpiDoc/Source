@@ -15,7 +15,7 @@ import java.util.TreeMap;
 /** Parses sources encoded in GreekKeys format.
  * @author Hugh A. Cayless
  */
-public class GreekKeysParser extends AbstractParser {
+public class GreekKeysParser extends AbstractGreekParser {
     
     /** Creates new UnicodeParser */
     public GreekKeysParser() {

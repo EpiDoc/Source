@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /** Handles conversion to the Unicode Form D encoding (with combining diacriticals).
  * @author Hugh A. Cayless
  */
-public class UnicodeDConverter extends AbstractConverter {
+public class UnicodeDConverter extends AbstractGreekConverter {
 
     /** Creates new UnicodeNormalizationFormCConverter */
     public UnicodeDConverter() {

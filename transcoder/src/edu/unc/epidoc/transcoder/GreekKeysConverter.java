@@ -15,7 +15,7 @@ import java.util.*;
 /** Handles conversion to the GreekKeys encoding.
  * @author Hugh A. Cayless
  */
-public class GreekKeysConverter extends AbstractConverter {
+public class GreekKeysConverter extends AbstractGreekConverter {
     
     /** Creates new GreekKeysConverter */
     public GreekKeysConverter() {

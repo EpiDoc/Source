@@ -15,7 +15,7 @@ import java.util.TreeMap;
 /** Parses sources encoded in SPIonic.
  * @author  Michael Jones
  */
-public class SPIonicParser extends AbstractParser {
+public class SPIonicParser extends AbstractGreekParser {
     
     /** Creates new SPIonicParser */
     public SPIonicParser() {

@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 public abstract class AbstractParser implements Parser {    
     
     protected String encoding = "UTF8";
-    protected String language = "grc";
+    protected String[] languages;
     
     protected char[] chArray;
     protected int index;
@@ -36,6 +36,8 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public Object getProperty(String name) {
+        if ("supported-languages".equals(name)) 
+            return languages;
         return null;
     }
     
@@ -64,6 +66,10 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public void setProperty(String name, Object value) {
+        if ("supported-languages".equals(name)) {
+            if (value instanceof String[])
+                languages = (String[])value;
+        }
     }
     
     /** Sets the <CODE>String</CODE> to be parsed.
@@ -83,7 +89,10 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public boolean supportsLanguage(String lang) {
-        return language.equals(lang);
+        for (int i = 0; i < languages.length; i++)
+            if (languages[i].equalsIgnoreCase(lang))
+                return true;
+        return false;
     }
     
 }

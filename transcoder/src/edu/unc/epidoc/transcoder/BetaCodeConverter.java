@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
  * @author Hugh A. Cayless
  * @version 0.8
  */
-public class BetaCodeConverter extends AbstractConverter {
+public class BetaCodeConverter extends AbstractGreekConverter {
     
     /** Creates new BetaCodeConverter */
     public BetaCodeConverter() {

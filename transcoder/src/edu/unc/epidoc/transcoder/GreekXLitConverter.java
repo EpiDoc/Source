@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /** Handles conversion to the Perseus Greek transliteration format.
  * @author  Michael Jones
  */
-public class GreekXLitConverter extends AbstractConverter {
+public class GreekXLitConverter extends AbstractGreekConverter {
     
     /** Creates new GreekXLitConverter */
     public GreekXLitConverter() {

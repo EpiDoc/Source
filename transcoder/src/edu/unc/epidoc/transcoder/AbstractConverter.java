@@ -1,4 +1,4 @@
-/*
+ /*
  * AbstractConverter.java
  *
  * (c) Hugh A. Cayless (hcayless@email.unc.edu)
@@ -47,8 +47,9 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
     public Object getProperty(String name) {
         if ("suppress-unrecognized-characters".equals(name))
             return new Boolean(unrec.equals(""));
-        else
-            return null;
+        if ("supported-languages".equals(name))
+            return languages;
+        return null;
     }
     
     /** Provides a mechanism for setting properties that alter the
@@ -65,6 +66,10 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
             else
                 unrec = unrecognizedChar;
         }
+        if ("supported-languages".equals(name)) {
+            if (value instanceof String[])
+                languages = (String[])value;
+        }
     }
     
     /** Provides a method of checking whether the Converter supports a
@@ -74,7 +79,10 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
      *
      */
     public boolean supportsLanguage(String lang) {
-        return language.equals(lang);
+        for (int i = 0; i < languages.length; i++)
+            if (languages[i].equalsIgnoreCase(lang))
+                return true;
+        return false;
     }
     
     protected String[] split(String str) {
@@ -88,7 +96,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
     }
     
     protected String encoding = "UTF8";
-    protected String language = "grc";
+    protected String[] languages;
     protected String unrecognizedChar = "?";
     protected String unrec = unrecognizedChar;
     

@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /** Handles conversion to the SGreek encoding.
  * @author  Michael Jones
  */
-public class SGreekConverter extends AbstractConverter {
+public class SGreekConverter extends AbstractGreekConverter {
     
     /** Creates new SGreekConverter */
     public SGreekConverter() {

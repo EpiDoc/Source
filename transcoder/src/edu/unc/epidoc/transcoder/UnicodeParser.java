@@ -15,7 +15,7 @@ import java.util.TreeMap;
 /** Parses sources encoded in Unicode.
  * @author Hugh A. Cayless
  */
-public class UnicodeParser extends AbstractParser {
+public class UnicodeParser extends AbstractGreekParser {
     
     /** Creates new UnicodeParser */
     public UnicodeParser() {

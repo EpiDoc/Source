@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /** Handles conversion to the SPIonic encoding.
  * @author  Michael Jones
  */
-public class SPIonicConverter extends AbstractConverter {
+public class SPIonicConverter extends AbstractGreekConverter {
     
     /** Creates new SPIonicConverter */
     public SPIonicConverter() {

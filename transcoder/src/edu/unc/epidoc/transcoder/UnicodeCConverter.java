@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 /** Handles conversion to the Unicode Form C encoding (with composed diacriticals).
  * @author Hugh A. Cayless
  */
-public class UnicodeCConverter extends AbstractConverter {
+public class UnicodeCConverter extends AbstractGreekConverter {
     
     /** Creates new UnicodeNormalizationFormCConverter */
     public UnicodeCConverter() {
