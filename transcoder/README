@@ -9,14 +9,24 @@ License:
 	See http://www.gnu.org/licenses/lgpl.html for details.
 	
 Supported encodings:
-	At the moment, there are classes for reading Beta Code, GreekKeys, and Unicode and for outputting Beta Code, precomposed Unicode (form C) and Unicode with combining diacriticals (form D).
+	At the moment, there are classes for reading Beta Code, GreekKeys, and Unicode and for outputting Beta Code, precomposed Unicode (form C) and Unicode with combining diacriticals (form D).  Michael Jones is developing several additional classes, beginning with SPIonic.
 	
 How to use it:
-	The classes that do the work are implement the Parser and Converter interfaces.  These may be loaded and accessed by the TransCoder class. The following code snippet creates a TransCoder and uses it to transform a Greek text file written in GreekKeys to a Unicode string.
+	The classes that do the work implement the Parser and Converter interfaces.  These may be loaded and accessed by the TransCoder class. The following code snippet creates a TransCoder and uses it to transform a Greek text file written in GreekKeys to a Unicode string.  The transcoder.jar file now includes a GUI form which can be used for testing the conversion of various font encodings.  The .jar file is executable, so it should be possible to run it by double clicking on the icon or executing it from the command line (java -jar transcoder.jar).
 	
 	<code>
 	    TransCoder tc = new TransCoder("GreekKeys", "UnicodeC");
 	    String result = tc.getString(new File("C:/temp/test.txt"));
+	</code>
+	
+	or
+	
+	<code>
+	    String source = "A)/NDRA MOI E)/NNEPE, MOU=SA";
+	    TransCoder tc = new TransCoder();
+	    tc.setParser("Unicode");
+	    tc.setConverter("BetaCode");
+	    String result = tc.getString(source);
 	</code>
 	
 To Do:
@@ -25,4 +35,26 @@ To Do:
 	
 	
 Issues:
-	With the implementation of the GreekKeysParser, I have found that the issue of character encoding is more important than I had at first suspected.  A Parser in most cases needs to get text in the encoding it expects (this can be determined by the getEncoding() method).  I strongly suspect that Converters will need to have a similar method added.  GreekKeys uses virtually all of the available space in the ISO-8859-1 (8 bit) encoding, while Unicode expects that some of that range will be used for control characters.  Therefore if a GreekKeys file is read in as UTF-8, some of its characters will be garbled.  It therefore matters a great deal how text gets to the TransCoder.  If it is read directly from a file, then the method illustrated in the example above will work well, but if it is delivered as a String, that String must have been properly interpreted in order for it to construct the correct output.  
+	With the implementation of the GreekKeysParser, I have found that the issue of character encoding is more important than I had at first suspected.  A Parser in most cases needs to get text in the encoding it expects (this can be determined by the getEncoding() method).  GreekKeys uses virtually all of the available space in the ISO-8859-1 (8 bit) encoding, while Unicode expects that some of that range will be used for control characters.  Therefore if a GreekKeys file is read in as UTF-8, some of its characters will be garbled.  It thus matters a great deal how text gets to the TransCoder.  If it is read directly from a file, then the method illustrated in the example above will work well, but if it is delivered as a String, that String must have been properly interpreted in order for it to construct the correct output.  In any case, the display of nonstandard fonts, such as Athenian in Java GUIs seems to be problematic.  The GUI Tester class can transform GreekKeys fonts, but does not do well in displaying them.  For such cases, file to file transformation works best.
+	
+Changes:
+        The Parser and Converter interfaces have been modified to include the following methods:
+            public String getEncoding()
+                -returns a String representing the encoding method supported by the class of fonts this class deals with.  
+                
+            public boolean supportsLanguage(String lang)
+                -indicates whether a particular class supports a particular language.  At present, the only supported language is Ancient Greek ("grc").  But others may be added in the future.  This method expects a parameter conforming to the ISO 639-2 three-letter language codes.
+                
+        The TransCoder class has the following additional methods:
+            public Parser getParser()
+                - returns the Parser that has been set previously.
+            public String[] getParsers()
+                - returns all of the known available Parser names (determined by the parsers.properties file).
+            public void addParser(String name, String className)
+                - allows new parser classes to be registered (untested).
+            public Converter getConverter()
+                - returns the Converter that has been set previously.
+            public String[] getConverters()
+                - returns all of the known available Converter names (determined by the converters.properties file).
+            public void addConverter(String name, String className)
+                - allows new converter classes to be registered (untested).
