@@ -1,21 +1,51 @@
-<!-- TEI-EPIDOC DTD FOR EPIGRAPHIC MARKUP
-     By Tom Elliott for the EpiDoc Collaborative:  www.unc.edu/awmc/epidoc
-     using the TEI Pizza Chef by Lou Burnard and Michael Sperberg-McQueen's 'Carthage'
-     and John Lavagnino's bodacious fixdtd PERL script
+<!-- TEI-EpiDoc DTD for Epigraphic Markup in XML using the Text Encoding Initiative Tag Set
+     Copyright (C) 2002  Tom Elliott, John Lavagnino, Jessica Ratcliff, Gabriel Bodard
+     for the EpiDoc Collaborative.
+      
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
+      
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+      
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
      
-     THIS IS VERSION 1.1, DATED 13 AUGUST 2002
-     COPYRIGHT 2002. USE THIS DTD ONLY FOR THE GOOD OF HUMANITY!
+     Filename: tei-epidoc.dtd
+
+     This file was created using the TEI Pizza Chef (by Lou Burnard, which uses Michael 
+     Sperberg-McQueen's 'Carthage': www.tei-c.org/pizza.html) and using John Lavagnino's 
+     bodacious fixdtd PERL script.
+     
+     Last modification to this file was 17 August 2002 by Tom Elliott
      
      Pizza chef settings:
      Mixed base with prose, verse and drama
      Additional tag sets: linking, figures, analysis, fs, certainty, transcription, text criticism, names and dates
      Entity sets: ISO Latin 1 and 2, ISO Greek 1 and 2, ISO Numeric
      
-     Modifications were made via the pizza chef using tei-epidoc-ext.ent and tei-epidoc-ext.dtd, versions 1.1.
+     Modifications were made via the pizza chef using tei-epidoc-ext.ent and tei-epidoc-ext.dtd.
      
      REVISION HISTORY:
      
-     version 1.1 (many thanks to Jessica Ratcliff for identifying these needs)
+     17 August 2002
+         * added GNU public license
+         * modified attributes for <mark> to include all the global ones, not just type
+         * modified some of the attributes for <measure> so that type, dim and value are all CDATA
+           and #IMPLIED, nothing more stringent. Note that "dim" is an extension used by EPAPP
+         * removed the epidoc.cert parameter entity entirely to allow the less restrictive "cert" 
+           attribute that is the default in TEI to remain on all relevant elements until we reach 
+           a consensus on how to do certainty in epidoc
+         * added dim attribute to value tag until EPAPP and Vindolanda can develop a consensus on
+           how to deal with various gap issues ... and that consensus has been vetted via the markup
+           list
+
+     13 August 2002
          *  Allowed the following elements, to support the Vindolanda Project at CSAD (and everyone else eventually):
              <editionStmt>
                  <edition>
@@ -38,2935 +68,2806 @@
            give data for REASON, which is currently required. Since we are not working with the actual 
            tablets but Bowman and Thomas' book, we do not necessarily have the info for why a gap 
            exists. I can imagine other similar situations, and wonder whether or not REASON should be 
-           required." THIS CHANGE NEEDS TO BE VETTED VIA THE MARKUP LIST.
-
-// --> 
-
-
-<!ELEMENT TEI.2 
-	(teiHeader, text) >
-
-<!ATTLIST TEI.2 
-	TEIform CDATA "TEI.2"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT ab 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST ab 
-	TEIform CDATA "ab"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT abbr 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST abbr 
-	TEIform CDATA "abbr"
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	expan CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp IDREF #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT add 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST add 
-	TEIform CDATA "add"
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	hand CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	place (inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed) #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	 >
-
-<!ELEMENT addrLine 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST addrLine 
-	TEIform CDATA "addrLine"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT address 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	((addrLine, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)+ | ((name | postBox | postCode | street), (gap 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)*)) >
-
-<!ATTLIST address 
-	TEIform CDATA "address"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT analytic 
-	(author | editor | respStmt | title | gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST analytic 
-	TEIform CDATA "analytic"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT app 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(lem, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*, (wit, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)?)?, ((rdg, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)?) | (rdgGrp, (gap | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, (wit, (gap | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*)?))+) >
-
-<!ATTLIST app 
-	TEIform CDATA "app"
-	ana IDREFS #IMPLIED
-	from IDREF "ROOT"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	loc CDATA #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	to IDREF "DITTO"
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT author 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST author 
-	TEIform CDATA "author"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT authority 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST authority 
-	TEIform CDATA "authority"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT availability 
-	(p)+ >
-
-<!ATTLIST availability 
-	TEIform CDATA "availability"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	status (free | unknown | restricted) "unknown"
-	 >
-
-<!ELEMENT bibl 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | analytic | author 
-	| biblScope | edition | editor | extent | idno | imprint 
-	| monogr | note | pubPlace | publisher | respStmt | series 
-	| gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST bibl 
-	TEIform CDATA "bibl"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT biblFull 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	titleStmt, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (editionStmt, (gap | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)?, (extent, (gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*)?, publicationStmt, 
-	(gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(sourceDesc, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*) >
-
-<!ATTLIST biblFull 
-	TEIform CDATA "biblFull"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT biblScope 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST biblScope 
-	TEIform CDATA "biblScope"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type (volume | pages | chapter | parts | fascicle | numbers | plates | issue) #IMPLIED
-	 >
-
-<!ELEMENT biblStruct 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(analytic, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*)?, (monogr, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (series, (gap | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)*)+, ((note, (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*) | (idno, (gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)*))*) >
-
-<!ATTLIST biblStruct 
-	TEIform CDATA "biblStruct"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT bloc 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST bloc 
-	TEIform CDATA "bloc"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT body 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, ((((bibl | biblFull | biblStruct | ab 
-	| l | lg | p | figure | list | listBibl | note), (gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
-	(div | gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*)?) | (div, (div | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*))) >
-
-<!ATTLIST body 
-	TEIform CDATA "body"
-	ana IDREFS #IMPLIED
-	decls IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT catDesc 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg)* >
-
-<!ATTLIST catDesc 
-	TEIform CDATA "catDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT catRef 
-	EMPTY >
-
-<!ATTLIST catRef 
-	TEIform CDATA "catRef"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	scheme IDREF #IMPLIED
-	target IDREFS #REQUIRED
-	 >
-
-<!ELEMENT category 
-	(catDesc, category*) >
-
-<!ATTLIST category 
-	TEIform CDATA "category"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT cb 
-	EMPTY >
-
-<!ATTLIST cb 
-	TEIform CDATA "cb"
-	ana IDREFS #IMPLIED
-	ed CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT certainty 
-	EMPTY >
-
-<!ATTLIST certainty 
-	TEIform CDATA "certainty"
-	ana IDREFS #IMPLIED
-	assertedValue CDATA #IMPLIED
-	degree CDATA #IMPLIED
-	desc CDATA #IMPLIED
-	given CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	locus CDATA #REQUIRED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	target IDREFS #REQUIRED
-	 >
-
-<!ELEMENT change 
-	(date, respStmt+, item) >
-
-<!ATTLIST change 
-	TEIform CDATA "change"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT classCode 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST classCode 
-	TEIform CDATA "classCode"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	scheme IDREF #IMPLIED
-	 >
-
-<!ELEMENT classDecl 
-	(taxonomy)+ >
-
-<!ATTLIST classDecl 
-	TEIform CDATA "classDecl"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT corr 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST corr 
-	TEIform CDATA "corr"
-	ana IDREFS #IMPLIED
-	cert CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	sic CDATA #IMPLIED
-	 >
-
-<!ELEMENT country 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST country 
-	TEIform CDATA "country"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT creation 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST creation 
-	TEIform CDATA "creation"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT date 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST date 
-	TEIform CDATA "date"
-	ana IDREFS #IMPLIED
-	calendar CDATA #IMPLIED
-	certainty CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT dateRange 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST dateRange 
-	TEIform CDATA "dateRange"
-	ana IDREFS #IMPLIED
-	calendar CDATA #IMPLIED
-	exact (to | from | both | none) #IMPLIED
-	from CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	to CDATA #IMPLIED
-	 >
-
-<!ELEMENT dateStruct 
-	(#PCDATA | dateStruct | day | distance | month | occasion 
-	| offset | week | year | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST dateStruct 
-	TEIform CDATA "dateStruct"
-	ana IDREFS #IMPLIED
-	calendar CDATA #IMPLIED
-	exact (Y | N | U) #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT day 
-	(#PCDATA) >
-
-<!ATTLIST day 
-	TEIform CDATA "day"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT del 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST del 
-	TEIform CDATA "del"
-	ana IDREFS #IMPLIED
-	cert CDATA #IMPLIED
-	hand IDREF #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp IDREF #IMPLIED
-	status CDATA "unremarkable"
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT distance 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST distance 
-	TEIform CDATA "distance"
-	ana IDREFS #IMPLIED
-	exact (Y | N | U) #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT distributor 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST distributor 
-	TEIform CDATA "distributor"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT div 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, ((div, (gap | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)+ | (((bibl | biblFull | biblStruct 
-	| ab | l | lg | p | figure | list | listBibl | note), (gap 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
-	(gap | certainty | fs | link | linkGrp | cb | lb | pb)*)*))) >
-
-<!ATTLIST div 
-	TEIform CDATA "div"
-	ana IDREFS #IMPLIED
-	decls IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	met CDATA #IMPLIED
-	n CDATA #IMPLIED
-	org (composite | uniform) "uniform"
-	part (Y | N | I | M | F) "N"
-	real CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	rhyme CDATA #IMPLIED
-	sample (initial | medial | final | unknown | complete) "complete"
-	type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation) #IMPLIED
-	 >
-
-<!ELEMENT docAuthor 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST docAuthor 
-	TEIform CDATA "docAuthor"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT edition 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST edition 
-	TEIform CDATA "edition"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT editionStmt 
-	((edition, respStmt*) | p+) >
-
-<!ATTLIST editionStmt 
-	TEIform CDATA "editionStmt"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT editor 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST editor 
-	TEIform CDATA "editor"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	role CDATA "editor"
-	 >
-
-<!ELEMENT emph 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST emph 
-	TEIform CDATA "emph"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT encodingDesc 
-	(classDecl*, p*) >
-
-<!ATTLIST encodingDesc 
-	TEIform CDATA "encodingDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT expan 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST expan 
-	TEIform CDATA "expan"
-	abbr CDATA #IMPLIED
-	ana IDREFS #IMPLIED
-	cert CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp IDREF #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT extent 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST extent 
-	TEIform CDATA "extent"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT f 
-	(str | fs)* >
-
-<!ATTLIST f 
-	TEIform CDATA "f"
-	ana IDREFS #IMPLIED
-	fVal IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	name NMTOKEN #REQUIRED
-	org (single | set | bag | list) #IMPLIED
-	rel (eq | ne | sb | ns) "eq"
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT figDesc 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST figDesc 
-	TEIform CDATA "figDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT figure 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(head, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, (p, (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*, (figDesc, (gap | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)?, (text, (gap | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*)?) >
-
-<!ATTLIST figure 
-	TEIform CDATA "figure"
-	ana IDREFS #IMPLIED
-	entity ENTITY #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT fileDesc 
-	(titleStmt, editionStmt?, extent?, publicationStmt, sourceDesc+) >
-
-<!ATTLIST fileDesc 
-	TEIform CDATA "fileDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT foreign 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST foreign 
-	TEIform CDATA "foreign"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT fs 
-	(f)* >
-
-<!ATTLIST fs 
-	TEIform CDATA "fs"
-	ana IDREFS #IMPLIED
-	feats IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rel (eq | ne | sb | ns) "sb"
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT funder 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST funder 
-	TEIform CDATA "funder"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT gap 
-	EMPTY >
-
-<!ATTLIST gap 
-	TEIform CDATA "gap"
-	agent CDATA #IMPLIED
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	desc CDATA #IMPLIED
-	extent CDATA #IMPLIED
-	hand CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reason (ellipsis | illegible | lost | omitted) #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	unit CDATA #IMPLIED
-	 >
-
-<!ELEMENT geog 
-	(#PCDATA) >
-
-<!ATTLIST geog 
-	TEIform CDATA "geog"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT geogName 
-	(#PCDATA | geog | name | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST geogName 
-	TEIform CDATA "geogName"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT gloss 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST gloss 
-	TEIform CDATA "gloss"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	target CDATA #IMPLIED
-	 >
-
-<!ELEMENT hand 
-	EMPTY >
-
-<!ATTLIST hand 
-	TEIform CDATA "hand"
-	ana IDREFS #IMPLIED
-	character CDATA #IMPLIED
-	first CDATA #IMPLIED
-	hand CDATA #IMPLIED
-	id ID #IMPLIED
-	ink CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	mainLang CDATA #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	scribe CDATA #IMPLIED
-	style CDATA #IMPLIED
-	 >
-
-<!ELEMENT handList 
-	(hand)* >
-
-<!ATTLIST handList 
-	TEIform CDATA "handList"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT handShift 
-	EMPTY >
-
-<!ATTLIST handShift 
-	TEIform CDATA "handShift"
-	ana IDREFS #IMPLIED
-	character CDATA #IMPLIED
-	id ID #IMPLIED
-	ink CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	new IDREF #IMPLIED
-	old IDREF #IMPLIED
-	rend CDATA #IMPLIED
-	resp IDREF #IMPLIED
-	style CDATA #IMPLIED
-	 >
-
-<!ELEMENT head 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST head 
-	TEIform CDATA "head"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT hi 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST hi 
-	TEIform CDATA "hi"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend (apex | intraline | ligature | longa | reversed | supraline | tall) #REQUIRED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT idno 
-	(#PCDATA) >
-
-<!ATTLIST idno 
-	TEIform CDATA "idno"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type (ISSN | ISBN | URL | OCLC) #REQUIRED
-	 >
-
-<!ELEMENT imprint 
-	(pubPlace | publisher | date | biblScope | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST imprint 
-	TEIform CDATA "imprint"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT item 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST item 
-	TEIform CDATA "item"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT keywords 
-	(term+ | list) >
-
-<!ATTLIST keywords 
-	TEIform CDATA "keywords"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	scheme IDREF #IMPLIED
-	 >
-
-<!ELEMENT l 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST l 
-	TEIform CDATA "l"
-	ana IDREFS #IMPLIED
-	enjamb CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	met CDATA #IMPLIED
-	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
-	real CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	rhyme CDATA #IMPLIED
-	 >
-
-<!ELEMENT langUsage 
-	(p | language)+ >
-
-<!ATTLIST langUsage 
-	TEIform CDATA "langUsage"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT language 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST language 
-	TEIform CDATA "language"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	usage CDATA #IMPLIED
-	wsd ENTITY #IMPLIED
-	 >
-
-<!ELEMENT lb 
-	EMPTY >
-
-<!ATTLIST lb 
-	TEIform CDATA "lb"
-	ana IDREFS #IMPLIED
-	ed CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type (worddiv) #IMPLIED
-	 >
-
-<!ELEMENT lem 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST lem 
-	TEIform CDATA "lem"
-	ana IDREFS #IMPLIED
-	cause CDATA #IMPLIED
-	hand IDREF #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	type CDATA #IMPLIED
-	varSeq CDATA #IMPLIED
-	wit CDATA #IMPLIED
-	 >
-
-<!ELEMENT lg 
-	((docAuthor | head | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (l | lg), (l | lg | gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*) >
-
-<!ATTLIST lg 
-	TEIform CDATA "lg"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	met CDATA #IMPLIED
-	n CDATA #IMPLIED
-	org (composite | uniform) "uniform"
-	part (Y | N | I | M | F) "N"
-	real CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	rhyme CDATA #IMPLIED
-	sample (initial | medial | final | unknown | complete) "complete"
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT link 
-	EMPTY >
-
-<!ATTLIST link 
-	TEIform CDATA "link"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	evaluate (all | one | none) #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "U"
-	targType CDATA #IMPLIED
-	targets IDREFS #REQUIRED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT linkGrp 
-	(link | ptr | xptr)+ >
-
-<!ATTLIST linkGrp 
-	TEIform CDATA "linkGrp"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	domains IDREFS #IMPLIED
-	evaluate (all | one | none) #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targFunc NMTOKENS #IMPLIED
-	targOrder (Y | N | U) "U"
-	targType CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT list 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(head, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, (item, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)*) >
-
-<!ATTLIST list 
-	TEIform CDATA "list"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA "simple"
-	 >
-
-<!ELEMENT listBibl 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(head, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, (bibl | biblStruct | biblFull), (bibl | biblStruct 
-	| biblFull | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*) >
-
-<!ATTLIST listBibl 
-	TEIform CDATA "listBibl"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT mark 
-	EMPTY >
-
-<!ATTLIST mark 
-	type CDATA #REQUIRED
-	 >
-
-<!ELEMENT measure 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST measure 
-	TEIform CDATA "measure"
-	ana IDREFS #IMPLIED
-	dim (height | width | depth | none) "none"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type (length | weight) "length"
-	value CDATA #REQUIRED
-	 >
-
-<!ELEMENT meeting 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST meeting 
-	TEIform CDATA "meeting"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT monogr 
-	(((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(((author | editor | respStmt), (author | editor | respStmt 
-	| gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	(title, (gap | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)+, ((editor | respStmt), (gap | certainty | fs | 
-	link | linkGrp | cb | lb | pb)*)*) | ((title, (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)+, ((author | editor 
-	| respStmt), (gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*)))?, ((note | meeting), (gap | certainty | 
-	fs | link | linkGrp | cb | lb | pb)*)*, (edition, (editor 
-	| respStmt | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)*, imprint, (imprint | extent | biblScope | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)*) >
-
-<!ATTLIST monogr 
-	TEIform CDATA "monogr"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT month 
-	(#PCDATA) >
-
-<!ATTLIST month 
-	TEIform CDATA "month"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT name 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST name 
-	TEIform CDATA "name"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT note 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST note 
-	TEIform CDATA "note"
-	ana IDREFS #IMPLIED
-	anchored (yes | no) "yes"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	place CDATA "not specified"
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	target CDATA #IMPLIED
-	targetEnd CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT num 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST num 
-	TEIform CDATA "num"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT occasion 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST occasion 
-	TEIform CDATA "occasion"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT offset 
-	(#PCDATA | gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
-
-<!ATTLIST offset 
-	TEIform CDATA "offset"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT orig 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST orig 
-	TEIform CDATA "orig"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	 >
-
-<!ELEMENT p 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST p 
-	TEIform CDATA "p"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT pb 
-	EMPTY >
-
-<!ATTLIST pb 
-	TEIform CDATA "pb"
-	ana IDREFS #IMPLIED
-	ed CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT placeName 
-	(#PCDATA | bloc | country | distance | geog | offset | region 
-	| settlement | mark | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	placeName | add | app | corr | del | orig | reg | sic | 
-	space | supplied | unclear | handShift | emph | foreign 
-	| gloss | hi | term | title | ptr | ref | xptr | xref | 
-	seg | gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)* >
-
-<!ATTLIST placeName 
-	TEIform CDATA "placeName"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT postBox 
-	(#PCDATA) >
-
-<!ATTLIST postBox 
-	TEIform CDATA "postBox"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT postCode 
-	(#PCDATA) >
-
-<!ATTLIST postCode 
-	TEIform CDATA "postCode"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT principal 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST principal 
-	TEIform CDATA "principal"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT profileDesc 
-	(creation?, langUsage*, handList*, textClass*) >
-
-<!ATTLIST profileDesc 
-	TEIform CDATA "profileDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT ptr 
-	EMPTY >
-
-<!ATTLIST ptr 
-	TEIform CDATA "ptr"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	evaluate (all | one | none) "all"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
-	targType CDATA #IMPLIED
-	target IDREFS #REQUIRED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT pubPlace 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST pubPlace 
-	TEIform CDATA "pubPlace"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT publicationStmt 
-	((p, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*)+ | ((publisher | distributor | authority | pubPlace 
-	| address | idno | availability | date), (gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)+) >
-
-<!ATTLIST publicationStmt 
-	TEIform CDATA "publicationStmt"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT publisher 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST publisher 
-	TEIform CDATA "publisher"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT rdg 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST rdg 
-	TEIform CDATA "rdg"
-	ana IDREFS #IMPLIED
-	cause CDATA #IMPLIED
-	hand IDREF #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	type CDATA #IMPLIED
-	varSeq CDATA #IMPLIED
-	wit CDATA #IMPLIED
-	 >
-
-<!ELEMENT rdgGrp 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	((rdgGrp, (gap | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*) | (rdg, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)?))+) >
-
-<!ATTLIST rdgGrp 
-	TEIform CDATA "rdgGrp"
-	ana IDREFS #IMPLIED
-	cause CDATA #IMPLIED
-	hand IDREF #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	type CDATA #IMPLIED
-	varSeq CDATA #IMPLIED
-	wit CDATA #IMPLIED
-	 >
-
-<!ELEMENT ref 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST ref 
-	TEIform CDATA "ref"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	evaluate (all | one | none) "all"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
-	targType CDATA #IMPLIED
-	target IDREFS #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT reg 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST reg 
-	TEIform CDATA "reg"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	orig CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	 >
-
-<!ELEMENT region 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST region 
-	TEIform CDATA "region"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT resp 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST resp 
-	TEIform CDATA "resp"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT respStmt 
-	(resp | name | gap | certainty | fs | link | linkGrp | cb 
-	| lb | pb)+ >
-
-<!ATTLIST respStmt 
-	TEIform CDATA "respStmt"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT revisionDesc 
-	(list | change+) >
-
-<!ATTLIST revisionDesc 
-	TEIform CDATA "revisionDesc"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT seg 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST seg 
-	TEIform CDATA "seg"
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	function CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	met CDATA #IMPLIED
-	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
-	real CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	rhyme CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT series 
-	(#PCDATA | title | editor | respStmt | biblScope | gap | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST series 
-	TEIform CDATA "series"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT settlement 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST settlement 
-	TEIform CDATA "settlement"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT sic 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	ab | l | lg | p | gap | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
-
-<!ATTLIST sic 
-	TEIform CDATA "sic"
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	corr CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	 >
-
-<!ELEMENT sourceDesc 
-	(p | bibl | biblFull | biblStruct | listBibl)+ >
-
-<!ATTLIST sourceDesc 
-	TEIform CDATA "sourceDesc"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT space 
-	EMPTY >
-
-<!ATTLIST space 
-	TEIform CDATA "space"
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	dim (horizontal | vertical) "horizontal"
-	extent CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	unit CDATA #IMPLIED
-	 >
-
-<!ELEMENT sponsor 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST sponsor 
-	TEIform CDATA "sponsor"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT str 
-	(#PCDATA) >
-
-<!ATTLIST str 
-	TEIform CDATA "str"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rel (eq | ne | sb | ns | lt | le | gt | ge) "eq"
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT street 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST street 
-	TEIform CDATA "street"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT supplied 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST supplied 
-	TEIform CDATA "supplied"
-	agent CDATA #IMPLIED
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	hand CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reason (lost | omitted | subaudible | explanation) #REQUIRED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	source CDATA #IMPLIED
-	 >
-
-<!ELEMENT taxonomy 
-	(category+ | ((bibl | biblStruct | biblFull), category*)) >
-
-<!ATTLIST taxonomy 
-	TEIform CDATA "taxonomy"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT teiCorpus.2 
-	(teiHeader, TEI.2+) >
-
-<!ATTLIST teiCorpus.2 
-	TEIform CDATA "teiCorpus.2"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT teiHeader 
-	(fileDesc, encodingDesc*, profileDesc*, revisionDesc?) >
-
-<!ATTLIST teiHeader 
-	TEIform CDATA "teiHeader"
-	ana IDREFS #IMPLIED
-	creator CDATA #IMPLIED
-	date.created CDATA #IMPLIED
-	date.updated CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	status (new | update) "new"
-	type CDATA "text"
-	 >
-
-<!ELEMENT term 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | gap | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST term 
-	TEIform CDATA "term"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT text 
-	((gap | certainty | fs | link | linkGrp | cb | lb | pb)*, 
-	body, (gap | certainty | fs | link | linkGrp | cb | lb | 
-	pb)*) >
-
-<!ATTLIST text 
-	TEIform CDATA "text"
-	ana IDREFS #IMPLIED
-	decls IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT textClass 
-	(classCode | catRef | keywords)* >
-
-<!ATTLIST textClass 
-	TEIform CDATA "textClass"
-	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT title 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST title 
-	TEIform CDATA "title"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	level (a | m | j | s | u) "m"
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type (main | subordinate | parallel | abbreviated) "main"
-	 >
-
-<!ELEMENT titleStmt 
-	(title+, (author | editor | sponsor | funder | principal 
-	| respStmt)*) >
-
-<!ATTLIST titleStmt 
-	TEIform CDATA "titleStmt"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT unclear 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST unclear 
-	TEIform CDATA "unclear"
-	agent CDATA #IMPLIED
-	ana IDREFS #IMPLIED
-	cert (certain | possible) "certain"
-	hand CDATA #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reason (damage | execution) #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	 >
-
-<!ELEMENT week 
-	(#PCDATA) >
-
-<!ATTLIST week 
-	TEIform CDATA "week"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-<!ELEMENT wit 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST wit 
-	TEIform CDATA "wit"
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	 >
-
-<!ELEMENT xptr 
-	EMPTY >
-
-<!ATTLIST xptr 
-	TEIform CDATA "xptr"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	doc ENTITY #IMPLIED
-	evaluate (all | one | none) "all"
-	from CDATA "ROOT"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
-	targType CDATA #IMPLIED
-	to CDATA "DITTO"
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT xref 
-	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
-	| expan | geogName | measure | name | num | placeName | 
-	add | app | corr | del | orig | reg | sic | space | supplied 
-	| unclear | handShift | emph | foreign | gloss | hi | term 
-	| title | ptr | ref | xptr | xref | seg | bibl | biblFull 
-	| biblStruct | figure | list | listBibl | note | text | 
-	gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
-
-<!ATTLIST xref 
-	TEIform CDATA "xref"
-	ana IDREFS #IMPLIED
-	crdate CDATA #IMPLIED
-	doc ENTITY #IMPLIED
-	evaluate (all | one | none) "all"
-	from CDATA "ROOT"
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
-	targType CDATA #IMPLIED
-	to CDATA "DITTO"
-	type CDATA #IMPLIED
-	 >
-
-<!ELEMENT year 
-	(#PCDATA) >
-
-<!ATTLIST year 
-	TEIform CDATA "year"
-	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
-	id ID #IMPLIED
-	key CDATA #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	reg CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	value CDATA #IMPLIED
-	 >
-
-
-
-<!ENTITY aacute  "&#x00E1;" >
-
-<!ENTITY Aacute  "&#x00C1;" >
-
-<!ENTITY acirc  "&#x00E2;" >
-
-<!ENTITY Acirc  "&#x00C2;" >
-
-<!ENTITY agrave  "&#x00E0;" >
-
-<!ENTITY Agrave  "&#x00C0;" >
-
-<!ENTITY aring  "&#x00E5;" >
-
-<!ENTITY Aring  "&#x00C5;" >
-
-<!ENTITY atilde  "&#x00E3;" >
-
-<!ENTITY Atilde  "&#x00C3;" >
-
-<!ENTITY auml  "&#x00E4;" >
-
-<!ENTITY Auml  "&#x00C4;" >
-
-<!ENTITY aelig  "&#x00E6;" >
-
-<!ENTITY AElig  "&#x00C6;" >
-
-<!ENTITY ccedil  "&#x00E7;" >
-
-<!ENTITY Ccedil  "&#x00C7;" >
-
-<!ENTITY eth  "&#x00F0;" >
-
-<!ENTITY ETH  "&#x00D0;" >
-
-<!ENTITY eacute  "&#x00E9;" >
-
-<!ENTITY Eacute  "&#x00C9;" >
-
-<!ENTITY ecirc  "&#x00EA;" >
-
-<!ENTITY Ecirc  "&#x00CA;" >
-
-<!ENTITY egrave  "&#x00E8;" >
-
-<!ENTITY Egrave  "&#x00C8;" >
-
-<!ENTITY euml  "&#x00EB;" >
-
-<!ENTITY Euml  "&#x00CB;" >
-
-<!ENTITY iacute  "&#x00ED;" >
-
-<!ENTITY Iacute  "&#x00CD;" >
-
-<!ENTITY icirc  "&#x00EE;" >
-
-<!ENTITY Icirc  "&#x00CE;" >
-
-<!ENTITY igrave  "&#x00EC;" >
-
-<!ENTITY Igrave  "&#x00CC;" >
-
-<!ENTITY iuml  "&#x00EF;" >
-
-<!ENTITY Iuml  "&#x00CF;" >
-
-<!ENTITY ntilde  "&#x00F1;" >
-
-<!ENTITY Ntilde  "&#x00D1;" >
-
-<!ENTITY oacute  "&#x00F3;" >
-
-<!ENTITY Oacute  "&#x00D3;" >
-
-<!ENTITY ocirc  "&#x00F4;" >
-
-<!ENTITY Ocirc  "&#x00D4;" >
-
-<!ENTITY ograve  "&#x00F2;" >
-
-<!ENTITY Ograve  "&#x00D2;" >
-
-<!ENTITY oslash  "&#x00F8;" >
-
-<!ENTITY Oslash  "&#x00D8;" >
-
-<!ENTITY otilde  "&#x00F5;" >
-
-<!ENTITY Otilde  "&#x00D5;" >
-
-<!ENTITY ouml  "&#x00F6;" >
-
-<!ENTITY Ouml  "&#x00D6;" >
-
-<!ENTITY szlig  "&#x00DF;" >
-
-<!ENTITY thorn  "&#x00FE;" >
-
-<!ENTITY THORN  "&#x00DE;" >
-
-<!ENTITY uacute  "&#x00FA;" >
-
-<!ENTITY Uacute  "&#x00DA;" >
-
-<!ENTITY ucirc  "&#x00DB;" >
-
-<!ENTITY Ucirc  "&#x00FB;" >
-
-<!ENTITY ugrave  "&#x00F9;" >
-
-<!ENTITY Ugrave  "&#x00D9;" >
-
-<!ENTITY uuml  "&#x00FC;" >
-
-<!ENTITY Uuml  "&#x00DC;" >
-
-<!ENTITY yacute  "&#x00FD;" >
-
-<!ENTITY Yacute  "&#x00DD;" >
-
-<!ENTITY yuml  "&#x00FF;" >
-
-<!ENTITY abreve  "&#x0103;" >
-
-<!ENTITY Abreve  "&#x0102;" >
-
-<!ENTITY amacr  "&#x0101;" >
-
-<!ENTITY Amacr  "&#x0100;" >
-
-<!ENTITY aogon  "&#x0105;" >
-
-<!ENTITY Aogon  "&#x0104;" >
-
-<!ENTITY cacute  "&#x0107;" >
-
-<!ENTITY Cacute  "&#x0106;" >
-
-<!ENTITY ccaron  "&#x010D;" >
-
-<!ENTITY Ccaron  "&#x010C;" >
-
-<!ENTITY ccirc  "&#x0109;" >
-
-<!ENTITY Ccirc  "&#x0108;" >
-
-<!ENTITY cdot  "&#x010B;" >
-
-<!ENTITY Cdot  "&#x010A;" >
-
-<!ENTITY dcaron  "&#x010F;" >
-
-<!ENTITY Dcaron  "&#x010E;" >
-
-<!ENTITY dstrok  "&#x0111;" >
-
-<!ENTITY Dstrok  "&#x0110;" >
-
-<!ENTITY ecaron  "&#x011B;" >
-
-<!ENTITY Ecaron  "&#x011A;" >
-
-<!ENTITY edot  "&#x0117;" >
-
-<!ENTITY Edot  "&#x0116;" >
-
-<!ENTITY emacr  "&#x0113;" >
-
-<!ENTITY Emacr  "&#x0112;" >
-
-<!ENTITY eogon  "&#x0119;" >
-
-<!ENTITY Eogon  "&#x0118;" >
-
-<!ENTITY gacute  "&#x01F5;" >
-
-<!ENTITY gbreve  "&#x011F;" >
-
-<!ENTITY Gbreve  "&#x011E;" >
-
-<!ENTITY Gcedil  "&#x0122;" >
-
-<!ENTITY gcirc  "&#x011D;" >
-
-<!ENTITY Gcirc  "&#x011C;" >
-
-<!ENTITY gdot  "&#x0121;" >
-
-<!ENTITY Gdot  "&#x0120;" >
-
-<!ENTITY hcirc  "&#x0125;" >
-
-<!ENTITY Hcirc  "&#x0124;" >
-
-<!ENTITY hstrok  "&#x0127;" >
-
-<!ENTITY Hstrok  "&#x0126;" >
-
-<!ENTITY Idot  "&#x0130;" >
-
-<!ENTITY Imacr  "&#x012A;" >
-
-<!ENTITY imacr  "&#x012B;" >
-
-<!ENTITY ijlig  "&#x0133;" >
-
-<!ENTITY IJlig  "&#x0132;" >
-
-<!ENTITY inodot  "&#x0131;" >
-
-<!ENTITY iogon  "&#x012F;" >
-
-<!ENTITY Iogon  "&#x012E;" >
-
-<!ENTITY itilde  "&#x0129;" >
-
-<!ENTITY Itilde  "&#x0128;" >
-
-<!ENTITY jcirc  "&#x0135;" >
-
-<!ENTITY Jcirc  "&#x0134;" >
-
-<!ENTITY kcedil  "&#x0137;" >
-
-<!ENTITY Kcedil  "&#x0136;" >
-
-<!ENTITY kgreen  "&#x0138;" >
-
-<!ENTITY lacute  "&#x013A;" >
-
-<!ENTITY Lacute  "&#x0139;" >
-
-<!ENTITY lcaron  "&#x013E;" >
-
-<!ENTITY Lcaron  "&#x013D;" >
-
-<!ENTITY lcedil  "&#x013C;" >
-
-<!ENTITY Lcedil  "&#x013B;" >
-
-<!ENTITY lmidot  "&#x0140;" >
-
-<!ENTITY Lmidot  "&#x013F;" >
-
-<!ENTITY lstrok  "&#x0142;" >
-
-<!ENTITY Lstrok  "&#x0141;" >
-
-<!ENTITY nacute  "&#x0144;" >
-
-<!ENTITY Nacute  "&#x0143;" >
-
-<!ENTITY eng  "&#x014B;" >
-
-<!ENTITY ENG  "&#x014A;" >
-
-<!ENTITY napos  "&#x0149;" >
-
-<!ENTITY ncaron  "&#x0148;" >
-
-<!ENTITY Ncaron  "&#x0147;" >
-
-<!ENTITY ncedil  "&#x0146;" >
-
-<!ENTITY Ncedil  "&#x0145;" >
-
-<!ENTITY odblac  "&#x0151;" >
-
-<!ENTITY Odblac  "&#x0150;" >
-
-<!ENTITY Omacr  "&#x014C;" >
-
-<!ENTITY omacr  "&#x014D;" >
-
-<!ENTITY oelig  "&#x0153;" >
-
-<!ENTITY OElig  "&#x0152;" >
-
-<!ENTITY racute  "&#x0155;" >
-
-<!ENTITY Racute  "&#x0154;" >
-
-<!ENTITY rcaron  "&#x0159;" >
-
-<!ENTITY Rcaron  "&#x0158;" >
-
-<!ENTITY rcedil  "&#x0157;" >
-
-<!ENTITY Rcedil  "&#x0156;" >
-
-<!ENTITY sacute  "&#x015B;" >
-
-<!ENTITY Sacute  "&#x015A;" >
-
-<!ENTITY scaron  "&#x0161;" >
-
-<!ENTITY Scaron  "&#x0160;" >
-
-<!ENTITY scedil  "&#x015F;" >
-
-<!ENTITY Scedil  "&#x015E;" >
-
-<!ENTITY scirc  "&#x015D;" >
-
-<!ENTITY Scirc  "&#x015C;" >
-
-<!ENTITY tcaron  "&#x0165;" >
-
-<!ENTITY Tcaron  "&#x0164;" >
-
-<!ENTITY tcedil  "&#x0163;" >
-
-<!ENTITY Tcedil  "&#x0162;" >
-
-<!ENTITY tstrok  "&#x0167;" >
-
-<!ENTITY Tstrok  "&#x0166;" >
-
-<!ENTITY ubreve  "&#x016D;" >
-
-<!ENTITY Ubreve  "&#x016C;" >
-
-<!ENTITY udblac  "&#x0171;" >
-
-<!ENTITY Udblac  "&#x0170;" >
-
-<!ENTITY umacr  "&#x016B;" >
-
-<!ENTITY Umacr  "&#x016A;" >
-
-<!ENTITY uogon  "&#x0173;" >
-
-<!ENTITY Uogon  "&#x0172;" >
-
-<!ENTITY uring  "&#x016F;" >
-
-<!ENTITY Uring  "&#x016E;" >
-
-<!ENTITY utilde  "&#x0169;" >
-
-<!ENTITY Utilde  "&#x0168;" >
-
-<!ENTITY wcirc  "&#x0175;" >
-
-<!ENTITY Wcirc  "&#x0174;" >
-
-<!ENTITY ycirc  "&#x0177;" >
-
-<!ENTITY Ycirc  "&#x0176;" >
-
-<!ENTITY Yuml  "&#x0178;" >
-
-<!ENTITY zacute  "&#x017A;" >
-
-<!ENTITY Zacute  "&#x0179;" >
-
-<!ENTITY zcaron  "&#x017E;" >
-
-<!ENTITY Zcaron  "&#x017D;" >
-
-<!ENTITY zdot  "&#x017C;" >
-
-<!ENTITY Zdot  "&#x017B;" >
-
-<!ENTITY agr  "&#x03B1;" >
-
-<!ENTITY Agr  "&#x0391;" >
-
-<!ENTITY bgr  "&#x03B2;" >
-
-<!ENTITY Bgr  "&#x0392;" >
-
-<!ENTITY ggr  "&#x03B3;" >
-
-<!ENTITY Ggr  "&#x0393;" >
-
-<!ENTITY dgr  "&#x03B4;" >
-
-<!ENTITY Dgr  "&#x0394;" >
-
-<!ENTITY egr  "&#x03B5;" >
-
-<!ENTITY Egr  "&#x0395;" >
-
-<!ENTITY zgr  "&#x03B6;" >
-
-<!ENTITY Zgr  "&#x0396;" >
-
-<!ENTITY eegr  "&#x03B7;" >
-
-<!ENTITY EEgr  "&#x0397;" >
-
-<!ENTITY thgr  "&#x03B8;" >
-
-<!ENTITY THgr  "&#x0398;" >
-
-<!ENTITY igr  "&#x03B9;" >
-
-<!ENTITY Igr  "&#x0399;" >
-
-<!ENTITY kgr  "&#x03BA;" >
-
-<!ENTITY Kgr  "&#x039A;" >
-
-<!ENTITY lgr  "&#x03BB;" >
-
-<!ENTITY Lgr  "&#x039B;" >
-
-<!ENTITY mgr  "&#x03BC;" >
-
-<!ENTITY Mgr  "&#x039C;" >
-
-<!ENTITY ngr  "&#x03BD;" >
-
-<!ENTITY Ngr  "&#x039D;" >
-
-<!ENTITY xgr  "&#x03BE;" >
-
-<!ENTITY Xgr  "&#x039E;" >
-
-<!ENTITY ogr  "&#x03BF;" >
-
-<!ENTITY Ogr  "&#x039F;" >
-
-<!ENTITY pgr  "&#x03C0;" >
-
-<!ENTITY Pgr  "&#x03A0;" >
-
-<!ENTITY rgr  "&#x03C1;" >
-
-<!ENTITY Rgr  "&#x03A1;" >
-
-<!ENTITY sgr  "&#x03C3;" >
-
-<!ENTITY Sgr  "&#x03A3;" >
-
-<!ENTITY sfgr  "&#x03C2;" >
-
-<!ENTITY tgr  "&#x03C4;" >
-
-<!ENTITY Tgr  "&#x03A4;" >
-
-<!ENTITY ugr  "&#x03C5;" >
-
-<!ENTITY Ugr  "&#x03A5;" >
-
-<!ENTITY phgr  "&#x03C6;" >
-
-<!ENTITY PHgr  "&#x03A6;" >
-
-<!ENTITY khgr  "&#x03C7;" >
-
-<!ENTITY KHgr  "&#x03A7;" >
-
-<!ENTITY psgr  "&#x03C8;" >
-
-<!ENTITY PSgr  "&#x03A8;" >
-
-<!ENTITY ohgr  "&#x03C9;" >
-
-<!ENTITY OHgr  "&#x03A9;" >
-
-<!ENTITY aacgr  "&#x03AC;" >
-
-<!ENTITY Aacgr  "&#x0386;" >
-
-<!ENTITY eacgr  "&#x03AD;" >
-
-<!ENTITY Eacgr  "&#x0388;" >
-
-<!ENTITY eeacgr  "&#x03AE;" >
-
-<!ENTITY EEacgr  "&#x0389;" >
-
-<!ENTITY idigr  "&#x03CA;" >
-
-<!ENTITY Idigr  "&#x03AA;" >
-
-<!ENTITY iacgr  "&#x03AF;" >
-
-<!ENTITY Iacgr  "&#x038A;" >
-
-<!ENTITY idiagr  "&#x0390;" >
-
-<!ENTITY oacgr  "&#x03CC;" >
-
-<!ENTITY Oacgr  "&#x038C;" >
-
-<!ENTITY udigr  "&#x03CB;" >
-
-<!ENTITY Udigr  "&#x03AB;" >
-
-<!ENTITY uacgr  "&#x03CD;" >
-
-<!ENTITY Uacgr  "&#x038E;" >
-
-<!ENTITY udiagr  "&#x03B0;" >
-
-<!ENTITY ohacgr  "&#x03CE;" >
-
-<!ENTITY OHacgr  "&#x038F;" >
-
-<!ENTITY half  "&#x00BD;" >
-
-<!ENTITY frac12  "&#x00BD;" >
-
-<!ENTITY frac14  "&#x00BC;" >
-
-<!ENTITY frac34  "&#x00BE;" >
-
-<!ENTITY frac18  "&#x215B;" >
-
-<!ENTITY frac38  "&#x215C;" >
-
-<!ENTITY frac58  "&#x215D;" >
-
-<!ENTITY frac78  "&#x215E;" >
-
-<!ENTITY sup1  "&#x00B9;" >
-
-<!ENTITY sup2  "&#x00B2;" >
-
-<!ENTITY sup3  "&#x00B3;" >
-
-<!ENTITY plus  "&#x002B;" >
-
-<!ENTITY plusmn  "&#x00B1;" >
-
-<!ENTITY equals  "&#x003D;" >
-
-<!ENTITY gt  "&#x003E;" >
-
-<!ENTITY divide  "&#x00F7;" >
-
-<!ENTITY times  "&#x00D7;" >
-
-<!ENTITY curren  "&#x00A4;" >
-
-<!ENTITY pound  "&#x00A3;" >
-
-<!ENTITY dollar  "&#x0024;" >
-
-<!ENTITY cent  "&#x00A2;" >
-
-<!ENTITY yen  "&#x00A5;" >
-
-<!ENTITY num  "&#x0023;" >
-
-<!ENTITY percnt  "&#x0025;" >
-
-<!ENTITY ast  "&#x2217;" >
-
-<!ENTITY commat  "&#x0040;" >
-
-<!ENTITY lsqb  "&#x005B;" >
-
-<!ENTITY bsol  "&#x005C;" >
-
-<!ENTITY rsqb  "&#x005D;" >
-
-<!ENTITY lcub  "&#x007B;" >
-
-<!ENTITY horbar  "&#x2015;" >
-
-<!ENTITY verbar  "&#x007C;" >
-
-<!ENTITY rcub  "&#x007D;" >
-
-<!ENTITY micro  "&#x00B5;" >
-
-<!ENTITY ohm  "&#x2126;" >
-
-<!ENTITY deg  "&#x00B0;" >
-
-<!ENTITY ordm  "&#x00BA;" >
-
-<!ENTITY ordf  "&#x00AA;" >
-
-<!ENTITY sect  "&#x00A7;" >
-
-<!ENTITY para  "&#x00B6;" >
-
-<!ENTITY middot  "&#x00B7;" >
-
-<!ENTITY larr  "&#x2190;" >
-
-<!ENTITY rarr  "&#x2192;" >
-
-<!ENTITY uarr  "&#x2191;" >
-
-<!ENTITY darr  "&#x2193;" >
-
-<!ENTITY copy  "&#x00A9;" >
-
-<!ENTITY reg  "&#x00AF;" >
-
-<!ENTITY trade  "&#x2122;" >
-
-<!ENTITY brvbar  "&#x00A6;" >
-
-<!ENTITY not  "&#x00AC;" >
-
-<!ENTITY sung  "&#x2669;" >
-
-<!ENTITY excl  "&#x0021;" >
-
-<!ENTITY iexcl  "&#x00A1;" >
-
-<!ENTITY quot  "&#x0022;" >
-
-<!ENTITY apos  "&#x0027;" >
-
-<!ENTITY lpar  "&#x0028;" >
-
-<!ENTITY rpar  "&#x0029;" >
-
-<!ENTITY comma  "&#x002C;" >
-
-<!ENTITY lowbar  "&#x005F;" >
-
-<!ENTITY hyphen  "&#xE4F8;" >
-
-<!ENTITY period  "&#x002E;" >
-
-<!ENTITY sol  "&#x002F;" >
-
-<!ENTITY colon  "&#x003A;" >
-
-<!ENTITY semi  "&#x003B;" >
-
-<!ENTITY quest  "&#x003F;" >
-
-<!ENTITY iquest  "&#x00BF;" >
-
-<!ENTITY laquo  "&#x00AB;" >
-
-<!ENTITY raquo  "&#x00BB;" >
-
-<!ENTITY lsquo  "&#x2018;" >
-
-<!ENTITY rsquo  "&#x2019;" >
-
-<!ENTITY ldquo  "&#x201C;" >
-
-<!ENTITY rdquo  "&#x201D;" >
-
-<!ENTITY nbsp  "&#x00A0;" >
-
-<!ENTITY shy  "&#x00AD;" >
-
-<!ENTITY times  "&#x00D7;" >
+           required." THIS CHANGE NEEDS TO BE VETTED VIA THE MARKUP LIST. --> 
+
+<!ELEMENT TEI.2
+  (teiHeader, text) >
+
+<!ATTLIST TEI.2
+  TEIform CDATA "TEI.2"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT ab
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST ab
+  TEIform CDATA "ab"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  part (Y | N | I | M | F) "N"
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT abbr
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST abbr
+  TEIform CDATA "abbr"
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  expan CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp IDREF #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT add
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  ab | l | lg | p | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST add
+  TEIform CDATA "add"
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  hand CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  place (inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed) #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED >
+
+<!ELEMENT addrLine
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST addrLine
+  TEIform CDATA "addrLine"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT address
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  ((addrLine, (gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)+ | ((name | postBox | postCode | street), (gap
+  | certainty | fs | link | linkGrp | cb | lb | pb)*)*)) >
+
+<!ATTLIST address
+  TEIform CDATA "address"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT analytic
+  (author | editor | respStmt | title | gap | certainty |
+  fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST analytic
+  TEIform CDATA "analytic"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT app
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (lem, (gap | certainty | fs | link | linkGrp | cb | lb |
+  pb)*, (wit, (gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)?)?, ((rdg, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*)?) | (rdgGrp, (gap | certainty | fs | link
+  | linkGrp | cb | lb | pb)*, (wit, (gap | certainty | fs
+  | link | linkGrp | cb | lb | pb)*)?))+) >
+
+<!ATTLIST app
+  TEIform CDATA "app"
+  ana IDREFS #IMPLIED
+  from IDREF "ROOT"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  loc CDATA #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  to IDREF "DITTO"
+  type CDATA #IMPLIED >
+
+<!ELEMENT author
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST author
+  TEIform CDATA "author"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT authority
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST authority
+  TEIform CDATA "authority"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT availability
+  (p)+ >
+
+<!ATTLIST availability
+  TEIform CDATA "availability"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  status (free | unknown | restricted) "unknown" >
+
+<!ELEMENT bibl
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | analytic | author
+  | biblScope | edition | editor | extent | idno | imprint
+  | monogr | note | pubPlace | publisher | respStmt | series
+  | gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST bibl
+  TEIform CDATA "bibl"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT biblFull
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  titleStmt, (gap | certainty | fs | link | linkGrp | cb |
+  lb | pb)*, (editionStmt, (gap | certainty | fs | link |
+  linkGrp | cb | lb | pb)*)?, (extent, (gap | certainty |
+  fs | link | linkGrp | cb | lb | pb)*)?, publicationStmt,
+  (gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (sourceDesc, (gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)*) >
+
+<!ATTLIST biblFull
+  TEIform CDATA "biblFull"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT biblScope
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST biblScope
+  TEIform CDATA "biblScope"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type (volume | pages | chapter | parts | fascicle | numbers | plates | issue) #IMPLIED >
+
+<!ELEMENT biblStruct
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (analytic, (gap | certainty | fs | link | linkGrp | cb |
+  lb | pb)*)?, (monogr, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, (series, (gap | certainty | fs | link
+  | linkGrp | cb | lb | pb)*)*)+, ((note, (gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)*) | (idno, (gap |
+  certainty | fs | link | linkGrp | cb | lb | pb)*))*) >
+
+<!ATTLIST biblStruct
+  TEIform CDATA "biblStruct"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT bloc
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST bloc
+  TEIform CDATA "bloc"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT body
+  ((docAuthor | head | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, ((((bibl | biblFull | biblStruct | ab
+  | l | lg | p | figure | list | listBibl | note), (gap |
+  certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div,
+  (div | gap | certainty | fs | link | linkGrp | cb | lb |
+  pb)*)?) | (div, (div | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*))) >
+
+<!ATTLIST body
+  TEIform CDATA "body"
+  ana IDREFS #IMPLIED
+  decls IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT catDesc
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg)* >
+
+<!ATTLIST catDesc
+  TEIform CDATA "catDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT catRef
+  EMPTY >
+
+<!ATTLIST catRef
+  TEIform CDATA "catRef"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  scheme IDREF #IMPLIED
+  target IDREFS #REQUIRED >
+
+<!ELEMENT category
+  (catDesc, category*) >
+
+<!ATTLIST category
+  TEIform CDATA "category"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT cb
+  EMPTY >
+
+<!ATTLIST cb
+  TEIform CDATA "cb"
+  ana IDREFS #IMPLIED
+  ed CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT certainty
+  EMPTY >
+
+<!ATTLIST certainty
+  TEIform CDATA "certainty"
+  ana IDREFS #IMPLIED
+  assertedValue CDATA #IMPLIED
+  degree CDATA #IMPLIED
+  desc CDATA #IMPLIED
+  given CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  locus CDATA #REQUIRED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  target IDREFS #REQUIRED >
+
+<!ELEMENT change
+  (date, respStmt+, item) >
+
+<!ATTLIST change
+  TEIform CDATA "change"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT classCode
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST classCode
+  TEIform CDATA "classCode"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  scheme IDREF #IMPLIED >
+
+<!ELEMENT classDecl
+  (taxonomy)+ >
+
+<!ATTLIST classDecl
+  TEIform CDATA "classDecl"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT corr
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  ab | l | lg | p | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST corr
+  TEIform CDATA "corr"
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  sic CDATA #IMPLIED >
+
+<!ELEMENT country
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST country
+  TEIform CDATA "country"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT creation
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST creation
+  TEIform CDATA "creation"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT date
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST date
+  TEIform CDATA "date"
+  ana IDREFS #IMPLIED
+  calendar CDATA #IMPLIED
+  certainty CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT dateRange
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST dateRange
+  TEIform CDATA "dateRange"
+  ana IDREFS #IMPLIED
+  calendar CDATA #IMPLIED
+  exact (to | from | both | none) #IMPLIED
+  from CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  to CDATA #IMPLIED >
+
+<!ELEMENT dateStruct
+  (#PCDATA | dateStruct | day | distance | month | occasion
+  | offset | week | year | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST dateStruct
+  TEIform CDATA "dateStruct"
+  ana IDREFS #IMPLIED
+  calendar CDATA #IMPLIED
+  exact (Y | N | U) #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT day
+  (#PCDATA) >
+
+<!ATTLIST day
+  TEIform CDATA "day"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT del
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST del
+  TEIform CDATA "del"
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  hand IDREF #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp IDREF #IMPLIED
+  status CDATA "unremarkable"
+  type CDATA #IMPLIED >
+
+<!ELEMENT distance
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST distance
+  TEIform CDATA "distance"
+  ana IDREFS #IMPLIED
+  exact (Y | N | U) #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT distributor
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST distributor
+  TEIform CDATA "distributor"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT div
+  ((docAuthor | head | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, ((div, (gap | certainty | fs | link |
+  linkGrp | cb | lb | pb)*)+ | (((bibl | biblFull | biblStruct
+  | ab | l | lg | p | figure | list | listBibl | note), (gap
+  | certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div,
+  (gap | certainty | fs | link | linkGrp | cb | lb | pb)*)*))) >
+
+<!ATTLIST div
+  TEIform CDATA "div"
+  ana IDREFS #IMPLIED
+  decls IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  met CDATA #IMPLIED
+  n CDATA #IMPLIED
+  org (composite | uniform) "uniform"
+  part (Y | N | I | M | F) "N"
+  real CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  rhyme CDATA #IMPLIED
+  sample (initial | medial | final | unknown | complete) "complete"
+  type (bibliography | commentary | description | diplomatic | edition | history | metadata | translation) #IMPLIED >
+
+<!ELEMENT docAuthor
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST docAuthor
+  TEIform CDATA "docAuthor"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT edition
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST edition
+  TEIform CDATA "edition"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT editionStmt
+  ((edition, respStmt*) | p+) >
+
+<!ATTLIST editionStmt
+  TEIform CDATA "editionStmt"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT editor
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST editor
+  TEIform CDATA "editor"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  role CDATA "editor" >
+
+<!ELEMENT emph
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST emph
+  TEIform CDATA "emph"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT encodingDesc
+  (classDecl*, p*) >
+
+<!ATTLIST encodingDesc
+  TEIform CDATA "encodingDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT expan
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST expan
+  TEIform CDATA "expan"
+  abbr CDATA #IMPLIED
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp IDREF #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT extent
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST extent
+  TEIform CDATA "extent"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT f
+  (str | fs)* >
+
+<!ATTLIST f
+  TEIform CDATA "f"
+  ana IDREFS #IMPLIED
+  fVal IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  name NMTOKEN #REQUIRED
+  org (single | set | bag | list) #IMPLIED
+  rel (eq | ne | sb | ns) "eq"
+  rend CDATA #IMPLIED >
+
+<!ELEMENT figDesc
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST figDesc
+  TEIform CDATA "figDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT figure
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (head, (gap | certainty | fs | link | linkGrp | cb | lb
+  | pb)*)?, (p, (gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)*, (figDesc, (gap | certainty | fs | link |
+  linkGrp | cb | lb | pb)*)?, (text, (gap | certainty | fs
+  | link | linkGrp | cb | lb | pb)*)?) >
+
+<!ATTLIST figure
+  TEIform CDATA "figure"
+  ana IDREFS #IMPLIED
+  entity ENTITY #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT fileDesc
+  (titleStmt, editionStmt?, extent?, publicationStmt, sourceDesc+) >
+
+<!ATTLIST fileDesc
+  TEIform CDATA "fileDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT foreign
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST foreign
+  TEIform CDATA "foreign"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT fs
+  (f)* >
+
+<!ATTLIST fs
+  TEIform CDATA "fs"
+  ana IDREFS #IMPLIED
+  feats IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rel (eq | ne | sb | ns) "sb"
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT funder
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST funder
+  TEIform CDATA "funder"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT gap
+  EMPTY >
+
+<!ATTLIST gap
+  TEIform CDATA "gap"
+  agent CDATA #IMPLIED
+  ana IDREFS #IMPLIED
+  desc CDATA #IMPLIED
+  dim CDATA #IMPLIED
+  extent CDATA #IMPLIED
+  hand CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reason (ellipsis | illegible | lost | omitted) #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  unit CDATA #IMPLIED >
+
+<!ELEMENT geog
+  (#PCDATA) >
+
+<!ATTLIST geog
+  TEIform CDATA "geog"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT geogName
+  (#PCDATA | geog | name | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST geogName
+  TEIform CDATA "geogName"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT gloss
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST gloss
+  TEIform CDATA "gloss"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  target CDATA #IMPLIED >
+
+<!ELEMENT hand
+  EMPTY >
+
+<!ATTLIST hand
+  TEIform CDATA "hand"
+  ana IDREFS #IMPLIED
+  character CDATA #IMPLIED
+  first CDATA #IMPLIED
+  hand CDATA #IMPLIED
+  id ID #IMPLIED
+  ink CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  mainLang CDATA #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  scribe CDATA #IMPLIED
+  style CDATA #IMPLIED >
+
+<!ELEMENT handList
+  (hand)* >
+
+<!ATTLIST handList
+  TEIform CDATA "handList"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT handShift
+  EMPTY >
+
+<!ATTLIST handShift
+  TEIform CDATA "handShift"
+  ana IDREFS #IMPLIED
+  character CDATA #IMPLIED
+  id ID #IMPLIED
+  ink CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  new IDREF #IMPLIED
+  old IDREF #IMPLIED
+  rend CDATA #IMPLIED
+  resp IDREF #IMPLIED
+  style CDATA #IMPLIED >
+
+<!ELEMENT head
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST head
+  TEIform CDATA "head"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT hi
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST hi
+  TEIform CDATA "hi"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend (apex | intraline | ligature | longa | reversed | supraline | tall) #REQUIRED
+  type CDATA #IMPLIED >
+
+<!ELEMENT idno
+  (#PCDATA) >
+
+<!ATTLIST idno
+  TEIform CDATA "idno"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type (ISSN | ISBN | URL | OCLC) #REQUIRED >
+
+<!ELEMENT imprint
+  (pubPlace | publisher | date | biblScope | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST imprint
+  TEIform CDATA "imprint"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT item
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  ab | l | lg | p | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST item
+  TEIform CDATA "item"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT keywords
+  (term+ | list) >
+
+<!ATTLIST keywords
+  TEIform CDATA "keywords"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  scheme IDREF #IMPLIED >
+
+<!ELEMENT l
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST l
+  TEIform CDATA "l"
+  ana IDREFS #IMPLIED
+  enjamb CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  met CDATA #IMPLIED
+  n CDATA #IMPLIED
+  part (Y | N | I | M | F) "N"
+  real CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  rhyme CDATA #IMPLIED >
+
+<!ELEMENT langUsage
+  (p | language)+ >
+
+<!ATTLIST langUsage
+  TEIform CDATA "langUsage"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT language
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST language
+  TEIform CDATA "language"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  usage CDATA #IMPLIED
+  wsd ENTITY #IMPLIED >
+
+<!ELEMENT lb
+  EMPTY >
+
+<!ATTLIST lb
+  TEIform CDATA "lb"
+  ana IDREFS #IMPLIED
+  ed CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type (worddiv) #IMPLIED >
+
+<!ELEMENT lem
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST lem
+  TEIform CDATA "lem"
+  ana IDREFS #IMPLIED
+  cause CDATA #IMPLIED
+  hand IDREF #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  type CDATA #IMPLIED
+  varSeq CDATA #IMPLIED
+  wit CDATA #IMPLIED >
+
+<!ELEMENT lg
+  ((docAuthor | head | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, (l | lg), (l | lg | gap | certainty |
+  fs | link | linkGrp | cb | lb | pb)*) >
+
+<!ATTLIST lg
+  TEIform CDATA "lg"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  met CDATA #IMPLIED
+  n CDATA #IMPLIED
+  org (composite | uniform) "uniform"
+  part (Y | N | I | M | F) "N"
+  real CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  rhyme CDATA #IMPLIED
+  sample (initial | medial | final | unknown | complete) "complete"
+  type CDATA #IMPLIED >
+
+<!ELEMENT link
+  EMPTY >
+
+<!ATTLIST link
+  TEIform CDATA "link"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  evaluate (all | one | none) #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targOrder (Y | N | U) "U"
+  targType CDATA #IMPLIED
+  targets IDREFS #REQUIRED
+  type CDATA #IMPLIED >
+
+<!ELEMENT linkGrp
+  (link | ptr | xptr)+ >
+
+<!ATTLIST linkGrp
+  TEIform CDATA "linkGrp"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  domains IDREFS #IMPLIED
+  evaluate (all | one | none) #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targFunc NMTOKENS #IMPLIED
+  targOrder (Y | N | U) "U"
+  targType CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT list
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (head, (gap | certainty | fs | link | linkGrp | cb | lb
+  | pb)*)?, (item, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*)*) >
+
+<!ATTLIST list
+  TEIform CDATA "list"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA "simple" >
+
+<!ELEMENT listBibl
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (head, (gap | certainty | fs | link | linkGrp | cb | lb
+  | pb)*)?, (bibl | biblStruct | biblFull), (bibl | biblStruct
+  | biblFull | gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*) >
+
+<!ATTLIST listBibl
+  TEIform CDATA "listBibl"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT mark
+  EMPTY >
+
+<!ATTLIST mark
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT measure
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST measure
+  TEIform CDATA "measure"
+  ana IDREFS #IMPLIED
+  dim (height | width | depth | none) "none"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT meeting
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST meeting
+  TEIform CDATA "meeting"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT monogr
+  (((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (((author | editor | respStmt), (author | editor | respStmt
+  | gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  (title, (gap | certainty | fs | link | linkGrp | cb | lb
+  | pb)*)+, ((editor | respStmt), (gap | certainty | fs |
+  link | linkGrp | cb | lb | pb)*)*) | ((title, (gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)*)+, ((author | editor
+  | respStmt), (gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)*)))?, ((note | meeting), (gap | certainty |
+  fs | link | linkGrp | cb | lb | pb)*)*, (edition, (editor
+  | respStmt | gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)*)*, imprint, (imprint | extent | biblScope |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)*) >
+
+<!ATTLIST monogr
+  TEIform CDATA "monogr"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT month
+  (#PCDATA) >
+
+<!ATTLIST month
+  TEIform CDATA "month"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT name
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST name
+  TEIform CDATA "name"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT note
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  ab | l | lg | p | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST note
+  TEIform CDATA "note"
+  ana IDREFS #IMPLIED
+  anchored (yes | no) "yes"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  place CDATA "not specified"
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  target CDATA #IMPLIED
+  targetEnd CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT num
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST num
+  TEIform CDATA "num"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT occasion
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST occasion
+  TEIform CDATA "occasion"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT offset
+  (#PCDATA | gap | certainty | fs | link | linkGrp | cb |
+  lb | pb)* >
+
+<!ATTLIST offset
+  TEIform CDATA "offset"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT orig
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST orig
+  TEIform CDATA "orig"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED >
+
+<!ELEMENT p
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST p
+  TEIform CDATA "p"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT pb
+  EMPTY >
+
+<!ATTLIST pb
+  TEIform CDATA "pb"
+  ana IDREFS #IMPLIED
+  ed CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT placeName
+  (#PCDATA | bloc | country | distance | geog | offset | region
+  | settlement | mark | abbr | address | date | dateRange
+  | dateStruct | expan | geogName | measure | name | num |
+  placeName | add | app | corr | del | orig | reg | sic |
+  space | supplied | unclear | handShift | emph | foreign
+  | gloss | hi | term | title | ptr | ref | xptr | xref |
+  seg | gap | certainty | fs | link | linkGrp | cb | lb |
+  pb)* >
+
+<!ATTLIST placeName
+  TEIform CDATA "placeName"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT postBox
+  (#PCDATA) >
+
+<!ATTLIST postBox
+  TEIform CDATA "postBox"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT postCode
+  (#PCDATA) >
+
+<!ATTLIST postCode
+  TEIform CDATA "postCode"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT principal
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST principal
+  TEIform CDATA "principal"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT profileDesc
+  (creation?, langUsage*, handList*, textClass*) >
+
+<!ATTLIST profileDesc
+  TEIform CDATA "profileDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT ptr
+  EMPTY >
+
+<!ATTLIST ptr
+  TEIform CDATA "ptr"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  evaluate (all | one | none) "all"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targOrder (Y | N | U) "Y"
+  targType CDATA #IMPLIED
+  target IDREFS #REQUIRED
+  type CDATA #IMPLIED >
+
+<!ELEMENT pubPlace
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST pubPlace
+  TEIform CDATA "pubPlace"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT publicationStmt
+  ((p, (gap | certainty | fs | link | linkGrp | cb | lb |
+  pb)*)+ | ((publisher | distributor | authority | pubPlace
+  | address | idno | availability | date), (gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)*)+) >
+
+<!ATTLIST publicationStmt
+  TEIform CDATA "publicationStmt"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT publisher
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST publisher
+  TEIform CDATA "publisher"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT rdg
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST rdg
+  TEIform CDATA "rdg"
+  ana IDREFS #IMPLIED
+  cause CDATA #IMPLIED
+  hand IDREF #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  type CDATA #IMPLIED
+  varSeq CDATA #IMPLIED
+  wit CDATA #IMPLIED >
+
+<!ELEMENT rdgGrp
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  ((rdgGrp, (gap | certainty | fs | link | linkGrp | cb |
+  lb | pb)*) | (rdg, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*, (wit, (gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)*)?))+) >
+
+<!ATTLIST rdgGrp
+  TEIform CDATA "rdgGrp"
+  ana IDREFS #IMPLIED
+  cause CDATA #IMPLIED
+  hand IDREF #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  type CDATA #IMPLIED
+  varSeq CDATA #IMPLIED
+  wit CDATA #IMPLIED >
+
+<!ELEMENT ref
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST ref
+  TEIform CDATA "ref"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  evaluate (all | one | none) "all"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targOrder (Y | N | U) "Y"
+  targType CDATA #IMPLIED
+  target IDREFS #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT reg
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST reg
+  TEIform CDATA "reg"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  orig CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED >
+
+<!ELEMENT region
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST region
+  TEIform CDATA "region"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT resp
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST resp
+  TEIform CDATA "resp"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT respStmt
+  (resp | name | gap | certainty | fs | link | linkGrp | cb
+  | lb | pb)+ >
+
+<!ATTLIST respStmt
+  TEIform CDATA "respStmt"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT revisionDesc
+  (list | change+) >
+
+<!ATTLIST revisionDesc
+  TEIform CDATA "revisionDesc"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT seg
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST seg
+  TEIform CDATA "seg"
+  ana IDREFS #IMPLIED
+  function CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  met CDATA #IMPLIED
+  n CDATA #IMPLIED
+  part (Y | N | I | M | F) "N"
+  real CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  rhyme CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT series
+  (#PCDATA | title | editor | respStmt | biblScope | gap |
+  certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST series
+  TEIform CDATA "series"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT settlement
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST settlement
+  TEIform CDATA "settlement"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  subtype CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT sic
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  ab | l | lg | p | gap | certainty | fs | link | linkGrp
+  | cb | lb | pb)* >
+
+<!ATTLIST sic
+  TEIform CDATA "sic"
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  corr CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED >
+
+<!ELEMENT sourceDesc
+  (p | bibl | biblFull | biblStruct | listBibl)+ >
+
+<!ATTLIST sourceDesc
+  TEIform CDATA "sourceDesc"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT space
+  EMPTY >
+
+<!ATTLIST space
+  TEIform CDATA "space"
+  ana IDREFS #IMPLIED
+  dim (horizontal | vertical) "horizontal"
+  extent CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  unit CDATA #IMPLIED >
+
+<!ELEMENT sponsor
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST sponsor
+  TEIform CDATA "sponsor"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT str
+  (#PCDATA) >
+
+<!ATTLIST str
+  TEIform CDATA "str"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rel (eq | ne | sb | ns | lt | le | gt | ge) "eq"
+  rend CDATA #IMPLIED >
+
+<!ELEMENT street
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST street
+  TEIform CDATA "street"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT supplied
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST supplied
+  TEIform CDATA "supplied"
+  agent CDATA #IMPLIED
+  ana IDREFS #IMPLIED
+  hand CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reason (lost | omitted | subaudible | explanation) #REQUIRED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  source CDATA #IMPLIED >
+
+<!ELEMENT taxonomy
+  (category+ | ((bibl | biblStruct | biblFull), category*)) >
+
+<!ATTLIST taxonomy
+  TEIform CDATA "taxonomy"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT teiCorpus.2
+  (teiHeader, TEI.2+) >
+
+<!ATTLIST teiCorpus.2
+  TEIform CDATA "teiCorpus.2"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT teiHeader
+  (fileDesc, encodingDesc*, profileDesc*, revisionDesc?) >
+
+<!ATTLIST teiHeader
+  TEIform CDATA "teiHeader"
+  ana IDREFS #IMPLIED
+  creator CDATA #IMPLIED
+  date.created CDATA #IMPLIED
+  date.updated CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  status (new | update) "new"
+  type CDATA "text" >
+
+<!ELEMENT term
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | gap | certainty
+  | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST term
+  TEIform CDATA "term"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED >
+
+<!ELEMENT text
+  ((gap | certainty | fs | link | linkGrp | cb | lb | pb)*,
+  body, (gap | certainty | fs | link | linkGrp | cb | lb |
+  pb)*) >
+
+<!ATTLIST text
+  TEIform CDATA "text"
+  ana IDREFS #IMPLIED
+  decls IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT textClass
+  (classCode | catRef | keywords)* >
+
+<!ATTLIST textClass
+  TEIform CDATA "textClass"
+  ana IDREFS #IMPLIED
+  default (YES | NO) "NO"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT title
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST title
+  TEIform CDATA "title"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  level (a | m | j | s | u) "m"
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type (main | subordinate | parallel | abbreviated) "main" >
+
+<!ELEMENT titleStmt
+  (title+, (author | editor | sponsor | funder | principal
+  | respStmt)*) >
+
+<!ATTLIST titleStmt
+  TEIform CDATA "titleStmt"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT unclear
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST unclear
+  TEIform CDATA "unclear"
+  agent CDATA #IMPLIED
+  ana IDREFS #IMPLIED
+  cert CDATA #IMPLIED
+  hand CDATA #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reason (damage | execution) #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED >
+
+<!ELEMENT week
+  (#PCDATA) >
+
+<!ATTLIST week
+  TEIform CDATA "week"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ELEMENT wit
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST wit
+  TEIform CDATA "wit"
+  ana IDREFS #IMPLIED
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED >
+
+<!ELEMENT xptr
+  EMPTY >
+
+<!ATTLIST xptr
+  TEIform CDATA "xptr"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  doc ENTITY #IMPLIED
+  evaluate (all | one | none) "all"
+  from CDATA "ROOT"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targOrder (Y | N | U) "Y"
+  targType CDATA #IMPLIED
+  to CDATA "DITTO"
+  type CDATA #IMPLIED >
+
+<!ELEMENT xref
+  (#PCDATA | mark | abbr | address | date | dateRange | dateStruct
+  | expan | geogName | measure | name | num | placeName |
+  add | app | corr | del | orig | reg | sic | space | supplied
+  | unclear | handShift | emph | foreign | gloss | hi | term
+  | title | ptr | ref | xptr | xref | seg | bibl | biblFull
+  | biblStruct | figure | list | listBibl | note | text |
+  gap | certainty | fs | link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST xref
+  TEIform CDATA "xref"
+  ana IDREFS #IMPLIED
+  crdate CDATA #IMPLIED
+  doc ENTITY #IMPLIED
+  evaluate (all | one | none) "all"
+  from CDATA "ROOT"
+  id ID #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  resp CDATA #IMPLIED
+  targOrder (Y | N | U) "Y"
+  targType CDATA #IMPLIED
+  to CDATA "DITTO"
+  type CDATA #IMPLIED >
+
+<!ELEMENT year
+  (#PCDATA) >
+
+<!ATTLIST year
+  TEIform CDATA "year"
+  ana IDREFS #IMPLIED
+  full (yes | abb | init) "yes"
+  id ID #IMPLIED
+  key CDATA #IMPLIED
+  lang IDREF #IMPLIED
+  n CDATA #IMPLIED
+  reg CDATA #IMPLIED
+  rend CDATA #IMPLIED
+  type CDATA #IMPLIED
+  value CDATA #IMPLIED >
+
+<!ENTITY aacute "&#x00E1;" >
+
+<!ENTITY Aacute "&#x00C1;" >
+
+<!ENTITY acirc "&#x00E2;" >
+
+<!ENTITY Acirc "&#x00C2;" >
+
+<!ENTITY agrave "&#x00E0;" >
+
+<!ENTITY Agrave "&#x00C0;" >
+
+<!ENTITY aring "&#x00E5;" >
+
+<!ENTITY Aring "&#x00C5;" >
+
+<!ENTITY atilde "&#x00E3;" >
+
+<!ENTITY Atilde "&#x00C3;" >
+
+<!ENTITY auml "&#x00E4;" >
+
+<!ENTITY Auml "&#x00C4;" >
+
+<!ENTITY aelig "&#x00E6;" >
+
+<!ENTITY AElig "&#x00C6;" >
+
+<!ENTITY ccedil "&#x00E7;" >
+
+<!ENTITY Ccedil "&#x00C7;" >
+
+<!ENTITY eth "&#x00F0;" >
+
+<!ENTITY ETH "&#x00D0;" >
+
+<!ENTITY eacute "&#x00E9;" >
+
+<!ENTITY Eacute "&#x00C9;" >
+
+<!ENTITY ecirc "&#x00EA;" >
+
+<!ENTITY Ecirc "&#x00CA;" >
+
+<!ENTITY egrave "&#x00E8;" >
+
+<!ENTITY Egrave "&#x00C8;" >
+
+<!ENTITY euml "&#x00EB;" >
+
+<!ENTITY Euml "&#x00CB;" >
+
+<!ENTITY iacute "&#x00ED;" >
+
+<!ENTITY Iacute "&#x00CD;" >
+
+<!ENTITY icirc "&#x00EE;" >
+
+<!ENTITY Icirc "&#x00CE;" >
+
+<!ENTITY igrave "&#x00EC;" >
+
+<!ENTITY Igrave "&#x00CC;" >
+
+<!ENTITY iuml "&#x00EF;" >
+
+<!ENTITY Iuml "&#x00CF;" >
+
+<!ENTITY ntilde "&#x00F1;" >
+
+<!ENTITY Ntilde "&#x00D1;" >
+
+<!ENTITY oacute "&#x00F3;" >
+
+<!ENTITY Oacute "&#x00D3;" >
+
+<!ENTITY ocirc "&#x00F4;" >
+
+<!ENTITY Ocirc "&#x00D4;" >
+
+<!ENTITY ograve "&#x00F2;" >
+
+<!ENTITY Ograve "&#x00D2;" >
+
+<!ENTITY oslash "&#x00F8;" >
+
+<!ENTITY Oslash "&#x00D8;" >
+
+<!ENTITY otilde "&#x00F5;" >
+
+<!ENTITY Otilde "&#x00D5;" >
+
+<!ENTITY ouml "&#x00F6;" >
+
+<!ENTITY Ouml "&#x00D6;" >
+
+<!ENTITY szlig "&#x00DF;" >
+
+<!ENTITY thorn "&#x00FE;" >
+
+<!ENTITY THORN "&#x00DE;" >
+
+<!ENTITY uacute "&#x00FA;" >
+
+<!ENTITY Uacute "&#x00DA;" >
+
+<!ENTITY ucirc "&#x00DB;" >
+
+<!ENTITY Ucirc "&#x00FB;" >
+
+<!ENTITY ugrave "&#x00F9;" >
+
+<!ENTITY Ugrave "&#x00D9;" >
+
+<!ENTITY uuml "&#x00FC;" >
+
+<!ENTITY Uuml "&#x00DC;" >
+
+<!ENTITY yacute "&#x00FD;" >
+
+<!ENTITY Yacute "&#x00DD;" >
+
+<!ENTITY yuml "&#x00FF;" >
+
+<!ENTITY abreve "&#x0103;" >
+
+<!ENTITY Abreve "&#x0102;" >
+
+<!ENTITY amacr "&#x0101;" >
+
+<!ENTITY Amacr "&#x0100;" >
+
+<!ENTITY aogon "&#x0105;" >
+
+<!ENTITY Aogon "&#x0104;" >
+
+<!ENTITY cacute "&#x0107;" >
+
+<!ENTITY Cacute "&#x0106;" >
+
+<!ENTITY ccaron "&#x010D;" >
+
+<!ENTITY Ccaron "&#x010C;" >
+
+<!ENTITY ccirc "&#x0109;" >
+
+<!ENTITY Ccirc "&#x0108;" >
+
+<!ENTITY cdot "&#x010B;" >
+
+<!ENTITY Cdot "&#x010A;" >
+
+<!ENTITY dcaron "&#x010F;" >
+
+<!ENTITY Dcaron "&#x010E;" >
+
+<!ENTITY dstrok "&#x0111;" >
+
+<!ENTITY Dstrok "&#x0110;" >
+
+<!ENTITY ecaron "&#x011B;" >
+
+<!ENTITY Ecaron "&#x011A;" >
+
+<!ENTITY edot "&#x0117;" >
+
+<!ENTITY Edot "&#x0116;" >
+
+<!ENTITY emacr "&#x0113;" >
+
+<!ENTITY Emacr "&#x0112;" >
+
+<!ENTITY eogon "&#x0119;" >
+
+<!ENTITY Eogon "&#x0118;" >
+
+<!ENTITY gacute "&#x01F5;" >
+
+<!ENTITY gbreve "&#x011F;" >
+
+<!ENTITY Gbreve "&#x011E;" >
+
+<!ENTITY Gcedil "&#x0122;" >
+
+<!ENTITY gcirc "&#x011D;" >
+
+<!ENTITY Gcirc "&#x011C;" >
+
+<!ENTITY gdot "&#x0121;" >
+
+<!ENTITY Gdot "&#x0120;" >
+
+<!ENTITY hcirc "&#x0125;" >
+
+<!ENTITY Hcirc "&#x0124;" >
+
+<!ENTITY hstrok "&#x0127;" >
+
+<!ENTITY Hstrok "&#x0126;" >
+
+<!ENTITY Idot "&#x0130;" >
+
+<!ENTITY Imacr "&#x012A;" >
+
+<!ENTITY imacr "&#x012B;" >
+
+<!ENTITY ijlig "&#x0133;" >
+
+<!ENTITY IJlig "&#x0132;" >
+
+<!ENTITY inodot "&#x0131;" >
+
+<!ENTITY iogon "&#x012F;" >
+
+<!ENTITY Iogon "&#x012E;" >
+
+<!ENTITY itilde "&#x0129;" >
+
+<!ENTITY Itilde "&#x0128;" >
+
+<!ENTITY jcirc "&#x0135;" >
+
+<!ENTITY Jcirc "&#x0134;" >
+
+<!ENTITY kcedil "&#x0137;" >
+
+<!ENTITY Kcedil "&#x0136;" >
+
+<!ENTITY kgreen "&#x0138;" >
+
+<!ENTITY lacute "&#x013A;" >
+
+<!ENTITY Lacute "&#x0139;" >
+
+<!ENTITY lcaron "&#x013E;" >
+
+<!ENTITY Lcaron "&#x013D;" >
+
+<!ENTITY lcedil "&#x013C;" >
+
+<!ENTITY Lcedil "&#x013B;" >
+
+<!ENTITY lmidot "&#x0140;" >
+
+<!ENTITY Lmidot "&#x013F;" >
+
+<!ENTITY lstrok "&#x0142;" >
+
+<!ENTITY Lstrok "&#x0141;" >
+
+<!ENTITY nacute "&#x0144;" >
+
+<!ENTITY Nacute "&#x0143;" >
+
+<!ENTITY eng "&#x014B;" >
+
+<!ENTITY ENG "&#x014A;" >
+
+<!ENTITY napos "&#x0149;" >
+
+<!ENTITY ncaron "&#x0148;" >
+
+<!ENTITY Ncaron "&#x0147;" >
+
+<!ENTITY ncedil "&#x0146;" >
+
+<!ENTITY Ncedil "&#x0145;" >
+
+<!ENTITY odblac "&#x0151;" >
+
+<!ENTITY Odblac "&#x0150;" >
+
+<!ENTITY Omacr "&#x014C;" >
+
+<!ENTITY omacr "&#x014D;" >
+
+<!ENTITY oelig "&#x0153;" >
+
+<!ENTITY OElig "&#x0152;" >
+
+<!ENTITY racute "&#x0155;" >
+
+<!ENTITY Racute "&#x0154;" >
+
+<!ENTITY rcaron "&#x0159;" >
+
+<!ENTITY Rcaron "&#x0158;" >
+
+<!ENTITY rcedil "&#x0157;" >
+
+<!ENTITY Rcedil "&#x0156;" >
+
+<!ENTITY sacute "&#x015B;" >
+
+<!ENTITY Sacute "&#x015A;" >
+
+<!ENTITY scaron "&#x0161;" >
+
+<!ENTITY Scaron "&#x0160;" >
+
+<!ENTITY scedil "&#x015F;" >
+
+<!ENTITY Scedil "&#x015E;" >
+
+<!ENTITY scirc "&#x015D;" >
+
+<!ENTITY Scirc "&#x015C;" >
+
+<!ENTITY tcaron "&#x0165;" >
+
+<!ENTITY Tcaron "&#x0164;" >
+
+<!ENTITY tcedil "&#x0163;" >
+
+<!ENTITY Tcedil "&#x0162;" >
+
+<!ENTITY tstrok "&#x0167;" >
+
+<!ENTITY Tstrok "&#x0166;" >
+
+<!ENTITY ubreve "&#x016D;" >
+
+<!ENTITY Ubreve "&#x016C;" >
+
+<!ENTITY udblac "&#x0171;" >
+
+<!ENTITY Udblac "&#x0170;" >
+
+<!ENTITY umacr "&#x016B;" >
+
+<!ENTITY Umacr "&#x016A;" >
+
+<!ENTITY uogon "&#x0173;" >
+
+<!ENTITY Uogon "&#x0172;" >
+
+<!ENTITY uring "&#x016F;" >
+
+<!ENTITY Uring "&#x016E;" >
+
+<!ENTITY utilde "&#x0169;" >
+
+<!ENTITY Utilde "&#x0168;" >
+
+<!ENTITY wcirc "&#x0175;" >
+
+<!ENTITY Wcirc "&#x0174;" >
+
+<!ENTITY ycirc "&#x0177;" >
+
+<!ENTITY Ycirc "&#x0176;" >
+
+<!ENTITY Yuml "&#x0178;" >
+
+<!ENTITY zacute "&#x017A;" >
+
+<!ENTITY Zacute "&#x0179;" >
+
+<!ENTITY zcaron "&#x017E;" >
+
+<!ENTITY Zcaron "&#x017D;" >
+
+<!ENTITY zdot "&#x017C;" >
+
+<!ENTITY Zdot "&#x017B;" >
+
+<!ENTITY agr "&#x03B1;" >
+
+<!ENTITY Agr "&#x0391;" >
+
+<!ENTITY bgr "&#x03B2;" >
+
+<!ENTITY Bgr "&#x0392;" >
+
+<!ENTITY ggr "&#x03B3;" >
+
+<!ENTITY Ggr "&#x0393;" >
+
+<!ENTITY dgr "&#x03B4;" >
+
+<!ENTITY Dgr "&#x0394;" >
+
+<!ENTITY egr "&#x03B5;" >
+
+<!ENTITY Egr "&#x0395;" >
+
+<!ENTITY zgr "&#x03B6;" >
+
+<!ENTITY Zgr "&#x0396;" >
+
+<!ENTITY eegr "&#x03B7;" >
+
+<!ENTITY EEgr "&#x0397;" >
+
+<!ENTITY thgr "&#x03B8;" >
+
+<!ENTITY THgr "&#x0398;" >
+
+<!ENTITY igr "&#x03B9;" >
+
+<!ENTITY Igr "&#x0399;" >
+
+<!ENTITY kgr "&#x03BA;" >
+
+<!ENTITY Kgr "&#x039A;" >
+
+<!ENTITY lgr "&#x03BB;" >
+
+<!ENTITY Lgr "&#x039B;" >
+
+<!ENTITY mgr "&#x03BC;" >
+
+<!ENTITY Mgr "&#x039C;" >
+
+<!ENTITY ngr "&#x03BD;" >
+
+<!ENTITY Ngr "&#x039D;" >
+
+<!ENTITY xgr "&#x03BE;" >
+
+<!ENTITY Xgr "&#x039E;" >
+
+<!ENTITY ogr "&#x03BF;" >
+
+<!ENTITY Ogr "&#x039F;" >
+
+<!ENTITY pgr "&#x03C0;" >
+
+<!ENTITY Pgr "&#x03A0;" >
+
+<!ENTITY rgr "&#x03C1;" >
+
+<!ENTITY Rgr "&#x03A1;" >
+
+<!ENTITY sgr "&#x03C3;" >
+
+<!ENTITY Sgr "&#x03A3;" >
+
+<!ENTITY sfgr "&#x03C2;" >
+
+<!ENTITY tgr "&#x03C4;" >
+
+<!ENTITY Tgr "&#x03A4;" >
+
+<!ENTITY ugr "&#x03C5;" >
+
+<!ENTITY Ugr "&#x03A5;" >
+
+<!ENTITY phgr "&#x03C6;" >
+
+<!ENTITY PHgr "&#x03A6;" >
+
+<!ENTITY khgr "&#x03C7;" >
+
+<!ENTITY KHgr "&#x03A7;" >
+
+<!ENTITY psgr "&#x03C8;" >
+
+<!ENTITY PSgr "&#x03A8;" >
+
+<!ENTITY ohgr "&#x03C9;" >
+
+<!ENTITY OHgr "&#x03A9;" >
+
+<!ENTITY aacgr "&#x03AC;" >
+
+<!ENTITY Aacgr "&#x0386;" >
+
+<!ENTITY eacgr "&#x03AD;" >
+
+<!ENTITY Eacgr "&#x0388;" >
+
+<!ENTITY eeacgr "&#x03AE;" >
+
+<!ENTITY EEacgr "&#x0389;" >
+
+<!ENTITY idigr "&#x03CA;" >
+
+<!ENTITY Idigr "&#x03AA;" >
+
+<!ENTITY iacgr "&#x03AF;" >
+
+<!ENTITY Iacgr "&#x038A;" >
+
+<!ENTITY idiagr "&#x0390;" >
+
+<!ENTITY oacgr "&#x03CC;" >
+
+<!ENTITY Oacgr "&#x038C;" >
+
+<!ENTITY udigr "&#x03CB;" >
+
+<!ENTITY Udigr "&#x03AB;" >
+
+<!ENTITY uacgr "&#x03CD;" >
+
+<!ENTITY Uacgr "&#x038E;" >
+
+<!ENTITY udiagr "&#x03B0;" >
+
+<!ENTITY ohacgr "&#x03CE;" >
+
+<!ENTITY OHacgr "&#x038F;" >
+
+<!ENTITY half "&#x00BD;" >
+
+<!ENTITY frac12 "&#x00BD;" >
+
+<!ENTITY frac14 "&#x00BC;" >
+
+<!ENTITY frac34 "&#x00BE;" >
+
+<!ENTITY frac18 "&#x215B;" >
+
+<!ENTITY frac38 "&#x215C;" >
+
+<!ENTITY frac58 "&#x215D;" >
+
+<!ENTITY frac78 "&#x215E;" >
+
+<!ENTITY sup1 "&#x00B9;" >
+
+<!ENTITY sup2 "&#x00B2;" >
+
+<!ENTITY sup3 "&#x00B3;" >
+
+<!ENTITY plus "&#x002B;" >
+
+<!ENTITY plusmn "&#x00B1;" >
+
+<!ENTITY equals "&#x003D;" >
+
+<!ENTITY gt "&#x003E;" >
+
+<!ENTITY divide "&#x00F7;" >
+
+<!ENTITY times "&#x00D7;" >
+
+<!ENTITY curren "&#x00A4;" >
+
+<!ENTITY pound "&#x00A3;" >
+
+<!ENTITY dollar "&#x0024;" >
+
+<!ENTITY cent "&#x00A2;" >
+
+<!ENTITY yen "&#x00A5;" >
+
+<!ENTITY num "&#x0023;" >
+
+<!ENTITY percnt "&#x0025;" >
+
+<!ENTITY ast "&#x2217;" >
+
+<!ENTITY commat "&#x0040;" >
+
+<!ENTITY lsqb "&#x005B;" >
+
+<!ENTITY bsol "&#x005C;" >
+
+<!ENTITY rsqb "&#x005D;" >
+
+<!ENTITY lcub "&#x007B;" >
+
+<!ENTITY horbar "&#x2015;" >
+
+<!ENTITY verbar "&#x007C;" >
+
+<!ENTITY rcub "&#x007D;" >
+
+<!ENTITY micro "&#x00B5;" >
+
+<!ENTITY ohm "&#x2126;" >
+
+<!ENTITY deg "&#x00B0;" >
+
+<!ENTITY ordm "&#x00BA;" >
+
+<!ENTITY ordf "&#x00AA;" >
+
+<!ENTITY sect "&#x00A7;" >
+
+<!ENTITY para "&#x00B6;" >
+
+<!ENTITY middot "&#x00B7;" >
+
+<!ENTITY larr "&#x2190;" >
+
+<!ENTITY rarr "&#x2192;" >
+
+<!ENTITY uarr "&#x2191;" >
+
+<!ENTITY darr "&#x2193;" >
+
+<!ENTITY copy "&#x00A9;" >
+
+<!ENTITY reg "&#x00AF;" >
+
+<!ENTITY trade "&#x2122;" >
+
+<!ENTITY brvbar "&#x00A6;" >
+
+<!ENTITY not "&#x00AC;" >
+
+<!ENTITY sung "&#x2669;" >
+
+<!ENTITY excl "&#x0021;" >
+
+<!ENTITY iexcl "&#x00A1;" >
+
+<!ENTITY quot "&#x0022;" >
+
+<!ENTITY apos "&#x0027;" >
+
+<!ENTITY lpar "&#x0028;" >
+
+<!ENTITY rpar "&#x0029;" >
+
+<!ENTITY comma "&#x002C;" >
+
+<!ENTITY lowbar "&#x005F;" >
+
+<!ENTITY hyphen "&#xE4F8;" >
+
+<!ENTITY period "&#x002E;" >
+
+<!ENTITY sol "&#x002F;" >
+
+<!ENTITY colon "&#x003A;" >
+
+<!ENTITY semi "&#x003B;" >
+
+<!ENTITY quest "&#x003F;" >
+
+<!ENTITY iquest "&#x00BF;" >
+
+<!ENTITY laquo "&#x00AB;" >
+
+<!ENTITY raquo "&#x00BB;" >
+
+<!ENTITY lsquo "&#x2018;" >
+
+<!ENTITY rsquo "&#x2019;" >
+
+<!ENTITY ldquo "&#x201C;" >
+
+<!ENTITY rdquo "&#x201D;" >
+
+<!ENTITY nbsp "&#x00A0;" >
+
+<!ENTITY shy "&#x00AD;" >
+
+<!ENTITY times "&#x00D7;" >
 

@@ -1009,17 +1009,17 @@
 
 
 <!ATTLIST mark 
-	type CDATA #REQUIRED >
-
-
-<!ATTLIST abbr 
-	cert (certain | possible) "certain" >
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	n CDATA #IMPLIED
+	lang IDREF #IMPLIED
+	rend CDATA #IMPLIED
+	type CDATA #IMPLIED >
 
 
 <!ATTLIST add 
 	place (inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed) #IMPLIED
 	resp CDATA #IMPLIED
-	cert (certain | possible) "certain"
 	hand CDATA #IMPLIED >
 
 
@@ -1032,8 +1032,20 @@
 	status (free | unknown | restricted) "unknown" >
 
 
+<!ATTLIST bibl 
+	type CDATA #IMPLIED >
+
+
+<!ATTLIST biblFull 
+	type CDATA #IMPLIED >
+
+
 <!ATTLIST biblScope 
 	type (volume | pages | chapter | parts | fascicle | numbers | plates | issue) #IMPLIED >
+
+
+<!ATTLIST biblStruct 
+	type CDATA #IMPLIED >
 
 
 <!ATTLIST bloc 
@@ -1057,11 +1069,11 @@
 
 
 <!ATTLIST gap 
-	reason (ellipsis | illegible | lost | omitted) #REQUIRED
+	reason (ellipsis | illegible | lost | omitted) #IMPLIED
 	unit CDATA #IMPLIED
+	dim CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	hand CDATA #IMPLIED
-	cert (certain | possible) "certain" >
+	hand CDATA #IMPLIED >
 
 
 <!ATTLIST geog 
@@ -1090,9 +1102,7 @@
 
 
 <!ATTLIST measure 
-	dim (height | width | depth | none) "none"
-	type (length | weight) "length"
-	value CDATA #REQUIRED >
+	dim (height | width | depth | none) "none" >
 
 
 <!ATTLIST note 
@@ -1115,26 +1125,16 @@
 	full (yes | abb | init) "yes" >
 
 
-<!ATTLIST seg 
-	cert (certain | possible) "certain" >
-
-
 <!ATTLIST settlement 
 	full (yes | abb | init) "yes" >
 
 
-<!ATTLIST sic 
-	cert (certain | possible) "certain" >
-
-
 <!ATTLIST space 
 	dim (horizontal | vertical) "horizontal"
-	unit CDATA #IMPLIED
-	cert (certain | possible) "certain" >
+	unit CDATA #IMPLIED >
 
 
 <!ATTLIST supplied 
-	cert (certain | possible) "certain"
 	hand CDATA #IMPLIED
 	reason (lost | omitted | subaudible | explanation) #REQUIRED >
 
@@ -1146,7 +1146,6 @@
 
 <!ATTLIST unclear 
 	reason (damage | execution) #IMPLIED
-	cert (certain | possible) "certain"
 	hand CDATA #IMPLIED
 	resp CDATA #IMPLIED >
 

@@ -1,8 +1,24 @@
 <!-- EpiDoc-specific TEI customization file (entities)
-     tei-epidoc-ext.ent
+     Copyright (C) 2002  Tom Elliott, John Lavagnino, Jessica Ratcliff, Gabriel Bodard
+      
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
+      
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+      
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+     
+     Filename: tei-epidoc-ext.ent
+     
      Must be used with the TEI Pizza Chef and the dtd customization file tei-epidoc-ext.dtd
-     By Tom Elliott, with help from John Lavagnino
-     This is version 1.1 dated 13 August 2002
+     This file was last modified on 17 August 2002 by Tom Elliott
 
      This file has three major sections:
      1: Suppression of TEI standard attribute models that EpiDoc does not use 
@@ -11,7 +27,10 @@
      
      REVISION HISTORY:
      
-     version 1.1 (many thanks to Jessica Ratcliff for identifying these needs)
+     17 August 2002
+        * Added GNU public license
+     
+     13 August 2002 (many thanks to Jessica Ratcliff for identifying these needs)
          Allowed the following elements, to support the Vindolanda Project at CSAD (and everyone else eventually):
              <editionStmt>
                  <edition>
@@ -28,8 +47,7 @@
                  <keywords>
                      NB: <list>, <term> and their descendents were already available
              <pb> (to signify transitions between leaves)
-             <handShift> (mistakenly omitted from earlier version)
-     -->
+             <handShift> (mistakenly omitted from earlier version) -->
 
 
 <!-- *********************************************************************
@@ -49,7 +67,7 @@
 
 <!-- *********************************************************************
      Suppression of standard TEI elements that EpiDoc does not use     
-     ********************************************************************* -->
+//   ********************************************************************* -->
 
 <!ENTITY % actor 'IGNORE' >
 <!ENTITY % addName 'IGNORE' >
