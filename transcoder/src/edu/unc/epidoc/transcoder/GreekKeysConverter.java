@@ -19,12 +19,12 @@ public class GreekKeysConverter extends AbstractConverter {
     
     /** Creates new GreekKeysConverter */
     public GreekKeysConverter() {
+        encoding = "Cp1252";
         reader = new MapReader();
-        reader.load("GreekKeysConverter.properties", ENCODING);
+        reader.load("GreekKeysConverter.properties", encoding);
     }
     
     private MapReader reader;
-    protected static final String ENCODING = "Cp1252";
     
     /** Convert the input String to a String in the desired encoding with
      * characters greater than 127 escaped as XML character entities.

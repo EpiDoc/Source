@@ -20,6 +20,7 @@ public class SPIonicConverter extends AbstractConverter {
     
     /** Creates new SPIonicConverter */
     public SPIonicConverter() {
+        encoding = "US-ASCII";
         sgp = new Properties();
         try {
             Class c = this.getClass();
@@ -30,7 +31,6 @@ public class SPIonicConverter extends AbstractConverter {
     }
     
     private Properties sgp;
-    protected static final String ENCODING = "US-ASCII";
     
     /** Convert the input String to a String in SPIonic with
      * characters greater than 127 escaped as XML character entities.

@@ -21,6 +21,7 @@ public class BetaCodeConverter extends AbstractConverter {
     
     /** Creates new BetaCodeConverter */
     public BetaCodeConverter() {
+        encoding = "US-ASCII";
         bcc = new Properties();
         try {
             Class c = this.getClass();
@@ -30,7 +31,6 @@ public class BetaCodeConverter extends AbstractConverter {
     }
     
     private Properties bcc;
-    protected static final String ENCODING = "US-ASCII";
     
     /** Convert the input String to a String in Beta Code with
      * characters greater than 127 escaped as XML character entities.

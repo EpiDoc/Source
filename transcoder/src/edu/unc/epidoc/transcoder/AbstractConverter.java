@@ -36,7 +36,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
      *
      */
     public String getEncoding() {
-        return new String(ENCODING);
+        return new String(encoding);
     }
     
     /** Provides a means of querying the <CODE>Converter</CODE>'s properties.
@@ -46,7 +46,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
      */
     public Object getProperty(String name) {
         if ("suppress-unrecognized-characters".equals(name))
-            return Boolean.valueOf(unrec.equals(""));
+            return new Boolean(unrec.equals(""));
         else
             return null;
     }
@@ -63,7 +63,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
             if ("true".equals(val))
                 unrec = "";
             else
-                unrec = UNRECOGNIZED_CHAR;
+                unrec = unrecognizedChar;
         }
     }
     
@@ -74,7 +74,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
      *
      */
     public boolean supportsLanguage(String lang) {
-        return LANGUAGE.equals(lang);
+        return language.equals(lang);
     }
     
     protected String[] split(String str) {
@@ -87,9 +87,9 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
         return result;
     }
     
-    protected static final String ENCODING = "UTF8";
-    protected static final String LANGUAGE = "grc";
-    protected static final String UNRECOGNIZED_CHAR = "?";
-    protected String unrec = UNRECOGNIZED_CHAR;
+    protected String encoding = "UTF8";
+    protected String language = "grc";
+    protected String unrecognizedChar = "?";
+    protected String unrec = unrecognizedChar;
     
 }

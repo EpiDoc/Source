@@ -136,7 +136,7 @@ public class TransCoderView extends JFrame {
 		p1.add(transformBufferButton);
 		transformBufferButton.addActionListener(myController);
 		buttonPanel.add(p1);
-
+ 
 		return buttonPanel;
 	}
 }

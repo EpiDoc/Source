@@ -42,7 +42,7 @@ public class TransCoderPlugin extends EBPlugin {
 	 * @param menuItems Used to add menu items
 	 */
 	public void createMenuItems(Vector menuItems) {
-		menuItems.addElement(GUIUtilities.loadMenuItem("TransCoder.display-dialog"));
+		menuItems.addElement(GUIUtilities.loadMenuItem("transcoder.display-dialog"));
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class TransCoderPlugin extends EBPlugin {
 	 */
 	public static void displayDialog(View jeditView) {
 		// If the TransCoder controller is not yet created, then create it
-		if (tcControl == null) {
+		if (tcControl == null) { 
 			tcControl = new TransCoderControl();
 			tcControl.setJeditView(jeditView);
 		}

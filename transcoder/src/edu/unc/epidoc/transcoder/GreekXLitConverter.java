@@ -20,6 +20,8 @@ public class GreekXLitConverter extends AbstractConverter {
     
     /** Creates new GreekXLitConverter */
     public GreekXLitConverter() {
+        encoding = "US-ASCII";
+        unrecognizedChar = "";
         sgp = new Properties();
         try {
             Class c = this.getClass();
@@ -30,8 +32,6 @@ public class GreekXLitConverter extends AbstractConverter {
     }
     
     private Properties sgp;
-    protected static final String ENCODING = "US-ASCII";
-    protected static final String UNRECOGNIZED_CHAR = "";
     
     /** Convert the input String to a String in transliterated Greek with
      * characters greater than 127 escaped as XML character entities.

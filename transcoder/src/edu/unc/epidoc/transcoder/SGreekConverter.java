@@ -20,6 +20,8 @@ public class SGreekConverter extends AbstractConverter {
     
     /** Creates new SGreekConverter */
     public SGreekConverter() {
+        encoding = "Cp1252";
+        unrecognizedChar = String.valueOf('\u0081');
         sgp = new Properties();
         try {
             Class c = this.getClass();
@@ -30,8 +32,6 @@ public class SGreekConverter extends AbstractConverter {
     }
     
     private Properties sgp;
-    protected static final String ENCODING = "Cp1252";
-    protected static final String UNRECOGNIZED_CHAR = String.valueOf('\u0081');
     
     /** Convert the input String to a String in SGreek with
      * characters greater than 127 escaped as XML character entities.
