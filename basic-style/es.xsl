@@ -40,6 +40,7 @@
     </xsl:text>
   			  <h1><xsl:apply-templates select="TEI.2/teiHeader/fileDesc/titleStmt/title"/></h1>
   			  <xsl:apply-templates select="TEI.2/text/body/div"/>
+			  <xsl:call-template name="enumerateCorrections"/>
   			</xsl:element>
 			</body>
 		</html>
@@ -49,6 +50,7 @@
   <xsl:include href="es_ab.xsl"/>
   <xsl:include href="es_abbr.xsl"/>
   <xsl:include href="es_app.xsl"/>
+  <xsl:include href="es_corr.xsl"/>
   <xsl:include href="es_div_bibliography.xsl"/>
   <xsl:include href="es_div_description.xsl"/>
   <xsl:include href="es_div_edition.xsl"/>  
