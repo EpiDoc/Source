@@ -32,6 +32,7 @@ public class BetaCodeConverter implements Converter {
     private Properties bcc;
     private StringBuffer strb = new StringBuffer();
     private static final String ENCODING = "ASCII";
+    private static final String LANGUAGE = "grc";
     
     public String convertToCharacterEntity(String in) {
         String out;
@@ -94,13 +95,18 @@ public class BetaCodeConverter implements Converter {
         return result;
     }
     
-    public String getProperty(String name) {
-        if (name.equals("ENCODING"))
-            return new String(ENCODING);
+    public Object getProperty(String name) {
         return null;
     }
     
-    public void setProperty(String name, String param) {
+    public void setProperty(String name, Object value) {
     }
     
+    public String getEncoding() {
+        return new String(ENCODING);
+    }
+    
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
+    }
 }
