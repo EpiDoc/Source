@@ -5,13 +5,13 @@
     doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" />
 
   <!-- variables to control processing -->
-  <xsl:variable name="lineInterval">2</xsl:variable>
+  <xsl:variable name="lineInterval">5</xsl:variable>
     <!-- controls line numbering: a number will be printed every $lineInterval lines -->
   <xsl:variable name="tabWidth">2</xsl:variable>
     <!-- number of spaces used for tab stops in indenting output -->
   <xsl:variable name="enumerateLimitHyphen">5</xsl:variable>
   <xsl:variable name="enumerateLimitDot">5</xsl:variable>
-  <xsl:variable name="cssPath">../style/main.css</xsl:variable>
+  <xsl:variable name="cssPath">main.css</xsl:variable>
     
   <!-- ***************************************************************************************************************** -->
   <!-- *** ROOT TEMPLATE *********************************************************************************************** -->
@@ -55,6 +55,7 @@
   <xsl:include href="es_div_history.xsl"/>
   <xsl:include href="es_div_metadata.xsl"/>
   <xsl:include href="es_div_translation.xsl"/>
+  <xsl:include href="es_expan.xsl"/>
   <xsl:include href="es_figure.xsl"/>
   <xsl:include href="es_foreign.xsl"/>
   <xsl:include href="es_gap.xsl"/>

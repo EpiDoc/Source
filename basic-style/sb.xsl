@@ -11,7 +11,7 @@
     <!-- number of spaces used for tab stops in indenting output -->
   <xsl:variable name="enumerateLimitHyphen">5</xsl:variable>
   <xsl:variable name="enumerateLimitDot">5</xsl:variable>
-  <xsl:variable name="cssPath">../style/sb.css</xsl:variable>
+  <xsl:variable name="cssPath">sb.css</xsl:variable>
     
   <!-- ***************************************************************************************************************** -->
   <!-- *** ROOT TEMPLATE *********************************************************************************************** -->

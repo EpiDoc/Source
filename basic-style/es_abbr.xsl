@@ -3,7 +3,7 @@
   <xsl:template match="abbr[not(@expan)]">
     <xsl:apply-templates /><xsl:text>(---)</xsl:text>
   </xsl:template>
-		<xsl:template match="abbr[@expan]">
+  <xsl:template match="abbr[@expan]">
 		<xsl:call-template name="resolveAbbr">
 			<xsl:with-param name="str1" select="@expan"/>
 			<xsl:with-param name="str2">

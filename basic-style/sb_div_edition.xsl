@@ -10,7 +10,7 @@
 	    <xsl:call-template name="outputID"/>
       <xsl:call-template name="outputLangAttributes"/>
 	    <xsl:attribute name="class">edition</xsl:attribute>
-	    <xsl:element name="i"><xsl:element name="b"><xsl:apply-templates select="node()[name()!='head']"/></xsl:element></xsl:element>
+	    <xsl:apply-templates select="node()[name()!='head']"/>
       <xsl:call-template name="utilIndent"><xsl:with-param name="indentSpaces" select="($divlevel+2)*$tabWidth"/></xsl:call-template>
 	  </xsl:element>
     <xsl:text>
