@@ -7,29 +7,52 @@
 
 package edu.unc.epidoc.transcoder;
 
-/**
- *
- * @author  Hugh A. Cayless
- * @version 
- *
- * A Converter's function is to take a character or the name 
- * of a character as input and return that character in the 
- * desired encoding. If the result encoding does not contain 
+/** A Converter's function is to take a character or the name
+ * of a character as input and return that character in the
+ * desired encoding. If the result encoding does not contain
  * the named character, then the converter will return the
  * character it is passed.
+ * @author Hugh A. Cayless (hcayless@email.unc.edu)
+ * @version 0.5
  */
 public interface Converter {
     
-    public String convertToString(String in); 
+    /** Convert the input String to a String in the desired encoding.
+     * @param in The String to be converted.
+     * @return The converted String.
+     */    
+    public String convertToString(Parser in); 
     
-    public String convertToCharacterEntity(String in);     
+    /** Convert the input String to a String in the desired encoding with
+     * characters greater than 127 escaped as XML character entities.
+     * @param in The String to be converted
+     * @return The converted String.
+     */    
+    public String convertToCharacterEntities(Parser in);     
     
+    /** Provides a mechanism for setting properties that alter the
+     * processing behavior of the <CODE>Converter</CODE>.
+     * @param name The property name.
+     * @param value The property value.
+     */    
     public void setProperty(String name, Object value);
     
+    /** Provides a means of querying the <CODE>Converter</CODE>'s properties.
+     * @param name The name of the property to be queried.
+     * @return The value of the property.
+     */    
     public Object getProperty(String name);
     
+    /** Returns the encoding method supported by this <CODE>Converter</CODE>.
+     * @return The encoding.
+     */    
     public String getEncoding();
     
+    /** Provides a method of checking whether the Converter supports a
+     * particular language.
+     * @param lang The language code.
+     * @return Whether the language is supported.
+     */    
     public boolean supportsLanguage(String lang);
 
 }
