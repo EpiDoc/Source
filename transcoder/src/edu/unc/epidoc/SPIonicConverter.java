@@ -6,9 +6,9 @@
  * See http://www.gnu.org/licenses/lgpl.html for details.
  */
 
-package edu.unc.epidoc; 
+package edu.unc.epidoc;
 
-import java.io.*; 
+import java.io.*;
 import java.lang.*;
 import java.util.Properties;
 import java.util.StringTokenizer;
@@ -19,38 +19,35 @@ import java.util.StringTokenizer;
  * @version
  */
 public class SPIonicConverter implements Converter {
-    
+
     /** Creates new SPIonicConverter */
     public SPIonicConverter() {
-        bcc = new Properties();
+        sgp = new Properties();
         try {
             Class c = this.getClass();
-            bcc.load(c.getResourceAsStream("SPIonicConverter.properties"));
-        } catch (Exception e) {
+            sgp.load(c.getResourceAsStream("SPIonicConverter.properties"));
+        }
+        catch (Exception e) {
         }
     }
-    
-    private Properties bcc;
+
+    private Properties sgp;
     StringBuffer strb = new StringBuffer();
-    
+    private static final String ENCODING = "ASCII";
+    private static final String LANGUAGE = "grc";
+
     public String convertToCharacterEntity(String in) {
         String out;
         if (in.indexOf('_')>0 && in.length()>1) {
             strb.delete(0,strb.length());
             String[] elements = split(in);
-            String temp = bcc.getProperty(elements[0]);
-            if (temp.charAt(0) == '*') {
-                strb.append(temp.charAt(0));
-                for (int i=1;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-                strb.append(temp.substring(1));
-            } else {
-                for (int i=0;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-            }
+            String temp = sgp.getProperty(elements[0]);
+            for (int i=0;i<elements.length;i++)
+               strb.append(sgp.getProperty(elements[i]));
             out = strb.toString();
-        } else
-            out = bcc.getProperty(in, in);
+        }
+        else
+            out = sgp.getProperty(in, in);
         strb.delete(0,strb.length());
         char[] chars = out.toCharArray();
         for (int i=0;i<chars.length;i++) {
@@ -58,32 +55,55 @@ public class SPIonicConverter implements Converter {
                 strb.append("&#");
                 strb.append(Character.getNumericValue(chars[i]));
                 strb.append(";");
-            } else {
+            }
+            else {
                 strb.append(chars[i]);
             }
         }
         return strb.toString();
     }
-    
+
     public String convertToString(String in) {
         if (in.indexOf('_')>0 && in.length()>1) {
-            strb.delete(0,strb.length());
-            String[] elements = split(in);
-            String temp = bcc.getProperty(elements[0]);
-            if (temp.charAt(0) == '*') {
-                strb.append(temp.charAt(0));
-                for (int i=1;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-                strb.append(temp.substring(1));
-            } else {
-                for (int i=0;i<elements.length;i++)
-                    strb.append(bcc.getProperty(elements[i]));
-            }
-            return strb.toString();
-        } else
-            return bcc.getProperty(in, in);
+	    String temp;
+	    String narrowWide;
+	    String[] elements = split(in);
+	    strb.delete(0,strb.length());
+	    if (isCharacterNarrow(elements[0])) 
+		narrowWide = "narrow";
+	    else
+		narrowWide = "wide";
+	    temp = elements[1];
+	    if (elements.length == 2) {
+		temp += "_" + narrowWide;
+		if (sgp.getProperty(temp) != null) {
+		    strb.append(sgp.getProperty(elements[0]) + sgp.getProperty(temp));
+		    for (int i=2;i<elements.length;i++)
+			strb.append(sgp.getProperty(elements[i]));
+		}
+		else {
+		    for (int i=0; i<elements.length;i++)
+			strb.append(sgp.getProperty(elements[i]));
+		}
+	    }
+	    else {
+		temp += "_" + elements[2] + "_" + narrowWide;
+		if (sgp.getProperty(temp) != null) {
+		    strb.append(sgp.getProperty(elements[0]) + sgp.getProperty(temp));
+		    for (int i=3;i<elements.length;i++)
+			strb.append(sgp.getProperty(elements[i]));
+		}
+		else {
+		    for (int i=0; i<elements.length;i++)
+			strb.append(sgp.getProperty(elements[i]));
+		}
+	    }
+	    return strb.toString();
+	}
+        else
+            return sgp.getProperty(in, in);
     }
-    
+
     private String[] split(String str) {
         StringTokenizer st = new StringTokenizer(str, "_");
         int tokenCount = st.countTokens();
@@ -93,11 +113,27 @@ public class SPIonicConverter implements Converter {
         }
         return result;
     }
-    
-    public void getParameter(String name) {
+
+    private boolean isCharacterNarrow(String ch) {
+	if (ch.equals("iota") || ch.equals("epsilon")) {
+	    return true;
+	}
+	else
+	    return false;
+    }
+  
+    public Object getProperty(String name) {
+        return null;
     }
     
-    public void setParameter(String name, String param) {
+    public void setProperty(String name, Object value) {
+    }
+
+    public String getEncoding() {
+        return new String(ENCODING);
     }
     
+    public boolean supportsLanguage(String lang) {
+        return LANGUAGE.equals(lang);
+    }
 }
