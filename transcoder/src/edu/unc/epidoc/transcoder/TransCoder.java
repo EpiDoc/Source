@@ -241,7 +241,14 @@ public class TransCoder {
         return conv.convertToString(p);
     }
     
-    public void write(InputStream in, OutputStream out) throws FileNotFoundException, IOException, UnsupportedEncodingException {
+    /** Stream the result from an <CODE>InputStream</CODE> to an <CODE>OutputStream</CODE>.
+     * This method should work with any type of encoding.
+     * @param in The InputStream to be transcoded.
+     * @param out The OutputStream to be written.
+     * @throws IOException if there is a problem reading the <CODE>File</CODE>.
+     * @throws UnsupportedEncodingException if the encoding used by the Parser isn't supported.
+     */
+    public void write(InputStream in, OutputStream out) throws IOException, UnsupportedEncodingException {
         BufferedReader br = new BufferedReader(
                                 new InputStreamReader(in, p.getEncoding()));
         PrintStream output = new PrintStream(new BufferedOutputStream(out));
