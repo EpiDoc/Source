@@ -27,7 +27,9 @@ public class GreekKeysConverter implements Converter {
     
     private MapReader reader;
     private StringBuffer strb = new StringBuffer();
-    private static final String ENCODING = "Cp1252";
+    /* Hack alert: The font isn't really ISO 8859-1, but using Cp1252
+     * causes some characters not to be properly converted. */
+    private static final String ENCODING = "ISO8859_1";
     private static final String LANGUAGE = "grc";
     private static final String UNRECOGNIZED_CHAR = "?";
     private String unrec = UNRECOGNIZED_CHAR;
@@ -49,34 +51,51 @@ public class GreekKeysConverter implements Converter {
         return strb.toString();
     }
     
-    private String doConversion(String in) {
-        String result = reader.get(in);
-        
-        if (result != null) {
-            try {
-                result = new String(result.getBytes(ENCODING));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            return result;
+    private byte[] doConversion(String in) {
+        String temp = reader.get(in);
+        byte[] result = null;
+        if (temp != null) {
+            if (temp.length() > 1) {
+                try {
+                    int i = Integer.parseInt(temp, 16);
+                    result = new byte[] {(byte)i};
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    result = unrec.getBytes();
+                }
+            } else
+                result = temp.getBytes();
+        } else {
+            if (in.length() > 1)
+                result = unrec.getBytes();
+            else
+                result = in.getBytes();
         }
-        if (in.length() > 1)
-            return unrec;
-        else
-            return in;
+        if ("elisionMark".equals(in))
+            System.out.println("elision: "+result.length);
+        return result;
     }
     
     public String convertToString(String in) {
+        
+        byte[] result = null;
+        strb.delete(0, strb.length());
         char[] chars = in.toCharArray();
-        String result = null;
         if (Character.isUpperCase(chars[0]) && in.indexOf('_') > 0) {
             String letter = in.substring(0, in.indexOf('_'));
             String diacriticals = in.substring(in.indexOf('_') + 1);
-            result = doConversion(diacriticals);
-            result += doConversion(letter);
+            byte[] d = doConversion(diacriticals);
+            byte[] l = doConversion(letter);
+            result = new byte[d.length + l.length];
+            System.arraycopy(d, 0, result, 0, d.length);
+            System.arraycopy(l, 0, result, d.length, l.length);
         } else
             result = doConversion(in);
-        return result;
+        try {
+            return new String(result, ENCODING);
+        } catch (UnsupportedEncodingException e) {
+            return null;
+        }
     }
     
     public Object getProperty(String name) {
