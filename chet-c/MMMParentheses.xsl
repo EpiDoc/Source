@@ -5,9 +5,10 @@
    <!--parentheses-->
   <xsl:template match="parentheses">
 	<xsl:choose>
-		<xsl:when test="starts-with(., 'i')"><supplied reason="explanation"><xsl:value-of select="normalize-space(substring-after(., 'e'))"/></supplied></xsl:when>
-		<xsl:when test="starts-with(., 'scil')"><supplied reason="subaudible"><xsl:value-of select="normalize-space(substring-after(., 'scil'))"/></supplied></xsl:when>
+		<xsl:when test="idEst"><supplied reason="explanation"><xsl:value-of select="normalize-space()"  /></supplied></xsl:when>
+		<xsl:when test="scil"><supplied reason="subaudible"><xsl:value-of select="normalize-space()" /></supplied></xsl:when>
 		<xsl:when test="vacat"><xsl:call-template name="vacat"/></xsl:when>
+        <xsl:otherwise><expan><xsl:apply-templates /></expan></xsl:otherwise>
 	</xsl:choose>
   </xsl:template>
   
