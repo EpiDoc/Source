@@ -38,6 +38,8 @@
 <!-- CURLY BRACES -->
 <xsl:template match="curlyBraces"><sic corr=""><xsl:apply-templates/></sic></xsl:template>
 
+<xsl:template match="damage"><damage><xsl:apply-templates/></damage></xsl:template>
+
 <!-- DOUBLE ANGLE BRACKETS -->
 <xsl:include href="MMMDoubleAngleBrackets.xsl"/>
 
