@@ -4,7 +4,7 @@
  * Created on October 27, 2002, 3:39 PM
  */
 
-package edu.unc.epidoc.cocoon;
+package edu.unc.epidoc.transcoder.cocoon;
 
 import edu.unc.epidoc.*;
 import java.util.Stack;
