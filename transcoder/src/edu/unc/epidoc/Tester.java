@@ -77,6 +77,7 @@ public class Tester extends javax.swing.JFrame {
         jMenuResult = new javax.swing.JMenu();
         jMenuFont = new javax.swing.JMenu();
 
+        setTitle("TransCoder Test Form");
         setFont(new java.awt.Font("Arial", 0, 12));
         setName("testerFrame");
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -98,8 +99,8 @@ public class Tester extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(0, 330, 0, 0);
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 330, 0, 0);
         jPanel1.add(clear, gridBagConstraints);
 
         transform.setText("Transform");
@@ -113,8 +114,8 @@ public class Tester extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
         jPanel1.add(transform, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.SOUTH);
@@ -170,6 +171,12 @@ public class Tester extends javax.swing.JFrame {
         jMenuFile.add(jMenuItemSaveAs);
         jMenuFile.add(jSeparator1);
         jMenuItemExit.setText("Exit");
+        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemExitActionPerformed(evt);
+            }
+        });
+
         jMenuFile.add(jMenuItemExit);
         jMenuBar1.add(jMenuFile);
         jMenuEncodings.setText("Encodings");
@@ -198,6 +205,11 @@ public class Tester extends javax.swing.JFrame {
 
         pack();
     }//GEN-END:initComponents
+
+    private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
+        // Add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         // Add your handling code here:

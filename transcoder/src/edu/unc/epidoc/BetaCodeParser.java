@@ -102,9 +102,9 @@ public class BetaCodeParser implements Parser {
                         escape.append(ch);
                         escape.append(chArray[index]);
                         index++;
-                        strb.append(lookup(escape.toString())+"Fixed");
+                        strb.append(lookup(escape.toString()));
                     } else {
-                        if (index >= chArray.length-1 || !Character.isLetter(chArray[index]))
+                        if (index > chArray.length-1 || !Character.isLetter(chArray[index]))
                             strb.append(lookup(String.valueOf(ch)+"2"));
                         else
                             strb.append(lookup(ch));
