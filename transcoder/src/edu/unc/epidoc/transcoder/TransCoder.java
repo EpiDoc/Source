@@ -52,7 +52,7 @@ public class TransCoder {
         setParser(from);
         /** Load the appropriate Converter class */
         setConverter(to);
-    }
+    }    
     
     private void init() {
         Class c = this.getClass();
@@ -167,6 +167,7 @@ public class TransCoder {
         p.setString(in);
         while (p.hasNext()) {
             out.append(conv.convertToString(p.next()));
+            char c = out.charAt(out.length()-1);
         }
         return out.toString();
     }
@@ -187,6 +188,7 @@ public class TransCoder {
         p.setString(strb.toString());
         while (p.hasNext()) {
             String temp = conv.convertToString(p.next());
+//            System.out.println((int)temp.charAt(0));
             out.append(temp);
         }
         return out.toString();
