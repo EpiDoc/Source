@@ -18,7 +18,7 @@
      Filename: tei-epidoc-ext.ent
      
      Must be used with the TEI Pizza Chef and the dtd customization file tei-epidoc-ext.dtd
-     This file was last modified on 04 April 2005 by Gabriel Bodard and Juan Garc&eacute;s
+     This file was last modified on 09 April 2005 by Gabriel Bodard 
 
      This file has three major sections:
      1: Suppression of TEI standard attribute models that EpiDoc does not use 
@@ -26,7 +26,11 @@
      3. EpiDoc-specific character entities 
      
      REVISION HISTORY:
-     4 April 2005
+
+     09 August 2005 (GB)
+      * suppressed standard content model for <unclear>
+
+     4 April 2005  (GB & JG)
       * removed IGNORE <rs> from entity list
 
      25 November 2002
@@ -226,6 +230,7 @@
 <!ENTITY % titlePart 'IGNORE' >
 <!ENTITY % trailer 'IGNORE' >
 <!ENTITY % uncertain 'IGNORE' >
+<!ENTITY % unclear 'IGNORE' >
 <!ENTITY % vAlt 'IGNORE' >
 <!ENTITY % variantEncoding 'IGNORE' >
 <!ENTITY % view 'IGNORE' >

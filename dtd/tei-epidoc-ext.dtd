@@ -28,6 +28,10 @@
      
      REVISION HISTORY:
 
+     09 August 2005
+           (GB)
+         * new content model for <unclear>: can only contain PCDATA or <mark>
+
      04 April 2005
            (GB and JG)
          * made <figure> a little more forgiving (for InsAph compatibility)
@@ -94,6 +98,12 @@
       %a.global;
       %a.seg;
       lemma CDATA #IMPLIED>
+<!ELEMENT unclear 
+	( #PCDATA | mark ) > 
+<!ATTLIST unclear  
+      %a.global;
+      cert CDATA #IMPLIED
+      agent CDATA #IMPLIED>
 
 <!-- *********************************************************************
      EpiDoc-specific attributes. Where they coincide with TEI attribute definitions, these will be binding
@@ -111,7 +121,7 @@
          evaluate (all | one | none) 'all' " >
 <!ENTITY % epidoc.a.date
        "cert CDATA #IMPLIED
-       	precision (exact | circa) #IMPLIED 
+        precision (exact | circa) #IMPLIED 
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
         exact (notBefore | notAfter | both | none) #IMPLIED " >
@@ -210,5 +220,3 @@
 <!-- *********************************************************************
      EpiDoc-specific character entities
      ********************************************************************* -->
-     
-<!ENTITY times '&#x00D7;' >
