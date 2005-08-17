@@ -1,124 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+   <!-- epidoc sitemap for the epidoc webapp: root of the example project subtree -->
+
    <map:components>
+      
       <map:generators default="file">
+
          <map:generator name="request" src="org.apache.cocoon.generation.RequestGenerator">
+            <!-- This generator generates an XML representation of the incoming request.
+                   See further the cocoon docs -->
             <map:parameter name="generate-attributes" value="true" />
          </map:generator>
+
       </map:generators>
+
       <map:transformers default="xslt">
+         
          <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer" />
+            <!-- This transformer triggers for the element include in the namespace apache org cocoon include 1.0. 
+                      The src attribute contains the url which points to an xml resource which is include instead of the element. 
+                      With the attributes element, ns and prefix it is possible to specify an element which surrounds the included 
+                      content.  See further the cocoon docs -->
+         
       </map:transformers>
+      
       <map:readers default="resource" />
+      
       <map:serializers default="xhtmlbasic">
+         <!-- note that the default serializer is our locally defined xhtmlbasic, not the standard cocoon xml serializer -->
+         
          <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic" src="org.apache.cocoon.serialization.XMLSerializer">
+            <!-- provide configuration for serializing XHTML with the proper doctype, encoding and suppressed indention -->
             <doctype-public>-//W3C//DTD XHTML 1.0 Strict//EN</doctype-public>
             <doctype-system>http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</doctype-system>
             <encoding>UTF-8</encoding>
             <indent>no</indent>
          </map:serializer>
+         
          <map:serializer mime-type="text/xml" name="xml" src="org.apache.cocoon.serialization.XMLSerializer">
-            <encoding>UTF-8</encoding>
+            <!-- force xml serialization to use UTF8 and to leave indent alone --><encoding>UTF-8</encoding>
             <indent>no</indent>
          </map:serializer>
+
+         
          <map:serializer mime-type="text/xml" name="xmlepidoc" src="org.apache.cocoon.serialization.XMLSerializer">
+            <!-- provide a means for serializing epidoc documents with a doctype pointing at the epidoc dtd -->
             <doctype-system>tei-epidoc.dtd</doctype-system>
             <encoding>UTF-8</encoding>
             <indent>no</indent>
          </map:serializer>
+         
       </map:serializers>
+
       <map:selectors default="browser" />
+
       <map:matchers default="wildcard" />
+
    </map:components>
+
+   <!-- ================================================================================= -->
+   
    <map:pipelines>
-      <map:pipeline>
-         <!--
-            ====================================================================================
-            PRODUCTION MAPS
-            ====================================================================================
-            -->
-         <!--
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            main home page (index.html)
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            -->
-         <map:match pattern="">
-            <map:generate src="src/index.xml" />
-            <map:transform src="xsl/main.xsl" />
-            <map:transform src="xsl/xhtmlindenter.xsl" />
-            <map:serialize type="xhtmlbasic" />
-         </map:match>
-         <map:match pattern="index.html">
-            <map:generate src="src/index.xml" />
-            <map:transform src="xsl/main.xsl" />
-            <map:transform src="xsl/xhtmlindenter.xsl" />
-            <map:serialize type="xhtmlbasic" />
-         </map:match>
-         <!--
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            table of contents page (toc.html)
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            -->
-         <!-- first map catches the browser request for the toc file -->
-         <map:match pattern="toc.html">
-            <map:generate src="src/topics/toc.xml" />
-            <!-- get the toc.xml file from disk -->
-            <map:transform type="cinclude" />
-            <!-- process cincludes in the xml file; note that the only  
-                                                                                                  cinclude there points at the second map below;
-                                                                                                  this incorporates a filtered directory listing as a
-                                                                                                  series of cincludes, one for each desireable file 
-                                                                                                  in the directory -->
-            <map:transform type="cinclude" />
-            <!-- process cincludes inserted in the xml stream by the
-                                                                                                 second map below -->
-            <map:transform src="xsl/toc.xsl" />
-            <!-- transform and massage the results for output -->
-            <map:transform src="xsl/xhtmlindenter.xsl" />
-            <map:serialize type="xhtmlbasic" />
-         </map:match>
-         <!-- second map reads the file list in the source (src) directory and uses an XSLT file to do some processing on it, 
-                resulting in an xml stream of cincludes, one for each desireable file in the directory -->
-         <map:match pattern="src/include">
-            <map:generate src="src" type="directory" />
-            <map:transform src="xsl/srcdirlist2cincludes.xsl">
-               <map:parameter name="article-dir" value="src" />
-            </map:transform>
-            <map:serialize type="xml" />
-         </map:match>
-         <!--
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         regular article pages (*.html) NB: this map needs to come after the more specific ones above
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         -->
+
+      <map:pipeline name="projectcontent">
+         
+         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         
          <map:match pattern="*.html">
+
+            <!-- MATCH: regular pages (*.html) -->
+
+            <!-- get the source xml -->
             <map:generate src="src/{1}.xml" />
-            <map:transform src="../../xsl/epidoc-xsl-0.2/html/epidoc.xsl" />
-            <map:transform src="../../xsl/util/xhtmlindenter.xsl" />
+
+            <!-- find and apply the nearest version of the epidoc stylesheets: permits override at each directory level -->
+            <!-- note: if the file is not found, an error will be thrown b/c the last try is the otherwise statement -->
+            <map:select type="resource-exists">
+               <map:when test="xsl/epidoc.xsl">
+                  <!-- maybe this project defines its own xsl files -->
+                  <map:transform src="xsl/epidoc.xsl" />
+               </map:when>
+               <map:when test="../../xsl/epidoc-xsl/html/epidoc.xsl">
+                   <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                  <map:transform src="../../xsl/epidoc-xsl/html/epidoc.xsl"/>
+               </map:when>
+               <map:when test="../../../epidoc-xsl/html/epidoc.xsl">
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                  <map:transform src="../../../epidoc-xsl/html/epidoc.xsl"/>
+                  </map:when>
+               <map:otherwise>
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                  <map:transform src="../epidoc-xsl/html/epidoc.xsl"/>
+                  </map:otherwise>
+            </map:select>
+            
+            <!-- find and apply the nearest version of the xhtml indenter stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+             <map:select type="resource-exists">
+                <map:when test="xsl/xhtmlindenter.xsl">
+                  <!-- maybe this project defines its own xsl files -->
+                  <map:transform src="xsl/xhtmlindenter.xsl" />
+               </map:when>
+                <map:when test="../../xsl/util/epidoc-xsl/util/xhtmlindenter.xsl">
+                   <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                   <map:transform src="../../xsl/epidoc-xsl/util/xhtmlindenter.xsl"/>
+                </map:when>
+                <map:when test="../../../epidoc-xsl/util/xhtmlindenter.xsl">
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                   <map:transform src="../../../epidoc-xsl/util/xhtmlindenter.xsl"/>
+                </map:when>
+                <map:otherwise>
+                   <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                   <map:transform src="../epidoc-xsl/util/xhtmlindenter.xsl"/>
+                </map:otherwise>
+             </map:select>
+                  
+            <!-- serialize for output -->
             <map:serialize type="xhtmlbasic" />
+
          </map:match>
+
+         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         
          <map:match pattern="*.xml">
+
+            <!-- MATCH: xml versions of pages (*.xml) -->
+            
+            <!-- get the source xml -->
             <map:generate src="src/{1}.xml" />
-            <map:transform src="../../xsl/util/teiindenter.xsl" />
+
+            <!-- find and apply the nearest version of the tei indenter stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+            <map:select type="resource-exists">
+               <map:when test="xsl/teiindenter.xsl">
+                  <!-- maybe this project defines its own xsl files -->
+                  <map:transform src="xsl/teiindenter.xsl" />
+               </map:when>
+               <map:when test="../../xsl/util/epidoc-xsl/util/teiindenter.xsl">
+                  <!-- standard configuration: standard xsls are installed at epidoc-webapp level and project is under prj -->
+                  <map:transform src="../../xsl/epidoc-xsl/util/teiindenter.xsl"/>
+               </map:when>
+               <map:when test="../../../epidoc-xsl/util/teiindenter.xsl">
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                  <map:transform src="../../../epidoc-xsl/util/teiindenter.xsl"/>
+               </map:when>
+               <map:otherwise>
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                  <map:transform src="../epidoc-xsl/util/teiindenter.xsl"/>
+               </map:otherwise>
+            </map:select>            
+            
+            <!-- serialize for output -->
             <map:serialize type="xmlepidoc" />
+            
          </map:match>
-         <!--
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         other/auxiliary files 
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         -->
-         <map:match pattern="*.css">
-            <map:read mime-type="text/css" src="../../css/{1}.css" />
-         </map:match>
+         
+         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         
+         <!-- MATCHES: images -->
          <map:match pattern="*.gif">
-            <map:read mime-type="image/gif" src="../../img/{1}.gif" />
+            <map:read mime-type="image/gif" src="img/{1}.gif" />
          </map:match>
          <map:match pattern="*.jpg">
-            <map:read mime-type="image/jpeg" src="../../img/{1}.jpg" />
+            <map:read mime-type="image/jpeg" src="img/{1}.jpg" />
          </map:match>
          <map:match pattern="*.png">
-            <map:read mime-type="image/png" src="../../img/{1}.png" />
+            <map:read mime-type="image/png" src="img/{1}.png" />
          </map:match>
-      </map:pipeline>
-   </map:pipelines>
+
+         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+         
+         <!-- find and apply the nearest version of the requested css file: permits override at each directory level  -->
+         <map:match pattern="*.css">
+            <map:select type="resource-exists">
+               <map:when test="css/{1}.css">
+                  <!-- maybe this project defines its own css files -->
+                  <map:read mime-type="text/css" src="css/{1}.css" />
+               </map:when>
+               <map:when test="../../css/{1}.css">
+                  <!-- standard configuration: standard csss are installed at epidoc-webapp level and project is under prj -->
+                  <map:read mime-type="text/css" src="../../css/{1}.css" />
+               </map:when>
+               <map:when test="../../../css/{1}.css">
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                  <map:read mime-type="text/css" src="../../../css/{1}.css"/>
+               </map:when>
+               <map:otherwise>
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                  <map:read mime-type="text/css" src="../epidoc-webapp/css/{1}.css"/>
+               </map:otherwise>               
+            </map:select>
+         </map:match>
+     </map:pipeline>
+  </map:pipelines>
 </map:sitemap>
