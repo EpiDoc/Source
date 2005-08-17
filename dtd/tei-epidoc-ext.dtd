@@ -19,8 +19,6 @@
 
      Must be used with the TEI Pizza Chef and the entities customization file tei-epidoc-ext.ent
 
-     This file was last modified on 25 November 2002 by Tom Elliott
-
      This file has three major sections:
      1: New elements added by EpiDoc, together with their attributes 
      2: EpiDoc-specific attributes (to override or make more stringent those specified by the TEI
@@ -28,6 +26,10 @@
      
      REVISION HISTORY:
 
+     17 August 2005
+          (TE)
+          * modified new content model for <unclear>: without trailing asterisk, content model was invalid
+          
      09 August 2005
            (GB)
          * new content model for <unclear>: can only contain PCDATA or <mark>
@@ -99,7 +101,7 @@
       %a.seg;
       lemma CDATA #IMPLIED>
 <!ELEMENT unclear 
-	( #PCDATA | mark ) > 
+	( #PCDATA | mark )* > 
 <!ATTLIST unclear  
       %a.global;
       cert CDATA #IMPLIED

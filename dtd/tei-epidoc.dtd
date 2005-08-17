@@ -1,111 +1,3 @@
-<!-- TEI-EpiDoc DTD for Epigraphic Markup in XML using the Text Encoding Initiative Tag Set
-     Copyright (C) 2002, 2005  EpiDoc Collaborative.
-      
-     This program is free software; you can redistribute it and/or
-     modify it under the terms of the GNU General Public License
-     as published by the Free Software Foundation; either version 2
-     of the License, or (at your option) any later version.
-      
-     This program is distributed in the hope that it will be useful,
-     but WITHOUT ANY WARRANTY; without even the implied warranty of
-     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-     GNU General Public License for more details.
-      
-     You should have received a copy of the GNU General Public License
-     along with this program; if not, write to the Free Software
-     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-     
-     Filename: tei-epidoc.dtd
-
-     This file was created using the TEI Pizza Chef (by Lou Burnard, which uses Michael 
-     Sperberg-McQueen's 'Carthage': www.tei-c.org/pizza.html) and using John Lavagnino's 
-     bodacious fixdtd PERL script.
-     
-     Last modification to this file was 9 August 2005 by Gabriel Bodard
-     
-     Pizza chef settings:
-     Mixed base with prose, verse and drama
-     Additional tag sets: linking, figures, analysis, fs, certainty, transcription, text criticism, names and dates
-     Entity sets: ISO Latin 1 and 2, ISO Greek 1 and 2, ISO Numeric, ISO Publishing Characters
-     
-     Modifications were made via the pizza chef using tei-epidoc-ext.ent and tei-epidoc-ext.dtd.
-     Copies of these files, and the raw pizza chef output, are available in the EpiDoc sourceforge
-     repository at http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/epidoc/dtd/ .
-     
-     REVISION HISTORY:
-
-     09 August 2005
-           (GB)
-         * new content model for <unclear>: can only contain PCDATA or <mark>
-         * removed superfluous &times; declaration
-
-     04 April 2005
-           (GB and JG)
-         * made <figure> a little more forgiving (for InsAph compatibility)
-         * Added <w> and <rs> (added %paracontent; to content model of <w>)
-         * made the @from and @to in <app> CDATA #IMPLIED
-         * made @cert CDATA #IMPLIED (globally)
-         * made <date> @precision ( exact | circa )
-         * made <div> @type CDATA #IMPLIED
-         * added 'superscript' to values of @rend in <hi>
-         * added @type to place-names
-         * added 'abbreviation' to @reason in <supplied>
-
-     25 November 2002
-         * Added an "href" attribute to the figure tag to support 'quick-and-dirty' direct linkage
-           of images and EpiDoc documents. This is a stop-gap until both TEI and EpiDoc finally 
-           decide on new, fully robust XML-based handling for image linkage.
-           
-     22 September 2002
-         * Removed guarding element for <persName> to allow it to appear in the DTD
-         * Added attribute customization for <persName> and <placeName>
-         * Added enumeration for values for the "dim" attribute on the <gap> tag to reflect G.B.'s 
-           recommendation of 11 September 2002 to reconcile usage between EPAPP and Vindolanda
-         * Added "precision", "notBefore", "notAfter", and "exact" attributes to the <date> tag 
-           to support recommendations made by G.B.
-         * Added "cert" attribute to the <supplied> and <seg> tags to support EPAPP
-         * Added "value" attribute to the <measure> tag to support EPAPP
-         * Added "diameter" to the enumeration in the "dim" attribute model on <measure> for EPAPP
-     17 August 2002
-         * added GNU public license
-         * modified attributes for <mark> to include all the global ones, not just type
-         * modified some of the attributes for <measure> so that type, dim and value are all CDATA
-           and #IMPLIED, nothing more stringent. Note that "dim" is an extension used by EPAPP
-         * removed the epidoc.cert parameter entity entirely to allow the less restrictive "cert" 
-           attribute that is the default in TEI to remain on all relevant elements until we reach 
-           a consensus on how to do certainty in epidoc
-         * added dim attribute to value tag until EPAPP and Vindolanda can develop a consensus on
-           how to deal with various gap issues ... and that consensus has been vetted via the markup
-           list
-
-     13 August 2002
-         *  Allowed the following elements, to support the Vindolanda Project at CSAD (and everyone else eventually):
-             <editionStmt>
-                 <edition>
-                 <respStmt>
-             <encodingDesc>
-                 <classDecl>
-                     <taxonomy>
-                         <category>
-                             <catDesc>
-                                 NB: <textDesc> is still disabled, since it's not clear it will be needed
-             <textClass>
-                 <classCode>
-                 <catRef>
-                 <keywords>
-                     NB: <list>, <term> and their descendents were already available
-             <pb> (to signify transitions between leaves)
-             <handShift> (mistakenly omitted from earlier version)     
-         * modified the attribute list for the <gap> element to make the 'reason' attribute optional,
-           on the following grounds (Ratcliff): "it may be difficult for us [Vindolanda project] to 
-           give data for REASON, which is currently required. Since we are not working with the actual 
-           tablets but Bowman and Thomas' book, we do not necessarily have the info for why a gap 
-           exists. I can imagine other similar situations, and wonder whether or not REASON should be 
-           required." THIS CHANGE NEEDS TO BE VETTED VIA THE MARKUP LIST. --> 
-
-
-
-
 <!ELEMENT TEI.2 
 	(teiHeader, text) >
 
@@ -2366,7 +2258,7 @@
 	 >
 
 <!ELEMENT unclear 
-	(#PCDATA | mark) >
+	(#PCDATA | mark)* >
 
 <!ATTLIST unclear 
 	agent CDATA #IMPLIED
@@ -2508,7 +2400,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza21641 on 9 Aug 2005 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza3694 on 17 Aug 2005 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 
@@ -3106,7 +2998,7 @@
 
 <!ENTITY copy  "&#x00A9;" >
 
-<!ENTITY reg  "&#x00AE;" >
+<!ENTITY reg  "&#x00AF;" >
 
 <!ENTITY trade  "&#x2122;" >
 
