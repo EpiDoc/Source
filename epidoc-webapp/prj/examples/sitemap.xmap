@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+   <map:components>
+      <map:generators default="file">
+         <map:generator name="request" src="org.apache.cocoon.generation.RequestGenerator">
+            <map:parameter name="generate-attributes" value="true" />
+         </map:generator>
+      </map:generators>
+      <map:transformers default="xslt">
+         <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer" />
+      </map:transformers>
+      <map:readers default="resource" />
+      <map:serializers default="xhtmlbasic">
+         <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic" src="org.apache.cocoon.serialization.XMLSerializer">
+            <doctype-public>-//W3C//DTD XHTML 1.0 Strict//EN</doctype-public>
+            <doctype-system>http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</doctype-system>
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+         <map:serializer mime-type="text/xml" name="xml" src="org.apache.cocoon.serialization.XMLSerializer">
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+         <map:serializer mime-type="text/xml" name="xmlepidoc" src="org.apache.cocoon.serialization.XMLSerializer">
+            <doctype-system>tei-epidoc.dtd</doctype-system>
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+      </map:serializers>
+      <map:selectors default="browser" />
+      <map:matchers default="wildcard" />
+   </map:components>
+   <map:pipelines>
+      <!-- there are many pipelines -->
+      <!-- ==================================================================================== -->
+      <!-- PIPELINE: project-specific files (i.e., content) -->
+      <!-- ==================================================================================== -->
+      <map:pipeline name="projectcontent">
+         <!-- regular pages (*.html) -->
+         <map:match pattern="*.html">
+            <map:generate src="src/{1}.xml" />
+            <map:transform src="../../xsl/epidoc-xsl-0.2/html/epidoc.xsl" />
+            <map:transform src="../../xsl/util/xhtmlindenter.xsl" />
+            <map:serialize type="xhtmlbasic" />
+         </map:match>
+         <!-- xml versions of pages (*.xml) -->
+         <map:match pattern="*.xml">
+            <map:generate src="src/{1}.xml" />
+            <map:transform src="../../xsl/util/teiindenter.xsl" />
+            <map:serialize type="xmlepidoc" />
+         </map:match>
+         <!-- images -->
+         <map:match pattern="*.gif">
+            <map:read mime-type="image/gif" src="img/{1}.gif" />
+         </map:match>
+         <map:match pattern="*.jpg">
+            <map:read mime-type="image/jpeg" src="img/{1}.jpg" />
+         </map:match>
+         <map:match pattern="*.png">
+            <map:read mime-type="image/png" src="img/{1}.png" />
+         </map:match>
+      </map:pipeline>
+      <!-- ==================================================================================== -->
+      <!-- PIPELINE: standard screen css file -->
+      <!-- ==================================================================================== -->
+      <map:pipeline>
+         <map:match pattern="epidocscreen.css">
+            <map:read mime-type="text/css" src="css/epidocscreen.css" />
+         </map:match>
+         <map:handle-errors>
+            <map:select type="exception">
+               <map:when test="not-found">
+                  <map:read mime-type="text/css" src="../../css/epidocscreen.css" />
+               </map:when>
+            </map:select>
+         </map:handle-errors>
+      </map:pipeline>
+      <!-- ==================================================================================== -->
+      <!-- PIPELINE: standard print css file -->
+      <!-- ==================================================================================== -->
+      <map:pipeline>
+         <map:match pattern="epidocprint.css">
+            <map:read mime-type="text/css" src="css/epidocprint.css" />
+         </map:match>
+         <map:handle-errors>
+            <map:select type="exception">
+               <map:when test="not-found">
+                  <map:read mime-type="text/css" src="../../css/epidocprint.css" />
+               </map:when>
+            </map:select>
+         </map:handle-errors>
+      </map:pipeline>
+   </map:pipelines>
+</map:sitemap>
