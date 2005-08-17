@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 SYSTEM "tei-epidoc.dtd" [
+  <!ENTITY ClaudianBS 'bs'>
+  <!ENTITY ClaudianPS 'ps'>
+  <!ENTITY ClaudianV 'v'>
+  <!ENTITY ClaudianY 'y'>
+]>
+<TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="transcriptionnonsensical" lang="eng">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Transcription with no uncertainty about the form of the character(s), but they do not make sense</title>
+            <editor>Tom Elliott</editor>
+         </titleStmt>
+         <publicationStmt>
+            <p>This document is unpublished, and is intended for personal use only.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>We made this up.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date value="2005-08-11">11 Aug 2005</date> in <name type="geographic" TEIform="name">Chapel Hill, North Carolina</name>
+         </creation>
+         <langUsage>
+            <language id="eng" TEIform="language">English</language>
+            <language id="grc" TEIform="language">Greek, Ancient</language>
+            <language id="lat" TEIform="language">Latin</language>
+         </langUsage>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div n="typographic">
+            <head>Traditional typographic representation:</head>
+            <ab><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr> <biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title> <abbr expan="page">p.</abbr> <biblScope type="pages">3</biblScope></bibl>:
+            <lb/><hi rend="italic">ABC</hi></ab> 
+         </div>
+         <div n="epidoc">
+            <head>EpiDoc encoding</head>
+            <ab>&lt;sic&gt;abc&lt;/sic&gt;</ab>
+         </div>
+         <div n="edition">
+            <head lang="eng">EpiDoc appearance with standard XSLT</head>
+         <ab lang="lat"><sic>abc</sic></ab>
+            
+         </div>
+         <div n="notes">
+            <head>Notes</head>
+            <ab>See also Editorial corrections.</ab></div>
+         <div n="questions">
+            <head>Questions and issues</head>
+            <list>
+               <item>Bodard (17 May 2005): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion at <link href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3"/>).</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI.2>

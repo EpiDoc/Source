@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 SYSTEM "tei-epidoc.dtd" [
+  <!ENTITY ClaudianBS 'bs'>
+  <!ENTITY ClaudianPS 'ps'>
+  <!ENTITY ClaudianV 'v'>
+  <!ENTITY ClaudianY 'y'>
+]>
+<TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="transcriptionwithnoproblems" lang="eng">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Transcription with no problems</title>
+            <editor>Tom Elliott</editor>
+         </titleStmt>
+         <publicationStmt>
+            <p>This document is unpublished, and is intended for personal use only.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>We made this up.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date value="2005-08-11">11 Aug 2005</date> in <name type="geographic" TEIform="name">Chapel Hill, North Carolina</name>
+         </creation>
+         <langUsage>
+            <language id="eng" TEIform="language">English</language>
+            <language id="grc" TEIform="language">Greek, Ancient</language>
+            <language id="lat" TEIform="language">Latin</language>
+         </langUsage>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div n="typographic">
+            <head>Traditional typographic representation:</head>
+            <ab><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr> <biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title> <abbr expan="page">p.</abbr> <biblScope type="pages">3</biblScope></bibl>:
+            <lb/><hi rend="italic">abc</hi></ab> 
+         </div>
+         <div n="epidoc">
+            <head>EpiDoc encoding</head>
+            <ab>abc</ab>
+         </div>
+         <div n="edition">
+            <head lang="eng">EpiDoc appearance with standard XSLT</head>
+         <ab lang="lat">abc</ab>
+            
+         </div>
+         <div n="notes">
+            <head>Notes</head>
+            <ab>The editor may introduce modern spacing, punctuation, accents and capitalization without comment unless the text is contained within a &lt;div&gt; of type="diplomatic".</ab></div>
+      </body>
+   </text>
+</TEI.2>
