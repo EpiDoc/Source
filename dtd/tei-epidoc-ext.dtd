@@ -13,7 +13,7 @@
       
      You should have received a copy of the GNU General Public License
      along with this program; if not, write to the Free Software
-     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+     Foundation, Inc., 59 Temple Place Suite 330, Boston, MA  02111-1307, USA.
      
      Filename: tei-epidoc-ext.dtd
 
@@ -26,13 +26,27 @@
      
      REVISION HISTORY:
 
+     18 August 2005
+          (TE)
+          * modifed the attribute list for xref to include an href attribute for quick and easy linking to 
+             outside information
+          * modified the attribute model for <unclear> so that the "reason" attribute has three possible values: 
+             "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See
+             further the markup list discussion referenced below under 09 August 2005
+          * consolidated two, partially overlapping, attribute specifications for <unclear> into a single one
+          * added "italic" and "strong" as legal values for the "rend" attribute on the "hi" element, to support
+             guidelines authoring
+          * added <tag> and <att> (stolen from the TEI Auxiliary DTD for Tag Set documentation) to support
+             guidelines authoring
+             
      17 August 2005
           (TE)
           * modified new content model for <unclear>: without trailing asterisk, content model was invalid
           
      09 August 2005
            (GB)
-         * new content model for <unclear>: can only contain PCDATA or <mark>
+         * new content model for <unclear>: can only contain PCDATA or <mark>. See further  a discussion on the 
+           markup list in July and August of 2005, subject: EpiDoc DTD issues [1: unclear].
 
      04 April 2005
            (GB and JG)
@@ -85,27 +99,33 @@
      New elements added by EpiDoc, together with their attributes
      ********************************************************************* -->
      
+<!ELEMENT att (#PCDATA)> 
+<!ATTLIST att  
+      %a.global; >
+      
+<!ELEMENT figure (head?, p*, figDesc) >
+<!ATTLIST figure
+	%a.global;
+	entity	ENTITY	#IMPLIED
+	href	CDATA	#IMPLIED >
+
 <!ELEMENT mark EMPTY >
 <!ATTLIST mark 
           %a.global; 
           type CDATA #IMPLIED >
-<!ELEMENT figure (head?, p*, figDesc) >
-<!ATTLIST figure
-	%a.global
-	entity	ENTITY	#IMPLIED
-	href	CDATA	#IMPLIED >
+
+<!ELEMENT tag (#PCDATA)> 
+<!ATTLIST tag  
+      %a.global; >
+      
+<!ELEMENT unclear 
+	( #PCDATA | mark )* > 
 
 <!ELEMENT w %om.RR;  %paraContent;>
 <!ATTLIST w  
       %a.global;
       %a.seg;
       lemma CDATA #IMPLIED>
-<!ELEMENT unclear 
-	( #PCDATA | mark )* > 
-<!ATTLIST unclear  
-      %a.global;
-      cert CDATA #IMPLIED
-      agent CDATA #IMPLIED>
 
 <!-- *********************************************************************
      EpiDoc-specific attributes. Where they coincide with TEI attribute definitions, these will be binding
@@ -120,7 +140,7 @@
 <!ENTITY % epidoc.resp "resp CDATA #IMPLIED" >
 <!ENTITY % epidoc.a.pointer
         "targOrder (Y | N | U) 'Y'
-         evaluate (all | one | none) 'all' " >
+         evaluate (all | one | none) 'all'">
 <!ENTITY % epidoc.a.date
        "cert CDATA #IMPLIED
         precision (exact | circa) #IMPLIED 
@@ -128,7 +148,7 @@
         notAfter CDATA #IMPLIED
         exact (notBefore | notAfter | both | none) #IMPLIED " >
         
-<!-- define the attributes for each element, as necessary -->         
+<!-- define the attributes for each element, as necessary  -->         
 
 <!ATTLIST %n.add;
         place ( inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed ) #IMPLIED
@@ -170,7 +190,7 @@
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
 <!ATTLIST %n.hi;
-        rend (apex | intraline | ligature | longa | reversed | supraline | tall | superscript) #REQUIRED
+        rend (apex | intraline | italic | ligature | longa | reversed | supraline | tall | strong | superscript) #REQUIRED
         type CDATA #IMPLIED >
 <!ATTLIST %n.idno;
         type (ISSN | ISBN | URL | OCLC) #REQUIRED >
@@ -209,13 +229,19 @@
         type (main | subordinate | parallel | abbreviated) 'main'
         level (a | m | j | s | u) 'm' >
 <!ATTLIST %n.unclear;
-        reason (damage | execution) #IMPLIED
+        %a.global;
+         reason (damage | execution | undefined) 'undefined'
+         %epidoc.resp; 
+         %epidoc.cert;
         %epidoc.hand;
-        %epidoc.resp; >
+         agent CDATA #IMPLIED >
 <!ATTLIST %n.xptr;
         %epidoc.a.pointer; >
 <!ATTLIST %n.xref;
-        %epidoc.a.pointer; >
+        %epidoc.a.pointer; 
+        href CDATA #IMPLIED>
+<!ATTLIST %n.TEI.2;
+        xmlns CDATA 'http://www.tei-c.org/ns/1.0'>
         
         
         
