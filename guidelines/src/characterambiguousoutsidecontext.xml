@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" [
+  <!ENTITY ClaudianBS 'bs'>
+  <!ENTITY ClaudianPS 'ps'>
+  <!ENTITY ClaudianV 'v'>
+  <!ENTITY ClaudianY 'y'>
+]>
+<TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="characterambiguousoutsidecontext" lang="en">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Transcription wherein the character would not be unambiguous outside its context</title>
+            <editor>Tom Elliott</editor>
+            <editor>Gabriel Bodard</editor>
+         </titleStmt>
+         <publicationStmt>
+            <p>This is a working document of the EpiDoc collaborative</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>We made this up.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date value="2005-08-18">18 Aug 2005</date> in <name type="geographic" TEIform="name">Durham, North Carolina</name>
+         </creation>
+         <langUsage>
+            <language id="en" TEIform="language">English</language>
+            <language id="grc" TEIform="language">Greek, Ancient</language>
+            <language id="lat" TEIform="language">Latin</language>
+         </langUsage>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div n="typographic">
+            <head>Traditional typographic representation:</head>
+            <ab><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr>
+                  <biblScope type="pages">17</biblScope></bibl>; <bibl>
+                  <title level="a" type="abbreviated">Donicht</title>
+                  <abbr expan="page">p.</abbr>
+                  <biblScope type="pages">3</biblScope>
+               </bibl>: <lb /><hi rend="italic">ạḅc̣</hi></ab>
+            <p>Note: depending on your font, the subscript dots in the preceding example may display after the character instead of beneath it.</p>
+         </div>
+         <div n="epidoc">
+            <head>EpiDoc encoding</head>
+            <ab>&lt;unclear&gt;a&lt;/unclear&gt;&lt;unclear&gt;b&lt;/unclear&gt;&lt;unclear&gt;c&lt;/unclear&gt;</ab>
+            <p>Note: </p>
+         </div>
+         <div n="edition">
+            <head lang="eng">EpiDoc appearance with standard XSLT</head>
+            <ab lang="lat">
+               <sic>abc</sic>
+            </ab>
+         </div>
+         <div n="notes">
+            <head>Notes</head>
+            <ab>See also Editorial corrections.</ab>
+         </div>
+         <div n="questions">
+            <head>Questions and issues</head>
+            <list>
+               <item>Bodard (17 May 2005): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion at <link href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3" />).</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI.2>
