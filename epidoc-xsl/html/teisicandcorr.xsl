@@ -31,5 +31,14 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="tei:sic"><xsl:apply-templates/>(!)</xsl:template>
+   <!-- in EpiDoc, a plain sic means unintelligible -->
+    <xsl:template match="tei:sic">
+       <xsl:element name="span">
+          <xsl:attribute name="class">unintelligible</xsl:attribute>
+          <xsl:choose>
+             <xsl:when test="ancestor-or-self::*/@lang='lat'"><xsl:value-of select="translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:when>
+             <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+          </xsl:choose>
+       </xsl:element>
+    </xsl:template>
 </xsl:stylesheet>
