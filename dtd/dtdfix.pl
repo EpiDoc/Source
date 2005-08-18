@@ -27,11 +27,14 @@
 
 # John Lavagnino, King's College London <John.Lavagnino@kcl.ac.uk>.
 
+# Inelegantly hacked by Tom Elliott, 18 August 2005, to suppress the
+# TEIform attribute
+
 use strict;
 use English;
 use diagnostics;
 
-my $version = '$Id: dtdfix.pl,v 1.1 2005-08-17 16:55:29 paregorios Exp $';
+my $version = '$Id: dtdfix.pl,v 1.2 2005-08-18 17:07:04 paregorios Exp $';
 
 sub fixattlist ($); # prototype
 
@@ -144,7 +147,10 @@ sub fixattlist ($) {
     my $newattlist = $beginning . "\n";
 
     foreach my $attname (sort (keys %atts)) {
-        $newattlist .= $atts{$attname} . "\n";
+        # suppress the annoying TEIform attribute
+        if ($attname ne "TEIform") {
+           $newattlist .= $atts{$attname} . "\n";
+       }
     }
 
     $newattlist .= "\t >\n\n";
