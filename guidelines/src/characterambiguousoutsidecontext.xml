@@ -1,68 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" [
-  <!ENTITY ClaudianBS 'bs'>
-  <!ENTITY ClaudianPS 'ps'>
-  <!ENTITY ClaudianV 'v'>
-  <!ENTITY ClaudianY 'y'>
-]>
+<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd">
 <TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="characterambiguousoutsidecontext" lang="en">
-   <teiHeader>
+   <teiHeader status="new" type="text">
       <fileDesc>
          <titleStmt>
-            <title>Transcription wherein the character would not be unambiguous outside its context</title>
-            <editor>Tom Elliott</editor>
-            <editor>Gabriel Bodard</editor>
+            <title level="m" type="main">Transcription wherein the character would not be unambiguous outside its context</title>
+            <author>Tom Elliott</author>
+            <author>Gabriel Bodard</author>
+            <respStmt><resp>contributor</resp><name>Hugh Cayless</name></respStmt>
+            <respStmt><resp>contributor</resp><name>Tim Finney</name></respStmt>    
+            <respStmt><resp>contributor</resp><name>Chris Lilley</name></respStmt>
          </titleStmt>
          <publicationStmt>
             <p>This is a working document of the EpiDoc collaborative</p>
          </publicationStmt>
-         <sourceDesc>
+         <sourceDesc default="NO">
             <p>We made this up.</p>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <creation>
-            <date value="2005-08-18">18 Aug 2005</date> in <name type="geographic" TEIform="name">Durham, North Carolina</name>
+            <date value="2005-08-18">18 August 2005</date> in <name type="geographic">Durham, North Carolina</name>
          </creation>
-         <langUsage>
-            <language id="en" TEIform="language">English</language>
-            <language id="grc" TEIform="language">Greek, Ancient</language>
-            <language id="lat" TEIform="language">Latin</language>
+         <langUsage default="NO">
+            <language id="en">English</language>
+            <language id="grc">Greek, Ancient</language>
+            <language id="lat">Latin</language>
          </langUsage>
       </profileDesc>
+      <revisionDesc>
+         <change>
+            <date value="2005-08-18">18 August 2005</date>
+            <respStmt><resp>encoder and author</resp><name>Tom Elliott</name></respStmt>
+            <item>Converted to TEI and modified content to conform to recent discussion resolution on the markup list. Tested to ensure synchrony with EpiDoc DTD (current sourceforge cvs image - also changed this date to support guidelines authoring). Tested to ensure synchrony with epidoc-xsl package (current sourceforge cvs image - also changed/expanded this date to support guidelines testing). Tested to ensure works in epidoc-weapp (current sourceforge cvs image - also changed this date to support guidelines display).</item>
+         </change>
+         
+      </revisionDesc>
    </teiHeader>
    <text>
       <body>
-         <div n="typographic">
-            <head>Traditional typographic representation:</head>
-            <ab><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr>
-                  <biblScope type="pages">17</biblScope></bibl>; <bibl>
-                  <title level="a" type="abbreviated">Donicht</title>
-                  <abbr expan="page">p.</abbr>
-                  <biblScope type="pages">3</biblScope>
-               </bibl>: <lb /><hi rend="italic">ạḅc̣</hi></ab>
+         <div id="typographic" org="uniform" part="N" sample="complete">
+            <head>Traditional typographic representation</head>
+            <list type="unordered">
+               <item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+                  <list type="unordered">
+                     <item><hi rend="italic">ạḅc̣</hi></item>
+                  </list></item>
+            </list>
             <p>Note: depending on your font, the subscript dots in the preceding example may display after the character instead of beneath it.</p>
          </div>
-         <div n="epidoc">
-            <head>EpiDoc encoding</head>
-            <ab>&lt;unclear&gt;a&lt;/unclear&gt;&lt;unclear&gt;b&lt;/unclear&gt;&lt;unclear&gt;c&lt;/unclear&gt;</ab>
-            <p>Note: </p>
-         </div>
-         <div n="edition">
-            <head lang="eng">EpiDoc appearance with standard XSLT</head>
-            <ab lang="lat">
-               <sic>abc</sic>
-            </ab>
-         </div>
-         <div n="notes">
-            <head>Notes</head>
-            <ab>See also Editorial corrections.</ab>
-         </div>
-         <div n="questions">
-            <head>Questions and issues</head>
+         <div id="epidoc" org="uniform" part="N" sample="complete">
+            <head>EpiDoc encodings</head>
             <list>
-               <item>Bodard (17 May 2005): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion at <link href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3" />).</item>
+            <item><tag>unclear</tag>abc<tag>/unclear</tag></item>
+            <item><tag>unclear</tag>a<tag>/unclear</tag><tag>unclear</tag>b<tag>/unclear</tag><tag>unclear</tag>c<tag>/unclear</tag></item>
+            <item><tag>unclear reason="damage"</tag>a<tag>/unclear</tag></item>
+            <item><tag>unclear reason="execution"</tag>a<tag>/unclear</tag></item>
+            <item><tag>unclear reason="undefined"</tag>a<tag>/unclear</tag></item>
             </list>
+            <p>Note: see 
+               <ref target="notes" evaluate="all" targOrder="Y">notes</ref>, below.</p>
+         </div>
+         <div id="edition" lang="lat">
+            <head lang="en">EpiDoc appearance with standard XSLT</head>
+            <list>
+            <item><unclear reason="undefined">abc</unclear></item>
+               <item><unclear reason="undefined">a</unclear><unclear reason="undefined">b</unclear><unclear reason="undefined">c</unclear></item>
+               <item><unclear reason="damage">abc</unclear></item>
+<item><unclear reason="execution">abc</unclear></item>
+
+               <item><unclear reason="undefined">abc</unclear></item>
+            </list>
+         </div>
+         <div id="notes" org="uniform" part="N" sample="complete">
+            <head>Notes</head>
+            <div id="usage" org="uniform" part="N" sample="complete">
+               <head>Usage</head>
+               <p>The EpiDoc DTD permits only the appearance of character data and the <tag>mark/</tag> element within <tag>unclear</tag><tag>/unclear</tag>. When an editor or encoder encounters a continuous string of unclear characters in a text, two encoding options are available: each character may be encapsulated within its own <tag>unclear</tag><tag>/unclear</tag> or the entire string may be encapsulated within a single <tag>unclear</tag><tag>/unclear</tag>. No other markup may appear inside <tag>unclear</tag><tag>/unclear</tag>, so if other aspects of a long string of unclear characters warrant additional tagging internal to the string, the per-character solution may be preferable or even required. For background on this issue, see a discussion on the 
+                  <xref href="http://lsv.uky.edu/archives/markup.html">markup list</xref> in July and August of 2005, subject: EpiDoc DTD issues [1: unclear].</p>
+            </div>
+            <div id="reason" org="uniform" part="N" sample="complete">
+               <head>The <att>reason</att> Attribute</head>
+               <p>TEI defines a 
+                  <att>reason</att> attribute for the <tag>unclear</tag> element. In the EpiDoc DTD, this attribute has three possible values: "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See further the markup list discussion referenced above. The default stylesheets render all instances of <tag>unclear</tag> with the standard subscript dot, regardless of the value of the <att>reason</att> attribute.</p>
+            </div>
          </div>
       </body>
    </text>
