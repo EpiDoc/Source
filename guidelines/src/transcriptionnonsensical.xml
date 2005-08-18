@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" [
-  <!ENTITY ClaudianBS 'bs'>
-  <!ENTITY ClaudianPS 'ps'>
-  <!ENTITY ClaudianV 'v'>
-  <!ENTITY ClaudianY 'y'>
-]>
-<TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="transcriptionnonsensical" lang="eng">
-   <teiHeader>
+<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd">
+<TEI.2 xmlns="http://www.tei-c.org/ns/1.0" id="transcriptionnonsensical" lang="en">
+   <teiHeader status="new" type="text">
       <fileDesc>
          <titleStmt>
-            <title>Transcription with no uncertainty about the form of the character(s), but they do not make sense</title>
-            <editor>Tom Elliott</editor>
+            <title level="m" type="main">Transcription with no uncertainty about the form of the character(s), but they do not make sense</title>
+            <author>Tom Elliott</author>
          </titleStmt>
          <publicationStmt>
-            <p>This document is unpublished, and is intended for personal use only.</p>
+            <p>This is a working document of the EpiDoc collaborative</p>
          </publicationStmt>
          <sourceDesc>
             <p>We made this up.</p>
@@ -21,38 +16,54 @@
       </fileDesc>
       <profileDesc>
          <creation>
-            <date value="2005-08-11">11 Aug 2005</date> in <name type="geographic" TEIform="name">Chapel Hill, North Carolina</name>
+            <date value="2005-08-11">11 Aug 2005</date> in <name type="geographic">Chapel Hill, North Carolina</name>
          </creation>
          <langUsage>
-            <language id="eng" TEIform="language">English</language>
-            <language id="grc" TEIform="language">Greek, Ancient</language>
-            <language id="lat" TEIform="language">Latin</language>
+            <language id="en">English</language>
+            <language id="grc">Greek, Ancient</language>
+            <language id="lat">Latin</language>
          </langUsage>
       </profileDesc>
-   </teiHeader>
+      <revisionDesc>
+         <change>
+            <date value="2005-08-18">18 August 2005</date>
+            <respStmt><resp>encoder</resp><name>Tom Elliott</name></respStmt>
+            <item>Modified to match/exploit new features of the EpiDoc DTD, e.g., the "tag" element</item>
+         </change>
+         <change>
+            <date value="2005-08-11">11 August 2005</date>
+            <respStmt><resp>encoder</resp><name>Tom Elliott</name></respStmt>
+            <item>Converted to TEI</item>
+         </change>
+         
+      </revisionDesc>   </teiHeader>
    <text>
       <body>
          <div n="typographic">
             <head>Traditional typographic representation:</head>
-            <ab><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr> <biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title> <abbr expan="page">p.</abbr> <biblScope type="pages">3</biblScope></bibl>:
-            <lb/><hi rend="italic">ABC</hi></ab> 
+            <list type="unordered">
+               <item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+                  <list type="unordered">
+                     <item><hi rend="italic">ABC</hi></item>
+                  </list></item>
+               </list>
          </div>
          <div n="epidoc">
             <head>EpiDoc encoding</head>
-            <ab>&lt;sic&gt;abc&lt;/sic&gt;</ab>
+            <list><item><tag>sic</tag>abc<tag>/sic</tag></item></list>
          </div>
-         <div n="edition">
-            <head lang="eng">EpiDoc appearance with standard XSLT</head>
-         <ab lang="lat"><sic>abc</sic></ab>
+         <div n="edition" lang="lat" org="uniform" part="N" sample="complete">
+            <head lang="en">EpiDoc appearance with standard XSLT</head>
+            <list>
+               <item><sic>abc</sic></item>
+            </list>
             
          </div>
-         <div n="notes">
-            <head>Notes</head>
-            <ab>See also Editorial corrections.</ab></div>
-         <div n="questions">
+         <div n="questions" org="uniform" part="N" sample="complete">
             <head>Questions and issues</head>
-            <list>
-               <item>Bodard (17 May 2005): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion at <link href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3"/>).</item>
+            <list type="simple">
+               <item><name>Gabriel Bodard</name> (<date value="2005-05-17">17 May 2005</date>): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion on the 
+                  <xref href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">markup list</xref>).</item>
             </list>
          </div>
       </body>
