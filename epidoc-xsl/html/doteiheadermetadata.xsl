@@ -16,7 +16,12 @@
          <xsl:attribute name="id">htmldocumenttitlestmt</xsl:attribute>
          <xsl:element name="h3">Full document title statement (tei:titleStmt)</xsl:element>
          <xsl:apply-templates select="tei:title" mode="teiheadermetadata" />
-         <xsl:apply-templates select="tei:author | tei:editor | tei:translator" mode="teiheadermetadata" />
+         <xsl:if test="count(tei:author | tei:editor | tei:translator | tei:respStmt) &gt; 0">
+            <xsl:element name="ul">
+               <xsl:apply-templates select="tei:author | tei:editor | tei:translator" mode="teiheadermetadata" />
+               <xsl:apply-templates select="tei:respStmt" mode="teiheadermetadata"/>
+            </xsl:element>
+         </xsl:if>
       </xsl:element>
    </xsl:template>
    <xsl:template match="tei:title" mode="teiheadermetadata">
@@ -28,13 +33,18 @@
       </xsl:element>
    </xsl:template>
    <xsl:template match="tei:author | tei:editor | tei:translator" mode="teiheadermetadata">
-      <xsl:element name="p">
+      <xsl:element name="li">
          <xsl:choose>
-            <xsl:when test="name(.)='author'">Author: </xsl:when>
-            <xsl:when test="name(.)='editor'">Editor: </xsl:when>
-            <xsl:when test="name(.)='translator'">Translator: </xsl:when>
+            <xsl:when test="name(.)='author'">author: </xsl:when>
+            <xsl:when test="name(.)='editor'">editor: </xsl:when>
+            <xsl:when test="name(.)='translator'">translator: </xsl:when>
          </xsl:choose>
          <xsl:apply-templates />
+      </xsl:element>
+   </xsl:template>
+   <xsl:template match="tei:respStmt" mode="teiheadermetadata">
+      <xsl:element name="li">
+         <xsl:value-of select="tei:resp"/>: <xsl:value-of select="tei:name"/>
       </xsl:element>
    </xsl:template>
    <xsl:template match="tei:publicationStmt" mode="teiheadermetadata">
@@ -65,7 +75,7 @@
          <xsl:element name="h3">Full document revision description (tei:revisionDesc)</xsl:element>
          <xsl:element name="ul">
             <xsl:for-each select="tei:change">
-               <xsl:element name="li"><xsl:apply-templates select="tei:date"/> (<xsl:apply-templates select="tei:respStmt/tei:name"/>, <xsl:apply-templates select="tei:respStmt/tei:resp"/>): <xsl:apply-templates select="tei:item"/></xsl:element>
+               <xsl:element name="li"><xsl:apply-templates select="tei:date"/> (<xsl:apply-templates select="tei:respStmt/tei:name"/>, <xsl:apply-templates select="tei:respStmt/tei:resp"/>): <xsl:element name="ul"><xsl:apply-templates select="tei:item"/></xsl:element></xsl:element>
             </xsl:for-each>
          </xsl:element>
          
