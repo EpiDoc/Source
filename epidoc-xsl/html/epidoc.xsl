@@ -30,6 +30,13 @@
    <xsl:import href="dolinenumbering.xsl" />
    <xsl:import href="doteiheadermetadata.xsl" />
    <xsl:import href="dolangattr.xsl" />
+   <xsl:import href="teilist.xsl" />
+   <xsl:import href="teiitem.xsl" />
+   <xsl:import href="teihi.xsl" />
+   <xsl:import href="teitag.xsl" />
+   <xsl:import href="teiatt.xsl"/>
+   <xsl:import href="teiunclear.xsl" />
+   <xsl:import href="teixref.xsl" />
    <xsl:param name="stripcomments">false</xsl:param>
    <xsl:param name="persnameuriprefix">people.html</xsl:param>
    <xsl:param name="placenameuriprefix">places.html</xsl:param>
