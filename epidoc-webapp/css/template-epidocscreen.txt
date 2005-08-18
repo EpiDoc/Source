@@ -5,6 +5,8 @@
 %CLRATTENTION% = red
 %CLRPALE% = #CCC
 %CLRSUBTLE% = #555
+%CLRCODE% = #057;
+%CLRBGDCODE% = #8DF;
 %BRDRSTD% = none
 %BRDRSUBTLE% = thin solid #555 
 %FNTFAMMETA% = "Arial Narrow",sans-serif;
@@ -33,19 +35,19 @@ body  {
 }
 
 div  { 
-   background:white;
    border: %BRDRSTD%;
    font-family: %FNTFAMCONTENT%;
    font-size: %FNTSIZENORM%;
    font-style: normal;
    font-weight: normal;
    margin:0px;
-   max-width: 100%;
    padding:0px;
    text-indent: 0px;
 } 
 
 #htmlcontent {
+   max-width: 75%;
+   float: left;
 }
 
    #htmlcontent div {
@@ -69,6 +71,20 @@ div  {
    padding-left: %OFFHORIZ%;
    padding-right: %OFFHORIZ%;
 }
+
+#htmldocumentmeta {
+   background: %CLRBGDCODE%;
+   font-size: %FNTSIZESML%;
+   font-family: %FNTFAMMETA%;
+   font-style: italic;
+   max-width: 22%;
+   float: right;
+}
+
+   #htmldocumentmeta div {
+      margin-left: %OFFHORIZ%;
+      margin-right %OFFHORIZ%;
+   }
 
 .bibliography {
 
@@ -203,8 +219,11 @@ span span:hover, a span:hover {
    color: black; 
 }
 
+.italic {
+   font-style: italic;
+}
 
-
-
-
+.tag, .att {
+   color: %CLRCODE%;
+}
 
