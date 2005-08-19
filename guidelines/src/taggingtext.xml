@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="taggingtext" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+   <head>Tagging the Inscribed Text</head>
+   <p>The creation or transformation of epigraphic texts using XML is greatly facilitated by the traditional, scholarly techniques of editing epigraphic texts. Epigraphers are already accustomed to careful examination, analysis and description of letters, words, phrases and other aspects of texts. Communicating these aspects accurately and unambiguously is the central aim of scholarly epigraphic publication, and epigraphers have developed a highly technical and effective typographic vocabulary for achieving it. If the semantic richness and rigor underlying this typographic vocabulary can be made structurally distinct in a way that permits computer software to distinguish all its elements reliably, then software can be used to increase scholarly productivity and reduce the manual tasks that slow scholarly inquiry. This is the primary goal of EpiDoc. The use of sigla in traditional typographic editions that either bind to individual characters or that encompass a group of characters
+      pair-wise provides a ready-made road map to the enumeration and application of XML tags. In formulating the guidelines for markup of the epigraphic text, we have endeavored to provide unique combinations of elements and attributes for each and every distinction epigraphers attempt to draw with sigla in print editions. These element-attribute combinations are described in the following sections, arranged by broad classes of editorial activity.</p>
+   <p>Several principles have been followed in developing these recommendations:</p>
+   <list>
+      <item>the markup language must provide the same degrees of flexibility and rigor inherent in the format-oriented editing conventions currently employed by epigraphers</item>
+      <item>format must be separated from structure and meaning: therefore, characters may be used only to represent text characters and symbols; all editorial distinctions must be made using structured markup </item>
+      <item>there must be a one-to-one relationship between each unique combination of siglum + format (as used in a traditional printed text) and an EPIDOC element + attribute(s) combination. This principle is particularly important if EPIDOC is to be used to facilitate data transfer between systems such as the Heidelberg Epigraphic Database and the Greek Epigraphy Project, each of which may use differing internal representation schemes. It is also important if EPIDOC is to be used to leverage a large and growing body of digital ASCII texts, such as those available from Manfred Clauss' web site at Frankfurt, by making them available for other kinds of textual projects and presentations.</item>
+      <item>rules laid down for the use of a given TEI tag in the TEI guidelines should be followed strictly by EPIDOC: we are not rewriting TEI</item>
+      <item>In some cases, there is more than one mechanism in TEI whereby a particular markup task can be accomplished (e.g., <tag>sic</tag> and <tag>corr</tag>). These alternatives are semantically equivalent. Editors should choose between them based on the needs of a project and the character of the surrounding markup. Designers of EpiDoc processing environments should accomodate all such options.</item>
+   </list>
+   <div id="taggingtext-subsections">
+      <head>Subsections</head>
+   <list>
+      <item>
+         <xref href="transcription.xml" type="include" />
+      </item>
+      <item>
+         <xref href="additionanddeletion.xml" type="include" />
+      </item>
+      <item>
+         <xref href="formandappearance.xml" type="include" />
+      </item>
+      <item>
+         <xref href="supplements.xml" type="include" />
+      </item>
+      <item>
+         <xref href="corrections.xml" type="include" />
+      </item>
+      <item>
+         <xref href="editorialother.xml" type="include" />
+      </item>
+      <item>
+         <xref href="criticalapparatus.xml" type="include" />
+      </item>
+   </list></div>
+</div>
