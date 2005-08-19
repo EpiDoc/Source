@@ -65,7 +65,13 @@
       <map:pipeline name="projectcontent">
          
          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-         
+         <map:match pattern="*.inc">
+            <map:generate src="src/{1}.xml"/>
+            <map:transform src="../epidoc-xsl/util/xref2cinclude.xsl"/>
+            <map:transform type="cinclude"/>
+            <map:transform src="../epidoc-xsl/html/epidoc.xsl"/>
+            <map:serialize type="xhtmlbasic"/>
+         </map:match>
          <map:match pattern="*.html">
 
             <!-- MATCH: regular pages (*.html) -->
@@ -73,25 +79,34 @@
             <!-- get the source xml -->
             <map:generate src="src/{1}.xml" />
 
+            
             <!-- find and apply the nearest version of the epidoc stylesheets: permits override at each directory level -->
             <!-- note: if the file is not found, an error will be thrown b/c the last try is the otherwise statement -->
             <map:select type="resource-exists">
                <map:when test="xsl/epidoc.xsl">
                   <!-- maybe this project defines its own xsl files -->
+                  <map:transform src="xsl/util/xref2cinclude.xsl"/>
+                  <map:transform type="cinclude"/>
                   <map:transform src="xsl/epidoc.xsl" />
                </map:when>
                <map:when test="../../xsl/epidoc-xsl/html/epidoc.xsl">
                    <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                  <map:transform src="../../xsl/util/xref2cinclude.xsl"/>
+                  <map:transform type="cinclude"/>
                   <map:transform src="../../xsl/epidoc-xsl/html/epidoc.xsl"/>
                </map:when>
                <map:when test="../../../epidoc-xsl/html/epidoc.xsl">
                   <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          but project is in standard prj directory under webapp (e.g., examples) -->
+                  <map:transform src="../../../epidoc-xsl/util/xref2cinclude.xsl"/>
+                  <map:transform type="cinclude"/>
                   <map:transform src="../../../epidoc-xsl/html/epidoc.xsl"/>
                   </map:when>
                <map:otherwise>
                   <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          and project is similarly parallel working directory -->
+                  <map:transform src="../epidoc-xsl/util/xref2cinclude.xsl"/>
+                  <map:transform type="cinclude"/>
                   <map:transform src="../epidoc-xsl/html/epidoc.xsl"/>
                   </map:otherwise>
             </map:select>
