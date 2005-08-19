@@ -184,18 +184,18 @@
                   <map:read mime-type="text/css" src="css/{1}.css" />
                </map:when>
                <map:when test="../../css/{1}.css">
-                  <!-- standard configuration: standard csss are installed at epidoc-webapp level and project is under prj -->
+                  <!-- maybe csss are installed at epidoc-webapp level and project is under prj -->
                   <map:read mime-type="text/css" src="../../css/{1}.css" />
                </map:when>
-               <map:when test="../../../css/{1}.css">
+               <map:when test="../../../epidoc-xsl/css/{1}.css">
                   <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          but project is in standard prj directory under webapp (e.g., examples) -->
-                  <map:read mime-type="text/css" src="../../../css/{1}.css"/>
+                  <map:read mime-type="text/css" src="../../../epidoc-xsl/css/{1}.css"/>
                </map:when>
                <map:otherwise>
                   <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          and project is similarly parallel working directory -->
-                  <map:read mime-type="text/css" src="../epidoc-webapp/css/{1}.css"/>
+                  <map:read mime-type="text/css" src="../epidoc-xsl/css/{1}.css"/>
                </map:otherwise>               
             </map:select>
          </map:match>
