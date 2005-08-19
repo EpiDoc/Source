@@ -37,6 +37,14 @@
    <xsl:import href="teiatt.xsl"/>
    <xsl:import href="teiunclear.xsl" />
    <xsl:import href="teixref.xsl" />
+   <xsl:import href="teilistbibl.xsl" />
+   <xsl:import href="teibibl.xsl" />
+   <xsl:import href="teiauthor.xsl" />
+   <xsl:import href="teirespstmt.xsl" />
+   <xsl:import href="teiref.xsl" />
+   <xsl:import href="getdivid.xsl" />
+   <xsl:import href="dohtmlheadboilerplate.xsl" />
+   <xsl:import href="dohtmlbodyboilerplate.xsl" />
    <xsl:param name="stripcomments">false</xsl:param>
    <xsl:param name="persnameuriprefix">people.html</xsl:param>
    <xsl:param name="placenameuriprefix">places.html</xsl:param>
@@ -48,10 +56,8 @@
    <xsl:param name="htmlheaderdivid">htmlheader</xsl:param>
    <xsl:param name="htmlseparatordivid">htmlnavigation</xsl:param>
    <xsl:template match="/">
-      <xsl:call-template name="rootprefix" />
-      <xsl:apply-templates />
-      <xsl:call-template name="rootpostfix" />
+      <xsl:element name="html">
+         <xsl:apply-templates />
+      </xsl:element>
    </xsl:template>
-   <xsl:template name="rootprefix" />
-   <xsl:template name="rootpostfix" />
 </xsl:stylesheet>
