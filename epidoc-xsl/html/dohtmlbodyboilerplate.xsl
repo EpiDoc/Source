@@ -19,6 +19,7 @@
                <xsl:if test="/*/@id">id: <xsl:value-of select="/*/@id" /> |<xsl:text> </xsl:text></xsl:if>
                <xsl:if test="/*/@n">n: <xsl:value-of select="/*/@n" /> |<xsl:text> </xsl:text></xsl:if>
                <xsl:for-each select="/*//tei:div">
+                  <xsl:if test="not(ancestor-or-self::tei:div[substring-after(@id, '-') = 'subsections'])">
                   <xsl:element name="a">
                      <xsl:attribute name="class">htmlnavigation</xsl:attribute>
                      <xsl:attribute name="href">#<xsl:call-template name="getdivid" /></xsl:attribute>
@@ -28,6 +29,7 @@
                   </xsl:element>
                   <xsl:if test="count(following::tei:div) != 0">
                      <xsl:text> | </xsl:text>
+                  </xsl:if>
                   </xsl:if>
                </xsl:for-each>
             </xsl:element>

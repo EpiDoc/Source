@@ -6,6 +6,12 @@
             <xsl:call-template name="dohtmlheadboilerplate" />
             <xsl:call-template name="dohtmlbodyboilerplate" />
          </xsl:when>
+         <xsl:when test="ancestor::tei:div[substring-after(@id, '-') = 'subsections']">
+            <xsl:element name="a">
+               <xsl:attribute name="href"><xsl:value-of select="@id"/>.html</xsl:attribute>
+               <xsl:value-of select="tei:head"/>
+            </xsl:element>
+         </xsl:when>
          <xsl:otherwise>
             <!-- this div is part of a TEI.2 document or is a subordinate div -->
             <xsl:element name="div">
