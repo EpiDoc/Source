@@ -2,12 +2,12 @@
 	(teiHeader, text) >
 
 <!ATTLIST TEI.2 
-	TEIform CDATA "TEI.2"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
+	xmlns CDATA "http://www.tei-c.org/ns/1.0"
 	 >
 
 <!ELEMENT ab 
@@ -15,13 +15,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST ab 
-	TEIform CDATA "ab"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -37,12 +36,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST abbr 
-	TEIform CDATA "abbr"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	expan CDATA #IMPLIED
@@ -59,13 +57,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | ab | l | lg | p | gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | ab | l | lg | p | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST add 
-	TEIform CDATA "add"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	hand CDATA #IMPLIED
@@ -82,12 +79,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST addrLine 
-	TEIform CDATA "addrLine"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -103,7 +99,6 @@
 	| cb | lb | pb)*)*)) >
 
 <!ATTLIST address 
-	TEIform CDATA "address"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -116,7 +111,6 @@
 	| fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST analytic 
-	TEIform CDATA "analytic"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -136,7 +130,6 @@
 	| certainty | fs | link | linkGrp | cb | lb | pb)*)?))+) >
 
 <!ATTLIST app 
-	TEIform CDATA "app"
 	ana IDREFS #IMPLIED
 	from IDREF #IMPLIED
 	id ID #IMPLIED
@@ -148,17 +141,27 @@
 	type CDATA #IMPLIED
 	 >
 
+<!ELEMENT att 
+	(#PCDATA) >
+
+<!ATTLIST att 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
 <!ELEMENT author 
 	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST author 
-	TEIform CDATA "author"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -171,12 +174,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST authority 
-	TEIform CDATA "authority"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -188,7 +190,6 @@
 	(p)+ >
 
 <!ATTLIST availability 
-	TEIform CDATA "availability"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -202,14 +203,13 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| analytic | author | biblScope | edition | editor | extent 
-	| idno | imprint | monogr | note | pubPlace | publisher 
-	| respStmt | series | gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | analytic | author | biblScope | 
+	edition | editor | extent | idno | imprint | monogr | note 
+	| pubPlace | publisher | respStmt | series | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST bibl 
-	TEIform CDATA "bibl"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -230,7 +230,6 @@
 	| certainty | fs | link | linkGrp | cb | lb | pb)*)*) >
 
 <!ATTLIST biblFull 
-	TEIform CDATA "biblFull"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -245,12 +244,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST biblScope 
-	TEIform CDATA "biblScope"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -270,7 +268,6 @@
 	| link | linkGrp | cb | lb | pb)*))*) >
 
 <!ATTLIST biblStruct 
-	TEIform CDATA "biblStruct"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -285,12 +282,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST bloc 
-	TEIform CDATA "bloc"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -313,7 +309,6 @@
 	| fs | link | linkGrp | cb | lb | pb)*))) >
 
 <!ATTLIST body 
-	TEIform CDATA "body"
 	ana IDREFS #IMPLIED
 	decls IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -327,10 +322,10 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag)* >
 
 <!ATTLIST catDesc 
-	TEIform CDATA "catDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -342,7 +337,6 @@
 	EMPTY >
 
 <!ATTLIST catRef 
-	TEIform CDATA "catRef"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -356,7 +350,6 @@
 	(catDesc, category*) >
 
 <!ATTLIST category 
-	TEIform CDATA "category"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -368,7 +361,6 @@
 	EMPTY >
 
 <!ATTLIST cb 
-	TEIform CDATA "cb"
 	ana IDREFS #IMPLIED
 	ed CDATA #IMPLIED
 	id ID #IMPLIED
@@ -381,7 +373,6 @@
 	EMPTY >
 
 <!ATTLIST certainty 
-	TEIform CDATA "certainty"
 	ana IDREFS #IMPLIED
 	assertedValue CDATA #IMPLIED
 	degree CDATA #IMPLIED
@@ -399,7 +390,6 @@
 	(date, respStmt+, item) >
 
 <!ATTLIST change 
-	TEIform CDATA "change"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -412,12 +402,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST classCode 
-	TEIform CDATA "classCode"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -430,7 +419,6 @@
 	(taxonomy)+ >
 
 <!ATTLIST classDecl 
-	TEIform CDATA "classDecl"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -443,13 +431,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | ab | l | lg | p | gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | ab | l | lg | p | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST corr 
-	TEIform CDATA "corr"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	id ID #IMPLIED
@@ -465,13 +452,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST country 
-	TEIform CDATA "country"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -489,12 +475,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST creation 
-	TEIform CDATA "creation"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -507,12 +492,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST date 
-	TEIform CDATA "date"
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
 	cert CDATA #IMPLIED
@@ -533,12 +517,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST dateRange 
-	TEIform CDATA "dateRange"
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
 	exact (to | from | both | none) #IMPLIED
@@ -556,7 +539,6 @@
 	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST dateStruct 
-	TEIform CDATA "dateStruct"
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
 	exact CDATA #IMPLIED
@@ -575,7 +557,6 @@
 	(#PCDATA) >
 
 <!ATTLIST day 
-	TEIform CDATA "day"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -593,12 +574,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST del 
-	TEIform CDATA "del"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	hand IDREF #IMPLIED
@@ -616,12 +596,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST distance 
-	TEIform CDATA "distance"
 	ana IDREFS #IMPLIED
 	exact (Y | N | U) #IMPLIED
 	full (yes | abb | init) "yes"
@@ -640,12 +619,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST distributor 
-	TEIform CDATA "distributor"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -663,7 +641,6 @@
 	linkGrp | cb | lb | pb)*)*))) >
 
 <!ATTLIST div 
-	TEIform CDATA "div"
 	ana IDREFS #IMPLIED
 	decls IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -684,12 +661,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST docAuthor 
-	TEIform CDATA "docAuthor"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -702,12 +678,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST edition 
-	TEIform CDATA "edition"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -719,7 +694,6 @@
 	((edition, respStmt*) | p+) >
 
 <!ATTLIST editionStmt 
-	TEIform CDATA "editionStmt"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -732,12 +706,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST editor 
-	TEIform CDATA "editor"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -751,13 +724,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST emph 
-	TEIform CDATA "emph"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -769,7 +741,6 @@
 	(classDecl*, p*) >
 
 <!ATTLIST encodingDesc 
-	TEIform CDATA "encodingDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -782,12 +753,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST expan 
-	TEIform CDATA "expan"
 	abbr CDATA #IMPLIED
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
@@ -804,12 +774,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST extent 
-	TEIform CDATA "extent"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -821,7 +790,6 @@
 	(str | fs)* >
 
 <!ATTLIST f 
-	TEIform CDATA "f"
 	ana IDREFS #IMPLIED
 	fVal IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -838,13 +806,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST figDesc 
-	TEIform CDATA "figDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -869,7 +836,6 @@
 	(titleStmt, editionStmt?, extent?, publicationStmt, sourceDesc+) >
 
 <!ATTLIST fileDesc 
-	TEIform CDATA "fileDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -882,13 +848,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST foreign 
-	TEIform CDATA "foreign"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -900,7 +865,6 @@
 	(f)* >
 
 <!ATTLIST fs 
-	TEIform CDATA "fs"
 	ana IDREFS #IMPLIED
 	feats IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -916,12 +880,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST funder 
-	TEIform CDATA "funder"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -933,7 +896,6 @@
 	EMPTY >
 
 <!ATTLIST gap 
-	TEIform CDATA "gap"
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
 	desc CDATA #IMPLIED
@@ -953,7 +915,6 @@
 	(#PCDATA) >
 
 <!ATTLIST geog 
-	TEIform CDATA "geog"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -971,7 +932,6 @@
 	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST geogName 
-	TEIform CDATA "geogName"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -988,12 +948,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST gloss 
-	TEIform CDATA "gloss"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1006,7 +965,6 @@
 	EMPTY >
 
 <!ATTLIST hand 
-	TEIform CDATA "hand"
 	ana IDREFS #IMPLIED
 	character CDATA #IMPLIED
 	first CDATA #IMPLIED
@@ -1026,7 +984,6 @@
 	(hand)* >
 
 <!ATTLIST handList 
-	TEIform CDATA "handList"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1038,7 +995,6 @@
 	EMPTY >
 
 <!ATTLIST handShift 
-	TEIform CDATA "handShift"
 	ana IDREFS #IMPLIED
 	character CDATA #IMPLIED
 	id ID #IMPLIED
@@ -1057,13 +1013,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST head 
-	TEIform CDATA "head"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1077,18 +1032,17 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST hi 
-	TEIform CDATA "hi"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	rend (apex | intraline | ligature | longa | reversed | supraline | tall | superscript) #REQUIRED
+	rend (apex | intraline | italic | ligature | longa | reversed | supraline | tall | strong | superscript) #REQUIRED
 	type CDATA #IMPLIED
 	 >
 
@@ -1096,7 +1050,6 @@
 	(#PCDATA) >
 
 <!ATTLIST idno 
-	TEIform CDATA "idno"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1110,7 +1063,6 @@
 	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST imprint 
-	TEIform CDATA "imprint"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1123,13 +1075,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | ab | l | lg | p | gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | ab | l | lg | p | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST item 
-	TEIform CDATA "item"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1141,7 +1092,6 @@
 	(term+ | list) >
 
 <!ATTLIST keywords 
-	TEIform CDATA "keywords"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1155,13 +1105,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST l 
-	TEIform CDATA "l"
 	ana IDREFS #IMPLIED
 	enjamb CDATA #IMPLIED
 	id ID #IMPLIED
@@ -1178,7 +1127,6 @@
 	(p | language)+ >
 
 <!ATTLIST langUsage 
-	TEIform CDATA "langUsage"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -1192,12 +1140,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST language 
-	TEIform CDATA "language"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1211,7 +1158,6 @@
 	EMPTY >
 
 <!ATTLIST lb 
-	TEIform CDATA "lb"
 	ana IDREFS #IMPLIED
 	ed CDATA #IMPLIED
 	id ID #IMPLIED
@@ -1226,13 +1172,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST lem 
-	TEIform CDATA "lem"
 	ana IDREFS #IMPLIED
 	cause CDATA #IMPLIED
 	hand IDREF #IMPLIED
@@ -1252,7 +1197,6 @@
 	| certainty | fs | link | linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST lg 
-	TEIform CDATA "lg"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1271,7 +1215,6 @@
 	EMPTY >
 
 <!ATTLIST link 
-	TEIform CDATA "link"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	evaluate (all | one | none) #IMPLIED
@@ -1290,7 +1233,6 @@
 	(link | ptr | xptr)+ >
 
 <!ATTLIST linkGrp 
-	TEIform CDATA "linkGrp"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	domains IDREFS #IMPLIED
@@ -1313,7 +1255,6 @@
 	| fs | link | linkGrp | cb | lb | pb)*)*) >
 
 <!ATTLIST list 
-	TEIform CDATA "list"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1330,7 +1271,6 @@
 	| fs | link | linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST listBibl 
-	TEIform CDATA "listBibl"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -1356,12 +1296,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST measure 
-	TEIform CDATA "measure"
 	ana IDREFS #IMPLIED
 	dim (height | width | depth | diameter | none) "none"
 	id ID #IMPLIED
@@ -1379,13 +1318,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST meeting 
-	TEIform CDATA "meeting"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1411,7 +1349,6 @@
 	lb | pb)*) >
 
 <!ATTLIST monogr 
-	TEIform CDATA "monogr"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1423,7 +1360,6 @@
 	(#PCDATA) >
 
 <!ATTLIST month 
-	TEIform CDATA "month"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1441,12 +1377,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST name 
-	TEIform CDATA "name"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
@@ -1462,13 +1397,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | ab | l | lg | p | gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | ab | l | lg | p | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST note 
-	TEIform CDATA "note"
 	ana IDREFS #IMPLIED
 	anchored (yes | no) "yes"
 	id ID #IMPLIED
@@ -1487,12 +1421,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST num 
-	TEIform CDATA "num"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1507,12 +1440,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST occasion 
-	TEIform CDATA "occasion"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1530,7 +1462,6 @@
 	| cb | lb | pb)* >
 
 <!ATTLIST offset 
-	TEIform CDATA "offset"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1548,12 +1479,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST orig 
-	TEIform CDATA "orig"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1568,13 +1498,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST p 
-	TEIform CDATA "p"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1586,7 +1515,6 @@
 	EMPTY >
 
 <!ATTLIST pb 
-	TEIform CDATA "pb"
 	ana IDREFS #IMPLIED
 	ed CDATA #IMPLIED
 	id ID #IMPLIED
@@ -1600,12 +1528,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST persName 
-	TEIform CDATA "persName"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1623,12 +1550,11 @@
 	| dateStruct | expan | geogName | measure | name | num | 
 	persName | placeName | rs | add | app | corr | del | orig 
 	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | term | title | ptr | ref | xptr 
-	| xref | seg | w | gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)* >
+	| foreign | gloss | hi | soCalled | term | title | ptr | 
+	ref | xptr | xref | seg | w | att | tag | gap | figure | 
+	certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST placeName 
-	TEIform CDATA "placeName"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1644,7 +1570,6 @@
 	(#PCDATA) >
 
 <!ATTLIST postBox 
-	TEIform CDATA "postBox"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1656,7 +1581,6 @@
 	(#PCDATA) >
 
 <!ATTLIST postCode 
-	TEIform CDATA "postCode"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1669,12 +1593,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST principal 
-	TEIform CDATA "principal"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1686,7 +1609,6 @@
 	(creation?, langUsage*, handList*, textClass*) >
 
 <!ATTLIST profileDesc 
-	TEIform CDATA "profileDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1698,7 +1620,6 @@
 	EMPTY >
 
 <!ATTLIST ptr 
-	TEIform CDATA "ptr"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	evaluate (all | one | none) "all"
@@ -1718,12 +1639,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST pubPlace 
-	TEIform CDATA "pubPlace"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
@@ -1740,7 +1660,6 @@
 	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)+) >
 
 <!ATTLIST publicationStmt 
-	TEIform CDATA "publicationStmt"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1753,12 +1672,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST publisher 
-	TEIform CDATA "publisher"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1771,13 +1689,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST rdg 
-	TEIform CDATA "rdg"
 	ana IDREFS #IMPLIED
 	cause CDATA #IMPLIED
 	hand IDREF #IMPLIED
@@ -1799,7 +1716,6 @@
 	| certainty | fs | link | linkGrp | cb | lb | pb)*)?))+) >
 
 <!ATTLIST rdgGrp 
-	TEIform CDATA "rdgGrp"
 	ana IDREFS #IMPLIED
 	cause CDATA #IMPLIED
 	hand IDREF #IMPLIED
@@ -1818,13 +1734,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST ref 
-	TEIform CDATA "ref"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	evaluate (all | one | none) "all"
@@ -1844,12 +1759,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST reg 
-	TEIform CDATA "reg"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1864,13 +1778,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST region 
-	TEIform CDATA "region"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -1888,12 +1801,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST resp 
-	TEIform CDATA "resp"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1906,7 +1818,6 @@
 	| cb | lb | pb)+ >
 
 <!ATTLIST respStmt 
-	TEIform CDATA "respStmt"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1918,7 +1829,6 @@
 	(list | change+) >
 
 <!ATTLIST revisionDesc 
-	TEIform CDATA "revisionDesc"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1931,12 +1841,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST rs 
-	TEIform CDATA "rs"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
@@ -1952,13 +1861,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST seg 
-	TEIform CDATA "seg"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	function CDATA #IMPLIED
@@ -1979,7 +1887,6 @@
 	figure | certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST series 
-	TEIform CDATA "series"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -1992,12 +1899,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST settlement 
-	TEIform CDATA "settlement"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -2015,13 +1921,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | ab | l | lg | p | gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | ab | l | lg | p | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST sic 
-	TEIform CDATA "sic"
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
 	corr CDATA #IMPLIED
@@ -2032,11 +1937,27 @@
 	resp CDATA #IMPLIED
 	 >
 
+<!ELEMENT soCalled 
+	(#PCDATA | mark | abbr | address | date | dateRange | dateStruct 
+	| expan | geogName | measure | name | num | persName | placeName 
+	| rs | add | app | corr | del | orig | reg | sic | space 
+	| supplied | unclear | handShift | emph | foreign | gloss 
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
+
+<!ATTLIST soCalled 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
 <!ELEMENT sourceDesc 
 	(p | bibl | biblFull | biblStruct | listBibl)+ >
 
 <!ATTLIST sourceDesc 
-	TEIform CDATA "sourceDesc"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -2049,7 +1970,6 @@
 	EMPTY >
 
 <!ATTLIST space 
-	TEIform CDATA "space"
 	ana IDREFS #IMPLIED
 	dim (horizontal | vertical) "horizontal"
 	extent CDATA #IMPLIED
@@ -2066,12 +1986,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST sponsor 
-	TEIform CDATA "sponsor"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2083,7 +2002,6 @@
 	(#PCDATA) >
 
 <!ATTLIST str 
-	TEIform CDATA "str"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2097,12 +2015,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST street 
-	TEIform CDATA "street"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2115,13 +2032,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST supplied 
-	TEIform CDATA "supplied"
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
 	cert CDATA #IMPLIED
@@ -2135,11 +2051,21 @@
 	source CDATA #IMPLIED
 	 >
 
+<!ELEMENT tag 
+	(#PCDATA) >
+
+<!ATTLIST tag 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
 <!ELEMENT taxonomy 
 	(category+ | ((bibl | biblStruct | biblFull), category*)) >
 
 <!ATTLIST taxonomy 
-	TEIform CDATA "taxonomy"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2151,7 +2077,6 @@
 	(teiHeader, TEI.2+) >
 
 <!ATTLIST teiCorpus.2 
-	TEIform CDATA "teiCorpus.2"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2163,7 +2088,6 @@
 	(fileDesc, encodingDesc*, profileDesc*, revisionDesc?) >
 
 <!ATTLIST teiHeader 
-	TEIform CDATA "teiHeader"
 	ana IDREFS #IMPLIED
 	creator CDATA #IMPLIED
 	date.created CDATA #IMPLIED
@@ -2181,12 +2105,11 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | gap | figure | certainty | fs | 
+	link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST term 
-	TEIform CDATA "term"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2201,7 +2124,6 @@
 	linkGrp | cb | lb | pb)*) >
 
 <!ATTLIST text 
-	TEIform CDATA "text"
 	ana IDREFS #IMPLIED
 	decls IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -2214,7 +2136,6 @@
 	(classCode | catRef | keywords)* >
 
 <!ATTLIST textClass 
-	TEIform CDATA "textClass"
 	ana IDREFS #IMPLIED
 	default (YES | NO) "NO"
 	id ID #IMPLIED
@@ -2228,13 +2149,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST title 
-	TEIform CDATA "title"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2249,7 +2169,6 @@
 	| respStmt)*) >
 
 <!ATTLIST titleStmt 
-	TEIform CDATA "titleStmt"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2268,7 +2187,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	reason (damage | execution) #IMPLIED
+	reason (damage | execution | undefined) "undefined"
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	 >
@@ -2278,10 +2197,10 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST w 
 	ana IDREFS #IMPLIED
@@ -2302,7 +2221,6 @@
 	(#PCDATA) >
 
 <!ATTLIST week 
-	TEIform CDATA "week"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -2320,13 +2238,12 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST wit 
-	TEIform CDATA "wit"
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -2338,7 +2255,6 @@
 	EMPTY >
 
 <!ATTLIST xptr 
-	TEIform CDATA "xptr"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	doc ENTITY #IMPLIED
@@ -2360,18 +2276,18 @@
 	| expan | geogName | measure | name | num | persName | placeName 
 	| rs | add | app | corr | del | orig | reg | sic | space 
 	| supplied | unclear | handShift | emph | foreign | gloss 
-	| hi | term | title | ptr | ref | xptr | xref | seg | w 
-	| bibl | biblFull | biblStruct | list | listBibl | note 
-	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| hi | soCalled | term | title | ptr | ref | xptr | xref 
+	| seg | w | att | tag | bibl | biblFull | biblStruct | list 
+	| listBibl | note | text | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | pb)* >
 
 <!ATTLIST xref 
-	TEIform CDATA "xref"
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	doc ENTITY #IMPLIED
 	evaluate (all | one | none) "all"
 	from CDATA "ROOT"
+	href CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -2387,7 +2303,6 @@
 	(#PCDATA) >
 
 <!ATTLIST year 
-	TEIform CDATA "year"
 	ana IDREFS #IMPLIED
 	full (yes | abb | init) "yes"
 	id ID #IMPLIED
@@ -2400,7 +2315,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza3694 on 17 Aug 2005 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza29566 on 18 Aug 2005 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 
