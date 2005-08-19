@@ -20,13 +20,13 @@
         <xsl:param name="corr"/>
         <xsl:choose>
             <xsl:when test="string-length($sic) = 1 and string-length($corr) = 1">
-                <xsl:element name="span"><xsl:attribute name="class">correction</xsl:attribute><xsl:attribute name="title"><xsl:value-of select="$sic"/></xsl:attribute>&lt;<xsl:value-of select="$corr"/>&gt;</xsl:element>
+                <xsl:element name="span"><xsl:call-template name="propagateattrs"/><xsl:attribute name="class">correction</xsl:attribute><xsl:attribute name="title"><xsl:value-of select="$sic"/></xsl:attribute>&lt;<xsl:value-of select="$corr"/>&gt;</xsl:element>
             </xsl:when>
             <xsl:when test="string-length($sic) &gt; 0 and string-length($corr) = 0">
-                <xsl:element name="span"><xsl:attribute name="class">correction</xsl:attribute>{<xsl:value-of select="$sic"/>}</xsl:element>
+               <xsl:element name="span"><xsl:call-template name="propagateattrs"/><xsl:attribute name="class">correction</xsl:attribute>{<xsl:value-of select="$sic"/>}</xsl:element>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:element name="span"><xsl:attribute name="class">correction</xsl:attribute><xsl:attribute name="title"><xsl:value-of select="$sic"/></xsl:attribute>&#x231C;<xsl:value-of select="$corr"/>&#x231D;</xsl:element>
+               <xsl:element name="span"><xsl:call-template name="propagateattrs"/><xsl:attribute name="class">correction</xsl:attribute><xsl:attribute name="title"><xsl:value-of select="$sic"/></xsl:attribute>&#x231C;<xsl:value-of select="$corr"/>&#x231D;</xsl:element>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -34,6 +34,7 @@
    <!-- in EpiDoc, a plain sic means unintelligible -->
     <xsl:template match="tei:sic">
        <xsl:element name="span">
+          <xsl:call-template name="propagateattrs"/>
           <xsl:attribute name="class">unintelligible</xsl:attribute>
           <xsl:choose>
              <xsl:when test="ancestor-or-self::*/@lang='lat'"><xsl:value-of select="translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:when>
