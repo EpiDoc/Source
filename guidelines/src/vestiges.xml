@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="vestiges" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+   <head>Transcription wherein vestiges of characters remain, but they cannot be recognized (extent certain or nearly so)</head>
+   <p>This section of the guidelines requires revision &mdash; in concert with DTD changes &mdash; to realize the solution reached in long, painful discussions on the markup and tei lists. What follows now is almost surely deprecated.</p>
+   <div id="vestiges-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="unordered">
+         <item><bibl><title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#panciera">Panciera</xref>
+               </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#donicht">Donicht</xref>
+               </title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered">
+               <item>+++</item>
+               <item>+ 10 +</item>
+               <item>+ c.10 +</item>
+               <item>+ 4.2cm +</item>
+            </list>
+         </item>
+         <item>
+            <bibl>
+               <title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#seg">SEG</xref>
+               </title>
+            </bibl>
+            <list type="ordered">
+               <item>[...]</item>
+            </list>
+         </item>
+         <item>
+            <bibl>
+               <title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#poxy">POxy</xref>
+               </title>
+            </bibl>
+            <list type="ordered">
+               <item>…</item>
+               <item>..........</item>
+            </list>
+         </item>
+         
+      </list>
+   </div>
+   <div id="vestiges-epidoc">
+      <head>EpiDoc encodings</head>
+      <list type="ordered">
+         <item><tag>gap reason="illegible" extent="3" unit="character"/</tag></item>
+         <item><tag>gap reason="illegible" extent="10" unit="character"/</tag></item>
+      </list>
+   </div>
+   <div id="vestiges-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item><gap reason="illegible" extent="3" unit="character"/></item>
+         <item><gap reason="illegible" extent="10" unit="character"/></item>
+      </list>
+   </div>
+   <div id="vestiges-notes">
+      <head>Notes</head>
+   </div>
+   <div id="tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item>
+            <xref href="http://www.tei-c.org/P4X/ref-GAP.html">
+               <tag>gap</tag>
+            </xref>
+         </item>
+         <item>
+            <xref href="http://www.tei-c.org/P4X/CE.html#CECECE">17.1.2 Structured Indications of Uncertainty</xref>
+         </item>
+         <item>
+            <xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref>
+         </item>
+      </list>
+   </div>
+   <div id="vestiges-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Tom Elliott</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Gabriel Bodard</name>
+            </respStmt>
+         </bibl>
+         
+         
+         
+      </listBibl>
+   </div>
+</div>
