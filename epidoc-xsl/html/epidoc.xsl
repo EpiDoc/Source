@@ -43,8 +43,10 @@
    <xsl:import href="teirespstmt.xsl" />
    <xsl:import href="teiref.xsl" />
    <xsl:import href="getdivid.xsl" />
+   <xsl:import href="teigap.xsl"/>
    <xsl:import href="dohtmlheadboilerplate.xsl" />
    <xsl:import href="dohtmlbodyboilerplate.xsl" />
+   <xsl:import href="teititle.xsl"/>
    <xsl:param name="stripcomments">false</xsl:param>
    <xsl:param name="persnameuriprefix">people.html</xsl:param>
    <xsl:param name="placenameuriprefix">places.html</xsl:param>
@@ -55,6 +57,7 @@
    <xsl:param name="htmlcontentdivid">htmlcontent</xsl:param>
    <xsl:param name="htmlheaderdivid">htmlheader</xsl:param>
    <xsl:param name="htmlseparatordivid">htmlnavigation</xsl:param>
+   <xsl:param name="vestigemark">+</xsl:param>
    <xsl:template match="/">
       <xsl:element name="html">
          <xsl:apply-templates />
