@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="unclear" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+   <head>Transcription wherein the character would not be unambiguous outside its context</head>
+   <p>Note: depending on your font, browser, browser settings, operating system and other factors, the subscript dots used in examples in this section may display after the character instead of beneath it.</p>
+   <div id="unclear-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="unordered">
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list type="unordered">
+               <item>
+                  <hi rend="italic">ạḅc̣</hi>
+               </item>
+            </list></item>
+      </list>
+   </div>
+   <div id="unclear-epidoc">
+      <head>EpiDoc encodings</head>
+      <list type="ordered">
+         <item><tag>unclear</tag>abc<tag>/unclear</tag></item>
+         <item><tag>unclear</tag>a<tag>/unclear</tag><tag>unclear</tag>b<tag>/unclear</tag><tag>unclear</tag>c<tag>/unclear</tag></item>
+         <item><tag>unclear reason="damage"</tag>a<tag>/unclear</tag></item>
+         <item><tag>unclear reason="execution"</tag>a<tag>/unclear</tag></item>
+         <item><tag>unclear reason="undefined"</tag>a<tag>/unclear</tag></item>
+      </list>
+      <p>Note: see <ref target="unclear-notes">notes</ref>, below.</p>
+   </div>
+   <div id="unclear-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item><unclear reason="undefined">abc</unclear></item>
+         <item><unclear reason="undefined">a</unclear><unclear reason="undefined">b</unclear><unclear reason="undefined">c</unclear></item>
+         <item><unclear reason="damage">abc</unclear></item>
+         <item><unclear reason="execution">abc</unclear></item>
+         <item><unclear reason="undefined">abc</unclear></item>
+      </list>
+   </div>
+   <div id="unclear-notes">
+      <head>Notes</head>
+      <div id="unclear-usage">
+         <head>Usage</head>
+         <p>The EpiDoc DTD permits only the appearance of character data and the <tag>mark/</tag> element within <tag>unclear</tag><tag>/unclear</tag>. When an editor or encoder encounters a continuous string of unclear characters in a text, two encoding options are available: each character may be encapsulated within its own <tag>unclear</tag><tag>/unclear</tag> or the entire string may be encapsulated within a single <tag>unclear</tag><tag>/unclear</tag>. No other markup may appear inside <tag>unclear</tag><tag>/unclear</tag>, so if other aspects of a long string of unclear characters warrant additional tagging internal to the string, the per-character solution may be preferable or even required. For background on this issue, see a discussion on the <xref href="http://lsv.uky.edu/archives/markup.html">markup list</xref> in July and August of 2005, subject: EpiDoc DTD issues [1: unclear].</p>
+      </div>
+      <div id="unclear-reason">
+         <head>The <att>reason</att> Attribute</head>
+         <p>TEI defines a <att>reason</att> attribute for the <tag>unclear</tag> element. In the EpiDoc DTD, this attribute has three possible values: "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See further the markup list discussion referenced above. The default stylesheets render all instances of <tag>unclear</tag> with the standard subscript dot, regardless of the value of the <att>reason</att> attribute.</p>
+      </div>
+   </div>
+   <div id="tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item><xref href="http://www.tei-c.org/P4X/ref-UNCLEAR.html"><tag>unclear</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/CE.html#CECECE">17.1.2 Structured Indications of Uncertainty</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref></item>
+      </list>
+   </div>
+   
+   <div id="unclear-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Tom Elliott</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Gabriel Bodard</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>contributor</resp>
+               <name>Hugh Cayless</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>contributor</resp>
+               <name>Tim Finney</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>contributor</resp>
+               <name>Chris Lilley</name>
+            </respStmt>
+         </bibl>
+      </listBibl>
+   </div>
+</div>
