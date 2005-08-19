@@ -1,0 +1,229 @@
+%OFFVERT% = 8px
+%OFFHORIZ% = 4px
+%CLRNEUTRAL% = white
+%CLRCONTRAST% = pink
+%CLRATTENTION% = red
+%CLRPALE% = #CCC
+%CLRSUBTLE% = #555
+%CLRCODE% = #057;
+%CLRBGDCODE% = #8DF;
+%BRDRSTD% = none
+%BRDRSUBTLE% = thin solid #555 
+%FNTFAMMETA% = "Arial Narrow",sans-serif;
+%FNTFAMCONTENT% = "Gentium",serif;
+%FNTSIZENORM% = 1em
+%FNTSIZESML% = 0.7em
+%LINENUMWIDTH% = 2em
+%LINENUMPAD% = 0.2em
+
+body  { 
+   background:%CLRNEUTRAL%;
+   margin:0px;
+   padding:%OFFVERT%;
+} 
+
+*[lang]  { 
+   font-style:italic;
+} 
+
+*[lang|="en"] { 
+   font-style:normal;
+} 
+
+*[lang="grc"] {
+   font-style:normal;
+}
+
+div  { 
+   border: %BRDRSTD%;
+   font-family: %FNTFAMCONTENT%;
+   font-size: %FNTSIZENORM%;
+   font-style: normal;
+   font-weight: normal;
+   margin:0px;
+   padding:0px;
+   text-indent: 0px;
+} 
+
+#htmlcontent {
+}
+
+   #htmlcontent div {
+      margin-left: %OFFHORIZ%;
+      margin-right %OFFHORIZ%;
+   }
+
+#htmlheader  { 
+   background:%CLRCONTRAST%;
+   margin-bottom:%OFFVERT%;
+} 
+
+
+#htmlnavigation {
+   background: %CLRPALE%;
+   font-size: %FNTSIZESML%;
+   font-family: %FNTFAMMETA%;
+   font-style: italic;
+   margin-bottom: %OFFVERT%;
+   padding: 0px;
+   padding-left: %OFFHORIZ%;
+   padding-right: %OFFHORIZ%;
+}
+
+#htmldocumentmeta {
+   background: %CLRBGDCODE%;
+   font-size: %FNTSIZESML%;
+   font-family: %FNTFAMMETA%;
+   font-style: italic;
+   margin-left: %OFFHORIZ%;
+   margin-right %OFFHORIZ%;
+   max-width: 25%;
+   float: right;
+}
+
+   #htmldocumentmeta div {
+      margin-left: %OFFHORIZ%;
+      margin-right %OFFHORIZ%;
+   }
+
+.bibliography {
+
+}
+
+.commentary {
+
+}
+
+.description {
+
+}
+
+.diplomatic {
+
+}
+
+.edition {
+
+}
+
+.history {
+
+}
+
+.metadata {
+
+}
+
+.translation {
+
+}
+
+
+
+h1, h2, h3, h4, h5, h6  { 
+   font-family:%FNTFAMMETA%;
+   font-style:normal;
+   font-weight:normal;
+   margin:0px;
+   padding:0px;
+} 
+
+h1  { 
+   border: %BRDRSTD%;
+   font-size:1.4em;
+   padding-left: %OFFHORIZ%;
+} 
+
+h2  { 
+   border-bottom: %BRDRSUBTLE%;
+   font-size:1.2em;
+} 
+
+h3  { 
+   font-size:1em;
+} 
+
+h4  { 
+   font-size:0.8em;
+} 
+
+h5  { 
+   font-size:0.6em;
+} 
+
+h6  { 
+   font-size:0.4em;
+} 
+
+p {
+   margin: 0px;
+   margin-top: %OFFVERT%;
+   margin-bottom: %OFFVERT%;
+   padding: 0px;
+}
+
+.linenumber {
+   color: %CLRSUBTLE%;
+   font-family: %FNTFAMMETA%;
+   font-size: %FNTSIZESML%;
+   left: -%LINENUMWIDTH%;
+   padding-right: %LINENUMPAD%;
+   position: absolute; 
+   text-align: right;
+   top: auto; 
+}
+
+.edition *.abstract {
+   left: %LINENUMWIDTH%;
+   line-height: 1.4;
+   margin-top: %OFFVERT%;
+   margin-bottom: %OFFVERT%;
+   position: relative;
+   padding-right: %LINENUMWIDTH%;
+}
+
+.translation p, .translation *.abstract, #htmldocumentmeta p {
+   padding-left: %LINENUMWIDTH%;
+   padding-right: %LINENUMWIDTH%;
+}
+
+.edition span.personal-name, .edition span.place-name {
+   background: %CLRCONTRAST%;
+}
+
+.edition span:hover {
+   border: thin solid %CLRATTENTION%;
+}   
+
+.edition a.personal-name, .edition a.placename {
+   color: black;
+   background: %CLRCONTRAST%;
+   text-decoration: none;
+}
+
+.edition a.personal-name:visited, .edition a.place-name:visited {
+   color: %CLRSUBTLE%;
+}
+
+.edition a.personal-name:hover, .edition a.place-name:hover {
+   color: %CLRATTENTION%;
+   text-decoration: underline;
+}
+
+.edition a.personal-name:active, .edition a.place-name:active {
+   color: %CLRATTENTION%;
+}
+
+span span:hover, a span:hover {
+   background: %CLRATTENTION%;
+   color: black; 
+}
+
+.italic {
+   font-style: italic;
+}
+
+.tag, .att {
+   color: %CLRCODE%;
+}
+
