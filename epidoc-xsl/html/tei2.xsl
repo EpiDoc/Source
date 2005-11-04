@@ -3,6 +3,6 @@
    <!-- epidoc-tei2 -->
    <!-- 2005-08-10: created by Tom Elliott -->
    <xsl:template match="tei:TEI.2">
-      <xsl:apply-templates />
+       <xsl:apply-templates />
    </xsl:template>
 </xsl:stylesheet>

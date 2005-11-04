@@ -6,7 +6,16 @@
     <xsl:template match="tei:body">
         <xsl:call-template name="teibodyprefix"/>
         
-        <xsl:apply-templates/>
+        <xsl:choose>
+            <xsl:when test="ancestor::tei:TEI.2/@rend='multipart'">
+                <xsl:apply-templates select="*[not(tei:div)]"/>
+                <xsl:element name="h2">Subsections:</xsl:element>
+                <xsl:element name="ul">
+                    <xsl:apply-templates select="tei:div"/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+        </xsl:choose>
         
         <xsl:call-template name="teibodypostfix"/>
     </xsl:template>
