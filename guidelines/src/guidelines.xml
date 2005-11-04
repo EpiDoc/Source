@@ -1,0 +1,30 @@
+<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" >
+<TEI.2 id="guidelines" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" rend="multipart">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>EpiDoc Guidelines</title>
+                <author>Tom Elliott</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>This is a draft digital work, currently unpublished.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <!-- one of (bibl biblFull biblStruct listBibl p recordingStmt scriptStmt) -->
+                <p>No physical source: this work was created in machine-readable form.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            
+            <!-- <xi:include  href="introduction.xml"/>
+            <xi:include  href="essentialreading.xml"/>
+            <xi:include  href="documentstructure.xml"/> -->
+            <xi:include  href="taggingtext.xml"/>
+            <!-- <xi:include  href="othermarkupissues.xml"/>
+            <xi:include  href="interoperability.xml"/> -->
+        </body>
+    </text>
+</TEI.2>

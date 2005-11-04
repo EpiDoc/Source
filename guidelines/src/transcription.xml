@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="transcription" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
-   <head>Transcription of characters and sigla on the stone</head>
-   <div id="transcription-subsections">
-      <head>Subsections</head>
-      <list><item><xref href="noproblems.xml" type="include" /></item>
-      <item><xref href="nonsensical.xml" type="include" /></item>
-      <item><xref href="unclear.xml" type="include" /></item>
-      <item><xref href="vestiges.xml" type="include" /></item>
-         <!--      <item><xref href="lost.xml" type="include" /></item>
-      <item><xref href="earlierwitness.xml" type="include" /></item>
-         <item><xref href="vacat.xml" type="include" /></item>
--->         
-         </list>
-   </div>
+<div id="transcription" xmlns="http://www.tei-c.org/ns/1.0" lang="en" rend="multipart">
+    <head>Transcription of characters and sigla on the stone</head>
+        <xi:include href="noproblems.xml"  />
+        <xi:include href="nonsensical.xml"  />
+        <xi:include href="unclear.xml"  />
+        <xi:include href="vestiges.xml"  />
+    <!--      <xi:include href="lost.xml"  />
+      <xi:include href="earlierwitness.xml"  />
+         <xi:include href="vacat.xml"  />
+-->
 </div>

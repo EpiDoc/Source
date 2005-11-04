@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="taggingtext" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+<div id="taggingtext" xmlns="http://www.tei-c.org/ns/1.0" lang="en" rend="multipart">
    <head>Tagging the Inscribed Text</head>
    <p>The creation or transformation of epigraphic texts using XML is greatly facilitated by the traditional, scholarly techniques of editing epigraphic texts. Epigraphers are already accustomed to careful examination, analysis and description of letters, words, phrases and other aspects of texts. Communicating these aspects accurately and unambiguously is the central aim of scholarly epigraphic publication, and epigraphers have developed a highly technical and effective typographic vocabulary for achieving it. If the semantic richness and rigor underlying this typographic vocabulary can be made structurally distinct in a way that permits computer software to distinguish all its elements reliably, then software can be used to increase scholarly productivity and reduce the manual tasks that slow scholarly inquiry. This is the primary goal of EpiDoc. The use of sigla in traditional typographic editions that either bind to individual characters or that encompass a group of characters
       pair-wise provides a ready-made road map to the enumeration and application of XML tags. In formulating the guidelines for markup of the epigraphic text, we have endeavored to provide unique combinations of elements and attributes for each and every distinction epigraphers attempt to draw with sigla in print editions. These element-attribute combinations are described in the following sections, arranged by broad classes of editorial activity.</p>
@@ -12,29 +12,12 @@
       <item>rules laid down for the use of a given TEI tag in the TEI guidelines should be followed strictly by EPIDOC: we are not rewriting TEI</item>
       <item>In some cases, there is more than one mechanism in TEI whereby a particular markup task can be accomplished (e.g., <tag>sic</tag> and <tag>corr</tag>). These alternatives are semantically equivalent. Editors should choose between them based on the needs of a project and the character of the surrounding markup. Designers of EpiDoc processing environments should accomodate all such options.</item>
    </list>
-   <div id="taggingtext-subsections">
-      <head>Subsections</head>
-   <list>
-      <item>
-         <xref href="transcription.xml" type="include" />
-      </item>
-      <item>
-         <xref href="additionanddeletion.xml" type="include" />
-      </item>
-      <item>
-         <xref href="formandappearance.xml" type="include" />
-      </item>
-      <item>
-         <xref href="supplements.xml" type="include" />
-      </item>
-      <item>
-         <xref href="corrections.xml" type="include" />
-      </item>
-      <item>
-         <xref href="editorialother.xml" type="include" />
-      </item>
-      <item>
-         <xref href="criticalapparatus.xml" type="include" />
-      </item>
-   </list></div>
+
+         <xi:include href="transcription.xml"  />
+         <xi:include href="additionanddeletion.xml" />
+         <xi:include href="formandappearance.xml"  />
+         <xi:include href="supplements.xml"  />
+         <xi:include href="corrections.xml"  />
+         <xi:include href="editorialother.xml"  />
+         <xi:include href="criticalapparatus.xml"  />
 </div>
