@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="lostline" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+    <head>An entire line completely lost (extent certain)</head>
+    <div id="lostline-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+                    <item>[ - - - - - - - - - - - - - - - - - - ] /</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="lostline-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item><tag>gap reason="lost" extent="1" unit="line"/</tag><tag>lb/</tag></item>
+        </list>
+    </div>
+    <div id="lostline-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item><gap id="gap3" reason="lost" extent="3" unit="character" />
+            <certainty target="gap3" locus="extent" degree=".5" /></item>
+            <item><gap id="gap4" reason="lost" extent="10" unit="character" />
+            <certainty target="gap4" locus="extent" degree=".5" /></item>
+        </list>
+    </div>
+    <div id="lostline-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+</div>

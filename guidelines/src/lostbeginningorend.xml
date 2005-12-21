@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="lostbeginningorend" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+    <head>One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)</head>
+    <div id="lostbeginningorend-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+                    <item>- - - - - - - - - - - - - - - - -</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="lostbeginningorend-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item><tag>gap reason="lost" agent="damage" extent="?" unit="line"/</tag></item>
+        </list>
+    </div>
+    <div id="lostbeginningorend-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item><gap reason="lost" agent="damage" extent="?" unit="line"/></item>
+        </list>
+    </div>
+    <div id="lostbeginningorend-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+</div>

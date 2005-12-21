@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<div id="lostcertain" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+    <head>Letters completely lost (extent certain or nearly so)</head>
+    <div id="lostcertain-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+                    <item>[• • •]</item>
+                    <item>[• 10 •]</item>
+                    <item> [• c.10 •]</item>
+                    <item> [ - 4.2cm - ]</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="lostcertain-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>
+                <tag>gap reason="lost" extent="3" unit="character"/</tag>
+            </item>
+            <item>
+                <tag>gap reason="lost" extent="10" unit="character"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap2" reason="lost" extent="10" unit="character"/</tag>
+                <tag>certainty target="gap2" locus="extent" degree=".75"/</tag>
+            </item>
+            <item>
+                <tag>gap reason="lost" extent="4.2" unit="cm"/</tag>
+            </item>
+        </list>
+    </div>
+    <div id="lostcertain-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item>
+                <gap reason="lost" extent="3" unit="character" />
+            </item>
+            <item>
+                <gap reason="lost" extent="10" unit="character" />
+            </item>
+            <item>
+                <gap id="gap2" reason="lost" extent="10" unit="character" />
+                <certainty target="gap2" locus="extent" degree=".75" />
+            </item>
+            <item>
+                <gap reason="lost" extent="4.2" unit="cm" />
+            </item>
+        </list>
+    </div>
+    <div id="lostcertain-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+</div>

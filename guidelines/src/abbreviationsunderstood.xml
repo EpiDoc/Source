@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood" lang="en">
+   <head>Identification and expansion of abbreviations understood by the editor</head>
+   <p>Identification and expansion of abbreviations understood by the editor </p>
+   <p>EPIDOC, FINNEY: </p>
+   <p><tag>abbr expan="consul"</tag>cos<tag>/abbr</tag></p>
+   <p><tag>abbr expan="Augustus"</tag>Aug<tag>/abbr</tag></p>
+   <p>PANCIERA (p. 17): </p>
+   <p>co(n)s(ul) </p>
+   <p>Aug(ustus) </p>
+   <p>NOTE: Abbreviated phrases (e.g., D(is) M(anibus)) should be marked-up word-by-word, thus: <tag>abbr expan="Dis"</tag>D<tag>/abbr</tag><tag>abbr expan="Manibus"</tag>M<tag>/abbr</tag> rather than as a whole phrase (<tag>abbr expan="Dis Manibus"</tag>DM<tag>/abbr</tag>). We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p>
+   <p>TEI P4: <tag>abbr</tag>; 6.4.5 Abbreviations and Their Expansions </p>
+</div>
