@@ -1,7 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+   <map:components>
+      <map:serializers default="xhtmlbasic">
+         <!-- note that the default serializer is our locally defined xhtmlbasic, not the standard cocoon xml serializer -->
+         <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic"
+            src="org.apache.cocoon.serialization.XMLSerializer">
+            <!-- provide configuration for serializing XHTML with the proper doctype, encoding and suppressed indention -->
+            <doctype-public>-//W3C//DTD XHTML 1.0 Strict//EN</doctype-public>
+            <doctype-system>http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</doctype-system>
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+         <map:serializer mime-type="text/xml" name="xml"
+            src="org.apache.cocoon.serialization.XMLSerializer">
+            <!-- force xml serialization to use UTF8 and to leave indent alone -->
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+         <map:serializer mime-type="text/xml" name="xmlepidoc"
+            src="org.apache.cocoon.serialization.XMLSerializer">
+            <!-- provide a means for serializing epidoc documents with a doctype pointing at the epidoc dtd -->
+            <doctype-system>tei-epidoc.dtd</doctype-system>
+            <encoding>UTF-8</encoding>
+            <indent>no</indent>
+         </map:serializer>
+      </map:serializers>
+   </map:components>
    <map:pipelines>
       <map:pipeline>
+         <map:match pattern="dirlist.xml">
+            <map:generate type="directory" src=".">
+               <map:parameter name="exclude" value="CVS" />
+            </map:generate>
+            <!-- find and apply the nearest version of the dir2tei stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+            <map:select type="resource-exists">
+               <map:when test="../xsl/util/epidoc-xsl/util/dir2tei.xsl">
+                  <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                  <map:transform src="../xsl/epidoc-xsl/util/dir2tei.xsl" />
+               </map:when>
+               <map:otherwise>
+                  <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                  <map:transform src="../../epidoc-xsl/util/dir2tei.xsl" />
+               </map:otherwise>
+            </map:select>
+            <map:serialize type="xml"/>
+         </map:match>
+         <map:match pattern="index.html">
+            <map:select type="resource-exists">
+               <!-- 
+                  ================================================================================
+                  if there is an index.html file in the directory, use that
+                  ================================================================================
+               -->
+               <map:when test="index.html">
+                  <map:generate src="index.html" />
+                  <map:serialize type="xhtmlbasic" />
+               </map:when>
+               <!-- 
+                  ================================================================================
+                  if there is an index.xml file in the directory, assume it is tei and transform it to xhtml
+                  ================================================================================
+               -->
+               <map:when test="index.xml">
+                  <map:generate src="index.xml" />
+                  <map:select type="resource-exists">
+                     <!-- find and apply the nearest version of the tei to xhtml transform: permits override at each directory level -->
+                     <map:when test="../xsl/epidoc-xsl/html/epidoc.xsl">
+                        <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                        <map:transform src="../xsl/util/xref2cinclude.xsl" />
+                        <map:transform type="cinclude" />
+                        <map:transform src="../xsl/epidoc-xsl/html/epidoc.xsl" />
+                     </map:when>
+                     <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                        <map:transform src="../../epidoc-xsl/util/xref2cinclude.xsl" />
+                        <map:transform type="cinclude" />
+                        <map:transform src="../../epidoc-xsl/html/epidoc.xsl" />
+                     </map:otherwise>
+                  </map:select>
+                  <!-- find and apply the nearest version of the xhtml indenter stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+                  <map:select type="resource-exists">
+                     <map:when test="../xsl/util/epidoc-xsl/util/xhtmlindenter.xsl">
+                        <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                        <map:transform src="../xsl/epidoc-xsl/util/xhtmlindenter.xsl" />
+                     </map:when>
+                     <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                        <map:transform src="../../epidoc-xsl/util/xhtmlindenter.xsl" />
+                     </map:otherwise>
+                  </map:select>
+                  <!-- serialize for output -->
+                  <map:serialize type="xhtmlbasic" />
+               </map:when>
+               <!-- 
+                  ================================================================================
+                  construct a tei div from the directory listing and convert it to html
+                  ================================================================================
+               -->              
+               <map:otherwise>
+                  <map:generate type="directory" src=".">
+                     <map:parameter name="exclude" value="CVS" />
+                  </map:generate>
+                  <!-- find and apply the nearest version of the dir2tei stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+                  <map:select type="resource-exists">
+                     <map:when test="../xsl/util/epidoc-xsl/util/dir2tei.xsl">
+                        <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                        <map:transform src="../xsl/epidoc-xsl/util/dir2tei.xsl" />
+                     </map:when>
+                     <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                        <map:transform src="../../epidoc-xsl/util/dir2tei.xsl" />
+                     </map:otherwise>
+                  </map:select>
+                  <map:select type="resource-exists">
+                     <!-- find and apply the nearest version of the tei to xhtml transform: permits override at each directory level -->
+                     <map:when test="../xsl/epidoc-xsl/html/epidoc.xsl">
+                        <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                        <map:transform src="../xsl/epidoc-xsl/html/epidoc.xsl" />
+                     </map:when>
+                     <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                        <map:transform src="../../epidoc-xsl/html/epidoc.xsl" />
+                     </map:otherwise>
+                  </map:select>
+                  <!-- find and apply the nearest version of the xhtml indenter stylesheet: permits override at each directory level 
+                   note: if the file is not found, processing will continue without indent -->
+                  <map:select type="resource-exists">
+                     <map:when test="../xsl/util/epidoc-xsl/util/xhtmlindenter.xsl">
+                        <!-- standard configuration: standard xsls are installed at epidoc-webapp level -->
+                        <map:transform src="../xsl/epidoc-xsl/util/xhtmlindenter.xsl" />
+                     </map:when>
+                     <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                        <map:transform src="../../epidoc-xsl/util/xhtmlindenter.xsl" />
+                     </map:otherwise>
+                  </map:select>
+                  <!-- serialize for output -->
+                  <map:serialize type="xhtmlbasic" />
+               </map:otherwise>
+            </map:select>
+         </map:match>
          <map:match pattern="*/**">
             <map:mount check-reload="yes" src="{1}/" uri-prefix="{1}" />
          </map:match>
