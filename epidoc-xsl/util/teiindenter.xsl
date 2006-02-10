@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [
 <!ENTITY inlinetags "
-   tei:abbr 
+   tei:abbr
+   | tei:att
    | tei:author[name(..) = 'bibl']
    | tei:bibl[name(..) != 'listBibl']
    | tei:biblScope[name(..) = 'bibl']
@@ -22,10 +23,16 @@
    | tei:publisher[name(..) = 'bibl'] 
    | tei:pubPlace[name(..) = 'bibl'] 
    | tei:quote[@rend='inline']
+   | tei:ref
+   | tei:resp
+   | tei:respStmt
    | tei:sic
+   | tei:tag
    | tei:term 
    | tei:translator[name(..) = 'bibl'] 
    | tei:title[name(..) != 'titleStmt']
+   | tei:unclear
+   | tei:xref
 ">
 <!ENTITY blocktags "
    tei:TEI.2
@@ -69,7 +76,7 @@
 ]>
 <xsl:stylesheet xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
    xmlns:str="http://exslt.org/strings">
-   <xsl:output indent="no" />
+   <xsl:output indent="no" method="xml" doctype-system="../dtd/tei-epidoc.dtd" />
    <xsl:strip-space elements="*"/>
    <xsl:param name="tabwidth">3</xsl:param>
    <!--
