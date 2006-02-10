@@ -68,6 +68,25 @@
             </map:match>
         </map:pipeline>
         <map:pipeline name="projectcontent">
+
+            
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   dirlist.html                                                                                                                                                                       -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="dirlist.html">
+                 <map:generate type="directory" src="./src">
+                     <map:parameter name="exclude" value="CVS" />
+                 </map:generate>
+                <map:transform src="cocoon:/util/dir2tei.xsl">
+                     <map:parameter name="dodirs" value="no"/>
+                     <map:parameter name="dofiles" value="yes"/>
+                     <map:parameter name="htmllink" value="yes"/>
+                </map:transform>
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                 <map:serialize type="xhtmlbasic" />                
+            </map:match>
+            
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.html                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -78,6 +97,8 @@
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
                 <map:serialize type="xhtmlbasic" />
             </map:match>
+            
+
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.xml                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
