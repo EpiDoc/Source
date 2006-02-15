@@ -7,23 +7,17 @@
 <div id="addition-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18-19</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: </item>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18-19</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list><item>Imperator `Caesar´ Augustus</item><item>Livia `clarissima´ femina</item></list></item>
       </list>
-   <p>Imperator `Caesar´ Augustus </p>
-   <p>Livia `clarissima´ femina </p>
    </div><div id="addition-encoding" type="gl-encoding">
       <head>EpiDoc encoding</head>
-      <p>Imperator <tag>add place="supralinear"</tag>Caesar<tag>/add</tag> Augustus </p>
-   <p>Livia <tag>add place="infralinear"</tag>clarissima<tag>/add</tag> femina </p>
-   
-   <p>NOTE: In traditional typographic systems (unless a diplomatic text is employed), the notation concerning placement of the addition would have to come in the commentary. </p></div><div id="addition-edition" type="gl-edition">
+      <list><item>Imperator <tag>add place="supralinear"</tag>Caesar<tag>/add</tag> Augustus</item><item>Livia <tag>add place="infralinear"</tag>clarissima<tag>/add</tag> femina </item></list><p>NOTE: In traditional typographic systems (unless a diplomatic text is employed), the notation concerning placement of the addition would have to come in the commentary. </p></div><div id="addition-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       
-   <p>Imperator <add place="supralinear">Caesar</add> Augustus </p>
-   <p>Livia <add place="infralinear">clarissima</add> femina </p></div><div id="addition-questions" type="gl-questions">
+   <list><item>Imperator <add place="supralinear">Caesar</add> Augustus</item><item>Livia <add place="infralinear">clarissima</add> femina</item></list></div><div id="addition-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
-         <item>None</item>
+         <item><name>GB</name>, <date>2006-02-15</date>: we ought to stress that @place is not-compulsory (for the case where people are tagging editions and don't have access to the stone, e.g.)</item>
       </list>
    </div>
    <div id="addition-responsibility" type="gl-responsibility"> 
