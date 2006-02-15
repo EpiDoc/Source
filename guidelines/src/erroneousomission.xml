@@ -1,14 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneousomission" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneousomission">
    <head>Letters erroneously omitted from the text, which the editor adds</head>
-   <p>Letters erroneously omitted from the text, which the editor adds </p>
-   <p>EPIDOC: </p>
-   <p>Valeri<tag>supplied reason="omitted"</tag>a<tag>/supplied</tag>nus </p>
-   <p>FINNEY: </p>
-   <p>Valeri<tag>sic corr="a"/</tag>nus </p>
-   <p>PANCIERA (p. 19): </p>
-   <p>Valeri<tag>a</tag>nus </p>
-   <p>TEI P4: <tag>supplied</tag>; 18.2.3 Damage, Illegibility, and Supplied Text; 6.5.1 Correction of Apparent Errors; 18.1.3 Correction and Conjecture </p>
+   
+<div id="erroneousomission-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>:</item>
+      </list>
+   <p>Valeri<supplied reason="omitted">a</supplied>nus </p><list><item><bibl><title><xref>Finney</xref></title></bibl>:</item></list><p>Valeri<tag>sic corr="a"/</tag>nus </p></div><div id="erroneousomission-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>Valeri<tag>supplied reason="omitted"</tag>a<tag>/supplied</tag>nus </p>
+   </div><div id="erroneousomission-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p>Valeri<supplied reason="omitted">a</supplied>nus </p>
+   </div><div id="erroneousomission-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div><div id="erroneousomission-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>
