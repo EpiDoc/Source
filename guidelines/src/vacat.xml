@@ -1,28 +1,50 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="vacat" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="vacat">
    <head>Transcription where a vacat is evident or suspected</head>
-   <p> Transcription where a vacat is evident or suspected </p>
-   <p>EPIDOC: </p>
-   <p>Imperator <tag>space dim="horizontal" extent="3" unit="character"/</tag> Caesar </p>
-   <p>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree=".5"/</tag> Atticilla </p>
-   <p>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree=".5"/</tag> populusque </p>
-   <p>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree=".5"/</tag><tag>certainty target="space3" locus="#gi" degree=".5"/</tag> nobis pacem </p>
-   <p>PANCIERA (p. 18): </p>
-   <p>Imperator (vac. ) Caesar </p>
+   <div id="vacat-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl></item></list><p>Imperator (vac. ) Caesar </p>
    <p>Valeria (vac. ?) Atticilla </p>
    <p>not addressed </p>
-   <p>not addressed </p>
-   <p>DONICHT (p. 5): </p>
+   <p>not addressed </p><list><item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: </item>
+      </list>
    <p>Imperator (vac. 3) Caesar </p>
    <p>Valeria (vac. ?) Atticilla </p>
    <p>senatus (vac. 3?) populusque </p>
+   <p>not addressed </p><list><item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dow">Dow</xref></title></bibl>: </item>
+      </list>
+   <p>Imperator <hi rend="superscript">vvv.</hi> Caesar </p>
+   <p>Valeria <hi rend="superscript">vvv.?</hi> Atticilla </p>
    <p>not addressed </p>
-   <p>DOW: </p>
-   <p>Imperator vvv. Caesar </p>
-   <p>Valeria vvv.? Atticilla </p>
-   <p>not addressed </p>
-   <p>not addressed </p>
-   <p>TEI P4: <tag>space</tag>; 18.2.5 Space </p>
-</div>
+   <p>not addressed </p></div><div id="vacat-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>Imperator <tag>space dim="horizontal" extent="3" unit="character"/</tag> Caesar </p>
+   <p>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree=".5"/</tag> Atticilla </p>
+   <p>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree=".5"/</tag> populusque </p>
+   <p>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree=".5"/</tag><tag>certainty target="space3" locus="#gi" degree=".5"/</tag> nobis pacem </p>
+   </div><div id="vacat-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p>Imperator <space dim="horizontal" extent="3" unit="character"/> Caesar </p>
+   <p>Valeria <space id="space1" dim="horizontal" extent="3" unit="character"/><certainty target="space1" locus="#gi" degree=".5"/> Atticilla </p>
+   <p>senatus <space id="space2" dim="horizontal" extent="3" unit="character"/><certainty target="space2" locus="#gi" degree=".5"/> populusque </p>
+   <p>dona <space id="space3" dim="horizontal" extent="5" unit="character"/><certainty target="space3" locus="extent" degree=".5"/><certainty target="space3" locus="#gi" degree=".5"/> nobis pacem </p>
+   
+   </div>
+
+   
+   
+   <div id="vacat-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="vacat-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div></div>
