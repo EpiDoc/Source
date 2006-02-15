@@ -4,10 +4,10 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" id="ligature">
    <head>Letters joined (ligature)</head>
    <p>Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters, such as adjacent M and N, but more broadly any two joined or superimposed characters.</p>
-   <div><head>Traditional typographic representation</head><p>PANCIERA (p. 17) , DONICHT (p. 3): </p><p><hi rend="ligature">ab</hi></p>
-   <p><hi rend="ligature">abc</hi></p></div><div><head>EpiDoc encoding</head><p><tag>hi rend="ligature"</tag>ab<tag>/hi</tag></p>
-   <p><tag>hi rend="ligature"</tag>abc<tag>/hi</tag></p></div><div><head>EpiDoc appearance with standard XSLT</head><p><hi rend="ligature">ab</hi></p>
-   <p><hi rend="ligature">abc</hi></p></div><div><head>Questions and issues</head><list type="simple">
+   <div type="gl-typographic"><head>Traditional typographic representation</head><p>PANCIERA (p. 17) , DONICHT (p. 3): </p><p><hi rend="ligature">ab</hi></p>
+   <p><hi rend="ligature">abc</hi></p></div><div type="gl-encoding"><head>EpiDoc encoding</head><p><tag>hi rend="ligature"</tag>ab<tag>/hi</tag></p>
+   <p><tag>hi rend="ligature"</tag>abc<tag>/hi</tag></p></div><div type="gl-edition"><head>EpiDoc appearance with standard XSLT</head><p><hi rend="ligature">ab</hi></p>
+   <p><hi rend="ligature">abc</hi></p></div><div type="gl-questions"><head>Questions and issues</head><list type="simple">
          <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>): One issue is with ligautres than span words, names, or other marked-up elements. Perhaps two <tag>hi</tag> elements with a <tag>link</tag> of some kind? Rendering is also a problem, of course...</item><item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>): But the other problem is that most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligs, our stylesheets don't do anything with them at present (though we may index them).</item>
       </list></div><div id="nonsensical-responsibility" type="gl-responsibility"> 
       <head>Responsibility for this section</head>
