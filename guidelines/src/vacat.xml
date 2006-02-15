@@ -1,50 +1,82 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="vacat">
-   <head>Transcription where a vacat is evident or suspected</head>
-   <div id="vacat-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl></item></list><p>Imperator (<hi rend="italic">vac.</hi> ) Caesar </p>
-   <p>Valeria (<hi rend="italic">vac. ?</hi>) Atticilla </p>
-   <p>not addressed </p>
-   <p>not addressed </p><list><item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: </item>
-      </list>
-   <p>Imperator (<hi rend="italic">vac. 3</hi>) Caesar </p>
-   <p>Valeria (<hi rend="italic">vac. ?</hi>) Atticilla </p>
-   <p>senatus (<hi rend="italic">vac. 3?</hi>) populusque </p>
-   <p>not addressed </p><list><item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dow">Dow</xref></title></bibl>: </item>
-      </list>
-   <p>Imperator <hi rend="superscript">vvv.</hi> Caesar </p>
-   <p>Valeria <hi rend="superscript">vvv.?</hi> Atticilla </p>
-   <p>not addressed </p>
-   <p>not addressed </p></div><div id="vacat-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <p>Imperator <tag>space dim="horizontal" extent="3" unit="character"/</tag> Caesar </p>
-   <p>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree=".5"/</tag> Atticilla </p>
-   <p>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree=".5"/</tag> populusque </p>
-   <p>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree=".5"/</tag><tag>certainty target="space3" locus="#gi" degree=".5"/</tag> nobis pacem </p>
-   </div><div id="vacat-edition" type="gl-edition">
-      <head>EpiDoc appearance with standard XSLT</head>
-      <p>Imperator <space dim="horizontal" extent="3" unit="character"/> Caesar </p>
-   <p>Valeria <space id="space1" dim="horizontal" extent="3" unit="character"/><certainty target="space1" locus="#gi" degree=".5"/> Atticilla </p>
-   <p>senatus <space id="space2" dim="horizontal" extent="3" unit="character"/><certainty target="space2" locus="#gi" degree=".5"/> populusque </p>
-   <p>dona <space id="space3" dim="horizontal" extent="5" unit="character"/><certainty target="space3" locus="extent" degree=".5"/><certainty target="space3" locus="#gi" degree=".5"/> nobis pacem </p>
-   
-   </div>
-
-   
-   
-   <div id="vacat-questions" type="gl-questions">
-      <head>Questions and issues</head>
-      <list type="simple">
-         <item>None</item>
-      </list>
-   </div>
-   <div id="vacat-responsibility" type="gl-responsibility"> 
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div></div>
+    <head>Transcription where a vacat is evident or suspected</head>
+    <div id="vacat-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item>
+                <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>
+                <list type="ordered">
+                    <item>Imperator (<hi rend="italic">vac.</hi> ) Caesar </item>
+                    <item>Valeria (<hi rend="italic"> vac. ?</hi>) Atticilla </item>
+                    <item>not addressed </item>
+                    <item>not addressed </item>
+                </list>
+            </item>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#donicht">Donicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list type="ordered">
+                    <item>Imperator (<hi rend="italic">vac. 3</hi>) Caesar </item>
+                    <item>Valeria (<hi rend="italic">vac. ?</hi>) Atticilla </item>
+                    <item>senatus (<hi rend="italic">vac. 3?</hi>) populusque </item>
+                    <item>not addressed </item>
+                </list>
+            </item>
+            <item><bibl>
+                    <title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#dow">Dow</xref>
+                    </title>
+                </bibl>: <list type="ordered">
+                    <item>Imperator <hi rend="superscript">vvv.</hi> Caesar </item>
+                    <item>Valeria <hi rend="superscript">vvv.?</hi> Atticilla </item>
+                    <item>not addressed </item>
+                    <item>not addressed </item>
+                </list>
+            </item>
+        </list>
+    </div>
+    <div id="vacat-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>Imperator <tag>space dim="horizontal" extent="3" unit="character"/</tag> Caesar </item>
+            <item>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree=".5"/</tag> Atticilla </item>
+            <item>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree=".5"/</tag> populusque </item>
+            <item>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree=".5"/</tag><tag>certainty target="space3" locus="#gi" degree=".5"/</tag> nobis pacem </item>
+        </list>
+    </div>
+    <div id="vacat-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item>Imperator <space dim="horizontal" extent="3" unit="character" /> Caesar </item>
+            <item>Valeria <space id="space1" dim="horizontal" extent="3" unit="character" /><certainty target="space1" locus="#gi" degree=".5" /> Atticilla </item>
+            <item>senatus <space id="space2" dim="horizontal" extent="3" unit="character" /><certainty target="space2" locus="#gi" degree=".5" /> populusque </item>
+            <item>dona <space id="space3" dim="horizontal" extent="5" unit="character" /><certainty target="space3" locus="extent" degree=".5" /><certainty target="space3" locus="#gi" degree=".5" /> nobis pacem </item>
+        </list>
+    </div>
+    <div id="vacat-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item>None</item>
+        </list>
+    </div>
+    <div id="vacat-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+</div>
