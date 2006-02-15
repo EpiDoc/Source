@@ -1,13 +1,33 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneoussubstitution" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneoussubstitution">
    <head>Letters erroneously substituted in the text, which the editor corrects</head>
-   <p>Letters erroneously substituted in the text, which the editor corrects </p>
-   <p>EPIDOC: </p>
-   <p>Valeri<tag>sic corr="an"</tag>na<tag>/sic</tag>us </p>
-   <p>Valeri<tag>corr sic="na"</tag>an<tag>/sic</tag>us </p>
-   <p>PANCIERA (p. 19): </p>
-   <p>Valeri⌜an⌝us </p>
-   <p>TEI P4: <tag>sic</tag>; 6.5.1 Correction of Apparent Errors; 18.1.3 Correction and Conjecture </p>
+   
+<div id="erroneoussubstitution-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: </item>
+      </list>
+   <p>Valeri<sic corr="an">na</sic>us</p></div><div id="erroneoussubstitution-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>Valeri<tag>sic corr="an"</tag>na<tag>/sic</tag>us </p>
+   <p>Valeri<tag>corr sic="na"</tag>an<tag>/corr</tag>us </p>
+   
+   </div><div id="erroneoussubstitution-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p>Valeri<sic corr="an">na</sic>us </p>
+   <p>Valeri<corr sic="na">an</corr>us </p>
+   </div><div id="erroneoussubstitution-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="erroneoussubstitution-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>
