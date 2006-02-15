@@ -1,12 +1,34 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsnotunderstood" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsnotunderstood">
    <head>Identification of abbreviations not understood by the editor</head>
-   <p>Identification of abbreviations not understood by the editor </p>
-   <p>EPIDOC: </p>
-   <p><tag>abbr</tag>a<tag>/abbr</tag></p>
-   <p>PANCIERA (p. 17): </p>
-   <p>a(- - -) </p>
-   <p>TEI P4: <tag>abbr</tag>; 6.4.5 Abbreviations and Their Expansions </p>
+   
+<div id="abbreviationsnotunderstood-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: </item>
+      </list>
+   <p>a(- - -) </p></div><div id="abbreviationsnotunderstood-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>
+         <tag>abbr</tag>a<tag>/abbr</tag></p>
+   </div><div id="abbreviationsnotunderstood-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item><abbr>
+            
+         a</abbr></item>
+      </list>
+   </div><div id="abbreviationsnotunderstood-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div><div id="abbreviationsnotunderstood-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>

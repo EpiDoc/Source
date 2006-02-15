@@ -1,15 +1,34 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
    <head>Identification and expansion of abbreviations understood by the editor</head>
-   <p>Identification and expansion of abbreviations understood by the editor </p>
-   <p>EPIDOC, FINNEY: </p>
-   <p><tag>abbr expan="consul"</tag>cos<tag>/abbr</tag></p>
-   <p><tag>abbr expan="Augustus"</tag>Aug<tag>/abbr</tag></p>
-   <p>PANCIERA (p. 17): </p>
-   <p>co(n)s(ul) </p>
-   <p>Aug(ustus) </p>
-   <p>NOTE: Abbreviated phrases (e.g., D(is) M(anibus)) should be marked-up word-by-word, thus: <tag>abbr expan="Dis"</tag>D<tag>/abbr</tag><tag>abbr expan="Manibus"</tag>M<tag>/abbr</tag> rather than as a whole phrase (<tag>abbr expan="Dis Manibus"</tag>DM<tag>/abbr</tag>). We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p>
-   <p>TEI P4: <tag>abbr</tag>; 6.4.5 Abbreviations and Their Expansions </p>
+   
+<div id="abbreviationsunderstood-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: </item>
+      </list>
+   <p>co<supplied reason="abbreviation">n</supplied>s<supplied reason="abbreviation">ul</supplied></p>
+   <p>Aug<supplied reason="abbreviation">ustus</supplied></p>
+   </div><div id="abbreviationsunderstood-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p><tag>expan</tag><tag>abbr</tag>co<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag><tag>abbr</tag>s<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></p>
+   <p><tag>expan</tag><tag>abbr</tag>Aug<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></p>
+   
+   <p>NOTE: Abbreviated phrases (e.g., D(is) M(anibus)) should be marked-up word-by-word, thus: <tag>abbr expan="Dis"</tag>D<tag>/abbr</tag><tag>abbr expan="Manibus"</tag>M<tag>/abbr</tag> rather than as a whole phrase (<tag>abbr expan="Dis Manibus"</tag>DM<tag>/abbr</tag>). We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p></div><div id="abbreviationsunderstood-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p><expan><abbr>co</abbr><supplied reason="abbreviation">n</supplied><abbr>s</abbr><supplied reason="abbreviation">ul</supplied></expan></p>
+   <p><expan><abbr>Aug</abbr><supplied reason="abbreviation">ustus</supplied></expan></p>
+   </div><div id="abbreviationsunderstood-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): the note above needs to be brought into line with the new markup, which is more P5-ish than before (although not quite)</item><item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): we should also note than marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
+      </list>
+   </div><div id="abbreviationsunderstood-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>
