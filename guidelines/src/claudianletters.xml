@@ -1,13 +1,33 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="claudianletters" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="claudianletters">
    <head>Claudian letters</head>
-   <p>Claudian letters </p>
-   <p>EPIDOC: there should be XML character entities defined for the Claudian letters (and/or Unicode additions made) and no special markup used </p>
-   <p>PANCIERA (p. 19) </p>
-   <p>((ps)) </p>
-   <p>DONICHT (p. 3) </p>
-   <p>⊂ps⊃ </p>
-   <p>NOTE: In traditional markup, can only be shown with special type or "in consuetam formam reducta" with doubled parentheses or some other signal and a note in the apparatus. </p>
-</div>
+   
+<div id="claudianletters-typographic" type="gl-typographic"><head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>:</item></list><p>((ps)) </p><list><item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: </item>
+      </list>
+   <p>⊂ps⊃ </p><p>NOTE: In traditional markup, can only be shown with special type or "in consuetam formam reducta" with doubled parentheses or some other signal and a note in the apparatus. </p></div><div id="claudianletters-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item>There should be XML character entities defined for the Claudian letters (and/or Unicode additions made) and no special markup used.</item>
+      </list>
+   </div><div id="claudianletters-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item>
+            
+         n/a</item>
+      </list>
+   </div><div id="claudianletters-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): But in the meantime, if we want to render as Panciera or Donicht recommend, should we not have a markup solution, using e.g. <tag>hi</tag>?</item>
+      </list>
+   </div><div id="claudianletters-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div></div>

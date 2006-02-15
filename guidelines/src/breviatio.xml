@@ -1,12 +1,28 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="breviatio" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="breviatio">
    <head>Editorial supplement in which the editor explains a "breviatio" or note</head>
-   <p>Editorial supplement in which the editor explains a "breviatio" or note </p>
-   <p>EPIDOC: </p>
-   <p>ab eo <tag>supplied reason="explanation"</tag>imperatore<tag>/supplied</tag></p>
-   <p>PANCIERA (p. 18): </p>
-   <p>ab eo (i.e. imperatore) </p>
-   <p>TEI P4: <tag>supplied</tag>; 18.2.3 Damage, Illegibility, and Supplied Text </p>
+   <div id="breviatio-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>:</item>
+      </list>
+   <p>ab eo (i.e. imperatore) </p></div><div id="breviatio-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>ab eo <tag>supplied reason="explanation"</tag>imperatore<tag>/supplied</tag></p>
+   </div><div id="breviatio-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p>ab eo <supplied reason="explanation">imperatore</supplied></p>
+   </div><div id="breviatio-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div><div id="breviatio-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>
