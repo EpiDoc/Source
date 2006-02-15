@@ -1,12 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="editorialellipsis" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="editorialellipsis">
    <head>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text</head>
-   <p>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text </p>
-   <p>EPIDOC: </p>
-   <p>ex auctoritate imperatoris <tag>gap reason="ellipsis"/</tag> Vespasiani </p>
-   <p>PANCIERA (p. 19) </p>
-   <p>ex auctoritate imperatoris ... Vespasiani </p>
-   <p>TEI P4: <tag>gap</tag>; 6.5.3 Additions, Deletions and Omissions </p>
+   
+<div id="editorialellipsis-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>:</item>
+      </list>
+   <p>ex auctoritate imperatoris ... Vespasiani </p></div><div id="editorialellipsis-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <p>ex auctoritate imperatoris <tag>gap reason="ellipsis"/</tag> Vespasiani </p>
+   </div><div id="editorialellipsis-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <p>ex auctoritate imperatoris <gap reason="ellipsis"/> Vespasiani </p>
+   </div><div id="editorialellipsis-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="editorialellipsis-responsibility" type="gl-responsibility"> 
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
 </div>
