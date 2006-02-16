@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ============================================================================= -->
-<!--   EPIDOC WEBAPP MAIN SITEMAP                                                                                                                      -->
+<!--   EPIDOC GUIDELINES MAIN SITEMAP - FOR USE WITH EPIDOC WEBAPP                 -->
 <!-- ============================================================================= -->
 <map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
     <map:components>
@@ -10,30 +10,25 @@
             </map:generator>
         </map:generators>
         <map:transformers default="xslt">
-            <map:transformer name="cinclude"
-                src="org.apache.cocoon.transformation.CIncludeTransformer" />
-            <map:transformer name="xinclude"
-                src="org.apache.cocoon.transformation.XIncludeTransformer" />
+            <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer" />
+            <map:transformer name="xinclude" src="org.apache.cocoon.transformation.XIncludeTransformer" />
         </map:transformers>
         <map:readers default="resource" />
         <map:serializers default="xhtmlbasic">
             <!-- note that the default serializer is our locally defined xhtmlbasic, not the standard cocoon xml serializer -->
-            <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic"
-                src="org.apache.cocoon.serialization.XMLSerializer">
+            <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic" src="org.apache.cocoon.serialization.XMLSerializer">
                 <!-- provide configuration for serializing XHTML with the proper doctype, encoding and suppressed indention -->
                 <doctype-public>-//W3C//DTD XHTML 1.0 Strict//EN</doctype-public>
                 <doctype-system>http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</doctype-system>
                 <encoding>UTF-8</encoding>
                 <indent>no</indent>
             </map:serializer>
-            <map:serializer mime-type="text/xml" name="xml"
-                src="org.apache.cocoon.serialization.XMLSerializer">
+            <map:serializer mime-type="text/xml" name="xml" src="org.apache.cocoon.serialization.XMLSerializer">
                 <!-- force xml serialization to use UTF8 and to leave indent alone -->
                 <encoding>UTF-8</encoding>
                 <indent>no</indent>
             </map:serializer>
-            <map:serializer mime-type="text/xml" name="xmlepidoc"
-                src="org.apache.cocoon.serialization.XMLSerializer">
+            <map:serializer mime-type="text/xml" name="xmlepidoc" src="org.apache.cocoon.serialization.XMLSerializer">
                 <!-- provide a means for serializing epidoc documents with a doctype pointing at the epidoc dtd -->
                 <doctype-system>tei-epidoc.dtd</doctype-system>
                 <encoding>UTF-8</encoding>
@@ -44,11 +39,15 @@
         <map:matchers default="wildcard" />
     </map:components>
     <!-- ============================================================================= -->
-    <!--   PIPELINES                                                                                                                                                              -->
+    <!--   PIPELINES                                                                                                                    -->
     <!-- ============================================================================= -->
     <map:pipelines>
         <map:pipeline internal-only="true">
             <!-- a thousand thankyous to Hugh Cayless, whose guidance lit the way to this pipeline. TRE -->
+            <!-- We check first in an 'xsl' directory subordinate to the current working directory (i.e., prj). If
+                  the file we're seeking is not found there, then we look in three other places corresponding to
+                  possible deployment patterns. For details, see the README.TXT file in the epidoc-webapp
+                  module. -->
             <map:match pattern="*/*.xsl">
                 <map:select type="resource-exists">
                     <map:when test="xsl/{1}/{2}.xsl">
@@ -68,25 +67,42 @@
             </map:match>
         </map:pipeline>
         <map:pipeline name="projectcontent">
-
-            
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   raw directory root                                                                                                                          -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="">
+                <map:generate src="./src/guidelines.xml"/>
+                <map:transform type="xinclude" />
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                <map:serialize type="xhtmlbasic" />
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   index.html                                                                                                                                       -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="index.html">
+                <map:generate src="./src/guidelines.xml"/>
+                <map:transform type="xinclude" />
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                <map:serialize type="xhtmlbasic" />
+            </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   dirlist.html                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="dirlist.html">
-                 <map:generate type="directory" src="./src">
-                     <map:parameter name="exclude" value="CVS" />
-                 </map:generate>
+                <map:generate type="directory" src="./src">
+                    <map:parameter name="exclude" value="CVS" />
+                </map:generate>
                 <map:transform src="cocoon:/util/dir2tei.xsl">
-                     <map:parameter name="dodirs" value="no"/>
-                     <map:parameter name="dofiles" value="yes"/>
-                     <map:parameter name="htmllink" value="yes"/>
+                    <map:parameter name="dodirs" value="no" />
+                    <map:parameter name="dofiles" value="yes" />
+                    <map:parameter name="htmllink" value="yes" />
                 </map:transform>
                 <map:transform src="cocoon:/html/epidoc.xsl" />
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                 <map:serialize type="xhtmlbasic" />                
+                <map:serialize type="xhtmlbasic" />
             </map:match>
-            
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.html                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -97,8 +113,6 @@
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
                 <map:serialize type="xhtmlbasic" />
             </map:match>
-            
-
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.xml                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -109,7 +123,7 @@
             </map:match>
             <map:match pattern="*.inc">
                 <map:generate src="src/{1}.xml" />
-                <map:transform type="xinclude"/>
+                <map:transform type="xinclude" />
                 <map:transform src="cocoon:/util/teiindenter.xsl" />
                 <map:serialize type="xmlepidoc" />
             </map:match>
