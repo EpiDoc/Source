@@ -13,6 +13,18 @@
          </xsl:choose></xsl:element>
          
    </xsl:template>
+    
+    <!-- ================================================================================= -->
+    <!-- one lost line: matches guidelines lostline.xml                                                                      -->
+    <!-- ================================================================================= -->
+    <xsl:template match="tei:gap[@reason='lost' and @unit='line' and @extent='1']">
+        <xsl:element name="span">
+            <xsl:attribute name="class">gap-illegible</xsl:attribute>
+            <xsl:attribute name="title">1 illegible line</xsl:attribute>
+            <xsl:call-template name="propagateattrs"/>
+            [ - - - - - - - - - - - - - - - - - - ]
+        </xsl:element>
+    </xsl:template>
    
    <xsl:template name="repeatstring">
       <xsl:param name="rstring"/>
