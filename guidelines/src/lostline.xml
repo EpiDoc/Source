@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="lostline" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
+<div id="lostline">
     <head>An entire line completely lost (extent certain)</head>
     <div id="lostline-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
@@ -19,10 +19,8 @@
     <div id="lostline-edition" type="gl-edition">
         <head>EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
-            <item><gap id="gap3" reason="lost" extent="3" unit="character" />
-            <certainty target="gap3" locus="extent" degree=".5" /></item>
-            <item><gap id="gap4" reason="lost" extent="10" unit="character" />
-            <certainty target="gap4" locus="extent" degree=".5" /></item>
+            <item><gap reason="lost" extent="1" unit="line"/><lb/></item>
+            
         </list>
     </div>
     <div id="lostline-responsibility" type="gl-responsibility">
