@@ -3,6 +3,8 @@
 %CLRNEUTRAL% = white
 %CLRCONTRAST% = pink
 %CLRATTENTION% = red
+%CLRERROR% = black
+%CLRBGDERROR% = red
 %CLRPALE% = #CCC
 %CLRPALE2% = #EEE
 %CLRSUBTLE% = #555
@@ -14,6 +16,7 @@
 %FNTFAMCONTENT% = "Gentium",serif;
 %FNTSIZENORM% = 1em
 %FNTSIZESML% = 0.7em
+%FNTSIZEERROR% = 1.3em
 %LINENUMWIDTH% = 2em
 %LINENUMPAD% = 0.2em
 
@@ -220,8 +223,26 @@ span span:hover, a span:hover {
    color: black; 
 }
 
+.error {
+    background: %CLRBGDERROR%;
+    color: %CLRERROR%;
+    text-decoration: blink;
+    font-size: %FNTSIZEERROR%;
+}
+
 .italic {
    font-style: italic;
+}
+
+.ligature {
+    background: %CLRCONTRAST%;
+}
+.ligature:hover, .ligature:active {
+    border: thin solid %CLRATTENTION%;
+}
+
+.line-through {
+    text-decoration: line-through;
 }
 
 .underline {

@@ -202,8 +202,26 @@ background: red;
 color: black;
 }
 
+.error {
+background: red;
+color: black;
+text-decoration: blink;
+font-size: 1.3em;
+}
+
 .italic {
 font-style: italic;
+}
+
+.ligature {
+background: pink;
+}
+.ligature:hover, .ligature:active {
+border: thin solid red;
+}
+
+.line-through {
+text-decoration: line-through;
 }
 
 .underline {
