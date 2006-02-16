@@ -14,7 +14,7 @@ DEVELOPER TIPS:
 
 To create a workspace where all separate epidoc packages are in parallel (rather than hierarchically arranged) so that you can use CVS easily, and so that they're out from under the cocoon webapp tree (so that you can rebuild cocoon without destroying everything):
 
-1. Unpack all your epidoc packages into a work directory subtree structured as follows, located in a place of your choice (e.g., d:\epidocwork\). I'll used %YOUR_EPIDOC_WORK% to represent the path to this work directory henceforth. You might have:
+1. Unpack all your epidoc packages into a work directory subtree structured as follows, located in a place of your choice (e.g., d:\epidocwork\). I'll use %YOUR_EPIDOC_WORK% to represent the path to this work directory henceforth. You might have:
 
 %YOUR_EPIDOC_WORK% (created by you)
    - dtd (checked out from cvs)
