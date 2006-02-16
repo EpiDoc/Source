@@ -5,7 +5,8 @@
     <div id="lostline-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
         <list>
-            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+                <list type="ordered">
                     <item>[ - - - - - - - - - - - - - - - - - - ] /</item>
                 </list></item>
         </list>
@@ -13,14 +14,17 @@
     <div id="lostline-encoding" type="gl-encoding">
         <head>EpiDoc encoding</head>
         <list type="ordered">
-            <item><tag>gap reason="lost" extent="1" unit="line"/</tag><tag>lb/</tag></item>
+            <item>
+                <tag>gap reason="lost" extent="1" unit="line"/</tag><tag>lb/</tag>
+            </item>
         </list>
     </div>
     <div id="lostline-edition" type="gl-edition">
         <head>EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
-            <item><gap reason="lost" extent="1" unit="line"/><lb/></item>
-            
+            <item>
+                <gap reason="lost" extent="1" unit="line" /><lb />
+            </item>
         </list>
     </div>
     <div id="lostline-responsibility" type="gl-responsibility">
