@@ -13,6 +13,12 @@
                <xsl:apply-templates />
             </xsl:element>
          </xsl:when>
+          <xsl:when test="@rend='underline'">
+              <xsl:element name="span">
+                  <xsl:attribute name="class">underline</xsl:attribute>
+                  <xsl:apply-templates />
+              </xsl:element>
+          </xsl:when>
          <xsl:otherwise>
             <xsl:comment>hi tag with rend=<xsl:value-of select="@rend" /> is not supported!</xsl:comment>
             <xsl:element name="span">
