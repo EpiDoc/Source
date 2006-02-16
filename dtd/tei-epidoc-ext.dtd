@@ -26,6 +26,10 @@
      
      REVISION HISTORY:
 
+     15 February 2006
+          (TE)
+          * Added 'underline' as a valid value for the 'rend' attribute on the 'hi' element. See bug req 1432358.
+          
      18 August 2005
           (TE)
           * modifed the attribute list for xref to include an href attribute for quick and easy linking to 
@@ -190,7 +194,7 @@
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
 <!ATTLIST %n.hi;
-        rend (apex | intraline | italic | ligature | longa | reversed | supraline | tall | strong | superscript) #REQUIRED
+        rend (apex | intraline | italic | ligature | longa | reversed | supraline | tall | strong | superscript | underline) #REQUIRED
         type CDATA #IMPLIED >
 <!ATTLIST %n.idno;
         type (ISSN | ISBN | URL | OCLC) #REQUIRED >
