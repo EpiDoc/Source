@@ -26,6 +26,11 @@
      
      REVISION HISTORY:
 
+     16 February 2006
+          (TE)
+          * Removed xmlns attribute from TEI.2 in order to maintain compatibility with InsAph and other
+             projects.
+             
      15 February 2006
           (TE)
           * Added 'underline' as a valid value for the 'rend' attribute on the 'hi' element. See bug req 1432358.
@@ -244,8 +249,7 @@
 <!ATTLIST %n.xref;
         %epidoc.a.pointer; 
         href CDATA #IMPLIED>
-<!ATTLIST %n.TEI.2;
-        xmlns CDATA 'http://www.tei-c.org/ns/1.0'>
+
         
         
         
