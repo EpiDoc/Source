@@ -1,3 +1,3 @@
 Read me for the epidoc guidelines dtd
-Current dtd version shipped here is same as Rev 1.10 in the dtd module in sourceforge cvs.
-15 February 2005 - Tom Elliott
+Current dtd version shipped here (FOR *GUIDELINES* DEVELOPMENT USE ONLY) is derived from Rev 1.11 in the dtd module in sourceforge cvs, with changes to add needed xmlns attributes and to change the lang attribute from an IDREF to CDATA. These changes are accomplished with the gl-dtd-convert.pl perl script in the guidelines/dtd directory.
+16 February 2005 - Tom Elliott
