@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div xmlns="http://www.tei-c.org/ns/1.0" id="intralinearlines">
+<div id="intralinearlines" lang="en">
     <head>Letters highlighted by intralinear lines</head>
     <div id="intralinearlines-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
@@ -29,8 +29,8 @@
             <item><tag>hi rend="intraline"</tag>abc<tag>/hi</tag></item>
         </list>
     </div>
-    <div id="intralinearlines-edition" type="gl-edition">
-        <head>EpiDoc appearance with standard XSLT</head>
+    <div id="intralinearlines-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
         <list>
             <item>
                 <hi rend="intraline">abc</hi>
@@ -40,7 +40,7 @@
     <div id="intralinearlines-questions" type="gl-questions">
         <head>Questions and issues</head>
         <list type="simple">
-            <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): do we actually render this in the edition?</item>
+            <item>none</item>
         </list>
     </div>
     <div id="intralinearlines-responsibility" type="gl-responsibility">
