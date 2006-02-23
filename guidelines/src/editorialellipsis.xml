@@ -1,30 +1,49 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="editorialellipsis">
-   <head>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text</head>
-   
-<div id="editorialellipsis-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>:<list><item>ex auctoritate imperatoris ... Vespasiani </item></list></item>
-      </list>
-   </div><div id="editorialellipsis-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list><item>ex auctoritate imperatoris <tag>gap reason="ellipsis"/</tag> Vespasiani</item></list>
-   </div><div id="editorialellipsis-edition" type="gl-edition">
-      <head>EpiDoc appearance with standard XSLT</head>
-      <list><item>ex auctoritate imperatoris <gap reason="ellipsis"/> Vespasiani</item></list>
-   </div><div id="editorialellipsis-questions" type="gl-questions">
-      <head>Questions and issues</head>
-      <list type="simple">
-         <item>None</item>
-      </list>
-   </div>
-   <div id="editorialellipsis-responsibility" type="gl-responsibility"> 
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div>
+    <head>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text</head>
+    <div id="editorialellipsis-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>:<list>
+                    <item lang="lat">ex auctoritate imperatoris ... Vespasiani </item>
+                </list></item>
+        </list>
+    </div>
+    <div id="editorialellipsis-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item>ex auctoritate imperatoris <tag>gap reason="ellipsis"/</tag> Vespasiani</item>
+        </list>
+    </div>
+    <div id="editorialellipsis-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item>ex auctoritate imperatoris <gap reason="ellipsis" /> Vespasiani</item>
+        </list>
+    </div>
+    <div id="editorialellipsis-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item>None</item>
+        </list>
+    </div>
+    <div id="editorialellipsis-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
