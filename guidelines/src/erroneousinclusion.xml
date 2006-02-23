@@ -1,29 +1,52 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="erroneousinclusion">
-   <head>Letters erroneously included in the text, which the editor suppresses</head>
-   <div id="erroneousinclusion-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: <list><item>Valeria{a}nus</item></list></item>
-      </list>
-   </div><div id="erroneousinclusion-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list><item>Valeria<tag>sic corr=""</tag>a<tag>/sic</tag>nus</item><item>Valeria<tag>corr sic="a"/</tag>nus</item></list>
-   
-   </div><div id="erroneousinclusion-edition" type="gl-edition">
-      <head>EpiDoc appearance with standard XSLT</head>
-      <list><item>Valeria<sic corr=" ">a</sic>nus</item><item>Valeria<corr sic="a"></corr>nus</item></list></div><div id="erroneousinclusion-questions" type="gl-questions">
-      <head>Questions and issues</head>
-      <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): rather than relying on @corr="" (empty attribute, as opposed to no attribute), we should adopt the use of an attribute such as @n="superfluous" for this. (See markup list: </item>
-      </list>
-   </div>
-   <div id="erroneousinclusion-responsibility" type="gl-responsibility"> 
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div>
+    <head>Letters erroneously included in the text, which the editor suppresses</head>
+    <div id="erroneousinclusion-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: <list>
+                    <item lang="lat">Valeria{a}nus</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="erroneousinclusion-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item>Valeria<tag>sic corr=""</tag>a<tag>/sic</tag>nus</item>
+            <item>Valeria<tag>corr sic="a"/</tag>nus</item>
+        </list>
+    </div>
+    <div id="erroneousinclusion-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item>Valeria<sic corr=" ">a</sic>nus</item>
+            <item>Valeria<corr sic="a" />nus</item>
+        </list>
+    </div>
+    <div id="erroneousinclusion-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): rather than relying on @corr="" (empty attribute, as opposed to no attribute), we should adopt the use of an attribute such as @n="superfluous" for this. (See markup list: </item>
+        </list>
+    </div>
+    <div id="erroneousinclusion-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
