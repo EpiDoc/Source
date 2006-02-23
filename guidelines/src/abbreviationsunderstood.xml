@@ -1,27 +1,54 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
-   <head>Identification and expansion of abbreviations understood by the editor</head>
-   
-<div id="abbreviationsunderstood-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: <list><item>co(n)s(ul)</item><item>Aug(ustus)</item></list></item>
-      </list>
-   </div><div id="abbreviationsunderstood-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list><item><tag>expan</tag><tag>abbr</tag>co<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag><tag>abbr</tag>s<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></item><item><tag>expan</tag><tag>abbr</tag>Aug<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></item></list><p>NOTE: Abbreviated phrases (e.g., D(is) M(anibus)) should be marked-up word-by-word, thus: <tag>abbr expan="Dis"</tag>D<tag>/abbr</tag><tag>abbr expan="Manibus"</tag>M<tag>/abbr</tag> rather than as a whole phrase (<tag>abbr expan="Dis Manibus"</tag>DM<tag>/abbr</tag>). We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p></div><div id="abbreviationsunderstood-edition" type="gl-edition">
-      <head>EpiDoc appearance with standard XSLT</head>
-      <list><item><expan><abbr>co</abbr><supplied reason="abbreviation">n</supplied><abbr>s</abbr><supplied reason="abbreviation">ul</supplied></expan></item><item><expan><abbr>Aug</abbr><supplied reason="abbreviation">ustus</supplied></expan></item></list></div><div id="abbreviationsunderstood-questions" type="gl-questions">
-      <head>Questions and issues</head>
-      <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): the note above needs to be brought into line with the new markup, which is more P5-ish than before (although not quite)</item><item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): we should also note than marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
-      </list>
-   </div><div id="abbreviationsunderstood-responsibility" type="gl-responsibility"> 
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div>
+    <head>Identification and expansion of abbreviations understood by the editor</head>
+    <div id="abbreviationsunderstood-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: <list lang="lat">
+                    <item>co(n)s(ul)</item>
+                    <item>Aug(ustus)</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="abbreviationsunderstood-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item><tag>expan</tag><tag>abbr</tag>co<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag><tag>abbr</tag>s<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></item>
+            <item><tag>expan</tag><tag>abbr</tag>Aug<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></item>
+        </list>
+        <p>NOTE: Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign lang="lat">D(is) M(anibus)</foreign>) should be marked-up word-by-word, thus: <tag>abbr expan="Dis"</tag>D<tag>/abbr</tag><tag>abbr expan="Manibus"</tag>M<tag>/abbr</tag> rather than as a whole phrase (<tag>abbr expan="Dis Manibus"</tag>DM<tag>/abbr</tag>). We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p>
+    </div>
+    <div id="abbreviationsunderstood-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item>
+                <expan><abbr>co</abbr><supplied reason="abbreviation">n</supplied><abbr>s</abbr><supplied reason="abbreviation">ul</supplied></expan>
+            </item>
+            <item>
+                <expan><abbr>Aug</abbr><supplied reason="abbreviation">ustus</supplied></expan>
+            </item>
+        </list>
+    </div>
+    <div id="abbreviationsunderstood-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): the note above needs to be brought into line with the new markup, which is more P5-ish than before (although not quite)</item>
+            <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): we should also note than marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
+            <item><persName>Tom Elliott</persName> (<date value="2006-02-23">23 February 2006</date>): what about abbreviations like <foreign lang="lat">AUGGG</foreign>?</item>
+        </list>
+    </div>
+    <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
