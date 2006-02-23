@@ -13,7 +13,7 @@ while ($file = shift @ARGV) {
        # remove any newline character at the end of the line
        chomp($myline);
         if($myline =~ /<!ATTLIST div/) {
-            print ($myline . "\n	xmlns CDATA \"http://www.tei-c.org/ns/1.0/\"\n	xmlns:tei CDATA \"http://www.tei-c.org/ns/1.0/\"\n	xmlns:xi CDATA \"http://www.w3.org/2001/XInclude\"\n");
+            print ($myline . "\n	xmlns CDATA \"http://www.tei-c.org/ns/1.0\"\n	xmlns:tei CDATA \"http://www.tei-c.org/ns/1.0\"\n	xmlns:xi CDATA \"http://www.w3.org/2001/XInclude\"\n");
         } elsif ($myline =~ /lang IDREF #IMPLIED/) {
             print ("lang CDATA #IMPLIED");
         } else {
