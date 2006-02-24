@@ -9,20 +9,20 @@
                 <bibl><title level="a" type="abbreviated">
                         <xref href="bibliography.xml#panciera">Panciera</xref>
                     </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>
-                <list type="ordered">
-                    <item>Imperator (<hi rend="italic">vac.</hi> ) Caesar </item>
-                    <item>Valeria (<hi rend="italic"> vac. ?</hi>) Atticilla </item>
-                    <item>not addressed </item>
-                    <item>not addressed </item>
+                <list type="ordered" lang="lat">
+                    <item>Imperator <hi rend="normal">(vac.)</hi> Caesar </item>
+                    <item>Valeria <hi rend="normal">(vac. ?)</hi> Atticilla </item>
+                    <item lang="en">not addressed </item>
+                    <item lang="en">not addressed </item>
                 </list>
             </item>
             <item><bibl><title level="a" type="abbreviated">
                         <xref href="bibliography.xml#donicht">Donicht</xref>
-                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list type="ordered">
-                    <item>Imperator (<hi rend="italic">vac. 3</hi>) Caesar </item>
-                    <item>Valeria (<hi rend="italic">vac. ?</hi>) Atticilla </item>
-                    <item>senatus (<hi rend="italic">vac. 3?</hi>) populusque </item>
-                    <item>not addressed </item>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list type="ordered" lang="lat">
+                    <item>Imperator (vac. 3) Caesar </item>
+                    <item>Valeria (vac. ?) Atticilla </item>
+                    <item>senatus (vac. 3?) populusque </item>
+                    <item lang="en">not addressed </item>
                 </list>
             </item>
             <item><bibl>
@@ -32,8 +32,8 @@
                 </bibl>: <list type="ordered">
                     <item>Imperator <hi rend="superscript">vvv.</hi> Caesar </item>
                     <item>Valeria <hi rend="superscript">vvv.?</hi> Atticilla </item>
-                    <item>not addressed </item>
-                    <item>not addressed </item>
+                    <item lang="en">not addressed </item>
+                    <item lang="en">not addressed </item>
                 </list>
             </item>
         </list>
@@ -42,20 +42,27 @@
         <head>EpiDoc encoding</head>
         <list type="ordered">
             <item>Imperator <tag>space dim="horizontal" extent="3" unit="character"/</tag> Caesar </item>
-            <item>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree=".5"/</tag> Atticilla </item>
-            <item>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree=".5"/</tag> populusque </item>
-            <item>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree=".5"/</tag><tag>certainty target="space3" locus="#gi" degree=".5"/</tag> nobis pacem </item>
+            <item>Valeria <tag>space id="space1" dim="horizontal" extent="3" unit="character"/</tag><tag>certainty target="space1" locus="#gi" degree="no"/</tag> Atticilla </item>
+            <item>senatus <tag>space id="space2" dim="horizontal" extent="3" unit="character" /</tag><tag>certainty target="space2" locus="#gi" degree="no"/</tag> populusque </item>
+            <item>dona <tag>space id="space3" dim="horizontal" extent="5" unit="character" /</tag><tag>certainty target="space3" locus="extent" degree="no"/</tag><tag>certainty target="space3" locus="#gi" degree="no"/</tag> nobis pacem </item>
         </list>
     </div>
-    <div id="vacat-edition" type="gl-edition">
-        <head>EpiDoc appearance with standard XSLT</head>
+    <div id="vacat-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
             <item>Imperator <space dim="horizontal" extent="3" unit="character" /> Caesar </item>
-            <item>Valeria <space id="space1" dim="horizontal" extent="3" unit="character" /><certainty target="space1" locus="#gi" degree=".5" /> Atticilla </item>
-            <item>senatus <space id="space2" dim="horizontal" extent="3" unit="character" /><certainty target="space2" locus="#gi" degree=".5" /> populusque </item>
-            <item>dona <space id="space3" dim="horizontal" extent="5" unit="character" /><certainty target="space3" locus="extent" degree=".5" /><certainty target="space3" locus="#gi" degree=".5" /> nobis pacem </item>
+            <item>Valeria <space id="space1" dim="horizontal" extent="3" unit="character" /><certainty target="space1" locus="#gi" degree="no" /> Atticilla </item>
+            <item>senatus <space id="space2" dim="horizontal" extent="3" unit="character" /><certainty target="space2" locus="#gi" degree="no" /> populusque </item>
+            <item>dona <space id="space3" dim="horizontal" extent="5" unit="character" /><certainty target="space3" locus="extent" degree="no" /><certainty target="space3" locus="#gi" degree="no" /> nobis pacem </item>
         </list>
     </div>
+    <div id="vacat-notes" type="gl-notes">
+        <head>Notes</head>
+        <p>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion 
+            on the <xref href="http://lsv.uky.edu/archives/markup.html">Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." 
+        (<dateRange from="2002-06-01" to="2002-06-10">1-10 June 2002</dateRange>).</p>
+    </div>
+    
     <div id="vacat-questions" type="gl-questions">
         <head>Questions and issues</head>
         <list type="simple">
