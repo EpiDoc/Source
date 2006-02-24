@@ -13,7 +13,23 @@
          </xsl:choose></xsl:element>
          
    </xsl:template>
-    
+
+    <!-- ================================================================================= -->
+    <!-- lost characters -->
+    <!-- ================================================================================= -->
+    <xsl:template match="tei:gap[@reason='lost' and @unit='character' and @extent]">
+        <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
+        <xsl:element name="span">
+            <xsl:attribute name="class">gap-illegible</xsl:attribute>
+            <xsl:attribute name="title"><xsl:if test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">approximately </xsl:if><xsl:value-of select="@extent"/> illegible character<xsl:if test="@extent &gt; 1">s</xsl:if></xsl:attribute>
+            <xsl:call-template name="propagateattrs"/>
+            <xsl:choose>
+                <xsl:when test="@extent &lt; 4 and not(//tei:certainty[@target=$gapid and @locus='extent' and @degree='no'])">[<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent - 1"/></xsl:with-param><xsl:with-param name="rstring">• </xsl:with-param></xsl:call-template>•]</xsl:when>
+                <xsl:otherwise>[• <xsl:if test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">c.</xsl:if><xsl:value-of select="@extent"/> •]</xsl:otherwise>
+            </xsl:choose>
+        </xsl:element>
+    </xsl:template>
+
     <!-- ================================================================================= -->
     <!-- one lost line: matches guidelines lostline.xml                                                                      -->
     <!-- ================================================================================= -->
