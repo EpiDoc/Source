@@ -19,6 +19,7 @@
    <xsl:import href="teisuppliedreasonabbreviation.xsl" />
    <xsl:import href="teisicandcorr.xsl" />
    <xsl:import href="teip.xsl" />
+    <xsl:import href="teispace.xsl"/>
    <xsl:import href="writehtmlmeta.xsl" />
    <xsl:import href="writehtmldc.xsl" />
    <xsl:import href="getdoctitle.xsl" />
