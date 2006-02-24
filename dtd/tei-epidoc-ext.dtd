@@ -25,7 +25,15 @@
      3. EpiDoc-specific character entities 
      
      REVISION HISTORY:
-
+     
+     24 February 2006
+          (TE)
+          * Added 'normal' as a valid value for the 'rend' attribute on the 'hi' element: permits suppression of 
+             inherited text styles (e.g., 'italic').
+          * Created an epidoc degree entity for use with the 'certainty' element. Reflects outcome of a 2002 
+             discussion on the markup list under the 'certainty' rubric. Note that 'yes' and 'no' are some of the
+             recommended possible value options recognized in the TEI guidelines.
+             
      16 February 2006
           (TE)
           * Removed xmlns attribute from TEI.2 in order to maintain compatibility with InsAph and other
@@ -143,6 +151,7 @@
 <!-- define parameter entities to facilitate uniformity where the same attribute appears on multiple elements -->
 
 <!ENTITY % epidoc.cert "cert CDATA #IMPLIED" >
+<!ENTITY % epidoc.degree "degree (yes | no) 'yes'">
 <!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
 <!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
 <!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
@@ -178,6 +187,8 @@
         type CDATA #IMPLIED >
 <!ATTLIST %n.bloc;
         %epidoc.full; >
+<!ATTLIST %n.certainty;
+        %epidoc.degree; >
 <!ATTLIST %n.country;
         %epidoc.full; >
 <!ATTLIST %n.date;
@@ -199,7 +210,7 @@
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
 <!ATTLIST %n.hi;
-        rend (apex | intraline | italic | ligature | longa | reversed | supraline | tall | strong | superscript | underline) #REQUIRED
+        rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline)  #REQUIRED
         type CDATA #IMPLIED >
 <!ATTLIST %n.idno;
         type (ISSN | ISBN | URL | OCLC) #REQUIRED >
@@ -229,7 +240,8 @@
         %epidoc.full; >
 <!ATTLIST %n.space;
         dim (horizontal | vertical) 'horizontal'
-        unit CDATA #IMPLIED >
+        unit CDATA 'character'
+        extent CDATA '1' >
 <!ATTLIST %n.supplied;
         %epidoc.hand;
         %epidoc.cert; 
