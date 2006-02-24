@@ -4,13 +4,17 @@
       <xsl:choose>
          <xsl:when test="@type = 'ordered'">
             <xsl:element name="ol">
-               <xsl:call-template name="propagateattrs"/>
+               <xsl:call-template name="propagateattrs">
+                   <xsl:with-param name="dolang">no</xsl:with-param>
+               </xsl:call-template>
                <xsl:apply-templates />
             </xsl:element>
          </xsl:when>
          <xsl:otherwise>
             <xsl:element name="ul">
-               <xsl:call-template name="propagateattrs"/>
+               <xsl:call-template name="propagateattrs">
+                   <xsl:with-param name="dolang">no</xsl:with-param>
+               </xsl:call-template>
                <xsl:apply-templates />
             </xsl:element>
          </xsl:otherwise>
