@@ -57,6 +57,7 @@
                     <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;?&#160;</xsl:element></xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no'] and //tei:certainty[@target=$gapid and @locus='unit' and @degree='no']">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param><xsl:with-param name="rstring">-&#160;?&#160;</xsl:with-param></xsl:call-template></xsl:when>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no']">
                 <xsl:choose>
                     <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template>?&#160;</xsl:when>
@@ -70,6 +71,7 @@
                     <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;</xsl:element></xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='unit' and @degree='no']">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param><xsl:with-param name="rstring">-&#160;</xsl:with-param></xsl:call-template></xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template></xsl:when>
