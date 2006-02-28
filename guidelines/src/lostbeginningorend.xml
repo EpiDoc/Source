@@ -13,13 +13,13 @@
     <div id="lostbeginningorend-encoding" type="gl-encoding">
         <head>EpiDoc encoding</head>
         <list type="ordered">
-            <item><tag>gap reason="lost" agent="damage" extent="?" unit="line"/</tag></item>
+            <item><tag>gap id="gap1" reason="lost" unit="line"/</tag><tag>certainty target="gap1" locus="extent" degree="no"/</tag></item>
         </list>
     </div>
     <div id="lostbeginningorend-edition" type="gl-edition">
         <head>EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
-            <item><gap reason="lost" agent="damage" extent="?" unit="line"/></item>
+            <item><gap id="gap1" reason="lost" unit="line" /><certainty target="gap1" locus="extent" degree="no"/></item>
         </list>
     </div>
     <div id="lostbeginningorend-responsibility" type="gl-responsibility">
