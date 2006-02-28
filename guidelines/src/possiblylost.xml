@@ -1,46 +1,117 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="possiblylost">
-   <head>Possibility that letters have been completely lost</head>
-   
-<div id="possiblylost-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list><item>[··· ? ] </item><item>[· 10 · ? ] </item><item>[· c.10 · ? ]</item><item>[ - 4.2cm - ? ] </item><item>[ - - - ? ]</item><item>[ - 10 - ? ]</item><item>[ - - - - - - - - - - - - - - - - - - - ? ] / etc. </item><item>- - - - - - - - - - - - - - - - - - - - ?</item></list></item>
-      </list>
-   </div><div id="possiblylost-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      
-         
-   <list><item><tag>gap id="gap6" reason="lost" extent="3" unit="characters"/</tag><tag>certainty target="gap6" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>gap id="gap7" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap7" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>gap id="gap8" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap8" locus="extent" degree="no"/</tag><tag>certainty target="gap8" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>gap id="gap9" reason="lost" extent="4.2" unit="cm"/</tag><tag>certainty target="gap9" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>gap id="gap10" reason="lost" extent="3" unit="character"/</tag><tag>certainty target="gap10" locus="extent" degree="no"/</tag><tag>certainty target="gap10" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>gap id="gap11" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap11" locus="extent" degree="no"/</tag><tag>certainty target="gap11" locus="#gi" assertedValue="space" degree="no"/</tag></item>
-   <item><tag>lb/</tag><tag>gap id="gap12" reason="lost" extent="1" unit="line"/</tag><tag>certainty target="gap12" locus="#gi" assertedValue="space" degree="no"/</tag><tag>lb/</tag>etc. </item>
-   <item><tag>gap id="gap13" reason="lost" extent="?" unit="line"/</tag><tag>certainty target="gap13" locus="#gi" assertedValue="space" degree="no"/</tag></item></list>
-</div><div id="possiblylost-edition" type="gl-edition">
-      <head>EpiDoc appearance with standard XSLT</head>
-      <list><item><gap id="gap6" reason="lost" extent="3" unit="characters"/><certainty target="gap6" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><gap id="gap7" reason="lost" extent="10" unit="character"/><certainty target="gap7" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><gap id="gap8" reason="lost" extent="10" unit="character"/><certainty target="gap8" locus="extent" degree="no"/><certainty target="gap8" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><gap id="gap9" reason="lost" extent="4.2" unit="cm"/><certainty target="gap9" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><gap id="gap10" reason="lost" extent="3" unit="character"/><certainty target="gap10" locus="extent" degree="no"/><certainty target="gap10" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><gap id="gap11" reason="lost" extent="10" unit="character"/><certainty target="gap11" locus="extent" degree="no"/><certainty target="gap11" locus="#gi" assertedValue="space" degree="no"/></item>
-   <item><lb/><gap id="gap12" reason="lost" extent="1" unit="line"/><certainty target="gap12" locus="#gi" assertedValue="space" degree="no"/><lb/>etc. </item>
-   <item><gap id="gap13" reason="lost" extent="?" unit="line"/><certainty target="gap13" locus="#gi" assertedValue="space" degree="no"/></item></list>
-   </div><div id="possiblylost-questions" type="gl-questions">
-      <head>Questions and issues</head>
-      <list type="simple">
-         <item>None</item>
-      </list>
-   </div>
-   <div id="possiblylost-responsibility" type="gl-responsibility"> 
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div>
+    <head>Possibility that letters have been completely lost</head>
+    <div id="possiblylost-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list type="unordered">
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#donicht">Donicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+                    <item>[&#160;&#183;&#160;&#183;&#160;&#183;&#160;?&#160;] </item>
+                    <item>[&#160;&#183;&#160;c.3&#160;&#183;&#160;?&#160;] </item>
+                    <item>[&#160;&#183;&#160;10&#160;&#183;&#160;?&#160;]</item>
+                    <item>[&#160;&#183;&#160;c.10&#160;&#183;&#160;?&#160;]</item>
+                    <item>[&#160;-&#160;4.2cm&#160;-&#160;?&#160;] </item>
+                    <item>[&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;]</item>
+                    <item>&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="possiblylost-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>
+                <tag>gap id="gap6" reason="lost" extent="3" unit="character"/</tag><tag>certainty target="gap6" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap7" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap7" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap8" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap8" locus="extent" degree="no"/</tag><tag>certainty target="gap8" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap9" reason="lost" extent="4.2" unit="cm"/</tag><tag>certainty target="gap9" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap10" reason="lost" extent="3" unit="character"/</tag><tag>certainty target="gap10" locus="extent" degree="no"/</tag><tag>certainty target="gap10" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap11" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap11" locus="extent" degree="no"/</tag><tag>certainty target="gap11" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap12" reason="lost" extent="1" unit="line"/</tag><tag>certainty target="gap12" locus="#gi" assertedValue="space" degree="no"/</tag></item>
+            <item>
+                <tag>gap id="gap13" reason="lost" extent="?" unit="line"/</tag><tag>certainty target="gap13" locus="#gi" assertedValue="space" degree="no"/</tag>
+            </item>
+        </list>
+    </div>
+    <div id="possiblylost-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item>
+                <gap id="gap1" reason="lost" extent="3" unit="character" />
+                <certainty target="gap1" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap2" reason="lost" extent="3" unit="character" />
+                <certainty target="gap2" locus="extent" assertedValue="space" degree="no"/>
+                <certainty target="gap2" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap3" reason="lost" extent="10" unit="character" />
+                <certainty target="gap3" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap4" reason="lost" extent="10" unit="character" />
+                <certainty target="gap4" locus="extent" degree="no" />
+                <certainty target="gap4" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap5" reason="lost" extent="4.2" unit="cm" />
+                <certainty target="gap5" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap6" reason="lost" extent="1" unit="line" />
+                <certainty target="gap6" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+            <item>
+                <gap id="gap7" reason="lost" unit="line" />
+                <certainty target="gap7" locus="extent" degree="no"/>
+                <certainty target="gap7" locus="#gi" assertedValue="space" degree="no" />
+            </item>
+        </list>
+    </div>
+    <div id="possiblylost-notes" type="gl-notes">
+        <head>Notes</head>
+        <list type="ordered">
+            <item>The first example indicates the <hi rend="strong">possible</hi> loss of exactly three characters (the alternative possibility is that there was originally a vacat in this space.</item>
+            <item>The second example indicates the <hi rend="strong">possible</hi> loss of approximately three characters.</item>
+            <item>The third example indicates the <hi rend="strong">possible</hi> loss of exactly 10 characters.</item>
+            <item>The fourth example indicates the <hi rend="strong">possible</hi> loss of approximately 10 characters.</item>
+            <item>The fifth example indicates the <hi rend="strong">possible</hi> loss of text in a horizontal span of 4.2cm.</item>
+            <item>The sixth example indicates the <hi rend="strong">possible</hi> loss of exactly one line of text.</item>
+            <item>The seventh example indicates the <hi rend="strong">possible</hi> loss of one or more lines of text.</item>
+            <item>For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <xref href="lostcertain.xml">Letters completely lost (extent certain or not certain)</xref>.</item>
+        </list>
+    </div>
+    <div id="possiblylost-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
