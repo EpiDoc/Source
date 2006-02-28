@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <div id="lostline" xmlns="http://www.tei-c.org/ns/1.0">
-    <head>An entire line completely lost (extent certain)</head>
+    <head>An entire line completely lost (extent certain or uncertain)</head>
     <div id="lostline-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
         <list>
             <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
                 <list type="ordered">
                     <item>[ - - - - - - - - - - - - - - - - - - ] /</item>
+                    <item>not addressed</item>
                 </list></item>
         </list>
     </div>
@@ -15,7 +16,10 @@
         <head>EpiDoc encoding</head>
         <list type="ordered">
             <item>
-                <tag>gap reason="lost" extent="1" unit="line"/</tag><tag>lb/</tag>
+                <tag>gap reason="lost" extent="1" unit="line"/</tag>
+            </item>
+            <item>
+                <tag>gap id="gap1" reason="lost" unit="line"/</tag><tag>certainty target="gap1" locus="extent" degree="no"/</tag>
             </item>
         </list>
     </div>
@@ -23,10 +27,24 @@
         <head>EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
             <item>
-                <gap reason="lost" extent="1" unit="line" /><lb />
+                <gap reason="lost" extent="1" unit="line" />
+            </item>
+            <item>
+                <gap id="gap1" reason="lost" unit="line" />
+                <certainty target="gap1" locus="extent" degree="no"/>
             </item>
         </list>
     </div>
+    <div id="lostline-notes" type="gl-notes">
+        <head>Notes</head>
+        <list type="ordered">
+            <item>The first example indicates complete certainty that a single, entire line of text has been lost.</item>
+            <item>The second example indicates complete certainty that some unknown number of entire lines of text have been lost.</item>
+            <item>For indications of uncertainty about whether lines of text have been lost or not, see <xref href="possiblylost.xml">Possibility that letters have been completely lost</xref>.</item>
+            <item>NB: values of extent greater than 1, when combined with unit="line" are unsupported by the standard xslts; therefore, each separate lost line should be encoded as a separate <tag>gap</tag>, with appropriate line breaks (vel sim.) separating them.</item>
+        </list>    
+    </div>
+    
     <div id="lostline-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
