@@ -10,6 +10,7 @@
                     <item>[• 10 •]</item>
                     <item> [• c.10 •]</item>
                     <item> [ - 4.2cm - ]</item>
+                
                 <item lang="en">not addressed</item>
                 </list></item>
         </list>
@@ -53,12 +54,21 @@
             <item>
                 <gap reason="lost" extent="4.2" unit="cm" />
             </item>
+            
             <item>
                 <gap id="gap3" reason="lost" extent="2" unit="character" />
                 <certainty target="gap3" locus="extent" degree="no" />
             </item>
         </list>
     </div>
+    <div id="lostcertain-notes" type="gl-notes">
+        <head>Notes</head>
+        <list type="unordered">
+            <item>If a unit of measurement other than "character" is used for the "unit" attribute on <tag>gap</tag>,
+                then no <tag>certainty locus="extent" degree="no"</tag> element should be associated with the <tag>gap</tag>.</item>
+        </list>
+    </div>
+    
     <div id="lostcertain-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
