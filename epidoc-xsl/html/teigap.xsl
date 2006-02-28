@@ -15,7 +15,7 @@
    </xsl:template>
 
     <!-- ================================================================================= -->
-    <!-- lost characters -->
+    <!-- lost characters, units measured in characters -->
     <!-- ================================================================================= -->
     <xsl:template match="tei:gap[@reason='lost' and @unit='character' and @extent]">
         <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
@@ -31,6 +31,18 @@
     </xsl:template>
 
     <!-- ================================================================================= -->
+    <!-- lost characters, units NOT measured in characters -->
+    <!-- ================================================================================= -->
+    <xsl:template match="tei:gap[@reason='lost' and @unit!='character' and @unit!='line' and @extent]">
+        <xsl:element name="span">
+            <xsl:attribute name="class">gap-illegible</xsl:attribute>
+            <xsl:attribute name="title"><xsl:value-of select="@extent"/> <xsl:value-of select="@unit"/> of illegible text</xsl:attribute>
+            <xsl:call-template name="propagateattrs"/>
+            [ - <xsl:value-of select="@extent"/><xsl:value-of select="@unit"/> - ]
+        </xsl:element>
+    </xsl:template>
+
+    <!-- ================================================================================= -->
     <!-- one lost line: matches guidelines lostline.xml                                                                      -->
     <!-- ================================================================================= -->
     <xsl:template match="tei:gap[@reason='lost' and @unit='line' and @extent='1']">
@@ -42,7 +54,11 @@
         </xsl:element>
     </xsl:template>
    
-   <xsl:template name="repeatstring">
+    <!-- ================================================================================= -->
+    <!-- callable template for repeating strings in output                                                                  -->
+    <!-- ================================================================================= -->
+
+    <xsl:template name="repeatstring">
       <xsl:param name="rstring"/>
       <xsl:param name="rcount"/>
       <xsl:if test="$rcount &gt; 0"
