@@ -48,6 +48,7 @@
    <xsl:import href="dohtmlheadboilerplate.xsl" />
    <xsl:import href="dohtmlbodyboilerplate.xsl" />
    <xsl:import href="teititle.xsl"/>
+    <xsl:import href="repeatstring.xsl"/>
    <xsl:param name="stripcomments">false</xsl:param>
    <xsl:param name="persnameuriprefix">people.html</xsl:param>
    <xsl:param name="placenameuriprefix">places.html</xsl:param>
@@ -59,6 +60,7 @@
    <xsl:param name="htmlheaderdivid">htmlheader</xsl:param>
    <xsl:param name="htmlseparatordivid">htmlnavigation</xsl:param>
    <xsl:param name="vestigemark">+</xsl:param>
+    <xsl:param name="gapmaxrepeat">3</xsl:param>
    <xsl:template match="/">
       <xsl:element name="html">
          <xsl:apply-templates />

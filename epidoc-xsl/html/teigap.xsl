@@ -14,58 +14,69 @@
          
    </xsl:template>
 
-    <!-- ================================================================================= -->
-    <!-- lost characters, units measured in characters -->
-    <!-- ================================================================================= -->
-    <xsl:template match="tei:gap[@reason='lost' and @unit='character' and @extent]">
+    <xsl:template match="tei:gap[@reason='lost' and @unit = 'line']">
+        <xsl:variable name="gaplinelen">15</xsl:variable>
         <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
-        <xsl:element name="span">
-            <xsl:attribute name="class">gap-illegible</xsl:attribute>
-            <xsl:attribute name="title"><xsl:if test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">approximately </xsl:if><xsl:value-of select="@extent"/> illegible character<xsl:if test="@extent &gt; 1">s</xsl:if></xsl:attribute>
-            <xsl:call-template name="propagateattrs"/>
-            <xsl:choose>
-                <xsl:when test="@extent &lt; 4 and not(//tei:certainty[@target=$gapid and @locus='extent' and @degree='no'])">[<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent - 1"/></xsl:with-param><xsl:with-param name="rstring">• </xsl:with-param></xsl:call-template>•]</xsl:when>
-                <xsl:otherwise>[• <xsl:if test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">c.</xsl:if><xsl:value-of select="@extent"/> •]</xsl:otherwise>
-            </xsl:choose>
-        </xsl:element>
+        <xsl:variable name="gapopener">[</xsl:variable>
+        <xsl:variable name="gapcloser">]</xsl:variable>
+        <xsl:choose>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no'] and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">
+                 &#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">-&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="$gaplinelen"/></xsl:with-param></xsl:call-template>?&#160;                
+            </xsl:when>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no']">
+                <xsl:value-of select="$gapopener"/>&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">-&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="$gaplinelen"/></xsl:with-param></xsl:call-template>?&#160;<xsl:value-of select="$gapcloser"/>
+            </xsl:when>
+             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">
+                 &#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">-&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="$gaplinelen"/></xsl:with-param></xsl:call-template>
+             </xsl:when>
+            <xsl:otherwise><xsl:value-of select="$gapopener"/>&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">-&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="$gaplinelen"/></xsl:with-param></xsl:call-template><xsl:value-of select="$gapcloser"/></xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
-    <!-- ================================================================================= -->
-    <!-- lost characters, units NOT measured in characters -->
-    <!-- ================================================================================= -->
-    <xsl:template match="tei:gap[@reason='lost' and @unit!='character' and @unit!='line' and @extent]">
+    <xsl:template match="tei:gap[@reason='lost' and @unit != 'line']">
+        <xsl:variable name="gapmaxrepeat">4</xsl:variable>
+        <xsl:variable name="gapopener">[</xsl:variable>
+        <xsl:variable name="gapcloser">]</xsl:variable>
+        <xsl:variable name="gapextentstring"><xsl:call-template name="calcgapextentstring"><xsl:with-param name="gapmaxrepeat"><xsl:value-of select="$gapmaxrepeat"/></xsl:with-param></xsl:call-template></xsl:variable>
         <xsl:element name="span">
-            <xsl:attribute name="class">gap-illegible</xsl:attribute>
-            <xsl:attribute name="title"><xsl:value-of select="@extent"/> <xsl:value-of select="@unit"/> of illegible text</xsl:attribute>
-            <xsl:call-template name="propagateattrs"/>
-            [ - <xsl:value-of select="@extent"/><xsl:value-of select="@unit"/> - ]
+            <xsl:attribute name="class">gap-lost</xsl:attribute>
+            <xsl:attribute name="title">put title here!</xsl:attribute>
+            <xsl:value-of select="$gapopener"
+            /><xsl:value-of select="$gapextentstring"
+            /><xsl:value-of select="$gapcloser"/>
         </xsl:element>
+    </xsl:template> 
+    
+    <xsl:template name="calcgapextentstring">
+        <xsl:param name="gapmaxrepeat">4</xsl:param>
+        <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
+        <xsl:choose>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no'] and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">
+                <xsl:choose>
+                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/><xsl:if test="@unit != 'character'"><xsl:value-of select="@unit"/></xsl:if>&#160;&#183;&#160;?&#160;</xsl:when>
+                    <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;?&#160;</xsl:element></xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='no']">
+                <xsl:choose>
+                    <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template>?&#160;</xsl:when>
+                    <xsl:when test="@unit='character' and @extent &gt; $gapmaxrepeat - 1">&#160;&#183;&#160;<xsl:value-of select="@extent"/>&#160;&#183;&#160;?&#160;</xsl:when>
+                    <xsl:otherwise>&#160;-&#160;<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;?&#160;</xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='no']">
+                <xsl:choose>
+                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/>&#160;&#183;&#160;</xsl:when>
+                    <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;</xsl:element></xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template></xsl:when>
+                    <xsl:when test="@unit='character' and @extent &gt; $gapmaxrepeat - 1">&#160;&#183;&#160;<xsl:value-of select="@extent"/>&#160;&#183;&#160;</xsl:when>
+                    <xsl:otherwise>&#160;-&#160;<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;</xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
-    <!-- ================================================================================= -->
-    <!-- one lost line: matches guidelines lostline.xml                                                                      -->
-    <!-- ================================================================================= -->
-    <xsl:template match="tei:gap[@reason='lost' and @unit='line' and @extent='1']">
-        <xsl:element name="span">
-            <xsl:attribute name="class">gap-illegible</xsl:attribute>
-            <xsl:attribute name="title">1 illegible line</xsl:attribute>
-            <xsl:call-template name="propagateattrs"/>
-            [ - - - - - - - - - - - - - - - - - - ]
-        </xsl:element>
-    </xsl:template>
-   
-    <!-- ================================================================================= -->
-    <!-- callable template for repeating strings in output                                                                  -->
-    <!-- ================================================================================= -->
-
-    <xsl:template name="repeatstring">
-      <xsl:param name="rstring"/>
-      <xsl:param name="rcount"/>
-      <xsl:if test="$rcount &gt; 0"
-         ><xsl:value-of select="$rstring"
-            /><xsl:call-template name="repeatstring"
-            ><xsl:with-param name="rstring"  select="$rstring"
-            /><xsl:with-param name="rcount" select="$rcount - 1"/></xsl:call-template
-         ></xsl:if>
-   </xsl:template>
 </xsl:stylesheet>
