@@ -18,6 +18,13 @@
                      /></xsl:element>
 
          </xsl:when>
+          <xsl:when test="contains(@href, '.xml')">
+              <xsl:element name="a">
+                  <xsl:attribute name="class">xref</xsl:attribute>
+                  <xsl:attribute name="href"><xsl:value-of select="substring-before(@href, '.xml')"/>.html</xsl:attribute>
+                  <xsl:call-template name="propagateattrs"
+                      /><xsl:apply-templates/></xsl:element>
+          </xsl:when>
          <xsl:when test="@href">
             <xsl:element name="a">
                <xsl:attribute name="class">xref</xsl:attribute>
