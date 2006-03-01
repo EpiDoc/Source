@@ -1,8 +1,41 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="outofline" lang="en">
-   <head>Characters inscribed above or below the line, but clearly not later additions</head>
-   <p>Characters inscribed above or below the line, but clearly not later additions </p>
-   <p>not done: we plan to use <tag>hi rend="superscript"</tag>blah<tag>/hi</tag> and <tag>hi rend="subscript"</tag>blah<tag>/hi</tag>, but need a good example. </p>
+<div xmlns="http://www.tei-c.org/ns/1.0" id="outofline">
+    <head>Characters inscribed above or below the line, but clearly not later additions</head>
+    <div id="outofline-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        
+    <p>Not mentioned in Panceira etc.; uaually mentioned in description of letters,  apparatus, vel sim.?</p></div>
+    <div id="outofline-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item>Ἐλογιμ<tag>hi rend="superscript"</tag>ο<tag>/hi</tag></item>
+        </list>
+    </div>
+    <div id="outofline-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item>
+                
+            Ἐλογιμ<hi rend="superscript">ο</hi></item>
+        </list>
+    </div>
+    <div id="outofline-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item><name>GB</name> (2006-03-01): We don't render this in the edition, usually, so I guess XSL won't handle this.</item>
+        </list>
+    </div>
+    <div id="outofline-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+            </listBibl>
+    </div>
 </div>
