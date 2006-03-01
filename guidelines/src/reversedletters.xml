@@ -1,15 +1,61 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="reversedletters" lang="en">
-   <head>Reversed letters</head>
-   <p>Reversed letters </p>
-   <p>EPIDOC: </p>
-   <p><tag>hi rend="reversed"</tag>f<tag>/hi</tag></p>
-   <p>PANCIERA (p. 19): </p>
-   <p>((f)) </p>
-   <p>DONICHT (p. 4) </p>
-   <p>⊂f⊃ </p>
-   <p>NOTE: In traditional markup, can only be shown with special type or "in consuetam formam reducta" with doubled parentheses or some other signal and a note in the apparatus. </p>
-   <p>TEI P4: <tag>hi</tag></p>
+
+   <div xmlns="http://www.tei-c.org/ns/1.0" id="reversedletters">
+    <head>Reversed letters</head>
+    <div id="reversedletters-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item>
+                <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: <list>
+                    <item>((f))</item>
+                </list></item>
+        </list>
+    <list>
+            <item>
+                <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#donicht">Donicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list>
+                    <item>⊂f⊃</item>
+                </list></item>
+        </list></div>
+    <div id="reversedletters-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item><tag>hi rend="reversed"</tag>f<tag>/hi</tag></item>
+        </list>
+    </div>
+    <div id="reversedletters-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item><hi rend="reversed">f</hi></item>
+        </list>
+    </div>
+    <div id="reversedletters-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item>None</item>
+        </list>
+    </div>
+    <div id="reversedletters-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            </listBibl><listBibl><bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
+
