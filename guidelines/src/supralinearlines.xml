@@ -1,16 +1,57 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="supralinearlines" lang="en">
-   <head>Letters and numerals highlighted by supralinear lines</head>
-   <p>Letters and numerals highlighted by supralinear lines </p>
-   <p>EPIDOC: </p>
-   <p><tag>hi rend="supraline"</tag>abc<tag>/hi</tag></p>
-   <p><tag>hi rend="supraline"</tag>V<tag>/hi</tag></p>
-   <p>FINNEY: </p>
-   <p><tag>hi rend="overline"</tag>abgd<tag>/hi</tag></p>
-   <p>PANCIERA (p. 17) , DONICHT (p. 3): </p>
-   <p>a̅b̅c̅ </p>
-   <p>V̅ </p>
-   <p>TEI P4: <tag>hi</tag></p>
+<div xmlns="http://www.tei-c.org/ns/1.0" id="supralinearlines">
+    <head>Letters and numerals highlighted by supralinear lines</head>
+    <div id="supralinearlines-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item>
+                <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#donicht">Donicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list>
+                    <item>a̅b̅c̅</item><item>V̅ </item>
+                </list></item>
+        </list>
+    </div>
+    <div id="supralinearlines-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list>
+            <item><tag>hi rend="supraline"</tag>abc<tag>/hi</tag></item><item>
+   <tag>hi rend="supraline"</tag>V<tag>/hi</tag></item>
+        </list>
+    </div>
+    <div id="supralinearlines-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list>
+            <item>
+                
+            <hi rend="supraline">abc</hi></item><item><hi rend="supraline">V</hi></item>
+        </list>
+    </div>
+    <div id="supralinearlines-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item>None</item>
+        </list>
+    </div>
+    <div id="supralinearlines-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            </listBibl><listBibl><bibl>
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
