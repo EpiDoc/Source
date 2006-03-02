@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
    <!-- epidoc-teiheader -->
    <!-- 2005-08-10: created by Tom Elliott -->
+    <xsl:import href="epidocmark.xsl" />
    <xsl:import href="xmlcomment.xsl" />
    <xsl:import href="tei2.xsl" />
    <xsl:import href="teiheader.xsl" />
