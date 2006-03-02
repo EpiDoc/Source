@@ -1,14 +1,40 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="overstruck" lang="en">
-   <head>Deletion and overstruck addition of text in antiquity</head>
-   <p>Deletion and overstruck addition of text in antiquity </p>
-   <p>EPIDOC: </p>
-   <p>legio XIII <tag>app</tag><tag>rdg</tag><tag>del</tag><tag>gap reason="lost" extent="1" unit="character"/</tag><tag>/del</tag><tag>/rdg</tag><tag>rdg</tag><tag>add place="overstrike"</tag>g<tag>/add</tag><tag>/rdg</tag><tag>/app</tag>emina </p>
-   <p>legio XIII <tag>app</tag><tag>rdg</tag><tag>del</tag><tag>unclear reason="damage"</tag>f<tag>/unclear</tag><tag>/del</tag><tag>/rdg</tag><tag>rdg</tag><tag>add place="overstrike"</tag>g<tag>/add</tag><tag>/rdg</tag><tag>/app</tag>emina </p>
-   <p>PANCIERA (pp. 18-19) , DONICHT (p. 4): </p>
-   <p>legio XIII <tag><tag>g</tag></tag>emina </p>
-   <p>legio XIII <tag><tag>g</tag></tag>emina (with note in apparatus for "f") </p>
-   <p>TEI P4: 18.1.5 Substitutions </p>
+    <head>Deletion and overstruck addition of text in antiquity</head>
+    <div id="overstruck-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="pages">pp.</abbr><biblScope type="pages">18-19</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered" lang="lat">
+                    <item>legio XIII &lt;&lt;g&gt;&gt;emina</item>
+                    <item>legio XIII &lt;&lt;g&gt;&gt;emina <foreign lang="en">(with a note in the apparatus indicating that the original character was "f")</foreign></item>
+                </list></item>
+        </list>
+    </div>
+        <div id="overstruck-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+ <list type="ordered">
+     <item>legio XIII <tag>app</tag><tag>rdg</tag><tag>del</tag><tag>gap reason="lost" extent="1" unit="character"/</tag><tag>/del</tag><tag>/rdg</tag><tag>rdg</tag><tag>add place="overstrike"</tag>g<tag>/add</tag><tag>/rdg</tag><tag>/app</tag>emina</item>
+     <item>legio XIII <tag>app</tag><tag>rdg</tag><tag>del</tag><tag>unclear reason="damage"</tag>f<tag>/unclear</tag><tag>/del</tag><tag>/rdg</tag><tag>rdg</tag><tag>add place="overstrike"</tag>g<tag>/add</tag><tag>/rdg</tag><tag>/app</tag>emina</item>
+ </list>
+        </div>
+    
+        <div id="overstruck-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+            <list type="ordered" lang="lat">
+                <item>legio XIII <app><rdg><del><gap reason="lost" extent="1" unit="character"/></del></rdg><rdg><add place="overstrike">g</add></rdg></app>emina</item>
+                <item>legio XIII <app><rdg><del><unclear reason="damage">f</unclear></del></rdg><rdg><add place="overstrike">g</add></rdg></app>emina</item>
+            </list>
+        </div>
+     <div id="overstruck-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>   
 </div>
