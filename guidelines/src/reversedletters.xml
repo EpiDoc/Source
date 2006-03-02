@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
-
-   <div xmlns="http://www.tei-c.org/ns/1.0" id="reversedletters">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="reversedletters">
     <head>Reversed letters</head>
     <div id="reversedletters-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
@@ -14,14 +12,15 @@
                     <item>((f))</item>
                 </list></item>
         </list>
-    <list>
+        <list>
             <item>
                 <bibl><title level="a" type="abbreviated">
                         <xref href="bibliography.xml#donicht">Donicht</xref>
                     </title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list>
                     <item>⊂f⊃</item>
                 </list></item>
-        </list></div>
+        </list>
+    </div>
     <div id="reversedletters-encoding" type="gl-encoding">
         <head>EpiDoc encoding</head>
         <list>
@@ -31,7 +30,9 @@
     <div id="reversedletters-edition" type="gl-edition">
         <head>EpiDoc appearance with standard XSLT</head>
         <list>
-            <item><hi rend="reversed">f</hi></item>
+            <item>
+                <hi rend="reversed">f</hi>
+            </item>
         </list>
     </div>
     <div id="reversedletters-questions" type="gl-questions">
@@ -49,7 +50,9 @@
                     <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
-            </listBibl><listBibl><bibl>
+        </listBibl>
+        <listBibl>
+            <bibl>
                 <respStmt>
                     <resp>converted XML</resp>
                     <name>Gabriel Bodard</name>
@@ -58,4 +61,3 @@
         </listBibl>
     </div>
 </div>
-
