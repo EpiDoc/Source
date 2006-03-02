@@ -68,6 +68,7 @@
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- @rend='supraline'                                                                                                   -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- I wonder if this should be "overline" to match css practice? TE -->
             <xsl:when test="@rend='supraline'">
                 <xsl:element name="span">
                     <xsl:attribute name="class">supraline</xsl:attribute>
