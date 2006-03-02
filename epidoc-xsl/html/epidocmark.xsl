@@ -3,6 +3,7 @@
    <xsl:template match="tei:mark">
        <xsl:element name="span">
            <xsl:attribute name="class">mark</xsl:attribute>
+           <xsl:attribute name="title">mark: <xsl:value-of select="@type"/></xsl:attribute>
            <xsl:call-template name="propagateattrs"/>((<xsl:value-of select="@type"/>))</xsl:element>
     </xsl:template>
 </xsl:stylesheet>
