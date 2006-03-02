@@ -39,7 +39,17 @@
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
+             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- @rend='reversed'                                                                                                      -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <xsl:when test="@rend='reversed'">
+                <xsl:element name="span">
+                    <xsl:attribute name="class">reversed</xsl:attribute>
+                    <xsl:attribute name="title">reversed: <xsl:value-of select="."/></xsl:attribute>
+                    ((<xsl:apply-templates />))
+                </xsl:element>
+            </xsl:when>
+           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- @rend='strong'                                                                                                           -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <xsl:when test="@rend='strong'">
@@ -52,6 +62,16 @@
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <xsl:when test="@rend='superscript'">
                 <xsl:element name="sup">
+                    <xsl:apply-templates />
+                </xsl:element>
+            </xsl:when>
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- @rend='supraline'                                                                                                   -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <xsl:when test="@rend='supraline'">
+                <xsl:element name="span">
+                    <xsl:attribute name="class">supraline</xsl:attribute>
+                    <xsl:attribute name="title">line above</xsl:attribute>
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
