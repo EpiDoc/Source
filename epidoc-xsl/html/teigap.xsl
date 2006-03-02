@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
-   <xsl:template match="tei:gap[@reason='illegible' and @unit='character']">
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- gap introduced by editor for ellipsis -->    
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <xsl:template match="tei:gap[@reason='ellipsis']">
+        <xsl:element name="span">
+            <xsl:attribute name="class">editorial ellipsis</xsl:attribute>
+            <xsl:attribute name="title">ellipsis introduced by the editor for the sake of brevity or emphasis</xsl:attribute>...</xsl:element>
+    </xsl:template>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- illegible gap measured in characters -->    
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <xsl:template match="tei:gap[@reason='illegible' and @unit='character']">
       <xsl:element name="span">
          <xsl:attribute name="class">gap-illegible</xsl:attribute>
          <xsl:attribute name="title"><xsl:value-of select="@extent"/> illegible character<xsl:if test="@extent &gt; 1">s</xsl:if></xsl:attribute>
@@ -14,6 +26,9 @@
          
    </xsl:template>
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- lost gap measured in lines -->    
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <xsl:template match="tei:gap[@reason='lost' and @unit = 'line']">
         <xsl:variable name="gaplinelen">15</xsl:variable>
         <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
@@ -33,6 +48,9 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- lost gap measured in units other than lines -->    
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <xsl:template match="tei:gap[@reason='lost' and @unit != 'line']">
         <xsl:variable name="gapmaxrepeat">4</xsl:variable>
         <xsl:variable name="gapopener">[</xsl:variable>
@@ -47,6 +65,9 @@
         </xsl:element>
     </xsl:template> 
     
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- callable template for determining string based on gap extent -->    
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <xsl:template name="calcgapextentstring">
         <xsl:param name="gapmaxrepeat">4</xsl:param>
         <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
