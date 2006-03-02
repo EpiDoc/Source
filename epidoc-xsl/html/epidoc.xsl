@@ -6,6 +6,7 @@
    <xsl:import href="xmlcomment.xsl" />
    <xsl:import href="tei2.xsl" />
    <xsl:import href="teiheader.xsl" />
+    <xsl:import href="teiapp.xsl" />
    <xsl:import href="teitext.xsl" />
    <xsl:import href="teibody.xsl" />
    <xsl:import href="text.xsl" />
