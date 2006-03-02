@@ -19,6 +19,7 @@
    <xsl:import href="teiplacename.xsl" />
    <xsl:import href="teiexpan.xsl" />
    <xsl:import href="teisuppliedreasonabbreviation.xsl" />
+    <xsl:import href="teisuppliedreasonexplanation.xsl" />
    <xsl:import href="teisicandcorr.xsl" />
    <xsl:import href="teip.xsl" />
     <xsl:import href="teispace.xsl"/>
