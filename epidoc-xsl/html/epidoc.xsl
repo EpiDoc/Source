@@ -17,6 +17,8 @@
    <xsl:import href="teilb.xsl" />
    <xsl:import href="teipersname.xsl" />
    <xsl:import href="teiplacename.xsl" />
+   <xsl:import href="teiabbr.xsl" />
+   <xsl:import href="teiabbrorig.xsl" />
    <xsl:import href="teiexpan.xsl" />
    <xsl:import href="teisuppliedreasonabbreviation.xsl" />
     <xsl:import href="teisuppliedreasonexplanation.xsl" />
