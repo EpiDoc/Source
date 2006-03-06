@@ -1,0 +1,37 @@
+# This is the source file for CHETC conversions of epigraphic markup to XML.
+
+# Replacements are accomplished by means of regular expressions.  Each line is a
+# replacement instruction.  Comments are preceded by a '#' character.  Blank lines
+# are ignored.  This file can be modified while the CHETC program is running, and 
+# the program will pick up the modifications.  
+
+# Replacements that require the counting of symbols, such as '+' or '-'
+# use a notation like '%g1%len2'.  This allows the program to measure the number of
+# occurences of the symbol in the second capturing group inside the first capturing group.  In 
+# regular expressions, capturing groups are delimited by parentheses.
+
+<<(\w+)>>    =    <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
+<((?:(-)|\s)+)>    =    <gap reason="omitted" extent="%g1%len2" unit="character"/>
+([^<])<([\w])>([^>])    =    $1<supplied reason="omitted">$2</supplied>$3
+(\+)+                     =          <gap reason="illegible" extent="%g1%len1" unit="character"/>
+\+\s*(\d+)\s*\+    =    <gap reason="illegible" extent="$1" unit="character"/>
+\+\s*(\d+)\s*(\w)\s*\+    =    <gap reason="illegible" extent="$1" unit="$2"/>
+(.)\(\?\)            =          <gap reason="illegible" extent="1" unit="character">$1</gap>
+(\w+)\(!\)    =    <sic>$1</sic>
+([\S]+)\(([\w\s]+)\)(\S*)\((\S*)\)    =    <abbr>$1<expan>$2</expan>$3<expan>$4</expan></abbr> 
+(\S+)\(([\w\s]+)\)(\S*)    =    <abbr>$1<expan>$2</expan>$3</abbr>
+(\S+)\((-\s*)+\)    = <abbr>$1</abbr>
+(\w)(?:-)\n    =    $1<lb type="worddiv"/>
+\n    =    <lb/>
+(\w)\/(\w)    =    $1<lb type="worddiv"/>$2
+(\s)\/(\s)    =    $1<lb/>$2
+\(scil. ([\w\s])\)    =    <supplied reason="subaudible">$1</supplied>
+\(i\.\s*e\. ([\w\s])\)    =    <supplied reason="explanation">$1</supplied>
+\[([.\s])\]    =    <gap reason="lost" extent="%g1%len1" unit="character"/>
+\[([-\s])\]    =    <gap reason="lost" extent="?" unit="character"/>
+\[([^\]]+)\]    =    <supplied reason="lost">$1</supplied>
+\[([^\n])*\n    =    <supplied reason="lost">$1</supplied>
+#not sure about this:
+\{(\w+)\}    =    <sic>$1<corr/></sic>
+
+

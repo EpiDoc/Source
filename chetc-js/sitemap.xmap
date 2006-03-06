@@ -1,0 +1,13 @@
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+	<map:components>
+		<map:readers default="resource" />
+		<map:matchers default="wildcard" />
+	</map:components>
+	<map:pipelines>
+		<map:pipeline name="chetc">
+			<map:match pattern="**.*">
+				<map:read src="{1}.{2}"/>
+			</map:match>
+		</map:pipeline>
+	</map:pipelines>
+</map:sitemap>
