@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" [
+  <!ENTITY ClaudianBS 'bs'>
+  <!ENTITY ClaudianPS 'ps'>
+  <!ENTITY ClaudianV 'v'>
+  <!ENTITY ClaudianY 'y'>
+]>
+<TEI.2 id="inst054" lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title level="m" type="main">Dispute between the <placeName lang="lat"
+                    >Comenses</placeName> and <placeName lang="lat">Bergalei</placeName></title>
+                <editor role="editor">Tom Elliott</editor>
+            </titleStmt>
+            <publicationStmt>
+                <p>This document is unpublished, and is intended for personal use only.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This file was created from material that originally appeared in <bibl><author>T.
+                            Elliott</author>, <title level="m" type="main">Epigraphic Evidence for
+                            Boundary Disputes in the Roman Empire</title>, <note>Ph.D.
+                        dissertation</note>, <publisher>University of North Carolina</publisher> at
+                            <pubPlace>Chapel Hill</pubPlace>, <date>2004</date>.</bibl> Various
+                    elements were copied and pasted, and additional editing and markup performed in
+                    the resulting <abbr expan="eXtensible Markup Language">XML</abbr> file. The
+                    markup for the edition of the text itself was first prepared by running the
+                    conventional (Leiden) text through the CHET-C epigraphic text converted,
+                    developed by <persName>Elliott</persName> in collaboration with <persName>Noel
+                        Fiser</persName> and <persName>Hugh Cayless</persName>. Additional markup on
+                    the edition was performed by hand.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <creation>
+                <date value="2004-09-09">09 Sep 2004</date> in <name type="geographic">Chapel Hill,
+                    North Carolina</name>
+            </creation>
+            <langUsage>
+                <language id="ara">Arabic</language>
+                <language id="cat">Catalan</language>
+                <language id="dut">Dutch</language>
+                <language id="en">English</language>
+                <language id="fre">French</language>
+                <language id="ger">German</language>
+                <language id="grc">Greek, Ancient</language>
+                <language id="gre">Greek, Modern</language>
+                <language id="ita">Italian</language>
+                <language id="lat">Latin</language>
+                <language id="peo">Persian, Old</language>
+                <language id="rus">Russian</language>
+                <language id="spa">Spanish</language>
+                <language id="tur">Turkish</language>
+                <language id="ukr">Ukrainian</language>
+            </langUsage>
+            <handList>
+                <hand id="hand1" first="yes" />
+            </handList>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date value="2005-08-15">15 August 2005</date>
+                <respStmt>
+                    <name>Tom Elliott</name>
+                    <resp>encoder</resp>
+                </respStmt>
+                <item>ripped out TEIform attributes</item>
+            </change>
+            <change>
+                <date value="2006-03-07">7 March 2006</date>
+                <respStmt>
+                    <name>Tom Elliott</name>
+                    <resp>encoder</resp>
+                </respStmt>
+                <item>ripped out TEIform attributes again and brought into conformance with dtd release version 2-alpha-1</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div id="publicationhistory" type="bibliography">
+                <head>Publication history</head>
+                <p>This document has received only one modern authoritative edition, that of <bibl
+                        type="edition"><editor>
+                            <persName reg="Theodor Mommsen"
+                                key="http://en.wikipedia.org/wiki/Mommsen">Mommsen</persName>
+                        </editor> in <title level="m" type="abbreviated">
+                            <abbr expan="Corpus Inscriptionum Latinarum">CIL</abbr>
+                        </title><biblScope>5.5050</biblScope></bibl> (from a squeeze), who provides
+                    earlier bibliography not repeated here. <bibl type="derivative">
+                        <title level="m" type="abbreviated">
+                            <abbr expan="Inscriptiones Latinae Selectae">ILS</abbr>
+                        </title>
+                        <biblScope>206</biblScope>
+                    </bibl> and <bibl type="derivative">
+                        <title level="m" type="abbreviated">
+                            <abbr expan="Fontes Iuris Romani Antejustiniani">FIRA</abbr>
+                        </title>
+                        <biblScope>1.71</biblScope>
+                    </bibl> are derivative editions. The most recent extensive study of the document
+                    is <bibl type="study">
+                        <title level="a" type="abbreviated">
+                            <abbr
+                                expan="E. Frézouls, &quot;A propos de la Tabula Clesiana,&quot; Ktema 6 (1981), 239-252."
+                                >Frézouls 1981</abbr>
+                        </title>
+                    </bibl> (noted by <bibl type="citation">
+                        <title level="m" type="abbreviated">
+                            <abbr expan="L'Année Epigraphique">AE</abbr>
+                        </title>
+                        <biblScope>1983.445</biblScope>
+                    </bibl>).</p>
+            </div>
+            <div id="description" type="description">
+                <head>Description</head>
+                <ab id="inscription-measurements">Measurements: <measure id="matrixheight"
+                        dim="height" type="length" value="50cm">50<abbr expan="centimeters"
+                            >cm</abbr><abbr expan="height">H</abbr></measure> x <measure
+                        id="matrixwidth" dim="width" type="length" value="38cm">38<abbr
+                            expan="centimeters">cm</abbr><abbr expan="width">W</abbr></measure>;
+                        <measure id="letterheight" dim="height" type="length" value="5mm">5<abbr
+                            expan="millimeters">mm</abbr><abbr expan="Letter height"
+                    >L</abbr></measure> (per <persName reg="Theodor Mommsen"
+                        key="http://en.wikipedia.org/wiki/Mommsen">Mommsen</persName>)</ab>
+                <ab id="inscription-date">Date(s): <date value="0046"><abbr
+                            expan="anno domine: in the year of the Lord">AD</abbr> 46</date>
+                    (prosopography: consular dates and titulature of <persName n="PIR² C942"
+                        reg="Claudius (emperor)" type="ancient"
+                        key="http://www.roman-emperors.org/claudius.htm" full="yes"
+                    >Claudius</persName>) </ab>
+            </div>
+            <div id="edition" type="edition">
+                <head>Text (after <bibl><editor>Mommsen</editor>, <title level="m"
+                            type="abbreviated">CIL</title><biblScope>5.5050</biblScope></bibl>)</head>
+                <ab lang="lat">
+                    <lb n="0" /><persName type="ancient" reg="Iunius Silanus, Marcus" n="PIR² I833"
+                        ><expan>M<supplied reason="abbreviation">arco</supplied></expan> Iunio
+                        Silano</persName>
+                    <persName type="ancient" reg="Sulpicius Camerinus Pythicus, Quintus"
+                        n="RE s.v. Sulpicius 30"
+                        ><expan>Q<supplied reason="abbreviation">uinto</supplied></expan> Sulpicio
+                        Camerino</persName>
+                    <expan>co<supplied reason="abbreviation">n</supplied>s<supplied reason="abbreviation">ulibus</supplied></expan>
+                    <lb n="1" />Idibus <expan>Marti<supplied reason="abbreviation">i</supplied>s</expan>
+                    <placeName reg="Baiae" n="BAtlas 44 F4">
+                        <expan>Bai<supplied reason="abbreviation">i</supplied>s</expan>
+                    </placeName> in praetorio edictum <lb n="2" /><persName type="ancient"
+                        reg="Claudius (emperor)" n="PIR² C942"
+                        ><expan>Ti<supplied reason="abbreviation">beri</supplied></expan> Claudi
+                        Caesaris Augusti Germanici</persName> propositum fuit id quod infra scriptum
+                    est <lb n="3" /><persName type="ancient" reg="Claudius (emperor)" n="PIR² C942"
+                        ><expan>Ti<supplied reason="abbreviation">berius</supplied></expan> Claudius
+                        Caesar Augustus Germanicus <expan>pont<supplied reason="abbreviation">ifex</supplied></expan>
+                        <lb n="4" /><expan>maxim<supplied reason="abbreviation">us</supplied></expan>
+                        <expan>trib<supplied reason="abbreviation">unicia</supplied></expan>
+                        <expan>potest<supplied reason="abbreviation">ate</supplied></expan> VI
+                        <expan>imp<supplied reason="abbreviation">erator</supplied></expan> XI <expan>p<supplied reason="abbreviation">ater</supplied></expan>
+                        <expan>p<supplied reason="abbreviation">atriae</supplied></expan>
+                        <expan>co<supplied reason="abbreviation">n</supplied>s<supplied reason="abbreviation">ul</supplied></expan>
+                        designatus IIII</persName> dicit <lb n="5" />cum ex veteribus controversis
+                        pe<sic corr="nd">T</sic>entibus aliquamdiu etiam <lb n="6" />temporibus
+                        <persName type="ancient" key="http://www.roman-emperors.org/tiberius.htm"
+                        reg="Tiberius (emperor)" n="PIR² C941"
+                        ><expan>Ti<supplied reason="abbreviation">beri</supplied></expan>
+                    Caesaris</persName> patrui mei ad quas ordinandas <lb n="7" /><persName
+                        reg="Pinarius Apollinaris" n="PIR² P408">Pinarium Apollinarem</persName>
+                    miserat quae tantum modo <lb n="8" />inter <placeName n="BAtlas 39 E2"
+                        reg="Comum">Comenses</placeName> essent quantum memoria refero et <lb n="9"
+                         /><placeName n="BAtlas 19 B3" reg="Bergalei">Bergaleos</placeName> isque
+                    primum <sic>apsentia</sic> pertinaci patrui mei <lb n="10" />deinde etiam
+                        <persName reg="Gaius (emperor)" n="PIR ² I271">Gai</persName> principatu
+                    quod ab eo non exigebatur <lb n="11" />referre non stulte quidem neglexserit et
+                    posteac <lb n="12" />detulerit <persName reg="Camurius Statutus"
+                        n="otherwise unknown?">Camurius Statutus</persName> ad me agros plerosque
+                        <lb n="13" />et saltus mei iuris esse in rem praesentem misi <lb n="14"
+                         /><persName reg="Iulius Planta" n="PIR ² I471">Plantam Iulium</persName>
+                    amicum et comitem meum qui <lb n="15" />cum adhibitis procuratoribus meis
+                        qui<sic corr="">s</sic>que in alia <lb n="16" />regione quique in vicinia
+                    erant summa cura inqui <lb n="17" type="worddiv" />sierit et cognoverit cetera
+                    quidem ut mihi demons <lb n="18" type="worddiv" />trata commentario facto ab
+                    ipso sunt statuat pronun <lb n="19" type="worddiv" />tietque ipsi permitto <lb
+                        n="20" />quod ad condicionem <placeName n="BAtlas 19 D3" reg="Anaunion"
+                        >Anaunorum</placeName> et <placeName n="BAtlas 19 C3" key="woogifer"
+                        reg="Tuliassi">Tulliassium</placeName> et <placeName n="BAtlas 19 unlocated"
+                        reg="Sinduni">Sindu <lb n="21" type="worddiv" />norum</placeName> pertinet
+                    quorum partem delator adtributam <placeName n="BAtlas 39 I1" reg="Trident(i)um"
+                        >Triden <lb n="22" type="worddiv" />tinis</placeName> partem ne adtributam
+                    quidem arguisse dicitur <lb n="23" />tam et si animadverto non nimium firmam id
+                    genus homi <lb n="24" type="worddiv" />num habere civitatis Romanae originem
+                    tamen cum longa <lb n="25" />usurpatione in possessionem eius fuisse dicatur et
+                    ita permix <lb n="26" type="worddiv" />tum cum <placeName n="BAtlas 39 I1"
+                        reg="Trident(i)um">Tridentinis</placeName> ut diduci ab
+                    <expan>i<supplied reason="abbreviation">i</supplied>s</expan> sine gravi <expan>splendi<supplied reason="abbreviation">di</supplied></expan>
+                    <expan>municipi<supplied reason="abbreviation">i</supplied></expan>
+                    <lb n="27" />iniuria non possit patior eos in eo iure in quo esse se existima
+                        <lb n="28" type="worddiv" />verunt permanere benificio meo eo quidem
+                    libentius quod <lb n="29" />pleri<sic corr="">s</sic>que ex eo genere hominum
+                    etiam militare in praetorio <lb n="30" />meo dicuntur quidam vero ordines quoque
+                    duxisse <lb n="31" />non nulli <sic corr="a">CO</sic>llecti in decurias
+                        <placeName n="BAtlas 43 B2" reg="Roma">Romae</placeName> res iudicare <lb
+                        n="32" />quod benificium
+                    <expan>i<supplied reason="abbreviation">i</supplied>s</expan> ita tribuo ut
+                    quaecumque tanquam <lb n="33" />cives Romani gesserunt egeruntque aut inter se
+                    aut cum <lb n="34" />Tridentinis alisve rata<sic corr="">m</sic> esse iubea<sic
+                        corr="m">T</sic> nominaque ea <lb n="35" />quae habuerunt antea tanquam
+                    cives Romani ita habere
+                    <expan>i<supplied reason="abbreviation">i</supplied>s</expan> permittam </ab>
+            </div>
+            <div id="translation" type="translation">
+                <head>Translation</head>
+                <ab><persName key="impclaudius" reg="Claudius (emperor)">Tiberius <name
+                            type="common">Claudius</name> Caesar Augustus Germanicus</persName>,
+                        <foreign lang="lat">pontifex maximus</foreign>, (holding the) tribunician
+                    power for the 6th time, (hailed as) <foreign lang="lat">imperator</foreign> 11
+                    times, father of the country, consul-designate for the 4th time, says: Since
+                    with respect to unsettled disputes that were already old in the days of
+                        <persName key="http://www.roman-emperors.org/tiberius.htm"
+                        reg="Tiberius (emperor)" n="PIR² C941"><name type="common">Tiberius</name>
+                        Caesar</persName> my uncle, for the resolution of which he sent <persName
+                        reg="Pinarius Apollinaris" n="PIR² P408">Pinarius Apollinaris</persName> and
+                    which were of great importance between the <placeName>Comenses</placeName>, if
+                    memory serves, and the <placeName>Bergalei</placeName>, (<persName
+                        reg="Pinarius Apollinaris" n="PIR² P408">Pinarius</persName>), first because
+                    of the protracted absence of my uncle and then in the principate of <persName
+                        reg="Gaius (emperor)" n="PIR ² I271">Gaius</persName> because he was not
+                    ordered to report, not unwisely neglected to do so, and (since) later <persName
+                        reg="Camurius Statutus" n="otherwise unknown?">Camurius Statutus</persName>
+                    reported to me that many fields and woodlands are under my jurisdiction, in the
+                    present case I sent out <persName reg="Iulius Planta" n="PIR ² I471">Iulius
+                        Planta</persName>, my friend and companion, whom, since he investigated and
+                    examined the matter with the greatest of care after consulting my procurators
+                    (both those who were in other regions and those who were in the vicinity), I
+                    permit to settle and declare the remaining issues just as he demonstrated them
+                    to me in the memorandum he prepared. As to that which pertains to the status of
+                    the <placeName>Anauni</placeName>, <placeName>Tulliasses</placeName> and
+                        <placeName>Sinduni</placeName>, some of whom are attributed to the
+                        <placeName>Tridentini</placeName> and some of whom are not (as the informer
+                    is said to have charged), although I am aware that this sort of person does not
+                    have a very firm basis of Roman citizenship, nevertheless, since they are said
+                    to have been in possession of it through long practice and to be so intertwined
+                    with the <placeName>Tridentini</placeName> that it is not possible to separate
+                    them without causing grave injury to that splendid <foreign lang="lat"
+                        >municipium</foreign>, I permit them to remain in that legal status that
+                    they thought they had, as a <foreign lang="lat">beneficium</foreign> from me,
+                    which indeed I am all the readier to do because many men of this sort are said
+                    to be serving in my Praetorian Guard, and indeed also to have had command rank,
+                    and some, enrolled in the <foreign lang="lat">decuriae</foreign> at Rome, are
+                    said to judge cases; which <foreign lang="lat">beneficium</foreign> I grant to
+                    them so that whatever they did or said as if Roman citizens, either amongst
+                    themselves or with the <placeName>Tridentini</placeName> or others, I order to
+                    be valid, and those names which they had before as if they were Roman citizens I
+                    permit them to keep.</ab>
+            </div>
+            <div id="commentary" type="commentary">
+                <head>Commentary</head>
+                <p id="prose-commentary">A protracted and, in some ways obscure, dispute between the
+                    inhabitants of <placeName lang="lat">Comum</placeName> (mod. <placeName
+                        n="modern">Como</placeName> in <placeName n="modern">Italy</placeName>) and
+                    a people living to their north, the <placeName lang="lat">Bergalei</placeName>,
+                    was finally settled by an edict of the emperor <persName n="PIR² C942"
+                        key="http://www.roman-emperors.org/claudius.htm" reg="Claudius (emperor)"
+                        >Claudius</persName>. The affair was first raised under <persName
+                        reg="Tiberius (emperor)" key="http://www.roman-emperors.org/tiberius.htm"
+                        n="PIR² C941">Tiberius</persName> and investigated by two separate
+                    delegates, the second commissioned by <persName n="PIR² C942"
+                        reg="Claudius (emperor)" key="http://www.roman-emperors.org/claudius.htm"
+                        >Claudius</persName>. To infer from the rulings and arrangements inherent in
+                    the edict, the matter seems to have touched on questions of citizenship rights,
+                    property ownership, territorial control and, possibly, boundaries. The fact that
+                        <persName n="PIR² C942" reg="Claudius (emperor)"
+                        key="http://www.roman-emperors.org/claudius.htm">Claudius</persName> rules
+                    on the citizenship issues, but delegates the issuance of a verdict in the rest
+                    of the case, strengthens the supposition that boundaries were involved,
+                    necessitating a definitive demarcation.</p>
+            </div>
+        </body>
+    </text>
+</TEI.2>
