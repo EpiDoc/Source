@@ -152,6 +152,9 @@
                     </map:otherwise>
                 </map:select>
             </map:match>
+            <map:match pattern="examples/**">
+                <map:mount check-reload="yes" src="../../xml-examples/" uri-prefix="examples"/>
+            </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Pass any other requests for subdirectories on down to the next directory level -->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
