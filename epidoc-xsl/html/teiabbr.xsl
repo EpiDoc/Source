@@ -8,7 +8,7 @@
             <xsl:when test="name(..)='expan'">
                 <xsl:element name="span">
                     <xsl:attribute name="class">original-characters</xsl:attribute>
-                    <xsl:value-of select="." />
+                    <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
             <xsl:when test="name(..)!='expan' and not(./@expan)">
@@ -16,7 +16,7 @@
                     <xsl:attribute name="class">epigraphic-abbreviation-not-understood</xsl:attribute>
                     <xsl:attribute name="title">
                         <xsl:value-of select="." />
-                    </xsl:attribute><xsl:value-of select="." />(- - -)</xsl:element>
+                    </xsl:attribute><xsl:apply-templates />(- - -)</xsl:element>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="span">
