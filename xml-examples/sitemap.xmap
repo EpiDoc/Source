@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================= -->
+<!--   EPIDOC WEBAPP PRJ SITEMAP (PROJECTS SUBDIRECTORY)                                    -->
+<!-- ============================================================================= -->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+        <map:generators default="file">
+            <map:generator name="request" src="org.apache.cocoon.generation.RequestGenerator">
+                <map:parameter name="generate-attributes" value="true" />
+            </map:generator>
+        </map:generators>
+        <map:transformers default="xslt">
+            <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer" />
+            <map:transformer name="xinclude" src="org.apache.cocoon.transformation.XIncludeTransformer" />
+        </map:transformers>
+        <map:readers default="resource" />
+        <map:serializers default="xhtmlbasic">
+            <!-- note that the default serializer is our locally defined xhtmlbasic, not the standard cocoon xml serializer -->
+            <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic" src="org.apache.cocoon.serialization.XMLSerializer">
+                <!-- provide configuration for serializing XHTML with the proper doctype, encoding and suppressed indention -->
+                <doctype-public>-//W3C//DTD XHTML 1.0 Strict//EN</doctype-public>
+                <doctype-system>http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</doctype-system>
+                <encoding>UTF-8</encoding>
+                <indent>no</indent>
+            </map:serializer>
+            <map:serializer mime-type="text/xml" name="xml" src="org.apache.cocoon.serialization.XMLSerializer">
+                <!-- force xml serialization to use UTF8 and to leave indent alone -->
+                <encoding>UTF-8</encoding>
+                <indent>no</indent>
+            </map:serializer>
+            <map:serializer mime-type="text/xml" name="xmlepidoc" src="org.apache.cocoon.serialization.XMLSerializer">
+                <!-- provide a means for serializing epidoc documents with a doctype pointing at the epidoc dtd -->
+                <doctype-system>tei-epidoc.dtd</doctype-system>
+                <encoding>UTF-8</encoding>
+                <indent>no</indent>
+            </map:serializer>
+        </map:serializers>
+        <map:selectors default="browser" />
+        <map:matchers default="wildcard" />
+    </map:components>
+    <!-- ============================================================================= -->
+    <!--   PIPELINES                                                                                                                    -->
+    <!-- ============================================================================= -->
+    <map:pipelines>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!--   search multiple locations for xsl files (internal requests only)                                                      -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <map:pipeline internal-only="true">
+            <!-- a thousand thankyous to Hugh Cayless, whose guidance lit the way to this pipeline. TRE -->
+            <!-- We check first in an 'xsl' directory subordinate to the current working directory (i.e., prj). If
+                  the file we're seeking is not found there, then we look in three other places corresponding to
+                  possible deployment patterns. For details, see the README.TXT file in the epidoc-webapp
+                  module. -->
+            <map:match pattern="*/*.xsl">
+                        <map:generate src="../epidoc-xsl/{1}/{2}.xsl" />
+                <map:serialize type="xml" />
+            </map:match>
+        </map:pipeline>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!--   handle external requests for files                                                                                                   -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <map:pipeline name="examplecontent">
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   raw directory root                                                                                                                          -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <map:match pattern="">
+                <map:generate type="directory" src=".">
+                    <map:parameter name="exclude" value="CVS" />
+                </map:generate>
+                <map:transform src="cocoon:/util/dir2tei.xsl">
+                    <map:parameter name="dodirs" value="yes" />
+                    <map:parameter name="dofiles" value="no" />
+                    <map:parameter name="htmllink" value="yes" />
+                </map:transform>
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                <map:serialize type="xhtmlbasic" />
+            </map:match>
+
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   dirlist.html                                                                                                                                     -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="dirlist.html">
+                <map:generate type="directory" src=".">
+                    <map:parameter name="exclude" value="CVS" />
+                </map:generate>
+                <map:transform src="cocoon:/util/dir2tei.xsl">
+                    <map:parameter name="dodirs" value="yes" />
+                    <map:parameter name="dofiles" value="no" />
+                    <map:parameter name="htmllink" value="yes" />
+                </map:transform>
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                <map:serialize type="xhtmlbasic" />
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   dirlist.xml                                                                                                                                       -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="dirlist.xml">
+                <map:generate type="directory" src=".">
+                    <map:parameter name="exclude" value="CVS" />
+                </map:generate>
+                <map:serialize type="xml" />
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   index.html (try various options, including making one from scratch                                           -->
+            <!--      1. look for an existing index.html in the current work directory (i.e., prj)                               -->
+            <!--      2. look for an existing index.xml file in the current work directory (i.e., prj), assume it is      -->
+            <!--          TEI and transform it to xhtml                                                                                                 -->
+            <!--      3. construct a tei div from the directory listing and convert it to html                                    -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="index.html">
+                <map:select type="resource-exists">
+                    <map:when test="index.html">
+                        <map:generate src="index.html" />
+                        <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                        <map:serialize type="xhtmlbasic" />
+                    </map:when>
+                    <map:when test="index.xml">
+                        <map:generate src="index.xml" />
+                        <map:transform src="cocoon:xref2cinclude.xsl" />
+                        <map:transform type="cinclude" />
+                        <map:transform src="cocoon:epidoc.xsl" />
+                        <map:transform src="cocoon:util/xhtmlindenter.xsl" />
+                        <map:serialize type="xhtmlbasic" />
+                    </map:when>
+                    <map:otherwise>
+                        <map:generate type="directory" src=".">
+                            <map:parameter name="exclude" value="CVS" />
+                        </map:generate>
+                        <map:transform src="cocoon:/util/dir2tei.xsl">
+                            <map:parameter name="dodirs" value="yes" />
+                            <map:parameter name="dofiles" value="no" />
+                            <map:parameter name="htmllink" value="yes" />
+                        </map:transform>
+                        <map:transform src="cocoon:/html/epidoc.xsl" />
+                        <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                        <map:serialize type="xhtmlbasic" />
+                    </map:otherwise>
+                </map:select>
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Pass any other requests for subdirectories on down to the next directory level -->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="*.html">
+                <map:generate src="src/{1}.xml" />
+                <map:transform src="cocoon:/util/force-namespace-tei.xsl" />
+                <map:transform src="cocoon:/html/epidoc.xsl" />
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
+                <map:serialize type="xhtmlbasic"/>
+            </map:match>
+           <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   *.xml                                                                                                                                                                       -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="*.xml">
+                <map:generate src="src/{1}.xml" />
+                <map:transform src="cocoon:/util/teiindenter.xsl" />
+                <map:serialize type="xmlepidoc" />
+            </map:match>
+            <map:match pattern="*.inc">
+                <map:generate src="src/{1}.xml" />
+                <map:transform type="xinclude" />
+                <map:transform src="cocoon:/util/teiindenter.xsl" />
+                <map:serialize type="xmlepidoc" />
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   IMAGES                                                                                                                                                                   -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="*.gif">
+                <map:read mime-type="image/gif" src="img/{1}.gif" />
+            </map:match>
+            <map:match pattern="*.jpg">
+                <map:read mime-type="image/jpeg" src="img/{1}.jpg" />
+            </map:match>
+            <map:match pattern="*.png">
+                <map:read mime-type="image/png" src="img/{1}.png" />
+            </map:match>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--   *.css                                                                                                                                                                        -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="*.css">
+                <map:select type="resource-exists">
+                    <map:when test="css/{1}.css">
+                        <!-- maybe this project defines its own css files -->
+                        <map:read mime-type="text/css" src="css/{1}.css" />
+                    </map:when>
+                    <map:when test="../../css/{1}.css">
+                        <!-- maybe csss are installed at epidoc-webapp level and project is under prj -->
+                        <map:read mime-type="text/css" src="../../css/{1}.css" />
+                    </map:when>
+                    <map:when test="../../../epidoc-xsl/css/{1}.css">
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         but project is in standard prj directory under webapp (e.g., examples) -->
+                        <map:read mime-type="text/css" src="../../../epidoc-xsl/css/{1}.css" />
+                    </map:when>
+                    <map:otherwise>
+                        <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
+                         and project is similarly parallel working directory -->
+                        <map:read mime-type="text/css" src="../epidoc-xsl/css/{1}.css" />
+                    </map:otherwise>
+                </map:select>
+            </map:match>            
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>
