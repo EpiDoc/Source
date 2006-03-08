@@ -56,6 +56,7 @@
             <xsl:when test="@rend='short'">
                 <xsl:element name="span">
                     <xsl:attribute name="class">short</xsl:attribute>
+                    <xsl:attribute  name="title">short character: <xsl:value-of select="."/></xsl:attribute>
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
@@ -92,6 +93,7 @@
             <xsl:when test="@rend='tall'">
                 <xsl:element name="span">
                     <xsl:attribute name="class">tall</xsl:attribute>
+                    <xsl:attribute  name="title">tall character: <xsl:value-of select="."/></xsl:attribute>
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
