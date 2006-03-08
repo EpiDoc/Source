@@ -53,6 +53,7 @@
    <xsl:import href="dohtmlheadboilerplate.xsl" />
    <xsl:import href="dohtmlbodyboilerplate.xsl" />
    <xsl:import href="teititle.xsl"/>
+    <xsl:import href="teisuppliedreasonomitted.xsl" />
     <xsl:import href="repeatstring.xsl"/>
    <xsl:param name="stripcomments">false</xsl:param>
    <xsl:param name="persnameuriprefix">people.html</xsl:param>
