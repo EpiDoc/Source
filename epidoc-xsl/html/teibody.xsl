@@ -8,7 +8,7 @@
         
         <xsl:choose>
             <xsl:when test="ancestor::tei:TEI.2/@rend='multipart'">
-                <xsl:apply-templates select="*[not(tei:div)]"/>
+                <xsl:apply-templates select="*[name()!='div']"/>
                 <xsl:element name="h2">Subsections:</xsl:element>
                 <xsl:element name="ul">
                     <xsl:apply-templates select="tei:div"/>
