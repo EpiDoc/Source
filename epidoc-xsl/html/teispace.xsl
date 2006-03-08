@@ -7,11 +7,11 @@
         <xsl:element name="span">
             <xsl:attribute name="class">space</xsl:attribute>
             <xsl:attribute name="title">vacat = blank space</xsl:attribute>
-            (v.<xsl:if test="./@id and //tei:certainty[@target=$spaceid and @locus='#gi' and @degree='no']">?</xsl:if>
+            (v.<xsl:if test="./@id and //tei:certainty[@target=$spaceid and @locus='#gi' and @degree='low']">?</xsl:if>
             <xsl:if test="@extent">
                 <xsl:text> </xsl:text><xsl:value-of select="@extent"/>
                 <xsl:if test="@unit != 'character'"><xsl:text> </xsl:text><xsl:value-of select="@unit"/></xsl:if>
-                <xsl:if test="./@id and ./@extent and //tei:certainty[@target=$spaceid and @locus='extent' and @degree='no']">?</xsl:if> 
+                <xsl:if test="./@id and ./@extent and //tei:certainty[@target=$spaceid and @locus='extent' and @degree='low']">?</xsl:if> 
             </xsl:if>)</xsl:element>
     </xsl:template>
     
