@@ -16,6 +16,7 @@
 %FNTFAMCONTENT% = "Gentium",serif;
 %FNTSIZENORM% = 1em
 %FNTSIZESML% = 0.7em
+%FNTSIZETALL% = 1.3em
 %FNTSIZEERROR% = 1.3em
 %LINENUMWIDTH% = 2em
 %LINENUMPAD% = 0.2em
@@ -249,12 +250,20 @@ span span:hover, a span:hover {
     font-style: normal;
 }
 
+.short {
+    font-size: %FNTSIZESML%;
+}
+
 .space {
     font-style: normal;
 }
 
 .supraline {
     text-decoration: overline;
+}
+
+.tall {
+    font-size: %FNTSIZETALL%;
 }
 
 .underline {
