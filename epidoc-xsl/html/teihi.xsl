@@ -51,12 +51,12 @@
                 </xsl:element>
             </xsl:when>
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- @rend='short'                                                                                                              -->
+            <!-- @rend='small'                                                                                                              -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <xsl:when test="@rend='short'">
+            <xsl:when test="@rend='small'">
                 <xsl:element name="span">
-                    <xsl:attribute name="class">short</xsl:attribute>
-                    <xsl:attribute  name="title">short character: <xsl:value-of select="."/></xsl:attribute>
+                    <xsl:attribute name="class">small</xsl:attribute>
+                    <xsl:attribute  name="title">small character: <xsl:value-of select="."/></xsl:attribute>
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
