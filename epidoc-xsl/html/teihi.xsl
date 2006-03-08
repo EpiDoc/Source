@@ -2,7 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
     <xsl:template match="tei:hi">
         <xsl:choose>
-             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ 
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- @rend='intraline'                                                                                                              -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <xsl:when test="@rend='intraline'">
@@ -49,7 +50,16 @@
                     ((<xsl:apply-templates />))
                 </xsl:element>
             </xsl:when>
-           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- @rend='short'                                                                                                              -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <xsl:when test="@rend='short'">
+                <xsl:element name="span">
+                    <xsl:attribute name="class">short</xsl:attribute>
+                    <xsl:apply-templates />
+                </xsl:element>
+            </xsl:when>
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- @rend='strong'                                                                                                           -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <xsl:when test="@rend='strong'">
@@ -73,6 +83,15 @@
                 <xsl:element name="span">
                     <xsl:attribute name="class">supraline</xsl:attribute>
                     <xsl:attribute name="title">line above</xsl:attribute>
+                    <xsl:apply-templates />
+                </xsl:element>
+            </xsl:when>
+           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- @rend='tall'                                                                                                              -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <xsl:when test="@rend='tall'">
+                <xsl:element name="span">
+                    <xsl:attribute name="class">tall</xsl:attribute>
                     <xsl:apply-templates />
                 </xsl:element>
             </xsl:when>
