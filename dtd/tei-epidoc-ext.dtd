@@ -26,6 +26,11 @@
      
      REVISION HISTORY:
      
+     8 March 2006
+          (TE)
+          * Changed allowable attribute values for @cert on all relevant tags and @degree on the 
+             'certainty' element to be 'low' or 'high' with default of 'high'. Per discussion on markup.
+     
      24 February 2006
           (TE)
           * Added 'normal' as a valid value for the 'rend' attribute on the 'hi' element: permits suppression of 
@@ -150,8 +155,8 @@
      
 <!-- define parameter entities to facilitate uniformity where the same attribute appears on multiple elements -->
 
-<!ENTITY % epidoc.cert "cert CDATA #IMPLIED" >
-<!ENTITY % epidoc.degree "degree (yes | no) 'yes'">
+<!ENTITY % epidoc.cert "cert (high | low) 'high'" >
+<!ENTITY % epidoc.degree "degree (high | low) 'high'">
 <!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
 <!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
 <!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
