@@ -21,38 +21,24 @@
     <div id="deletion-encoding" type="gl-encoding">
         <head>EpiDoc encoding</head>
         <list>
-            <item>et <tag>del rend="erasure"</tag>Getae Caesari<tag>/del</tag> ob rem publicam </item>
+            <item>et <tag>del rend="erasure"</tag>Getae Caesari<tag>/del</tag> ob rem publicam</item>
             <item>et <tag>del rend="erasure"</tag><tag>unclear reason="damage"</tag>Getae<tag>/unclear</tag> Caesari<tag>/del</tag> ob rem publicam</item>
-            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap20" reason="illegible" extent="11" unit="character"/</tag><tag>certainty target="gap20" locus="extent" degree=".75"/</tag><tag>/del</tag> ob rem publicam</item>
-            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap21" reason="lost" extent="11" unit="character"/</tag><tag>certainty target="gap21" locus="extent" degree=".75"/</tag><tag>/del</tag> ob rem publicam</item>
-            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap22" reason="lost" extent="11" unit="character"/</tag><tag>certainty target="gap22" locus="extent" degree=".5"/</tag><tag>/del</tag> ob rem publicam</item>
-        </list>
+            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap20" reason="illegible" extent="11" unit="character" /</tag><tag>certainty target="gap20" locus="extent" degree="low" /</tag><tag>/del</tag> ob rem publicam</item>
+            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap21" reason="lost" extent="11" unit="character" /</tag><tag>certainty target="gap21" locus="extent" degree="low" /</tag><tag>/del</tag> ob rem publicam</item>
+            <item>et <tag>del rend="erasure"</tag><tag>gap id="gap22" reason="lost" extent="11" unit="character" /</tag><tag>certainty target="gap22" locus="unit" degree="low" /</tag><tag>/del</tag> ob rem publicam</item>
+         </list>
     </div>
     <div id="deletion-edition" type="gl-edition" lang="lat">
         <head lang="en">EpiDoc appearance with standard XSLT</head>
         <list>
             <item>et <del rend="erasure">Getae Caesari</del> ob rem publicam</item>
             <item>et <del rend="erasure"><unclear reason="damage">Getae</unclear> Caesari</del> ob rem publicam</item>
-            <item>et <del rend="erasure">
-                    <gap id="gap20" reason="illegible" extent="11" unit="character" />
-                    <certainty target="gap20" locus="extent" degree=".75" />
-                </del> ob rem publicam</item>
-            <item>et <del rend="erasure">
-                    <gap id="gap21" reason="lost" extent="11" unit="character" />
-                    <certainty target="gap21" locus="extent" degree=".75" />
-                </del> ob rem publicam</item>
-            <item>et <del rend="erasure">
-                    <gap id="gap22" reason="lost" extent="11" unit="character" />
-                    <certainty target="gap22" locus="extent" degree=".5" />
-                </del> ob rem publicam</item>
+            <item>et <del rend="erasure"><gap id="gap20" reason="illegible" extent="11" unit="character" /><certainty target="gap20" locus="extent" degree="low" /></del> ob rem publicam</item>
+            <item>et <del rend="erasure"><gap id="gap21" reason="lost" extent="11" unit="character" /><certainty target="gap21" locus="extent" degree="low" /></del> ob rem publicam</item>
+            <item>et <del rend="erasure"><gap id="gap22" reason="lost" extent="11" unit="character" /><certainty target="gap22" locus="unit" degree="low" /></del> ob rem publicam</item>
         </list>
     </div>
-    <div id="deletion-questions" type="gl-questions">
-        <head>Questions and issues</head>
-        <list type="simple">
-            <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): Only a reminder to fix the way certainty is marked up in these examples once we have guidelines on this. Recommend @degree="low" rather than ".75".</item>
-        </list>
-    </div>
+    
     <div id="deletion-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
