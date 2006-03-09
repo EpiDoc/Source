@@ -64,12 +64,12 @@
             <!--   raw directory root                                                                                                                          -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
              <map:match pattern="">
-                <map:generate type="directory" src=".">
+                <map:generate type="directory" src="src">
                     <map:parameter name="exclude" value="CVS" />
                 </map:generate>
                 <map:transform src="cocoon:/util/dir2tei.xsl">
                     <map:parameter name="dodirs" value="yes" />
-                    <map:parameter name="dofiles" value="no" />
+                    <map:parameter name="dofiles" value="yes" />
                     <map:parameter name="htmllink" value="yes" />
                 </map:transform>
                 <map:transform src="cocoon:/html/epidoc.xsl" />
@@ -78,26 +78,10 @@
             </map:match>
 
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--   dirlist.html                                                                                                                                     -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <map:match pattern="dirlist.html">
-                <map:generate type="directory" src=".">
-                    <map:parameter name="exclude" value="CVS" />
-                </map:generate>
-                <map:transform src="cocoon:/util/dir2tei.xsl">
-                    <map:parameter name="dodirs" value="yes" />
-                    <map:parameter name="dofiles" value="no" />
-                    <map:parameter name="htmllink" value="yes" />
-                </map:transform>
-                <map:transform src="cocoon:/html/epidoc.xsl" />
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
-            </map:match>
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   dirlist.xml                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="dirlist.xml">
-                <map:generate type="directory" src=".">
+                <map:generate type="directory" src="src">
                     <map:parameter name="exclude" value="CVS" />
                 </map:generate>
                 <map:serialize type="xml" />
