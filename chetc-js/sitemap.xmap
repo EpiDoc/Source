@@ -5,6 +5,9 @@
 	</map:components>
 	<map:pipelines>
 		<map:pipeline name="chetc">
+			<map:match pattern="">
+				<map:redirect-to uri="chetc.html"/>
+			</map:match>
 			<map:match pattern="**.*">
 				<map:read src="{1}.{2}"/>
 			</map:match>
