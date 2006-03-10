@@ -76,7 +76,7 @@
 ]>
 <xsl:stylesheet xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
    xmlns:str="http://exslt.org/strings">
-   <xsl:output indent="no" method="xml" doctype-system="../dtd/tei-epidoc.dtd" />
+   <xsl:output indent="no" method="xml" doctype-system="http://seneca.stoa.org/projects/epidoc-webapp/prj/dtd/epidoc/tei-epidoc.dtd" />
    <xsl:strip-space elements="*"/>
    <xsl:param name="tabwidth">3</xsl:param>
    <!--
