@@ -2,7 +2,14 @@
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
     <xsl:template match="tei:hi">
         <xsl:choose>
- 
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- @rend='apex'                                                                                                              -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <xsl:when test="@rend='apex'">
+                 <xsl:element name="span">
+                     <xsl:attribute name="class">apex</xsl:attribute>
+                     <xsl:attribute name="title">apex over: <xsl:value-of select="."/></xsl:attribute><xsl:value-of select="translate(., 'aeiou', 'áéíóú')"/></xsl:element>
+             </xsl:when>
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- @rend='intraline'                                                                                                              -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
