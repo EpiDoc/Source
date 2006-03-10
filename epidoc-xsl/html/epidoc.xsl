@@ -10,6 +10,7 @@
    <xsl:import href="teitext.xsl" />
    <xsl:import href="teibody.xsl" />
    <xsl:import href="text.xsl" />
+    <xsl:import href="teiadd.xsl" />
     <xsl:import href="teidel.xsl" />
    <xsl:import href="teihead.xsl" />
    <xsl:import href="teidiv.xsl" />
