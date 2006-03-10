@@ -1,13 +1,59 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="subaudible" lang="en">
-   <head>Editorial supplement in which the editor makes a "subaudible" word manifest</head>
-   <p>Editorial supplement in which the editor makes a "subaudible" word manifest </p>
-   <p>EPIDOC: </p>
-   <p>clarissima <tag>supplied reason="subaudible"</tag>femina<tag>/supplied</tag> Iulia </p>
-   <p>PANCIERA (p. 17): </p>
-   <p>clarissima (scil. femina) Iulia </p>
-   <p>NOTE: the distinction here from a correction may vary from editor to editor (see 5.x) </p>
-   <p>TEI P4: <tag>supplied</tag>; 18.2.3 Damage, Illegibility, and Supplied Text </p>
+    <head>Editorial supplement in which the editor makes a "subaudible" word manifest</head>
+    <div id="subaudible-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page"
+                        >p.</abbr><biblScope type="pages">17</biblScope></bibl>: <list
+                    type="ordered" lang="lat">
+                    <item>clarissima (scil. femina) Iulia</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="subaudible-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>clarissima <tag>supplied reason="subaudible"</tag>femina<tag>/supplied</tag>
+            Iulia</item>
+        </list>
+    </div>
+    <div id="subaudible-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item lang="lat">clarissima <supplied reason="subaudible">femina</supplied> Iulia</item>
+        </list>
+    </div>
+    <div id="subaudible-notes" type="gl-notes">
+        <head>Notes</head>
+        <list>
+            <item>The distinction here from a correction may vary from editor to editor</item>
+        </list>
+    </div>
+    <div id="subaudible-tei-p4links">
+        <head>TEI P4 links</head>
+        <list>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html">
+                    <tag>supplied</tag>
+                </xref>
+            </item>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and
+                    Supplied Text</xref>
+            </item>
+        </list>
+    </div>
+    <div id="subaudible-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
