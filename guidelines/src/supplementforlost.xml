@@ -1,15 +1,59 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="supplementforlost" lang="en">
-   <head>Editorial supplement for characters wholly lost</head>
-   <p> Editorial supplement for characters wholly lost </p>
-   <p>EPIDOC: </p>
-   <p>iug<tag>supplied reason="lost"</tag>er<tag>/supplied</tag>a </p>
-   <p>FINNEY: </p>
-   <p><tag>add</tag>abgd<tag>/add</tag></p>
-   <p>PANCIERA (p. 18): </p>
-   <p>iug[er]a </p>
-   <p>NOTE: compare to 1.5. </p>
-   <p>TEI P4: <tag>supplied</tag>; 18.2.3 Damage, Illegibility, and Supplied Text </p>
+    <head>Editorial supplement for characters wholly lost</head>
+    <div id="supplementforlost-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >18</biblScope></bibl>: <list lang="lat" type="ordered">
+                    <item>iug[er]a</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="supplementforlost-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>iug<tag>supplied reason="lost"</tag>er<tag>/supplied</tag>a</item>
+        </list>
+    </div>
+    <div id="supplementforlost-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list type="ordered" lang="lat">
+            <item>iug<supplied reason="lost">er</supplied>a</item>
+        </list>
+    </div>
+    <div id="supplementforlost-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="unordered">
+            <item>none</item>
+        </list>
+    </div>
+    <div id="supplementforlost-tei-p4links">
+        <head>TEI P4 links</head>
+        <list>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html">
+                    <tag>supplied</tag>
+                </xref>
+            </item>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and
+                    Supplied Text</xref>
+            </item>
+        </list>
+    </div>
+    <div id="supplementforlost-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
