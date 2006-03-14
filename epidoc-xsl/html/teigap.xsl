@@ -8,6 +8,11 @@
             <xsl:attribute name="class">editorial ellipsis</xsl:attribute>
             <xsl:attribute name="title">ellipsis introduced by the editor for the sake of brevity or emphasis</xsl:attribute>...</xsl:element>
     </xsl:template>
+
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Letters omitted because the stonecutter did not carry out the text to the end -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <xsl:template match="tei:gap[@reason='omitted']">&lt;- - -&gt;</xsl:template>
     
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- illegible gap measured in characters -->    
