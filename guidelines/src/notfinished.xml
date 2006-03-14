@@ -1,12 +1,63 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="notfinished" lang="en">
-   <head>Letters omitted because the stonecutter did not carry out the text to the end</head>
-   <p>Letters omitted because the stonecutter did not carry out the text to the end </p>
-   <p>EPIDOC: </p>
-   <p><tag>gap id="gap25" reason="omitted" extent="3" unit="character"/</tag><tag>certainty target="gap25" locus="extent" degree=".5"/</tag></p>
-   <p>PANCIERA (p. 19): </p>
-   <p><tag>- - -</tag></p>
-   <p>TEI P4: <tag>gap</tag>; 18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination </p>
+    <head>Letters omitted because the stonecutter did not carry out the text to the end</head>
+    <div id="notfinished-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >19</biblScope></bibl>: <list lang="lat" type="ordered">
+                    <item>&lt;- - -&gt;</item>
+                </list></item>
+        </list>
+    </div>
+    <div id="notfinished-encoding" type="gl-encoding">
+        <head>EpiDoc encoding</head>
+        <list type="ordered">
+            <item>
+                <tag>gap reason="omitted" /</tag>
+            </item>
+        </list>
+    </div>
+    <div id="notfinished-edition" type="gl-edition" lang="lat">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list type="ordered" lang="lat">
+            <item>
+                <gap reason="omitted" />
+            </item>
+        </list>
+    </div>
+    <div id="notfinished-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="unordered">
+            <item>none</item>
+        </list>
+    </div>
+    <div id="notfinished-tei-p4links">
+        <head>TEI P4 links</head>
+        <list>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/ref-GAP.html">
+                    <tag>gap</tag>
+                </xref>
+            </item>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del,
+                    Damage, Unclear and Supplied Tags in Combination </xref>
+            </item>
+        </list>
+    </div>
+    <div id="notfinished-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
 </div>
