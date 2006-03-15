@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.5 2006-03-15 14:10:24 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.6 2006-03-15 14:19:16 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd" >
 <TEI.2 id="guidelines" xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -8,7 +8,8 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in <abbr expan="Text Encoding Initiative">TEI</abbr></title>
+                <title>EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in <abbr
+                        expan="Text Encoding Initiative">TEI</abbr></title>
                 <author>Tom Elliott</author>
             </titleStmt>
             <publicationStmt>
@@ -22,14 +23,13 @@
     </teiHeader>
     <text>
         <body>
-            
             <!-- <xi:include  href="introduction.xml"/>
             <xi:include  href="essentialreading.xml"/>
             <xi:include  href="documentstructure.xml"/> -->
-            <xi:include  href="taggingtext.xml"/>
+            <xi:include href="taggingtext.xml" />
             <!-- <xi:include  href="othermarkupissues.xml"/> -->
-            <xi:include  href="interoperability.xml"/> 
-            <xi:include href="bibliography.xml"/>
+            <xi:include href="interoperability.xml" />
+            <xi:include href="bibliography.xml" />
         </body>
     </text>
 </TEI.2>
