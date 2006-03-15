@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.4 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.5 2006-03-15 18:22:08 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="vestiges" lang="en">
    <head>Transcription wherein vestiges of characters remain, but they cannot be recognized (extent certain or nearly so)</head>
    <p>This section of the guidelines requires revision in concert with DTD changes to realize the solution reached in long, painful discussions on the markup and tei lists. What follows now is almost surely deprecated.</p>
-   <div id="vestiges-typographic">
+   <div id="vestiges-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
          <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
@@ -28,7 +28,7 @@
             </list></item>
       </list>
    </div>
-   <div id="vestiges-epidoc">
+   <div id="vestiges-encoding" type="gl-encoding">
       <head>EpiDoc encodings</head>
       <list type="ordered">
          <item><tag>gap reason="illegible" extent="3" unit="character"/</tag></item>
@@ -37,7 +37,7 @@
          <item><tag>gap id="gap2" reason="illegible" extent="4.2" unit="cm"/</tag></item>
       </list>
    </div>
-   <div id="vestiges-edition" lang="lat">
+   <div id="vestiges-edition" lang="lat" type="gl-edition">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item>
@@ -51,10 +51,13 @@
             <gap id="gap2" reason="illegible" extent="4.2" unit="cm"/></item>
       </list>
    </div>
-   <div id="vestiges-notes">
+   <div id="vestiges-notes" type="gl-notes">
       <head>Notes</head>
+       <list>
+           <item>none</item>
+       </list>
    </div>
-   <div id="tei-p4links">
+   <div id="vestiges-tei-p4links" type="gl-tei-p4links">
       <head>TEI P4 links</head>
       <list>
          <item><xref href="http://www.tei-c.org/P4X/ref-GAP.html"><tag>gap</tag></xref></item>
@@ -62,11 +65,18 @@
          <item><xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref></item>
       </list>
    </div>
-   <div id="vestiges-responsibility">
+   <div id="vestiges-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
          <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
+   </div>
+    <div id="vestiges-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
+      <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:22:08 $</seg></p>
+      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>
