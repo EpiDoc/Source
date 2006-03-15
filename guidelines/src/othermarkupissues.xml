@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/othermarkupissues.xml,v 1.4 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/othermarkupissues.xml,v 1.5 2006-03-15 21:16:15 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="othermarkupissues" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="othermarkupissues" lang="en" rend="multipart">
    <head>Other markup issues</head>
-   <p>Other markup issues </p>
+   <xi:include href="control.xml"/>
+    <xi:include href="measurements.xml"/>
+    <xi:include href="dates.xml"/>
+    <xi:include href="namesandpersons.xml"/>
+    <xi:include href="geography.xml"/>
+    <xi:include href="languages.xml"/>
+    <xi:include href="numbersandnumerals.xml"/>
+    <xi:include href="literature.xml"/>
+    <xi:include href="crossreferences.xml"/>
 </div>
