@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.6 2006-03-15 18:07:44 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="noproblems" lang="en" rend="whole">
    <head>Transcription with no problems</head>
-   <div id="noproblems-typographic">
+   <div id="noproblems-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
          <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title><abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
@@ -15,26 +15,33 @@
             </list></item>
       </list>
    </div>
-   <div id="noproblems-epidoc">
+   <div id="noproblems-encoding" type="gl-encoding">
       <head>EpiDoc encoding</head>
       <list type="ordered">
          <item>abc</item>
       </list>
    </div>
-   <div id="noproblems-edition" lang="lat">
+   <div id="noproblems-edition" lang="lat" type="gl-edition">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item>abc</item>
       </list>
    </div>
-   <div id="noproblems-notes">
+   <div id="noproblems-notes" type="gl-notes">
       <head>Notes</head>
       <p>The editor may introduce modern spacing, punctuation, accents and capitalization without comment unless the text is contained within a <tag>div type="diplomatic"</tag>.</p>
    </div>
-   <div id="noproblems-responsibility">
+   <div id="noproblems-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
+   </div>
+    <div id="noproblems-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="noproblems-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="noproblems-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="noproblems-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:07:44 $</seg></p>
+      <p id="noproblems-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>

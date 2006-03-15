@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.6 2006-03-15 18:12:29 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="unclear" lang="en" rend="whole">
    <head>Transcription wherein the character would not be unambiguous outside its context</head>
    <p>Note: depending on your font, browser, browser settings, operating system and other factors, the subscript dots used in examples in this section may display after the character instead of beneath it.</p>
-   <div id="unclear-typographic">
+   <div id="unclear-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
          <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
@@ -16,7 +16,7 @@
             </list></item>
       </list>
    </div>
-   <div id="unclear-epidoc">
+   <div id="unclear-encoding" type="gl-encoding">
       <head>EpiDoc encodings</head>
       <list type="ordered">
          <item><tag>unclear</tag>abc<tag>/unclear</tag></item>
@@ -27,7 +27,7 @@
       </list>
       <p>Note: see <ref target="unclear-notes">notes</ref>, below.</p>
    </div>
-   <div id="unclear-edition" lang="lat">
+   <div id="unclear-edition" lang="lat" type="gl-edition">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item><unclear reason="undefined">abc</unclear></item>
@@ -37,7 +37,7 @@
          <item><unclear reason="undefined">abc</unclear></item>
       </list>
    </div>
-   <div id="unclear-notes">
+   <div id="unclear-notes" type="gl-notes">
       <head>Notes</head>
       <div id="unclear-usage">
          <head>Usage</head>
@@ -48,7 +48,7 @@
          <p>TEI defines a <att>reason</att> attribute for the <tag>unclear</tag> element. In the EpiDoc DTD, this attribute has three possible values: "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See further the markup list discussion referenced above. The default stylesheets render all instances of <tag>unclear</tag> with the standard subscript dot, regardless of the value of the <att>reason</att> attribute.</p>
       </div>
    </div>
-   <div id="tei-p4links">
+   <div id="unclear-tei-p4links" type="gl-tei-p4links">
       <head>TEI P4 links</head>
       <list>
          <item><xref href="http://www.tei-c.org/P4X/ref-UNCLEAR.html"><tag>unclear</tag></xref></item>
@@ -56,7 +56,7 @@
          <item><xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref></item>
       </list>
    </div>
-   <div id="unclear-responsibility">
+   <div id="unclear-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
@@ -65,5 +65,12 @@
          <bibl><respStmt><resp>contributor</resp><name>Tim Finney</name></respStmt></bibl>
          <bibl><respStmt><resp>contributor</resp><name>Chris Lilley</name></respStmt></bibl>
       </listBibl>
+   </div>
+    <div id="unclear-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="unclear-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="unclear-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="unclear-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:12:29 $</seg></p>
+      <p id="unclear-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>
