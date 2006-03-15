@@ -16,8 +16,8 @@
 %FNTFAMCONTENT% = "Gentium",serif;
 %FNTSIZENORM% = 1em
 %FNTSIZESML% = 0.7em
-%FNTSIZETALL% = 1.3em
-%FNTSIZEERROR% = 1.3em
+%FNTSIZETALL% = 1.2em
+%FNTSIZEERROR% = 1.2em
 %LINENUMWIDTH% = 2em
 %LINENUMPAD% = 0.2em
 
@@ -123,7 +123,17 @@ div  {
 
 }
 
+.gl-cvs {
+    background: %CLRPALE2%;
+    font-family: %FNTFAMMETA%;
+}
 
+.gl-cvs p {
+    margin: 0px;
+    padding: 0px;
+    font-size: %FNTSIZESML%;
+    font-style:italic;
+}
 
 h1, h2, h3, h4, h5, h6  { 
    font-family:%FNTFAMMETA%;
@@ -268,6 +278,7 @@ span span:hover, a span:hover {
 
 .tall {
     font-size: %FNTSIZETALL%;
+    text-transform: uppercase;
 }
 
 .underline {
