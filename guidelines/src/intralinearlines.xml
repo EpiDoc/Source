@@ -1,53 +1,56 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/intralinearlines.xml,v 1.9 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/intralinearlines.xml,v 1.10 2006-03-15 18:34:28 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div id="intralinearlines" lang="en">
-<head>Letters highlighted by intralinear lines</head>
-<div id="intralinearlines-typographic" type="gl-typographic">
-<head>Traditional typographic representation</head>
-<list>
-<item>
-<bibl>
-<title level="a" type="abbreviated">
-<xref href="bibliography.xml#panciera">Panciera</xref></title></bibl>: 
-<list>
-<item>not addressed</item></list></item></list>
-<list>
-<item>
-<bibl>
-<title level="a" type="abbreviated">
-<xref href="bibliography.xml#donicht">Donicht</xref></title>, 
-<abbr expan="page">p.</abbr>
-<biblScope type="pages">6</biblScope></bibl>: 
-<list>
-<item>
-<hi rend="intraline">abc</hi></item></list></item></list></div>
-<div id="intralinearlines-encoding" type="gl-encoding">
-<head>EpiDoc encoding</head>
-<list>
-<item>
-<tag>hi rend="intraline"</tag>abc
-<tag>/hi</tag></item></list></div>
-<div id="intralinearlines-edition" type="gl-edition" lang="lat">
-<head lang="en">EpiDoc appearance with standard XSLT</head>
-<list>
-<item>
-<hi rend="intraline">abc</hi></item></list></div>
-<div id="intralinearlines-questions" type="gl-questions">
-<head>Questions and issues</head>
-<list type="simple">
-<item>none</item></list></div>
-<div id="intralinearlines-responsibility" type="gl-responsibility">
-<head>Responsibility for this section</head>
-<listBibl>
-<bibl>
-<respStmt>
-<resp>author</resp>
-<name>Tom Elliott</name></respStmt></bibl>
-<bibl>
-<respStmt>
-<resp>converted XML</resp>
-<name>Gabriel Bodard</name></respStmt></bibl></listBibl></div></div>
+<div xmlns="http://www.tei-c.org/ns/1.0" id="intralinearlines" lang="en">
+   <head>Letters highlighted by intralinear lines</head>
+   <div id="intralinearlines-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title></bibl>:
+            <list>
+               <item>not addressed</item>
+            </list></item>
+      </list>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>,<abbr expan="page">p.</abbr><biblScope type="pages">6</biblScope></bibl>:
+            <list>
+               <item><hi rend="intraline">abc</hi></item>
+            </list></item>
+      </list>
+   </div>
+   <div id="intralinearlines-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list>
+         <item><tag>hi rend="intraline"</tag>abc<tag>/hi</tag></item>
+      </list>
+   </div>
+   <div id="intralinearlines-edition" type="gl-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list>
+         <item><hi rend="intraline">abc</hi></item>
+      </list>
+   </div>
+   <div id="intralinearlines-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>none</item>
+      </list>
+   </div>
+   <div id="intralinearlines-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="intralinearlines-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="intralinearlines-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.10 $</seg></p>
+      <p id="intralinearlines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="intralinearlines-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:34:28 $</seg></p>
+      <p id="intralinearlines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+   </div>
+</div>
