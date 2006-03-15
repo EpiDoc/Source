@@ -1,10 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructure.xml,v 1.4 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructure.xml,v 1.5 2006-03-15 22:34:01 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="documentstructure" lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"  id="documentstructure" lang="en" rend="multipart">
    <head>Document Structure</head>
-   <p>Document Structure </p>
+   <xi:include href="documentstructureintro.xml"/>
+    <!-- <xi:include href="planningdocumentstructure.xml"/> -->
+    <xi:include href="teiheader.xml"/>
+    <xi:include href="teitext.xml"/>
+    <xi:include href="teidiv.xml"/>
 </div>
