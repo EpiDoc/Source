@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/corrections.xml,v 1.5 2006-03-15 17:58:40 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/corrections.xml,v 1.6 2006-03-15 18:30:31 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
-
-<div id="corrections" lang="en" rend="multipart">
-<head>Editorial corrections</head>
-<include href="erroneousinclusion.xml"/>
-<include href="erroneousomission.xml"/>
-<include href="erroneoussubstitution.xml"/>
-<include href="incorrectlyexecuted.xml"/></div>
+<div id="corrections" lang="en" rend="multipart" xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <head>Editorial corrections</head>
+    <xi:include href="erroneousinclusion.xml" />
+    <xi:include href="erroneousomission.xml" />
+    <xi:include href="erroneoussubstitution.xml" />
+    <xi:include href="incorrectlyexecuted.xml" />
+</div>
