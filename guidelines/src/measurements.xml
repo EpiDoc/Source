@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.6 2006-03-15 21:36:29 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.7 2006-03-15 21:43:06 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="measurements" lang="en">
     <head>Measurements</head>
@@ -59,7 +59,13 @@
             </list>
         </div>
     </div>
-    
+    <div id="measurements-tei-p4links" type="gl-tei-p4links">
+        <head>TEI P4 links</head>
+      <list>
+          <item><xref href="http://www.tei-c.org/P4X/ref-MEASURE.html"><tag>measure</tag></xref></item>
+          <item><xref href="http://www.tei-c.org/P4X/CO.html#CONANU">6.4.3 Numbers and Measures</xref></item>
+          </list>
+        </div>
  <div id="measurements-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
@@ -70,9 +76,9 @@
     
 <div id="measurements-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
       <p id="measurements-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 21:36:29 $</seg></p>
+      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 21:43:06 $</seg></p>
       <p id="measurements-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>
