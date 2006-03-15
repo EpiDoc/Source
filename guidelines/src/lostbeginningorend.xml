@@ -1,39 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostbeginningorend.xml,v 1.4 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="lostbeginningorend" xmlns="http://www.tei-c.org/ns/1.0" lang="en">
-    <head>One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)</head>
-    <div id="lostbeginningorend-typographic" type="gl-typographic">
-        <head>Traditional typographic representation</head>
-        <list>
-            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
-                    <item>- - - - - - - - - - - - - - - - -</item>
-                </list></item>
-        </list>
-    </div>
-    <div id="lostbeginningorend-encoding" type="gl-encoding">
-        <head>EpiDoc encoding</head>
-        <list type="ordered">
-            <item><tag>gap id="gap1" reason="lost" unit="line"/</tag><tag>certainty target="gap1" locus="extent" degree="low"/</tag></item>
-        </list>
-    </div>
-    <div id="lostbeginningorend-edition" type="gl-edition">
-        <head>EpiDoc appearance with standard XSLT</head>
-        <list type="ordered">
-            <item><gap id="gap1" reason="lost" unit="line" /><certainty target="gap1" locus="extent" degree="low"/></item>
-        </list>
-    </div>
-    <div id="lostbeginningorend-responsibility" type="gl-responsibility">
-        <head>Responsibility for this section</head>
-        <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Tom Elliott</name>
-                </respStmt>
-            </bibl>
-        </listBibl>
-    </div>
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostbeginningorend.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="lostbeginningorend" lang="en">
+   <head>One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)</head>
+   <div id="lostbeginningorend-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+            <list type="ordered">
+               <item>- - - - - - - - - - - - - - - - -</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="lostbeginningorend-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item><tag>gap id="gap1" reason="lost" unit="line"/</tag><tag>certainty target="gap1" locus="extent" degree="low"/</tag></item>
+      </list>
+   </div>
+   <div id="lostbeginningorend-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item>
+            <gap id="gap1" reason="lost" unit="line"/>
+            <certainty target="gap1" locus="extent" degree="low"/></item>
+      </list>
+   </div>
+   <div id="lostbeginningorend-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="lostbeginningorend-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="lostbeginningorend-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+   </div>
 </div>

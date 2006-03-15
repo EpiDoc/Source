@@ -1,75 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.10 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.11 2006-03-15 17:58:40 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
-    <head>Identification and expansion of abbreviations understood by the editor</head>
-    <div id="abbreviationsunderstood-typographic" type="gl-typographic">
-        <head>Traditional typographic representation</head>
-        <list type="ordered">
-            <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, 
-                <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
-                <list type="ordered" lang="lat">
-                        <item>co(n)s(ul)</item>
-                        <item>Aug(ustus)</item>
-                        <item lang="en">Not covered</item>
-                        <item lang="en">Not covered</item>
-                        <item lang="en">Not covered</item>
-                </list></item>
-        </list>
-    </div>
-    <div id="abbreviationsunderstood-encoding" type="gl-encoding">
-        <head>EpiDoc encoding</head>
-        <list type="ordered">
-            <item><tag>expan</tag><tag>abbr</tag>co<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag><tag>abbr</tag>s<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></item>
-            <item><tag>expan</tag><tag>abbr</tag>Aug<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></item>
-            <item><tag>expan</tag><tag>abbr</tag>Aug<tag>orig</tag>g<tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>usti duo<tag>/supplied</tag><tag>/expan</tag></item>
-            <item><tag>expan</tag><tag>abbr</tag>pr<tag>orig</tag><tag>mark type="stop/</tag><tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>esbyter<tag>/supplied</tag><tag>/expan</tag></item>
-            <item id="multi-word-example"><tag>expan</tag><tag>abbr</tag>D<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag><tag>/expan</tag> <tag>expan</tag><tag>abbr</tag>M<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
-        </list>
-        <p>NOTE: Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>,
-                <foreign lang="lat">d(is) m(anibus)</foreign>) should be marked-up word-by-word, as
-            illustrated in <ref target="multi-word-example">the example above</ref> rather than as a
-            whole phrase, like: 
-            <list type="unordered">
-                <item><hi rend="strong">No:</hi> <tag>expan</tag><tag>abbr</tag>d<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag>
-                    <tag>abbr</tag>m<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
-                <item><hi rend="strong">No:</hi> <tag>abbr expan="dis manibus"</tag>dm<tag>/abbr</tag> or</item>
-            </list> 
-            We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or
-            otherwise abbreviated phrases. If an application needs to be able to identify and expand
-            acronyms and abbreviated phrases, it will need to do so by processing the text to
-            aggregate sequences of <tag>abbr</tag>-tagged words. </p>
-    </div>
-    <div id="abbreviationsunderstood-edition" type="gl-edition" lang="lat">
-        <head lang="en">EpiDoc appearance with standard XSLT</head>
-        <list type="ordered">
-            <item><expan><abbr>co</abbr><supplied reason="abbreviation">n</supplied><abbr>s</abbr><supplied reason="abbreviation">ul</supplied></expan></item>
-            <item><expan><abbr>Aug</abbr><supplied reason="abbreviation">ustus</supplied></expan></item>
-            <item><expan><abbr>Aug<orig>g</orig></abbr><supplied reason="abbreviation">usti duo</supplied></expan></item>
-            <item><expan><abbr>pr<orig><mark type="stop"/></orig></abbr><supplied reason="abbreviation">esbyter</supplied></expan></item>
-            <item><expan><abbr>d</abbr><supplied reason="abbreviation">is</supplied></expan>  <expan><abbr>m</abbr><supplied reason="abbreviation">anibus</supplied></expan></item>
-        </list>
-    </div>
-    <div id="abbreviationsunderstood-questions" type="gl-questions">
-        <head>Questions and issues</head>
-        <list type="simple">
-            <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): the note above needs to be brought into line with the new markup, which is more P5-ish than before (although not quite). (ADD 2006-03-03: it now occurs to me that with the system we're using, the 'note' is not particularly valid anyway, unless we want to make it clear that multiple <tag>expan</tag> are needed for multiple word abbreviations...)</item>
-            <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): we should also note that marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
-            <item><persName>Tom Elliott</persName> (<date value="2006-02-23">23 February 2006</date>): what about abbreviations like <foreign lang="lat">AUGGG</foreign>?</item>
-						<item><persName>Hugh Cayless</persName> (<date value="2006-03-13">13 March 2006</date>): I have to say I don't like splitting up letters that occur together into separate abbreviation markers.  The D and M in DM just don't occur separately.  They mean something else if so.  I realize this is a permathread, so I'm simply registering my objection.</item>
-        </list>
-    </div>
-    <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
-        <head>Responsibility for this section</head>
-        <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt>
-            </bibl>
-        </listBibl>
-    </div>
+   <head>Identification and expansion of abbreviations understood by the editor</head>
+   <div id="abbreviationsunderstood-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="ordered">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
+            <list type="ordered" lang="lat">
+               <item>co(n)s(ul)</item>
+               <item>Aug(ustus)</item>
+               <item lang="en">Not covered</item>
+               <item lang="en">Not covered</item>
+               <item lang="en">Not covered</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item><tag>expan</tag><tag>abbr</tag>co<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag><tag>abbr</tag>s<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></item>
+         <item><tag>expan</tag><tag>abbr</tag>Aug<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></item>
+         <item><tag>expan</tag><tag>abbr</tag>Aug<tag>orig</tag>g<tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>usti duo<tag>/supplied</tag><tag>/expan</tag></item>
+         <item><tag>expan</tag><tag>abbr</tag>pr<tag>orig</tag><tag>mark type="stop/</tag><tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>esbyter<tag>/supplied</tag><tag>/expan</tag></item>
+         <item id="multi-word-example"><tag>expan</tag><tag>abbr</tag>D<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag><tag>/expan</tag><tag>expan</tag><tag>abbr</tag>M<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
+      </list>
+      <p>NOTE: Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign lang="lat">d(is) m(anibus)</foreign>) should be marked-up word-by-word, as illustrated in <ref target="multi-word-example">the example above</ref> rather than as a whole phrase, like: 
+         <list type="unordered">
+            <item><hi rend="strong">No:</hi><tag>expan</tag><tag>abbr</tag>d<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag><tag>abbr</tag>m<tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
+            <item><hi rend="strong">No:</hi><tag>abbr expan="dis manibus"</tag>dm<tag>/abbr</tag> or</item>
+         </list> We are using the <tag>abbr</tag> tag to mark abbreviated words, not acronyms or otherwise abbreviated phrases. If an application needs to be able to identify and expand acronyms and abbreviated phrases, it will need to do so by processing the text to aggregate sequences of <tag>abbr</tag>-tagged words. </p>
+   </div>
+   <div id="abbreviationsunderstood-edition" type="gl-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item><expan><abbr>co</abbr>
+            <supplied reason="abbreviation">n</supplied><abbr>s</abbr>
+            <supplied reason="abbreviation">ul</supplied></expan></item>
+         <item><expan><abbr>Aug</abbr>
+            <supplied reason="abbreviation">ustus</supplied></expan></item>
+         <item><expan><abbr>Aug
+            <orig>g</orig></abbr>
+            <supplied reason="abbreviation">usti duo</supplied></expan></item>
+         <item><expan><abbr>pr
+            <orig>
+            <mark type="stop"/></orig></abbr>
+            <supplied reason="abbreviation">esbyter</supplied></expan></item>
+         <item><expan><abbr>d</abbr>
+            <supplied reason="abbreviation">is</supplied></expan><expan><abbr>m</abbr>
+            <supplied reason="abbreviation">anibus</supplied></expan></item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): the note above needs to be brought into line with the new markup, which is more P5-ish than before (although not quite). (ADD 2006-03-03: it now occurs to me that with the system we're using, the 'note' is not particularly valid anyway, unless we want to make it clear that multiple <tag>expan</tag> are needed for multiple word abbreviations...)</item>
+         <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): we should also note that marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
+         <item><persName>Tom Elliott</persName> (<date value="2006-02-23">23 February 2006</date>): what about abbreviations like <foreign lang="lat">AUGGG</foreign>?</item>
+         <item><persName>Hugh Cayless</persName> (<date value="2006-03-13">13 March 2006</date>): I have to say I don't like splitting up letters that occur together into separate abbreviation markers. The D and M in DM just don't occur separately. They mean something else if so. I realize this is a permathread, so I'm simply registering my objection.</item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="abbreviationsunderstood-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:40 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+   </div>
 </div>

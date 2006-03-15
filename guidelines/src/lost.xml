@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lost.xml,v 1.4 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="lost" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" lang="en" rend="multipart">
-    <head>Transcription where letters are completely lost</head>
-    <xi:include href="lostcertain.xml" />
-    <xi:include href="lostlesscertain.xml" />
-    <xi:include href="lostline.xml" />
-    <xi:include href="lostbeginningorend.xml" />
-    <xi:include href="possiblylost.xml" />
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lost.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="lost" lang="en" rend="multipart">
+   <head>Transcription where letters are completely lost</head>
+   <xi:include href="lostcertain.xml"/>
+   <xi:include href="lostlesscertain.xml"/>
+   <xi:include href="lostline.xml"/>
+   <xi:include href="lostbeginningorend.xml"/>
+   <xi:include href="possiblylost.xml"/>
 </div>

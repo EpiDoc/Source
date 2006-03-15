@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.4 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="unclear" xmlns="http://www.tei-c.org/ns/1.0" lang="en" rend="whole">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="unclear" lang="en" rend="whole">
    <head>Transcription wherein the character would not be unambiguous outside its context</head>
    <p>Note: depending on your font, browser, browser settings, operating system and other factors, the subscript dots used in examples in this section may display after the character instead of beneath it.</p>
    <div id="unclear-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
          <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
-             <list type="unordered">
-               <item>
-                  <hi rend="italic">ạḅc̣</hi>
-               </item>
+            <list type="unordered">
+               <item><hi rend="italic">ạḅc̣</hi></item>
             </list></item>
       </list>
    </div>
@@ -57,40 +56,14 @@
          <item><xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref></item>
       </list>
    </div>
-   
    <div id="unclear-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
-         <bibl>
-            <respStmt>
-               <resp>author</resp>
-               <name>Tom Elliott</name>
-            </respStmt>
-         </bibl>
-         <bibl>
-            <respStmt>
-               <resp>author</resp>
-               <name>Gabriel Bodard</name>
-            </respStmt>
-         </bibl>
-         <bibl>
-            <respStmt>
-               <resp>contributor</resp>
-               <name>Hugh Cayless</name>
-            </respStmt>
-         </bibl>
-         <bibl>
-            <respStmt>
-               <resp>contributor</resp>
-               <name>Tim Finney</name>
-            </respStmt>
-         </bibl>
-         <bibl>
-            <respStmt>
-               <resp>contributor</resp>
-               <name>Chris Lilley</name>
-            </respStmt>
-         </bibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>contributor</resp><name>Hugh Cayless</name></respStmt></bibl>
+         <bibl><respStmt><resp>contributor</resp><name>Tim Finney</name></respStmt></bibl>
+         <bibl><respStmt><resp>contributor</resp><name>Chris Lilley</name></respStmt></bibl>
       </listBibl>
    </div>
 </div>

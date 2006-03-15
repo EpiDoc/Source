@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplements.xml,v 1.6 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="supplements" xmlns="http://www.tei-c.org/ns/1.0" lang="en" rend="multipart">
-    <head>Editorial supplements, observations and hypotheses</head>
-    
-    <xi:include href="abbreviationsunderstood.xml"/>
-    <xi:include href="abbreviationsnotunderstood.xml"/>
-    <xi:include href="subaudible.xml"/>
-    <xi:include href="breviatio.xml"/>
-    <xi:include href="supplementforlost.xml"/>
-    <xi:include href="notfinished.xml" /> 
-    
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplements.xml,v 1.7 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="supplements" lang="en" rend="multipart">
+   <head>Editorial supplements, observations and hypotheses</head>
+   <include xmlns="" href="abbreviationsunderstood.xml"/>
+   <include xmlns="" href="abbreviationsnotunderstood.xml"/>
+   <include xmlns="" href="subaudible.xml"/>
+   <include xmlns="" href="breviatio.xml"/>
+   <include xmlns="" href="supplementforlost.xml"/>
+   <include xmlns="" href="notfinished.xml"/>
 </div>

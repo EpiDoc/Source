@@ -1,64 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/subaudible.xml,v 1.5 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/subaudible.xml,v 1.6 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
 <div xmlns="http://www.tei-c.org/ns/1.0" id="subaudible" lang="en">
-    <head>Editorial supplement in which the editor makes a "subaudible" word manifest</head>
-    <div id="subaudible-typographic" type="gl-typographic">
-        <head>Traditional typographic representation</head>
-        <list>
-            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: <list type="ordered" lang="lat">
-                    <item>clarissima (scil. femina) Iulia</item>
-                </list></item>
-        </list>
-    </div>
-    <div id="subaudible-encoding" type="gl-encoding">
-        <head>EpiDoc encoding</head>
-        <list type="ordered">
-            <item>clarissima <tag>supplied reason="subaudible"</tag>femina<tag>/supplied</tag>
-            Iulia</item>
-        </list>
-    </div>
-    <div id="subaudible-edition" type="gl-edition">
-        <head>EpiDoc appearance with standard XSLT</head>
-        <list type="ordered">
-            <item lang="lat">clarissima <supplied reason="subaudible">femina</supplied> Iulia</item>
-        </list>
-    </div>
-    <div id="subaudible-notes" type="gl-notes">
-        <head>Notes</head>
-        <list>
-            <item>The distinction here from a correction may vary from editor to editor</item>
-        </list>
-    </div>
-    <div id="supplementforlost-questions" type="gl-questions">
-        <head>Questions and issues</head>
-        <list type="unordered">
-            <item><name>GB</name> (<date>2006-03-14</date>): in my experience, the use of (scil.) or (sc.) is less common than simple (femina); this is of course down to rendering conventions, but we might want to mention this in the guidelines?</item>
-        </list>
-    </div><div id="subaudible-tei-p4links">
-        <head>TEI P4 links</head>
-        <list>
-            <item>
-                <xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html">
-                    <tag>supplied</tag></xref>
-            </item>
-            <item>
-                <xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and
-                    Supplied Text</xref>
-            </item>
-        </list>
-    </div>
-    <div id="subaudible-responsibility" type="gl-responsibility">
-        <head>Responsibility for this section</head>
-        <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Tom Elliott</name>
-                </respStmt>
-            </bibl>
-        </listBibl>
-    </div>
+   <head>Editorial supplement in which the editor makes a "subaudible" word manifest</head>
+   <div id="subaudible-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
+            <list type="ordered" lang="lat">
+               <item>clarissima (scil. femina) Iulia</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="subaudible-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item>clarissima <tag>supplied reason="subaudible"</tag>femina<tag>/supplied</tag> Iulia</item>
+      </list>
+   </div>
+   <div id="subaudible-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item lang="lat">clarissima 
+            <supplied reason="subaudible">femina</supplied> Iulia</item>
+      </list>
+   </div>
+   <div id="subaudible-notes" type="gl-notes">
+      <head>Notes</head>
+      <list>
+         <item>The distinction here from a correction may vary from editor to editor</item>
+      </list>
+   </div>
+   <div id="supplementforlost-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="unordered">
+         <item><name>GB</name> (<date>2006-03-14</date>): in my experience, the use of (scil.) or (sc.) is less common than simple (femina); this is of course down to rendering conventions, but we might want to mention this in the guidelines?</item>
+      </list>
+   </div>
+   <div id="subaudible-tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html"><tag>supplied</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and Supplied Text</xref></item>
+      </list>
+   </div>
+   <div id="subaudible-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="subaudible-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="subaudible-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="subaudible-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="subaudible-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
+      <p id="subaudible-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+   </div>
 </div>

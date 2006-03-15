@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.4 2006-03-15 14:10:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
+<?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<div id="noproblems" xmlns="http://www.tei-c.org/ns/1.0" lang="en" rend="whole">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="noproblems" lang="en" rend="whole">
    <head>Transcription with no problems</head>
    <div id="noproblems-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
-         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr>
-            <biblScope type="pages">17</biblScope></bibl>; <bibl>
-            <title level="a" type="abbreviated">Donicht</title>
-            <abbr expan="page">p.</abbr>
-            <biblScope type="pages">3</biblScope>
-            </bibl>: 
-             <list type="ordered">
-               <item><hi rend="italic">abc</hi></item></list></item></list>
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title><abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered">
+               <item><hi rend="italic">abc</hi></item>
+            </list></item>
+      </list>
    </div>
    <div id="noproblems-epidoc">
       <head>EpiDoc encoding</head>
@@ -28,7 +26,6 @@
       <list type="ordered">
          <item>abc</item>
       </list>
-      
    </div>
    <div id="noproblems-notes">
       <head>Notes</head>
@@ -37,12 +34,7 @@
    <div id="noproblems-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
-         <bibl>
-            <respStmt>
-               <resp>author</resp>
-               <name>Tom Elliott</name>
-            </respStmt>
-         </bibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
    </div>
 </div>
