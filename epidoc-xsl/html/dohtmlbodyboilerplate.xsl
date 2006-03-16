@@ -22,7 +22,7 @@
                     <xsl:attribute name="class">abstract</xsl:attribute>
                     <xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="/*/@id"/>.xml</xsl:attribute>xml version</xsl:element>
                     ||<xsl:if test="/*/@id or /*/@n"><xsl:if test="/*/@id"> id: <xsl:value-of select="/*/@id" /></xsl:if><xsl:if test="/*/@id and /*/@n"> | </xsl:if><xsl:if test="/*/@n"> n: <xsl:value-of select="/*/@n" /></xsl:if></xsl:if>
-                    ||
+                    <xsl:if test="count(.//tei:div) &gt; 1">||
                     <xsl:choose>
                         <xsl:when test="count(ancestor-or-self::*[@rend]) = 0 or ancestor-or-self::*[@rend][1]/@rend != 'multipart'">
                             <xsl:for-each select="/*//tei:div">
@@ -31,9 +31,12 @@
                                         <xsl:attribute name="class">htmlnavigation</xsl:attribute>
                                         <xsl:attribute name="href">#<xsl:call-template
                                                 name="getdivid" /></xsl:attribute>
-                                        <xsl:call-template name="lowercase">
-                                            <xsl:with-param name="victimstring" select="tei:head" />
-                                        </xsl:call-template>
+                                        <xsl:choose>
+                                            <xsl:when test="tei:head"><xsl:call-template name="lowercase"><xsl:with-param name="victimstring" select="tei:head" /></xsl:call-template></xsl:when>
+                                            <xsl:when test="@type"><xsl:call-template name="lowercase"><xsl:with-param name="victimstring" select="@type"/></xsl:call-template></xsl:when>
+                                            <xsl:otherwise><xsl:call-template name="getdivid"/></xsl:otherwise>
+                                        </xsl:choose>
+                                        
                                     </xsl:element>
                                     <xsl:if test="count(following::tei:div) != 0">
                                         <xsl:text> | </xsl:text>
@@ -44,7 +47,7 @@
                         <xsl:otherwise>
                             <xsl:if test="count(/*//tei:div) &gt; 0"><a class="htmlnavigation" href="#subsections">subsections</a></xsl:if>
                         </xsl:otherwise>
-                    </xsl:choose>
+                    </xsl:choose></xsl:if>
                 </xsl:element>
             </xsl:element>
             <!-- handle any teiHeader metadata -->
