@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.7 2006-03-15 21:43:06 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.8 2006-03-16 14:06:12 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="measurements" lang="en">
     <head>Measurements</head>
@@ -30,9 +30,7 @@
         <div id="measurements-monuments-edition" type="gl-edition">
             <head>EpiDoc appearance with standard XSLT</head>
             <list type="ordered">
-                <item>[<measure type="length" dim="height" value="1.15">1.15</measure> × <measure
-                        type="length" dim="width" value="0.76">0.76</measure> × <measure
-                        type="length" dim="depth" value="0.285">0.285</measure>]</item>
+                <item>[<measure type="length" dim="height" value="1.15">1.15</measure> × <measure type="length" dim="width" value="0.76">0.76</measure> × <measure type="length" dim="depth" value="0.285">0.285</measure>]</item>
             </list>
         </div>
     </div>
@@ -66,7 +64,13 @@
           <item><xref href="http://www.tei-c.org/P4X/CO.html#CONANU">6.4.3 Numbers and Measures</xref></item>
           </list>
         </div>
- <div id="measurements-responsibility" type="gl-responsibility">
+ <div type="gl-questions" id="measurements-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">16 Mar 2006</date>): There are a couple of important issues with measurements that need to be addressed in order to get our crosswalks to (e.g.) EDH working. (1) is the fact that in EDH the stone dimensions need to (a) be literally numerical, and (b) a single number, not multiple numbers, a range, circa, vel sim.; (letter-heights, on the other hand, can be a text field). (2) is the question of tagging the dimensions within a single element -- I'd strongly suggest <tag>rs type="dimensions"</tag> -- so that it can be extracted by the crosswalk wherever this data appears, even in the teiHeader.</item>
+         
+      </list>
+   </div><div id="measurements-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
@@ -76,9 +80,9 @@
     
 <div id="measurements-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
+      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.8 $</seg></p>
       <p id="measurements-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 21:43:06 $</seg></p>
-      <p id="measurements-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-16 14:06:12 $</seg></p>
+      <p id="measurements-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
    </div>
 </div>
