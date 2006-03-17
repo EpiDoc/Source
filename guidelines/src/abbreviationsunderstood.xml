@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.11 2006-03-15 17:58:40 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.12 2006-03-17 02:36:09 hcayless Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
@@ -61,6 +61,7 @@
          <item><name>Gabriel Bodard</name> (<date value="2006-02-15">2006-02-15</date>): we should also note that marks of abbreviation can be tagged using <tag>orig</tag> inside the <tag>abbr</tag>...</item>
          <item><persName>Tom Elliott</persName> (<date value="2006-02-23">23 February 2006</date>): what about abbreviations like <foreign lang="lat">AUGGG</foreign>?</item>
          <item><persName>Hugh Cayless</persName> (<date value="2006-03-13">13 March 2006</date>): I have to say I don't like splitting up letters that occur together into separate abbreviation markers. The D and M in DM just don't occur separately. They mean something else if so. I realize this is a permathread, so I'm simply registering my objection.</item>
+				<item><persName>Hugh Cayless</persName> (<date value="2006-03-14">14 March 2006</date>): If I may hit this dead horse just one more time, what about: <![CDATA[<abbr>co<supplied reason="expansion">n</supplied>s<supplied reason="expansion">ul</supplied></abbr>]]>?  I'm probably as bored with this discussion as you, but I am also a pedant.  reason="abbreviation" seems semantically awkward in the above.  I recognize that "reason" sometimes means the reason why the letters had to be supplied, but cf. breviatio.xml.  I like &lt;abbr&gt; as the primary tag, because it is, after all, what is on the stone.  The Leiden markup does not give us the expanded form (which is what &lt;expan&gt; should refer to), but instead supplies the "missing" letters.</item>
       </list>
    </div>
    <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
@@ -71,9 +72,9 @@
    </div>
    <div id="abbreviationsunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.12 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:40 $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-17 02:36:09 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
    </div>
 </div>
