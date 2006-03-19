@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.9 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.10 2006-03-19 01:33:25 sbauman Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="lostline">
@@ -20,7 +20,7 @@
       <head>EpiDoc encoding</head>
       <list type="ordered">
          <item><tag>gap reason="lost" extent="1" unit="line"/</tag></item>
-         <item><tag>gap id="gap1" reason="lost" unit="line"/</tag><tag>certainty target="gap1" locus="extent" degree="low"/</tag></item>
+         <item><tag>gap id="gap23" reason="lost" unit="line"/</tag><tag>certainty target="gap23" locus="extent" degree="low"/</tag></item>
       </list>
    </div>
    <div id="lostline-edition" type="gl-edition">
@@ -29,8 +29,8 @@
          <item>
             <gap reason="lost" extent="1" unit="line"/></item>
          <item>
-            <gap id="gap1" reason="lost" unit="line"/>
-            <certainty target="gap1" locus="extent" degree="low"/></item>
+            <gap id="gap23" reason="lost" unit="line"/>
+            <certainty target="gap23" locus="extent" degree="low"/></item>
       </list>
    </div>
    <div id="lostline-notes" type="gl-notes">
@@ -50,9 +50,9 @@
    </div>
    <div id="lostline-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
+      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.10 $</seg></p>
       <p id="lostline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-19 01:33:25 $</seg></p>
+      <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: sbauman $</seg></p>
    </div>
 </div>

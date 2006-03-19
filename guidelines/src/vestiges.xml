@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.5 2006-03-15 18:22:08 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.6 2006-03-19 01:33:25 sbauman Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="vestiges" lang="en">
@@ -33,8 +33,8 @@
       <list type="ordered">
          <item><tag>gap reason="illegible" extent="3" unit="character"/</tag></item>
          <item><tag>gap reason="illegible" extent="10" unit="character"/</tag></item>
-         <item><tag>gap id="gap1" reason="illegible" extent="10" unit="character"/</tag><tag>certainty target="gap1" locus="extent" degree="low"/</tag></item>
-         <item><tag>gap id="gap2" reason="illegible" extent="4.2" unit="cm"/</tag></item>
+         <item><tag>gap id="gap24" reason="illegible" extent="10" unit="character"/</tag><tag>certainty target="gap24" locus="extent" degree="low"/</tag></item>
+         <item><tag>gap id="gap25" reason="illegible" extent="4.2" unit="cm"/</tag></item>
       </list>
    </div>
    <div id="vestiges-edition" lang="lat" type="gl-edition">
@@ -45,10 +45,10 @@
          <item>
             <gap reason="illegible" extent="10" unit="character"/></item>
          <item>
-            <gap id="gap1" reason="illegible" extent="10" unit="character"/>
-            <certainty target="gap1" locus="extent" degree="low"/></item>
+            <gap id="gap24" reason="illegible" extent="10" unit="character"/>
+            <certainty target="gap24" locus="extent" degree="low"/></item>
          <item>
-            <gap id="gap2" reason="illegible" extent="4.2" unit="cm"/></item>
+            <gap id="gap25" reason="illegible" extent="4.2" unit="cm"/></item>
       </list>
    </div>
    <div id="vestiges-notes" type="gl-notes">
@@ -74,9 +74,9 @@
    </div>
     <div id="vestiges-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
+      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
       <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:22:08 $</seg></p>
-      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-19 01:33:25 $</seg></p>
+      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: sbauman $</seg></p>
    </div>
 </div>

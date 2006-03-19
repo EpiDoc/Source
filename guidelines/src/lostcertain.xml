@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostcertain.xml,v 1.7 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostcertain.xml,v 1.8 2006-03-19 01:33:25 sbauman Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="lostcertain" lang="en">
@@ -24,9 +24,9 @@
       <list type="ordered">
          <item><tag>gap reason="lost" extent="3" unit="character"/</tag></item>
          <item><tag>gap reason="lost" extent="10" unit="character"/</tag></item>
-         <item><tag>gap id="gap2" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap2" locus="extent" degree="low"/</tag></item>
+         <item><tag>gap id="gap26" reason="lost" extent="10" unit="character"/</tag><tag>certainty target="gap26" locus="extent" degree="low"/</tag></item>
          <item><tag>gap reason="lost" extent="4.2" unit="cm"/</tag></item>
-         <item><tag>gap id="gap3" reason="lost" extent="2" unit="character" /</tag><tag>certainty target="gap3" locus="extent" degree="low" /</tag></item>
+         <item><tag>gap id="gap27" reason="lost" extent="2" unit="character" /</tag><tag>certainty target="gap27" locus="extent" degree="low" /</tag></item>
       </list>
    </div>
    <div id="lostcertain-edition" type="gl-edition">
@@ -37,13 +37,13 @@
          <item>
             <gap reason="lost" extent="10" unit="character"/></item>
          <item>
-            <gap id="gap2" reason="lost" extent="10" unit="character"/>
-            <certainty target="gap2" locus="extent" degree="low"/></item>
+            <gap id="gap26" reason="lost" extent="10" unit="character"/>
+            <certainty target="gap26" locus="extent" degree="low"/></item>
          <item>
             <gap reason="lost" extent="4.2" unit="cm"/></item>
          <item>
-            <gap id="gap3" reason="lost" extent="2" unit="character"/>
-            <certainty target="gap3" locus="extent" degree="low"/></item>
+            <gap id="gap27" reason="lost" extent="2" unit="character"/>
+            <certainty target="gap27" locus="extent" degree="low"/></item>
       </list>
    </div>
    <div id="lostcertain-notes" type="gl-notes">
@@ -65,9 +65,9 @@
    </div>
    <div id="lostcertain-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostcertain-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
+      <p id="lostcertain-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.8 $</seg></p>
       <p id="lostcertain-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostcertain-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="lostcertain-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="lostcertain-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-19 01:33:25 $</seg></p>
+      <p id="lostcertain-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: sbauman $</seg></p>
    </div>
 </div>
