@@ -1,36 +1,38 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.8 2006-03-16 14:06:12 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/measurements.xml,v 1.9 2006-03-20 18:18:47 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="measurements" lang="en">
     <head>Measurements</head>
-    <p>Note: all measurements in meters.</p>
+    
     <p>This section includes examples for two types of measurements commonly included in epigraphic editions: </p>
     <list>
         <item><ref target="measurements-monuments">monuments, matrices, etc.</ref></item>
         <item><ref target="measurements-letters">letter heights</ref></item>
     </list>
-    <div id="measurements-monuments">
+    <p>NOTE: it is assumed unless a value is given for <att>unit</att>, that measurements of type length are given in metres.</p><div id="measurements-monuments">
         <head>Monuments, matrices, etc.</head>
         <div id="measurements-monuments-typographic" type="gl-typographic">
             <head>Traditional typographic representation</head>
             <list type="ordered">
                 <item>[1.15 x 0.76 x 0.285]</item>
-            </list>
+            <item>[c. 1.2 x c. 0.75 x c. 0.3]</item></list>
         </div>
         <div id="measurements-monuments-encoding" type="gl-encoding">
             <head>EpiDoc encoding</head>
             <list type="ordered">
-                <item>[<tag>measure type="length" dim="height" value="1.15"</tag>1.15<tag>/measure</tag> × <tag>measure
-                        type="length" dim="width" value="0.76"</tag>0.76<tag>/measure</tag> × <tag>measure
-                        type="length" dim="depth" value="0.285"</tag>0.285<tag>/measure</tag>]</item>
-            </list>
+                <item>[<tag>measure type="length" dim="height" value="1.15" unit="metre"</tag>1.15<tag>/measure</tag> × <tag>measure
+                        type="length" dim="width" value="0.76" unit="metre"</tag>0.76<tag>/measure</tag> × <tag>measure
+                        type="length" dim="depth" value="0.285" unit="metre"</tag>0.285<tag>/measure</tag>]</item>
+            <item>[<tag>measure type="length" dim="height" value="1.2" unit="metre" precision="circa"</tag>1.2<tag>/measure</tag> × <tag>measure
+                        type="length" dim="width" value="0.75" unit="metre" precision="circa"</tag>0.75<tag>/measure</tag> × <tag>measure
+                        type="length" dim="depth" value="0.3" unit="metre" precision="circa"</tag>0.3<tag>/measure</tag>]</item></list>
         </div>
         <div id="measurements-monuments-edition" type="gl-edition">
             <head>EpiDoc appearance with standard XSLT</head>
             <list type="ordered">
-                <item>[<measure type="length" dim="height" value="1.15">1.15</measure> × <measure type="length" dim="width" value="0.76">0.76</measure> × <measure type="length" dim="depth" value="0.285">0.285</measure>]</item>
+                <item>[<measure type="length" dim="height" value="1.15" unit="metre">1.15</measure> × <measure type="length" dim="width" value="0.76" unit="metre">0.76</measure> × <measure type="length" dim="depth" value="0.285" unit="metre">0.285</measure>]</item><item>[<measure type="length" dim="height" value="1.15" precision="circa" unit="metre">1.2</measure> × <measure type="length" dim="width" value="0.76" unit="metre" precision="circa">0.75</measure> × <measure type="length" dim="depth" value="0.285" unit="metre" precision="circa">0.3</measure>]</item>
             </list>
         </div>
     </div>
@@ -47,13 +49,13 @@
         <div id="measurements-letters-encoding" type="gl-encoding">
             <head>EpiDoc encoding</head>
             <list type="ordered">
-                <item><tag>measure type="length" dim="height" value="0.025"</tag>0.025<tag>/measure</tag></item>
+                <item><tag>measure type="length" dim="height" value="0.025" unit="metre"</tag>0.025<tag>/measure</tag></item>
             </list>
         </div>
         <div id="measurements-letters-edition" type="gl-edition">
             <head>EpiDoc appearance with standard XSLT</head>
             <list type="ordered">
-                <item><measure type="length" dim="height" value="0.025">0.025</measure></item>
+                <item><measure type="length" dim="height" value="0.025" unit="metre">0.025</measure></item>
             </list>
         </div>
     </div>
@@ -80,9 +82,9 @@
     
 <div id="measurements-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.8 $</seg></p>
+      <p id="measurements-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
       <p id="measurements-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-16 14:06:12 $</seg></p>
+      <p id="measurements-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 18:18:47 $</seg></p>
       <p id="measurements-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
    </div>
 </div>
