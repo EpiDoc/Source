@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.6 2006-03-20 06:13:50 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.7 2006-03-20 16:35:13 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="documentstructureintro" lang="en">
     <head>Introduction to EpiDoc Document Structure</head>
     <div type="example" id="example1">
         <head>Example 1</head>
-        <tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag> ...
+        <ab><tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag> ...
             <tag>/teiHeader</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>text</tag> ... <tag>/text</tag><lb />
-        <tag>/TEI.2</tag>
+        <tag>/TEI.2</tag></ab>
     </div>
     <div id="basicdocumentstructure">
         <head>Basic document structure</head>
@@ -31,7 +31,7 @@
     </div>
     <div id="example2" type="example">
         <head>Example 2: Elements within the <tag>teiHeader</tag></head>
-        <tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag><lb />
+        <ab><tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag><lb />
             &nbsp;&nbsp;&nbsp;&nbsp;<tag>fileDesc</tag> ...
         <tag>/fileDesc</tag><lb /> &nbsp;&nbsp;&nbsp;&nbsp;<tag>encodingDesc</tag>
         ... <tag>/encodingDesc</tag><lb />
@@ -40,11 +40,11 @@
         &nbsp;&nbsp;&nbsp;&nbsp;<tag>revisionDesc</tag> ...
         <tag>/revisionDesc</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>/teiHeader</tag><lb />
             &nbsp;&nbsp;&nbsp;<tag>text</tag> ... <tag>/text</tag><lb />
-        <tag>/TEI.2</tag>
+        <tag>/TEI.2</tag></ab>
     </div>
     <div>
         <head>The <tag>teiHeader</tag></head>
-        <p>For example, the <tag>teiHeader</tag> (see <ref taget="example2">Example 2</ref>) has a
+        <p>For example, the <tag>teiHeader</tag> (see <ref target="example2">Example 2</ref>) has a
             very explicit content model, requiring the presence of certain subordinate elements in a
             particular order. It contains the following: </p>
         <list>
@@ -67,7 +67,8 @@
     </div>
     <div id="example3" type="example">
         <head>Example 3: Outline of EpiDoc usage</head>
-        
+        <p>To be completed</p>
+        </div>
    <div>
        <head>The <tag>text</tag> element and its subordinate <tag>div</tag>s</head>
        <p>When compared with the <tag>teiHeader</tag>, the top-level <tag>text</tag> element has a more
