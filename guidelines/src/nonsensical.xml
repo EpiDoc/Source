@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/nonsensical.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/nonsensical.xml,v 1.6 2006-03-20 18:54:15 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="nonsensical" lang="en">
@@ -18,32 +18,32 @@
    <div id="nonsensical-encoding" type="gl-encoding">
       <head>EpiDoc encoding</head>
       <list type="ordered">
-         <item><tag>sic</tag>abc<tag>/sic</tag></item>
+         <item><tag>sic n="unintelligible" lang="lat"</tag>abc<tag>/sic</tag></item><item><tag>sic n="unintelligible" lang="grc"</tag>αβγ<tag>/sic</tag></item>
       </list>
    </div>
    <div id="nonsensical-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item><sic lang="lat">abc</sic></item>
+         <item><sic lang="lat" n="unintelligible">abc</sic></item><item><sic lang="grc" n="unintelligible">αβγ</sic></item>
       </list>
    </div>
    <div id="nonsensical-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">17 May 2005</date>): Should there be an attribute @n="unintelligible" (vel sim.) here? (See discussion on the <xref href="http://lsv.uky.edu/cgi-bin/wa.exe?A2=ind0404&amp;L=markup&amp;P=R697&amp;I=-3" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">markup list</xref>).</item>
+         <item>None.</item>
       </list>
    </div>
    <div id="nonsensical-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
    </div>
    <div id="nonsensical-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="nonsensical-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
+      <p id="nonsensical-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
       <p id="nonsensical-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="nonsensical-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="nonsensical-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="nonsensical-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 18:54:15 $</seg></p>
+      <p id="nonsensical-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
    </div>
 </div>
