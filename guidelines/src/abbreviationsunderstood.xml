@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.12 2006-03-17 02:36:09 hcayless Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.13 2006-03-20 16:52:12 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
@@ -37,21 +37,11 @@
    <div id="abbreviationsunderstood-edition" type="gl-edition" lang="lat">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item><expan><abbr>co</abbr>
-            <supplied reason="abbreviation">n</supplied><abbr>s</abbr>
-            <supplied reason="abbreviation">ul</supplied></expan></item>
-         <item><expan><abbr>Aug</abbr>
-            <supplied reason="abbreviation">ustus</supplied></expan></item>
-         <item><expan><abbr>Aug
-            <orig>g</orig></abbr>
-            <supplied reason="abbreviation">usti duo</supplied></expan></item>
-         <item><expan><abbr>pr
-            <orig>
-            <mark type="stop"/></orig></abbr>
-            <supplied reason="abbreviation">esbyter</supplied></expan></item>
-         <item><expan><abbr>d</abbr>
-            <supplied reason="abbreviation">is</supplied></expan><expan><abbr>m</abbr>
-            <supplied reason="abbreviation">anibus</supplied></expan></item>
+         <item><expan><abbr>co</abbr><supplied reason="abbreviation">n</supplied><abbr>s</abbr><supplied reason="abbreviation">ul</supplied></expan></item>
+         <item><expan><abbr>Aug</abbr><supplied reason="abbreviation">ustus</supplied></expan></item>
+         <item><expan><abbr>Aug<orig>g</orig></abbr><supplied reason="abbreviation">usti duo</supplied></expan></item>
+         <item><expan><abbr>pr<orig><mark type="stop"/></orig></abbr><supplied reason="abbreviation">esbyter</supplied></expan></item>
+         <item><expan><abbr>d</abbr><supplied reason="abbreviation">is</supplied></expan><expan><abbr>m</abbr><supplied reason="abbreviation">anibus</supplied></expan></item>
       </list>
    </div>
    <div id="abbreviationsunderstood-questions" type="gl-questions">
@@ -72,9 +62,9 @@
    </div>
    <div id="abbreviationsunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.12 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.13 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-17 02:36:09 $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 16:52:12 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>
