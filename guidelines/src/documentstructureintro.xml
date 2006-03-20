@@ -1,41 +1,138 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.5 2006-03-19 01:05:42 sbauman Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.6 2006-03-20 06:13:50 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
-
 <div xmlns="http://www.tei-c.org/ns/1.0" id="documentstructureintro" lang="en">
-   <head>Introduction to EpiDoc Document Structure</head>
-   <p>Introduction to EpiDoc Document Structure </p>
-   <p>The basic document structure recommended by EpiDoc follows exactly that laid out for TEI.2. There are two main sections of the document, both of which are required: the <tag>teiHeader</tag> and the <tag>text</tag>. The <tag>teiHeader</tag> is essentially the title page and descriptive catalog record for the electronic version of the text, providing information about the source of the text, the way it is digitally represented and any revisions it has undergone. The <tag>text</tag> element, on the other hand, embodies the structure and content of the text itself, including introduction, textual edition, translation, critical apparatus, commentary, notes and the like. The basic, top-level structure of any such TEI document would look like that sketched in Example 1. </p>
-   <p>This simple representation of the top-level tagging hides the structural complexity and semantic power that can be achieved with TEI. Within each of the two major elements, TEI permits (and sometimes requires) the use of a wide range of other elements. Some of these elements have very precise rules governing their use. Others permit adaptation to meet the needs of particular projects or types of textual materials. </p>
-   <p>For example, the <tag>teiHeader</tag> has a very explicit content model, requiring the presence of certain subordinate elements in a particular order (See Example 2). It contains the following: </p>
-   <p><tag>fileDesc</tag>, which provides a full bibliographical description of the computer file itself </p>
-   <p><tag>encodingDesc</tag>, which describes the relationship between an electronic text and its source(s) </p>
-   <p><tag>profileDesc</tag> (or 'text profile'), containing classificatory and contextual information about the text, such as its subject matter, the situation in which it was produced, the individuals described by or participating in producing it, and so forth. </p>
-   <p><tag>revisionDesc</tag> (or 'revision history'), which allows the encoder to provide a history of changes made during the development of the electronic text </p>
-   <p>The use of each of these elements (each with its own specific content model) is discussed in Section 5.3 below. See TEI, Section 5: The TEI Header for more details. </p>
-   <p>When compared with the <tag>teiHeader</tag>, the top-level <tag>text</tag> element has a more flexible content model, as do many of its subordinate elements. This flexibility is necessary to accomodate the wide range of textual materials that might require digitization. Example 3 provides an abbreviated EpiDoc representation of a boundary marker for an imperial estate in North Africa. </p>
-   <p>Within the <tag>text</tag> element of Example 3, one finds the mandatory TEI <tag>body</tag> element. TEI provides that this element can be subdivided further into any number of logical divisions using the <tag>div</tag> element. TEI specifies the use of the <tag>div</tag> element for the hierarchical grouping of divisions and subdivisions within a text. Depending on the genre of the text, these 'groups' can have different common names, such as 'chapter' in a novel, 'scene' in a play, or 'book' in an ancient literary work. Rather than elaborate differently named elements for each and every possible such grouping, TEI employs the generic <tag>div</tag> element for all such divisions. The TEI specification for the <tag>div</tag> element provides a standard attribute named 
-      <att>type</att>. This attribute is used to categorize these <tag>div</tag> elements independently of their hierarchical relationships using a set of attribute values appropriate to the genre and audience of the text. In this way, the nesting of <tag>div</tag> elements can be used to indicate the hierarchical relationship between a chapter and a subsection, while the 
-      <att>type</att> attribute can be used simultaneously to indicate the semantic difference between a chapter and an appendix. Note: Example 3 does not 'nest' its <tag>div</tag> elements, so there are not any significant hierarchical relationships between divisions of this particular text. But there are significant semantic differences, as indicated by the use of the 
-      <att>type</att> attribute. </p>
-   <p>In this example, the 
-      <att>type</att> attribute of the <tag>div</tag> element is used to distinguish between six different types of divisions: </p>
-   <p>a description of the text and/or monument; </p>
-   <p>the edition of the epigraphic text itself; </p>
-   <p>a translation of that text; </p>
-   <p>a scholarly commentary related to the text and its unique problems and items of interest; </p>
-   <p>a history of the discovery, documentation, and interpretation of the text leading to its present publication; and </p>
-   <p>a bibliography relevent to this text. </p>
-   <p>These attribute values (and two more: metadata and diplomatic) have been introduced as part of the EpiDoc standard (see Section 5.5: EpiDoc divisions (tei:div) of the text element (tei:text) for the formal definition of the <tag>div/</tag> element and its attributes). TEI places no limits or requirements on the use of the 
-      <att>type</att> attribute; it merely makes 
-      <att>type</att> available "to provide a name or description for the division." We have deliberately kept the number of EpiDoc values for 
-      <att>type</att> small to ensure the greatest possible degree of smooth interchange between EpiDoc-conformant projects. </p>
-   <p>EpiDoc exploits the flexibility and specificity of the <tag>div/</tag> element and its 
-      <att>type</att> attribute to distinguish between the various components commonly found in the scholarly presentation of epigraphic texts. Compare the conventional print representation of ALA 2 (Example 4) with the XML version in Example 3. Although styles and presentation differ from one scholarly epigraphic publication to the next, at a basic level, this example is representative of the historiographic genre. Typographic cues are generally used to alert the reader to a change in the character of information being presented for each text, but the exact nature of such changes is often simply implied. We assume that our reader understands the conventions of epigraphic publication. In the XML counterpart, the semantic differences between each division are made explicit using standard values for the 
-      <att>type</att> attribute. </p>
-   <p>These semantic distinctions, encoded into a digital text from its creation, facilitate a number of important possibilities when the time comes to prepare the text for presentation to a user or incorporate it into another publication or project. Standard XML software can use combinations of element and attribute values to select, compare, combine and reformat semantically discrete portions of documents in complex ways, providing the semantic distinctions have been explicitly encoded in a standard manner. The typed divisions of TEI, when categorized according to a generally-agreed and epigraphically relevant scheme, constitute such a standard. </p>
-   <p>Divisions with the same type attribute value can be repeated as necessary, and further semantic distinctions between them drawn at the editor's discretion using the standard TEI attribute 
-      <att>n</att>. These arrangements permit extensive, project-specific flexibility in searching, formatting and reusing documents. There are no EpiDoc-mandated values for n, but projects are encouraged to develop standard usage and publish documentation thereof as part of their dataset. The EPAPP project has developed such a system of attribute values, as demonstrated by the text in Example 5. The EPAPP system of values for n on the <tag>div</tag> element has been adopted by these guidelines as a recommendation for projects which find it helpful. </p>
+    <head>Introduction to EpiDoc Document Structure</head>
+    <div type="example" id="example1">
+        <head>Example 1</head>
+        <tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag> ...
+            <tag>/teiHeader</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>text</tag> ... <tag>/text</tag><lb />
+        <tag>/TEI.2</tag>
+    </div>
+    <div id="basicdocumentstructure">
+        <head>Basic document structure</head>
+        <p>The basic document structure recommended by EpiDoc follows exactly that laid out for
+            TEI.2. There are two main sections of the document, both of which are required: the
+                <tag>teiHeader</tag> and the <tag>text</tag>. The <tag>teiHeader</tag> is
+            essentially the title page and descriptive catalog record for the electronic version of
+            the text, providing information about the source of the text, the way it is digitally
+            represented and any revisions it has undergone. The <tag>text</tag> element, on the
+            other hand, embodies the structure and content of the text itself, including
+            introduction, textual edition, translation, critical apparatus, commentary, notes and
+            the like. The basic, top-level structure of any such TEI document would look like that
+            sketched in <ref target="example1">Example 1</ref>. </p>
+        <p>This simple representation of the top-level tagging hides the structural complexity and
+            semantic power that can be achieved with TEI. Within each of the two major elements, TEI
+            permits (and sometimes requires) the use of a wide range of other elements. Some of
+            these elements have very precise rules governing their use. Others permit adaptation to
+            meet the needs of particular projects or types of textual materials. </p>
+    </div>
+    <div id="example2" type="example">
+        <head>Example 2: Elements within the <tag>teiHeader</tag></head>
+        <tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag><lb />
+            &nbsp;&nbsp;&nbsp;&nbsp;<tag>fileDesc</tag> ...
+        <tag>/fileDesc</tag><lb /> &nbsp;&nbsp;&nbsp;&nbsp;<tag>encodingDesc</tag>
+        ... <tag>/encodingDesc</tag><lb />
+        &nbsp;&nbsp;&nbsp;&nbsp;<tag>profileDesc</tag> ...
+        <tag>/profileDesc</tag><lb />
+        &nbsp;&nbsp;&nbsp;&nbsp;<tag>revisionDesc</tag> ...
+        <tag>/revisionDesc</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>/teiHeader</tag><lb />
+            &nbsp;&nbsp;&nbsp;<tag>text</tag> ... <tag>/text</tag><lb />
+        <tag>/TEI.2</tag>
+    </div>
+    <div>
+        <head>The <tag>teiHeader</tag></head>
+        <p>For example, the <tag>teiHeader</tag> (see <ref taget="example2">Example 2</ref>) has a
+            very explicit content model, requiring the presence of certain subordinate elements in a
+            particular order. It contains the following: </p>
+        <list>
+            <item><tag>fileDesc</tag>, which provides a full bibliographical description of the
+                computer file itself </item>
+            <item><tag>encodingDesc</tag>, which describes the relationship between an electronic
+                text and its source(s) </item>
+            <item><tag>profileDesc</tag> (or 'text profile'), containing classificatory and
+                contextual information about the text, such as its subject matter, the situation in
+                which it was produced, the individuals described by or participating in producing
+                it, and so forth. </item>
+            <item><tag>revisionDesc</tag> (or 'revision history'), which allows the encoder to
+                provide a history of changes made during the development of the electronic text
+            </item>
+        </list>
+        <p>The use of each of these elements in encoding epigraphic editions (each with its own
+            specific content model) is discussed below. In general, see TEI, <xref
+                href="http://www.tei-c.org/P4X/HD.html">Section 5: The TEI Header for more
+            details</xref>. </p>
+    </div>
+    <div id="example3" type="example">
+        <head>Example 3: Outline of EpiDoc usage</head>
+        
+   <div>
+       <head>The <tag>text</tag> element and its subordinate <tag>div</tag>s</head>
+       <p>When compared with the <tag>teiHeader</tag>, the top-level <tag>text</tag> element has a more
+        flexible content model, as do many of its subordinate elements. This flexibility is
+        necessary to accomodate the wide range of textual materials that might require digitization. <ref target="example3">Example 3</ref> provides an abbreviated EpiDoc representation of a boundary marker for an imperial estate in North Africa.</p>
+    <p>Within the <tag>text</tag> element of <ref target="example3">Example 3</ref>, one finds the mandatory TEI <tag>body</tag>
+        element. TEI provides that this element can be subdivided further into any number of logical
+        divisions using the <tag>div</tag> element. TEI specifies the use of the <tag>div</tag>
+        element for the hierarchical grouping of divisions and subdivisions within a text. Depending
+        on the genre of the text, these 'groups' can have different common names, such as 'chapter'
+        in a novel, 'scene' in a play, or 'book' in an ancient literary work. Rather than elaborate
+        differently named elements for each and every possible such grouping, TEI employs the
+        generic <tag>div</tag> element for all such divisions. The TEI specification for the
+            <tag>div</tag> element provides a standard attribute named <att>type</att>. This
+        attribute is used to categorize these <tag>div</tag> elements independently of their
+        hierarchical relationships using a set of attribute values appropriate to the genre and
+        audience of the text. In this way, the nesting of <tag>div</tag> elements can be used to
+        indicate the hierarchical relationship between a chapter and a subsection, while the
+            <att>type</att> attribute can be used simultaneously to indicate the semantic difference
+        between a chapter and an appendix. Note: <ref target="example3">Example 3</ref> does not 'nest' its <tag>div</tag>
+        elements, so there are not any significant hierarchical relationships between divisions of
+        this particular text. But there are significant semantic differences, as indicated by the
+        use of the <att>type</att> attribute. </p>
+    <p>In this example, the <att>type</att> attribute of the <tag>div</tag> element is used to
+        distinguish between six different types of divisions: </p>
+    <p>a description of the text and/or monument; </p>
+    <p>the edition of the epigraphic text itself; </p>
+    <p>a translation of that text; </p>
+    <p>a scholarly commentary related to the text and its unique problems and items of interest; </p>
+    <p>a history of the discovery, documentation, and interpretation of the text leading to its
+        present publication; and </p>
+    <p>a bibliography relevent to this text. </p>
+    <p>These attribute values (and two more: metadata and diplomatic) have been introduced as part
+        of the EpiDoc standard (see Section 5.5: EpiDoc divisions (tei:div) of the text element
+        (tei:text) for the formal definition of the <tag>div/</tag> element and its attributes). TEI
+        places no limits or requirements on the use of the <att>type</att> attribute; it merely
+        makes <att>type</att> available "to provide a name or description for the division." We have
+        deliberately kept the number of EpiDoc values for <att>type</att> small to ensure the
+        greatest possible degree of smooth interchange between EpiDoc-conformant projects. </p>
+    <p>EpiDoc exploits the flexibility and specificity of the <tag>div/</tag> element and its
+            <att>type</att> attribute to distinguish between the various components commonly found
+        in the scholarly presentation of epigraphic texts. Compare the conventional print
+        representation of ALA 2 (Example 4) with the XML version in Example 3. Although styles and
+        presentation differ from one scholarly epigraphic publication to the next, at a basic level,
+        this example is representative of the historiographic genre. Typographic cues are generally
+        used to alert the reader to a change in the character of information being presented for
+        each text, but the exact nature of such changes is often simply implied. We assume that our
+        reader understands the conventions of epigraphic publication. In the XML counterpart, the
+        semantic differences between each division are made explicit using standard values for the
+            <att>type</att> attribute. </p>
+    <p>These semantic distinctions, encoded into a digital text from its creation, facilitate a
+        number of important possibilities when the time comes to prepare the text for presentation
+        to a user or incorporate it into another publication or project. Standard XML software can
+        use combinations of element and attribute values to select, compare, combine and reformat
+        semantically discrete portions of documents in complex ways, providing the semantic
+        distinctions have been explicitly encoded in a standard manner. The typed divisions of TEI,
+        when categorized according to a generally-agreed and epigraphically relevant scheme,
+        constitute such a standard. </p>
+    <p>Divisions with the same type attribute value can be repeated as necessary, and further
+        semantic distinctions between them drawn at the editor's discretion using the standard TEI
+        attribute <att>n</att>. These arrangements permit extensive, project-specific flexibility in
+        searching, formatting and reusing documents. There are no EpiDoc-mandated values for n, but
+        projects are encouraged to develop standard usage and publish documentation thereof as part
+        of their dataset. The EPAPP project has developed such a system of attribute values, as
+        demonstrated by the text in Example 5. The EPAPP system of values for n on the
+        <tag>div</tag> element has been adopted by these guidelines as a recommendation for projects
+        which find it helpful. </p></div>
 </div>
