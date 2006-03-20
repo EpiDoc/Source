@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.6 2006-03-15 18:12:29 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/unclear.xml,v 1.7 2006-03-20 16:02:29 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="unclear" lang="en" rend="whole">
@@ -23,7 +23,7 @@
          <item><tag>unclear</tag>a<tag>/unclear</tag><tag>unclear</tag>b<tag>/unclear</tag><tag>unclear</tag>c<tag>/unclear</tag></item>
          <item><tag>unclear reason="damage"</tag>abc<tag>/unclear</tag></item>
          <item><tag>unclear reason="execution"</tag>abc<tag>/unclear</tag></item>
-         <item><tag>unclear reason="undefined"</tag>abc<tag>/unclear</tag></item>
+         <item><tag>unclear reason="undefined"</tag>abc<tag>/unclear</tag></item><item><tag>app</tag><tag>rdg</tag><tag>unclear</tag>N<tag>/unclear</tag><tag>/rdg</tag><tag>rdg n="default"</tag><tag>unclear</tag>M<tag>/unclear</tag><tag>/rdg</tag><tag>rdg</tag><tag>unclear</tag>H<tag>/unclear</tag><tag>/rdg</tag><tag>/app</tag></item>
       </list>
       <p>Note: see <ref target="unclear-notes">notes</ref>, below.</p>
    </div>
@@ -34,7 +34,7 @@
          <item><unclear reason="undefined">a</unclear><unclear reason="undefined">b</unclear><unclear reason="undefined">c</unclear></item>
          <item><unclear reason="damage">abc</unclear></item>
          <item><unclear reason="execution">abc</unclear></item>
-         <item><unclear reason="undefined">abc</unclear></item>
+         <item><unclear reason="undefined">abc</unclear></item><item><app><rdg><unclear>N</unclear></rdg><rdg n="default"><unclear>M</unclear></rdg><rdg><unclear>H</unclear></rdg></app></item>
       </list>
    </div>
    <div id="unclear-notes" type="gl-notes">
@@ -47,7 +47,10 @@
          <head>The <att>reason</att> Attribute</head>
          <p>TEI defines a <att>reason</att> attribute for the <tag>unclear</tag> element. In the EpiDoc DTD, this attribute has three possible values: "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See further the markup list discussion referenced above. The default stylesheets render all instances of <tag>unclear</tag> with the standard subscript dot, regardless of the value of the <att>reason</att> attribute.</p>
       </div>
-   </div>
+   <div id="unclear-readings">
+         <head>Alternative readings</head>
+         <p>In cases where a letter trace is compatible with a range of characters but the context does not offer an unambiguous choice but the editor wishes to offer a default value, the alternative interpretations may be offered in a series of <tag>rdg</tag> elements within an <tag>app</tag>; in which case the particular reading to be rendered must be labelled with an attribute <att>n</att>='default' (see e.g. 6 above).</p><p>It is also envisaged that the possibility will exist to record the general shape of the surviving traces using embedded SVG or similar elements which could then be rendered as a drawing.</p><p>Where the editor is not willing to commit to a default reading, see <xref href="vestiges.xml">vestiges</xref>.</p>
+      </div></div>
    <div id="unclear-tei-p4links" type="gl-tei-p4links">
       <head>TEI P4 links</head>
       <list>
@@ -60,7 +63,7 @@
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Charles Crowther</name></respStmt></bibl>
          <bibl><respStmt><resp>contributor</resp><name>Hugh Cayless</name></respStmt></bibl>
          <bibl><respStmt><resp>contributor</resp><name>Tim Finney</name></respStmt></bibl>
          <bibl><respStmt><resp>contributor</resp><name>Chris Lilley</name></respStmt></bibl>
@@ -68,9 +71,9 @@
    </div>
     <div id="unclear-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="unclear-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="unclear-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
       <p id="unclear-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="unclear-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:12:29 $</seg></p>
-      <p id="unclear-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+      <p id="unclear-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 16:02:29 $</seg></p>
+      <p id="unclear-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
    </div>
 </div>

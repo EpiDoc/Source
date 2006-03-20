@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.6 2006-03-19 01:33:25 sbauman Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vestiges.xml,v 1.7 2006-03-20 16:02:29 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="vestiges" lang="en">
@@ -34,7 +34,7 @@
          <item><tag>gap reason="illegible" extent="3" unit="character"/</tag></item>
          <item><tag>gap reason="illegible" extent="10" unit="character"/</tag></item>
          <item><tag>gap id="gap24" reason="illegible" extent="10" unit="character"/</tag><tag>certainty target="gap24" locus="extent" degree="low"/</tag></item>
-         <item><tag>gap id="gap25" reason="illegible" extent="4.2" unit="cm"/</tag></item>
+         <item><tag>gap id="gap25" reason="illegible" extent="4.2" unit="cm"/</tag></item><item><tag>app</tag><tag>rdg n="default"</tag><tag>gap id="gap25" reason="illegible" extent="1" unit="character"/</tag><tag>/rdg</tag><tag>rdg</tag><tag>unclear</tag>E<tag>/unclear</tag><tag>/rdg</tag><tag>rdg</tag><tag>unclear</tag>F<tag>/unclear</tag><tag>/rdg</tag><tag>/app</tag></item>
       </list>
    </div>
    <div id="vestiges-edition" lang="lat" type="gl-edition">
@@ -48,14 +48,15 @@
             <gap id="gap24" reason="illegible" extent="10" unit="character"/>
             <certainty target="gap24" locus="extent" degree="low"/></item>
          <item>
-            <gap id="gap25" reason="illegible" extent="4.2" unit="cm"/></item>
+            <gap id="gap25" reason="illegible" extent="4.2" unit="cm"/></item><item><app><rdg n="default"><gap reason="illegible" extent="1" unit="character"/></rdg><rdg><unclear>E</unclear></rdg><rdg><unclear>F</unclear></rdg></app></item>
       </list>
    </div>
    <div id="vestiges-notes" type="gl-notes">
       <head>Notes</head>
-       <list>
-           <item>none</item>
-       </list>
+       <div id="vestiges-readings">
+         <head>Alternative readings</head>
+         <p>In cases where a letter trace is compatible with a range of characters and the context does not offer an unambiguous choice but the editor wishes to record the possibilities, the alternative interpretations may be offered in a series of <tag>rdg</tag> elements within an <tag>app</tag>. In addition, a <tag>rdg</tag> with the attribute <att>n</att>='default' should contain the <tag>gap reason="illegible"</tag> (see e.g. 5 above).</p><p>It is also envisaged that the possibility will exist to record the general shape of the surviving traces using embedded SVG or similar elements which could then be rendered as a drawing.</p><p>Where the editor wishes to indicate a preferred  reading, see <xref href="unclear.xml">unclear</xref>.</p>
+      </div>
    </div>
    <div id="vestiges-tei-p4links" type="gl-tei-p4links">
       <head>TEI P4 links</head>
@@ -74,9 +75,9 @@
    </div>
     <div id="vestiges-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
       <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-19 01:33:25 $</seg></p>
-      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: sbauman $</seg></p>
+      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 16:02:29 $</seg></p>
+      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
    </div>
 </div>
