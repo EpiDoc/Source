@@ -1,8 +1,282 @@
 <?xml version="1.0"?>
 <?oxygen RNGSchema="file:/C:/Program%20Files/Oxygen%207.1/frameworks/tei/xml/tei/custom/schema/relaxng/p5odds.rng" type="xml"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"><teiHeader><fileDesc><titleStmt><title>Epidoc meta schema</title><author>Zaneta Au</author></titleStmt><publicationStmt><p>Under the same copyright as epidoc.</p></publicationStmt><sourceDesc><p>created on Thursday 23rd 2006f March 2006 02:58:34 PM by the form at
-                    http://www.tei-c.org.uk/Roma/</p></sourceDesc></fileDesc></teiHeader><text><body><schemaSpec ident="epiMetaDoc" xml:lang="en"><moduleRef key="core"/><moduleRef key="tei"/><moduleRef key="header"/><moduleRef key="tagdocs"/><moduleRef key="linking"/><moduleRef key="figures"/><elementSpec module="core" ident="add" mode="delete"/><elementSpec module="core" ident="addrLine" mode="delete"/><elementSpec module="core" ident="address" mode="delete"/><elementSpec module="core" ident="analytic" mode="delete"/><elementSpec module="core" ident="bibl" mode="delete"/><elementSpec module="core" ident="biblFull" mode="delete"/><elementSpec module="core" ident="biblStruct" mode="delete"/><elementSpec module="core" ident="binaryObject" mode="delete"/><elementSpec module="core" ident="cb" mode="delete"/><elementSpec module="core" ident="choice" mode="delete"/><elementSpec module="core" ident="cit" mode="delete"/><elementSpec module="core" ident="corr" mode="delete"/><elementSpec module="core" ident="del" mode="delete"/><elementSpec module="core" ident="distinct" mode="delete"/><elementSpec module="core" ident="divGen" mode="delete"/><elementSpec module="core" ident="editor" mode="delete"/><elementSpec module="core" ident="emph" mode="delete"/><elementSpec module="core" ident="equiv" mode="delete"/><elementSpec module="core" ident="expan" mode="delete"/><elementSpec module="core" ident="foreign" mode="delete"/><elementSpec module="core" ident="gap" mode="delete"/><elementSpec module="core" ident="headItem" mode="delete"/><elementSpec module="core" ident="headLabel" mode="delete"/><elementSpec module="core" ident="imprint" mode="delete"/><elementSpec module="core" ident="index" mode="delete"/><elementSpec module="core" ident="l" mode="delete"/><elementSpec module="core" ident="label" mode="delete"/><elementSpec module="core" ident="lb" mode="delete"/><elementSpec module="core" ident="lg" mode="delete"/><elementSpec module="core" ident="listBibl" mode="delete"/><elementSpec module="core" ident="measure" mode="delete"/><elementSpec module="core" ident="meeting" mode="delete"/><elementSpec module="core" ident="mentioned" mode="delete"/><elementSpec module="core" ident="milestone" mode="delete"/><elementSpec module="core" ident="monogr" mode="delete"/><elementSpec module="core" ident="num" mode="delete"/><elementSpec module="core" ident="orig" mode="delete"/><elementSpec module="core" ident="pb" mode="delete"/><elementSpec module="core" ident="postBox" mode="delete"/><elementSpec module="core" ident="postCode" mode="delete"/><elementSpec module="core" ident="pubPlace" mode="delete"/><elementSpec module="core" ident="publisher" mode="delete"/><elementSpec module="core" ident="q" mode="delete"/><elementSpec module="core" ident="reg" mode="delete"/><elementSpec module="core" ident="rs" mode="delete"/><elementSpec module="core" ident="series" mode="delete"/><elementSpec module="core" ident="sic" mode="delete"/><elementSpec module="core" ident="soCalled" mode="delete"/><elementSpec module="core" ident="sp" mode="delete"/><elementSpec module="core" ident="speaker" mode="delete"/><elementSpec module="core" ident="stage" mode="delete"/><elementSpec module="core" ident="street" mode="delete"/><elementSpec module="core" ident="teiCorpus" mode="delete"/><elementSpec module="core" ident="term" mode="delete"/><elementSpec module="core" ident="time" mode="delete"/><elementSpec module="core" ident="timeRange" mode="delete"/><elementSpec module="core" ident="unclear" mode="delete"/><elementSpec module="header" ident="authority" mode="delete"/><elementSpec module="header" ident="broadcast" mode="delete"/><elementSpec module="header" ident="catDesc" mode="delete"/><elementSpec module="header" ident="catRef" mode="delete"/><elementSpec module="header" ident="category" mode="delete"/><elementSpec module="header" ident="classCode" mode="delete"/><elementSpec module="header" ident="classDecl" mode="delete"/><elementSpec module="header" ident="correction" mode="delete"/><elementSpec module="header" ident="creation" mode="delete"/><elementSpec module="header" ident="distributor" mode="delete"/><elementSpec module="header" ident="editorialDecl" mode="delete"/><elementSpec module="header" ident="encodingDesc" mode="delete"/><elementSpec module="header" ident="equipment" mode="delete"/><elementSpec module="header" ident="extent" mode="delete"/><elementSpec module="header" ident="fsdDecl" mode="delete"/><elementSpec module="header" ident="hyphenation" mode="delete"/><elementSpec module="header" ident="interpretation" mode="delete"/><elementSpec module="header" ident="keywords" mode="delete"/><elementSpec module="header" ident="langUsage" mode="delete"/><elementSpec module="header" ident="language" mode="delete"/><elementSpec module="header" ident="metDecl" mode="delete"/><elementSpec module="header" ident="metSym" mode="delete"/><elementSpec module="header" ident="normalization" mode="delete"/><elementSpec module="header" ident="notesStmt" mode="delete"/><elementSpec module="header" ident="principal" mode="delete"/><elementSpec module="header" ident="profileDesc" mode="delete"/><elementSpec module="header" ident="projectDesc" mode="delete"/><elementSpec module="header" ident="quotation" mode="delete"/><elementSpec module="header" ident="recording" mode="delete"/><elementSpec module="header" ident="recordingStmt" mode="delete"/><elementSpec module="header" ident="refsDecl" mode="delete"/><elementSpec module="header" ident="rendition" mode="delete"/><elementSpec module="header" ident="samplingDecl" mode="delete"/><elementSpec module="header" ident="scriptStmt" mode="delete"/><elementSpec module="header" ident="segmentation" mode="delete"/><elementSpec module="header" ident="seriesStmt" mode="delete"/><elementSpec module="header" ident="sponsor" mode="delete"/><elementSpec module="header" ident="state" mode="delete"/><elementSpec module="header" ident="stdVals" mode="delete"/><elementSpec module="header" ident="tagUsage" mode="delete"/><elementSpec module="header" ident="tagsDecl" mode="delete"/><elementSpec module="header" ident="taxonomy" mode="delete"/><elementSpec module="header" ident="textClass" mode="delete"/><elementSpec module="header" ident="variantEncoding" mode="delete"/><elementSpec module="textstructure" ident="argument" mode="delete"/><elementSpec module="textstructure" ident="back" mode="delete"/><elementSpec module="textstructure" ident="byline" mode="delete"/><elementSpec module="textstructure" ident="closer" mode="delete"/><elementSpec module="textstructure" ident="dateline" mode="delete"/><elementSpec module="textstructure" ident="div0" mode="delete"/><elementSpec module="textstructure" ident="div1" mode="delete"/><elementSpec module="textstructure" ident="div2" mode="delete"/><elementSpec module="textstructure" ident="div3" mode="delete"/><elementSpec module="textstructure" ident="div4" mode="delete"/><elementSpec module="textstructure" ident="div5" mode="delete"/><elementSpec module="textstructure" ident="div6" mode="delete"/><elementSpec module="textstructure" ident="div7" mode="delete"/><elementSpec module="textstructure" ident="docAuthor" mode="delete"/><elementSpec module="textstructure" ident="docDate" mode="delete"/><elementSpec module="textstructure" ident="docEdition" mode="delete"/><elementSpec module="textstructure" ident="docImprint" mode="delete"/><elementSpec module="textstructure" ident="docTitle" mode="delete"/><elementSpec module="textstructure" ident="epigraph" mode="delete"/><elementSpec module="textstructure" ident="front" mode="delete"/><elementSpec module="textstructure" ident="group" mode="delete"/><elementSpec module="textstructure" ident="imprimatur" mode="delete"/><elementSpec module="textstructure" ident="opener" mode="delete"/><elementSpec module="textstructure" ident="salute" mode="delete"/><elementSpec module="textstructure" ident="signed" mode="delete"/><elementSpec module="textstructure" ident="titlePage" mode="delete"/><elementSpec module="textstructure" ident="titlePart" mode="delete"/><elementSpec module="textstructure" ident="trailer" mode="delete"/><elementSpec module="linking" ident="alt" mode="delete"/><elementSpec module="linking" ident="altGrp" mode="delete"/><elementSpec module="linking" ident="anchor" mode="delete"/><elementSpec module="linking" ident="join" mode="delete"/><elementSpec module="linking" ident="joinGrp" mode="delete"/><elementSpec module="linking" ident="timeline" mode="delete"/><elementSpec module="linking" ident="when" mode="delete"/><elementSpec module="figures" ident="cell" mode="delete"/><elementSpec module="figures" ident="formula" mode="delete"/><elementSpec module="figures" ident="row" mode="delete"/><elementSpec module="figures" ident="table" mode="delete"/><elementSpec module="header" ident="cRefPattern" mode="change"><altIdent>regex</altIdent></elementSpec><elementSpec ident="typog" mode="add"><desc>Individual examples of traditional typographic editorial conventions.</desc><classes><memberOf key="model.graphicLike"/><memberOf key="att.global"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://www.ascc.net/xml/schematron"><rng:zeroOrMore><rng:text/><rng:ref name="model.gLike"/><rng:ref name="hi"/></rng:zeroOrMore><sch:pattern xmlns:sch="http://www.ascc.net/xml/schematron" name="typog only in typogBox"><sch:rule context="typog"><sch:assert test="ancestor::topogBox"> ERROR: the 'typog' element
-                                    must be a descendant of a 'typogBox'. </sch:assert></sch:rule></sch:pattern></content></elementSpec><elementSpec ident="typogBox" mode="add"><desc>Contains one or more typographic editorial conventions, possibly with one
-                        or more source references. </desc><classes><memberOf key="att.global"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0"><rng:text/><rng:ref name="biblItem"/><rng:zeroOrMore><rng:choice><rng:ref name="model.pLike"/><rng:ref name="model.listLike"/></rng:choice></rng:zeroOrMore></content></elementSpec><elementSpec ident="listResp" mode="add"><desc>Contains statements of responsibility for individuals.</desc><classes><memberOf key="att.global"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0"><rng:oneOrMore><rng:ref name="respStmt"/></rng:oneOrMore></content></elementSpec><elementSpec ident="epiEntry" mode="add"><desc>Contains the description of a particular epigraphic feature, examples of
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Epidoc meta schema</title>
+                <author>Zaneta Au</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Under the same copyright as epidoc.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>created on Thursday 23rd 2006f March 2006 02:58:34 PM by the form at
+                    http://www.tei-c.org.uk/Roma/</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <schemaSpec ident="epiMetaDoc" xml:lang="en">
+                <moduleRef key="core"/>
+                <moduleRef key="tei"/>
+                <moduleRef key="header"/>
+                <moduleRef key="tagdocs"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="figures"/>
+                <elementSpec module="core" ident="add" mode="delete"/>
+                <elementSpec module="core" ident="addrLine" mode="delete"/>
+                <elementSpec module="core" ident="address" mode="delete"/>
+                <elementSpec module="core" ident="analytic" mode="delete"/>
+                <elementSpec module="core" ident="bibl" mode="delete"/>
+                <elementSpec module="core" ident="biblFull" mode="delete"/>
+                <elementSpec module="core" ident="biblStruct" mode="delete"/>
+                <elementSpec module="core" ident="binaryObject" mode="delete"/>
+                <elementSpec module="core" ident="cb" mode="delete"/>
+                <elementSpec module="core" ident="choice" mode="delete"/>
+                <elementSpec module="core" ident="cit" mode="delete"/>
+                <elementSpec module="core" ident="corr" mode="delete"/>
+                <elementSpec module="core" ident="del" mode="delete"/>
+                <elementSpec module="core" ident="distinct" mode="delete"/>
+                <elementSpec module="core" ident="divGen" mode="delete"/>
+                <elementSpec module="core" ident="editor" mode="delete"/>
+                <elementSpec module="core" ident="emph" mode="delete"/>
+                <elementSpec module="core" ident="equiv" mode="delete"/>
+                <elementSpec module="core" ident="expan" mode="delete"/>
+                <elementSpec module="core" ident="foreign" mode="delete"/>
+                <elementSpec module="core" ident="gap" mode="delete"/>
+                <elementSpec module="core" ident="headItem" mode="delete"/>
+                <elementSpec module="core" ident="headLabel" mode="delete"/>
+                <elementSpec module="core" ident="imprint" mode="delete"/>
+                <elementSpec module="core" ident="index" mode="delete"/>
+                <elementSpec module="core" ident="l" mode="delete"/>
+                <elementSpec module="core" ident="label" mode="delete"/>
+                <elementSpec module="core" ident="lb" mode="delete"/>
+                <elementSpec module="core" ident="lg" mode="delete"/>
+                <elementSpec module="core" ident="listBibl" mode="delete"/>
+                <elementSpec module="core" ident="measure" mode="delete"/>
+                <elementSpec module="core" ident="meeting" mode="delete"/>
+                <elementSpec module="core" ident="mentioned" mode="delete"/>
+                <elementSpec module="core" ident="milestone" mode="delete"/>
+                <elementSpec module="core" ident="monogr" mode="delete"/>
+                <elementSpec module="core" ident="num" mode="delete"/>
+                <elementSpec module="core" ident="orig" mode="delete"/>
+                <elementSpec module="core" ident="pb" mode="delete"/>
+                <elementSpec module="core" ident="postBox" mode="delete"/>
+                <elementSpec module="core" ident="postCode" mode="delete"/>
+                <elementSpec module="core" ident="pubPlace" mode="delete"/>
+                <elementSpec module="core" ident="publisher" mode="delete"/>
+                <elementSpec module="core" ident="q" mode="delete"/>
+                <elementSpec module="core" ident="reg" mode="delete"/>
+                <elementSpec module="core" ident="rs" mode="delete"/>
+                <elementSpec module="core" ident="series" mode="delete"/>
+                <elementSpec module="core" ident="sic" mode="delete"/>
+                <elementSpec module="core" ident="soCalled" mode="delete"/>
+                <elementSpec module="core" ident="sp" mode="delete"/>
+                <elementSpec module="core" ident="speaker" mode="delete"/>
+                <elementSpec module="core" ident="stage" mode="delete"/>
+                <elementSpec module="core" ident="street" mode="delete"/>
+                <elementSpec module="core" ident="teiCorpus" mode="delete"/>
+                <elementSpec module="core" ident="term" mode="delete"/>
+                <elementSpec module="core" ident="time" mode="delete"/>
+                <elementSpec module="core" ident="timeRange" mode="delete"/>
+                <elementSpec module="core" ident="unclear" mode="delete"/>
+                <elementSpec module="header" ident="authority" mode="delete"/>
+                <elementSpec module="header" ident="broadcast" mode="delete"/>
+                <elementSpec module="header" ident="catDesc" mode="delete"/>
+                <elementSpec module="header" ident="catRef" mode="delete"/>
+                <elementSpec module="header" ident="category" mode="delete"/>
+                <elementSpec module="header" ident="classCode" mode="delete"/>
+                <elementSpec module="header" ident="classDecl" mode="delete"/>
+                <elementSpec module="header" ident="correction" mode="delete"/>
+                <elementSpec module="header" ident="creation" mode="delete"/>
+                <elementSpec module="header" ident="distributor" mode="delete"/>
+                <elementSpec module="header" ident="editorialDecl" mode="delete"/>
+                <elementSpec module="header" ident="encodingDesc" mode="delete"/>
+                <elementSpec module="header" ident="equipment" mode="delete"/>
+                <elementSpec module="header" ident="extent" mode="delete"/>
+                <elementSpec module="header" ident="fsdDecl" mode="delete"/>
+                <elementSpec module="header" ident="hyphenation" mode="delete"/>
+                <elementSpec module="header" ident="interpretation" mode="delete"/>
+                <elementSpec module="header" ident="keywords" mode="delete"/>
+                <elementSpec module="header" ident="langUsage" mode="delete"/>
+                <elementSpec module="header" ident="language" mode="delete"/>
+                <elementSpec module="header" ident="metDecl" mode="delete"/>
+                <elementSpec module="header" ident="metSym" mode="delete"/>
+                <elementSpec module="header" ident="normalization" mode="delete"/>
+                <elementSpec module="header" ident="notesStmt" mode="delete"/>
+                <elementSpec module="header" ident="principal" mode="delete"/>
+                <elementSpec module="header" ident="profileDesc" mode="delete"/>
+                <elementSpec module="header" ident="projectDesc" mode="delete"/>
+                <elementSpec module="header" ident="quotation" mode="delete"/>
+                <elementSpec module="header" ident="recording" mode="delete"/>
+                <elementSpec module="header" ident="recordingStmt" mode="delete"/>
+                <elementSpec module="header" ident="refsDecl" mode="delete"/>
+                <elementSpec module="header" ident="rendition" mode="delete"/>
+                <elementSpec module="header" ident="samplingDecl" mode="delete"/>
+                <elementSpec module="header" ident="scriptStmt" mode="delete"/>
+                <elementSpec module="header" ident="segmentation" mode="delete"/>
+                <elementSpec module="header" ident="seriesStmt" mode="delete"/>
+                <elementSpec module="header" ident="sponsor" mode="delete"/>
+                <elementSpec module="header" ident="state" mode="delete"/>
+                <elementSpec module="header" ident="stdVals" mode="delete"/>
+                <elementSpec module="header" ident="tagUsage" mode="delete"/>
+                <elementSpec module="header" ident="tagsDecl" mode="delete"/>
+                <elementSpec module="header" ident="taxonomy" mode="delete"/>
+                <elementSpec module="header" ident="textClass" mode="delete"/>
+                <elementSpec module="header" ident="variantEncoding" mode="delete"/>
+                <elementSpec module="textstructure" ident="argument" mode="delete"/>
+                <elementSpec module="textstructure" ident="back" mode="delete"/>
+                <elementSpec module="textstructure" ident="byline" mode="delete"/>
+                <elementSpec module="textstructure" ident="closer" mode="delete"/>
+                <elementSpec module="textstructure" ident="dateline" mode="delete"/>
+                <elementSpec module="textstructure" ident="div0" mode="delete"/>
+                <elementSpec module="textstructure" ident="div1" mode="delete"/>
+                <elementSpec module="textstructure" ident="div2" mode="delete"/>
+                <elementSpec module="textstructure" ident="div3" mode="delete"/>
+                <elementSpec module="textstructure" ident="div4" mode="delete"/>
+                <elementSpec module="textstructure" ident="div5" mode="delete"/>
+                <elementSpec module="textstructure" ident="div6" mode="delete"/>
+                <elementSpec module="textstructure" ident="div7" mode="delete"/>
+                <elementSpec module="textstructure" ident="docAuthor" mode="delete"/>
+                <elementSpec module="textstructure" ident="docDate" mode="delete"/>
+                <elementSpec module="textstructure" ident="docEdition" mode="delete"/>
+                <elementSpec module="textstructure" ident="docImprint" mode="delete"/>
+                <elementSpec module="textstructure" ident="docTitle" mode="delete"/>
+                <elementSpec module="textstructure" ident="epigraph" mode="delete"/>
+                <elementSpec module="textstructure" ident="front" mode="delete"/>
+                <elementSpec module="textstructure" ident="group" mode="delete"/>
+                <elementSpec module="textstructure" ident="imprimatur" mode="delete"/>
+                <elementSpec module="textstructure" ident="opener" mode="delete"/>
+                <elementSpec module="textstructure" ident="salute" mode="delete"/>
+                <elementSpec module="textstructure" ident="signed" mode="delete"/>
+                <elementSpec module="textstructure" ident="titlePage" mode="delete"/>
+                <elementSpec module="textstructure" ident="titlePart" mode="delete"/>
+                <elementSpec module="textstructure" ident="trailer" mode="delete"/>
+                <elementSpec module="linking" ident="alt" mode="delete"/>
+                <elementSpec module="linking" ident="altGrp" mode="delete"/>
+                <elementSpec module="linking" ident="anchor" mode="delete"/>
+                <elementSpec module="linking" ident="join" mode="delete"/>
+                <elementSpec module="linking" ident="joinGrp" mode="delete"/>
+                <elementSpec module="linking" ident="timeline" mode="delete"/>
+                <elementSpec module="linking" ident="when" mode="delete"/>
+                <elementSpec module="figures" ident="cell" mode="delete"/>
+                <elementSpec module="figures" ident="formula" mode="delete"/>
+                <elementSpec module="figures" ident="row" mode="delete"/>
+                <elementSpec module="figures" ident="table" mode="delete"/>
+                <elementSpec module="header" ident="cRefPattern" mode="change">
+                    <altIdent>regex</altIdent>
+                </elementSpec>
+                <elementSpec module="core" ident="hi" mode="change">
+                    <attList>
+                        <attDef ident="rend" mode="add">
+                            <gloss>Idicates the rendition of the epigraphic conventions.</gloss>
+                            <datatype>
+                                <rng:ref name="data.enumerated"/>
+                            </datatype>
+                            <valList type="closed">
+                                <valItem ident="italic">
+                                    <gloss>italicized</gloss>
+                                </valItem>
+                                <valItem ident="sup">
+                                    <gloss>superscripted</gloss>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="typog" mode="add">
+                    <desc>Individual examples of traditional typographic editorial conventions.</desc>
+                    <classes>
+                        <memberOf key="model.graphicLike"/>
+                        <memberOf key="att.global"/>
+                    </classes>
+                    <content xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                        xmlns:sch="http://www.ascc.net/xml/schematron">
+                        <rng:zeroOrMore>
+                            <rng:text/>
+                            <rng:ref name="model.gLike"/>
+                            <rng:ref name="hi"/>
+                        </rng:zeroOrMore>
+                        <sch:pattern xmlns:sch="http://www.ascc.net/xml/schematron"
+                            name="typog only in typogBox">
+                            <sch:rule context="typog">
+                                <sch:assert test="ancestor::topogBox"> ERROR: the 'typog' element
+                                    must be a descendant of a 'typogBox'. </sch:assert>
+                            </sch:rule>
+                        </sch:pattern>
+                    </content>
+                </elementSpec>
+                <elementSpec ident="typogBox" mode="add">
+                    <desc>Contains one or more typographic editorial conventions, possibly with one
+                        or more source references. </desc>
+                    <classes>
+                        <memberOf key="att.global"/>
+                    </classes>
+                    <content xmlns:rng="http://relaxng.org/ns/structure/1.0">
+                        <rng:text/>
+                        <rng:ref name="biblItem"/>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:ref name="model.pLike"/>
+                                <rng:ref name="model.listLike"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                    </content>
+                </elementSpec>
+                <elementSpec ident="listResp" mode="add">
+                    <desc>Contains statements of responsibility for individuals.</desc>
+                    <classes>
+                        <memberOf key="att.global"/>
+                    </classes>
+                    <content xmlns:rng="http://relaxng.org/ns/structure/1.0">
+                        <rng:oneOrMore>
+                            <rng:ref name="respStmt"/>
+                        </rng:oneOrMore>
+                    </content>
+                </elementSpec>
+                <elementSpec ident="epiEntry" mode="add">
+                    <desc>Contains the description of a particular epigraphic feature, examples of
                         traditional editorial conventions, epidoc XML representations and regular
-                        expressions to change the former to the latter. </desc><classes><memberOf key="att.global"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0"><rng:zeroOrMore><rng:ref name="model.pLike"/></rng:zeroOrMore><rng:optional><rng:oneOrMore><rng:ref name="typoBox"/></rng:oneOrMore><rng:oneOrMore><rng:ref name="regex"/></rng:oneOrMore></rng:optional><rng:oneOrMore><rng:choice><rng:ref name="exemplum"/><rng:ref name="egXML"/></rng:choice></rng:oneOrMore><rng:zeroOrMore><rng:ref name="note"/></rng:zeroOrMore><rng:ref name="respList"/></content></elementSpec><classSpec ident="att.global" mode="change" module="tei"><attList><attDef ident="xml:id" mode="change"/><attDef ident="n" mode="delete"/><attDef ident="xml:lang" mode="change"/><attDef ident="rend" mode="delete"/><attDef ident="xml:base" mode="delete"/></attList></classSpec></schemaSpec></body></text></TEI>
+                        expressions to change the former to the latter. </desc>
+                    <classes>
+                        <memberOf key="att.global"/>
+                    </classes>
+                    <content xmlns:rng="http://relaxng.org/ns/structure/1.0">
+                        <rng:zeroOrMore>
+                            <rng:ref name="model.pLike"/>
+                        </rng:zeroOrMore>
+                        <rng:optional>
+                            <rng:oneOrMore>
+                                <rng:ref name="typoBox"/>
+                            </rng:oneOrMore>
+                            <rng:oneOrMore>
+                                <rng:ref name="regex"/>
+                            </rng:oneOrMore>
+                        </rng:optional>
+                        <rng:oneOrMore>
+                            <rng:choice>
+                                <rng:ref name="exemplum"/>
+                                <rng:ref name="egXML"/>
+                            </rng:choice>
+                        </rng:oneOrMore>
+                        <rng:zeroOrMore>
+                            <rng:ref name="note"/>
+                        </rng:zeroOrMore>
+                        <rng:ref name="respList"/>
+                    </content>
+                </elementSpec>
+                <classSpec ident="att.global" mode="change" module="tei" type="atts">
+                    <attList>
+                        <attDef ident="xml:id" mode="change"/>
+                        <attDef ident="n" mode="delete"/>
+                        <attDef ident="xml:lang" mode="change"/>
+                        <attDef ident="rend" mode="delete"/>
+                        <attDef ident="xml:base" mode="delete"/>
+                    </attList>
+                </classSpec>
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
