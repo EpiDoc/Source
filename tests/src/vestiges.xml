@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/vestiges.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="vestiges" lang="en">
+   <head>Transcription wherein vestiges of characters remain, but they cannot be recognized (extent certain or nearly so)</head>
+   <p>This section of the guidelines requires revision in concert with DTD changes to realize the solution reached in long, painful discussions on the markup and tei lists. What follows now is almost surely deprecated.</p>
+   <div id="vestiges-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="unordered">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered">
+               <item>+++</item>
+               <item>+ 10 +</item>
+               <item>+ c.10 +</item>
+               <item>+ 4.2cm +</item>
+            </list></item>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#seg">SEG</xref></title></bibl>
+            <list type="ordered">
+               <item>[...]</item>
+            </list></item>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#poxy">POxy</xref></title></bibl>
+            <list type="ordered">
+               <item>…</item>
+               <item>..........</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="vestiges-encoding" type="gl-encoding">
+      <head>EpiDoc encodings</head>
+      <list type="ordered">
+         <item><tag>gap reason="illegible" extent="3" unit="character"/</tag></item>
+         <item><tag>gap reason="illegible" extent="10" unit="character"/</tag></item>
+         <item><tag>gap id="gap24" reason="illegible" extent="10" unit="character"/</tag><tag>certainty target="gap24" locus="extent" degree="low"/</tag></item>
+         <item><tag>gap id="gap25" reason="illegible" extent="4.2" unit="cm"/</tag></item><item><tag>app</tag><tag>rdg n="default"</tag><tag>gap id="gap25" reason="illegible" extent="1" unit="character"/</tag><tag>/rdg</tag><tag>rdg</tag><tag>unclear</tag>E<tag>/unclear</tag><tag>/rdg</tag><tag>rdg</tag><tag>unclear</tag>F<tag>/unclear</tag><tag>/rdg</tag><tag>/app</tag></item>
+      </list>
+   </div>
+   <div id="vestiges-edition" lang="lat" type="gl-edition">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item>
+            <gap reason="illegible" extent="3" unit="character"/></item>
+         <item>
+            <gap reason="illegible" extent="10" unit="character"/></item>
+         <item>
+            <gap id="gap24" reason="illegible" extent="10" unit="character"/>
+            <certainty target="gap24" locus="extent" degree="low"/></item>
+         <item>
+            <gap id="gap25" reason="illegible" extent="4.2" unit="cm"/></item><item><app><rdg n="default"><gap reason="illegible" extent="1" unit="character"/></rdg><rdg><unclear>E</unclear></rdg><rdg><unclear>F</unclear></rdg></app></item>
+      </list>
+   </div>
+   <div id="vestiges-notes" type="gl-notes">
+      <head>Notes</head>
+       <div id="vestiges-readings">
+         <head>Alternative readings</head>
+         <p>In cases where a letter trace is compatible with a range of characters and the context does not offer an unambiguous choice but the editor wishes to record the possibilities, the alternative interpretations may be offered in a series of <tag>rdg</tag> elements within an <tag>app</tag>. In addition, a <tag>rdg</tag> with the attribute <att>n</att>='default' should contain the <tag>gap reason="illegible"</tag> (see e.g. 5 above).</p><p>It is also envisaged that the possibility will exist to record the general shape of the surviving traces using embedded SVG or similar elements which could then be rendered as a drawing.</p><p>Where the editor wishes to indicate a preferred  reading, see <xref href="unclear.xml">unclear</xref>.</p>
+      </div>
+   </div>
+   <div id="vestiges-tei-p4links" type="gl-tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item><xref href="http://www.tei-c.org/P4X/ref-GAP.html"><tag>gap</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/CE.html#CECECE">17.1.2 Structured Indications of Uncertainty</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</xref></item>
+      </list>
+   </div>
+   <div id="vestiges-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
+    <div id="vestiges-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:05 $</seg></p>
+      <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

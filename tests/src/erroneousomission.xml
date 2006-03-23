@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/erroneousomission.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneousomission">
+   <head>Letters erroneously omitted from the text, which the editor adds</head>
+   <div id="erroneousomission-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+            <list>
+               <item>Valeri&lt;a&gt;nus</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="erroneousomission-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list>
+         <item>Valeri<tag>supplied reason="omitted"</tag>a<tag>/supplied</tag>nus</item>
+      </list>
+   </div>
+   <div id="erroneousomission-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list>
+         <item>Valeri
+            <supplied reason="omitted">a</supplied>nus</item>
+      </list>
+   </div>
+   <div id="erroneousomission-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="erroneousomission-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="erroneousomission-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="erroneousomission-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="erroneousomission-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="erroneousomission-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:05 $</seg></p>
+      <p id="erroneousomission-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

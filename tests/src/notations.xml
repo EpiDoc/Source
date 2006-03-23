@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/notations.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="notations">
+   <head>Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</head>
+   <div id="notations-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+            <list>
+               <item>((crux))</item>
+            </list></item>
+      </list>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+            <list>
+               <item>⊂crux⊃</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="notations-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list>
+         <item><tag>mark type="crux"/</tag></item>
+      </list>
+      <p>NOTE: It is sometimes necessary to represent a mark in the original text that is not readily handled by conventional type or fonts (i.e., does not correspond to a Unicode code point) but is not really an illustration. Some examples include: scroll, chi-rho, cross, stop, leaf, star. In conventional typographic editions, these 'odd characters' can only be shown "in consuetam formam reducta" with doubled parentheses and a note in the apparatus. The distinction between character rectification and naming of a symbol or glyph is made by using italics. In digital editions, projects are free to define character entities for this purpose, but searching for these items as a class of material dictated the use of an XML element. TEI provides no element for this purpose, and so EpiDoc recommends the extension of TEI for epigraphic work with the use of the <tag>mark</tag> element. It has one attribute, type, which is required. The type attribute can have any value the editor deems necessary. </p>
+   </div>
+   <div id="notations-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list>
+         <item>
+            <mark type="crux"/></item>
+      </list>
+   </div>
+   <div id="notations-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="notations-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+      <listBibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="notations-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="notations-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:05 $</seg></p>
+      <p id="notations-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

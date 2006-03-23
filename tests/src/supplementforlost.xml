@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/supplementforlost.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="supplementforlost" lang="en">
+   <head>Editorial supplement for characters wholly lost</head>
+   <div id="supplementforlost-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>: 
+            <list lang="lat" type="ordered">
+               <item>iug[er]a</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="supplementforlost-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item>iug<tag>supplied reason="lost"</tag>er<tag>/supplied</tag>a</item>
+      </list>
+   </div>
+   <div id="supplementforlost-edition" type="gl-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered" lang="lat">
+         <item>iug<supplied reason="lost">er</supplied>a</item>
+      </list>
+   </div>
+   <div id="supplementforlost-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="unordered">
+         <item>none</item>
+      </list>
+   </div>
+   <div id="supplementforlost-tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html"><tag>supplied</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and Supplied Text</xref></item>
+      </list>
+   </div>
+   <div id="supplementforlost-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="supplementforlost-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="supplementforlost-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="supplementforlost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="supplementforlost-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:05 $</seg></p>
+      <p id="supplementforlost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

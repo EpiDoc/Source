@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/numbersandnumerals.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="numbersandnumerals" lang="en">
+   <head>Numbers and numerals</head>
+   
+   <p>Different behaviour for Greek and Latin numerals:</p>
+<div id="numbersandnumerals-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      
+   <list>
+               <item lang="grc">α´</item><item lang="grc">͵αχο´</item><item lang="lat">XIII</item>
+            </list></div>
+   <div id="numbersandnumerals-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list>
+         <item><tag>num value="1" lang="grc"</tag>α<tag>/num</tag></item><item><tag>num value="1670" lang="grc"</tag>αχο<tag>/num</tag></item><item><tag>num value="13" lang="lat"</tag>XIII<tag>/num</tag></item>
+      </list>
+   </div>
+   <div id="numbersandnumerals-edition" type="gl-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list>
+         <item><num value="1" lang="grc">α</num></item><item><num value="1670" lang="grc">αχο</num></item><item><num lang="lat" value="13">XIII</num></item>
+      </list>
+   </div>
+   <div id="numbersandnumerals-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div>
+   <div id="numbersandnumerals-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>contributor</resp><name>Zaneta Au</name></respStmt></bibl>
+         
+      </listBibl>
+   </div></div>

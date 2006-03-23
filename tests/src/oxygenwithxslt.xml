@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/oxygenwithxslt.xml,v 1.1.1.1 2006-03-23 09:03:05 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="oxygenwithxslt" lang="en">
+    <head>Transforming the XML using Oxygen</head>
+   <p>Instructions of how to use the epidoc XSLT stylesheets with your own epidoc files. This was written using Oxygen v7.1</p>
+    <list>
+    	<item>With the XML file open in Oxygen, click the "Apply transformation scenario" button.</item>
+    	<item>In the "Configure transformation scenario" window, click on "new" to create a new scenario.</item>
+      <item>In the XSLT tab, enter the path for force-namespace-tei.xsl into XSL URL</item>
+    	<item>Click on "Parameters", "Add". Enter in "Name", 'standalonecss'. In "Value", enter the path for the location of epidocscreen.css.</item>
+    	<item>Back in the XSLT tab, click on "Additional XSLT stylesheets", "Add". Enter the path for epidoc.xsl</item>
+    	<item>Return to the XSLT tab, in the Output tab, select "Prompt for file" and "Open in browser".</item>
+    	<item>Returning to the original "Configure transformation scenario" window, click "Transform now".</item>
+    	<item>Save to a desired location and see the results!</item>
+    </list>
+    <div id="oxygenwithxslt-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Zaneta Au</name></respStmt></bibl>
+      </listBibl>
+   </div>
+    <div id="oxygenwithxslt-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="oxygenwithxslt-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:05 $</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

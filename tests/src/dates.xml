@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/dates.xml,v 1.1.1.1 2006-03-23 09:03:04 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="dates" lang="en">
+   <head>Dates</head>
+   <p>Dates may be identified in the ancient text (consular years, olympiads, etc.), or in editorial discussion. The date element contains a date in any format. There are basically three contexts in which an expression might be tagged as a date in an EpiDoc file:</p>
+   <list type="unordered">
+      <item>a regular date expression in a bibliographical citation or editorial discussion;</item>
+      <item>any kind of date expression in the original text of an inscription;</item>
+      <item>the editor's dating of an inscription or monument, either by a specific date or a span of years or centuries.</item>
+   </list>
+   <p>(Note: A year or regular date in the Gregorian calendar may simply be tagged as a <tag>date</tag> with no further information required from attribute values. If the date or span of dates is expressed in prose, in ancient terms, or in a different calendar, further information may be given using the following attributes.)</p>
+   <p>There are two groups of attributes which add information to the date element. The attributes 'value' and 'precision' express a single date, exactly or approximately, whereas 'notBefore', 'notAfter', and 'exact' define a span of possible dates within which the date in question may be located.</p>
+   <list type="unordered">
+      <item>value: in an ancient date expression this attribute may indicate the regularised date in the Julian calendar; if the date is already numerical and unproblematic, it may be ommitted;</item>
+      <item>precision: the level of accuracy to be assigned to "value", e.g. "approx" or "exact";</item>
+   </list>
+   <ab>versus:</ab>
+   <list type="unordered">
+      <item>notBefore: beginning of a span of possible dates;</item>
+      <item>notAfter: end of span of possible dates;</item>
+      <item>exact: refers to the previous two attributes; values include 'notBefore', 'notAfter', 'both' and 'none'.</item>
+   </list>
+   <p>Date expressions should be given in the form recommended by ISO 8601:2000, i.e. 'yyyy-mm-dd'. This means that years below 1000 (either BCE or CE) need leading zeroes to make them up to four digits. (See examples below.) When a date is not known to the very day the shortened forms 'yyyy-mm' and 'yyyy' may be used. Dates BCE should be indicated by the placement of a minus sign (hyphen) before the date expression. (Unlike ISO 8601:2000 we do not assume the existance of a year zero in the Gregorian calendar, so 44 BCE is "-0044" not "-0043".)</p>
+   <p>There is also an additional attribute 'calendar', which may be used to express the non-regular dating system in the case of dates in the original text. Example values include: 'Attic', 'A.U.C.', 'Julian', Amphictionic, Macedonian, etc.</p>
+   <p>(Note: the difference between a single date <hi rend="strong">within</hi> a span of possibilities (marked by the notBefore and notAfter attributes of <tag>date</tag>, as above) and an expression indicating a time period (such as the reign of an emperor). For the latter EpiDoc recommends the use of <tag>dateRange</tag>, as documented in the TEI Guidelines.)</p>
+   <div id="dates-encoding" type="gl-encoding">
+      <head>EpiDoc encodings</head>
+      <div id="dates-epidoc-in-description" type="gl-encoding">
+         <head>Inscription/monument dates in <tag>div type="description"</tag></head>
+         <list type="ordered">
+            <item><tag>date notBefore="-0399" notAfter="-0398" exact="both"</tag>399/8 BCE<tag>/date</tag></item>
+            <item><tag>date notBefore="0201" notAfter="0225" exact="none"</tag>First quarter third century CE<tag>/date</tag></item>
+            <item><tag>date notBefore="14" notAfter="39" exact="notBefore"</tag>Within a quarter century of the death of Augustus<tag>/date</tag></item>
+            <item><tag>date value="-0044-03-15" precision="exact"</tag>the Ides of March 44<tag>/date</tag> (Note the use of Julian calendar!)</item>
+            <item><tag>date value="0523-02-14" precision="exact"</tag>ἰνδικτίωνος α´ μηνὸς β´, ιδ´, ἡμέρα τρίτη<tag>/date</tag></item>
+         </list>
+      </div>
+      <div id="dates-epidoc-elsewhere" type="gl-encoding">
+         <head>Dates elsewhere, bibliography, etc.</head>
+         <list type="ordered">
+            <item>Roueché (<tag>date</tag>1989<tag>/date</tag>), no. 22</item>
+         </list>
+      </div>
+   </div>
+   <div id="dates-edition" lang="lat" type="gl-edition">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <div id="dates-edition-in-description" type="gl-edition">
+         <head lang="en">Inscription/monument dates in <tag>div type="description"</tag></head>
+         <list type="ordered">
+            <item><date notBefore="-0399" notAfter="-0398" exact="both">399/8 BCE</date></item>
+            <item><date notBefore="0201" notAfter="0225" exact="none">First quarter third century CE</date></item>
+            <item><date notBefore="14" notAfter="39" exact="notBefore">Within a quarter century of the death of Augustus</date></item>
+            <item><date value="-0044-03-15" precision="exact">the Ides of March 44</date> (Note the use of Julian calendar!)</item>
+            <item><date value="0523-02-14" precision="exact">ἰνδικτίωνος α´ μηνὸς β´, ιδ´, ἡμέρα τρίτη</date></item>
+         </list>
+      </div>
+      <div id="dates-edition-elsewhere" type="gl-edition">
+         <head lang="en">Dates elsewhere, bibliography, etc.</head>
+         <list type="ordered">
+            <item>Roueché (<date>1989</date>), no. 22</item>
+         </list>
+      </div>
+   </div>
+   <div id="dates-tei-p4links" type="gl-tei-p4links">
+      <head>TEI P4 links</head>
+      <list>
+         <item><xref href="http://www.tei-c.org/P4X/ref-DATE.html"><tag>date</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/CO.html#CONADA">6.4.4. Dates and Times</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/ND.html#NDDATE">20.4 Dates and Time</xref></item>
+      </list>
+   </div>
+   <div id="dates-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>re-encoded from xwiki to TEI-ish</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div>
+    <div id="dates-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="dates-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="dates-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="dates-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:04 $</seg></p>
+      <p id="dates-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>

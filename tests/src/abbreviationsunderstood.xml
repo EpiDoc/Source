@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/tests/src/abbreviationsunderstood.xml,v 1.1.1.1 2006-03-23 09:03:04 hcayless Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsunderstood">
+   <head>Identification and expansion of abbreviations understood by the editor</head>
+   <div id="abbreviationsunderstood-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="ordered">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
+            <list type="ordered" lang="lat">
+               <item>co(n)s(ul)</item>
+               <item>Aug(ustus)</item>
+               <item lang="en">Not covered</item>
+               <item lang="en">Not covered</item>
+               <item lang="en">Not covered</item>
+               <item lang="en">Not covered</item>
+            </list></item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-encoding" type="gl-encoding">
+      <head>EpiDoc encoding</head>
+      <list type="ordered">
+         <item id="cos-example"><tag>expan</tag>co<tag>supplied reason="abbreviation"</tag>n<tag>/supplied</tag>s<tag>supplied reason="abbreviation"</tag>ul<tag>/supplied</tag><tag>/expan</tag></item>
+         <item><tag>expan</tag>Aug<tag>supplied reason="abbreviation"</tag>ustus<tag>/supplied</tag><tag>/expan</tag></item>
+         <item id="augg-example"><tag>expan</tag><tag>abbr</tag>Aug<tag>orig</tag>g<tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>usti duo<tag>/supplied</tag><tag>/expan</tag></item>
+         <item id="pr.-example"><tag>expan</tag><tag>abbr</tag>pr<tag>orig</tag><tag>mark type="stop/</tag><tag>/orig</tag><tag>/abbr</tag><tag>supplied reason="abbreviation"</tag>esbyter<tag>/supplied</tag><tag>/expan</tag></item>
+         <item id="multi-word-example-1"><tag>expan</tag>D<tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag> M<tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
+         <item id="multi-word-example-2"><tag>expan</tag>D<tag>supplied reason="abbreviation"</tag>is<tag>/supplied</tag><tag>/expan</tag> <tag>expan</tag>M<tag>supplied reason="abbreviation"</tag>anibus<tag>/supplied</tag><tag>/expan</tag></item>
+      </list>
+      <list type="unordered">
+         <head>Notes</head>
+        <item>An <tag>abbr</tag> element within the <tag>expan</tag> containing the abbreviated form of the word is available but optional. It may be useful when the abbreviation contains additional markers not in the expanded form (cf. <ref target="augg-example">Augg</ref> and <ref target="pr.-example">pr.</ref> above), but might require additional linking in cases where the abbreviation must be expanded by interpolation (<ref target="cos-example">cf. co(n)s(ul)</ref>)</item>
+         <item>When the abbreviated form contains markers not in the expanded form, such as <ref target="augg-example">additional letters</ref> or <ref target="pr.-example">punctuation</ref>, best practice is to put these in <tag>orig</tag> elements, which the standard stylesheets will omit when rendering the expanded form.</item>
+      <item>Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign lang="lat">D(is) M(anibus)</foreign>) should properly be marked-up as a group, as illustrated in <ref target="multi-word-example-1">the example above</ref>, but marking them as single words is not incorrect (see <ref target="multi-word-example-2">the last example</ref>).</item>
+         </list>
+   </div>
+   <div id="abbreviationsunderstood-edition" type="gl-edition" lang="lat">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item><expan>co<supplied reason="abbreviation">n</supplied>s<supplied reason="abbreviation">ul</supplied></expan></item>
+         <item><expan>Aug<supplied reason="abbreviation">ustus</supplied></expan></item>
+         <item><expan><abbr>Aug<orig>g</orig></abbr><supplied reason="abbreviation">usti duo</supplied></expan></item>
+         <item><expan><abbr>pr<orig><mark type="stop"/></orig></abbr><supplied reason="abbreviation">esbyter</supplied></expan></item>
+         <item><expan>D<supplied reason="abbreviation">is</supplied> M<supplied reason="abbreviation">anibus</supplied></expan></item>
+         <item><expan>D<supplied reason="abbreviation">is</supplied></expan> <expan>M<supplied reason="abbreviation">anibus</supplied></expan></item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None.</item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Hugh Cayless</name></respStmt></bibl>
+      </listBibl>
+   </div>
+   <div id="abbreviationsunderstood-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1.1.1 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-23 09:03:04 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: hcayless $</seg></p>
+   </div>
+</div>
