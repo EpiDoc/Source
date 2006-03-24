@@ -25,6 +25,7 @@ die() {
 DRIVER=src/guidelines.xml
 RNG=../schema-gl/epiMetaDoc.rng
 RNC=../schema-gl/epiMetaDoc.rnc
+NRL=../schema-gl/epiMetaDoc.nrl
 TMP=/tmp
 TFILE=epidoc-guidelines-complete.xml
 
@@ -54,7 +55,11 @@ else
 fi
 
 if which jing ; then 
-    jing -t p5odds.rng $(DRIVER) | grep -v ": error: Illegal xml:lang value \"[A-Za-z][A-Za-z][A-Za-z]\"\.$$"
+    # Note: see sourceforge:tei/P5/Makefile for an explanation of the greps below
+    jing -t $RNG $DRIVER | grep -v ": error: Illegal xml:lang value \"[A-Za-z][A-Za-z][A-Za-z]\"\.$$"
+    jing $NRL $DRIVER \
+	 | grep -v ": error: Illegal xml:lang value \"[A-Za-z][A-Za-z][A-Za-z]\"\.$$" \
+	 | grep -v ': error: unfinished element$$'
 else
     echo "You don't seem to have `jing`, skipping both jing validation and NRL validation."
 fi
