@@ -25,7 +25,16 @@
      3. EpiDoc-specific character entities 
      
      REVISION HISTORY:
-     
+
+	23 March 2006
+		(GB & JF)
+		* added @extentmax to <gap> (for range)
+
+     20 March 2006
+		(GB & CC)
+		* added attribute @unit to <measure> (to specify metres, centimetres, cubits, etc.)
+		* added attribute @precision (values 'circa' or 'exact') to <measure>
+
      8 March 2006
           (TE)
           * Changed allowable attribute values for @cert on all relevant tags and @degree on the 
@@ -121,6 +130,10 @@
      New elements added by EpiDoc, together with their attributes
      ********************************************************************* -->
      
+<!ELEMENT choice (abbr | corr | expan | orig | reg | seg | sic | unclear | choice)* > 
+<!ATTLIST choice   
+      %a.global; >
+      
 <!ELEMENT att (#PCDATA)> 
 <!ATTLIST att  
       %a.global; >
@@ -204,6 +217,7 @@
         type CDATA #IMPLIED >
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #IMPLIED
+        extentmax CDATA #IMPLIED
         unit CDATA #IMPLIED
         dim (left | right | top | bottom | internal) #IMPLIED
         %epidoc.resp;
@@ -223,7 +237,9 @@
         type (worddiv) #IMPLIED >
 <!ATTLIST %n.measure;
         dim (height | width | depth | diameter | none) "none" 
-        value CDATA #IMPLIED >
+        value CDATA #IMPLIED
+        unit CDATA #IMPLIED
+        precision (circa | exact) #IMPLIED >
 <!ATTLIST %n.note;
         place CDATA 'not specified'
         target CDATA #IMPLIED

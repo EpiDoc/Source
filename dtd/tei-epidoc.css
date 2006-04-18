@@ -1,0 +1,444 @@
+/* Use Times New Roman for default font */
+$DOCUMENT
+{
+  font-family: "Arial Unicode MS", "Palatino Linotype";
+  font-size: 12pt;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+$COMMENT {
+  display: block;
+  font-style: italic ;
+  font-weight: lighter ;
+  color: purple;
+  white-space: pre;
+}
+
+$PROCINS {
+  color: black;
+  background-color: #ccc;
+}
+
+teiHeader {
+	display: block;
+	background-color: #fda ;
+	border: 2px olive solid ;
+	margin: 1em ;
+	}
+
+head {
+  display: block;
+  font-weight: normal ;
+  color: black ;
+  background-color: #bbb;
+}
+
+*[cert="low"]:before {
+	color: green ;
+	font-weight: normal ;
+	content: "?" ;
+}
+
+ab {
+  display: block;
+}
+
+address {
+  display: block;
+}
+
+addrLine {
+  display: block;
+}
+
+bibl {
+  display: block;
+}
+
+certainty:before {
+  content: '?';
+}
+
+change {
+  display: block;
+}
+
+div {
+  display: block;
+}
+
+div[n="text"] ab, lg {
+	margin-left: 1em ;
+	}
+
+edition {
+  display: block;
+}
+
+encodingDesc {
+  display: block;
+}
+
+supplied[reason='abbreviation']:before {
+  content: '(';
+}
+
+supplied[reason='abbreviation']:after {
+  content: ')';
+}
+
+supplied[reason='explanation']:before {
+  content: '(i.e. ';
+}
+
+supplied[reason='explanation']:after {
+  content: ')';
+}
+
+supplied[reason='omitted']:before {
+  content: '<';
+}
+
+supplied[reason='omitted']:after {
+  content: '>';
+}
+
+supplied[reason='lost']:before {
+  content: '[';
+}
+
+supplied[reason='lost']:after {
+  content: ']';
+}
+
+extent {
+  display: block;
+}
+
+f {
+  display: block;
+}
+
+figDesc {
+  display: block;
+}
+
+figure {
+  display: block;
+}
+
+fileDesc {
+  display: block;
+}
+
+fs {
+  display: block;
+}
+
+funder {
+  display: block;
+}
+
+gap:before {
+  content: '[...]';
+}
+
+gap[reason='lost']:before {
+  content: '[...]';
+}
+
+gap[reason='illegible']:before {
+  content: '..';
+}
+
+gap[dim='top']:before {
+  content: '---]';
+}
+
+gap[dim='bottom']:before {
+  content: '[---';
+}
+
+gap[dim='left']:before {
+  content: '...]';
+}
+
+gap[dim='right']:before {
+  content: '[...';
+}
+
+handList {
+  display: block;
+}
+
+idno {
+  display: block;
+}
+
+imprint {
+  display: block;
+}
+
+item {
+  display: block;
+}
+
+keywords {
+  display: block;
+}
+
+l {
+  display: block;
+}
+
+cb { 
+ display: block; 
+}
+
+ cb[rend='block'] { 
+  display: inline;
+}
+
+lb {
+  display: block;
+}
+
+div[type='apparatus'] lb {
+  display: inline ;
+}
+
+div[type='apparatus'] lb:before {
+  color: black ;
+  content: '|' ;
+}
+
+lb:before {
+	color: red;
+	font-weight: normal ;
+	content: attr(n);
+}
+
+lb[type='worddiv']:before {
+	color: green;
+	font-weight: normal ;
+	content: '- ' attr(n);
+}
+
+cb:before {
+	color: fuchsia;
+	font-weight: normal ;
+	content: attr(rend) ": " attr(n);
+}
+
+cb[rend='block']:before { 
+   color: black ; 
+ 	content: "|"; 
+ } 
+
+language {
+  display: block;
+}
+
+langUsage {
+  display: block;
+}
+
+lem {
+  display: block;
+}
+
+lg {
+  display: block;
+}
+
+linkGrp {
+  display: block;
+}
+
+list {
+  display: block;
+}
+
+listBibl {
+  display: block;
+}
+
+mark:before {
+	color: gray;
+	font-weight: normal ;
+	font-style: italic ;
+	content: "(" attr(type) ")";
+}
+
+measure[dim='height']:before {
+  color: gray ;
+  content: 'H: ' ;
+  }
+
+measure[dim='width']:before {
+  color: gray ;
+  content: 'W: ' ;
+  }
+
+measure[dim='depth']:before {
+  color: gray ;
+  content: 'D: ' ;
+  }
+
+meeting {
+  display: block;
+}
+
+monogr {
+  display: block;
+}
+
+note {
+  display: block;
+}
+
+p {
+  display: block;
+}
+
+postBox {
+  display: block;
+}
+
+principal {
+  display: block;
+}
+
+profileDesc {
+  display: block;
+}
+
+publicationStmt {
+  display: block;
+}
+
+pubPlace {
+  display: block;
+}
+
+rdg {
+  display: block;
+}
+
+rdgGrp {
+  display: block;
+}
+
+resp {
+  display: block;
+}
+
+respStmt {
+  display: block;
+}
+
+revisionDesc {
+  display: block;
+}
+
+rdg[resp='previous'] {
+  text-decoration: underline;
+}
+
+rs[type='findspot']:before {
+  color: silver ;
+  font-size: smaller ;
+  content: 'found:' ;
+}
+
+rs[type='orig-location']:before {
+  color: silver ;
+  font-size: smaller ;
+  content: 'orig:' ;
+}
+
+rs[type='last-location']:before {
+  color: silver ;
+  font-size: smaller ;
+  content: 'last:' ;
+}
+
+seg[type='autopsy'] {
+  text-decoration: underline;
+}
+
+sic[type='unintelligible'] {
+  font-variant: small-caps;
+}
+
+sic[n='superfluous']:before {
+  content: '{'
+}
+
+sic[n='superfluous']:after {
+  content: '}'
+}
+
+sourceDesc {
+  display: block;
+}
+
+space[unit='character' and extent='1']:before {
+	color: gray;
+	font-weight: normal ;
+	font-style: italic ;
+	content: 'vac.';
+}
+
+space[unit='character']:before {
+	color: gray;
+	font-weight: normal ;
+	font-style: italic ;
+	content: 'vac.';
+}
+
+space[unit='line']:before {
+	color: gray;
+	font-weight: normal ;
+	font-style: italic ;
+	content: 'vacat';
+}
+
+TEI\.2 {
+  display: block;
+}
+
+text {
+  display: block;
+  background-color: #ffe;
+  border: 1px gray solid ;
+}
+
+title {
+  font-style: italic;
+}
+
+titleStmt {
+  display: block;
+}
+
+xref {
+	color: blue;
+	text-decoration: underline;
+}
+
+*[lang="grc"] {
+  color: #900;
+}
+
+*[lang="lat"] {
+  color: #228;
+  font-style: italic;
+}
+
+*[lang="eng"] {
+  color: black ;
+  font-weight: normal ;
+}
+
