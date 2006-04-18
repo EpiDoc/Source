@@ -32,10 +32,16 @@
     </xsl:template>
     
     <xsl:template match="item">
-        <item xml:id="{@id}"><xsl:apply-templates mode="process-item-children"/></item></xsl:template>
+        <item xml:id="{@id}">
+            <xsl:apply-templates mode="process-item-children"/></item></xsl:template>
     
     <xsl:template match="note" mode="process-item-children"/>
     
-    <xsl:template match="*[ancestor::item]" mode="process-item-children">&lt;<xsl:value-of select="local-name(.)"/><xsl:for-each select="@*"> <xsl:value-of select="local-name(.)"/>="<xsl:value-of select="."/>"</xsl:for-each>&gt;<xsl:apply-templates/>&lt;/<xsl:value-of select="local-name(.)"/>&gt;</xsl:template>
+    <xsl:template match="*[ancestor::item]" mode="process-item-children" xml:space="preserve">
+        <xsl:choose>
+            <xsl:when test="text()|*">&lt;<xsl:value-of select="local-name(.)"/><xsl:for-each select="@*"> <xsl:value-of select="local-name(.)"/>="<xsl:value-of select="."/>"</xsl:for-each>&gt;<xsl:apply-templates/>&lt;/<xsl:value-of select="local-name(.)"/>&gt;</xsl:when>
+            <xsl:otherwise>&lt;<xsl:value-of select="local-name(.)"/><xsl:for-each select="@*"> <xsl:value-of select="local-name(.)"/>="<xsl:value-of select="."/>"</xsl:for-each>/&gt;</xsl:otherwise>
+        </xsl:choose>
+        </xsl:template>
     
 </xsl:stylesheet>

@@ -2,7 +2,7 @@
 $DOCUMENT
 {
   font-family: "Arial Unicode MS", "Palatino Linotype";
-  font-size: 12pt;
+  font-size: 16pt;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -368,19 +368,15 @@ seg[type='autopsy'] {
   text-decoration: underline;
 }
 
-sic {
+sic[type='unintelligible'] {
   font-variant: small-caps;
 }
 
-sic[corr=''] {
-  font-variant: normal;
-}
-
-sic[corr='']:before {
+sic[n='superfluous']:before {
   content: '{'
 }
 
-sic[corr='']:after {
+sic[n='superfluous']:after {
   content: '}'
 }
 
@@ -446,3 +442,12 @@ xref {
   font-weight: normal ;
 }
 
+xi\:include:before {
+  color: red ;
+  font-size: smaller ;
+  content: '[' attr(href) ']' ;
+}
+
+xi\:include {
+  display: block ;
+}

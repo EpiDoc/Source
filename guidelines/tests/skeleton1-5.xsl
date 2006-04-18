@@ -53,125 +53,207 @@
 
    If you create your own meta-stylesheet to override this one, it is a
    good idea to have both in the same directory and to run the stylesheet
-   from that directory, as many XSLT implementations have ideosyncratic
+   from that directory, as many XSLT implementations have idiosyncratic
    handling of URLs: keep it simple.
          
 -->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias" 
-	xmlns:sch="http://www.ascc.net/xml/schematron"
+
+<!-- 
+	
+	Forked for Epidoc project by Hugh Cayless, 3-2006. Some of these changes should be modularized 
+	into their own XSLT files, but that's for later
+	
+	Changes: 
+		- enabled XSLT 2.0 support.  Templates that require XSLT 1.0, have been marked
+		   with @version="1.0".
+		- added functions to deal with Epidoc-specific needs.
+-->
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias"
+	xmlns:sch="http://www.ascc.net/xml/schematron" 
 	xmlns:fn="http://www.w3.org/2005/xpath-functions"
-	xmlns:tei="http://www.tei-c.org/ns/1.0"
-	 >
-<!-- Note that this namespace is not version specific.
+	xmlns:tei="http://www.tei-c.org/ns/1.0" 
+	xmlns:epidoc="http://www.stoa.org/epidoc/ns/1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Note that this namespace is not version specific.
 This program implements schematron 1.5 with some 1.6 extensions -->
-<xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
-<!-- Category: top-level-element -->
-<xsl:output method="html" omit-xml-declaration="yes" standalone="yes"  indent="yes"/>
-<xsl:param name="block"></xsl:param><!-- reserved -->
-<xsl:param name="phase">
-  <xsl:choose>
-    <xsl:when test="//sch:schema/@defaultPhase">
-      <xsl:value-of select="//sch:schema/@defaultPhase"/>
-    </xsl:when>
-    <xsl:otherwise>#ALL</xsl:otherwise>
-  </xsl:choose>
-</xsl:param>
-<xsl:param name="hiddenKey"> key </xsl:param><!-- workaround for Xalan4J 2.0 -->
+	<xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
+	<!-- Category: top-level-element -->
+	<xsl:output method="html" omit-xml-declaration="yes" standalone="yes" indent="yes"/>
+	<xsl:param name="block"/>
+	<!-- reserved -->
+	<xsl:param name="phase">
+		<xsl:choose>
+			<xsl:when test="//sch:schema/@defaultPhase">
+				<xsl:value-of select="//sch:schema/@defaultPhase"/>
+			</xsl:when>
+			<xsl:otherwise>#ALL</xsl:otherwise>
+		</xsl:choose>
+	</xsl:param>
+	<xsl:param name="hiddenKey"> key </xsl:param>
+	<!-- workaround for Xalan4J 2.0 -->
 
-<!-- SCHEMA -->
-<xsl:template match="sch:schema | schema">
-	<axsl:stylesheet version="2.0">
-		<xsl:for-each select="sch:ns | ns">
-			<xsl:attribute name="{concat(@prefix,':dummy-for-xmlns')}" namespace="{@uri}"/>
-		</xsl:for-each>
- 
-		<xsl:if test="count(sch:title/* | title/* )">
-			<xsl:message>
-				<xsl:text>Warning: </xsl:text>
-				<xsl:value-of select="name(.)"/>
-				<xsl:text> must not contain any child elements</xsl:text>
-			</xsl:message>
-		</xsl:if>
- 
-		<xsl:call-template name="process-prolog"/>
-		<!-- utility routine for implementations -->
-   		<axsl:template match="*|@*" mode="schematron-get-full-path">
+	<!-- SCHEMA -->
+	<xsl:template match="sch:schema | schema">
+		<axsl:stylesheet version="2.0">
+			<xsl:for-each select="sch:ns | ns">
+				<xsl:attribute name="{concat(@prefix,':dummy-for-xmlns')}" namespace="{@uri}"/>
+			</xsl:for-each>
 
-			<axsl:apply-templates select="parent::*" mode="schematron-get-full-path"/>
-			<axsl:text>/</axsl:text>
-			<axsl:if test="count(. | ../@*) = count(../@*)">@</axsl:if>
-			<axsl:value-of select="name()"/>
-			<axsl:text>[</axsl:text>
-	  		<axsl:value-of select="1+count(preceding-sibling::*[name()=name(current())])"/>
-	  		<axsl:text>]</axsl:text>
-       	 	</axsl:template>
+			<xsl:if test="count(sch:title/* | title/* )">
+				<xsl:message>
+					<xsl:text>Warning: </xsl:text>
+					<xsl:value-of select="name(.)"/>
+					<xsl:text> must not contain any child elements</xsl:text>
+				</xsl:message>
+			</xsl:if>
 
-		<xsl:apply-templates mode="do-keys" 
-                select="sch:pattern/sch:rule/sch:key | pattern/rule/key | sch:key | key "/>
+			<xsl:call-template name="process-prolog"/>
+			<!-- utility routine for implementations -->
+			<axsl:template match="*|@*" mode="schematron-get-full-path">
+
+				<axsl:apply-templates select="parent::*" mode="schematron-get-full-path"/>
+				<axsl:text>/</axsl:text>
+				<axsl:if test="count(. | ../@*) = count(../@*)">@</axsl:if>
+				<axsl:value-of select="name()"/>
+				<axsl:text>[</axsl:text>
+				<axsl:value-of select="1+count(preceding-sibling::*[name()=name(current())])"/>
+				<axsl:text>]</axsl:text>
+			</axsl:template>
+
+			<xsl:apply-templates mode="do-keys"
+				select="sch:pattern/sch:rule/sch:key | pattern/rule/key | sch:key | key "/>
 
 
-		<axsl:template match="/">
-			<xsl:call-template name="process-root">
-				<xsl:with-param name="fpi" select="@fpi"/>
-				<xsl:with-param 	xmlns:sch="http://www.ascc.net/xml/schematron"
-				name="title" select="./sch:title | title"/>
-				<xsl:with-param name="id" select="@id"/>
-				<xsl:with-param name="icon" select="@icon"/>
-				<xsl:with-param name="lang" select="@xml:lang"/>
-				<xsl:with-param name="version" select="@version" />
-				<xsl:with-param name="schemaVersion" select="@schemaVersion" />
-				<xsl:with-param name="contents">
-					<xsl:apply-templates mode="do-all-patterns"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</axsl:template>
- 
-		<xsl:apply-templates/>
-		<axsl:template match="text()" priority="-1">
-			<!-- strip characters -->
-		</axsl:template>
-	</axsl:stylesheet>
-</xsl:template>
+			<axsl:template match="/">
+				<xsl:call-template name="process-root" version="1.0">
+					<xsl:with-param name="fpi" select="@fpi"/>
+					<xsl:with-param xmlns:sch="http://www.ascc.net/xml/schematron" name="title"
+						select="./sch:title | title"/>
+					<xsl:with-param name="id" select="@id"/>
+					<xsl:with-param name="icon" select="@icon"/>
+					<xsl:with-param name="lang" select="@xml:lang"/>
+					<xsl:with-param name="version" select="@version"/>
+					<xsl:with-param name="schemaVersion" select="@schemaVersion"/>
+					<xsl:with-param name="contents">
+						<xsl:apply-templates mode="do-all-patterns"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</axsl:template>
+
+			<xsl:apply-templates/>
+			<axsl:template match="text()" priority="-1">
+				<!-- strip characters -->
+			</axsl:template>
+			
+<!-- Begin Epidoc extension functions -->
+			
+			<!-- 
+				function epidoc:countMatches
+				Returns the number of times a given regular expression matches the given source string.
+			-->
+			<axsl:function name="epidoc:countMatches">
+				<axsl:param name="source"/>
+				<axsl:param name="regex"/>
+				<axsl:variable name="fixedSrc" select="translate($source, '_', '')"/>
+				<axsl:choose>
+					<axsl:when test="matches($fixedSrc, $regex)">
+						<axsl:value-of select="epidoc:charCount(replace($fixedSrc, $regex, '_'))"/>
+					</axsl:when>
+					<axsl:otherwise>0</axsl:otherwise>
+				</axsl:choose>
+			</axsl:function>
+			
+			<!-- 
+				function epidoc:charCount
+				Used to supprt epidoc:countMatches.  Takes a source string in which matches encountered
+				by epidoc:countMatches have been replaced by an underscore '_' and returns the number
+				of times the underscore character occurs.
+			-->
+			<axsl:function name="epidoc:charCount">
+				<axsl:param name="source"/>
+				<axsl:value-of select="string-length(replace($source, '[^_]', ''))"/>
+			</axsl:function>
+			
+			<!-- 
+				function epidoc:convert
+				Extends the functionality of the XSLT 2.0 replace() function to handle Epidoc-specific needs,
+				specifically the ability to replace regex patterns with the number of times that pattern occurs
+				and the ability to generate ids.  Just like replace(), it takes a source string, a regular
+				expression pattern, and a replacement string.
+			-->
+			<axsl:function name="epidoc:convert">
+				<axsl:param name="source"/>
+				<axsl:param name="regex"/>
+				<axsl:param name="replace"/>
+				<axsl:choose>
+					<axsl:when test="matches($replace, '%len')">
+						<axsl:analyze-string select="$replace" regex="%g(\d)%len(\d)">
+							<axsl:matching-substring>
+								<axsl:variable name="g" select="xs:integer(regex-group(1))"/>
+								<axsl:variable name="len" select="xs:integer(regex-group(1))"/>
+								<axsl:analyze-string select="$source" regex="$regex">
+									<axsl:matching-substring>
+										<axsl:value-of select="epidoc:convert($source, $regex, replace($replace, '%g\d%len\d', epidoc:countMatches(regex-group($g), regex-group($len))))"/>
+									</axsl:matching-substring>
+								</axsl:analyze-string>
+							</axsl:matching-substring>
+						</axsl:analyze-string>
+					</axsl:when>
+					<axsl:when test="matches($replace, '%genID\d')">
+						<axsl:analyze-string select="$replace" regex="id=&quot;%genID(\d)&quot;">
+							<axsl:matching-substring>
+								<axsl:value-of select="epidoc:convert($source, $regex, replace($replace, concat('%genID', regex-group(1)), regex-group(1)))"/>
+							</axsl:matching-substring>
+						</axsl:analyze-string>
+					</axsl:when>
+					<axsl:otherwise>
+						<axsl:value-of select="replace($source, $regex, $replace)"/>
+					</axsl:otherwise>
+				</axsl:choose>
+			</axsl:function>
+<!-- End Epidoc extension functions -->
+		</axsl:stylesheet>
+	</xsl:template>
 
 	<!-- ACTIVE -->
 	<xsl:template match="sch:active | active">
-                <xsl:if test="not(@pattern)">
-                    <xsl:message>Markup Error: no pattern attribute in &lt;active></xsl:message>
-                </xsl:if>
-                <xsl:if test="//sch:rule[@id= current()/@pattern]">
-                    <xsl:message>Reference Error: the pattern  "<xsl:value-of select="@pattern"/>" has been activated but is not declared</xsl:message>
-                </xsl:if>
-        </xsl:template>
+		<xsl:if test="not(@pattern)">
+			<xsl:message>Markup Error: no pattern attribute in &lt;active></xsl:message>
+		</xsl:if>
+		<xsl:if test="//sch:rule[@id= current()/@pattern]">
+			<xsl:message>Reference Error: the pattern "<xsl:value-of select="@pattern"/>" has been
+				activated but is not declared</xsl:message>
+		</xsl:if>
+	</xsl:template>
 
 	<!-- ASSERT and REPORT -->
 	<xsl:template match="sch:assert | assert">
-                <xsl:if test="not(@test)">
-                    <xsl:message>Markup Error: no test attribute in &lt;assert></xsl:message>
-                </xsl:if>
+		<xsl:if test="not(@test)">
+			<xsl:message>Markup Error: no test attribute in &lt;assert></xsl:message>
+		</xsl:if>
 		<axsl:choose>
 			<axsl:when test="{@test}"/>
 			<axsl:otherwise>
-				<xsl:call-template name="process-assert">
+				<xsl:call-template name="process-assert" version="1.0">
 					<xsl:with-param name="role" select="@role"/>
 					<xsl:with-param name="id" select="@id"/>
-					<xsl:with-param name="test" select="normalize-space(@test)" />
+					<xsl:with-param name="test" select="normalize-space(@test)"/>
 					<xsl:with-param name="icon" select="@icon"/>
 					<xsl:with-param name="subject" select="@subject"/>
 					<xsl:with-param name="diagnostics" select="@diagnostics"/>
-				</xsl:call-template>  
+				</xsl:call-template>
 			</axsl:otherwise>
 		</axsl:choose>
 	</xsl:template>
 	<xsl:template match="sch:report | report">
-                <xsl:if test="not(@test)">
-                    <xsl:message>Markup Error: no test attribute in &lt;report></xsl:message>
-                </xsl:if>
+		<xsl:if test="not(@test)">
+			<xsl:message>Markup Error: no test attribute in &lt;report></xsl:message>
+		</xsl:if>
 		<axsl:if test="{@test}">
-			<xsl:call-template name="process-report">
+			<xsl:call-template name="process-report" version="1.0">
 				<xsl:with-param name="role" select="@role"/>
-				<xsl:with-param name="test" select="normalize-space(@test)" />
+				<xsl:with-param name="test" select="normalize-space(@test)"/>
 				<xsl:with-param name="icon" select="@icon"/>
 				<xsl:with-param name="id" select="@id"/>
 				<xsl:with-param name="subject" select="@subject"/>
@@ -182,64 +264,67 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 
 
 	<!-- DIAGNOSTIC -->
-	<xsl:template match="sch:diagnostic | diagnostic"
-              ><xsl:if test="not(@id)"
-                    ><xsl:message>Markup Error: no id attribute in &lt;diagnostic></xsl:message
-                ></xsl:if><xsl:call-template name="process-diagnostic">
-                <xsl:with-param name="id" select="@id" />
-               </xsl:call-template>
-        </xsl:template>
+	<xsl:template match="sch:diagnostic | diagnostic">
+		<xsl:if test="not(@id)">
+			<xsl:message>Markup Error: no id attribute in &lt;diagnostic></xsl:message>
+		</xsl:if>
+		<xsl:call-template name="process-diagnostic" version="1.0">
+			<xsl:with-param name="id" select="@id"/>
+		</xsl:call-template>
+	</xsl:template>
 
 	<!-- DIAGNOSTICS -->
 	<xsl:template match="sch:diagnostics | diagnostics"/>
 
 	<!-- DIR -->
-	<xsl:template match="sch:dir | dir"  mode="text"
-		><xsl:call-template name="process-dir">
+	<xsl:template match="sch:dir | dir" mode="text">
+		<xsl:call-template name="process-dir" version="1.0">
 			<xsl:with-param name="value" select="@value"/>
 		</xsl:call-template>
 	</xsl:template>
 
 	<!-- EMPH -->
-	<xsl:template match="sch:emph | emph"  mode="text"
-		><xsl:call-template name="process-emph"/>
+	<xsl:template match="sch:emph | emph" mode="text">
+		<xsl:call-template name="process-emph"/>
 	</xsl:template>
 
 	<!-- EXTENDS -->
 	<xsl:template match="sch:extends | extends">
-		<xsl:if test="not(@rule)"
-                    ><xsl:message>Markup Error: no rule attribute in &lt;extends></xsl:message
-                ></xsl:if>
-     		<xsl:if test="not(//sch:rule[@abstract='true'][@id= current()/@rule] )
+		<xsl:if test="not(@rule)">
+			<xsl:message>Markup Error: no rule attribute in &lt;extends></xsl:message>
+		</xsl:if>
+		<xsl:if
+			test="not(//sch:rule[@abstract='true'][@id= current()/@rule] )
                     and not(//rule[@abstract='true'][@id= current()/@rule])">
-                    <xsl:message>Reference Error: the abstract rule  "<xsl:value-of select="@rule"/>" has been referenced but is not declared</xsl:message>
-                </xsl:if>
-	        <xsl:call-template name="IamEmpty" />
+			<xsl:message>Reference Error: the abstract rule "<xsl:value-of select="@rule"/>" has
+				been referenced but is not declared</xsl:message>
+		</xsl:if>
+		<xsl:call-template name="IamEmpty"/>
 
-  		<xsl:if test="//sch:rule[@id=current()/@rule]">
-    			<xsl:apply-templates select="//sch:rule[@id=current()/@rule]"
-				mode="extends"/>
-  		</xsl:if>
+		<xsl:if test="//sch:rule[@id=current()/@rule]">
+			<xsl:apply-templates select="//sch:rule[@id=current()/@rule]" mode="extends"/>
+		</xsl:if>
 
 	</xsl:template>
 
 	<!-- KEY -->
-	<!-- do we need something to test uniqueness too? --> 
+	<!-- do we need something to test uniqueness too? -->
 	<!-- NOTE: if you get complaint about "key" here (e.g. Xalan4C 1.0) replace
 		"key" with "$hiddenKey" -->
-	<xsl:template  match="sch:key | key " mode="do-keys" >
-                <xsl:if test="not(@name)">
-                    <xsl:message>Markup Error: no name attribute in &lt;key></xsl:message>
-                </xsl:if>
-               <xsl:if test="not(@match) and not(../sch:rule)">
-                    <xsl:message>Markup Error:  no match attribute on &lt;key> outside &lt;rule></xsl:message>
-                </xsl:if>
-                <xsl:if test="not(@path)">
-                    <xsl:message>Markup Error: no path attribute in &lt;key></xsl:message>
-                </xsl:if>
-	        <xsl:call-template name="IamEmpty" />
+	<xsl:template match="sch:key | key " mode="do-keys">
+		<xsl:if test="not(@name)">
+			<xsl:message>Markup Error: no name attribute in &lt;key></xsl:message>
+		</xsl:if>
+		<xsl:if test="not(@match) and not(../sch:rule)">
+			<xsl:message>Markup Error: no match attribute on &lt;key> outside
+			&lt;rule></xsl:message>
+		</xsl:if>
+		<xsl:if test="not(@path)">
+			<xsl:message>Markup Error: no path attribute in &lt;key></xsl:message>
+		</xsl:if>
+		<xsl:call-template name="IamEmpty"/>
 
-             <xsl:choose>
+		<xsl:choose>
 			<xsl:when test="@match">
 				<axsl:key match="{@match}" name="{@name}" use="{@path}"/>
 			</xsl:when>
@@ -249,103 +334,109 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 		</xsl:choose>
 	</xsl:template>
 
-      <xsl:template match="sch:key | key"  /><!-- swallow --> 
+	<xsl:template match="sch:key | key"/>
+	<!-- swallow -->
 
 	<!-- NAME -->
 	<xsl:template match="sch:name | name" mode="text">
 		<axsl:text xml:space="preserve"> </axsl:text>
-			<xsl:if test="@path"
-				><xsl:call-template name="process-name">
-					<xsl:with-param name="name" select="concat('name(',@path,')')"/>
-					<!-- SAXON needs that instead of  select="'name({@path})'"  -->
-				</xsl:call-template>
-			</xsl:if>
-			<xsl:if test="not(@path)"
-				><xsl:call-template name="process-name">
-					<xsl:with-param name="name" select="'name(.)'"/>
-				</xsl:call-template>
-			</xsl:if>
-	        	<xsl:call-template name="IamEmpty" />
+		<xsl:if test="@path">
+			<xsl:call-template name="process-name">
+				<xsl:with-param name="name" select="concat('name(',@path,')')"/>
+				<!-- SAXON needs that instead of  select="'name({@path})'"  -->
+			</xsl:call-template>
+		</xsl:if>
+		<xsl:if test="not(@path)">
+			<xsl:call-template name="process-name">
+				<xsl:with-param name="name" select="'name(.)'"/>
+			</xsl:call-template>
+		</xsl:if>
+		<xsl:call-template name="IamEmpty"/>
 		<axsl:text xml:space="preserve"> </axsl:text>
 	</xsl:template>
 
 	<!-- NS -->
-	<xsl:template match="sch:ns | ns"  mode="do-all-patterns" >
-               <xsl:if test="not(@uri)">
-                    <xsl:message>Markup Error: no uri attribute in &lt;ns></xsl:message>
-                </xsl:if>
-               <xsl:if test="not(@prefix)">
-                    <xsl:message>Markup Error: no prefix attribute in &lt;ns></xsl:message>
-                </xsl:if>
-	        <xsl:call-template name="IamEmpty" />
-		<xsl:call-template name="process-ns" >
+	<xsl:template match="sch:ns | ns" mode="do-all-patterns">
+		<xsl:if test="not(@uri)">
+			<xsl:message>Markup Error: no uri attribute in &lt;ns></xsl:message>
+		</xsl:if>
+		<xsl:if test="not(@prefix)">
+			<xsl:message>Markup Error: no prefix attribute in &lt;ns></xsl:message>
+		</xsl:if>
+		<xsl:call-template name="IamEmpty"/>
+		<xsl:call-template name="process-ns" version="1.0">
 			<xsl:with-param name="prefix" select="@prefix"/>
 			<xsl:with-param name="uri" select="@uri"/>
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="sch:ns | ns"  /><!-- swallow -->
+	<xsl:template match="sch:ns | ns"/>
+	<!-- swallow -->
 
 	<!-- P -->
-	<xsl:template match="sch:schema/sch:p | schema/p" mode="do-schema-p" >
-		<xsl:call-template name="process-p">
+	<xsl:template match="sch:schema/sch:p | schema/p" mode="do-schema-p">
+		<xsl:call-template name="process-p" version="1.0">
 			<xsl:with-param name="class" select="@class"/>
 			<xsl:with-param name="icon" select="@icon"/>
 			<xsl:with-param name="id" select="@id"/>
 			<xsl:with-param name="lang" select="@xml:lang"/>
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="sch:pattern/sch:p | pattern/p" mode="do-pattern-p" >
-		<xsl:call-template name="process-p">
+	<xsl:template match="sch:pattern/sch:p | pattern/p" mode="do-pattern-p">
+		<xsl:call-template name="process-p" version="1.0">
 			<xsl:with-param name="class" select="@class"/>
 			<xsl:with-param name="icon" select="@icon"/>
 			<xsl:with-param name="id" select="@id"/>
 			<xsl:with-param name="lang" select="@xml:lang"/>
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="sch:phase/sch:p" /><!-- We don't use these -->
-	<xsl:template match="sch:p | p" />
+	<xsl:template match="sch:phase/sch:p"/>
+	<!-- We don't use these -->
+	<xsl:template match="sch:p | p"/>
 
 	<!-- PATTERN -->
 	<xsl:template match="sch:pattern | pattern" mode="do-all-patterns">
-	<xsl:if test="($phase = '#ALL') 
+		<xsl:if
+			test="($phase = '#ALL') 
 	or (../sch:phase[@id= ($phase)]/sch:active[@pattern= current()/@id])
 	or (../phase[@id= ($phase)]/active[@id= current()/@id])">
-		<xsl:call-template name="process-pattern">
-			<xsl:with-param name="name" select="@name"/>
-			<xsl:with-param name="id" select="@id"/>
-			<xsl:with-param name="see" select="@see"/>
-			<xsl:with-param name="fpi" select="@fpi"/>
-			<xsl:with-param name="icon" select="@icon"/>
-		</xsl:call-template>
-		<axsl:apply-templates select="/" mode="M{count(preceding-sibling::*)}"/>
-        </xsl:if>
+			<xsl:call-template name="process-pattern" version="1.0">
+				<xsl:with-param name="name" select="@name"/>
+				<xsl:with-param name="id" select="@id"/>
+				<xsl:with-param name="see" select="@see"/>
+				<xsl:with-param name="fpi" select="@fpi"/>
+				<xsl:with-param name="icon" select="@icon"/>
+			</xsl:call-template>
+			<axsl:apply-templates select="/" mode="M{count(preceding-sibling::*)}"/>
+		</xsl:if>
 	</xsl:template>
-	
+
 	<xsl:template match="sch:pattern | pattern">
-        <xsl:if test="($phase = '#ALL') 
+		<xsl:if
+			test="($phase = '#ALL') 
 	or (../sch:phase[@id= ($phase)]/sch:active[@pattern= current()/@id])
 	or (../phase[@id= ($phase)]/active[@id= current()/@id])">
-		<xsl:apply-templates/>
-		<axsl:template match="text()" priority="-1" mode="M{count(preceding-sibling::*)}">
-			<!-- strip characters -->
-		</axsl:template>
-        </xsl:if>
+			<xsl:apply-templates/>
+			<axsl:template match="text()" priority="-1" mode="M{count(preceding-sibling::*)}">
+				<!-- strip characters -->
+			</axsl:template>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- PHASE -->
-	<xsl:template match="sch:phase | phase" >
-                <xsl:if test="not(@id)">
-                    <xsl:message>Markup Error: no id attribute in &lt;phase></xsl:message>
-                </xsl:if>
+	<xsl:template match="sch:phase | phase">
+		<xsl:if test="not(@id)">
+			<xsl:message>Markup Error: no id attribute in &lt;phase></xsl:message>
+		</xsl:if>
 	</xsl:template>
 
 	<!-- RULE -->
 	<xsl:template match="sch:rule[not(@abstract='true')] | rule[not(@abstract='true')]">
-                <xsl:if test="not(@context)">
-                    <xsl:message>Markup Error: no context attribute in &lt;rule></xsl:message>
-                </xsl:if>
-		<axsl:template match="{@context}" priority="{4000 - count(preceding-sibling::*)}" mode="M{count(../preceding-sibling::*)}">
-			<xsl:call-template name="process-rule">
+		<xsl:if test="not(@context)">
+			<xsl:message>Markup Error: no context attribute in &lt;rule></xsl:message>
+		</xsl:if>
+		<axsl:template match="{@context}" priority="{4000 - count(preceding-sibling::*)}"
+			mode="M{count(../preceding-sibling::*)}">
+			<xsl:call-template name="process-rule" version="1.0">
 				<xsl:with-param name="id" select="@id"/>
 				<xsl:with-param name="context" select="@context"/>
 				<xsl:with-param name="role" select="@role"/>
@@ -357,55 +448,54 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 
 
 	<!-- ABSTRACT RULE -->
-	<xsl:template match="sch:rule[@abstract='true'] | rule[@abstract='true']" >
+	<xsl:template match="sch:rule[@abstract='true'] | rule[@abstract='true']">
 		<xsl:if test=" not(@id)">
-                    <xsl:message>Markup Error: no id attribute on abstract &lt;rule></xsl:message>
-                </xsl:if>
- 		<xsl:if test="@context">
-                    <xsl:message>Markup Error: (2) context attribute on abstract &lt;rule></xsl:message>
-                </xsl:if>
+			<xsl:message>Markup Error: no id attribute on abstract &lt;rule></xsl:message>
+		</xsl:if>
+		<xsl:if test="@context">
+			<xsl:message>Markup Error: (2) context attribute on abstract &lt;rule></xsl:message>
+		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="sch:rule[@abstract='true'] | rule[@abstract='true']"
-		mode="extends" >
-                <xsl:if test="@context">
-                    <xsl:message>Markup Error: context attribute on abstract &lt;rule></xsl:message>
-                </xsl:if>
-			<xsl:apply-templates/>
+	<xsl:template match="sch:rule[@abstract='true'] | rule[@abstract='true']" mode="extends">
+		<xsl:if test="@context">
+			<xsl:message>Markup Error: context attribute on abstract &lt;rule></xsl:message>
+		</xsl:if>
+		<xsl:apply-templates/>
 	</xsl:template>
 
 	<!-- SPAN -->
 	<xsl:template match="sch:span | span" mode="text">
-		<xsl:call-template name="process-span">
+		<xsl:call-template name="process-span" version="1.0">
 			<xsl:with-param name="class" select="@class"/>
 		</xsl:call-template>
 	</xsl:template>
 
 	<!-- TITLE -->
 	<!-- swallow -->
-	<xsl:template match="sch:title | title" /> 
+	<xsl:template match="sch:title | title"/>
 
 	<!-- VALUE-OF -->
-	<xsl:template match="sch:value-of | value-of" mode="text" >
-               <xsl:if test="not(@select)">
-                    <xsl:message>Markup Error: no select attribute in &lt;value-of></xsl:message>
-                </xsl:if>
-	        <xsl:call-template name="IamEmpty" />
+	<xsl:template match="sch:value-of | value-of" mode="text">
+		<xsl:if test="not(@select)">
+			<xsl:message>Markup Error: no select attribute in &lt;value-of></xsl:message>
+		</xsl:if>
+		<xsl:call-template name="IamEmpty"/>
 		<xsl:choose>
-			<xsl:when test="@select"
-				><xsl:call-template name="process-value-of">
-					<xsl:with-param name="select" select="@select"/>  
+			<xsl:when test="@select">
+				<xsl:call-template name="process-value-of">
+					<xsl:with-param name="select" select="@select"/>
 				</xsl:call-template>
 			</xsl:when>
-			<xsl:otherwise >
-				<xsl:call-template name="process-value-of"
-					><xsl:with-param name="select" select="'.'"/>
+			<xsl:otherwise>
+				<xsl:call-template name="process-value-of">
+					<xsl:with-param name="select" select="'.'"/>
 				</xsl:call-template>
 			</xsl:otherwise>
-                </xsl:choose>
+		</xsl:choose>
 	</xsl:template>
 
-<!-- ============================================================== -->
+	<!-- ============================================================== -->
 	<!-- Text -->
 	<xsl:template match="text()" priority="-1" mode="do-keys">
 		<!-- strip characters -->
@@ -413,10 +503,10 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 	<xsl:template match="text()" priority="-1" mode="do-all-patterns">
 		<!-- strip characters -->
 	</xsl:template>
-        <xsl:template match="text()" priority="-1" mode="do-schema-p">
+	<xsl:template match="text()" priority="-1" mode="do-schema-p">
 		<!-- strip characters -->
 	</xsl:template>
-        <xsl:template match="text()" priority="-1" mode="do-pattern-p">
+	<xsl:template match="text()" priority="-1" mode="do-pattern-p">
 		<!-- strip characters -->
 	</xsl:template>
 	<xsl:template match="text()" priority="-1">
@@ -430,56 +520,60 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 		<xsl:value-of select="."/>
 	</xsl:template>
 
-<!-- ============================================================== -->
-<!-- utility templates -->
-<xsl:template name="IamEmpty">
-	<xsl:if test="count( * )">
-		<xsl:message>
-			<xsl:text>Warning: </xsl:text>
-			<xsl:value-of select="name(.)"/>
-			<xsl:text> must not contain any child elements</xsl:text>
-		</xsl:message>
-	</xsl:if>
-</xsl:template>
+	<!-- ============================================================== -->
+	<!-- utility templates -->
+	<xsl:template name="IamEmpty">
+		<xsl:if test="count( * )">
+			<xsl:message>
+				<xsl:text>Warning: </xsl:text>
+				<xsl:value-of select="name(.)"/>
+				<xsl:text> must not contain any child elements</xsl:text>
+			</xsl:message>
+		</xsl:if>
+	</xsl:template>
 
-<xsl:template name="diagnosticsSplit">
-  <!-- Process at the current point the first of the <diagnostic> elements
+	<xsl:template name="diagnosticsSplit">
+		<!-- Process at the current point the first of the <diagnostic> elements
        referred to parameter str, and then recurse -->
-  <xsl:param name="str"/>
-  <xsl:variable name="start">
-    <xsl:choose>
-      <xsl:when test="contains($str,' ')">
-	<xsl:value-of  select="substring-before($str,' ')"/>
-      </xsl:when>
-      <xsl:otherwise><xsl:value-of select="$str"/></xsl:otherwise>
-    </xsl:choose>
-  </xsl:variable>
+		<xsl:param name="str"/>
+		<xsl:variable name="start">
+			<xsl:choose>
+				<xsl:when test="contains($str,' ')">
+					<xsl:value-of select="substring-before($str,' ')"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$str"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
 
-  <xsl:variable name="end">
-    <xsl:if test="contains($str,' ')">
-      <xsl:value-of select="substring-after($str,' ')"/>
-    </xsl:if>
-  </xsl:variable>
+		<xsl:variable name="end">
+			<xsl:if test="contains($str,' ')">
+				<xsl:value-of select="substring-after($str,' ')"/>
+			</xsl:if>
+		</xsl:variable>
 
-  <xsl:if test="not(string-length(normalize-space($start)) = 0)
+		<xsl:if
+			test="not(string-length(normalize-space($start)) = 0)
 	and not(//sch:diagnostic[@id = ($start)]) and not(//diagnostic[@id = ($start)])">
-	<xsl:message>Reference error: A diagnostic "<xsl:value-of select="string($start)"/>" has been referenced but is not declared</xsl:message>
-  </xsl:if>
+			<xsl:message>Reference error: A diagnostic "<xsl:value-of select="string($start)"/>" has
+				been referenced but is not declared</xsl:message>
+		</xsl:if>
 
-  <xsl:if test="string-length(normalize-space($start)) > 0">
-     <xsl:apply-templates 
-        select="//sch:diagnostic[@id = ($start) ] | //diagnostic[@id= ($start) ]"/>
-  </xsl:if>
+		<xsl:if test="string-length(normalize-space($start)) > 0">
+			<xsl:apply-templates
+				select="//sch:diagnostic[@id = ($start) ] | //diagnostic[@id= ($start) ]"/>
+		</xsl:if>
 
-  <xsl:if test="not($end='')">
-    <xsl:call-template name="diagnosticsSplit">
-      <xsl:with-param name="str" select="$end"/>
-    </xsl:call-template>
-  </xsl:if>
-</xsl:template>
+		<xsl:if test="not($end='')">
+			<xsl:call-template name="diagnosticsSplit">
+				<xsl:with-param name="str" select="$end"/>
+			</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
 
 
-<!-- ============================================================== -->
+	<!-- ============================================================== -->
 
 	<xsl:template match="*">
 		<xsl:message>
@@ -493,7 +587,7 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 			<xsl:value-of select="name(.)"/>
 		</xsl:message>
 	</xsl:template>
-<!-- ============================================================== -->
+	<!-- ============================================================== -->
 	<!-- Default named templates -->
 	<!-- These are the actions that are performed unless overridden -->
 	<xsl:template name="process-prolog"/>
@@ -507,7 +601,7 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 		<xsl:param name="role"/>
 		<xsl:param name="test"/>
 		<!-- unused parameters: id, icon, diagnostics, subject -->
-		<xsl:call-template name="process-message">
+		<xsl:call-template name="process-message" version="1.0">
 			<xsl:with-param name="pattern" select="$test"/>
 			<xsl:with-param name="role" select="$role"/>
 		</xsl:call-template>
@@ -516,7 +610,7 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 		<xsl:param name="role"/>
 		<xsl:param name="test"/>
 		<!-- unused parameters: id, icon, diagnostics, subject -->
-		<xsl:call-template name="process-message">
+		<xsl:call-template name="process-message" version="1.0">
 			<xsl:with-param name="pattern" select="$test"/>
 			<xsl:with-param name="role" select="$role"/>
 		</xsl:call-template>
@@ -525,14 +619,17 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 		<!-- params: id -->
 		<xsl:apply-templates mode="text"/>
 	</xsl:template>
-	<xsl:template name="process-dir" 
-		><xsl:apply-templates mode="inline-text"/></xsl:template>
-	<xsl:template name="process-emph" 
-		><xsl:apply-templates mode="inline-text"/></xsl:template>
+	<xsl:template name="process-dir">
+		<xsl:apply-templates mode="inline-text"/>
+	</xsl:template>
+	<xsl:template name="process-emph">
+		<xsl:apply-templates mode="inline-text"/>
+	</xsl:template>
 	<xsl:template name="process-name">
-		<xsl:param name="name"
-		/><axsl:value-of select="{$name}"/></xsl:template>
-	<xsl:template name="process-ns" />
+		<xsl:param name="name"/>
+		<axsl:value-of select="{$name}"/>
+	</xsl:template>
+	<xsl:template name="process-ns"/>
 	<!-- unused params: prefix, uri -->
 	<!-- note that this is independent of the use of sch:ns by sch:schema -->
 	<xsl:template name="process-p"/>
@@ -541,15 +638,17 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 	<!-- unused params: name, id, see, fpi, icon -->
 	<xsl:template name="process-rule"/>
 	<!-- unused params: id, context, role -->
-	<xsl:template name="process-span" 
-		><xsl:apply-templates mode="inline-text"/></xsl:template>
+	<xsl:template name="process-span">
+		<xsl:apply-templates mode="inline-text"/>
+	</xsl:template>
 	<xsl:template name="process-value-of">
-		<xsl:param name="select"
-		/><axsl:value-of select="{$select}"/></xsl:template>
+		<xsl:param name="select"/>
+		<axsl:value-of select="{$select}"/>
+	</xsl:template>
 	<!-- default output action: the simplest customization is to just override this -->
 	<xsl:template name="process-message">
 		<!-- params: pattern, role -->
 		<xsl:apply-templates mode="text"/>
 	</xsl:template>
-</xsl:stylesheet>
 
+</xsl:stylesheet>

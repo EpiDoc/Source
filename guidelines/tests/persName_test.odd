@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Test of Proposed EpiDoc <gi>persName</gi></title>
+        <author>Syd Bauman</author>
+      </titleStmt>
+      <publicationStmt>
+        <availability status="free">
+          <p>Copyright 2006 Syd Bauman</p>
+          <p>Licensed under the Perl Artistic License</p>
+	  <p>Note: applicable license may be changed (w/o author's
+	  consent) to any open license by anyone with access to EpiDoc
+	  Sourceforge sources provided at least one other person with
+	  said access agrees.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>No source, this file was created in digital format.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>Test of <gi>persName</gi> proposal</head>
+      <schemaSpec ident="persName_test" start="TEI p">
+        <!-- ******************************************************** -->
+        <!-- module inclusion section                                 -->
+        <!-- ******************************************************** -->
+        <moduleRef key="core"/>
+        <moduleRef key="header"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="namesdates"/>
+        <!-- ******************************************************** -->
+        <!-- element deletion section                                 -->
+        <!-- ******************************************************** -->
+        <elementSpec module="namesdates" ident="addName" mode="delete"/>
+        <elementSpec module="namesdates" ident="forename" mode="delete"/>
+        <elementSpec module="namesdates" ident="nameLink" mode="delete"/>
+        <elementSpec module="namesdates" ident="surname" mode="delete"/>
+        <!-- ******************************************************** -->
+        <!-- element alteration section                               -->
+        <!-- ******************************************************** -->
+	<elementSpec module="namesdates" ident="roleName" mode="change">
+	  <content>
+	    <rng:oneOrMore>
+	      <rng:choice>
+		<rng:ref name="macro.phraseSeq"/>
+		<rng:ref name="model.persNamePart"/>
+	      </rng:choice>
+	    </rng:oneOrMore>
+	  </content>
+	  <attList>
+	    <attDef ident="type" mode="change">
+	      <valList>
+		<valItem ident="office"/>
+		<valItem ident="military"/>
+		<valItem ident="honorific"/>
+		<valItem ident="familial"/>
+		<valItem ident="occupational"/>
+		<valItem ident="civic_status"/>
+		<valItem ident="epithet"/>
+		<valItem ident="nobility"/>
+		<valItem ident="tribe"/>
+	      </valList>
+	    </attDef>
+	  </attList>
+	</elementSpec>
+        <!-- ******************************************************** -->
+        <!-- element addition section                                 -->
+        <!-- ******************************************************** -->
+	<elementSpec module="namesdates" usage="opt" ident="praenomen">
+	  <gloss>praenomen</gloss>
+	  <desc>[Someone who knows more about Latin names than I do
+	  should write something here.]</desc>
+	  <classes>
+	    <memberOf key="model.persNamePart"/>
+	    <memberOf key="att.personal"/>
+	  </classes>
+	  <content>
+	    <rng:ref name="macro.phraseSeq"/>
+	  </content>
+	  <attList>
+	    <attDef ident="type" mode="change">
+	      <valList>
+		<valItem ident="freed">
+		  <desc>was a slave, has been freed, I suppose</desc>
+		</valItem>
+		<valItem ident="adopted">
+		  <desc>legally adopted into the family, I would guess</desc>
+		</valItem>
+	      </valList>
+	    </attDef>
+	  </attList>
+	</elementSpec>
+	<elementSpec module="namesdates" usage="opt" ident="gentilicium">
+	  <gloss>gentilicium</gloss>
+	  <desc>[Someone who knows more about Latin names than I do
+	  should write something here.]</desc>
+	  <classes>
+	    <memberOf key="model.persNamePart"/>
+	    <memberOf key="att.personal"/>
+	  </classes>
+	  <content>
+	    <rng:ref name="macro.phraseSeq"/>
+	  </content>
+	  <attList>
+	    <attDef ident="type" mode="change">
+	      <valList>
+		<valItem ident="freed">
+		  <desc>was a slave, has been freed, I suppose</desc>
+		</valItem>
+		<valItem ident="adopted">
+		  <desc>legally adopted into the family, I would guess</desc>
+		</valItem>
+	      </valList>
+	    </attDef>
+	  </attList>
+	</elementSpec>
+	<elementSpec module="namesdates" usage="opt" ident="cognomen">
+	  <gloss>cognomen</gloss>
+	  <desc>[Someone who knows more about Latin names than I do
+	  should write something here.]</desc>
+	  <classes>
+	    <memberOf key="model.persNamePart"/>
+	    <memberOf key="att.personal"/>
+	  </classes>
+	  <content>
+	    <rng:ref name="macro.phraseSeq"/>
+	  </content>
+	  <attList>
+	    <attDef ident="type" mode="change">
+	      <valList>
+		<valItem ident="epithet">
+		  <desc>seems to include a lotta stuff</desc>
+		</valItem>
+		<valItem ident="adopted">
+		  <desc>legally adopted into the family, I would guess</desc>
+		</valItem>
+		<valItem ident="imperial">
+		  <desc>yet another way of announcing that you're the emperor, maybe?</desc>
+		</valItem>
+	      </valList>
+	    </attDef>
+	  </attList>
+	</elementSpec>
+	<elementSpec module="namesdates" usage="opt" ident="imperial">
+	  <gloss>imperial</gloss>
+	  <desc>[Someone who knows more about Latin names than I do
+	  should write something here.]</desc>
+	  <classes>
+	    <memberOf key="model.persNamePart"/>
+	    <memberOf key="att.personal"/>
+	  </classes>
+	  <content>
+	    <rng:ref name="macro.phraseSeq"/>
+	  </content>
+	</elementSpec>
+	<elementSpec module="namesdates" usage="opt" ident="slaveName">
+	  <gloss>slaveName</gloss>
+	  <desc>[Someone who knows more about Latin names than I do
+	  should write something here.]</desc>
+	  <classes>
+	    <memberOf key="model.persNamePart"/>
+	    <memberOf key="att.personal"/>
+	  </classes>
+	  <content>
+	    <rng:ref name="macro.phraseSeq"/>
+	  </content>
+	</elementSpec>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

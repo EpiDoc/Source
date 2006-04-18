@@ -43,7 +43,7 @@
 
 <xsl:import href="skeleton1-5.xsl"/>
  <xsl:output method="xml" standalone="yes" omit-xml-declaration="no"/>
-<xsl:param name="diagnose">yes</xsl:param>     
+<xsl:param name="diagnose">yes</xsl:param>    
 
 <xsl:template name="process-prolog">
    <axsl:output method="html" />
