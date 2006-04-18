@@ -1,56 +1,52 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplementforlost.xml,v 1.6 2006-03-20 17:33:43 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="supplementforlost" lang="en">
-   <head>Editorial supplement for characters wholly lost</head>
-   <div id="supplementforlost-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplementforlost.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="supplementforlost"><head>Editorial supplement for characters wholly lost</head>
+<div id="supplementforlost-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>: 
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>: 
             <list lang="lat" type="ordered">
-               <item>iug[er]a</item>
-            </list></item>
-      </list>
-   </div>
-   <div id="supplementforlost-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item>iug<tag>supplied reason="lost"</tag>er<tag>/supplied</tag>a</item>
-      </list>
-   </div>
-   <div id="supplementforlost-edition" type="gl-edition" lang="lat">
+               <item id="TypoEx-1">iug[er]a</item>
+            </list><list></list>not addressed</item>
+      </list><list><item><foreign lang="lat">[V?]III</foreign> or <foreign lang="lat">[V(?)]III</foreign> or <foreign lang="lat">[V?]III</foreign></item></list>
+   </div><div id="supplementforlost-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="supplementforlost-edition" type="gl-edition" lang="lat" org="uniform" part="N" sample="complete">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered" lang="lat">
-         <item>iug<supplied reason="lost">er</supplied>a</item>
+         <item id="EncEx-1">iug<supplied reason="lost" cert="high">er</supplied>a</item>
+      </list><list type="ordered" lang="lat">
+         <item id="EncEx-2"><supplied reason="lost" cert="low">V</supplied>III</item>
       </list>
-   </div>
-   <div id="supplementforlost-questions" type="gl-questions">
+   </div><div id="supplementforlost-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="unordered">
          <item>none</item>
       </list>
-   </div>
-   <div id="supplementforlost-tei-p4links">
+   </div><div id="supplementforlost-tei-p4links" org="uniform" part="N" sample="complete">
       <head>TEI P4 links</head>
-      <list>
-         <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html"><tag>supplied</tag></xref></item>
-         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHDA">18.2.3 Damage, Illegibility, and Supplied Text</xref></item>
+      <list type="simple">
+         <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO"><tag>supplied</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHDA" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">18.2.3 Damage, Illegibility, and Supplied Text</xref></item>
       </list>
-   </div>
-   <div id="supplementforlost-responsibility" type="gl-responsibility">
+   </div><div id="supplementforlost-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="supplementforlost-cvs" type="gl-cvs">
+   </div><div id="supplementforlost-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="supplementforlost-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
-      <p id="supplementforlost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="supplementforlost-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 17:33:43 $</seg></p>
-      <p id="supplementforlost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="supplementforlost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+      <p id="supplementforlost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="supplementforlost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="supplementforlost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

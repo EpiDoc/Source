@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-apparatus.xml,v 1.2 2006-04-18 19:52:26 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="div-apparatus" lang="en">
+   <head>Apparatus Criticus</head>
+   <p>Structuring comments on the epigraphic text (tei:div type="apparatus") </p>
+   <p>Provides information on readings and conjectures. A portion of this is
+      captured in the markup (test this), so it can be generated. But the
+      apparatus criticus has to handle "out of line" or more general comments.
+      Perhaps stubs can be created for each line that has conjectures in a
+      CHET-C type conversion. This can then be edited by hand, the way CHET-C
+      output is. There also needs to be a provision for plain text sections,
+      which can appear interspersed with the more structured sections, or added to
+      the line stubs.</p>
+   <p>refer to use of <tag>app</tag> in TEI. Refer to markup of text content in epidoc.</p>
+    <div id="div-apparatus-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="div-apparatus-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="div-apparatus-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.2 $</seg></p>
+        <p id="div-apparatus-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="div-apparatus-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="div-apparatus-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div></div>

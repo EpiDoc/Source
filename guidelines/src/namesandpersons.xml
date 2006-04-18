@@ -1,76 +1,80 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/namesandpersons.xml,v 1.7 2006-03-15 21:59:37 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
-<div xmlns="http://www.tei-c.org/ns/1.0" id="namesandpersons" lang="en">
-    <head>Personal names and prosopography</head>
-    <p>It is likely that an epigraphic or papyrological project will need to maintain a database or authority list containing onomastic or basic prosopographical data on persons named in the corpus. In addition to the tags and attributes suggested below, therefore, the individual names might be linked to the keys or ids in this controlled list.</p>
-    <p>As a minimum, personal names should be tagged with the <tag>persName</tag> tag, as demonstrated below. In addition, the attributes 'reg' and 'key' may be used to offer normalised spelling and link to a database/authority list, respectively.</p>
-    
-        <div id="namesandpersons-typographic" type="gl-typographic">
-            <head>Traditional typographic representation</head>
-            <list type="ordered">
-                <item>Antonius Tatianus</item>
-                <item>Τ. Ἀσκληπίοδοτον</item>
-            </list>
-        </div>
-        <div id="namesandpersons-encoding" type="gl-encoding">
-            <head>EpiDoc encoding</head>
-            <list type="ordered">
-                <item><tag>persName</tag>Antonius Tatianus<tag>/persName</tag></item>
-                <item><tag>persName reg="Ἀσκληπίοδοτος, Τίτος Ὄππιος" key="OppAsclep"</tag>Τ. Ἀσκληπίοδοτον<tag>/persName</tag></item>
-               
-            </list>
-        </div>
-        <div id="namesandpersons-edition" type="gl-edition">
-            <head>EpiDoc appearance with standard XSLT</head>
-            <list type="ordered">
-                <item><persName>Antonius Tatianus</persName></item>
-                <item><persName reg="Ἀσκληπίοδοτος, Τίτος Ὄππιος" key="OppAsclep">Τ. Ἀσκληπίοδοτον</persName></item>
-            </list>
-        </div>
-    
-    
-    <div id="namesandpersons-tei-p4links" type="gl-tei-p4links">
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/namesandpersons.xml,v 1.8 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="namesandpersons"><head>Personal names and prosopography</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><p>It is likely that an epigraphic or papyrological project will need to
+        maintain a database or authority list containing onomastic or basic
+        prosopographical data on persons named in the corpus. In addition to the
+        tags and attributes suggested below, therefore, the individual names
+        might be linked to the keys or ids in this controlled list.</p><p>As a minimum, personal names should be tagged with the
+        <tag>persName</tag> tag, as demonstrated below. In addition, the
+        attributes 'reg' and 'key' may be used to offer normalised spelling and
+        link to a database/authority list, respectively.</p><p>There exist various prosopographical databases and onomastic lists that may 
+    provide keys for personal names in inscriptions. For more information see the section/appendix
+    on authority lists and controlled vocabularies. The controlled vocabulary being used should be
+    indicated either in the header (<note>which section?</note> or using an <note>as yet 
+    undertermined</note> new attribute on persname.</p><div id="namesandpersons-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+        <head>Traditional typographic representation</head>
+        <list type="ordered">
+            <item>Antonius Tatianus</item>
+            <item>Τ. Ἀσκληπίοδοτον</item>
+        </list>
+    </div><div id="namesandpersons-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="namesandpersons-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item id="EncEx-1">
+                <persName full="yes">Antonius Tatianus</persName>
+            </item>
+            <item id="EncEx-2">
+                <persName reg="Ἀσκληπίοδοτος, Τίτος Ὄππιος" key="OppAsclep" full="yes">Τ.
+                    Ἀσκληπίοδοτον</persName>
+            </item>
+        </list>
+    </div><div id="namesandpersons-tei-p4links" type="gl-tei-p4links" org="uniform" part="N" sample="complete">
         <head>TEI P4 links</head>
-        <list>
+        <list type="simple">
             <item>
-                <xref href="http://www.tei-c.org/P4X/ref-PERSNAME.html">
+                <xref href="http://www.tei-c.org/P4X/ref-PERSNAME.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">
                     <tag>persName</tag>
                 </xref>
             </item>
             <item>
-                <xref href="http://www.tei-c.org/P4X/ND.html#NDPER">20.1 Personal Names</xref>
+                <xref href="http://www.tei-c.org/P4X/ND.html#NDPER" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">20.1
+                    Personal Names</xref>
             </item>
         </list>
-    </div>
-    <div id="namesandpersons-responsibility" type="gl-responsibility">
+    </div><div id="namesandpersons-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
         <head>Responsibility for this section</head>
-        <listBibl>
-            <bibl>
+        <listBibl default="NO">
+            <bibl default="NO">
                 <respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
-            <bibl>
+            <bibl default="NO">
                 <respStmt>
                     <resp>converted from xwiki to xml</resp>
                     <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
         </listBibl>
-    </div>
-    <div id="namesandpersons-cvs" type="gl-cvs">
+    </div><div id="namesandpersons-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="namesandpersons-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-                >$Revision: 1.7 $</seg></p>
-        <p id="namesandpersons-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-                >$Name: not supported by cvs2svn $</seg></p>
-        <p id="namesandpersons-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-                >$Date: 2006-03-15 21:59:37 $</seg></p>
-        <p id="namesandpersons-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-                >$Author: paregorios $</seg></p>
-    </div>
-</div>
+        <p id="namesandpersons-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.8 $</seg></p>
+        <p id="namesandpersons-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+        <p id="namesandpersons-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="namesandpersons-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+    </div></div>
+

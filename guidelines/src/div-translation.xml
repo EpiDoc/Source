@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-translation.xml,v 1.2 2006-04-18 19:52:26 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="div-translation" lang="en">
+    <head>The Translation</head>
+    <p> (tei:div type="translation")</p>
+    <div>
+        <head>General</head>
+        <p>This section describes the division in which the translation of the inscription is
+            encoded.</p>
+        <p>A minimal translation contains plain text rendering the inscription into the desired
+            language.</p>
+        <p>A project may also choose to tag the text features within the translation, in which case
+            the detailed guidelines concerning the markup of traditionally transcribed issues are
+            found under the heading of <xref id="taggingtext.xml">Tagging the Inscribed
+        Text</xref>.</p>
+    </div>
+    <div>
+        <head>Particulars</head>
+        <p>An edition is tagged using the <tag>div @type='translation'</tag> element. There can be
+            multiple translations of the same text, for example into different languages or by
+            different translators; each translation should be enclosed in its own separate <tag>div
+                @type='translation'</tag>.</p>
+        <p>Authority for each translation is recorded in.</p>
+    </div>
+    <div id="teidiv-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="teidiv-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="teidiv-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+                >$Revision: 1.2 $</seg></p>
+        <p id="teidiv-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="teidiv-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="teidiv-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+                >$Author: paregorios $</seg></p>
+    </div>
+</div>

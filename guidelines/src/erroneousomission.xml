@@ -1,51 +1,46 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneousomission.xml,v 1.10 2006-03-15 17:58:42 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="erroneousomission">
-   <head>Letters erroneously omitted from the text, which the editor adds</head>
-   <div id="erroneousomission-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneousomission.xml,v 1.11 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="erroneousomission"><head>Letters erroneously omitted from the text, which the editor adds</head>
+<div id="erroneousomission-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
-            <list>
-               <item>Valeri&lt;a&gt;nus</item>
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+            <list type="simple">
+               <item id="TypoEx-1">Valeri&lt;a&gt;nus</item>
             </list></item>
       </list>
-   </div>
-   <div id="erroneousomission-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list>
-         <item>Valeri<tag>supplied reason="omitted"</tag>a<tag>/supplied</tag>nus</item>
-      </list>
-   </div>
-   <div id="erroneousomission-edition" type="gl-edition">
+   </div><div id="erroneousomission-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="erroneousomission-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
-      <list>
-         <item>Valeri
-            <supplied reason="omitted">a</supplied>nus</item>
+      <list type="simple">
+         <item id="EncEx-1">Valeri
+            <supplied reason="omitted" cert="high">a</supplied>nus</item>
       </list>
-   </div>
-   <div id="erroneousomission-questions" type="gl-questions">
+   </div><div id="erroneousomission-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
          <item>None</item>
       </list>
-   </div>
-   <div id="erroneousomission-responsibility" type="gl-responsibility">
+   </div><div id="erroneousomission-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="erroneousomission-cvs" type="gl-cvs">
+   </div><div id="erroneousomission-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="erroneousomission-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.10 $</seg></p>
-      <p id="erroneousomission-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="erroneousomission-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="erroneousomission-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="erroneousomission-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
+      <p id="erroneousomission-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="erroneousomission-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="erroneousomission-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

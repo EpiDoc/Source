@@ -1,55 +1,50 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/ligature.xml,v 1.11 2006-03-20 16:48:24 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="ligature">
-   <head>Letters joined (ligature)</head>
-   <p>Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters, such as adjacent M and N, but more broadly any two joined or superimposed characters.</p>
-   <div type="gl-typographic" id="ligature-typeographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/ligature.xml,v 1.12 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="ligature"><head>Letters joined (ligature)</head>
+<p>Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters, such as adjacent M and N, but more broadly any two joined or superimposed characters.</p><div type="gl-typographic" id="ligature-typeographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
-            <list>
-               <item>ab͡</item>
-               <item>ab͡c͡</item>
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="simple">
+               <item id="TypoEx-1">ab͡</item>
+               <item id="TypoEx-2">ab͡c͡</item>
             </list></item>
       </list>
-   </div>
-   <div type="gl-encoding" id="ligature-encoding">
-      <head>EpiDoc encoding</head>
-      <list>
-         <item><tag>hi rend="ligature"</tag>ab<tag>/hi</tag></item>
-         <item><tag>hi rend="ligature"</tag>abc<tag>/hi</tag></item>
-      </list>
-   </div>
-   <div type="gl-edition" id="ligature-edition">
+   </div><div id="ligature-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div type="gl-edition" id="ligature-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
        <p>Note: The standard stylesheets deliberately do not reproduce the corresponding typographic examples.</p>
-      <list>
-         <item><hi rend="ligature">ab</hi></item>
-         <item><hi rend="ligature">abc</hi></item>
+      <list type="simple">
+         <item id="EncEx-1" lang="lat"><hi rend="ligature">ab</hi></item>
+         <item id="EncEx-2" lang="lat"><hi rend="ligature">abc</hi></item><item lang="grc">ἀρχιερέω<hi rend="ligature" id="hi1">ν</hi> <hi rend="ligature" id="hi2">ἐ</hi>κγόνου <link targets="hi1 hi2"/></item>
       </list>
-   </div>
-   <div type="gl-questions" id="ligature-questions">
+   </div><div type="gl-questions" id="ligature-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>): One issue is with ligautres than span words, names, or other marked-up elements. Perhaps two <tag>hi</tag> elements with a <tag>link/</tag> of some kind? Rendering is also a problem, of course...</item>
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>): But the other problem is that most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligs, our stylesheets don't do anything with them at present (though we may index them).</item>
+         
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>):  most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligatures, our stylesheets don't do anything with them at present (though we do index them).</item>
       </list>
-   </div>
-   <div id="ligature-responsibility" type="gl-responsibility">
+   </div><div id="ligature-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="ligature-cvs" type="gl-cvs">
+   </div><div id="ligature-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="ligature-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
-      <p id="ligature-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="ligature-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 16:48:24 $</seg></p>
-      <p id="ligature-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="ligature-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
+      <p id="ligature-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="ligature-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="ligature-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

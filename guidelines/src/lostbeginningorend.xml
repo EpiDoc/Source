@@ -1,45 +1,41 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostbeginningorend.xml,v 1.6 2006-03-19 01:33:25 sbauman Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="lostbeginningorend" lang="en">
-   <head>One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)</head>
-   <div id="lostbeginningorend-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostbeginningorend.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="lostbeginningorend"><head>One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)</head>
+<div id="lostbeginningorend-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="ordered">
-               <item>- - - - - - - - - - - - - - - - -</item>
+               <item id="TypoEx-1">- - - - - - - - - - - - - - - - -</item>
             </list></item>
       </list>
-   </div>
-   <div id="lostbeginningorend-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item><tag>gap id="gap0" reason="lost" unit="line"/</tag><tag>certainty target="gap0" locus="extent" degree="low"/</tag></item>
-      </list>
-   </div>
-   <div id="lostbeginningorend-edition" type="gl-edition">
+   </div><div id="lostbeginningorend-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lostbeginningorend-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item>
+         <item id="EncEx-1">
             <gap id="gap0" reason="lost" unit="line"/>
             <certainty target="gap0" locus="extent" degree="low"/></item>
       </list>
-   </div>
-   <div id="lostbeginningorend-responsibility" type="gl-responsibility">
+   </div><div id="lostbeginningorend-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="lostbeginningorend-cvs" type="gl-cvs">
+   </div><div id="lostbeginningorend-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostbeginningorend-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
-      <p id="lostbeginningorend-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostbeginningorend-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-19 01:33:25 $</seg></p>
-      <p id="lostbeginningorend-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: sbauman $</seg></p>
-   </div>
-</div>
+      <p id="lostbeginningorend-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="lostbeginningorend-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

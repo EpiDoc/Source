@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.7 2006-03-20 16:35:13 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/documentstructureintro.xml,v 1.8 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="documentstructureintro" lang="en">
     <head>Introduction to EpiDoc Document Structure</head>
-    <div type="example" id="example1">
+    <div type="gl-example" id="example1">
         <head>Example 1</head>
         <ab><tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag> ...
             <tag>/teiHeader</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>text</tag> ... <tag>/text</tag><lb />
@@ -29,7 +29,7 @@
             these elements have very precise rules governing their use. Others permit adaptation to
             meet the needs of particular projects or types of textual materials. </p>
     </div>
-    <div id="example2" type="example">
+    <div id="example2" type="gl-example">
         <head>Example 2: Elements within the <tag>teiHeader</tag></head>
         <ab><tag>TEI.2</tag><lb /> &nbsp;&nbsp;&nbsp;<tag>teiHeader</tag><lb />
             &nbsp;&nbsp;&nbsp;&nbsp;<tag>fileDesc</tag> ...
@@ -65,7 +65,7 @@
                 href="http://www.tei-c.org/P4X/HD.html">Section 5: The TEI Header for more
             details</xref>. </p>
     </div>
-    <div id="example3" type="example">
+    <div id="example3" type="gl-example">
         <head>Example 3: Outline of EpiDoc usage</head>
         <p>To be completed</p>
         </div>
@@ -136,4 +136,26 @@
         demonstrated by the text in Example 5. The EPAPP system of values for n on the
         <tag>div</tag> element has been adopted by these guidelines as a recommendation for projects
         which find it helpful. </p></div>
+        <div id="documentstructureintro-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="documentstructureintro-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="documentstructureintro-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.8 $</seg></p>
+        <p id="documentstructureintro-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="documentstructureintro-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="documentstructureintro-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
 </div>

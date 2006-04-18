@@ -1,13 +1,35 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/interoperability.xml,v 1.6 2006-03-15 18:30:31 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/interoperability.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="glpartfiletemplate" lang="en" rend="multipart">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="interoperability" lang="en" rend="multipart">
    <head>Interoperability</head>
    <xi:include href="interoperabilityintro.xml"/>
    <xi:include href="interoperabilityotherepigraphy.xml"/>
    <xi:include href="interoperabilitynonepigraphy.xml"/>
    <xi:include href="interoperabilitygroundwork.xml"/>
+    <div id="interoperability-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="interoperability-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="interoperability-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.7 $</seg></p>
+        <p id="interoperability-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="interoperability-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="interoperability-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
 </div>

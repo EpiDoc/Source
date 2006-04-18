@@ -1,20 +1,43 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/formandappearance.xml,v 1.10 2006-03-15 18:24:32 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/formandappearance.xml,v 1.11 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"  id="formandappearance" lang="en" rend="multipart">
-   <head>Observations concerning the form and appearance of characters or sigla on the stone</head>
-   <xi:include  href="apices.xml"/>
-   <xi:include  href="supralinearlines.xml"/>
-   <xi:include  href="intralinearlines.xml"/>
-   <xi:include  href="ligature.xml"/>
-   <xi:include  href="reversedletters.xml"/>
-   <xi:include  href="claudianletters.xml"/>
-   <xi:include  href="notations.xml"/>
-   <xi:include  href="ilonga.xml"/>
-   <xi:include  href="tallcharacters.xml"/>
-   <xi:include  href="outofline.xml"/>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="formandappearance" lang="en" rend="multipart">
+   <head>Characters and sigla: form and appearance</head><p>Observations concerning the form and appearance of characters or sigla in the text, including both highlighted alphabetic characters and special symbols.</p>
+   <xi:include href="apices.xml"/>
+   <xi:include href="supralinearlines.xml"/>
+   <xi:include href="intralinearlines.xml"/>
+   <xi:include href="ligature.xml"/>
+   <xi:include href="reversedletters.xml"/>
+   
+   <xi:include href="notations.xml"/>
+   <xi:include href="ilonga.xml"/>
+   <xi:include href="tallcharacters.xml"/>
+   <xi:include href="outofline.xml"/><xi:include href="directionoftext.xml"/>
     <!-- <xi:include href="vowelquantity.xml" /> -->
+    <div id="formandappearance-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="formandappearance-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="formandappearance-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.11 $</seg></p>
+        <p id="formandappearance-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="formandappearance-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="formandappearance-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
+
 </div>

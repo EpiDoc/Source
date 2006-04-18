@@ -1,49 +1,59 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/nonsensical.xml,v 1.6 2006-03-20 18:54:15 gabrielbodard Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="nonsensical" lang="en">
-   <head>Transcription with no uncertainty about the form of the character(s), but they do not make sense</head>
-   <div id="nonsensical-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/nonsensical.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="nonsensical"><head>Transcription with no uncertainty about the form of the character(s), but the editor prefers not to resolve them.</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="nonsensical-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
             <list type="ordered">
-               <item><hi rend="italic">ABC</hi></item>
+               <item id="TypoEx-1"><hi rend="italic">ABC</hi></item>
             </list></item>
-      </list>
-   </div>
-   <div id="nonsensical-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item><tag>sic n="unintelligible" lang="lat"</tag>abc<tag>/sic</tag></item><item><tag>sic n="unintelligible" lang="grc"</tag>αβγ<tag>/sic</tag></item>
-      </list>
-   </div>
-   <div id="nonsensical-edition" type="gl-edition">
+      <item> <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered">
+               <item id="TypoEx-2"><hi rend="italic">V</hi></item>
+            </list></item></list>
+   </div><div id="nonsensical-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+<item id="Regex-3">
+            blah</item>
+<item id="Regex-4">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="nonsensical-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item><sic lang="lat" n="unintelligible">abc</sic></item><item><sic lang="grc" n="unintelligible">αβγ</sic></item>
+         <item id="EncEx-1"><orig lang="lat" n="unresolved">abc</orig></item><item id="EncEx-2"><orig lang="lat" n="unresolved_vocality">v</orig></item><item id="EncEx-3"><orig lang="grc" n="unresolved">αβγ</orig></item>
+      <item id="EncEx-4"><orig lang="grc" n="unresolved_context">σ</orig></item>
       </list>
-   </div>
-   <div id="nonsensical-questions" type="gl-questions">
+   </div><div id="nonsensical-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
          <item>None.</item>
       </list>
-   </div>
-   <div id="nonsensical-responsibility" type="gl-responsibility">
+   <div id="nonsensical-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      <list type="simple">
+         <item>The general case of unresolved characters is handled by the use of the <tag>orig</tag> element with the <att>n</att> attribute containing "unresolved". For more particular cases, such as the Latin <foreign lang="lat">V</foreign> identified by Dohnicht as ambiguously vocalic or consonantal, the attribute may be further specified with the addition of "_vocality", <foreign lang="lat">vel sim.</foreign></item>
+      </list>
+   </div></div><div id="nonsensical-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-      </listBibl>
-   </div>
-   <div id="nonsensical-cvs" type="gl-cvs">
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <bibl default="NO"><respStmt><resp>author</resp><name>Julia Flanders</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl></listBibl>
+   </div><div id="nonsensical-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="nonsensical-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
-      <p id="nonsensical-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="nonsensical-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-20 18:54:15 $</seg></p>
-      <p id="nonsensical-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
-   </div>
-</div>
+      <p id="nonsensical-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+      <p id="nonsensical-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="nonsensical-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="nonsensical-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

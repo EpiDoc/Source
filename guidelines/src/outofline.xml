@@ -1,44 +1,39 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/outofline.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="outofline">
-   <head>Characters inscribed above or below the line, but clearly not later additions</head>
-   <div id="outofline-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/outofline.xml,v 1.6 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="outofline"><head>Characters inscribed above or below the line, but clearly not later additions</head>
+<p n="regexerror">for divset 1: encodingitemcount != editionitemcount</p><div id="outofline-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
       <p>Not mentioned in Panceira etc.; uaually mentioned in description of letters, apparatus, vel sim.?</p>
-   </div>
-   <div id="outofline-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list>
-         <item>Ἐλογιμ<tag>hi rend="superscript"</tag>ο<tag>/hi</tag></item>
-      </list>
-   </div>
-   <div id="outofline-edition" type="gl-edition">
+   </div><div id="outofline-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="outofline-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
-      <list>
-         <item> Ἐλογιμ<hi rend="superscript">ο</hi></item>
+      <list type="simple">
+         <item id="EncEx-1">Ἐλειγειογρά<seg type="outofline" rend="below" cert="high" part="N">φου</seg></item><item id="EncEx-2">amicabi<seg type="outofline" rend="above" cert="high" part="N">lis</seg></item><item id="EncEx-3">Ἐλογιμ<hi rend="superscript">ο</hi></item>
       </list>
-   </div>
-   <div id="outofline-questions" type="gl-questions">
+   </div><div id="outofline-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
-         <item><name>GB</name> (2006-03-01): We don't render this in the edition, usually, so I guess XSL won't handle this.</item>
+         <item><name>GB</name> (2006-03-01): InsAph don't render this in the edition, usually, so I guess our XSL won't handle this like the EpiDoc standard stylesheets do...</item>
       </list>
-   </div>
-   <div id="outofline-responsibility" type="gl-responsibility">
+   </div><div id="outofline-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Charles Crowther</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="outofline-cvs" type="gl-cvs">
+   </div><div id="outofline-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="outofline-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
-      <p id="outofline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="outofline-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="outofline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="outofline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.6 $</seg></p>
+      <p id="outofline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="outofline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="outofline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

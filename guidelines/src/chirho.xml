@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/chirho.xml,v 1.2 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="chirho"><head>Chi-Rho (☧)</head>
+<p n="regexerror">divcount mismatch</p><p>The chi-rho symbol, whether representing a ligature of <foreign lang="grc">χρ</foreign>, a monogram for Christ, or a generic Christian logo.</p><div id="chirho-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+      <head>Traditional typographic representation</head>
+      <list type="simple">
+         <item>Not addressed. Possibly expanded or printed as a symbol.</item>
+      </list>
+      
+   </div><div id="chirho-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="simple">
+
+         <item id="EncEx-1"><seg cert="high" part="N"><orig>☧</orig><reg><hi rend="ligature">χρ</hi></reg></seg>ήματα</item>
+
+			<item id="EncEx-2"><expan><abbr><seg cert="high" part="N"><orig>☧</orig> <reg><mark type="chirho" rend="☧"/></reg> <reg><hi rend="ligature">Χρ</hi></reg></seg></abbr><supplied reason="abbreviation" cert="high">ist</supplied></expan>ofer</item>
+			
+			<item id="EncEx-3"><expan><abbr><orig><orig>☧</orig></orig></abbr><supplied reason="abbreviation" cert="high">Christ</supplied></expan>ofer</item><item id="EncEx-4"><seg cert="high" part="N"><orig>☧</orig></seg> (as, e.g., at the head of a Christian Latin epitaph where the
+editor has reason to believe it was not necessarily understood as an
+abbreviation for the word Ch<supplied reason="abbreviation" cert="high">ristos</supplied> but simply as a symbol of the Christian
+faith)</item>
+			
+			
+
+      </list>
+   </div><div id="chirho-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      
+      <p>The distinctive ☧ can be interpreted and rendered in at
+least three different ways. Since several Unicode characters closely
+represent the symbol—no. 2627 (Greek chi rho), 2CE9 (Coptic chi rho), and
+no. 2CE8 (Coptic tau rho—similar to the vertical cross chi rho)--it can be
+easily represented in either of its characteristic forms as a single
+character (☧, ⳩, ⳨), or it can be rendered as a ligature ☧, or it can be
+spelled out ("chi-rho"). Similarly, as ☧ is used in ancient texts, it can
+be understood in at least three different ways‹as a simple ligature, as an
+abbreviation, and as a symbol (as in the examples above).</p><p>  For example:
+ 
+[xp]hmata = ligature
+[xp](isto)fer = abbreviation
+[xp] = symbol (as, e.g., at the head of a Christian Latin epitaph where the
+editor has reason to believe it was not originally understood as an
+abbreviation for the word Ch(ristos) but simply as a symbol of the Christian
+faith)</p><p>As always, the issues of semantic markup and rendering (output) are
+independent and can be used in conjunction with each other to represent an
+editor's interpretation of the {xp} in context in whatever fashion is
+preferred. The simplest way to ensure consistent indexing and rendering
+within a text (or series of texts) in which more than one of the
+interpretations occurs is to embed within each semantic encoding of the {xp}
+the full string of possible representations, and to have the xsl stylesheet
+render each systematically according to its semantic interpretation. For
+example, the ligature might be represented as {xp lig], the abbreviaton as
+(chi-rho), and the symbol as {xp}.</p>
+   </div><div id="notations-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+      <head>Questions and issues</head>
+      <list type="simple">
+         <item>None</item>
+      </list>
+   </div><div id="chirho-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+      <head>Responsibility for this section</head>
+      <listBibl default="NO">
+         
+      
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Charles Crowther</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="chirho-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.2 $</seg></p>
+      <p id="notations-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="notations-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

@@ -1,11 +1,32 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/literature.xml,v 1.5 2006-03-15 21:16:15 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
-
-<div xmlns="http://www.tei-c.org/ns/1.0" id="literature" lang="en">
-   <head>Literature citations and bibliographic entries</head>
-   
-   <p>to be added </p>
+    <!-- Start CVS information: do not remove -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/literature.xml,v 1.6 2006-04-18 19:52:26 paregorios Exp $ -->
+    <!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude" id="literature">
+    <head>Literature citations and bibliographic entries</head>
+    <p>to be added </p>
+    <div id="literature-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="literature-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="literature-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.6 $</seg></p>
+        <p id="literature-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="literature-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="literature-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
 </div>

@@ -1,56 +1,51 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/intralinearlines.xml,v 1.11 2006-03-21 11:49:48 zau Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="intralinearlines" lang="en">
-   <head>Letters and numerals highlighted by intralinear lines</head>
-   <div id="intralinearlines-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/intralinearlines.xml,v 1.12 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="intralinearlines"><head>Letters and numerals highlighted by intralinear lines</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="intralinearlines-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title></bibl>:
-            <list>
-               <item>not addressed</item>
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title></bibl>:
+            <list type="simple">
+               <item id="TypoEx-1">not addressed</item>
             </list></item>
       </list>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>,<abbr expan="page">p.</abbr><biblScope type="pages">6</biblScope></bibl>:
-            <list>
-               <item><hi rend="intraline">abc</hi></item>
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>,<abbr expan="page">p.</abbr><biblScope type="pages">6</biblScope></bibl>:
+            <list type="simple">
+               <item id="TypoEx-2"><hi rend="intraline">abc</hi></item>
             </list></item>
       </list>
-   </div>
-   <div id="intralinearlines-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list>
-         <item><tag>hi rend="intraline"</tag>abc<tag>/hi</tag></item>
-      </list>
-   </div>
-   <div id="intralinearlines-edition" type="gl-edition" lang="lat">
+   </div><div id="intralinearlines-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="intralinearlines-edition" type="gl-edition" lang="lat" org="uniform" part="N" sample="complete">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
-      <list>
-         <item><hi rend="intraline">abc</hi></item>
+      <list type="simple">
+         <item id="EncEx-1"><hi rend="intraline">abc</hi></item>
       </list>
-   </div>
-   <div id="intralinearlines-questions" type="gl-questions">
+   </div><div id="intralinearlines-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
          <item>none</item>
       </list>
-   </div>
-   <div id="intralinearlines-responsibility" type="gl-responsibility">
+   </div><div id="intralinearlines-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="intralinearlines-cvs" type="gl-cvs">
+   </div><div id="intralinearlines-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="intralinearlines-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
-      <p id="intralinearlines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="intralinearlines-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-21 11:49:48 $</seg></p>
-      <p id="intralinearlines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: zau $</seg></p>
-   </div>
-</div>
+      <p id="intralinearlines-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
+      <p id="intralinearlines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="intralinearlines-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="intralinearlines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

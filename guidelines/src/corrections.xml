@@ -1,13 +1,34 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/corrections.xml,v 1.6 2006-03-15 18:30:31 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/corrections.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
-<div id="corrections" lang="en" rend="multipart" xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+<div id="corrections" lang="en" rend="multipart" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <head>Editorial corrections</head>
-    <xi:include href="erroneousinclusion.xml" />
-    <xi:include href="erroneousomission.xml" />
-    <xi:include href="erroneoussubstitution.xml" />
-    <xi:include href="incorrectlyexecuted.xml" />
+    <xi:include href="erroneousinclusion.xml"/>
+    <xi:include href="erroneousomission.xml"/>
+    <xi:include href="erroneoussubstitution.xml"/>
+    <div id="corrections-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="corrections-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="corrections-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.7 $</seg></p>
+        <p id="corrections-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="corrections-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="corrections-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
+    
 </div>

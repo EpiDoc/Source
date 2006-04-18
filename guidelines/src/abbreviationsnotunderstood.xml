@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsnotunderstood.xml,v 1.8 2006-03-15 17:58:40 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsnotunderstood.xml,v 1.9 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsnotunderstood">
@@ -11,40 +11,47 @@
       <list>
          <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
             <list lang="lat" type="ordered">
-               <item>a(- - -) </item>
+               <item id="TypoEx-A">a(- - -) </item><item>Not addressed</item><item>Not addressed</item>
             </list></item>
       </list>
    </div>
-   <div id="abbreviationsnotunderstood-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item><tag>abbr</tag>a<tag>/abbr</tag></item>
-      </list>
-   </div>
+   
+	<div id="abbreviationsnotunderstood-regex" type="gl-regextest">
+          <head>Regular Expression Test</head>  
+         <list>
+            <item id="Regex-A"><![CDATA[(\S+)\((-\s*)+\) = <abbr>$1</abbr>]]></item>
+         </list>
+    <link id="TestLink-A" targets="TypoEx-A EncEx-A Regex-A"/>
+	</div>
    <div id="abbreviationsnotunderstood-edition" type="gl-edition" lang="lat">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item><abbr>a</abbr></item>
+         <item id="EncEx-A"><abbr>a</abbr></item><item id="EncEx-B"><abbr>pr</abbr></item><item id="EncEx-C"><abbr>p</abbr> <abbr>r</abbr></item>
       </list>
    </div>
+   <div id="abbreviationsnotunderstood-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="simple">
+         <item>Examples 2. and 3. indicate the difference between a group of letters representing a single abbreviated word, and an abbreviated phrase or formula. If an abbreviation is not understood and  its nature as single word or phrase cannot be determined, the procedure for <xref>uncertainty</xref> should be followed.</item>
+      </list>
    <div id="abbreviationsnotunderstood-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
          <item>None</item>
       </list>
-   </div>
+   </div></div>
    <div id="abbreviationsnotunderstood-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
       </listBibl>
    </div>
    <div id="abbreviationsnotunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsnotunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.8 $</seg></p>
+      <p id="abbreviationsnotunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
       <p id="abbreviationsnotunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsnotunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:40 $</seg></p>
+      <p id="abbreviationsnotunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-04-18 19:52:26 $</seg></p>
       <p id="abbreviationsnotunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>

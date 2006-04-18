@@ -1,35 +1,99 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/introduction.xml,v 1.5 2006-03-15 22:19:55 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/introduction.xml,v 1.6 2006-04-18 19:52:26 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="introduction" lang="en">
     <head>Introduction</head>
-    <p>to be continued </p>
-    <p>If a project uses standard XML tools and TEI/EpiDoc markup--or if that project has created a
-        translation application to move documents between XML/EpiDoc and their own internal format
-        or database--then sharing documents between projects becomes as simple as telling the
-        software where to find the new file. Manual conversion of data and re-entering of texts will
-        become a thing of the past because there is enough information in the text itself to permit
-        software to make necessary conversion decisions unaided. </p>
-    <p>Beyond the tremendous benefits to be realized from project-to-project data sharing,
-        individual projects can gain other advantages from adopting EpiDoc techniques. One can
-        imagine a website in which customizable user preferences dictate whether standard glosses
-        for the various division types are presented to or hidden from the user (i.e., a helpful,
-        student-oriented interface vs. a compact, streamlined view for scholars). A search engine
-        packaged with a CDROM of texts could search for date ranges found only in 'description'
-        divisions, for Latin abbreviations found only in 'edition' divisions, or for English words
-        appearing only in 'translation' divisions. In assembling a large database of inscriptions,
-        an automated process could easily be put to the task of reading all the entries from the
-        'bibliography' divisions of hundreds of individual texts prepared by a number of different
-        projects, then collating the citations into a single master bibliography file for the entire
-        database. </p>
-    <p>to be continued </p>
+    <div id="introduction-general">
+        <head>The EpiDoc Guidelines</head>
+        <p>The EpiDoc Guidelines were created to describe, document and explain the use of the
+            TEI-based EpiDoc encoding scheme, which provides for the realization of electronic
+            epigraphic editions, corpora and similar materials in XML. The guidelines also provide
+            directions and documentation for epigraphists and software developers who are engaged in
+            creating or refining EpiDoc software tools, and even the Guidelines themselves.</p>
+        <p>The EpiDoc Guidelines embody more than prose and encoding examples for direct examination
+            by human readers. They also contain carefully encoded data strings that are picked up
+            and used by core EpiDoc software tools. As a result, the Guidelines function as the lone
+            source from which the various converting and formatting mechanisms developed by the
+            EpiDoc community draw the settings that specify their behavior, in particular with
+            regard to mappings between traditional sigla for epigraphic transcription and the
+            TEI/XML encodings specified by EpiDoc. Self-test mechanisms for the Guidelines, designed
+            and implemented by Hugh Cayless during the <xref href="sprintsandstorm.xml">EpiDoc
+                Sandstorm Development Sprint</xref> in London (March 2006), ensure that the
+            behaviors of these tools remain reliably synchonized with each other, and with the
+            encoding guidance and explanation the Guidelines provide to human readers.</p>
+    </div>
+    <div id="introduction-bg">
+        <head>Background and Rationale</head>
+        <p>One of the great achievements of the 1931 Leiden meeting was the establishment of a set
+            of common notational practices for epigraphic and papyrological transcription. In the
+            21st century, the next hurdle/challenge to be met is of the same sort: to migrate these
+            practices into the digital arena and extend them in a way that takes advantage of the
+            functional opportunities offered by the new medium. The goal of the EpiDoc consortium is
+            to do just this (see further: <xref href="IntroEpigraphers.xml">Introduction for
+                Epigraphers</xref>). The toolkit it provides includes a TEI-conformant markup
+            language, a set of XML tools to assist in transcription and publication (see <xref
+                href="epidev.xml">EpiDoc Development</xref>, and full documentation of how to use
+            both. </p>
+        <p>The EpiDoc toolkit is useful in a number of ways. It can help make basic activities such
+            as transcription and sharing of documents much easier. For projects using standard XML
+            tools and TEI/EpiDoc markup, sharing documents between projects becomes as simple as
+            telling the software where to find the new file. For projects engaged in converting
+            materials from Leiden notation to XML, manual conversion of data and re-entering of
+            texts will become a thing of the past; the EpiDoc tools can convert directly from Leiden
+            notation to EpiDoc markup without manual intervention. </p>
+        <p>But beyond the tremendous practical benefits to be realized from automated conversion and
+            project-to-project data sharing, individual projects can gain other advantages from
+            adopting EpiDoc techniques. One of the most significant is the ability to produce much
+            more powerful user interfaces, which can be adapted easily to the needs of different
+            user groups. One can imagine a website in which customizable user preferences dictate
+            whether standard glosses for the various division types are presented to or hidden from
+            the user (i.e., a helpful, student-oriented interface vs. a compact, streamlined view
+            for scholars). Printed output in a variety of formats is also easy to produce from the
+            EpiDoc-encoded source. Another important advantage is the ability to provide more
+            nuanced searching, using the EpiDoc markup to identify specific search contexts and
+            terms. Users can search for date ranges found only in 'description' divisions, for Latin
+            abbreviations found only in 'edition' divisions, or for English words appearing only in
+            'translation' divisions. In assembling a large database of inscriptions, an automated
+            process could easily be put to the task of reading all the entries from the
+            'bibliography' divisions of hundreds of individual texts prepared by a number of
+            different projects, then collating the citations into a single master bibliography file
+            for the entire database (for the major divisions of an EpiDoc document, see <xref
+                href="documentstructure.xml">Document Structure</xref>).</p>
+    </div>
+    <div id="introduction-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Julia Flanders</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Roueché</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
     <div id="introduction-cvs" type="gl-cvs">
-      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="introduction-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
-      <p id="introduction-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="introduction-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 22:19:55 $</seg></p>
-      <p id="introduction-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="introduction-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+                >$Revision: 1.6 $</seg></p>
+        <p id="introduction-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+                >$Name: not supported by cvs2svn $</seg></p>
+        <p id="introduction-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date:
+                2006/03/23 18:27:47 $</seg></p>
+        <p id="introduction-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+                >$Author: paregorios $</seg></p>
+    </div>
 </div>

@@ -1,83 +1,64 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.6 2006-03-16 03:17:32 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="languages" lang="en">
-   <head>Ancient and modern languages</head>
-    <p>Text in a language other than the default language of the document should be indicated by the
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="languages"><head>Ancient and modern languages</head>
+<p n="regexerror">divcount mismatch</p><p>Text in a language other than the default language of the document should be indicated by the
         use of the attribute @lang='' with the ISO 639 three-letter code for the language in
         question. In addition, the code must be declared in the <tag>teiHeader</tag> (see 5.3.3
-        Using <tag>profileDesc</tag>) in TEI.2/teiHeader/profileDesc/langUsage.</p>
-    <div id="languages-header-encoding" type="gl-encoding">
-        <head>Encoding of language declarations in <tag>profileDesc</tag></head>
-            <ab><tag>langUsage</tag><lb/>
-   &nbsp;&nbsp;&nbsp;&nbsp;<tag>language id="eng"</tag>English<tag>/language</tag><lb/>
-   &nbsp;&nbsp;&nbsp;&nbsp;<tag>language id="fre"</tag>French<tag>/language</tag><lb/>
-   &nbsp;&nbsp;&nbsp;&nbsp;<tag>language id="grc"</tag>Ancient Greek<tag>/language</tag><lb/>
-   &nbsp;&nbsp;&nbsp;&nbsp;<tag>language id="gre"</tag>Modern Greek<tag>/language</tag><lb/>
-   &nbsp;&nbsp;&nbsp;&nbsp;<tag>language id="lat"</tag>Latin<tag>/language</tag><lb/>
-<tag>/langUsage</tag></ab>
-    </div>
-    <div id="languages-usage-encoding" type="gl-encoding">
-        <head>Using language ids in document encoding</head>
-        <list type="ordered">
-            <item>
-                <tag>TEI.2 lang="eng"</tag>
-            </item>
-            <item>
-                <tag>div type="edition" lang="grc"</tag>
-            </item>
-            <item>Gallienus' additional <tag>foreign lang="lat"</tag>nomen<tag>/foreign</tag>,
-                Egnatius...</item>
-            <item>Boulanger: <tag>foreign lang="fre"</tag>Galerie de l'Est. À gauche de la porte
-                    centrale<tag>/foreign</tag></item>
-            <item>The letters <tag>foreign lang="grc"</tag>ΠΡΟΚΑΛΣΕΠΤ<tag>/foreign</tag> have been
-                erased</item>
-        </list>
-    </div>
-    
-    
-    <div id="languages-tei-p4links" type="gl-tei-p4links">
+        Using <tag>profileDesc</tag>) in TEI.2/teiHeader/profileDesc/langUsage.</p><div id="languages-regex-1" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="languages-regex-2" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-2-1">
+            blah</item>
+<item id="Regex-2-2">
+            blah</item>
+<item id="Regex-2-3">
+            blah</item>
+<item id="Regex-2-4">
+            blah</item>
+<item id="Regex-2-5">
+            blah</item>
+</list><link id="TestLink-2-1" type="regextest" targets="TypoEx-2-1 EncEx-2-1 Regex-2-1"/></div><div id="languages-tei-p4links" type="gl-tei-p4links" org="uniform" part="N" sample="complete">
         <head>TEI P4 links</head>
-        <list>
+        <list type="simple">
             <item>
-                <xref href="http://www.tei-c.org/P4X/ref-FOREIGN.html">
+                <xref href="http://www.tei-c.org/P4X/ref-FOREIGN.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">
                     <tag>foreign</tag>
                 </xref>
             </item>
             <item>
-                <xref href="http://www.tei-c.org/P4X/HD.html#HD41">5.4.2 Language Usage</xref>
+                <xref href="http://www.tei-c.org/P4X/HD.html#HD41" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">5.4.2 Language Usage</xref>
             </item>
         </list>
-    </div>
-    <div id="languages-responsibility" type="gl-responsibility">
+    </div><div id="languages-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
         <head>Responsibility for this section</head>
-        <listBibl>
-            <bibl>
+        <listBibl default="NO">
+            <bibl default="NO">
                 <respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
-            <bibl>
+            <bibl default="NO">
                 <respStmt>
                     <resp>converted from xwiki to xml</resp>
                     <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
         </listBibl>
-    </div>
-    <div id="languages-cvs" type="gl-cvs">
+    </div><div id="languages-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="languages-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-                >$Revision: 1.6 $</seg></p>
-        <p id="languages-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-                >$Name: not supported by cvs2svn $</seg></p>
-        <p id="languages-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-                >$Date: 2006-03-16 03:17:32 $</seg></p>
-        <p id="languages-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-                >$Author: paregorios $</seg></p>
-    </div>
-</div>
+        <p id="languages-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+        <p id="languages-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+        <p id="languages-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+        <p id="languages-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+    </div></div>
+

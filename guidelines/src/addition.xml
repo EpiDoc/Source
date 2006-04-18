@@ -1,56 +1,55 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/addition.xml,v 1.9 2006-03-15 18:20:31 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="addition">
-   <head>Addition of text in antiquity</head>
-   <div id="addition-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/addition.xml,v 1.10 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="addition"><head>Addition of text in antiquity</head>
+<div id="addition-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18-19</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#donicht">Donicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
-            <list lang="lat">
-               <item>Imperator `Caesar´ Augustus</item>
-               <item>Livia `clarissima´ femina</item>
+      <list type="simple">
+         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18-19</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+            <list lang="lat" type="simple">
+               <item id="TypoEx-1">Imperator `Caesar´ Augustus</item>
+               <item id="TypoEx-2">Livia `clarissima´ femina</item>
             </list></item>
       </list>
-   </div>
-   <div id="addition-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list>
-         <item>Imperator <tag>add place="supralinear"</tag>Caesar<tag>/add</tag> Augustus</item>
-         <item>Livia <tag>add place="infralinear"</tag>clarissima<tag>/add</tag> femina </item>
-      </list>
-      <p>NOTE: In traditional typographic systems (unless a diplomatic text is employed), the notation concerning placement of the addition would have to come in the commentary. Note further that use of the 'place' attribute is not compulsory; it may well often be the case that the editor of an edition may not have access to the epigraphic matrix or to adequate notes for this purpose.</p>
-   </div>
-   <div id="addition-edition" type="gl-edition" lang="lat">
+   </div><div id="addition-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="addition-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
-      <list>
-         <item>Imperator <add place="supralinear">Caesar</add> Augustus</item>
-         <item>Livia <add place="infralinear">clarissima</add> femina</item>
+      <list type="simple">
+         <item id="EncEx-1" lang="lat">Imperator <add place="supralinear">Caesar</add> Augustus</item>
+         <item id="EncEx-2" lang="lat">Livia <add place="infralinear">clarissima</add> femina</item><item lang="grc"><add place="left">Σαμουηλ</add> Ἰαηλ</item>
       </list>
-   </div>
-   <div id="addition-questions" type="gl-questions">
+   </div><div id="addition-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      <list type="simple">
+         <item>In traditional Lejden the place of added text is not specified in the transcription, but noted in the apparatus or commentary. This added information, recorded here by use of the <att>place</att> attribute, is therefore optional and may be omitted without harm.</item>
+      </list>
+   <div id="addition-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
          <item>none</item>
       </list>
-   </div>
-   <div id="addition-responsibility" type="gl-responsibility">
+   </div></div><div id="addition-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
-         <bibl><respStmt><resp>@place not compulsory</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         
       </listBibl>
-   </div>
-   <div id="addition-cvs" type="gl-cvs">
+   </div><div id="addition-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="addition-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
-      <p id="addition-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="addition-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:20:31 $</seg></p>
-      <p id="addition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-   
-</div>
+      <p id="addition-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
+      <p id="addition-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="addition-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="addition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

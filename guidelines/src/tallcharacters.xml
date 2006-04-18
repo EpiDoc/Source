@@ -1,49 +1,45 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/tallcharacters.xml,v 1.5 2006-03-15 17:58:42 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="tallcharacters" lang="en">
-   <head>Tall characters</head>
-   <div id="tallcharacters-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/tallcharacters.xml,v 1.6 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="tallcharacters"><head>Tall characters</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="tallcharacters-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
       <p>not addressed?</p>
-   </div>
-   <div id="tallcharacters-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item>d<tag>hi rend="tall"</tag>i<tag>/hi</tag>s manibus</item>
-         <item>Amaran<tag>hi rend="tall"</tag>t<tag>/hi</tag>ho Agathemeris soror pro meri<tag>hi rend="tall"</tag>t<tag>/hi</tag>is <tag>hi rend="tall"</tag>t<tag>/hi</tag>ribu<tag>unclear reason="damage"</tag>i<tag>/unclear</tag><tag>unclear reason="damage"</tag>t<tag>/unclear</tag></item>
-      </list>
-   </div>
-   <div id="tallcharacters-edition" type="gl-edition">
+   </div><div id="tallcharacters-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="tallcharacters-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item>d<hi rend="tall">i</hi>s manibus</item>
-         <item>Amaran<hi rend="tall">t</hi>ho Agathemeris soror pro meri<hi rend="tall">t</hi>is <hi rend="tall">t</hi>ribu<unclear reason="damage">i</unclear><unclear reason="damage">t</unclear></item>
+         <item id="EncEx-1">d<hi rend="tall">i</hi>s manibus</item>
+         <item id="EncEx-2">Amaran<hi rend="tall">t</hi>ho Agathemeris soror pro meri<hi rend="tall">t</hi>is <hi rend="tall">t</hi>ribu<unclear reason="damage" cert="high">i</unclear><unclear reason="damage" cert="high">t</unclear></item>
       </list>
-   </div>
-   <div id="tallcharacters-notes" type="gl-notes">
+   </div><div id="tallcharacters-notes" type="gl-notes" org="uniform" part="N" sample="complete">
       <head>Notes</head>
       <list type="ordered">
-         <item>Marking a character as "tall" is purely descriptive. Editorial observations concerning the significance of the character height should be marked up separately. See, e.g., <xref href="vowelquantity.xml">Vowel Quantity</xref>.</item>
-         <item>See also: <xref href="smallcharacters.xml">Small Characters</xref>.</item>
+         <item>Marking a character as "tall" is purely descriptive. Editorial observations concerning the significance of the character height should be marked up separately. See, e.g., <xref href="vowelquantity.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Vowel Quantity</xref>.</item>
+         <item>See also: <xref href="smallcharacters.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Small Characters</xref>.</item>
       </list>
-   </div>
-   <div id="tallcharacters-responsibility" type="gl-responsibility">
+   </div><div id="tallcharacters-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>assistance</resp><name>John Bodel</name></respStmt></bibl>
-         <bibl><respStmt><resp>assistance</resp><name>Lisa Anderson</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>assistance</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>assistance</resp><name>Lisa Anderson</name></respStmt></bibl>
       </listBibl>
-   </div>
-   <div id="tallcharacters-cvs" type="gl-cvs">
+   </div><div id="tallcharacters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.5 $</seg></p>
-      <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 17:58:42 $</seg></p>
-      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.6 $</seg></p>
+      <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

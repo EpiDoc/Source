@@ -1,47 +1,42 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.6 2006-03-15 18:07:44 paregorios Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="noproblems" lang="en" rend="whole">
-   <head>Transcription with no problems</head>
-   <div id="noproblems-typographic" type="gl-typographic">
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/noproblems.xml,v 1.7 2006-04-18 19:52:26 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="noproblems"><head>Transcription with no problems</head>
+<div id="noproblems-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
       <list type="unordered">
-         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Donicht</title><abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+         <item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Dohnicht</title><abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
             <list type="ordered">
-               <item><hi rend="italic">abc</hi></item>
+               <item id="TypoEx-1"><hi rend="italic">abc</hi></item>
             </list></item>
       </list>
-   </div>
-   <div id="noproblems-encoding" type="gl-encoding">
-      <head>EpiDoc encoding</head>
-      <list type="ordered">
-         <item>abc</item>
-      </list>
-   </div>
-   <div id="noproblems-edition" lang="lat" type="gl-edition">
+   </div><div id="noproblems-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="noproblems-edition" type="gl-edition" org="uniform" part="N" sample="complete">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item>abc</item>
+         <item id="EncEx-1" lang="lat">abc</item><item lang="grc">αβγ</item>
       </list>
-   </div>
-   <div id="noproblems-notes" type="gl-notes">
+   </div><div id="noproblems-notes" type="gl-notes" org="uniform" part="N" sample="complete">
       <head>Notes</head>
       <p>The editor may introduce modern spacing, punctuation, accents and capitalization without comment unless the text is contained within a <tag>div type="diplomatic"</tag>.</p>
-   </div>
-   <div id="noproblems-responsibility" type="gl-responsibility">
+   </div><div id="noproblems-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div>
-    <div id="noproblems-cvs" type="gl-cvs">
+   </div><div id="noproblems-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="noproblems-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
-      <p id="noproblems-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="noproblems-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-03-15 18:07:44 $</seg></p>
-      <p id="noproblems-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
-   </div>
-</div>
+      <p id="noproblems-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+      <p id="noproblems-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="noproblems-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 19:52:26 $</seg></p>
+      <p id="noproblems-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+
