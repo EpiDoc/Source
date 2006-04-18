@@ -6,7 +6,7 @@
 # GNU/Linux. Luckily path to bash is the same on both of these
 # systems.
 #
-# Written 2006-03-23 by Syd Bauman, based on my local version of
+# Written 2006-03-24 by Syd Bauman, based on my local version of
 # similar cmd.
 # Copyleft 2006 Syd Bauman.
 # 
@@ -38,7 +38,7 @@ TFILE=epidoc-guidelines-complete.xml
 MYDIR=`pwd`
 MYDIR=${MYDIR##*/}
 if [ $MYDIR != guidelines ] ; then 
-    die "Need to be in your sourceforge:epidoc/guidelines working directory."
+    die "You need to be in your sourceforge:epidoc/guidelines working directory."
 fi
 
 if which xmllint ; then

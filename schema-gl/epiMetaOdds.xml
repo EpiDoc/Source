@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:teix="http://www.tei-c.org/ns/Examples"
+  xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>ODD language for use by EpiDoc for EpiMetaDoc</title>
+        <author>Syd Bauman</author>
+      </titleStmt>
+      <publicationStmt>
+        <p> </p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Based almost completely on the TEI's sourceforge:tei/P5/p5odds.odd by
+          Sebastian Rahtz</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="epiMetaOdds" start="TEI">
+        <!-- moduleRef
+          url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/relaxng.rng"/ -->
+        <moduleRef
+          url="﻿relaxng.rng"/>
+        <moduleRef key="header"/>
+        <moduleRef key="core"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="tagdocs"/>
+
+        <macroSpec ident="macro.schemapattern" mode="change" module="tagdocs">
+          <content>
+            <group xmlns="http://relaxng.org/ns/structure/1.0">
+              <choice>
+                <text/>
+                <oneOrMore>
+                  <ref name="pattern"/>
+                </oneOrMore>
+              </choice>
+              <zeroOrMore>
+                <ref name="anySchematron"/>
+              </zeroOrMore>
+            </group>
+          </content>
+        </macroSpec>
+
+        <elementSpec module="tagdocs" ns="http://www.tei-c.org/ns/Examples"
+          usage="mwa" ident="egXML" mode="change">
+          <content>
+            <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+              <choice>
+                <text/>
+                <ref name="anyEPI"/>
+              </choice>
+            </oneOrMore>
+          </content>
+        </elementSpec>
+
+        <macroSpec ident="anySchematron" mode="add">
+          <content>
+            <element xmlns="http://relaxng.org/ns/structure/1.0">
+              <nsName ns="http://www.ascc.net/xml/schematron"/>
+              <zeroOrMore>
+                <choice>
+                  <attribute>
+                    <anyName/>
+                  </attribute>
+                  <ref name="anySchematron"/>
+                  <text/>
+                </choice>
+              </zeroOrMore>
+            </element>
+          </content>
+        </macroSpec>
+
+        <macroSpec ident="anyEPI" mode="add">
+          <content>
+            <element xmlns="http://relaxng.org/ns/structure/1.0">
+              <choice>
+              	<name>teix:unclear</name>
+              	<name>teix:supplied</name>
+              	<name>teix:expan</name>
+                <name>teix:gap</name>
+                <name>teix:xref</name>
+                <name>teix:p</name>
+                <name>teix:hi</name>
+                <name>teix:quote</name>
+                <name>teix:altIdent</name>
+                <name>teix:desc</name>
+                <name>teix:gloss</name>
+                <name>teix:name</name>
+                <name>teix:date</name>
+                <name>teix:dateRange</name>
+                <name>teix:abbr</name>
+                <name>teix:ptr</name>
+                <name>teix:ref</name>
+                <name>teix:list</name>
+                <name>teix:item</name>
+                <name>teix:head</name>
+                <name>teix:note</name>
+                <name>teix:graphic</name>
+                <name>teix:biblItem</name>
+                <name>teix:listBibl</name>
+                <name>teix:author</name>
+                <name>teix:respStmt</name>
+                <name>teix:resp</name>
+                <name>teix:title</name>
+                <name>teix:biblScope</name>
+                <name>teix:teiHeader</name>
+                <name>teix:fileDesc</name>
+                <name>teix:titleStmt</name>
+                <name>teix:funder</name>
+                <name>teix:editionStmt</name>
+                <name>teix:edition</name>
+                <name>teix:publicationStmt</name>
+                <name>teix:idno</name>
+                <name>teix:availability</name>
+                <name>teix:sourceDesc</name>
+                <name>teix:namespace</name>
+                <name>teix:regex</name>
+                <name>teix:revisionDesc</name>
+                <name>teix:change</name>
+                <name>teix:TEI</name>
+                <name>teix:text</name>
+                <name>teix:body</name>
+                <name>teix:div</name>
+                <name>teix:att</name>
+                <name>teix:code</name>
+                <name>teix:eg</name>
+                <name>teix:gi</name>
+                <name>teix:ident</name>
+                <name>teix:tag</name>
+                <name>teix:val</name>
+                <name>teix:specList</name>
+                <name>teix:specDesc</name>
+                <name>teix:moduleRef</name>
+                <name>teix:moduleSpec</name>
+                <name>teix:schemaSpec</name>
+                <name>teix:specGrp</name>
+                <name>teix:specGrpRef</name>
+                <name>teix:stringVal</name>
+                <name>teix:elementSpec</name>
+                <name>teix:classSpec</name>
+                <name>teix:macroSpec</name>
+                <name>teix:remarks</name>
+                <name>teix:listRef</name>
+                <name>teix:exemplum</name>
+                <name>teix:classes</name>
+                <name>teix:memberOf</name>
+                <name>teix:content</name>
+                <name>teix:attList</name>
+                <name>teix:attDef</name>
+                <name>teix:attRef</name>
+                <name>teix:datatype</name>
+                <name>teix:defaultVal</name>
+                <name>teix:valDesc</name>
+                <name>teix:valItem</name>
+                <name>teix:valList</name>
+                <name>teix:link</name>
+                <name>teix:linkGrp</name>
+                <name>teix:ab</name>
+                <name>teix:seg</name>
+                <name>teix:figure</name>
+                <name>teix:figDesc</name>
+                <name>teix:typog</name>
+                <name>teix:typogBox</name>
+                <name>teix:listResp</name>
+                <name>teix:epiEntry</name>
+                <name>teix:egXML</name>
+              </choice>
+              <ref name="att.global.attribute.xmlid"/>
+              <ref name="att.global.attribute.xmllang"/>
+              <zeroOrMore>
+                <attribute>
+                  <anyName>
+                    <except>
+                      <name>xml:id</name>
+                      <name>xml:lang</name>
+                    </except>
+                  </anyName>
+                </attribute>
+              </zeroOrMore>
+              <zeroOrMore>
+                <choice>
+                  <text/>
+                  <ref name="anyEPI"/>
+                  <ref name="macro.schemapattern"/>
+                </choice>
+              </zeroOrMore>
+            </element>
+          </content>
+        </macroSpec>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

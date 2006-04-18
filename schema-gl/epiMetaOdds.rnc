@@ -1,0 +1,4510 @@
+default namespace = "http://www.tei-c.org/ns/1.0"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ns1 = "http://www.ascc.net/xml/schematron"
+namespace rng = "http://relaxng.org/ns/structure/1.0"
+namespace teix = "http://www.tei-c.org/ns/Examples"
+
+# Schema generated 2006-03-27T01:40:03+01:00
+
+#
+div { 
+# WARNING -- cheat:
+# copied-and pasted RNG defs from p5odds.rnc to here as they were
+# not being generated and I can't figure out why not.
+  pattern =
+    element rng:element {
+      attribute name { xsd:QName },
+      pattern+
+    }
+    | element rng:element { nameClass, pattern+ }
+    | element rng:attribute {
+        attribute name { xsd:QName },
+        pattern?
+      }
+    | element rng:attribute { nameClass, pattern? }
+    | element rng:group { pattern+ }
+    | element rng:interleave { pattern+ }
+    | element rng:choice { pattern+ }
+    | element rng:optional { pattern+ }
+    | element rng:zeroOrMore { pattern+ }
+    | element rng:oneOrMore { pattern+ }
+    | element rng:list { pattern+ }
+    | element rng:mixed { pattern+ }
+    | element rng:ref {
+        attribute name { xsd:NCName }
+      }
+    | element rng:parentRef {
+        attribute name { xsd:NCName }
+      }
+    | element rng:empty { empty }
+    | element rng:text { empty }
+    | element rng:value {
+        attribute type { xsd:NCName }?,
+        xsd:string
+      }
+    | element rng:data {
+        attribute type { xsd:NCName },
+        param*,
+        exceptPattern?
+      }
+    | element rng:notAllowed { empty }
+    | element rng:externalRef {
+        attribute href { xsd:anyURI },
+        empty
+      }
+    | element rng:grammar { grammarContent* }
+  param =
+    element rng:param {
+      attribute name { xsd:NCName },
+      xsd:string
+    }
+  exceptPattern = element rng:except { pattern+ }
+  grammarContent =
+    \start
+    | define
+    | element rng:div { grammarContent* }
+    | element rng:include {
+        attribute href { xsd:anyURI },
+        includeContent*
+      }
+  includeContent =
+    \start
+    | define
+    | element rng:div { includeContent* }
+  \start =
+    element rng:start {
+      attribute combine { method }?,
+      pattern
+    }
+  define =
+    element rng:define {
+      attribute name { xsd:NCName },
+      attribute combine { method }?,
+      pattern+
+    }
+  method = "choice" | "interleave"
+  nameClass =
+    element rng:name { xsd:QName }
+    | element rng:anyName { exceptNameClass? }
+    | element rng:nsName { exceptNameClass? }
+    | element rng:choice { nameClass+ }
+  exceptNameClass = element rng:except { nameClass+ }
+}
+emo.data.certainty = "high" | "medium" | "low" | "unknown"
+emo.data.probability =
+  xsd:double { minInclusive = "0" maxInclusive = "1" }
+emo.data.numeric = xsd:double | xsd:decimal
+emo.data.count = xsd:nonNegativeInteger
+emo.data.temporal =
+  xsd:date
+  | xsd:gYear
+  | xsd:gMonth
+  | xsd:gDay
+  | xsd:gYearMonth
+  | xsd:gMonthDay
+  | xsd:time
+  | xsd:dateTime
+  | xsd:token {
+      pattern =
+        "(-?[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T)?([01][0-9]|2[0-3])(:[0-5][0-9])?(Z|[+\-]((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+    }
+emo.data.duration = xsd:duration
+emo.data.truthValue = xsd:boolean
+emo.data.xTruthValue = xsd:boolean | "unknown" | "inapplicable"
+emo.data.language = xsd:language
+emo.data.sex = "0" | "1" | "2" | "9"
+emo.data.namespace = xsd:anyURI
+emo.data.outputMeasurement =
+  xsd:token {
+    pattern =
+      "[\-+]?\d+(\.\d+)?(%|cm|mm|in|pt|pc|px|em|ex|gd|rem|vw|vh|vm)"
+  }
+emo.data.pattern = xsd:token
+emo.data.pointer = xsd:anyURI
+emo.data.pointers = list { emo.data.pointer+ }
+emo.data.code = xsd:anyURI
+emo.data.enumerated = xsd:token
+emo.data.key = xsd:string
+emo.data.word = xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+emo.data.names = list { emo.data.name+ }
+emo.data.words = list { emo.data.word+ }
+emo.data.name = xsd:Name
+emo.macro.bodyPart.div =
+  emo.div, (emo.div | emo.divGen | emo.model.global)*
+emo.macro.bodyPart.div0 =
+  emo.div0, (emo.div0 | emo.divGen | emo.model.global)*
+emo.macro.bodyPart.div1 =
+  emo.div1, (emo.div1 | emo.divGen | emo.model.global)*
+emo.macro.bodyPart.pre = (emo.divGen, emo.model.global*)*
+emo.macro.bodyPart.main =
+  emo.macro.bodyPart.pre,
+  (emo.macro.bodyPart.div
+   | emo.macro.bodyPart.div0
+   | emo.macro.bodyPart.div1)
+emo.macro.component = emo.model.common
+emo.macro.componentSeq = (emo.macro.component | emo.model.global)*
+emo.macro.paraContent =
+  (text
+   | emo.model.gLike
+   | emo.model.phrase
+   | emo.model.inter
+   | emo.model.global)*
+emo.macro.phraseSeq =
+  (text | emo.model.gLike | emo.model.phrase | emo.model.global)*
+emo.macro.specialPara =
+  (text
+   | emo.model.gLike
+   | emo.model.phrase
+   | emo.model.inter
+   | emo.model.divPart
+   | emo.model.global)*
+emo.macro.xtext = (text | emo.model.gLike)*
+emo.macro.fileDescPart =
+  emo.titleStmt,
+  emo.editionStmt?,
+  emo.extent?,
+  emo.publicationStmt,
+  emo.seriesStmt?,
+  emo.notesStmt?
+emo.macro.glossSeq = emo.altIdent?, emo.equiv*, emo.gloss*, emo.desc*
+emo.macro.schemapattern = (text | pattern+), emo.anySchematron*
+emo.anySchematron =
+  element ns1:* {
+    (attribute * { text }
+     | emo.anySchematron
+     | text)*
+  }
+emo.anyEPI =
+  element teix:supplied
+  				| teix:unclear
+          | teix:expan
+          | teix:gap
+          | teix:xref
+          | teix:p
+          | teix:hi
+          | teix:quote
+          | teix:altIdent
+          | teix:desc
+          | teix:gloss
+          | teix:name
+          | teix:date
+          | teix:dateRange
+          | teix:abbr
+          | teix:ptr
+          | teix:ref
+          | teix:list
+          | teix:item
+          | teix:head
+          | teix:note
+          | teix:graphic
+          | teix:biblItem
+          | teix:listBibl
+          | teix:author
+          | teix:respStmt
+          | teix:resp
+          | teix:title
+          | teix:biblScope
+          | teix:teiHeader
+          | teix:fileDesc
+          | teix:titleStmt
+          | teix:funder
+          | teix:editionStmt
+          | teix:edition
+          | teix:publicationStmt
+          | teix:idno
+          | teix:availability
+          | teix:sourceDesc
+          | teix:namespace
+          | teix:regex
+          | teix:revisionDesc
+          | teix:change
+          | teix:TEI
+          | teix:text
+          | teix:body
+          | teix:div
+          | teix:att
+          | teix:code
+          | teix:eg
+          | teix:gi
+          | teix:ident
+          | teix:tag
+          | teix:val
+          | teix:specList
+          | teix:specDesc
+          | teix:moduleRef
+          | teix:moduleSpec
+          | teix:schemaSpec
+          | teix:specGrp
+          | teix:specGrpRef
+          | teix:stringVal
+          | teix:elementSpec
+          | teix:classSpec
+          | teix:macroSpec
+          | teix:remarks
+          | teix:listRef
+          | teix:exemplum
+          | teix:classes
+          | teix:memberOf
+          | teix:content
+          | teix:attList
+          | teix:attDef
+          | teix:attRef
+          | teix:datatype
+          | teix:defaultVal
+          | teix:valDesc
+          | teix:valItem
+          | teix:valList
+          | teix:link
+          | teix:linkGrp
+          | teix:ab
+          | teix:seg
+          | teix:figure
+          | teix:figDesc
+          | teix:typog
+          | teix:typogBox
+          | teix:listResp
+          | teix:epiEntry
+          | teix:egXML {
+    att.global.attribute.xmlid,
+    att.global.attribute.xmllang,
+    attribute * - (xml:id | xml:lang) { text }*,
+    (text | emo.anyEPI | emo.macro.schemapattern)*
+  }
+emo.att.ascribed.attributes = att.ascribed.attribute.who, empty
+
+att.ascribed.attribute.who =
+  ## indicates the person, or group of
+  ##	people, to whom the element content is ascribed.
+  attribute who { emo.data.pointers }?
+emo.att.datable.attributes =
+  att.datable.attribute.notBefore, att.datable.attribute.notAfter, empty
+
+att.datable.attribute.notBefore =
+  ## specifies the earliest possible date for the event in
+  ##	standard form, e.g. yyyy-mm-dd.
+  attribute notBefore { emo.data.temporal }?
+
+att.datable.attribute.notAfter =
+  ## specifies the latest possible date for the event in
+  ##	standard form, e.g. yyyy-mm-dd.
+  attribute notAfter { emo.data.temporal }?
+emo.att.declarable.attributes = att.declarable.attribute.default, empty
+
+att.declarable.attribute.default =
+  ## indicates whether or not this element is selected by default when
+  ## its parent is selected.
+  [ a:defaultValue = "false" ]
+  attribute default {
+    ## (This element is selected if its parent is selected) 
+    "true" | ## (This element can only be selected explicitly, unless it is the
+      ## only one of its kind, in which case it is selected if its parent is selected.) 
+      "false"
+  }?
+emo.att.declaring.attributes = att.declaring.attribute.decls, empty
+
+att.declaring.attribute.decls =
+  ## identifies one or more declarable elements within the
+  ## header, which are understood to apply to the element bearing this
+  ## attribute and its content.
+  attribute decls { emo.data.pointers }?
+emo.att.divLike.attributes =
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  empty
+
+att.divLike.attribute.type =
+  ## specifies a name conventionally used for this level of
+  ##		subdivision, e.g. act, volume, book,
+  ##		section, canto, etc.
+  attribute type { emo.data.enumerated }?
+
+att.divLike.attribute.org =
+  ## specifies how the content of the division is organized.
+  [ a:defaultValue = "uniform" ]
+  attribute org {
+    ## (composite content: i.e. no claim is made about the
+    ##		  sequence in which the immediate contents of this division
+    ##		  are to be processed, or their inter-relationships.) 
+    "composite" | ## (uniform content: i.e. the immediate contents of this
+      ##		  element are regarded as forming a logical unit, to be
+      ##		  processed in sequence.) 
+      "uniform"
+  }?
+
+att.divLike.attribute.sample =
+  ## indicates whether this division is a sample of the
+  ##		original source and if so, from which part.
+  [ a:defaultValue = "complete" ]
+  attribute sample {
+    ## (division lacks material present at end in source.) 
+    "initial" | ## (division lacks material at start and end.) 
+      "medial" | ## (division lacks material at start.) 
+      "final" | ## (position of sampled material within original unknown.) 
+      "unknown" | ## (division is not a sample.) 
+      "complete"
+  }?
+
+att.divLike.attribute.part =
+  ## specifies whether or not the division is fragmented by
+  ##		some other structural element, for example a speech which is
+  ##		divided between two or more verse stanzas.
+  [ a:defaultValue = "N" ]
+  attribute part {
+    ## (the division is incomplete in some respect) 
+    "Y" | ## (either the division is complete, or no claim is made as to its completeness.) 
+      "N" | ## (the initial part of an incomplete division) 
+      "I" | ## (a medial part of an incomplete division) 
+      "M" | ## (the final part of an incomplete division) 
+      "F"
+  }?
+emo.att.interpLike.attributes =
+  att.interpLike.attribute.resp,
+  att.interpLike.attribute.type,
+  att.interpLike.attribute.inst,
+  empty
+
+att.interpLike.attribute.resp =
+  ## indicates who is responsible for the interpretation.
+  attribute resp { emo.data.pointer }?
+
+att.interpLike.attribute.type =
+  ## indicates what kind of phenomenon is being noted in the passage.
+  attribute type { emo.data.enumerated }?
+
+att.interpLike.attribute.inst =
+  ## points to instances of the analysis or interpretation represented
+  ## by the current element.
+  attribute inst { emo.data.pointers }?
+emo.att.editLike.attributes =
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  empty
+
+att.editLike.attribute.cert =
+  ## signifies the degree of certainty associated with the
+  ##	intervention or interpretation.
+  attribute cert { emo.data.enumerated }?
+
+att.editLike.attribute.resp =
+  ## indicates the agency responsible for the
+  ##	intervention or interpretation, for example an editor or transcriber.
+  attribute resp { emo.data.pointer }?
+
+att.editLike.attribute.evidence =
+  ## indicates the nature of the evidence supporting the reliability or
+  ##   accuracy of the intervention or interpretation.
+  attribute evidence { emo.data.enumerated }?
+emo.att.global.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+att.global.attribute.xmlid =
+  ## provides a unique identifier for the element bearing the
+  ##       attribute.
+  attribute xml:id { xsd:ID }?
+
+att.global.attribute.n =
+  ## gives a number (or other label) for an element, which is
+  ##       not necessarily unique within the document.
+  attribute n { emo.data.words }?
+
+att.global.attribute.xmllang =
+  ## indicates the language of the element content using the
+  ##       codes from RFC
+  ##       3066
+  attribute xml:lang { emo.data.language }?
+
+att.global.attribute.rend =
+  ## indicates how the element in question was rendered or
+  ##	presented in the source text.
+  attribute rend { emo.data.words }?
+
+att.global.attribute.xmlbase =
+  ## provides a base URI reference with which applications can
+  ##       resolve relative URI references into absolute URI
+  ##       references.
+  attribute xml:base { emo.data.pointer }?
+emo.att.measured.attributes =
+  att.measured.attribute.unit, att.measured.attribute.scope, empty
+
+att.measured.attribute.unit =
+  ## names the units used for the measurement.
+  attribute unit { emo.data.enumerated }?
+
+att.measured.attribute.scope =
+  ## specifies the applicability of this measurement, where
+  ##    more than one object is being measured.
+  attribute scope { emo.data.enumerated }?
+emo.att.measurement.attributes =
+  att.measurement.attribute.unit,
+  att.measurement.attribute.quantity,
+  att.measurement.attribute.commodity,
+  empty
+
+att.measurement.attribute.unit =
+  ## indicates the units used for the measurement, usually
+  ##       using the standard symbol for the desired units.
+  attribute unit { emo.data.enumerated }?
+
+att.measurement.attribute.quantity =
+  ## specifies the number of the specified units that
+  ##       comprise the measurement
+  attribute quantity { emo.data.numeric }?
+
+att.measurement.attribute.commodity =
+  ## indicates the substance that is being measured
+  attribute commodity { emo.data.words }?
+emo.att.naming.attributes = att.naming.attribute.key, empty
+
+att.naming.attribute.key =
+  ## provides a means of locating a full definition for the entity being named
+  ## such as a database record key or URI.
+  attribute key { emo.data.key }?
+emo.att.segLike.attributes =
+  att.segLike.attribute.type,
+  att.segLike.attribute.function,
+  att.segLike.attribute.part,
+  empty
+
+att.segLike.attribute.type =
+  ## characterizes the type of segment.
+  attribute type { emo.data.enumerated }?
+
+att.segLike.attribute.function =
+  ## characterizes the function of the segment.
+  attribute function { emo.data.enumerated }?
+
+att.segLike.attribute.part =
+  ## specifies whether or not the segment is fragmented by some other
+  ## structural element, for example a clause which is divided between two
+  ## or more sentences.
+  [ a:defaultValue = "N" ]
+  attribute part {
+    ## (the segment is incomplete in some respect) 
+    "Y" | ## (either the segment is complete, or no claim is made as to
+      ## its completeness) 
+      "N" | ## (the initial part of an incomplete segment) 
+      "I" | ## (a medial part of an incomplete segment) 
+      "M" | ## (the final part of an incomplete segment) 
+      "F"
+  }?
+emo.att.spanning.attributes = att.spanning.attribute.spanTo, empty
+
+att.spanning.attribute.spanTo =
+  ## indicates the end of a span initiated by the element
+  ##	bearing this attribute.
+  attribute spanTo { emo.data.pointer }?
+emo.att.timed.attributes =
+  att.timed.attribute.start,
+  att.timed.attribute.end,
+  att.timed.attribute.dur,
+  empty
+
+att.timed.attribute.start =
+  ## indicates the location within a temporal alignment
+  ##       at which this element begins.
+  attribute start { emo.data.pointer }?
+
+att.timed.attribute.end =
+  ## indicates the location within a temporal alignment at which
+  ##    this element ends.
+  attribute end { emo.data.pointer }?
+
+att.timed.attribute.dur =
+  ## indicates the length of this element in time, using either
+  ##          specific units or the units specified on the associated temporal
+  ##          alignment.
+  attribute dur { xsd:duration }?
+emo.att.typed.attributes =
+  att.typed.attribute.type, att.typed.attribute.subtype, empty
+
+att.typed.attribute.type =
+  ## characterizes the element in some sense, using any convenient
+  ##  classification scheme or typology.
+  attribute type { emo.data.word }?
+
+att.typed.attribute.subtype =
+  ## provides a sub-categorization of the element, if needed
+  attribute subtype { emo.data.word }?
+emo.model.nameLike.agent = emo.name
+emo.model.segLike = notAllowed
+emo.model.hiLike =
+  emo.foreign
+  | emo.emph
+  | emo.hi
+  | emo.distinct
+  | emo.mentioned
+  | emo.soCalled
+  | emo.gloss
+  | emo.term
+  | emo.title
+emo.model.dateLike = emo.date | emo.dateRange
+emo.model.timeLike = emo.time | emo.timeRange
+emo.model.measureLike = emo.num | emo.measure
+emo.model.graphicLike =
+  emo.graphic | emo.binaryObject | emo.eg | emo.egXML
+emo.model.pPart.msdesc = notAllowed
+emo.model.pPart.edit =
+  emo.sic
+  | emo.corr
+  | emo.choice
+  | emo.reg
+  | emo.orig
+  | emo.add
+  | emo.del
+  | emo.unclear
+  | emo.abbr
+  | emo.expan
+emo.model.ptrLike = emo.ptr | emo.ref
+emo.model.lPart = notAllowed
+emo.model.global.meta = emo.index
+emo.model.milestoneLike = emo.milestone | emo.pb | emo.lb | emo.cb
+emo.model.gLike = notAllowed
+emo.model.oddDecl =
+  emo.moduleSpec
+  | emo.specGrp
+  | emo.elementSpec
+  | emo.classSpec
+  | emo.macroSpec
+  | emo.listRef
+emo.model.oddRef = emo.moduleRef | emo.specGrpRef
+emo.model.oddPhr =
+  emo.att
+  | emo.code
+  | emo.gi
+  | emo.ident
+  | emo.tag
+  | emo.val
+  | emo.specList
+  | emo.specDesc
+emo.model.qLike = emo.q | emo.quote | emo.cit
+emo.model.biblLike =
+  emo.bibl | emo.biblItem | emo.biblStruct | emo.biblFull
+emo.model.listLike = emo.list | emo.listBibl
+emo.model.noteLike = emo.note
+emo.model.stageLike = emo.stage
+emo.model.complexVal = notAllowed
+emo.model.singleVal = notAllowed
+emo.model.entryParts.top = emo.note
+emo.model.global.edit = emo.gap
+emo.model.divPart = emo.p | emo.l | emo.lg | emo.sp | emo.schemaSpec
+emo.model.blockLike = notAllowed
+emo.model.pLike = emo.p
+emo.model.publicationStmtPart =
+  emo.address
+  | emo.date
+  | emo.publisher
+  | emo.pubPlace
+  | emo.distributor
+  | emo.authority
+  | emo.idno
+  | emo.availability
+emo.model.glossLike = emo.altIdent | emo.desc | emo.equiv | emo.gloss
+emo.model.quoteLike = emo.quote
+emo.model.respLike = emo.author | emo.editor | emo.respStmt
+emo.model.personPart = emo.note | emo.bibl
+emo.model.divWrapper.bottom = emo.trailer | emo.closer | emo.signed
+emo.model.divWrapper =
+  emo.head
+  | emo.byline
+  | emo.dateline
+  | emo.argument
+  | emo.epigraph
+  | emo.opener
+  | emo.salute
+  | emo.docAuthor
+  | emo.docDate
+emo.model.frontPart.drama = notAllowed
+emo.model.pLike.front =
+  emo.head
+  | emo.byline
+  | emo.argument
+  | emo.epigraph
+  | emo.docTitle
+  | emo.titlePart
+  | emo.docAuthor
+  | emo.docEdition
+  | emo.docImprint
+  | emo.docDate
+emo.model.titlepagePart =
+  emo.graphic
+  | emo.binaryObject
+  | emo.byline
+  | emo.epigraph
+  | emo.docTitle
+  | emo.titlePart
+  | emo.docAuthor
+  | emo.imprimatur
+  | emo.docEdition
+  | emo.docImprint
+  | emo.docDate
+emo.model.msItemPart =
+  emo.model.respLike
+  | emo.q
+  | emo.note
+  | emo.bibl
+  | emo.listBibl
+  | emo.title
+emo.model.choicePart =
+  emo.sic
+  | emo.corr
+  | emo.reg
+  | emo.orig
+  | emo.unclear
+  | emo.abbr
+  | emo.expan
+emo.model.lLike = emo.l
+emo.model.recordingPart =
+  emo.model.dateLike | emo.respStmt | emo.equipment | emo.broadcast
+emo.model.imprintPart = emo.publisher | emo.biblScope | emo.pubPlace
+emo.model.catDescPart = notAllowed
+emo.model.nameLike = emo.model.nameLike.agent | emo.rs
+emo.model.global =
+  emo.model.global.meta
+  | emo.model.milestoneLike
+  | emo.model.global.edit
+emo.model.featureVal = emo.model.complexVal | emo.model.singleVal
+emo.model.common =
+  emo.model.oddDecl
+  | emo.model.oddRef
+  | emo.model.qLike
+  | emo.model.biblLike
+  | emo.model.listLike
+  | emo.model.noteLike
+  | emo.model.divPart
+  | emo.label
+  | emo.eg
+  | emo.egXML
+emo.model.biblPart =
+  emo.model.respLike
+  | emo.model.imprintPart
+  | emo.note
+  | emo.series
+  | emo.edition
+  | emo.extent
+  | emo.distributor
+  | emo.idno
+emo.model.frontPart =
+  emo.model.frontPart.drama | emo.divGen | emo.titlePage
+emo.model.addrPart =
+  emo.model.nameLike
+  | emo.addrLine
+  | emo.street
+  | emo.postCode
+  | emo.postBox
+emo.model.pPart.data =
+  emo.model.dateLike
+  | emo.model.timeLike
+  | emo.model.measureLike
+  | emo.model.nameLike
+  | emo.address
+emo.model.inter =
+  emo.model.oddDecl
+  | emo.model.oddRef
+  | emo.model.qLike
+  | emo.model.biblLike
+  | emo.model.listLike
+  | emo.model.noteLike
+  | emo.model.stageLike
+  | emo.label
+  | emo.text
+emo.model.phrase =
+  emo.model.segLike
+  | emo.model.hiLike
+  | emo.model.graphicLike
+  | emo.model.pPart.msdesc
+  | emo.model.pPart.edit
+  | emo.model.ptrLike
+  | emo.model.lPart
+  | emo.model.oddPhr
+  | emo.model.pPart.data
+
+emo.p =
+  ## (paragraph) marks paragraphs in prose.
+  element p { emo.p.content, emo.p.attributes }
+emo.p.content = emo.macro.paraContent
+emo.p.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.foreign =
+  ## (foreign) identifies a word or phrase as belonging to some language other
+  ## than that of the surrounding text. 
+  element foreign { emo.foreign.content, emo.foreign.attributes }
+emo.foreign.content = emo.macro.phraseSeq
+emo.foreign.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.emph =
+  ## (emphasized) marks words or phrases which are stressed or emphasized for
+  ## linguistic or rhetorical effect.
+  element emph { emo.emph.content, emo.emph.attributes }
+emo.emph.content = emo.macro.paraContent
+emo.emph.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.hi =
+  ## (highlighted) marks a word or phrase as graphically distinct from the
+  ## surrounding text, for reasons concerning which no claim is
+  ## made. 
+  element hi { emo.hi.content, emo.hi.attributes }
+emo.hi.content = emo.macro.paraContent
+emo.hi.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.distinct =
+  ## (distinct) identifies any word or phrase which is regarded as linguistically
+  ## distinct, for example as archaic, technical, dialectal, non-preferred,
+  ## etc., or as forming part of a sublanguage. 
+  element distinct { emo.distinct.content, emo.distinct.attributes }
+emo.distinct.content = emo.macro.phraseSeq
+emo.distinct.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the sublanguage or register to which the word or phrase
+  ## is being assigned
+  attribute type { emo.data.enumerated }?,
+  ## specifies how the phrase is distinct diachronically
+  attribute time { emo.data.code }?,
+  ## specifies how the phrase is distinct diatopically
+  attribute space { emo.data.code }?,
+  ## specifies how the phrase is distinct diastatically
+  attribute social { emo.data.code }?,
+  empty
+
+emo.q =
+  ## (quoted speech, thought, or writing) contains material which is
+  ## marked as (ostensibly) quoted from elsewhere; in narrative, this element is used to mark direct or
+  ## indirect speech; in dictionaries, it ay be used to mark
+  ## real or contrived examples of usage; in manuscript descriptions or
+  ## other metadata, to mark extracts quoted from the source being documented.
+  element q { emo.q.content, emo.q.attributes }
+emo.q.content = emo.macro.specialPara
+emo.q.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.ascribed.attribute.who,
+  ## may be used to indicate whether the quoted matter is spoken
+  ## or thought, or to characterize it more finely.
+  attribute type { emo.data.enumerated }?,
+  ## may be used to indicate whether the quoted matter is regarded
+  ## as direct or indirect speech.
+  [ a:defaultValue = "unknown" ]
+  attribute direct {
+    ## (speech or thought is represented directly.) 
+    "true" | ## (speech or thought is represented indirectly,
+      ## e.g. by use of a marked verbal aspect.) 
+      "false" | ## (no claim is made.) 
+      "unknown"
+  }?,
+  empty
+
+emo.quote =
+  ## (quotation) contains a phrase or passage attributed by the narrator or
+  ## author to some agency external to the text. 
+  element quote { emo.quote.content, emo.quote.attributes }
+emo.quote.content = emo.macro.specialPara
+emo.quote.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.cit =
+  ## A quotation from some other document, together with a
+  ##   bibliographic reference to its source.
+  element cit { emo.cit.content, emo.cit.attributes }
+emo.cit.content =
+  (emo.model.quoteLike
+   | emo.model.biblLike
+   | emo.model.ptrLike
+   | emo.model.global)+
+emo.cit.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.mentioned =
+  ## marks words or phrases mentioned, not used.
+  element mentioned { emo.mentioned.content, emo.mentioned.attributes }
+emo.mentioned.content = emo.macro.phraseSeq
+emo.mentioned.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.soCalled =
+  ## (so called) contains a word or phrase for which the author or narrator
+  ## indicates a disclaiming of responsibility, for example by the use
+  ## of scare quotes or italics.
+  element soCalled { emo.soCalled.content, emo.soCalled.attributes }
+emo.soCalled.content = emo.macro.phraseSeq
+emo.soCalled.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.altIdent =
+  ## supplies the recommended XML name for an element, class,
+  ##   attribute, etc. in some language.
+  element altIdent { emo.altIdent.content, emo.altIdent.attributes }
+emo.altIdent.content = emo.macro.xtext
+emo.altIdent.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.typed.attribute.type,
+  att.typed.attribute.subtype,
+  empty
+
+emo.desc =
+  ## (description) contains a brief description of the purpose and application for
+  ## an element, attribute, or attribute value.
+  element desc { emo.desc.content, emo.desc.attributes }
+emo.desc.content = emo.macro.paraContent
+emo.desc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.equiv =
+  ## specifies a component which is considered equivalent to the
+  ##   parent element, either by co-reference, or by external link.
+  element equiv { emo.equiv.content, emo.equiv.attributes }
+emo.equiv.content = empty
+emo.equiv.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## names the underlying concept of which the parent is a
+  ##   representation
+  attribute name { emo.data.name }?,
+  ## references the underlying concept of which the parent is a
+  ##   representation by means of some external identifier
+  attribute uri { emo.data.pointer }?,
+  ## references an external script which contains a method to
+  ## transform instances of this element to canonical TEI
+  attribute filter { xsd:anyURI }?,
+  ## MIME type of external filter script
+  attribute mimeType { emo.data.word }?,
+  empty
+
+emo.gloss =
+  ## identifies a phrase or word used to provide a gloss or
+  ##   definition for some other word or phrase.
+  element gloss { emo.gloss.content, emo.gloss.attributes }
+emo.gloss.content = emo.macro.phraseSeq
+emo.gloss.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  (
+   ## identifies the associated term element by an
+   ##       absolute or relative URI reference
+   attribute target { emo.data.pointer } | ## identifies the associated term element using a canonical
+     ##       reference from a scheme defined in a refsDecl element
+     ##       in the TEI header
+     attribute cRef { emo.data.pointer })?,
+  empty
+
+emo.term =
+  ## contains a single-word, multi-word, or symbolic designation
+  ##   which is regarded as a technical term.
+  element term { emo.term.content, emo.term.attributes }
+emo.term.content = emo.macro.phraseSeq
+emo.term.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  att.typed.attribute.type,
+  att.typed.attribute.subtype,
+  ## supplies the sort key for this term in an index.
+  attribute sortKey { emo.data.word }?,
+  (
+   ## identifies the associated gloss element by an
+   ##	absolute or relative URI reference
+   attribute target { emo.data.pointer } | ## identifies the associated gloss element using a
+     ##	canonical reference from a scheme defined in a
+     ##	refsDecl element in the TEI header
+     attribute cRef { emo.data.pointer })?,
+  empty
+
+emo.sic =
+  ## contains text reproduced although apparently incorrect or inaccurate.
+  element sic { emo.sic.content, emo.sic.attributes }
+emo.sic.content = emo.macro.paraContent
+emo.sic.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.corr =
+  ## (correction) contains the correct form of a passage apparently erroneous in the copy text.
+  element corr { emo.corr.content, emo.corr.attributes }
+emo.corr.content = emo.macro.paraContent
+emo.corr.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  empty
+
+emo.choice =
+  ## groups a number of alternative encodings for the same point in
+  ##   a text.
+  element choice { emo.choice.content, emo.choice.attributes }
+emo.choice.content = (emo.model.choicePart | emo.choice)*
+emo.choice.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.reg =
+  ## (regularization) contains a reading which has been regularized or normalized
+  ## in some sense.
+  element reg { emo.reg.content, emo.reg.attributes }
+emo.reg.content = emo.macro.paraContent
+emo.reg.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  empty
+
+emo.orig =
+  ## (original form) contains  a reading which is marked as following  the original,
+  ## rather than being normalized or corrected.
+  element orig { emo.orig.content, emo.orig.attributes }
+emo.orig.content = emo.macro.paraContent
+emo.orig.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.gap =
+  ## (omitted material) indicates a point where material has been omitted in a
+  ## transcription, whether for editorial reasons described in the TEI
+  ## header, as part of sampling practice, or because the material is
+  ## illegible or inaudible.
+  element gap { emo.gap.content, emo.gap.attributes }
+emo.gap.content = emo.macro.glossSeq?
+emo.gap.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  ## gives the reason for omission.  Sample values include
+  ## ‘sampling’, ‘illegible’, ‘inaudible’,
+  ## ‘irrelevant’, ‘cancelled’, ‘cancelled and illegible’.
+  attribute reason { emo.data.words }?,
+  ## in the case of text omitted from the transcription because of
+  ## deliberate deletion by an identifiable hand, signifies the hand which
+  ## made the deletion.
+  attribute hand { emo.data.pointer }?,
+  ## In the case of text omitted because of damage, categorizes the cause of the damage, if it can be identified.
+  attribute agent { emo.data.enumerated }?,
+  ## indicates approximately how much text has been omitted from the
+  ## transcription, in letters, minims, inches, or any appropriate unit,
+  ## either because of editorial policy or because a deletion, damage, or
+  ## other cause has rendered transcription impossible.
+  attribute extent { emo.data.words }?,
+  empty
+
+emo.add =
+  ## (addition) contains letters, words, or phrases inserted in the text by an
+  ## author, scribe, annotator, or corrector.
+  element add { emo.add.content, emo.add.attributes }
+emo.add.content = emo.macro.paraContent
+emo.add.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  ## if the the addition is written into the copy text, indicates
+  ## where the additional text is written.
+  attribute place { emo.data.words }?,
+  ## signifies the hand of the agent which made the addition.
+  attribute hand { emo.data.pointer }?,
+  empty
+
+emo.del =
+  ## (deletion) contains a letter, word or passage deleted, marked as deleted,
+  ## or otherwise indicated as superfluous or spurious in the copy text by an
+  ## author, scribe, annotator, or corrector.
+  element del { emo.del.content, emo.del.attributes }
+emo.del.content = emo.macro.paraContent
+emo.del.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  ## classifies the type of deletion using any convenient typology.
+  attribute type { emo.data.enumerated }?,
+  ## may be used to indicate faulty deletions, e.g.
+  ## strikeouts which include too much or too little text.
+  [ a:defaultValue = "unremarkable" ]
+  attribute status { emo.data.enumerated }?,
+  ## signifies the hand of the agent which made the deletion.
+  attribute hand { emo.data.pointer }?,
+  empty
+
+emo.unclear =
+  ## contains a word, phrase, or passage which cannot be transcribed
+  ## with certainty because it is illegible or inaudible in the source.
+  element unclear { emo.unclear.content, emo.unclear.attributes }
+emo.unclear.content = emo.macro.paraContent
+emo.unclear.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  ## indicates why the material is hard to transcribe.
+  attribute reason { emo.data.words }?,
+  ## Where the difficulty in transcription arises from action
+  ## (partial deletion, etc.) assignable to an identifiable hand, signifies
+  ## the hand responsible for the action.
+  attribute hand { emo.data.pointer }?,
+  ## Where the difficulty in transcription arises from
+  ##  damage, categorizes the cause of the damage, if it can be identified.
+  attribute agent { emo.data.enumerated }?,
+  empty
+
+emo.name =
+  ## (name, proper noun) contains a proper noun or noun phrase.
+  element name { emo.name.content, emo.name.attributes }
+emo.name.content = emo.macro.phraseSeq
+emo.name.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.naming.attribute.key,
+  ## indicates the type of the object which is being named by the
+  ##       phrase.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.rs =
+  ## (referencing string) contains a general purpose name or referring string.
+  element rs { emo.rs.content, emo.rs.attributes }
+emo.rs.content = emo.macro.phraseSeq
+emo.rs.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.naming.attribute.key,
+  ## indicates more specifically the object referred to by the
+  ##       referencing string. Values might include person,
+  ##       place, ship, element etc.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.address =
+  ## contains a postal or other address, for example of a
+  ## publisher, an organization, or an individual.
+  element address { emo.address.content, emo.address.attributes }
+emo.address.content =
+  emo.model.global*, (emo.model.addrPart, emo.model.global*)+
+emo.address.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.addrLine =
+  ## contains one line of a postal or other address.
+  element addrLine { emo.addrLine.content, emo.addrLine.attributes }
+emo.addrLine.content = emo.macro.phraseSeq
+emo.addrLine.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.street =
+  ## (street) a full street address including any name or number identifying a
+  ## building as well as the name of the street or route on which it is
+  ## located.
+  element street { emo.street.content, emo.street.attributes }
+emo.street.content = emo.macro.phraseSeq
+emo.street.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.postCode =
+  ## (postCode) contains a numerical or alphanumeric code used as part of a
+  ## postal address to simplify sorting or delivery of mail. 
+  element postCode { emo.postCode.content, emo.postCode.attributes }
+emo.postCode.content = text
+emo.postCode.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.postBox =
+  ## (postBox) contains a number or other identifier for some postal delivery
+  ## point other than a street address. 
+  element postBox { emo.postBox.content, emo.postBox.attributes }
+emo.postBox.content = text
+emo.postBox.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.num =
+  ## (number) contains a number, written in any form.
+  element num { emo.num.content, emo.num.attributes }
+emo.num.content = emo.macro.phraseSeq
+emo.num.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the type of numeric value.
+  attribute type { emo.data.enumerated }?,
+  ## supplies the value of the number in standard form.
+  attribute value { emo.data.numeric }?,
+  empty
+
+emo.measure =
+  ## contains a word or phrase referring to some quantity of
+  ## an object or commodity, usually comprising a number, a unit, and a
+  ## commodity name.
+  element measure { emo.measure.content, emo.measure.attributes }
+emo.measure.content = emo.macro.phraseSeq
+emo.measure.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.measurement.attribute.unit,
+  att.measurement.attribute.quantity,
+  att.measurement.attribute.commodity,
+  ## specifies the type of measurement in any convenient typology.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.date =
+  ## contains a date in any format.
+  element date { emo.date.content, emo.date.attributes }
+emo.date.content = emo.macro.phraseSeq
+emo.date.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  ## indicates the system or calendar to which the date belongs.
+  attribute calendar { emo.data.enumerated }?,
+  ## gives the value of the date in standard form, i.e. yyyy-mm-dd.
+  attribute value { emo.data.temporal }?,
+  ## indicates the degree of precision associated with the date.
+  attribute precision { emo.data.certainty }?,
+  empty
+
+emo.dateRange =
+  ## (date range) contains two dates or another phrase delimiting a time period.
+  element dateRange { emo.dateRange.content, emo.dateRange.attributes }
+emo.dateRange.content = emo.macro.phraseSeq
+emo.dateRange.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the system or calendar to which the date belongs.
+  attribute calendar { emo.data.enumerated }?,
+  ## indicates the starting point of the period in standard form.
+  attribute from {
+    xsd:date
+    | xsd:gYear
+    | xsd:gMonth
+    | xsd:gDay
+    | xsd:gYearMonth
+    | xsd:gMonthDay
+    | xsd:time
+    | xsd:dateTime
+  }?,
+  ## indicates the ending point of the period in standard form.
+  attribute to {
+    xsd:date
+    | xsd:gYear
+    | xsd:gMonth
+    | xsd:gDay
+    | xsd:gYearMonth
+    | xsd:gMonthDay
+    | xsd:time
+    | xsd:dateTime
+  }?,
+  ## indicates the precision to be attached to either or both dates
+  ## specified.
+  attribute exact {
+    ## (the to date is exact) 
+    "to" | ## (the from date is exact) 
+      "from" | ## (both dates are exact) 
+      "both" | ## (both dates are approximate or unspecified) 
+      "none"
+  }?,
+  empty
+
+emo.time =
+  ## contains a phrase defining a time of day in any format.
+  element time { emo.time.content, emo.time.attributes }
+emo.time.content = emo.macro.phraseSeq
+emo.time.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## gives the value of the time in standard form, e.g. as hh:mm.
+  attribute value { emo.data.temporal }?,
+  empty
+
+emo.timeRange =
+  ## (time range) contains two times or another phrase indicating a time period.
+  element timeRange { emo.timeRange.content, emo.timeRange.attributes }
+emo.timeRange.content = emo.macro.phraseSeq
+emo.timeRange.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the starting point of the time period in a standard form, usually hh:mm.
+  attribute from { emo.data.temporal }?,
+  ## indicates the ending point of the time period in standard form, usually hh:mm.
+  attribute to { emo.data.temporal }?,
+  ## indicates the precision to be attached to either or both times
+  ##		specified.
+  attribute exact {
+    ## (the to time is exact) 
+    "to" | ## (the from time is exact) 
+      "from" | ## (both times are exact) 
+      "both" | ## (both times are approximate or unspecified) 
+      "none"
+  }?,
+  empty
+
+emo.abbr =
+  ## (abbreviation) contains an abbreviation of any sort.
+  element abbr { emo.abbr.content, emo.abbr.attributes }
+emo.abbr.content = emo.macro.phraseSeq
+emo.abbr.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## allows the encoder to classify the abbreviation according to
+  ## some convenient typology.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.expan =
+  ## (expansion) contains the expansion of an abbreviation.
+  element expan { emo.expan.content, emo.expan.attributes }
+emo.expan.content = emo.macro.phraseSeq
+emo.expan.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.editLike.attribute.cert,
+  att.editLike.attribute.resp,
+  att.editLike.attribute.evidence,
+  empty
+
+emo.ptr =
+  ## defines a pointer to another location.
+  element ptr { emo.ptr.content, emo.ptr.attributes }
+emo.ptr.content = empty
+emo.ptr.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  (
+   ## specifies the destination of the pointer by supplying one or
+   ##       more URI References
+   attribute target { emo.data.pointers } | ## specifies the destination of the pointer by supplying a
+     ##       canonical reference from a scheme defined in a refsDecl
+     ##       element in the TEI header
+     attribute cRef { emo.data.pointers })?,
+  empty
+
+emo.ref =
+  ## defines a reference to another location, possibly
+  ##   modified by additional text or comment.
+  element ref { emo.ref.content, emo.ref.attributes }
+emo.ref.content = emo.macro.paraContent
+emo.ref.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  (
+   ## specifies the destination of the reference by supplying one
+   ##     or more URI References
+   attribute target { emo.data.pointers } | ## specifies the destination of the reference by supplying a
+     ##       canonical reference from a scheme defined in a refsDecl
+     ##       element in the TEI header
+     attribute cRef { emo.data.pointers })?,
+  empty
+
+emo.list =
+  ## contains any sequence of items organized as a list.
+  element list { emo.list.content, emo.list.attributes }
+emo.list.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  ((emo.item, emo.model.global*)+
+   | (emo.headLabel?,
+      emo.headItem?,
+      (emo.label, emo.model.global*, emo.item, emo.model.global*)+)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.list.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## describes the form of the list.
+  [ a:defaultValue = "simple" ] attribute type { emo.data.enumerated }?,
+  empty
+
+emo.item =
+  ## contains one
+  ## component of a list.
+  element item { emo.item.content, emo.item.attributes }
+emo.item.content = emo.macro.specialPara
+emo.item.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.label =
+  ## contains the label associated with an item in a list; in
+  ## glossaries, marks the term being defined.
+  element label { emo.label.content, emo.label.attributes }
+emo.label.content = emo.macro.phraseSeq
+emo.label.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.head =
+  ## (heading) contains any type of heading, for example the title of a section,
+  ## or the heading of a list, glossary, manuscript description, etc.
+  element head { emo.head.content, emo.head.attributes }
+emo.head.content = emo.macro.paraContent
+emo.head.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## categorizes the heading in any way meaningful 
+  ##          to the encoder. 
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.headLabel =
+  ## (heading for list labels) contains the heading for the label or term column in a
+  ## glossary list or similar structured list.
+  element headLabel { emo.headLabel.content, emo.headLabel.attributes }
+emo.headLabel.content = emo.macro.phraseSeq
+emo.headLabel.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.headItem =
+  ## (heading for list items) contains the heading for the item or gloss column in a
+  ## glossary list or similar structured list.
+  element headItem { emo.headItem.content, emo.headItem.attributes }
+emo.headItem.content = emo.macro.phraseSeq
+emo.headItem.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.note =
+  ## contains a note or
+  ## annotation.
+  element note { emo.note.content, emo.note.attributes }
+emo.note.content = emo.macro.specialPara
+emo.note.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## describes the type of note.
+  attribute type { emo.data.enumerated }?,
+  ## indicates who is responsible for the annotation: author,
+  ##	editor, translator, etc.
+  attribute resp { emo.data.pointer }?,
+  ## indicates where the note appears in the source text.
+  [ a:defaultValue = "unspecified" ] attribute place { emo.data.code }?,
+  ## indicates whether the copy text shows the exact place of reference
+  ## for the note.
+  [ a:defaultValue = "true" ]
+  attribute anchored {
+    ## (copy text indicates the place of attachment for the note.
+    ##     ) 
+    "true" | ## (copy text indicates no place of attachment for the note.) 
+      "false"
+  }?,
+  ## indicates the point (or points) of attachment for a note, or the beginning of
+  ## the span to which the note is attached.
+  attribute target { emo.data.pointers }?,
+  ## points to the end of the span to which the note is attached, if
+  ## the note is not embedded in the text at that point.
+  attribute targetEnd { emo.data.pointers }?,
+  empty
+
+emo.index =
+  ## (index entry) marks a location to be indexed for whatever purpose.
+  element index { emo.index.content, emo.index.attributes }
+emo.index.content = (emo.term, emo.index?)*
+emo.index.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.spanning.attribute.spanTo,
+  ## supplies a name to specify which index (of several) the index entry belongs to.
+  attribute indexName { emo.data.name }?,
+  empty
+
+emo.divGen =
+  ## (automatically generated text division) indicates the location at which a textual division generated
+  ## automatically by a text-processing application is to appear.
+  element divGen { emo.divGen.content, emo.divGen.attributes }
+emo.divGen.content = emo.model.divWrapper*
+emo.divGen.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies what type of generated text division (e.g. index,
+  ## table of contents, etc.) is to appear.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.graphic =
+  ## indicates the location of an inline graphic, illustration, or figure.
+  element graphic { emo.graphic.content, emo.graphic.attributes }
+emo.graphic.content = empty
+emo.graphic.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## The display width of the image
+  attribute width { emo.data.outputMeasurement }?,
+  ## The display height of the image
+  attribute height { emo.data.outputMeasurement }?,
+  ## A scale factor to be applied to the image to make it the desired display size
+  attribute scale { emo.data.probability }?,
+  ## The target URL
+  attribute url { emo.data.pointer }?,
+  ## The MIME type
+  attribute mimeType { emo.data.word }?,
+  empty
+
+emo.binaryObject =
+  ## provides encoded binary data representing an inline graphic or other object.
+  element binaryObject {
+    emo.binaryObject.content, emo.binaryObject.attributes
+  }
+emo.binaryObject.content = text
+emo.binaryObject.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## The display width of the object
+  attribute width { emo.data.outputMeasurement }?,
+  ## The display height of the object
+  attribute height { emo.data.outputMeasurement }?,
+  ## A scale factor to be applied to the object to make it the desired display size
+  attribute scale { emo.data.numeric }?,
+  ## The MIME type
+  attribute mimeType { emo.data.word }?,
+  ## The encoding used to encode the binary data. If not
+  ##       specified, this is assumed to be Base64
+  attribute encoding { emo.data.words }?,
+  empty
+
+emo.milestone =
+  ## marks a boundary point separating  any kind of section of a text, as indicated by
+  ## changes in a standard reference system, where the section is not
+  ## represented by a structural element.
+  element milestone { emo.milestone.content, emo.milestone.attributes }
+emo.milestone.content = empty
+emo.milestone.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the edition or version to which the milestone applies.
+  attribute ed { emo.data.code }?,
+  ## provides a conventional name for the kind of section changing at this milestone.
+  attribute unit { emo.data.enumerated },
+  empty
+
+emo.pb =
+  ## (page break) marks the boundary between one page of a text and the next
+  ## in a standard reference system.
+  element pb { emo.pb.content, emo.pb.attributes }
+emo.pb.content = empty
+emo.pb.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the edition or version in which the page break is located
+  ## at this point
+  attribute ed { emo.data.code }?,
+  empty
+
+emo.lb =
+  ## (line break) marks the start of a new (typographic) line in some
+  ## edition or version of a text.
+  element lb { emo.lb.content, emo.lb.attributes }
+emo.lb.content = empty
+emo.lb.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the edition or version in which the line break is located
+  ## at this point
+  attribute ed { emo.data.code }?,
+  empty
+
+emo.cb =
+  ## (column break) marks the boundary between one column of a text and the next
+  ## in a standard reference system.
+  element cb { emo.cb.content, emo.cb.attributes }
+emo.cb.content = empty
+emo.cb.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the edition or version in which the column break is located
+  ## at this point
+  attribute ed { emo.data.code }?,
+  empty
+
+emo.bibl =
+  ## (bibliographic citation) contains a loosely-structured bibliographic citation of which
+  ## the sub-components may or may not be explicitly tagged. 
+  element bibl { emo.bibl.content, emo.bibl.attributes }
+emo.bibl.content =
+  (text
+   | emo.model.gLike
+   | emo.model.hiLike
+   | emo.model.pPart.data
+   | emo.model.pPart.edit
+   | emo.model.segLike
+   | emo.model.ptrLike
+   | emo.model.biblPart
+   | emo.model.global)*
+emo.bibl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.biblItem =
+  ## (bibliographic citation) contains a bibliographic citation in which only bibliographic
+  ##   subelements appear.
+  element biblItem { emo.biblItem.content, emo.biblItem.attributes }
+emo.biblItem.content =
+  (emo.title
+   | emo.biblItem
+   | emo.imprint
+   | emo.model.nameLike
+   | emo.model.biblPart
+   | emo.model.dateLike)+
+emo.biblItem.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  att.typed.attribute.type,
+  att.typed.attribute.subtype,
+  ## indicates the physical form of the object of this bibliographic entry.
+  attribute form { xsd:token }?,
+  ## indicates the publication status of the object of this bibliographic entry.
+  attribute status { text }?,
+  ## indicates the relationship of this bibliographic entry to
+  ##       that of its parent bibl or biblItem.
+  attribute role { text }?,
+  empty
+
+emo.biblStruct =
+  ## (structured bibliographic citation) contains a structured bibliographic citation, in which only
+  ## bibliographic subelements appear and in a specified order. 
+  element biblStruct {
+    emo.biblStruct.content, emo.biblStruct.attributes
+  }
+emo.biblStruct.content =
+  emo.analytic*,
+  (emo.monogr, emo.series*)+,
+  (emo.model.noteLike | emo.idno)*
+emo.biblStruct.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.biblFull =
+  ## contains a fully-structured bibliographic citation, in which all
+  ## components of the TEI file description
+  ## are present.
+  element biblFull { emo.biblFull.content, emo.biblFull.attributes }
+emo.biblFull.content = emo.macro.fileDescPart, emo.sourceDesc*
+emo.biblFull.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.listBibl =
+  ## (citation list) contains a list of bibliographic citations of any kind. 
+  element listBibl { emo.listBibl.content, emo.listBibl.attributes }
+emo.listBibl.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (emo.model.biblLike, emo.model.global*)+,
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.listBibl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.analytic =
+  ## (analytic level) contains bibliographic elements describing an item (e.g. an
+  ## article or poem) published within a monograph or journal and not as an
+  ## independent publication.
+  element analytic { emo.analytic.content, emo.analytic.attributes }
+emo.analytic.content =
+  (emo.author | emo.editor | emo.respStmt | emo.title)*
+emo.analytic.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.monogr =
+  ## (monographic level) contains bibliographic elements describing an item (e.g. a book
+  ## or journal) published as an independent item (i.e. as a separate
+  ## physical object).
+  element monogr { emo.monogr.content, emo.monogr.attributes }
+emo.monogr.content =
+  (((emo.author | emo.editor | emo.respStmt),
+    (emo.author | emo.editor | emo.respStmt)*,
+    emo.title+,
+    (emo.editor | emo.respStmt)*)
+   | (emo.title+, (emo.author | emo.editor | emo.respStmt)*))?,
+  (emo.model.noteLike | emo.meeting)*,
+  (emo.edition, (emo.editor | emo.respStmt)*)*,
+  emo.imprint,
+  (emo.imprint | emo.extent | emo.biblScope)*
+emo.monogr.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.series =
+  ## (series information) contains information about the series in which a book or other
+  ## bibliographic item has appeared.
+  element series { emo.series.content, emo.series.attributes }
+emo.series.content =
+  (text
+   | emo.model.gLike
+   | emo.title
+   | emo.editor
+   | emo.respStmt
+   | emo.biblScope
+   | emo.model.global)*
+emo.series.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.author =
+  ## in a bibliographic reference, contains the name of the author(s),
+  ## personal or corporate,
+  ## of a work; the primary statement of responsibility for any
+  ## bibliographic item. 
+  element author { emo.author.content, emo.author.attributes }
+emo.author.content = emo.macro.phraseSeq
+emo.author.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.editor =
+  ## (editor) secondary statement of responsibility for a
+  ## bibliographic item, for example the name of an individual, institution
+  ## or organization, (or of several such) acting as editor, compiler,
+  ## translator, etc. 
+  element editor { emo.editor.content, emo.editor.attributes }
+emo.editor.content = emo.macro.phraseSeq
+emo.editor.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the nature of the intellectual responsibility
+  [ a:defaultValue = "editor" ] attribute role { emo.data.enumerated }?,
+  empty
+
+emo.respStmt =
+  ## (statement of responsibility) supplies a statement of responsibility for someone responsible
+  ##   for the intellectual content of a text, edition, recording, or
+  ##   series, where the specialized elements for authors, editors, etc. do
+  ##   not suffice or do not apply.
+  element respStmt { emo.respStmt.content, emo.respStmt.attributes }
+emo.respStmt.content =
+  (emo.resp, emo.resp*, emo.model.nameLike.agent+)
+  | (emo.model.nameLike.agent, emo.model.nameLike.agent*, emo.resp+)
+emo.respStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.resp =
+  ## contains a phrase describing the nature of a person's
+  ##   intellectual responsibility.
+  element resp { emo.resp.content, emo.resp.attributes }
+emo.resp.content = emo.macro.phraseSeq
+emo.resp.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.title =
+  ## contains the full title of a work of any kind.
+  element title { emo.title.content, emo.title.attributes }
+emo.title.content = emo.macro.paraContent
+emo.title.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the bibliographic level for a title, that is,
+  ##	whether it identifies  an article, book, journal,
+  ## series, or unpublished material.
+  attribute level {
+    ## (analytic title (article, poem, or other item published as
+    ##           part of a larger item)
+    ##     ) 
+    "a" | ## (monographic title (book, collection, or other item published
+      ##           as a distinct item, including single volumes of multi-volume
+      ##           works)
+      ##     ) 
+      "m" | ## (journal title
+      ##     ) 
+      "j" | ## (series title
+      ##     ) 
+      "s" | ## (title of unpublished material (including theses and
+      ##           dissertations unless published by a commercial press)) 
+      "u"
+  }?,
+  ## classifies the title according to some convenient typology.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.meeting =
+  ## in bibliographic references,
+  ## contains a description of the meeting or conference from which
+  ## the bibliographic item derives.
+  element meeting { emo.meeting.content, emo.meeting.attributes }
+emo.meeting.content = emo.macro.paraContent
+emo.meeting.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.imprint =
+  ## groups information relating to the publication or distribution
+  ##   of a bibliographic item.
+  element imprint { emo.imprint.content, emo.imprint.attributes }
+emo.imprint.content =
+  ((emo.model.imprintPart | emo.model.dateLike), emo.model.global*)+
+emo.imprint.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.publisher =
+  ## provides the name of the organization responsible for
+  ## the publication or distribution of a bibliographic item.
+  element publisher { emo.publisher.content, emo.publisher.attributes }
+emo.publisher.content = emo.macro.phraseSeq
+emo.publisher.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.biblScope =
+  ## (scope of citation) defines the scope of a bibliographic reference, for example as a
+  ## list of pagenumbers, or a named subdivision of a larger work.
+  element biblScope { emo.biblScope.content, emo.biblScope.attributes }
+emo.biblScope.content = emo.macro.phraseSeq
+emo.biblScope.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## identifies the type of information conveyed by the element, e.g.
+  ## pages, volume.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.pubPlace =
+  ## contains the name of the place where a bibliographic item was
+  ## published.
+  element pubPlace { emo.pubPlace.content, emo.pubPlace.attributes }
+emo.pubPlace.content = emo.macro.phraseSeq
+emo.pubPlace.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.naming.attribute.key,
+  empty
+
+emo.l =
+  ## (verse line) contains a single, possibly incomplete, line of verse.
+  element l { emo.l.content, emo.l.attributes }
+emo.l.content = emo.macro.paraContent
+emo.l.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies whether or not the line is metrically complete. 
+  [ a:defaultValue = "N" ]
+  attribute part {
+    ## (the line is metrically incomplete) 
+    "Y" | ## (either the line is complete, or no claim is made as to its
+      ## completeness) 
+      "N" | ## (the initial part of an incomplete line) 
+      "I" | ## (a medial part of an incomplete line) 
+      "M" | ## (the final part of an incomplete line) 
+      "F"
+  }?,
+  empty
+
+emo.lg =
+  ## (line group) contains a group of verse lines functioning as a formal unit,
+  ## e.g. a stanza, refrain, verse paragraph, etc.
+  element lg { emo.lg.content, emo.lg.attributes }
+emo.lg.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (emo.model.lLike | emo.lg),
+  (emo.model.lLike | emo.lg | emo.model.global)*,
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.lg.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  empty
+
+emo.sp =
+  ## (speech) An individual speech in a performance text, or a passage
+  ##	  presented as such in a prose or verse text.
+  element sp { emo.sp.content, emo.sp.attributes }
+emo.sp.content =
+  emo.model.global*,
+  (emo.speaker, emo.model.global*)?,
+  ((emo.model.lLike
+    | emo.lg
+    | emo.model.pLike
+    | emo.model.blockLike
+    | emo.model.stageLike),
+   emo.model.global*)+
+emo.sp.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.ascribed.attribute.who,
+  empty
+
+emo.speaker =
+  ## A specialized form of heading or label, giving the name of
+  ## one or more speakers in a dramatic text or fragment.
+  element speaker { emo.speaker.content, emo.speaker.attributes }
+emo.speaker.content = emo.macro.phraseSeq
+emo.speaker.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.stage =
+  ## (stage direction) contains any kind of stage direction within a dramatic text or
+  ## fragment.
+  element stage { emo.stage.content, emo.stage.attributes }
+emo.stage.content = emo.macro.specialPara
+emo.stage.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates the kind of stage direction.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.teiCorpus =
+  ## (TEI corpus) contains the whole of a TEI encoded corpus, comprising a
+  ## single corpus header and one or more TEI elements, each containing
+  ## a single text header and a text.
+  element teiCorpus { emo.teiCorpus.content, emo.teiCorpus.attributes }
+emo.teiCorpus.content = emo.teiHeader, (emo.TEI | emo.teiCorpus)+
+emo.teiCorpus.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## The version of the TEI scheme
+  [ a:defaultValue = "5.0" ] attribute version { xsd:decimal }?,
+  empty
+
+emo.teiHeader =
+  ## (TEI Header) supplies the descriptive and declarative information making
+  ##	up an electronic title page prefixed to every TEI-conformant
+  ##	text.
+  element teiHeader { emo.teiHeader.content, emo.teiHeader.attributes }
+emo.teiHeader.content =
+  emo.fileDesc, emo.model.headerPart*, emo.revisionDesc?
+emo.teiHeader.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the kind of document to which the header is attached.
+  [ a:defaultValue = "text" ] attribute type { emo.data.enumerated }?,
+  empty
+
+emo.fileDesc =
+  ## (File Description) contains a full bibliographic description of an electronic
+  ## file.
+  element fileDesc { emo.fileDesc.content, emo.fileDesc.attributes }
+emo.fileDesc.content = emo.macro.fileDescPart, emo.sourceDesc+
+emo.fileDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.titleStmt =
+  ## (title statement) groups information about the title of a work and those
+  ## responsible for its intellectual content.
+  element titleStmt { emo.titleStmt.content, emo.titleStmt.attributes }
+emo.titleStmt.content =
+  emo.title+,
+  (emo.author
+   | emo.editor
+   | emo.sponsor
+   | emo.funder
+   | emo.principal
+   | emo.respStmt)*
+emo.titleStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.sponsor =
+  ## specifies the name of a sponsoring organization or
+  ## institution.
+  element sponsor { emo.sponsor.content, emo.sponsor.attributes }
+emo.sponsor.content = emo.macro.phraseSeq
+emo.sponsor.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.funder =
+  ## (Funding body) specifies the name of an individual, institution, or organization
+  ## responsible for the funding of a project or text.
+  element funder { emo.funder.content, emo.funder.attributes }
+emo.funder.content = emo.macro.phraseSeq
+emo.funder.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.principal =
+  ## (principal researcher) supplies the name of the principal researcher responsible for the
+  ## creation of an electronic text.
+  element principal { emo.principal.content, emo.principal.attributes }
+emo.principal.content = emo.macro.phraseSeq
+emo.principal.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.editionStmt =
+  ## (edition statement) groups information relating to one edition of a text.
+  element editionStmt {
+    emo.editionStmt.content, emo.editionStmt.attributes
+  }
+emo.editionStmt.content =
+  emo.model.pLike+ | (emo.edition, emo.respStmt*)
+emo.editionStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.edition =
+  ## (Edition) describes the particularities of one edition of a text.
+  element edition { emo.edition.content, emo.edition.attributes }
+emo.edition.content = emo.macro.phraseSeq
+emo.edition.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.extent =
+  ## describes the approximate size of the electronic text as stored on
+  ## some carrier medium, specified in any convenient units.
+  element extent { emo.extent.content, emo.extent.attributes }
+emo.extent.content = emo.macro.phraseSeq
+emo.extent.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.publicationStmt =
+  ## (publication statement) groups information concerning the publication or distribution
+  ## of an electronic or other text. 
+  element publicationStmt {
+    emo.publicationStmt.content, emo.publicationStmt.attributes
+  }
+emo.publicationStmt.content =
+  emo.model.pLike+
+  | (emo.publisher
+     | emo.distributor
+     | emo.authority
+     | emo.pubPlace
+     | emo.address
+     | emo.idno
+     | emo.availability
+     | emo.date)+
+emo.publicationStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.distributor =
+  ## supplies the name of a person or other agency responsible for the
+  ## distribution of a text.
+  element distributor {
+    emo.distributor.content, emo.distributor.attributes
+  }
+emo.distributor.content = emo.macro.phraseSeq
+emo.distributor.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.authority =
+  ## (release authority) supplies the name of a person or other agency responsible for
+  ##   making an electronic file available, other than a publisher or
+  ##   distributor.
+  element authority { emo.authority.content, emo.authority.attributes }
+emo.authority.content = emo.macro.phraseSeq
+emo.authority.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.idno =
+  ## (identifying number) supplies any standard or non-standard number used to identify a
+  ## bibliographic item.
+  element idno { emo.idno.content, emo.idno.attributes }
+emo.idno.content = text
+emo.idno.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## categorizes the number, for example as an ISBN or other
+  ##          standard series.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.availability =
+  ## supplies information about the availability of a text, for
+  ##   example any restrictions on its use or distribution, its copyright
+  ##   status, etc.
+  element availability {
+    emo.availability.content, emo.availability.attributes
+  }
+emo.availability.content = emo.model.pLike+
+emo.availability.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## supplies a code identifying the current availability of the
+  ## text.
+  [ a:defaultValue = "unknown" ]
+  attribute status {
+    ## (the text is freely available.
+    ##     ) 
+    "free" | ## (the status of the text is unknown.
+      ##     ) 
+      "unknown" | ## (the text is not freely available.
+      ##    ) 
+      "restricted"
+  }?,
+  empty
+
+emo.seriesStmt =
+  ## (series statement) groups information about the series, if any, to which
+  ## a publication belongs.
+  element seriesStmt {
+    emo.seriesStmt.content, emo.seriesStmt.attributes
+  }
+emo.seriesStmt.content =
+  emo.model.pLike+
+  | (emo.title+, (emo.idno | emo.respStmt)*)
+emo.seriesStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.notesStmt =
+  ## (Notes statement) collects together any notes providing information about a text
+  ## additional to that recorded in other parts of the bibliographic
+  ## description.
+  element notesStmt { emo.notesStmt.content, emo.notesStmt.attributes }
+emo.notesStmt.content = emo.model.noteLike+
+emo.notesStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.sourceDesc =
+  ## supplies a description of the source text(s) from
+  ## which an electronic text was derived or generated.
+  element sourceDesc {
+    emo.sourceDesc.content, emo.sourceDesc.attributes
+  }
+emo.sourceDesc.content =
+  emo.model.pLike+
+  | emo.listBibl
+  | (emo.model.biblLike | emo.model.sourceDescPart)+
+emo.sourceDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.scriptStmt =
+  ## (script statement) contains a citation giving details of the script used for
+  ## a spoken text.
+  element scriptStmt {
+    emo.scriptStmt.content, emo.scriptStmt.attributes
+  }
+emo.scriptStmt.content = emo.model.pLike+ | emo.model.biblLike
+emo.scriptStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.recordingStmt =
+  ## (recording statement) describes a set of recordings used in transcription of a
+  ## spoken text.
+  element recordingStmt {
+    emo.recordingStmt.content, emo.recordingStmt.attributes
+  }
+emo.recordingStmt.content = emo.model.pLike+ | emo.recording+
+emo.recordingStmt.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.recording =
+  ## (recording event) details of an audio or video recording event
+  ## used as the source of a spoken text, either directly or from
+  ## a public broadcast. 
+  element recording { emo.recording.content, emo.recording.attributes }
+emo.recording.content = emo.model.pLike+ | emo.model.recordingPart*
+emo.recording.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## the kind of recording.
+  [ a:defaultValue = "audio" ]
+  attribute type {
+    ## (audio recording) 
+    "audio" | ## (audio and video recording) 
+      "video"
+  }?,
+  ## the original duration of the recording. 
+  attribute dur { emo.data.duration }?,
+  empty
+
+emo.equipment =
+  ## (equipment) provides technical details of the equipment and media used for
+  ## an audio or video recording used as the source for a spoken text.
+  element equipment { emo.equipment.content, emo.equipment.attributes }
+emo.equipment.content = emo.model.pLike+
+emo.equipment.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.broadcast =
+  ## (broadcast) describes a broadcast used as the source of a spoken text.
+  element broadcast { emo.broadcast.content, emo.broadcast.attributes }
+emo.broadcast.content =
+  emo.model.pLike+ | emo.model.biblLike | emo.recording
+emo.broadcast.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.encodingDesc =
+  ## (Encoding description) documents the relationship between an electronic text and the
+  ## source or sources from which it was derived.
+  element encodingDesc {
+    emo.encodingDesc.content, emo.encodingDesc.attributes
+  }
+emo.encodingDesc.content = (emo.model.encodingPart | emo.model.pLike)+
+emo.encodingDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.projectDesc =
+  ## (project description) describes in detail the aim or purpose for which an electronic
+  ## file was encoded, together with any other relevant information
+  ## concerning the process by which it was assembled or collected.
+  element projectDesc {
+    emo.projectDesc.content, emo.projectDesc.attributes
+  }
+emo.projectDesc.content = emo.model.pLike+
+emo.projectDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.samplingDecl =
+  ## (sampling declaration) contains a prose description of the rationale and methods used
+  ## in sampling texts in the creation of a corpus or collection.
+  element samplingDecl {
+    emo.samplingDecl.content, emo.samplingDecl.attributes
+  }
+emo.samplingDecl.content = emo.model.pLike+
+emo.samplingDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.editorialDecl =
+  ## (editorial practice declaration) provides details of editorial principles and practices applied
+  ## during the encoding of a text.
+  element editorialDecl {
+    emo.editorialDecl.content, emo.editorialDecl.attributes
+  }
+emo.editorialDecl.content =
+  emo.model.pLike+ | emo.model.editorialDeclPart+
+emo.editorialDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.correction =
+  ## (correction principles) states how and under what circumstances corrections have been
+  ## made in the text.
+  element correction {
+    emo.correction.content, emo.correction.attributes
+  }
+emo.correction.content = emo.model.pLike+
+emo.correction.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## indicates the degree of correction applied to the text.
+  [ a:defaultValue = "unknown" ]
+  attribute status {
+    ## (the text has been thoroughly checked and
+    ##                        proofread.
+    ##     ) 
+    "high" | ## (the text has been checked at least once.
+      ##     ) 
+      "medium" | ## (the text has not been checked.
+      ##     ) 
+      "low" | ## (the correction status of the text is unknown.
+      ##    ) 
+      "unknown"
+  }?,
+  ## indicates the method adopted to indicate corrections within the
+  ##          text.
+  [ a:defaultValue = "silent" ]
+  attribute method {
+    ## (corrections have been made silently
+    ##     ) 
+    "silent" | ## (corrections have been represented using editorial tags
+      ##    ) 
+      "tags"
+  }?,
+  empty
+
+emo.normalization =
+  ## indicates the extent of normalization or regularization of the
+  ## original source carried out in converting it to electronic form.
+  element normalization {
+    emo.normalization.content, emo.normalization.attributes
+  }
+emo.normalization.content = emo.model.pLike+
+emo.normalization.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## indicates the authority for any normalization carried out.
+  attribute source { emo.data.pointer }?,
+  ## indicates the method adopted to indicate normalizations within
+  ##          the text.
+  [ a:defaultValue = "silent" ]
+  attribute method {
+    ## (normalization made silently
+    ##   ) 
+    "silent" | ## (normalization represented using editorial tags
+      ##    ) 
+      "tags"
+  }?,
+  empty
+
+emo.quotation =
+  ## specifies editorial practice adopted with respect to quotation
+  ##   marks in the original. 
+  element quotation { emo.quotation.content, emo.quotation.attributes }
+emo.quotation.content = emo.model.pLike+
+emo.quotation.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## indicates whether or not quotation marks have been retained as
+  ##       content within the text. 
+  [ a:defaultValue = "all" ]
+  attribute marks {
+    ## (no quotation marks have been retained ) 
+    "none" | ## (some quotation marks have been retained ) 
+      "some" | ## (all quotation marks have been retained ) 
+      "all"
+  }?,
+  ## specifies how quotation marks are indicated within the
+  ##       text.
+  [ a:defaultValue = "unknown" ]
+  attribute form {
+    ## (quotation marks are retained as data.) 
+    "data" | ## (the rendition attribute is consistently used to
+      ##           indicate the form of quotation marks.) 
+      "rend" | ## (use of quotation marks has been standardized.) 
+      "std" | ## (quotation marks are represented inconsistently.) 
+      "nonstd" | ## (use of quotation marks is unknown.) 
+      "unknown"
+  }?,
+  empty
+
+emo.hyphenation =
+  ## (Hyphenation) summarizes the way in which hyphenation in a source text has been
+  ## treated in an encoded version of it.
+  element hyphenation {
+    emo.hyphenation.content, emo.hyphenation.attributes
+  }
+emo.hyphenation.content = emo.model.pLike+
+emo.hyphenation.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## indicates whether or not end-of-line hyphenation has been
+  ##	retained in a text.
+  [ a:defaultValue = "some" ]
+  attribute eol {
+    ## (all end-of-line hyphenation has been retained,
+    ##                    even though the lineation of the original
+    ##                    may not have been.
+    ##    ) 
+    "all" | ## (end-of-line hyphenation has been retained in some
+      ##                    cases.
+      ##    ) 
+      "some" | ## (all soft end-of-line hyphenation has been removed:
+      ##                    any remaining end-od-line hyphenation should be retained.
+      ##   ) 
+      "hard" | ## (all end-of-line hyphenation has been removed:
+      ##                   any remaining hyphenation occurred within the line.
+      ##    ) 
+      "none"
+  }?,
+  empty
+
+emo.segmentation =
+  ## describes the principles according to which the text has been
+  ## segmented, for example into sentences, tone-units, graphemic strata,
+  ## etc.
+  element segmentation {
+    emo.segmentation.content, emo.segmentation.attributes
+  }
+emo.segmentation.content = emo.model.pLike+
+emo.segmentation.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.stdVals =
+  ## (Standard values) specifies the format used when standardized date or number
+  ## values are supplied.
+  element stdVals { emo.stdVals.content, emo.stdVals.attributes }
+emo.stdVals.content = emo.model.pLike+
+emo.stdVals.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.interpretation =
+  ## describes the scope of any analytic or interpretive information
+  ## added to the text in addition to the transcription. 
+  element interpretation {
+    emo.interpretation.content, emo.interpretation.attributes
+  }
+emo.interpretation.content = emo.model.pLike+
+emo.interpretation.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.tagsDecl =
+  ## (tagging declaration) provides detailed information about the tagging applied to an SGML or XML document.
+  element tagsDecl { emo.tagsDecl.content, emo.tagsDecl.attributes }
+emo.tagsDecl.content = emo.rendition*, emo.namespace*
+emo.tagsDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.tagUsage =
+  ## (tagUsage) supplies information about the usage of a specific element
+  ## within a text. 
+  element tagUsage { emo.tagUsage.content, emo.tagUsage.attributes }
+emo.tagUsage.content = emo.macro.paraContent
+emo.tagUsage.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## the name (generic identifier)
+  ## of the element indicated by the tag.
+  attribute gi { emo.data.name },
+  ## specifies the number of occurrences of this element within the text.
+  attribute occurs { emo.data.count }?,
+  ## specifies the number of occurrences of this element within the text
+  ## which bear a distinct value for the global xml:id attribute. 
+  attribute withId { emo.data.count }?,
+  ## specifies the identifier of a rendition element which
+  ## defines how this element is to be rendered.
+  attribute render { emo.data.pointer }?,
+  empty
+
+emo.namespace =
+  ## supplies the formal name of the namespace to which the elements
+  ## documented by its children belong. 
+  element namespace { emo.namespace.content, emo.namespace.attributes }
+emo.namespace.content = emo.tagUsage+
+emo.namespace.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## the full formal name of the namespace concerned.
+  attribute name { emo.data.namespace },
+  empty
+
+emo.rendition =
+  ## (rendition) supplies information about the intended rendition of one or more
+  ## elements.
+  element rendition { emo.rendition.content, emo.rendition.attributes }
+emo.rendition.content = emo.macro.paraContent
+emo.rendition.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.refsDecl =
+  ## (references declaration) specifies how canonical references are constructed for this
+  ##   text.
+  element refsDecl { emo.refsDecl.content, emo.refsDecl.attributes }
+emo.refsDecl.content = emo.model.pLike+ | emo.cRefPattern+ | emo.state+
+emo.refsDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## identifies the document type within which
+  ##       this reference declaration is used.
+  [ a:defaultValue = "TEI" ] attribute doctype { emo.data.name }?,
+  empty
+
+emo.cRefPattern =
+  ## (defines how to convert a canonical reference into a URI) specifies an expression and replacement pattern for
+  ##   tranforming a canonical reference into a URI
+  element cRefPattern {
+    emo.cRefPattern.content, emo.cRefPattern.attributes
+  }
+emo.cRefPattern.content = emo.model.pLike*
+emo.cRefPattern.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies a regular expression against which the values of
+  ##       cRef attributes can be matched.
+  attribute matchPattern { emo.data.pattern },
+  ## specifies a replacement pattern
+  ##       which, once subpattern substitution has been performed, provides
+  ##       a URI.
+  attribute replacementPattern { text },
+  empty
+
+emo.state =
+  ## specifies one component of a canonical reference defined by
+  ## the milestone method.
+  element state { emo.state.content, emo.state.attributes }
+emo.state.content = empty
+emo.state.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates which edition or version the milestone applies to.
+  attribute ed { emo.data.code }?,
+  ## indicates what kind of state is changing at this milestone.
+  attribute unit { emo.data.enumerated },
+  ## specifies the fixed length of the reference component.
+  attribute length { emo.data.count }?,
+  ## supplies a delimiting string following the reference
+  ##           component.
+  attribute delim { text }?,
+  empty
+
+emo.classDecl =
+  ## (classification declarations) contains one or more taxonomies defining any classificatory
+  ## codes used elsewhere in the text.
+  element classDecl { emo.classDecl.content, emo.classDecl.attributes }
+emo.classDecl.content = emo.taxonomy+
+emo.classDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.taxonomy =
+  ## (taxonomy) defines a typology used to classify texts either implicitly, by
+  ## means of a bibliographic citation, or explicitly by a structured
+  ## taxonomy.
+  element taxonomy { emo.taxonomy.content, emo.taxonomy.attributes }
+emo.taxonomy.content =
+  emo.category+ | (emo.model.biblLike, emo.category*)
+emo.taxonomy.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.category =
+  ## (category) contains an individual descriptive category, possibly nested
+  ## within a superordinate category, within a user-defined taxonomy.
+  element category { emo.category.content, emo.category.attributes }
+emo.category.content = emo.catDesc, emo.category*
+emo.category.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.catDesc =
+  ## (category description) describes some category within a taxonomy
+  ## or text typology, either in the form of a brief prose description
+  ## or in terms of the situational parameters used by the TEI
+  ## formal textDesc.
+  element catDesc { emo.catDesc.content, emo.catDesc.attributes }
+emo.catDesc.content = (text | emo.model.phrase | emo.model.catDescPart)*
+emo.catDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.fsdDecl =
+  ## (FSD (feature-system declaration) declaration) identifies the feature system declaration which contains
+  ## definitions for a particular type of feature structure.
+  element fsdDecl { emo.fsdDecl.content, emo.fsdDecl.attributes }
+emo.fsdDecl.content = empty
+emo.fsdDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## identifies the type of feature structure documented by the FSD;
+  ## this will be the value of the type attribute on at least one
+  ## feature structure.
+  attribute type { emo.data.enumerated },
+  ## supplies a link to the entity containing the feature system
+  ## declaration. 
+  attribute url { emo.data.pointer },
+  empty
+
+emo.metDecl =
+  ## documents the notation employed to represent a metrical
+  ##   pattern when this is specified as the value of a met,
+  ##   real, or rhyme attribute on any structural
+  ##   element of a metrical text (e.g. lg, l, or
+  ##   seg).
+  element metDecl { emo.metDecl.content, emo.metDecl.attributes }
+emo.metDecl.content = emo.macro.componentSeq | emo.metSym+
+emo.metDecl.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  ## indicates whether the notation conveys the abstract
+  ##       metrical form, its actual prosodic realization, or the rhyme
+  ##       scheme, or some combination thereof.
+  [ a:defaultValue = "met real" ]
+  attribute type {
+    list { ("met" | "real" | "rhyme")+ }
+  }?,
+  ## specifies a regular expression defining any value that
+  ##	is legal for this notation.
+  attribute pattern { emo.data.enumerated }?,
+  empty
+
+emo.metSym =
+  ## documents the intended significance of a particular character or
+  ## character sequence within a metrical notation, either explicitly or in
+  ## terms of other symbol elements in the same metDecl.
+  element metSym { emo.metSym.content, emo.metSym.attributes }
+emo.metSym.content = emo.macro.phraseSeq
+emo.metSym.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the character or character sequence being documented.
+  attribute value { emo.data.words },
+  ## specifies whether the symbol is defined in terms of other
+  ## symbols (terminal is set to false) or in prose
+  ## (terminal is set to true).
+  [ a:defaultValue = "true" ]
+  attribute terminal {
+    ## (the element contains a prose definition of its meaning.) 
+    "true" | ## (the element contains a definition of its meaning given using
+      ## symbols defined elsewhere in the same metDecl element.) 
+      "false"
+  }?,
+  empty
+
+emo.variantEncoding =
+  ## declares the method used to encode text-critical variants.
+  element variantEncoding {
+    emo.variantEncoding.content, emo.variantEncoding.attributes
+  }
+emo.variantEncoding.content = empty
+emo.variantEncoding.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## indicates which method is used to encode the apparatus of
+  ## variants.
+  attribute method {
+    ## (apparatus uses line numbers or other canonical reference scheme
+    ## referenced in a base text.) 
+    "location-referenced" | ## (apparatus indicates the precise locations of the beginning and
+      ## ending of each lemma relative to a base text.) 
+      "double-end-point" | ## (alternate readings of a passage are given in parallel in the
+      ## text; no notion of a base text is necessary.) 
+      "parallel-segmentation"
+  },
+  ## indicates whether the apparatus appears within the running text
+  ## or external to it.
+  attribute location {
+    ## (apparatus appears within the running text.) 
+    "internal" | ## (apparatus appears outside the base text.) 
+      "external"
+  },
+  empty
+
+emo.profileDesc =
+  ## (text-profile description) provides a detailed description of non-bibliographic aspects of a
+  ## text, specifically the languages and sublanguages used, the situation in
+  ## which it was produced, the participants and their setting.
+  element profileDesc {
+    emo.profileDesc.content, emo.profileDesc.attributes
+  }
+emo.profileDesc.content = emo.creation?, emo.model.profileDescPart*
+emo.profileDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.creation =
+  ## contains information about the creation of a text.
+  element creation { emo.creation.content, emo.creation.attributes }
+emo.creation.content = emo.macro.phraseSeq
+emo.creation.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.langUsage =
+  ## (language usage) describes the languages, sublanguages, registers, dialects etc.
+  ## represented within a text.
+  element langUsage { emo.langUsage.content, emo.langUsage.attributes }
+emo.langUsage.content = (emo.language)+
+emo.langUsage.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.language =
+  ## characterizes a single language or sublanguage used within a
+  ##   text.
+  element language { emo.language.content, emo.language.attributes }
+emo.language.content = emo.macro.phraseSeq
+emo.language.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## Supplies a language code constructed as defined in RFC 3066 (or
+  ##       its successor) which is used to identify the language documented
+  ##       by this element, and which is referenced by the global xml:lang attribute.
+  attribute ident { emo.data.language },
+  ## specifies the approximate percentage (by volume) of the
+  ##       text which uses this language.
+  attribute usage {
+    xsd:nonNegativeInteger { maxInclusive = "100" }
+  }?,
+  empty
+
+emo.textClass =
+  ## (text classification) groups information which describes the nature or topic of a text
+  ## in terms of a standard classification scheme, thesaurus, etc.
+  element textClass { emo.textClass.content, emo.textClass.attributes }
+emo.textClass.content = (emo.classCode | emo.catRef | emo.keywords)*
+emo.textClass.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declarable.attribute.default,
+  empty
+
+emo.keywords =
+  ## (Keywords) contains a list of keywords or phrases identifying the topic or
+  ## nature of a text.
+  element keywords { emo.keywords.content, emo.keywords.attributes }
+emo.keywords.content = emo.term+ | emo.list
+emo.keywords.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## identifies the controlled vocabulary within which the set of
+  ##   keywords concerned is defined.
+  attribute scheme { emo.data.pointer },
+  empty
+
+emo.classCode =
+  ## (classCode) contains the classification code used for this text in some
+  ## standard classification system.
+  element classCode { emo.classCode.content, emo.classCode.attributes }
+emo.classCode.content = emo.macro.phraseSeq
+emo.classCode.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## identifies the classification system or taxonomy in use.
+  attribute scheme { emo.data.pointer },
+  empty
+
+emo.catRef =
+  ## (category reference) specifies one or more defined categories
+  ## within some taxonomy or text typology.
+  element catRef { emo.catRef.content, emo.catRef.attributes }
+emo.catRef.content = empty
+emo.catRef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## identifies the categories concerned
+  attribute target { emo.data.pointers },
+  ## identifies the classification scheme within which the set of
+  ##     categories concerned is defined
+  attribute scheme { emo.data.pointer }?,
+  empty
+
+emo.revisionDesc =
+  ## (revision description) summarizes the revision history for a file.
+  element revisionDesc {
+    emo.revisionDesc.content, emo.revisionDesc.attributes
+  }
+emo.revisionDesc.content = emo.list | emo.change+
+emo.revisionDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.change =
+  ## summarizes a particular change or correction made
+  ## to a particular version of an electronic text which is
+  ## shared between several researchers.
+  element change { emo.change.content, emo.change.attributes }
+emo.change.content = emo.macro.specialPara
+emo.change.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.ascribed.attribute.who,
+  ## supplies the date of the change in standard form,  i.e. yyyy-mm-dd.
+  attribute date { emo.data.temporal }?,
+  empty
+emo.model.headerPart = emo.encodingDesc | emo.profileDesc
+emo.model.sourceDescPart = emo.scriptStmt | emo.recordingStmt
+emo.model.encodingPart =
+  emo.projectDesc
+  | emo.samplingDecl
+  | emo.editorialDecl
+  | emo.tagsDecl
+  | emo.refsDecl
+  | emo.classDecl
+  | emo.fsdDecl
+  | emo.metDecl
+  | emo.variantEncoding
+emo.model.editorialDeclPart =
+  emo.correction
+  | emo.normalization
+  | emo.quotation
+  | emo.hyphenation
+  | emo.segmentation
+  | emo.stdVals
+  | emo.interpretation
+emo.model.profileDescPart = emo.langUsage | emo.textClass
+
+emo.TEI =
+  ## (TEI document) contains a single TEI-conformant document,
+  ## comprising a TEI header and a text, either in isolation or as part of a
+  ## teiCorpus element.
+  element TEI { emo.TEI.content, emo.TEI.attributes }
+emo.TEI.content = emo.teiHeader, emo.text
+emo.TEI.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## The version of the TEI scheme
+  [ a:defaultValue = "5.0" ] attribute version { xsd:decimal }?,
+  empty
+
+emo.text =
+  ## contains a single text of any kind, whether unitary or
+  ## composite, for example a poem or drama, a collection of essays, a novel,
+  ## a dictionary, or a corpus sample.
+  element text { emo.text.content, emo.text.attributes }
+emo.text.content =
+  emo.model.global*,
+  (emo.front, emo.model.global*)?,
+  (emo.body | emo.group),
+  emo.model.global*,
+  (emo.back, emo.model.global*)?
+emo.text.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  empty
+
+emo.body =
+  ## (text body) contains the whole body of a single unitary text, excluding any front or back matter.
+  element body { emo.body.content, emo.body.attributes }
+emo.body.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.macro.component, emo.model.global*)+,
+    ((emo.divGen, emo.model.global*)*,
+     ((emo.div, (emo.div | emo.divGen | emo.model.global)*)
+      | (emo.div0, (emo.div0 | emo.divGen | emo.model.global)*)
+      | (emo.div1, (emo.div1 | emo.divGen | emo.model.global)*))?))
+   | ((emo.divGen, emo.model.global*)*,
+      ((emo.div, (emo.div | emo.divGen | emo.model.global)*)
+       | (emo.div0, (emo.div0 | emo.divGen | emo.model.global)*)
+       | (emo.div1, (emo.div1 | emo.divGen | emo.model.global)*)))),
+  emo.model.divWrapper.bottom*
+emo.body.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  empty
+
+emo.group =
+  ## contains the body of a composite text, grouping together a
+  ## sequence of distinct texts (or groups of such texts) which are regarded
+  ## as a unit for some purpose, for example the collected works of an
+  ## author, a sequence of prose essays, etc.
+  element group { emo.group.content, emo.group.attributes }
+emo.group.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  ((emo.text | emo.group), (emo.text | emo.group | emo.model.global)*),
+  emo.model.divWrapper.bottom*
+emo.group.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div =
+  ## (text division) contains a subdivision of the front, body, or back of a
+  ## text.
+  element div { emo.div.content, emo.div.attributes }
+emo.div.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  ((emo.div | emo.divGen)+
+   | ((emo.macro.component, emo.model.global*)+,
+      (emo.div | emo.divGen)*)),
+  (emo.model.divWrapper | emo.model.divWrapper.bottom)*
+emo.div.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div0 =
+  ## (level-0 text division) contains the largest possible subdivision of the body
+  ## of a text.
+  element div0 { emo.div0.content, emo.div0.attributes }
+emo.div0.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div1 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div1 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div0.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div1 =
+  ## (level-1 text division) contains a first-level subdivision of the front, body, or back
+  ## of a text (the largest, if
+  ## div0 is not used, the second largest if it is).
+  element div1 { emo.div1.content, emo.div1.attributes }
+emo.div1.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div2 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div2 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div1.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div2 =
+  ## (level-2 text division) contains a second-level subdivision of the front, body, or back of a
+  ##  text.
+  element div2 { emo.div2.content, emo.div2.attributes }
+emo.div2.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div3 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div3 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div2.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div3 =
+  ## (level-3 text division) contains a third-level subdivision of the front, body, or back of a
+  ##  text.
+  element div3 { emo.div3.content, emo.div3.attributes }
+emo.div3.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div4 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div4 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div3.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div4 =
+  ## (level-4 text division) contains a fourth-level subdivision of the front, body, or back of a
+  ##  text.
+  element div4 { emo.div4.content, emo.div4.attributes }
+emo.div4.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div5 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div5 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div4.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div5 =
+  ## (level-5 text division) contains a fifth-level subdivision of the front, body, or back of a
+  ##  text.
+  element div5 { emo.div5.content, emo.div5.attributes }
+emo.div5.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div6 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div6 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div5.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div6 =
+  ## (level-6 text division) contains a sixth-level subdivision of the front, body, or back of a
+  ##  text.
+  element div6 { emo.div6.content, emo.div6.attributes }
+emo.div6.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (((emo.div7 | emo.divGen), emo.model.global*)+
+   | ((emo.macro.component, emo.model.global*)+,
+      ((emo.div7 | emo.divGen), emo.model.global*)*)),
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div6.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.div7 =
+  ## (level-7 text division) contains the smallest possible subdivision of the front, body or
+  ## back of a text, larger than a paragraph.
+  element div7 { emo.div7.content, emo.div7.attributes }
+emo.div7.content =
+  (emo.model.divWrapper | emo.model.global)*,
+  (emo.macro.component, emo.model.global*)+,
+  (emo.model.divWrapper.bottom, emo.model.global*)*
+emo.div7.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.divLike.attribute.type,
+  att.divLike.attribute.org,
+  att.divLike.attribute.sample,
+  att.divLike.attribute.part,
+  att.declaring.attribute.decls,
+  empty
+
+emo.trailer =
+  ## (trailer) contains a closing title or footer appearing at the end of
+  ## a division of a text. 
+  element trailer { emo.trailer.content, emo.trailer.attributes }
+emo.trailer.content = emo.macro.phraseSeq
+emo.trailer.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.byline =
+  ## contains the primary statement of responsibility given for a work
+  ## on its title page or at the head or end of the work.
+  element byline { emo.byline.content, emo.byline.attributes }
+emo.byline.content =
+  (text
+   | emo.model.gLike
+   | emo.model.phrase
+   | emo.docAuthor
+   | emo.model.global)*
+emo.byline.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.dateline =
+  ## contains a brief description of the place, date, time, etc. of
+  ##	production of a letter, newspaper story, or other work, prefixed or
+  ##	suffixed to it as a kind of heading or trailer. 
+  element dateline { emo.dateline.content, emo.dateline.attributes }
+emo.dateline.content = emo.macro.phraseSeq
+emo.dateline.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.argument =
+  ## A formal list or prose description of the topics addressed by
+  ##	a subdivision of a text.
+  element argument { emo.argument.content, emo.argument.attributes }
+emo.argument.content =
+  (emo.model.global*, emo.head)?,
+  (emo.macro.component, emo.model.global*)*
+emo.argument.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.epigraph =
+  ## (epigraph) contains a quotation, anonymous or attributed, appearing at
+  ## the start of a section or chapter, or on a title page. 
+  element epigraph { emo.epigraph.content, emo.epigraph.attributes }
+emo.epigraph.content = emo.macro.componentSeq
+emo.epigraph.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.opener =
+  ## groups together dateline, byline, salutation, and similar
+  ## phrases appearing as a preliminary group at the start of a
+  ## division, especially of a letter.
+  element opener { emo.opener.content, emo.opener.attributes }
+emo.opener.content =
+  (text
+   | emo.model.gLike
+   | emo.model.phrase
+   | emo.argument
+   | emo.byline
+   | emo.dateline
+   | emo.epigraph
+   | emo.salute
+   | emo.signed
+   | emo.model.global)*
+emo.opener.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.closer =
+  ## groups together dateline, byline, salutation, and similar
+  ## phrases appearing as a final group at the end of a
+  ## division, especially of a letter.
+  element closer { emo.closer.content, emo.closer.attributes }
+emo.closer.content =
+  (text
+   | emo.model.gLike
+   | emo.signed
+   | emo.dateline
+   | emo.salute
+   | emo.model.phrase
+   | emo.model.global)*
+emo.closer.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.salute =
+  ## (salutation) contains a salutation or greeting prefixed to a foreword,
+  ## dedicatory epistle, or other division of a text, or the
+  ## salutation in the closing of a letter, preface, etc.
+  element salute { emo.salute.content, emo.salute.attributes }
+emo.salute.content = emo.macro.phraseSeq
+emo.salute.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.signed =
+  ## (signature) contains the closing salutation, etc., appended to a foreword,
+  ## dedicatory epistle, or other division of a text. 
+  element signed { emo.signed.content, emo.signed.attributes }
+emo.signed.content = emo.macro.phraseSeq
+emo.signed.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.titlePage =
+  ## (title page) contains the title page of a text, appearing within the front
+  ## or back matter. 
+  element titlePage { emo.titlePage.content, emo.titlePage.attributes }
+emo.titlePage.content =
+  emo.model.global*,
+  emo.model.titlepagePart,
+  (emo.model.titlepagePart | emo.model.global)*
+emo.titlePage.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## classifies the title page according to any convenient typology.
+  attribute type { emo.data.enumerated }?,
+  empty
+
+emo.docTitle =
+  ## (document title) contains the title of a document, including all its
+  ## constituents, as given on a title page.
+  element docTitle { emo.docTitle.content, emo.docTitle.attributes }
+emo.docTitle.content =
+  emo.model.global*, (emo.titlePart, emo.model.global*)+
+emo.docTitle.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.titlePart =
+  ## (title part) contains a subsection or division of the title of a work, as
+  ## indicated on a title page.
+  element titlePart { emo.titlePart.content, emo.titlePart.attributes }
+emo.titlePart.content = emo.macro.paraContent
+emo.titlePart.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the role of this subdivision of the title.
+  [ a:defaultValue = "main" ] attribute type { emo.data.enumerated }?,
+  empty
+
+emo.docAuthor =
+  ## (document author) contains the name of the author of the document, as given on the
+  ## title page (often but not always contained in a byline).
+  element docAuthor { emo.docAuthor.content, emo.docAuthor.attributes }
+emo.docAuthor.content = emo.macro.phraseSeq
+emo.docAuthor.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.imprimatur =
+  ## contains a formal statement authorizing the publication of
+  ## a work, sometimes required to appear on a title page or its verso.
+  element imprimatur {
+    emo.imprimatur.content, emo.imprimatur.attributes
+  }
+emo.imprimatur.content = emo.macro.paraContent
+emo.imprimatur.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.docEdition =
+  ## (document edition) contains an edition statement as presented on a title page of a
+  ## document.
+  element docEdition {
+    emo.docEdition.content, emo.docEdition.attributes
+  }
+emo.docEdition.content = emo.macro.paraContent
+emo.docEdition.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.docImprint =
+  ## (document imprint) contains the imprint statement (place and date of publication,
+  ## publisher name), as given
+  ## (usually) at the foot of a title page.
+  element docImprint {
+    emo.docImprint.content, emo.docImprint.attributes
+  }
+emo.docImprint.content =
+  (text
+   | emo.model.gLike
+   | emo.model.phrase
+   | emo.pubPlace
+   | emo.docDate
+   | emo.publisher
+   | emo.model.global)*
+emo.docImprint.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.docDate =
+  ## (document date) contains the date of a document, as given
+  ## (usually) on a title page.
+  element docDate { emo.docDate.content, emo.docDate.attributes }
+emo.docDate.content = emo.macro.phraseSeq
+emo.docDate.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## gives the value of the date in a standard form.
+  attribute value { emo.data.temporal }?,
+  empty
+
+emo.front =
+  ## (front matter) contains any prefatory matter (headers,
+  ## title page, prefaces, dedications, etc.)
+  ## found  at the start of a document, before the main body.
+  element front { emo.front.content, emo.front.attributes }
+emo.front.content =
+  (emo.model.frontPart | emo.model.global)*,
+  ((emo.model.pLike.front,
+    (emo.model.pLike.front | emo.titlePage | emo.model.global)*)
+   | (emo.div, (emo.div | emo.model.frontPart | emo.model.global)*)
+   | (emo.div1, (emo.div1 | emo.model.frontPart | emo.model.global)*))?
+emo.front.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  empty
+
+emo.back =
+  ## (back matter) contains any appendixes, etc. following the main part of a
+  ## text.
+  element back { emo.back.content, emo.back.attributes }
+emo.back.content =
+  (emo.model.frontPart | emo.model.global | emo.model.divWrapper)*,
+  ((emo.div, (emo.div | emo.model.frontPart | emo.model.global)*)
+   | (emo.div1, (emo.div1 | emo.model.frontPart | emo.model.global)*))?,
+  emo.model.divWrapper.bottom*
+emo.back.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.declaring.attribute.decls,
+  empty
+
+emo.att =
+  ## (attribute) contains the name of an attribute appearing within running text.
+  element att { emo.att.content, emo.att.attributes }
+emo.att.content = text
+emo.att.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## supplies an identifier for  the scheme in which this name is defined.
+  [ a:defaultValue = "TEI" ] attribute scheme { emo.data.enumerated }?,
+  empty
+
+emo.code =
+  ## contains literal code from some formal language such as a
+  ## programming language
+  element code { emo.code.content, emo.code.attributes }
+emo.code.content = text
+emo.code.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## a name identifying the formal language in which  the
+  ##	code is expressed
+  attribute lang { emo.data.word }?,
+  empty
+
+emo.eg =
+  ## contains any kind of illustrative example. 
+  element eg { emo.eg.content, emo.eg.attributes }
+emo.eg.content = text
+emo.eg.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.egXML =
+  ## contains a single well-formed XML example demonstrating the use of some XML element or
+  ##   attribute. 
+  element teix:egXML { emo.egXML.content, emo.egXML.attributes }
+emo.egXML.content = (text | emo.anyEPI)+
+emo.egXML.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.gi =
+  ## (generic identifier) contains the name (generic identifier) of an element.
+  element gi { emo.gi.content, emo.gi.attributes }
+emo.gi.content = text
+emo.gi.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## supplies the name of the scheme in which this name is defined.
+  [ a:defaultValue = "TEI" ] attribute scheme { emo.data.enumerated }?,
+  empty
+
+emo.ident =
+  ## contains an identifier or name for an object of some kind in a formal language
+  element ident { emo.ident.content, emo.ident.attributes }
+emo.ident.content = text
+emo.ident.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.typed.attribute.type,
+  att.typed.attribute.subtype,
+  empty
+
+emo.tag =
+  ## contains text of a complete start- or end-tag, possibly
+  ## including attribute specifications, but excluding the opening and
+  ## closing markup delimiter characters.
+  element tag { emo.tag.content, emo.tag.attributes }
+emo.tag.content = text
+emo.tag.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## supplies the name of the scheme in which this name is defined.
+  [ a:defaultValue = "TEI" ]
+  attribute scheme {
+    ## (this tag is part of the TEI scheme.) 
+    "TEI" | ## (this element is  part of the Docbook scheme.) 
+      "DBK"
+  }?,
+  empty
+
+emo.val =
+  ## (value) contains a single attribute value.
+  element val { emo.val.content, emo.val.attributes }
+emo.val.content = text
+emo.val.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.specList =
+  ## marks where a list of descriptions is to be inserted into the prose documentation.
+  element specList { emo.specList.content, emo.specList.attributes }
+emo.specList.content = emo.specDesc+
+emo.specList.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.specDesc =
+  ## (Element or class description) indicates that a description of the specified element or class should
+  ##           be included at this point within a document.
+  element specDesc { emo.specDesc.content, emo.specDesc.attributes }
+emo.specDesc.content = empty
+emo.specDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## (identifier) supplies the identifier of the documentary element or class for
+  ##           which a description is to be obtained.
+  attribute key { emo.data.name }?,
+  ## (attributes) supplies attribute names for which descriptions should additionally
+  ##           be obtained.
+  attribute atts {
+    list { emo.data.name* }
+  }?,
+  empty
+
+emo.moduleRef =
+  ## references a module which is to be incorporated into a schema.
+  element moduleRef { emo.moduleRef.content, emo.moduleRef.attributes }
+emo.moduleRef.content = emo.content?
+emo.moduleRef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  (
+   ## the name of a TEI module
+   attribute key { xsd:NCName } | ## refers to a non-TEI module by external location 
+     attribute url { xsd:anyURI })?,
+  empty
+
+emo.moduleSpec =
+  ## documents the structure, content, and purpose of a single
+  ## module, i.e. a named and externally visible group of declarations.
+  element moduleSpec {
+    emo.moduleSpec.content, emo.moduleSpec.attributes
+  }
+emo.moduleSpec.content =
+  emo.macro.glossSeq, emo.exemplum*, emo.remarks?, emo.listRef*
+emo.moduleSpec.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## type of module to be generated
+  attribute type { text }?,
+  empty
+
+emo.schemaSpec =
+  ## generates a TEI-conformant schema and documentation for it.
+  element schemaSpec {
+    emo.schemaSpec.content, emo.schemaSpec.attributes
+  }
+emo.schemaSpec.content =
+  emo.macro.glossSeq,
+  (emo.moduleRef | emo.specGrpRef | emo.model.oddDecl)*
+emo.schemaSpec.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## type of schema
+  attribute type { emo.data.namespace }?,
+  ## specifies entry points to the schema, i.e. which
+  ##       elements  are allowed to be used as  the root of
+  ##       documents conforming to it. 
+  [ a:defaultValue = "TEI" ]
+  attribute start {
+    list { emo.data.name* }
+  }?,
+  ## specifies the default namespace (if any) applicable to
+  ##       components of the schema.
+  [ a:defaultValue = "http://www.tei-c.org/ns/1.0" ]
+  attribute ns { emo.data.namespace }?,
+  empty
+
+emo.specGrp =
+  ## (specification group) contains any convenient grouping of specifications for use within
+  ##   the current module.
+  element specGrp { emo.specGrp.content, emo.specGrp.attributes }
+emo.specGrp.content =
+  (emo.model.oddDecl | emo.model.oddRef | emo.model.divPart)*
+emo.specGrp.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.specGrpRef =
+  ## (reference to a specification group) indicates that the  declarations contained by the
+  ##   specGrp referenced should be inserted at this point.
+  element specGrpRef {
+    emo.specGrpRef.content, emo.specGrpRef.attributes
+  }
+emo.specGrpRef.content = empty
+emo.specGrpRef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## points at the specification group  which logically belongs here.
+  attribute target { emo.data.pointer },
+  empty
+
+emo.stringVal =
+  ## contains the intended expansion for the entity documented
+  ## by an patternSpec element, enclosed by quotation marks.
+  element stringVal { emo.stringVal.content, emo.stringVal.attributes }
+emo.stringVal.content = text
+emo.stringVal.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.elementSpec =
+  ## documents the structure, content, and purpose of a single
+  ## element type.
+  element elementSpec {
+    emo.elementSpec.content, emo.elementSpec.attributes
+  }
+emo.elementSpec.content =
+  emo.macro.glossSeq,
+  emo.classes?,
+  emo.content?,
+  emo.attList?,
+  emo.exemplum*,
+  emo.remarks*,
+  emo.listRef*
+emo.elementSpec.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## (namespace) specifies the namespace to which this element belongs
+  [ a:defaultValue = "http://www.tei-c.org/ns/1.0" ]
+  attribute ns { emo.data.namespace }?,
+  ## specifies the optionality of an attribute or element. 
+  [ a:defaultValue = "opt" ]
+  attribute usage {
+    ## (required) 
+    "req" | ## (mandatory when applicable) 
+      "mwa" | ## (recommended) 
+      "rec" | ## (recommended when applicable) 
+      "rwa" | ## (optional) 
+      "opt"
+  }?,
+  empty
+
+emo.classSpec =
+  ## contains reference information for a TEI element class; 
+  ## that is a group of 
+  ##   elements which appear together in  content models, or 
+  ##   which share some common attribute, or both.
+  element classSpec { emo.classSpec.content, emo.classSpec.attributes }
+emo.classSpec.content =
+  emo.macro.glossSeq,
+  emo.classes?,
+  emo.attList?,
+  emo.exemplum*,
+  emo.remarks*,
+  emo.listRef*
+emo.classSpec.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## indicates whether this is a model class or an attribute class
+  attribute type {
+    ## (members of this class appear in the same  content models) 
+    "model" | ## (members of this class share common attributes) 
+      "atts"
+  },
+  empty
+
+emo.macroSpec =
+  ## documents the function and implementation of a pattern. 
+  element macroSpec { emo.macroSpec.content, emo.macroSpec.attributes }
+emo.macroSpec.content =
+  emo.macro.glossSeq,
+  (emo.stringVal | emo.content)+,
+  emo.exemplum*,
+  emo.remarks*,
+  emo.listRef*
+emo.macroSpec.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## indicates which type of entity should be generated, when an ODD
+  ##	processor is generating a module using SGML syntax.
+  attribute type {
+    ## (parameter entity) 
+    "pe" | ## (element parameter entity) 
+      "epe" | ## (general entity) 
+      "ge" | ## (datatype entity) 
+      "dt"
+  }?,
+  empty
+
+emo.remarks =
+  ## contains any commentary or discussion about the usage of an
+  ## element, attribute, class, or entity not otherwise documented within the
+  ## containing element.
+  element remarks { emo.remarks.content, emo.remarks.attributes }
+emo.remarks.content = emo.macro.componentSeq
+emo.remarks.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.listRef =
+  ## (list of references) supplies a list of significant references to places where this
+  ##   element is discussed, in the current document or elsewhere.
+  element listRef { emo.listRef.content, emo.listRef.attributes }
+emo.listRef.content = emo.ptr*
+emo.listRef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.exemplum =
+  ## contains a single example demonstrating the use of an element,
+  ##   together with optional paragraphs of commentary.
+  element exemplum { emo.exemplum.content, emo.exemplum.attributes }
+emo.exemplum.content =
+  emo.model.pLike*, (emo.egXML | emo.eg), emo.model.pLike*
+emo.exemplum.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.classes =
+  ## specifies all the classes of which the documented element or
+  ## class is a member or subclass.
+  element classes { emo.classes.content, emo.classes.attributes }
+emo.classes.content = emo.memberOf*
+emo.classes.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.memberOf =
+  ## specifies  class membership of the parent element or class.
+  element memberOf { emo.memberOf.content, emo.memberOf.attributes }
+emo.memberOf.content = emo.macro.xtext
+emo.memberOf.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## (a name) specifies the identifier for a class of which the documented
+  ##  element or class is a member or subclass
+  attribute key { emo.data.name }?,
+  empty
+
+emo.content =
+  ## (schema declaration) contains the text of a declaration for the schema
+  ## documented.
+  element content { emo.content.content, emo.content.attributes }
+emo.content.content = emo.macro.schemapattern*
+emo.content.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.attList =
+  ## contains documentation for all the attributes associated with this
+  ## element, as a series of attDef elements.
+  element attList { emo.attList.content, emo.attList.attributes }
+emo.attList.content = (emo.attRef | emo.attDef | emo.attList)*
+emo.attList.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies whether all the attributes in the list are
+  ##   available (org="group") or only  one of them (org="choice")
+  [ a:defaultValue = "group" ]
+  attribute org {
+    ## (grouped) 
+    "group" | ## (alternated) 
+      "choice"
+  }?,
+  empty
+
+emo.attDef =
+  ## (attribute definition) contains the definition of a single attribute.
+  element attDef { emo.attDef.content, emo.attDef.attributes }
+emo.attDef.content =
+  emo.macro.glossSeq,
+  emo.datatype?,
+  emo.defaultVal?,
+  (emo.valList | emo.valDesc)?,
+  emo.exemplum*,
+  emo.remarks*
+emo.attDef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  ## specifies the optionality of an attribute or element.
+  [ a:defaultValue = "opt" ]
+  attribute usage {
+    ## (required) 
+    "req" | ## (mandatory when applicable  ) 
+      "mwa" | ## (recommended  ) 
+      "rec" | ## (recommended when applicable  ) 
+      "rwa" | ## (optional ) 
+      "opt"
+  }?,
+  ## (namespace) specifies the namespace to which this attribute belongs
+  [ a:defaultValue = "http://www.tei-c.org/ns/1.0" ]
+  attribute ns { emo.data.namespace }?,
+  empty
+
+emo.attRef =
+  ## (attribute pointer) points to the definition of an attribute or group of attributes.
+  element attRef { emo.attRef.content, emo.attRef.attributes }
+emo.attRef.content = empty
+emo.attRef.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## the name of the pattern defining the attribute(s)
+  attribute name { emo.data.word },
+  empty
+
+emo.datatype =
+  ## specifies the declared value for an attribute, by referring to
+  ##   any datatype defined by the chosen schema language.
+  element datatype { emo.datatype.content, emo.datatype.attributes }
+emo.datatype.content = emo.macro.schemapattern*
+emo.datatype.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.defaultVal =
+  ## specifies the default declared value for an attribute.
+  element defaultVal {
+    emo.defaultVal.content, emo.defaultVal.attributes
+  }
+emo.defaultVal.content = text
+emo.defaultVal.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  empty
+
+emo.valDesc =
+  ## (value description) specifies any semantic or syntactic constraint on the value that
+  ## an attribute may take, additional to the information carried by the
+  ## datatype element.
+  element valDesc { emo.valDesc.content, emo.valDesc.attributes }
+emo.valDesc.content = emo.macro.phraseSeq
+emo.valDesc.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the effect of this declaration on its parent module.
+  [ a:defaultValue = "add" ]
+  attribute mode {
+    ## (this declaration is added to the current definitions) 
+    "add" | ## (this declaration and all of its children are removed from the current setup) 
+      "delete" | ## (this declaration changes the declaration of the same
+      ##	 name in the current definition) 
+      "change" | ## (this declaration replaces the declaration of the same
+      ##	name in the current definition) 
+      "replace"
+  }?,
+  empty
+
+emo.valItem =
+  ## (value definition) contains a single value and gloss  pair for an attribute.
+  element valItem { emo.valItem.content, emo.valItem.attributes }
+emo.valItem.content = emo.macro.glossSeq
+emo.valItem.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  empty
+
+emo.valList =
+  ## (value list) contains one or more valItem elements defining possible
+  ##   values for an attribute.
+  element valList { emo.valList.content, emo.valList.attributes }
+emo.valList.content = emo.valItem+
+emo.valList.attributes =
+  att.global.attribute.xmlid,
+  att.global.attribute.n,
+  att.global.attribute.xmllang,
+  att.global.attribute.rend,
+  att.global.attribute.xmlbase,
+  ## specifies the effect of this declaration on its parent
+  ##     module.
+  [ a:defaultValue = "add" ]
+  attribute mode {
+    ## (this declaration is added to the current definitions) 
+    "add" | ## (this declaration and all of its children are removed from the current setup) 
+      "delete" | ## (this declaration changes the declaration of the same
+      ##	 name in the current definition) 
+      "change" | ## (this declaration replaces the declaration of the same
+      ##	name in the current definition) 
+      "replace"
+  }?,
+  ## specifies the extensibility of the list of attribute values
+  ##       specified.
+  [ a:defaultValue = "open" ]
+  attribute type {
+    ## (only the values specified are permitted.) 
+    "closed" | ## (all the values specified should be supported, but
+      ##	  other values are legal and software should have appropriate
+      ##	  fallback processing for them.
+      ##	  ) 
+      "semi" | ## (the values specified are sample values only.) 
+      "open"
+  }?,
+  empty
+emo.att.identified.attributes =
+  att.identified.attribute.ident,
+  att.identified.attribute.depend,
+  att.identified.attribute.predeclare,
+  att.identified.attribute.module,
+  att.identified.attribute.mode,
+  empty
+
+att.identified.attribute.ident =
+  ## Supplies the identifier by which this element is referenced.
+  attribute ident { emo.data.name }
+
+att.identified.attribute.depend =
+  ## The name of a module on which this object depends.
+  attribute depend { xsd:NCName }?
+
+att.identified.attribute.predeclare =
+  ## Says whether the class should be treated as global, and so
+  ##       needs predefining in the core.
+  [ a:defaultValue = "false" ] attribute predeclare { xsd:boolean }?
+
+att.identified.attribute.module =
+  ## Supplies the name of the module in which this object is to
+  ##       be defined.
+  attribute module { xsd:NCName }?
+
+att.identified.attribute.mode =
+  ## specifies the effect of this declaration on its parent
+  ##     module.
+  [ a:defaultValue = "add" ]
+  attribute mode {
+    ## (this declaration is added to the current definitions) 
+    "add" | ## (this declaration and all of its children are removed from the current setup) 
+      "delete" | ## (this declaration changes the declaration of the same
+      ##     name in the current definition) 
+      "change" | ## (this declaration replaces the declaration of the same
+      ##     name in the current definition) 
+      "replace"
+  }?
+start = emo.TEI
