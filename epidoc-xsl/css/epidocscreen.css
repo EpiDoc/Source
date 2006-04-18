@@ -33,8 +33,8 @@ text-indent: 0px;
 }
 
 #htmlcontent div {
-margin-left: 4px;
-margin-right %OFFHORIZ%;
+margin: 0px;
+padding: 0px;
 }
 
 #htmlheader  {
@@ -42,6 +42,12 @@ background:pink;
 margin-bottom:8px;
 }
 
+#htmltitlepageheader, #htmltitlepagecontent {
+padding: 20%;
+padding-top: 0px;
+padding-bottom: 0px;
+text-align: center;
+}
 
 #htmlnavigation {
 background: #EEE;
@@ -128,16 +134,19 @@ font-style:italic;
 h1, h2, h3, h4, h5, h6  {
 font-family:"Arial Narrow",sans-serif;;
 font-style:normal;
-font-weight:normal;
+font-weight:bold;
 margin:0px;
+margin-top: 8px;
 padding:0px;
 }
 
 h1  {
+margin-top: 0px;
 border: none;
 font-size:1.4em;
 padding-left: 4px;
 }
+
 
 h2  {
 border-bottom: thin solid #555;
@@ -145,28 +154,40 @@ font-size:1.2em;
 }
 
 h3  {
-font-size:1em;
+font-size:1.2em;
 }
 
 h4  {
-font-size:0.8em;
+font-size:1.0em;
 }
 
 h5  {
-font-size:0.6em;
+font-size:0.8em;
 }
 
 h6  {
-font-size:0.4em;
+font-size:0.6em;
 }
 
 p {
-margin: 0px;
+margin: 16px;;
 margin-top: 8px;
 margin-bottom: 8px;
 padding: 0px;
 }
 
+#htmltitlepagecontent h2 {
+border: 0px;
+margin-top: 24px;
+padding-top: 24px;
+}
+#htmltitlepagecontent p {
+margin-top: 24px;
+margin-bottom: 24px;
+}
+#htmlnavigation p {
+margin: 0px;
+}
 .linenumber {
 color: #555;
 font-family: "Arial Narrow",sans-serif;;
@@ -250,6 +271,10 @@ text-decoration: line-through;
 font-style: normal;
 }
 
+.note {
+background: #FFFF99;;
+font-size: 0.7em;
+}
 .previously-read {
 background: #CCC;
 }

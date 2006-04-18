@@ -1,5 +1,8 @@
 %OFFVERT% = 8px
+%OFFVERTTITLE% = 24px
 %OFFHORIZ% = 4px
+%OFFHORIZTITLE% = 20%
+%OFFHORIZBIG% = 16px;
 %CLRNEUTRAL% = white
 %CLRCONTRAST% = pink
 %CLRATTENTION% = red
@@ -10,6 +13,7 @@
 %CLRSUBTLE% = #555
 %CLRCODE% = #057;
 %CLRBGDCODE% = #8DF;
+%CLRYELLOWSTICKY% = #FFFF99;
 %BRDRSTD% = none
 %BRDRSUBTLE% = thin solid #555 
 %FNTFAMMETA% = "Arial Narrow",sans-serif;
@@ -55,8 +59,8 @@ div  {
 }
 
    #htmlcontent div {
-      margin-left: %OFFHORIZ%;
-      margin-right %OFFHORIZ%;
+        margin: 0px;
+        padding: 0px;
    }
 
 #htmlheader  { 
@@ -64,6 +68,12 @@ div  {
    margin-bottom:%OFFVERT%;
 } 
 
+#htmltitlepageheader, #htmltitlepagecontent {
+        padding: %OFFHORIZTITLE%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        text-align: center;
+}
 
 #htmlnavigation {
    background: %CLRPALE2%;
@@ -150,16 +160,19 @@ div.example h3 {
 h1, h2, h3, h4, h5, h6  { 
    font-family:%FNTFAMMETA%;
    font-style:normal;
-   font-weight:normal;
+   font-weight:bold;
    margin:0px;
+   margin-top: %OFFVERT%;
    padding:0px;
 } 
 
 h1  { 
+    margin-top: 0px;
    border: %BRDRSTD%;
    font-size:1.4em;
    padding-left: %OFFHORIZ%;
 } 
+
 
 h2  { 
    border-bottom: %BRDRSUBTLE%;
@@ -167,28 +180,40 @@ h2  {
 } 
 
 h3  { 
-   font-size:1em;
+   font-size:1.2em;
 } 
 
 h4  { 
-   font-size:0.8em;
+   font-size:1.0em;
 } 
 
 h5  { 
-   font-size:0.6em;
+   font-size:0.8em;
 } 
 
 h6  { 
-   font-size:0.4em;
+   font-size:0.6em;
 } 
 
 p {
-   margin: 0px;
+   margin: %OFFHORIZBIG%;
    margin-top: %OFFVERT%;
    margin-bottom: %OFFVERT%;
    padding: 0px;
 }
 
+#htmltitlepagecontent h2 {
+    border: 0px;
+    margin-top: %OFFVERTTITLE%;
+    padding-top: %OFFVERTTITLE%;
+}
+#htmltitlepagecontent p {
+    margin-top: %OFFVERTTITLE%;
+    margin-bottom: %OFFVERTTITLE%;
+}
+#htmlnavigation p {
+    margin: 0px;
+}
 .linenumber {
    color: %CLRSUBTLE%;
    font-family: %FNTFAMMETA%;
@@ -272,6 +297,10 @@ span span:hover, a span:hover {
     font-style: normal;
 }
 
+.note {
+    background: %CLRYELLOWSTICKY%;
+    font-size: %FNTSIZESML%;
+}
 .previously-read {
     background: %CLRPALE%;
 }

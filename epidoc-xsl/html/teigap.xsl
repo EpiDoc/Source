@@ -73,37 +73,37 @@
     
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- callable template for determining string based on gap extent -->    
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <xsl:template name="calcgapextentstring">
         <xsl:param name="gapmaxrepeat">4</xsl:param>
         <xsl:variable name="gapid"><xsl:value-of select="@id"/></xsl:variable>
         <xsl:choose>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
                 <xsl:choose>
-                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/><xsl:if test="@unit != 'character'"><xsl:value-of select="@unit"/></xsl:if>&#160;&#183;&#160;?&#160;</xsl:when>
+                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/><xsl:if test="@extentmax"><xsl:text>-</xsl:text><xsl:value-of select="@extentmax"/></xsl:if>&#160;&#183;&#160;?&#160;</xsl:when>
                     <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;?&#160;</xsl:element></xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and //tei:certainty[@target=$gapid and @locus='unit' and @degree='low']">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param><xsl:with-param name="rstring">-&#160;?&#160;</xsl:with-param></xsl:call-template></xsl:when>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low']">
                 <xsl:choose>
-                    <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template>?&#160;</xsl:when>
+                    <xsl:when test="@unit='character' and not(@extentmax) and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template>?&#160;</xsl:when>
                     <xsl:when test="@unit='character' and @extent &gt; $gapmaxrepeat - 1">&#160;&#183;&#160;<xsl:value-of select="@extent"/>&#160;&#183;&#160;?&#160;</xsl:when>
                     <xsl:otherwise>&#160;-&#160;<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;?&#160;</xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
                 <xsl:choose>
-                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/>&#160;&#183;&#160;</xsl:when>
+                    <xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/><xsl:if test="@extentmax"><xsl:text>-</xsl:text><xsl:value-of select="@extentmax"/></xsl:if>&#160;&#183;&#160;</xsl:when>
                     <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>&#160;-&#160;c.<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;</xsl:element></xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='unit' and @degree='low']">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param><xsl:with-param name="rstring">-&#160;</xsl:with-param></xsl:call-template></xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="@unit='character' and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template></xsl:when>
-                    <xsl:when test="@unit='character' and @extent &gt; $gapmaxrepeat - 1">&#160;&#183;&#160;<xsl:value-of select="@extent"/>&#160;&#183;&#160;</xsl:when>
-                    <xsl:otherwise>&#160;-&#160;<xsl:value-of select="@extent"/><xsl:value-of select="@unit"/>&#160;-&#160;</xsl:otherwise>
+                    <xsl:when test="@unit='character' and not(@extentmax) and @extent &lt; $gapmaxrepeat">&#160;<xsl:call-template name="repeatstring"><xsl:with-param name="rstring">&#183;&#160;</xsl:with-param><xsl:with-param name="rcount"><xsl:value-of select="@extent"/></xsl:with-param></xsl:call-template></xsl:when>
+                    <xsl:when test="@unit='character' and @extent &gt; $gapmaxrepeat - 1">&#160;&#183;&#160;<xsl:value-of select="@extent"/><xsl:if test="@extentmax"><xsl:text>-</xsl:text><xsl:value-of select="@extentmax"/></xsl:if>&#160;&#183;&#160;</xsl:when>
+                    <xsl:otherwise>&#160;-&#160;<xsl:value-of select="@extent"/><xsl:if test="@extentmax"><xsl:text>-</xsl:text><xsl:value-of select="@extentmax"/></xsl:if><xsl:if test="@unit != 'character'"><xsl:value-of select="@unit"/></xsl:if>&#160;-&#160;</xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>

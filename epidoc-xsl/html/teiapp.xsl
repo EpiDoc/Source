@@ -4,9 +4,13 @@
         <xsl:choose>
             <xsl:when test="contains(ancestor::tei:div/@type, 'edition') and tei:rdg/tei:add[@place='overstrike']"><xsl:call-template name="overstruck"/></xsl:when>
             <xsl:when test="contains(ancestor::tei:div/@type, 'edition') and count(tei:rdg) = 2 and tei:rdg[1]/tei:gap[@reason='lost'] and not(tei:rdg[2]/tei:gap[@reason='lost'])"><xsl:call-template name="previouslyread"/></xsl:when>
+		<xsl:when test="contains(ancestor::tei:div/@type, 'edition') and tei:rdg[@n='default']">
+			<xsl:apply-templates select="tei:rdg[@n='default']"/>
+		</xsl:when>
             <xsl:otherwise><xsl:element name="span"><xsl:attribute name="class">error</xsl:attribute>Untrapped app construct.</xsl:element></xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+
      <xsl:template name="overstruck">
          <xsl:element name="span">
              <xsl:attribute name="class">overstruck</xsl:attribute>

@@ -3,6 +3,8 @@
     <xsl:template match="tei:lb">
         <xsl:call-template name="teilbprefix"/>
         <xsl:if test="@type='worddiv'">-</xsl:if>
+        <xsl:if test="preceding::tei:lb[1][@rend='right-to-left']"> &#x2190;</xsl:if>
+        <xsl:if test="preceding::tei:lb[1][@rend='left-to-right']"> &#x2192;</xsl:if>
         <xsl:text>
             </xsl:text><xsl:element name="br">
                 <xsl:call-template name="propagateattrs"/>

@@ -19,9 +19,10 @@
         <xsl:param name="sic"/>
         <xsl:param name="corr"/>
         <xsl:choose>
-            <xsl:when test="string-length($sic) = 1 and string-length($corr) = 1">
+<!--            <xsl:when test="string-length($sic) = 1 and string-length($corr) = 1">
                 <xsl:element name="span"><xsl:call-template name="propagateattrs"/><xsl:attribute name="class">correction</xsl:attribute><xsl:attribute name="title"><xsl:value-of select="$sic"/></xsl:attribute>&lt;<xsl:value-of select="$corr"/>&gt;</xsl:element>
             </xsl:when>
+-->
             <xsl:when test="string-length($sic) &gt; 0 and string-length($corr) = 0">
                <xsl:element name="span"><xsl:call-template name="propagateattrs"/><xsl:attribute name="class">correction</xsl:attribute>{<xsl:value-of select="$sic"/>}</xsl:element>
             </xsl:when>
@@ -31,13 +32,34 @@
         </xsl:choose>
     </xsl:template>
     
-   <!-- in EpiDoc, a plain sic means unintelligible -->
-    <xsl:template match="tei:sic">
+   <!-- in EpiDoc, sic with no corr but [@n='unintelligible'] means unintelligible -->
+    <xsl:template match="tei:sic[@n='unintelligible']">
        <xsl:element name="span">
           <xsl:call-template name="propagateattrs"/>
           <xsl:attribute name="class">unintelligible</xsl:attribute>
           <xsl:choose>
-             <xsl:when test="ancestor-or-self::*/@lang='lat'"><xsl:value-of select="translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/></xsl:when>
+             <xsl:when test="ancestor-or-self::*[@lang][1]/@lang='lat'">
+               <xsl:value-of select="translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+             </xsl:when>
+             <xsl:when test="ancestor-or-self::*[@lang][1]/@lang='grc'">
+               <span style="text-transform: uppercase ;"><xsl:apply-templates/></span>
+             </xsl:when>
+             <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+          </xsl:choose>
+       </xsl:element>
+    </xsl:template>
+   <!-- in EpiDoc, sic with no corr but [@n='superfluous'] means erroneously included -->
+    <xsl:template match="tei:sic[@n='superfluous']">
+       <xsl:element name="span">
+          <xsl:call-template name="propagateattrs"/>
+          <xsl:attribute name="class">superfluous</xsl:attribute>
+          <xsl:choose>
+             <xsl:when test="ancestor-or-self::*[@lang][1]/@lang='lat'">
+               <xsl:text>{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+             </xsl:when>
+             <xsl:when test="ancestor-or-self::*[@lang][1]/@lang='grc'">
+               <xsl:text>{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+             </xsl:when>
              <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
           </xsl:choose>
        </xsl:element>

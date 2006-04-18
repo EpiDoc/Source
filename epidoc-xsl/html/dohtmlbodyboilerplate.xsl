@@ -2,19 +2,22 @@
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    
     <xsl:template name="dohtmlbodyboilerplate">
+        <xsl:param name="doctitleprefix"></xsl:param>
+        <xsl:param name="includenav">yes</xsl:param>
+        <xsl:param name="processteiheader">yes</xsl:param>
+        <!-- options: floating, no -->
         <xsl:element name="body">
             <!-- create an html div to function as the header -->
             <xsl:element name="div">
                 <xsl:attribute name="id">
                     <xsl:value-of select="$htmlheaderdivid" />
                 </xsl:attribute>
-                <xsl:element name="h1">
-                    <xsl:call-template name="getdoctitle" />
-                </xsl:element>
+                <xsl:element name="h1"><xsl:value-of select="$doctitleprefix"/><xsl:call-template name="getdoctitle" /></xsl:element>
             </xsl:element>
             <!-- create an html div to function as a separator/navigation bar -->
-            <xsl:element name="div">
+            <xsl:if test="$includenav = 'yes'"><xsl:element name="div">
                 <xsl:attribute name="id">
                     <xsl:value-of select="$htmlseparatordivid" />
                 </xsl:attribute>
@@ -48,23 +51,28 @@
                             <xsl:if test="count(/*//tei:div) &gt; 0"><a class="htmlnavigation" href="#subsections">subsections</a></xsl:if>
                         </xsl:otherwise>
                     </xsl:choose></xsl:if>
+                    || <xsl:element name="a"><xsl:attribute name="href"
+                            >mailto:markup@lsv.uky.edu?subject=guidelines comment on <xsl:value-of
+                            select="@id"/>.xml</xsl:attribute>post a comment</xsl:element>
+                    
                 </xsl:element>
-            </xsl:element>
+            </xsl:element></xsl:if>
             <!-- handle any teiHeader metadata -->
-            <xsl:call-template name="doteiheadermetadata" />
+            <xsl:if test="$processteiheader = 'yes'"><xsl:call-template name="doteiheadermetadata" /></xsl:if>
             <!-- create an html div to contain the rest of the document content -->
             <xsl:element name="div">
                 <xsl:attribute name="id">
                     <xsl:value-of select="$htmlcontentdivid" />
                 </xsl:attribute>
                 <xsl:choose>
-                    <xsl:when test="ancestor-or-self::*/@rend='multipart'">
+                    <xsl:when test="ancestor-or-self::*/@rend='multipart' and tei:div">
                         <xsl:apply-templates select="*[name() != 'div' and name() != 'head']" />
                         <xsl:element name="h2"><xsl:attribute name="id"
-                            >subsections</xsl:attribute>Subsections:</xsl:element>
+                            >subsections</xsl:attribute>Subsections</xsl:element>
                         <xsl:element name="ul">
-                            <xsl:apply-templates select="tei:div" />
+                            <xsl:apply-templates select="tei:div[not(@type) or not(contains(@type, 'gl-'))]"/>
                         </xsl:element>
+                        <xsl:apply-templates select="tei:div[@type]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="*[name() != 'head']" />

@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
    <xsl:template name="dohtmlheadboilerplate">
+       <xsl:param name="doctitleprefix"></xsl:param>
+       
       <xsl:element name="head">
          <!-- get the document title -->
-         <xsl:variable name="doctitle">
-            <xsl:call-template name="getdoctitle">
+         <xsl:variable name="doctitle"><xsl:value-of select="$doctitleprefix"/><xsl:call-template name="getdoctitle">
                <xsl:with-param name="ascii">true</xsl:with-param>
-            </xsl:call-template>
-         </xsl:variable>
+            </xsl:call-template></xsl:variable>
          <!-- output standard html content type information -->
          <xsl:comment>standard html content type information</xsl:comment>
          <xsl:element name="meta" namespace="http://www.w3.org/1999/xhtml">
@@ -24,6 +24,13 @@
             <xsl:attribute name="rel">shortcut icon</xsl:attribute>
             <xsl:attribute name="href">
                <xsl:value-of select="$faviconpath" />
+            </xsl:attribute>
+         </xsl:element>
+         <xsl:element name="link">
+            <xsl:attribute name="rel">stylesheet</xsl:attribute>
+            <xsl:attribute name="type">text/css</xsl:attribute>
+            <xsl:attribute name="href">
+               <xsl:value-of select="$standalonecss" />
             </xsl:attribute>
          </xsl:element>
          <!-- output the standard html title for this document -->

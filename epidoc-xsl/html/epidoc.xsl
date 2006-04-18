@@ -11,6 +11,7 @@
     <xsl:import href="teiapp.xsl" />
     <xsl:import href="teitext.xsl" />
     <xsl:import href="teibody.xsl" />
+    <xsl:import href="teinote.xsl"/>
     <xsl:import href="text.xsl" />
     <xsl:import href="teiadd.xsl" />
     <xsl:import href="teidel.xsl" />
@@ -25,12 +26,15 @@
     <xsl:import href="teipersname.xsl" />
     <xsl:import href="teiplacename.xsl" />
     <xsl:import href="teiabbr.xsl" />
-    <xsl:import href="teiabbrorig.xsl" />
+    <xsl:import href="teiorig.xsl" />
     <xsl:import href="teiexpan.xsl" />
+    <xsl:import href="processitemchildren.xsl"/>
     <xsl:import href="teisuppliedreasonabbreviation.xsl" />
     <xsl:import href="teisuppliedreasonexplanation.xsl" />
     <xsl:import href="teisicandcorr.xsl" />
     <xsl:import href="teip.xsl" />
+    <xsl:import href="teimeasure.xsl" />
+    <xsl:import href="teinum.xsl" />
     <xsl:import href="teispace.xsl" />
     <xsl:import href="writehtmlmeta.xsl" />
     <xsl:import href="writehtmldc.xsl" />
@@ -61,12 +65,15 @@
     <xsl:import href="dohtmlbodyboilerplate.xsl" />
     <xsl:import href="teititle.xsl" />
     <xsl:import href="teisuppliedreasonomitted.xsl" />
+    <xsl:import href="multipartpopdown.xsl"/>
     <xsl:import href="repeatstring.xsl" />
+    <xsl:param name="dotitlepage">no</xsl:param>
     <xsl:param name="stripcomments">false</xsl:param>
     <xsl:param name="persnameuriprefix">people.html</xsl:param>
     <xsl:param name="placenameuriprefix">places.html</xsl:param>
     <xsl:param name="linenumberinterval">5</xsl:param>
     <xsl:param name="faviconpath">img/favicon.ico</xsl:param>
+    <xsl:param name="standalonecss"></xsl:param>
     <xsl:param name="screencsspath">epidocscreen.css</xsl:param>
     <xsl:param name="printcsspath">epidocprint.css</xsl:param>
     <xsl:param name="htmlcontentdivid">htmlcontent</xsl:param>
@@ -74,6 +81,10 @@
     <xsl:param name="htmlseparatordivid">htmlnavigation</xsl:param>
     <xsl:param name="vestigemark">+</xsl:param>
     <xsl:param name="gapmaxrepeat">3</xsl:param>
+    <xsl:param name="htmltitleheaderid">htmltitlepageheader</xsl:param>
+    <xsl:param name="htmltitlecontentid">htmltitlepagecontent</xsl:param>
+    <xsl:param name="epidocrefurl">http://www.ibiblio.org/telliott/epidoc</xsl:param>
+    <xsl:param name="epidocrefstring">the EpiDoc home page</xsl:param>
     <xsl:template match="/">
         <xsl:element name="html">
             <xsl:apply-templates />
