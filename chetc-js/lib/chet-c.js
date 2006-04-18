@@ -70,6 +70,16 @@ Epigraph2Markup.prototype.convert = function(text) {
 			var pattern = new RegExp(repl[0], "g");
 			result = result.replace(pattern, replace);
 		}
+		while (ids = result.match(/id="%genID(\d)"/)) {
+			var id = new String(Math.random());
+			id = id.substr(2);
+			var idPattern = new RegExp('(id=")%genID'+ids[1]+'(")');
+			result = result.replace(idPattern, "$1"+id+"$2");
+			if (replace.match(/target="%genID\d"/)) {
+				var targPattern = new RegExp('(target=")%genID'+ids[1]+'(")');
+				result = result.replace(targPattern, "$1"+id+"$2");
+			}
+		}
 	}
 	return result;
 }

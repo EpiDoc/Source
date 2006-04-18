@@ -11,27 +11,36 @@
 # regular expressions, capturing groups are delimited by parentheses.
 
 <<(\w+)>>    =    <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
-<((?:(-)|\s)+)>    =    <gap reason="omission" extent="%g1%len2" unit="character"/>
-([^<])<(\w+)>([^>])    =    $1<supplied reason="omission">$2</supplied>$3
+<((?:(-)|\s)+)>    =    <gap reason="omitted" extent="%g1%len2" unit="character"/>
+([^<])<(\w+)>([^>])    =    $1<supplied reason="omitted">$2</supplied>$3
 (\+)+                     =          <gap reason="illegible" extent="%g1%len1" unit="character"/>
 \+\s*(\d+)\s*\+    =    <gap reason="illegible" extent="$1" unit="character"/>
 \+\s*(\d+)\s*(\w)\s*\+    =    <gap reason="illegible" extent="$1" unit="$2"/>
 (.)\(\?\)            =          <gap reason="illegible" extent="1" unit="character">$1</gap>
 (\w+)\(!\)    =    <sic>$1</sic>
 \(i\.e\. ([^\)+])\)   =   <supplied reason="explanation">$1</supplied>
-([\S]+)\(([\w\s]+)\)(\S*)\((\S*)\)    =    <abbr>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="expansion">$4</supplied></abbr> 
-(\S+)\(([\w\s]+)\)(\S*)    =    <abbr>$1<supplied reason="expansion">$2</supplied>$3</abbr>
+(\W|^)\((\w+)\)     =   $1<mark type="$2"/>
+([\S]+)\(([\w\s]+)\)(\S*)\((\S*)\)    =    <expan>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="abbreviation">$4</supplied></expan> 
+(\w+)\(([\w\s]+)\)(\2*)    =    <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
 (\S+)\((-\s*)+\)    = <abbr>$1</abbr>
 (\w)(?:-)\n    =    $1<lb type="worddiv"/>
 \n    =    <lb/>
 (\w)\/(\w)    =    $1<lb type="worddiv"/>$2
 (\s)\/(\s)    =    $1<lb/>$2
-\(scil. ((?:)\w|\s)+)\)    =    <supplied reason="subaudible">$1</supplied>
-\(i\.\s*e\. ((?:)\w|\s)+)\)    =    <supplied reason="explanation">$1</supplied>
-\[([.\s])\]    =    <gap reason="lost" extent="%g1%len1" unit="character"/>
-\[([-\s])\]    =    <gap reason="lost" extent="?" unit="character"/>
+\(scil. ((?:\w|\s)+)\)    =    <supplied reason="subaudible">$1</supplied>
+\(i\.\s*e\. ((?:\w|\s)+)\)    =    <supplied reason="explanation">$1</supplied>
+\[([·\s]+)\]    =    <gap reason="lost" extent="%g1%len1" unit="character"/>
+([^\[]*)\[((?:\w|\s)+)((?:-|\s)+)\]   =   $1<supplied reason="lost">$2<gap id="%genID1" reason="lost" extent="%g3%len3" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/></supplied>
+#
+# e.g. f[---]
+#
+([^\[]*)\[([-\s\]]+)\]    =    $1<gap id="%genID1" reason="lost" extent="%g2%len2" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/>
+#
+# e.g. [(centuria) ---]
+#
+([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1$2$3<gap id="%genID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/>
 \[([^\]]+)\]    =    <supplied reason="lost">$1</supplied>
 \[([^\n])+\n    =    <supplied reason="lost">$1</supplied>
-\{(\w+)\}    =    <corr sic="$1"></corr>
+\{(\w+)\}       =    <corr sic="$1"></corr>
 
 
