@@ -34,13 +34,11 @@
                 <xsl:call-template name="dohtmlbodyboilerplate" />
             </xsl:when>
             <xsl:when test="ancestor::tei:div[@rend][1]/@rend='multipart' or (count(ancestor::tei:div[@rend]) = 0 and ancestor::tei:TEI.2/@rend='multipart') ">
-                <!--<xsl:if test="@id and not(contains(ancestor-or-self::tei:div/@type, 'gl-')) and
-                not(not(@rend) and not(../@rend))">
-                <xsl:call-template name="multipartpopdown"/></xsl:if>-->
                 <xsl:choose>
                     <xsl:when test="@id and not(contains(ancestor-or-self::tei:div/@type, 'gl-')) and not(not(@rend) and not(../@rend))">
                         <xsl:call-template name="multipartpopdown"/>
                     </xsl:when>
+                    <xsl:when test="@type and contains(@type, 'gl-') and count(ancestor::tei:div) &gt; 1"/>
                     <xsl:otherwise>
                         <xsl:element name="div">
                             <xsl:call-template name="propagateattrs"/>
