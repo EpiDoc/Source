@@ -90,7 +90,7 @@
                 <xsl:attribute name="id">
                     <xsl:value-of select="$htmlcontentdivid" />
                 </xsl:attribute>
-                <xsl:variable name="cvsname"><xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-name'], '$Name: not supported by cvs2svn $')"/></xsl:variable>
+                <xsl:variable name="cvsname"><xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-name'], '&#x24;Name:  '),'&#x24;')"/></xsl:variable>
                 <xsl:if test="$cvsname != ''"><p>Release or development version:  <xsl:value-of select="$cvsname"/></p></xsl:if>
                 
                 <xsl:choose>
