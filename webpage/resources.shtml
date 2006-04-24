@@ -8,19 +8,65 @@
     <body>
         <div id="container">
             <div id="main">
-                <h1><span class="text">EpiDoc Resources and Tools</span></h1>
+                <h1>
+                    <span class="text">EpiDoc Resources and Tools</span>
+                </h1>
                 <div id="introduction">
-                    <p><!--#include virtual="intropara.html" -->
-                    <span class="small">[ <a href="index.shtml">back to the EpiDoc home page ...</a> ]</span></p>
+                    <p>
+                        <!--#include virtual="intropara.html" -->
+                        <span class="small">[ <a href="index.shtml">back to the EpiDoc home page ...</a> ]</span>
+                    </p>
                 </div>
                 <div id="resources">
-                    <p>Members of the EpiDoc Community have created, and maintain, a range of guidelines, software tools and other <strong>resources</strong> to
-                        facilitate the creation, dissemination and exploitation of EpiDoc works. These include:</p>
-                    <ul>
-                        <li>blah</li>
-                        <li>blah</li>
-                        <li>blah</li>
-                    </ul>
+                    <p>Members of the EpiDoc Community have created, and maintain, a range of guidelines, software tools and other
+                        <strong>resources</strong> to facilitate the creation, dissemination and exploitation of EpiDoc works. These include:</p>
+                    <div id="guidelines">
+                        <h2>The EpiDoc Guidelines</h2>
+                        <p><span class="title">The EpiDoc Guidelines</span> is a prose document intended to provide complete guidance for the
+                            application of <abbr title="Text Encoding Initiative">TEI</abbr> markup to the preparation of digital epigraphic editions
+                            and similar documents. The <span class="title">Guidelines</span> are collaboratively written by <a
+                                href="http://sourceforge.net/project/memberlist.php?group_id=60289">the developers in the EpiDoc Community</a>. At
+                            present, they are authored under the auspices of the same TEI customization that is distributed as the <a href="#dtd"
+                                >EpiDoc DTD</a>; however, work is underway to replace this method with a custom <a href="http://www.relaxng.org/"
+                                >RelaxNG</a> schema that will also function as a TEI P5 ODD from which a future P5-compliant version of the EpiDoc
+                            schema will be generated.</p>
+                        <p>Copies of <span class="title">The EpiDoc Guidelines</span> can be obtained in one of the following ways:</p>
+                        <ul>
+                            <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                    <li>Online (in HTML), courtesy of the Stoa Consortium (coming soon)</li>
+                                    <li>As a <a href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182238"
+                                            >downloadable package of XML files</a>, courtesy of SourceForge</li>
+                                    <li>As a downloadable package of HTML files, courtesy of SourceForge (coming soon)</li>
+                                </ul>
+                            </li>
+                            <li>Raw, development versions:<ul>
+                                    <li><a href="http://www.stoa.org/projects/epidoc/snapshot/guidelines/" title="Recent development version of the
+                                            EpiDoc Guidelines in HTML">Online (in HTML)</a>, courtesy of the Stoa Consortium</li>
+                                    <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>, courtesy
+                                        of SourceForge (module name: guidelines)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="dtd">
+                        <h2>The EpiDoc Document Type Definition (DTD)</h2>
+                    </div>
+                    <div id="xslt">
+                        <h2>The EpiDoc &ldquo;Standard&rdquo; Stylesheets</h2>
+                    </div>
+                    <div id="chetc">
+                        <h2>The Chapel Hill Electronic Text Converter (CHETC)</h2>
+                        <p>description here</p>
+                    </div>
+                    <div id="webapp">
+                        <h2>The EpiDoc Cocoon Web Application</h2>
+                    </div>
+                    <div id="transcoder">
+                        <h2>The Transcoder</h2>
+                    </div>
+                    <div id="examples">
+                        <h2>EpiDoc Example Files</h2>
+                    </div>
                 </div>
             </div>
             <!--#include virtual="meta.html" -->
