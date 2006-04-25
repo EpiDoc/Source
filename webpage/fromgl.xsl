@@ -42,12 +42,14 @@
                                     <xsl:value-of select="tei:name"/>
                                 </xsl:otherwise>
                             </xsl:choose>
-                        </xsl:for-each>. Last update: <xsl:value-of select="substring-before(substring-after(//tei:seg[@n='cvs-revision-date'], '&#x24;Date: '),' &#x24;')"/>.<br/>Copyright 2006 by the authors.</p>
+                        </xsl:for-each>. Last update: <xsl:value-of select="substring-before(substring-after(//tei:seg[@n='cvs-revision-date'], '&#x24;Date: '),' &#x24;')"/>.<br/>Copyright 2006 by the authors.<br/>
+                        This document derives from content in the <a href="resources.shtml#guidelines">EpiDoc Guidelines</a> (source file: <xsl:value-of select="/tei:div/@id"/>.xml).</p>
                     </xsl:if>
                     
                 </div>
                 
             </div>
+            <xsl:comment>#include virtual="meta.html"</xsl:comment>
         </div>
     </body>
     
