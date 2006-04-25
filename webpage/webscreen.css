@@ -28,7 +28,6 @@ End license statement: do not remove */
 
 
 
-
 body {
 margin: 0px;
 padding: 0px;
@@ -68,6 +67,21 @@ font: italic 1.1em Arial, sans-serif;
 font-weight: bold;
 }
 
+#main h3 {
+margin: 0px;
+margin-top: 1.4em;
+margin-bottom: 0.5em;
+padding: 0px;
+color: #CC6666;
+font: italic 1em Arial, sans-serif;
+font-weight: bold;
+}
+
+#main h3:before {
+content: "❧ ";
+font-style: normal;
+}
+
 #main p {
 margin: 0px;
 margin-top: 0px;
@@ -79,6 +93,7 @@ margin-right: 6%;
 #main a:link, #main a:visited {
 color: #557848;
 }
+
 
 #introduction p {
 margin-top: 3%;
@@ -134,8 +149,8 @@ text-decoration: none;
 
 ul {
 list-style-type: circle;
-margin-top: 0px;
-margin-bottom: 0px;
+margin-top: 1.4em;
+margin-bottom: 1.4em;
 padding-top: 0px;
 padding-bottom: 0px;
 }
@@ -176,6 +191,22 @@ font-style:normal;
 font-size: 0.8em;
 }
 
+p.status {
+margin: 0px;
+padding: 0px;
+color: black;
+font-size: 0.8em;
+font-style: italic;
+}
+
+p.project-citation {
+margin: 0px;
+padding: 0px;
+color: black;
+font-size: 0.8em;
+line-height: 1.1em;
+font-style: italic;
+}
 
 
 

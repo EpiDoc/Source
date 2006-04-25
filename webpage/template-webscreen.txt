@@ -50,8 +50,9 @@
 %FNTPI% = italic 1em Arial, sans-serif
 %FNTPISMALL% = italic 0.8em Arial, sans-serif
 %FNTH2% = italic 1.1em Arial, sans-serif
+%FNTH3% = italic 1em Arial, sans-serif
 %FNTSIZESMALL% = 0.8em
-
+%LINEHEIGHTSMALL% = 1.1em
  
 body {
     margin: 0px; 
@@ -92,6 +93,21 @@ body {
     font-weight: bold;
 }
 
+#main h3 {
+    margin: 0px;
+    margin-top: %HSPACEBEFORE%;
+    margin-bottom: %HSPACEAFTER%;
+    padding: 0px;
+    color: %ROSE%;
+    font: %FNTH3%;
+    font-weight: bold;
+}
+
+#main h3:before {
+    content: "❧ ";
+    font-style: normal;
+}
+
 #main p {
     margin: 0px;
     margin-top: 0px;
@@ -103,6 +119,7 @@ body {
 #main a:link, #main a:visited {
     color: %GRASS%;
 }
+
 
 #introduction p {
     margin-top: %GAP1%;
@@ -158,8 +175,8 @@ a:hover {
 
 ul {
     list-style-type: circle;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: %PSPACE%;
+    margin-bottom: %PSPACE%;
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -200,6 +217,22 @@ span.module {
     font-size: %FNTSIZESMALL%;
 }
 
+p.status {
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    font-size: %FNTSIZESMALL%;
+    font-style: italic;
+}
+
+p.project-citation {
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    font-size: %FNTSIZESMALL%;
+    line-height: %LINEHEIGHTSMALL%;
+    font-style: italic;
+}
 
 
 
