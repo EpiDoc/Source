@@ -109,7 +109,7 @@
     <xsl:param name="gapmaxrepeat">3</xsl:param>
     <xsl:param name="htmltitleheaderid">htmltitlepageheader</xsl:param>
     <xsl:param name="htmltitlecontentid">htmltitlepagecontent</xsl:param>
-    <xsl:param name="epidocrefurl">http://www.ibiblio.org/telliott/epidoc</xsl:param>
+    <xsl:param name="epidocrefurl">http://epidoc.sf.net</xsl:param>
     <xsl:param name="epidocrefstring">the EpiDoc home page</xsl:param>
     <xsl:template match="/">
         <xsl:element name="html">
