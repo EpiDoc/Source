@@ -13,10 +13,10 @@
                 </h1>
                 <div id="introduction">
                     <h2>EpiDoc Resources and Tools</h2>
-                    <p>Members of the EpiDoc Community have created, and maintain, a range of guidelines, software tools and other
-                        <strong>resources</strong> to facilitate the creation, dissemination and exploitation of EpiDoc works. This page provides
-                        basic information about each of the major resource packages, with links to complete documentation, download locations and
-                        online copies.<br /><br />
+                    <p><a href="http://sourceforge.net/project/memberlist.php?group_id=60289">Developers in the EpiDoc Community</a> have created, and
+                        maintain collaboratively, a range of guidelines, software tools and other resources to facilitate the creation, dissemination
+                        and exploitation of EpiDoc works. This page provides basic information about each of the major resource packages, with links
+                        to documentation, download locations and online copies.<br /><br />
                         <span class="small">[ <a href="index.shtml">back to the EpiDoc home page ...</a> ]</span>
                     </p>
                 </div>
@@ -25,18 +25,18 @@
                         <h2>The EpiDoc Guidelines</h2>
                         <p><span class="title">The EpiDoc Guidelines</span> is a prose document intended to provide complete guidance for the
                             application of <abbr title="Text Encoding Initiative">TEI</abbr> markup to the preparation of digital epigraphic editions
-                            and similar documents. They also provide documentation for all of the resources described on this page.</p>
-                        <p>The <span class="title">Guidelines</span> are collaboratively written by <a
-                                href="http://sourceforge.net/project/memberlist.php?group_id=60289">the developers in the EpiDoc Community</a>. At
-                            present, they are authored under the auspices of a slightly hacked version of the same TEI customization that is
-                            distributed as the <a href="#dtd">EpiDoc DTD</a>; however, work is underway to replace this method with a custom <a
-                                href="http://www.relaxng.org/">RelaxNG</a> schema that will also function as a TEI P5 ODD from which a future
-                            P5-compliant version of the EpiDoc schema will be generated (see the <span class="module">schema-gl</span> module in the
-                                <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a> on SourceForge.</p>
+                            and similar documents. They also provide documentation for all of the resources described on this page and serve as a
+                            repository for configuration data for <a href="#chetc">the CHETC tool</a>.</p>
+                        <p>The <span class="title">Guidelines</span> are collaboratively authored under the auspices of a slightly hacked version of
+                            the same TEI customization that is distributed as the <a href="#dtd">EpiDoc DTD</a>; however, work is underway to replace
+                            this method with a custom <a href="http://www.relaxng.org/">RelaxNG</a> schema that will also function as a TEI P5 ODD
+                            from which a future P5-compliant version of the EpiDoc schema will be generated (see the <span class="module"
+                            >schema-gl</span> module in the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a> on
+                            SourceForge).</p>
                         <p>Copies of <span class="title">The EpiDoc Guidelines</span> can be obtained in one of the following ways:</p>
                         <ul>
                             <li>Current, stable &ldquo;release&rdquo; versions: <ul>
-                                    <li>Online (in HTML), courtesy of the Stoa Consortium (coming soon)</li>
+                                    <li id="guidelines-online">Online (in HTML), courtesy of the Stoa Consortium (coming soon)</li>
                                     <li>As a <a href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182238"
                                             title="EpiDoc Guidelines Release Packages">downloadable package of XML files</a>, courtesy of SourceForge</li>
                                     <li>As a downloadable package of HTML files, courtesy of SourceForge (coming soon)</li>
@@ -57,7 +57,7 @@
                                 href="http://www.tei-c.org/Guidelines2/index.xml.ID=P4">the P4 version of the TEI Guidelines</a>. A customized DTD,
                             created using the <a href="http://www.tei-c.org/pizza.html">TEI Pizza Chef</a>, provides for coordinating editorial
                             control and document validation.</p>
-                        <p>Copies of the EpiDoc DTD can be obtained in one of the following ways:</p>
+                        <p>Copies of the <span class="title">EpiDoc DTD</span> can be obtained in one of the following ways:</p>
                         <ul>
                             <li>Current, stable &ldquo;release&rdquo; versions: <ul>
                                     <li>Online, courtesy of the Stoa Consortium (coming soon)</li>
@@ -75,10 +75,62 @@
                     </div>
                     <div id="xslt">
                         <h2>The EpiDoc &ldquo;Standard&rdquo; Stylesheets</h2>
+                        <p>A series of modular <a href="http://www.w3.org/TR/xslt" title="eXtended Stylesheet Language Transformations">XSLT</a>
+                            stylesheets, together with accompanying <a href="http://www.w3.org/Style/CSS/" title="Cascading Style Sheets">CSSs</a>,
+                            provide for the transformation of the <a href="#guidelines">EpiDoc Guidelines</a> (they are used with <a
+                                href="http://cocoon.apache.org/" title="The Apache Cocoon Project">Cocoon</a> and the <a href="#webapp">EpiDoc
+                            webapp</a> for the <a href="#guidelines-online">online versions of the Guidelines</a>) and for a
+                            &ldquo;canonical&rdquo; typographic representation of all editorial conventions recognized therein. They are used
+                            for round-trip testing of EpiDoc tools and guidance, and for ready transformation of EpiDoc documents via the <span
+                                class="title">EpiDoc webapp</span> or with standalone <abbr title="eXtensible Markup Language">XML</abbr> processing
+                            tools.</p>
+                        <p>Copies of the <span class="title">EpiDoc Standard Stylesheets</span> can be obtained in one of the following ways:</p>
+                        <ul>
+                            <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                    <li>As a <a href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182239"
+                                            title="EpiDoc XSLT Release Packages">downloadable package</a>, courtesy of SourceForge</li>
+                                </ul>
+                            </li>
+                            <li>Raw, development versions:<ul>
+                                    <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>, courtesy
+                                        of SourceForge (module name: <span class="module">epidoc-xsl</span>; note that an earlier version, the <span
+                                            class="module">basic-style</span> module, is deprecated and unmaintained)</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div id="chetc">
                         <h2>The Chapel Hill Electronic Text Converter (CHETC)</h2>
-                        <p>description here</p>
+                        <p>The Chapel Hill Electronic Text Converter is a software tool designed to convert digital texts that employ <a
+                                href="notes.shtml#conventions">standard typographic editorial conventions</a> into EpiDoc-compliant XML files. A
+                            series of <a href="http://en.wikipedia.org/wiki/Regular_expressions" title="strings that describe or match a set of
+                                strings, according to certain syntax rules">regular expressions</a> are applied to the source document and the results
+                            are placed into a &ldquo;shell file&rdquo; (<abbr title="id est = that is">i.e.</abbr>, a template), which can be
+                            customized in advance. The regular expressions are stored in a separate configuration file to permit customization, but
+                            this file is generated from regular expressions embedded in the <a href="#guidelines">EpiDoc Guidelines</a> source files.
+                            This arrangement permits robust automated and user-driven self-tests within the <a href="#webapp">EpiDoc webapp</a> and
+                            facilitates a high degree of coordination across EpiDoc tools. Prior versions exist (<a
+                                href="http://en.wikipedia.org/wiki/Microsoft_access" title="Microsoft Access">MSAccess</a> + <a
+                                href="http://en.wikipedia.org/wiki/Visual_Basic_for_Applications" title="Visual Basic for
+                                Applications">VBA</a> and <a href="http://en.wikipedia.org/wiki/Java_%28Sun%29">Java</a>, both now deprecated), but
+                            current development focuses on a <a href="http://en.wikipedia.org/wiki/Javascript">JavaScript</a> version that will run
+                            without plugins in a modern web browser.</p>
+                        <p>Copies of the <span class="title">Chapel Hill Electronic Text Converter</span> can be obtained in one of the following
+                            ways:</p>
+                        <ul>
+                            <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                    <li>Online, courtesy of the Stoa Consortium (coming soon)</li>
+                                    <li>As a downloadable package, courtesy of SourceForge (coming soon)</li>
+                                </ul>
+                            </li>
+                            <li>Raw, development versions:<ul>
+                                    <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>, courtesy
+                                        of SourceForge (module name: <span class="module">chetc-js</span>; note that earlier versions, the <span
+                                            class="module">chet-c</span> and <span class="module">chet-c-java</span> modules, are deprecated and
+                                        unmaintained)</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div id="webapp">
                         <h2>The EpiDoc Cocoon Web Application</h2>
