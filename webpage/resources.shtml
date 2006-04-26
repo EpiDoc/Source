@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <!-- Start CVS information: do not remove -->
-    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/resources.shtml,v 1.7 2006-04-26 11:27:52 paregorios Exp $ -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/resources.shtml,v 1.8 2006-04-26 15:20:52 paregorios Exp $ -->
     <!-- End CVS information: do not remove -->
     <head>
         <title>EpiDoc Resources and Tools</title>
@@ -16,21 +16,22 @@
                 </h1>
                 <div id="introduction">
                     <h2>EpiDoc Resources and Tools</h2>
-                    <p><a href="http://sourceforge.net/project/memberlist.php?group_id=60289">Developers in the EpiDoc Community</a> have created, and
-                        maintain collaboratively, a range of guidelines, software tools and other resources to facilitate the creation, dissemination
-                        and exploitation of EpiDoc works. This page provides basic information about each of the major resource packages, with links
-                        to documentation, download locations and online copies.<br /><br />
+                    <p><a href="development.shtml#developers">Developers in the EpiDoc Community</a> have created, and maintain collaboratively, a
+                        range of guidelines, software tools and other resources to facilitate the creation, dissemination and exploitation of EpiDoc
+                        works. This page provides basic information about each of the major resource packages, with links to documentation, download
+                        locations and online copies.<br /><br />
                         <span class="small">[ <a href="index.shtml">back to the EpiDoc home page ...</a> ]</span>
                     </p>
                 </div>
                 <div id="resources">
                     <div id="markup">
                         <h2>The Markup List</h2>
-                        <p>The <a href="http://www.stoa.org">Stoa Consortium</a> has assisted the EpiDoc Community in a number of ways since its earliest days. One of the most
-                            important aspects of this on-going collaboration is a listserv &mdash; called &ldquo;markup&rdquo; &mdash;
-                            that is used by the community to discuss questions of content, method, development and practice. This list is the focal
-                            point for all EpiDoc release announcements. All interested parties are invited to join the Markup List by visiting the <a
-                                href="http://lsv.uky.edu/archives/markup.html">Markup List Archive Page</a>.</p>
+                        <p>The <a href="http://www.stoa.org">Stoa Consortium</a> has assisted the EpiDoc Community in a number of ways since its
+                            earliest days. One of the most important aspects of this on-going collaboration is a listserv &mdash; called
+                            &ldquo;markup&rdquo; &mdash; that is used by the community to discuss questions of content, method,
+                            development and practice. This list is the focal point for all EpiDoc release announcements. All interested parties are
+                            invited to join the Markup List by visiting the <a href="http://lsv.uky.edu/archives/markup.html">Markup List Archive
+                            Page</a>.</p>
                     </div>
                     <div id="guidelines">
                         <h2>The EpiDoc Guidelines</h2>
@@ -113,16 +114,16 @@
                     <div id="chetc">
                         <h2>The Chapel Hill Electronic Text Converter (CHETC)</h2>
                         <p>The Chapel Hill Electronic Text Converter is a software tool designed to convert digital texts that employ <a
-                                href="IntroEpigraphers.shtml#IntroEpigraphers-conventions">standard typographic editorial conventions</a> into EpiDoc-compliant XML files. A
-                            series of <a href="http://en.wikipedia.org/wiki/Regular_expressions" title="strings that describe or match a set of
-                                strings, according to certain syntax rules">regular expressions</a> are applied to the source document and the results
-                            are placed into a &ldquo;shell file&rdquo; (<abbr title="id est = that is">i.e.</abbr>, a template), which can be
-                            customized in advance. The regular expressions are stored in a separate configuration file to permit customization, but
-                            this file is generated from regular expressions embedded in the <a href="#guidelines">EpiDoc Guidelines</a> source files.
-                            This arrangement permits robust automated and user-driven self-tests within the <a href="#webapp">EpiDoc webapp</a> and
-                            facilitates a high degree of coordination across EpiDoc tools. Prior versions exist (<a
-                                href="http://en.wikipedia.org/wiki/Microsoft_access" title="Microsoft Access">MSAccess</a> + <a
-                                href="http://en.wikipedia.org/wiki/Visual_Basic_for_Applications" title="Visual Basic for
+                                href="IntroEpigraphers.shtml#IntroEpigraphers-conventions">standard typographic editorial conventions</a> into
+                            EpiDoc-compliant XML files. A series of <a href="http://en.wikipedia.org/wiki/Regular_expressions" title="strings that
+                                describe or match a set of                                 strings, according to certain syntax rules">regular
+                                expressions</a> are applied to the source document and the results are placed into a &ldquo;shell file&rdquo;
+                                (<abbr title="id est = that is">i.e.</abbr>, a template), which can be customized in advance. The regular expressions
+                            are stored in a separate configuration file to permit customization, but this file is generated from regular expressions
+                            embedded in the <a href="#guidelines">EpiDoc Guidelines</a> source files. This arrangement permits robust automated and
+                            user-driven self-tests within the <a href="#webapp">EpiDoc webapp</a> and facilitates a high degree of coordination across
+                            EpiDoc tools. Prior versions exist (<a href="http://en.wikipedia.org/wiki/Microsoft_access" title="Microsoft Access"
+                                >MSAccess</a> + <a href="http://en.wikipedia.org/wiki/Visual_Basic_for_Applications" title="Visual Basic for
                                 Applications">VBA</a> and <a href="http://en.wikipedia.org/wiki/Java_%28Sun%29">Java</a>, both now deprecated), but
                             current development focuses on a <a href="http://en.wikipedia.org/wiki/Javascript">JavaScript</a> version that will run
                             without plugins in a modern web browser.</p>
@@ -145,7 +146,36 @@
                     </div>
                     <div id="webapp">
                         <h2>The EpiDoc Cocoon Web Application</h2>
-                        <p>Description and links coming soon</p>
+                        <p>The <a href="http://cocoon.apache.org/">Apache Cocoon Web Development Framework</a>, with the addition of Schematron
+                            support, is used to develop, test and deploy the EpiDoc <a href="#guidelines">Guidelines</a>, <a href="#examples">Example
+                                Files</a> and <a href="#xslt">Standard Stylesheets</a>. It also provides potential users with a basic, EpiDoc-ready
+                            deployment environment that can be quickly downloaded and incorporated into a new or existing Cocoon installation.</p>
+                        <p>Two versions of the EpiDoc Web Application are available:</p>
+                        <div id="webapp-bundle">
+                            <h3>The Webapp Bundle</h3>
+                            <p>This &ldquo;fat&rdquo; version of the EpiDoc Web Application is available only as <a
+                                    href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182240" title="EpiDoc Webapp
+                                    Bundle Release Packages">a release package</a> via Sourceforge. It includes the most recent release versions of
+                                the <a href="#guidelines">Guidelines</a>, <a href="#xslt">Stylesheets</a> and <a href="#examples">Example Files</a>
+                                just as they are deployed for online access via the Stoa website.</p>
+                        </div>
+                        <div id="webapp-skeleton">
+                            <h3>The Webapp Skeleton</h3>
+                            <p>This &ldquo;skinny&rdquo; version of the EpiDoc Web Application includes only the basic directory structure,
+                                sitemap files and an example project or two. It can be obtained in one of the following ways:</p>
+                            <ul>
+                                <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                        <li>As a <a href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182241"
+                                                title="EpiDoc Webapp Skeleton Release Packages">downloadable package</a>, courtesy of SourceForge</li>
+                                    </ul>
+                                </li>
+                                <li>Raw, development versions:<ul>
+                                        <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>,
+                                            courtesy of SourceForge (module name: <span class="module">epidoc-webapp</span>)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div id="transcoder">
                         <h2>The Transcoder</h2>
@@ -169,10 +199,30 @@
                     </div>
                     <div id="examples">
                         <h2>EpiDoc Example Files</h2>
-                        <p>Description and links coming soon</p>
+                        <p>A number of example XML files are available for inspection by those interested in the EpiDoc approach. Some of these files
+                            are distributed with the <a href="#webapp">EpiDoc Web Application</a> (inside the &ldquo;prj&rdquo; subdirectory),
+                            others are distributed in a separate <span class="title">EpiDoc Example File</span> collection, described here. Some of
+                            the <a href="projects.shtml">EpiDoc Projects</a> also distribute their source files from their websites. Upgrading and
+                            diversifying the example files is a <a href="development#priorities">current development priority</a> of the EpiDoc
+                            Community; however, users of the example files should always remain alert to the age and origin of a given file. The <a
+                                href="#dtd">EpiDoc DTD</a> has gone through a number of changes over the years, and continues to be an active
+                            development focus. Older example files are unlikely to validate against the current DTD.</p>
+                        <p>Copies of the <span class="title">EpiDoc Example Files Collection</span> can be obtained in one of the following ways:</p>
+                        <ul>
+                            <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                    <li>As a <a href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182798"
+                                            title="Example File Release Packages">downloadable package</a>, courtesy of SourceForge</li>
+                                </ul>
+                            </li>
+                            <li>Raw, development versions:<ul>
+                                    <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>, courtesy
+                                        of SourceForge (module name: <span class="module">xml-examples</span>)</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div id="footer">
-                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date: 2006-04-26 11:27:52 $. <br />Copyright 2006 by
+                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date: 2006-04-26 15:20:52 $. <br />Copyright 2006 by
                             the authors.</p>
                     </div>
                 </div>
