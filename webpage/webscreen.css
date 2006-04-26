@@ -74,7 +74,7 @@ margin-bottom: 0.5em;
 padding: 0px;
 color: #CC6666;
 font: italic 1em Arial, sans-serif;
-font-weight: bold;
+font-weight: normal;
 }
 
 #main h3:before {
@@ -149,7 +149,7 @@ text-decoration: none;
 }
 
 ul {
-list-style-type: circle;
+list-style-type: disc;
 margin-top: 1.4em;
 margin-bottom: 1.4em;
 padding-top: 0px;
@@ -159,6 +159,9 @@ padding-bottom: 0px;
 li ul {
 margin-top: 0px;
 margin-bottom: 0px;
+margin-left: 0px;
+padding-left: 1em;
+list-style-type: circle;
 }
 
 #main li {

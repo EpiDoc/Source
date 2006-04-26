@@ -100,7 +100,7 @@ body {
     padding: 0px;
     color: %ROSE%;
     font: %FNTH3%;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 #main h3:before {
@@ -175,7 +175,7 @@ a:hover {
 }
 
 ul {
-    list-style-type: circle;
+    list-style-type: disc;
     margin-top: %PSPACE%;
     margin-bottom: %PSPACE%;
     padding-top: 0px;
@@ -185,6 +185,9 @@ ul {
 li ul {
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: 0px;
+    padding-left: 1em;
+    list-style-type: circle;
 }
 
 #main li {
