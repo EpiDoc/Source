@@ -13,6 +13,7 @@ while ($file = shift @ARGV) {
     print ("echo ------------------------------------------------------------------------ >> .\\glxform.log\n");
     # while there is content in the file, read it in line-by-line
     while (defined ($myline = <FILE>)) {
+    print ("echo ------------------------------------------------------------------------ >> .\\glxform.log\n");
        # remove any newline character at the end of the line
        chomp($myline);
        if ($myline =~ /(.+)\.xml$/) {
@@ -33,10 +34,13 @@ while ($file = shift @ARGV) {
 
     }
            # now do the rote transformations
+    print ("echo ------------------------------------------------------------------------ >> .\\glxform.log\n");
        print ("echo Transforming guidelines.xml to create toc.html >> glxform.log\n");
        print ("xsltproc -o .\\work\\toc.html -novalid --xinclude --stringparam dotitlepage yes \%EPIDOC_XSLPATH\%\\html\\sitemap.xsl \%EPIDOC_GLPATH\%\\src\\guidelines.xml >> glxform.log 2>&1\n");
        print ("echo Transforming XHTML (indenting): toc.html >> glxform.log\n");
        print ("xsltproc -o \%EPIDOC_STATICHTML\%\\toc.html -novalid \%EPIDOC_XSLPATH\%\\util\\xhtmlindenter.xsl .\\work\\toc.html >> glxform.log 2>&1\n");
-       print ("copy \%EPIDOC_STATICHTML\%\\guidelines.html .\%EPIDOC_STATICHTML\%\\index.html\n");
+    print ("echo ------------------------------------------------------------------------ >> .\\glxform.log\n");
+       print ("echo copying \%EPIDOC_STATICHTML\%\\guidelines.html to \%EPIDOC_STATICHTML\%\\index.html >> glxform.log\n");
+       print ("copy \%EPIDOC_STATICHTML\%\\guidelines.html \%EPIDOC_STATICHTML\%\\index.html >> glxform.log 2>&1\n");
 }
     
