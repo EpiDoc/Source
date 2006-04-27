@@ -26,10 +26,10 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/releasefullwebapp.xml,v 1.1 2006-04-21 20:54:58 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/releasefullwebapp.xml,v 1.2 2006-04-27 15:47:40 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="releasefullwebapp" lang="en" rend="multipart">
+<div xmlns="http://www.tei-c.org/ns/1.0" id="releasefullwebapp" lang="en">
    <head>Releasing the full EpiDoc webapp</head>
     <p>This is incomplete ... and so far the procedures assume the windows operating system ...</p>
     <div>
@@ -51,14 +51,24 @@ End license statement: do not remove -->
         
 
         </div>
-    <div id="releasefullwebapp-cvs" type="gl-cvs">
+    <div id="releasefullwebapp-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>    <div id="releasefullwebapp-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="releasefullwebapp-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-                >$Revision: 1.1 $</seg></p>
+                >$Revision: 1.2 $</seg></p>
         <p id="releasefullwebapp-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
                 >$Name: not supported by cvs2svn $</seg></p>
         <p id="releasefullwebapp-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-04-21 20:54:58 $</seg></p>
+            >$Date: 2006-04-27 15:47:40 $</seg></p>
         <p id="releasefullwebapp-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
                 >$Author: paregorios $</seg></p>
     </div>
