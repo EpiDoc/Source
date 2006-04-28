@@ -86,6 +86,7 @@
     <xsl:import href="teirespstmt.xsl" />
     <xsl:import href="teiref.xsl" />
     <xsl:import href="getdivid.xsl" />
+    <xsl:import href="teisocalled.xsl" />
     <xsl:import href="teigap.xsl" />
     <xsl:import href="dohtmlheadboilerplate.xsl" />
     <xsl:import href="dohtmlbodyboilerplate.xsl" />
