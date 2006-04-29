@@ -82,6 +82,13 @@
                             select="@id"/>.xml</xsl:attribute>post a comment</xsl:element>
                     
                 </xsl:element>
+                <xsl:variable name="cvsname"><xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-name'], '&#x24;Name: '),'&#x24;')"/></xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="$cvsname != '' and $cvsname != ' '"><p>Release or development version:  <xsl:value-of select="$cvsname"/></p></xsl:when>
+                    <xsl:otherwise>
+                        <p>Revised since last release or tag: <xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-date'], '&#x24;Date: '),'&#x24;')"/></p>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:element></xsl:if>
             <!-- handle any teiHeader metadata -->
             <xsl:if test="$processteiheader = 'yes'"><xsl:call-template name="doteiheadermetadata" /></xsl:if>
@@ -90,8 +97,7 @@
                 <xsl:attribute name="id">
                     <xsl:value-of select="$htmlcontentdivid" />
                 </xsl:attribute>
-                <xsl:variable name="cvsname"><xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-name'], '&#x24;Name:  '),'&#x24;')"/></xsl:variable>
-                <xsl:if test="$cvsname != ''"><p>Release or development version:  <xsl:value-of select="$cvsname"/></p></xsl:if>
+                
                 
                 <xsl:choose>
                     <xsl:when test="ancestor-or-self::*/@rend='multipart' and tei:div">
