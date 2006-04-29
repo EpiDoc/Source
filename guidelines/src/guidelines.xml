@@ -26,7 +26,7 @@ End license statement: do not remove -->
 
 <!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.11 2006-04-18 21:12:51 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.12 2006-04-29 12:12:17 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <TEI.2 xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0" id="guidelines" rend="multipart">
@@ -88,7 +88,13 @@ End license statement: do not remove -->
                 </respStmt>            
             </titleStmt>
             <publicationStmt>
-                <p>This is a draft digital work, currently unpublished.</p>
+                <authority>Tom Elliott for the EpiDoc Community</authority>
+                <availability>
+                    <p>Copyright by the authors.<lb/>Distributed electronically via the websites of the <xref href="http://www.stoa.org">Stoa Consortium</xref> and <xref href="http://sf.net">SourceForge.net</xref> under the provisions of the <xref href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</xref></p>
+                </availability>
+                <idno type="release">$Name: not supported by cvs2svn $</idno>
+                <date>$Date: 2006-04-29 12:12:17 $</date>
+                
             </publicationStmt>
             <sourceDesc>
                 <!-- one of (bibl biblFull biblStruct listBibl p recordingStmt scriptStmt) -->
@@ -107,6 +113,17 @@ End license statement: do not remove -->
             <xi:include href="interoperability.xml" />
             <xi:include href="bibliography.xml" />
             <xi:include href="epidev.xml" />
+                <div id="guidelines-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="guidelines-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.12 $</seg></p>
+        <p id="guidelines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="guidelines-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2006-04-29 12:12:17 $</seg></p>
+        <p id="guidelines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
         </body>
     </text>
 </TEI.2>
