@@ -74,9 +74,21 @@
                                     name="em">and</xsl:element></xsl:if>
                             </xsl:for-each><xsl:element name="br"/>the members of the
                             <xsl:element name="a"><xsl:attribute name="href">http://lsv.uky.edu/archives/markup.html</xsl:attribute>Markup
-                            List</xsl:element></xsl:element>
+                                List</xsl:element></xsl:element>
+                        <hr/>
                         <xsl:for-each select="tei:teiHeader/tei:fileDesc/tei:publicationStmt">
-                            <xsl:apply-templates />
+                            <xsl:element name="p">
+                                Released under the authority of <xsl:value-of select="tei:authority"/>.<br/>
+                                
+                                <xsl:choose>
+                                    <xsl:when test="tei:idno[@type='release'] = '&#x24;Name&#x24;'">This version is a development snapshot.</xsl:when>
+                                    <xsl:otherwise>Release name: <xsl:value-of select="tei:idno[@type='release']"/></xsl:otherwise>
+                                </xsl:choose>
+                                
+                            </xsl:element>
+                            <xsl:for-each select="tei:availability">
+                                <xsl:apply-templates/>
+                                </xsl:for-each>
                         </xsl:for-each>
                         <xsl:element name="p">Latest change reflected in this copy: <xsl:for-each
                                 select="//tei:seg[@n='cvs-revision-date' and text() != '&#x24;Date&#x24;']">
@@ -85,17 +97,20 @@
                                     <xsl:value-of
                                         select="substring-before(substring-after(., '&#x24;Date: '),'&#x24;')"/>
                                 </xsl:if>
-                            </xsl:for-each></xsl:element>
+                        </xsl:for-each></xsl:element>
+                        <hr/>
                         <xsl:element name="p">The latest information on EpiDoc, and the most recent
-                            revisions to the guidelines, may be obtained from <xsl:element name="a">
+                            revisions to the guidelines and EpiDoc tools, may be obtained from <xsl:element name="a">
                                 <xsl:attribute name="href">
                                     <xsl:value-of select="$epidocrefurl" />
                                 </xsl:attribute>
                                 <xsl:value-of select="$epidocrefstring" />
                             </xsl:element>.</xsl:element>
+                        <hr/>
                         <xsl:element name="div"><xsl:element name="h2"><xsl:element name="a"><xsl:attribute
                             name="href">toc.html</xsl:attribute>Table of Contents</xsl:element>
-                    </xsl:element></xsl:element></xsl:element>
+                        </xsl:element></xsl:element>
+                    <hr/></xsl:element>
                 </xsl:element>
             </xsl:when>
             <xsl:otherwise>
