@@ -115,7 +115,7 @@
                     <xsl:when test="@href = 'epidev.xml'">
                         <a href="resources.shtml" title="EpiDoc Resources"><xsl:value-of select="."/></a>
                     </xsl:when>
-                    <xsl:when test="@href = 'guidelines.xml' or @href='documentstructure.xml'">
+                    <xsl:when test="@href = 'guidelines.xml'">
                         <a href="resources.shtml#guidelines" title="EpiDoc Guidelines"><xsl:value-of select="."/></a>
                     </xsl:when>
                     <xsl:when test="@href = 'taggingtext.xml'">
@@ -123,6 +123,9 @@
                     </xsl:when>
                     <xsl:when test="@href = 'chetc.xml'">
                         <a href="resources.shtml#chetc" title="The Chapel Hill Electronic Text Converter"><xsl:value-of select="."/></a>
+                    </xsl:when>
+                    <xsl:when test="@href = 'documentstructure.xml'">
+                        <a href="http://www.stoa.org/projects/epidoc/stable/guidelines/documentstructure.html" title="Document Structure section of the EpiDoc Guidelines"><xsl:value-of select="."/></a>
                     </xsl:when>
                     <xsl:otherwise><span class="internal-link"><xsl:apply-templates/></span></xsl:otherwise>
                 </xsl:choose>
