@@ -81,7 +81,7 @@
                                 Released under the authority of <xsl:value-of select="tei:authority"/>.<br/>
                                 
                                 <xsl:choose>
-                                    <xsl:when test="tei:idno[@type='release'] = '&#x24;Name&#x24;'">This version is a development snapshot.</xsl:when>
+                                    <xsl:when test="tei:idno[@type='release'] = '&#x24;Name&#x24;' or tei:idno[@type='release'] = '&#x24;Name:  &#x24;'">This version is a development snapshot.</xsl:when>
                                     <xsl:otherwise>Release name: <xsl:value-of select="tei:idno[@type='release']"/></xsl:otherwise>
                                 </xsl:choose>
                                 
