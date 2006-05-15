@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <!-- Start CVS information: do not remove -->
-    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/resources.shtml,v 1.14 2006-04-29 12:06:05 paregorios Exp $ -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/resources.shtml,v 1.15 2006-05-15 18:51:50 paregorios Exp $ -->
     <!-- End CVS information: do not remove -->
     <head>
         <title>EpiDoc Resources and Tools</title>
@@ -146,6 +146,19 @@
                             </li>
                         </ul>
                     </div>
+                    <div id="crosswalker">
+                        <h2><span class="highlight">NEW:</span> Crosswalker: EpiDoc Exporter Tool</h2>
+                        <p>Crosswalker is a software toolset for converting EpiDoc XML documents to other formats; i.e., to comma-separated-value (CSV) text, or  to XML governed by another schema. Users create an XML file (the &ldquo;crosswalk file&rdquo;) that maps (or describes) the relationships between components of the EpiDoc XML file and components of the targeted format. An XSL transform interacts with the crosswalk file to produce a separate, custom XSL transformation file that can then be used to convert EpiDoc documents to the desired format. Data may be replicated and combined from one or more elements in the source file to a single field (or element) in the output. Multiple source locations (indicated with XPath expressions) and hard-coded default values (if the XPath fails) may be specified. String replacements, value substitutions (for, e.g., vocabulary conversions) and user-supplied XSL transformations may be performed on the data by supplying the appropriate information in the crosswalk file. This tool is still under preliminary development, although most features for production of CSV are fully implemented.</p>
+                        <p>Copies of <span class="title">Crosswalker</span> can be obtained in the following
+                            way:</p>
+                        <ul>
+                        <li>Raw, development versions:<ul>
+                            <li>Via checkout from the <a href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS Repository</a>, courtesy
+                                        of SourceForge (module name: <span class="module">crosswalker</span>)</li>
+                            </ul>
+                            </ul>
+                    </div>
+                    
                     <div id="webapp">
                         <h2>The EpiDoc Cocoon Web Application</h2>
                         <p>The <a href="http://cocoon.apache.org/">Apache Cocoon Web Development Framework</a>, with the addition of <a href="http://www.eccnet.com/schematron/index.php/Main_Page" title="Schematron is a small language for making assertions about the presence or absense of patterns in XML documents using XPaths">Schematron</a>
@@ -224,7 +237,7 @@
                         </ul>
                     </div>
                     <div id="footer">
-                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date: 2006-04-29 12:06:05 $. <br />Copyright 2006 by
+                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date: 2006-05-15 18:51:50 $. <br />Copyright 2006 by
                             the authors.</p>
                     </div>
                 </div>
