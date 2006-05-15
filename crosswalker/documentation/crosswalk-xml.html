@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <!-- Start CVS information: do not remove -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/crosswalker/documentation/crosswalk-xml.html,v 1.1 2006-05-15 18:29:10 paregorios Exp $ -->
+    <!-- End CVS information: do not remove -->
+    <head>
+        <title>Crosswalker: A Tool for Converting EpiDoc to Other Formats</title>
+        <style type="text/css" media="screen"> @import "docscreen.css"; </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="main">
+                <h1>
+                    <span class="text">The Crosswalk XML File: Defining Crosswalks</span>
+                </h1>
+                <div id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Please note: this documentation is presently incomplete</p>
+                    <p>The <a href="index.html">&ldquo;Crosswalker&rdquo; toolset</a> relies upon a user-created XML file (the
+                        &ldquo;crosswalk file&rdquo;) that maps (or describes) the relationships between components of an EpiDoc XML file and
+                        components of the targeted format. The structure of the crosswalk XML file is governed by a RelaxNG schema (<span class="file">crosswalk.rng</span>),
+                        shipped in the <span class="directory">crosswalks</span> directory. Subdirectories within the <span class="directory">crosswalks</span> directory may contain example crosswalk xml files
+                        (e.g., the experimental <span class="directory">iaph2edr-csv</span>, for converting <a href="http://epidoc.sf.net/projects.shtml#insaph" title="Inscriptions of Aphrodisias">InsAph</a> EpiDoc files to <abbr title="comma-separated value">CSV</abbr> format for input into <a href="http://www.edr-edr.it/" title="Epigraphic Database Roma" >EDR</a>).</p>
+                </div>
+                <div id="overview">
+                    <h2>Overview of Document Structure</h2>
+                    <p>The crosswalk xml file must be valid in accordance with the crosswalk.rng schema. The top-level element is <span
+                            class="element">crosswalk</span>, within which two required elements must appear (in order): <span class="element"
+                        >input</span> and <span class="element">output</span>. These elements provide essential information about the input and output
+                        file formats (see further: <a href="#input">the &lt;input&gt; element</a> and <a href="#output">the
+                            &lt;output&gt; element</a>).</p>
+                    <p>Subsequent to these two elements, any number of <span class="element">copy</span> or <span class="element">force</span>
+                        elements may appear, in any order. The simpler of these two elements (<span class="element">force</span>) permits the user to
+                        specify a hard-coded value for any &ldquo;destination&rdquo; field or element in the output file. The <span
+                            class="element">copy</span> element facilitates the replication of data from one or more elements in the source file to a
+                        single field (or element) in the output. Multiple source locations (indicated with XPath expressions) and hard-coded default
+                        values (if the XPath fails) may be specified. String replacements, value substitutions (for, e.g., vocabulary conversions) and
+                        user-supplied XSL transformations may be performed on the data by supplying the appropriate information in the <span
+                            class="element">copy</span>. See further: (<a href="copy">the <span class="element">copy</span> element</a> and <a
+                            href="force">the <span class="element">force</span> element</a>).</p>
+                </div>
+                <div id="copy">
+                    <h2>The <span class="element">copy</span> element</h2>
+                </div>
+                <div id="force">
+                    <h2>The <span class="element">force</span> element</h2>
+                </div>
+                <div id="input">
+                    <h2>The <span class="element">input</span> element</h2>
+                </div>
+                <div id="output">
+                    <h2>The <span class="element">output</span> element</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crosswalk source="InsAph" destination="EDR">
+    <input>
+        <format>XML</format>
+        <encoding>UTF-8</encoding>
+    </input>
+    <output>
+        <format>CSV</format>
+        <header>no</header>
+        <!-- encoding changes are not supported; whatever the input encoding, that will be the output encoding -->
+    </output>
+    <!-- we omit to emit an id_nr because this is not our id number, it is the destination databases' id number. 
+          Our id number will be included in the bibliography. -->
+    <force>
+        <destination>provinz</destination>
+        <value>Lycia</value>
+    </force>
+    <force>
+        <destination>land</destination>
+        <value>tky</value>
+    </force>
+    <force>
+        <destination>fo_antik</destination>
+        <value>Aphrodisias</value>
+    </force>
+    <force>
+        <destination>fo_modern</destination>
+        <value>Geyre</value>
+    </force>
+    <copy>
+        <destination>fundstelle</destination>
+        <source>
+            <xpath>//rs[@type='findspot']</xpath>
+        </source>
+        <stringReplace>
+            <find>:</find>
+            <replace>,</replace>
+        </stringReplace>
+        <default>ignoratur</default>
+    </copy>
+    <copy>
+        <destination>aufbewahrung</destination>
+        <source>
+            <xpath>//rs[@type='last-location']</xpath>
+        </source>
+        <default>ignoratur</default>
+    </copy>
+    <copy>
+        <!-- this mapping really needs a substitution to produce latin terms in the EAGLE vocabulary: 
+              http://www.edr-edr.it/tabelle_it.html#Tabella1 -->
+        <destination>denkmaltyp</destination>
+        <source>
+            <xpath>//rs[@type='catMonument']/@reg</xpath>
+            <fallback>//rs[@type='catMonument']</fallback>
+        </source>
+        <default>ignoratur</default>
+    </copy>
+    <copy>
+        <destination>material</destination>
+        <source>
+            <xpath>//rs[@type='material']/@reg</xpath>
+            <fallback>//rs[@type='material']</fallback>
+        </source>
+        <default>ignoratur</default>
+        <substitutions>
+            <!-- this substitution sequence is not complete; it needs to address all of the EAGLE terminology at
+                  http://www.edr-edr.it/tabelle_it.html#Tabella2 -->
+            <substitution>
+                <partialMatch>marble</partialMatch>
+                <replace>marmor</replace>
+            </substitution>
+        </substitutions>
+    </copy>
+   <force>
+        <!-- not much nuance here: need to modify to see whether InsAph indicates differences, and then devise 
+              a "copy" element that works. It will need to incorporate a set of "substitions" that handle all the
+              intersections between InsAph vocabulary and that used by EAGLE. See:
+              http://www.edr-edr.it/tabelle_it.html#Tabella3 -->
+        <destination>scriptura</destination>
+        <value>scalpro</value>
+   </force> 
+    <copy>
+        <destination>lingua</destination>
+        <source>
+            <xpath>//div[@type='edition']/ancestor-or-self::*[@lang][1]/@lang</xpath>
+        </source>
+        <substitutions>
+            <!-- NB: this substitution list is by no means complete. It should be expanded to include all terms in the EAGLE thesaurus: 
+                  there is no online list, the options in the access database are: latina, graeca, *latina-graeca*, alia -->
+            <substitution>
+                <match>grc</match>
+                <replace>graeca</replace>
+            </substitution>
+            <substitution>
+                <match>lat</match>
+                <replace>latina</replace>
+            </substitution>
+        </substitutions>
+        <default>alia</default>
+    </copy>
+    <copy>
+        <destination>i_gattung</destination>
+        <source>
+            <xpath>//fileDesc/titleStmt/title/rs[@type='catText']/@reg</xpath>
+            <fallback>//fileDesc/titleStmt/title/rs[@type='catText']</fallback>
+        </source>
+        <substitutions>
+            <!-- NB: this substitution list is by no means complete. It should be expanded to include all terms in the EAGLE thesaurus: 
+                  http://www.edr-edr.it/tabelle_it.html#Tabella4 -->
+            <substitution>
+                <match>imperial letter</match>
+                <replace>fasti, leges, acta</replace>
+            </substitution>
+        </substitutions>
+    </copy>
+    <copy>
+        <destination>livellosociale1</destination>
+        <!-- this is going to require some rather complicated investigation and experimentation to flesh out -->
+    </copy>
+        <copy>
+        <destination>livellosociale2</destination>
+        <!-- this is going to require some rather complicated investigation and experimentation to flesh out -->
+        </copy>
+    <copy>
+        <destination>Bibliografia</destination>
+        <sourceCombine>
+            <delimiter>/</delimiter>
+            <enumerate>postfix-parens</enumerate>
+            <prefix>
+                <xpath>//fileDesc</xpath>
+                <xslt>iaph2edr-edition.xsl</xslt>
+            </prefix>
+            <xpath>//div[@type='bibliography']/p/bibl[@rend='primary']</xpath>
+        </sourceCombine>
+    </copy>
+    <copy>
+        <destination>Testo</destination>
+        <source>
+            <xpath>//div[@type='edition']</xpath>
+            <xslt>iaph2edr-epidoc.xsl</xslt>
+        </source>
+    </copy> -->
+</crosswalk>

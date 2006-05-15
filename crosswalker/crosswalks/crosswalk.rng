@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="crosswalk">
+      <attribute name="destination">
+        <data type="NCName"/>
+      </attribute>
+      <attribute name="source">
+        <data type="NCName"/>
+      </attribute>
+        <element name="input">
+            <ref name="format"/>
+            <element name="encoding">
+              <data type="NCName"/>
+            </element>
+        </element>
+        <element name="output">
+            <ref name="format"/>
+            <element name="header">
+              <data type="NCName"/>
+            </element>
+          </element>
+      <oneOrMore>
+        <choice>
+          
+          <element name="copy">
+            <ref name="destination"/>
+            <optional>
+              <element name="source">
+                <ref name="xpath"/>
+                <optional>
+                  <choice>
+                    <ref name="xslt"/>
+                    <element name="fallback">
+                      <text/>
+                    </element>
+                  </choice>
+                </optional>
+              </element>
+            </optional>
+            <optional>
+              <element name="stringReplace">
+                <element name="find">
+                  <data type="NMTOKEN"/>
+                </element>
+                <ref name="replace"/>
+              </element>
+            </optional>
+            <choice>
+              <element name="sourceCombine">
+                <element name="delimiter">
+                  <text/>
+                </element>
+                <element name="enumerate">
+                  <data type="NCName"/>
+                </element>
+                <element name="prefix">
+                  <ref name="xpath"/>
+                  <ref name="xslt"/>
+                </element>
+                <ref name="xpath"/>
+              </element>
+              <zeroOrMore>
+                <choice>
+                  <element name="default">
+                    <data type="NCName"/>
+                  </element>
+                  <element name="substitutions">
+                    <oneOrMore>
+                      <element name="substitution">
+                        <choice>
+                          <element name="match">
+                            <text/>
+                          </element>
+                          <element name="partialMatch">
+                            <data type="NCName"/>
+                          </element>
+                        </choice>
+                        <ref name="replace"/>
+                      </element>
+                    </oneOrMore>
+                  </element>
+                </choice>
+              </zeroOrMore>
+            </choice>
+          </element>
+          <element name="force">
+            <ref name="destination"/>
+            <element name="value">
+              <data type="NCName"/>
+            </element>
+          </element>
+          
+          
+        </choice>
+      </oneOrMore>
+    </element>
+  </start>
+  <define name="format">
+    <element name="format">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="destination">
+    <element name="destination">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="xpath">
+    <element name="xpath">
+      <text/>
+    </element>
+  </define>
+  <define name="xslt">
+    <element name="xslt">
+      <data type="NCName"/>
+    </element>
+  </define>
+  <define name="replace">
+    <element name="replace">
+      <text/>
+    </element>
+  </define>
+</grammar>
