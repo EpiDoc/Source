@@ -29,6 +29,9 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="tei:div">
         <xsl:choose>
+		  <xsl:when test="@type='gl-regextest'">
+		  <!-- NOTE: TEMPORARILY OMITTING REGEXTEST UNTIL IT WORKS -->
+		  </xsl:when>
             <xsl:when test="count(ancestor::*) = 0">
                 <xsl:call-template name="dohtmlheadboilerplate" />
                 <xsl:call-template name="dohtmlbodyboilerplate" />
