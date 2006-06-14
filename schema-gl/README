@@ -1,3 +1,28 @@
+A QUICK OVERVIEW OF EPIDOC VALIDATION
+
+Note: this explanations refer to the not-yet-existing P5 version of
+      the EpiDoc guidelines in the present tense.
+
+The EpiDoc Guidelines are themselves a TEI P5 customization ODD.
+However, the EpiDoc Guidelines call for a somewhat different document
+structure than your standard run-of-the-mill reference documentation.
+In order to accomadate that structure, a more specialized schema than
+TEI with tagset documentation is required. 'epiMetaDoc' is that
+schema.
+
+'epiMetaDoc' is a TEI customization that supports the writing of the
+EpiDoc Guidelines. The EpiDoc Guidelines are themselves a TEI
+customization that support the encoding of epigraphic materials. 
+
+That is sufficient information for most folks. For the real TEI
+customization die-hards, there is one more level of complexity that is
+interesting. Normally, a TEI customization conforms to the same TEI
+customization that we use to create the TEI Guidelines themselves,
+called 'p5odds'. However, in creating 'epiMetaDoc', we discovered
+there were some points of friction, and thus have developed
+'epiMetaOdds', a customization for writing 'epiMetaDoc'.
+
+
 A QUICK EXPLANATION OF FILES IN THIS MODULE
 
 epiMetaOdds.xml: defines the schema for writing the EpiDoc guidelines

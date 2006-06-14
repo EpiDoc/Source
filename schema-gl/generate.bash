@@ -30,9 +30,11 @@ EXNAME=epiMetaDoc-ex.xml
 PREFIX=emd.
 # WARNING: these default paths are currently for Syd's systems, not generalized.
 if [ -e /Volumes/data/ ] ; then
-    ROMACMD=/Volumes/data/SFTEI/Roma/roma.sh
-    XSLDIR=/Volumes/data/SFTEI/Stylesheets
-    P5DIR=/Volumes/data/SFTEI/P5
+    # Note: these paths are aginst the latest Subversion check-in, rather than
+    # the released TEI, which may be a better idea
+    ROMACMD=/Volumes/data/SFTEI/trunk/Roma/roma.sh
+    XSLDIR=/Volumes/data/Stylesheets/release/tei-xsl/p5
+    P5DIR=/Volumes/data/P5
 else
     ROMACMD=/usr/bin/roma
     XSLDIR=/usr/share/xml/tei/stylesheet
@@ -71,16 +73,16 @@ GLOBAL_ATTS_LINKING_CONCISE='   <a class=\"link_odd\" href=\"#att.global.linking
 echo -e "--------- generate schema & reference documentation"
 $ROMACMD --patternprefix=$PREFIX            \
     --xsl=$XSLDIR --nodtd --noxsd --dochtml \
-    --localsource=$P5DIR/Source-driver.xml  \
+    --localsource=$P5DIR/Source/Guidelines/en/guidelines-en.xml  \
     --doc  ./$INNAME  .
 
 echo "9. extract schematron rules into ${MYNAME}.sch"
-xmllint --noent  ./$INNAME | xsltproc $P5DIR/extract-sch.xsl - > `basename $INNAME .odd`.sch
+xmllint --noent  ./$INNAME | xsltproc $P5DIR/Utilities/extract-sch.xsl - > `basename $INNAME .odd`.sch
 
 echo -e "\n--------- now generate schema for examples, i.e. <egXML> content"
 $ROMACMD --patternprefix=emd-ex.          \
     --xsl=$XSLDIR --nodtd --noxsd          \
-    --localsource=$P5DIR/Source-driver.xml \
+    --localsource=$P5DIR/Source/Guidelines/en/guidelines-en.xml \
     --doc  ./$EXNAME  .
 
 # get the name of the examples' schema output file
