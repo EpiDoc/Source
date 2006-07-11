@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <!-- Start CVS information: do not remove -->
-    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/index.shtml,v 1.10 2006-05-05 20:21:52 paregorios Exp $ -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/index.shtml,v 1.11 2006-07-11 18:30:41 paregorios Exp $ -->
     <!-- End CVS information: do not remove -->
     <head>
         <title>EpiDoc: Epigraphic Documents in TEI XML</title>
@@ -12,7 +12,8 @@
         <div id="container">
             <div id="main">
                 <h1>
-                    <span class="text">EpiDoc: Epigraphic Documents in <abbr title="Text Encoding Initiative">TEI</abbr>
+                    <span class="text">EpiDoc: Epigraphic Documents in <abbr
+                            title="Text Encoding Initiative">TEI</abbr>
                         <abbr title="eXtensible Markup Language">XML</abbr></span>
                 </h1>
                 <div id="introduction">
@@ -22,16 +23,16 @@
                 </div>
                 <div id="gettingstarted">
                     <h2>Getting Started</h2>
-                    <p>To learn more about EpiDoc, or to get started using it, please take advantage of the following resources:</p>
+                    <p>To learn more about EpiDoc, or to get started using it, please take advantage
+                        of the following resources:</p>
                     <ul>
                         <li>
                             <a href="#principles">Principles</a>
                         </li>
                         <li>
-                            <a href="#about"><span class="highlight">UPDATED:</span> About EpiDoc</a>
+                            <a href="#about">About EpiDoc</a>
                         </li>
                         <li>
-                            <span class="highlight">NEW:</span>
                             <a href="IntroEpigraphers.shtml">Introduction for Epigraphers</a>
                         </li>
                         <li>
@@ -41,71 +42,112 @@
                             <a href="projects.shtml">Past and Present EpiDoc Projects</a>
                         </li>
                         <li>
+                            <span class="highlight">UPDATED 11 July 2006:</span>
                             <a href="development.shtml">Introduction to EpiDoc Development</a>
                         </li>
                     </ul>
                 </div>
                 <div id="principles">
                     <h2>Principles</h2>
-                    <p>Five important principles have governed the elaboration of EpiDoc techniques and tools from the beginning:</p>
+                    <p>Five important principles have governed the elaboration of EpiDoc techniques
+                        and tools from the beginning:</p>
                     <ul>
-                        <li>EpiDoc and its tools should be <strong>open</strong> and available to the widest possible range of individuals and groups;
-                            therefore, all documents and software produced by the EpiDoc Community are released under the <a
-                                href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></li>
-                        <li>Insofar as possible, EpiDoc should be compliant or compatible with other published <strong>standards</strong>: we should
-                            strive to avoid re-inventing wheels or creating data silos</li>
-                        <li>EpiDoc projects <strong>work collaboratively and supportively</strong> with other digital epigraphy initiatives,
-                            especially those sanctioned by the <a href="http://www.uni-koeln.de/phil-fak/ifa/altg/eck/aiegl.html" lang="fr"
-                                xml:lang="fr" title="International                                 Association for Greek and Latin (Roman) Epigraphy"
-                                >Association Internationale d&#8217; Épigraphie Grecque et Latine</a></li>
-                        <li>In the arena of transcription, EpiDoc must facilitate the encoding of <strong>all editorial observations and
-                            distinctions</strong> signaled in traditional print editions through the use of sigla and typographic indicia</li>
-                        <li>We <strong>avoid encoding the appearance</strong> of these sigla and indicia; rather, we encode the character (or
-                            semantics) of the distinction or observation the human editor is making. The rendering of typographic representations of
-                            these distinctions are accomplished using XSLTs or other methods.</li>
+                        <li>EpiDoc and its tools should be <strong>open</strong> and available to
+                            the widest possible range of individuals and groups; therefore, all
+                            documents and software produced by the EpiDoc Community are released
+                            under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General
+                                Public License</a></li>
+                        <li>Insofar as possible, EpiDoc should be compliant or compatible with other
+                            published <strong>standards</strong>: we should strive to avoid
+                            re-inventing wheels or creating data silos</li>
+                        <li>EpiDoc projects <strong>work collaboratively and supportively</strong>
+                            with other digital epigraphy initiatives, especially those sanctioned by
+                            the <a href="http://www.uni-koeln.de/phil-fak/ifa/altg/eck/aiegl.html"
+                                lang="fr" xml:lang="fr"
+                                title="International                                 Association for Greek and Latin (Roman) Epigraphy"
+                                >Association Internationale d&#8217; Épigraphie Grecque et
+                                Latine</a></li>
+                        <li>In the arena of transcription, EpiDoc must facilitate the encoding of
+                                <strong>all editorial observations and distinctions</strong>
+                            signaled in traditional print editions through the use of sigla and
+                            typographic indicia</li>
+                        <li>We <strong>avoid encoding the appearance</strong> of these sigla and
+                            indicia; rather, we encode the character (or semantics) of the
+                            distinction or observation the human editor is making. The rendering of
+                            typographic representations of these distinctions are accomplished using
+                            XSLTs or other methods.</li>
                     </ul>
                 </div>
                 <div id="about">
                     <h2>About EpiDoc</h2>
-                    <p>EpiDoc was started in the late 1990s by <a href="http://www.unc.edu/~thomase" title="Tom Elliott's curriculum vitae">Tom
-                            Elliott</a>, then a graduate student in <a href="http://www.unc.edu/depts/history/fields/ancient.html" title="Field
-                            description: Ancient History and UNC-CH">Ancient History</a> at the <a href="http://www.unc.edu" title="Home page of
-                            UNC-CH">University of North Carolina in Chapel Hill</a> (<abbr title="United                             States of
-                            America">U.S.A.</abbr>). Elliott made public his initial work on epigraphic encoding in XML in response to the promulgation, by <a
-                            href="http://w3.uniroma1.it/archeologia/Docenti/Docente057/Panciera.htm">Prof. Silvio Panciera</a> and colleagues, of a <a
-                            href="http://cisadu4a.let.uniroma1.it/panciera/Documenti/Document1_it.html" title="">manifesto</a> recommending the
-                        establishment of an on-line, free and unrestricted &ldquo;database ... of all surviving Greek and Latin epigraphical texts
-                        produced down to the end of Antiquity.&rdquo; </p>
-                    <p>The manifesto itself had emerged from a round-table meeting on the subject of &ldquo;Epigraphy and Information
-                        Technology&rdquo; in Rome, convened by Prof. Panciera in May 1999 in his capacity as President of the
-                        &ldquo;Commission for Epigraphy and Information Technology&rdquo; of the <a
-                            href="http://www.uni-koeln.de/phil-fak/ifa/altg/eck/aiegl.html" lang="fr" xml:lang="fr" title="International
-                            Association for Greek and Latin (Roman) Epigraphy">Association Internationale d&#8217; Épigraphie Grecque et
-                        Latine</a>. A second round-table meeting, held at Aquileia and Trieste in 2003, refined the initiative as a federation of
-                        epigraphic databases. This important project is well underway, under the rubric: <span id="abouteagle" class="title">Electronic Archive of
-                            Greek and Latin Epigraphy (EAGLE)</span>; its constituent databases, at present, are:</p>
+                    <p>EpiDoc was started in the late 1990s by <a href="http://www.unc.edu/~thomase"
+                            title="Tom Elliott's curriculum vitae">Tom Elliott</a>, then a graduate
+                        student in <a href="http://www.unc.edu/depts/history/fields/ancient.html"
+                            title="Field
+                            description: Ancient History and UNC-CH"
+                            >Ancient History</a> at the <a href="http://www.unc.edu"
+                            title="Home page of
+                            UNC-CH">University of
+                            North Carolina in Chapel Hill</a> (<abbr
+                            title="United                             States of
+                            America"
+                            >U.S.A.</abbr>). Elliott made public his initial work on epigraphic
+                        encoding in XML in response to the promulgation, by <a
+                            href="http://w3.uniroma1.it/archeologia/Docenti/Docente057/Panciera.htm"
+                            >Prof. Silvio Panciera</a> and colleagues, of a <a
+                            href="http://cisadu4a.let.uniroma1.it/panciera/Documenti/Document1_it.html"
+                            title="">manifesto</a> recommending the establishment of an on-line,
+                        free and unrestricted &ldquo;database ... of all surviving Greek and
+                        Latin epigraphical texts produced down to the end of Antiquity.&rdquo; </p>
+                    <p>The manifesto itself had emerged from a round-table meeting on the subject of
+                        &ldquo;Epigraphy and Information Technology&rdquo; in Rome, convened
+                        by Prof. Panciera in May 1999 in his capacity as President of the
+                        &ldquo;Commission for Epigraphy and Information Technology&rdquo; of
+                        the <a href="http://www.uni-koeln.de/phil-fak/ifa/altg/eck/aiegl.html"
+                            lang="fr" xml:lang="fr"
+                            title="International
+                            Association for Greek and Latin (Roman) Epigraphy"
+                            >Association Internationale d&#8217; Épigraphie Grecque et
+                        Latine</a>. A second round-table meeting, held at Aquileia and Trieste in
+                        2003, refined the initiative as a federation of epigraphic databases. This
+                        important project is well underway, under the rubric: <span id="abouteagle"
+                            class="title">Electronic Archive of Greek and Latin Epigraphy
+                        (EAGLE)</span>; its constituent databases, at present, are:</p>
                     <ul>
                         <li>
                             <a href="http://www.edb.uniba.it/">Epigraphic Database Bari (EDB)</a>
                         </li>
                         <li>
-                            <a href="http://www.uni-heidelberg.de/institute/sonst/adw/edh/" lang="de" xml:lang="de">Epigraphische Datenbank Heidelberg
-                                (EDH)</a>
+                            <a href="http://www.uni-heidelberg.de/institute/sonst/adw/edh/"
+                                lang="de" xml:lang="de">Epigraphische Datenbank Heidelberg (EDH)</a>
                         </li>
                         <li>
                             <a href="http://www.edr-edr.it/">Epigraphic Database Roma (EDR)</a>
                         </li>
                     </ul>
-                    <p>Among the salutary recommendations embodied in the report of the Rome meeting was a provision recognizing the importance of a
-                        platform-independent format suitable for backup, archiving and data interchange (i.e., XML):</p>
-                    <blockquote><p><span lang="it" xml:lang="it">È importante che siano utilizzati programmi che consentano l'esportazione dei documenti
-                            in &ldquo;Document Type Definition (DTD) format&rdquo;</span><br /><br />It is important that the software used
-                        for the database support the export of data in a structured format definable by a Document Type Definition (DTD).</p></blockquote>
-                    <p>It was this provision that encouraged Elliott to post to the web, in the summer of 1999, a description of his work on XML for epigraphy. He hoped that this step might facilitate the realization of the Rome meeting&apos;s recommendations. ...</p>
-                    <p class="small"><a href="moreabout.shtml">Read more about the history and development of EpiDoc ...</a></p>
+                    <p>Among the salutary recommendations embodied in the report of the Rome meeting
+                        was a provision recognizing the importance of a platform-independent format
+                        suitable for backup, archiving and data interchange (i.e., XML):</p>
+                    <blockquote>
+                        <p><span lang="it" xml:lang="it">È importante che siano utilizzati programmi
+                                che consentano l'esportazione dei documenti in &ldquo;Document
+                                Type Definition (DTD) format&rdquo;</span><br /><br />It is
+                            important that the software used for the database support the export of
+                            data in a structured format definable by a Document Type Definition
+                            (DTD).</p>
+                    </blockquote>
+                    <p>It was this provision that encouraged Elliott to post to the web, in the
+                        summer of 1999, a description of his work on XML for epigraphy. He hoped
+                        that this step might facilitate the realization of the Rome
+                        meeting&apos;s recommendations. ...</p>
+                    <p class="small">
+                        <a href="moreabout.shtml">Read more about the history and development of
+                            EpiDoc ...</a>
+                    </p>
                 </div>
                 <div id="footer">
-                    <p>Content on this page by Tom Elliott. Last update: $Date: 2006-05-05 20:21:52 $. <br />Copyright 2006 by the authors.</p>
+                    <p>Content on this page by Tom Elliott. Last update: $Date: 2006/05/05 20:21:52
+                        $. <br />Copyright 2006 by the authors.</p>
                 </div>
             </div>
             <!--#include virtual="meta.html" -->
