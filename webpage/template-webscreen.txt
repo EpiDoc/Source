@@ -52,7 +52,7 @@
 %FNTH2% = italic 1.1em Arial, sans-serif
 %FNTH3% = italic 1em Arial, sans-serif
 %FNTSIZESMALL% = 0.8em
-%LINEHEIGHTSMALL% = 1.1em
+%LINEHEIGHTSMALL% = 1.2em
  
 body {
     margin: 0px; 
@@ -104,7 +104,7 @@ body {
 }
 
 #main h3:before {
-    content: "❧ ";
+    content: "\2767\A0";
     font-style: normal;
 }
 
@@ -246,6 +246,19 @@ p.project-citation {
 span.highlight {
     color: red;
 }
+p.gloss {
+    
+    font-size: %FNTSIZESMALL%;
+   line-height: %LINEHEIGHTSMALL%;
+    font-style: italic;
+}
+
+li.gloss  {
+    font-size: %FNTSIZESMALL%;
+   line-height: %LINEHEIGHTSMALL%;
+    font-style: italic;
+}
+
 
 
 
