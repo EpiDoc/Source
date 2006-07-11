@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <!-- Start CVS information: do not remove -->
-    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/development.shtml,v 1.5 2006-04-26 15:21:27 paregorios Exp $ -->
+    <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/webpage/development.shtml,v 1.6 2006-07-11 18:26:24 paregorios Exp $ -->
     <!-- End CVS information: do not remove -->
     <head>
         <title>EpiDoc Development</title>
@@ -16,41 +16,133 @@
                 </h1>
                 <div id="introduction">
                     <h2>EpiDoc Development</h2>
-                    <p>The development of guidelines and software for EpiDoc work is carried out collaboratively and internationally.
-                            <br /><br /><span class="small">[ <a href="index.shtml">back to the EpiDoc home page ...</a> ]</span></p>
+                    <p>The development of guidelines and software for EpiDoc work is carried out
+                        collaboratively and internationally. <br /><br /><span class="small">[ <a
+                                href="index.shtml">back to the EpiDoc home page ...</a> ]</span></p>
                 </div>
                 <div id="development">
                     <div id="philosophy">
                         <h2>Development Philosophy</h2>
-                        <p class="placeholder">To be added</p>
+                        <p class="placeholder">Pick up something and run with it!</p>
                     </div>
                     <div id="developers">
                         <h2>Developers</h2>
-                        <p class="placeholder">To be added</p>
+                        <p>Whether you are an experienced software developer, practicing epigraphist
+                            or smart, interested layperson, <strong>EpiDoc wants you</strong>. <a
+                                href="mailto:thomase@email.unc.edu?subject='EpiDoc development'"
+                                >Contact Tom Elliott</a> to volunteer.</p>
                     </div>
                     <div id="priorities">
                         <h2>Priorities</h2>
-                        <p class="placeholder">To be added</p>
+                        <p class="placeholder">The EpiDoc community is currently working on a
+                            development &ldquo;road map&rdquo;. Join the discussion via the
+                                <a href="resources.shtml#markup">Markup List</a>, subject = sprint
+                            planning.</p>
                     </div>
-                    
                     <div id="tools">
                         <h2>Development Tools and Resources</h2>
-                        <p>For now, see <a href="resources.shtml">EpiDoc Resources</a>.</p>
+                        <p>For specific tools and documents, see <a href="resources.shtml">EpiDoc
+                                Resources</a>.</p>
+                        <div id="cvs">
+                            <h3>Code repository</h3>
+                            <p>The EpiDoc community uses the Concurrent Versioning System (CVS), via
+                                    <a href="http://sf.net">sourceforge.net</a> for all its tools
+                                and guidelines. See the entry for each <a href="resources.shtml"
+                                    >EpiDoc resource</a> for more details. Sourceforge provides <a
+                                    href="http://sourceforge.net/cvs/?group_id=60289">instructions
+                                    for accessing the repository</a>.</p>
+                        </div>
+                        <div id="releases">
+                            <h3>Releases</h3>
+                            <p>The EpiDoc community uses the sourceforge file release mechanism to
+                                distribute pre-bundled packages of the tools and guidelines. See the
+                                entry for each <a href="resources.shtml">EpiDoc resource</a> for
+                                more details. </p>
+                        </div>
+
                     </div>
                     <div id="workshops">
                         <h2>Workshops and Sprints</h2>
-                        <p class="placeholder">We also need a paragraph about the function of the workshops/sprints.</p>
-                        <p class="placeholder">Many workshops have been held. We should list/summarize them here with correct dates:</p>
-                        <ul>
-                            <li>Chapel Hill</li>
-                            <li>London 1</li>
-                            <li>Oxford</li>
-                            <li>Rutgers</li>
-                            <li>Brown</li>
-                            <li>London 2</li>
-                            <li>Berlin</li>
-                            <li>London (&ldquo;Sandstorm&rdquo; Sprint, March 2006)</li>
-                        </ul>
+                        <p>EpiDoc owes much of its progress to the collaborative and
+                            community-minded efforts of the active EpiDoc projects and their
+                            directors. An on-going series of international workshops and development
+                            &ldquo;sprints&rdquo; &mdash; chiefly organized by Charlotte
+                            Rouech&eacute; and her team at King's College, London &mdash;
+                            continue to focus and propel the movement.</p>
+                        <div id="sprints-defined">
+                            <h3>What is a &ldquo;sprint?&rdquo;</h3>
+                            <p>A sprint is an event when programmers and content developers meet to
+                                do collaborative computer programming and/or content creation. These
+                                are sometimes referred to as &ldquo;hackathons&rdquo;,
+                                &ldquo;hackfests&rdquo; or &ldquo;codefests&rdquo;.
+                                Sprints are intensive events, lasting 2-5 days or so and requiring
+                                long hours and limited distractions. Development sprints are not <a
+                                    href="#training">training events</a>; expert knowledge
+                                &mdash; either in programming or in the problem domain of
+                                concern &mdash; is required. </p>
+                        </div>
+
+                        <div id="workshops-past">
+                            <h3>Past Workshops</h3>
+                            <p>Please see our <a href="workshopspast.shtml">separate list of
+                                    previous workshops</a>.</p>
+                            <p>Please note also the public presentations and papers that have been
+                                delivered by members of the EpiDoc Community (coming soon).</p>
+                        </div>
+                        <div id="workshops-future">
+                            <h3>Scheduled Future Workshops</h3>
+                            <ul>
+                                <li>
+                                    <em>EpiDoc &ldquo;Forza&rdquo; Sprint (tentative)</em>
+                                    <ul>
+                                        <li class="gloss">Location: Rome, Italy</li>
+                                        <li class="gloss">Dates: 21-22 October 2006 ?</li>
+                                        <li class="gloss">Agenda: EpiDoc tools completion
+                                            (tentative): <ul>
+                                                <li>EpiDoc Guidelines moved from TEI P4 to P5 using
+                                                  schema-gl</li>
+                                                <li>CHET-C Regular Expression embedding in
+                                                  Guidelines</li>
+                                                <li>Guidelines self-tests with Schematron</li>
+                                                <li>Crosswalker</li>
+                                            </ul>
+                                        </li>
+                                        <li class="gloss">Participation: programmers only; no
+                                            guidelines content will be changed</li>
+                                    </ul>
+                                    <p />
+                                </li>
+                                <li>
+                                    <em>EpiDoc &ldquo;White and Blue&rdquo; Sprint
+                                        (tentative)</em>
+                                    <ul>
+
+                                        <li class="gloss">Location: Chapel Hill, North Carolina,
+                                            U.S.A.</li>
+                                        <li class="gloss">Dates: 4-8 December 2006 ?</li>
+                                        <li class="gloss">Agenda: open</li>
+                                        <li class="gloss">Participation: undecided</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>To participate in planning (or make agenda requests) for future
+                                sprints and workshops, please post to the <a
+                                    href="resources.shtml#markup">Markup List</a>.</p>
+                        </div>
+                        <div id="workshops-sponsor">
+                            <h3>Sponsor an Event</h3>
+                            <p>The EpiDoc community can benefit from your help. If your organization
+                                would be interested in sponsoring or organizing an EpiDoc workshop
+                                or sprint, please contact one of the following individuals:</p>
+                            <ul>
+                                <li><a
+                                        href="mailto:thomase@email.unc.edu?subject='EpiDoc Sponsorship'"
+                                        >Tom Elliott</a>, Convenor of the EpiDoc Community</li>
+                                <li><a
+                                        href="mailto:charlotte.roueche@kcl.ac.uk?subject='EpiDoc Sponsorship'"
+                                        >Charlotte Rouech&eacute;</a>, Director of InsAph</li>
+                            </ul>
+                        </div>
                     </div>
                     <div id="training">
                         <h2>Training</h2>
@@ -58,7 +150,8 @@
                     </div>
                 </div>
                 <div id="footer">
-                    <p>Content on this page by Tom Elliott. Last update: $Date: 2006-04-26 15:21:27 $. <br />Copyright 2006 by the authors.</p>
+                    <p>Content on this page by Tom Elliott. Last update: $Date: 2006/04/26 15:21:27
+                        $. <br />Copyright 2006 by the authors.</p>
                 </div>
             </div>
             <!--#include virtual="meta.html" -->
