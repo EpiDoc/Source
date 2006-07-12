@@ -24,12 +24,12 @@ http://epidoc.sf.net.
 
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
-<!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/teiprofiledesc.xml,v 1.6 2006-07-12 11:18:03 gabrielbodard Exp $ -->
-<!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" id="teiprofiledesc" lang="en" rend="multipart">
-   <head>Using tei:profileDesc</head>
-   <p>using tei:profileDesc </p>
-   <p>to be added </p>
-<xi:include href="teilangusage.xml"/></div>
+
+
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="teilangusage" lang="en">
+   <head>Using tei:langUsage</head>
+   <p>using tei:langUsage </p>
+   <p>to be added</p><p>The <tag>langUsage</tag> element in the <tag>teiHeader</tag> contains a list of declared ancient and modern languages, each of which has the form:</p>
+<list><item><tag>language id="la"</tag>Latin<tag>/language</tag></item><item><tag>language id="grc"</tag>Ancient Greek<tag>/language</tag></item><item><tag>language id="en"</tag>English<tag>/language</tag></item><item><tag>language id="el"</tag>Modern Greek<tag>/language</tag></item></list><p>The <att>id</att> of each <tag>language</tag> should contain the 2-letter ISO language code, where one is available, or the 3-digit code where one is not (as in the case of ancient Greek).</p><p>These languages are then available to be referred to by the <att>lang</att> or <att>xml:lang</att> attribute on any element in the file. See <tag>tei:foreign</tag> and <xref>languages.xml</xref>.</p></div>
