@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,32 +25,28 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-commentary.xml,v 1.3 2006-04-18 21:12:51 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-commentary.xml,v 1.4 2006-07-12 13:44:06 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="div-commentary" lang="en">
    <head>Commentary (prosopographical/historical)</head>
    <p>Structuring comments on the epigraphic text (tei:div type="commentary") </p>
-   <p>to be added </p>
+   <p>Generally this is prose commentary, although it may have XML structure in some cases. Historical, prosopographical, and other scholarly comments on the text, its context or implications, dating, etc. May also include references to bibliography.</p><p>Cf. "physical commentary" which belongs in a <tag>div</tag> with @type='description'—the @type of the div in EpiDoc does not prejudice the name or label an editor chooses to give to this division of the edition.</p>
     <div id="div-commentary-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
                     <resp>author</resp>
-                    <name>to be added</name>
+                    <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
         </listBibl>
     </div>
     <div id="div-commentary-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="div-commentary-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.3 $</seg></p>
-        <p id="div-commentary-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-            >$Name: not supported by cvs2svn $</seg></p>
-        <p id="div-commentary-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-04-18 21:12:51 $</seg></p>
-        <p id="div-commentary-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-            >$Author: paregorios $</seg></p>
+        <p id="div-commentary-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.4 $</seg></p>
+        <p id="div-commentary-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="div-commentary-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-12 13:44:06 $</seg></p>
+        <p id="div-commentary-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
     </div></div>

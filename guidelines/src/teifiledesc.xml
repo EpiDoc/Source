@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,11 +25,27 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/teifiledesc.xml,v 1.5 2006-04-18 21:19:01 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/teifiledesc.xml,v 1.6 2006-07-12 13:44:06 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="teifiledesc" lang="en">
    <head>Using tei:fileDesc</head>
-   <p>Using tei:fileDesc </p>
-   <p>to be added </p>
-</div>
+   
+   
+   <p>The TEI element <tag>fileDesc</tag> is the first child of the <tag>teiHeader</tag> and encodes descriptive information about the XML file itself. The principle contents of the <tag>fileDesc</tag> are:</p><list type="ordered"><item> <tag>titleStmt</tag> (title statement), which includes <tag>title</tag>, <tag>editor</tag>, and the like</item><item><tag>publicationStmt</tag> (publication statement), which may include <tag>date</tag>, <tag>availablity</tag>, <tag>publisher</tag>, <tag>distributor</tag>, and/or a  copyright notice</item><item><tag>sourceDesc</tag> (source description), which should include bibliographical information on the original source of the content, or a statement to the effect that the content was born digital</item></list><p>A sample <tag>fileDesc</tag> from an EpiDoc file of the Inscriptions of Aphrodisias project might read:</p><div type="gl-example"><p><tag>fileDesc</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>titleStmt</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>title</tag>Honours for Cornelia Salonina<tag>/title</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>editor</tag>Charlotte M. Roueché<tag>/editor</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>/titleStmt</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>publicationStmt</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>date</tag>2004<tag>/date</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>availability</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>p</tag>Creative Commons licence Attribution 2.5 (http://creativecommons.org/licenses/by/2.5/).<lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All reuse or distribution of this work must contain somewhere a link back to the URL http://insaph.kcl.ac.uk/<tag>/p</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>/availability</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>/publicationStmt</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>sourceDesc</tag><lb/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tag>p</tag>Born digital.<tag>/p</tag><lb/>&nbsp;&nbsp;&nbsp;<tag>/sourceDesc</tag><lb/><tag>/fileDesc</tag></p></div>
+   
+   
+   
+    <div id="teifiledesc-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            
+        <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    </div>
