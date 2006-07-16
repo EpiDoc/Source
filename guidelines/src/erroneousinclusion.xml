@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneousinclusion.xml,v 1.10 2006-04-18 21:12:51 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneousinclusion.xml,v 1.11 2006-07-16 13:17:06 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -55,7 +54,7 @@ End license statement: do not remove -->
    </div><div id="erroneousinclusion-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-03-21</date>): I would suggest we deprecate number 2 the empty <tag>corr</tag> element which now does not add any flexibility in terms of mixed content in text vs attribute nodes.</item>
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-03-21</date>): I would suggest we deprecate number 2 the empty <tag>corr</tag> element which now does not add any flexibility in terms of mixed content in text vs attribute nodes.</item><item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-07-16</date>): I would also suggest we quit abusing the <att>n</att> attribute and customise the schema to allow <att>type</att> or <att>reason</att> (vel sim.)</item>
       </list>
    </div><div id="erroneousinclusion-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
@@ -65,9 +64,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="erroneousinclusion-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="erroneousinclusion-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
+      <p id="erroneousinclusion-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
       <p id="erroneousinclusion-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="erroneousinclusion-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:12:51 $</seg></p>
-      <p id="erroneousinclusion-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="erroneousinclusion-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-16 13:17:06 $</seg></p>
+      <p id="erroneousinclusion-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
