@@ -49,6 +49,7 @@
     <xsl:import href="teiforeign.xsl" />
     <xsl:import href="teisuppliedreasonsubaudible.xsl" />
     <xsl:import href="teisuppliedreasonlost.xsl" />
+    <xsl:import href="reasonlost.xsl" />
     <xsl:import href="teipersname.xsl" />
     <xsl:import href="teiplacename.xsl" />
     <xsl:import href="teiabbr.xsl" />

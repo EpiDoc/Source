@@ -25,16 +25,21 @@
  End license statement: do not remove -->
  
 
-<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
 
-    <xsl:template match="tei:supplied[@reason='lost']">
-      <xsl:call-template name="reasonlostleft"/>
-      <xsl:apply-templates />
-      <xsl:if test="@cert='low'">
-        <xsl:text>?</xsl:text>
-      </xsl:if>
-      <xsl:call-template name="reasonlostright"/>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!--        Square bracket handling templates for *[@reason='lost']        -->    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--     OPEN BRACKET     -->
+    <xsl:template name="reasonlostleft">
+        <xsl:text>[</xsl:text>
+    </xsl:template>
+
+<!--     CLOSE BRACKET     -->
+
+    <xsl:template name="reasonlostright">
+        <xsl:text>]</xsl:text>
     </xsl:template>
 
 </xsl:stylesheet>
