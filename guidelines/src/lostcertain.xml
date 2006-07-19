@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostcertain.xml,v 1.10 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostcertain.xml,v 1.11 2006-07-19 13:35:14 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -81,8 +80,8 @@ End license statement: do not remove -->
          <item>The second example indicates the certain loss of exactly 10 characters.</item>
          <item>The third example indicates the certain loss of approximately 10 characters.</item>
          <item>The fourth example indicates the certain loss of 4.2cm of text.</item>
-         <item>The fifth example indicates the certain loss of exactly 2 characters.</item><item>The sixth example indicates the certain loss of between 22 and 28 characters. If the <att>extentmax</att> attribute is used (for the maximum value of the extent range), then the <att>extent</att> is taken to indicate the minimum value of this range.</item><item>The seventh example indicates the certain loss of between 1 and 3 characters (constituting a <foreign lang="lat">praenomen</foreign>).</item>
-         <item>If a unit of measurement other than "character" or "line" is used for the "unit" attribute on <tag>gap</tag>, then no <tag>certainty locus="extent" degree="low"</tag> element should be associated with the <tag>gap</tag>.</item>
+         <item>The fifth example indicates the certain loss of approximately 2 characters (where exactly 2 characters would give [ · · ] <foreign lang="lat">vel sim.</foreign>).</item><item>The sixth example indicates the certain loss of between 22 and 28 characters. If the <att>extentmax</att> attribute is used (for the maximum value of the extent range), then the <att>extent</att> is taken to indicate the minimum value of this range.</item><item>The seventh example indicates the certain loss of between 1 and 3 characters (constituting a <foreign lang="lat">praenomen</foreign>).</item>
+         <item>If a unit of measurement other than "character" or "line" is used for the "unit" attribute on <tag>gap</tag>, then no <tag>certainty locus="extent" degree="low"</tag> element should be associated with the <tag>gap</tag>. <note>GB: Why not? are we not confusing certainty with precision again? And even then, could we not have c. 4.2 cm lost?</note></item>
       </list>
    </div><div id="lostcertain-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
@@ -93,9 +92,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="lostcertain-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostcertain-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
+      <p id="lostcertain-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
       <p id="lostcertain-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostcertain-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
-      <p id="lostcertain-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="lostcertain-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-19 13:35:14 $</seg></p>
+      <p id="lostcertain-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 

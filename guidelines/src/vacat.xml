@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vacat.xml,v 1.11 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vacat.xml,v 1.12 2006-07-19 13:35:14 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -85,12 +84,12 @@ End license statement: do not remove -->
       </list>
    </div><div id="vacat-notes" type="gl-notes" org="uniform" part="N" sample="complete">
       <head>Notes</head>
-      <p>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion on the <xref href="http://lsv.uky.edu/archives/markup.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." (
-         <dateRange from="2002-06-01" to="2002-06-10">1-10 June 2002</dateRange>).</p>
+      <list type="ordered"><item>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion on the <xref href="http://lsv.uky.edu/archives/markup.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." (
+         <dateRange from="2002-06-01" to="2002-06-10">1-10 June 2002</dateRange>).</item></list>
    </div><div id="vacat-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
-      <list type="simple">
-         <item>None</item>
+      <list type="ordered">
+         <item>GB (2006-07-19): This section also impinges on the "whitespace" discussion. Ideally, all space on stone should be marked up the same way, with contextual stylesheets rendering some as (vac.) and others with whitespace—dependent of course on the desires of the project: USEP want more whitespace; InsAph want more (vv.).</item>
       </list>
    </div><div id="vacat-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
@@ -100,9 +99,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="vacat-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="vacat-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
+      <p id="vacat-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
       <p id="vacat-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="vacat-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
-      <p id="vacat-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="vacat-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-19 13:35:14 $</seg></p>
+      <p id="vacat-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
