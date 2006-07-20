@@ -26,12 +26,12 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/notations.xml,v 1.8 2006-07-16 11:54:32 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/notations.xml,v 1.9 2006-07-20 15:46:01 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="notations" rend="multipart"><head>Special Characters</head>
-<p n="regexerror">divcount mismatch</p><p>Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</p><xi:include href="claudianletters.xml"/><xi:include href="interpuncts.xml"/><xi:include href="chirho.xml"/><xi:include href="acrophonic.xml"/><div id="notations-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">divcount mismatch</p><p>Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</p><xi:include href="acrophonic.xml"/><xi:include href="chirho.xml"/><xi:include href="claudianletters.xml"/><xi:include href="interpuncts.xml"/><div id="notations-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
       <head>Traditional typographic representation</head>
       <list type="simple">
          <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
@@ -69,9 +69,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="notations-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.8 $</seg></p>
+      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
       <p id="notations-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-16 11:54:32 $</seg></p>
+      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-20 15:46:01 $</seg></p>
       <p id="notations-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
