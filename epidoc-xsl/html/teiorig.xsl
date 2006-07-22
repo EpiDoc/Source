@@ -36,6 +36,21 @@
        <xsl:element name="span">
           <xsl:call-template name="propagateattrs"/>
           <xsl:attribute name="class">unintelligible</xsl:attribute>
+          <span style="text-transform: uppercase ;">
+             <xsl:apply-templates/>
+          </span>
+       </xsl:element>
+    </xsl:template>
+   
+</xsl:stylesheet>
+
+<!--
+Old uppercase template follows: this deprecated because does not allow for mixed content inside <gi>orig</gi>
+-->
+<!--
+text-transform:uppercase would probably in any case be better inserted into the EpiDoc CSS for span[class='unintelligible'] where it might degrade more elegantly
+-->
+<!--
           <xsl:choose>
              <xsl:when test="ancestor-or-self::*[@lang][1]/@lang='lat'">
                <xsl:value-of select="translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
@@ -45,7 +60,4 @@
              </xsl:when>
              <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
           </xsl:choose>
-       </xsl:element>
-    </xsl:template>
-   
-</xsl:stylesheet>
+-->
