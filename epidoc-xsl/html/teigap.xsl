@@ -100,7 +100,7 @@
             </xsl:when>
 		<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low']">
 			<!-- <xsl:value-of select="$gapopener"/> -->
-			<xsl:call-template name="reasonlostleft"/>
+			<xsl:call-template name="reasonlostopen"/>
 			<xsl:text>&#160;</xsl:text>
 			<xsl:call-template name="repeatstring">
 				<xsl:with-param name="rstring">
@@ -112,7 +112,7 @@
 			</xsl:call-template>
 			<xsl:text>?&#160;</xsl:text>
 			<!-- <xsl:value-of select="$gapcloser"/> -->
-			<xsl:call-template name="reasonlostright"/>
+			<xsl:call-template name="reasonlostclose"/>
 		</xsl:when>
 			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
 				 <xsl:text>&#160;</xsl:text>
@@ -127,7 +127,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 			<!-- <xsl:value-of select="$gapopener"/> -->
-			<xsl:call-template name="reasonlostleft"/>
+			<xsl:call-template name="reasonlostopen"/>
 				<xsl:text>&#160;</xsl:text>
 				<xsl:call-template name="repeatstring">
 					<xsl:with-param name="rstring">
@@ -138,7 +138,7 @@
 					</xsl:with-param>
 				</xsl:call-template>
 			<!-- <xsl:value-of select="$gapcloser"/> -->
-			<xsl:call-template name="reasonlostright"/>
+			<xsl:call-template name="reasonlostclose"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -154,7 +154,7 @@
 					<xsl:text>&#160;[</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-			<xsl:call-template name="reasonlostleft"/>
+			<xsl:call-template name="reasonlostopen"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -164,7 +164,7 @@
 					<xsl:text>]&#160;</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:call-template name="reasonlostright"/>
+					<xsl:call-template name="reasonlostclose"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>

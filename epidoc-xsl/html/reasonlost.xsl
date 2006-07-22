@@ -32,14 +32,50 @@
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <!--     OPEN BRACKET     -->
-    <xsl:template name="reasonlostleft">
-        <xsl:text>[</xsl:text>
-    </xsl:template>
+<xsl:template name="reasonlostopen">
+   <xsl:choose>
+			<xsl:when test="preceding-sibling::*[1][@reason='lost']">
+        <xsl:if test="preceding-sibling::text() and preceding-sibling::*[1][following-sibling::text()]">
+  	      <xsl:variable name="curr-prec" select="generate-id(preceding-sibling::text()[1])"/>
+  		    <xsl:for-each select="preceding-sibling::*[1][@reason='lost']">
+    			  <xsl:choose>
+    			    <xsl:when test="generate-id(following-sibling::text()[1]) = $curr-prec and not(following-sibling::text()[1]=' ')">
+                <xsl:text>[</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:for-each>
+        </xsl:if>
+			</xsl:when>
+      <xsl:otherwise>
+         <xsl:text>[</xsl:text>
+      </xsl:otherwise>
+   </xsl:choose>
+</xsl:template>
 
 <!--     CLOSE BRACKET     -->
 
-    <xsl:template name="reasonlostright">
+<xsl:template name="reasonlostclose">
+   <xsl:choose>
+      <xsl:when test="following-sibling::*[1][@reason='lost']">
+          <xsl:if test="following-sibling::text() and following-sibling::*[1][preceding-sibling::text()]">
+    	      <xsl:variable name="curr-foll" select="generate-id(following-sibling::text()[1])"/>
+    		    <xsl:for-each select="following-sibling::*[1][@reason='lost']">
+      			  <xsl:choose>
+      			    <xsl:when test="generate-id(preceding-sibling::text()[1]) = $curr-foll and not(preceding-sibling::text()[1]=' ')">
+                  <xsl:text>]</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:for-each>
+          </xsl:if>
+				</xsl:when>
+      <xsl:otherwise>
         <xsl:text>]</xsl:text>
-    </xsl:template>
+      </xsl:otherwise>
+   </xsl:choose>
+</xsl:template>
 
 </xsl:stylesheet>

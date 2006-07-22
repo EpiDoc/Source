@@ -29,12 +29,12 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template match="tei:supplied[@reason='lost']">
-      <xsl:call-template name="reasonlostleft"/>
+      <xsl:call-template name="reasonlostopen"/>
       <xsl:apply-templates />
       <xsl:if test="@cert='low'">
         <xsl:text>?</xsl:text>
       </xsl:if>
-      <xsl:call-template name="reasonlostright"/>
+      <xsl:call-template name="reasonlostclose"/>
     </xsl:template>
 
 </xsl:stylesheet>
