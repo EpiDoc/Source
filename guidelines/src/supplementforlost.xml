@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplementforlost.xml,v 1.11 2006-07-22 14:40:24 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/supplementforlost.xml,v 1.12 2006-07-27 13:57:17 zau Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -36,9 +36,9 @@ End license statement: do not remove -->
       <list type="simple">
          <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>: 
             <list lang="lat" type="ordered">
-               <item id="TypoEx-1">iug[er]a</item><item>not addressed</item><item>not addressed</item>
+               <item id="TypoEx-1">iug[er]a</item><item lang="en">not addressed</item><item lang="en">not addressed</item><item lang="en">not addressed</item>
             </list></item>
-      </list><list><item>Other conventions:<list type="ordered"><item>n/a</item><item id="TypoEx-2"><foreign lang="lat">[V?]III</foreign> or <foreign lang="lat">[V(?)]III</foreign> or <foreign lang="lat">[?V]III</foreign></item><item id="TypoEx-3" lang="grc">τ[οὺς · · ·]</item></list></item></list>
+      </list><list><item>Other conventions:<list type="ordered"><item>n/a</item><item id="TypoEx-2"><foreign lang="lat">[V?]III</foreign> or <foreign lang="lat">[V(?)]III</foreign> or <foreign lang="lat">[?V]III</foreign></item><item id="TypoEx-3" lang="grc">τ[οὺς · · ·]</item><item id="TypoEx-4" lang="grc">τὸ[ν Διο]γένην</item></list></item></list>
    </div><div id="supplementforlost-regex" type="gl-regextest">
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
@@ -48,14 +48,19 @@ End license statement: do not remove -->
       <list type="ordered">
          <item id="EncEx-1" lang="lat">iug<supplied reason="lost" cert="high">er</supplied>a</item>
       
-         <item id="EncEx-2" lang="lat"><supplied reason="lost" cert="low">V</supplied>III</item><item id="EncEx-3" lang="grc">τ<supplied reason="lost">οὺς</supplied> <gap reason="lost" extent="3" unit="character"/></item>
+         <item id="EncEx-2" lang="lat"><supplied reason="lost" cert="low">V</supplied>III</item><item id="EncEx-3" lang="grc">τ<supplied reason="lost">οὺς</supplied> <gap reason="lost" extent="3" unit="character"/></item><item lang="grc">τὸ<supplied reason="lost">ν</supplied> <persName><supplied reason="lost">Διο</supplied>γένην</persName></item>
       </list>
-   </div><div id="supplementforlost-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="supplementforlost-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      <list type="unordered">
+         <item>Example 2 is the case of a restoration flagged as uncertain by the editor. Local preferences as to placement of the question mark may vary: the standard XSLTs replicate the most common practice, but this is easily customised by individual projects.</item><item>Examples 3 and 4  are to demonstrate standard XSLT handling of partially restored lacunae, and supplements divided by embedded markup, respectively. This handling has been designed not to interfere with standard markup if these rules are not required.</item>
+      </list>
+   <div id="supplementforlost-questions" type="gl-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="unordered">
          <item>none</item>
       </list>
-   </div><div id="supplementforlost-tei-p4links" org="uniform" part="N" sample="complete">
+   </div></div><div id="supplementforlost-tei-p4links" org="uniform" part="N" sample="complete">
       <head>TEI P4 links</head>
       <list type="simple">
          <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO"><tag>supplied</tag></xref></item>
@@ -68,9 +73,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="supplementforlost-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="supplementforlost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
+      <p id="supplementforlost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
       <p id="supplementforlost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="supplementforlost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-22 14:40:24 $</seg></p>
-      <p id="supplementforlost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="supplementforlost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-27 13:57:17 $</seg></p>
+      <p id="supplementforlost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: zau $</seg></p>
    </div></div>
 
