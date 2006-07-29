@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,31 +26,28 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.8 2006-04-18 21:12:51 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.9 2006-07-29 07:16:52 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="languages"><head>Ancient and modern languages</head>
-<p n="regexerror">divcount mismatch</p><p>Text in a language other than the default language of the document should be indicated by the
-        use of the attribute @lang='' with the ISO 639 three-letter code for the language in
-        question. In addition, the code must be declared in the <tag>teiHeader</tag> (see 5.3.3
-        Using <tag>profileDesc</tag>) in TEI.2/teiHeader/profileDesc/langUsage.</p><div id="languages-regex-1" type="gl-regextest">
+<p>Text in a language other than the default language of the document should be indicated by the
+        use of the attribute @lang='' with the ISO two-letter code for the language in
+        question. All language codes must be declared in the  in <tag>profileDesc</tag> (see <xref href="teilangusage.xml">langUsage</xref>).</p><div id="languages-regex-1" type="gl-regextest">
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="languages-regex-2" type="gl-regextest">
-  <head>Regular Expression Test</head>
-            <list><item id="Regex-2-1">
-            blah</item>
-<item id="Regex-2-2">
-            blah</item>
-<item id="Regex-2-3">
-            blah</item>
-<item id="Regex-2-4">
-            blah</item>
-<item id="Regex-2-5">
-            blah</item>
-</list><link id="TestLink-2-1" type="regextest" targets="TypoEx-2-1 EncEx-2-1 Regex-2-1"/></div><div id="languages-tei-p4links" type="gl-tei-p4links" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="languages-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+      <head>Traditional typographic representation</head>
+      <list type="ordered">
+         <item id="TypoEx-1" lang="en">The recipient cannot be identified from his <hi rend="italic">nomen</hi> alone</item><item id="TypoEx-2">It may be that the word κοινῶν stood in l. 18</item>
+         </list>
+   </div><div id="languages-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">The recipient cannot be identified from his <foreign lang="la">nomen</foreign> alone</item>
+         <item id="EncEx-2">It may be that the word <foreign lang="grc">κοινῶν</foreign> stood in l. 18</item></list>
+   </div><div id="languages-tei-p4links" type="gl-tei-p4links" org="uniform" part="N" sample="complete">
         <head>TEI P4 links</head>
         <list type="simple">
             <item>
@@ -81,9 +77,9 @@ End license statement: do not remove -->
         </listBibl>
     </div><div id="languages-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="languages-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.8 $</seg></p>
+        <p id="languages-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
         <p id="languages-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-        <p id="languages-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:12:51 $</seg></p>
-        <p id="languages-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+        <p id="languages-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-29 07:16:52 $</seg></p>
+        <p id="languages-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
     </div></div>
 

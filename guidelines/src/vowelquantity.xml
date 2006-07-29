@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vowelquantity.xml,v 1.1 2006-07-29 07:16:52 gabrielbodard Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="vowelquantity"><head>Vowel Quantity</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="vowelquantity-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+      <head>Traditional typographic representation</head>
+      <p>not addressed?</p>
+   <list type="ordered">
+         <item id="TypoEx-1" lang="la"><note>Latin example?</note></item><item lang="grc" id="TypoEx-2">βοΐθι το͂ͅ σο͂ͅ δούλο̅ͅ</item>
+         </list></div><div id="vowelquantity-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vowelquantity-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1" lang="la"><note>Latin example?</note></item><item lang="grc" id="EncEx-2">βοΐθι τ<seg real="long">ο͂ͅ</seg> σ<seg real="long">ο͂ͅ</seg> δούλ<seg real="long">ο</seg>ͅ</item>
+         </list>
+   </div><div id="vowelquantity-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      <list type="ordered">
+         <item>XSLT for this is not yet in place. If an editor chooses to tag long vowels such as omicron and episilon consistently, the stylesheets will need to test for the absence of a circumflex accent before applying a macron.</item>
+         
+      </list>
+   </div><div id="vowelquantity-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+      <head>Responsibility for this section</head>
+      <listBibl default="NO">
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         </listBibl>
+   </div><div id="tallcharacters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.1 $</seg></p>
+      <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-29 07:16:52 $</seg></p>
+      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+   </div></div>
+

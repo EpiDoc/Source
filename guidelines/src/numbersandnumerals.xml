@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.9 2006-07-19 10:57:34 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.10 2006-07-29 07:16:52 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="numbersandnumerals">
@@ -35,7 +35,7 @@ End license statement: do not remove -->
     <p>Different behaviour for Greek and Latin numerals:</p>
     <div id="numbersandnumerals-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
         <head>Traditional typographic representation</head>
-        <list type="simple">
+        <list type="ordered">
             <item lang="grc" id="TypoEx-1">α´</item>
             <item lang="grc" id="TypoEx-2">͵αχο´</item>
             <item lang="grc" id="TypoEx-3">&#x10151;</item>
@@ -53,7 +53,7 @@ End license statement: do not remove -->
     </div>
     <div id="numbersandnumerals-edition" type="gl-edition" lang="lat" org="uniform" part="N" sample="complete">
         <head lang="en">EpiDoc appearance with standard XSLT</head>
-        <list type="simple">
+        <list type="ordered">
             <item id="EncEx-1">
                 <num value="1" lang="grc">α</num>
             </item>
@@ -102,9 +102,9 @@ End license statement: do not remove -->
     </div>
     <div id="numbersandnumerals-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.10 $</seg></p>
         <p id="numbersandnumerals-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-19 10:57:34 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-29 07:16:52 $</seg></p>
         <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
     </div>
 </div>

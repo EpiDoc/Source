@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/ligature.xml,v 1.13 2006-04-18 21:12:51 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/ligature.xml,v 1.14 2006-07-29 07:16:52 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -38,7 +37,7 @@ End license statement: do not remove -->
          <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">ab͡</item>
-               <item id="TypoEx-2">ab͡c͡</item>
+               <item id="TypoEx-2">ab͡c͡</item><item>not addressed</item>
             </list></item>
       </list>
    </div><div id="ligature-regex" type="gl-regextest">
@@ -49,27 +48,33 @@ End license statement: do not remove -->
             blah</item>
 </list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div type="gl-edition" id="ligature-edition" org="uniform" part="N" sample="complete">
       <head>EpiDoc appearance with standard XSLT</head>
-       <p>Note: The standard stylesheets deliberately do not reproduce the corresponding typographic examples.</p>
+       
       <list type="simple">
          <item id="EncEx-1" lang="lat"><hi rend="ligature">ab</hi></item>
          <item id="EncEx-2" lang="lat"><hi rend="ligature">abc</hi></item><item lang="grc">ἀρχιερέω<hi rend="ligature" id="hi1">ν</hi> <hi rend="ligature" id="hi2">ἐ</hi>κγόνου <link targets="hi1 hi2"/></item>
+      </list>
+   </div><div type="gl-notes" id="ligature-notes" org="uniform" part="N" sample="complete">
+      <head>Notes</head>
+      <list type="ordered">
+         
+         <item>The standard stylesheets deliberately do not reproduce the corresponding typographic examples.</item><item>Example 3 demonstrates the tagging of ligatures across words, which may cause problems with embedded tagging such as of personal names, <tag>w</tag>, etc. Display of these ligatures is unsatisfactory, as it is in traditional typography, but for indexing etc. such linking is essential.</item>
       </list>
    </div><div type="gl-questions" id="ligature-questions" org="uniform" part="N" sample="complete">
       <head>Questions and issues</head>
       <list type="simple">
          
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>):  most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligatures, our stylesheets don't do anything with them at present (though we do index them).</item>
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">15 Feb 2006</date>):  most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligatures, our display stylesheets don't do anything with them at present (though we do index them).</item>
       </list>
    </div><div id="ligature-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
       <head>Responsibility for this section</head>
       <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
    </div><div id="ligature-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="ligature-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
+      <p id="ligature-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
       <p id="ligature-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="ligature-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:12:51 $</seg></p>
-      <p id="ligature-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="ligature-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-29 07:16:52 $</seg></p>
+      <p id="ligature-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 

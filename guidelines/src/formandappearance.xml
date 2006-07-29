@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/formandappearance.xml,v 1.12 2006-04-18 21:12:51 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/formandappearance.xml,v 1.13 2006-07-29 07:16:52 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="formandappearance" lang="en" rend="multipart">
@@ -36,12 +35,11 @@ End license statement: do not remove -->
    <xi:include href="intralinearlines.xml"/>
    <xi:include href="ligature.xml"/>
    <xi:include href="reversedletters.xml"/>
-   
    <xi:include href="notations.xml"/>
    <xi:include href="ilonga.xml"/>
-   <xi:include href="tallcharacters.xml"/>
+   <xi:include href="tallcharacters.xml"/><xi:include href="smallcharacters.xml"/>
    <xi:include href="outofline.xml"/><xi:include href="directionoftext.xml"/>
-    <!-- <xi:include href="vowelquantity.xml" /> -->
+   <xi:include href="vowelquantity.xml"/>
     <div id="formandappearance-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
@@ -55,14 +53,10 @@ End license statement: do not remove -->
     </div>
     <div id="formandappearance-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="formandappearance-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.12 $</seg></p>
-        <p id="formandappearance-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-            >$Name: not supported by cvs2svn $</seg></p>
-        <p id="formandappearance-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-04-18 21:12:51 $</seg></p>
-        <p id="formandappearance-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-            >$Author: paregorios $</seg></p>
+        <p id="formandappearance-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.13 $</seg></p>
+        <p id="formandappearance-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="formandappearance-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-29 07:16:52 $</seg></p>
+        <p id="formandappearance-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
     </div>
 
 </div>

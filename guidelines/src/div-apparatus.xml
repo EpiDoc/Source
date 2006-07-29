@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-apparatus.xml,v 1.3 2006-04-18 21:12:51 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-apparatus.xml,v 1.4 2006-07-29 07:16:52 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="div-apparatus" lang="en">
    <head>Apparatus Criticus</head>
@@ -39,26 +38,30 @@ End license statement: do not remove -->
       output is. There also needs to be a provision for plain text sections,
       which can appear interspersed with the more structured sections, or added to
       the line stubs.</p>
-   <p>refer to use of <tag>app</tag> in TEI. Refer to markup of text content in epidoc.</p>
+   <p><note>refer to use of <tag>app</tag> in TEI. Refer to markup of text content in epidoc</note></p><p>A structured apparatus criticus or epigraphic commentary may in principle consist of three types of entries:</p>
+    <list type="ordered"><item>General comments on the text, not tied to a particular line; these may be tagged as simple <tag>p</tag> <note>or <tag>note</tag>?</note> without linking information</item><item>Comments on a particular line or lines of the text; these should be linked to the lines in question using the mechanism specified <note><tag>ptr</tag> or <tag>lem loc=""</tag>?</note></item><item>Record of variant readings or alternative restorations of problematic lines (this is the only meaning of apparatus as understood by the <tag>tei:app</tag> element); these items should be structured with <tag>app</tag>, <tag>lem</tag>, <tag>rdg</tag>, and possibly <tag>note</tag> elements.</item></list><div id="div-apparatus-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered"><item><p>The squeeze is faint and inadequate where the right-hand ends of lines is concerned.</p></item><item><p><ref target="line-3">l. 3</ref> the erasure in this line is indubitably deliberate but illegible</p></item><item><app loc="a 3"><lem>ἀμειβόμενοι</lem><rdg resp="Cormack"><supplied reason="lost">ἐ</supplied>|<supplied reason="lost">γερ</supplied><unclear reason="damage">σι</unclear>β<unclear reason="damage">ό</unclear><supplied reason="lost">αι</supplied> <note>rejected by Robert</note></rdg><rdg resp="Drew-Bear"><supplied reason="lost">ἀ</supplied>μειβ<unclear reason="damage">ό</unclear>μ<supplied reason="lost">ενο</supplied>ι</rdg></app></item></list>
+    </div>
     <div id="div-apparatus-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
-                    <resp>author</resp>
-                    <name>to be added</name>
+                    <resp>Gabriel Bodard</resp>
+                    <name>author</name>
+                </respStmt>
+            </bibl><bibl>
+                <respStmt>
+                    <resp>Tom Elliott</resp>
+                    <name>author</name>
                 </respStmt>
             </bibl>
         </listBibl>
-    </div>
-    <div id="div-apparatus-cvs" type="gl-cvs">
+    </div><div id="div-apparatus-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="div-apparatus-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.3 $</seg></p>
-        <p id="div-apparatus-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-            >$Name: not supported by cvs2svn $</seg></p>
-        <p id="div-apparatus-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-04-18 21:12:51 $</seg></p>
-        <p id="div-apparatus-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-            >$Author: paregorios $</seg></p>
+        <p id="div-apparatus-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.4 $</seg></p>
+        <p id="div-apparatus-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="div-apparatus-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-29 07:16:52 $</seg></p>
+        <p id="div-apparatus-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
     </div></div>
