@@ -6,17 +6,17 @@
     <map:components>
         <map:generators default="file">
             <map:generator name="request" src="org.apache.cocoon.generation.RequestGenerator">
-                <map:parameter name="generate-attributes" value="true" />
+                <map:parameter name="generate-attributes" value="true"/>
             </map:generator>
         </map:generators>
         <map:transformers default="xslt">
             <map:transformer name="xslt-saxon" src="org.apache.cocoon.transformation.TraxTransformer">
                 <xslt-processor-role>saxon</xslt-processor-role>
             </map:transformer>
-            <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer" />
-            <map:transformer name="xinclude" src="org.apache.cocoon.transformation.XIncludeTransformer" />
+            <map:transformer name="cinclude" src="org.apache.cocoon.transformation.CIncludeTransformer"/>
+            <map:transformer name="xinclude" src="org.apache.cocoon.transformation.XIncludeTransformer"/>
         </map:transformers>
-        <map:readers default="resource" />
+        <map:readers default="resource"/>
         <map:serializers default="xhtmlbasic">
             <!-- note that the default serializer is our locally defined xhtmlbasic, not the standard cocoon xml serializer -->
             <map:serializer mime-type="application/xhtml+xml" name="xhtmlbasic" src="org.apache.cocoon.serialization.XMLSerializer">
@@ -26,10 +26,11 @@
                 <encoding>UTF-8</encoding>
                 <indent>no</indent>
             </map:serializer>
-            <map:serializer logger="sitemap.serializer.html" mime-type="text/html" name="html" pool-max="32" src="org.apache.cocoon.serialization.HTMLSerializer">
+            <map:serializer logger="sitemap.serializer.html" mime-type="text/html" name="html" pool-max="32"
+                src="org.apache.cocoon.serialization.HTMLSerializer">
                 <doctype-public>-//W3C//DTD HTML 4.01 Transitional//EN</doctype-public>
                 <doctype-system>http://www.w3.org/TR/html4/loose.dtd</doctype-system>
-            	<encoding>UTF-8</encoding>
+                <encoding>UTF-8</encoding>
             </map:serializer>
             <map:serializer mime-type="text/xml" name="xml" src="org.apache.cocoon.serialization.XMLSerializer">
                 <!-- force xml serialization to use UTF8 and to leave indent alone -->
@@ -43,8 +44,8 @@
                 <indent>no</indent>
             </map:serializer>
         </map:serializers>
-        <map:selectors default="browser" />
-        <map:matchers default="wildcard" />
+        <map:selectors default="browser"/>
+        <map:matchers default="wildcard"/>
     </map:components>
     <!-- ============================================================================= -->
     <!--   PIPELINES                                                                                                                    -->
@@ -59,28 +60,28 @@
             <map:match pattern="*/*.xsl">
                 <map:select type="resource-exists">
                     <map:when test="xsl/{1}/{2}.xsl">
-                        <map:generate src="xsl/{1}/{2}.xsl" />
+                        <map:generate src="xsl/{1}/{2}.xsl"/>
                     </map:when>
                     <map:when test="../../xsl/epidoc-xsl/{1}/{2}.xsl">
-                        <map:generate src="../../xsl/epidoc-xsl/{1}/{2}.xsl" />
+                        <map:generate src="../../xsl/epidoc-xsl/{1}/{2}.xsl"/>
                     </map:when>
                     <map:when test="../../../epidoc-xsl/{1}/{2}.xsl">
-                        <map:generate src="../../../epidoc-xsl/{1}/{2}.xsl" />
+                        <map:generate src="../../../epidoc-xsl/{1}/{2}.xsl"/>
                     </map:when>
                     <map:otherwise>
-                        <map:generate src="../epidoc-xsl/{1}/{2}.xsl" />
+                        <map:generate src="../epidoc-xsl/{1}/{2}.xsl"/>
                     </map:otherwise>
                 </map:select>
-                <map:serialize type="xml" />
+                <map:serialize type="xml"/>
             </map:match>
-            <map:match  pattern="toc">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/html/epidoc.xsl">
-                   <map:parameter name="dotitlepage" value="yes"/>
-               </map:transform>
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />                
+            <map:match pattern="toc">
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/html/epidoc.xsl">
+                    <map:parameter name="dotitlepage" value="yes"/>
+                </map:transform>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>
             </map:match>
         </map:pipeline>
         <map:pipeline name="tests" internal-only="true">
@@ -95,47 +96,54 @@
             <!--   multiple ways to get the title page -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/html/epidoc.xsl">
-                   <map:parameter name="dotitlepage" value="yes"/>
-               </map:transform>
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
+                <!-- Redirect request to the root path to the index page -->
+                <map:redirect-to uri="index.html"/>
+<!-- Redirecting to index.html to solve the problem some browsers have when no filename is specified.
+    
+    <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/html/epidoc.xsl">
+                    <map:parameter name="dotitlepage" value="yes"/>
+                </map:transform>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>-->
             </map:match>
             <map:match pattern="guidelines.html">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/html/epidoc.xsl">
-                   <map:parameter name="dotitlepage" value="yes"/>
-               </map:transform>
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
+                <!-- Redirect request to the root path to the index page -->
+                <map:redirect-to uri="index.html"/>
+                <!--
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/html/epidoc.xsl">
+                    <map:parameter name="dotitlepage" value="yes"/>
+                </map:transform>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>-->
             </map:match>
             <map:match pattern="index.html">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/html/epidoc.xsl">
-                   <map:parameter name="dotitlepage" value="yes"/>
-               </map:transform>
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/html/epidoc.xsl">
+                    <map:parameter name="dotitlepage" value="yes"/>
+                </map:transform>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   dirlist.html                                                                                                                                                                       -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="dirlist.html">
                 <map:generate type="directory" src="./src">
-                    <map:parameter name="exclude" value="CVS" />
+                    <map:parameter name="exclude" value="CVS"/>
                 </map:generate>
                 <map:transform src="cocoon:/util/dir2tei.xsl">
-                    <map:parameter name="dodirs" value="no" />
-                    <map:parameter name="dofiles" value="yes" />
-                    <map:parameter name="htmllink" value="yes" />
+                    <map:parameter name="dodirs" value="no"/>
+                    <map:parameter name="dofiles" value="yes"/>
+                    <map:parameter name="htmllink" value="yes"/>
                 </map:transform>
-                <map:transform src="cocoon:/html/epidoc.xsl" />
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
+                <map:transform src="cocoon:/html/epidoc.xsl"/>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.html                                                                                                                                                -->
@@ -157,19 +165,19 @@
                 <map:serialize type="xmlepidoc"/>
             </map:match>
             <map:match pattern="toc.html">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
                 <map:transform src="cocoon:/html/sitemap.xsl"/>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
                 <map:serialize type="xhtmlbasic"/>
             </map:match>
 
             <map:match pattern="*.html">
-                <map:generate src="src/{1}.xml" />
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/html/epidoc.xsl" />
-                <map:transform src="cocoon:/util/xhtmlindenter.xsl" />
-                <map:serialize type="xhtmlbasic" />
+                <map:generate src="src/{1}.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/html/epidoc.xsl"/>
+                <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
+                <map:serialize type="xhtmlbasic"/>
                 <map:serialize type="xml"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -177,43 +185,43 @@
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="resp.xml">
                 <map:generate src="src/guidelines.xml"/>
-                <map:transform type="xinclude" />
-                <map:transform src="cocoon:/util/aggregatecontributors.xsl" />
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/util/aggregatecontributors.xsl"/>
                 <map:transform src="cocoon:/util/sortcontributors.xsl"/>
                 <map:serialize type="xml"/>
             </map:match>
- 
+
             <map:match pattern="guidelines.xml">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-                <map:transform src="cocoon:/util/teiindenter.xsl" />
-                <map:serialize type="xmlepidoc" />
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/util/teiindenter.xsl"/>
+                <map:serialize type="xmlepidoc"/>
             </map:match>
-            
-            
+
+
             <map:match pattern="*.xml">
-                <map:generate src="src/{1}.xml" />
-                <map:transform src="cocoon:/util/teiindenter.xsl" />
-                <map:serialize type="xmlepidoc" />
+                <map:generate src="src/{1}.xml"/>
+                <map:transform src="cocoon:/util/teiindenter.xsl"/>
+                <map:serialize type="xmlepidoc"/>
             </map:match>
 
             <map:match pattern="*.inc">
-                <map:generate src="src/{1}.xml" />
-                <map:transform type="xinclude" />
+                <map:generate src="src/{1}.xml"/>
+                <map:transform type="xinclude"/>
                 <!--<map:transform src="cocoon:/util/disambiguatedivids.xsl"/>-->
-                <map:transform src="cocoon:/util/teiindenter.xsl" />
-                <map:serialize type="xmlepidoc" />
+                <map:transform src="cocoon:/util/teiindenter.xsl"/>
+                <map:serialize type="xmlepidoc"/>
             </map:match>
             <map:match pattern="guidelines.woo">
-                 <map:generate src="src/guidelines.xml"/>
-                <map:transform type="xinclude" />
-               <map:transform src="cocoon:/util/attributes.xsl"/>
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/util/attributes.xsl"/>
                 <map:serialize type="text"/>
             </map:match>
             <map:match pattern="replacements.txt">
-                <map:generate src="src/guidelines.xml" />
-                <map:transform type="xinclude" />
-<!--                <map:transform src="cocoon:/util/disambiguatedivids.xsl"/> -->
+                <map:generate src="src/guidelines.xml"/>
+                <map:transform type="xinclude"/>
+                <!--                <map:transform src="cocoon:/util/disambiguatedivids.xsl"/> -->
                 <map:transform src="cocoon:/util/replacements.xsl"/>
                 <map:serialize type="text"/>
             </map:match>
@@ -221,29 +229,29 @@
             <!--   TESTS                                                                                                                                                -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="*.test">
-                <map:generate src="src/{1}.xml" />
-                <map:transform type="xinclude" />
+                <map:generate src="src/{1}.xml"/>
+                <map:transform type="xinclude"/>
                 <map:transform type="xslt-saxon" src="tests/preprocess.xsl"/>
                 <map:transform type="xslt-saxon" src="cocoon:/tests/unittest.sch"/>
-                <map:serialize type="html" />
+                <map:serialize type="html"/>
             </map:match>
             <map:match pattern="*.preprocess">
-                <map:generate src="src/{1}.xml" />
-                <map:transform type="xinclude" />
+                <map:generate src="src/{1}.xml"/>
+                <map:transform type="xinclude"/>
                 <map:transform type="xslt-saxon" src="tests/preprocess.xsl"/>
-                <map:serialize type="xml" />
+                <map:serialize type="xml"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   IMAGES                                                                                                                                                                   -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="*.gif">
-                <map:read mime-type="image/gif" src="img/{1}.gif" />
+                <map:read mime-type="image/gif" src="img/{1}.gif"/>
             </map:match>
             <map:match pattern="*.jpg">
-                <map:read mime-type="image/jpeg" src="img/{1}.jpg" />
+                <map:read mime-type="image/jpeg" src="img/{1}.jpg"/>
             </map:match>
             <map:match pattern="*.png">
-                <map:read mime-type="image/png" src="img/{1}.png" />
+                <map:read mime-type="image/png" src="img/{1}.png"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.css                                                                                                                                                                        -->
@@ -252,21 +260,21 @@
                 <map:select type="resource-exists">
                     <map:when test="css/{1}.css">
                         <!-- maybe this project defines its own css files -->
-                        <map:read mime-type="text/css" src="css/{1}.css" />
+                        <map:read mime-type="text/css" src="css/{1}.css"/>
                     </map:when>
                     <map:when test="../../css/{1}.css">
                         <!-- maybe csss are installed at epidoc-webapp level and project is under prj -->
-                        <map:read mime-type="text/css" src="../../css/{1}.css" />
+                        <map:read mime-type="text/css" src="../../css/{1}.css"/>
                     </map:when>
                     <map:when test="../../../epidoc-xsl/css/{1}.css">
                         <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          but project is in standard prj directory under webapp (e.g., examples) -->
-                        <map:read mime-type="text/css" src="../../../epidoc-xsl/css/{1}.css" />
+                        <map:read mime-type="text/css" src="../../../epidoc-xsl/css/{1}.css"/>
                     </map:when>
                     <map:otherwise>
                         <!-- developer configuration (standard xsls are installed in a work directory at same level as epidoc-webapp),
                          and project is similarly parallel working directory -->
-                        <map:read mime-type="text/css" src="../epidoc-xsl/css/{1}.css" />
+                        <map:read mime-type="text/css" src="../epidoc-xsl/css/{1}.css"/>
                     </map:otherwise>
                 </map:select>
             </map:match>
