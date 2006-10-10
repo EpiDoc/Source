@@ -44,7 +44,13 @@
                 <indent>no</indent>
             </map:serializer>
         </map:serializers>
-        <map:selectors default="browser"/>
+        <map:selectors default="browser">
+          <map:selector name="browser"
+           src="org.apache.cocoon.selection.BrowserSelector">
+          <browser name="explorer" useragent="MSIE"/>
+          <browser name="netscape" useragent="Mozilla"/>
+         </map:selector>
+        </map:selectors>
         <map:matchers default="wildcard"/>
     </map:components>
     <!-- ============================================================================= -->
@@ -81,7 +87,15 @@
                     <map:parameter name="dotitlepage" value="yes"/>
                 </map:transform>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
             </map:match>
         </map:pipeline>
         <map:pipeline name="tests" internal-only="true">
@@ -127,7 +141,15 @@
                     <map:parameter name="dotitlepage" value="yes"/>
                 </map:transform>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   dirlist.html                                                                                                                                                                       -->
@@ -143,7 +165,15 @@
                 </map:transform>
                 <map:transform src="cocoon:/html/epidoc.xsl"/>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   *.html                                                                                                                                                -->
@@ -155,7 +185,15 @@
                 <map:transform src="cocoon:/util/tagrefprep.xsl"/>
                 <map:transform src="cocoon:/html/tagref.xsl"/>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
             </map:match>
             <map:match pattern="tagref.xml">
                 <map:generate src="src/guidelines.xml"/>
@@ -169,7 +207,15 @@
                 <map:transform type="xinclude"/>
                 <map:transform src="cocoon:/html/sitemap.xsl"/>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
             </map:match>
 
             <map:match pattern="*.html">
@@ -177,7 +223,15 @@
                 <map:transform type="xinclude"/>
                 <map:transform src="cocoon:/html/epidoc.xsl"/>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>
+                <!-- serializes output according to browser used: uses dumb html for dumb MSIE -->
+                    <map:select type="browser">
+                       <map:when test="explorer">
+                        <map:serialize type="html" />
+                      </map:when>
+                      <map:otherwise>
+                        <map:serialize type="xhtmlbasic" />
+                      </map:otherwise>
+                    </map:select>
                 <map:serialize type="xml"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
