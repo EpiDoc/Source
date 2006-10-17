@@ -110,9 +110,9 @@
             <!--   multiple ways to get the title page -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <map:match pattern="">
-                <!-- Redirect request to the root path to the index page -->
-                <map:redirect-to uri="index.html"/>
-<!-- Redirecting to index.html to solve the problem some browsers have when no filename is specified.
+                <!-- Redirect request to the root path to the index page
+                <map:redirect-to uri="index.html"/> -->
+<!-- Redirecting to index.html to solve the problem some browsers have when no filename is specified.-->
     
     <map:generate src="src/guidelines.xml"/>
                 <map:transform type="xinclude"/>
@@ -120,19 +120,19 @@
                     <map:parameter name="dotitlepage" value="yes"/>
                 </map:transform>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>-->
+                <map:serialize type="xhtmlbasic"/>
             </map:match>
             <map:match pattern="guidelines.html">
                 <!-- Redirect request to the root path to the index page -->
-                <map:redirect-to uri="index.html"/>
-                <!--
+                 <!--<map:redirect-to uri="index.html"/>-->
+               
                 <map:generate src="src/guidelines.xml"/>
                 <map:transform type="xinclude"/>
                 <map:transform src="cocoon:/html/epidoc.xsl">
                     <map:parameter name="dotitlepage" value="yes"/>
                 </map:transform>
                 <map:transform src="cocoon:/util/xhtmlindenter.xsl"/>
-                <map:serialize type="xhtmlbasic"/>-->
+                <map:serialize type="xhtmlbasic"/>
             </map:match>
             <map:match pattern="index.html">
                 <map:generate src="src/guidelines.xml"/>
