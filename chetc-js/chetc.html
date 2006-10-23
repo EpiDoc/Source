@@ -21,6 +21,7 @@
 				Effect.BlindDown('resultXML');
 			}
 			function getStarted() {
+			  //d = new Ajax.Request("replacements/replacements_general.txt", onSuccess: new function(t) {convert(t);})
 				d = doSimpleXMLHttpRequest("replacements/replacements_general.txt");
 				d.addCallback(convert);
 			}

@@ -10,10 +10,15 @@
 # occurences of the symbol in the second capturing group inside the first capturing group.  In 
 # regular expressions, capturing groups are delimited by parentheses.
 
-<<(\w+)>>                               =    <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
-<((?:(-)|\s)+)>                         =    <gap reason="omitted" extent="%g1%len2" unit="character"/>
-([^<])<(\w+)>([^>])                     =    $1<supplied reason="omitted">$2</supplied>$3
-(\.)+                                   =   <gap extent="%g1%len1"/>
+<<(\w+)>>                               =   <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
+<((?:(-)|\s)+)>                         =   <gap reason="omitted" extent="%g1%len2" unit="character"/>
+([^<])<(\w+)>([^>])                     =   $1<supplied reason="omitted">$2</supplied>$3
+#
+# e.g. [abc . . .]
+#
+\[(\w+)\s*(([.\s])+)\]                  =   <supplied reason="lost">$1</supplied><gap extent="%g2%len3"/>
+((\w[\u323])+)                    =   <unclear reason="damage" cert="high">$1</unclear>
+((\.)+)                                 =   <gap extent="%g1%len2"/>
 (\+)+                                   =   <gap reason="illegible" extent="%g1%len1" unit="character"/>
 \+\s*(\d+)\s*\+                         =   <gap reason="illegible" extent="$1" unit="character"/>
 \+\s*(\d+)\s*(\w)\s*\+                  =   <gap reason="illegible" extent="$1" unit="$2"/>
@@ -43,5 +48,9 @@
 \[([^\]]+)\]                            =    <supplied reason="lost">$1</supplied>
 \[([^\n])+\n                            =    <supplied reason="lost">$1</supplied>
 \{(\w+)\}                               =    <corr sic="$1"></corr>
+#
+# post conversion cleanup
+#
+\u323                                   =   null
 
 
