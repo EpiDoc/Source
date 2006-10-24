@@ -26,12 +26,13 @@
 (\w+)\(!\)                              =   <sic>$1</sic>
 \(i\.e\. ([^\)+])\)                     =   <supplied reason="explanation">$1</supplied>
 (\W|^)\((\w+)\)                         =   $1<mark type="$2"/>
-([\S]+)\(((?:\w|\s)+)\)(\S*)\((\S*)\)      =   <expan>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="abbreviation">$4</supplied></expan> 
-(\w+)\(((?:\w|\s)+)\)(\2*)                 =   <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
+([\S]+)\(((?:\w|\s)+)\)(\S*)\((\S*)\)   =   <expan>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="abbreviation">$4</supplied></expan> 
+(\w+)\(((?:\w|\s)+)\)(\2*)              =   <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
 (\S+)\((-\s*)+\)                        =   <abbr>$1</abbr>
 (\w)(?:-)\n                             =   $1<lb type="worddiv"/>
 \n                                      =   <lb/>
-(\s|>)\/(\s|<)(?:\d*)                      =   $1<lb/>$2
+(\s|>)\/\d+                             =   $1<lb/>
+(\s|>)\/(\s|<)                          =   $1<lb/>$2
 (\w|>)\/(\w|<)                          =   $1<lb type="worddiv"/>$2
 \(scil. ((?:\w|\s)+)\)                  =   <supplied reason="subaudible">$1</supplied>
 \(i\.\s*e\. ((?:\w|\s)+)\)              =   <supplied reason="explanation">$1</supplied>
