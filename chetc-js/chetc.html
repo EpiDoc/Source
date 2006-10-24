@@ -14,7 +14,7 @@
 				ep.lineBreaks($('ignoreLB').value);
 				result = ep.convert(strip($('source').value));
 				roundElement('resultXML', 'all');
-				var resultHTML = escapeHTML("<ab>"+result+"</ab>");
+				var resultHTML = escapeHTML("<ab><lb/>"+result+"</ab>");
 				resultHTML = resultHTML.replace(/(&lt;lb[^\/]*\/&gt;)/g, "$1<br>");
 				$('resultXML').innerHTML = "<div style=\"padding:10px;\">"+resultHTML+"</div>";
 				Rounded("div#resultXML","#D1D1FF","#FFFFD1");
