@@ -37,15 +37,15 @@
 \(scil. ((?:\w|\s)+)\)                  =   <supplied reason="subaudible">$1</supplied>
 \(i\.\s*e\. ((?:\w|\s)+)\)              =   <supplied reason="explanation">$1</supplied>
 \[([·\s]+)\]                            =   <gap reason="lost" extent="%g1%len1" unit="character"/>
-([^\[]*)\[((?:\w|\s)+)((?:-|\s)+)\]     =   $1<supplied reason="lost">$2<gap id="%genID1" reason="lost" extent="%g3%len3" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/></supplied>
+([^\[]*)\[((?:\w|\s)+)((?:-|\s)+)\]     =   $1<supplied reason="lost">$2<gap id="%mkID1" reason="lost" extent="%g3%len3" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/></supplied>
 #
 # e.g. f[---]
 #
-([^\[]*)\[([-\s\]]+)\]                  =    $1<gap id="%genID1" reason="lost" extent="%g2%len2" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/>
+([^\[]*)\[([-\s\]]+)\]                  =    $1<gap id="%mkID1" reason="lost" extent="%g2%len2" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>
 #
 # e.g. [(centuria) ---]
 #
-([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1$2$3<gap id="%genID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%genID1" locus="unit" degree="low"/>
+([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1$2$3<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>
 \[([^\]]+)\]                            =    <supplied reason="lost">$1</supplied>
 \[([^\n])+\n                            =    <supplied reason="lost">$1</supplied>
 \{(\w+)\}                               =    <corr sic="$1"></corr>
