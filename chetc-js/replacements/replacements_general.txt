@@ -27,7 +27,7 @@
 \(i\.e\. ([^\)+])\)                     =   <supplied reason="explanation">$1</supplied>
 (\W|^)\((\w+)\)                         =   $1<mark type="$2"/>
 ([\S]+)\(((?:\w|\s)+)\)(\S*)\((\S*)\)   =   <expan>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="abbreviation">$4</supplied></expan> 
-(\w+)\(((?:\w|\s)+)\)(\2*)              =   <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
+([^(\s]+)\(((?:\w|\s)+)\)(\]*)          =   <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
 (\S+)\((-\s*)+\)                        =   <abbr>$1</abbr>
 (\w)(?:-)\n                             =   $1<lb type="worddiv"/>
 \n                                      =   <lb/>
