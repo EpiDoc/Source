@@ -77,7 +77,7 @@ Epigraph2Markup.prototype.convert = function(text) {
 		}
 		while (ids = result.match(/id="%mkID(\d)"/)) {
 			var id = new String(Math.random());
-			id = id.substr(2);
+			id = 'id' + id.substr(2);
 			var idPattern = new RegExp('(id=")%mkID'+ids[1]+'(")');
 			result = result.replace(idPattern, "$1"+id+"$2");
 			if (replace.match(/target="%mkID\d"/)) {
