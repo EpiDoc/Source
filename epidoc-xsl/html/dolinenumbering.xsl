@@ -40,12 +40,12 @@
             </xsl:if>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:if test="count(preceding::lb) mod $linenumberinterval = 0">
+            <xsl:if test="count(preceding::tei:lb) mod $linenumberinterval = 0">
                <xsl:element name="span">
                   <xsl:attribute name="class">linenumber</xsl:attribute>
                   <xsl:attribute name="lang"><xsl:value-of select="$language"/></xsl:attribute>
                   <xsl:attribute name="lang" namespace="http://www.w3.org/XML/1998/namespace"><xsl:value-of select="$language"/></xsl:attribute>
-                  <xsl:value-of select="count(preceding::lb)" />
+                  <xsl:value-of select="count(preceding::tei:lb)" />
                </xsl:element>
             </xsl:if>
          </xsl:otherwise>
