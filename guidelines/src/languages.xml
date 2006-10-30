@@ -25,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.10 2006-10-30 12:05:36 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/languages.xml,v 1.11 2006-10-30 15:13:23 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -34,7 +34,7 @@ End license statement: do not remove -->
     <ab><rs type="conformance">leiden</rs></ab>
     <p>The language of a document, or a subsection of a document, must be explicitly indicated
     by means of TEI-standard mechanisms and internationally agreed codes for the identification
-    of languages and scripts. All codes for language and script combinations to be used in the 
+    of languages and scripts (see: <xref href="http://www.w3.org/International/articles/language-tags/">Language tags in HTML and XML</xref>). All codes for language and script combinations to be used in the 
         document must be locally 
     declared in the <tag>profileDesc</tag> sub-element of the <tag>teiHeader</tag>. See further: 
     <xref href="teilangusage.xml">Specifying available languages and scripts</xref></p>
@@ -116,11 +116,11 @@ End license statement: do not remove -->
     <div id="languages-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="languages-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-                cert="high" part="N">$Revision: 1.10 $</seg></p>
+                cert="high" part="N">$Revision: 1.11 $</seg></p>
         <p id="languages-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
                 cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
         <p id="languages-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high"
-                part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+                part="N">$Date: 2006-10-30 15:13:23 $</seg></p>
         <p id="languages-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
                 cert="high" part="N">$Author: paregorios $</seg></p>
     </div>
