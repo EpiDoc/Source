@@ -27,12 +27,12 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/tallcharacters.xml,v 1.7 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/tallcharacters.xml,v 1.8 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="tallcharacters"><head>Tall characters</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="tallcharacters-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="tallcharacters-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <p>not addressed?</p>
    </div><div id="tallcharacters-regex" type="gl-regextest">
@@ -41,30 +41,30 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-2">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="tallcharacters-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="tallcharacters-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">d<hi rend="tall">i</hi>s manibus</item>
          <item id="EncEx-2">Amaran<hi rend="tall">t</hi>ho Agathemeris soror pro meri<hi rend="tall">t</hi>is <hi rend="tall">t</hi>ribu<unclear reason="damage" cert="high">i</unclear><unclear reason="damage" cert="high">t</unclear></item>
       </list>
-   </div><div id="tallcharacters-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="tallcharacters-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
-         <item>Marking a character as "tall" is purely descriptive. Editorial observations concerning the significance of the character height should be marked up separately. See, e.g., <xref href="vowelquantity.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Vowel Quantity</xref>.</item>
-         <item>See also: <xref href="smallcharacters.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Small Characters</xref>.</item>
+         <item>Marking a character as "tall" is purely descriptive. Editorial observations concerning the significance of the character height should be marked up separately. See, e.g., <xref href="vowelquantity.xml" >Vowel Quantity</xref>.</item>
+         <item>See also: <xref href="smallcharacters.xml" >Small Characters</xref>.</item>
       </list>
-   </div><div id="tallcharacters-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="tallcharacters-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>assistance</resp><name>John Bodel</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>assistance</resp><name>Lisa Anderson</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>assistance</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl><respStmt><resp>assistance</resp><name>Lisa Anderson</name></respStmt></bibl>
       </listBibl>
-   </div><div id="tallcharacters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="tallcharacters-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.7 $</seg></p>
+      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.8 $</seg></p>
       <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
+      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
       <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

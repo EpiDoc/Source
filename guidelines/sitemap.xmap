@@ -97,6 +97,15 @@
                       </map:otherwise>
                     </map:select>
             </map:match>
+            <map:match pattern="*-*-list-raw.xml">
+                <map:generate src="src/guidelines.xml" />
+                <map:transform type="xinclude"/>
+                <map:transform src="cocoon:/util/extract-rs.xsl">
+                    <map:parameter name="rstype" value="{1}"/>
+                    <map:parameter name="rsvalue" value="{2}"/>
+                </map:transform>
+                <map:serialize type="xml"/>
+            </map:match>
         </map:pipeline>
         <map:pipeline name="tests" internal-only="true">
             <map:match pattern="*/*.sch">
@@ -242,6 +251,13 @@
                 <map:transform type="xinclude"/>
                 <map:transform src="cocoon:/util/aggregatecontributors.xsl"/>
                 <map:transform src="cocoon:/util/sortcontributors.xsl"/>
+                <map:serialize type="xml"/>
+            </map:match>
+            
+            
+            <map:match pattern="conformance-leiden-list.xml">
+                <map:generate src="src/conformance-leiden-list.xml"/>
+                <map:transform type="xinclude"/>
                 <map:serialize type="xml"/>
             </map:match>
 

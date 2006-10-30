@@ -27,15 +27,15 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/possiblylost.xml,v 1.12 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/possiblylost.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="possiblylost"><head>Possibility that letters have been completely lost</head>
-<p n="regexerror">for divset 1: encodingitemcount != editionitemcount</p><div id="possiblylost-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">for divset 1: encodingitemcount != editionitemcount</p><div id="possiblylost-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="ordered">
                <item id="TypoEx-1">[ · · · ? ] </item>
                <item id="TypoEx-2">[ · c.3 · ? ] </item>
@@ -64,7 +64,7 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-8">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="possiblylost-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="possiblylost-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">
@@ -92,7 +92,7 @@ End license statement: do not remove -->
             <certainty target="gap7" locus="extent" degree="low"/>
             <certainty target="gap7" locus="#gi" assertedValue="space" degree="low"/></item>
       </list>
-   </div><div id="possiblylost-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="possiblylost-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
          <item>The first example indicates the <hi rend="strong">possible</hi> loss of exactly three characters (the alternative possibility is that there was originally a vacat in this space.</item>
@@ -102,19 +102,19 @@ End license statement: do not remove -->
          <item>The fifth example indicates the <hi rend="strong">possible</hi> loss of text in a horizontal span of 4.2cm.</item>
          <item>The sixth example indicates the <hi rend="strong">possible</hi> loss of exactly one line of text.</item>
          <item>The seventh example indicates the <hi rend="strong">possible</hi> loss of one or more lines of text.</item>
-         <item>For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <xref href="lostcertain.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Letters completely lost (extent certain or not certain)</xref>.</item>
+         <item>For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <xref href="lostcertain.xml" >Letters completely lost (extent certain or not certain)</xref>.</item>
       </list>
-   </div><div id="possiblylost-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="possiblylost-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div><div id="possiblylost-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="possiblylost-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="possiblylost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
+      <p id="possiblylost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
       <p id="possiblylost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="possiblylost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
+      <p id="possiblylost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
       <p id="possiblylost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

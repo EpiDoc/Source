@@ -25,20 +25,25 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsnotunderstood.xml,v 1.11 2006-07-29 07:16:52 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsnotunderstood.xml,v 1.12 2006-10-30 12:05:35 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="abbreviationsnotunderstood">
    <head>Identification of abbreviations not understood by the editor</head>
-   <div id="abbreviationsnotunderstood-typographic" type="gl-typographic">
-      <head>Traditional typographic representation</head>
-      <list>
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
-            <list type="ordered">
-               <item id="TypoEx-A" lang="lat">a(- - -) </item><item lang="en">Not addressed</item><item lang="en">Not addressed</item>
-            </list></item>
-      </list>
-   </div>
+    <ab><rs type="conformance">leiden</rs></ab>    
+    <div id="abbreviationsnotunderstood-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >17</biblScope></bibl>: <list type="ordered">
+                    <item id="TypoEx-A" lang="la">a(- - -) </item>
+                    <item lang="en">Not addressed</item>
+                    <item lang="en">Not addressed</item>
+                </list></item>
+        </list>
+    </div>
    
 	<div id="abbreviationsnotunderstood-regex" type="gl-regextest">
           <head>Regular Expression Test</head>  
@@ -47,7 +52,7 @@ End license statement: do not remove -->
          </list>
     <link id="TestLink-A" targets="TypoEx-A EncEx-A Regex-A"/>
 	</div>
-   <div id="abbreviationsnotunderstood-edition" type="gl-edition" lang="lat">
+   <div id="abbreviationsnotunderstood-edition" type="gl-edition" lang="la">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-A"><abbr>a</abbr></item><item id="EncEx-B"><abbr>pr</abbr></item><item id="EncEx-C"><abbr>p</abbr> <abbr>r</abbr></item>
@@ -73,9 +78,9 @@ End license statement: do not remove -->
    </div>
    <div id="abbreviationsnotunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsnotunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
+      <p id="abbreviationsnotunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.12 $</seg></p>
       <p id="abbreviationsnotunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsnotunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-29 07:16:52 $</seg></p>
-      <p id="abbreviationsnotunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
+      <p id="abbreviationsnotunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-10-30 12:05:35 $</seg></p>
+      <p id="abbreviationsnotunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
    </div>
 </div>

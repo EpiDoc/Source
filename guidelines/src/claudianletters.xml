@@ -27,21 +27,21 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/claudianletters.xml,v 1.9 2006-04-18 21:12:51 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/claudianletters.xml,v 1.10 2006-10-30 12:05:35 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="claudianletters"><head>Claudian letters</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="claudianletters-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="claudianletters-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>:
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>:
             <list type="simple">
                <item id="TypoEx-1">((ps))</item>
             </list></item>
       </list>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-2">⊂ps⊃</item>
             </list></item>
@@ -51,27 +51,27 @@ End license statement: do not remove -->
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="claudianletters-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="claudianletters-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1"> <mark type="claudian_ps"/></item>
       </list>
-   </div><div id="claudianletters-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="claudianletters-notes" type="gl-notes">
       <head>Notes</head>
       <list type="simple">
          <item>It is an assumption in EpiDoc that these characters should and will eventually be included in Unicode, at which point the markup we use will change (although some markup will still be necessary for purposes of traditional rendering, searching, etc.). In the meantime, the markup listed above should be used.</item>
       </list>
-   </div><div id="claudianletters-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="claudianletters-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div><div id="claudianletters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="claudianletters-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="claudianletters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
+      <p id="claudianletters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
       <p id="claudianletters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="claudianletters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:12:51 $</seg></p>
+      <p id="claudianletters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:35 $</seg></p>
       <p id="claudianletters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

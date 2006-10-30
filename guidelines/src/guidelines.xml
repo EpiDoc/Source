@@ -26,7 +26,7 @@ End license statement: do not remove -->
 
 <!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.12 2006-04-29 12:12:17 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <TEI.2 xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0" id="guidelines" rend="multipart">
@@ -87,25 +87,45 @@ End license statement: do not remove -->
                     <name>Neel Smith</name>
                 </respStmt>            
             </titleStmt>
+            
             <publicationStmt>
                 <authority>Tom Elliott for the EpiDoc Community</authority>
                 <availability>
                     <p>Copyright by the authors.<lb/>Distributed electronically via the websites of the <xref href="http://www.stoa.org">Stoa Consortium</xref> and <xref href="http://sf.net">SourceForge.net</xref> under the provisions of the <xref href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</xref></p>
                 </availability>
                 <idno type="release">$Name: not supported by cvs2svn $</idno>
-                <date>$Date: 2006-04-29 12:12:17 $</date>
+                <date>$Date: 2006-10-30 12:05:36 $</date>
                 
             </publicationStmt>
+            
             <sourceDesc>
                 <!-- one of (bibl biblFull biblStruct listBibl p recordingStmt scriptStmt) -->
                 <p>No physical source: this work was created in machine-readable form.</p>
             </sourceDesc>
+            
+            
         </fileDesc>
+        
+        <profileDesc>
+            <langUsage>
+                <language id="en">English</language>
+                <language id="fr">French</language>
+                <language id="de">German</language>
+                <language id="grc">Greek, ancient</language>
+                <language id="grc-Latn">Greek, ancient (in Latin characters)</language>
+                <language id="el">Greek (modern)</language>
+                <language id="it">Italian</language>
+                <language id="la">Latin</language>
+                <language id="la-Grek">Latin (in ancient Greek characters)</language>
+                <language id="sp">Spanish</language>
+            </langUsage>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
             <xi:include href="introduction.xml" />
             <xi:include href="IntroEpigraphers.xml"/>
+            <xi:include href="conformance.xml"/>
             <!--  <xi:include  href="essentialreading.xml"/> -->
             <xi:include href="documentstructure.xml" />
             <xi:include href="taggingtext.xml" />
@@ -116,11 +136,11 @@ End license statement: do not remove -->
                 <div id="guidelines-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="guidelines-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.12 $</seg></p>
+            >$Revision: 1.13 $</seg></p>
         <p id="guidelines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
             >$Name: not supported by cvs2svn $</seg></p>
         <p id="guidelines-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-04-29 12:12:17 $</seg></p>
+            >$Date: 2006-10-30 12:05:36 $</seg></p>
         <p id="guidelines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
             >$Author: paregorios $</seg></p>
     </div>

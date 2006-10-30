@@ -26,21 +26,22 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneoussubstitution.xml,v 1.13 2006-10-25 14:24:25 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneoussubstitution.xml,v 1.14 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="erroneoussubstitution"><head>Letters erroneously substituted or incorrectly executed in the text, which the editor corrects</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="erroneoussubstitution-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+            <ab><rs type="conformance">leiden</rs></ab>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="erroneoussubstitution-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">Valeri⌜an⌝us</item><item id="TypoEx-2">Not addressed</item>
             </list></item>
       </list>
    <list type="unordered">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#seg" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">SEG</xref></title></bibl>, <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#poxy" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">POxy</xref></title></bibl>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#seg" >SEG</xref></title></bibl>, <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#poxy" >POxy</xref></title></bibl>
             <list type="ordered">
                <item id="TypoEx-3">Valeri&lt;an&gt;us</item><item id="TypoEx-4">Valeria&lt;n&gt;us</item>
             </list></item>
@@ -50,29 +51,29 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-2">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="erroneoussubstitution-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="erroneoussubstitution-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <!--<item id="">Valeri<sic corr="an">na</sic>us or Valeri<corr sic="na">an</corr>us</item>
 <item id=">Valeria<sic corr="n">m</sic>us or Valeria<corr sic="m">n</corr>us</item>
       --><item id="EncEx-1">Valeri<choice n="correction"><sic>na</sic><corr>an</corr></choice>us</item><item id="EncEx-2">Valeria<choice n="correction"><sic>m</sic><corr>n</corr></choice>us</item></list>
-   </div><div id="erroneoussubstitution-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="erroneoussubstitution-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
          <item>An earlier version of the EpiDoc guidelines incorrectly distinguished between these two types of correction, which are not so distinguished in Panciera or other conventions.</item><item>GB (2006-07-16): I'm going to suggest we quit using the Janus pair of sic/corr elements and attributes, and start using <tag>choice</tag> here (even in P4 land). Not fixed in GL yet because XSLT doesn't yet handle it. See e.g. 3 above.</item><item>GB (2006-10-25): we now do this in both examples!</item>
       </list>
-   </div><div id="erroneoussubstitution-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="erroneoussubstitution-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
       </listBibl>
-   </div><div id="erroneoussubstitution-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="erroneoussubstitution-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="erroneoussubstitution-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
       <p id="erroneoussubstitution-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="erroneoussubstitution-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-25 14:24:25 $</seg></p>
-      <p id="erroneoussubstitution-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

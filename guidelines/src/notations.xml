@@ -26,52 +26,52 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/notations.xml,v 1.9 2006-07-20 15:46:01 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/notations.xml,v 1.10 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="notations" rend="multipart"><head>Special Characters</head>
-<p n="regexerror">divcount mismatch</p><p>Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</p><xi:include href="acrophonic.xml"/><xi:include href="chirho.xml"/><xi:include href="claudianletters.xml"/><xi:include href="interpuncts.xml"/><div id="notations-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">divcount mismatch</p><p>Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</p><xi:include href="acrophonic.xml"/><xi:include href="chirho.xml"/><xi:include href="claudianletters.xml"/><xi:include href="interpuncts.xml"/><div id="notations-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">((crux))</item>
             </list></item>
       </list>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-2">⊂crux⊃</item>
             </list></item>
       </list>
-   </div><div id="notations-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+   </div><div id="notations-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="simple">
          <item id="EncEx-1">
             <mark type="crux"/></item>
       </list>
-   </div><div id="notations-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="notations-notes" type="gl-notes">
       <head>Notes</head>
       
       <p>It is sometimes necessary to represent a mark in the original text that is not readily handled by conventional type or fonts (e.g., does not correspond to a Unicode code point) but is not really an illustration. Some examples of symbols that might be recorded in this way include: scroll, chi-rho, cross, stop, leaf, star, centurion, denarius, fish. In conventional typographic editions, these 'odd characters' can only be shown "in consuetam formam reducta" with doubled parentheses and a note in the apparatus. The distinction between character rectification and naming of a symbol or glyph is made by using italics. In digital editions, projects are free to define character entities for this purpose, but searching for these items as a class of material dictated the use of an XML element. TEI provides no element for this purpose, and so EpiDoc recommends the extension of TEI for epigraphic work with the use of the <tag>mark</tag> element. It has one attribute, type, which is required. The type attribute can have any value the editor deems necessary. </p>
-   </div><div id="notations-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="notations-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
          <item>GB (2006-07-16): I recall having a conversation about the special case of 'denarius' at the April 2006 sprint, but I don't find any reference to this in my notes. I'll try to reconstruct.</item>
       </list>
-   </div><div id="notations-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="notations-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>Charles Crowther</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Charles Crowther</name></respStmt></bibl>
       </listBibl>
-   </div><div id="notations-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="notations-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
+      <p id="notations-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
       <p id="notations-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-20 15:46:01 $</seg></p>
-      <p id="notations-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="notations-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+      <p id="notations-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

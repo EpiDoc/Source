@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
  
  <!-- Start license statement: do not remove 
  
@@ -27,7 +27,7 @@
 
 <xsl:stylesheet xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
    xmlns:str="http://exslt.org/strings">
-   <xsl:output indent="no"/>
+   <xsl:output indent="no" encoding="utf-8" version="1.0" method="xml" />
     <!--
    ====================================================================================
    ROOT TEMPLATE

@@ -26,29 +26,30 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vacat.xml,v 1.12 2006-07-19 13:35:14 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vacat.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="vacat"><head>Transcription where a vacat is evident or suspected</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><p>The element <tag>space/</tag> should be used where a blank space on the stone is considered significant.</p><div id="vacat-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+            <ab><rs type="conformance">leiden</rs></ab>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><p>The element <tag>space/</tag> should be used where a blank space on the stone is considered significant.</p><div id="vacat-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>
-            <list type="ordered" lang="lat">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>
+            <list type="ordered" lang="la">
                <item id="TypoEx-1">Imperator <hi rend="normal">(vac.)</hi> Caesar </item>
                <item id="TypoEx-2">Valeria <hi rend="normal">(vac. ?)</hi> Atticilla </item>
                <item id="TypoEx-3">not addressed </item>
                <item id="TypoEx-4">not addressed </item>
             </list></item>
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
-            <list type="ordered" lang="lat">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered" lang="la">
                <item id="TypoEx-5">Imperator (vac. 3) Caesar </item>
                <item id="TypoEx-6">Valeria (vac. ?) Atticilla </item>
                <item id="TypoEx-7">senatus (vac. 3?) populusque </item>
                <item id="TypoEx-8">not addressed </item>
             </list></item>
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dow" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dow</xref></title></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dow" >Dow</xref></title></bibl>: 
             <list type="ordered">
                <item id="TypoEx-9">Imperator <hi rend="superscript">vvv.</hi> Caesar </item>
                <item id="TypoEx-10">Valeria <hi rend="superscript">vvv.?</hi> Atticilla </item>
@@ -66,7 +67,7 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-4">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vacat-edition" type="gl-edition" lang="lat" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vacat-edition" type="gl-edition" lang="la">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">Imperator 
@@ -82,26 +83,26 @@ End license statement: do not remove -->
             <certainty target="space3" locus="extent" degree="low"/>
             <certainty target="space3" locus="#gi" degree="low"/> nobis pacem </item>
       </list>
-   </div><div id="vacat-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="vacat-notes" type="gl-notes">
       <head>Notes</head>
-      <list type="ordered"><item>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion on the <xref href="http://lsv.uky.edu/archives/markup.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." (
+      <list type="ordered"><item>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion on the <xref href="http://lsv.uky.edu/archives/markup.html" >Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." (
          <dateRange from="2002-06-01" to="2002-06-10">1-10 June 2002</dateRange>).</item></list>
-   </div><div id="vacat-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="vacat-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="ordered">
          <item>GB (2006-07-19): This section also impinges on the "whitespace" discussion. Ideally, all space on stone should be marked up the same way, with contextual stylesheets rendering some as (vac.) and others with whitespace—dependent of course on the desires of the project: USEP want more whitespace; InsAph want more (vv.).</item>
       </list>
-   </div><div id="vacat-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="vacat-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
       </listBibl>
-   </div><div id="vacat-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="vacat-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="vacat-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
+      <p id="vacat-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
       <p id="vacat-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="vacat-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-19 13:35:14 $</seg></p>
-      <p id="vacat-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="vacat-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+      <p id="vacat-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

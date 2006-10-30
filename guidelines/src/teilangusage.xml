@@ -29,7 +29,26 @@ End license statement: do not remove -->
 
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="teilangusage" lang="en">
-   <head>Using tei:langUsage</head>
-   <p>using tei:langUsage </p>
-   <p>to be added</p><p>The <tag>langUsage</tag> element in the <tag>teiHeader</tag> contains a list of declared ancient and modern languages, each of which has the form:</p>
-<list><item><tag>language id="la"</tag>Latin<tag>/language</tag></item><item><tag>language id="grc"</tag>Ancient Greek<tag>/language</tag></item><item><tag>language id="en"</tag>English<tag>/language</tag></item><item><tag>language id="el"</tag>Modern Greek<tag>/language</tag></item></list><p>The <att>id</att> of each <tag>language</tag> should contain the 2-letter ISO language code, where one is available, or the 3-digit code where one is not (as in the case of ancient Greek).</p><p>These languages are then available to be referred to by the <att>lang</att> or <att>xml:lang</att> attribute on any element in the file. See <tag>tei:foreign</tag> and <xref href="languages.xml">languages.xml</xref>.</p></div>
+    <head>Specifying available languages and scripts</head>
+    <ab><rs type="conformance">leiden</rs></ab>
+    <p>The TEI provides a <tag>langUsage</tag> element in the <tag>teiHeader</tag> whereby the
+        languages and scripts used in a given document or project must be declared before they may be
+        used in the document itself. The <tag>langUsage</tag> contains a list of standard language-and-script
+        codes, drawn from <seg n="incomplete">international standards</seg>. Each such code may be glossed with an
+        appropriate description. Examples follow:</p>
+    <list>
+        <item><tag>language id="la"</tag>Latin<tag>/language</tag></item>
+        <item><tag>language id="grc"</tag>Ancient Greek<tag>/language</tag></item>
+        <item><tag>language id="en"</tag>English<tag>/language</tag></item>
+        <item><tag>language id="el"</tag>Modern Greek<tag>/language</tag></item>
+        <item><tag>language id="grc-Latn"</tag>Ancient Greek in Latin characters<tag>/language</tag></item>
+        <item><tag>language id="la-Grek"</tag>Latin in Ancient Greek characters<tag>/language</tag></item>
+    </list>
+    <p>The <att>id</att> of each <tag>language</tag> should contain the 2-letter ISO language code,
+        where one is available, or the 3-digit code where one is not (as in the case of ancient
+        Greek). The four-letter, case-sensitive script code should not be added as a subtag unless it is
+    not the usual (default) script for the language in question.</p>
+    <p>These languages are then available to be referred to by the <att>lang</att> or
+        <att>xml:lang</att> attribute on any element in the file. See <tag>tei:foreign</tag> and
+            <xref href="languages.xml">languages.xml</xref>.</p>
+</div>

@@ -27,15 +27,16 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.12 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="lostline"><head>An entire line completely lost (extent certain or uncertain)</head>
-<div id="lostline-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+            <ab><rs type="conformance">leiden</rs></ab>
+<div id="lostline-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="ordered">
                <item id="TypoEx-1">[ - - - - - - - - - - - - - - - - - - ] /</item>
                <item id="TypoEx-2">not addressed</item>
@@ -47,7 +48,7 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-2">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lostline-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lostline-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">
@@ -56,24 +57,24 @@ End license statement: do not remove -->
             <gap id="gap23" reason="lost" unit="line"/>
             <certainty target="gap23" locus="extent" degree="low"/></item>
       </list>
-   </div><div id="lostline-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="lostline-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
          <item>The first example indicates complete certainty that a single, entire line of text has been lost.</item>
          <item>The second example indicates complete certainty that some unknown number of entire lines of text have been lost.</item>
-         <item>For indications of uncertainty about whether lines of text have been lost or not, see <xref href="possiblylost.xml" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Possibility that letters have been completely lost</xref>.</item>
+         <item>For indications of uncertainty about whether lines of text have been lost or not, see <xref href="possiblylost.xml" >Possibility that letters have been completely lost</xref>.</item>
          <item>NB: values of extent greater than 1, when combined with unit="line" are unsupported by the standard xslts; therefore, each separate lost line should be encoded as a separate <tag>gap</tag>, with appropriate line breaks (vel sim.) separating them.</item>
       </list>
-   </div><div id="lostline-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="lostline-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
-   </div><div id="lostline-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="lostline-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.12 $</seg></p>
+      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
       <p id="lostline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
+      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
       <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

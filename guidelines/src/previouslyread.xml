@@ -26,15 +26,16 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/previouslyread.xml,v 1.13 2006-07-16 11:07:16 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/previouslyread.xml,v 1.14 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="previouslyread"><head>Letters read by a previous modern observer, but which cannot now be read</head>
-<div id="previouslyread-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+            <ab><rs type="conformance">leiden</rs></ab>
+<div id="previouslyread-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">Imperator <hi rend="underline">Caesar</hi></item>
             </list></item>
@@ -43,7 +44,7 @@ End license statement: do not remove -->
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="previouslyread-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="previouslyread-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
        <p>Note: The standard stylesheets deliberately do not reproduce the corresponding typographic examples.</p>
       <list type="ordered">
@@ -53,22 +54,22 @@ End license statement: do not remove -->
             <gap reason="lost" agent="damage" extent="6" unit="character"/></rdg>
             <rdg resp="FHG">Caesar</rdg></app></item>
       </list>
-   </div><div id="previouslyread-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="previouslyread-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
          <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-02-15</date>): in InsAph we use standard values for <att>resp</att>, viz. "previous" and "autopsy", for simplicity of processing. This could be incorporated into the respStmt in a more sophisticated process, of course.</item><item><name>GB</name> (<date>2006-07-16</date>): standard stylesheets also require autopsy <tag>rdg</tag> to appear <hi rend="italic">before</hi> previously read. This should be discussed and documented.</item>
       </list>
-   </div><div id="previouslyread-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="previouslyread-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div><div id="previouslyread-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="previouslyread-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="previouslyread-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
+      <p id="previouslyread-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
       <p id="previouslyread-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="previouslyread-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-16 11:07:16 $</seg></p>
-      <p id="previouslyread-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="previouslyread-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+      <p id="previouslyread-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

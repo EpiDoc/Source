@@ -26,11 +26,12 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/dates.xml,v 1.10 2006-07-16 13:17:06 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/dates.xml,v 1.11 2006-10-30 12:05:35 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div id="dates" xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"><head>Dates</head>
+            <ab><rs type="conformance">aiegl</rs></ab>
 <p n="regexerror">divcount mismatch</p><p>Dates may be identified in the ancient text (consular years, olympiads, etc.), or in editorial discussion. The date element contains a date in any format. There are basically three contexts in which an expression might be tagged as a date in an EpiDoc file:</p><list type="unordered">
       <item>a regular date expression in a bibliographical citation or editorial discussion;</item>
       <item>any kind of date expression in the original text of an inscription;</item>
@@ -58,7 +59,7 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-7">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="dates-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="dates-edition" type="gl-edition">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       
          
@@ -71,24 +72,24 @@ End license statement: do not remove -->
          <item id="EncEx-7"><bibl><author>Roueché</author> (<date>1989</date>), no. 22</bibl></item></list>
       
       
-   </div><div id="dates-tei-p4links" type="gl-tei-p4links" org="uniform" part="N" sample="complete">
+   </div><div id="dates-tei-p4links" type="gl-tei-p4links">
       <head>TEI P4 links</head>
       <list type="simple">
-         <item><xref href="http://www.tei-c.org/P4X/ref-DATE.html" evaluate="all" from="ROOT" targOrder="Y" to="DITTO"><tag>date</tag></xref></item>
-         <item><xref href="http://www.tei-c.org/P4X/CO.html#CONADA" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">6.4.4. Dates and Times</xref></item>
-         <item><xref href="http://www.tei-c.org/P4X/ND.html#NDDATE" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">20.4 Dates and Time</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/ref-DATE.html" ><tag>date</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/CO.html#CONADA" >6.4.4. Dates and Times</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/ND.html#NDDATE" >20.4 Dates and Time</xref></item>
       </list>
-   </div><div id="dates-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="dates-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl default="NO"><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>re-encoded from xwiki to TEI-ish</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl><respStmt><resp>re-encoded from xwiki to TEI-ish</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
-   </div><div id="dates-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="dates-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="dates-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
+      <p id="dates-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.11 $</seg></p>
       <p id="dates-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="dates-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-16 13:17:06 $</seg></p>
-      <p id="dates-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="dates-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:35 $</seg></p>
+      <p id="dates-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

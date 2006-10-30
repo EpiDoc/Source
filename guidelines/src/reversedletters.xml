@@ -27,21 +27,21 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/reversedletters.xml,v 1.8 2006-04-18 21:19:01 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/reversedletters.xml,v 1.9 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="reversedletters"><head>Reversed letters</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="reversedletters-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="reversedletters-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">((f))</item>
             </list></item>
       </list>
       <list type="simple">
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-2">⊂f⊃</item>
             </list></item>
@@ -50,29 +50,29 @@ End license statement: do not remove -->
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="reversedletters-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="reversedletters-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="simple">
          <item id="EncEx-1"><hi rend="reversed">f</hi></item>
       </list>
-   </div><div id="reversedletters-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+   </div><div id="reversedletters-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
          <item>None</item>
       </list>
-   </div><div id="reversedletters-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="reversedletters-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
       </listBibl>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div><div id="reversedletters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="reversedletters-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="reversedletters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.8 $</seg></p>
+      <p id="reversedletters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
       <p id="reversedletters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="reversedletters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:19:01 $</seg></p>
+      <p id="reversedletters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
       <p id="reversedletters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

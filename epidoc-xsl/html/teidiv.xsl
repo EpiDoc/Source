@@ -64,11 +64,22 @@
                         <xsl:element name="div">
                             <xsl:attribute name="class">gl-encoding</xsl:attribute>
                             <xsl:element name="h3">EpiDoc Encoding</xsl:element>
-                            <xsl:element name="ol">
-                                <xsl:for-each select="./tei:list/tei:item">
-                                    <xsl:element name="li"><xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute><xsl:apply-templates mode="process-item-children"/></xsl:element>
-                                </xsl:for-each>
-                            </xsl:element>
+                            <xsl:choose>
+                                <xsl:when test="./tei:list/@type='ordered'">
+                                    <xsl:element name="ol">
+                                        <xsl:for-each select="./tei:list/tei:item">
+                                            <xsl:element name="li"><xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute><xsl:apply-templates mode="process-item-children"/></xsl:element>
+                                        </xsl:for-each>
+                                    </xsl:element>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:element name="ul">
+                                        <xsl:for-each select="./tei:list/tei:item">
+                                            <xsl:element name="li"><xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute><xsl:apply-templates mode="process-item-children"/></xsl:element>
+                                        </xsl:for-each>
+                                    </xsl:element>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:element>
                         <!-- make div for xslt processing as an edition -->
                         <xsl:element name="div">

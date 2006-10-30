@@ -27,16 +27,17 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/directionoftext.xml,v 1.3 2006-04-18 21:12:51 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/directionoftext.xml,v 1.4 2006-10-30 12:05:35 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="directionoftext"><head>Indication of the direction of script (e.g. right-to-left)</head>
-<div id="directionoftext-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+            <ab><rs type="conformance">leiden</rs></ab>
+<div id="directionoftext-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
          
-         <item><bibl default="NO"><title level="a" type="abbreviated"><xref href="bibliography.xml#seg" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">SEG</xref></title></bibl>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#seg" >SEG</xref></title></bibl>
             <list type="ordered">
                <item id="TypoEx-1"> abc ←</item><item id="TypoEx-2">Not addressed</item>
             </list></item>
@@ -46,27 +47,27 @@ End license statement: do not remove -->
   <head>Regular Expression Test</head>
             <list><item id="Regex-1">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="directionoftext-edition" lang="lat" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="directionoftext-edition" lang="la" type="gl-edition">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">
             <lb rend="right-to-left"/>abc<lb/></item><item id="EncEx-2">
             <lb rend="left-to-right"/>def<lb/></item>
          </list>
-   </div><div id="directionoftext-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="directionoftext-notes" type="gl-notes">
       <head>Notes</head>
        <list type="ordered"><item>As each line in an EpiDoc encoded inscription begins with an <tag>lb/</tag>, attributes on this tag can be understood to refer to the content of that line, i.e. all text before the following <tag>lb/</tag>.</item><item>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as it is the default direction. One might need to use a <att>rend</att> attribute as in example 2, above, in the case of boustrophedon text, for instance.</item><item>Other values of the <att>rend</att> attribute  can be created in the case of texts written vertically, in a circle or spiral, or otherwise unusually.</item></list>
-   </div><div id="directionoftext-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="directionoftext-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
       </listBibl>
-   </div><div id="directionoftext-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="directionoftext-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.3 $</seg></p>
+      <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.4 $</seg></p>
       <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-04-18 21:12:51 $</seg></p>
+      <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:35 $</seg></p>
       <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 

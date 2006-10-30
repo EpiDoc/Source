@@ -26,20 +26,20 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.10 2006-07-29 07:16:52 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.11 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="numbersandnumerals">
     <head>Numbers and numerals</head>
     <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p>
     <p>Different behaviour for Greek and Latin numerals:</p>
-    <div id="numbersandnumerals-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+    <div id="numbersandnumerals-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
         <list type="ordered">
             <item lang="grc" id="TypoEx-1">α´</item>
             <item lang="grc" id="TypoEx-2">͵αχο´</item>
             <item lang="grc" id="TypoEx-3">&#x10151;</item>
-            <item lang="lat" id="TypoEx-4">XIII</item>
+            <item lang="la" id="TypoEx-4">XIII</item>
         </list>
     </div>
     <div id="numbersandnumerals-regex" type="gl-regextest">
@@ -51,7 +51,7 @@ End license statement: do not remove -->
         </list>
         <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
     </div>
-    <div id="numbersandnumerals-edition" type="gl-edition" lang="lat" org="uniform" part="N" sample="complete">
+    <div id="numbersandnumerals-edition" type="gl-edition" lang="la">
         <head lang="en">EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
             <item id="EncEx-1">
@@ -64,11 +64,11 @@ End license statement: do not remove -->
                     <num value="50" type="acrophonic">&#x10151;</num>
                 </measure> </item>
             <item id="EncEx-4">
-                <num lang="lat" value="13">XIII</num>
+                <num lang="la" value="13">XIII</num>
             </item>
         </list>
     </div>
-    <div id="numbersandnumerals-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+    <div id="numbersandnumerals-notes" type="gl-notes">
         <head>Notes</head>
         <list type="simple">
             <item>If a numeral is indicated with a supralinear bar or other mark on the stone, this
@@ -76,23 +76,23 @@ End license statement: do not remove -->
             <item>Example 3 above is an acrophonic Greek numeral (for more on which see the
                 guidelines section of <xref href="acrophonic.xml">acrophonics</xref>)</item>
         </list>
-        <div id="numbersandnumerals-questions" type="gl-questions" org="uniform" part="N" sample="complete">
+        <div id="numbersandnumerals-questions" type="gl-questions">
             <head>Questions and issues</head>
             <list type="simple">
                 <item>None</item>
             </list>
         </div>
     </div>
-    <div id="numbersandnumerals-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+    <div id="numbersandnumerals-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
-        <listBibl default="NO">
-            <bibl default="NO">
+        <listBibl>
+            <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
-            <bibl default="NO">
+            <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Zaneta Au</name>
@@ -102,9 +102,9 @@ End license statement: do not remove -->
     </div>
     <div id="numbersandnumerals-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.10 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
         <p id="numbersandnumerals-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-07-29 07:16:52 $</seg></p>
-        <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-10-30 12:05:36 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
     </div>
 </div>

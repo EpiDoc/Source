@@ -30,6 +30,7 @@
     xmlns:xml="http://www.w3.org/XML/1998/namespace">
     <!-- epidoc-teiheader -->
     <!-- 2005-08-10: created by Tom Elliott -->
+    <xsl:import href="conformance.xsl"/>
     <xsl:import href="epidocmark.xsl" />
     <xsl:import href="xmlcomment.xsl" />
     <xsl:import href="tei2.xsl" />

@@ -26,12 +26,12 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vowelquantity.xml,v 1.1 2006-07-29 07:16:52 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/vowelquantity.xml,v 1.2 2006-10-30 12:05:36 paregorios Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="vowelquantity"><head>Vowel Quantity</head>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="vowelquantity-typographic" type="gl-typographic" org="uniform" part="N" sample="complete">
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="vowelquantity-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <p>not addressed?</p>
    <list type="ordered">
@@ -42,27 +42,27 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-2">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vowelquantity-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vowelquantity-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1" lang="la"><note>Latin example?</note></item><item lang="grc" id="EncEx-2">βοΐθι τ<seg real="long">ο͂ͅ</seg> σ<seg real="long">ο͂ͅ</seg> δούλ<seg real="long">ο</seg>ͅ</item>
          </list>
-   </div><div id="vowelquantity-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+   </div><div id="vowelquantity-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
          <item>XSLT for this is not yet in place. If an editor chooses to tag long vowels such as omicron and episilon consistently, the stylesheets will need to test for the absence of a circumflex accent before applying a macron.</item>
          
       </list>
-   </div><div id="vowelquantity-responsibility" type="gl-responsibility" org="uniform" part="N" sample="complete">
+   </div><div id="vowelquantity-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
-      <listBibl default="NO">
-         <bibl default="NO"><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
          </listBibl>
-   </div><div id="tallcharacters-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+   </div><div id="tallcharacters-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.1 $</seg></p>
+      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.2 $</seg></p>
       <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-07-29 07:16:52 $</seg></p>
-      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
+      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
    </div></div>
 
