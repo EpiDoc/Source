@@ -26,31 +26,17 @@
  
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="tei:ab[tei:rs/@type='conformance']">
+        <xsl:element name="p"><xsl:attribute name="class">conformance-statement</xsl:attribute><xsl:apply-templates/></xsl:element>
+    </xsl:template>
+    <xsl:template match="tei:rs[@type='conformance']">
+        <xsl:variable name="parenttext"><xsl:value-of select="normalize-space(..)"/></xsl:variable>
+        <xsl:variable name="parenttextnormal"><xsl:value-of select="normalize-space($parenttext)"/></xsl:variable>
+        <xsl:variable name="selftext"><xsl:value-of select="normalize-space(.)"/></xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$parenttext=$selftext">Implementation of the guidance in this section is <strong>required</strong> for <xsl:apply-templates/><xsl:text> </xsl:text><a href="conformance.html">conformance</a>.</xsl:when>
+            <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+        </xsl:choose>
+        </xsl:template>
 
-   <xsl:template match="tei:ab">
-      <xsl:element name="p">
-         <!-- do not move next line: customization stub -->
-         <xsl:call-template name="teiabprefix" />
-         <xsl:attribute name="class">abstract</xsl:attribute>
-         <xsl:call-template name="propagateattrs" />
-         <xsl:apply-templates />
-         <!-- do not move next line: customization stub -->
-         <xsl:call-template name="teiabpostfix" />
-      </xsl:element>
-   </xsl:template>
-   <xsl:template match="tei:ab" mode="epidoc-edition">
-      <xsl:element name="div">
-         <!-- do not move next line: customization stub -->
-         <xsl:call-template name="teiabeditionprefix" />
-         <xsl:attribute name="class">abstract</xsl:attribute>
-         <xsl:call-template name="propagateattrs" />
-         <xsl:apply-templates />
-         <!-- do not move next line: customization stub -->
-         <xsl:call-template name="teiabeditionpostfix" />
-      </xsl:element>
-   </xsl:template>
-   <xsl:template name="teiabprefix" />
-   <xsl:template name="teiabpostfix" />
-   <xsl:template name="teiabeditionprefix" />
-   <xsl:template name="teiabeditionpostfix" />
 </xsl:stylesheet>
