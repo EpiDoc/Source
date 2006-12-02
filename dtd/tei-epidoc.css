@@ -36,11 +36,12 @@ head {
   background-color: #bbb;
 }
 
-*[cert="low"]:before {
+
+/* *[cert="low"]:before {
 	color: green ;
 	font-weight: normal ;
 	content: "?" ;
-}
+} */
 
 ab {
   display: block;
@@ -58,9 +59,9 @@ bibl {
   display: block;
 }
 
-certainty:before {
+/* certainty:before {
   content: '?';
-}
+} */
 
 change {
   display: block;
@@ -82,37 +83,37 @@ encodingDesc {
   display: block;
 }
 
-supplied[reason='abbreviation']:before {
+/* supplied[reason='abbreviation']:before {
   content: '(';
-}
+} */
 
-supplied[reason='abbreviation']:after {
+/* supplied[reason='abbreviation']:after {
   content: ')';
-}
+} */
 
-supplied[reason='explanation']:before {
+/* supplied[reason='explanation']:before {
   content: '(i.e. ';
-}
+} */
 
-supplied[reason='explanation']:after {
+/* supplied[reason='explanation']:after {
   content: ')';
-}
+} */
 
-supplied[reason='omitted']:before {
+/* supplied[reason='omitted']:before {
   content: '<';
-}
+} */
 
-supplied[reason='omitted']:after {
+/* supplied[reason='omitted']:after {
   content: '>';
-}
+} */
 
-supplied[reason='lost']:before {
+/* supplied[reason='lost']:before {
   content: '[';
-}
+} */
 
-supplied[reason='lost']:after {
+/* supplied[reason='lost']:after {
   content: ']';
-}
+} */
 
 extent {
   display: block;
@@ -142,33 +143,33 @@ funder {
   display: block;
 }
 
-gap:before {
+/* gap:before {
   content: '[...]';
-}
+} */
 
-gap[reason='lost']:before {
+/* gap[reason='lost']:before {
   content: '[...]';
-}
+} */
 
-gap[reason='illegible']:before {
+/* gap[reason='illegible']:before {
   content: '..';
-}
+} */
 
-gap[dim='top']:before {
+/* gap[dim='top']:before {
   content: '---]';
-}
+} */
 
-gap[dim='bottom']:before {
+/* gap[dim='bottom']:before {
   content: '[---';
-}
+} */
 
-gap[dim='left']:before {
+/* gap[dim='left']:before {
   content: '...]';
-}
+} */
 
-gap[dim='right']:before {
+/* gap[dim='right']:before {
   content: '[...';
-}
+} */
 
 handList {
   display: block;
@@ -210,33 +211,33 @@ div[type='apparatus'] lb {
   display: inline ;
 }
 
-div[type='apparatus'] lb:before {
+/* div[type='apparatus'] lb:before {
   color: black ;
   content: '|' ;
-}
+} */
 
-lb:before {
+/* lb:before {
 	color: red;
 	font-weight: normal ;
 	content: attr(n);
-}
+} */
 
-lb[type='worddiv']:before {
+/* lb[type='worddiv']:before {
 	color: green;
 	font-weight: normal ;
 	content: '- ' attr(n);
-}
+} */
 
-cb:before {
+/* cb:before {
 	color: fuchsia;
 	font-weight: normal ;
 	content: attr(rend) ": " attr(n);
-}
+} */
 
-cb[rend='block']:before { 
+/* cb[rend='block']:before { 
    color: black ; 
  	content: "|"; 
- } 
+ } */ 
 
 language {
   display: block;
@@ -266,27 +267,27 @@ listBibl {
   display: block;
 }
 
-mark:before {
+/* mark:before {
 	color: gray;
 	font-weight: normal ;
 	font-style: italic ;
 	content: "(" attr(type) ")";
-}
+} */
 
-measure[dim='height']:before {
+/* measure[dim='height']:before {
   color: gray ;
   content: 'H: ' ;
-  }
+  } */
 
-measure[dim='width']:before {
+/* measure[dim='width']:before {
   color: gray ;
   content: 'W: ' ;
-  }
+  } */
 
-measure[dim='depth']:before {
+/* measure[dim='depth']:before {
   color: gray ;
   content: 'D: ' ;
-  }
+  } */
 
 meeting {
   display: block;
@@ -344,27 +345,27 @@ revisionDesc {
   display: block;
 }
 
-rdg[resp='previous'] {
+/* rdg[resp='previous'] {
   text-decoration: underline;
-}
+} */
 
-rs[type='findspot']:before {
+/* rs[type='findspot']:before {
   color: silver ;
   font-size: smaller ;
   content: 'found:' ;
-}
+} */
 
-rs[type='orig-location']:before {
+/* rs[type='orig-location']:before {
   color: silver ;
   font-size: smaller ;
   content: 'orig:' ;
-}
+} */
 
-rs[type='last-location']:before {
+/* rs[type='last-location']:before {
   color: silver ;
   font-size: smaller ;
   content: 'last:' ;
-}
+} */
 
 seg[type='autopsy'] {
   text-decoration: underline;
@@ -374,38 +375,38 @@ sic[type='unintelligible'] {
   font-variant: small-caps;
 }
 
-sic[n='superfluous']:before {
+/* sic[n='superfluous']:before {
   content: '{'
-}
+} */
 
-sic[n='superfluous']:after {
+/* sic[n='superfluous']:after {
   content: '}'
-}
+} */
 
 sourceDesc {
   display: block;
 }
 
-space[unit='character' and extent='1']:before {
+/* space[unit='character' and extent='1']:before {
 	color: gray;
 	font-weight: normal ;
 	font-style: italic ;
 	content: 'vac.';
-}
+} */
 
-space[unit='character']:before {
+/* space[unit='character']:before {
 	color: gray;
 	font-weight: normal ;
 	font-style: italic ;
 	content: 'vac.';
-}
+} */
 
-space[unit='line']:before {
+/* space[unit='line']:before {
 	color: gray;
 	font-weight: normal ;
 	font-style: italic ;
 	content: 'vacat';
-}
+} */
 
 TEI\.2 {
   display: block;
