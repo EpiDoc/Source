@@ -24,7 +24,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<div type="description"><head>Descriptio</head><p>Rerum inscriptarum distributio: <rs type="catMonument" key="tabula">tabula</rs></p><p>Rei materia: <rs type="material" key="marmor">marmor</rs></p><p>Scriptura: <rs type="scriptura" key="scalpro">scalpro</rs></p><p>Lingua: <rs key="la">Latina</rs></p></div><div type="commentary"><head>Commentarium</head><p>Titulorum distributio: <rs type="catText" key="sepulcralis">sepulcralis</rs></p><p>Virorum distributio: <rs key="cet." type="catPersons">cet.</rs></p></div><div type="edition" lang="la">
+			<div type="description"><head>Descriptio</head><p>Rerum inscriptarum distributio: <rs type="objectType" key="tabula">tabula</rs></p><p>Rei materia: <rs type="material" key="marmor">marmor</rs></p><p>Scriptura: <rs type="execution" key="scalpro">scalpro</rs></p><p>Lingua: <rs key="la" type="language">Latina</rs></p></div><div type="commentary"><head>Commentarium</head><p>Titulorum distributio: <rs type="textType" key="sepulcralis">sepulcralis</rs></p><p>Virorum distributio: <rs key="cet." type="personType">cet.</rs></p></div><div type="edition" lang="la">
 				<head>Textus</head>
 				<ab><lb/>Amethystus
 <lb/>Irene
@@ -32,11 +32,11 @@
 <lb/>et
 <lb/>ssibi fecit</ab>
 			</div>
-		<div type="history" n="text-constituted-from"><head>Apparatus</head><p>Textus secundum (<ref target="bibl-1">1</ref>).</p></div><div type="history" n="locations"><head>Loci</head><p>Regio antiqua: <geogName type="regio-antiqua" key="Roma">Roma</geogName></p><p>
-Regio nostrae aetatis: <geogName type="regio-nostrae-aetatis" key="it">I</geogName></p><p>
-Urbs antiqua: <placeName type="urbs-antiqua" key="Roma" lang="la">Roma</placeName></p><p>
-Urbs nostrae aetatis: <placeName type="urbs-nostrae-aetatis" key="Roma" lang="it">Roma</placeName>
-</p><p>Locus inventionis: <rs type="findspot">Roma, cimitero dei Gordiani</rs></p><p>
-Locus adservationis: <rs type="last-location">ignoratur</rs></p></div><div type="bibliography"><head>Editiones</head><p><bibl id="bibl-1">Riv. Arch. Crist., 8, 1931, p. 229, nr. 62 (E. Josi)</bibl></p></div></body>
+		<div type="history" n="text-constituted-from"><head>Apparatus</head><p>Textus secundum (<ref target="bibl-1">1</ref>).</p></div><div type="history" n="locations"><head>Loci</head><p>Regio antiqua: <geogName type="ancientRegion" key="Roma">Roma</geogName></p><p>
+Regio nostrae aetatis: <geogName type="modernCountry" key="it">Italy</geogName></p><p>
+Urbs antiqua: <placeName type="ancientFindpot" key="Roma" lang="la">Roma</placeName></p><p>
+Urbs nostrae aetatis: <placeName type="modernFindspot" key="Roma" lang="it">Roma</placeName>
+</p><p>Locus inventionis: <rs type="found">Roma, cimitero dei Gordiani</rs></p><p>
+Locus adservationis: <rs type="lastLocation">ignoratur</rs></p></div><div type="bibliography"><head>Editiones</head><p><bibl id="bibl-1">Riv. Arch. Crist., 8, 1931, p. 229, nr. 62 (E. Josi)</bibl></p></div></body>
 	</text>
 </TEI.2>
