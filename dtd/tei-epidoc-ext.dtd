@@ -26,11 +26,18 @@
      
      REVISION HISTORY:
 
+	03 December 2006
+		(GB)
+		* added epidoc.a.date to <year>, <month>, and <day>
+		* recreated <date> from scratch in order to remove @certainty
+		* made gap[@reason] #REQUIRED (pace Radcliffe, below!)
+		* busted out <geogName> to allow phrase content
+
 	23 March 2006
 		(GB & JF)
 		* added @extentmax to <gap> (for range)
 
-     20 March 2006
+	20 March 2006
 		(GB & CC)
 		* added attribute @unit to <measure> (to specify metres, centimetres, cubits, etc.)
 		* added attribute @precision (values 'circa' or 'exact') to <measure>
@@ -137,12 +144,24 @@
 <!ELEMENT att (#PCDATA)> 
 <!ATTLIST att  
       %a.global; >
-      
+
+<!ELEMENT date %om.RR;  %phrase.seq;> 
+<!ATTLIST date  
+      %a.global;
+      calendar CDATA #IMPLIED
+      value CDATA #IMPLIED >
+
 <!ELEMENT figure (head?, p*, figDesc) >
 <!ATTLIST figure
 	%a.global;
-	entity	ENTITY	#IMPLIED
-	href	CDATA	#IMPLIED >
+	entity ENTITY #IMPLIED
+	href CDATA #IMPLIED >
+
+<!ELEMENT geogName %om.RR; (#PCDATA | geog | %m.phrase; | %m.Incl; )*> 
+<!ATTLIST geogName  
+      %a.global;
+      %a.names;
+      type CDATA #IMPLIED >
 
 <!ELEMENT mark EMPTY >
 <!ATTLIST mark 
@@ -211,12 +230,14 @@
         %epidoc.full; >
 <!ATTLIST %n.date;
         %epidoc.a.date; >
+<!ATTLIST %n.day;
+        %epidoc.a.date; >
 <!ATTLIST %n.distance;
         %epidoc.exact; >
 <!ATTLIST %n.div;
         type CDATA #IMPLIED >
 <!ATTLIST %n.gap;
-        reason (ellipsis | illegible | lost | omitted) #IMPLIED
+        reason (ellipsis | illegible | lost | omitted) #REQUIRED
         extentmax CDATA #IMPLIED
         unit CDATA #IMPLIED
         dim (left | right | top | bottom | internal) #IMPLIED
@@ -240,6 +261,8 @@
         value CDATA #IMPLIED
         unit CDATA #IMPLIED
         precision (circa | exact) #IMPLIED >
+<!ATTLIST %n.month;
+        %epidoc.a.date; >
 <!ATTLIST %n.note;
         place CDATA 'not specified'
         target CDATA #IMPLIED
@@ -282,6 +305,8 @@
 <!ATTLIST %n.xref;
         %epidoc.a.pointer; 
         href CDATA #IMPLIED>
+<!ATTLIST %n.year;
+        %epidoc.a.date; >
 
         
         
