@@ -107,7 +107,7 @@
                 <map:serialize type="xml"/>
             </map:match>
         </map:pipeline>
-        <map:pipeline name="tests" internal-only="true">
+        <map:pipeline name="tests" internal-only="false">
             <map:match pattern="*/*.sch">
                 <map:generate src="{1}/{2}.sch"/>
                 <map:transform type="xslt-saxon" src="{1}/schematron-report.xsl"/>
@@ -301,14 +301,14 @@
             <map:match pattern="*.test">
                 <map:generate src="src/{1}.xml"/>
                 <map:transform type="xinclude"/>
-                <map:transform type="xslt-saxon" src="tests/preprocess.xsl"/>
+                <map:transform type="xslt" src="tests/preprocess.xsl"/>
                 <map:transform type="xslt-saxon" src="cocoon:/tests/unittest.sch"/>
                 <map:serialize type="html"/>
             </map:match>
             <map:match pattern="*.preprocess">
                 <map:generate src="src/{1}.xml"/>
                 <map:transform type="xinclude"/>
-                <map:transform type="xslt-saxon" src="tests/preprocess.xsl"/>
+                <map:transform type="xslt" src="tests/preprocess.xsl"/>
                 <map:serialize type="xml"/>
             </map:match>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

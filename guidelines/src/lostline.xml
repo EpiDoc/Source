@@ -27,7 +27,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lostline.xml,v 1.14 2006-12-03 18:15:35 hcayless Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -39,21 +39,18 @@ End license statement: do not remove -->
          <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="ordered">
                <item id="TypoEx-1">[ - - - - - - - - - - - - - - - - - - ] /</item>
-               <item id="TypoEx-2">not addressed</item>
+               <item>not addressed</item>
             </list></item>
       </list>
    </div><div id="lostline-regex" type="gl-regextest">
   <head>Regular Expression Test</head>
-            <list><item id="Regex-1">
-            blah</item>
-<item id="Regex-2">
-            blah</item>
+   	<list><item id="Regex-1"><![CDATA[(^\[(\s*(-(\s*))+)\s*\])  =   <gap reason="lost" extent="1" unit="line"/>]]></item>
 </list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lostline-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1">
             <gap reason="lost" extent="1" unit="line"/></item>
-         <item id="EncEx-2">
+         <item>
             <gap id="gap23" reason="lost" unit="line"/>
             <certainty target="gap23" locus="extent" degree="low"/></item>
       </list>
@@ -72,9 +69,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="lostline-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
+      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
       <p id="lostline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
-      <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-12-03 18:15:35 $</seg></p>
+      <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: hcayless $</seg></p>
    </div></div>
 

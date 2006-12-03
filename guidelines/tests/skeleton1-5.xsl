@@ -191,8 +191,8 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 						<axsl:analyze-string select="$replace" regex="%g(\d)%len(\d)">
 							<axsl:matching-substring>
 								<axsl:variable name="g" select="xs:integer(regex-group(1))"/>
-								<axsl:variable name="len" select="xs:integer(regex-group(1))"/>
-								<axsl:analyze-string select="$source" regex="$regex">
+								<axsl:variable name="len" select="xs:integer(regex-group(2))"/>
+								<axsl:analyze-string select="$source" regex="{$regex}">
 									<axsl:matching-substring>
 										<axsl:value-of select="epidoc:convert($source, $regex, replace($replace, '%g\d%len\d', epidoc:countMatches(regex-group($g), regex-group($len))))"/>
 									</axsl:matching-substring>
@@ -200,10 +200,10 @@ This program implements schematron 1.5 with some 1.6 extensions -->
 							</axsl:matching-substring>
 						</axsl:analyze-string>
 					</axsl:when>
-					<axsl:when test="matches($replace, '%genID\d')">
-						<axsl:analyze-string select="$replace" regex="id=&quot;%genID(\d)&quot;">
+					<axsl:when test="matches($replace, '%mkID(\w+\d+)')">
+						<axsl:analyze-string select="$replace" regex="id=&quot;%mkID(\w+\d+)&quot;">
 							<axsl:matching-substring>
-								<axsl:value-of select="epidoc:convert($source, $regex, replace($replace, concat('%genID', regex-group(1)), regex-group(1)))"/>
+								<axsl:value-of select="epidoc:convert($source, $regex, replace($replace, concat('%mkID', regex-group(1)), regex-group(1)))"/>
 							</axsl:matching-substring>
 						</axsl:analyze-string>
 					</axsl:when>
