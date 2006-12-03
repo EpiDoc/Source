@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 file:schemata/imsvdex_v1p0_thesaurus.xsd"
+    profileType="thesaurus" language="en" orderSignificant="false">
+
+    <vocabName>
+        <langstring>Modern Country Codes Used by the Epigraphic Database Roma (EDR)</langstring>
+    </vocabName>
+
+    <vocabIdentifier isRegistered="false">edrcountrycodes</vocabIdentifier>
+
+    <term>
+        <termIdentifier>A</termIdentifier>
+        <caption>
+            <langstring language="it">Austria</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>CH</termIdentifier>
+        <caption>
+            <langstring language="it">Svizzera</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>F</termIdentifier>
+        <caption>
+            <langstring language="it">Francia</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>HR</termIdentifier>
+        <caption>
+            <langstring language="it">Croazia</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>I</termIdentifier>
+        <caption>
+            <langstring language="it">Italia</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>M</termIdentifier>
+        <caption>
+            <langstring language="it">Malta</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>MC</termIdentifier>
+        <caption>
+            <langstring language="it">Monaco</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>RSM</termIdentifier>
+        <caption>
+            <langstring language="it">San Marino</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>SLO</termIdentifier>
+        <caption>
+            <langstring language="it">Slovenia</langstring>
+        </caption>
+    </term>
+    <term>
+        <termIdentifier>V</termIdentifier>
+        <caption>
+            <langstring language="it">Città del Vaticano</langstring>
+        </caption>
+    </term>
+    
+    <!-- the following relationships are used to crosswalk the idiosyncratic identifier codes used by EDR, and defined formally above, to the
+        ISO 3166-1 alpha 2 codes required by EpiDoc, which are formally defined in an external vdex vocabulary file -->
+    <relationship>
+        <!-- austria -->
+        <sourceTerm>A</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">AT</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Svizzera -->
+        <sourceTerm>CH</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">CH</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Francia -->
+        <sourceTerm>F</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">FR</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Croazia -->
+        <sourceTerm>HR</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">HR</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Italia -->
+        <sourceTerm>I</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">IT</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Malta -->
+        <sourceTerm>M</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">MT</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Monaco -->
+        <sourceTerm>MC</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">MC</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- San Marino -->
+        <sourceTerm>RSM</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">SM</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Slovenia -->
+        <sourceTerm>SLO</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">SI</targetTerm>
+    </relationship>
+    <relationship>
+        <!-- Città del Vaticano -->
+        <sourceTerm>V</sourceTerm>
+        <targetTerm vocabularyIdentifier="countrycodes">VA</targetTerm>
+    </relationship>
+    
+    
+</vdex>
