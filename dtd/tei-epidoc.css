@@ -305,14 +305,6 @@ p {
   display: block;
 }
 
-postBox {
-  display: block;
-}
-
-principal {
-  display: block;
-}
-
 profileDesc {
   display: block;
 }
@@ -408,8 +400,8 @@ sourceDesc {
 	content: 'vacat';
 } */
 
-TEI\.2 {
-  display: block;
+TEI\.2:before {
+  content: '[' attr(id) ']';
 }
 
 text {
@@ -424,6 +416,11 @@ title {
 
 titleStmt {
   display: block;
+}
+
+xptr:before {
+  color: red ;
+  content: '[' attr(from) ']' ;
 }
 
 xref {
