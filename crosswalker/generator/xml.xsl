@@ -5,7 +5,6 @@
        application with the ability to produce XML files. -->
 <!-- ========================================================================= -->
 <xsl:stylesheet xmlns="http://www.w3.org/1999/XSL/TransformAlias" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias" version="1.0">
-    <xsl:import href="substitutions.xsl"/>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- this template writes the instructions to copy data from the source xml file to the
             destination xml file -->

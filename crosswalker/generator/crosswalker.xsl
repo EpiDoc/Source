@@ -15,10 +15,13 @@
 <!-- ========================================================================= -->
 <xsl:stylesheet xmlns="http://www.w3.org/1999/XSL/TransformAlias"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias" version="1.0">
+    xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias" 
+    xmlns:vdex="http://www.imsglobal.org/xsd/imsvdex_v1p0"
+    version="1.0">
     <xsl:import href="copy.xsl" />
     <xsl:import href="csv.xsl" />
     <xsl:import href="xml.xsl" />
+    <xsl:import href="substitutions.xsl"/>
     <xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl" />
     <xsl:output encoding="UTF-8" method="xml" indent="no" />
     <xsl:param name="generatordir">../../generator/</xsl:param>

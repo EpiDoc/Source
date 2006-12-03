@@ -219,8 +219,8 @@
         </xsl:variable>
         <axsl:call-template name="stringReplace">
             <axsl:with-param name="input"><axsl:value-of select="&#x24;{$destname}"/></axsl:with-param>
-            <axsl:with-param name="find"><xsl:value-of select="stringReplace/find"/></axsl:with-param>
-            <axsl:with-param name="replace"><xsl:value-of select="stringReplace/replace" /></axsl:with-param>
+            <axsl:with-param name="find"><axsl:text><xsl:value-of select="stringReplace/find"/></axsl:text></axsl:with-param>
+            <axsl:with-param name="replace"><axsl:text><xsl:value-of select="stringReplace/replace" /></axsl:text></axsl:with-param>
         </axsl:call-template>
     </xsl:template>
 </xsl:stylesheet>

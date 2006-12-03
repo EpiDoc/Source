@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="file:/C:/TomDocs/epidocwork/epidoc-sf/crosswalker/crosswalks/crosswalk.rng" type="xml"?>
 <crosswalk source="EDR" destination="KV">
     <input>
         <format>XML</format>
@@ -52,16 +51,24 @@
                         </source>
                     </copy>
                     <element name="reg">
-                        <!-- need to add code to substitute ISO code for EDR code -->
                         <attribute name="key">
                             <source>
                                 <xpath>land</xpath>
                             </source>
+                            <substitutions type="vdex">
+                                <sourceThesaurus>edrcountrycodes</sourceThesaurus>
+                                <targetThesaurus>countrycodes</targetThesaurus>
+                                <target>termIdentifier</target>
+                            </substitutions>
                         </attribute>
                         <source>
                             <xpath>land</xpath>
                         </source>
-                        <!-- add code here: substitute regularization for code -->
+                        <substitutions type="vdex">
+                            <sourceThesaurus>edrcountrycodes</sourceThesaurus>
+                            <targetThesaurus>countrycodes</targetThesaurus>
+                            <target>caption</target>
+                        </substitutions>
                     </element>
                 </element>
 
@@ -127,8 +134,6 @@
                             <xpath>denkmaltyp</xpath>
                         </source>
                     </element>
-
-                    <!-- add: reg and id -->
                 </element>
 
                 <!-- rei_mat = "rei materia" comes from the EDR schema field "material" -->
@@ -144,10 +149,10 @@
                             <source>
                                 <xpath>material</xpath>
                             </source>
-<!--                             <stringReplace>
-                                <find> </find>
+                             <stringReplace>
+                                <find xml:space="preserve"> </find>
                                 <replace>_</replace>
-                            </stringReplace> -->
+                            </stringReplace>
                         </attribute>
                         <source>
                             <xpath>material</xpath>
@@ -169,19 +174,17 @@
                             <source>
                                 <xpath>scriptura</xpath>
                             </source>
-                            <stringReplace>
-<!-- stopped here: searching for whitespace causes stack overflow error -->
-                                <!-- see also commented out section above -->
-                                <find> </find>
+                           <stringReplace>
+                                <find xml:space="preserve"> </find>
                                 <replace>_</replace>
-                            </stringReplace>
-                            <!-- <stringReplace>
+                            </stringReplace> 
+                            <stringReplace>
                                 <find>.</find>
                                 <replace></replace>
-                            </stringReplace> -->
+                            </stringReplace>
                         </attribute>
                         <source>
-                            <xpath>material</xpath>
+                            <xpath>scriptura</xpath>
                         </source>
                     </element>
                     
