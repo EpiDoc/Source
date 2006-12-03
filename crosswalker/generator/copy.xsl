@@ -17,7 +17,13 @@
           stores the same in a variable with the name of the destination field. -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <xsl:template name="copy-get-value">
-        <axsl:variable name="{destination}">
+        <xsl:variable name="destname">
+            <xsl:choose>
+                <xsl:when test="destination"><xsl:value-of select="destination"/></xsl:when>
+                <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <axsl:variable name="{$destname}">
             <xsl:choose>
                 <xsl:when test="source">
                     <xsl:call-template name="copy-get-value-source"/>
@@ -189,7 +195,13 @@
                 <xsl:call-template name="substitutions"/>
             </xsl:when>
             <xsl:otherwise>
-                <axsl:value-of select="&#x24;{destination}"/>
+                <xsl:variable name="destname">
+                    <xsl:choose>
+                        <xsl:when test="destination"><xsl:value-of select="destination"/></xsl:when>
+                        <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
+                    </xsl:choose>
+                </xsl:variable>
+                <axsl:value-of select="&#x24;{$destname}"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -199,8 +211,14 @@
           the source data value and emits the result as a destination-ready text value -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
     <xsl:template name="copy-stringReplace">
+        <xsl:variable name="destname">
+            <xsl:choose>
+                <xsl:when test="destination"><xsl:value-of select="destination"/></xsl:when>
+                <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
         <axsl:call-template name="stringReplace">
-            <axsl:with-param name="input"><axsl:value-of select="&#x24;{destination}"/></axsl:with-param>
+            <axsl:with-param name="input"><axsl:value-of select="&#x24;{$destname}"/></axsl:with-param>
             <axsl:with-param name="find"><xsl:value-of select="stringReplace/find"/></axsl:with-param>
             <axsl:with-param name="replace"><xsl:value-of select="stringReplace/replace" /></axsl:with-param>
         </axsl:call-template>

@@ -22,7 +22,7 @@
                     </source>
                 </copy>
 
-                <!-- "numerus" comes from the EDR id number (id_nr) --> 
+                <!-- "numerus" comes from the EDR id number (id_nr) -->
                 <element name="numerus">
                     <copy>
                         <destination>orig</destination>
@@ -53,14 +53,18 @@
                     </copy>
                     <element name="reg">
                         <!-- need to add code to substitute ISO code for EDR code -->
-                        <attribute name="key"><source><xpath>land</xpath></source></attribute>
+                        <attribute name="key">
+                            <source>
+                                <xpath>land</xpath>
+                            </source>
+                        </attribute>
                         <source>
                             <xpath>land</xpath>
                         </source>
                         <!-- add code here: substitute regularization for code -->
                     </element>
                 </element>
-                
+
                 <!-- urbs_ant = "urbs antiqua" comes from the EDR schema field "fo_antik" -->
                 <element name="urbs_ant">
                     <copy>
@@ -70,7 +74,7 @@
                         </source>
                     </copy>
                 </element>
-                
+
                 <!-- urbs_nos = "urbs nostrae aetatis" comes from the EDR schema field "fo_modern" -->
                 <element name="urbs_nos">
                     <copy>
@@ -80,7 +84,7 @@
                         </source>
                     </copy>
                 </element>
-                
+
                 <!-- loc_inv = "locus inventionis" comes from the EDR schema field "fundstelle" -->
                 <element name="loc_inv">
                     <copy>
@@ -90,7 +94,7 @@
                         </source>
                     </copy>
                 </element>
-                
+
                 <!-- loc_ads = "locus adservationis" comes from the EDR schmea field "aufbewahrung" -->
                 <element name="loc_ads">
                     <copy>
@@ -100,7 +104,7 @@
                         </source>
                     </copy>
                 </element>
-                
+
                 <!-- rer_distrib = "rerum inscriptarum distributio" comes from the EDR schema field "denkmaltyp" -->
                 <element name="rer_distrib">
                     <copy>
@@ -109,55 +113,158 @@
                             <xpath>denkmaltyp</xpath>
                         </source>
                     </copy>
+                    <element name="reg">
+                        <attribute name="key">
+                            <source>
+                                <xpath>denkmaltyp</xpath>
+                            </source>
+                            <stringReplace>
+                                <find>, </find>
+                                <replace>_</replace>
+                            </stringReplace>
+                        </attribute>
+                        <source>
+                            <xpath>denkmaltyp</xpath>
+                        </source>
+                    </element>
+
                     <!-- add: reg and id -->
                 </element>
-                
+
                 <!-- rei_mat = "rei materia" comes from the EDR schema field "material" -->
                 <element name="rei_mat">
                     <copy>
                         <destination>orig</destination>
+                        <source>
+                            <xpath>material</xpath>
+                        </source>
                     </copy>
-                    <source>
-                        <xpath>material</xpath>
-                    </source>
-                    <!-- add reg and id -->
+                    <element name="reg">
+                        <attribute name="key">
+                            <source>
+                                <xpath>material</xpath>
+                            </source>
+<!--                             <stringReplace>
+                                <find> </find>
+                                <replace>_</replace>
+                            </stringReplace> -->
+                        </attribute>
+                        <source>
+                            <xpath>material</xpath>
+                        </source>
+                    </element>
+                    
                 </element>
-                
+
                 <!-- "scriptura" comes from the EDR schema field "scriptura" -->
                 <element name="scriptura">
                     <copy>
                         <destination>orig</destination>
+                        <source>
+                            <xpath>scriptura</xpath>
+                        </source>
                     </copy>
-                    <source>
-                        <xpath>scriptura</xpath>
-                    </source>
-                    <!-- add reg and id -->
+                    <element name="reg">
+                        <attribute name="key">
+                            <source>
+                                <xpath>scriptura</xpath>
+                            </source>
+                            <stringReplace>
+<!-- stopped here: searching for whitespace causes stack overflow error -->
+                                <!-- see also commented out section above -->
+                                <find> </find>
+                                <replace>_</replace>
+                            </stringReplace>
+                            <!-- <stringReplace>
+                                <find>.</find>
+                                <replace></replace>
+                            </stringReplace> -->
+                        </attribute>
+                        <source>
+                            <xpath>material</xpath>
+                        </source>
+                    </element>
+                    
                 </element>
-                
-                <!-- "scriptura" comes from the EDR schema field "scriptura" -->
-                <element name="scriptura">
-                    <copy>
-                        <destination>orig</destination>
-                    </copy>
-                    <source>
-                        <xpath>scriptura</xpath>
-                    </source>
-                    <!-- add reg and id -->
-                </element>
-                
+
                 <!-- "lingua" comes from the EDR schema field "scriptura" -->
                 <element name="lingua">
                     <copy>
                         <destination>orig</destination>
+                        <source>
+                            <xpath>lingua</xpath>
+                        </source>
                     </copy>
-                    <source>
-                        <xpath>lingua</xpath>
-                    </source>
                     <!-- add reg and id ; split for multiples if necessary -->
                 </element>
-                
-                
-                
+
+                <!-- tit_distrib = "Titulorum distributio" comes from the EDR schema field "scriptura" -->
+                <element name="tit_distrib">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>i_gattung</xpath>
+                        </source>
+                    </copy>
+                    <!-- add reg and id -->
+                </element>
+
+                <!-- vir_distrib = "Virorum distributio" comes from the EDR schema field "scriptura" -->
+                <element name="vir_distrib">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>livellosocialeTot</xpath>
+                        </source>
+                    </copy>
+                    <!-- add reg and id; split for multiples if necessary -->
+                </element>
+
+                <!-- "editiones" comes from the EDR schema field "Bibliografia" -->
+                <element name="editiones">
+                    <!-- this needs code to split the field multiple times, and do wrapping  ont he result -->
+                </element>
+
+                <!-- "textus" comes from the EDR schema field "Testo" -->
+                <element name="textus">
+                    <!-- this needs code to escape pointy brackets? -->
+                    <source>
+                        <xpath>Testo</xpath>
+                    </source>
+                </element>
+
+                <!-- "apparatus" comes from the EDR schema field "Apparato" -->
+                <element name="apparatus">
+                    <source>
+                        <xpath>Apparato</xpath>
+                    </source>
+                </element>
+
+                <!-- "tempus" is a complicated combination of fields from the EDR schema -->
+                <element name="tempus"> BBBAAAWWWAHAHAHAHAHA!!!!!! </element>
+
+                <!-- "sched_script" = "schedae scriptor" comes from the EDR schema field "bearbeiter" -->
+                <element name="sched_script">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>bearbeiter</xpath>
+                        </source>
+                    </copy>
+                </element>
+
+                <!-- "temp_sched" = "tempus schedae" comes from the EDR schema field "datum" -->
+                <element name="temp_sched">
+                    <copy>
+                        <destination>temp_sched</destination>
+                        <source>
+                            <xpath>datum</xpath>
+                        </source>
+                        <!-- add code to strip out time -->
+                    </copy>
+                </element>
+
+
             </element>
         </for-each>
     </element>
