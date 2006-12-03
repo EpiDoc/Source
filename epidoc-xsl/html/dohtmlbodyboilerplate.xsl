@@ -80,6 +80,9 @@
                     || <xsl:element name="a"><xsl:attribute name="href"
                             >mailto:markup@lsv.uky.edu?subject=guidelines comment on <xsl:value-of
                             select="@id"/>.xml</xsl:attribute>post a comment</xsl:element>
+                    <xsl:if test="//tei:div[@type='gl-regextest']">
+                    || <a href="{/tei:div/@id}.test" target="_blank">test this page</a>
+                    </xsl:if>
                     
                 </xsl:element>
                 <xsl:variable name="cvsname"><xsl:value-of select="substring-before(substring-after(tei:div[@type='gl-cvs']//tei:seg[@n='cvs-revision-name'], '&#x24;Name: '),'&#x24;')"/></xsl:variable>
