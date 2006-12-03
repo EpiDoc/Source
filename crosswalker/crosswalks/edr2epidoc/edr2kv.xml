@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="file:/C:/TomDocs/epidocwork/epidoc-sf/crosswalker/crosswalks/crosswalk.rng" type="xml"?>
+<crosswalk source="EDR" destination="KV">
+    <input>
+        <format>XML</format>
+        <encoding>UTF-8</encoding>
+    </input>
+    <output>
+        <format>XML</format>
+    </output>
+
+
+    <element name="inscriptiones">
+        <for-each select="//epigr">
+            <element name="inscriptio">
+
+                <!-- filename  comes from the EDR id number (id_nr) -->
+                <copy>
+                    <destination>filename</destination>
+                    <source>
+                        <xpath>id_nr</xpath>
+                    </source>
+                </copy>
+
+                <!-- "numerus" comes from the EDR id number (id_nr) --> 
+                <element name="numerus">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>id_nr</xpath>
+                        </source>
+                    </copy>
+                </element>
+
+                <!-- regio_ant = "regio antiqua" comes from the EDR schema field "provinz" -->
+                <element name="regio_ant">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>provinz</xpath>
+                        </source>
+                    </copy>
+                </element>
+
+                <!-- regio_nos = "regio nostrae aetatis" comes from the EDR schema field "land" 
+                        and a standard key and full name are added in processing -->
+                <element name="regio_nos">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>land</xpath>
+                        </source>
+                    </copy>
+                    <element name="reg">
+                        <!-- need to add code to substitute ISO code for EDR code -->
+                        <attribute name="key"><source><xpath>land</xpath></source></attribute>
+                        <source>
+                            <xpath>land</xpath>
+                        </source>
+                        <!-- add code here: substitute regularization for code -->
+                    </element>
+                </element>
+                
+                <!-- urbs_ant = "urbs antiqua" comes from the EDR schema field "fo_antik" -->
+                <element name="urbs_ant">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>fo_antik</xpath>
+                        </source>
+                    </copy>
+                </element>
+                
+                <!-- urbs_nos = "urbs nostrae aetatis" comes from the EDR schema field "fo_modern" -->
+                <element name="urbs_nos">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>fo_modern</xpath>
+                        </source>
+                    </copy>
+                </element>
+                
+                <!-- loc_inv = "locus inventionis" comes from the EDR schema field "fundstelle" -->
+                <element name="loc_inv">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>fundstelle</xpath>
+                        </source>
+                    </copy>
+                </element>
+                
+                <!-- loc_ads = "locus adservationis" comes from the EDR schmea field "aufbewahrung" -->
+                <element name="loc_ads">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>aufbewahrung</xpath>
+                        </source>
+                    </copy>
+                </element>
+                
+                <!-- rer_distrib = "rerum inscriptarum distributio" comes from the EDR schema field "denkmaltyp" -->
+                <element name="rer_distrib">
+                    <copy>
+                        <destination>orig</destination>
+                        <source>
+                            <xpath>denkmaltyp</xpath>
+                        </source>
+                    </copy>
+                    <!-- add: reg and id -->
+                </element>
+                
+                <!-- rei_mat = "rei materia" comes from the EDR schema field "material" -->
+                <element name="rei_mat">
+                    <copy>
+                        <destination>orig</destination>
+                    </copy>
+                    <source>
+                        <xpath>material</xpath>
+                    </source>
+                    <!-- add reg and id -->
+                </element>
+                
+                <!-- "scriptura" comes from the EDR schema field "scriptura" -->
+                <element name="scriptura">
+                    <copy>
+                        <destination>orig</destination>
+                    </copy>
+                    <source>
+                        <xpath>scriptura</xpath>
+                    </source>
+                    <!-- add reg and id -->
+                </element>
+                
+                <!-- "scriptura" comes from the EDR schema field "scriptura" -->
+                <element name="scriptura">
+                    <copy>
+                        <destination>orig</destination>
+                    </copy>
+                    <source>
+                        <xpath>scriptura</xpath>
+                    </source>
+                    <!-- add reg and id -->
+                </element>
+                
+                <!-- "lingua" comes from the EDR schema field "scriptura" -->
+                <element name="lingua">
+                    <copy>
+                        <destination>orig</destination>
+                    </copy>
+                    <source>
+                        <xpath>lingua</xpath>
+                    </source>
+                    <!-- add reg and id ; split for multiples if necessary -->
+                </element>
+                
+                
+                
+            </element>
+        </for-each>
+    </element>
+</crosswalk>
