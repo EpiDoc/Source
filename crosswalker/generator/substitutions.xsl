@@ -21,12 +21,15 @@
                     <xsl:attribute name="test">
                         <xsl:choose>
                             <xsl:when test="match">&#x24;<xsl:value-of select="$varname"/> = '<xsl:value-of select="match"/>'</xsl:when>
-                            <xsl:when test="partialMatch">contains(&#x24;<xsl:value-of select="$varname"/>, '<xsl:value-of select="match"/>')</xsl:when>
+                            <xsl:when test="partialMatch">contains(&#x24;<xsl:value-of select="$varname"/>, '<xsl:value-of select="partialMatch"/>')</xsl:when>
                         </xsl:choose>
                     </xsl:attribute>
                     <xsl:value-of select="replace"/>
                 </xsl:element>
             </xsl:for-each>
+            <xsl:if test="substitutions/otherwise">
+                <xsl:element name="xsl:otherwise"><xsl:value-of select="substitutions/otherwise"/></xsl:element>
+            </xsl:if>
         </xsl:element>
     </xsl:template>
     
