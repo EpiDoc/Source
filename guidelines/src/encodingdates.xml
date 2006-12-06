@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/encodingdates.xml,v 1.1 2006-12-06 21:33:09 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div id="encodingdates" xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"><head>Dates</head>
+            <ab><rs type="conformance">aiegl</rs></ab>
+<p n="regexerror">divcount mismatch</p><p>Dates may be identified in the ancient text (consular years, olympiads, etc.), or in editorial discussion. The date element contains a date in any format. There are basically three contexts in which an expression might be tagged as a date in an EpiDoc file:</p><list type="unordered">
+      <item>a regular date expression in a bibliographical citation or editorial discussion;</item>
+      <item>any kind of date expression in the original text of an inscription;</item>
+      <item>the editor's dating of an inscription or monument, either by a specific date or a span of years or centuries.</item>
+   </list><p>(Note: A year or regular date in the Gregorian calendar may simply be tagged as a <tag>date</tag> with no further information required from attribute values. If the date or span of dates is expressed in prose, in ancient terms, or in a different calendar, further information may be given using the following attributes.)</p><p>There are two groups of attributes which add information to the date element. The attributes 'value' and 'precision' express a single date, exactly or approximately, whereas 'notBefore', 'notAfter', and 'exact' define a span of possible dates within which the date in question may be located.</p><list type="unordered">
+      <item><att>value</att>: in an ancient date expression this attribute may indicate the regularised date in the Julian calendar; if the date is already numerical and unproblematic, it may be ommitted;</item>
+      <item><att>precision</att>: the level of accuracy to be assigned to "value", e.g. "approx" or "exact";</item>
+   </list><ab part="N">versus:</ab><list type="unordered">
+      <item><att>notBefore</att>: beginning of a span of possible dates;</item>
+      <item><att>notAfter</att>: end of span of possible dates;</item>
+      <item><att>exact</att>: refers to the previous two attributes; values include 'notBefore', 'notAfter', 'both' and 'none'.</item>
+   </list><p>Date expressions should be given in the form recommended by ISO 8601:2000, i.e. 'yyyy-mm-dd'. This means that years below 1000 (either BCE or CE) need leading zeroes to make them up to four digits. (See examples below.) When a date is not known to the very day the shortened forms 'yyyy-mm' and 'yyyy' may be used. Dates BCE should be indicated by the placement of a minus sign (hyphen) before the date expression. (Unlike ISO 8601:2000 we do not assume the existance of a year zero in the Gregorian calendar, so 44 BCE is "-0044" not "-0043".)</p><p>There is also an additional attribute <att>calendar</att>, which may be used to express the non-regular dating system in the case of dates in the original text. Example values include: 'Attic', 'A.U.C.', 'Julian', 'Amphictionic', 'Macedonian', etc.</p><p>(Note: the difference between a single date <hi rend="strong">within</hi> a span of possibilities (marked by the <att>notBefore</att> and <att>notAfter</att> attributes of <tag>date</tag>, as above) and an expression indicating a time period (such as the reign of an emperor). For the latter EpiDoc recommends the use of <tag>dateRange</tag>, as documented in the TEI Guidelines.)</p><div id="encodingdates-regex-1" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+<item id="Regex-3">
+            blah</item>
+<item id="Regex-4">
+            blah</item>
+<item id="Regex-5">
+            blah</item>
+<item id="Regex-6">
+            blah</item>
+<item id="Regex-7">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="encodingdates-edition" type="gl-edition">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      
+         
+         <list type="ordered">
+            <item id="EncEx-1"><date notBefore="-0399" notAfter="-0398" exact="both">399/8 BCE</date></item>
+            <item id="EncEx-2"><date notBefore="0201" notAfter="0225" exact="none">First quarter third century CE</date></item>
+            <item id="EncEx-3"><date notBefore="0014-08-19" notAfter="0045" exact="notBefore">Early Julio-Claudian</date></item><item id="EncEx-4"><date notAfter="-0027-01-16" notBefore="-0100" exact="notAfter">Late Republican</date></item>
+            <item id="EncEx-5"><date value="-0044-03-15" precision="exact">the Ides of March 44</date> (Note the use of Julian calendar!)</item>
+            <item id="EncEx-6" lang="grc"><date value="0523-02-14" precision="exact">ἰνδικτίωνος α´ μηνὸς β´, ιδ´, ἡμέρα τρίτη</date></item>
+         <item id="EncEx-7"><bibl><author>Roueché</author> (<date>1989</date>), no. 22</bibl></item></list>
+      
+      
+   </div><div id="encodingdates-tei-p4links" type="gl-tei-p4links">
+      <head>TEI P4 links</head>
+      <list type="simple">
+         <item><xref href="http://www.tei-c.org/P4X/ref-DATE.html" ><tag>date</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/CO.html#CONADA" >6.4.4. Dates and Times</xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/ND.html#NDDATE" >20.4 Dates and Time</xref></item>
+      </list>
+   </div><div id="encodingdates-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl><respStmt><resp>re-encoded from xwiki to TEI-ish</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="encodingdates-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="encodingdates-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.1 $</seg></p>
+      <p id="encodingdates-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="encodingdates-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-12-06 21:33:09 $</seg></p>
+      <p id="encodingdates-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

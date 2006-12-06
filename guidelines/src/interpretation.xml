@@ -26,40 +26,36 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/othermarkupissues.xml,v 1.8 2006-12-06 21:33:09 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/interpretation.xml,v 1.1 2006-12-06 21:33:09 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="othermarkupissues" lang="en" rend="multipart">
-   <head>Other markup issues</head>
-   <xi:include href="control.xml"/>
-    <xi:include href="measurements.xml"/>
-    <xi:include href="encodingdates.xml"/>
-    <xi:include href="tagging-namesandpersons.xml"/>
-    <xi:include href="geography.xml"/>
-    <xi:include href="languages.xml"/>
-    <xi:include href="numbersandnumerals.xml"/>
-    <xi:include href="literature.xml"/>
-    <xi:include href="crossreferences.xml"/>
-    <div id="othermarkupissues-responsibility" type="gl-responsibility">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="interpretation" lang="en" rend="multipart">
+   <head>Interpretation: Analysis and Translation</head>
+   <p>yes, and ... </p>
+    <xi:include href="typeoftext.xml"/>
+    <xi:include href="dateinterpretation.xml"/>
+    <!-- dateoftext.xml and datesintext.xml -->
+    <xi:include href="namesandpersons.xml"/>
+    <div id="interpretation-responsibility" type="gl-interpretation">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
                     <resp>author</resp>
-                    <name>to be added</name>
+                    <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
         </listBibl>
     </div>
-    <div id="othermarkupissues-cvs" type="gl-cvs">
+    <div id="interpretation-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="othermarkupissues-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.8 $</seg></p>
-        <p id="othermarkupissues-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+        <p id="interpretation-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.1 $</seg></p>
+        <p id="interpretation-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
             >$Name: not supported by cvs2svn $</seg></p>
-        <p id="othermarkupissues-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+        <p id="interpretation-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
             >$Date: 2006-12-06 21:33:09 $</seg></p>
-        <p id="othermarkupissues-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+        <p id="interpretation-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
             >$Author: paregorios $</seg></p>
     </div>
 </div>
