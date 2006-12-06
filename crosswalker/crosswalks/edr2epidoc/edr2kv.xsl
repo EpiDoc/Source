@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:str="http://exslt.org/strings" xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:str="http://exslt.org/strings" 
     xmlns:vdex="http://www.imsglobal.org/xsd/imsvdex_v1p0" version="1.0">
     <axsl:import href="../../generator//stringReplace.xsl" />
     <axsl:output indent="no" method="xml" encoding="UTF-8" />
@@ -610,7 +610,7 @@
                         </axsl:for-each>
                     </axsl:element>
                     <axsl:element name="editiones">
-                        <axsl:element name="tei:bibl">Not. Sc., 1923, p. 368 (E. Gatti)
+                        <axsl:element name="bibl">Not. Sc., 1923, p. 368 (E. Gatti)
                         (1)</axsl:element>
                     </axsl:element>
                     <axsl:element name="textus">
@@ -634,7 +634,7 @@
                         <axsl:value-of select="$apparatus" />
                     </axsl:element>
                     <axsl:element name="tempus">
-                        <axsl:element name="tei:date">
+                        <axsl:element name="date">
                             <axsl:attribute name="type">textDate</axsl:attribute>
                             <axsl:attribute name="value">0301</axsl:attribute>
                             <axsl:attribute name="precision">exact</axsl:attribute>d.C.

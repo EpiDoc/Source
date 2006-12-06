@@ -8,7 +8,6 @@
 	extension-element-prefixes="exsl dyn"
 	version="1.0" 
 	exclude-result-prefixes="exsl dyn">
-	<xsl:output doctype-system="../../../dtd/tei-epidoc.dtd"/>
 
 	<xsl:template match="/inscriptiones">
 		<xsl:apply-templates select="inscriptio"/>
@@ -16,7 +15,7 @@
 	
 	<xsl:template match="inscriptio">
 		<xsl:variable name="insc_path" select="."/>
-		<exsl:document href="{normalize-space(filename)}-out.xml" doctype-public="../../../dtd/tei-epidoc.dtd">
+		<exsl:document href="{normalize-space(filename)}.xml" doctype-system="../../../dtd/tei-epidoc.dtd">
 			<xsl:apply-templates select="document('edrkv2epidoc.xml')"><xsl:with-param name="root" select="$insc_path"/></xsl:apply-templates>
 		</exsl:document>
 	</xsl:template>
@@ -43,7 +42,10 @@
 				<xsl:if test="$key">
 					<xsl:attribute name="key"><xsl:value-of select="$key"/></xsl:attribute>
 				</xsl:if>
-				<xsl:value-of select="."/>
+				<xsl:if test="ancestor::*[@cert = 'low']">
+					<xsl:copy-of select="ancestor::*[@cert]/@cert"/>
+				</xsl:if>
+				<xsl:copy-of select="./node()"/>
 			</xsl:element>
 		</xsl:for-each>
 	</xsl:template>

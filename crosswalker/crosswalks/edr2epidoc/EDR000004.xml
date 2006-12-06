@@ -1,29 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2006-12-02T09:57:46">
-    <epigr>
-        <id_nr>EDR000004</id_nr>
-        <provinz>Roma</provinz>
-        <land>I</land>
-        <fo_antik>Roma</fo_antik>
-        <fo_modern>Roma</fo_modern>
-        <fundstelle>Roma, via Livenza (già via Salaria antica), colombario</fundstelle>
-        <aufbewahrung>Roma, Museo Civiltà Romana (già Palazzo Esposizioni, casse 160, 163)</aufbewahrung>
-        <denkmaltyp>tabula</denkmaltyp>
-        <material>marmor</material>
-        <scriptura>scalpro</scriptura>
-        <lingua>latina-graeca</lingua>
-        <i_gattung>sepucralis</i_gattung>
-        <livellosocialeTot>ord. eq.; offic. priv.</livellosocialeTot>
-        <Bibliografia>Not. Sc., 1923, p. 368 (E. Gatti) (1)</Bibliografia>
-        <Testo>L̲(ucius) C̲estius L(uci) ((et mulieris)) l(ibertus) Amaranthus ollam emit ab Cn(aeo)
-            Papirio Felice.</Testo>
-        <Apparato>Textus secundum (1), contulit ad imaginem archivii photographici Instituti
-            Epigraphiae Latinae (Roma) Mazzini a. 2002</Apparato>
-        <dat_tag>0</dat_tag>
-        <dat_monat>0</dat_monat>
-        <dat_jahr_a>1</dat_jahr_a>
-        <dat_jahr_e>50</dat_jahr_e>
-        <bearbeiter>GIULIANO MAZZINI</bearbeiter>
-        <datum>2002-12-06T00:00:00</datum>
-    </epigr>
-</dataroot>
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "../../../dtd/tei-epidoc.dtd">
+<TEI.2 lang="la">
+	<teiHeader status="new" type="text">
+		<fileDesc>
+			<titleStmt>
+				<title level="m" type="main">EDR000004</title>
+				<editor role="editor">GIULIANO MAZZINI</editor>
+			</titleStmt>
+			<publicationStmt>
+				
+			</publicationStmt>
+			<sourceDesc default="NO">
+				<p><xref type="EDR" evaluate="all" from="ROOT" targOrder="Y" to="DITTO">EDR000004</xref></p>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<langUsage lang="it" default="NO">
+				<language id="grc">Greco Antico</language>
+				<language id="it">Italiano</language>
+				<language id="la">Latina</language>
+			</langUsage>
+		</profileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div type="description" org="uniform" part="N" sample="complete"><head>Descriptio</head><p>Rerum inscriptarum distributio: <rs type="objectType">tabula</rs></p><p>Rei materia: <rs type="material" key="marmor">marmor</rs></p><p>Scriptura: <rs type="execution" key="scalpro">scalpro</rs></p><p>Lingua: <rs type="language" key=""/><rs type="language" key=""/></p></div><div type="commentary" org="uniform" part="N" sample="complete"><head>Commentarium</head><p>Titulorum distributio: <rs type="textType" key="sepucralis">sepucralis</rs></p><p>Virorum distributio: <rs type="personType">ord. eq.; offic. priv.</rs></p><p><date type="textDate" value="0301" precision="exact">d.C.
+                        301</date></p></div><div type="edition" lang="la" org="uniform" part="N" sample="complete">
+				<head>Textus</head>
+				<ab part="N">L&#x332;(ucius) C&#x332;estius L(uci) ((et mulieris)) l(ibertus) Amaranthus ollam emit ab Cn(aeo) Papirio Felice.</ab>
+			</div>
+			<div type="history" n="text-constituted-from" org="uniform" part="N" sample="complete"><head>Apparatus</head><p>Textus secundum (1), contulit ad imaginem archivii photographici Instituti Epigraphiae Latinae (Roma) Mazzini a. 2002</p></div><div type="history" n="locations" org="uniform" part="N" sample="complete"><head>Loci</head><p>Regio antiqua: <geogName type="ancientRegion" full="yes">Roma</geogName></p><p>
+				Regio nostrae aetatis: <geogName type="modernCountry" full="yes" key="IT">Italy</geogName></p><p>
+					Urbs antiqua: <placeName type="ancientFindspot" lang="la" full="yes" cert="low">Roma?</placeName></p><p>
+						Urbs nostrae aetatis: <placeName type="modernFindspot" lang="it" full="yes">Roma</placeName>
+</p><p>Locus inventionis: <rs type="found">Roma, via Livenza (gi&#xE0; via Salaria antica), colombario</rs></p><p>
+Locus adservationis: <rs type="lastLocation">Roma, Museo Civilt&#xE0; Romana (gi&#xE0; Palazzo Esposizioni, casse 160, 163)</rs></p></div><div type="bibliography" org="uniform" part="N" sample="complete"><head>Editiones</head><p><bibl default="NO">Not. Sc., 1923, p. 368 (E. Gatti)
+                        (1)</bibl></p></div><div type="figure" org="uniform" part="N" sample="complete"><head>Foto</head></div></body>
+	</text>
+</TEI.2>
