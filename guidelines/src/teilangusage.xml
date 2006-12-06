@@ -30,27 +30,99 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" id="teilangusage" lang="en">
     <head>Specifying available languages and scripts</head>
-    <ab><rs type="conformance">leiden</rs></ab>
+    <ab>
+        <rs type="conformance">leiden</rs>
+    </ab>
     <p>The TEI provides a <tag>langUsage</tag> element in the <tag>teiHeader</tag> whereby the
-        languages and scripts used in a given document or project must be declared before they may be
-        used in the document itself. The <tag>langUsage</tag> contains a list of standard language-and-script
-        codes, drawn from international standards (see: 
-        <xref href="http://www.w3.org/International/articles/language-tags/">Language tags in HTML and XML</xref>. 
-        Each such code may be glossed with an
-        appropriate description. Examples follow:</p>
+        languages and scripts used in a given document or project must be declared before they may
+        be used in the document itself. The <tag>langUsage</tag> contains a list of
+        language-and-script codes, drawn from international standards (see: <xref
+            href="http://www.w3.org/International/articles/language-tags/">Language tags in HTML and
+            XML</xref>; the standards document itself is <xref
+            href="ftp://ftp.rfc-editor.org/in-notes/rfc4646.txt">RFC 4646: Tags for Identifying
+            Languages (September 2006)</xref>). Each such code may be glossed with an appropriate
+        description (at the discretion of the project or editor). Examples follow:</p>
     <list>
         <item><tag>language id="la"</tag>Latin<tag>/language</tag></item>
         <item><tag>language id="grc"</tag>Ancient Greek<tag>/language</tag></item>
         <item><tag>language id="en"</tag>English<tag>/language</tag></item>
         <item><tag>language id="el"</tag>Modern Greek<tag>/language</tag></item>
         <item><tag>language id="grc-Latn"</tag>Ancient Greek in Latin characters<tag>/language</tag></item>
-        <item><tag>language id="la-Grek"</tag>Latin in Ancient Greek characters<tag>/language</tag></item>
+        <item><tag>language id="la-Grek"</tag>Latin in Ancient Greek
+        characters<tag>/language</tag></item>
     </list>
     <p>The <att>id</att> of each <tag>language</tag> should contain the 2-letter ISO language code,
         where one is available, or the 3-digit code where one is not (as in the case of ancient
-        Greek). The four-letter, case-sensitive script code should not be added as a subtag unless it is
-    not the usual (default) script for the language in question.</p>
-    <p>These languages are then available to be referred to by the <att>lang</att> or
-        <att>xml:lang</att> attribute on any element in the file. See <tag>tei:foreign</tag> and
-            <xref href="languages.xml">languages.xml</xref>.</p>
+        Greek). The four-letter, case-sensitive script code should not be added as a subtag unless
+        it is not the usual (default) script for the language in question. These languages are then
+        available to be referred to by the <att>lang</att> or <att>xml:lang</att> attribute on any
+        element in the file. See <tag>tei:foreign</tag> and <xref href="languages.xml"
+        >languages.xml</xref>.</p>
+
+    <p>Note that established practice of looking up language codes in various ISO-sponsored lists is
+        now deprecated. These lists function as the source for only some of the full set; The
+        Internet Assigned Numbers Authority (IANA) is the final aggregator and arbiter for language
+        codes. IANA&apos;s lists of language/script codes and related information are available
+        at:</p>
+    <list type="unordered">
+        <item>
+            <xref href="http://www.iana.org/assignments/language-subtag-registry">IANA Language
+                Subtag Registry</xref>
+        </item>
+        <item>
+            <xref href="http://www.iana.org/assignments/language-tag-extensions-registry">IANA
+                Language Tag Extensions Registry</xref>
+        </item>
+    </list>
+    <p>Note that, by definition, language subtags are case-neutral and all processing environments
+        are required to treat them in a case-insensitive manner. There is, however, a <hi
+            rend="strong">recommended</hi> captialization scheme &mdash; intended to help human
+        readers &mdash; which is reflected in the IANA registry. Note, however, that the TEI P4
+        DTD defines the standard <att>lang</att> attribute as an IDREF; this means that &mdash;
+        in order for the file to be valid &mdash; there must be one, and only one, exact copy of
+        each language code value in an <att>id</att> attribute somewhere in the file (i.e., on a
+            <tag>language</tag> element in the header, as described above). EpiDoc users therefore
+        must ensure that they make consistent use of capitalization in language tags across their
+        project. Best practice is a modification of the EpiDoc DTD to constrain the legal values for
+        the <att>lang</att> attribute so that they match the codes used in the <att>id</att>
+        attributes of the <tag>language</tag> tags in the header. So, for example, the default
+        EpiDoc DTD defines <att>lang</att> as follows: </p>
+    <list type="unordered">
+        <item>lang IDREF #IMPLIED</item>
+    </list>
+    <p>To match the example language code declarations above, this definition could be altered as
+        follows:</p>
+    <list type="unordered">
+        <item>lang (la | grc | en | el | grc-Latn | la-Grek) "en"</item>
+    </list>
+    <div id="teilangusage-responsibility" type="gl-responsibility" org="uniform" part="N"
+        sample="complete">
+        <head>Responsibility for this section</head>
+        <listBibl >
+            <bibl >
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+            <bibl >
+                <respStmt>
+                    <resp>converted XML</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="teilangusage-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="teilangusage-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+                cert="high" part="N">$Revision: 1.5 $</seg></p>
+        <p id="teilangusage-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+                cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+        <p id="teilangusage-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high"
+                part="N">$Date: 2006-12-06 13:13:17 $</seg></p>
+        <p id="teilangusage-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+                cert="high" part="N">$Author: paregorios $</seg></p>
+    </div>
+
 </div>
