@@ -37,6 +37,8 @@
                 <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
             </xsl:choose>
         </xsl:variable>
+        <!-- TOM!!!!!! -->
+        <xsl:variable name="sourcetermpath"></xsl:variable>
         <axsl:for-each select="document('../thesauri/{substitutions/sourceThesaurus}.xml')/descendant::vdex:relationship[vdex:sourceTerm=&#x24;{$varname} and vdex:targetTerm/@vocabularyIdentifier='{substitutions/targetThesaurus}']">
             <xsl:choose>
                 <xsl:when test="substitutions/target='termIdentifier'"><axsl:value-of select="vdex:targetTerm"/></xsl:when>
@@ -50,5 +52,7 @@
         </axsl:for-each>
         
     </xsl:template>
+    
+    
     
 </xsl:stylesheet>

@@ -126,6 +126,9 @@
                                 <xpath>denkmaltyp</xpath>
                             </source>
                             <stringReplace>
+                                <!-- values for this key are drawn directly from the Latin values used by EDR, substituting an underscore for the
+                                    comma + space used in EDR. The actual values are being tranlated to multiple languages ahead of creating a 
+                                    vdex file. -->
                                 <find>, </find>
                                 <replace>_</replace>
                             </stringReplace>
@@ -146,22 +149,29 @@
                     </copy>
                     <element name="reg">
                         <attribute name="key">
+                            <!-- values for this key are drawn directly from the Latin values used by EDR. The actual 
+                                values are being tranlated to multiple languages ahead of creating a vdex file. -->
                             <source>
                                 <xpath>material</xpath>
                             </source>
-                             <stringReplace>
+                            <!--     don't need?                         <stringReplace>
                                 <find xml:space="preserve"> </find>
                                 <replace>_</replace>
-                            </stringReplace>
+                            </stringReplace> -->
                         </attribute>
                         <source>
                             <xpath>material</xpath>
                         </source>
                     </element>
-                    
+
                 </element>
 
                 <!-- "scriptura" comes from the EDR schema field "scriptura" -->
+                <!-- coding here is incomplete; reg should contain a fully spelled out version of the Latin term, but at present we 
+                    don't have these terms anywhere they're easy to get at. We will eventually produce a vdex file, and this should
+                    be used for the reg lookup,  but first we need to get everything spelled out etc. and we're using the Goolge
+                    Spreadsheets for that for now, q.v.. Meantime, we just use the abbreviated version, having suppressed full-stops
+                    and substituted underscore for space -->
                 <element name="scriptura">
                     <copy>
                         <destination>orig</destination>
@@ -174,20 +184,20 @@
                             <source>
                                 <xpath>scriptura</xpath>
                             </source>
-                           <stringReplace>
+                            <stringReplace>
                                 <find xml:space="preserve"> </find>
                                 <replace>_</replace>
-                            </stringReplace> 
+                            </stringReplace>
                             <stringReplace>
                                 <find>.</find>
-                                <replace></replace>
+                                <replace />
                             </stringReplace>
                         </attribute>
                         <source>
                             <xpath>scriptura</xpath>
                         </source>
                     </element>
-                    
+
                 </element>
 
                 <!-- "lingua" comes from the EDR schema field "scriptura" -->
@@ -198,10 +208,32 @@
                             <xpath>lingua</xpath>
                         </source>
                     </copy>
-                    <!-- add reg and id ; split for multiples if necessary -->
+                    <element name="reg">
+                        <attribute name="key">
+                            <source>
+                                <xpath>lingua</xpath>
+                                <delimiter>-</delimiter>
+                            </source>
+                            <substitutions type="vdex">
+                                <sourceThesaurus>edrlanguagecodes</sourceThesaurus>
+                                <targetThesaurus>languagecodes</targetThesaurus>
+                                <target>termIdentifier</target>
+                            </substitutions>
+                        </attribute>
+                        <source>
+                            <xpath>lingua</xpath>
+                            <delimiter>-</delimiter>
+                        </source>
+                        <substitutions type="vdex">
+                            <sourceThesaurus>edrlanguagecodes</sourceThesaurus>
+                            <targetThesaurus>languagecodes</targetThesaurus>
+                            <target>caption</target>
+                        </substitutions>
+                    </element>
                 </element>
 
-                <!-- tit_distrib = "Titulorum distributio" comes from the EDR schema field "scriptura" -->
+                <!-- tit_distrib = "Titulorum distributio" comes from the EDR schema field "i_gattung" -->
+                <!-- same abbreviation problem and status as for "scriptura" above" -->
                 <element name="tit_distrib">
                     <copy>
                         <destination>orig</destination>
@@ -209,10 +241,32 @@
                             <xpath>i_gattung</xpath>
                         </source>
                     </copy>
-                    <!-- add reg and id -->
+                    <element name="reg">
+                        <attribute name="key">
+                            <source>
+                                <xpath>i_gattung</xpath>
+                            </source>
+                            <stringReplace>
+                                <find xml:space="preserve"> </find>
+                                <replace>_</replace>
+                            </stringReplace>
+                            <stringReplace>
+                                <find>.</find>
+                                <replace />
+                            </stringReplace>
+                        </attribute>
+                        <source>
+                            <xpath>i_gattung</xpath>
+                        </source>
+                    </element>
                 </element>
 
-                <!-- vir_distrib = "Virorum distributio" comes from the EDR schema field "scriptura" -->
+                <!-- vir_distrib = "Virorum distributio" comes from the EDR schema field "livellosocialeTot" -->
+                <!-- note: we are ignoring the two constituent fields in EDR from which this "tot" field is built on 
+                    the grounds that its possible to manually edit the content of the "tot" field via the input form regardless
+                    of the settings in the other two fields, which are not visible to the user. Therefore, the "tot" field
+                    will contain the value that the EDR staff is used to seeing and that they expect -->
+                <!-- same abbreviation problem and status as for "scriptura" above -->
                 <element name="vir_distrib">
                     <copy>
                         <destination>orig</destination>
@@ -225,7 +279,7 @@
 
                 <!-- "editiones" comes from the EDR schema field "Bibliografia" -->
                 <element name="editiones">
-                    <!-- this needs code to split the field multiple times, and do wrapping  ont he result -->
+                    <!-- this needs code to split the field multiple times, and do wrapping  on the result -->
                 </element>
 
                 <!-- "textus" comes from the EDR schema field "Testo" -->
