@@ -5,28 +5,33 @@
         <numerus>
             <orig>EDR000004</orig>
         </numerus>
-        <regio_ant>
+        <regio_ant cert="high">
             <orig>Roma</orig>
+            <reg>Roma</reg>
         </regio_ant>
-        <regio_nos>
+        <regio_nos cert="high">
             <orig>I</orig>
             <reg key="IT">Italy</reg>
         </regio_nos>
-        <urbs_ant>
+        <urbs_ant cert="high">
             <orig>Roma</orig>
+            <reg>Roma</reg>
         </urbs_ant>
-        <urbs_nos>
+        <urbs_nos cert="high">
             <orig>Roma</orig>
+            <reg>Roma</reg>
         </urbs_nos>
-        <loc_inv>
+        <loc_inv cert="high">
             <orig>Roma, via Livenza (già via Salaria antica), colombario</orig>
+            <reg>Roma, via Livenza (già via Salaria antica), colombario</reg>
         </loc_inv>
-        <loc_ads>
+        <loc_ads cert="high">
             <orig>Roma, Museo Civiltà Romana (già Palazzo Esposizioni, casse 160, 163)</orig>
+            <reg>Roma, Museo Civiltà Romana (già Palazzo Esposizioni, casse 160, 163)</reg>
         </loc_ads>
-        <rer_distrib>
+        <rer_distrib cert="high">
             <orig>tabula</orig>
-            <reg key="tabula">tabula</reg>
+            <reg>tabula</reg>
         </rer_distrib>
         <rei_mat>
             <orig>marmor</orig>
@@ -37,22 +42,29 @@
             <reg key="scalpro">scalpro</reg>
         </scriptura>
         <lingua>
-            <orig>latina</orig>
+            <orig>latina-graeca</orig>
             <reg key="la">Latin</reg>
+            <reg key="grc">Greek (ancient)</reg>
         </lingua>
         <tit_distrib>
             <orig>sepucralis</orig>
             <reg key="sepucralis">sepucralis</reg>
         </tit_distrib>
         <vir_distrib>
-            <orig>cet.</orig>
+            <orig>ord. eq.; offic. priv.</orig>
         </vir_distrib>
-        <editiones />
+        <editiones>
+            <tei:bibl xmlns:tei="http://www.tei-c.org/ns/1.0">Not. Sc., 1923, p. 368 (E. Gatti)
+            (1)</tei:bibl>
+        </editiones>
         <textus>L̲(ucius) C̲estius L(uci) ((et mulieris)) l(ibertus) Amaranthus ollam emit ab
             Cn(aeo) Papirio Felice.</textus>
         <apparatus>Textus secundum (1), contulit ad imaginem archivii photographici Instituti
             Epigraphiae Latinae (Roma) Mazzini a. 2002</apparatus>
-        <tempus> BBBAAAWWWAHAHAHAHAHA!!!!!! </tempus>
+        <tempus>
+            <tei:date xmlns:tei="http://www.tei-c.org/ns/1.0" type="textDate" value="0301"
+                precision="exact">d.C. 301</tei:date>
+        </tempus>
         <sched_script>
             <orig>GIULIANO MAZZINI</orig>
         </sched_script>

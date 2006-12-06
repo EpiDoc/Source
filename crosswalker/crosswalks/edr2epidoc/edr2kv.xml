@@ -4,6 +4,7 @@
         <format>XML</format>
         <encoding>UTF-8</encoding>
     </input>
+
     <output>
         <format>XML</format>
     </output>
@@ -16,54 +17,70 @@
                 <!-- filename  comes from the EDR id number (id_nr) -->
                 <copy>
                     <destination>filename</destination>
-                    <source>
-                        <xpath>id_nr</xpath>
-                    </source>
+                    <source><xpath>id_nr</xpath></source>
                 </copy>
 
                 <!-- "numerus" comes from the EDR id number (id_nr) -->
                 <element name="numerus">
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>id_nr</xpath>
-                        </source>
+                        <source><xpath>id_nr</xpath></source>
                     </copy>
                 </element>
 
                 <!-- regio_ant = "regio antiqua" comes from the EDR schema field "provinz" -->
                 <element name="regio_ant">
+                    <attribute name="cert">
+                        <source><xpath>provinz</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>provinz</xpath>
-                        </source>
+                        <source><xpath>provinz</xpath></source>
                     </copy>
+                    <element name="reg">
+                        <!-- no key for geography at this stage! -->
+                        <source><xpath>provinz</xpath></source>
+                        <stringReplace>
+                            <find>?</find>
+                            <replace />
+                        </stringReplace>
+                    </element>
                 </element>
 
                 <!-- regio_nos = "regio nostrae aetatis" comes from the EDR schema field "land" 
                         and a standard key and full name are added in processing -->
                 <element name="regio_nos">
+                    <attribute name="cert">
+                        <source><xpath>land</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>land</xpath>
-                        </source>
+                        <source><xpath>land</xpath></source>
                     </copy>
                     <element name="reg">
                         <attribute name="key">
-                            <source>
-                                <xpath>land</xpath>
-                            </source>
+                            <source><xpath>land</xpath></source>
                             <substitutions type="vdex">
                                 <sourceThesaurus>edrcountrycodes</sourceThesaurus>
                                 <targetThesaurus>countrycodes</targetThesaurus>
                                 <target>termIdentifier</target>
                             </substitutions>
                         </attribute>
-                        <source>
-                            <xpath>land</xpath>
-                        </source>
+                        <source><xpath>land</xpath></source>
                         <substitutions type="vdex">
                             <sourceThesaurus>edrcountrycodes</sourceThesaurus>
                             <targetThesaurus>countrycodes</targetThesaurus>
@@ -74,69 +91,130 @@
 
                 <!-- urbs_ant = "urbs antiqua" comes from the EDR schema field "fo_antik" -->
                 <element name="urbs_ant">
+                    <attribute name="cert">
+                        <source><xpath>fo_antik</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>fo_antik</xpath>
-                        </source>
+                        <source><xpath>fo_antik</xpath></source>
+                    </copy>
+                    <copy>
+                        <destination>reg</destination>
+                        <source><xpath>fo_antik</xpath></source>
+                        <stringReplace>
+                            <find>?</find>
+                            <replace />
+                        </stringReplace>
                     </copy>
                 </element>
 
                 <!-- urbs_nos = "urbs nostrae aetatis" comes from the EDR schema field "fo_modern" -->
                 <element name="urbs_nos">
+                    <attribute name="cert">
+                        <source><xpath>fo_modern</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>fo_modern</xpath>
-                        </source>
+                        <source><xpath>fo_modern</xpath></source>
+                    </copy>
+                    <copy>
+                        <destination>reg</destination>
+                        <source><xpath>fo_modern</xpath></source>
+                        <stringReplace>
+                            <find>?</find>
+                            <replace />
+                        </stringReplace>
                     </copy>
                 </element>
 
                 <!-- loc_inv = "locus inventionis" comes from the EDR schema field "fundstelle" -->
                 <element name="loc_inv">
+                    <attribute name="cert">
+                        <source><xpath>fundstelle</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>fundstelle</xpath>
-                        </source>
+                        <source><xpath>fundstelle</xpath></source>
+                    </copy>
+                    <copy>
+                        <destination>reg</destination>
+                        <source><xpath>fundstelle</xpath></source>
+                        <stringReplace>
+                            <find>?</find>
+                            <replace />
+                        </stringReplace>
                     </copy>
                 </element>
 
                 <!-- loc_ads = "locus adservationis" comes from the EDR schmea field "aufbewahrung" -->
                 <element name="loc_ads">
+                    <attribute name="cert">
+                        <source><xpath>aufbewahrung</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>aufbewahrung</xpath>
-                        </source>
+                        <source><xpath>aufbewahrung</xpath></source>
+                    </copy>
+                    <copy>
+                        <destination>reg</destination>
+                        <source><xpath>aufbewahrung</xpath></source>
+                        <stringReplace>
+                            <find>?</find>
+                            <replace />
+                        </stringReplace>
                     </copy>
                 </element>
 
                 <!-- rer_distrib = "rerum inscriptarum distributio" comes from the EDR schema field "denkmaltyp" -->
                 <element name="rer_distrib">
+                    <attribute name="cert">
+                        <source><xpath>denkmaltyp</xpath></source>
+                        <substitutions>
+                            <substitution>
+                                <partialMatch>?</partialMatch>
+                                <replace>low</replace>
+                            </substitution>
+                            <otherwise>high</otherwise>
+                        </substitutions>
+                    </attribute>
                     <copy>
                         <destination>orig</destination>
-                        <source>
-                            <xpath>denkmaltyp</xpath>
-                        </source>
+                        <source><xpath>denkmaltyp</xpath></source>
                     </copy>
-                    <element name="reg">
-                        <attribute name="key">
-                            <source>
-                                <xpath>denkmaltyp</xpath>
-                            </source>
-                            <stringReplace>
-                                <!-- values for this key are drawn directly from the Latin values used by EDR, substituting an underscore for the
-                                    comma + space used in EDR. The actual values are being tranlated to multiple languages ahead of creating a 
-                                    vdex file. -->
-                                <find>, </find>
-                                <replace>_</replace>
-                            </stringReplace>
-                        </attribute>
-                        <source>
-                            <xpath>denkmaltyp</xpath>
-                        </source>
-                    </element>
+                    <copy>
+                        <destination>reg</destination>
+                        <source><xpath>denkmaltyp</xpath></source>
+                    </copy>
+                    
+                    
                 </element>
 
                 <!-- rei_mat = "rei materia" comes from the EDR schema field "material" -->
@@ -211,8 +289,7 @@
                     <element name="reg">
                         <attribute name="key">
                             <source>
-                                <xpath>lingua</xpath>
-                                <delimiter>-</delimiter>
+                                <useParent />
                             </source>
                             <substitutions type="vdex">
                                 <sourceThesaurus>edrlanguagecodes</sourceThesaurus>
@@ -220,10 +297,10 @@
                                 <target>termIdentifier</target>
                             </substitutions>
                         </attribute>
-                        <source>
+                        <sourceSplit>
                             <xpath>lingua</xpath>
                             <delimiter>-</delimiter>
-                        </source>
+                        </sourceSplit>
                         <substitutions type="vdex">
                             <sourceThesaurus>edrlanguagecodes</sourceThesaurus>
                             <targetThesaurus>languagecodes</targetThesaurus>
@@ -274,12 +351,18 @@
                             <xpath>livellosocialeTot</xpath>
                         </source>
                     </copy>
-                    <!-- add reg and id; split for multiples if necessary -->
+                    <element name="reg">
+                        <sourceSplit>
+                            <xpath>livellosocialteTot</xpath>
+                            <delimiter>; </delimiter>
+                        </sourceSplit>
+
+                    </element>
                 </element>
 
                 <!-- "editiones" comes from the EDR schema field "Bibliografia" -->
                 <element name="editiones">
-                    <!-- this needs code to split the field multiple times, and do wrapping  on the result -->
+                    <element name="tei:bibl">Not. Sc., 1923, p. 368 (E. Gatti) (1)</element>
                 </element>
 
                 <!-- "textus" comes from the EDR schema field "Testo" -->
@@ -298,8 +381,14 @@
                 </element>
 
                 <!-- "tempus" is a complicated combination of fields from the EDR schema -->
-                <element name="tempus"> BBBAAAWWWAHAHAHAHAHA!!!!!! </element>
+                <element name="tempus">
+                    <element name="tei:date">
+                        <attribute name="type">textDate</attribute>
+                        <attribute name="value">0301</attribute>
+                        <attribute name="precision">exact</attribute>d.C. 301</element>
 
+                </element>
+            
                 <!-- "sched_script" = "schedae scriptor" comes from the EDR schema field "bearbeiter" -->
                 <element name="sched_script">
                     <copy>
