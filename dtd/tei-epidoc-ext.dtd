@@ -26,6 +26,10 @@
      
      REVISION HISTORY:
 
+	06 December 2006
+		(GB)
+		* added added @type to epidoc.a.date
+
 	03 December 2006
 		(GB)
 		* added epidoc.a.date to <year>, <month>, and <day>
@@ -198,6 +202,7 @@
          evaluate (all | one | none) 'all'">
 <!ENTITY % epidoc.a.date
        "cert CDATA #IMPLIED
+        type CDATA #IMPLIED
         precision (exact | circa) #IMPLIED 
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
