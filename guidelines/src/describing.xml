@@ -26,27 +26,15 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/describing.xml,v 1.1 2006-12-06 21:33:09 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/describing.xml,v 1.2 2006-12-08 13:59:19 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="describing" lang="en" rend="multipart">
    <head>Describing the Text, the Support and the Context</head>
    <p>yes, and ... </p>
     <xi:include href="location.xml"/>
-    <!-- ancientRegion
-modernCountry
-ancientFindspot
-modernFindspot
-found
-lastLocation
-    -->
     <xi:include href="description-physical.xml"/>
-    <!-- objectType
-material
-execution
-    -->
     <xi:include href="description-language.xml"/>
-    <xi:include href="measurements.xml"/>
     <div id="describing-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
@@ -61,11 +49,11 @@ execution
     <div id="describing-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="describing-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.1 $</seg></p>
+            >$Revision: 1.2 $</seg></p>
         <p id="describing-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
             >$Name: not supported by cvs2svn $</seg></p>
         <p id="describing-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-12-06 21:33:09 $</seg></p>
+            >$Date: 2006-12-08 13:59:19 $</seg></p>
         <p id="describing-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
             >$Author: paregorios $</seg></p>
     </div>

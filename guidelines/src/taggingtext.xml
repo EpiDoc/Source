@@ -26,27 +26,45 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/taggingtext.xml,v 1.8 2006-12-06 21:33:09 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/taggingtext.xml,v 1.9 2006-12-08 13:59:19 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="taggingtext" lang="en" rend="multipart">
-   <head>Transcribing and Editing the Text</head>
-   <p>The creation or transformation of epigraphic texts using XML is greatly facilitated by the traditional, scholarly techniques of editing epigraphic texts. Epigraphers are already accustomed to careful examination, analysis and description of letters, words, phrases and other aspects of texts. Communicating these aspects accurately and unambiguously is the central aim of scholarly epigraphic publication, and epigraphers have developed a highly technical and effective typographic vocabulary for achieving it. If the semantic richness and rigor underlying this typographic vocabulary can be made structurally distinct in a way that permits computer software to distinguish all its elements reliably, then software can be used to increase scholarly productivity and reduce the manual tasks that slow scholarly inquiry. This is the primary goal of EpiDoc. The use of sigla in traditional typographic editions that either bind to individual characters or that encompass a group of characters pair-wise provides a ready-made road map to the enumeration and application of XML tags. In formulating the guidelines for markup of the epigraphic text, we have endeavored to provide unique combinations of elements and attributes for each and every distinction epigraphers attempt to draw with sigla in print editions. These element-attribute combinations are described in the following sections, arranged by broad classes of editorial activity.</p>
-   <p>Several principles have been followed in developing these recommendations:</p>
-   <list>
-      <item>the markup language must provide the same degrees of flexibility and rigor inherent in the format-oriented editing conventions currently employed by epigraphers</item>
-      <item>format must be separated from structure and meaning: therefore, characters may be used only to represent text characters and symbols; all editorial distinctions must be made using structured markup </item>
-      <item>there must be a one-to-one relationship between each unique combination of siglum + format (as used in a traditional printed text) and an EPIDOC element + attribute(s) combination. This principle is particularly important if EPIDOC is to be used to facilitate data transfer between systems such as the Heidelberg Epigraphic Database and the Greek Epigraphy Project, each of which may use differing internal representation schemes. It is also important if EPIDOC is to be used to leverage a large and growing body of digital ASCII texts, such as those available from Manfred Clauss' web site at Frankfurt, by making them available for other kinds of textual projects and presentations.</item>
-      <item>rules laid down for the use of a given TEI tag in the TEI guidelines should be followed strictly by EPIDOC: we are not rewriting TEI</item>
-      <item>In some cases, there is more than one mechanism in TEI whereby a particular markup task can be accomplished (e.g., <tag>sic</tag> and <tag>corr</tag>). These alternatives are semantically equivalent. Editors should choose between them based on the needs of a project and the character of the surrounding markup. Designers of EpiDoc processing environments should accomodate all such options.</item>
-   </list>
-   <xi:include href="transcription.xml"/>
-   <xi:include href="additionanddeletion.xml"/>
-   <xi:include href="formandappearance.xml"/>
-   <xi:include href="supplements.xml"/>
-   <xi:include href="corrections.xml"/>
-   <xi:include href="editorialother.xml"/>
-   <xi:include href="criticalapparatus.xml"/>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="taggingtext"
+    lang="en" rend="multipart">
+    <head>Transcribing and Editing the Text</head>
+    <p>The creation of epigraphic texts using XML is greatly facilitated by the
+        traditional, scholarly techniques of editing epigraphic texts. Epigraphers are already
+        accustomed to careful examination, analysis and description of letters, words, phrases and
+        other aspects of texts. Communicating these aspects accurately and unambiguously is the
+        central aim of scholarly epigraphic publication, and epigraphers have developed a highly
+        technical and effective typographic vocabulary for achieving it (see further: "
+        <xref href="IntroEpigraphers.xml">Introduction for Epigraphers</xref>").  Our goal in developing the guidelines in this section has been to render structurally distinct the semantic richness
+        and rigor underlying the typographic vocabulary to permit computer software to distinguish all its elements reliably.
+        This arrangement permits the use of xml-aware software 
+        to increase scholarly productivity and reduce the manual tasks that slow scholarly
+        inquiry. </p>
+    <p>The use of sigla in traditional typographic
+        editions that either bind to individual characters or that encompass a group of characters
+        pair-wise provides a ready-made road map to the enumeration and application of XML tags. In
+        formulating these recommendations, we have endeavored to provide
+        unique combinations of elements and attributes for each and every distinction epigraphers
+        attempt to draw with sigla in print editions. These element-attribute combinations are
+        described in the following sections, arranged by broad classes of editorial activity.</p>
+    <p>Note that this section focuses exclusively on the transcription and editing of the inscribed
+        text, i.e., the specific activities in which an epigraphist engages to constitute a text and
+        associated apparatus. Other aspects of epigraphic editions, reports and corpora are
+        presented elsewhere in these <bibl>
+            <title level="m">Guidelines</title>
+        </bibl> (please see the <xref href="toc.xml">Table of Contents</xref> or <xref
+            href="gl-organization.xml">Organization of the Guidelines: where to go from
+        here</xref>).</p>
+    <xi:include href="transcription.xml" />
+    <xi:include href="additionanddeletion.xml" />
+    <xi:include href="formandappearance.xml" />
+    <xi:include href="supplements.xml" />
+    <xi:include href="corrections.xml" />
+    <xi:include href="editorialother.xml" />
+    <xi:include href="criticalapparatus.xml" />
     <div id="taggingtext-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
@@ -61,12 +79,12 @@ End license statement: do not remove -->
     <div id="taggingtext-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="taggingtext-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.8 $</seg></p>
+                >$Revision: 1.9 $</seg></p>
         <p id="taggingtext-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
-            >$Name: not supported by cvs2svn $</seg></p>
-        <p id="taggingtext-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-12-06 21:33:09 $</seg></p>
+                >$Name: not supported by cvs2svn $</seg></p>
+        <p id="taggingtext-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date:
+                2006/12/06 21:33:09 $</seg></p>
         <p id="taggingtext-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-            >$Author: paregorios $</seg></p>
+                >$Author: paregorios $</seg></p>
     </div>
 </div>

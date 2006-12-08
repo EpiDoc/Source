@@ -26,7 +26,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/IntroEpigraphers.xml,v 1.7 2006-10-30 12:05:35 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/IntroEpigraphers.xml,v 1.8 2006-12-08 13:59:19 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div id="IntroEpigraphers">
     <head>Introduction for Epigraphers</head>
@@ -43,7 +43,7 @@ End license statement: do not remove -->
         <p>The difficulty of rendering such conventions and, in particular, Greek characters in consistent fonts and on the Web has tended to delay
             the publication of full epigraphic texts online; instead, enormously rich search collections have been created, most notably: <list
                 type="unordered">
-                <item>the Electronic Archive of Greek and Latin Epigraphy (EAGLE) constituent databases, operated under the aegis of the International Association for Greek and Latin Epigraphy (AIEGL): <list type="unordered">
+                <item>the <xref href="http://www.eagle-eagle.it">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</xref> constituent databases, operated under the aegis of the International Association for Greek and Latin Epigraphy (AIEGL): <list type="unordered">
                         <item>
                             <xref href="http://www.edb.uniba.it/">Epigraphic Database Bari (EDB)</xref>
                         </item>
@@ -129,28 +129,42 @@ End license statement: do not remove -->
     </div>
     <div id="IntroEpigraphers-epidoc">
         <head>The EpiDoc Customization: TEI for Epigraphers</head>
-        <p>Within this framework, the <xref href="http://epidoc.sf.net">EpiDoc community</xref> has been working, since 2000, to develop a custom
-            version of the TEI Guidelines to support the particular needs of epigraphers. The idea was launched by <xref
-                href="http://www.unc.edu/~thomase/">Tom Elliott</xref>, an ancient historian at the University of North Carolina at Chapel Hill; the
-            aim is both to make the fullest possible use of the work that has already been done, and also to ensure that texts which happen to be
-            inscribed are handled in a manner consistent with that used for other texts, and not distanced ffrom them. The EpiDoc customization
-            removes irrelevant elements from the main body of the TEI, and it adds provisions for the specific kinds of transcription, analysis, and
-            metadata that are essential for epigraphic work. The result is a simple yet powerful language which can be used to mark all of the
-            significant features of inscriptions and also represent the accompanying information about the epigraphic object itself.</p>
-        <p>To accompany the EpiDoc encoding language, the EpiDoc community has also produced a set of <xref href="epidev.xml">software tools</xref>,
-            as well as <xref href="guidelines.xml">documentation</xref> which describes how to use the encoding language, the tools, and the other
-            elements of the EpiDoc method. The goal is to establish a framework that is easy to learn and use, even for scholars with no technical
-            background or support. This may sound improbable, but the enterprise is of the same order as learning to mark-up a standard epigraphic
-            text, with the existing series of sigla.</p>
-        <p>The group has worked to develop expressions for all the <xref href="taggingtext.xml">agreed epigraphic conventions</xref>. They have drawn
-            up a set of <xref href="guidelines.xml">guidelines</xref>, which analyse and present the various fields which may be presented in an
-            epigraphic publication, including: <list>
-                <item>a description of the text and/or monument</item>
-                <item>the edition of the epigraphic text itself (xref)</item>
-                <item>a translation of the text (xref)</item>
-                <item>a scholarly commentary related to the text and its unique problems and items of interest(xref)</item>
-                <item>a history of the discovery, documentation, and interpretation of the text leading to its present publication (xref)</item>
-                <item>a bibliography relevant to this text (xref)</item>
+        <p>Within this framework, the <xref href="http://epidoc.sf.net">EpiDoc community</xref> has
+            been working, since 2000, to develop a custom version of the TEI Guidelines to support
+            the particular needs of epigraphers. The idea was launched by <xref
+                href="http://www.unc.edu/~thomase/">Tom Elliott</xref>, an ancient historian at the
+            University of North Carolina at Chapel Hill; the aim is both to make the fullest
+            possible use of the work that has already been done, and also to ensure that texts which
+            happen to be inscribed are handled in a manner consistent with that used for other
+            texts, and not distanced from them. The EpiDoc customization removes irrelevant elements
+            from the main body of the TEI, and it adds provisions for the specific kinds of
+            transcription, analysis, description, and classification that are essential for
+            epigraphic work. The result is a simple yet powerful language which can be used to mark
+            all of the significant features of inscriptions and also represent the accompanying
+            information about the epigraphic object itself.</p>
+        <p>To accompany the EpiDoc encoding language, the EpiDoc community has also produced a set
+            of <xref href="guidelines.xml">encoding guidelines</xref> and <xref href="epidev.xml">software
+            tools</xref>, as well as <xref href="http://epidocumentation.pbwiki.com">documentation</xref> which
+            describes how to use the encoding language, the tools, and the other elements of the
+            EpiDoc method. The goal is to establish a framework that is easy to learn and use, even
+            for scholars with no technical background or support. This may sound improbable, but the
+            enterprise is of the same order as learning to mark-up a standard epigraphic text, with
+            the existing series of sigla.</p>
+        <p>The group has worked to develop expressions for all the agreed epigraphic conventions.
+            They have expanded this guidance to address the various fields which may be presented in
+            an epigraphic publication, including: <list>
+                <item>
+                    <xref href="taggingtext.xml">the edition of the epigraphic text itself</xref>
+                </item>
+                <item>
+                    <xref href="describing.xml">descriptions of the text, support and context</xref>
+                </item>
+                <item><xref href="translation.xml">a translation of the text</xref></item>
+                <item><xref href="commentary.xml">a scholarly commentary</xref> related to the text and its unique problems and items
+                    of interest</item>
+                <item><xref href="history.xml">a history of the discovery, documentation, and interpretation of the text</xref>
+                    leading to its present publication</item>
+                <item><xref href="bibliographicreferences.xml">a bibliography</xref> relevant to this text (xref)</item>
             </list> See further: <xref href="documentstructure.xml">Document Structure</xref>. </p>
         <p>Further areas under active exploration include developing interoperability. A software tool for converting texts in normal epigraphic
             markup into EpiDoc XML has already been developed (the so-called <xref href="chetc.xml">Chapel Hill Electronic Text Converter
@@ -190,9 +204,9 @@ End license statement: do not remove -->
     </div>
     <div id="IntroEpigraphers-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="IntroEpigraphers-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
+        <p id="IntroEpigraphers-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.8 $</seg></p>
         <p id="IntroEpigraphers-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-        <p id="IntroEpigraphers-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-10-30 12:05:35 $</seg></p>
+        <p id="IntroEpigraphers-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-12-08 13:59:19 $</seg></p>
         <p id="IntroEpigraphers-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
     </div>
 </div>

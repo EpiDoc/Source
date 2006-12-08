@@ -26,7 +26,7 @@ End license statement: do not remove -->
 
 <!DOCTYPE TEI.2 SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.14 2006-12-06 21:33:09 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/guidelines.xml,v 1.15 2006-12-08 13:59:19 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <TEI.2 xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0" id="guidelines" rend="multipart">
@@ -94,7 +94,7 @@ End license statement: do not remove -->
                     <p>Copyright by the authors.<lb/>Distributed electronically via the websites of the <xref href="http://www.stoa.org">Stoa Consortium</xref> and <xref href="http://sf.net">SourceForge.net</xref> under the provisions of the <xref href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</xref></p>
                 </availability>
                 <idno type="release">$Name: not supported by cvs2svn $</idno>
-                <date>$Date: 2006-12-06 21:33:09 $</date>
+                <date>$Date: 2006-12-08 13:59:19 $</date>
                 
             </publicationStmt>
             
@@ -124,26 +124,24 @@ End license statement: do not remove -->
     <text>
         <body>
             <xi:include href="introduction.xml" />
-            <xi:include href="IntroEpigraphers.xml"/>
-            <xi:include href="conformance.xml"/>
             <!--  <xi:include  href="essentialreading.xml"/> -->
-            <xi:include href="documentstructure.xml" />
             <xi:include href="taggingtext.xml" />
             <xi:include href="describing.xml" />
             <xi:include href="interpretation.xml"/>
             <xi:include href="recording.xml"/>
-            <xi:include href="othermarkupissues.xml" />
-            <xi:include href="interoperability.xml" />
+            <!-- tre removed interoperability.xml in favor of conformance.xml on 7 December 2006, somewhere
+                high over Arizona or New Mexico -->
+            <xi:include href="xmlencoding.xml"/>
             <xi:include href="bibliography.xml" />
             <xi:include href="epidev.xml" />
                 <div id="guidelines-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="guidelines-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
-            >$Revision: 1.14 $</seg></p>
+            >$Revision: 1.15 $</seg></p>
         <p id="guidelines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
             >$Name: not supported by cvs2svn $</seg></p>
         <p id="guidelines-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            >$Date: 2006-12-06 21:33:09 $</seg></p>
+            >$Date: 2006-12-08 13:59:19 $</seg></p>
         <p id="guidelines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
             >$Author: paregorios $</seg></p>
     </div>
