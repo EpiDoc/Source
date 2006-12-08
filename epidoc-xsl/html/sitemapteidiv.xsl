@@ -31,7 +31,7 @@
         <xsl:choose>
             <xsl:when test="name(..) = 'body' and count(preceding-sibling::tei:div) = 0">
                 <xsl:element name="ul">
-                    <xsl:for-each select="../tei:div[@id]"><xsl:call-template name="multipartpopdown"/></xsl:for-each>
+                    <xsl:for-each select="../tei:div[@id and not(contains(@type, 'gl-'))]"><xsl:call-template name="multipartpopdown"/></xsl:for-each>
                 </xsl:element>
             </xsl:when>
             <xsl:when test="name(..) = 'body' and count(preceding-sibling::tei:div) &gt; 0"/>

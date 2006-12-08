@@ -101,14 +101,13 @@
                     <xsl:value-of select="$htmlcontentdivid" />
                 </xsl:attribute>
                 
-                
                 <xsl:choose>
                     <xsl:when test="ancestor-or-self::*/@rend='multipart' and tei:div">
                         <xsl:apply-templates select="*[name() != 'div' and name() != 'head']" />
                         <xsl:element name="h2"><xsl:attribute name="id"
                             >subsections</xsl:attribute>Subsections</xsl:element>
                         <xsl:element name="ul">
-                            <xsl:apply-templates select="tei:div[not(@type) or not(contains(@type, 'gl-'))]"/>
+                            <xsl:apply-templates select="tei:div[not(@type) or (@type and not(contains(@type, 'gl-')))]"/>
                         </xsl:element>
                         <xsl:apply-templates select="tei:div[@type]"/>
                     </xsl:when>
