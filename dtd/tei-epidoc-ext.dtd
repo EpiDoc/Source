@@ -251,6 +251,7 @@
 <!ATTLIST %n.geog;
         %epidoc.full; >
 <!ATTLIST %n.geogName;
+        %epidoc.cert;
         %epidoc.full; >
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
@@ -273,8 +274,12 @@
         target CDATA #IMPLIED
         targetEnd CDATA #IMPLIED >
 <!ATTLIST %n.persName;
+        %epidoc.cert;
         %epidoc.full; >
+<!ATTLIST %n.rs;
+        %epidoc.cert; >
 <!ATTLIST %n.placeName;
+        %epidoc.cert;
         %epidoc.full;
         type CDATA #IMPLIED >
 <!ATTLIST %n.ptr;
