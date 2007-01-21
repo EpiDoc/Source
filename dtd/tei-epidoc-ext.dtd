@@ -1,5 +1,5 @@
 <!-- EpiDoc-specific TEI customization file
-     Copyright (C) 2002-2005  EpiDoc Collaborative
+     Copyright (C) 2002-2007  EpiDoc Collaborative
       
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -25,6 +25,11 @@
      3. EpiDoc-specific character entities 
      
      REVISION HISTORY:
+
+      21 January 2007
+		(GB)
+		* created EpiDoc attribute entity: epidoc.precision
+		* added epidoc.precision to <date>, <measure>, <gap>, and <space>
 
 	06 December 2006
 		(GB)
@@ -143,7 +148,8 @@
      
 <!ELEMENT choice (abbr | corr | expan | orig | reg | seg | sic | unclear | choice)* > 
 <!ATTLIST choice   
-      %a.global; >
+      %a.global;
+      type CDATA #IMPLIED >
       
 <!ELEMENT att (#PCDATA)> 
 <!ATTLIST att  
@@ -196,6 +202,7 @@
 <!ENTITY % epidoc.exact "exact (Y | N | U) #IMPLIED" >
 <!ENTITY % epidoc.full "full (yes | abb | init) 'yes'" >
 <!ENTITY % epidoc.hand "hand CDATA #IMPLIED" >
+<!ENTITY % epidoc.precision "precision (circa | exact) #IMPLIED" >
 <!ENTITY % epidoc.resp "resp CDATA #IMPLIED" >
 <!ENTITY % epidoc.a.pointer
         "targOrder (Y | N | U) 'Y'
@@ -203,7 +210,6 @@
 <!ENTITY % epidoc.a.date
        "cert CDATA #IMPLIED
         type CDATA #IMPLIED
-        precision (exact | circa) #IMPLIED 
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
         exact (notBefore | notAfter | both | none) #IMPLIED " >
@@ -234,8 +240,10 @@
 <!ATTLIST %n.country;
         %epidoc.full; >
 <!ATTLIST %n.date;
-        %epidoc.a.date; >
+        %epidoc.a.date;
+	  %epidoc.precision; >
 <!ATTLIST %n.day;
+	  %epidoc.precision;
         %epidoc.a.date; >
 <!ATTLIST %n.distance;
         %epidoc.exact; >
@@ -246,6 +254,7 @@
         extentmax CDATA #IMPLIED
         unit CDATA #IMPLIED
         dim (left | right | top | bottom | internal) #IMPLIED
+        %epidoc.precision;
         %epidoc.resp;
         %epidoc.hand; >
 <!ATTLIST %n.geog;
@@ -266,8 +275,9 @@
         dim (height | width | depth | diameter | none) "none" 
         value CDATA #IMPLIED
         unit CDATA #IMPLIED
-        precision (circa | exact) #IMPLIED >
+        %epidoc.precision; >
 <!ATTLIST %n.month;
+	  %epidoc.precision;
         %epidoc.a.date; >
 <!ATTLIST %n.note;
         place CDATA 'not specified'
@@ -295,7 +305,8 @@
 <!ATTLIST %n.space;
         dim (horizontal | vertical) 'horizontal'
         unit CDATA 'character'
-        extent CDATA '1' >
+        extent CDATA '1'
+        %epidoc.precision; >
 <!ATTLIST %n.supplied;
         %epidoc.hand;
         %epidoc.cert; 
@@ -316,6 +327,7 @@
         %epidoc.a.pointer; 
         href CDATA #IMPLIED>
 <!ATTLIST %n.year;
+	  %epidoc.precision;
         %epidoc.a.date; >
 
         
