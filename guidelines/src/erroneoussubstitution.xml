@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneoussubstitution.xml,v 1.14 2006-10-30 12:05:36 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/erroneoussubstitution.xml,v 1.15 2007-02-21 17:38:50 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -35,13 +35,13 @@ End license statement: do not remove -->
 <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="erroneoussubstitution-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
             <list type="simple">
                <item id="TypoEx-1">Valeri⌜an⌝us</item><item id="TypoEx-2">Not addressed</item>
             </list></item>
       </list>
    <list type="unordered">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#seg" >SEG</xref></title></bibl>, <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#poxy" >POxy</xref></title></bibl>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#seg">SEG</xref></title></bibl>, <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#poxy">POxy</xref></title></bibl>
             <list type="ordered">
                <item id="TypoEx-3">Valeri&lt;an&gt;us</item><item id="TypoEx-4">Valeria&lt;n&gt;us</item>
             </list></item>
@@ -56,7 +56,7 @@ End license statement: do not remove -->
       <list type="ordered">
          <!--<item id="">Valeri<sic corr="an">na</sic>us or Valeri<corr sic="na">an</corr>us</item>
 <item id=">Valeria<sic corr="n">m</sic>us or Valeria<corr sic="m">n</corr>us</item>
-      --><item id="EncEx-1">Valeri<choice n="correction"><sic>na</sic><corr>an</corr></choice>us</item><item id="EncEx-2">Valeria<choice n="correction"><sic>m</sic><corr>n</corr></choice>us</item></list>
+      --><item id="EncEx-1">Valeri<choice type="correction"><sic>na</sic><corr>an</corr></choice>us</item><item id="EncEx-2">Valeria<choice type="correction"><sic>m</sic><corr>n</corr></choice>us</item></list>
    </div><div id="erroneoussubstitution-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
@@ -71,9 +71,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="erroneoussubstitution-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="erroneoussubstitution-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.15 $</seg></p>
       <p id="erroneoussubstitution-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="erroneoussubstitution-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
-      <p id="erroneoussubstitution-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-02-21 17:38:50 $</seg></p>
+      <p id="erroneoussubstitution-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 

@@ -27,10 +27,10 @@
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:template match="tei:choice[@n='correction']/tei:sic">
+<xsl:template match="tei:choice[@type='correction']/tei:sic">
 </xsl:template>
 
-<xsl:template match="tei:choice[@n='correction']/tei:corr">
+<xsl:template match="tei:choice[@type='correction']/tei:corr">
 	<xsl:text>&#x231C;</xsl:text>
 		<xsl:apply-templates/>
 	<xsl:text>&#x231D;</xsl:text>
@@ -55,6 +55,7 @@
 
 </xsl:stylesheet>
 
+<!-- REST OF FILE IS LEGACY CRAP -->
 
 <!--    <xsl:template match="tei:sic[@corr]">
         <xsl:call-template name="docorrectsubstitution">
