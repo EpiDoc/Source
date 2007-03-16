@@ -26,6 +26,11 @@
      
      REVISION HISTORY:
 
+	16 March 2007
+		(GB)
+		* added new model for <app>
+		* replace cert in <date> with epidoc.cert
+
       21 January 2007
 		(GB)
 		* created EpiDoc attribute entity: epidoc.precision
@@ -146,6 +151,14 @@
      New elements added by EpiDoc, together with their attributes
      ********************************************************************* -->
      
+<!ELEMENT app %om.RO; ( (%m.Incl;)*, (lem, (%m.Incl;)*, (wit, (%m.Incl;)*)? )? , (ptr, (%m.Incl;)*)?, ( (rdg, (%m.Incl;)*, (wit, (%m.Incl;)*)? ) | (rdgGrp, (%m.Incl;)*, (wit, (%m.Incl;)*)? ) )*, (note, (%m.Incl;)*)?)>
+<!ATTLIST app  
+      %a.global;
+      type CDATA #IMPLIED
+      from IDREF #IMPLIED
+      to IDREF #IMPLIED
+      loc CDATA #IMPLIED>
+
 <!ELEMENT choice (abbr | corr | expan | orig | reg | seg | sic | unclear | choice)* > 
 <!ATTLIST choice   
       %a.global;
@@ -208,11 +221,11 @@
         "targOrder (Y | N | U) 'Y'
          evaluate (all | one | none) 'all'">
 <!ENTITY % epidoc.a.date
-       "cert CDATA #IMPLIED
-        type CDATA #IMPLIED
+       "type CDATA #IMPLIED
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
-        exact (notBefore | notAfter | both | none) #IMPLIED " >
+        exact (notBefore | notAfter | both | none) #IMPLIED 
+	  %epidoc.cert;" >
         
 <!-- define the attributes for each element, as necessary  -->         
 
