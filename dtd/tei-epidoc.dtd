@@ -17,7 +17,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST ab 
 	ana IDREFS #IMPLIED
@@ -37,7 +38,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST abbr 
 	ana IDREFS #IMPLIED
@@ -60,7 +62,7 @@
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | ab | l | 
 	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST add 
 	ana IDREFS #IMPLIED
@@ -81,7 +83,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST addrLine 
 	ana IDREFS #IMPLIED
@@ -93,10 +96,10 @@
 
 <!ELEMENT address 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, ((addrLine, (gap | figure | certainty | fs | 
-	link | linkGrp | cb | lb | pb)*)+ | ((name | postBox | postCode 
-	| street), (gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)*)) >
+	lb | milestone | pb)*, ((addrLine, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)+ | ((name 
+	| postBox | postCode | street), (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)*)) >
 
 <!ATTLIST address 
 	ana IDREFS #IMPLIED
@@ -108,7 +111,7 @@
 
 <!ELEMENT analytic 
 	(author | editor | respStmt | title | gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)* >
+	| fs | link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST analytic 
 	ana IDREFS #IMPLIED
@@ -120,17 +123,19 @@
 
 <!ELEMENT app 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (lem, (gap | figure | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*, (wit, (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)?)?, (ptr, (gap | 
-	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)?, 
-	((rdg, (gap | figure | certainty | fs | link | linkGrp | 
-	cb | lb | pb)*, (wit, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)?) | (rdgGrp, (gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)*, (wit, 
+	lb | milestone | pb)*, (lem, (gap | figure | certainty | 
+	fs | link | linkGrp | cb | lb | milestone | pb)*, (wit, 
 	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?))*, (note, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)?) >
+	| milestone | pb)*)?)?, (ptr, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?, ((rdg, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*, (wit, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)*)?) | (rdgGrp, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*, (wit, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)*)?))*, (note, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*)?) >
 
 <!ATTLIST app 
 	ana IDREFS #IMPLIED
@@ -162,7 +167,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST author 
 	ana IDREFS #IMPLIED
@@ -179,7 +185,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST authority 
 	ana IDREFS #IMPLIED
@@ -211,7 +218,7 @@
 	| biblScope | edition | editor | extent | idno | imprint 
 	| monogr | note | pubPlace | publisher | respStmt | series 
 	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	lb | milestone | pb)* >
 
 <!ATTLIST bibl 
 	ana IDREFS #IMPLIED
@@ -225,13 +232,14 @@
 
 <!ELEMENT biblFull 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, titleStmt, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, (editionStmt, (gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)?, (extent, 
+	lb | milestone | pb)*, titleStmt, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*, (editionStmt, 
 	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)?, publicationStmt, (gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*, (sourceDesc, (gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)*) >
+	| milestone | pb)*)?, (extent, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?, publicationStmt, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*, (sourceDesc, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)*) >
 
 <!ATTLIST biblFull 
 	ana IDREFS #IMPLIED
@@ -250,7 +258,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST biblScope 
 	ana IDREFS #IMPLIED
@@ -263,13 +272,14 @@
 
 <!ELEMENT biblStruct 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (analytic, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)?, (monogr, (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*, (series, (gap | 
-	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)*)+, 
-	((note, (gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*) | (idno, (gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*))*) >
+	lb | milestone | pb)*, (analytic, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?, (monogr, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*, (series, (gap | figure | certainty | 
+	fs | link | linkGrp | cb | lb | milestone | pb)*)*)+, ((note, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*) | (idno, (gap | figure | certainty | 
+	fs | link | linkGrp | cb | lb | milestone | pb)*))*) >
 
 <!ATTLIST biblStruct 
 	ana IDREFS #IMPLIED
@@ -288,7 +298,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST bloc 
 	ana IDREFS #IMPLIED
@@ -305,12 +316,13 @@
 
 <!ELEMENT body 
 	((docAuthor | head | gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, ((((bibl | biblFull | biblStruct 
-	| ab | l | lg | p | list | listBibl | note), (gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)+, (div, 
-	(div | gap | figure | certainty | fs | link | linkGrp | 
-	cb | lb | pb)*)?) | (div, (div | gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*))) >
+	| linkGrp | cb | lb | milestone | pb)*, ((((bibl | biblFull 
+	| biblStruct | ab | l | lg | p | list | listBibl | note), 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*)+, (div, (div | gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?) | 
+	(div, (div | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)*))) >
 
 <!ATTLIST body 
 	ana IDREFS #IMPLIED
@@ -421,7 +433,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST classCode 
 	ana IDREFS #IMPLIED
@@ -452,7 +465,7 @@
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | ab | l | 
 	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST corr 
 	ana IDREFS #IMPLIED
@@ -473,7 +486,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST country 
 	ana IDREFS #IMPLIED
@@ -495,7 +509,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST creation 
 	ana IDREFS #IMPLIED
@@ -512,7 +527,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST date 
 	ana IDREFS #IMPLIED
@@ -537,7 +553,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST dateRange 
 	ana IDREFS #IMPLIED
@@ -554,7 +571,7 @@
 <!ELEMENT dateStruct 
 	(#PCDATA | dateStruct | day | distance | month | occasion 
 	| offset | week | year | gap | figure | certainty | fs | 
-	link | linkGrp | cb | lb | pb)* >
+	link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST dateStruct 
 	ana IDREFS #IMPLIED
@@ -599,7 +616,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST del 
 	ana IDREFS #IMPLIED
@@ -621,7 +639,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST distance 
 	ana IDREFS #IMPLIED
@@ -644,7 +663,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST distributor 
 	ana IDREFS #IMPLIED
@@ -656,12 +676,13 @@
 
 <!ELEMENT div 
 	((docAuthor | head | gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, ((div, (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)+ | (((bibl | biblFull 
-	| biblStruct | ab | l | lg | p | list | listBibl | note), 
+	| linkGrp | cb | lb | milestone | pb)*, ((div, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)*)+ | (((bibl | biblFull | biblStruct | ab | l | lg 
+	| p | list | listBibl | note), (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)+, (div, 
 	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)+, (div, (gap | figure | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*)*))) >
+	| milestone | pb)*)*))) >
 
 <!ATTLIST div 
 	ana IDREFS #IMPLIED
@@ -686,7 +707,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST docAuthor 
 	ana IDREFS #IMPLIED
@@ -703,7 +725,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST edition 
 	ana IDREFS #IMPLIED
@@ -731,7 +754,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST editor 
 	ana IDREFS #IMPLIED
@@ -750,7 +774,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST emph 
 	ana IDREFS #IMPLIED
@@ -778,7 +803,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST expan 
 	abbr CDATA #IMPLIED
@@ -799,7 +825,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST extent 
 	ana IDREFS #IMPLIED
@@ -832,7 +859,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST figDesc 
 	ana IDREFS #IMPLIED
@@ -874,7 +902,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST foreign 
 	ana IDREFS #IMPLIED
@@ -905,7 +934,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST funder 
 	ana IDREFS #IMPLIED
@@ -960,7 +990,7 @@
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
 	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)* >
+	lb | milestone | pb)* >
 
 <!ATTLIST geogName 
 	ana IDREFS #IMPLIED
@@ -982,7 +1012,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST gloss 
 	ana IDREFS #IMPLIED
@@ -1048,7 +1079,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST head 
 	ana IDREFS #IMPLIED
@@ -1067,7 +1099,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST hi 
 	ana IDREFS #IMPLIED
@@ -1092,7 +1125,8 @@
 
 <!ELEMENT imprint 
 	(pubPlace | publisher | date | biblScope | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST imprint 
 	ana IDREFS #IMPLIED
@@ -1111,7 +1145,7 @@
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | ab | l | 
 	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST item 
 	ana IDREFS #IMPLIED
@@ -1141,7 +1175,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST l 
 	ana IDREFS #IMPLIED
@@ -1175,7 +1210,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST language 
 	ana IDREFS #IMPLIED
@@ -1208,7 +1244,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST lem 
 	ana IDREFS #IMPLIED
@@ -1226,8 +1263,9 @@
 
 <!ELEMENT lg 
 	((docAuthor | head | gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*, (l | lg), (l | lg | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*) >
+	| linkGrp | cb | lb | milestone | pb)*, (l | lg), (l | lg 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)*) >
 
 <!ATTLIST lg 
 	ana IDREFS #IMPLIED
@@ -1283,9 +1321,10 @@
 
 <!ELEMENT list 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (head, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)?, (item, (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)*) >
+	lb | milestone | pb)*, (head, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?, (item, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*)*) >
 
 <!ATTLIST list 
 	ana IDREFS #IMPLIED
@@ -1298,10 +1337,11 @@
 
 <!ELEMENT listBibl 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (head, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)?, (bibl | biblStruct | biblFull), 
-	(bibl | biblStruct | biblFull | gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*) >
+	lb | milestone | pb)*, (head, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)?, (bibl 
+	| biblStruct | biblFull), (bibl | biblStruct | biblFull 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)*) >
 
 <!ATTLIST listBibl 
 	ana IDREFS #IMPLIED
@@ -1331,7 +1371,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST measure 
 	ana IDREFS #IMPLIED
@@ -1356,7 +1397,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST meeting 
 	ana IDREFS #IMPLIED
@@ -1366,22 +1408,37 @@
 	rend CDATA #IMPLIED
 	 >
 
+<!ELEMENT milestone 
+	EMPTY >
+
+<!ATTLIST milestone 
+	ana IDREFS #IMPLIED
+	ed CDATA #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	unit CDATA #REQUIRED
+	 >
+
 <!ELEMENT monogr 
 	(((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, (((author | editor | respStmt), (author | editor 
-	| respStmt | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*, (title, (gap | figure | certainty | fs 
-	| link | linkGrp | cb | lb | pb)*)+, ((editor | respStmt), 
+	lb | milestone | pb)*, (((author | editor | respStmt), (author 
+	| editor | respStmt | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | milestone | pb)*, (title, (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)*)+, ((editor | respStmt), (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*)*) | 
+	((title, (gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)*)+, ((author | editor | respStmt), 
 	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)*) | ((title, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*)+, ((author | editor | respStmt), 
-	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
-	| pb)*)*)))?, ((note | meeting), (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*)*, (edition, (editor 
-	| respStmt | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)*)*, imprint, (imprint | extent | biblScope 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*) >
+	| milestone | pb)*)*)))?, ((note | meeting), (gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)*)*, (edition, (editor | respStmt | gap | figure | 
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)*)*, imprint, (imprint | extent | biblScope | gap | figure 
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)*) >
 
 <!ATTLIST monogr 
 	ana IDREFS #IMPLIED
@@ -1419,7 +1476,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST name 
 	ana IDREFS #IMPLIED
@@ -1441,7 +1499,7 @@
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | ab | l | 
 	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST note 
 	ana IDREFS #IMPLIED
@@ -1464,7 +1522,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST num 
 	ana IDREFS #IMPLIED
@@ -1483,7 +1542,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST occasion 
 	ana IDREFS #IMPLIED
@@ -1500,7 +1560,7 @@
 
 <!ELEMENT offset 
 	(#PCDATA | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST offset 
 	ana IDREFS #IMPLIED
@@ -1522,7 +1582,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST orig 
 	ana IDREFS #IMPLIED
@@ -1542,7 +1603,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST p 
 	ana IDREFS #IMPLIED
@@ -1571,7 +1633,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST persName 
 	ana IDREFS #IMPLIED
@@ -1594,7 +1657,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST placeName 
 	ana IDREFS #IMPLIED
@@ -1638,7 +1702,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST principal 
 	ana IDREFS #IMPLIED
@@ -1684,7 +1749,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST pubPlace 
 	ana IDREFS #IMPLIED
@@ -1698,9 +1764,10 @@
 
 <!ELEMENT publicationStmt 
 	((p, (gap | figure | certainty | fs | link | linkGrp | cb 
-	| lb | pb)*)+ | ((publisher | distributor | authority | 
-	pubPlace | address | idno | availability | date), (gap | 
-	figure | certainty | fs | link | linkGrp | cb | lb | pb)*)+) >
+	| lb | milestone | pb)*)+ | ((publisher | distributor | 
+	authority | pubPlace | address | idno | availability | date), 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*)+) >
 
 <!ATTLIST publicationStmt 
 	ana IDREFS #IMPLIED
@@ -1717,7 +1784,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST publisher 
 	ana IDREFS #IMPLIED
@@ -1735,7 +1803,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST rdg 
 	ana IDREFS #IMPLIED
@@ -1753,10 +1822,11 @@
 
 <!ELEMENT rdgGrp 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, ((rdgGrp, (gap | figure | certainty | fs | link 
-	| linkGrp | cb | lb | pb)*) | (rdg, (gap | figure | certainty 
-	| fs | link | linkGrp | cb | lb | pb)*, (wit, (gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)*)?))+) >
+	lb | milestone | pb)*, ((rdgGrp, (gap | figure | certainty 
+	| fs | link | linkGrp | cb | lb | milestone | pb)*) | (rdg, 
+	(gap | figure | certainty | fs | link | linkGrp | cb | lb 
+	| milestone | pb)*, (wit, (gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)*)?))+) >
 
 <!ATTLIST rdgGrp 
 	ana IDREFS #IMPLIED
@@ -1780,7 +1850,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST ref 
 	ana IDREFS #IMPLIED
@@ -1804,7 +1875,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST reg 
 	ana IDREFS #IMPLIED
@@ -1824,7 +1896,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST region 
 	ana IDREFS #IMPLIED
@@ -1846,7 +1919,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST resp 
 	ana IDREFS #IMPLIED
@@ -1858,7 +1932,7 @@
 
 <!ELEMENT respStmt 
 	(resp | name | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)+ >
+	| cb | lb | milestone | pb)+ >
 
 <!ATTLIST respStmt 
 	ana IDREFS #IMPLIED
@@ -1886,7 +1960,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST rs 
 	ana IDREFS #IMPLIED
@@ -1908,7 +1983,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST seg 
 	ana IDREFS #IMPLIED
@@ -1928,7 +2004,8 @@
 
 <!ELEMENT series 
 	(#PCDATA | title | editor | respStmt | biblScope | gap | 
-	figure | certainty | fs | link | linkGrp | cb | lb | pb)* >
+	figure | certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST series 
 	ana IDREFS #IMPLIED
@@ -1945,7 +2022,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST settlement 
 	ana IDREFS #IMPLIED
@@ -1969,7 +2047,7 @@
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | ab | l | 
 	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | pb)* >
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST sic 
 	ana IDREFS #IMPLIED
@@ -1989,7 +2067,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST soCalled 
 	ana IDREFS #IMPLIED
@@ -2034,7 +2113,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST sponsor 
 	ana IDREFS #IMPLIED
@@ -2063,7 +2143,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST street 
 	ana IDREFS #IMPLIED
@@ -2081,7 +2162,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST supplied 
 	agent CDATA #IMPLIED
@@ -2153,7 +2235,8 @@
 	| reg | sic | space | supplied | unclear | handShift | emph 
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | pb)* >
+	certainty | fs | link | linkGrp | cb | lb | milestone | 
+	pb)* >
 
 <!ATTLIST term 
 	ana IDREFS #IMPLIED
@@ -2166,8 +2249,8 @@
 
 <!ELEMENT text 
 	((gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | pb)*, body, (gap | figure | certainty | fs | link | 
-	linkGrp | cb | lb | pb)*) >
+	lb | milestone | pb)*, body, (gap | figure | certainty | 
+	fs | link | linkGrp | cb | lb | milestone | pb)*) >
 
 <!ATTLIST text 
 	ana IDREFS #IMPLIED
@@ -2198,7 +2281,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST title 
 	ana IDREFS #IMPLIED
@@ -2246,7 +2330,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST w 
 	ana IDREFS #IMPLIED
@@ -2287,7 +2372,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST wit 
 	ana IDREFS #IMPLIED
@@ -2325,7 +2411,8 @@
 	| foreign | gloss | hi | soCalled | term | title | ptr | 
 	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
 	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | pb)* >
+	| certainty | fs | link | linkGrp | cb | lb | milestone 
+	| pb)* >
 
 <!ATTLIST xref 
 	ana IDREFS #IMPLIED
@@ -2366,7 +2453,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza28170 on 16 Mar 2007 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza6674 on 27 Apr 2007 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 
