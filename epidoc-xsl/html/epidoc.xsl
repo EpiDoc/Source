@@ -32,6 +32,7 @@
     <!-- 2005-08-10: created by Tom Elliott -->
     <xsl:import href="conformance.xsl"/>
     <xsl:import href="epidocmark.xsl" />
+    <xsl:import href="teig.xsl" />
     <xsl:import href="xmlcomment.xsl" />
     <xsl:import href="tei2.xsl" />
     <xsl:import href="teiheader.xsl" />
