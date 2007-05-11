@@ -27,6 +27,9 @@
      
      REVISION HISTORY:
 
+	11th May 2007 (GB)
+	* added element <g> as mirror of <mark> (to be deprecated)
+
 	27 April 2007 (GB)
 	* stopped ignoring <milestone>
 
@@ -88,7 +91,7 @@
      using the standard TEI extension mechanisms
      ********************************************************************* -->
 
-<!ENTITY % x.phrase 'mark | choice |' >
+<!ENTITY % x.phrase 'g | mark | choice |' >
 
 
 <!-- *********************************************************************

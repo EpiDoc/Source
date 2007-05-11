@@ -26,6 +26,10 @@
      
      REVISION HISTORY:
 
+	11th May 2007
+		(GB)
+		* added element <g> as mirror of <mark> (to be deprecated)
+
 	16 March 2007
 		(GB)
 		* added new model for <app>
@@ -191,12 +195,17 @@
           %a.global; 
           type CDATA #IMPLIED >
 
+<!ELEMENT g EMPTY >
+<!ATTLIST g 
+          %a.global; 
+          type CDATA #IMPLIED >
+
 <!ELEMENT tag (#PCDATA)> 
 <!ATTLIST tag  
       %a.global; >
       
 <!ELEMENT unclear 
-	( #PCDATA | mark )* > 
+	( #PCDATA | mark | g )* > 
 
 <!ELEMENT w %om.RR;  %paraContent;>
 <!ATTLIST w  
