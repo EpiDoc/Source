@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<omphalos>
+    <generatepath>C:\TomDocs\epidocwork\epidoc-sf\guidelines\</generatepath>
+    <transformpath>C:\TomDocs\epidocwork\epidoc-sf\epidoc-xsl\</transformpath>
+    <destpath>C:\staticgl\</destpath>
+    <pipe>
+        <generate>src/guidelines.xml</generate>
+        <transform type="xinclude"/>
+        <transform src="html/epidoc.xsl">
+            <parameter name="dotitlepage" value="yes"/>
+        </transform>
+        <transform src="util/xhtmlindenter.xsl"/>
+        <serialize type="xhtmlbasic"/>
+        <emit>guidelines.html</emit>
+    </pipe>
+</omphalos>
