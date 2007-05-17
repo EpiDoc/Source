@@ -49,21 +49,21 @@ class Pipe:
         
     def cycle(self):
         gfile = join(self.parent.generatepath, self.generate)
-        #f = open(gfile)
-        #g = f.read()
         gtree = etree.parse(gfile)
-        #f.close()
         for t in self.transforms:
             if t.type == 'xinclude':
                 gtree.xinclude()
             else:
                 xfile = join(self.parent.transformpath, t.source)
-                #f = open(xfile)
-                #x = f.read()
                 xdoc = etree.parse(xfile)
                 xform = etree.XSLT(xdoc)
-                #f.close()
-                result = xform(gtree)
+                if len(t.parameters) == 0:
+                    result = xform(gtree)
+                else:
+                    kw = {}
+                    for param in t.parameters:
+                        kw[param[0]] = "'%s'" % param[1]
+                    result = xform(gtree, **kw)
                 gtree = result
         presult = etree.tostring(gtree).encode('utf-8')
         efile = join(self.parent.destpath, self.emit)
