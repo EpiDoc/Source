@@ -3,14 +3,57 @@
     <generatepath>C:\TomDocs\epidocwork\epidoc-sf\guidelines\</generatepath>
     <transformpath>C:\TomDocs\epidocwork\epidoc-sf\epidoc-xsl\</transformpath>
     <destpath>C:\staticgl\</destpath>
+
+    <!-- do we need a way to generate a linked directory listing? Our cocoon
+    sitemap file produced a dirlist.html using a directory generator. 
+    Shouldn't be hard to replicate the behavior in cocoon -->
+
+    <!-- title page, saved both as guidelines.html and index.html -->
     <pipe>
-        <generate>src/guidelines.xml</generate>
+        <generate src="src/guidelines.xml"/>
         <transform type="xinclude"/>
         <transform src="html/epidoc.xsl">
             <parameter name="dotitlepage" value="yes"/>
         </transform>
         <transform src="util/xhtmlindenter.xsl"/>
-        <serialize type="xhtmlbasic"/>
-        <emit>guidelines.html</emit>
+        <emit dest="guidelines.html"/>
+        <emit dest="index.html"/>
     </pipe>
+    
+    <!-- table of contents saved as toc.html -->
+    <pipe>
+        <generate src="src/guidelines.xml"/>
+        <transform type="xinclude"/>
+        <transform src="html/sitemap.xsl"/>
+        <transform src="util/xhtmlindenter.xsl"/>
+        <emit dest="toc.html"/>
+    </pipe>
+    
+    <!-- individual pages -->
+    <pipe>
+            <generate type="directorylist" src="src">
+                <parameter name="exclude" value="CVS"/>
+            </generate>
+            <transform type="xinclude"/>
+            <transform src="html/epidoc.xsl"/>
+            <transform src="util/xhtmlindenter.xsl"/>
+            <emit>
+                <parameter name="extension" value="html"/>
+            </emit>
+    </pipe>
+    
+   <!-- tag reference page saved as tagref.html -->
+    <!-- this is throwing whacky transform errors: need to debug ... note that some incorporated files are invalid!
+   <pipe>
+        <generate src="src/guidelines.xml"/>
+        <transform type="xinclude"/>
+        <transform src="util/tagrefprep.xsl"/>
+        <transform src="html/tagref.xsl"/>
+        <transform src="util/xhtmlindenter.xsl"/>
+        <emit>tagref.html</emit> 
+       <emit>tagrefprepped.xml</emit>
+   </pipe>
+    -->
+    
+    
 </omphalos>
