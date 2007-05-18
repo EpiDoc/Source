@@ -6,8 +6,23 @@ from etreehelps import getalltext
 from texthelps import normalizetext
 
 
-class Omphalos:
-    """wahoo, beluga!"""
+class Generator:
+    """
+    
+    A class that knows how to generate static html from xml source using a processing pipeline
+    provided via an external xml configuration file, the path to which (including arbitrary
+    filename) is passed in as an argument. 
+    
+    Usage (python prompt):
+    
+    >>> import staticgen
+    >>> g = staticgen.Generator(r'C:\TomDocs\epidocwork\epidoc-sf\guidelines\staticgen\config.xml')
+    >>> g.cycle()
+    
+    The format of the config file should be relatively self-evident from the example. Note the 
+    similarities to (and differences from) a cocoon sitemap.xmap file.
+    
+    """
     
     def __init__(self, configpathname):
         # load and store config file
@@ -36,7 +51,8 @@ class Omphalos:
             pipe.cycle()
 
 class Pipe:
-    """wa"""
+    """This class stores information about an individual processing pipeline, and knows how to load
+    it from a configuration file pipe element (lxml) and how to execute that pipeline."""
     
     def __init__(self, parent, pelement):
         self.parent = parent
@@ -72,7 +88,8 @@ class Pipe:
         f.close()
         
 class Transform:
-    """bah"""
+    """This class loads and stores information about an individual transformation element found in
+    a config file processing pipe."""
     
     def __init__(self, telement):
         self.source = ''
