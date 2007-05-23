@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,21 +25,21 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.17 2007-05-11 11:36:53 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.18 2007-05-23 15:32:42 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
         <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="abbreviationsunderstood"><head>Identification and expansion of abbreviations understood by the editor</head>
     <ab><rs type="conformance">leiden</rs></ab>                
 <div id="abbreviationsunderstood-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="ordered">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
             <list type="ordered" lang="la">
                <item id="TypoEx-1">co(n)s(ul)</item>
                <item id="TypoEx-2">Aug(ustus)</item>
                <item id="TypoEx-3">Not covered</item>
                <item id="TypoEx-4">Not covered</item>
                <item id="TypoEx-5">Not covered</item>
-               <item id="TypoEx-6">Not covered</item><item id="TypoEx-7">Not covered</item>
+               <item id="TypoEx-6">Not covered</item><item id="TypoEx-7">Not covered</item><item id="TypoEx-8">Not covered</item>
             </list></item>
       </list>
    </div><div id="abbreviationsunderstood-regex" type="gl-regextest">
@@ -59,7 +58,8 @@ End license statement: do not remove -->
             blah</item>
 <item id="Regex-7">
             blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="abbreviationsunderstood-edition" type="gl-edition" lang="la">
+<item id="Regex-8">
+            blah</item></list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="abbreviationsunderstood-edition" type="gl-edition" lang="la">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
          <item id="EncEx-1"><expan>co<supplied reason="abbreviation" cert="high">n</supplied>s<supplied reason="abbreviation" cert="high">ul</supplied></expan></item>
@@ -68,7 +68,7 @@ End license statement: do not remove -->
          <item id="EncEx-4"><expan><abbr>pr<orig><g type="stop"/></orig></abbr><supplied reason="abbreviation" cert="high">esbyter</supplied></expan></item>
          <item id="EncEx-5"><expan>D<supplied reason="abbreviation" cert="high">is</supplied> M<supplied reason="abbreviation" cert="high">anibus</supplied></expan></item>
          <item id="EncEx-6"><expan>D<supplied reason="abbreviation" cert="high">is</supplied></expan> <expan>M<supplied reason="abbreviation" cert="high">anibus</supplied></expan></item><item id="EncEx-7"><expan><abbr>H<orig><space extent="2" dim="horizontal" unit="character"/></orig></abbr><supplied reason="abbreviation" cert="high">ic</supplied> <abbr>s<orig><space extent="2" dim="horizontal" unit="character"/></orig></abbr><supplied reason="abbreviation" cert="high">itus</supplied> <abbr>e</abbr><supplied reason="abbreviation" cert="high">st</supplied></expan></item>
-      </list>
+      <item id="EncEx-8"><expan><abbr><orig><g type="monogram"/></orig></abbr> <supplied reason="abbreviation" cert="high">Θεοχάρης</supplied></expan></item></list>
    </div><div id="abbreviationsunderstood-notes" type="gl-notes">
       <head>Notes</head>
       <list type="unordered">
@@ -90,9 +90,9 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="abbreviationsunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.17 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.18 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-05-11 11:36:53 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-05-23 15:32:42 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
