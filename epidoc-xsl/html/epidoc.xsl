@@ -65,7 +65,7 @@
     <xsl:import href="teimeasure.xsl" />
     <xsl:import href="teinum.xsl" />
     <xsl:import href="teispace.xsl" />
-        <!-- <xsl:import href="../typographic/teispace-typography.xsl"/> -->
+    <xsl:import href="teispace-typography.xsl"/>
     <xsl:import href="writehtmlmeta.xsl" />
     <xsl:import href="writehtmldc.xsl" />
     <xsl:import href="getdoctitle.xsl" />
