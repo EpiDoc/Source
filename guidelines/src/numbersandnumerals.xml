@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.11 2006-10-30 12:05:36 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/numbersandnumerals.xml,v 1.12 2007-05-23 13:13:26 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="numbersandnumerals">
@@ -38,7 +38,7 @@ End license statement: do not remove -->
         <list type="ordered">
             <item lang="grc" id="TypoEx-1">α´</item>
             <item lang="grc" id="TypoEx-2">͵αχο´</item>
-            <item lang="grc" id="TypoEx-3">&#x10151;</item>
+            <item lang="grc" id="TypoEx-3"></item>
             <item lang="la" id="TypoEx-4">XIII</item>
         </list>
     </div>
@@ -61,7 +61,7 @@ End license statement: do not remove -->
                 <num value="1670" lang="grc">αχο</num>
             </item>
             <item id="EncEx-3" lang="grc"><measure type="currency" unit="stater" value="50">
-                    <num value="50" type="acrophonic">&#x10151;</num>
+                    <num value="50" type="acrophonic"></num>
                 </measure> </item>
             <item id="EncEx-4">
                 <num lang="la" value="13">XIII</num>
@@ -72,7 +72,7 @@ End license statement: do not remove -->
         <head>Notes</head>
         <list type="simple">
             <item>If a numeral is indicated with a supralinear bar or other mark on the stone, this
-                should be separately indicated by a <tag>hi rend="overbar"</tag> element or similar.</item>
+                should be separately indicated by a <tag>hi rend="overbar"</tag> element or similar (see section on <xref href="supralinearlines.xml">supralinear lines</xref>).</item>
             <item>Example 3 above is an acrophonic Greek numeral (for more on which see the
                 guidelines section of <xref href="acrophonic.xml">acrophonics</xref>)</item>
         </list>
@@ -102,9 +102,9 @@ End license statement: do not remove -->
     </div>
     <div id="numbersandnumerals-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.11 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.12 $</seg></p>
         <p id="numbersandnumerals-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-10-30 12:05:36 $</seg></p>
-        <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2007-05-23 13:13:26 $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
     </div>
 </div>
