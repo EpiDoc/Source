@@ -46,6 +46,7 @@
     <xsl:import href="teihead.xsl" />
     <xsl:import href="teidiv.xsl" />
     <xsl:import href="teidiv-epidocedition.xsl" />
+    <xsl:import href="teidiv-textpart.xsl" />
     <xsl:import href="teiab.xsl" />
     <xsl:import href="teilb.xsl" />
     <xsl:import href="teiforeign.xsl" />
