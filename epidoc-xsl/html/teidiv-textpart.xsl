@@ -27,13 +27,15 @@
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="tei:div[starts-with(@type, 'textpart')]" mode="epidoc-edition">
+
         <xsl:call-template name="divtextpartprefix"/>
         
-        <xsl:attribute name="class">epidoc-textpart</xsl:attribute>
         <xsl:apply-templates" mode="epidoc-edition"/>
         
         <xsl:call-template name="divtextpartpostfix"/>
-    </xsl:template>    
+
+    </xsl:template>
+
     <xsl:template name="divtextpartprefix">
 	<strong><xsl:value-of select="@n"/></strong><br/>
     </xsl:template>
