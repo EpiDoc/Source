@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -26,14 +25,13 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/textparts.xml,v 1.1 2007-04-19 17:04:37 paregorios Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/textparts.xml,v 1.2 2007-05-25 16:03:19 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
-    id="textparts" rend="multipart">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="textparts" rend="multipart">
     <head>Lines, sections and references to them</head>
-    <ab><rs type="conformance">leiden</rs></ab>
     
-    <xi:include href="lines.xml" />
+    
+    <xi:include href="lines.xml"/>
     <xi:include href="textunits.xml"/>
 </div>
