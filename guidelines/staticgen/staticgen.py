@@ -1,6 +1,7 @@
 import glob
 from os.path import normpath, normcase, isfile, splitdrive, splitext, split, join
 from os import listdir
+import re
 
 import lxml.etree as etree
 
@@ -50,7 +51,17 @@ class Piper:
         
     def cycle(self):
         for pipe in self.pipes:
-            pipe.cycle()
+            if pipe.type != 'internal':
+                pipe.cycle()
+            
+    def find_pipe(self, pattern):
+        for p in self.pipes:
+            try:
+                if p.pattern == pattern:
+                    return p
+            except:
+                pass
+        return None
 
 class Pipe:
     """This class stores information about an individual processing pipeline, and knows how to load
@@ -59,6 +70,12 @@ class Pipe:
     def __init__(self, parent, pelement):
         self.parent = parent
                 
+        try:
+            self.type = pelement.attrib['type']
+        except:
+            self.type = 'normal'
+        if self.type == 'internal':
+            self.pattern = pelement.attrib['pattern']
         self.generator = Generator(self, pelement.xpath("generate")[0])
         self.transforms = []
         for telement in pelement.xpath("transform"):
@@ -89,13 +106,31 @@ class Pipe:
             # note that serialization settings are ignored 
             for e in self.emits:
                 e.cycle(gtree)
+            if self.type == 'internal':
+                return etree.XML(unicode(gtree))
         print 'PIPE COMPLETE\n'
+        
+    
         
     def do_transforms(self, intree):
         gtree = intree
         for t in self.transforms:
             if t.type == 'xinclude':
                 print ' - xinclude transform started ...'
+                
+                
+                internals = gtree.xpath("//*[local-name()='include' and starts-with(@href, 'cocoon:/')]")
+                if len(internals) > 0:
+                    
+                    for internal in internals:
+                        internal_pattern = internal.attrib['href'].replace('cocoon:/', '', 1)
+                        ipipe = self.parent.find_pipe(internal_pattern)
+                        iresult = ipipe.cycle()
+                        internal_parent = internal.getparent()
+                        internal_i = internal_parent.index(internal)
+                        internal_parent.insert(internal_i, iresult)
+                        internal_parent.remove(internal)
+
                 gtree.xinclude()
             else:
                 print ' - xslt transform started: %s ...' % t.source
@@ -138,8 +173,25 @@ class Generator:
             return gtree
         else:
             dlist = listdir(join(self.parent.parent.generatepath, self.src))
+            print 'PARAMS:'
+            print self.params
             exclusions = [param[1] for param in self.params if param[0] == 'exclude']
-            ilist = [item for item in dlist if item not in exclusions]
+            print 'EXCLUSIONS:'
+            print exclusions
+            #re_exclusions = [param[1].replace(r'*',r'[^\s\.]*').replace(r'.',r'\.') for param in self.params if param[0] == 'exclude' and param[1].find('*') != -1]
+            #ilist = [item for item in dlist if item not in exclusions]
+            ilist = []
+            for rex in exclusions:
+                print rex
+                rexc = re.compile(rex)
+                for item in dlist:
+                    # if item not in ilist:
+                    m = rexc.match(item)
+                    if m:
+                        print ' ~~~ pruning: %s' % item
+                    else:
+                        print ' ~~~ APPENDING: %s' % item
+                        ilist.append(item)
             if self.type=='directory':
                 dxml = etree.Element("directory")
                 for item in ilist:

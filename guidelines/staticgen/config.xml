@@ -32,7 +32,7 @@
     <!-- individual pages -->
     <pipe>
             <generate type="directorylist" src="src">
-                <parameter name="exclude" value="CVS"/>
+                <parameter name="exclude" value="CVS|.*\.bak"/>
             </generate>
             <transform type="xinclude"/>
             <transform src="html/epidoc.xsl"/>
@@ -42,7 +42,25 @@
             </emit>
     </pipe>
     
-   <!-- tag reference page saved as tagref.html -->
+    <pipe type="internal" pattern="conformance-aiegl-list-raw.xml">
+        <generate src="src/guidelines.xml"/>
+        <transform type="xinclude"/>
+        <transform src="util/extract-rs.xsl">
+            <parameter name="rstype" value="conformance"/>
+            <parameter name="rsvalue" value="aiegl"/>
+        </transform>
+    </pipe>
+    
+    <pipe type="internal" pattern="conformance-leiden-list-raw.xml">
+        <generate src="src/guidelines.xml"/>
+        <transform type="xinclude"/>
+        <transform src="util/extract-rs.xsl">
+            <parameter name="rstype" value="conformance"/>
+            <parameter name="rsvalue" value="leiden"/>
+        </transform>
+    </pipe>
+
+    <!-- tag reference page saved as tagref.html -->
     <!-- this is throwing whacky transform errors: need to debug ... note that some incorporated files are invalid!
    <pipe>
         <generate src="src/guidelines.xml"/>
