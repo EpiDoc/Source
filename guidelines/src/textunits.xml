@@ -25,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/textunits.xml,v 1.3 2007-05-24 18:18:01 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/textunits.xml,v 1.4 2007-05-25 16:02:53 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="textunits">
@@ -52,10 +52,10 @@ End license statement: do not remove -->
 </list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="textunits-edition" type="gl-edition">
       <head>EpiDoc appearance with standard XSLT</head>
       <div id="EncEx-1"><div n="a" type="textpart_fragment"><ab><lb/>abc</ab></div><div n="b" type="textpart_fragment"><ab><lb/>abc</ab></div></div>
-   </div><div id="textunits-notes" type="gl-notes">
+   <div><list><item id="EncEx-2">    Ζωΐ<milestone unit="block"/>λος   θεοῦ  Ἰουλίου  υἱ<milestone unit="block"/>οῦ  Καίσαρος</item></list></div></div><div id="textunits-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
-         <item>Unfinished</item>
+         <item>The EpiDoc Standard XSLTs do not current support the 'textpart' div, at least not in the Guidelines pages.</item>
          
       </list>
    </div><div id="textunits-responsibility" type="gl-responsibility">
@@ -67,8 +67,8 @@ End license statement: do not remove -->
       </listBibl>
    </div><div id="textunits-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="textunits-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.3 $</seg></p>
+      <p id="textunits-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.4 $</seg></p>
       <p id="textunits-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="textunits-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-05-24 18:18:01 $</seg></p>
+      <p id="textunits-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-05-25 16:02:53 $</seg></p>
       <p id="textunits-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
