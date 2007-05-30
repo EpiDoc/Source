@@ -15,6 +15,7 @@
         <transform src="html/epidoc.xsl">
             <parameter name="dotitlepage" value="yes"/>
         </transform>
+        <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
         <emit dest="guidelines.html"/>
         <emit dest="index.html"/>
@@ -25,6 +26,7 @@
         <generate src="src/guidelines.xml"/>
         <transform type="xinclude"/>
         <transform src="html/sitemap.xsl"/>
+        <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
         <emit dest="toc.html"/>
     </pipe>
@@ -36,6 +38,7 @@
             </generate>
             <transform type="xinclude"/>
             <transform src="html/epidoc.xsl"/>
+            <transform src="util/nscleanup.xsl"/>
             <transform src="util/xhtmlindenter.xsl"/>
             <emit>
                 <parameter name="extension" value="html"/>
