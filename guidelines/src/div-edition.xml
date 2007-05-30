@@ -25,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-edition.xml,v 1.6 2006-12-03 16:19:02 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-edition.xml,v 1.7 2007-05-30 13:48:23 ctupman Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="div-edition" lang="en">
    <head>  Edition</head>
@@ -46,7 +46,7 @@ End license statement: do not remove -->
             <tag>div @type='edition'</tag>.</p>
       <p>Authority for each edition is recorded in the corresponding <xref href="div-history.xml">source
             section of history</xref>, and in the corresponding external <xref href="div-apparatus.xml">apparatus criticus</xref>. The edition is linked to its
-         corresponding sections (how?); if there is but a single edition, the link may be considered
+         corresponding sections <note>(how?)</note>; if there is but a single edition, the link may be considered
          to be implicit.</p>
       <p>The edition division can also be used to record a consolidated edition (similar to an
          eclectic manuscript edition—e.g. brick-stamps, coins, Diocletian's Prices Edict, <title>Res
@@ -70,9 +70,9 @@ End license statement: do not remove -->
     </div>
     <div id="div-edition-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-        <p id="div-edition-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.6 $</seg></p>
+        <p id="div-edition-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
         <p id="div-edition-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-        <p id="div-edition-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006-12-03 16:19:02 $</seg></p>
-        <p id="div-edition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
+        <p id="div-edition-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2007-05-30 13:48:23 $</seg></p>
+        <p id="div-edition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: ctupman $</seg></p>
     </div>
 </div>
