@@ -30,7 +30,7 @@
 
         <xsl:call-template name="divtextpartprefix"/>
         
-        <xsl:apply-templates" mode="epidoc-edition"/>
+        <xsl:apply-templates mode="epidoc-edition"/>
         
         <xsl:call-template name="divtextpartpostfix"/>
 
