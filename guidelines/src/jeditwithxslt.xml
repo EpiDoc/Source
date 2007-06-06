@@ -25,45 +25,119 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/jeditwithxslt.xml,v 1.1 2006-07-16 13:46:59 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/jeditwithxslt.xml,v 1.2 2007-06-06 17:24:11 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
-<div xmlns="http://www.tei-c.org/ns/1.0" id="jeditwithxslt" lang="en">
-   <head>Transforming the XML using jEdit</head>
-   <p>Instructions to use the EpiDoc XSLT stylesheets to render and view your own XML files. These notes apply to jEdit 4.2; older versions may exhibit minor differences in behaviour. (To enable XML and XSLT handling in jEdit, see the final section below.)</p><p>There are some bugs in jEdit performance: we have documented work-arounds to three of these serious problems below.</p>
-   <list type="ordered">
-      <item>Open the XML file  in jEdit.	If the XSLT Processor is not already open, click on the 'XSLT Processor' tab (we recommend docking this tab at the bottom of the window but some may prefer to open a 'floating' window.)</item><item>Select stylesheets to apply:<list><item>	Click on the '+' button to the right of the 'Stylesheet' box</item><item>Find '\epidoc-xsl\util\force-namespace-tei.xsl' on your computer</item><item>	Click on 'Open' to select the file</item><item>	Repeat to add '\epidoc-xsl\html\epidoc.xsl'</item><item>	(Ensure that 'force-namespace-tei.xsl' is above 'epidoc.xsl'. If it comes below, click on one of the files, and move them into the correct order using the directional arrows to the lower right of the box.)</item><item>	(You can remove stylesheets from the list by selecting the filename and clicking on the '-' button, which is below the '+' button. )</item></list></item><item>The 'Parameter' function in the jEdit XSLT processor does not appear to work as of version 4.2. For the workaround, see 'Setting the CSS parameter' below.</item><item>Under 'Source XML' on the right of the XSLT panel, select 'Current buffer'. (Running the file from disc can cause problems with Greek Unicode output.)</item><item>Under 'Result', enter the path and name for the output file<list><item>	The first time you transform a given XML file, the output HTML will open in a new buffer and you should manually save it (see 8. below)
-</item><item>	On future saves you can click the button on the right to find the path and select the file from the HTML folder on your computer
-</item><item>	 (It is this location you need to be aware of when 'Setting the CSS parameter' below.)</item></list></item><item>Make sure your EpiDoc XML file is the active buffer (at the front of the jEdit windows)</item><item>Click the 'xml + xsl =' button to run the process<list><item>	You will see the raw html in jEdit</item></list></item><item>If a new file, manually save the output to the HTML folder on your computer<list><item>Name the file</item></list></item><item>	Go to where the file is saved to open it in your web browser</item>
-   </list>
-   <div><head>Setting the CSS Parameter</head><p>At the moment the parameter function in jEdit does not seem to work correctly (as of version 4.2). The EpiDoc stylesheets require one parameter to be set, which needs to be edited by hand in your local copy of the stylesheets; this is the standalonecss parameter (which tells the output HTML where to find the CSS which displays it correctly in the browser).</p><p></p><list type="simple"><item>Open epidoc-xsl\html\epidoc.xsl inside jEdit.</item><item>	Look for: &lt;xsl:param name="standalonecss"&gt;</item><item>	Change the path to where 'epidocscreen.css' is kept on your computer.
-(If using a relative path [e.g. "..\css\"] remember this relationship is between your output file and the CSS; this problem is avoided by making the path absolute.)</item></list></div><div><head>Enabling XML and XSLT in jEdit</head><list type="ordered"><item>	Install the following plugins (either through 'Plugins Manager' or, if there are problems here, from http://plugins.jedit.org/):<list><item>ErrorList (from 'Support')</item><item>	SideKick (from 'Support')</item><item>	XercesPlugin (from 'HTML and XML')</item><item>	XML (from 'HTML and XML')</item><item>	XmlIndenter  (from 'HTML and XML')</item><item>	XSLT (from 'HTML and XML')
-</item></list>
-</item><item>	If installing manually, unpack all zip files to '\program files\jEdit\jars' folder (or location of jEdit on your system if not Windows).</item><item>	Set up XML functions on docked windows<list><item>
-	Go to 'Utilities' menu and select 'Global Settings'</item><item>
-	Under 'jEdit' select 'Docking'</item><item>For XML Insert, we recommend changing 'Docking position' to 'left' (using dropdown menu)</item><item>	For both Error List and XSLT Processor we recommend change 'Docking Position' to 'Bottom'</item><item>	Click 'OK' to exit the window</item></list></item><item>	To activate any of these docked options, click on the button at the left or bottom of the window. Clicking again hides the dock temporarily. You may need to resize the docks for convenience.</item><item>	Change default font:<list><item>Go to 'Utilities' menu and select 'Global Settings'</item><item>	Under 'jEdit' select 'Text Area'</item><item>	Click on the box to the right of 'Text font:'</item><item>
-Change the font to a Greek Unicode compliant font, e.g. Arial Unicode MS, Palatino Linotype, Lucida Grande, New Athena Unicode, Cardo, etc.</item><item>	Click 'OK' to exit the window</item></list>
-</item></list></div><div id="jeditwithxslt-responsibility" type="gl-responsibility">
-      <head>Responsibility for this section</head>
-      <listBibl>
-         <bibl>
+<div xmlns="http://www.tei-c.org/ns/1.0" id="jeditwithxslt" lang="en" rend="integral">
+    <head>Transforming the XML using jEdit</head>
+    <p>Instructions to use the EpiDoc XSLT stylesheets to render and view your own XML files. These notes apply to jEdit 4.2;
+        older versions may exhibit minor differences in behaviour. (To enable XML and XSLT handling in jEdit, see the final
+        section below.)</p>
+    <p>There are some bugs in jEdit performance: we have documented work-arounds to three of these serious problems below.</p>
+    <list type="ordered">
+        <item>Open the XML file in jEdit. If the XSLT Processor is not already open, click on the 'XSLT Processor' tab (we
+            recommend docking this tab at the bottom of the window but some may prefer to open a 'floating' window.)</item>
+        <item>Select stylesheets to apply:<list>
+                <item> Click on the '+' button to the right of the 'Stylesheet' box</item>
+                <item>Find '\epidoc-xsl\util\force-namespace-tei.xsl' on your computer</item>
+                <item> Click on 'Open' to select the file</item>
+                <item> Repeat to add '\epidoc-xsl\html\epidoc.xsl'</item>
+                <item> (Ensure that 'force-namespace-tei.xsl' is above 'epidoc.xsl'. If it comes below, click on one of the
+                    files, and move them into the correct order using the directional arrows to the lower right of the box.)</item>
+                <item> (You can remove stylesheets from the list by selecting the filename and clicking on the '-' button,
+                    which is below the '+' button. )</item>
+            </list></item>
+        <item>The 'Parameter' function in the jEdit XSLT processor does not appear to work as of version 4.2. For the
+            workaround, see 'Setting the CSS parameter' below.</item>
+        <item>Under 'Source XML' on the right of the XSLT panel, select 'Current buffer'. (Running the file from disc can
+            cause problems with Greek Unicode output.)</item>
+        <item>Under 'Result', enter the path and name for the output file<list>
+                <item> The first time you transform a given XML file, the output HTML will open in a new buffer and you
+                    should manually save it (see 8. below) </item>
+                <item> On future saves you can click the button on the right to find the path and select the file from the
+                    HTML folder on your computer </item>
+                <item> (It is this location you need to be aware of when 'Setting the CSS parameter' below.)</item>
+            </list></item>
+        <item>Make sure your EpiDoc XML file is the active buffer (at the front of the jEdit windows)</item>
+        <item>Click the 'xml + xsl =' button to run the process<list>
+                <item> You will see the raw html in jEdit</item>
+            </list></item>
+        <item>If a new file, manually save the output to the HTML folder on your computer<list>
+                <item>Name the file</item>
+            </list></item>
+        <item> Go to where the file is saved to open it in your web browser</item>
+    </list>
+    <div>
+        <head>Setting the CSS Parameter</head>
+        <p>At the moment the parameter function in jEdit does not seem to work correctly (as of version 4.2). The EpiDoc
+            stylesheets require one parameter to be set, which needs to be edited by hand in your local copy of the
+            stylesheets; this is the standalonecss parameter (which tells the output HTML where to find the CSS which
+            displays it correctly in the browser).</p>
+        <p />
+        <list type="simple">
+            <item>Open epidoc-xsl\html\epidoc.xsl inside jEdit.</item>
+            <item> Look for: &lt;xsl:param name="standalonecss"&gt;</item>
+            <item> Change the path to where 'epidocscreen.css' is kept on your computer. (If using a relative path [e.g.
+                "..\css\"] remember this relationship is between your output file and the CSS; this problem is avoided by
+                making the path absolute.)</item>
+        </list>
+    </div>
+    <div>
+        <head>Enabling XML and XSLT in jEdit</head>
+        <list type="ordered">
+            <item> Install the following plugins (either through 'Plugins Manager' or, if there are problems here, from http://plugins.jedit.org/):<list>
+                    <item>ErrorList (from 'Support')</item>
+                    <item> SideKick (from 'Support')</item>
+                    <item> XercesPlugin (from 'HTML and XML')</item>
+                    <item> XML (from 'HTML and XML')</item>
+                    <item> XmlIndenter (from 'HTML and XML')</item>
+                    <item> XSLT (from 'HTML and XML') </item>
+                </list>
+            </item>
+            <item> If installing manually, unpack all zip files to '\program files\jEdit\jars' folder (or location of jEdit
+                on your system if not Windows).</item>
+            <item> Set up XML functions on docked windows<list>
+                    <item> Go to 'Utilities' menu and select 'Global Settings'</item>
+                    <item> Under 'jEdit' select 'Docking'</item>
+                    <item>For XML Insert, we recommend changing 'Docking position' to 'left' (using dropdown menu)</item>
+                    <item> For both Error List and XSLT Processor we recommend change 'Docking Position' to 'Bottom'</item>
+                    <item> Click 'OK' to exit the window</item>
+                </list></item>
+            <item> To activate any of these docked options, click on the button at the left or bottom of the window. Clicking
+                again hides the dock temporarily. You may need to resize the docks for convenience.</item>
+            <item> Change default font:<list>
+                    <item>Go to 'Utilities' menu and select 'Global Settings'</item>
+                    <item> Under 'jEdit' select 'Text Area'</item>
+                    <item> Click on the box to the right of 'Text font:'</item>
+                    <item> Change the font to a Greek Unicode compliant font, e.g. Arial Unicode MS, Palatino Linotype,
+                        Lucida Grande, New Athena Unicode, Cardo, etc.</item>
+                    <item> Click 'OK' to exit the window</item>
+                </list>
+            </item>
+        </list>
+    </div>
+    <div id="jeditwithxslt-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
             <respStmt>
                <resp>author</resp>
                <name>Zaneta Au</name>
             </respStmt>
-         </bibl><bibl>
+         </bibl>
+            <bibl>
             <respStmt>
                <resp>author</resp>
                <name>Gabriel Bodard</name>
             </respStmt>
          </bibl>
-      </listBibl>
-   </div>
-   <div id="jeditwithxslt-cvs" type="gl-cvs">
-      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="oxygenwithxslt-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.1 $</seg></p>
-      <p id="oxygenwithxslt-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
-      <p id="oxygenwithxslt-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date:
-            2006/03/21 16:07:55 $</seg></p>
-      <p id="oxygenwithxslt-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
-   </div>
+        </listBibl>
+    </div>
+    <div id="jeditwithxslt-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="oxygenwithxslt-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.2 $</seg></p>
+        <p id="oxygenwithxslt-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="oxygenwithxslt-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2007-06-06 17:24:11 $</seg></p>
+        <p id="oxygenwithxslt-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard
+                $</seg></p>
+    </div>
 </div>
