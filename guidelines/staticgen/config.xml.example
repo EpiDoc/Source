@@ -17,7 +17,6 @@
         </transform>
         <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
-        <emit dest="guidelines.html"/>
         <emit dest="index.html"/>
     </pipe>
     
@@ -28,13 +27,14 @@
         <transform src="html/sitemap.xsl"/>
         <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
+        <emit dest="guidelines.html"/>
         <emit dest="toc.html"/>
     </pipe>
     
     <!-- individual pages -->
     <pipe>
             <generate type="directorylist" src="src">
-                <parameter name="exclude" value="CVS|.*\.bak"/>
+                <parameter name="exclude" value="CVS|.*\.bak|guidelines\.xml"/>
             </generate>
             <transform type="xinclude"/>
             <transform src="html/epidoc.xsl"/>
