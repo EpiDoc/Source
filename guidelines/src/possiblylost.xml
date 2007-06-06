@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
@@ -27,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/possiblylost.xml,v 1.13 2006-10-30 12:05:36 paregorios Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/possiblylost.xml,v 1.14 2007-06-06 16:45:54 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -35,7 +34,7 @@ End license statement: do not remove -->
 <p n="regexerror">for divset 1: encodingitemcount != editionitemcount</p><div id="possiblylost-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="unordered">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht" >Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
             <list type="ordered">
                <item id="TypoEx-1">[ · · · ? ] </item>
                <item id="TypoEx-2">[ · c.3 · ? ] </item>
@@ -71,16 +70,12 @@ End license statement: do not remove -->
             <gap id="gap1" reason="lost" extent="3" unit="character"/>
             <certainty target="gap1" locus="#gi" assertedValue="space" degree="low"/></item>
          <item id="EncEx-2">
-            <gap id="gap2" reason="lost" extent="3" unit="character"/>
-            <certainty target="gap2" locus="extent" assertedValue="space" degree="low"/>
-            <certainty target="gap2" locus="#gi" assertedValue="space" degree="low"/></item>
+            <gap id="gap2" reason="lost" extent="3" unit="character" precision="circa"/> <certainty target="gap2" locus="#gi" assertedValue="space" degree="low"/></item>
          <item id="EncEx-3">
             <gap id="gap3" reason="lost" extent="10" unit="character"/>
             <certainty target="gap3" locus="#gi" assertedValue="space" degree="low"/></item>
          <item id="EncEx-4">
-            <gap id="gap4" reason="lost" extent="10" unit="character"/>
-            <certainty target="gap4" locus="extent" degree="low"/>
-            <certainty target="gap4" locus="#gi" assertedValue="space" degree="low"/></item>
+            <gap id="gap4" reason="lost" extent="10" unit="character" precision="circa"/> <certainty target="gap4" locus="#gi" assertedValue="space" degree="low"/></item>
          <item id="EncEx-5">
             <gap id="gap5" reason="lost" extent="4.2" unit="cm"/>
             <certainty target="gap5" locus="#gi" assertedValue="space" degree="low"/></item>
@@ -88,33 +83,37 @@ End license statement: do not remove -->
             <gap id="gap6" reason="lost" extent="1" unit="line"/>
             <certainty target="gap6" locus="#gi" assertedValue="space" degree="low"/></item>
          <item id="EncEx-7">
-            <gap id="gap7" reason="lost" unit="line"/>
-            <certainty target="gap7" locus="extent" degree="low"/>
+            <gap id="gap7" reason="lost" unit="line" extent="unknown"/>
             <certainty target="gap7" locus="#gi" assertedValue="space" degree="low"/></item>
       </list>
    </div><div id="possiblylost-notes" type="gl-notes">
       <head>Notes</head>
       <list type="ordered">
          <item>The first example indicates the <hi rend="strong">possible</hi> loss of exactly three characters (the alternative possibility is that there was originally a vacat in this space.</item>
-         <item>The second example indicates the <hi rend="strong">possible</hi> loss of approximately three characters.</item>
+         <item>The second example indicates the <hi rend="strong">possible</hi> loss of circa three characters.</item>
          <item>The third example indicates the <hi rend="strong">possible</hi> loss of exactly 10 characters.</item>
-         <item>The fourth example indicates the <hi rend="strong">possible</hi> loss of approximately 10 characters.</item>
+         <item>The fourth example indicates the <hi rend="strong">possible</hi> loss of circa 10 characters.</item>
          <item>The fifth example indicates the <hi rend="strong">possible</hi> loss of text in a horizontal span of 4.2cm.</item>
          <item>The sixth example indicates the <hi rend="strong">possible</hi> loss of exactly one line of text.</item>
          <item>The seventh example indicates the <hi rend="strong">possible</hi> loss of one or more lines of text.</item>
-         <item>For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <xref href="lostcertain.xml" >Letters completely lost (extent certain or not certain)</xref>.</item>
+         <item>For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <xref href="lostcertain.xml">Letters completely lost (extent certain or not certain)</xref>.</item>
       </list>
    </div><div id="possiblylost-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>converted XML</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl default="NO">
+				<respStmt>
+					<resp>author</resp>
+					<name>Gabriel Bodard</name>
+				</respStmt>
+			</bibl>
       </listBibl>
    </div><div id="possiblylost-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="possiblylost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.13 $</seg></p>
+      <p id="possiblylost-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.14 $</seg></p>
       <p id="possiblylost-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="possiblylost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2006-10-30 12:05:36 $</seg></p>
-      <p id="possiblylost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+      <p id="possiblylost-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-06-06 16:45:54 $</seg></p>
+      <p id="possiblylost-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
