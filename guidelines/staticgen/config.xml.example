@@ -18,6 +18,7 @@
         <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
         <emit dest="index.html"/>
+        <emit dest="guidelines.html"/>
     </pipe>
     
     <!-- table of contents saved as toc.html -->
@@ -27,7 +28,6 @@
         <transform src="html/sitemap.xsl"/>
         <transform src="util/nscleanup.xsl"/>
         <transform src="util/xhtmlindenter.xsl"/>
-        <emit dest="guidelines.html"/>
         <emit dest="toc.html"/>
     </pipe>
     
