@@ -42,15 +42,29 @@
          </xsl:when>
          <xsl:otherwise>
              <xsl:variable name="precount" select="count(preceding::tei:lb[count(key('editionlb', generate-id()))&gt;0])"/>
-             <xsl:variable name="precountmod" select="count(preceding::tei:lb[count(key('editionlb', generate-id()))&gt;0]) mod $linenumberinterval"/>
-            <xsl:if test="$precountmod = $linenumberinterval - 1 and $precount != 1">
-               <xsl:element name="span">
-                  <xsl:attribute name="class">linenumber</xsl:attribute>
-                  <xsl:attribute name="lang"><xsl:value-of select="$language"/></xsl:attribute>
-                  <xsl:attribute name="lang" namespace="http://www.w3.org/XML/1998/namespace"><xsl:value-of select="$language"/></xsl:attribute>
-                  <xsl:value-of select="$precount+1" />
-               </xsl:element>
-            </xsl:if>
+             <xsl:variable name="countmod" select="(count(preceding::tei:lb[count(key('editionlb', generate-id()))&gt;0])+1) mod $linenumberinterval"/>
+             <xsl:choose>
+                 <xsl:when test="$linenumberinterval = 0"></xsl:when>
+                 <xsl:when test="$linenumberinterval = 1">
+                   <xsl:element name="span">
+                      <xsl:attribute name="class">linenumber</xsl:attribute>
+                      <xsl:attribute name="lang"><xsl:value-of select="$language"/></xsl:attribute>
+                      <xsl:attribute name="lang" namespace="http://www.w3.org/XML/1998/namespace"><xsl:value-of select="$language"/></xsl:attribute>
+                      <xsl:value-of select="$precount+1" />
+                   </xsl:element>
+                 </xsl:when>
+                 <xsl:when test="$linenumberinterval &gt; 1">
+                     <xsl:if test="$countmod = 0 and $precount != 0">
+                       <xsl:element name="span">
+                          <xsl:attribute name="class">linenumber</xsl:attribute>
+                          <xsl:attribute name="lang"><xsl:value-of select="$language"/></xsl:attribute>
+                          <xsl:attribute name="lang" namespace="http://www.w3.org/XML/1998/namespace"><xsl:value-of select="$language"/></xsl:attribute>
+                          <xsl:value-of select="$precount+1" />
+                       </xsl:element>
+                    </xsl:if>
+                 </xsl:when>
+             </xsl:choose>
+             
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
