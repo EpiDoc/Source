@@ -26,7 +26,7 @@
  
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
-   <xsl:template match="tei:note[not(@target) and @place='not specified']">
+   <xsl:template match="tei:note[not(@target) and @place='not specified' and not(ancestor::tei:app)]">
       <xsl:element name="span">
           <xsl:attribute name="class">note</xsl:attribute>
           <xsl:call-template name="propagateattrs"/>

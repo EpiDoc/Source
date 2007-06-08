@@ -33,7 +33,7 @@
     <xsl:template match="tei:space" mode="typography">
         <xsl:variable name="spaceid"><xsl:value-of select="@id" /></xsl:variable>
         <xsl:value-of select="$space-delimiter-left"
-            /><xsl:if test="./@id and //tei:certainty[@target=$spaceid and @locus='#gi' and @degree='low']"><xsl:value-of select="$space-uncertainty-indicator"/></xsl:if
+            /><xsl:if test="@precision='circa'"><xsl:value-of select="$space-uncertainty-indicator"/></xsl:if
             ><xsl:if test="@extent"><xsl:text> </xsl:text><xsl:value-of select="@extent"
                 /><xsl:if test="@unit != 'character'"><xsl:text> </xsl:text><xsl:value-of select="@unit"/></xsl:if
                 ><xsl:if test="./@id and ./@extent and //tei:certainty[@target=$spaceid and @locus='extent' and @degree='low']"><xsl:value-of select="$space-uncertainty-indicator"/></xsl:if> </xsl:if><xsl:value-of select="$space-delimiter-right"/>
