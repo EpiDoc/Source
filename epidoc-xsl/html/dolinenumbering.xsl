@@ -26,6 +26,7 @@
  
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <xsl:key name="editionlb" match="//tei:div[@type='edition']//tei:lb" use="generate-id(.)"/>
    <xsl:template name="dolinenumbering">
       <xsl:variable name="language" select="ancestor::*[@lang][last()]/@lang"></xsl:variable>
       <xsl:choose>
@@ -40,12 +41,14 @@
             </xsl:if>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:if test="count(preceding::tei:lb) mod $linenumberinterval = 0">
+             <xsl:variable name="precount" select="count(preceding::tei:lb[count(key('editionlb', generate-id()))&gt;0])"/>
+             <xsl:variable name="precountmod" select="count(preceding::tei:lb[count(key('editionlb', generate-id()))&gt;0]) mod $linenumberinterval"/>
+            <xsl:if test="$precountmod = $linenumberinterval - 1 and $precount != 1">
                <xsl:element name="span">
                   <xsl:attribute name="class">linenumber</xsl:attribute>
                   <xsl:attribute name="lang"><xsl:value-of select="$language"/></xsl:attribute>
                   <xsl:attribute name="lang" namespace="http://www.w3.org/XML/1998/namespace"><xsl:value-of select="$language"/></xsl:attribute>
-                  <xsl:value-of select="count(preceding::tei:lb)" />
+                  <xsl:value-of select="$precount+1" />
                </xsl:element>
             </xsl:if>
          </xsl:otherwise>
