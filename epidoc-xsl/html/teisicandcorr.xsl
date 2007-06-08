@@ -31,9 +31,42 @@
 </xsl:template>
 
 <xsl:template match="tei:choice[@type='correction']/tei:corr">
-	<xsl:text>&#x231C;</xsl:text>
-		<xsl:apply-templates/>
-	<xsl:text>&#x231D;</xsl:text>
+    <xsl:choose>
+        <xsl:when test="$corrstyle = 'edh'">
+            <xsl:element name="span">
+                <xsl:attribute name="class">epigraphic-correction</xsl:attribute>
+                <xsl:if test="../tei:sic">
+                    <xsl:attribute name="title">corrected to <xsl:value-of select="."/> from <xsl:value-of select="../tei:sic" /></xsl:attribute>
+                </xsl:if>
+                <xsl:text>&lt;</xsl:text>
+                <xsl:apply-templates/><xsl:text>=</xsl:text><xsl:value-of select="../tei:sic"/>
+                <xsl:text>&gt;</xsl:text>
+            </xsl:element>            
+        </xsl:when>
+        <xsl:when test="$corrstyle = 'seg'">
+            <xsl:element name="span">
+                <xsl:attribute name="class">epigraphic-correction</xsl:attribute>
+                <xsl:if test="../tei:sic">
+                    <xsl:attribute name="title">corrected to <xsl:value-of select="."/> from <xsl:value-of select="../tei:sic" /></xsl:attribute>
+                </xsl:if>
+                <xsl:text>&lt;</xsl:text>
+                <xsl:apply-templates />
+                <xsl:text>&gt;</xsl:text>
+            </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:element name="span">
+                <xsl:attribute name="class">epigraphic-correction</xsl:attribute>
+                <xsl:if test="../tei:sic">
+                    <xsl:attribute name="title">corrected to <xsl:value-of select="."/> from <xsl:value-of select="../tei:sic" /></xsl:attribute>
+                </xsl:if>
+                <xsl:text>&#x231C;</xsl:text>
+                <xsl:apply-templates />
+                <xsl:text>&#x231D;</xsl:text>
+            </xsl:element>
+        </xsl:otherwise>
+    </xsl:choose>
+	
 </xsl:template>
 
    <!-- in EpiDoc, sic with no corr but [@n='superfluous'] means erroneously included -->

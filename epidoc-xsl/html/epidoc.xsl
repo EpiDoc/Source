@@ -117,6 +117,8 @@
     <xsl:param name="htmltitlecontentid">htmltitlepagecontent</xsl:param>
     <xsl:param name="epidocrefurl">http://epidoc.sf.net</xsl:param>
     <xsl:param name="epidocrefstring">the EpiDoc home page</xsl:param>
+    <xsl:param name="corrstyle">panciera</xsl:param>
+    <!-- supported values for corrstyle are: "panciera", "seg" and "edh" -->
     <xsl:template match="/">
         <xsl:element name="html">
             <xsl:apply-templates />
