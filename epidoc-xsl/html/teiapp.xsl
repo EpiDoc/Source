@@ -42,7 +42,7 @@
 				<xsl:apply-templates select="tei:rdg[@n='default']"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:if test="@loc"><xsl:value-of select="@loc"/>: </xsl:if><xsl:apply-templates/>
+				<xsl:if test="@loc"><xsl:value-of select="@loc"/>&#160;</xsl:if><xsl:apply-templates/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -51,7 +51,7 @@
 		(<xsl:apply-templates/>)</xsl:template>
 	
 	<xsl:template match="tei:lem">
-		<xsl:value-of select="."/>: 
+		<xsl:value-of select="."/>&#160;
 	</xsl:template>
 	
 	<xsl:template match="tei:rdg">
