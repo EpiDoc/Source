@@ -26,18 +26,25 @@
  
 
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="tei:div[starts-with(@type, 'textpart')]" mode="epidoc-edition">
+    <xsl:template match="tei:div[starts-with(@type, 'textpart')]">
 
         <xsl:call-template name="divtextpartprefix"/>
         
-        <xsl:apply-templates mode="epidoc-edition"/>
+        <xsl:apply-templates/>
         
         <xsl:call-template name="divtextpartpostfix"/>
 
     </xsl:template>
 
     <xsl:template name="divtextpartprefix">
-	<strong><xsl:value-of select="@n"/></strong><br/>
+	<span class="textparthead">
+	  <xsl:if test="string-length(@type) &gt; 9">
+	    <xsl:value-of select="substring-after(@type, 'textpart_')"/>
+	    <xsl:text>&#xa0;</xsl:text>
+	  </xsl:if>
+	  <xsl:value-of select="@n"/>
+	</span>
+	<br/>
     </xsl:template>
 
     <xsl:template name="divtextpartpostfix"/>
