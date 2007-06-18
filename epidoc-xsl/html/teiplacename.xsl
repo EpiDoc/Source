@@ -43,7 +43,7 @@
          </xsl:when>
          <xsl:otherwise>
             <xsl:element name="span">
-               <xsl:attribute name="class">personal-name</xsl:attribute>
+               <xsl:attribute name="class">place-name</xsl:attribute>
                <xsl:call-template name="propagateattrs" />
                <xsl:if test="@reg">
                   <xsl:attribute name="title">
