@@ -86,7 +86,7 @@
 		<xsl:variable name="gapopener">[</xsl:variable>
 		<xsl:variable name="gapcloser">]</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and @precision='circa'">
                  <xsl:text>&#160;</xsl:text>
 		 <xsl:call-template name="repeatstring">
 		 	<xsl:with-param name="rstring">
@@ -114,7 +114,7 @@
 			<!-- <xsl:value-of select="$gapcloser"/> -->
 			<xsl:call-template name="reasonlostclose"/>
 		</xsl:when>
-			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+			<xsl:when test="@id and @precision='circa'">
 				 <xsl:text>&#160;</xsl:text>
 				 <xsl:call-template name="repeatstring">
 					 <xsl:with-param name="rstring">
@@ -195,7 +195,7 @@
 		<xsl:choose>
 			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low']">
 				<xsl:choose>
-					<xsl:when test="//tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+					<xsl:when test="@precision='circa'">
 						<xsl:choose>
 							<xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/>
 								<xsl:if test="@extentmax">
@@ -228,7 +228,7 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			</xsl:when>
-			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+			<xsl:when test="@id and @precision='circa'">
 				<xsl:choose>
 					<xsl:when test="@unit='character'">&#160;&#183;&#160;c.<xsl:value-of select="@extent"/>
 						<xsl:if test="@extentmax">
@@ -282,7 +282,7 @@
 			<xsl:value-of select="@id"/>
 		</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and @precision='circa'">
 				<xsl:choose>
 					<xsl:when test="@unit='character'">&#160;+&#160;c.<xsl:value-of select="@extent"/>
 						<xsl:if test="@unit != 'character'">
@@ -312,7 +312,7 @@
 						<xsl:value-of select="@unit"/>&#160;+&#160;?&#160;</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
-			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='extent' and @degree='low']">
+			<xsl:when test="@id and @precision='circa'">
 				<xsl:choose>
 					<xsl:when test="@unit='character'">&#160;+&#160;c.<xsl:value-of select="@extent"/>&#160;+&#160;</xsl:when>
 					<xsl:otherwise>
