@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<xsl:stylesheet version="1.0" 
+    xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xsl:template match="/tei:TEI.2">
         <xsl:element name="div">
             <xsl:attribute name="xmlns">http://www.tei-c.org/ns/1.0</xsl:attribute>
             <xsl:attribute name="xmlns:tei">http://www.tei-c.org/ns/1.0</xsl:attribute>
-            <xsl:attribute name="xmlns:xi">http://www.w3.org/2001/XInclude</xsl:attribute>
+            <!-- <xsl:attribute name="xmlns:xi">http://www.w3.org/2001/XInclude</xsl:attribute> -->
             
                 <xsl:element name="list">
                     <xsl:attribute name="type">exempla</xsl:attribute>
