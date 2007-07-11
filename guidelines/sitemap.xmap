@@ -118,6 +118,12 @@
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--   multiple ways to get the title page -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <map:match pattern="dirlist.xml">
+                <map:generate type="directory" src="./src">
+                    <map:parameter name="exclude" value="CVS"/>
+                </map:generate>
+                <map:serialize type="xml"/>
+            </map:match>
             <map:match pattern="">
                 <!-- Redirect request to the root path to the index page
                 <map:redirect-to uri="index.html"/> -->
