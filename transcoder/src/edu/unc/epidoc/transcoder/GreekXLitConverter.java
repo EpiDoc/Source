@@ -4,6 +4,8 @@
  * (c) Michael Jones (mdjone2@uky.edu)
  * This software is licensed under the terms of the GNU LGPL.
  * See http://www.gnu.org/licenses/lgpl.html for details.
+ *
+ * Edited 1-5-2003 by Hugh Cayless (hcayless@email.unc.edu)
  */
 
 package edu.unc.epidoc.transcoder;
@@ -37,7 +39,7 @@ public class GreekXLitConverter extends AbstractGreekConverter {
      * characters greater than 127 escaped as XML character entities.
      * @param in The String to be converted
      * @return The converted String.
-     */ 
+     */
     public String convertToCharacterEntities(Parser in) {
         StringBuffer result = new StringBuffer();
         char[] chars = convertToString(in).toCharArray();
@@ -46,7 +48,7 @@ public class GreekXLitConverter extends AbstractGreekConverter {
             if (ch > 127)
                 result.append("&#x"+Integer.toHexString(ch)+";");
             else
-                result.append(chars[i]);        
+                result.append(chars[i]);
         }
         return result.toString();
     }
@@ -54,7 +56,7 @@ public class GreekXLitConverter extends AbstractGreekConverter {
     /** Convert the input String to a String in transliterated Greek.
      * @param in The String to be converted.
      * @return The converted String.
-     */ 
+     */
     public String convertToString(Parser in) {
         StringBuffer result = new StringBuffer();
         String last = "";
@@ -73,13 +75,18 @@ public class GreekXLitConverter extends AbstractGreekConverter {
                             result.append(sgp.getProperty(elements[0], ""));
                         }
                     } else {
-                        if (Character.isUpperCase(elements[0].charAt(0))) {
-                            result.append("H");
-                            result.append((sgp.getProperty(elements[0], "")).toLowerCase());
-                        }
-                        else {
-                            result.append("h");
+                        if ("rho".equals(elements[0].toLowerCase())) {
                             result.append(sgp.getProperty(elements[0], ""));
+                            result.append("h");
+                        } else {
+                            if (Character.isUpperCase(elements[0].charAt(0))) {
+                                result.append("H");
+                                result.append((sgp.getProperty(elements[0], "")).toLowerCase());
+                            }
+                            else {
+                                result.append("h");
+                                result.append(sgp.getProperty(elements[0], ""));
+                            }
                         }
                     }
                 }
@@ -94,7 +101,7 @@ public class GreekXLitConverter extends AbstractGreekConverter {
             last = convert;
         }
         return result.toString();
-    }  
+    }
     
     private boolean isDiphthong(String first, String second) {
         if ("iota".equalsIgnoreCase(second)) {

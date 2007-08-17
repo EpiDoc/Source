@@ -1,7 +1,7 @@
-package edu.unc.epidoc.transcoder.xml;
+package edu.unc.epidoc.transcoder.xml.sax;
 
 /*
- * TranscodingHandler.java
+ * TranscodingContentHandler.java
  *
  * Created on October 27, 2002, 3:39 PM
  */
@@ -40,7 +40,7 @@ import org.xml.sax.ext.*;
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
  * @version 0.9
  */
-public class TranscodingHandler implements ContentHandler, LexicalHandler {
+public class TranscodingContentHandler implements ContentHandler, LexicalHandler {
     
     /**
      * Set the <code>SourceResolver</code>, objectModel <code>Map</code>,
@@ -75,6 +75,7 @@ public class TranscodingHandler implements ContentHandler, LexicalHandler {
      */
     public void startElement(String uri, String name, String raw, org.xml.sax.Attributes attributes)
     throws SAXException {
+        flush();
         if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
             language = attributes.getValue("lang");
             languages.push(attributes.getValue("lang"));
@@ -107,6 +108,7 @@ public class TranscodingHandler implements ContentHandler, LexicalHandler {
      */
     public void endElement(String uri, String name, String raw)
     throws SAXException {
+        flush();
         if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
             languages.pop();
             language = (String)languages.peek();
@@ -161,7 +163,23 @@ public class TranscodingHandler implements ContentHandler, LexicalHandler {
                 throw new SAXException(e);
             }
         }
-        this.contentHandler.characters(strb.toString().toCharArray(), start, length);
+        buffer(strb, start);
+        //this.contentHandler.characters(strb.toString().toCharArray(), start, length);
+    }
+    
+    private void buffer(StringBuffer strb, int start) {
+        if (this.strb == null)
+            this.strb = strb;
+        if (this.start == -1)
+            this.start = start;
+    }
+    
+    private void flush() throws SAXException {
+        if (strb != null) {
+            this.contentHandler.characters(strb.toString().toCharArray(), start, strb.length());
+            strb = null;
+            start = -1;
+        }
     }
     
     public void endDocument() throws SAXException {
@@ -232,6 +250,8 @@ public class TranscodingHandler implements ContentHandler, LexicalHandler {
     private Stack languages;
     private Stack parsers;
     private Stack converters;
+    private StringBuffer strb;
+    private int start = -1;
     /** The namespace of the <CODE>TranscodingHandler</CODE> component. */
     public static String NAMESPACE = "http://stoa.org/2002/transcoder";
     private static String TC_NAME = "transcode";

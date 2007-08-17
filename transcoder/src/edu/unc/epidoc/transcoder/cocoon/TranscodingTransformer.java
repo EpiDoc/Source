@@ -51,10 +51,10 @@ public class TranscodingTransformer extends AbstractTransformer {
         tc = new TransCoder();
         try {
             tc.setParser(parameters.getParameter("parser", "BetaCode"));
-            tc.setConverter(parameters.getParameter("converter", "Unicode"));
+            tc.setConverter(parameters.getParameter("converter", "UnicodeC"));
             
             attributeName = parameters.getParameter("useAttribute", "lang");
-            String setLanguage = parameters.getParameter("setLanguage");
+            String setLanguage = parameters.getParameter("setLanguage", null);
             if (setLanguage != null) {
                 String[] arr = (String[])tc.getParser().getProperty("supported-languages");
                 String[] arr2 = new String[arr.length + 1];
