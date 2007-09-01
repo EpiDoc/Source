@@ -86,6 +86,9 @@
 		<xsl:variable name="gapopener">[</xsl:variable>
 		<xsl:variable name="gapcloser">]</xsl:variable>
 		<xsl:choose>
+			<xsl:when test="@extent='unknown'">
+				<xsl:text> - - - - - - - - - - </xsl:text>
+			</xsl:when>
 			<xsl:when test="@id and //tei:certainty[@target=$gapid and @locus='#gi' and @degree='low'] and @precision='circa'">
                  <xsl:text>&#160;</xsl:text>
 		 <xsl:call-template name="repeatstring">
@@ -150,6 +153,9 @@
 		<xsl:variable name="gapmaxrepeat">4</xsl:variable>
 		<xsl:variable name="gapopener">
 			<xsl:choose>
+				<xsl:when test="@extent='unknown'">
+					<xsl:text> - - - - - </xsl:text>
+				</xsl:when>
 				<xsl:when test="ancestor::tei:del[@rend='erasure']">
 					<xsl:text>&#160;[</xsl:text>
 				</xsl:when>
