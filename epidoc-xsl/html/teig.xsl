@@ -31,6 +31,9 @@
            <xsl:attribute name="class">mark</xsl:attribute>
            <xsl:attribute name="title">mark: <xsl:value-of select="@type"/></xsl:attribute>
            <xsl:call-template name="propagateattrs"/>
+             <xsl:if test="following::*[1][local-name() = 'lb'][@type='worddiv']">
+               <xsl:text>- </xsl:text>
+             </xsl:if>
              <xsl:text>((</xsl:text>
              <xsl:choose>
                <xsl:when test="contains(@type, 'claudian_')">

@@ -32,6 +32,9 @@
     
     <xsl:template match="tei:space" mode="typography">
         <xsl:variable name="spaceid"><xsl:value-of select="@id" /></xsl:variable>
+        <xsl:if test="following::*[1][local-name() = 'lb'][@type='worddiv']">
+          <xsl:text>- </xsl:text>
+        </xsl:if>
         <xsl:value-of select="$space-delimiter-left"
             /><xsl:if test="@precision='circa'"><xsl:value-of select="$space-uncertainty-indicator"/></xsl:if
             ><xsl:if test="@extent"><xsl:text> </xsl:text><xsl:value-of select="@extent"

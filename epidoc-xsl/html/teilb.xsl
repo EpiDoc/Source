@@ -28,9 +28,11 @@
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="tei:lb">
         <xsl:call-template name="teilbprefix"/>
-        <xsl:if test="@type='worddiv'">-</xsl:if>
-        <xsl:if test="preceding::tei:lb[1][@rend='right-to-left']"> &#x2190;</xsl:if>
-        <xsl:if test="preceding::tei:lb[1][@rend='left-to-right']"> &#x2192;</xsl:if>
+        <xsl:if test="@type='worddiv' and preceding::*[1][not(local-name()='space' or local-name()='g')]">
+          <xsl:text>-</xsl:text>
+        </xsl:if>
+        <xsl:if test="preceding::tei:lb[1][@rend='right-to-left']"><xsl:text> &#x2190;</xsl:text></xsl:if>
+        <xsl:if test="preceding::tei:lb[1][@rend='left-to-right']"><xsl:text> &#x2192;</xsl:text></xsl:if>
         <xsl:text>
             </xsl:text><xsl:element name="br">
                 <xsl:call-template name="propagateattrs"/>
