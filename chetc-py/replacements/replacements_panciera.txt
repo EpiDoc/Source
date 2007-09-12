@@ -1,0 +1,30 @@
+# note: original regex match expression inherited from replacements_general.txt for unclear was wrong
+# ditto for vestiges of explicit units
+# ditto for supplied reason=explanation
+# ditto for <gap reason='illegible' just plusses
+#
+#<<(\w+)>>                               =   <app><rdg><del status="unremarkable"><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
+#<((?:(-)|\s)+)>                         =   <gap reason="omitted" extent="%g1%len2" unit="character"/>
+([^<])<(\w+)>([^>])                     =   $1<supplied reason="omitted" cert="high">$2</supplied>$3
+#
+# e.g. [abc . . .]
+#
+#\[(\w+)\s*(([.\s])+)\]                  =   <supplied reason="lost">$1</supplied><gap extent="%g2%len3"/>
+(\w)[\u323]+                          =   <unclear reason="undefined" cert="high">$1</unclear>
+#((\.)+)                                 =   <gap extent="%g1%len2"/>
+# ----------------------------------------------------------------------------------------------
+# for illegibility, the complicated bracketing cases must be handled before the simple serial plus cases
+# so following steps must be applied in order
+\+\s*(\d+)\s*\+                         =   <gap reason="illegible" extent="$1" unit="character"/>
+\+\s*([\d\.\,]+)\s*([^\s\+]+)\s*\+                  =   <gap reason="illegible" extent="$1" unit="$2"/>
+\++                                  =   <gap reason="illegible" extent="%g1%len1" unit="character"/>
+# ----------------------------------------------------------------------------------------------
+\(i\.e\. ([^\)]+)\)                     =   <supplied reason="explanation" cert="high">$1</supplied>
+\(\(([^\(]+)\)\)                        = <g type="$1"/>
+# ----------------------------------------------------------------------------------------------
+# abbreviations require the following steps be applied in order
+(\s|^)([^\(\s]+\([^\s]+\)[^\s]*)(\s|$)    = $1<expan>$2</expan>$3
+\(([^\)]+)\?\)														= <supplied reason="abbreviation" cert="low">$1</supplied>
+\(([^\)]+)\)															= <supplied reason="abbreviation" cert="high">$1</supplied>
+# ----------------------------------------------------------------------------------------------
+\[([·\.\s]+)\]                            =   <gap reason="lost" extent="%g1%len1" unit="character"/>
