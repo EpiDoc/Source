@@ -2,7 +2,8 @@
 #
 # File: chetc.py
 #
-# EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+# Chapel Hill Electronic Text Converter (CHET-C): Python version
+#
 # Copyright (C) 2007 by Hugh Cayless and Tom Elliott.
 # Additional contributors' copyright may be designated in individual source files.
 # 
