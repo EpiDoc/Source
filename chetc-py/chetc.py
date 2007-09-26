@@ -163,6 +163,7 @@ def _test():
     import doctest
     doctest.testmod()
     doctest.testfile('tests/chetc_replacements_panciera.txt')
+    doctest.testfile('tests/chetc_replacements_ddbdp.txt')
     # invoke additional doctest files here
 
 if __name__ == "__main__":

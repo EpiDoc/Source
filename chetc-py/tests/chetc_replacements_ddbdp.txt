@@ -1,0 +1,40 @@
+==============================================================================
+
+File: chetc_replacements_ddbdp.txt
+doctests for chetc.convert()
+Leiden input mode for Latin epigraphy (Panciera style)
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2007 by Hugh Cayless and Tom Elliott.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+Funding from the Andrew W. Mellon Foundation paid for the initial 
+version of this code through a grant to Duke University and partners
+for the enhancement of the Duke Database of Documentary Greek 
+Papyri and the Papyrological Navigator web portal.
+
+==============================================================================
+tests in this file should coordinate with parsing pairs in 
+../replacements/replacements_ddbdp.txt and with the
+encoding examples and guidance in the EpiDoc Guidelines
+==============================================================================
+
+>>> from chetc import convert
+
