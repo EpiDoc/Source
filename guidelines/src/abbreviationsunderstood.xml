@@ -25,74 +25,161 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.18 2007-05-23 15:32:42 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.19 2007-10-18 18:26:02 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
-        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="abbreviationsunderstood"><head>Identification and expansion of abbreviations understood by the editor</head>
-    <ab><rs type="conformance">leiden</rs></ab>                
-<div id="abbreviationsunderstood-typographic" type="gl-typographic">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+   xmlns:xi="http://www.w3.org/2001/XInclude" id="abbreviationsunderstood">
+   <head>Identification and expansion of abbreviations understood by the editor</head>
+   <ab>
+      <rs type="conformance">leiden</rs>
+   </ab>
+   <div id="abbreviationsunderstood-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="ordered">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
-            <list type="ordered" lang="la">
+         <item><bibl><title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#panciera">Panciera</xref>
+               </title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>:
+               <list type="ordered" lang="la">
                <item id="TypoEx-1">co(n)s(ul)</item>
                <item id="TypoEx-2">Aug(ustus)</item>
                <item id="TypoEx-3">Not covered</item>
                <item id="TypoEx-4">Not covered</item>
                <item id="TypoEx-5">Not covered</item>
-               <item id="TypoEx-6">Not covered</item><item id="TypoEx-7">Not covered</item><item id="TypoEx-8">Not covered</item>
+               <item id="TypoEx-6">Not covered</item>
+               <item id="TypoEx-7">Not covered</item>
+               <item id="TypoEx-8">Not covered</item>
             </list></item>
       </list>
-   </div><div id="abbreviationsunderstood-regex" type="gl-regextest">
-  <head>Regular Expression Test</head>
-            <list><item id="Regex-1">
-            blah</item>
-<item id="Regex-2">
-            blah</item>
-<item id="Regex-3">
-            blah</item>
-<item id="Regex-4">
-            blah</item>
-<item id="Regex-5">
-            blah</item>
-<item id="Regex-6">
-            blah</item>
-<item id="Regex-7">
-            blah</item>
-<item id="Regex-8">
-            blah</item></list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="abbreviationsunderstood-edition" type="gl-edition" lang="la">
+   </div>
+   <div id="abbreviationsunderstood-regex" type="gl-regextest">
+      <head>Regular Expression Test</head>
+      <list>
+         <item id="Regex-1"> blah</item>
+         <item id="Regex-2"> blah</item>
+         <item id="Regex-3"> blah</item>
+         <item id="Regex-4"> blah</item>
+         <item id="Regex-5"> blah</item>
+         <item id="Regex-6"> blah</item>
+         <item id="Regex-7"> blah</item>
+         <item id="Regex-8"> blah</item>
+      </list>
+      <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+   </div>
+   <div id="abbreviationsunderstood-edition" type="gl-edition" lang="la">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="ordered">
-         <item id="EncEx-1"><expan>co<supplied reason="abbreviation" cert="high">n</supplied>s<supplied reason="abbreviation" cert="high">ul</supplied></expan></item>
-         <item id="EncEx-2"><expan>Aug<supplied reason="abbreviation" cert="high">ustus</supplied></expan></item>
-         <item id="EncEx-3"><expan><abbr>Aug<orig>g</orig></abbr><supplied reason="abbreviation" cert="high">usti duo</supplied></expan></item>
-         <item id="EncEx-4"><expan><abbr>pr<orig><g type="stop"/></orig></abbr><supplied reason="abbreviation" cert="high">esbyter</supplied></expan></item>
-         <item id="EncEx-5"><expan>D<supplied reason="abbreviation" cert="high">is</supplied> M<supplied reason="abbreviation" cert="high">anibus</supplied></expan></item>
-         <item id="EncEx-6"><expan>D<supplied reason="abbreviation" cert="high">is</supplied></expan> <expan>M<supplied reason="abbreviation" cert="high">anibus</supplied></expan></item><item id="EncEx-7"><expan><abbr>H<orig><space extent="2" dim="horizontal" unit="character"/></orig></abbr><supplied reason="abbreviation" cert="high">ic</supplied> <abbr>s<orig><space extent="2" dim="horizontal" unit="character"/></orig></abbr><supplied reason="abbreviation" cert="high">itus</supplied> <abbr>e</abbr><supplied reason="abbreviation" cert="high">st</supplied></expan></item>
-      <item id="EncEx-8"><expan><abbr><orig><g type="monogram"/></orig></abbr> <supplied reason="abbreviation" cert="high">Θεοχάρης</supplied></expan></item></list>
-   </div><div id="abbreviationsunderstood-notes" type="gl-notes">
+         <item id="EncEx-1">
+            <expan>co<ex>n</ex>s<ex>ul</ex></expan>
+         </item>
+         <item id="EncEx-2">
+            <expan>Aug<ex>ustus</ex></expan>
+         </item>
+         <item id="EncEx-3">
+            <expan>
+               <abbr>Aug<am>g</am></abbr><ex>usti duo</ex>
+            </expan>
+         </item>
+         <item id="EncEx-4">
+            <expan>
+               <abbr>pr<am><g type="stop"/></am></abbr><ex>esbyter</ex>
+            </expan>
+         </item>
+         <item id="EncEx-5">
+            <expan>D<ex>is</ex> M<ex>anibus</ex></expan>
+         </item>
+         <item id="EncEx-6">
+            <expan>D<ex>is</ex></expan>
+            <expan>M<ex>anibus</ex></expan>
+         </item>
+         <item id="EncEx-7">
+            <expan>
+               <abbr>H<orig><space extent="2" dim="horizontal" unit="character"/>
+                  </orig></abbr>
+               <ex>ic</ex>
+               <abbr>s<orig>
+                     <space extent="2" dim="horizontal" unit="character"/>
+                  </orig></abbr>
+               <ex>itus</ex>
+               <abbr>e</abbr>
+               <ex>st</ex>
+            </expan>
+         </item>
+         <item id="EncEx-8">
+            <expan>
+               <abbr>
+                  <am>
+                     <g type="monogram"/>
+                  </am>
+               </abbr>
+               <ex>Θεοχάρης</ex>
+            </expan>
+         </item>
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-notes" type="gl-notes">
       <head>Notes</head>
       <list type="unordered">
+
+         <item>An <tag>abbr</tag> element within the <tag>expan</tag> containing the abbreviated
+            form of the word is available but optional. It may be useful when the abbreviation
+            contains additional markers not in the expanded form (cf. <ref target="EncEx-3"
+               evaluate="all" targOrder="Y">Augg</ref> and <ref target="EncEx-4" evaluate="all"
+               targOrder="Y">pr.</ref> above), but might require additional linking in cases where
+            the abbreviation must be expanded by interpolation (<ref target="EncEx-2" evaluate="all"
+               targOrder="Y">cf. co(n)s(ul)</ref>)</item>
+         <item>When the abbreviated form contains markers not in the expanded form, such as <ref
+               target="EncEx-3" evaluate="all" targOrder="Y">additional letters</ref> or <ref
+               target="EncEx-4" evaluate="all" targOrder="Y">punctuation</ref>, best practice is to
+            put these in <tag>am</tag> (abbreviation marker) elements, which the standard stylesheets will omit when
+            rendering the expanded form.</item>
+         <item>Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign
+               lang="la">D(is) M(anibus)</foreign>) should properly be marked-up as a group, as
+            illustrated in <ref target="EncEx-5" evaluate="all" targOrder="Y">the example
+            above</ref>, but marking them as single words is not incorrect (see <ref
+               target="EncEx-6" evaluate="all" targOrder="Y">the second example</ref>).</item>
          
-        <item>An <tag>abbr</tag> element within the <tag>expan</tag> containing the abbreviated form of the word is available but optional. It may be useful when the abbreviation contains additional markers not in the expanded form (cf. <ref target="EncEx-3" evaluate="all" targOrder="Y">Augg</ref> and <ref target="EncEx-4" evaluate="all" targOrder="Y">pr.</ref> above), but might require additional linking in cases where the abbreviation must be expanded by interpolation (<ref target="EncEx-2" evaluate="all" targOrder="Y">cf. co(n)s(ul)</ref>)</item>
-         <item>When the abbreviated form contains markers not in the expanded form, such as <ref target="EncEx-3" evaluate="all" targOrder="Y">additional letters</ref> or <ref target="EncEx-4" evaluate="all" targOrder="Y">punctuation</ref>, best practice is to put these in <tag>orig</tag> elements, which the standard stylesheets will omit when rendering the expanded form.</item>
-      <item>Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign lang="la">D(is) M(anibus)</foreign>) should properly be marked-up as a group, as illustrated in <ref target="EncEx-5" evaluate="all" targOrder="Y">the example above</ref>, but marking them as single words is not incorrect (see <ref target="EncEx-6" evaluate="all" targOrder="Y">the second example</ref>).</item>
-         </list>
-   </div><div id="abbreviationsunderstood-questions" type="gl-questions">
+      </list>
+   </div>
+   <div id="abbreviationsunderstood-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
-         <item>None.</item>
+         <item>GB (2007-10-18): a problem. Example 7 seems to be suggesting that the <tag>space</tag> is 
+            an abbreviation marker. I'm not sure I understand this, and in any case it would be illegal to tag
+            thus in P5 (from where we have borrowed the <tag>am</tag> element).</item>
       </list>
-   </div><div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
+   </div>
+   <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-         <bibl><respStmt><resp>author</resp><name>Hugh Cayless</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Gabriel Bodard</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Hugh Cayless</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>John Bodel</name>
+            </respStmt>
+         </bibl>
       </listBibl>
-   </div><div id="abbreviationsunderstood-cvs" type="gl-cvs">
+   </div>
+   <div id="abbreviationsunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.18 $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007-05-23 15:32:42 $</seg></p>
-      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
-   </div></div>
-
+      <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg
+            n="cvs-revision-number" cert="high" part="N">$Revision: 1.19 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg
+            n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            cert="high" part="N">$Date: 2007-10-18 18:26:02 $</seg></p>
+      <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg
+            n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+   </div>
+</div>
