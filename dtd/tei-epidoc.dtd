@@ -10,15 +10,15 @@
 	 >
 
 <!ELEMENT ab 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST ab 
 	ana IDREFS #IMPLIED
@@ -32,14 +32,14 @@
 	 >
 
 <!ELEMENT abbr 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST abbr 
 	ana IDREFS #IMPLIED
@@ -54,15 +54,15 @@
 	 >
 
 <!ELEMENT add 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | ab | l | 
-	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST add 
 	ana IDREFS #IMPLIED
@@ -77,14 +77,14 @@
 	 >
 
 <!ELEMENT addrLine 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST addrLine 
 	ana IDREFS #IMPLIED
@@ -102,6 +102,17 @@
 	| fs | link | linkGrp | cb | lb | milestone | pb)*)*)) >
 
 <!ATTLIST address 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
+<!ELEMENT am 
+	(#PCDATA | g)* >
+
+<!ATTLIST am 
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
@@ -161,14 +172,14 @@
 	 >
 
 <!ELEMENT author 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST author 
 	ana IDREFS #IMPLIED
@@ -179,14 +190,14 @@
 	 >
 
 <!ELEMENT authority 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST authority 
 	ana IDREFS #IMPLIED
@@ -209,16 +220,16 @@
 	 >
 
 <!ELEMENT bibl 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | analytic | author 
-	| biblScope | edition | editor | extent | idno | imprint 
-	| monogr | note | pubPlace | publisher | respStmt | series 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| analytic | author | biblScope | edition | editor | extent 
+	| idno | imprint | monogr | note | pubPlace | publisher 
+	| respStmt | series | gap | figure | certainty | fs | link 
+	| linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST bibl 
 	ana IDREFS #IMPLIED
@@ -252,14 +263,14 @@
 	 >
 
 <!ELEMENT biblScope 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST biblScope 
 	ana IDREFS #IMPLIED
@@ -292,14 +303,14 @@
 	 >
 
 <!ELEMENT bloc 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST bloc 
 	ana IDREFS #IMPLIED
@@ -334,12 +345,12 @@
 	 >
 
 <!ELEMENT catDesc 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag)* >
 
 <!ATTLIST catDesc 
 	ana IDREFS #IMPLIED
@@ -415,7 +426,7 @@
 
 <!ELEMENT choice 
 	(abbr | corr | expan | orig | reg | seg | sic | unclear 
-	| choice)* >
+	| choice | am | ex)* >
 
 <!ATTLIST choice 
 	ana IDREFS #IMPLIED
@@ -427,14 +438,14 @@
 	 >
 
 <!ELEMENT classCode 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST classCode 
 	ana IDREFS #IMPLIED
@@ -457,15 +468,15 @@
 	 >
 
 <!ELEMENT corr 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | ab | l | 
-	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST corr 
 	ana IDREFS #IMPLIED
@@ -479,15 +490,15 @@
 	 >
 
 <!ELEMENT country 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST country 
 	ana IDREFS #IMPLIED
@@ -503,14 +514,14 @@
 	 >
 
 <!ELEMENT creation 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST creation 
 	ana IDREFS #IMPLIED
@@ -521,14 +532,14 @@
 	 >
 
 <!ELEMENT date 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST date 
 	ana IDREFS #IMPLIED
@@ -547,14 +558,14 @@
 	 >
 
 <!ELEMENT dateRange 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST dateRange 
 	ana IDREFS #IMPLIED
@@ -610,14 +621,14 @@
 	 >
 
 <!ELEMENT del 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST del 
 	ana IDREFS #IMPLIED
@@ -633,14 +644,14 @@
 	 >
 
 <!ELEMENT distance 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST distance 
 	ana IDREFS #IMPLIED
@@ -657,14 +668,14 @@
 	 >
 
 <!ELEMENT distributor 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST distributor 
 	ana IDREFS #IMPLIED
@@ -701,14 +712,14 @@
 	 >
 
 <!ELEMENT docAuthor 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST docAuthor 
 	ana IDREFS #IMPLIED
@@ -719,14 +730,14 @@
 	 >
 
 <!ELEMENT edition 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST edition 
 	ana IDREFS #IMPLIED
@@ -748,14 +759,14 @@
 	 >
 
 <!ELEMENT editor 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST editor 
 	ana IDREFS #IMPLIED
@@ -767,15 +778,15 @@
 	 >
 
 <!ELEMENT emph 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST emph 
 	ana IDREFS #IMPLIED
@@ -796,15 +807,28 @@
 	rend CDATA #IMPLIED
 	 >
 
+<!ELEMENT ex 
+	(#PCDATA | g)* >
+
+<!ATTLIST ex 
+	ana IDREFS #IMPLIED
+	cert (high | low) "high"
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	resp CDATA #IMPLIED
+	 >
+
 <!ELEMENT expan 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST expan 
 	abbr CDATA #IMPLIED
@@ -819,14 +843,14 @@
 	 >
 
 <!ELEMENT extent 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST extent 
 	ana IDREFS #IMPLIED
@@ -852,15 +876,15 @@
 	 >
 
 <!ELEMENT figDesc 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST figDesc 
 	ana IDREFS #IMPLIED
@@ -895,15 +919,15 @@
 	 >
 
 <!ELEMENT foreign 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST foreign 
 	ana IDREFS #IMPLIED
@@ -928,14 +952,14 @@
 	 >
 
 <!ELEMENT funder 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST funder 
 	ana IDREFS #IMPLIED
@@ -995,9 +1019,9 @@
 	 >
 
 <!ELEMENT geogName 
-	(#PCDATA | geog | g | mark | choice | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | geog | g | choice | am | ex | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1018,14 +1042,14 @@
 	 >
 
 <!ELEMENT gloss 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST gloss 
 	ana IDREFS #IMPLIED
@@ -1084,15 +1108,15 @@
 	 >
 
 <!ELEMENT head 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST head 
 	ana IDREFS #IMPLIED
@@ -1104,15 +1128,15 @@
 	 >
 
 <!ELEMENT hi 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST hi 
 	ana IDREFS #IMPLIED
@@ -1149,15 +1173,15 @@
 	 >
 
 <!ELEMENT item 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | ab | l | 
-	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST item 
 	ana IDREFS #IMPLIED
@@ -1180,15 +1204,15 @@
 	 >
 
 <!ELEMENT l 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST l 
 	ana IDREFS #IMPLIED
@@ -1216,14 +1240,14 @@
 	 >
 
 <!ELEMENT language 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST language 
 	ana IDREFS #IMPLIED
@@ -1249,15 +1273,15 @@
 	 >
 
 <!ELEMENT lem 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST lem 
 	ana IDREFS #IMPLIED
@@ -1364,27 +1388,15 @@
 	rend CDATA #IMPLIED
 	 >
 
-<!ELEMENT mark 
-	EMPTY >
-
-<!ATTLIST mark 
-	ana IDREFS #IMPLIED
-	id ID #IMPLIED
-	lang IDREF #IMPLIED
-	n CDATA #IMPLIED
-	rend CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
-
 <!ELEMENT measure 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST measure 
 	ana IDREFS #IMPLIED
@@ -1402,15 +1414,15 @@
 	 >
 
 <!ELEMENT meeting 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST meeting 
 	ana IDREFS #IMPLIED
@@ -1482,14 +1494,14 @@
 	 >
 
 <!ELEMENT name 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST name 
 	ana IDREFS #IMPLIED
@@ -1503,15 +1515,15 @@
 	 >
 
 <!ELEMENT note 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | ab | l | 
-	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST note 
 	ana IDREFS #IMPLIED
@@ -1528,14 +1540,14 @@
 	 >
 
 <!ELEMENT num 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST num 
 	ana IDREFS #IMPLIED
@@ -1548,14 +1560,14 @@
 	 >
 
 <!ELEMENT occasion 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST occasion 
 	ana IDREFS #IMPLIED
@@ -1588,14 +1600,14 @@
 	 >
 
 <!ELEMENT orig 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST orig 
 	ana IDREFS #IMPLIED
@@ -1608,15 +1620,15 @@
 	 >
 
 <!ELEMENT p 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST p 
 	ana IDREFS #IMPLIED
@@ -1639,14 +1651,14 @@
 	 >
 
 <!ELEMENT persName 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST persName 
 	ana IDREFS #IMPLIED
@@ -1663,7 +1675,7 @@
 
 <!ELEMENT placeName 
 	(#PCDATA | bloc | country | distance | geog | offset | region 
-	| settlement | g | mark | choice | abbr | address | date 
+	| settlement | g | choice | am | ex | abbr | address | date 
 	| dateRange | dateStruct | expan | geogName | measure | 
 	name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
@@ -1708,14 +1720,14 @@
 	 >
 
 <!ELEMENT principal 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST principal 
 	ana IDREFS #IMPLIED
@@ -1755,14 +1767,14 @@
 	 >
 
 <!ELEMENT pubPlace 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST pubPlace 
 	ana IDREFS #IMPLIED
@@ -1790,14 +1802,14 @@
 	 >
 
 <!ELEMENT publisher 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST publisher 
 	ana IDREFS #IMPLIED
@@ -1808,15 +1820,15 @@
 	 >
 
 <!ELEMENT rdg 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST rdg 
 	ana IDREFS #IMPLIED
@@ -1855,15 +1867,15 @@
 	 >
 
 <!ELEMENT ref 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST ref 
 	ana IDREFS #IMPLIED
@@ -1881,14 +1893,14 @@
 	 >
 
 <!ELEMENT reg 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST reg 
 	ana IDREFS #IMPLIED
@@ -1901,15 +1913,15 @@
 	 >
 
 <!ELEMENT region 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST region 
 	ana IDREFS #IMPLIED
@@ -1925,14 +1937,14 @@
 	 >
 
 <!ELEMENT resp 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST resp 
 	ana IDREFS #IMPLIED
@@ -1966,14 +1978,14 @@
 	 >
 
 <!ELEMENT rs 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST rs 
 	ana IDREFS #IMPLIED
@@ -1988,15 +2000,15 @@
 	 >
 
 <!ELEMENT seg 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST seg 
 	ana IDREFS #IMPLIED
@@ -2028,14 +2040,14 @@
 	 >
 
 <!ELEMENT settlement 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST settlement 
 	ana IDREFS #IMPLIED
@@ -2051,15 +2063,15 @@
 	 >
 
 <!ELEMENT sic 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | ab | l | 
-	lg | p | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | ab | l | lg | p | gap | figure | certainty | fs 
+	| link | linkGrp | cb | lb | milestone | pb)* >
 
 <!ATTLIST sic 
 	ana IDREFS #IMPLIED
@@ -2073,14 +2085,14 @@
 	 >
 
 <!ELEMENT soCalled 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST soCalled 
 	ana IDREFS #IMPLIED
@@ -2119,14 +2131,14 @@
 	 >
 
 <!ELEMENT sponsor 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST sponsor 
 	ana IDREFS #IMPLIED
@@ -2149,14 +2161,14 @@
 	 >
 
 <!ELEMENT street 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST street 
 	ana IDREFS #IMPLIED
@@ -2167,25 +2179,26 @@
 	 >
 
 <!ELEMENT supplied 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST supplied 
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
 	cert (high | low) "high"
+	evidence (conjecture | duplicate | external | internal) #IMPLIED
 	hand CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	reason (lost | omitted | subaudible | explanation | abbreviation) #REQUIRED
+	reason (lost | omitted | subaudible | explanation | abbreviation | undefined) #REQUIRED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	source CDATA #IMPLIED
@@ -2241,14 +2254,14 @@
 	 >
 
 <!ELEMENT term 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | gap | figure | 
-	certainty | fs | link | linkGrp | cb | lb | milestone | 
-	pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| gap | figure | certainty | fs | link | linkGrp | cb | 
+	lb | milestone | pb)* >
 
 <!ATTLIST term 
 	ana IDREFS #IMPLIED
@@ -2286,15 +2299,15 @@
 	 >
 
 <!ELEMENT title 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST title 
 	ana IDREFS #IMPLIED
@@ -2319,7 +2332,7 @@
 	 >
 
 <!ELEMENT unclear 
-	(#PCDATA | mark | g)* >
+	(#PCDATA | g)* >
 
 <!ATTLIST unclear 
 	agent CDATA #IMPLIED
@@ -2335,15 +2348,15 @@
 	 >
 
 <!ELEMENT w 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST w 
 	ana IDREFS #IMPLIED
@@ -2377,15 +2390,15 @@
 	 >
 
 <!ELEMENT wit 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST wit 
 	ana IDREFS #IMPLIED
@@ -2416,15 +2429,15 @@
 	 >
 
 <!ELEMENT xref 
-	(#PCDATA | g | mark | choice | abbr | address | date | dateRange 
-	| dateStruct | expan | geogName | measure | name | num | 
-	persName | placeName | rs | add | app | corr | del | orig 
-	| reg | sic | space | supplied | unclear | handShift | emph 
-	| foreign | gloss | hi | soCalled | term | title | ptr | 
-	ref | xptr | xref | seg | w | att | tag | bibl | biblFull 
-	| biblStruct | list | listBibl | note | text | gap | figure 
-	| certainty | fs | link | linkGrp | cb | lb | milestone 
-	| pb)* >
+	(#PCDATA | g | choice | am | ex | abbr | address | date 
+	| dateRange | dateStruct | expan | geogName | measure | 
+	name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
 
 <!ATTLIST xref 
 	ana IDREFS #IMPLIED
@@ -2465,7 +2478,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza23075 on 11 May 2007 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza1478 on 18 Oct 2007 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 

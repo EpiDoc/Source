@@ -26,6 +26,14 @@
      
      REVISION HISTORY:
 
+          18th October 2007 (GB)
+                   * removed mark element declaration (deprecated 6 months ago)
+                   * removed mark from unclear content model
+                   * added am and ex element models
+                   * added @evidence to supplied attlist
+                   * added 'undefined' to supplied[@reason] vocabulary
+                   * NOTE: that supplied[@reason='abbreviation'] is now deprecated
+
 	11th May 2007
 		(GB)
 		* added element <g> as mirror of <mark> (to be deprecated)
@@ -155,6 +163,11 @@
      New elements added by EpiDoc, together with their attributes
      ********************************************************************* -->
      
+<!ELEMENT am 
+	( #PCDATA | g )*  >
+<!ATTLIST am 
+          %a.global; >
+
 <!ELEMENT app %om.RO; ( (%m.Incl;)*, (lem, (%m.Incl;)*, (wit, (%m.Incl;)*)? )? , (ptr, (%m.Incl;)*)?, ( (rdg, (%m.Incl;)*, (wit, (%m.Incl;)*)? ) | (rdgGrp, (%m.Incl;)*, (wit, (%m.Incl;)*)? ) )*, (note, (%m.Incl;)*)?)>
 <!ATTLIST app  
       %a.global;
@@ -163,20 +176,27 @@
       to IDREF #IMPLIED
       loc CDATA #IMPLIED>
 
-<!ELEMENT choice (abbr | corr | expan | orig | reg | seg | sic | unclear | choice)* > 
-<!ATTLIST choice   
-      %a.global;
-      type CDATA #IMPLIED >
-      
 <!ELEMENT att (#PCDATA)> 
 <!ATTLIST att  
       %a.global; >
 
+<!ELEMENT choice (abbr | corr | expan | orig | reg | seg | sic | unclear | choice | am | ex)* > 
+<!ATTLIST choice   
+      %a.global;
+      type CDATA #IMPLIED >
+      
 <!ELEMENT date %om.RR;  %phrase.seq;> 
 <!ATTLIST date  
       %a.global;
       calendar CDATA #IMPLIED
       value CDATA #IMPLIED >
+
+<!ELEMENT ex 
+	( #PCDATA | g )*  >
+<!ATTLIST ex 
+          %a.global; 
+          cert (high | low) 'high'
+          resp CDATA #IMPLIED>
 
 <!ELEMENT figure (head?, p*, figDesc) >
 <!ATTLIST figure
@@ -190,22 +210,16 @@
       %a.names;
       type CDATA #IMPLIED >
 
-<!ELEMENT mark EMPTY >
-<!ATTLIST mark 
-          %a.global; 
-          type CDATA #IMPLIED >
-
 <!ELEMENT g EMPTY >
 <!ATTLIST g 
           %a.global; 
           type CDATA #IMPLIED >
-
 <!ELEMENT tag (#PCDATA)> 
 <!ATTLIST tag  
       %a.global; >
       
 <!ELEMENT unclear 
-	( #PCDATA | mark | g )* > 
+	( #PCDATA | g )* > 
 
 <!ELEMENT w %om.RR;  %paraContent;>
 <!ATTLIST w  
@@ -332,7 +346,8 @@
 <!ATTLIST %n.supplied;
         %epidoc.hand;
         %epidoc.cert; 
-        reason (lost | omitted | subaudible | explanation | abbreviation) #REQUIRED >
+        reason (lost | omitted | subaudible | explanation | abbreviation | undefined) #REQUIRED 
+        evidence (conjecture|duplicate|external|internal) #IMPLIED >
 <!ATTLIST %n.title;
         type (main | subordinate | parallel | abbreviated) 'main'
         level (a | m | j | s | u) 'm' >
