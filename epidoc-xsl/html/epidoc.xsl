@@ -58,6 +58,8 @@
     <xsl:import href="teiabbr.xsl" />
     <xsl:import href="teiorig.xsl" />
     <xsl:import href="teiexpan.xsl" />
+    <xsl:import href="teiam.xsl" />
+     <xsl:import href="teiex.xsl" />
     <xsl:import href="processitemchildren.xsl"/>
     <xsl:import href="teisuppliedreasonabbreviation.xsl" />
     <xsl:import href="teisuppliedreasonexplanation.xsl" />

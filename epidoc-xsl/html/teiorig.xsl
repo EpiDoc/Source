@@ -25,25 +25,26 @@
  End license statement: do not remove -->
  
 
-<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    
-   <!-- in EpiDoc orig within expan or abbr is omitted from rendered version-->
-   <xsl:template match="tei:orig[contains(ancestor::tei:div/@type, 'edition') and ancestor::tei:expan]">
-    </xsl:template>
-    
-    <!-- in EpiDoc, orig with [@n='unresolved'] means unresolved -->
-    <xsl:template match="tei:orig[contains(@n, 'unresolved')]">
-       <xsl:element name="span">
-          <xsl:call-template name="propagateattrs"/>
-          <xsl:attribute name="class">unintelligible</xsl:attribute>
-          <span style="text-transform: uppercase ;">
-             <xsl:apply-templates/>
-          </span>
-       </xsl:element>
-    </xsl:template>
-   
-</xsl:stylesheet>
+<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+   <!-- in EpiDoc orig within expan or abbr is omitted from rendered version
+   THIS MARKUP IS NOW DEPRECATED; USE <am> INSTEAD (as per TEI P5) -->
+   <xsl:template
+      match="tei:orig[contains(ancestor::tei:div/@type, 'edition') and ancestor::tei:expan]"> </xsl:template>
+
+   <!-- in EpiDoc, orig with [@n='unresolved'] means unresolved -->
+   <xsl:template match="tei:orig[contains(@n, 'unresolved')]">
+      <xsl:element name="span">
+         <xsl:call-template name="propagateattrs"/>
+         <xsl:attribute name="class">unintelligible</xsl:attribute>
+         <span style="text-transform: uppercase ;">
+            <xsl:apply-templates/>
+         </span>
+      </xsl:element>
+   </xsl:template>
+
+</xsl:stylesheet>
 <!--
 Old uppercase template follows: this deprecated because does not allow for mixed content inside <gi>orig</gi>
 -->

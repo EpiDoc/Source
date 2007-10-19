@@ -24,13 +24,12 @@
  
  End license statement: do not remove -->
  
+
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml"
- xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
- 
-<!-- THIS MARKUP NOW DEPRECATED ; USE <ex> INSTEAD (as per TEI P5) -->
- 
- <xsl:template match="tei:supplied[@reason='abbreviation']">(<xsl:element name="span">
-   <xsl:attribute name="class">supplied-characters</xsl:attribute>
-   <xsl:apply-templates/>
-  </xsl:element>)</xsl:template>
+   xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+   <!-- in EpiDoc am within expan or abbr is omitted from interpretive edition -->
+   <xsl:template
+      match="tei:am[contains(ancestor::tei:div/@type, 'edition') and ancestor::tei:expan]"/>
+
 </xsl:stylesheet>
