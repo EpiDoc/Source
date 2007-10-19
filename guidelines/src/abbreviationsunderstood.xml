@@ -2,7 +2,7 @@
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
-Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Copyright (C) 2000-2007 by all contributors listed in <div type="gl-responsibility">, below.
 Additional contributors' copyright may be designated in individual source files.
 
 This program is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@ http://epidoc.sf.net.
 End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
-<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.19 2007-10-18 18:26:02 gabrielbodard Exp $ -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/abbreviationsunderstood.xml,v 1.20 2007-10-19 16:15:36 gabrielbodard Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
    xmlns:xi="http://www.w3.org/2001/XInclude" id="abbreviationsunderstood">
@@ -47,7 +47,6 @@ End license statement: do not remove -->
                <item id="TypoEx-5">Not covered</item>
                <item id="TypoEx-6">Not covered</item>
                <item id="TypoEx-7">Not covered</item>
-               <item id="TypoEx-8">Not covered</item>
             </list></item>
       </list>
    </div>
@@ -61,7 +60,6 @@ End license statement: do not remove -->
          <item id="Regex-5"> blah</item>
          <item id="Regex-6"> blah</item>
          <item id="Regex-7"> blah</item>
-         <item id="Regex-8"> blah</item>
       </list>
       <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
    </div>
@@ -76,12 +74,16 @@ End license statement: do not remove -->
          </item>
          <item id="EncEx-3">
             <expan>
-               <abbr>Aug<am>g</am></abbr><ex>usti duo</ex>
+               <abbr>Aug<am>g</am></abbr>
+               <ex>usti duo</ex>
             </expan>
          </item>
          <item id="EncEx-4">
             <expan>
-               <abbr>pr<am><g type="stop"/></am></abbr><ex>esbyter</ex>
+               <abbr>pr<am>
+                     <g type="stop"/>
+                  </am></abbr>
+               <ex>esbyter</ex>
             </expan>
          </item>
          <item id="EncEx-5">
@@ -93,19 +95,6 @@ End license statement: do not remove -->
          </item>
          <item id="EncEx-7">
             <expan>
-               <abbr>H<orig><space extent="2" dim="horizontal" unit="character"/>
-                  </orig></abbr>
-               <ex>ic</ex>
-               <abbr>s<orig>
-                     <space extent="2" dim="horizontal" unit="character"/>
-                  </orig></abbr>
-               <ex>itus</ex>
-               <abbr>e</abbr>
-               <ex>st</ex>
-            </expan>
-         </item>
-         <item id="EncEx-8">
-            <expan>
                <abbr>
                   <am>
                      <g type="monogram"/>
@@ -114,6 +103,19 @@ End license statement: do not remove -->
                <ex>Θεοχάρης</ex>
             </expan>
          </item>
+         <!--item id="EncEx-8">
+            <expan>
+            <abbr>H<orig><space extent="2" dim="horizontal" unit="character"/>
+            </orig></abbr>
+            <ex>ic</ex>
+            <abbr>s<orig>
+            <space extent="2" dim="horizontal" unit="character"/>
+            </orig></abbr>
+            <ex>itus</ex>
+            <abbr>e</abbr>
+            <ex>st</ex>
+            </expan>
+            </item-->
       </list>
    </div>
    <div id="abbreviationsunderstood-notes" type="gl-notes">
@@ -130,22 +132,24 @@ End license statement: do not remove -->
          <item>When the abbreviated form contains markers not in the expanded form, such as <ref
                target="EncEx-3" evaluate="all" targOrder="Y">additional letters</ref> or <ref
                target="EncEx-4" evaluate="all" targOrder="Y">punctuation</ref>, best practice is to
-            put these in <tag>am</tag> (abbreviation marker) elements, which the standard stylesheets will omit when
-            rendering the expanded form.</item>
+            put these in <tag>am</tag> (abbreviation marker) elements, which the standard
+            stylesheets will omit when rendering the expanded form.</item>
          <item>Abbreviated phrases (<abbr expan="for example = exempli gratia">e.g.</abbr>, <foreign
                lang="la">D(is) M(anibus)</foreign>) should properly be marked-up as a group, as
             illustrated in <ref target="EncEx-5" evaluate="all" targOrder="Y">the example
             above</ref>, but marking them as single words is not incorrect (see <ref
                target="EncEx-6" evaluate="all" targOrder="Y">the second example</ref>).</item>
-         
+
       </list>
    </div>
    <div id="abbreviationsunderstood-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
-         <item>GB (2007-10-18): a problem. Example 7 seems to be suggesting that the <tag>space</tag> is 
-            an abbreviation marker. I'm not sure I understand this, and in any case it would be illegal to tag
-            thus in P5 (from where we have borrowed the <tag>am</tag> element).</item>
+         <item>GB (2007-10-18): a problem. One example above seems to be suggesting that the
+            <tag>space</tag> is an abbreviation marker. I'm not sure I understand this, and in any
+            case it would be illegal to tag thus in P5 (from where we have borrowed the
+            <tag>am</tag> element). I have eliminated the old example until we can figure out what 
+            we meant by this issue.</item>
       </list>
    </div>
    <div id="abbreviationsunderstood-responsibility" type="gl-responsibility">
@@ -174,11 +178,11 @@ End license statement: do not remove -->
    <div id="abbreviationsunderstood-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
       <p id="abbreviationsunderstood-cvs-revision-number">Revision number: <seg
-            n="cvs-revision-number" cert="high" part="N">$Revision: 1.19 $</seg></p>
+            n="cvs-revision-number" cert="high" part="N">$Revision: 1.20 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): <seg
             n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
-            cert="high" part="N">$Date: 2007-10-18 18:26:02 $</seg></p>
+            cert="high" part="N">$Date: 2007-10-19 16:15:36 $</seg></p>
       <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: <seg
             n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div>
