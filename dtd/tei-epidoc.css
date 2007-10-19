@@ -90,10 +90,20 @@ encodingDesc {
 }
 
 supplied[reason='abbreviation']:before {
+  background-color: red;
   content: '(';
 }
 
 supplied[reason='abbreviation']:after {
+  background-color: red;
+  content: ')';
+}
+
+ex:before {
+  content: '(';
+}
+
+ex:after {
   content: ')';
 }
 
