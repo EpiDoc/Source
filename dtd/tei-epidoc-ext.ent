@@ -27,6 +27,9 @@
      
      REVISION HISTORY:
 
+          06 December 2007 (GB)
+          * added <subst> to phrase level entity
+          
           18th October 2007 (GB)
           * removed <mark> from phrase-level entity (deprecated 6 months ago)
           * added <am> and <ex> to phrase-level entity
@@ -95,7 +98,7 @@
      using the standard TEI extension mechanisms
      ********************************************************************* -->
 
-<!ENTITY % x.phrase 'g | choice | am | ex |' >
+<!ENTITY % x.phrase 'g | choice | am | ex | subst |' >
 
 
 <!-- *********************************************************************

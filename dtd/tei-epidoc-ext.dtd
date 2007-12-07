@@ -26,6 +26,12 @@
      
      REVISION HISTORY:
 
+          06 December 2007 (GB)
+                  * added new model for <subst>
+                  * added attributes to hi/@rend
+			* added 'margin' to add/@place
+                  
+          
           18th October 2007 (GB)
                    * removed mark element declaration (deprecated 6 months ago)
                    * removed mark from unclear content model
@@ -204,19 +210,26 @@
 	entity ENTITY #IMPLIED
 	href CDATA #IMPLIED >
 
+<!ELEMENT g EMPTY >
+<!ATTLIST g 
+          %a.global; 
+          type CDATA #IMPLIED >
+          
 <!ELEMENT geogName %om.RR; (#PCDATA | geog | %m.phrase; | %m.Incl; )*> 
 <!ATTLIST geogName  
       %a.global;
       %a.names;
       type CDATA #IMPLIED >
 
-<!ELEMENT g EMPTY >
-<!ATTLIST g 
-          %a.global; 
-          type CDATA #IMPLIED >
 <!ELEMENT tag (#PCDATA)> 
 <!ATTLIST tag  
       %a.global; >
+      
+<!ELEMENT subst (add | del)* > 
+<!ATTLIST subst   
+      %a.global;
+	resp CDATA #IMPLIED
+	hand CDATA #IMPLIED >
       
 <!ELEMENT unclear 
 	( #PCDATA | g )* > 
@@ -253,7 +266,7 @@
 <!-- define the attributes for each element, as necessary  -->         
 
 <!ATTLIST %n.add;
-        place ( inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed ) #IMPLIED
+        place ( inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed | margin ) #IMPLIED
         %epidoc.resp;
         %epidoc.hand; >
 <!ATTLIST %n.app;
@@ -301,7 +314,7 @@
 <!ATTLIST %n.gloss;
         target CDATA #IMPLIED >
 <!ATTLIST %n.hi;
-        rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline)  #REQUIRED
+        rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline | sling-above | sling-below | supraline-underline | subscript | diaeresis | oxia | dasia | varia | psili | perispomeni)  #REQUIRED
         type CDATA #IMPLIED >
 <!ATTLIST %n.idno;
         type (ISSN | ISBN | URL | OCLC) #REQUIRED >
