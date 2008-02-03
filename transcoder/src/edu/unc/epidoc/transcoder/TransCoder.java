@@ -8,8 +8,19 @@
 
 package edu.unc.epidoc.transcoder;
 
+import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
+
 import java.io.*;
 import java.util.*;
+import javax.xml.transform.*;
+import javax.xml.transform.sax.*;
+
+import org.apache.xml.serializer.Serializer;
+import org.apache.xml.serializer.SerializerFactory;
+import org.apache.xml.serializer.OutputPropertiesFactory;
+import org.xml.sax.*;
+import org.xml.sax.ext.*;
+import org.xml.sax.helpers.*;
 
 /** TransCoder is the main class of the program.  It can easily be incorporated
  * into any other Java program.  TransCoder expects the user to set the
@@ -263,7 +274,7 @@ public class TransCoder {
     }
     
     /** Get the result <CODE>String</CODE> from the input <CODE>String</CODE>.
-     * Characters with codes about 127 will be returned as XML character entities.
+     * Characters with codes above 127 will be returned as XML character entities.
      * @param in The <CODE>String</CODE> to be transcoded.
      * @throws UnsupportedEncodingException if the encoding used by the Parser isn't supported.
      * @return The result of the transcoding operation.
@@ -271,6 +282,67 @@ public class TransCoder {
     public String getCharacterEntities(String in) throws UnsupportedEncodingException {
         p.setString(in);
         return conv.convertToCharacterEntities(p);
+    }
+    
+    /**
+     * Main method for the Transcoder class when launched from the command line.
+     * @param args An array consisting either of: a String to be transcoded plus 
+     * the source and result encodings, or: a source file, a result file, plus 
+     * the source and result encodings.
+     */
+    public static void main(String[] args)  {
+        if (args.length < 3 || args.length > 4) {
+            System.out.println("Wrong number of arguments");
+        }
+        TransCoder tc = new TransCoder();
+        try {
+            tc.setParser(args[2]);
+            tc.setConverter(args[3]);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        if (args.length == 4) {
+            File source = new File(args[0]);
+            File result = new File(args[1]);
+            
+            if (source.exists()) {
+                try {
+                    FileOutputStream fos = new FileOutputStream(result);
+                    if (source != null) {
+                        if (source.getName().endsWith(".xml")) {
+                            TransformerFactory tFactory = TransformerFactory.newInstance();
+                            if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
+                                TranscodingContentHandler handler = new TranscodingContentHandler();
+                                Serializer serializer = SerializerFactory.getSerializer 
+                                              (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
+                                serializer.setOutputStream(fos);           
+                                XMLReader reader = XMLReaderFactory.createXMLReader();
+                                reader.setContentHandler(handler);
+                                reader.setFeature("http://xml.org/sax/features/validation", false );
+                                handler.setup(serializer.asContentHandler(), null,tc, null, null);
+                                InputSource is = new InputSource(new java.io.FileInputStream(source));
+                                is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
+                                reader.parse(is);
+                            }
+                        } else {
+                            tc.write(new FileInputStream(source), fos);
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+            }
+        } else {
+            try {
+                System.out.print(tc.getString(args[2]));
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+        
     }
     
 }

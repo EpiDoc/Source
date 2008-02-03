@@ -7,10 +7,22 @@
 package edu.unc.epidoc.transcoder.gui;
 
 import edu.unc.epidoc.transcoder.*;
+import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
+
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
+import javax.xml.transform.*;
+import javax.xml.transform.sax.*;
+import javax.xml.transform.stream.StreamSource;
+
+import org.apache.xml.serializer.Serializer;
+import org.apache.xml.serializer.SerializerFactory;
+import org.apache.xml.serializer.OutputPropertiesFactory;
+import org.xml.sax.*;
+import org.xml.sax.ext.*;
+import org.xml.sax.helpers.*;
 
 /** This class provides a GUI test interface to the <CODE>Transcoder</CODE>.
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
@@ -321,16 +333,21 @@ public class Tester extends javax.swing.JFrame {
     private void transformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transformActionPerformed
         // Add your handling code here:
         try {
-            if (source == null && result == null) 
+            if (source == null && result == null) {
                 conversionArea.setText(tc.getString(conversionArea.getText()));
-            else {
+            } else {
                 if (result != null) {
-                    if (!result.exists())
+                    if (!result.exists()) {
                         result.createNewFile();
+                    }
                     FileOutputStream fos = new FileOutputStream(result);
-                    if (source != null) 
-                        tc.write(new FileInputStream(source), fos);
-                    else {
+                    if (source != null) {
+                        if (source.getName().endsWith(".xml")) {
+                            convert(source, fos);
+                        } else {
+                            tc.write(new FileInputStream(source), fos);
+                        }
+                    } else {
                         String s = tc.getString(conversionArea.getText());
                         fos.write(s.getBytes(tc.getConverter().getEncoding()));
                         fos.flush();
@@ -347,6 +364,27 @@ public class Tester extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_transformActionPerformed
+    
+    public void convert(File in, OutputStream out) throws TransformerException, 
+        TransformerConfigurationException, SAXException, IOException, Exception {
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
+            SAXTransformerFactory saxTFactory = (SAXTransformerFactory)tFactory;
+            TranscodingContentHandler handler = new TranscodingContentHandler();
+            Serializer serializer = SerializerFactory.getSerializer 
+                          (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
+            serializer.setOutputStream(out);           
+            
+            XMLReader reader = XMLReaderFactory.createXMLReader();
+            reader.setContentHandler(handler);
+            reader.setFeature("http://xml.org/sax/features/validation", false );
+            handler.setup(serializer.asContentHandler(), null,"BetaCode", "UnicodeC", null, null);
+            InputSource source = new InputSource(new java.io.FileInputStream(in));
+            source.setSystemId("/Users/hcayless/Development/EpiDuke/trunk/data/DDB_TEI_XML/");
+            reader.parse(source);
+            
+        }
+    }
     
     /** Exit the Application */
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm

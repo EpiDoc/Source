@@ -7,7 +7,7 @@ package edu.unc.epidoc.transcoder.xml.sax;
  */
 
 import edu.unc.epidoc.transcoder.*;
-import java.util.Stack;
+import java.util.*;
 import org.xml.sax.*;
 import org.xml.sax.ext.*;
 
@@ -47,27 +47,35 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      * the source and sitemap <code>Parameters</code> used to process the request.
      */
     public void setup(ContentHandler contentHandler, LexicalHandler lexicalHandler, String parser, String converter, String useAttribute, String lang) throws Exception {
-        this.contentHandler = contentHandler;
         tc = new TransCoder();
-        if (parser != null)
+        if (parser != null) {
             tc.setParser(parser);
-        if (converter != null)
+        }
+        if (converter != null) {
             tc.setConverter(converter);
-        if (useAttribute != null)
-            attributeName = useAttribute;
-        else
+        }
+        this.setup(contentHandler, lexicalHandler, tc, useAttribute, lang);
+    }
+    
+    public void setup(ContentHandler ch, LexicalHandler lh, TransCoder tc, String useAttribute, String lang) throws Exception {
+        this.tc = tc;
+        this.contentHandler = ch;
+        if (useAttribute != null) {
+            this.attributeName = useAttribute;
+        } else {
             attributeName = "lang";
-        
-        elements = new Stack();
-        languages = new Stack();
-        if (lang != null)
+        }
+        this.elements = new Stack();
+        this.languages = new Stack();
+        if (lang != null) {
             languages.push(lang);
-        else
+        } else {
             languages.push(DEFAULT_LANG);
-        parsers = new Stack();
-        parsers.push(tc.getParser().getClass().getName());
-        converters = new Stack();
-        converters.push(tc.getConverter().getClass().getName());
+        }
+        this.parsers = new Stack();
+        this.parsers.push(tc.getParser().getClass().getName());
+        this.converters = new Stack();
+        this.converters.push(tc.getConverter().getClass().getName());
     }
     
     /**
@@ -108,7 +116,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      */
     public void endElement(String uri, String name, String raw)
     throws SAXException {
-        flush();
+        //flush();
         if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
             languages.pop();
             language = (String)languages.peek();
@@ -150,21 +158,21 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     public void characters(char c[], int start, int len)
     throws SAXException {
         StringBuffer strb = new StringBuffer();
-        int length = len;
-        strb.append(c);
+        String in = "";
+        String out = "";
         if(tc.getParser().supportsLanguage(language)) {
             try {
-                String in = new String(c, start, len);
-                String out = tc.getString(in);
-                strb.delete(start, start+len);
-                strb.insert(start, out);
-                length = out.length();
+                in = new String(c, start, len);
+                out = tc.getString(in);
+                strb.append(out);
             } catch (Exception e) {
                 throw new SAXException(e);
             }
+            this.contentHandler.characters(strb.toString().toCharArray(), 0, strb.length());
+        } else {
+            this.contentHandler.characters(c, start, len);
         }
-        buffer(strb, start);
-        //this.contentHandler.characters(strb.toString().toCharArray(), start, length);
+        
     }
     
     private void buffer(StringBuffer strb, int start) {
@@ -176,7 +184,8 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     
     private void flush() throws SAXException {
         if (strb != null) {
-            this.contentHandler.characters(strb.toString().toCharArray(), start, strb.length());
+            char[] chars = strb.toString().toCharArray();
+            this.contentHandler.characters(chars, 0, chars.length);
             strb = null;
             start = -1;
         }

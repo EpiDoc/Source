@@ -57,25 +57,33 @@ public class BetaCodeParser extends AbstractGreekParser {
                         index++;
                     }
                     if (hasNext()) {
-                        while (Character.isDigit(chArray[index])) {
+                        while (hasNext() && Character.isDigit(chArray[index]) ) {
                             escape.append(chArray[index]);
                             index++;
                         }
+                    }
+                    String result = lookup(escape.toString());
+                    // reset if this isn't a recognized Beta Code escape
+                    if (result.equals(escape.toString())) { 
+                        index -= (escape.length() - 1);
+                        escape.delete(1, escape.length());
                     }
                     strb.append((lookup(escape.toString())));
                 } else {
                     if (ch == '#' && Character.isLetter(chArray[index]))
                         strb.append(lookup(ch));
                     else {
-                        while (isBetaCodeDiacritical(chArray[index])) {
+                        while (hasNext() && isBetaCodeDiacritical(chArray[index])) {
                             map.put(lookupAccent(chArray[index]), lookup(chArray[index]));
                             index++;
                         }
-                        strb.append(lookup(lookup(ch) + String.valueOf(chArray[index])));
-                        index++;
-                        while (!map.isEmpty()) {
-                            String str = (String)map.remove(map.firstKey());
-                            strb.append("_"+str);
+                        if (hasNext()) {
+                            strb.append(lookup(lookup(ch) + String.valueOf(chArray[index])));
+                            index++;
+                            while (!map.isEmpty()) {
+                                String str = (String)map.remove(map.firstKey());
+                                strb.append("_"+str);
+                            }
                         }
                     }
                 }
@@ -87,10 +95,13 @@ public class BetaCodeParser extends AbstractGreekParser {
                         index++;
                         strb.append(lookup(escape.toString()));
                     } else {
-                        if (index > chArray.length-1 || !Character.isLetter(chArray[index]))
-                            strb.append(lookup(String.valueOf(ch)+"2"));
-                        else
+                        if (index < chArray.length && (Character.isLetter(chArray[index]) 
+                                || chArray[index] == '?')) {
                             strb.append(lookup(ch));
+                        } else {
+                            strb.append(lookup(String.valueOf(ch)+"2"));
+                        }
+                            
                     }
                 } else {
                     strb.append(lookup(ch));
@@ -116,7 +127,7 @@ public class BetaCodeParser extends AbstractGreekParser {
     }
     
     private String lookup(String key) {
-        return bcp.getProperty(key.toUpperCase());
+        return bcp.getProperty(key.toUpperCase(), key);
     }
     
     private String lookupAccent(char ch) {
