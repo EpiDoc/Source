@@ -26,19 +26,25 @@
      
      REVISION HISTORY:
 
-          06 December 2007 (GB)
-                  * added new model for <subst>
-                  * added attributes to hi/@rend
-			* added 'margin' to add/@place
+	03 February 2008 (GB)
+		* recreated <sourceDesc> from scratch in order to add msDesc
+		* added msDesc, msIdentifier, msName
+		* added " | side | lines" to biblScope/@type
+		* added subtype CDATA #IMPLIED to ATTLIST div
+
+      06 December 2007 (GB)
+      	* added new model for <subst>
+      	* added attributes to hi/@rend
+		* added 'margin' to add/@place
                   
           
-          18th October 2007 (GB)
-                   * removed mark element declaration (deprecated 6 months ago)
-                   * removed mark from unclear content model
-                   * added am and ex element models
-                   * added @evidence to supplied attlist
-                   * added 'undefined' to supplied[@reason] vocabulary
-                   * NOTE: that supplied[@reason='abbreviation'] is now deprecated
+      18th October 2007 (GB)
+      	* removed mark element declaration (deprecated 6 months ago)
+      	* removed mark from unclear content model
+      	* added am and ex element models
+      	* added @evidence to supplied attlist
+      	* added 'undefined' to supplied[@reason] vocabulary
+		* NOTE: that supplied[@reason='abbreviation'] is now deprecated
 
 	11th May 2007
 		(GB)
@@ -221,10 +227,34 @@
       %a.names;
       type CDATA #IMPLIED >
 
+<!ELEMENT msDesc 
+	(p | msIdentifier)+ >
+<!ATTLIST msDesc
+	%a.global; >
+
+<!ELEMENT msIdentifier 
+	(msName)+ >
+<!ATTLIST msIdentifier 
+	%a.global; >
+
+<!ELEMENT msName 
+	(#PCDATA | g)* >
+<!ATTLIST msName 
+	%a.global;
+	type CDATA #IMPLIED
+	subtype CDATA #IMPLIED >
+
 <!ELEMENT tag (#PCDATA)> 
 <!ATTLIST tag  
       %a.global; >
       
+<!ELEMENT sourceDesc 
+	(p | bibl | biblFull | biblStruct | listBibl | msDesc)+ >
+<!ATTLIST sourceDesc 
+	%a.global;
+	default (YES | NO) "NO"
+	 >
+
 <!ELEMENT subst (add | del)* > 
 <!ATTLIST subst   
       %a.global;
@@ -279,7 +309,7 @@
 <!ATTLIST %n.biblFull;
         type CDATA #IMPLIED >
 <!ATTLIST %n.biblScope;
-        type (volume | pages | chapter | parts | fascicle | numbers | plates | issue ) #IMPLIED >
+        type (volume | pages | chapter | parts | fascicle | numbers | plates | issue | side | lines ) #IMPLIED >
 <!ATTLIST %n.biblStruct;
         type CDATA #IMPLIED >
 <!ATTLIST %n.bloc;
@@ -297,6 +327,7 @@
 <!ATTLIST %n.distance;
         %epidoc.exact; >
 <!ATTLIST %n.div;
+        subtype CDATA #IMPLIED
         type CDATA #IMPLIED >
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #REQUIRED

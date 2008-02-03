@@ -27,12 +27,15 @@
      
      REVISION HISTORY:
 
-          06 December 2007 (GB)
-          * added <subst> to phrase level entity
-          
-          18th October 2007 (GB)
-          * removed <mark> from phrase-level entity (deprecated 6 months ago)
-          * added <am> and <ex> to phrase-level entity
+	03 February 2008 (GB)
+	* suppressed standard model for <sourceDesc>
+
+      06 December 2007 (GB)
+      * added <subst> to phrase level entity
+         
+      18th October 2007 (GB)
+      * removed <mark> from phrase-level entity (deprecated 6 months ago)
+      * added <am> and <ex> to phrase-level entity
 
 	11th May 2007 (GB)
 	* added element <g> as mirror of <mark> (to be deprecated)
@@ -98,7 +101,7 @@
      using the standard TEI extension mechanisms
      ********************************************************************* -->
 
-<!ENTITY % x.phrase 'g | choice | am | ex | subst |' >
+<!ENTITY % x.phrase 'g | choice | am | ex | subst | ' >
 
 
 <!-- *********************************************************************
@@ -231,6 +234,7 @@
 <!ENTITY % set 'IGNORE' >
 <!ENTITY % signed 'IGNORE' >
 <!ENTITY % sound 'IGNORE' >
+<!ENTITY % sourceDesc 'IGNORE' >
 <!ENTITY % sp 'IGNORE' >
 <!ENTITY % span 'IGNORE' >
 <!ENTITY % spanGrp 'IGNORE' >
