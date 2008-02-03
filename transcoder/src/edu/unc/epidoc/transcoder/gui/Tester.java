@@ -15,7 +15,6 @@ import java.io.*;
 import java.util.*;
 import javax.xml.transform.*;
 import javax.xml.transform.sax.*;
-import javax.xml.transform.stream.StreamSource;
 
 import org.apache.xml.serializer.Serializer;
 import org.apache.xml.serializer.SerializerFactory;
@@ -97,6 +96,7 @@ public class Tester extends javax.swing.JFrame {
         setFont(new java.awt.Font("Arial", 0, 12));
         setName("testerFrame");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
             }
@@ -253,15 +253,17 @@ public class Tester extends javax.swing.JFrame {
         // Add your handling code here:
         try {
             int returnVal = jFileChooser.showOpenDialog(this);
-            if (returnVal == jFileChooser.APPROVE_OPTION) {
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
                 String enc = "UTF8";
-                if (tc.getParser() != null)
+                if (tc.getParser() != null) {
                     enc = tc.getParser().getEncoding();
+                }
                 InputStreamReader in = new InputStreamReader(
                                             new FileInputStream(jFileChooser.getSelectedFile()), enc);
                 StringBuffer text = new StringBuffer();
-                while (in.ready())
+                while (in.ready()) {
                     text.append((char)in.read());
+                }
                 conversionArea.setText(text.toString());
             }
         } catch (Exception e) {
@@ -274,10 +276,11 @@ public class Tester extends javax.swing.JFrame {
         if (saveTo != null) {
             try {
                 int returnVal = jFileChooser.showSaveDialog(this);
-                if (returnVal == jFileChooser.APPROVE_OPTION) {
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
                     saveTo = jFileChooser.getSelectedFile();
-                    if (!saveTo.exists())
+                    if (!saveTo.exists()) {
                         saveTo.createNewFile();
+                    }
                     FileOutputStream fos = new FileOutputStream(saveTo);
                     fos.write(conversionArea.getText().getBytes(tc.getConverter().getEncoding()));
                     fos.flush();
@@ -294,10 +297,11 @@ public class Tester extends javax.swing.JFrame {
         // Add your handling code here:
         try {
             int returnVal = jFileChooser.showSaveDialog(this);
-            if (returnVal == jFileChooser.APPROVE_OPTION) {
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
                 saveTo = jFileChooser.getSelectedFile();
-                if (!saveTo.exists())
+                if (!saveTo.exists()) {
                     saveTo.createNewFile();
+                }
                 FileOutputStream fos = new FileOutputStream(saveTo);
                 fos.write(conversionArea.getText().getBytes(tc.getConverter().getEncoding()));
                 fos.flush();
@@ -311,15 +315,17 @@ public class Tester extends javax.swing.JFrame {
     private void jMenuItemSetResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSetResultActionPerformed
         // Add your handling code here:
         int returnVal = jFileChooser.showSaveDialog(this);
-        if (returnVal == jFileChooser.APPROVE_OPTION)
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
             result = jFileChooser.getSelectedFile();
+        }
     }//GEN-LAST:event_jMenuItemSetResultActionPerformed
     
     private void jMenuItemSetSourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSetSourceActionPerformed
         // Add your handling code here:
         int returnVal = jFileChooser.showOpenDialog(this);
-        if (returnVal == jFileChooser.APPROVE_OPTION)
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
             source = jFileChooser.getSelectedFile();
+        }
     }//GEN-LAST:event_jMenuItemSetSourceActionPerformed
     
     private void jMenuSourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSourceActionPerformed
@@ -378,10 +384,10 @@ public class Tester extends javax.swing.JFrame {
             XMLReader reader = XMLReaderFactory.createXMLReader();
             reader.setContentHandler(handler);
             reader.setFeature("http://xml.org/sax/features/validation", false );
-            handler.setup(serializer.asContentHandler(), null,"BetaCode", "UnicodeC", null, null);
-            InputSource source = new InputSource(new java.io.FileInputStream(in));
-            source.setSystemId("/Users/hcayless/Development/EpiDuke/trunk/data/DDB_TEI_XML/");
-            reader.parse(source);
+            handler.setup(serializer.asContentHandler(), null, this.tc, null, null);
+            InputSource is = new InputSource(new java.io.FileInputStream(in));
+            is.setSystemId("/Users/hcayless/Development/EpiDuke/trunk/data/DDB_TEI_XML/");
+            reader.parse(is);
             
         }
     }
@@ -397,7 +403,7 @@ public class Tester extends javax.swing.JFrame {
     public static void main(String args[]) {
         Tester test = new Tester();
         test.setLocation(100, 100);
-        test.show();
+        test.setVisible(true);
     }
     
     

@@ -11,16 +11,9 @@ import java.util.*;
 import org.xml.sax.*;
 import org.xml.sax.ext.*;
 
-/** The TranscodingTransformer is a Cocoon ({@link http://cocoon.apache.org})
- * Transformer which allows the integration of the Transcoder into Cocoon's
- * processing pipelines.  In order to use it, you will need to add the line:
- * <PRE>
- * &lt;map:transformer logger="sitemap.transformer.transcoding" name="transcoder" src="edu.unc.epidoc.transcoder.cocoon.TranscodingTransformer"/&gt;
- * </PRE>
- * to the &lt;map:transformers/&gt;area of the sitemap and call the TranscodingTransformer
- * in any desired pipelines.  The TranscodingTransformer can be invoked against XML with "lang"
- * attributes on any elements or on any area enclosed by the element "transcode" in the
- * TranscodingTransformer's namespace (http://stoa.org/2002/transcoder).  For example, both:
+/** The TranscodingContentHandler is a SAX <code>ContentHandler</code>.  
+ * 
+ * For example, both:
  * <PRE>
  * &lt;foreign lang="grc"&gt;OI) ME\N I)PPH/WN&lt;/foreign&gt;
  * </PRE>
@@ -28,23 +21,22 @@ import org.xml.sax.ext.*;
  * <PRE>
  * &lt;transcode xmlns="http://stoa.org/2002/transcoder"&gt;A)SPIDI ME\N *SAI/+WM TIS A)GA/LLETAI&lt;transcoder&gt;
  * </PRE>
- * will cause the transcoder to be invoked against their content.  In order to enable
- * the TranscodingTransformer for any pipeline, add something like:
- * <PRE>
- * &lt;map:transform type="transcoder"&gt;
- *    &lt;map:parameter name="parser" value="BetaCode"/&gt;
- *    &lt;map:parameter name="converter" value="UnicodeC"/&gt;
- * &lt;/map:transform&gt;
- * </PRE>
- * to the pipeline.
+ * will cause the transcoder to be invoked against their content.  
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
- * @version 0.9
+ * @version 1.1
  */
 public class TranscodingContentHandler implements ContentHandler, LexicalHandler {
     
     /**
      * Set the <code>SourceResolver</code>, objectModel <code>Map</code>,
      * the source and sitemap <code>Parameters</code> used to process the request.
+     * @param contentHandler a SAX ContentHandler to be wrapped by the TranscodingContentHandler
+     * @param lexicalHandler a SAX LexicalHandler to be wrapped
+     * @param parser a transcoder <code>Parser</code>
+     * @param converter a transcoder <code>Converter</code>
+     * @param useAttribute the name of the attribute to use to signal encoding changes
+     * @param lang 
+     * @throws java.lang.Exception 
      */
     public void setup(ContentHandler contentHandler, LexicalHandler lexicalHandler, String parser, String converter, String useAttribute, String lang) throws Exception {
         tc = new TransCoder();
@@ -80,6 +72,15 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     
     /**
      * Handle the start of an element in the source document.
+     * @param name the local name (without prefix), or the
+     *        empty string if Namespace processing is not being
+     *        performed
+     * @param raw the qualified name (with prefix), or the
+     *        empty string if qualified names are not available
+     * @param attributes the attributes attached to the element.  If
+     *        there are no attributes, it shall be an empty
+     *        Attributes object.  The value of this object after
+     *        startElement returns is undefined
      */
     public void startElement(String uri, String name, String raw, org.xml.sax.Attributes attributes)
     throws SAXException {
@@ -113,6 +114,11 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     }
     /**
      * Handle the end of an element in the source document.
+     * @param name the local name (without prefix), or the
+     *        empty string if Namespace processing is not being
+     *        performed
+     * @param raw the qualified XML name (with prefix), or the
+     *        empty string if qualified names are not available
      */
     public void endElement(String uri, String name, String raw)
     throws SAXException {
@@ -154,32 +160,28 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     
     /**
      * Handle character data.
+     * @param c the character array
+     * @param start the position in the array from which to start reading
+     * @param len how far to read
      */
     public void characters(char c[], int start, int len)
     throws SAXException {
-        StringBuffer strb = new StringBuffer();
+        StringBuffer buffer = new StringBuffer();
         String in = "";
         String out = "";
         if(tc.getParser().supportsLanguage(language)) {
             try {
                 in = new String(c, start, len);
-                out = tc.getString(in);
-                strb.append(out);
+                out = this.tc.getString(in);
+                buffer.append(out);
             } catch (Exception e) {
                 throw new SAXException(e);
             }
-            this.contentHandler.characters(strb.toString().toCharArray(), 0, strb.length());
+            this.contentHandler.characters(strb.toString().toCharArray(), 0, buffer.length());
         } else {
             this.contentHandler.characters(c, start, len);
         }
         
-    }
-    
-    private void buffer(StringBuffer strb, int start) {
-        if (this.strb == null)
-            this.strb = strb;
-        if (this.start == -1)
-            this.start = start;
     }
     
     private void flush() throws SAXException {

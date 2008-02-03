@@ -74,6 +74,7 @@ public abstract class AbstractParser implements Parser {
     
     /** Sets the <CODE>String</CODE> to be parsed.
      * @param in The <CODE>String</CODE> to be parsed.
+     * @throws java.io.UnsupportedEncodingException 
      *
      */
     public void setString(String in) throws UnsupportedEncodingException{
