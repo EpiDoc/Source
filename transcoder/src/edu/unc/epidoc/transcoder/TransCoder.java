@@ -291,13 +291,26 @@ public class TransCoder {
      * the source and result encodings.
      */
     public static void main(String[] args)  {
+        if (args.length == 0) {
+            System.out.println("Transcoder should be invoked with 3 or 4 arguments:");
+            System.out.println("If 3, then the arguments should be the string to be converted," +
+                    "the source ancoding, and the result encoding.");
+            System.out.println("If 4, then the arguments should be the source file, " +
+                    "the result file, and the source and result encodings.");
+            System.exit(0);
+        }
         if (args.length < 3 || args.length > 4) {
             System.out.println("Wrong number of arguments");
         }
         TransCoder tc = new TransCoder();
         try {
-            tc.setParser(args[2]);
-            tc.setConverter(args[3]);
+            if (args.length == 4) {
+                tc.setParser(args[2]);
+                tc.setConverter(args[3]);
+            } else {
+                tc.setParser(args[1]);
+                tc.setConverter(args[2]);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);

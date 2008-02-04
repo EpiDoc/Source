@@ -50,8 +50,9 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     }
     
     public void setup(ContentHandler ch, LexicalHandler lh, TransCoder tc, String useAttribute, String lang) throws Exception {
-        this.tc = tc;
         this.contentHandler = ch;
+        this.lexicalHandler = lh;
+        this.tc = tc;
         if (useAttribute != null) {
             this.attributeName = useAttribute;
         } else {
@@ -122,7 +123,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      */
     public void endElement(String uri, String name, String raw)
     throws SAXException {
-        //flush();
+        flush();
         if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
             languages.pop();
             language = (String)languages.peek();
@@ -159,37 +160,44 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     }
     
     /**
-     * Handle character data.
+     * Handle character data.  Since character data != all of the text inside
+     * and element, the data is buffered and then flushed when an element
+     * close or open event occurs.
      * @param c the character array
      * @param start the position in the array from which to start reading
      * @param len how far to read
      */
     public void characters(char c[], int start, int len)
     throws SAXException {
-        StringBuffer buffer = new StringBuffer();
-        String in = "";
-        String out = "";
-        if(tc.getParser().supportsLanguage(language)) {
-            try {
-                in = new String(c, start, len);
-                out = this.tc.getString(in);
-                buffer.append(out);
-            } catch (Exception e) {
-                throw new SAXException(e);
-            }
-            this.contentHandler.characters(strb.toString().toCharArray(), 0, buffer.length());
-        } else {
-            this.contentHandler.characters(c, start, len);
+        if (this.strb == null) {
+            this.strb = new StringBuffer();
         }
+        this.strb.append(new String(c, start, len));
         
     }
     
+    /**
+     * Flushes the character buffer to the underlying ContentHandler, after 
+     * performing transcoding, if necessary.
+     * @throws org.xml.sax.SAXException
+     */
     private void flush() throws SAXException {
         if (strb != null) {
+            if(tc.getParser().supportsLanguage(language)) {
+                String in = "";
+                String out = "";
+                try {
+                    in = this.strb.toString();
+                    this.strb = new StringBuffer();
+                    out = this.tc.getString(in);
+                    this.strb.append(out);
+                } catch (Exception e) {
+                    throw new SAXException(e);
+                }
+            }
             char[] chars = strb.toString().toCharArray();
             this.contentHandler.characters(chars, 0, chars.length);
             strb = null;
-            start = -1;
         }
     }
     
@@ -262,7 +270,6 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     private Stack parsers;
     private Stack converters;
     private StringBuffer strb;
-    private int start = -1;
     /** The namespace of the <CODE>TranscodingHandler</CODE> component. */
     public static String NAMESPACE = "http://stoa.org/2002/transcoder";
     private static String TC_NAME = "transcode";

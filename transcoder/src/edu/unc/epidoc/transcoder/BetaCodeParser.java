@@ -94,8 +94,7 @@ public class BetaCodeParser extends AbstractGreekParser {
                         index++;
                         strb.append(lookup(escape.toString()));
                     } else {
-                        if (index < chArray.length && (Character.isLetter(chArray[index]) 
-                                || chArray[index] == '?')) {
+                        if (!isTerminalSigma(chArray, index)) {
                             strb.append(lookup(ch));
                         } else {
                             strb.append(lookup(String.valueOf(ch)+"2"));
@@ -116,6 +115,26 @@ public class BetaCodeParser extends AbstractGreekParser {
             }
         }
         return strb.toString();
+    }
+    
+    private boolean isTerminalSigma(char[] chArray, int index) {
+        if (index >= chArray.length) {
+            return true;
+        }
+        char ch = chArray[index];
+        if (Character.isLetter(ch)) {
+            return false;
+        }
+
+        for (int i = 0; i + index < chArray.length; i++) {
+            if (Character.isWhitespace(chArray[index + i])) {
+                return true;
+            }
+            if (Character.isLetter(chArray[index +i])) {
+                return false;
+            }
+        }
+        return false;
     }
     
     private String lookup(char ch) {
