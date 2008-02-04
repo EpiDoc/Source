@@ -130,8 +130,14 @@ public class BetaCodeParser extends AbstractGreekParser {
             if (Character.isWhitespace(chArray[index + i])) {
                 return true;
             }
-            if (Character.isLetter(chArray[index +i])) {
+            if (Character.isLetter(chArray[index + i])) {
                 return false;
+            }
+            if (chArray[index + i] == '-') {
+                return false;
+            }
+            if (isPunctuation(chArray[index + i])) {
+                return true;
             }
         }
         return false;
@@ -173,6 +179,19 @@ public class BetaCodeParser extends AbstractGreekParser {
             case '*':
             case '#':
             case '%':
+                return true;
+            default:
+                return false;
+        }
+    }
+    
+    private boolean isPunctuation(char ch) {
+        switch (ch) {
+            case '.':
+            case ',':
+            case ':':
+            case ';':
+            case '_':
                 return true;
             default:
                 return false;
