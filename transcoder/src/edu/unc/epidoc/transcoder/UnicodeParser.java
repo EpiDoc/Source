@@ -57,7 +57,7 @@ public class UnicodeParser extends AbstractGreekParser {
             } else {
                 if (hasNext() && isCombiningDiacritical(chArray[index])) {
                     map.clear();
-                    while (isCombiningDiacritical(chArray[index]) && index < chArray.length) {
+                    while (index < chArray.length && isCombiningDiacritical(chArray[index]) ) {
                         map.put(lookupAccent(chArray[index]), lookup(chArray[index]));
                         index++;
                     }
