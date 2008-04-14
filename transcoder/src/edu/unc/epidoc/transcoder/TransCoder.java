@@ -252,6 +252,11 @@ public class TransCoder {
         return conv.convertToString(p);
     }
     
+    public String getString(StringBuffer in, int start, int length) {
+        p.setStringBuffer(in, start, length);
+        return conv.convertToString(p);
+    }
+    
     /** Stream the result from an <CODE>InputStream</CODE> to an <CODE>OutputStream</CODE>.
      * This method should work with any type of encoding.
      * @param in The InputStream to be transcoded.

@@ -20,6 +20,7 @@ public abstract class AbstractParser implements Parser {
     
     protected char[] chArray;
     protected int index;
+    protected int length;
     protected String in;
     
     /** Returns the encoding method supported by this <CODE>Parser</CODE>.
@@ -47,7 +48,7 @@ public abstract class AbstractParser implements Parser {
      *
      */
     public boolean hasNext() {
-        if (index < chArray.length)
+        if (index < length)
             return true;
         else
             return false;
@@ -81,6 +82,13 @@ public abstract class AbstractParser implements Parser {
         this.in = new String(in.getBytes(), encoding);
         chArray = in.toCharArray();
         index = 0;
+        length = chArray.length;
+    }
+    
+    public void setStringBuffer(StringBuffer in, int start, int len) {
+        this.chArray = in.toString().toCharArray();
+        index = start;
+        length = len;
     }
     
     /** Provides a method of checking whether the <CODE>Parser</CODE> supports a

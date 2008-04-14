@@ -35,7 +35,9 @@ public interface Parser {
     /** Sets the <CODE>String</CODE> to be parsed.
      * @param in The <CODE>String</CODE> to be parsed.
      */    
-    public void setString(String in) throws UnsupportedEncodingException;        
+    public void setString(String in) throws UnsupportedEncodingException;   
+    
+    public void setStringBuffer(StringBuffer in, int start, int len);
     
     /** Provides a means of querying the <CODE>Parser</CODE>'s properties.
      * @param name The name of the property to be queried.
