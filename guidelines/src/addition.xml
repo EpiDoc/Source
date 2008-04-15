@@ -27,7 +27,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/addition.xml,v 1.13 2006-12-03 18:15:35 hcayless Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/addition.xml,v 1.14 2008-04-15 16:37:56 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -38,16 +38,22 @@ End license statement: do not remove -->
 		<head>Traditional typographic representation</head>
 		<list type="simple">
 			<item><bibl default="NO"><title level="a" type="abbreviated">
-						<xref href="bibliography.xml#panciera" evaluate="all" from="ROOT" targOrder="Y"
-							to="DITTO">Panciera</xref>
-					</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18-19</biblScope></bibl>;
-					<bibl default="NO"><title level="a" type="abbreviated">
-						<xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT" targOrder="Y"
-							to="DITTO">Dohnicht</xref>
-					</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list
-					lang="lat" type="simple">
+						<xref href="bibliography.xml#panciera" evaluate="all" from="ROOT"
+							targOrder="Y" to="DITTO">Panciera</xref>
+					</title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+				>18-19</biblScope></bibl>; <bibl default="NO"><title level="a" type="abbreviated">
+						<xref href="bibliography.xml#dohnicht" evaluate="all" from="ROOT"
+							targOrder="Y" to="DITTO">Dohnicht</xref>
+					</title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+				>4</biblScope></bibl>: <list lang="lat" type="simple">
 					<item id="TypoEx-1">Imperator `Caesar´ Augustus</item>
 					<item>Livia `clarissima´ femina</item>
+					<item>
+						<note>not treated</note>
+					</item>
+					<item>
+						<note>not treated</note>
+					</item>
 				</list></item>
 		</list>
 	</div>
@@ -59,26 +65,29 @@ End license statement: do not remove -->
 		</list>
 		<link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
 	</div>
-	<div id="addition-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+	<div id="addition-edition" type="gl-edition">
 		<head lang="en">EpiDoc appearance with standard XSLT</head>
 		<list type="simple">
-			<item lang="lat">Imperator <add place="supralinear">Caesar</add> Augustus</item>
-			<item id="EncEx-1" lang="lat">Imperator <add>Caesar</add> Augustus</item>
-			<item lang="lat">Livia <add place="infralinear">clarissima</add> femina</item>
-			<item lang="grc"><add place="left">Σαμουηλ</add> Ἰαηλ</item>
+			<item id="EncEx-1" lang="la">Imperator <add>Caesar</add> Augustus</item>
+			<item lang="la">Livia <add place="infralinear">clarissima</add> femina</item>
+			<item lang="la">Imperator <add place="supralinear">Caesar</add> Augustus</item>
+			<item lang="grc"><add place="margin">Σαμουηλ</add> Ἰαηλ</item>
 		</list>
 	</div>
-	<div id="addition-notes" type="gl-notes" org="uniform" part="N" sample="complete">
+	<div id="addition-notes" type="gl-notes">
 		<head>Notes</head>
 		<list type="simple">
-			<item>In traditional Lejden the place of added text is not specified in the transcription, but
-				noted in the apparatus or commentary. This added information, recorded here by use of the
-					<att>place</att> attribute, is therefore optional and may be omitted without harm.</item>
+			<item>In traditional Leiden the place of added text is not specified in the
+				transcription, but noted in the apparatus or commentary. This added information,
+				recorded here by use of the <att>place</att> attribute, is therefore optional and
+				may be omitted without harm.</item>
 		</list>
 		<div id="addition-questions" type="gl-questions" org="uniform" part="N" sample="complete">
 			<head>Questions and issues</head>
 			<list type="simple">
-				<item>none</item>
+				<item>In some Leiden-styles (e.g. papyrological) the place of an insertion changes
+					the sigla used to represent the added text. The modularized XSL reflects this to
+					some extent, but there is not yet any way to test this in the Guidelines.</item>
 			</list>
 		</div>
 	</div>
@@ -103,13 +112,13 @@ End license statement: do not remove -->
 	</div>
 	<div id="addition-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
 		<head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-		<p id="addition-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high"
-				part="N">$Revision: 1.13 $</seg></p>
+		<p id="addition-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+				cert="high" part="N">$Revision: 1.14 $</seg></p>
 		<p id="addition-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
 				cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
 		<p id="addition-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high"
-				part="N">$Date: 2006-12-03 18:15:35 $</seg></p>
+				part="N">$Date: 2008-04-15 16:37:56 $</seg></p>
 		<p id="addition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
-				cert="high" part="N">$Author: hcayless $</seg></p>
+				cert="high" part="N">$Author: gabrielbodard $</seg></p>
 	</div>
 </div>
