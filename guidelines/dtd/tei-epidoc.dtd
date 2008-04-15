@@ -13,9 +13,9 @@
 	 >
 
 <!ELEMENT ab 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -35,9 +35,9 @@
 	 >
 
 <!ELEMENT abbr 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -57,9 +57,9 @@
 	 >
 
 <!ELEMENT add 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -74,15 +74,15 @@
 	id ID #IMPLIED
 	lang CDATA #IMPLIED
 	n CDATA #IMPLIED
-	place (inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed) #IMPLIED
+	place (inline | supralinear | infralinear | left | right | top | bottom | opposite | verso | overstrike | mixed | margin) #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	 >
 
 <!ELEMENT addrLine 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -175,9 +175,9 @@
 	 >
 
 <!ELEMENT author 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -193,9 +193,9 @@
 	 >
 
 <!ELEMENT authority 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -223,9 +223,9 @@
 	 >
 
 <!ELEMENT bibl 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -241,6 +241,7 @@
 	lang CDATA #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
+	subtype CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
@@ -266,9 +267,9 @@
 	 >
 
 <!ELEMENT biblScope 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -281,7 +282,7 @@
 	lang CDATA #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	type (volume | pages | chapter | parts | fascicle | numbers | plates | issue) #IMPLIED
+	type (volume | pages | chapter | parts | fascicle | numbers | plates | issue | side | lines) #IMPLIED
 	 >
 
 <!ELEMENT biblStruct 
@@ -306,9 +307,9 @@
 	 >
 
 <!ELEMENT bloc 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -348,9 +349,9 @@
 	 >
 
 <!ELEMENT catDesc 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag)* >
@@ -441,9 +442,9 @@
 	 >
 
 <!ELEMENT classCode 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -471,9 +472,9 @@
 	 >
 
 <!ELEMENT corr 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -493,9 +494,9 @@
 	 >
 
 <!ELEMENT country 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -517,9 +518,9 @@
 	 >
 
 <!ELEMENT creation 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -535,9 +536,9 @@
 	 >
 
 <!ELEMENT date 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -561,9 +562,9 @@
 	 >
 
 <!ELEMENT dateRange 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -624,9 +625,9 @@
 	 >
 
 <!ELEMENT del 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -647,9 +648,9 @@
 	 >
 
 <!ELEMENT distance 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -671,9 +672,9 @@
 	 >
 
 <!ELEMENT distributor 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -714,13 +715,14 @@
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
 	sample (initial | medial | final | unknown | complete) "complete"
+	subtype CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT docAuthor 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -736,9 +738,9 @@
 	 >
 
 <!ELEMENT edition 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -765,9 +767,9 @@
 	 >
 
 <!ELEMENT editor 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -784,9 +786,9 @@
 	 >
 
 <!ELEMENT emph 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -827,9 +829,9 @@
 	 >
 
 <!ELEMENT expan 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -849,9 +851,9 @@
 	 >
 
 <!ELEMENT extent 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -882,9 +884,9 @@
 	 >
 
 <!ELEMENT figDesc 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -925,9 +927,9 @@
 	 >
 
 <!ELEMENT foreign 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -958,9 +960,9 @@
 	 >
 
 <!ELEMENT funder 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1025,14 +1027,14 @@
 	 >
 
 <!ELEMENT geogName 
-	(#PCDATA | geog | g | choice | am | ex | abbr | address 
-	| date | dateRange | dateStruct | expan | geogName | measure 
-	| name | num | persName | placeName | rs | add | app | corr 
-	| del | orig | reg | sic | space | supplied | unclear | 
-	handShift | emph | foreign | gloss | hi | soCalled | term 
-	| title | ptr | ref | xptr | xref | seg | w | att | tag 
-	| gap | figure | certainty | fs | link | linkGrp | cb | 
-	lb | milestone | pb)* >
+	(#PCDATA | geog | g | choice | am | ex | subst | abbr | 
+	address | date | dateRange | dateStruct | expan | geogName 
+	| measure | name | num | persName | placeName | rs | add 
+	| app | corr | del | orig | reg | sic | space | supplied 
+	| unclear | handShift | emph | foreign | gloss | hi | soCalled 
+	| term | title | ptr | ref | xptr | xref | seg | w | att 
+	| tag | gap | figure | certainty | fs | link | linkGrp | 
+	cb | lb | milestone | pb)* >
 
 <!ATTLIST geogName 
 	ana IDREFS #IMPLIED
@@ -1048,9 +1050,9 @@
 	 >
 
 <!ELEMENT gloss 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1114,9 +1116,9 @@
 	 >
 
 <!ELEMENT head 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1134,9 +1136,9 @@
 	 >
 
 <!ELEMENT hi 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1149,7 +1151,7 @@
 	id ID #IMPLIED
 	lang CDATA #IMPLIED
 	n CDATA #IMPLIED
-	rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline) #REQUIRED
+	rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline | sling-above | sling-below | supraline-underline | subscript | diaeresis | oxia | dasia | varia | psili | perispomeni) #REQUIRED
 	type CDATA #IMPLIED
 	 >
 
@@ -1179,9 +1181,9 @@
 	 >
 
 <!ELEMENT item 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1210,9 +1212,9 @@
 	 >
 
 <!ELEMENT l 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1246,9 +1248,9 @@
 	 >
 
 <!ELEMENT language 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1279,9 +1281,9 @@
 	 >
 
 <!ELEMENT lem 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1395,9 +1397,9 @@
 	 >
 
 <!ELEMENT measure 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1420,9 +1422,9 @@
 	 >
 
 <!ELEMENT meeting 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1499,10 +1501,45 @@
 	value CDATA #IMPLIED
 	 >
 
+<!ELEMENT msDesc 
+	(p | msIdentifier)+ >
+
+<!ATTLIST msDesc 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang CDATA #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
+<!ELEMENT msIdentifier 
+	(msName)+ >
+
+<!ATTLIST msIdentifier 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang CDATA #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	 >
+
+<!ELEMENT msName 
+	(#PCDATA | g)* >
+
+<!ATTLIST msName 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang CDATA #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	subtype CDATA #IMPLIED
+	type CDATA #IMPLIED
+	 >
+
 <!ELEMENT name 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1521,9 +1558,9 @@
 	 >
 
 <!ELEMENT note 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1546,9 +1583,9 @@
 	 >
 
 <!ELEMENT num 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1566,9 +1603,9 @@
 	 >
 
 <!ELEMENT occasion 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1606,9 +1643,9 @@
 	 >
 
 <!ELEMENT orig 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1626,9 +1663,9 @@
 	 >
 
 <!ELEMENT p 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1657,9 +1694,9 @@
 	 >
 
 <!ELEMENT persName 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1681,9 +1718,9 @@
 
 <!ELEMENT placeName 
 	(#PCDATA | bloc | country | distance | geog | offset | region 
-	| settlement | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	| settlement | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1726,9 +1763,9 @@
 	 >
 
 <!ELEMENT principal 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1773,9 +1810,9 @@
 	 >
 
 <!ELEMENT pubPlace 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1808,9 +1845,9 @@
 	 >
 
 <!ELEMENT publisher 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1826,9 +1863,9 @@
 	 >
 
 <!ELEMENT rdg 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1873,9 +1910,9 @@
 	 >
 
 <!ELEMENT ref 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1899,9 +1936,9 @@
 	 >
 
 <!ELEMENT reg 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1919,9 +1956,9 @@
 	 >
 
 <!ELEMENT region 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1943,9 +1980,9 @@
 	 >
 
 <!ELEMENT resp 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -1984,9 +2021,9 @@
 	 >
 
 <!ELEMENT rs 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2006,9 +2043,9 @@
 	 >
 
 <!ELEMENT seg 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2046,9 +2083,9 @@
 	 >
 
 <!ELEMENT settlement 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2069,9 +2106,9 @@
 	 >
 
 <!ELEMENT sic 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2091,9 +2128,9 @@
 	 >
 
 <!ELEMENT soCalled 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2109,7 +2146,7 @@
 	 >
 
 <!ELEMENT sourceDesc 
-	(p | bibl | biblFull | biblStruct | listBibl)+ >
+	(p | bibl | biblFull | biblStruct | listBibl | msDesc)+ >
 
 <!ATTLIST sourceDesc 
 	ana IDREFS #IMPLIED
@@ -2137,9 +2174,9 @@
 	 >
 
 <!ELEMENT sponsor 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2167,9 +2204,9 @@
 	 >
 
 <!ELEMENT street 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2184,10 +2221,23 @@
 	rend CDATA #IMPLIED
 	 >
 
+<!ELEMENT subst 
+	(add | del)* >
+
+<!ATTLIST subst 
+	ana IDREFS #IMPLIED
+	hand CDATA #IMPLIED
+	id ID #IMPLIED
+	lang CDATA #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	resp CDATA #IMPLIED
+	 >
+
 <!ELEMENT supplied 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2260,9 +2310,9 @@
 	 >
 
 <!ELEMENT term 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2305,9 +2355,9 @@
 	 >
 
 <!ELEMENT title 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2354,9 +2404,9 @@
 	 >
 
 <!ELEMENT w 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2396,9 +2446,9 @@
 	 >
 
 <!ELEMENT wit 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2435,9 +2485,9 @@
 	 >
 
 <!ELEMENT xref 
-	(#PCDATA | g | choice | am | ex | abbr | address | date 
-	| dateRange | dateStruct | expan | geogName | measure | 
-	name | num | persName | placeName | rs | add | app | corr 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
 	| del | orig | reg | sic | space | supplied | unclear | 
 	handShift | emph | foreign | gloss | hi | soCalled | term 
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
@@ -2484,7 +2534,7 @@
 	value CDATA #IMPLIED
 	 >
 
-<!-- DTD  generated by PizzaChef 1.4 for pid pizza1478 on 18 Oct 2007 -->
+<!-- DTD  generated by PizzaChef 1.4 for pid pizza21740 on 3 Feb 2008 -->
 
 <!ENTITY aacute  "&#x00E1;" >
 
@@ -3082,7 +3132,7 @@
 
 <!ENTITY copy  "&#x00A9;" >
 
-<!ENTITY reg  "&#x00AF;" >
+<!ENTITY reg  "&#x00AE;" >
 
 <!ENTITY trade  "&#x2122;" >
 
