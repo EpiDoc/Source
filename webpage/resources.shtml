@@ -6,15 +6,14 @@
     <!-- End CVS information: do not remove -->
     <head>
         <title>EpiDoc Resources and Tools</title>
-        <style type="text/css" media="screen"> @import "webscreen.css"; </style>
+        <style type="text/css" media="screen">
+            @import "webscreen.css";</style>
     </head>
     <body>
         <div id="container">
-            
+
             <div id="main">
-                <h1>
-                    <span class="text">EpiDoc Resources and Tools</span>
-                </h1>
+                <h1>EpiDoc Resources and Tools</h1>
                 <div id="introduction">
                     <h2>EpiDoc Resources and Tools</h2>
                     <p><a href="development.shtml#developers">Developers in the EpiDoc Community</a>
@@ -22,42 +21,81 @@
                         tools and other resources to facilitate the creation, dissemination and
                         exploitation of EpiDoc works. This page provides basic information about
                         each of the major resource packages, with links to documentation, download
-                        locations and online copies.<br /><br />
+                        locations and online copies.<br/><br/>
                         <span class="small">[ <a href="index.shtml">back to the EpiDoc home page
                             ...</a> ]</span>
                     </p>
                     
+
                 </div>
+                <div id="notice">
+                    <h2 class="highlight">Urgent Notice (15 April 2008)</h2>
+                    <p>The EpiDoc CVS repository at SourceForge is now deprecated. We are now using 
+                        a <a href="http://sourceforge.net/svn/?group_id=60289">Subversion (SVN) repository at SourceForge</a>. 
+                        <span class="highlight">Any changes committed to CVS hereafter will be lost forever.</span> 
+                        Details below will be updated shortly.</p>
+                </div>
+                
                 <div id="resources">
-<div id="navigation-in-page">
+                    <div id="navigation-in-page">
+                        <h2>Contents of this page</h2>
                         <p>The following resources are discussed on this web page:</p>
                         <ul>
-                            <li><a href="#communication">Communication</a>
+                            <li>
+                                <a href="#communication">Communication</a>
                                 <ul>
-                                    <li><a href="#markup">Markup Email Discussion List</a></li>
-                                    <li><a href="#irc">Internet Relay Chat Channel</a></li>
+                                    <li>
+                                        <a href="#markup">Markup Email Discussion List</a>
+                                    </li>
+                                    <li>
+                                        <a href="#irc">Internet Relay Chat Channel</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="#documentation">Documentation</a>
+                            <li>
+                                <a href="#documentation">Documentation</a>
                                 <ul>
-                                    <li><a href="#guidelines">Guidelines</a></li>
-                                    <li><a href="#docwiki">Documentation Wiki</a></li>
-                                    <li><a href="#roadmapwiki">Planning and Priorities Wiki</a></li>
-                                    <li><a href="#examples">Example Files</a></li>
+                                    <li>
+                                        <a href="#guidelines">Guidelines</a>
+                                    </li>
+                                    <li>
+                                        <a href="#docwiki">Documentation Wiki</a>
+                                    </li>
+                                    <li>
+                                        <a href="#roadmapwiki">Planning and Priorities Wiki</a>
+                                    </li>
+                                    <li>
+                                        <a href="#examples">Example Files</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="#software">Software</a>
+                            <li>
+                                <a href="#software">Software</a>
                                 <ul>
-                                    <li><a href="#dtd">Document Type Definition (DTD)</a></li>
-                                    <li><a href="#xslt">Extensible Stylesheet Language Transformations (XSLTs)</a></li>
-                                    <li><a href="#chetc">Typographic Leiden to EpiDoc XML Converter</a></li>
-                                    <li><a href="#crosswalker">Schema Crosswalker Tool</a></li>
-                                    <li><a href="#webapp">Web Application (Cocoon)</a></li>
-                                    <li><a href="#transcoder">Font Re-encoding (Transcoder)</a></li>
+                                    <li>
+                                        <a href="#dtd">Document Type Definition (DTD)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#xslt">Extensible Stylesheet Language
+                                            Transformations (XSLTs)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#chetc">Typographic Leiden to EpiDoc XML
+                                        Converter</a>
+                                    </li>
+                                    <li>
+                                        <a href="#crosswalker">Schema Crosswalker Tool</a>
+                                    </li>
+                                    <li>
+                                        <a href="#webapp">Web Application (Cocoon)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#transcoder">Font Re-encoding (Transcoder)</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
-                        
+
                     </div>
                     <div id="communication">
                         <h2>Communicating with the EpiDoc Community</h2>
@@ -118,11 +156,9 @@
                             <ul>
                                 <li>Latest release: <ul>
                                         <li id="guidelines-online">
-                                            <a
-                                                href="http://www.stoa.org/epidoc/gl/5/"
-                                                title="Latest Guidelines Release Online"
-                                                >Online (in HTML)</a>, courtesy of the Stoa
-                                            Consortium</li>
+                                            <a href="http://www.stoa.org/epidoc/gl/5/"
+                                                title="Latest Guidelines Release Online">Online (in
+                                                HTML)</a>, courtesy of the Stoa Consortium</li>
                                         <li>As a <a
                                                 href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182238"
                                                 title="EpiDoc Guidelines Release Packages"
@@ -156,10 +192,12 @@
                         <div id="roadmapwiki">
                             <h3>Planning Wiki</h3>
                             <p>The EpiDoc Roadmap Wiki is meant for the collaborative development of
-                            priorities, plans and schedules for EpiDoc software, documentation, tools, meetings and so forth.
-                            All EpiDoc community members &mdash; particularly developers and project directors &mdash; 
-                            are encouraged to participate in the establishment of community-wide priorities and plans, via this
-                            wiki and regular meetings on the <a href="#irc">EpiDoc IRC Channel</a>.</p>
+                                priorities, plans and schedules for EpiDoc software, documentation,
+                                tools, meetings and so forth. All EpiDoc community members
+                                &mdash; particularly developers and project directors
+                                &mdash; are encouraged to participate in the establishment of
+                                community-wide priorities and plans, via this wiki and regular
+                                meetings on the <a href="#irc">EpiDoc IRC Channel</a>.</p>
                         </div>
 
 
@@ -454,8 +492,7 @@
                     </div>
 
                     <div id="footer">
-                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date:
-                            2006/07/11 18:33:16 $. <br />Copyright 2006 by the authors.</p>
+                        <p>Content on this page by Tom Elliott and Hugh Cayless. Last update: $Date: 2006/07/11 18:33:16 $. <br/>Copyright 2006-2008 by the authors.</p>
                     </div>
                 </div>
             </div>
