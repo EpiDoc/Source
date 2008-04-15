@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
 <!-- Start CVS information: do not remove -->
 
-        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/overstruck.xml,v 1.9 2008-04-15 13:35:30 gabrielbodard Exp $ -->
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/overstruck.xml,v 1.10 2008-04-15 13:37:28 gabrielbodard Exp $ -->
 
         <!-- End CVS information: do not remove -->
 
@@ -76,16 +76,18 @@ End license statement: do not remove -->
          <item id="EncEx-5">legio XIII 
             <subst><del status="unremarkable"><unclear reason="damage" cert="high">f</unclear></del><add place="overstrike">g</add></subst>emina</item>
       </list>
-   </div><div id="overstruck-responsibility" type="gl-responsibility">
+   </div><div id="overstruck-notes" type="gl-notes">
+      <head>Notes</head>
+      <p><tag>subst</tag> is a new element from TEI P5 that we have added to the EpiDoc DTD for this purpose.</p></div><div id="overstruck-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
          <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Valentina Asciutti</name></respStmt></bibl>
       </listBibl>
    </div><div id="overstruck-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="overstruck-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.9 $</seg></p>
+      <p id="overstruck-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.10 $</seg></p>
       <p id="overstruck-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="overstruck-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2008-04-15 13:35:30 $</seg></p>
+      <p id="overstruck-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2008-04-15 13:37:28 $</seg></p>
       <p id="overstruck-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
    </div></div>
 
