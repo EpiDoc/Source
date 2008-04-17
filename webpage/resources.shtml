@@ -13,7 +13,9 @@
         <div id="container">
 
             <div id="main">
+                
                 <h1>EpiDoc Resources and Tools</h1>
+
                 <div id="introduction">
                     <h2>EpiDoc Resources and Tools</h2>
                     <p><a href="development.shtml#developers">Developers in the EpiDoc Community</a>
@@ -25,9 +27,8 @@
                         <span class="small">[ <a href="index.shtml">back to the EpiDoc home page
                             ...</a> ]</span>
                     </p>
-                    
-
                 </div>
+                
                 <div id="notice">
                     <h2 class="highlight">Urgent Notice (15 April 2008)</h2>
                     <p>The EpiDoc CVS repository at SourceForge is now deprecated. We are now using 
@@ -41,66 +42,46 @@
                         <h2>Contents of this page</h2>
                         <p>The following resources are discussed on this web page:</p>
                         <ul>
-                            <li>
-                                <a href="#communication">Communication</a>
+                            <li><a href="#communication">Communication</a>
                                 <ul>
-                                    <li>
-                                        <a href="#markup">Markup Email Discussion List</a>
-                                    </li>
-                                    <li>
-                                        <a href="#irc">Internet Relay Chat Channel</a>
-                                    </li>
+                                    <li><a href="#markup">Markup Email Discussion List</a></li>
+                                    <li><a href="#irc">Internet Relay Chat Channel</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#documentation">Documentation</a>
+                            <li><a href="#development">Development</a>
                                 <ul>
-                                    <li>
-                                        <a href="#guidelines">Guidelines</a>
-                                    </li>
-                                    <li>
-                                        <a href="#docwiki">Documentation Wiki</a>
-                                    </li>
-                                    <li>
-                                        <a href="#roadmapwiki">Planning and Priorities Wiki</a>
-                                    </li>
-                                    <li>
-                                        <a href="#examples">Example Files</a>
-                                    </li>
+                                    <li><a href="#svn">Subversion (SVN) Code Repository</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#software">Software</a>
+                            <li><a href="#documentation">Documentation</a>
                                 <ul>
-                                    <li>
-                                        <a href="#dtd">Document Type Definition (DTD)</a>
-                                    </li>
-                                    <li>
-                                        <a href="#xslt">Extensible Stylesheet Language
-                                            Transformations (XSLTs)</a>
-                                    </li>
-                                    <li>
-                                        <a href="#chetc">Typographic Leiden to EpiDoc XML
-                                        Converter</a>
-                                    </li>
-                                    <li>
-                                        <a href="#crosswalker">Schema Crosswalker Tool</a>
-                                    </li>
-                                    <li>
-                                        <a href="#webapp">Web Application (Cocoon)</a>
-                                    </li>
-                                    <li>
-                                        <a href="#transcoder">Font Re-encoding (Transcoder)</a>
-                                    </li>
+                                    <li><a href="#guidelines">Guidelines</a></li>
+                                    <li><a href="#docwiki">Documentation Wiki</a></li>
+                                    <li><a href="#roadmapwiki">Planning and Priorities Wiki</a></li>
+                                    <li><a href="#examples">Example Files</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#software">Software</a>
+                                <ul>
+                                    <li><a href="#dtd">Document Type Definition (DTD)</a></li>
+                                    <li><a href="#xslt">Extensible Stylesheet Language
+                                            Transformations (XSLTs)</a></li>
+                                    <li><a href="#chetc">Typographic Leiden to EpiDoc XML
+                                        Converter</a></li>
+                                    <li><a href="#crosswalker">Schema Crosswalker Tool</a></li>
+                                    <li><a href="#webapp">Web Application (Cocoon)</a></li>
+                                    <li><a href="#transcoder">Font Re-encoding (Transcoder)</a></li>
                                 </ul>
                             </li>
                         </ul>
 
                     </div>
+                    
                     <div id="communication">
+                        
                         <h2>Communicating with the EpiDoc Community</h2>
+                        
                         <div id="markup">
-
                             <h3>The Markup List</h3>
                             <p>The <a href="http://www.stoa.org">Stoa Consortium</a> has assisted
                                 the EpiDoc Community in a number of ways since its earliest days.
@@ -113,6 +94,7 @@
                                 visiting the <a href="http://lsv.uky.edu/archives/markup.html"
                                     >Markup List Archive Page</a>.</p>
                         </div>
+
                         <div id="irc">
                             <h3>EpiDoc IRC Channel</h3>
                             <p>The EpiDoc Community maintains an Internet Relay Chat (IRC) channel
@@ -128,10 +110,36 @@
                                     href="http://epidocumentation.pbwiki.com/EpiDocIrcChannel">IRC
                                     Channel article on the EpiDoc Documentation Wiki</a>.</p>
                         </div>
+                        
                     </div>
+                    
+                    <div id="development">
+                    
+                        <h2>Software Development</h2>
+                        
+                        <div id="svn">
+                            <h3>The EpiDoc Subversion (SVN) Code Repository</h3>
+                            <p>SourceForge provides us with a code repository, which EpiDoc Developers
+                            use share changes to code and documents, and to track the history of those changes.
+                            A web browser can be used to examine the content of the repository. An SVN client
+                            can be used anonymously to check out the contents of the repository. To modify 
+                            content (i.e., "commit" changes), you will need not only an SVN client but also
+                            a SourceForge userid to which one of the EpiDoc SourceForge administrators has
+                            granted SVN commit privileges.</p>
+                            <p>Historical note: prior to 15 April 2008, the EpiDoc Community used a
+                            CVS respository from SourceForge. This has now been obsoleted in favor of
+                            the more flexible SVN offering. The Community is grateful for the work of
+                            Hugh Cayless in effecting the transition of its content from the old 
+                            repository system to the new one.</p>
+                        </div>
+                        
+                    </div>
+                    
 
                     <div id="documentation">
+                        
                         <h2>Documentation and Examples</h2>
+                        
                         <div id="guidelines">
                             <h3>The EpiDoc Guidelines</h3>
                             <p><span class="title">The EpiDoc Guidelines</span> is a prose document
@@ -154,7 +162,8 @@
                             <p>Copies of <span class="title">The EpiDoc Guidelines</span> can be
                                 obtained in one of the following ways:</p>
                             <ul>
-                                <li>Latest release: <ul>
+                                <li>Latest release: 
+                                    <ul>
                                         <li id="guidelines-online">
                                             <a href="http://www.stoa.org/epidoc/gl/5/"
                                                 title="Latest Guidelines Release Online">Online (in
@@ -167,7 +176,8 @@
 
                                     </ul>
                                 </li>
-                                <li>Raw, development versions:<ul>
+                                <li>Raw, development versions:
+                                    <ul>
                                         <li>Via checkout from the <a
                                                 href="http://sourceforge.net/cvs/?group_id=60289"
                                                 >EpiDoc CVS Repository</a>, courtesy of SourceForge
@@ -177,8 +187,11 @@
                                 </li>
                             </ul>
                         </div>
+                        
                         <div id="docwiki">
+                            
                             <h3>Documentation Wiki</h3>
+                            
                             <p>The <a href="http://epidocumentation.pbwiki.com/">EpiDoc
                                     Documentation Wiki</a> is meant for the collaborative authoring
                                 and reviewing of documentation on core EpiDoc cconcepts, tools, and
@@ -189,8 +202,11 @@
                                 please contact <a href="#markup">the Markup list</a> with your
                                 request and you will be issued with the password.</p>
                         </div>
+                        
                         <div id="roadmapwiki">
+                            
                             <h3>Planning Wiki</h3>
+                            
                             <p>The EpiDoc Roadmap Wiki is meant for the collaborative development of
                                 priorities, plans and schedules for EpiDoc software, documentation,
                                 tools, meetings and so forth. All EpiDoc community members
@@ -202,7 +218,9 @@
 
 
                         <div id="examples">
+                            
                             <h3>EpiDoc Example Files</h3>
+                            
                             <p>A number of example XML files are available for inspection by those
                                 interested in the EpiDoc approach. Some of these files are
                                 distributed with the <a href="#webapp">EpiDoc Web Application</a>
@@ -221,14 +239,16 @@
                             <p>Copies of the <span class="title">EpiDoc Example Files
                                 Collection</span> can be obtained in one of the following ways:</p>
                             <ul>
-                                <li>Current, stable &ldquo;release&rdquo; versions: <ul>
+                                <li>Current, stable &ldquo;release&rdquo; versions: 
+                                    <ul>
                                         <li>As a <a
                                                 href="http://sourceforge.net/project/showfiles.php?group_id=60289&amp;package_id=182798"
                                                 title="Example File Release Packages">downloadable
                                                 package</a>, courtesy of SourceForge</li>
                                     </ul>
                                 </li>
-                                <li>Raw, development versions:<ul>
+                                <li>Raw, development versions:
+                                    <ul>
                                         <li>Via checkout from the <a
                                                 href="http://sourceforge.net/cvs/?group_id=60289"
                                                 >EpiDoc CVS Repository</a>, courtesy of SourceForge
@@ -253,8 +273,7 @@
                             <p>Copies of the <span class="title">EpiDoc DTD</span> can be obtained
                                 in one of the following ways:</p>
                             <ul>
-                                <li>
-                                    <a href="http://www.stoa.org/epidoc/dtd/"
+                                <li><a href="http://www.stoa.org/epidoc/dtd/"
                                         title="Online reference copies of the EpiDoc DTD">Online
                                         reference copies</a> of all past releases of the DTD are
                                     available online, courtesy of the Stoa Consortium</li>
@@ -348,8 +367,7 @@
                                     Converter</span> can be obtained in one of the following ways:</p>
                             <ul>
                                 <li>Current, stable &ldquo;release&rdquo; versions: <ul>
-                                        <li>
-                                            <a
+                                        <li><a
                                                 href="http://www.stoa.org/projects/epidoc/stable/chetc-js/chetc.html"
                                                 title="CHETC stable version online">Online</a>,
                                             courtesy of the Stoa Consortium</li>
@@ -360,8 +378,7 @@
                                     </ul>
                                 </li>
                                 <li>Raw, development versions:<ul>
-                                        <li>
-                                            <a
+                                        <li><a
                                                 href="http://www.stoa.org/projects/epidoc/snapshot/chetc-js/chetc.html"
                                                 title="CHETC-JS latest development version online"
                                                 >Online</a>, courtesy of the Stoa Consortium</li>
