@@ -32,7 +32,7 @@
                 <div id="notice">
                     <h2 class="highlight">Urgent Notice (15 April 2008)</h2>
                     <p>The EpiDoc CVS repository at SourceForge is now deprecated. We are now using
-                        a <a href="http://sourceforge.net/svn/?group_id=60289">Subversion (SVN)
+                        a <a href="#svn">Subversion (SVN)
                             repository at SourceForge</a>. <span class="highlight">Any changes
                             committed to CVS hereafter will be lost forever.</span> Details below
                         will be updated shortly.</p>
@@ -150,19 +150,22 @@
 
                         <div id="svn">
                             <h3>The EpiDoc Subversion (SVN) Repository</h3>
-                            <p>SourceForge provides us with a <a
+                            <p>SourceForge provides us with access to a <a
                                     href="http://en.wikipedia.org/wiki/Revision_control">version
-                                    control system</a>, which EpiDoc Developers use to share and
-                                manage changes to code and documents, and to track the history of
-                                those changes. A web browser can be used to examine the content of
+                                    control system</a> called "Subversion". We have used this
+                                system to create a repository where EpiDoc developers can share and
+                                manage changes to code and documents, and can track the history of
+                                those changes. Anyone can use a web browser to examine the content of
                                 the repository via the <a
                                     href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/">EpiDoc
                                     SVN viewer</a>, courtesy of SourceForge. An 
                                 <a
                                     href="http://en.wikipedia.org/wiki/Comparison_of_Subversion_clients"
                                     >SVN client</a> program can be
-                                used anonymously to check out the contents of the repository. To
-                                modify content (i.e., "commit" changes), you will need not only an
+                                used anonymously to check out the contents of the repository to
+                                a local file system for examination and customization. To
+                                modify content in the repository (i.e., "commit" changes so as to contribute
+                                your modifications back to the EpiDoc community), you will need not only an
                                 SVN client but also a SourceForge userid to which one of the EpiDoc
                                 SourceForge administrators has granted SVN commit privileges.</p>
                             <p>Historical note: prior to 15 April 2008, the EpiDoc Community used a
@@ -184,20 +187,19 @@
                             <p><span class="title">The EpiDoc Guidelines</span> is a prose document
                                 intended to provide complete guidance for the application of <abbr
                                     title="Text Encoding Initiative">TEI</abbr> markup to the
-                                preparation of digital epigraphic editions and similar documents.
-                                They also provide documentation for all of the resources described
-                                on this page and serve as a repository for configuration data for <a
-                                    href="#chetc">the CHETC tool</a>.</p>
-                            <p>The <span class="title">Guidelines</span> are collaboratively
+                                preparation of digital editions of primary source documents like <a
+                                    href="http://en.wikipedia.org/wiki/Inscriptions"
+                                >inscriptions</a> or <a
+                                    href="http://en.wikipedia.org/wiki/Papyrology">papyri</a>.The
+                                    <span class="title">Guidelines</span> are collaboratively
                                 authored under the auspices of a slightly hacked version of the same
                                 TEI customization that is distributed as the <a href="#dtd">EpiDoc
                                     DTD</a>; however, work is underway to replace this method with a
                                 custom <a href="http://www.relaxng.org/">RelaxNG</a> schema that
                                 will also function as a TEI P5 ODD from which a future P5-compliant
-                                version of the EpiDoc schema will be generated (see the <span
-                                    class="module">schema-gl</span> module in the <a
-                                    href="http://sourceforge.net/cvs/?group_id=60289">EpiDoc CVS
-                                    Repository</a> on SourceForge).</p>
+                                version of the EpiDoc schema will be generated (browse: <a
+                                    href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/schema-gl/"
+                                    class="module">schema-gl</a>).</p>
                             <p>Copies of <span class="title">The EpiDoc Guidelines</span> can be
                                 obtained in one of the following ways:</p>
                             <ul>
@@ -216,10 +218,10 @@
                                 </li>
                                 <li>Raw, development versions: <ul>
                                         <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module"
-                                        >guidelines</span>)</li>
+                                                href="#svn"
+                                                >EpiDoc SVN Repository</a>, courtesy of SourceForge
+                                            (browse: <a  href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/guidelines/" class="module"
+                                        >guidelines</a>)</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -231,7 +233,7 @@
 
                             <p>The <a href="http://epidocumentation.pbwiki.com/">EpiDoc
                                     Documentation Wiki</a> is meant for the collaborative authoring
-                                and reviewing of documentation on core EpiDoc cconcepts, tools, and
+                                and reviewing of documentation on core EpiDoc concepts, tools, and
                                 recommendations. All EpiDoc Community members are encouraged to
                                 participate in the creation of documentation, even if only by
                                 entering individual questions or concerns into the wiki, which then
@@ -244,13 +246,14 @@
 
                             <h3>Planning Wiki</h3>
 
-                            <p>The EpiDoc Roadmap Wiki is meant for the collaborative development of
-                                priorities, plans and schedules for EpiDoc software, documentation,
-                                tools, meetings and so forth. All EpiDoc community members
-                                &mdash; particularly developers and project directors
-                                &mdash; are encouraged to participate in the establishment of
-                                community-wide priorities and plans, via this wiki and regular
-                                meetings on the <a href="#irc">EpiDoc IRC Channel</a>.</p>
+                            <p>The <a href="http://epidocroadmap.pbwiki.com/">EpiDoc Roadmap
+                                Wiki</a> is meant for the collaborative development of priorities,
+                                plans and schedules for EpiDoc software, documentation, tools,
+                                meetings and so forth. All EpiDoc community members &mdash;
+                                particularly developers and project directors &mdash; are
+                                encouraged to participate in the establishment of community-wide
+                                priorities and plans, via this wiki and regular meetings on the <a
+                                    href="#irc">EpiDoc IRC Channel</a>.</p>
                         </div>
 
 
@@ -266,7 +269,7 @@
                                 File</span> collection, described here. Some of the <a
                                     href="projects.shtml">EpiDoc Projects</a> also distribute their
                                 source files from their websites. Upgrading and diversifying the
-                                example files is a <a href="development#priorities">current
+                                example files is a <a href="development.shtml#priorities">current
                                     development priority</a> of the EpiDoc Community; however, users
                                 of the example files should always remain alert to the age and
                                 origin of a given file. The <a href="#dtd">EpiDoc DTD</a> has gone
@@ -284,11 +287,10 @@
                                     </ul>
                                 </li>
                                 <li>Raw, development versions: <ul>
-                                        <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module"
-                                        >xml-examples</span>)</li>
+                                        <li>Via checkout from the <a href="#svn">EpiDoc SVN
+                                                Repository</a>, courtesy of SourceForge (browse: <a
+                                                href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/xml-examples/"
+                                                class="module">xml-examples</a>)</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -325,10 +327,10 @@
                                 </li>
                                 <li>Raw, development versions:<ul>
 
-                                        <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module">dtd</span>)</li>
+                                        <li>Via checkout from the <a href="#svn">EpiDoc SVN
+                                                Repository</a>, courtesy of SourceForge (browse: <a
+                                                href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/dtd/"
+                                                class="module">dtd</a>)</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -340,17 +342,12 @@
                                 stylesheets, together with accompanying <a
                                     href="http://www.w3.org/Style/CSS/"
                                     title="Cascading Style Sheets">CSSs</a>, provide for the
-                                transformation of the <a href="#guidelines">EpiDoc Guidelines</a>
-                                (they are used with <a href="http://cocoon.apache.org/"
-                                    title="The Apache Cocoon Project">Cocoon</a> and the <a
-                                    href="#webapp">EpiDoc webapp</a> for the <a
-                                    href="#guidelines-online">online versions of the Guidelines</a>)
-                                and for a &ldquo;canonical&rdquo; typographic representation
-                                of all editorial conventions recognized therein. They are used for
-                                round-trip testing of EpiDoc tools and guidance, and for ready
-                                transformation of EpiDoc documents via the <span class="title"
-                                    >EpiDoc webapp</span> or with standalone <abbr
-                                    title="eXtensible Markup Language">XML</abbr> processing tools.</p>
+                                transformation to HTML of EpiDoc documents. These are also used to
+                                prepare HTML versions of the <a href="#guidelines">EpiDoc
+                                Guidelines</a>. These stylesheets perform the necessary conversions
+                                to produce the human-readable versions of EpiDoc, using the familiar
+                                    <a href="http://en.wikipedia.org/wiki/Leiden_Conventions">Leiden
+                                    conventions</a>.</p>
                             <p>Copies of the <span class="title">EpiDoc Standard Stylesheets</span>
                                 can be obtained in one of the following ways:</p>
                             <ul>
@@ -363,16 +360,17 @@
                                 </li>
                                 <li>Raw, development versions:<ul>
                                         <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module">epidoc-xsl</span>;
-                                            note that an earlier version, the <span class="module"
-                                                >basic-style</span> module, is deprecated and
+                                                href="#svn"
+                                                >EpiDoc SVN Repository</a>, courtesy of SourceForge
+                                            (module name: <a href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/epidoc-xsl/" class="module">epidoc-xsl</a>;
+                                            note that an earlier version, called <span class="module"
+                                                >basic-style</span>, is deprecated and
                                             unmaintained)</li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
+                        
                         <div id="chetc">
                             <h3>The Chapel Hill Electronic Text Converter (CHETC)</h3>
                             <p>The Chapel Hill Electronic Text Converter is a software tool designed
@@ -381,7 +379,7 @@
                                     >standard typographic editorial conventions</a> into
                                 EpiDoc-compliant XML files. A series of <a
                                     href="http://en.wikipedia.org/wiki/Regular_expressions"
-                                    title="strings that                                 describe or match a set of                                 strings, according to certain syntax rules"
+                                    title="strings that match a set of strings, according to certain rules"
                                     >regular expressions</a> are applied to the source document and
                                 the results are placed into a &ldquo;shell file&rdquo;
                                     (<abbr title="id est = that is">i.e.</abbr>, a template), which
@@ -398,9 +396,14 @@
                                     title="Visual Basic for                                 Applications"
                                     >VBA</a> and <a
                                     href="http://en.wikipedia.org/wiki/Java_%28Sun%29">Java</a>,
-                                both now deprecated), but current development focuses on a <a
+                                both now deprecated), but more recent development has focused on a <a
                                     href="http://en.wikipedia.org/wiki/Javascript">JavaScript</a>
-                                version that will run without plugins in a modern web browser.</p>
+                                version that will run without plugins in a modern web browser.
+                            Work is now in progress on an entirely new and more powerful incarnation
+                            of the tool, realized in the python programming language. This version
+                            is currently in development to support the conversion of the Duke Databank
+                            of Documentary Papyri to EpiDoc format, and will be released back to 
+                            the EpiDoc Community by midsummer 2008.</p>
                             <p>Copies of the <span class="title">Chapel Hill Electronic Text
                                     Converter</span> can be obtained in one of the following ways:</p>
                             <ul>
@@ -421,9 +424,9 @@
                                                 title="CHETC-JS latest development version online"
                                                 >Online</a>, courtesy of the Stoa Consortium</li>
                                         <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module">chetc-js</span>; note
+                                                href="#svn"
+                                                >EpiDoc SVN Repository</a>, courtesy of SourceForge
+                                            (browse: <a href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/chetc-js/" class="module">chetc-js</a>; note
                                             that earlier versions, the <span class="module"
                                             >chet-c</span> and <span class="module"
                                             >chet-c-java</span> modules, are deprecated and
@@ -434,7 +437,7 @@
                         </div>
                         <div id="crosswalker">
                             <h3> Crosswalker: EpiDoc Exporter Tool</h3>
-                            <p>Crosswalker is a software toolset for converting EpiDoc XML documents
+                            <p>Crosswalker is an experimental software toolset for converting EpiDoc XML documents
                                 to other formats; i.e., to comma-separated-value (CSV) text, or to
                                 XML governed by another schema. Users create an XML file (the
                                 &ldquo;crosswalk file&rdquo;) that maps (or describes) the
@@ -456,10 +459,10 @@
                             <ul>
                                 <li>Raw, development versions:<ul>
                                         <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module"
-                                        >crosswalker</span>)</li>
+                                                href="#svn"
+                                                >EpiDoc SVN Repository</a>, courtesy of SourceForge
+                                            (browse: <a href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/crosswalker/" class="module"
+                                        >crosswalker</a>)</li>
                                     </ul></li>
                             </ul>
                         </div>
@@ -486,8 +489,7 @@
                                         >a release package</a> via Sourceforge. It includes the most
                                     recent release versions of the <a href="#guidelines"
                                     >Guidelines</a>, <a href="#xslt">Stylesheets</a> and <a
-                                        href="#examples">Example Files</a> just as they are deployed
-                                    for online access via the Stoa website.</p>
+                                        href="#examples">Example Files</a>.</p>
                             </div>
                             <div id="webapp-skeleton">
                                 <h3>The Webapp Skeleton</h3>
@@ -506,10 +508,10 @@
                                     </li>
                                     <li>Raw, development versions:<ul>
                                             <li>Via checkout from the <a
-                                                  href="http://sourceforge.net/cvs/?group_id=60289"
-                                                  >EpiDoc CVS Repository</a>, courtesy of
-                                                SourceForge (module name: <span class="module"
-                                                  >epidoc-webapp</span>)</li>
+                                                  href="#svn"
+                                                  >EpiDoc SVN Repository</a>, courtesy of
+                                                SourceForge (browse: <a href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/epidoc-webapp/" class="module"
+                                                  >epidoc-webapp</a>)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -536,10 +538,10 @@
                                 </li>
                                 <li>Raw, development versions:<ul>
                                         <li>Via checkout from the <a
-                                                href="http://sourceforge.net/cvs/?group_id=60289"
-                                                >EpiDoc CVS Repository</a>, courtesy of SourceForge
-                                            (module name: <span class="module"
-                                        >transcoder</span>)</li>
+                                                href="#svn"
+                                                >EpiDoc SVN Repository</a>, courtesy of SourceForge
+                                            (browse: <a  href="http://epidoc.svn.sourceforge.net/viewvc/epidoc/trunk/transcoder/" class="module"
+                                        >transcoder</a>)</li>
                                     </ul>
                                 </li>
                             </ul>
