@@ -46,8 +46,7 @@ End license statement: do not remove -->
 		<head>Regular Expression Test</head>
 		<list>
 			<item id="Regex-1">
-				<![CDATA[\[\s*((-\s*)+)\s*\] = <gap id="%mkIDgap28" reason="lost" extent="%g1%len2" unit="character"/>
-            <certainty target="%mkIDgap28" locus="extent" degree="low"/>]]></item>
+				<![CDATA[\[\s*((-\s*)+)\s*\] = <gap reason="lost" extent="%g1%len2" unit="character" precision="circa"/>]]></item>
 		</list>
 		<link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
 	</div>
@@ -55,11 +54,11 @@ End license statement: do not remove -->
 		<head>EpiDoc appearance with standard XSLT</head>
 		<list type="ordered">
 			<item id="EncEx-1">
-				<gap id="gap28" reason="lost" extent="3" unit="character" precision="circa"/>
-				<certainty target="gap28" locus="extent" degree="low"/></item>
+				<gap reason="lost" extent="3" unit="character" precision="circa"/>
+				</item>
 			<item>
-				<gap id="gap29" reason="lost" extent="10" unit="character" precision="circa"/>
-				<certainty target="gap29" locus="extent" degree="low"/></item>
+				<gap reason="lost" extent="10" unit="character" precision="circa"/>
+				</item>
 		</list>
 	</div>
 	<div id="lostlesscertain-notes" type="gl-notes" org="uniform" part="N" sample="complete">
