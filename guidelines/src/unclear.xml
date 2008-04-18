@@ -32,28 +32,29 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xi="http://www.w3.org/2001/XInclude" id="unclear">
     <head>Transcription wherein the character would not be unambiguous outside its context</head>
-    <ab><rs type="conformance">leiden</rs></ab>
-    
+    <ab>
+        <rs type="conformance">leiden</rs>
+    </ab>
+
     <p>Note: depending on your font, browser, browser settings, operating system and other factors,
         the subscript dots used in examples in this section may display after the character instead
         of beneath it.</p>
-    <div id="unclear-typographic" type="gl-typographic" >
+    <div id="unclear-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
         <list type="unordered">
-            <item><bibl ><title level="a" type="abbreviated">Panciera</title>, <abbr
-                        expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl
-                    ><title level="a" type="abbreviated">Dohnicht</title>, <abbr
-                        expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list
+            <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page"
+                        >p.</abbr><biblScope type="pages">17</biblScope></bibl>; <bibl><title
+                        level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page"
+                        >p.</abbr><biblScope type="pages">3</biblScope></bibl>: <list
                     type="unordered">
                     <item id="TypoEx-1">
                         <hi rend="italic">ạḅc̣</hi>
                     </item>
-                        </list></item>
-            <item>Alternative example:
-            <list type="unordered">
-                <item id="TypoEx-2">Ṃ</item>
-            </list></item>
-            
+                </list></item>
+            <item>Alternative example: <list type="unordered">
+                    <item id="TypoEx-2">Ṃ</item>
+                </list></item>
+
         </list>
     </div>
     <div id="unclear-regex" type="gl-regextest">
@@ -61,24 +62,27 @@ End license statement: do not remove -->
         <list type="unordered">
             <item id="Regex-1"> blah</item>
         </list>
-        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1" />
-        <link id="TestLink-2" type="regextest" targets="TypoEx-1 EncEx-2 Regex-1" />
-        <link id="TestLink-3" type="regextest" targets="TypoEx-1 EncEx-3 Regex-1" />
-        <link id="TestLink-4" type="regextest" targets="TypoEx-1 EncEx-4 Regex-1" />
-        <link id="TestLink-5" type="regextest" targets="TypoEx-1 EncEx-5 Regex-1" />
-        <link id="TestLink-6" type="regextest" targets="TypoEx-2 EncEx-6 Regex-1" />
+        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+        <link id="TestLink-2" type="regextest" targets="TypoEx-1 EncEx-2 Regex-1"/>
+        <link id="TestLink-3" type="regextest" targets="TypoEx-1 EncEx-3 Regex-1"/>
+        <link id="TestLink-4" type="regextest" targets="TypoEx-1 EncEx-4 Regex-1"/>
+        <link id="TestLink-5" type="regextest" targets="TypoEx-1 EncEx-5 Regex-1"/>
+        <link id="TestLink-6" type="regextest" targets="TypoEx-2 EncEx-6 Regex-1"/>
     </div>
-    <div id="unclear-edition" lang="la" type="gl-edition" >
+    <div id="unclear-edition" lang="la" type="gl-edition">
         <head lang="en">EpiDoc appearance with standard XSLT</head>
-        <p lang="en">Note that TEI provides the option of being more specific than Leiden about the details of of the difficulty (note final example).
-        Without the deliberate encoding of <xref href="div-apparatus.xml">an apparatus component</xref> to pick up and display the extra distinctions,
-        the effort of full markup may be lost.</p> 
+        <p lang="en">Note that TEI provides the option of being more specific than Leiden about the
+            details of of the difficulty (note final example). Without the deliberate encoding of
+                <xref href="div-apparatus.xml">an apparatus component</xref> to pick up and display
+            the extra distinctions, the effort of full markup may be lost.</p>
         <list type="unordered">
             <item id="EncEx-1">
                 <unclear reason="undefined" cert="high">abc</unclear>
             </item>
             <item id="EncEx-2">
-                <unclear reason="undefined" cert="high">a</unclear><unclear reason="undefined" cert="high">b</unclear><unclear reason="undefined" cert="high">c</unclear>
+                <unclear reason="undefined" cert="high">a</unclear>
+                <unclear reason="undefined" cert="high">b</unclear>
+                <unclear reason="undefined" cert="high">c</unclear>
             </item>
             <item id="EncEx-3">
                 <unclear reason="damage" cert="high">abc</unclear>
@@ -91,12 +95,13 @@ End license statement: do not remove -->
             </item>
             <item id="EncEx-6">
                 <app>
+                    <lem>
+                        <unclear cert="high" reason="undefined">M</unclear>
+                    </lem>
                     <rdg>
                         <unclear cert="high" reason="undefined">N</unclear>
                     </rdg>
-                    <rdg n="default">
-                        <unclear cert="high" reason="undefined">M</unclear>
-                    </rdg>
+
                     <rdg>
                         <unclear cert="high" reason="undefined">H</unclear>
                     </rdg>
@@ -104,9 +109,9 @@ End license statement: do not remove -->
             </item>
         </list>
     </div>
-    <div id="unclear-notes" type="gl-notes" >
+    <div id="unclear-notes" type="gl-notes">
         <head>Notes</head>
-        <div id="unclear-usage" >
+        <div id="unclear-usage">
             <head>Usage</head>
             <p>The EpiDoc DTD permits only the appearance of character data and the <tag>g/</tag>
                 element within <tag>unclear</tag><tag>/unclear</tag>. When an editor or encoder
@@ -118,10 +123,10 @@ End license statement: do not remove -->
                 of unclear characters warrant additional tagging internal to the string, the
                 per-character solution may be preferable or even required. For background on this
                 issue, see a discussion on the <xref href="http://lsv.uky.edu/archives/markup.html"
-                    >markup list</xref> in July
-                and August of 2005, subject: EpiDoc DTD issues [1: unclear].</p>
+                    >markup list</xref> in July and August of 2005, subject: EpiDoc DTD issues [1:
+                unclear].</p>
         </div>
-        <div id="unclear-reason" >
+        <div id="unclear-reason">
             <head>The <att>reason</att> Attribute</head>
             <p>TEI defines a <att>reason</att> attribute for the <tag>unclear</tag> element. In the
                 EpiDoc DTD, this attribute has three possible values: "damage", "execution" and
@@ -130,7 +135,7 @@ End license statement: do not remove -->
                 instances of <tag>unclear</tag> with the standard subscript dot, regardless of the
                 value of the <att>reason</att> attribute.</p>
         </div>
-        <div id="unclear-readings" >
+        <div id="unclear-readings">
             <head>Alternative readings</head>
             <p>In cases where a letter trace is compatible with a range of characters but the
                 context does not offer an unambiguous choice but the editor wishes to offer a
@@ -142,65 +147,62 @@ End license statement: do not remove -->
                 the surviving traces using embedded SVG or similar elements which could then be
                 rendered as a drawing.</p>
             <p>Where the editor is not willing to commit to a default reading, see <xref
-                    href="vestiges.xml" 
-                >vestiges</xref>.</p>
+                    href="vestiges.xml">vestiges</xref>.</p>
         </div>
     </div>
-    <div id="unclear-tei-p4links" type="gl-tei-p4links" >
+    <div id="unclear-tei-p4links" type="gl-tei-p4links">
         <head>TEI P4 links</head>
         <list type="unordered">
             <item>
-                <xref href="http://www.tei-c.org/P4X/ref-UNCLEAR.html"
-                    >
+                <xref href="http://www.tei-c.org/P4X/ref-UNCLEAR.html">
                     <tag>unclear</tag>
                 </xref>
             </item>
             <item>
-                <xref href="http://www.tei-c.org/P4X/CE.html#CECECE"
-                    >17.1.2 Structured Indications of Uncertainty</xref>
+                <xref href="http://www.tei-c.org/P4X/CE.html#CECECE">17.1.2 Structured Indications
+                    of Uncertainty</xref>
             </item>
             <item>
-                <xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB"
-                    >18.2.4 The Use of the Gap, Del, Damage, Unclear and
-                    Supplied Tags in Combination</xref>
+                <xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB">18.2.4 The Use of the Gap, Del,
+                    Damage, Unclear and Supplied Tags in Combination</xref>
             </item>
         </list>
     </div>
     <div id="unclear-responsibility" type="gl-responsibility" org="uniform" part="N"
         sample="complete">
         <head>Responsibility for this section</head>
-        <listBibl >
-            <bibl >
+        <listBibl>
+            <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
-            <bibl >
+            <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
-            <bibl >
+            <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Charles Crowther</name>
                 </respStmt>
             </bibl>
-            <bibl >
+            <bibl>
                 <respStmt>
                     <resp>contributor</resp>
                     <name>Hugh Cayless</name>
                 </respStmt>
             </bibl>
-            <bibl >
+            <bibl>
                 <respStmt>
                     <resp>contributor</resp>
                     <name>Tim Finney</name>
                 </respStmt>
             </bibl>
-            <bibl >
+            <bibl>
                 <respStmt>
                     <resp>contributor</resp>
                     <name>Chris Lilley</name>
@@ -208,7 +210,7 @@ End license statement: do not remove -->
             </bibl>
         </listBibl>
     </div>
-    <div id="unclear-cvs" type="gl-cvs" >
+    <div id="unclear-cvs" type="gl-cvs">
         <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
         <p id="unclear-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
                 cert="high" part="N">$Revision$</seg></p>
