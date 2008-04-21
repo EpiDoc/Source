@@ -86,9 +86,10 @@ public abstract class AbstractParser implements Parser {
     }
     
     public void setStringBuffer(StringBuffer in, int start, int len) {
-        this.chArray = in.toString().toCharArray();
+        this.in = in.toString();
+        this.chArray = this.in.toCharArray();
         index = start;
-        length = len;
+        length = len + start;
     }
     
     /** Provides a method of checking whether the <CODE>Parser</CODE> supports a

@@ -11,6 +11,7 @@ import java.lang.reflect.*;
 import java.util.*;
 import org.xml.sax.*;
 import org.xml.sax.ext.*;
+import org.xml.sax.helpers.AttributesImpl;
 
 /** The TranscodingContentHandler is a SAX <code>ContentHandler</code>.  
  * 
@@ -86,12 +87,13 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      */
     public void startElement(String uri, String name, String raw, org.xml.sax.Attributes attributes)
     throws SAXException {
-        if ("p".equals(name)) {
+        this.currentElt = name;
+        if ("p".equals(name) && !this.flushingBuffer) {
             this.eventBufferOn = true;
             this.charBuffer = new StringBuffer();
         }
         if (this.eventBufferOn) {
-            this.eventBuffer.add(new Object[] {"startElement",uri,name,raw,attributes});
+            this.eventBuffer.add(new Object[] {"startElement",uri,name,raw,new AttributesImpl(attributes)});
         } else {
             //true if this is a transcode element
             if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
@@ -117,7 +119,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                 if (attributes.getValue(langAttr) != null) {
                     language = attributes.getValue(langAttr);
                 }
-                elements.push(new String[] {name, attributes.getValue(langAttr)});
+                elements.push(new String[] {name, language});
                 this.contentHandler.startElement(uri, name, raw, attributes);
             }
         }
@@ -165,7 +167,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                 elements.pop();
                 language = "eng";
                 if (elements.size() > 0) {
-                    String[] elt = (String[])elements.peek();
+                    String[] elt = elements.peek();
                     if (elt[1] != null) {
                        language = elt[1]; 
                     }
@@ -186,28 +188,38 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      */
     public void characters(char c[], int start, int len)
     throws SAXException {
-        if (this.eventBufferOn) {
-            int offset = charBuffer.length();
-            charBuffer.append(c, start, len);
-            char[] ctmp = new char[0];
-            this.eventBuffer.add(new Object[] {"characters",ctmp,offset,len});
-        } else {
-            if (charBuffer.length() > 0) {
-                if(tc.getParser().supportsLanguage(language)) {
-                    String in = "";
-                    String out = "";
-                    try {
-                        out = this.tc.getString(this.charBuffer, start, len);
-                        this.contentHandler.characters(out.toCharArray(), 0, out.length());
-                    } catch (Exception e) {
-                        throw new SAXException(e);
-                    }
+        try {
+            if (this.eventBufferOn) {
+                int offset = charBuffer.length();
+                charBuffer.append(c, start, len);
+                if ("lem".equals(this.currentElt) || "rdg".equals(this.currentElt)) {
+                    this.eventBuffer.add(new Object[] {"characters",c,start,len});
                 } else {
-                    this.contentHandler.characters(this.charBuffer.substring(start, len).toCharArray(), 0, len);
+                    char[] ctmp = new char[0];
+                    this.eventBuffer.add(new Object[] {"characters",ctmp,offset,len});
                 }
             } else {
-                this.contentHandler.characters(c, start, len);
+                if (c.length == 0) {
+                    if(this.tc.getParser().supportsLanguage(language)) {
+                        String out = "";
+                        out = this.tc.getString(this.charBuffer, start, len);
+                        this.contentHandler.characters(out.toCharArray(), 0, out.length());
+                    } else {
+                        this.contentHandler.characters(this.charBuffer.substring(start, start+len).toCharArray(), 0, len);
+                    }
+                } else {
+                    if (this.tc.getParser().supportsLanguage(language)) {
+                        String out = "";
+                        out = this.tc.getString(new String(c, start, len));
+                        this.contentHandler.characters(out.toCharArray(), 0, out.length());
+                    } else {
+                        this.contentHandler.characters(c, start, len);
+                    }
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new SAXException(e);
         }
     }
     
@@ -231,6 +243,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                    m.invoke(this, (Object[])null); 
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 throw new SAXException(e);
             }
         }
@@ -345,7 +358,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     private String language;
     private String langAttr = "lang";
     private TransCoder tc;
-    private Stack elements;
+    private Stack<String[]> elements;
     private Stack languages;
     private Stack parsers;
     private Stack converters;
@@ -353,7 +366,8 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     private StringBuffer charBuffer = new StringBuffer();
     private boolean eventBufferOn = false;
     private boolean flushingBuffer = false;
-    private StringBuffer strb;
+    private String currentElt;
+
     /** The namespace of the <CODE>TranscodingHandler</CODE> component. */
     public static String NAMESPACE = "http://stoa.org/2002/transcoder";
     private static String TC_NAME = "transcode";
