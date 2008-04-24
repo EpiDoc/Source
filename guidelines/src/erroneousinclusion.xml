@@ -30,44 +30,79 @@ End license statement: do not remove -->
 
         <!-- End CVS information: do not remove -->
 
-        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="erroneousinclusion"><head>Letters erroneously included in the text, which the editor suppresses</head>
-            <ab><rs type="conformance">leiden</rs></ab>
-<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="erroneousinclusion-typographic" type="gl-typographic">
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+   xmlns:xi="http://www.w3.org/2001/XInclude" id="erroneousinclusion">
+   <head>Letters erroneously included in the text, which the editor suppresses</head>
+   <ab>
+      <rs type="conformance">leiden</rs>
+   </ab>
+   <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p>
+   <div id="erroneousinclusion-typographic" type="gl-typographic">
       <head>Traditional typographic representation</head>
       <list type="simple">
-         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera" >Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>: 
-            <list type="simple">
+         <item><bibl><title level="a" type="abbreviated">
+                  <xref href="bibliography.xml#panciera">Panciera</xref>
+               </title>, <abbr expan="page">p.</abbr><biblScope type="pages">19</biblScope></bibl>:
+               <list type="simple">
                <item id="TypoEx-1">Valeria{a}nus</item>
             </list></item>
       </list>
-   </div><div id="erroneousinclusion-regex" type="gl-regextest">
-  <head>Regular Expression Test</head>
-            <list><item id="Regex-1">
-            blah</item>
-<item id="Regex-2">
-            blah</item>
-</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="erroneousinclusion-edition" type="gl-edition" lang="la">
+   </div>
+   <div id="erroneousinclusion-regex" type="gl-regextest">
+      <head>Regular Expression Test</head>
+      <list>
+         <item id="Regex-1"> blah</item>
+         <item id="Regex-2"> blah</item>
+      </list>
+      <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+   </div>
+   <div id="erroneousinclusion-edition" type="gl-edition" lang="la">
       <head lang="en">EpiDoc appearance with standard XSLT</head>
       <list type="simple">
-         <item id="EncEx-1">Valeria<sic n="superfluous">a</sic>nus</item>
-         <item id="EncEx-2">Valeria<corr sic="a"/>nus</item>
+         <item id="EncEx-1">Valeria<sic>a</sic>nus</item>
       </list>
-   </div><div id="erroneousinclusion-questions" type="gl-questions">
+   </div>
+   <div id="erroneousinclusion-questions" type="gl-questions">
       <head>Questions and issues</head>
       <list type="simple">
-         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-03-21</date>): I would suggest we deprecate number 2 the empty <tag>corr</tag> element which now does not add any flexibility in terms of mixed content in text vs attribute nodes.</item><item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-07-16</date>): I would also suggest we quit abusing the <att>n</att> attribute and customise the schema to allow <att>type</att> or <att>reason</att> (vel sim.)</item>
+         <item><name>Gabriel Bodard</name> (<date>2008-04-24</date>): we have now simplified the EpiDoc
+         recommendation on this issue to that <tag>sic</tag> without a parent::<tag>choice</tag> represents
+         a superfluous character, but <tag>sic</tag> within <tag>choice</tag> (and parallel to <tag>corr</tag>)
+         represents an erroneously executed character (see <xref>erroneoussubstitution.xml</xref>).</item>
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-03-21</date>): I would
+            suggest we deprecate number 2 the empty <tag>corr</tag> element which now does not add
+            any flexibility in terms of mixed content in text vs attribute nodes. <note>DONE: GB</note></item>
+         <item><name>Gabriel Bodard</name> (<date value="2005-05-17">2006-07-16</date>): I would
+            also suggest we quit abusing the <att>n</att> attribute and customise the schema to
+            allow <att>type</att> or <att>reason</att> (vel sim.)</item>
       </list>
-   </div><div id="erroneousinclusion-responsibility" type="gl-responsibility">
+   </div>
+   <div id="erroneousinclusion-responsibility" type="gl-responsibility">
       <head>Responsibility for this section</head>
       <listBibl>
-         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Tom Elliott</name>
+            </respStmt>
+         </bibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Gabriel Bodard</name>
+            </respStmt>
+         </bibl>
       </listBibl>
-   </div><div id="erroneousinclusion-cvs" type="gl-cvs">
+   </div>
+   <div id="erroneousinclusion-cvs" type="gl-cvs">
       <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
-      <p id="erroneousinclusion-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision$</seg></p>
-      <p id="erroneousinclusion-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
-      <p id="erroneousinclusion-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date$</seg></p>
-      <p id="erroneousinclusion-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author$</seg></p>
-   </div></div>
-
+      <p id="erroneousinclusion-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            cert="high" part="N">$Revision$</seg></p>
+      <p id="erroneousinclusion-cvs-revision-name">Revision name (if any): <seg
+            n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="erroneousinclusion-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            cert="high" part="N">$Date$</seg></p>
+      <p id="erroneousinclusion-cvs-revision-author">Revision committed by: <seg
+            n="cvs-revision-author" cert="high" part="N">$Author$</seg></p>
+   </div>
+</div>
