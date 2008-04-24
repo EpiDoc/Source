@@ -33,34 +33,42 @@ End license statement: do not remove -->
     xmlns:xi="http://www.w3.org/2001/XInclude" id="nonsensical">
     <head>Transcription with no uncertainty about the form of the character(s), but the editor
         prefers not to resolve them.</head>
-    <ab><rs type="conformance">leiden</rs></ab>
-    
+    <ab>
+        <rs type="conformance">leiden</rs>
+    </ab>
+
     <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p>
-    
+
     <div id="nonsensical-typographic" type="gl-typographic">
         <head>Traditional typographic representation</head>
         <list type="simple">
-            <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, 
-                    <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; 
-                <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, 
-                    <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
-                <list type="ordered">
-                    <item id="TypoEx-1"><hi rend="italic">ABC</hi></item>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera">Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#dohnicht">Dohnicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >3</biblScope></bibl>: <list type="ordered">
+                    <item id="TypoEx-1">
+                        <hi rend="italic">ABC</hi>
+                    </item>
                 </list></item>
-            <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, 
-                    <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
-                <list type="ordered">
-                    <item id="TypoEx-2"><hi rend="italic">V</hi></item>
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#dohnicht">Dohnicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >3</biblScope></bibl>: <list type="ordered">
+                    <item id="TypoEx-2">
+                        <hi rend="italic">V</hi>
+                    </item>
                 </list></item>
-            <item>Standard Greek examples:
-                <list type="unordered">
+            <item>Standard Greek examples: <list type="unordered">
                     <item id="TypoEx-3">ΑΒΓ</item>
                     <item id="TypoEx-4">Σ</item>
                 </list>
             </item>
         </list>
     </div>
-    
+
     <div id="nonsensical-regex" type="gl-regextest">
         <head>Regular Expression Test</head>
         <!-- commenting these out will cause validation failure, thereby alerting us to incompleteness 
@@ -70,28 +78,28 @@ End license statement: do not remove -->
             <item id="Regex-3"> blah</item>
             <item id="Regex-4"> blah</item>
         </list> -->
-        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1" />
-       
+        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+
     </div>
-    
+
     <div id="nonsensical-edition" type="gl-edition">
         <head>EpiDoc appearance with standard XSLT</head>
         <list type="ordered">
             <item id="EncEx-1">
-                <orig lang="la" n="unresolved">abc</orig>
+                <orig>abc</orig>
             </item>
             <item id="EncEx-2">
-                <orig lang="la" n="unresolved_vocality">v</orig>
+                <orig>v</orig>
             </item>
             <item id="EncEx-3">
-                <orig lang="grc" n="unresolved">αβγ</orig>
+                <orig>αβγ</orig>
             </item>
             <item id="EncEx-4">
-                <orig lang="grc" n="unresolved_context">σ</orig>
+                <orig>σ</orig>
             </item>
         </list>
     </div>
-    
+
     <div id="nonsensical-questions" type="gl-questions">
         <head>Questions and issues</head>
         <list type="simple">
@@ -100,6 +108,13 @@ End license statement: do not remove -->
         <div id="nonsensical-notes" type="gl-notes">
             <head>Notes</head>
             <list type="simple">
+                <item><name>Gabriel Bodard</name> (<date>2008-04-24</date>): it has been decided to
+                    deprecate the use of <att>n</att> on this element, so that <tag>orig</tag>
+                    without parent::<tag>choice</tag> means an unresolved character, as opposed to
+                    <tag>orig</tag> (parallel to <tag>reg</tag>) inside of <tag>choice</tag>
+                    which is a local or irregular form requiring normalization. <note>GB: As of this change we
+                    no longer have a way to indicate the specific cases of u/v whose vocality is unresolved, or σ/ς whose
+                    context (medial/final) is unresolved. Is this a problem?</note></item>
                 <item>The general case of unresolved characters is handled by the use of the
                         <tag>orig</tag> element with the <att>n</att> attribute containing
                     "unresolved". For more particular cases, such as the Latin <foreign lang="la"
@@ -109,9 +124,8 @@ End license statement: do not remove -->
             </list>
         </div>
     </div>
-    
-    <div id="nonsensical-responsibility" type="gl-responsibility" org="uniform" part="N"
-        sample="complete">
+
+    <div id="nonsensical-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
