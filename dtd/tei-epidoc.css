@@ -90,13 +90,15 @@ encodingDesc {
 }
 
 supplied[reason='abbreviation']:before {
-  background-color: red;
-  content: '(';
+  font-weight: bold ;
+  color: red ;
+  content: '?';
 }
 
 supplied[reason='abbreviation']:after {
-  background-color: red;
-  content: ')';
+  font-weight: bold ;
+  color: red ;
+  content: '?';
 }
 
 ex:before {
@@ -299,13 +301,6 @@ listBibl {
   display: block;
 }
 
-mark:before {
-	color: gray;
-	font-weight: normal ;
-	font-style: italic ;
-	content: "(" attr(type) ")";
-}
-
 g:before {
 	color: gray;
 	font-weight: normal ;
@@ -498,8 +493,8 @@ xref {
 
 *[lang="la"] {
   color: #228 ;
-  font-style: italic ;
 }
+<!-- font-style: italic ; -->
 
 *[lang="en"] {
   color: black ;
