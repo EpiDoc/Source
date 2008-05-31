@@ -384,7 +384,7 @@ public class Tester extends javax.swing.JFrame {
             XMLReader reader = XMLReaderFactory.createXMLReader();
             reader.setContentHandler(handler);
             reader.setFeature("http://xml.org/sax/features/validation", false );
-            handler.setup(serializer.asContentHandler(), null, this.tc, null, null);
+            handler.setup(serializer.asContentHandler(), null, this.tc);
             InputSource is = new InputSource(new java.io.FileInputStream(in));
             is.setSystemId("/Users/hcayless/Development/EpiDuke/trunk/data/DDB_TEI_XML/");
             reader.parse(is);

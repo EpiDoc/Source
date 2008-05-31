@@ -8,7 +8,6 @@
 
 package edu.unc.epidoc.transcoder;
 
-import java.lang.*;
 import java.util.Properties;
 import java.util.TreeMap;
 

@@ -13,7 +13,14 @@ import org.xml.sax.*;
 import org.xml.sax.ext.*;
 import org.xml.sax.helpers.AttributesImpl;
 
-/** The TranscodingContentHandler is a SAX <code>ContentHandler</code>.  
+/** The TranscodingContentHandler is a SAX <code>ContentHandler</code>.  If 
+ * passed into a SAX process, it will transcode Greek text that it finds.
+ * The ContentHandler detects Greek text by means of attributes in the source,
+ * or it can simply transcode the entire text content.  It buffers the text as
+ * it processes, in order to be able to detect word boundaries and properly
+ * handle medial vs. final sigma.  Elements that trigger buffering (and buffer 
+ * flushing) are, by default, <p> and <lb/>.  If buffering is not desired, an
+ * empty element list can be passed to the setup method.
  * 
  * For example, both:
  * <PRE>
@@ -25,33 +32,26 @@ import org.xml.sax.helpers.AttributesImpl;
  * </PRE>
  * will cause the transcoder to be invoked against their content.  
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
- * @version 1.1
+ * @version 1.2
  */
 public class TranscodingContentHandler implements ContentHandler, LexicalHandler {
     
     /**
-     * Set the <code>SourceResolver</code>, objectModel <code>Map</code>,
-     * the source and sitemap <code>Parameters</code> used to process the request.
-     * @param contentHandler a SAX ContentHandler to be wrapped by the TranscodingContentHandler
-     * @param lexicalHandler a SAX LexicalHandler to be wrapped
-     * @param parser a transcoder <code>Parser</code>
-     * @param converter a transcoder <code>Converter</code>
-     * @param useAttribute the name of the attribute to use to signal encoding changes
-     * @param lang 
-     * @throws java.lang.Exception 
+     * The setup method must be called before the ContentHandler is used
+     * @param ch A SAX ContentHandler
+     * @param lh A SAX Lexical Handler
+     * @param tc A pre-configured TransCoder
+     * @param useAttribute The local name of an attribute to be used as a 
+     * signal to transcode the contents of an element (default "lang").
+     * @param lang THe default language (default "eng").
+     * @param flowTerminators A List of String triples 
+     * ([namespace, name, container|milestone]) that  will cause the 
+     * TranscodingContentHandler's text buffer to flush.  The default are <p> 
+     * and <lb/> tags.
+     * Important if you are using large documents
+     * @throws java.lang.Exception
      */
-    public void setup(ContentHandler contentHandler, LexicalHandler lexicalHandler, String parser, String converter, String useAttribute, String lang) throws Exception {
-        tc = new TransCoder();
-        if (parser != null) {
-            tc.setParser(parser);
-        }
-        if (converter != null) {
-            tc.setConverter(converter);
-        }
-        this.setup(contentHandler, lexicalHandler, tc, useAttribute, lang);
-    }
-    
-    public void setup(ContentHandler ch, LexicalHandler lh, TransCoder tc, String useAttribute, String lang) throws Exception {
+    public void setup(ContentHandler ch, LexicalHandler lh, TransCoder tc, String useAttribute, String lang, List<String[]> flowTerminators ) throws Exception {
         this.contentHandler = ch;
         this.lexicalHandler = lh;
         this.tc = tc;
@@ -71,10 +71,31 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         this.parsers.push(tc.getParser().getClass().getName());
         this.converters = new Stack();
         this.converters.push(tc.getConverter().getClass().getName());
+        this.flowTerminators = new ArrayList();
+        if (flowTerminators == null) {
+            this.flowTerminators.add(new String[]{"", "p", "container"});
+            this.flowTerminators.add(new String[]{"", "lb", "milestone"});
+        } else {
+            for (Iterator<String[]> i = flowTerminators.iterator(); i.hasNext();) {
+                String[] ft = i.next();
+                //do some scrubbing: namespace/name pairs only, no null or empty names, set null namespaces to empty String.
+                if (ft.length == 3 && ft[1] != null && !"".equals(ft[1])) {
+                    if (ft[0] == null) {
+                        ft[0] = "";
+                    }
+                    this.flowTerminators.add(ft);
+                }
+            }
+        }
+    }
+    
+    public void setup(ContentHandler ch, LexicalHandler lh, TransCoder tc) throws Exception {
+        this.setup(ch, lh, tc, null, null, null);
     }
     
     /**
      * Handle the start of an element in the source document.
+     * @param uri the namespace URI
      * @param name the local name (without prefix), or the
      *        empty string if Namespace processing is not being
      *        performed
@@ -84,13 +105,25 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      *        there are no attributes, it shall be an empty
      *        Attributes object.  The value of this object after
      *        startElement returns is undefined
+     * @throws org.xml.sax.SAXException 
      */
     public void startElement(String uri, String name, String raw, org.xml.sax.Attributes attributes)
     throws SAXException {
         this.currentElt = name;
-        if ("p".equals(name) && !this.flushingBuffer) {
-            this.eventBufferOn = true;
-            this.charBuffer = new StringBuffer();
+        for (Iterator<String[]> i = this.flowTerminators.iterator(); i.hasNext();) {
+            String[] ft = i.next();
+            if (ft[0].equals(uri) && ft[1].equals(name) && !this.flushingBuffer) {
+                if (this.eventBufferOn) {
+                    this.eventBufferOn = false;
+                    this.flushingBuffer = true;
+                    flushEventBuffer();
+                    this.flushingBuffer = false;
+                    this.eventBufferOn = true;
+                } else {
+                    this.eventBufferOn = true;
+                    this.charBuffer = new StringBuffer();
+                }
+            }
         }
         if (this.eventBufferOn) {
             this.eventBuffer.add(new Object[] {"startElement",uri,name,raw,new AttributesImpl(attributes)});
@@ -126,19 +159,25 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     }
     /**
      * Handle the end of an element in the source document.
+     * @param uri the Namespace
      * @param name the local name (without prefix), or the
      *        empty string if Namespace processing is not being
      *        performed
      * @param raw the qualified XML name (with prefix), or the
      *        empty string if qualified names are not available
+     * @throws org.xml.sax.SAXException 
      */
     public void endElement(String uri, String name, String raw)
     throws SAXException {
-        if ("p".equals(name) && !this.flushingBuffer) {
-            this.eventBufferOn = false;
-            this.flushingBuffer = true;
-            flushEventBuffer();
-            this.flushingBuffer = false;
+        for (Iterator<String[]> i = this.flowTerminators.iterator(); i.hasNext();) {
+            String[] ft = i.next();
+            if (ft[0].equals(uri) && ft[1].equals(name) && !this.flushingBuffer && !"milestone".equals(ft[2])) {
+                this.eventBufferOn = false;
+                this.flushingBuffer = true;
+                flushEventBuffer();
+                this.flushingBuffer = false;
+                break;
+            }
         }
         if (this.eventBufferOn) {
             this.eventBuffer.add(new Object[] {"endElement",uri,name,raw});
@@ -185,6 +224,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      * @param c the character array
      * @param start the position in the array from which to start reading
      * @param len how far to read
+     * @throws org.xml.sax.SAXException 
      */
     public void characters(char c[], int start, int len)
     throws SAXException {
@@ -192,29 +232,23 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
             if (this.eventBufferOn) {
                 int offset = charBuffer.length();
                 charBuffer.append(c, start, len);
-                if ("lem".equals(this.currentElt) || "rdg".equals(this.currentElt)) {
-                    this.eventBuffer.add(new Object[] {"characters",c,start,len});
-                } else {
-                    char[] ctmp = new char[0];
-                    this.eventBuffer.add(new Object[] {"characters",ctmp,offset,len});
-                }
+                char[] ctmp = new char[0];
+                this.eventBuffer.add(new Object[] {"characters",ctmp,offset,len});
             } else {
-                if (c.length == 0) {
-                    if(this.tc.getParser().supportsLanguage(language)) {
+                if (charBuffer.length() > 0) {
+                    if(tc.getParser().supportsLanguage(language)) {
                         String out = "";
-                        out = this.tc.getString(this.charBuffer, start, len);
-                        this.contentHandler.characters(out.toCharArray(), 0, out.length());
+                        try {
+                            out = this.tc.getString(this.charBuffer, start, len);
+                            this.contentHandler.characters(out.toCharArray(), 0, out.length());
+                        } catch (Exception e) {
+                            throw new SAXException(e);
+                        }
                     } else {
                         this.contentHandler.characters(this.charBuffer.substring(start, start+len).toCharArray(), 0, len);
                     }
                 } else {
-                    if (this.tc.getParser().supportsLanguage(language)) {
-                        String out = "";
-                        out = this.tc.getString(new String(c, start, len));
-                        this.contentHandler.characters(out.toCharArray(), 0, out.length());
-                    } else {
-                        this.contentHandler.characters(c, start, len);
-                    }
+                    this.contentHandler.characters(c, start, len);
                 }
             }
         } catch (Exception e) {
@@ -264,7 +298,10 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     
     public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
         if (this.eventBufferOn) {
-            this.eventBuffer.add(new Object[] {"ignorableWhitespace", ch, start, length});
+            charBuffer.append(ch, start, length);
+            char[] ctmp = new char[length];
+            System.arraycopy(ch, start, ctmp, 0, length);
+            this.eventBuffer.add(new Object[] {"ignorableWhitespace", ctmp, 0, length});
         } else {
             contentHandler.ignorableWhitespace(ch, start, length);
         }
@@ -373,7 +410,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     private static String TC_NAME = "transcode";
     private ContentHandler contentHandler;
     private LexicalHandler lexicalHandler;
-    
+    private List<String[]> flowTerminators;
 
     
 }
