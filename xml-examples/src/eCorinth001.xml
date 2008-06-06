@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE div SYSTEM "file:/Users/tom/Sandbox/epidoc.svn.sourceforge.net/trunk/dtd/tei-epidoc.dtd">
+<!DOCTYPE div SYSTEM "../../dtd/tei-epidoc.dtd">
+<?xml-stylesheet type="text/css" href="../../dtd/tei-epidoc-oxygen.css"?>
 <div type="edition">
     <head>Archaic Sacrificial Calendar on Stone</head>
-<div type="textpart" n="fragments-a-b">
-    <head>Fragments A + B</head>
-    <div type="textpart" n="face-i">
-        <head>Face I</head>
-        <ab>
-            <lb rend="right-to-lef"/>Φοινι<unclear reason="damage">κ</unclear><supplied reason="lost">αίο</supplied><gap reason="illegible" extent="1" unit="character"/><gap reason="lost" extent="4" unit="characters" precision="circa"/>
-            <lb rend="left-to-right"/><gap reason="lost" extent="5" unit="character" precision="circa"/><supplied reason="lost">τ</supplied>ρε̂ς 
-            χο<lb rend="right-to-left" type="worddiv"/>ίρ̣ο<unclear reason="damage">υ</unclear><supplied reason="lost">ς</supplied><gap reason="lost" extent="6" unit="characters" precision="circa"/>
-            <lb/><gap reason="lost" extent="1" unit="line"/>
-        </ab>
-    </div>
-    <div type="textpart" n="face-ii">
-        <head>Face II</head>
-        <ab>
-            <lb rend="right-to-left"/><gap reason="lost" extent="7" unit="character" precision="circa"/><orig><unclear reason="damage">Λ</unclear></orig>αι
-            <lb rend="left-to-right"/>κε <gap reason="lost" extent="6" unit="character" precision="circa"/>
-            <lb rend="right-to-left"/><gap reason="lost" extent="8" unit="character" precision="circa"/>
-            h<lb rend="left-to-right" type="worddiv"/><gap reason="illegible" extent="1" unit="character"/><gap reason="lost" extent="9" unit="character" precision="circa"/>
-            <lb/><gap reason="lost" extent="1" unit="line"/>
-        </ab>
+    <div type="textpart" n="fragments-a-b">
+        <head>Fragments A + B</head>
+        <div type="textpart" n="face-i">
+            <head>Face I</head>
+            <ab>
+                <lb rend="right-to-lef"/>Φοινι<unclear reason="damage">κ</unclear><supplied
+                    reason="lost">αίο</supplied><gap reason="lost" extent="1" unit="character"/><gap
+                    reason="lost" extent="4" unit="character" precision="circa"/>
+                <lb rend="left-to-right"/><gap reason="lost" extent="5" unit="character"
+                    precision="circa"/><supplied reason="lost">τ</supplied>ρε̂ς χο<lb
+                    rend="right-to-left" type="worddiv"/>ί<unclear reason="damage"
+                    >ρ</unclear>ο<unclear reason="damage">υ</unclear><supplied reason="lost"
+                    >ς</supplied><gap reason="lost" extent="6" unit="character" precision="circa"/>
+                <lb/><gap reason="lost" extent="1" unit="line"/>
+            </ab>
         </div>
-</div>    
+        <div type="textpart" n="face-ii">
+            <head>Face II</head>
+            <ab>
+                <lb rend="right-to-left"/><gap reason="lost" extent="7" unit="character"
+                    precision="circa"/><orig><unclear reason="damage">Λ</unclear></orig>αι <lb
+                    rend="left-to-right"/>κε <gap reason="lost" extent="6" unit="character"
+                    precision="circa"/>
+                <lb rend="right-to-left"/><gap reason="lost" extent="8" unit="character"
+                    precision="circa"/> h<lb rend="left-to-right" type="worddiv"/><gap
+                    reason="illegible" extent="1" unit="character"/><gap reason="lost" extent="9"
+                    unit="character" precision="circa"/>
+                <lb/><gap reason="lost" extent="1" unit="line"/>
+            </ab>
+        </div>
+    </div>
 </div>
