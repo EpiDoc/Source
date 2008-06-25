@@ -29,7 +29,7 @@ End license statement: do not remove -->
 <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/control.xml,v 1.7 2006-04-18 21:12:51 paregorios Exp $ -->
 <!-- End CVS information: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" id="control" lang="en">
-   <head>A note on controlled vocabularies and thesauri</head>
+   <head>Controlled Vocabularies and Thesauri</head>
    <p>Many components of the documentation of an inscription can be linked to
       controlled lists so that they can be identified, verified, disambiguated,
       indexed or retrieved. Controlled lists are usefully applied to personal
@@ -44,6 +44,14 @@ End license statement: do not remove -->
    <p>When using a controlled vocabulary, the source reference and any relevant
       information about how IDs are deployed should be documented in the TEI
       header <hi rend="strong">where?</hi>.</p>
+    <p>For more information on specific vocabularies recommended for EpiDoc work or specified for 
+        EAGLE conformance, see:</p>
+    <list type="unordered">
+        <item><xref href="geography.xml">Geographic Information</xref></item>
+        <item><xref href="descipriont-support.xml">Describing the type of inscribed object</xref></item>
+        <item><xref href="description-material.xml">Describing the material of the inscribed object</xref></item>
+    </list>
+    <p>There is also a <xref href="vocabularies.xml">list of vocabularies</xref>.</p>
     <div id="control-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
