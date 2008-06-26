@@ -278,6 +278,24 @@ public class TransCoder {
         output.close();
     }
     
+    public void writeXML(File source, OutputStream out, TransCoder tc) throws Exception {
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
+            TranscodingContentHandler handler = new TranscodingContentHandler();
+            Serializer serializer = SerializerFactory.getSerializer 
+                          (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
+            serializer.setOutputStream(out);           
+            XMLReader reader = XMLReaderFactory.createXMLReader();
+            reader.setContentHandler(handler);
+            reader.setFeature("http://xml.org/sax/features/validation", false );
+            handler.setup(serializer.asContentHandler(), null,tc);
+            InputSource is = new InputSource(new java.io.FileInputStream(source));
+            is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
+            reader.parse(is);
+        }
+    }
+
+    
     /** Get the result <CODE>String</CODE> from the input <CODE>String</CODE>.
      * Characters with codes above 127 will be returned as XML character entities.
      * @param in The <CODE>String</CODE> to be transcoded.
@@ -297,70 +315,101 @@ public class TransCoder {
      */
     public static void main(String[] args)  {
         if (args.length == 0) {
-            System.out.println("Transcoder should be invoked with 3 or 4 arguments:");
-            System.out.println("If 3, then the arguments should be the string to be converted," +
-                    "the source ancoding, and the result encoding.");
-            System.out.println("If 4, then the arguments should be the source file, " +
-                    "the result file, and the source and result encodings.");
-            System.exit(0);
-        }
-        if (args.length < 3 || args.length > 4) {
-            System.out.println("Wrong number of arguments");
-        }
-        TransCoder tc = new TransCoder();
-        try {
-            if (args.length == 4) {
-                tc.setParser(args[2]);
-                tc.setConverter(args[3]);
-            } else {
-                tc.setParser(args[1]);
-                tc.setConverter(args[2]);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        if (args.length == 4) {
-            File source = new File(args[0]);
-            File result = new File(args[1]);
-            
-            if (source.exists()) {
-                try {
-                    FileOutputStream fos = new FileOutputStream(result);
-                    if (source != null) {
-                        if (source.getName().endsWith(".xml")) {
-                            TransformerFactory tFactory = TransformerFactory.newInstance();
-                            if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
-                                TranscodingContentHandler handler = new TranscodingContentHandler();
-                                Serializer serializer = SerializerFactory.getSerializer 
-                                              (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
-                                serializer.setOutputStream(fos);           
-                                XMLReader reader = XMLReaderFactory.createXMLReader();
-                                reader.setContentHandler(handler);
-                                reader.setFeature("http://xml.org/sax/features/validation", false );
-                                handler.setup(serializer.asContentHandler(), null,tc);
-                                InputSource is = new InputSource(new java.io.FileInputStream(source));
-                                is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
-                                reader.parse(is);
-                            }
-                        } else {
-                            tc.write(new FileInputStream(source), fos);
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
+            edu.unc.epidoc.transcoder.gui.Tester.main(null);
+        } else {
+            TransCoder tc = new TransCoder();
+            File tmpSource = null;
+            File result = null;
+            boolean xmlMode = false;
+            try {
+            for (int i = 0; i < args.length; i++) {
+                if (args[i].equals("-s")) {
+                    tmpSource = new File(args[++i]);
+                }
+                if (args[i].equals("-o")) {
+                    result = new File(args[++i]);
+                }
+                if (args[i].equals("-se")) {
+                    tc.setParser(args[++i]);
+                }
+                if (args[i].equals("-oe")) {
+                    tc.setConverter(args[++i]);
+                }
+                if (args[i].equals("-x")) {
+                    xmlMode = true;
+                }
+                if (args[i].equals("--help")) {
+                    System.out.println("The transcoder can be invoked with arguments denoting the source and result files or directories and the source and result encodings.");
+                    System.out.println("Arguments:");
+                    System.out.println("-s   The source file or directory.");
+                    System.out.println("-o   The output file or directory.  If the source is a directory, the result must also be one.");
+                    System.out.println("-se  The source encoding (default BetaCode).");
+                    System.out.println("-oe  The output encoding (default UnicodeC).");
+                    System.out.println("-x   Use XML mode.  Treat the source and result files as XML.  Not needed if the files have a .xml suffix.");
+                    System.out.println();
+                    System.out.println("Valid encodings are: BetaCode, UncidodeC, UnicodeD, GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
+                    System.exit(0);
                 }
             }
-        } else {
-            try {
-                System.out.print(tc.getString(args[2]));
+            if (tc.getParser() == null) {
+                tc.setParser("BetaCode");
+            }
+            if (tc.getConverter() == null) {
+                tc.setConverter("UnicodeC");
+            }
             } catch (Exception e) {
                 e.printStackTrace();
                 System.exit(1);
             }
+            final File source = tmpSource;
+            if (!source.exists()) {
+                System.out.println(source.getAbsolutePath() + " does not exist.");
+            }
+
+            if (source.isDirectory()) {
+                if (!result.isDirectory()) {
+                    System.out.println("If the source is a directory, the result must also be a directory.");
+                    System.exit(1);
+                }
+                File[] files = source.listFiles(new FilenameFilter() {
+                    public boolean accept(File dir, String name) {
+                        if (dir.equals(source)) {
+                            File tmp = new File(dir, name);
+                            if (!tmp.isHidden() && !tmp.isDirectory()) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                });
+                for (int i = 0;  i < files.length; i++) {
+                    File out = new File(result, files[i].getName());
+                    try {
+                        out.createNewFile();
+                        if (files[i].getName().endsWith(".xml") || xmlMode) {
+                            tc.writeXML(files[i], new FileOutputStream(out), tc);
+                        } else {
+                            tc.write(new FileInputStream(source), new FileOutputStream(out));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Can't write to " + out.getAbsolutePath());
+                    }
+                }
+            } else {
+                try {
+                    if (source.getName().endsWith(".xml") || xmlMode) {
+                        tc.writeXML(source, new FileOutputStream(result), tc);
+                    } else {
+                        tc.write(new FileInputStream(source), new FileOutputStream(result));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("Can't write to " + result.getAbsolutePath());
+                    System.exit(1);
+                }
+            }
         }
-        
     }
     
 }

@@ -11,19 +11,19 @@ package edu.unc.epidoc.transcoder;
 import java.util.Properties;
 import java.util.TreeMap;
 
-/** Parses sources encoded in GreekKeys format.
+/** Parses sources encoded in GreekKeys format which OpenOffice has remapped.
  * @author Hugh A. Cayless
  */
-public class GreekKeysParser extends AbstractGreekParser {
+public class OOGreekKeysParser extends AbstractGreekParser {
     
     /** Creates new UnicodeParser */
-    public GreekKeysParser() {
+    public OOGreekKeysParser() {
         encoding = "ISO8859_1";
         gkp = new Properties();
         ga = new Properties();
         try {
             Class c = this.getClass();
-            gkp.load(c.getResourceAsStream("GreekKeysParser.properties"));
+            gkp.load(c.getResourceAsStream("OOGreekKeysParser.properties"));
             ga.load(c.getResourceAsStream("GreekAccents.properties"));
         } catch (Exception e) {
             System.out.println(e.getMessage());

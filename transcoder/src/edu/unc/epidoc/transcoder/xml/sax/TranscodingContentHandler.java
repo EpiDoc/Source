@@ -60,18 +60,18 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         } else {
             langAttr = "lang";
         }
-        this.elements = new Stack();
-        this.languages = new Stack();
+        this.elements = new Stack<String[]>();
+        this.languages = new Stack<String>();
         if (lang != null) {
             languages.push(lang);
         } else {
             languages.push(DEFAULT_LANG);
         }
-        this.parsers = new Stack();
+        this.parsers = new Stack<String>();
         this.parsers.push(tc.getParser().getClass().getName());
-        this.converters = new Stack();
+        this.converters = new Stack<String>();
         this.converters.push(tc.getConverter().getClass().getName());
-        this.flowTerminators = new ArrayList();
+        this.flowTerminators = new ArrayList<String[]>();
         if (flowTerminators == null) {
             this.flowTerminators.add(new String[]{"", "p", "container"});
             this.flowTerminators.add(new String[]{"", "lb", "milestone"});
@@ -296,6 +296,15 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         }
     }
     
+    /**
+     * For text buffering purposes, ignorable whitespace isn't treated as ignorable.  It is added 
+     * to the text buffer and has an effect on character transcoding.
+     * 
+     * @param ch
+     * @param start
+     * @param length
+     * @throws org.xml.sax.SAXException
+     */
     public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
         if (this.eventBufferOn) {
             charBuffer.append(ch, start, length);
@@ -396,10 +405,10 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     private String langAttr = "lang";
     private TransCoder tc;
     private Stack<String[]> elements;
-    private Stack languages;
-    private Stack parsers;
-    private Stack converters;
-    private List<Object[]> eventBuffer = new ArrayList();
+    private Stack<String> languages;
+    private Stack<String> parsers;
+    private Stack<String> converters;
+    private List<Object[]> eventBuffer = new ArrayList<Object[]>();
     private StringBuffer charBuffer = new StringBuffer();
     private boolean eventBufferOn = false;
     private boolean flushingBuffer = false;

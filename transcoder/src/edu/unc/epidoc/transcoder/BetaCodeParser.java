@@ -35,7 +35,7 @@ public class BetaCodeParser extends AbstractGreekParser {
     private Properties bcp;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();
-    private TreeMap map = new TreeMap();
+    private TreeMap<String,String> map = new TreeMap<String,String>();
     private StringBuffer escape = new StringBuffer();
     
     /** Returns the next parsed character as a String.
@@ -138,6 +138,9 @@ public class BetaCodeParser extends AbstractGreekParser {
             }
             if (isPunctuation(chArray[index + i])) {
                 return true;
+            }
+            if (chArray[index + i] == '\'') {
+                return false;
             }
         }
         return false;

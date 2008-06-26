@@ -33,7 +33,7 @@ public class UnicodeParser extends AbstractGreekParser {
     private Properties up;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();
-    private TreeMap map = new TreeMap();
+    private TreeMap<String,String> map = new TreeMap<String,String>();
     
     /** Returns the next parsed character as a String.
      * @return The name of the parsed character.

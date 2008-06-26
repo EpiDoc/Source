@@ -35,7 +35,7 @@ public class Tester extends javax.swing.JFrame {
         
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         String[] fonts = ge.getAvailableFontFamilyNames();
-        fontItems = new ArrayList();
+        fontItems = new ArrayList<FontMenuItem>();
         JMenu menu = jMenuFonts;
         for (int i=0, j=0; i < fonts.length; i++, j++) {
             FontMenuItem fontItem = new Tester.FontMenuItem(fonts[i]);
@@ -432,7 +432,7 @@ public class Tester extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
     private TransCoder tc;
-    private ArrayList fontItems;
+    private ArrayList<FontMenuItem> fontItems;
     private int fontSize = 12;
     private int[] fontSizes = new int[] {10, 12, 14, 16};
     private File source;

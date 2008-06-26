@@ -24,7 +24,7 @@ public class MapReader {
      * @param encoding The encoding that should be used in reading the file.
      */    
     public void load (String file, String encoding) {
-        map = new HashMap();
+        map = new HashMap<String,String>();
                 try {
             Class c = this.getClass();
             BufferedReader reader = new BufferedReader(
@@ -71,7 +71,7 @@ public class MapReader {
     
     
     
-    private Map map;
+    private Map<String,String> map;
     
     
 }
