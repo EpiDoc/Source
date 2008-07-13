@@ -56,7 +56,7 @@ public class BetaCodeParser extends AbstractGreekParser {
                         index++;
                     }
                     if (hasNext()) {
-                        while (hasNext() && Character.isDigit(chArray[index]) ) {
+                        while (hasNext() && (Character.isDigit(chArray[index]) || '?' == (chArray[index]))) {
                             escape.append(chArray[index]);
                             index++;
                         }
@@ -200,4 +200,5 @@ public class BetaCodeParser extends AbstractGreekParser {
                 return false;
         }
     }
+
 }
