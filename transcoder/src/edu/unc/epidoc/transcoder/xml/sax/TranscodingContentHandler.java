@@ -56,9 +56,9 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         this.lexicalHandler = lh;
         this.tc = tc;
         if (useAttribute != null) {
-            this.langAttr = useAttribute;
+            this.langAttrs = new String[]{useAttribute};
         } else {
-            langAttr = "lang";
+            langAttrs = new String[]{"lang", "xml:lang"};
         }
         this.elements = new Stack<String[]>();
         this.languages = new Stack<String>();
@@ -73,8 +73,10 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         this.converters.push(tc.getConverter().getClass().getName());
         this.flowTerminators = new ArrayList<String[]>();
         if (flowTerminators == null) {
+            this.flowTerminators.add(new String[]{"", "div(\n)?", "container"});
             this.flowTerminators.add(new String[]{"", "p", "container"});
             this.flowTerminators.add(new String[]{"", "lb", "milestone"});
+            this.flowTerminators.add(new String[]{"", "l", "container"});
         } else {
             for (Iterator<String[]> i = flowTerminators.iterator(); i.hasNext();) {
                 String[] ft = i.next();
@@ -112,7 +114,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         this.currentElt = name;
         for (Iterator<String[]> i = this.flowTerminators.iterator(); i.hasNext();) {
             String[] ft = i.next();
-            if (ft[0].equals(uri) && ft[1].equals(name) && !this.flushingBuffer) {
+            if (ft[0].equals(uri) && ft[1].matches(name) && !this.flushingBuffer) {
                 if (this.eventBufferOn) {
                     this.eventBufferOn = false;
                     this.flushingBuffer = true;
@@ -149,8 +151,10 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                     }
                 }
             } else {
-                if (attributes.getValue(langAttr) != null) {
-                    language = attributes.getValue(langAttr);
+                for (int i = 0; i < langAttrs.length; i++) {
+                    if (attributes.getValue(langAttrs[i]) != null) {
+                        language = attributes.getValue(langAttrs[i]);
+                    }
                 }
                 elements.push(new String[] {name, language});
                 this.contentHandler.startElement(uri, name, raw, attributes);
@@ -248,7 +252,17 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                         this.contentHandler.characters(this.charBuffer.substring(start, start+len).toCharArray(), 0, len);
                     }
                 } else {
-                    this.contentHandler.characters(c, start, len);
+                    if(tc.getParser().supportsLanguage(language)) {
+                        String out = "";
+                        try {
+                            out = this.tc.getString(new String(c, start, len));
+                            this.contentHandler.characters(out.toCharArray(), 0, out.length());
+                        } catch (Exception e) {
+                            throw new SAXException(e);
+                        }
+                    } else {
+                        this.contentHandler.characters(c, start, len);
+                    }
                 }
             }
         } catch (Exception e) {
@@ -402,7 +416,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     
     private static String DEFAULT_LANG = "eng";
     private String language;
-    private String langAttr = "lang";
+    private String[] langAttrs;
     private TransCoder tc;
     private Stack<String[]> elements;
     private Stack<String> languages;

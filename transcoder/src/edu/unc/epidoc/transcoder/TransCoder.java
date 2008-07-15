@@ -63,12 +63,6 @@ public class TransCoder {
     /** Creates new Transcoder */
     public TransCoder() {
         init();
-        try {
-            setParser("edu.unc.epidoc.transcoder.BetaCodeParser");
-            setConverter("edu.unc.epidoc.transcoder.BetaCodeConverter");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
     
     /** Creates new <CODE>Transcoder<CODE> with the <CODE>Parser</CODE>
