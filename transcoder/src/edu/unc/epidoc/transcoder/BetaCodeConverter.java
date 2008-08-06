@@ -30,7 +30,7 @@ public class BetaCodeConverter extends AbstractGreekConverter {
         }
     }
     
-    private Properties bcc;
+    protected Properties bcc;
     
     /** Convert the input String to a String in Beta Code with
      * characters greater than 127 escaped as XML character entities.
