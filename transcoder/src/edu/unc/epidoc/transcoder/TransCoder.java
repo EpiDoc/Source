@@ -341,7 +341,7 @@ public class TransCoder {
                     System.out.println("-oe  The output encoding (default UnicodeC).");
                     System.out.println("-x   Use XML mode.  Treat the source and result files as XML.  Not needed if the files have a .xml suffix.");
                     System.out.println();
-                    System.out.println("Valid encodings are: BetaCode, UncidodeC, UnicodeD, GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
+                    System.out.println("Valid encodings are: BetaCode, PerseusBetaCode (Beta Code using lowercase ASCII), UncidodeC, UnicodeD, GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
                     System.exit(0);
                 }
             }
