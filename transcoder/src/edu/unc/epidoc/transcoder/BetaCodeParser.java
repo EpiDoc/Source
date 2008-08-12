@@ -147,10 +147,11 @@ public class BetaCodeParser extends AbstractGreekParser {
     }
     
     private String lookup(char ch) {
-        if (Character.isLowerCase(ch))
-            ch = Character.toUpperCase(ch);
-        String key = String.valueOf(ch);
-        return bcp.getProperty(key, key);
+        char chr = ch;
+        if (Character.isLowerCase(chr))
+            chr = Character.toUpperCase(chr);
+        String key = String.valueOf(chr);
+        return bcp.getProperty(key, String.valueOf(ch));
     }
     
     private String lookup(String key) {
