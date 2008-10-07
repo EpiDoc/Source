@@ -27,6 +27,9 @@
      REVISION HISTORY:
 
 	03 February 2008 (GB)
+                   * recreated <term> from scratch to add @target
+
+          03 February 2008 (GB)
 		* recreated <sourceDesc> from scratch in order to add msDesc
 		* added msDesc, msIdentifier, msName
 		* added " | side | lines" to biblScope/@type
@@ -35,7 +38,7 @@
       06 December 2007 (GB)
       	* added new model for <subst>
       	* added attributes to hi/@rend
-		* added 'margin' to add/@place
+	* added 'margin' to add/@place
                   
           
       18th October 2007 (GB)
@@ -44,7 +47,7 @@
       	* added am and ex element models
       	* added @evidence to supplied attlist
       	* added 'undefined' to supplied[@reason] vocabulary
-		* NOTE: that supplied[@reason='abbreviation'] is now deprecated
+	* NOTE: that supplied[@reason='abbreviation'] is now deprecated
 
 	11th May 2007
 		(GB)
@@ -216,7 +219,7 @@
 	entity ENTITY #IMPLIED
 	href CDATA #IMPLIED >
 
-<!ELEMENT g EMPTY >
+<!ELEMENT g (#PCDATA) >
 <!ATTLIST g 
           %a.global; 
           type CDATA #IMPLIED >
@@ -261,6 +264,13 @@
 	resp CDATA #IMPLIED
 	hand CDATA #IMPLIED >
       
+<!ELEMENT term %om.RR;  %phrase.seq;> 
+<!ATTLIST term  
+      %a.global;
+	type CDATA #IMPLIED
+	target CDATA #IMPLIED
+	 >
+
 <!ELEMENT unclear 
 	( #PCDATA | g )* > 
 
