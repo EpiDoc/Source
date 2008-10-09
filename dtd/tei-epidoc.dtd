@@ -697,6 +697,8 @@
 	| milestone | pb)*)*))) >
 
 <!ATTLIST div 
+	type (apparatus|bibliography|commentary|description|edition|figure|history|textpart|translation) #REQUIRED
+	subtype CDATA #IMPLIED
 	ana IDREFS #IMPLIED
 	decls IDREFS #IMPLIED
 	id ID #IMPLIED
@@ -709,9 +711,7 @@
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
 	sample (initial | medial | final | unknown | complete) "complete"
-	subtype CDATA #IMPLIED
-	type CDATA #IMPLIED
-	 >
+	>
 
 <!ELEMENT docAuthor 
 	(#PCDATA | g | choice | am | ex | subst | abbr | address 

@@ -26,6 +26,12 @@
      
      REVISION HISTORY:
 
+            01 October 2008 (GB)
+	     * constrained div/@type
+
+            19 September 2008 (GB)
+	     * allowed <g> to contain PCDATA
+	
 	03 February 2008 (GB)
                    * recreated <term> from scratch to add @target
 
@@ -339,7 +345,7 @@
         %epidoc.exact; >
 <!ATTLIST %n.div;
         subtype CDATA #IMPLIED
-        type CDATA #IMPLIED >
+        type (apparatus|bibliography|commentary|description|edition|figure|history|textpart|translation) #REQUIRED >
 <!ATTLIST %n.gap;
         reason (ellipsis | illegible | lost | omitted) #REQUIRED
         extentmax CDATA #IMPLIED
