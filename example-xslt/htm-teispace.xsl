@@ -5,6 +5,7 @@
   <xsl:template name="space-content">
     <xsl:param name="vacat"/>
     <xsl:param name="extent"/>
+    
     <xsl:choose>
       <xsl:when test="$leiden-style = 'insaph'">
         <i>
@@ -28,6 +29,16 @@
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template name="dip-space">
+    <em>
+      <span class="smaller">
+        <xsl:call-template name="space-content-1">
+          <xsl:with-param name="vacat" select="'vacat '"/>
+        </xsl:call-template>
+      </span>
+    </em>
   </xsl:template>
 
 </xsl:stylesheet>

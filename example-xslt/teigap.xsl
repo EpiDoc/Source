@@ -33,9 +33,14 @@
 
 
   <xsl:template match="gap[@reason='omitted']">
-    <xsl:text>&lt;</xsl:text>
-    <xsl:call-template name="extent-string"/>
-    <xsl:text>></xsl:text>
+    <xsl:choose>
+      <xsl:when test="$edition-type = 'diplomatic'"/>
+      <xsl:otherwise>
+        <xsl:text>&lt;</xsl:text>
+        <xsl:call-template name="extent-string"/>
+        <xsl:text>></xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
 

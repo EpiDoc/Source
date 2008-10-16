@@ -44,6 +44,7 @@
   
   <xsl:include href="tpl-reasonlost.xsl"/>
   <xsl:include href="tpl-certlow.xsl"/>
+  <xsl:include href="tpl-text.xsl"/>
 
 
   <xsl:template match="/">

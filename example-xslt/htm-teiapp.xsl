@@ -28,17 +28,25 @@
 
   <xsl:template match="rdg">
     <xsl:choose>
-      <!-- Temporary -->
-      <xsl:when test="parent::app"/>
-
-      <xsl:when test="@resp='previous'">
-        <span class="previouslyread">
-          <xsl:apply-templates/>
-        </span>
+      <xsl:when test="$edition-type = 'diplomatic'">
+        <xsl:choose>
+          <xsl:when test="@resp='previous'"/> 
+          <xsl:when test="@resp='autopsy'">
+            <xsl:apply-templates/>
+          </xsl:when>
+          <xsl:otherwise/>
+        </xsl:choose>
       </xsl:when>
-      <xsl:when test="@resp='autopsy'"/>
       <xsl:otherwise>
-        <xsl:apply-templates/>
+        <xsl:choose>
+          <xsl:when test="@resp='previous'">
+            <xsl:apply-templates/>
+          </xsl:when>
+          <xsl:when test="@resp='autopsy'"/>
+          <xsl:otherwise>
+            <xsl:apply-templates/>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

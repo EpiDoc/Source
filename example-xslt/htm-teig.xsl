@@ -14,6 +14,15 @@
         <!-- Found in teig.xsl -->
         <xsl:call-template name="g-ddbdp" />
       </xsl:when>
+      <xsl:when test="$edition-type = 'diplomatic'">
+        <xsl:text> </xsl:text>
+        <em>
+          <span class="smaller">
+            <xsl:apply-imports/>
+          </span>
+        </em>
+        <xsl:text> </xsl:text>
+      </xsl:when>
       <xsl:otherwise>
         <i>
           <xsl:apply-imports/>

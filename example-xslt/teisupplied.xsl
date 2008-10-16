@@ -14,7 +14,41 @@
       <xsl:otherwise>
         <!-- Found in tpl-reasonlost.xsl -->
         <xsl:call-template name="lost-opener"/>
+        <xsl:choose>
+          <xsl:when test="$edition-type = 'diplomatic'">
+            <xsl:variable name="supplied-content">
+              <xsl:value-of select="descendant::text()"/>
+            </xsl:variable>
+            <xsl:variable name="sup-context-length">
+              <xsl:value-of select="string-length(normalize-space($supplied-content))"/>
+            </xsl:variable>
+            <xsl:variable name="space-ex">
+              <xsl:choose>
+                <xsl:when test="number(descendant::space/@extent)">
+                  <xsl:number value="descendant::space/@extent"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:number value="1"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+            
+            <xsl:for-each select="g">
+              <xsl:text>&#xb7;&#xb7;</xsl:text>
+            </xsl:for-each>
+            <!-- Found in teigap.xsl -->
+            <xsl:call-template name="dot-out">
+              <xsl:with-param name="cur-num" select="$sup-context-length"/>
+            </xsl:call-template>
+            <xsl:call-template name="dot-out">
+              <xsl:with-param name="cur-num" select="$space-ex"/>
+            </xsl:call-template>
+            
+          </xsl:when>
+        <xsl:otherwise>
         <xsl:apply-templates/>
+          </xsl:otherwise>
+        </xsl:choose>
         <!-- Found in tpl-cert-low.xsl -->
         <xsl:call-template name="cert-low"/>
         <!-- Found in tpl-reasonlost.xsl -->
