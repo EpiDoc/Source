@@ -83,9 +83,9 @@
       <xsl:otherwise>
         <xsl:choose>
           <xsl:when test="parent::app[@type='previouslyread']">
-            <u>
+            <span class="previouslyread">
               <xsl:apply-templates/>
-            </u>
+            </span>
           </xsl:when>
           <xsl:otherwise>
             <xsl:apply-templates/>
