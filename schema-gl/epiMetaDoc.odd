@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <?oxygen RNGSchema="epiMetaOdds.rnc" type="compact"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://www.ascc.net/xml/schematron">
+     xmlns:rng="http://relaxng.org/ns/structure/1.0"
+     xmlns:sch="http://www.ascc.net/xml/schematron" >
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -22,6 +23,22 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2008-10-24" who="#SB">
+	<list>
+	  <head>Brought into line with TEI P5 1.2</head>
+	  <item>no <name type="class">model.divWrapper.bottom</name> anymore</item>
+	  <item>no <gi>biblItem</gi> element anymore</item>
+	  <item><gi>change</gi> uses <att>when</att> not <att>date</att></item>
+	  <item>no <name type="macro">macro.component</name> anymore</item>
+	</list>
+	<list>
+	  <head>miscellaneous fixes</head>
+	  <item>reference to <gi>respList</gi> should have been
+	  <gi>listResp</gi> (or the definition of <gi>listResp</gi>
+	  should have been <gi>respList</gi>)</item>
+	  <item>reference to <gi>regex</gi> should have been to canonical name <gi>cRefPattern</gi></item>
+	</list>
+      </change>
       <change when="2006-03-27" who="#ZA">
 	<list>
 	  <item>Added example to element hi</item>
@@ -89,7 +106,7 @@
 	      </rng:choice>
 	      <rng:group>
 		<rng:oneOrMore>
-		  <rng:ref name="macro.component"/>
+		  <rng:ref name="model.common"/>
 		  <rng:zeroOrMore>
 		    <rng:ref name="model.global"/>
 		  </rng:zeroOrMore>
@@ -105,10 +122,12 @@
 	      </rng:group>
 	    </rng:choice>
 	    <rng:zeroOrMore>
-	      <rng:choice>
-		<rng:ref name="model.divWrapper"/>
-		<rng:ref name="model.divWrapper.bottom"/>
-	      </rng:choice>
+	      <rng:group>
+		<rng:ref name="model.divBottom"/>
+	      </rng:group>
+	      <rng:zeroOrMore>
+		<rng:ref name="model.global"/>
+	      </rng:zeroOrMore>
 	    </rng:zeroOrMore>
 	  </content>
 	</elementSpec>
@@ -179,7 +198,7 @@
 	<!-- add a required type= to <listBibl> -->
 	<elementSpec module="core" ident="listBibl" mode="change">
 	  <attList>
-	    <attDef mode="add" ident="type" usage="req">
+	    <attDef mode="change" ident="type" usage="req">
 	      <datatype>
 		<rng:ref name="data.enumerated"/>
 	      </datatype>
@@ -232,7 +251,7 @@
 	<elementSpec module="header" ident="cRefPattern" mode="change">
 	  <altIdent>regex</altIdent>
 	  <gloss>Defines regular expressions for epidoc XML fragments.</gloss>
-	  <desc>Specifies an search pattern and replacement expression for transforming the
+	  <desc>Specifies a search pattern and replacement expression for transforming the
 	  traditional typographic conventions against the EpiDoc XML markup. In addition, may
 	  contain prose commentary explaining the regular expressions.</desc>
 	  <attList>
@@ -250,8 +269,8 @@
 	  </attList>
 	  <exemplum>
 	    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-	      <regex xml:id="M1" matchPattern="(\S+)\((-\s*)+\)" replacementPattern="&amp;lt;abbr&gt;$1&amp;lt;/abbr&gt;"/>
-	      <regex xml:id="R1" matchPattern="\[([.\s])\]" replacementPattern="&amp;lt;gap reason='lost' extent='%g1%len1' unit='character'/&gt;">
+	      <regex xml:id="abb1" matchPattern="(\S+)\((-\s*)+\)" replacementPattern="&amp;lt;abbr&gt;$1&amp;lt;/abbr&gt;"/>
+	      <regex xml:id="gap1" matchPattern="\[([.\s])\]" replacementPattern="&amp;lt;gap reason='lost' extent='%g1%len1' unit='character'/&gt;">
 		Note the use of a notation like '%g1%len2', which allows the
 		chetc program to measure the number of occurences of the symbol in
 	      the second capturing group inside the first capturing group.</regex>
@@ -384,7 +403,7 @@
 	  <content>
 	    <rng:text/>
 	    <rng:oneOrMore>
-	      <rng:ref name="biblItem"/>
+	      <rng:ref name="bibl"/>
 	    </rng:oneOrMore>
 	    <rng:zeroOrMore>
 	      <rng:choice>
@@ -392,17 +411,26 @@
 		<rng:ref name="model.listLike"/>
 	      </rng:choice>
 	    </rng:zeroOrMore>
+	    <sch:pattern name="data-like_bibl">
+	      <sch:rule context="typogBox/bibl">
+		<sch:assert test="normalize-space( text() )=''">A
+		bibliographic citation (&lt;bibl>) inside a
+		typographic specification box (&lt;typogBox>) should
+		not contain any character data, only other XML
+		elements.</sch:assert>
+	      </sch:rule>
+	    </sch:pattern>
 	  </content>
 	  <exemplum>
 	    <egXML xmlns="http://www.tei-c.org/ns/Examples">
 	      <typogBox id="abbreviationsunderstood-typog-1">
-		<biblItem>
+		<bibl>
 		  <title level="a" type="abbreviated">
 		    <ref target="bibliography.xml#panciera">Panciera</ref>
 		  </title>
 		  <abbr expan="page">p.</abbr>
 		  <biblScope type="pages">17</biblScope>
-		</biblItem>
+		</bibl>
 		<list type="ordered" lang="lat">
 		  <item><typog id="TypoEx-1">co(n)s(ul)</typog></item>
 		  <item><typog id="TypoEx-2">Aug(ustus)</typog></item>
@@ -435,7 +463,7 @@
 		<rng:ref name="typogBox"/>
 	      </rng:oneOrMore>
 	      <rng:oneOrMore>
-		<rng:ref name="regex"/>
+		<rng:ref name="cRefPattern"/>
 	      </rng:oneOrMore>
 	    </rng:optional>
 	    <rng:oneOrMore>
@@ -453,7 +481,7 @@
 	    <rng:zeroOrMore>
 	      <rng:ref name="note"/>
 	    </rng:zeroOrMore>
-	    <rng:ref name="respList"/>
+	    <rng:ref name="listResp"/>
 	    <sch:pattern
 		name="No 'ptr' elements in main epigraphic entry 'linkGrp' (it's only there for CHETC anyway)">
 	      <sch:rule context="epiEntry/linkGrp">
