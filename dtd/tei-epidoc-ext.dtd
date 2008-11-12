@@ -184,8 +184,7 @@
      New elements added by EpiDoc, together with their attributes
      ********************************************************************* -->
      
-<!ELEMENT am 
-	( #PCDATA | g )*  >
+<!ELEMENT am %om.RR;  %phrase.seq;> 
 <!ATTLIST am 
           %a.global; >
 
