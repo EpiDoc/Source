@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="usepi.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <!-- printable version of USEpi inscription ID: -->
+        <title>MA.Camb.HU.Sack.L.1932.56.129.v</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>USEpigraphy info goes here</p>
+      </publicationStmt>
+      <sourceDesc>
+        <!-- true ID (i.e., XML NCName) of USEpi inscription ID: -->
+        <msDesc xml:id="MA.Camb.HU.Sack.L.1932.56.129.v">
+          <msIdentifier>
+            <!-- same info, parsed out: -->
+            <!-- alternatively, we could just use <msName>, but that isn't as machine -->
+            <!-- accessible (or human, for that matter). -->
+            <region>MA</region>
+            <settlement>Cambridge</settlement>
+            <institution>Harvard</institution>
+            <repository>Sackler</repository>
+            <!--required-->
+            <idno>1932.56.129.v</idno>
+            <!-- optionally some <altIdentifier>s or <msName>s here -->
+          </msIdentifier>
+          <msContents>
+            <summary>epitaph of Statoria C.f. Appia and C. Statorius Proculus</summary>
+            <textLang mainLang="la"/>
+            <msItemStruct>
+              <!-- Think about what we put here? -->
+            </msItemStruct>
+          </msContents>
+          <physDesc>
+            <objectDesc form="stele.cippus">
+              <supportDesc material="stone.marble">
+                <support>
+                  <p>Stele cippus <material>blue marble</material> that is partially
+                    reconstituted.</p>
+                </support>
+                <extent>
+                  <measure unit="chars" quantity="17"/>
+                </extent>
+                <condition>
+                  <p>pretty beat up</p>
+                </condition>
+              </supportDesc>
+              <layoutDesc>
+                <layout columns="2" writtenLines="4">
+                  <!-- use a <locus> to narrow down part of inscription being discussed -->
+                  <p>text goes L to R across columns</p>
+                </layout>
+                <layout rend="faces(2)"></layout>
+              </layoutDesc>
+            </objectDesc>
+            <!-- optional: -->
+            <decoDesc>
+              <decoNote type="crosses">
+                <p>discussion of all the little crosses</p>
+              </decoNote>
+              <!-- <decoNote> is repeatable -->
+            </decoDesc>
+          </physDesc>
+          <history>
+            <origin notBefore="0150" notAfter="0200">
+              <geo>74 -71</geo>
+              <note>fake</note>
+            </origin>
+            <provenance>in situ on a tomb, <placeName ref="../info/places.xml#ventimiglia"
+                >Ventimiglia, Liguria, Italy</placeName></provenance>
+          </history>
+        </msDesc>
+        <listBibl>
+          <bibl>
+            <ptr type="rest-of-bibl" target="../info/bibl.xml#LSAG"/>
+            <biblScope type="item">95, no. 16</biblScope>
+            <!-- think about using 2 separate <blblScope>s, one for pp one for item -->
+          </bibl>
+          <bibl>
+            <ptr type="rest-of-bibl" target="../info/bibl.xml#Mitten"/>
+            <biblScope type="pp">46-48</biblScope>
+          </bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <!-- Put taxonomy of inscription types here.  There can be more than 1 taxonomy. -->
+        <taxonomy xml:id="USEp-inscriptionType">
+          <category xml:id="funerary.epitaph">
+            <desc>this is for funeral stuff</desc>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <textClass>
+        <catRef target="#funerary.epitaph"/>
+        <!-- problem: <catRef> is almost perfect, but USE has further description or detail of each instance of a catagory,
+        so if we just hasd <p> or <desc> inside (or following) <catRef>, it would work nicely. -->
+      </textClass>
+    </profileDesc>
+  </teiHeader>
+  <facsimile>
+    <surface>
+      <graphic url="../images/MA.Camb.HU.Sack.L.1932.56.129.v.jpg"/>
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+      <ab type="noTranscriptionIndicator"/>
+    </body>
+  </text>
+</TEI>
