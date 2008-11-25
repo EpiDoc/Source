@@ -106,7 +106,38 @@
 
     <xsl:template match="gap">
       <xsl:copy>
-        <xsl:copy-of select="@*[not(local-name = 'dim')][not(local-name = 'desc')]"/>
+        <xsl:copy-of select="@reason"/>
+       <xsl:choose>
+         <xsl:when test="@extent and @extentmax">
+           <xsl:attribute name="atLeast">
+             <xsl:value-of select="@extent"/>
+           </xsl:attribute>
+           <xsl:attribute name="atMost">
+             <xsl:value-of select="@extentmax"/>
+           </xsl:attribute>
+         </xsl:when>
+         <xsl:when test="@extent != 'unknown'">
+           <xsl:attribute name="quantity">
+             <xsl:value-of select="@extent"/>
+           </xsl:attribute>
+         </xsl:when>
+         <xsl:when test="@extent='unknown'">
+           <xsl:copy-of select="@extent"/>
+         </xsl:when>
+       </xsl:choose>
+        <xsl:if test="@unit">
+          <xsl:copy-of select="@unit"/>
+        </xsl:if>
+        <xsl:if test="@precision='circa'">
+          <xsl:attribute name="precision">
+            <xsl:text>low</xsl:text>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="@id">
+          <xsl:attribute name="xml:id">
+            <xsl:value-of select="@id"/>
+          </xsl:attribute>
+        </xsl:if>
         <xsl:if test="@desc">
           <xsl:element name="desc">
             <xsl:value-of select="@desc"/>
