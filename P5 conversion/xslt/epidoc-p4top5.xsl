@@ -6,24 +6,17 @@
 <!-- |||||                Last update 2004-04-02                 ||||||| -->
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
-<xsl:stylesheet
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-        xmlns="http://www.tei-c.org/ns/1.0"
-        >
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+  xmlns="http://www.tei-c.org/ns/1.0">
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
   <!-- |||||||||||||||||||||||||  output as XML  ||||||||||||||||||||||||| -->
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
-  <xsl:output 
-        method="xml" 
-        version="1.0" 
-        encoding="UTF-8" 
-        indent="no" 
-      />
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- ||||||||||||||||||||||  copy all existing elements |||||||||||||||| -->
+  <!-- ||||||||||||||||||||||||||  copy all existing elements ||||||||||||||||| -->
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="*">
@@ -44,7 +37,7 @@
   </xsl:template>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- |||||||||||||||||||||| copy all comments  ||||||||||||||||||||||||| -->
+  <!-- |||||||||||||||||||||||| copy all comments  ||||||||||||||||||||||||| -->
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="//comment()">
@@ -54,7 +47,7 @@
   </xsl:template>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- ||||||||||||||||||||||          exceptions           ||||||||||||||||||||||||| -->
+  <!-- ||||||||||||||||||||||     EXCEPTIONS      ||||||||||||||||||||||||| -->
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="TEI.2">
@@ -66,7 +59,7 @@
       <xsl:attribute name="xml:lang">
         <xsl:value-of select="@lang"/>
       </xsl:attribute>
-<!--      <xsl:attribute name="xmlns">
+      <!--      <xsl:attribute name="xmlns">
         <xsl:text>http://www.tei-c.org/ns/1.0</xsl:text>
       </xsl:attribute>-->
       <xsl:apply-templates/>
@@ -80,6 +73,25 @@
         <xsl:value-of select="@id"/>
       </xsl:attribute>
       <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="persName|name|placeName|geogName|rs">
+    <xsl:copy>
+      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <!--<xsl:choose>
+        <xsl:when test="@reg">
+          <xsl:element name="reg">
+            <xsl:value-of select="@reg"/>
+          </xsl:element>
+          <xsl:element name="">
+            <xsl:apply-templates/>
+          </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+        </xsl:otherwise>
+      </xsl:choose>-->
+          <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
 
@@ -104,55 +116,55 @@
     </xsl:for-each>
   </xsl:template>
 
-    <xsl:template match="gap">
-      <xsl:copy>
-        <xsl:copy-of select="@reason"/>
-       <xsl:choose>
-         <xsl:when test="@extent and @extentmax">
-           <xsl:attribute name="atLeast">
-             <xsl:value-of select="@extent"/>
-           </xsl:attribute>
-           <xsl:attribute name="atMost">
-             <xsl:value-of select="@extentmax"/>
-           </xsl:attribute>
-         </xsl:when>
-         <xsl:when test="@extent != 'unknown'">
-           <xsl:attribute name="quantity">
-             <xsl:value-of select="@extent"/>
-           </xsl:attribute>
-         </xsl:when>
-         <xsl:when test="@extent='unknown'">
-           <xsl:copy-of select="@extent"/>
-         </xsl:when>
-       </xsl:choose>
-        <xsl:if test="@unit">
-          <xsl:copy-of select="@unit"/>
-        </xsl:if>
-        <xsl:if test="@precision='circa'">
-          <xsl:attribute name="precision">
-            <xsl:text>low</xsl:text>
+  <xsl:template match="gap">
+    <xsl:copy>
+      <xsl:copy-of select="@reason"/>
+      <xsl:choose>
+        <xsl:when test="@extent and @extentmax">
+          <xsl:attribute name="atLeast">
+            <xsl:value-of select="@extent"/>
           </xsl:attribute>
-        </xsl:if>
-        <xsl:if test="@id">
-          <xsl:attribute name="xml:id">
-            <xsl:value-of select="@id"/>
+          <xsl:attribute name="atMost">
+            <xsl:value-of select="@extentmax"/>
           </xsl:attribute>
-        </xsl:if>
-        <xsl:if test="@desc">
-          <xsl:element name="desc">
-            <xsl:value-of select="@desc"/>
-          </xsl:element>
-        </xsl:if>
-      </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="keywords">
-      <xsl:copy>
-        <xsl:attribute name="scheme">
-          <xsl:text>EAGLE</xsl:text>
+        </xsl:when>
+        <xsl:when test="@extent != 'unknown'">
+          <xsl:attribute name="quantity">
+            <xsl:value-of select="@extent"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@extent='unknown'">
+          <xsl:copy-of select="@extent"/>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:if test="@unit">
+        <xsl:copy-of select="@unit"/>
+      </xsl:if>
+      <xsl:if test="@precision='circa'">
+        <xsl:attribute name="precision">
+          <xsl:text>low</xsl:text>
         </xsl:attribute>
-        <xsl:apply-templates/>
-      </xsl:copy>
-    </xsl:template>
+      </xsl:if>
+      <xsl:if test="@id">
+        <xsl:attribute name="xml:id">
+          <xsl:value-of select="@id"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@desc">
+        <xsl:element name="desc">
+          <xsl:value-of select="@desc"/>
+        </xsl:element>
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="keywords">
+    <xsl:copy>
+      <xsl:attribute name="scheme">
+        <xsl:text>EAGLE</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
 
 </xsl:stylesheet>
