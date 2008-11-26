@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen RNGSchema="usepi.rnc" type="compact"?>
+<?oxygen RNGSchema="USEp-P5.rnc" type="compact"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <fileDesc>
@@ -21,7 +21,8 @@
             <settlement>Cambridge</settlement>
             <institution>Harvard</institution>
             <repository>Sackler</repository>
-            <!--required-->
+            <!--required.-->
+            <!-- USEp comment: is this the actual collection accession number? or the USEp. number? Probably the latter. -->
             <idno>1932.56.129.v</idno>
             <!-- optionally some <altIdentifier>s or <msName>s here -->
           </msIdentifier>
@@ -29,12 +30,12 @@
             <summary>epitaph of Statoria C.f. Appia and C. Statorius Proculus</summary>
             <textLang mainLang="la"/>
             <msItemStruct>
-              <!-- Think about what we put here? -->
+              <!-- This is where we put metadata about the content of the inscription.  -->
             </msItemStruct>
           </msContents>
           <physDesc>
-            <objectDesc form="stele.cippus">
-              <supportDesc material="stone.marble">
+            <objectDesc form="stele.cippus"> <!-- @form is data.enumerated -->
+              <supportDesc material="stone.marble"> <!-- @material is data.enumerated -->
                 <support>
                   <p>Stele cippus <material>blue marble</material> that is partially
                     reconstituted.</p>
@@ -56,18 +57,27 @@
             </objectDesc>
             <!-- optional: -->
             <decoDesc>
-              <decoNote type="crosses">
+              <decoNote type="crosses"> <!-- @type is data.enumerated -->
                 <p>discussion of all the little crosses</p>
               </decoNote>
               <!-- <decoNote> is repeatable -->
             </decoDesc>
           </physDesc>
           <history>
-            <origin notBefore="0150" notAfter="0200">
-              <geo>74 -71</geo>
+            <summary>
               <note>fake</note>
+              <!-- USEp. comment: This is a USEp. convention for now, to indicate if an inscription is fake.  -->
+              <!-- This isn't sufficient, as it doesn't indicate properly if it's the text or the support that's fake. -->
+            </summary>
+            <origin>
+              <!-- Should contain information about origin of inscription including place and date.  -->
+              <date notBefore="0150" notAfter="0200">mid 2nd c.</date>
+              <!-- need to figure out how to indicate the place of origin as well as coordinates. -->
+              <geo>74 -71</geo><!-- geographical coordinates -->
             </origin>
-            <provenance>in situ on a tomb, <placeName ref="../info/places.xml#ventimiglia"
+            <provenance>
+              <!-- Can have more than one of these. Describe different phases in the history of an inscription. -->
+              in situ on a tomb, <placeName ref="../info/places.xml#ventimiglia"
                 >Ventimiglia, Liguria, Italy</placeName></provenance>
           </history>
         </msDesc>
@@ -75,7 +85,7 @@
           <bibl>
             <ptr type="rest-of-bibl" target="../info/bibl.xml#LSAG"/>
             <biblScope type="item">95, no. 16</biblScope>
-            <!-- think about using 2 separate <blblScope>s, one for pp one for item -->
+            <!-- think about using 2 separate <blblScope>s, one for pp one for item. John B. recommends this. -->
           </bibl>
           <bibl>
             <ptr type="rest-of-bibl" target="../info/bibl.xml#Mitten"/>
