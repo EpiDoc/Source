@@ -18,6 +18,19 @@
   <xsl:template match="g">
     <xsl:value-of select="@type"/>
   </xsl:template>
+  
+  <!-- London specific template -->
+  <xsl:template name="g-london">
+    <xsl:choose>
+      <xsl:when test="@type = 'chirho'">
+        <xsl:text>&#x2ce9;</xsl:text>
+      </xsl:when>
+      <xsl:when test="@type = 'taurho'">
+        <xsl:text>&#x2ce8;</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+    
+  </xsl:template>
 
   <!-- ddb specific template -->
   <xsl:template name="g-ddbdp">
