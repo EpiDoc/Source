@@ -13,7 +13,7 @@
     </xsl:choose>
   </xsl:template>-->
   
-  <xsl:template match="orig[not(parent::choice)]//text()">
+  <xsl:template match="orig[not(parent::choice)]//text()" priority="1">
     <xsl:value-of select="translate(., $all-grc, $grc-upper-strip)"/>
   </xsl:template>
   
