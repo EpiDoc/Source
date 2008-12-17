@@ -8,7 +8,7 @@
   <xsl:template name="lost-opener">
     <!-- Relationship: start at x going to y -->
     <xsl:choose>
-      <!--1.
+      <!--1.1
         ````````__|__
         ```````|`````|
         ```````y`````x
@@ -22,7 +22,7 @@
       </xsl:when>
 
 
-      <!--2.
+      <!--1.2
         ````````__|__
         ```````|`````|
         ```````y```__z__
@@ -40,7 +40,31 @@
       </xsl:when>
       
 
-      <!--3.
+      <!--1.3
+        ````````______|______
+        ```````|`````````````|
+        ```````y```````````__z__
+        ``````````````````|`````|
+        ````````````````__z__
+        ```````````````|`````|
+        ```````````````x
+        If y is a text() then output '['
+        If y is 'lost' then nothing
+      -->
+      
+      <xsl:when test="current()[not(preceding-sibling::*)]
+        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /parent::*[not(preceding-sibling::*)]
+        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /parent::*[preceding-sibling::*[1][@reason='lost']]">
+        <xsl:if
+          test="parent::*/parent::*[preceding-sibling::node()[1][self::text()][not(translate(normalize-space(.), ' ', '') = '')]]">
+          <xsl:text>[</xsl:text>
+        </xsl:if>
+      </xsl:when>
+      
+
+      <!--2.1
         ````````__|__
         ```````|`````|
         `````__z__```x
@@ -57,7 +81,7 @@
         </xsl:if>
       </xsl:when>
 
-      <!--4.
+      <!--2.2
         ````````____|____
         ```````|`````````|
         `````__z__`````__z__
@@ -77,9 +101,36 @@
           <xsl:text>[</xsl:text>
         </xsl:if>
       </xsl:when>
+      
+      
+      <!--2.3
+        ````````______|______
+        ```````|`````````````|
+        `````__z__`````````__z__
+        ````|`````|```````|`````|
+        ``````````y`````__z__
+        ```````````````|`````|
+        ```````````````x
+        If y is a text() then output '['
+        If y is 'lost' then nothing
+      -->
+      <xsl:when test="current()[not(preceding-sibling::*)]
+        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /parent::*[not(preceding-sibling::*)]
+        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /parent::*[preceding-sibling::*[1]]
+        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /preceding-sibling::*[1]
+        /*[@reason='lost'][not(following-sibling::*)]">
+        <xsl:if
+          test="parent::*/parent::*/preceding-sibling::*[1]
+          /*[@reason='lost'][not(following-sibling::*)][following-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
+          <xsl:text>[</xsl:text>
+        </xsl:if>
+      </xsl:when>
 
 
-      <!--5.
+      <!--3.1
         ````````____|____
         ```````|`````````|
         `````__z__```````x
@@ -103,7 +154,7 @@
       </xsl:when>
       
       
-      <!--6.
+      <!--3.2
         ````````_______|_______
         ```````|```````````````|
         `````__z__```````````__z__
@@ -130,7 +181,7 @@
       </xsl:when>
       
       
-      <!--7. 
+      <!--3.3 
         ````````______|______
         ```````|`````````````|
         `````__z__`````````__z__
@@ -157,57 +208,6 @@
           <xsl:text>[</xsl:text>
         </xsl:if>
       </xsl:when>
-      
-
-      <!--8.
-        ````````______|______
-        ```````|`````````````|
-        ```````y```````````__z__
-        ``````````````````|`````|
-        ````````````````__z__
-        ```````````````|`````|
-        ```````````````x
-        If y is a text() then output '['
-        If y is 'lost' then nothing
-      -->
-      
-      <xsl:when test="current()[not(preceding-sibling::*)]
-        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /parent::*[not(preceding-sibling::*)]
-        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /parent::*[preceding-sibling::*[1][@reason='lost']]">
-        <xsl:if
-          test="parent::*/parent::*[preceding-sibling::node()[1][self::text()][not(translate(normalize-space(.), ' ', '') = '')]]">
-          <xsl:text>[</xsl:text>
-        </xsl:if>
-      </xsl:when>
-      
-      
-      <!--9.
-        ````````______|______
-        ```````|`````````````|
-        `````__z__`````````__z__
-        ````|`````|```````|`````|
-        ``````````y`````__z__
-        ```````````````|`````|
-        ```````````````x
-        If y is a text() then output '['
-        If y is 'lost' then nothing
-      -->
-      <xsl:when test="current()[not(preceding-sibling::*)]
-        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /parent::*[not(preceding-sibling::*)]
-        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /parent::*[preceding-sibling::*[1]]
-        [not(preceding-sibling::node()[1][self::text()]) or preceding-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /preceding-sibling::*[1]
-        /*[@reason='lost'][not(following-sibling::*)]">
-        <xsl:if
-          test="parent::*/parent::*/preceding-sibling::*[1]
-          /*[@reason='lost'][not(following-sibling::*)][following-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
-          <xsl:text>[</xsl:text>
-        </xsl:if>
-      </xsl:when>
             
       
       <xsl:otherwise>
@@ -224,7 +224,7 @@
       And so the 'y' in the comments should be replaced with 'x' 
     -->
     <xsl:choose>
-      <!-- 1. -->
+      <!-- 1.1 -->
       <xsl:when test="following-sibling::*[1][@reason='lost']">
         <xsl:if test="following-sibling::node()[1][self::text()][not(translate(normalize-space(.), ' ', '') = '')]">
           <xsl:text>]</xsl:text>
@@ -232,7 +232,7 @@
       </xsl:when>
       
       
-      <!-- 2. -->
+      <!-- 1.2 -->
       <xsl:when test="current()[not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
         /following-sibling::*[1]/*[@reason='lost'][not(preceding-sibling::*)]">
         <xsl:if
@@ -242,7 +242,21 @@
       </xsl:when>
       
       
-      <!-- 3. -->
+      <!-- 1.3 -->
+      <xsl:when test="current()[not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /following-sibling::*[1]
+        /*[not(preceding-sibling::*)]
+        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /*[@reason='lost'][not(preceding-sibling::*)]">
+        <xsl:if
+          test="following-sibling::*[1]/*
+          /*[@reason='lost'][not(preceding-sibling::*)][preceding-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
+          <xsl:text>]</xsl:text>
+        </xsl:if>
+      </xsl:when>
+      
+      
+      <!-- 2.1 -->
       <xsl:when test="current()[not(following-sibling::*)]
         [not(following-sibling::text()) or translate(normalize-space(following-sibling::text()), ' ', '') = '']
         /parent::*[following-sibling::*[1][@reason='lost']]">
@@ -252,7 +266,7 @@
       </xsl:when>
 
       
-      <!-- 4. -->
+      <!-- 2.2 -->
       <xsl:when test="current()[not(following-sibling::*)]
         [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
         /parent::*[following-sibling::*[1]]
@@ -266,7 +280,24 @@
       </xsl:when>
       
       
-      <!-- 5. -->
+      <!-- 2.3 -->
+      <xsl:when test="current()[not(following-sibling::*)]
+        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /parent::*[following-sibling::*[1]]
+        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /following-sibling::*[1]
+        /*[not(preceding-sibling::*)]
+        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
+        /*[@reason='lost'][not(preceding-sibling::*)]">
+        <xsl:if
+          test="parent::*/following-sibling::*[1]/*
+          /*[@reason='lost'][not(preceding-sibling::*)][preceding-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
+          <xsl:text>]</xsl:text>
+        </xsl:if>
+      </xsl:when>
+      
+      
+      <!-- 3.1 -->
       <xsl:when test="current()[not(following-sibling::*)]
         [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
         /parent::*[not(following-sibling::*)]
@@ -279,7 +310,7 @@
       </xsl:when>
          
       
-      <!-- 6. -->
+      <!-- 3.2 -->
       <xsl:when test="current()[not(following-sibling::*)]
         [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
         /parent::*[not(following-sibling::*)]
@@ -296,7 +327,7 @@
       </xsl:when>
       
       
-      <!-- 7. -->
+      <!-- 3.3 -->
       <xsl:when test="current()[not(following-sibling::*)]
         [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
         /parent::*[not(following-sibling::*)]
@@ -309,37 +340,6 @@
         /*[@reason='lost'][not(preceding-sibling::*)]">
         <xsl:if
           test="parent::*/parent::*/following-sibling::*[1]/*
-          /*[@reason='lost'][not(preceding-sibling::*)][preceding-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
-          <xsl:text>]</xsl:text>
-        </xsl:if>
-      </xsl:when>
-      
-      
-      <!-- 8. -->
-      <xsl:when test="current()[not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /following-sibling::*[1]
-        /*[not(preceding-sibling::*)]
-        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /*[@reason='lost'][not(preceding-sibling::*)]">
-        <xsl:if
-          test="following-sibling::*[1]/*
-          /*[@reason='lost'][not(preceding-sibling::*)][preceding-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
-          <xsl:text>]</xsl:text>
-        </xsl:if>
-      </xsl:when>
-      
-      
-      <!-- 9. -->
-      <xsl:when test="current()[not(following-sibling::*)]
-        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /parent::*[following-sibling::*[1]]
-        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /following-sibling::*[1]
-        /*[not(preceding-sibling::*)]
-        [not(following-sibling::node()[1][self::text()]) or following-sibling::node()[1][self::text() and translate(normalize-space(.), ' ', '') = '']]
-        /*[@reason='lost'][not(preceding-sibling::*)]">
-        <xsl:if
-          test="parent::*/following-sibling::*[1]/*
           /*[@reason='lost'][not(preceding-sibling::*)][preceding-sibling::text()[not(translate(normalize-space(.), ' ', '') = '')]]">
           <xsl:text>]</xsl:text>
         </xsl:if>
