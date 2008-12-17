@@ -38,7 +38,7 @@
           <xsl:when test="$leiden-style='ddbdp'">
             <xsl:text>vac. </xsl:text>
           </xsl:when>
-          <xsl:when test="$leiden-style='insaph'">
+          <xsl:when test="$leiden-style='london'">
             <xsl:choose>
               <xsl:when test="@extent = 'unknown'">
                 <!-- Found in [htm|txt]-teispace.xsl -->

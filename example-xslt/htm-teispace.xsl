@@ -7,7 +7,7 @@
     <xsl:param name="extent"/>
     
     <xsl:choose>
-      <xsl:when test="$leiden-style = 'insaph'">
+      <xsl:when test="$leiden-style = 'london'">
         <i>
           <!-- Found in teispace.xsl -->
           <xsl:call-template name="space-content-1">

@@ -140,7 +140,7 @@
                   </xsl:otherwise>
                 </xsl:choose>
               </xsl:when>
-              <xsl:when test="$leiden-style = 'insaph'">
+              <xsl:when test="$leiden-style = 'london'">
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:text> ? </xsl:text>
@@ -180,7 +180,7 @@
                 <xsl:value-of select="@extent"/>
                 <xsl:value-of select="$extentmax"/>
               </xsl:when>
-              <xsl:when test="$leiden-style = 'insaph'">
+              <xsl:when test="$leiden-style = 'london'">
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:text> </xsl:text>
@@ -269,7 +269,7 @@
               </xsl:otherwise>
             </xsl:choose>
           </xsl:when>
-          <xsl:when test="$leiden-style = 'insaph'">
+          <xsl:when test="$leiden-style = 'london'">
             <xsl:text>---</xsl:text>
           </xsl:when>
           <xsl:when test="$leiden-style = 'panciera' and dim = 'bottom'">

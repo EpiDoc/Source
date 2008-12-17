@@ -5,7 +5,7 @@
   <xsl:template name="space-content">
     <xsl:param name="vacat"/>
     <xsl:choose>
-      <xsl:when test="$leiden-style = 'insaph'">
+      <xsl:when test="$leiden-style = 'london'">
         <!-- Found in teispace.xsl -->
         <xsl:call-template name="space-content-1">
           <xsl:with-param name="vacat" select="$vacat"/>
