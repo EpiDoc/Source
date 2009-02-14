@@ -15,7 +15,7 @@
 				result = ep.convert(strip($('source').value));
 				roundElement('resultXML', 'all');
 				var resultHTML = escapeHTML("<ab><lb/>"+result+"</ab>");
-				resultHTML = resultHTML.replace(/(&lt;lb[^\/]*\/&gt;)/g, "$1<br>");
+				resultHTML = resultHTML.replace(/(&lt;lb[^\/]*\/&gt;)/g, "<br>$1");
 				$('resultXML').innerHTML = "<div style=\"padding:10px;\">"+resultHTML+"</div>";
 				Rounded("div#resultXML","#D1D1FF","#FFFFD1");
 				Effect.BlindDown('resultXML');

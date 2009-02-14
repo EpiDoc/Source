@@ -36,7 +36,7 @@ Epigraph2Markup.prototype.lineBreaks = function(ignore) {
 
 Epigraph2Markup.prototype.count = function(txt, find) {
 	if (txt == find) {
-		result = txt.length;
+		result = txt.replace(/\s/g, '').length;
 	} else {
 		result = 0;
 		compare = txt;
@@ -77,7 +77,7 @@ Epigraph2Markup.prototype.convert = function(text) {
 		}
 		while (ids = result.match(/id="%mkID(\d)"/)) {
 			var id = new String(Math.random());
-			id = 'id' + id.substr(2);
+			id = 'id' + id.substr(2,5);
 			var idPattern = new RegExp('(id=")%mkID'+ids[1]+'(")');
 			result = result.replace(idPattern, "$1"+id+"$2");
 			if (replace.match(/target="%mkID\d"/)) {

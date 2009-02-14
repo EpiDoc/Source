@@ -10,6 +10,7 @@
 # occurences of the symbol in the second capturing group inside the first capturing group.  In 
 # regular expressions, capturing groups are delimited by parentheses.
 
+\s*\[(?:[-\s\]]+)\]\s*(\n)              =   <gap reason="lost" extent="1" unit="line" />$1
 <<(\w+)>>                               =   <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
 <((?:(-)|\s)+)>                         =   <gap reason="omitted" extent="%g1%len2" unit="character"/>
 ([^<])<(\w+)>([^>])                     =   $1<supplied reason="omitted">$2</supplied>$3
@@ -17,8 +18,8 @@
 # e.g. [abc . . .]
 #
 \[(\w+)\s*(([.\s])+)\]                  =   <supplied reason="lost">$1</supplied><gap extent="%g2%len3"/>
-((\w[\u323])+)                          =   <unclear reason="damage" cert="high">$1</unclear>
-((\.)+)                                 =   <gap extent="%g1%len2"/>
+((\ẉ)+)                                =   <unclear reason="damage" cert="high">$1</unclear>
+#((\.)+)                                 =   <gap extent="%g1%len2"/>
 (\+)+                                   =   <gap reason="illegible" extent="%g1%len1" unit="character"/>
 \+\s*(\d+)\s*\+                         =   <gap reason="illegible" extent="$1" unit="character"/>
 \+\s*(\d+)\s*(\w)\s*\+                  =   <gap reason="illegible" extent="$1" unit="$2"/>
@@ -45,13 +46,14 @@
 #
 # e.g. [(centuria) ---]
 #
-([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1$2$3<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>
+([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1[$2<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>]
+([^\[]*)\[(\s*)((?:-|\s)+)([^-\]]+)\]   =   $1<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>[$4]
 \[([^\]]+)\]                            =    <supplied reason="lost">$1</supplied>
 \[([^\n])+\n                            =    <supplied reason="lost">$1</supplied>
 \{(\w+)\}                               =    <corr sic="$1"></corr>
 #
 # post conversion cleanup
 #
-\u323                                   =   null
+̣                                       =   null
 
 
