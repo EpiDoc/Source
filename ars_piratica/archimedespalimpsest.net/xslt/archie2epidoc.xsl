@@ -66,5 +66,10 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  <xsl:template match="tei:choice[tei:abbr and tei:expan]">
+    <xsl:variable name="expan" select="substring(tei:expan,1,string-length(tei:abbr))"/>
+    <expan><xsl:value-of select="$expan"/><ex><xsl:value-of select="substring-after(tei:expan,$expan)"/></ex></expan>
+  </xsl:template>
 
 </xsl:stylesheet>
