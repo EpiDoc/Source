@@ -37,13 +37,26 @@
           <xsl:copy-of select="@n"/>
           <xsl:copy-of select="@facs"/>
           <xsl:if
-            test="child::seg[@type='wordend'] or child::w[@part='F'] or preceding-sibling::seg[@type='line'][1]/w[@part='I']">
+            test="child::tei:seg[@type='wordend'] or child::tei:w[@part='F'] or preceding-sibling::tei:seg[@type='line'][1]/tei:w[@part='I']">
             <xsl:attribute name="type">
               <xsl:text>worddiv</xsl:text>
             </xsl:attribute>
           </xsl:if>
         </xsl:element>
         <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:when test="@type='wordend'">
+        <xsl:element name="w">
+          <xsl:attribute name="part">
+            <xsl:text>F</xsl:text>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:when>
+      <xsl:when test="@type='word'">
+        <xsl:element name="w">
+          <xsl:apply-templates/>
+        </xsl:element>
       </xsl:when>
       <xsl:otherwise>
         <xsl:copy>
