@@ -26,6 +26,10 @@
      
      REVISION HISTORY:
 
+            17 February 2009 (GB)
+                  * added measure/@from and @to
+                  * added date/@dur
+            
             01 October 2008 (GB)
 	     * constrained div/@type
 
@@ -306,6 +310,7 @@
         notBefore CDATA #IMPLIED
         notAfter CDATA #IMPLIED
         exact (notBefore | notAfter | both | none) #IMPLIED 
+        dur CDATA #IMPLIED
 	  %epidoc.cert;" >
         
 <!-- define the attributes for each element, as necessary  -->         
@@ -371,6 +376,8 @@
         dim (height | width | depth | diameter | none) "none" 
         value CDATA #IMPLIED
         unit CDATA #IMPLIED
+        from CDATA #IMPLIED
+        to CDATA #IMPLIED
         %epidoc.precision; >
 <!ATTLIST %n.month;
 	  %epidoc.precision;
