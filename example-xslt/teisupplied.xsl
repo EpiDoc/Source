@@ -7,7 +7,7 @@
       <br/>
     </xsl:if>
     <xsl:choose>
-      <xsl:when test="@evidence = 'duplicate'">
+      <xsl:when test="@evidence = 'parallel'">
         <!-- Found in [htm|txt]-teisupplied.xsl -->
         <xsl:call-template name="supplied-parallel"/>
       </xsl:when>
@@ -60,7 +60,7 @@
 
   <xsl:template match="supplied[@reason='omitted']">
     <xsl:choose>
-      <xsl:when test="@evidence = 'duplicate'">
+      <xsl:when test="@evidence = 'parallel'">
         <!-- Found in [htm|txt]-teisupplied.xsl -->
         <xsl:call-template name="supplied-parallel"/>
       </xsl:when>
