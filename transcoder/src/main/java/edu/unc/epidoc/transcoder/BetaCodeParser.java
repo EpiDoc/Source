@@ -8,6 +8,7 @@
 
 package edu.unc.epidoc.transcoder;
 
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.TreeMap;
 
@@ -20,18 +21,28 @@ public class BetaCodeParser extends AbstractGreekParser {
     /** Creates new BetaCodeParser */
     public BetaCodeParser() {
         encoding = "US-ASCII";
-        bcp = new Properties();
-        ga = new Properties();
-        try {
-            Class c = this.getClass();
-            bcp.load(c.getResourceAsStream("BetaCodeParser.properties"));
-            ga.load(c.getResourceAsStream("GreekAccents.properties"));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace(System.out);
+        if (properties.isEmpty()) {
+            bcp = new Properties();
+            ga = new Properties();
+            synchronized(properties) {
+                try {
+                    Class c = this.getClass();
+                    bcp.load(c.getResourceAsStream("BetaCodeParser.properties"));
+                    ga.load(c.getResourceAsStream("GreekAccents.properties"));
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    e.printStackTrace(System.out);
+                }
+                properties.put("bcp", bcp);
+                properties.put("ga", ga);
+            }
+        } else {
+            bcp = properties.get("bcp");
+            ga = properties.get("ga");
         }
     }
-        
+
+    private static final HashMap<String,Properties> properties = new HashMap<String,Properties>();
     private Properties bcp;
     private Properties ga;
     private StringBuffer strb = new StringBuffer();
@@ -117,7 +128,7 @@ public class BetaCodeParser extends AbstractGreekParser {
         return strb.toString();
     }
     
-    private boolean isTerminalSigma(char[] chArray, int index) {
+    protected boolean isTerminalSigma(char[] chArray, int index) {
         if (index >= chArray.length) {
             return true;
         }
@@ -142,11 +153,14 @@ public class BetaCodeParser extends AbstractGreekParser {
             if (chArray[index + i] == '\'') {
                 return false;
             }
+            if (i + index == chArray.length - 1) {
+                return true;
+            }
         }
         return false;
     }
     
-    private String lookup(char ch) {
+    protected String lookup(char ch) {
         char chr = ch;
         if (Character.isLowerCase(chr))
             chr = Character.toUpperCase(chr);
@@ -154,16 +168,16 @@ public class BetaCodeParser extends AbstractGreekParser {
         return bcp.getProperty(key, String.valueOf(ch));
     }
     
-    private String lookup(String key) {
+    protected String lookup(String key) {
         return bcp.getProperty(key.toUpperCase(), key);
     }
     
-    private String lookupAccent(char ch) {
+    protected String lookupAccent(char ch) {
         String key = String.valueOf(ch);
         return ga.getProperty(lookup(key));
     }
     
-    private boolean isBetaCodeDiacritical(char ch) {
+    protected static boolean isBetaCodeDiacritical(char ch) {
         switch (ch) {
             case ')':
             case '(':
@@ -178,7 +192,7 @@ public class BetaCodeParser extends AbstractGreekParser {
         }
     }
     
-    private boolean isBetaCodePrefix(char ch) {
+    protected static boolean isBetaCodePrefix(char ch) {
         switch (ch) {
             case '*':
             case '#':
@@ -189,7 +203,7 @@ public class BetaCodeParser extends AbstractGreekParser {
         }
     }
     
-    private boolean isPunctuation(char ch) {
+    protected static boolean isPunctuation(char ch) {
         switch (ch) {
             case '.':
             case ',':

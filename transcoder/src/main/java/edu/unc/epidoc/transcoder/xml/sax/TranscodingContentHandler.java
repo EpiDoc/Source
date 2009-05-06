@@ -73,7 +73,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         this.converters.push(tc.getConverter().getClass().getName());
         this.flowTerminators = new ArrayList<String[]>();
         if (flowTerminators == null) {
-            this.flowTerminators.add(new String[]{"", "div(\n)?", "container"});
+            this.flowTerminators.add(new String[]{"", "div([0-7])?", "container"});
             this.flowTerminators.add(new String[]{"", "p", "container"});
             this.flowTerminators.add(new String[]{"", "lb", "milestone"});
             this.flowTerminators.add(new String[]{"", "l", "container"});
@@ -175,7 +175,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     throws SAXException {
         for (Iterator<String[]> i = this.flowTerminators.iterator(); i.hasNext();) {
             String[] ft = i.next();
-            if (ft[0].equals(uri) && ft[1].equals(name) && !this.flushingBuffer && !"milestone".equals(ft[2])) {
+            if (ft[0].equals(uri) && name.matches(ft[1]) && !this.flushingBuffer && !"milestone".equals(ft[2])) {
                 this.eventBufferOn = false;
                 this.flushingBuffer = true;
                 flushEventBuffer();
