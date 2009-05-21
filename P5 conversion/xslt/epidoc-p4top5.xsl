@@ -15,7 +15,7 @@
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="*">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
@@ -28,7 +28,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
@@ -69,17 +69,17 @@
   </xsl:template>
 
   <xsl:template match="language">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = 'id')]"/>
       <xsl:attribute name="ident">
         <xsl:value-of select="@id"/>
       </xsl:attribute>
       <xsl:apply-templates/>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="persName|name|placeName|geogName|rs">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
       <xsl:if test="@reg">
         <xsl:attribute name="ref">
@@ -88,7 +88,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="xref">
@@ -99,9 +99,9 @@
   </xsl:template>
 
   <xsl:template match="revisionDesc">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:for-each select="change">
-        <xsl:copy>
+        <xsl:element name="{local-name()}">
           <xsl:attribute name="when">
             <xsl:value-of select="date"/>
           </xsl:attribute>
@@ -109,13 +109,13 @@
             <xsl:value-of select="respStmt/name"/>
           </xsl:attribute>
           <xsl:value-of select="item"/>
-        </xsl:copy>
+        </xsl:element>
       </xsl:for-each>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="gap">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:copy-of select="@reason"/>
       <xsl:choose>
         <xsl:when test="@extent and @extentmax">
@@ -153,16 +153,16 @@
           <xsl:value-of select="@desc"/>
         </xsl:element>
       </xsl:if>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="keywords">
-    <xsl:copy>
+    <xsl:element name="{local-name()}">
       <xsl:attribute name="scheme">
         <xsl:text>DDbDP</xsl:text>
       </xsl:attribute>
       <xsl:apply-templates/>
-    </xsl:copy>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="handList">
