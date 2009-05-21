@@ -5,10 +5,10 @@
 <!-- ||||        Last update 2004-04-02       |||||| -->
 <!-- ||||||||||||||||||||||||||||||||||||||||| -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
   xmlns="http://www.tei-c.org/ns/1.0">
 
- <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
   <!-- ||||||||||  copy all existing elements |||||||||| -->
@@ -52,7 +52,14 @@
         <xsl:value-of select="@id"/>
       </xsl:attribute>
       <xsl:attribute name="xml:lang">
-        <xsl:value-of select="@lang"/>
+        <xsl:choose>
+          <xsl:when test="@lang">
+            <xsl:value-of select="@lang"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>en</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:attribute>
       <!--      <xsl:attribute name="xmlns">
         <xsl:text>http://www.tei-c.org/ns/1.0</xsl:text>
@@ -74,19 +81,13 @@
   <xsl:template match="persName|name|placeName|geogName|rs">
     <xsl:copy>
       <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
-      <!--<xsl:choose>
-        <xsl:when test="@reg">
-          <xsl:element name="reg">
-            <xsl:value-of select="@reg"/>
-          </xsl:element>
-          <xsl:element name="">
-            <xsl:apply-templates/>
-          </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
-        </xsl:otherwise>
-      </xsl:choose>-->
-          <xsl:apply-templates/>
+      <xsl:if test="@reg">
+        <xsl:attribute name="ref">
+          <xsl:text>local#</xsl:text>
+          <xsl:value-of select="@reg"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
 
@@ -98,17 +99,19 @@
   </xsl:template>
 
   <xsl:template match="revisionDesc">
-    <xsl:for-each select="change">
-      <xsl:copy>
-        <xsl:attribute name="when">
-          <xsl:value-of select="date"/>
-        </xsl:attribute>
-        <xsl:attribute name="who">
-          <xsl:value-of select="respStmt/name"/>
-        </xsl:attribute>
-        <xsl:value-of select="item"/>
-      </xsl:copy>
-    </xsl:for-each>
+    <xsl:copy>
+      <xsl:for-each select="change">
+        <xsl:copy>
+          <xsl:attribute name="when">
+            <xsl:value-of select="date"/>
+          </xsl:attribute>
+          <xsl:attribute name="who">
+            <xsl:value-of select="respStmt/name"/>
+          </xsl:attribute>
+          <xsl:value-of select="item"/>
+        </xsl:copy>
+      </xsl:for-each>
+    </xsl:copy>
   </xsl:template>
 
   <xsl:template match="gap">
@@ -156,10 +159,29 @@
   <xsl:template match="keywords">
     <xsl:copy>
       <xsl:attribute name="scheme">
-        <xsl:text>EAGLE</xsl:text>
+        <xsl:text>DDbDP</xsl:text>
       </xsl:attribute>
       <xsl:apply-templates/>
     </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="handList">
+    <xsl:element name="handNotes">
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="hand">
+    <xsl:element name="handNote">
+      <xsl:copy-of select="@*[not(local-name()='id')]"/>
+      <xsl:if test="@id">
+        <xsl:attribute name="xml:id">
+          <xsl:value-of select="@id"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
   </xsl:template>
 
 </xsl:stylesheet>
