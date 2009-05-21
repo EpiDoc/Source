@@ -77,8 +77,21 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-
-  <xsl:template match="persName|name|placeName|geogName|rs">
+  
+  <xsl:template match="persName|name|placeName|geogName">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <xsl:if test="@reg">
+        <xsl:attribute name="nymRef">
+          <xsl:text>local#</xsl:text>
+          <xsl:value-of select="@reg"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="rs">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
       <xsl:if test="@reg">
