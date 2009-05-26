@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 
 <!-- ||||||||||||||||||||||||||||||||||||||||| -->
-<!-- ||||  Gabriel BODARD 2008-11-20   |||||| -->
-<!-- ||||        Last update 2004-04-02       |||||| -->
+<!-- ||||  Gabriel BODARD 2008-11-20    |||||| -->
+<!-- |||| w/contribution from TE,HC,EM |||||| -->
+<!-- ||||           Last update 2004-05-26        |||||| -->
 <!-- ||||||||||||||||||||||||||||||||||||||||| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -16,7 +17,8 @@
 
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
+      <!--[not(local-name() = 'id')][not(local-name() = 'lang')][not(local-name() = 'default')][not(local-name() = 'org')][not(local-name() = 'part')][not(local-name() = 'sample')]-->
+      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
@@ -162,7 +164,7 @@
   
   <xsl:template match="persName|name|placeName|geogName">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <xsl:copy-of select="@*[not(local-name() = ('reg','full'))]"/>
       <xsl:if test="@reg">
         <xsl:attribute name="nymRef">
           <xsl:text>local#</xsl:text>
@@ -175,7 +177,7 @@
   
   <xsl:template match="rs">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <xsl:copy-of select="@*[not(local-name() = ('reg','full'))]"/>
       <xsl:if test="@reg">
         <xsl:attribute name="ref">
           <xsl:text>local#</xsl:text>
@@ -201,10 +203,16 @@
       </xsl:for-each>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match="unclear">
+    <xsl:element name="{local-name()}">
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="xref">
     <xsl:element name="ref">
-      <xsl:copy-of select="@*"/>
+      <xsl:copy-of select="@*[not(local-name()=('targOrder','evaluate','to','from'))]"/>
       <xsl:if test="@type">
         <xsl:attribute name="type">
           <xsl:value-of select="translate(@type,' ','-')"/>
