@@ -8,7 +8,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
   xmlns="http://www.tei-c.org/ns/1.0">
 
-  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no" />
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
   <!-- ||||||||||  copy all existing elements |||||||||| -->
@@ -68,65 +68,6 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="language">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'id')]"/>
-      <xsl:attribute name="ident">
-        <xsl:value-of select="@id"/>
-      </xsl:attribute>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-  
-  <xsl:template match="persName|name|placeName|geogName">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
-      <xsl:if test="@reg">
-        <xsl:attribute name="nymRef">
-          <xsl:text>local#</xsl:text>
-          <xsl:value-of select="@reg"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-  
-  <xsl:template match="rs">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
-      <xsl:if test="@reg">
-        <xsl:attribute name="ref">
-          <xsl:text>local#</xsl:text>
-          <xsl:value-of select="@reg"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-
-  <xsl:template match="xref">
-    <xsl:element name="ref">
-      <xsl:copy-of select="@*"/>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-
-  <xsl:template match="revisionDesc">
-    <xsl:element name="{local-name()}">
-      <xsl:for-each select="change">
-        <xsl:element name="{local-name()}">
-          <xsl:attribute name="when">
-            <xsl:value-of select="date"/>
-          </xsl:attribute>
-          <xsl:attribute name="who">
-            <xsl:value-of select="respStmt/name"/>
-          </xsl:attribute>
-          <xsl:value-of select="item"/>
-        </xsl:element>
-      </xsl:for-each>
-    </xsl:element>
-  </xsl:template>
-
   <xsl:template match="gap">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@reason"/>
@@ -169,15 +110,6 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="keywords">
-    <xsl:element name="{local-name()}">
-      <xsl:attribute name="scheme">
-        <xsl:text>DDbDP</xsl:text>
-      </xsl:attribute>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-
   <xsl:template match="handList">
     <xsl:element name="handNotes">
       <xsl:copy-of select="@*"/>
@@ -191,6 +123,79 @@
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="keywords">
+    <xsl:element name="{local-name()}">
+      <xsl:attribute name="scheme">
+        <xsl:text>DDbDP</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="language">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = 'id')]"/>
+      <xsl:attribute name="ident">
+        <xsl:value-of select="@id"/>
+      </xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="persName|name|placeName|geogName">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <xsl:if test="@reg">
+        <xsl:attribute name="nymRef">
+          <xsl:text>local#</xsl:text>
+          <xsl:value-of select="@reg"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="rs">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = 'reg')]"/>
+      <xsl:if test="@reg">
+        <xsl:attribute name="ref">
+          <xsl:text>local#</xsl:text>
+          <xsl:value-of select="@reg"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="revisionDesc">
+    <xsl:element name="{local-name()}">
+      <xsl:for-each select="change">
+        <xsl:element name="{local-name()}">
+          <xsl:attribute name="when">
+            <xsl:value-of select="date"/>
+          </xsl:attribute>
+          <xsl:attribute name="who">
+            <xsl:value-of select="respStmt/name"/>
+          </xsl:attribute>
+          <xsl:value-of select="item"/>
+        </xsl:element>
+      </xsl:for-each>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="xref">
+    <xsl:element name="ref">
+      <xsl:copy-of select="@*"/>
+      <xsl:if test="@type">
+        <xsl:attribute name="type">
+          <xsl:value-of select="translate(@type,' ','-')"/>
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
