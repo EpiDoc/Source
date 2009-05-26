@@ -46,6 +46,9 @@
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="TEI.2">
+    <xsl:processing-instruction name="oxygen ">
+      RNGSchema="c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
+    </xsl:processing-instruction>
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
       <xsl:attribute name="xml:id">
@@ -145,6 +148,15 @@
         <xsl:value-of select="@id"/>
       </xsl:attribute>
       <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="num[contains(@value, '/')]">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*"/>
+       <xsl:attribute name="valueType">
+         <xsl:text>fraction</xsl:text>
+       </xsl:attribute>
     </xsl:element>
   </xsl:template>
   
