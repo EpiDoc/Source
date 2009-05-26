@@ -17,8 +17,7 @@
 
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
-      <!--[not(local-name() = 'id')][not(local-name() = 'lang')][not(local-name() = 'default')][not(local-name() = 'org')][not(local-name() = 'part')][not(local-name() = 'sample')]-->
-      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert'))]"/>
+      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
@@ -52,7 +51,7 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
+      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
     </xsl:processing-instruction>
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
