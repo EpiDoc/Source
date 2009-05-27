@@ -17,7 +17,7 @@
 
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status'))]"/>
+      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
