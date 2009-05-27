@@ -26,7 +26,6 @@
                 <moduleRef key="tei"/>
                 <moduleRef key="header"/>
                 <moduleRef key="textstructure"/>
-                
                 <moduleRef key="transcr"/>
                 <moduleRef key="verse"/>
                 <moduleRef key="analysis"/>
@@ -37,6 +36,51 @@
                 <moduleRef key="namesdates"/>
                 <moduleRef key="textcrit"/>
                 <moduleRef key="figures"/>
+                <elementSpec module="core" ident="add" mode="change">
+                    <attList>
+                        <attDef ident="place" mode="replace">
+                            <valList>
+                                <valItem ident="inline"/>
+                                <valItem ident="supralinear"/>
+                                <valItem ident="infralinear"/>
+                                <valItem ident="left"/>
+                                <valItem ident="right"/>
+                                <valItem ident="top"/>
+                                <valItem ident="bottom"/>
+                                <valItem ident="opposite"/>
+                                <valItem ident="verso"/>
+                                <valItem ident="overstrike"/>
+                                <valItem ident="mixed"/>
+                                <valItem ident="margin"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec module="core" ident="gap" mode="change">
+                    <attList>
+                        <attDef ident="reason" mode="replace" usage="req">
+                            <valList>
+                                <valItem ident="lost"><desc>Text completely lost from the surface and unrecoverable</desc></valItem>
+                                <valItem ident="illegible"><desc>Traces of text remains on the surface but cannot be interpreted</desc></valItem>
+                                <valItem ident="omitted"><desc>Text erroneously omitted from the surface by the scribe/cutter</desc></valItem>
+                                <valItem ident="ellipsis"><desc>Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)</desc></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec module="transcr" ident="supplied" mode="change">
+                    <attList>
+                        <attDef ident="reason" mode="replace" usage="req">
+                            <valList>
+                                <valItem ident="lost"/>
+                                <valItem ident="omitted"/>
+                                <valItem ident="subaudible"/>
+                                <valItem ident="explanation"/>
+                                <valItem ident="undefined"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec module="textstructure" ident="argument" mode="delete"/>
                 <elementSpec module="textstructure" ident="byline" mode="delete"/>
                 <elementSpec module="textstructure" ident="closer" mode="delete"/>
