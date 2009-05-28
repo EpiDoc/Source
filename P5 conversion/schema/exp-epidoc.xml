@@ -36,10 +36,27 @@
                 <moduleRef key="namesdates"/>
                 <moduleRef key="textcrit"/>
                 <moduleRef key="figures"/>
+                <elementSpec ident="div" mode="change" module="textstructure">
+                    <attList>
+                        <attDef ident="type" mode="replace" usage="req">
+                            <valList type="closed">
+                                <valItem ident="apparatus"><desc>to contain apparatus criticus or textual notes</desc></valItem>
+                                <valItem ident="bibliography"><desc>to contain bibliographical information, previous publications, etc.</desc></valItem>
+                                <valItem ident="commentary"><desc>to contain all editorial commentary, historical/prosopographical discussion, etc.</desc></valItem>
+                                <valItem ident="description"><desc>to contain description of the object, text campus, and lettering; physical commentary (to be deprecated for msDesc)</desc></valItem>
+                                <valItem ident="edition"><desc>to contain the text of the edition itself; may include multiple text-parts</desc></valItem>
+                                <valItem ident="figure"><desc>to contain links to figures and other media representing the text-object (to be deprecated for facsimile)</desc></valItem>
+                                <valItem ident="history"><desc>to contain history of the discovery and recording of the text-object, including findspot/locations</desc></valItem>
+                                <valItem ident="textpart"><desc>used to divide a div[edition] into multiple parts (fragments, columns, faces, etc.)</desc></valItem>
+                                <valItem ident="translation"><desc>to contain a translation of the text into one or more modern languages</desc></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec module="core" ident="add" mode="change">
                     <attList>
                         <attDef ident="place" mode="replace">
-                            <valList>
+                            <valList type="closed">
                                 <valItem ident="inline"/>
                                 <valItem ident="supralinear"/>
                                 <valItem ident="infralinear"/>
@@ -59,7 +76,7 @@
                 <elementSpec module="core" ident="gap" mode="change">
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
-                            <valList>
+                            <valList type="closed">
                                 <valItem ident="lost"><desc>Text completely lost from the surface and unrecoverable</desc></valItem>
                                 <valItem ident="illegible"><desc>Traces of text remains on the surface but cannot be interpreted</desc></valItem>
                                 <valItem ident="omitted"><desc>Text erroneously omitted from the surface by the scribe/cutter</desc></valItem>
@@ -68,15 +85,55 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                <elementSpec ident="hi" module="core" mode="change">
+                    <attList>
+                        <attDef ident="rend" mode="replace" usage="req">
+                            <valList type="closed">
+                                <valItem ident="apex"><desc></desc></valItem>
+                                <valItem ident="intraline"><desc></desc></valItem>
+                                <valItem ident="italic"><desc></desc></valItem>
+                                <valItem ident="ligature"><desc></desc></valItem>
+                                <valItem ident="longa"><desc></desc></valItem>
+                                <valItem ident="normal"><desc></desc></valItem>
+                                <valItem ident="reversed"><desc></desc></valItem>
+                                <valItem ident="supraline"><desc></desc></valItem>
+                                <valItem ident="tall"><desc></desc></valItem>
+                                <valItem ident="strong"><desc></desc></valItem>
+                                <valItem ident="superscript"><desc></desc></valItem>
+                                <valItem ident="underline"><desc></desc></valItem>
+                                <valItem ident="sling-above"><desc></desc></valItem>
+                                <valItem ident="sling-below"><desc></desc></valItem>
+                                <valItem ident="supraline-underline"><desc></desc></valItem>
+                                <valItem ident="subscript"><desc></desc></valItem>
+                                <valItem ident="diaeresis"><desc></desc></valItem>
+                                <valItem ident="oxia"><desc></desc></valItem>
+                                <valItem ident="dasia"><desc></desc></valItem>
+                                <valItem ident="varia"><desc></desc></valItem>
+                                <valItem ident="psili"><desc></desc></valItem>
+                                <valItem ident="perispomeni"><desc></desc></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="lb" mode="change" module="core">
+                    <desc>Line-beginning: marks the start of each line of the text, including the first</desc>
+                    <attList>
+                        <attDef ident="type" mode="replace" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="worddiv"><desc>this line-beginning appears mid-word</desc></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec module="transcr" ident="supplied" mode="change">
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
-                            <valList>
-                                <valItem ident="lost"/>
-                                <valItem ident="omitted"/>
-                                <valItem ident="subaudible"/>
-                                <valItem ident="explanation"/>
-                                <valItem ident="undefined"/>
+                            <valList type="closed">
+                                <valItem ident="lost"><desc>Restoration of text completely lost from the surface</desc></valItem>
+                                <valItem ident="omitted"><desc>Supplement of text erroneously omitted from the surface by the scribe/cutter</desc></valItem>
+                                <valItem ident="subaudible"><desc>Editorial supplement of words subaudible to the native reader</desc></valItem>
+                                <valItem ident="explanation"><desc>Editorial explanation of oblique text in original</desc></valItem>
+                                <valItem ident="undefined"><desc>Text restored (e.g. from earlier witness or alternate copy) without specification of current state of this text</desc></valItem>
                             </valList>
                         </attDef>
                     </attList>
