@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
-# Schema generated from ODD source 2009-05-27T18:23:54Z. 
+# Schema generated from ODD source 2009-05-29T12:13:11Z. 
 # TEI Edition: 1.3.0. Last updated on February 1st 2009.
 #
 
@@ -962,7 +962,88 @@ tei_hi =
   ## (highlighted) marks a word or phrase as graphically distinct from the
   ##         surrounding text, for reasons concerning which no claim is
   ##         made.
-  element hi { tei_macro.paraContent, att.global.attributes, empty }
+  element hi {
+    tei_macro.paraContent,
+    
+    ##
+    attribute rend {
+      
+      ##
+      "apex"
+      | 
+        ##
+        "intraline"
+      | 
+        ##
+        "italic"
+      | 
+        ##
+        "ligature"
+      | 
+        ##
+        "longa"
+      | 
+        ##
+        "normal"
+      | 
+        ##
+        "reversed"
+      | 
+        ##
+        "supraline"
+      | 
+        ##
+        "tall"
+      | 
+        ##
+        "strong"
+      | 
+        ##
+        "superscript"
+      | 
+        ##
+        "underline"
+      | 
+        ##
+        "sling-above"
+      | 
+        ##
+        "sling-below"
+      | 
+        ##
+        "supraline-underline"
+      | 
+        ##
+        "subscript"
+      | 
+        ##
+        "diaeresis"
+      | 
+        ##
+        "oxia"
+      | 
+        ##
+        "dasia"
+      | 
+        ##
+        "varia"
+      | 
+        ##
+        "psili"
+      | 
+        ##
+        "perispomeni"
+    },
+    att.global.attribute.xmlid,
+    att.global.attribute.n,
+    att.global.attribute.xmllang,
+    att.global.attribute.rendition,
+    att.global.attribute.xmlbase,
+    att.global.linking.attributes,
+    att.global.analytic.attributes,
+    att.global.facs.attributes,
+    empty
+  }
 tei_distinct =
   
   ## identifies any word or phrase which is regarded as linguistically distinct, for example as
@@ -1196,7 +1277,20 @@ tei_gap =
     tei_model.glossLike*,
     
     ##
-    attribute reason { text },
+    attribute reason {
+      
+      ## Text completely lost from the surface and unrecoverable
+      "lost"
+      | 
+        ## Traces of text remains on the surface but cannot be interpreted
+        "illegible"
+      | 
+        ## Text erroneously omitted from the surface by the scribe/cutter
+        "omitted"
+      | 
+        ## Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)
+        "ellipsis"
+    },
     
     ## in the case of text omitted from the transcription because of
     ##         deliberate deletion by an identifiable hand, signifies the hand which
@@ -1218,7 +1312,44 @@ tei_add =
     tei_macro.paraContent,
     
     ##
-    attribute place { text }?,
+    attribute place {
+      
+      ##
+      "inline"
+      | 
+        ##
+        "supralinear"
+      | 
+        ##
+        "infralinear"
+      | 
+        ##
+        "left"
+      | 
+        ##
+        "right"
+      | 
+        ##
+        "top"
+      | 
+        ##
+        "bottom"
+      | 
+        ##
+        "opposite"
+      | 
+        ##
+        "verso"
+      | 
+        ##
+        "overstrike"
+      | 
+        ##
+        "mixed"
+      | 
+        ##
+        "margin"
+    }?,
     att.global.attributes,
     att.transcriptional.attributes,
     att.typed.attributes,
@@ -1743,11 +1874,18 @@ tei_pb =
   }
 tei_lb =
   
-  ## (line break) marks the start of a new (typographic) line in some edition or version of a text.
+  ## (line break) Line-beginning: marks the start of each line of the text, including the first
   element lb {
     empty,
+    
+    ##
+    attribute type {
+      
+      ## this line-beginning appears mid-word
+      "worddiv"
+    }?,
     att.global.attributes,
-    att.typed.attributes,
+    att.typed.attribute.subtype,
     att.sourced.attributes,
     empty
   }
@@ -3054,9 +3192,40 @@ tei_div =
           ((tei_model.divLike | tei_model.divGenLike),
            tei_model.global*)*)),
       (tei_model.divBottom, tei_model.global*)*)?),
+    
+    ##
+    attribute type {
+      
+      ## to contain apparatus criticus or textual notes
+      "apparatus"
+      | 
+        ## to contain bibliographical information, previous publications, etc.
+        "bibliography"
+      | 
+        ## to contain all editorial commentary, historical/prosopographical discussion, etc.
+        "commentary"
+      | 
+        ## to contain description of the object, text campus, and lettering; physical commentary (to be deprecated for msDesc)
+        "description"
+      | 
+        ## to contain the text of the edition itself; may include multiple text-parts
+        "edition"
+      | 
+        ## to contain links to figures and other media representing the text-object (to be deprecated for facsimile)
+        "figure"
+      | 
+        ## to contain history of the discovery and recording of the text-object, including findspot/locations
+        "history"
+      | 
+        ## used to divide a div[edition] into multiple parts (fragments, columns, faces, etc.)
+        "textpart"
+      | 
+        ## to contain a translation of the text into one or more modern languages
+        "translation"
+    },
     att.global.attributes,
     att.divLike.attributes,
-    att.typed.attributes,
+    att.typed.attribute.subtype,
     att.declaring.attributes,
     empty
   }
@@ -3378,7 +3547,23 @@ tei_supplied =
     tei_macro.paraContent,
     
     ##
-    attribute reason { text },
+    attribute reason {
+      
+      ## Restoration of text completely lost from the surface
+      "lost"
+      | 
+        ## Supplement of text erroneously omitted from the surface by the scribe/cutter
+        "omitted"
+      | 
+        ## Editorial supplement of words subaudible to the native reader
+        "subaudible"
+      | 
+        ## Editorial explanation of oblique text in original
+        "explanation"
+      | 
+        ## Text restored (e.g. from earlier witness or alternate copy) without specification of current state of this text
+        "undefined"
+    },
     att.global.attributes,
     att.editLike.attributes,
     empty
