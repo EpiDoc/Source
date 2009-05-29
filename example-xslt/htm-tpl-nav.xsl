@@ -215,7 +215,7 @@
 
     <xsl:variable name="meta-dir">
       <xsl:text>HGV</xsl:text>
-      <xsl:value-of select="ceiling(number(translate($hgv-no, $grc-lower-strip, '')) div 1000)"/>
+      <xsl:value-of select="ceiling(number(translate(substring-after($hgv-no, '.'), $grc-lower-strip, '')) div 1000)"/>
     </xsl:variable>
 
     <xsl:text> | </xsl:text>
@@ -224,10 +224,10 @@
         <xsl:if test="string($vol)">
           <xsl:text>../</xsl:text>
         </xsl:if>
-        <xsl:text>../../../xml/meta/</xsl:text>
+        <xsl:text>../../../hgvmeta/xml/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="$hgv-no"/>
+        <xsl:value-of select="substring-after($hgv-no,'.')"/>
         <xsl:text>.xml</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata XML (</xsl:text>
@@ -241,10 +241,10 @@
         <xsl:if test="string($vol)">
           <xsl:text>../</xsl:text>
         </xsl:if>
-        <xsl:text>../../../meta_html/</xsl:text>
+        <xsl:text>../../../hgvmeta/html/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="$hgv-no"/>
+        <xsl:value-of select="substring-after($hgv-no,'.')"/>
         <xsl:text>.html</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata HTML (</xsl:text>
@@ -263,7 +263,7 @@
           <xsl:if test="string($vol)">
             <xsl:text>../</xsl:text>
           </xsl:if>
-          <xsl:text>../trans/</xsl:text>
+          <xsl:text>../../../trans/html/</xsl:text>
           <xsl:value-of select="$hgv-no"/>
           <xsl:text>.html</xsl:text>
         </xsl:attribute>
@@ -277,7 +277,7 @@
           <xsl:if test="string($vol)">
             <xsl:text>../</xsl:text>
           </xsl:if>
-          <xsl:text>../../../xml/trans/</xsl:text>
+          <xsl:text>../../../trans/xml/</xsl:text>
           <xsl:value-of select="$hgv-no"/>
           <xsl:text>.xml</xsl:text>
         </xsl:attribute>
