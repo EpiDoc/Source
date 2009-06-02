@@ -143,6 +143,20 @@
                         <rng:ref name="macro.xtext"/>
                     </content>
                 </elementSpec>
+              
+<!--       CHANGING ATTRIBUTE CLASSES         -->
+              <classSpec type="atts" ident="att.editLike" mode="change">
+                  <attList>
+                      <attDef ident="cert" mode="replace">
+                          <valList type="closed">
+                              <valItem ident="low"/>
+                              <valItem ident="high"/>
+                          </valList>
+                      </attDef>
+                  </attList>
+              </classSpec>  
+                
+<!--      DELETING SUPERFLUOUS ELEMENTS FROM EPIDOC SCHEMA          -->
                 <elementSpec module="textstructure" ident="argument" mode="delete"/>
                 <elementSpec module="textstructure" ident="byline" mode="delete"/>
                 <elementSpec module="textstructure" ident="closer" mode="delete"/>
