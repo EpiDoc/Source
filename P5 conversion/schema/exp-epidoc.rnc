@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
-# Schema generated from ODD source 2009-06-02T15:50:09Z. 
+# Schema generated from ODD source 2009-06-03T16:12:13Z. 
 # TEI Edition: 1.3.0. Last updated on February 1st 2009.
 #
 
@@ -707,6 +707,7 @@ tei_model.measureLike =
   | tei_height
   | tei_depth
   | tei_width
+  | tei_geo
 tei_model.egLike = notAllowed
 tei_model.graphicLike = tei_graphic | tei_binaryObject
 tei_model.offsetLike = tei_geogFeat
@@ -762,8 +763,10 @@ tei_model.persStateLike = tei_persName
 tei_model.personLike = tei_person | tei_personGrp
 tei_model.personPart = tei_model.persStateLike | tei_bibl
 tei_model.placeTraitLike = notAllowed
-tei_model.placeNamePart = tei_placeName | tei_geogName
-tei_model.placeNamePart_sequenceOptional = tei_placeName?, tei_geogName?
+tei_model.placeNamePart =
+  tei_placeName | tei_region | tei_settlement | tei_geogName
+tei_model.placeNamePart_sequenceOptional =
+  tei_placeName?, tei_region?, tei_settlement?, tei_geogName?
 tei_model.placeStateLike = tei_model.placeNamePart
 tei_model.placeEventLike = notAllowed
 tei_model.publicationStmtPart =
@@ -4787,6 +4790,30 @@ tei_placeName =
     att.dimensions.attributes,
     empty
   }
+tei_region =
+  
+  ## contains the name of an administrative unit such as a state, province, or county, larger
+  ##     than a settlement, but smaller than a country.
+  element region {
+    tei_macro.phraseSeq,
+    att.global.attributes,
+    att.naming.attributes,
+    att.typed.attributes,
+    att.datable.attributes,
+    empty
+  }
+tei_settlement =
+  
+  ## contains the name of a settlement such as a city, town, or village identified as a single
+  ##     geo-political or administrative unit.
+  element settlement {
+    tei_macro.phraseSeq,
+    att.global.attributes,
+    att.naming.attributes,
+    att.typed.attributes,
+    att.datable.attributes,
+    empty
+  }
 tei_geogName =
   
   ## (geographical name) a name associated with some geographical feature such as Windrush Valley or Mount Sinai.
@@ -4812,6 +4839,11 @@ tei_geogFeat =
     att.datable.attributes,
     empty
   }
+tei_geo =
+  
+  ## (geographical coordinates) contains any expression of a set of geographic coordinates, representing a point, line, or
+  ##         area on the surface of the earth in some notation.
+  element geo { text, att.global.attributes, empty }
 tei_listPerson =
   
   ## (list of persons) contains a list of descriptions, each of which provides information about an identifiable
