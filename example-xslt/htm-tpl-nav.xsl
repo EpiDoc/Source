@@ -8,9 +8,13 @@
     <xsl:choose>
       <!-- Navigation from Translation HTML -->
       <xsl:when test="//div[@type = 'translation'] and $topNav = 'ddbdp'">
+        <a href="/navigator/full/trismegistos{substring-after(/TEI.2/@id, 'HGV-')}">Papyrological Navigator</a>
+        
+        <xsl:text> | </xsl:text>
+        
         <a>
           <xsl:attribute name="href">
-            <xsl:text>../../../xml/trans/</xsl:text>
+            <xsl:text>../../../hgvtrans/xml/</xsl:text>
             <xsl:value-of select="substring-after(/TEI.2/@id, 'HGV-')"/>
             <xsl:text>.xml</xsl:text>
           </xsl:attribute>
@@ -26,7 +30,7 @@
         </xsl:variable>
         <a>
           <xsl:attribute name="href">
-            <xsl:text>../../../xml/meta/</xsl:text>
+            <xsl:text>../../../hgvmeta/xml/</xsl:text>
             <xsl:value-of select="$meta-dir"/>
             <xsl:text>/</xsl:text>
             <xsl:value-of select="$meta-no"/>
@@ -39,7 +43,7 @@
 
         <a>
           <xsl:attribute name="href">
-            <xsl:text>../../../meta_html/</xsl:text>
+            <xsl:text>../../../hgvmeta/html/</xsl:text>
             <xsl:value-of select="$meta-dir"/>
             <xsl:text>/</xsl:text>
             <xsl:value-of select="$meta-no"/>
@@ -121,6 +125,22 @@
 
         <p>
           <xsl:text>Link to </xsl:text>
+          <!-- PN -->
+          <a>
+            <xsl:attribute name="href">
+              <xsl:text>/navigator/full/ddbdp_</xsl:text>
+              <xsl:value-of select="substring-before($pers-id,';')"/>
+              <xsl:text>_</xsl:text>
+              <xsl:if test="string($vol)">
+                <xsl:value-of select="$vol"/>
+                <xsl:text>_</xsl:text>
+              </xsl:if>
+              <xsl:value-of select="substring-after($vol-doc,';')"/>
+            </xsl:attribute>
+            <xsl:text>Papyrological Navigator</xsl:text>
+          </a>
+          <xsl:text> | </xsl:text>
+          
           <!-- DDB XML -->
           <a>
             <xsl:attribute name="href">
@@ -181,9 +201,12 @@
           <xsl:value-of select="ceiling(number(translate($hgv-no, $grc-lower-strip, '')) div 1000)"/>
         </xsl:variable>
         <p>
+          <a href="/navigator/full/trismegistos_{$hgv-no}">Papyrological Navigator</a>
+          <xsl:text> | </xsl:text>
+          
           <a>
             <xsl:attribute name="href">
-              <xsl:text>../../xml/meta/</xsl:text>
+              <xsl:text>../../hgvmeta/xml/</xsl:text>
               <xsl:value-of select="$meta-dir"/>
               <xsl:text>/</xsl:text>
               <xsl:value-of select="$hgv-no"/>
@@ -205,10 +228,10 @@
     <xsl:variable name="hgv-no">
       <xsl:choose>
         <xsl:when test="contains($n-val, ' ')">
-          <xsl:value-of select="substring-before($n-val, ' ')"/>
+          <xsl:value-of select="substring-after(substring-before($n-val, ' '),'.')"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:value-of select="$n-val"/>
+          <xsl:value-of select="substring-after($n-val,'.')"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -227,7 +250,7 @@
         <xsl:text>../../../hgvmeta/xml/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="substring-after($hgv-no,'.')"/>
+        <xsl:value-of select="$hgv-no,'.'"/>
         <xsl:text>.xml</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata XML (</xsl:text>
@@ -244,7 +267,7 @@
         <xsl:text>../../../hgvmeta/html/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="substring-after($hgv-no,'.')"/>
+        <xsl:value-of select="$hgv-no,'.'"/>
         <xsl:text>.html</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata HTML (</xsl:text>
@@ -263,7 +286,7 @@
           <xsl:if test="string($vol)">
             <xsl:text>../</xsl:text>
           </xsl:if>
-          <xsl:text>../../../trans/html/</xsl:text>
+          <xsl:text>../../../hgvtrans/html/</xsl:text>
           <xsl:value-of select="$hgv-no"/>
           <xsl:text>.html</xsl:text>
         </xsl:attribute>
@@ -277,7 +300,7 @@
           <xsl:if test="string($vol)">
             <xsl:text>../</xsl:text>
           </xsl:if>
-          <xsl:text>../../../trans/xml/</xsl:text>
+          <xsl:text>../../../hgvtrans/xml/</xsl:text>
           <xsl:value-of select="$hgv-no"/>
           <xsl:text>.xml</xsl:text>
         </xsl:attribute>
