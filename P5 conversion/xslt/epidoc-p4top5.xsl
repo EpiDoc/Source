@@ -9,7 +9,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
   xmlns="http://www.tei-c.org/ns/1.0">
 
-  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no" />
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
   <!-- ||||||||||  copy all existing elements |||||||||| -->
@@ -17,7 +17,8 @@
 
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored'))]"/>
+      <xsl:copy-of
+        select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
@@ -51,7 +52,10 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
+      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"
+      type="xml" <!--
+      RNGSchema="http:///exp-epidoc.rng" type="xml"
+-->
     </xsl:processing-instruction>
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
@@ -75,6 +79,45 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="date">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert'))]"/>
+      <xsl:if test="@cert='low'">
+        <xsl:copy-of select="@cert"/>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="@exact='none'">
+          <xsl:attribute name="precision">
+            <xsl:text>low</xsl:text>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@precision='circa'">
+          <xsl:attribute name="precision">
+            <xsl:text>low</xsl:text>
+          </xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:if test="@exact=('notAfter','notBefore')">
+        <xsl:attribute name="xml:id">
+          <xsl:value-of select="generate-id(.)"/>
+        </xsl:attribute>
+      </xsl:if>
+    </xsl:element>
+    <xsl:if test="@exact=('notAfter','notBefore')">
+      <xsl:element name="precision">
+        <xsl:attribute name="target">
+          <xsl:value-of select="generate-id(.)"/>
+        </xsl:attribute>
+        <xsl:attribute name="locus">
+          <xsl:value-of select="@exact"/>
+        </xsl:attribute>
+        <xsl:attribute name="degree">
+          <xsl:text>low</xsl:text>
+        </xsl:attribute>
+      </xsl:element>
+    </xsl:if>
+  </xsl:template>
+
   <xsl:template match="gap">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@reason"/>
@@ -87,12 +130,12 @@
             <xsl:value-of select="@extentmax"/>
           </xsl:attribute>
         </xsl:when>
-        <xsl:when test="@extent != 'unknown'">
+        <xsl:when test="number(@extent)">
           <xsl:attribute name="quantity">
             <xsl:value-of select="@extent"/>
           </xsl:attribute>
         </xsl:when>
-        <xsl:when test="@extent='unknown'">
+        <xsl:when test="not(number(@extent))">
           <xsl:copy-of select="@extent"/>
         </xsl:when>
       </xsl:choose>
@@ -154,19 +197,52 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
-  <xsl:template match="num[contains(@value, '/')]">
+
+  <xsl:template match="measure">
+    <xsl:choose>
+      <xsl:when test="@dim=('height','width','depth')">
+        <xsl:element name="{@dim}">
+          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision'))]"/>
+          <xsl:if test="@precision='circa'">
+            <xsl:attribute name="precision">
+              <xsl:text>low</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element name="dim">
+          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision'))]"/>
+          <xsl:attribute name="dim">
+            <xsl:value-of select="@dim"/>
+          </xsl:attribute>
+          <xsl:if test="@precision='circa'">
+            <xsl:attribute name="precision">
+              <xsl:text>low</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!--  <xsl:template match="num[contains(@value, '/')]">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*"/>
        <xsl:attribute name="valueType">
          <xsl:text>fraction</xsl:text>
        </xsl:attribute>
     </xsl:element>
-  </xsl:template>
-  
+  </xsl:template>-->
+
   <xsl:template match="persName|name|placeName|geogName">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = ('reg','full'))]"/>
+      <xsl:copy-of select="@*[not(local-name() = ('reg','full','cert'))]"/>
+      <xsl:if test="@cert='low'">
+        <xsl:copy-of select="@cert"/>
+      </xsl:if>
       <xsl:if test="@reg">
         <xsl:attribute name="nymRef">
           <xsl:text>local#</xsl:text>
@@ -176,18 +252,30 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="rs">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = ('reg','full'))]"/>
-      <xsl:if test="@reg">
-        <xsl:attribute name="ref">
-          <xsl:text>local#</xsl:text>
-          <xsl:value-of select="@reg"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
+    <xsl:choose>
+      <xsl:when test="@type='dimensions'">
+        <xsl:element name="dimensions">
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element name="{local-name()}">
+          <xsl:copy-of select="@*[not(local-name() = ('reg','full','cert'))]"/>
+          <xsl:if test="@cert='low'">
+            <xsl:copy-of select="@cert"/>
+          </xsl:if>
+          <xsl:if test="@reg">
+            <xsl:attribute name="ref">
+              <xsl:text>local#</xsl:text>
+              <xsl:value-of select="@reg"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="revisionDesc">
@@ -205,13 +293,30 @@
       </xsl:for-each>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-
+  
+  <xsl:template match="xptr">
+    <xsl:element name="ptr">
+      <xsl:copy-of select="@*[not(local-name()=('targOrder','evaluate','to','from'))]"/>
+      <xsl:if test="@type">
+        <xsl:attribute name="type">
+          <xsl:value-of select="translate(@type,' ','-')"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@from">
+        <xsl:attribute name="target">
+          <xsl:value-of select="@from"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+  
   <xsl:template match="xref">
     <xsl:element name="ref">
       <xsl:copy-of select="@*[not(local-name()=('targOrder','evaluate','to','from'))]"/>
