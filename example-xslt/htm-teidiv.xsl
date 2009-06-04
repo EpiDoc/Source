@@ -4,16 +4,6 @@
 
   <xsl:template match="div">
     <!-- div[@type = 'edition']" and div[starts-with(@type, 'textpart')] can be found in htm-teidivedition.xsl -->
-    <xsl:choose>
-      <!-- Exclude divs to stop double output where hgv pulls -->
-      <xsl:when test="@type = 'commentary' and $meta-style = 'hgv'"/>
-      <xsl:when test="@type = 'bibliography' and $meta-style = 'hgv'"/>
-      <xsl:when test="@type = 'history' and $meta-style = 'hgv'"/>
-      <xsl:when test="@type = 'description' and $meta-style = 'hgv'"/>
-      <xsl:when test="@type = 'figure' and $meta-style = 'hgv'" />
-      
-      <!-- Any other div -->
-      <xsl:otherwise>
         <div>
           <xsl:if test="parent::body and @type">
             <xsl:attribute name="id">
@@ -58,8 +48,7 @@
             </xsl:choose>
           </xsl:if>
         </div>
-      </xsl:otherwise>
-    </xsl:choose>
+
   </xsl:template>
 
 </xsl:stylesheet>

@@ -19,6 +19,12 @@
           <xsl:with-param name="direction" select="'in'" />
         </xsl:call-template>
       </xsl:when>
+      <xsl:when test="@type = 'Perseus'">
+        <xsl:variable name="col" select="substring-before(@href, ';')"/>
+        <xsl:variable name="vol" select="substring-before(substring-after(@href,';'),';')"/>
+        <xsl:variable name="no" select="substring-after(substring-after(@href,';'),';')"/>
+        <a href="http://www.perseus.tufts.edu/cgi-bin/ptext?doc=Perseus:text:1999.05.{$col}:volume={$vol}:document={$no}"><xsl:apply-templates/></a>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates />
       </xsl:otherwise>

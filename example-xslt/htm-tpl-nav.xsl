@@ -85,7 +85,7 @@
       </xsl:when>
 
       <!-- Navigation from DDb Text HTML and NOT HGV metadata -->
-      <xsl:when test="$topNav = 'ddbdp' and not(starts-with(//TEI.2/@id, 'hgv'))">
+      <xsl:when test="$topNav = 'ddbdp' and //div[@type='edition']">
         <!-- File name -->
         <xsl:variable name="cur-id" select="//TEI.2/@id"/>
         <xsl:variable name="pers-id" select="//TEI.2/@n"/>
@@ -191,9 +191,9 @@
       </xsl:when>
 
       <!-- Navigation from HGV metadata -->
-      <xsl:when test="$topNav = 'ddbdp' and starts-with(//TEI.2/@id, 'hgv')">
+      <xsl:when test="$topNav = 'ddbdp' and not(//div[@type='edition'])">
         <xsl:variable name="hgv-no">
-          <xsl:value-of select="substring(/TEI.2/@id, 4)"/>
+          <xsl:value-of select="//bibl[@type='Trismegistos']/biblScope[@type='numbers']"/>
         </xsl:variable>
 
         <xsl:variable name="meta-dir">
