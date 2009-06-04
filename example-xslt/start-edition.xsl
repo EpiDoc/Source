@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: start-edition.xsl 1510 2008-08-14 15:27:51Z zau $ -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei">
-  <xsl:output method="xml" encoding="UTF-8"/>
+  <xsl:output method="html" encoding="UTF-8"/>
 
   <xsl:include href="global-varsandparams.xsl"/>
 

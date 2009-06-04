@@ -133,7 +133,7 @@
               <xsl:text>_</xsl:text>
               <xsl:if test="string($vol)">
                 <xsl:value-of select="$vol"/>
-                <xsl:text>_</xsl:text>
+                <xsl:text>:</xsl:text>
               </xsl:if>
               <xsl:value-of select="substring-after($vol-doc,';')"/>
             </xsl:attribute>
