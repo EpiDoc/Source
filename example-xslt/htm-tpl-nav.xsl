@@ -7,7 +7,7 @@
   <xsl:template name="topNavigation">
     <xsl:choose>
       <!-- Navigation from Translation HTML -->
-      <xsl:when test="//div[@type = 'translation'] and $topNav = 'ddbdp'">
+      <xsl:when test="//div[@type = 'translation'] and starts-with(/TEI.2/@id, 'HGV-') and $topNav = 'ddbdp'">
         <a href="/navigator/full/trismegistos{substring-after(/TEI.2/@id, 'HGV-')}">Papyrological Navigator</a>
         
         <xsl:text> | </xsl:text>
@@ -238,7 +238,7 @@
 
     <xsl:variable name="meta-dir">
       <xsl:text>HGV</xsl:text>
-      <xsl:value-of select="ceiling(number(translate(substring-after($hgv-no, '.'), $grc-lower-strip, '')) div 1000)"/>
+      <xsl:value-of select="ceiling(number(translate($hgv-no, $grc-lower-strip, '')) div 1000)"/>
     </xsl:variable>
 
     <xsl:text> | </xsl:text>
@@ -276,10 +276,9 @@
     </a>
     <!-- Translations -->
     <!-- Extra testing to limit amount of dead translation links -->
+    <xsl:variable name="trans" select="document(concat('../../../hgvtrans/xml/',$hgv-no,'.xml'))"/>
     <xsl:if
-      test="starts-with($cur-id, 'bgu') or starts-with($cur-id, 'p.louvre.1') or starts-with($cur-id, 'sb.20') 
-      or starts-with($cur-id, 'sb.1') or starts-with($cur-id, 'chr.wilck') or starts-with($cur-id, 'chr.mitt') 
-      or starts-with($cur-id, 'c.pap.gr.2.1')">
+      test="$trans">
       <xsl:text> | </xsl:text>
       <a>
         <xsl:attribute name="href">
