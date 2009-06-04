@@ -1,4 +1,5 @@
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace epidoc = "http://epidoc.sf.net/ns/EpiDoc/8.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
@@ -7,7 +8,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 
-# Schema generated from ODD source 2009-06-03T16:12:13Z. 
+# Schema generated from ODD source 2009-06-04T12:18:37Z. 
 # TEI Edition: 1.3.0. Last updated on February 1st 2009.
 #
 
@@ -742,7 +743,7 @@ tei_model.pPart.edit =
 tei_model.ptrLike = tei_ptr | tei_ref
 tei_model.lPart = notAllowed
 tei_model.global.meta =
-  tei_index | tei_certainty | tei_link | tei_linkGrp
+  tei_index | tei_certainty | tei_link | tei_linkGrp | tei_precision
 tei_model.milestoneLike = tei_milestone | tei_pb | tei_lb | tei_cb
 tei_model.gLike = tei_g
 tei_model.biblLike =
@@ -1296,16 +1297,20 @@ tei_gap =
     ##
     attribute reason {
       
-      ## Text completely lost from the surface and unrecoverable
+      ## Text completely lost from the surface and
+      ##                                     unrecoverable
       "lost"
       | 
-        ## Traces of text remains on the surface but cannot be interpreted
+        ## Traces of text remains on the surface but cannot be
+        ##                                         interpreted
         "illegible"
       | 
-        ## Text erroneously omitted from the surface by the scribe/cutter
+        ## Text erroneously omitted from the surface by the
+        ##                                         scribe/cutter
         "omitted"
       | 
-        ## Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)
+        ## Text omitted from the edition by the editor, for whatever
+        ##                                         reason (brevity, context, language, etc.)
         "ellipsis"
     },
     
@@ -1911,7 +1916,8 @@ tei_pb =
   }
 tei_lb =
   
-  ## (line break) Line-beginning: marks the start of each line of the text, including the first
+  ## (line break) Line-beginning: marks the start of each line of the text, including the
+  ##                         first
   element lb {
     empty,
     
@@ -3236,28 +3242,37 @@ tei_div =
       ## to contain apparatus criticus or textual notes
       "apparatus"
       | 
-        ## to contain bibliographical information, previous publications, etc.
+        ## to contain bibliographical information, previous
+        ##                                         publications, etc.
         "bibliography"
       | 
-        ## to contain all editorial commentary, historical/prosopographical discussion, etc.
+        ## to contain all editorial commentary,
+        ##                                         historical/prosopographical discussion, etc.
         "commentary"
       | 
-        ## to contain description of the object, text campus, and lettering; physical commentary (to be deprecated for msDesc)
+        ## to contain description of the object, text campus, and
+        ##                                         lettering; physical commentary (to be deprecated for
+        ##                                     msDesc)
         "description"
       | 
-        ## to contain the text of the edition itself; may include multiple text-parts
+        ## to contain the text of the edition itself; may include
+        ##                                         multiple text-parts
         "edition"
       | 
-        ## to contain links to figures and other media representing the text-object (to be deprecated for facsimile)
+        ## to contain links to figures and other media representing
+        ##                                         the text-object (to be deprecated for facsimile)
         "figure"
       | 
-        ## to contain history of the discovery and recording of the text-object, including findspot/locations
+        ## to contain history of the discovery and recording of the
+        ##                                         text-object, including findspot/locations
         "history"
       | 
-        ## used to divide a div[edition] into multiple parts (fragments, columns, faces, etc.)
+        ## used to divide a div[edition] into multiple parts
+        ##                                         (fragments, columns, faces, etc.)
         "textpart"
       | 
-        ## to contain a translation of the text into one or more modern languages
+        ## to contain a translation of the text into one or more
+        ##                                         modern languages
         "translation"
     },
     att.global.attributes,
@@ -3594,19 +3609,24 @@ tei_supplied =
     ##
     attribute reason {
       
-      ## Restoration of text completely lost from the surface
+      ## Restoration of text completely lost from the
+      ##                                     surface
       "lost"
       | 
-        ## Supplement of text erroneously omitted from the surface by the scribe/cutter
+        ## Supplement of text erroneously omitted from the surface by
+        ##                                         the scribe/cutter
         "omitted"
       | 
-        ## Editorial supplement of words subaudible to the native reader
+        ## Editorial supplement of words subaudible to the native
+        ##                                         reader
         "subaudible"
       | 
         ## Editorial explanation of oblique text in original
         "explanation"
       | 
-        ## Text restored (e.g. from earlier witness or alternate copy) without specification of current state of this text
+        ## Text restored (e.g. from earlier witness or alternate
+        ##                                         copy) without specification of current state of this
+        ##                                     text
         "undefined"
     },
     att.global.attributes,
@@ -5192,5 +5212,35 @@ tei_figDesc =
   ## displaying it.
   element figDesc {
     tei_macro.limitedContent, att.global.attributes, empty
+  }
+tei_precision =
+  
+  ##
+  element epidoc:precision {
+    empty,
+    
+    ##
+    attribute target {
+      list { xsd:anyURI+ }
+    },
+    
+    ##
+    attribute locus { xsd:Name },
+    
+    ##
+    attribute degree {
+      
+      ##
+      "low"
+      | 
+        ##
+        "high"
+    }?,
+    
+    ##
+    attribute stdDev { xsd:double | xsd:decimal }?,
+    att.global.attributes,
+    att.dimensions.attributes,
+    empty
   }
 start = tei_TEI

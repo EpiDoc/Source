@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -19,8 +20,7 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <p>My TEI Customization&#xD; starts with modules tei, core, textstructure and
-                header</p>
+            <p>My TEI Customization&#xD; starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="exp-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
@@ -36,6 +36,43 @@
                 <moduleRef key="namesdates"/>
                 <moduleRef key="textcrit"/>
                 <moduleRef key="figures"/>
+
+                <!--        NEW ELEMENT SPECS        -->
+                <elementSpec ident="precision" mode="add" ns="http://epidoc.sf.net/ns/EpiDoc/8.0">
+                    <classes>
+                        <memberOf key="model.global.meta"/>
+                    </classes>
+                    <content>
+                        <rng:empty/>
+                    </content>
+                    <attList>
+                        <attRef name="att.global.attributes"/>
+                        <attRef name="att.dimensions.attributes"/>
+                        <attDef ident="target" usage="req">
+                            <datatype minOccurs="1" maxOccurs="unbounded">
+                                <rng:ref name="data.pointer"/>
+                            </datatype>
+                        </attDef>
+                        <attDef ident="locus" usage="req">
+                            <datatype>
+                                <rng:ref name="data.enumerated"/>
+                            </datatype>
+                        </attDef>
+                        <attDef ident="degree" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="low"/>
+                                <valItem ident="high"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="stdDev" usage="opt">
+                            <datatype minOccurs="1" maxOccurs="1">
+                                <rng:ref name="data.numeric"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <!--        CHANGED ELEMENT SPECS        -->
                 <elementSpec module="core" ident="add" mode="change">
                     <attList>
                         <attDef ident="place" mode="replace">
@@ -60,15 +97,42 @@
                     <attList>
                         <attDef ident="type" mode="replace" usage="req">
                             <valList type="closed">
-                                <valItem ident="apparatus"><desc>to contain apparatus criticus or textual notes</desc></valItem>
-                                <valItem ident="bibliography"><desc>to contain bibliographical information, previous publications, etc.</desc></valItem>
-                                <valItem ident="commentary"><desc>to contain all editorial commentary, historical/prosopographical discussion, etc.</desc></valItem>
-                                <valItem ident="description"><desc>to contain description of the object, text campus, and lettering; physical commentary (to be deprecated for msDesc)</desc></valItem>
-                                <valItem ident="edition"><desc>to contain the text of the edition itself; may include multiple text-parts</desc></valItem>
-                                <valItem ident="figure"><desc>to contain links to figures and other media representing the text-object (to be deprecated for facsimile)</desc></valItem>
-                                <valItem ident="history"><desc>to contain history of the discovery and recording of the text-object, including findspot/locations</desc></valItem>
-                                <valItem ident="textpart"><desc>used to divide a div[edition] into multiple parts (fragments, columns, faces, etc.)</desc></valItem>
-                                <valItem ident="translation"><desc>to contain a translation of the text into one or more modern languages</desc></valItem>
+                                <valItem ident="apparatus">
+                                    <desc>to contain apparatus criticus or textual notes</desc>
+                                </valItem>
+                                <valItem ident="bibliography">
+                                    <desc>to contain bibliographical information, previous
+                                        publications, etc.</desc>
+                                </valItem>
+                                <valItem ident="commentary">
+                                    <desc>to contain all editorial commentary,
+                                        historical/prosopographical discussion, etc.</desc>
+                                </valItem>
+                                <valItem ident="description">
+                                    <desc>to contain description of the object, text campus, and
+                                        lettering; physical commentary (to be deprecated for
+                                    msDesc)</desc>
+                                </valItem>
+                                <valItem ident="edition">
+                                    <desc>to contain the text of the edition itself; may include
+                                        multiple text-parts</desc>
+                                </valItem>
+                                <valItem ident="figure">
+                                    <desc>to contain links to figures and other media representing
+                                        the text-object (to be deprecated for facsimile)</desc>
+                                </valItem>
+                                <valItem ident="history">
+                                    <desc>to contain history of the discovery and recording of the
+                                        text-object, including findspot/locations</desc>
+                                </valItem>
+                                <valItem ident="textpart">
+                                    <desc>used to divide a div[edition] into multiple parts
+                                        (fragments, columns, faces, etc.)</desc>
+                                </valItem>
+                                <valItem ident="translation">
+                                    <desc>to contain a translation of the text into one or more
+                                        modern languages</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
@@ -77,10 +141,22 @@
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
-                                <valItem ident="lost"><desc>Text completely lost from the surface and unrecoverable</desc></valItem>
-                                <valItem ident="illegible"><desc>Traces of text remains on the surface but cannot be interpreted</desc></valItem>
-                                <valItem ident="omitted"><desc>Text erroneously omitted from the surface by the scribe/cutter</desc></valItem>
-                                <valItem ident="ellipsis"><desc>Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)</desc></valItem>
+                                <valItem ident="lost">
+                                    <desc>Text completely lost from the surface and
+                                    unrecoverable</desc>
+                                </valItem>
+                                <valItem ident="illegible">
+                                    <desc>Traces of text remains on the surface but cannot be
+                                        interpreted</desc>
+                                </valItem>
+                                <valItem ident="omitted">
+                                    <desc>Text erroneously omitted from the surface by the
+                                        scribe/cutter</desc>
+                                </valItem>
+                                <valItem ident="ellipsis">
+                                    <desc>Text omitted from the edition by the editor, for whatever
+                                        reason (brevity, context, language, etc.)</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
@@ -89,38 +165,85 @@
                     <attList>
                         <attDef ident="rend" mode="replace" usage="req">
                             <valList type="closed">
-                                <valItem ident="apex"><desc></desc></valItem>
-                                <valItem ident="intraline"><desc></desc></valItem>
-                                <valItem ident="italic"><desc></desc></valItem>
-                                <valItem ident="ligature"><desc>two (or more) letter ligatured or joined</desc></valItem>
-                                <valItem ident="longa"><desc></desc></valItem>
-                                <valItem ident="normal"><desc></desc></valItem>
-                                <valItem ident="reversed"><desc></desc></valItem>
-                                <valItem ident="supraline"><desc></desc></valItem>
-                                <valItem ident="tall"><desc></desc></valItem>
-                                <valItem ident="strong"><desc></desc></valItem>
-                                <valItem ident="superscript"><desc></desc></valItem>
-                                <valItem ident="underline"><desc></desc></valItem>
-                                <valItem ident="sling-above"><desc></desc></valItem>
-                                <valItem ident="sling-below"><desc></desc></valItem>
-                                <valItem ident="supraline-underline"><desc></desc></valItem>
-                                <valItem ident="subscript"><desc></desc></valItem>
-                                <valItem ident="diaeresis"><desc>ancient diaeresis</desc></valItem>
-                                <valItem ident="acute"><desc>ancient acute (oxia, tonos) diacritic</desc></valItem>
-                                <valItem ident="grave"><desc>ancient grave (varia) diacritic</desc></valItem>
-                                <valItem ident="circumflex"><desc>ancient circumflex (perispomeni) diacritic</desc></valItem>
-                                <valItem ident="asper"><desc>ancient asper (rough breaking) diacritic</desc></valItem>
-                                <valItem ident="lenis"><desc>ancient lenis (smooth breathing) diacritic</desc></valItem>
+                                <valItem ident="apex">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="intraline">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="italic">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="ligature">
+                                    <desc>two (or more) letter ligatured or joined</desc>
+                                </valItem>
+                                <valItem ident="longa">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="normal">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="reversed">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="supraline">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="tall">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="strong">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="superscript">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="underline">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="sling-above">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="sling-below">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="supraline-underline">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="subscript">
+                                    <desc/>
+                                </valItem>
+                                <valItem ident="diaeresis">
+                                    <desc>ancient diaeresis</desc>
+                                </valItem>
+                                <valItem ident="acute">
+                                    <desc>ancient acute (oxia, tonos) diacritic</desc>
+                                </valItem>
+                                <valItem ident="grave">
+                                    <desc>ancient grave (varia) diacritic</desc>
+                                </valItem>
+                                <valItem ident="circumflex">
+                                    <desc>ancient circumflex (perispomeni) diacritic</desc>
+                                </valItem>
+                                <valItem ident="asper">
+                                    <desc>ancient asper (rough breaking) diacritic</desc>
+                                </valItem>
+                                <valItem ident="lenis">
+                                    <desc>ancient lenis (smooth breathing) diacritic</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
                 </elementSpec>
                 <elementSpec ident="lb" mode="change" module="core">
-                    <desc>Line-beginning: marks the start of each line of the text, including the first</desc>
+                    <desc>Line-beginning: marks the start of each line of the text, including the
+                        first</desc>
                     <attList>
                         <attDef ident="type" mode="replace" usage="opt">
                             <valList type="closed">
-                                <valItem ident="worddiv"><desc>this line-beginning appears mid-word</desc></valItem>
+                                <valItem ident="worddiv">
+                                    <desc>this line-beginning appears mid-word</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
@@ -129,11 +252,26 @@
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
-                                <valItem ident="lost"><desc>Restoration of text completely lost from the surface</desc></valItem>
-                                <valItem ident="omitted"><desc>Supplement of text erroneously omitted from the surface by the scribe/cutter</desc></valItem>
-                                <valItem ident="subaudible"><desc>Editorial supplement of words subaudible to the native reader</desc></valItem>
-                                <valItem ident="explanation"><desc>Editorial explanation of oblique text in original</desc></valItem>
-                                <valItem ident="undefined"><desc>Text restored (e.g. from earlier witness or alternate copy) without specification of current state of this text</desc></valItem>
+                                <valItem ident="lost">
+                                    <desc>Restoration of text completely lost from the
+                                    surface</desc>
+                                </valItem>
+                                <valItem ident="omitted">
+                                    <desc>Supplement of text erroneously omitted from the surface by
+                                        the scribe/cutter</desc>
+                                </valItem>
+                                <valItem ident="subaudible">
+                                    <desc>Editorial supplement of words subaudible to the native
+                                        reader</desc>
+                                </valItem>
+                                <valItem ident="explanation">
+                                    <desc>Editorial explanation of oblique text in original</desc>
+                                </valItem>
+                                <valItem ident="undefined">
+                                    <desc>Text restored (e.g. from earlier witness or alternate
+                                        copy) without specification of current state of this
+                                    text</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
@@ -143,20 +281,20 @@
                         <rng:ref name="macro.xtext"/>
                     </content>
                 </elementSpec>
-              
-<!--       CHANGING ATTRIBUTE CLASSES         -->
-              <classSpec type="atts" ident="att.editLike" mode="change">
-                  <attList>
-                      <attDef ident="cert" mode="replace">
-                          <valList type="closed">
-                              <valItem ident="low"/>
-                              <valItem ident="high"/>
-                          </valList>
-                      </attDef>
-                  </attList>
-              </classSpec>  
-                
-<!--      DELETING SUPERFLUOUS ELEMENTS FROM EPIDOC SCHEMA          -->
+
+                <!--       CHANGING ATTRIBUTE CLASSES         -->
+                <classSpec type="atts" ident="att.editLike" mode="change">
+                    <attList>
+                        <attDef ident="cert" mode="replace">
+                            <valList type="closed">
+                                <valItem ident="low"/>
+                                <valItem ident="high"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </classSpec>
+
+                <!--      DELETING SUPERFLUOUS ELEMENTS FROM EPIDOC SCHEMA          -->
                 <elementSpec module="textstructure" ident="argument" mode="delete"/>
                 <elementSpec module="textstructure" ident="byline" mode="delete"/>
                 <elementSpec module="textstructure" ident="closer" mode="delete"/>
