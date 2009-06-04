@@ -7,7 +7,7 @@
 <!-- ||||||||||||||||||||||||||||||||||||||||| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns="http://www.tei-c.org/ns/1.0">
+  xmlns="http://www.tei-c.org/ns/1.0" xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
@@ -52,11 +52,11 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"
-      type="xml" <!--
-      RNGSchema="http:///exp-epidoc.rng" type="xml"
--->
+        RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
     </xsl:processing-instruction>
+      <!--
+      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
+      -->
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
       <xsl:attribute name="xml:id">
@@ -104,7 +104,7 @@
       </xsl:if>
     </xsl:element>
     <xsl:if test="@exact=('notAfter','notBefore')">
-      <xsl:element name="precision">
+      <xsl:element name="epidoc:precision">
         <xsl:attribute name="target">
           <xsl:value-of select="generate-id(.)"/>
         </xsl:attribute>
