@@ -276,7 +276,7 @@
     </a>
     <!-- Translations -->
     <!-- Extra testing to limit amount of dead translation links -->
-    <xsl:variable name="trans" select="document(concat('../../../hgvtrans/xml/',$hgv-no,'.xml'))"/>
+    <xsl:variable name="trans" select="document(concat('../output/data/hgvtrans/xml/',$hgv-no,'.xml'))"/>
     <xsl:if
       test="$trans">
       <xsl:text> | </xsl:text>

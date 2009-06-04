@@ -9,7 +9,7 @@
   
   <!-- Location of HGV glossary file relative to the current file -->
   <xsl:variable name="hgv-gloss">
-    <xsl:text>../../data/HGV_trans_EpiDoc/glossary.xml</xsl:text>
+    <xsl:text>../../../xml/idp.data/trunk/HGV_trans_EpiDoc/glossary.xml</xsl:text>
   </xsl:variable>
   
   <!-- Mapping file -->
