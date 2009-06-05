@@ -240,7 +240,7 @@
       <xsl:text>HGV</xsl:text>
       <xsl:value-of select="ceiling(number(translate($hgv-no, $grc-lower-strip, '')) div 1000)"/>
     </xsl:variable>
-
+    <xsl:if test="number($hgv-no)">
     <xsl:text> | </xsl:text>
     <a>
       <xsl:attribute name="href">
@@ -257,7 +257,6 @@
       <xsl:value-of select="$hgv-no"/>
       <xsl:text>)</xsl:text>
     </a>
-
     <xsl:text> | </xsl:text>
     <a>
       <xsl:attribute name="href">
@@ -274,6 +273,7 @@
       <xsl:value-of select="$hgv-no"/>
       <xsl:text>)</xsl:text>
     </a>
+    </xsl:if>
     <!-- Translations -->
     <!-- Extra testing to limit amount of dead translation links -->
     <xsl:variable name="trans" select="document(concat('../output/data/hgvtrans/xml/',$hgv-no,'.xml'))"/>
