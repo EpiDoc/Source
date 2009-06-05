@@ -133,8 +133,8 @@
               <xsl:text>_</xsl:text>
               <xsl:if test="string($vol)">
                 <xsl:value-of select="$vol"/>
-                <xsl:text>:</xsl:text>
               </xsl:if>
+              <xsl:text>:</xsl:text>
               <xsl:value-of select="substring-after($vol-doc,';')"/>
             </xsl:attribute>
             <xsl:text>Papyrological Navigator</xsl:text>
