@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -41,13 +42,12 @@
                 <elementSpec ident="precision" mode="add" ns="http://epidoc.sf.net/ns/EpiDoc/8.0">
                     <classes>
                         <memberOf key="model.global.meta"/>
+                        <memberOf key="att.dimensions"/>
                     </classes>
                     <content>
                         <rng:empty/>
                     </content>
                     <attList>
-                        <attRef name="att.global.attributes"/>
-                        <attRef name="att.dimensions.attributes"/>
                         <attDef ident="target" usage="req">
                             <datatype minOccurs="1" maxOccurs="unbounded">
                                 <rng:ref name="data.pointer"/>
@@ -59,10 +59,9 @@
                             </datatype>
                         </attDef>
                         <attDef ident="degree" usage="opt">
-                            <valList type="closed">
-                                <valItem ident="low"/>
-                                <valItem ident="high"/>
-                            </valList>
+                            <datatype>
+                                <rng:ref name="data.probability"/>
+                            </datatype>
                         </attDef>
                         <attDef ident="stdDev" usage="opt">
                             <datatype minOccurs="1" maxOccurs="1">
