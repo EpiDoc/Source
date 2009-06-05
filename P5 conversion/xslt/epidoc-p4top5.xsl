@@ -12,13 +12,13 @@
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- ||||||||||  copy all existing elements |||||||||| -->
+  <!-- ||||||||||||  copy all existing elements ||||||||||| -->
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
 
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
       <xsl:copy-of
-        select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored'))]"/>
+        select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored','degree'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
@@ -31,6 +31,9 @@
       </xsl:if>
       <xsl:if test="@cert='low'">
         <xsl:copy-of select="@cert"/>
+      </xsl:if>
+      <xsl:if test="number(@degree)">
+        <xsl:copy-of select="@degree"/>
       </xsl:if>
       <xsl:apply-templates/>
     </xsl:element>
@@ -52,13 +55,13 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-        RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
-    </xsl:processing-instruction>
-      <!--
       RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
+     </xsl:processing-instruction>
+      <!--
+       RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
       -->
     <xsl:element name="TEI">
-      <xsl:copy-of select="@*[not(local-name() = 'id')][not(local-name() = 'lang')]"/>
+      <xsl:copy-of select="@*[not(local-name() = ('id','lang'))]"/>
       <xsl:attribute name="xml:id">
         <xsl:value-of select="@id"/>
       </xsl:attribute>
@@ -110,9 +113,6 @@
         </xsl:attribute>
         <xsl:attribute name="locus">
           <xsl:value-of select="@exact"/>
-        </xsl:attribute>
-        <xsl:attribute name="degree">
-          <xsl:text>low</xsl:text>
         </xsl:attribute>
       </xsl:element>
     </xsl:if>
