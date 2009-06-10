@@ -55,9 +55,9 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng" type="xml"
-     </xsl:processing-instruction>
-      <!--
+      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"
+      type="xml" </xsl:processing-instruction>
+    <!--
        RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
       -->
     <xsl:element name="TEI">
@@ -79,6 +79,33 @@
         <xsl:text>http://www.tei-c.org/ns/1.0</xsl:text>
       </xsl:attribute>-->
       <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="certainty">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = ('locus','target','degree'))]"/>
+      <xsl:attribute name="target">
+        <xsl:text>#</xsl:text>
+        <xsl:value-of select="@target"/>
+      </xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="@locus = '#gi'">
+          <xsl:attribute name="locus">
+            <xsl:text>name</xsl:text>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="pattern">
+            <xsl:text>@</xsl:text>
+            <xsl:value-of select="@locus"/>
+          </xsl:attribute>
+          <xsl:attribute name="locus">
+            <xsl:text>value</xsl:text>
+          </xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+
     </xsl:element>
   </xsl:template>
 
@@ -107,12 +134,20 @@
       </xsl:if>
     </xsl:element>
     <xsl:if test="@exact=('notAfter','notBefore')">
-      <xsl:element name="epidoc:precision">
+      <xsl:element name="precision">
         <xsl:attribute name="target">
+          <xsl:text>#</xsl:text>
           <xsl:value-of select="generate-id(.)"/>
         </xsl:attribute>
-        <xsl:attribute name="locus">
-          <xsl:value-of select="@exact"/>
+        <xsl:attribute name="pattern">
+          <xsl:choose>
+            <xsl:when test="@exact='notBefore'">
+              <xsl:text>@notAfter</xsl:text>
+            </xsl:when>
+            <xsl:when test="@exact='notAfter'">
+              <xsl:text>@notBefore</xsl:text>
+            </xsl:when>
+          </xsl:choose>
         </xsl:attribute>
       </xsl:element>
     </xsl:if>
@@ -214,7 +249,7 @@
       <xsl:otherwise>
         <xsl:element name="dim">
           <xsl:copy-of select="@*[not(local-name()=('type','dim','precision'))]"/>
-          <xsl:attribute name="dim">
+          <xsl:attribute name="type">
             <xsl:value-of select="@dim"/>
           </xsl:attribute>
           <xsl:if test="@precision='circa'">
@@ -245,7 +280,8 @@
       </xsl:if>
       <xsl:if test="@reg">
         <xsl:attribute name="nymRef">
-          <xsl:text>local#</xsl:text>
+          <xsl:value-of select="local-name()"/>
+          <xsl:text>AL#</xsl:text>
           <xsl:value-of select="@reg"/>
         </xsl:attribute>
       </xsl:if>
@@ -268,7 +304,8 @@
           </xsl:if>
           <xsl:if test="@reg">
             <xsl:attribute name="ref">
-              <xsl:text>local#</xsl:text>
+              <xsl:value-of select="@type"/>
+              <xsl:text>AL#</xsl:text>
               <xsl:value-of select="@reg"/>
             </xsl:attribute>
           </xsl:if>
@@ -299,7 +336,7 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="xptr">
     <xsl:element name="ptr">
       <xsl:copy-of select="@*[not(local-name()=('targOrder','evaluate','to','from'))]"/>
@@ -316,7 +353,7 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="xref">
     <xsl:element name="ref">
       <xsl:copy-of select="@*[not(local-name()=('targOrder','evaluate','to','from'))]"/>
