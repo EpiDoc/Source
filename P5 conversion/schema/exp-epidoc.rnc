@@ -1,12 +1,11 @@
 default namespace = "http://www.tei-c.org/ns/1.0"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
-namespace ns1 = "http://epidoc.sf.net/ns/EpiDoc/8.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2009-06-05T15:22:46Z. 
+# Schema generated from ODD source 2009-06-10T12:30:08Z. 
 # TEI Edition: 1.4.0. Last updated on June 7th 2009.
 #
 
@@ -58,14 +57,51 @@ att.canonical.attribute.ref =
   attribute ref {
     list { xsd:anyURI+ }
   }?
+att.ranging.attributes =
+  att.ranging.attribute.atLeast,
+  att.ranging.attribute.atMost,
+  att.ranging.attribute.min,
+  att.ranging.attribute.max,
+  empty
+att.ranging.attribute.atLeast =
+  
+  ## gives a minimum estimated value for the measurement.
+  attribute atLeast {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+att.ranging.attribute.atMost =
+  
+  ## gives a maximum estimated value for the measurement.
+  attribute atMost {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+att.ranging.attribute.min =
+  
+  ## where the measurement summarizes more than one observation, supplies the minimum value
+  ##         observed.
+  attribute min {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+att.ranging.attribute.max =
+  
+  ## where the measurement summarizes more than one observation, supplies the maximum value
+  ##       observed.
+  attribute max {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
 att.dimensions.attributes =
+  att.ranging.attributes,
   att.dimensions.attribute.unit,
   att.dimensions.attribute.quantity,
   att.dimensions.attribute.extent,
-  att.dimensions.attribute.atLeast,
-  att.dimensions.attribute.atMost,
-  att.dimensions.attribute.min,
-  att.dimensions.attribute.max,
   att.dimensions.attribute.precision,
   att.dimensions.attribute.scope,
   empty
@@ -107,40 +143,6 @@ att.dimensions.attribute.extent =
     list {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
     }
-  }?
-att.dimensions.attribute.atLeast =
-  
-  ## gives a minimum estimated value for the measurement.
-  attribute atLeast {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.dimensions.attribute.atMost =
-  
-  ## gives a maximum estimated value for the measurement.
-  attribute atMost {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.dimensions.attribute.min =
-  
-  ## where the measurement summarizes more than one observation, supplies the minimum value
-  ##         observed.
-  attribute min {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.dimensions.attribute.max =
-  
-  ## where the measurement summarizes more than one observation, supplies the maximum value
-  ##       observed.
-  attribute max {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
   }?
 att.dimensions.attribute.precision =
   
@@ -715,7 +717,7 @@ tei_model.emphLike =
   | tei_title
 tei_model.highlighted = tei_model.hiLike | tei_model.emphLike
 tei_model.dateLike = tei_date | tei_time
-tei_model.dimLike_sequenceOptional = tei_height?, tei_depth?, tei_width?
+tei_model.dimLike = tei_height | tei_depth | tei_width
 tei_model.measureLike =
   tei_num
   | tei_measure
@@ -759,7 +761,7 @@ tei_model.pPart.edit =
 tei_model.ptrLike = tei_ptr | tei_ref
 tei_model.lPart = notAllowed
 tei_model.global.meta =
-  tei_index | tei_certainty | tei_link | tei_linkGrp | tei_precision
+  tei_index | tei_precision | tei_certainty | tei_link | tei_linkGrp
 tei_model.milestoneLike = tei_milestone | tei_pb | tei_lb | tei_cb
 tei_model.gLike = tei_g
 tei_model.biblLike =
@@ -3698,6 +3700,34 @@ att.global.analytic.attribute.ana =
   attribute ana {
     list { xsd:anyURI+ }
   }?
+tei_precision =
+  
+  ## indicates the numerical accuracy or precision  associated
+  ##   with some aspect of the text markup.
+  element precision {
+    tei_model.glossLike*,
+    att.global.attributes,
+    
+    ## points at the element or elements the precision of which
+    ##       is to be specified.
+    attribute target {
+      list { xsd:anyURI+ }
+    }?,
+    
+    ## supplies an XSLT 2.0 pattern which may be used to select
+    ##       those portions of the
+    ##       document the precision of which is to be specified.
+    attribute pattern { text }?,
+    
+    ## supplies a standard deviation associated with the value in
+    ##       question
+    attribute stdDeviation {
+      xsd:double
+      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+      | xsd:decimal
+    }?,
+    empty
+  }
 tei_certainty =
   
   ## indicates the degree of certainty or uncertainty associated
@@ -3706,48 +3736,44 @@ tei_certainty =
     tei_model.glossLike*,
     att.global.attributes,
     
-    ## points at the elements whose markup is
+    ## points at the element or elements whose markup is
     ##       uncertain.
     attribute target {
       list { xsd:anyURI+ }
     },
     
-    ## indicates the precise location of the uncertainty in the
-    ##	markup: applicability of the element, precise position of the
-    ##	start- or end-tag, value of a specific attribute,
+    ## supplies an XSLT 2.0 pattern which may be used to select
+    ##       those portions of the
+    ##       document the precision of which is to be specified.
+    attribute pattern { text }?,
+    
+    ## indicates more exactly the aspect concerning which
+    ##       uncertainty is being expressed: for example, whether the markup
+    ##       is correctly located, whether the right element or attribute
+    ##       name has been used, whether the content of the element or
+    ##       attribute is correct,
     ##	etc.
-    ## Suggested values include: 1] gi (element name요소명Il n'est pas certain que l'élément utilisé
-    ##               s'applique vraiment au passagenome di elementoes incierto si el elemento usado realmente se aplica al pasaje...); 2] startLoc (start location시작 위치inicio de la localizaciónEmplacement de début posizione iniziale); 3] endLoc (end location종료 위치final de la localizaciónemplacement de finposizione finale); 4] location; 5] attrName (attribute name속성명nom de
-    ##             l'attribut.nome di attributoel valor dado para el nombre del atributo es incierto.); 6] transcribedContent; 7] suppliedContent
     attribute locus {
       
-      ## (element name) uncertain whether the element used actually applies
-      ##	    to the passage.
-      "gi"
+      ## uncertainty concerns whether the name of the element
+      ##	  or attribute  used is correctly applied.
+      "name"
       | 
-        ## (start location) start-tag may not be correctly located.
-        "startLoc"
+        ## uncertainty concerns whether the start of the element
+        ##	  is correctly identified.
+        "start"
       | 
-        ## (end location) end-tag may not be correctly located.
-        "endLoc"
+        ## uncertainty concerns whether the end of the element
+        ##	  is correctly identified.
+        "end"
       | 
-        ## both the start-tag and the end-tag may not be
-        ##	    correctly located.
+        ## uncertainty concerns both the start and the end of the
+        ##	  element.
         "location"
       | 
-        ## (attribute name) the value given for the attribute name is
-        ##	    uncertain.
-        "attrName"
-      | 
-        ## the content of the element may not be a correct
-        ##	    transcription of the source text.
-        "transcribedContent"
-      | 
-        ## the content of the element may not have been
-        ##	    correctly supplied by the reader, e.g. as in the cases of
-        ##	    corr and abbrev elements.
-        "suppliedContent"
-      | xsd:Name
+        ## uncertainty concerns the content (for an element) or
+        ##	  the value (for an attribute)
+        "value"
     },
     
     ## provides an alternative value for the aspect of the markup in
@@ -3999,7 +4025,7 @@ tei_dimensions =
   
   ## contains a dimensional specification.
   element dimensions {
-    (tei_dim*, tei_model.dimLike_sequenceOptional),
+    (tei_dim | tei_model.dimLike)*,
     att.global.attributes,
     att.dimensions.attributes,
     
@@ -4010,7 +4036,8 @@ tei_dimensions =
   }
 tei_dim =
   
-  ##
+  ## contains any single measurement forming part of a dimensional
+  ## specification of some sort.
   element dim {
     tei_macro.xtext,
     att.global.attributes,
@@ -5197,33 +5224,5 @@ tei_figDesc =
   ## displaying it.
   element figDesc {
     tei_macro.limitedContent, att.global.attributes, empty
-  }
-tei_precision =
-  
-  ##
-  element ns1:precision {
-    empty,
-    att.dimensions.attributes,
-    
-    ##
-    attribute target {
-      list { xsd:anyURI+ }
-    },
-    
-    ##
-    attribute locus { xsd:Name },
-    
-    ##
-    attribute degree {
-      xsd:double { minInclusive = "0" maxInclusive = "1" }
-    }?,
-    
-    ##
-    attribute stdDev {
-      xsd:double
-      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-      | xsd:decimal
-    }?,
-    empty
   }
 start = tei_TEI
