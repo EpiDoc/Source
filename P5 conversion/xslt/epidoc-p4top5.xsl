@@ -55,10 +55,10 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"
-      type="xml" </xsl:processing-instruction>
+      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
+    </xsl:processing-instruction>
     <!--
-       RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
+      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = ('id','lang'))]"/>
@@ -75,9 +75,6 @@
           </xsl:otherwise>
         </xsl:choose>
       </xsl:attribute>
-      <!--      <xsl:attribute name="xmlns">
-        <xsl:text>http://www.tei-c.org/ns/1.0</xsl:text>
-      </xsl:attribute>-->
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
