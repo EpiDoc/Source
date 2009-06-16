@@ -216,7 +216,9 @@
           </a>
         </p>
       </xsl:when>
-      <xsl:otherwise/>
+      <xsl:otherwise>
+        <xsl:variable name="hgv-no"/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
@@ -250,7 +252,7 @@
         <xsl:text>../../../hgvmeta/xml/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="$hgv-no,'.'"/>
+        <xsl:value-of select="$hgv-no"/>
         <xsl:text>.xml</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata XML (</xsl:text>
@@ -266,7 +268,7 @@
         <xsl:text>../../../hgvmeta/html/</xsl:text>
         <xsl:value-of select="$meta-dir"/>
         <xsl:text>/</xsl:text>
-        <xsl:value-of select="$hgv-no,'.'"/>
+        <xsl:value-of select="$hgv-no"/>
         <xsl:text>.html</xsl:text>
       </xsl:attribute>
       <xsl:text>Metadata HTML (</xsl:text>
