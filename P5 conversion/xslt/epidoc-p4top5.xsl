@@ -327,6 +327,34 @@
       </xsl:for-each>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match="space">
+    <xsl:element name="{local-name()}">
+      <xsl:choose>
+        <xsl:when test="number(@extent)">
+          <xsl:attribute name="quantity">
+            <xsl:value-of select="@extent"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="not(number(@extent))">
+          <xsl:copy-of select="@extent"/>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:if test="@unit">
+        <xsl:copy-of select="@unit"/>
+      </xsl:if>
+      <xsl:if test="@precision='circa'">
+        <xsl:attribute name="precision">
+          <xsl:text>low</xsl:text>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@id">
+        <xsl:attribute name="xml:id">
+          <xsl:value-of select="@id"/>
+        </xsl:attribute>
+      </xsl:if>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">
