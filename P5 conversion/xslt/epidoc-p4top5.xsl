@@ -93,7 +93,7 @@
           </xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:attribute name="pattern">
+          <xsl:attribute name="match">
             <xsl:text>@</xsl:text>
             <xsl:value-of select="@locus"/>
           </xsl:attribute>
