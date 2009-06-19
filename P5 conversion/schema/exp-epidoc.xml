@@ -169,20 +169,20 @@
                         <attDef ident="rend" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="apex">
-                                    <desc/>
+                                    <desc></desc>
                                 </valItem>
                                 <valItem ident="intraline">
-                                    <desc/>
+                                    <desc>characters scored or struck through at the mid-line level</desc>
                                 </valItem>
                                 <valItem ident="italic">
                                     <desc/>
                                 </valItem>
                                 <valItem ident="ligature">
-                                    <desc>two (or more) letter ligatured or joined</desc>
+                                    <desc>two (or more) letters ligatured, monogrammed, or therwise joined</desc>
                                 </valItem>
-                                <valItem ident="longa">
-                                    <desc/>
-                                </valItem>
+                                <!--<valItem ident="longa">
+                                    <desc>(deprecated)</desc>
+                                </valItem>-->
                                 <valItem ident="normal">
                                     <desc/>
                                 </valItem>
@@ -190,19 +190,19 @@
                                     <desc/>
                                 </valItem>
                                 <valItem ident="supraline">
-                                    <desc/>
+                                    <desc>characters written with a supralinear line above (e.g. for abbreviation or numerals)</desc>
                                 </valItem>
                                 <valItem ident="tall">
-                                    <desc/>
+                                    <desc>Letter(s) taller than those around it, e.g. I-longa</desc>
                                 </valItem>
-                                <valItem ident="strong">
-                                    <desc/>
-                                </valItem>
+                               <!-- <valItem ident="strong">
+                                    <desc>(deprecated; does this mean 'bold'?)</desc>
+                                </valItem>-->
                                 <valItem ident="superscript">
-                                    <desc/>
+                                    <desc>characters written higher than the surrounding text</desc>
                                 </valItem>
                                 <valItem ident="underline">
-                                    <desc/>
+                                    <desc>text written with solid line beneath</desc>
                                 </valItem>
                                 <valItem ident="sling-above">
                                     <desc/>
@@ -211,10 +211,10 @@
                                     <desc/>
                                 </valItem>
                                 <valItem ident="supraline-underline">
-                                    <desc/>
+                                    <desc>text written with solid lines both above and beneath</desc>
                                 </valItem>
                                 <valItem ident="subscript">
-                                    <desc/>
+                                    <desc>characters written lower than the surrounding text</desc>
                                 </valItem>
                                 <valItem ident="diaeresis">
                                     <desc>ancient diaeresis</desc>
@@ -290,13 +290,24 @@
                     <attList>
                         <attDef ident="cert" mode="replace">
                             <valList type="closed">
-                                <valItem ident="low"/>
                                 <valItem ident="high"/>
+                                <valItem ident="low"/>
                             </valList>
                         </attDef>
                     </attList>
                 </classSpec>
-
+                
+                <classSpec type="atts" ident="att.dimensions" mode="change">
+                    <attList>
+                        <attDef ident="precision" mode="replace">
+                            <valList type="closed">
+                                <valItem ident="high"/>
+                                <valItem ident="low"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </classSpec>
+                
                 <!--      DELETING SUPERFLUOUS ELEMENTS FROM EPIDOC SCHEMA          -->
                 <elementSpec module="textstructure" ident="argument" mode="delete"/>
                 <elementSpec module="textstructure" ident="byline" mode="delete"/>
