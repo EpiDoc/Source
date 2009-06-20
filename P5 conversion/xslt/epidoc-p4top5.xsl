@@ -356,6 +356,16 @@
     </xsl:element>
   </xsl:template>
 
+<xsl:template match="titleStmt/title">
+  <xsl:element name="{local-name()}">
+    <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
+      <xsl:if test="string(@n)">
+        <xsl:copy-of select="@n"/>
+      </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:element>
+</xsl:template>
+
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">
       <xsl:apply-templates/>
