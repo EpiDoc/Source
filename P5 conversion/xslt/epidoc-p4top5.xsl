@@ -192,10 +192,12 @@
   </xsl:template>
 
   <xsl:template match="handList">
-    <xsl:element name="handNotes">
-      <xsl:copy-of select="@*"/>
-      <xsl:apply-templates/>
-    </xsl:element>
+    <xsl:if test="//handShift">
+      <xsl:element name="handNotes">
+        <xsl:copy-of select="@*"/>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="hand">
