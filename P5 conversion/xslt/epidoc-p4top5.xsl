@@ -55,8 +55,7 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"
-    </xsl:processing-instruction>
+      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml" </xsl:processing-instruction>
     <!--
       RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
@@ -327,7 +326,32 @@
       </xsl:for-each>
     </xsl:element>
   </xsl:template>
-  
+
+  <xsl:template match="seg">
+    <xsl:choose>
+      <xsl:when test="@cert='low'">
+          <xsl:apply-templates/>
+        <xsl:element name="certainty">
+          <xsl:attribute name="match">
+            <xsl:text>..</xsl:text>
+          </xsl:attribute>
+          <xsl:attribute name="locus">
+            <xsl:text>value</xsl:text>
+          </xsl:attribute>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:element name="{local-name()}">
+          <xsl:copy-of select="@*[not(local-name() = ('cert','part'))]"/>
+          <xsl:if test="@part != 'N'">
+            <xsl:copy-of select="@part"/>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="space">
     <xsl:element name="{local-name()}">
       <xsl:choose>
@@ -356,15 +380,15 @@
     </xsl:element>
   </xsl:template>
 
-<xsl:template match="titleStmt/title">
-  <xsl:element name="{local-name()}">
-    <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
+  <xsl:template match="titleStmt/title">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
       <xsl:if test="string(@n)">
         <xsl:copy-of select="@n"/>
       </xsl:if>
-    <xsl:apply-templates/>
-  </xsl:element>
-</xsl:template>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">

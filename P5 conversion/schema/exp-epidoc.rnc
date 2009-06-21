@@ -5,8 +5,8 @@ namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2009-06-10T12:30:08Z. 
-# TEI Edition: 1.4.0. Last updated on June 7th 2009.
+# Schema generated from ODD source 2009-06-20T21:45:24Z. 
+# TEI Edition: 1.4.0. Last updated on June 20th 2009.
 #
 
 #
@@ -99,12 +99,23 @@ att.ranging.attribute.max =
   }?
 att.dimensions.attributes =
   att.ranging.attributes,
+  att.dimensions.attribute.precision,
   att.dimensions.attribute.unit,
   att.dimensions.attribute.quantity,
   att.dimensions.attribute.extent,
-  att.dimensions.attribute.precision,
   att.dimensions.attribute.scope,
   empty
+att.dimensions.attribute.precision =
+  
+  ##
+  attribute precision {
+    
+    ##
+    "high"
+    | 
+      ##
+      "low"
+  }?
 att.dimensions.attribute.unit =
   
   ## names the unit used for the measurement
@@ -144,10 +155,6 @@ att.dimensions.attribute.extent =
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
     }
   }?
-att.dimensions.attribute.precision =
-  
-  ## characterizes the precision of the values specified by the other attributes.
-  attribute precision { "high" | "medium" | "low" | "unknown" }?
 att.dimensions.attribute.scope =
   
   ## where the measurement summarizes more than one observation, specifies the applicability
@@ -343,10 +350,10 @@ att.editLike.attribute.cert =
   attribute cert {
     
     ##
-    "low"
+    "high"
     | 
       ##
-      "high"
+      "low"
   }?
 att.editLike.attribute.resp =
   
@@ -704,7 +711,7 @@ att.typed.attribute.subtype =
   ## provides a sub-categorization of the element, if needed
   attribute subtype { xsd:Name }?
 tei_model.nameLike.agent = tei_name | tei_persName
-tei_model.segLike = tei_w | tei_m | tei_c | tei_seg
+tei_model.segLike = tei_w | tei_m | tei_c | tei_pc | tei_seg
 tei_model.hiLike = tei_hi
 tei_model.emphLike =
   tei_foreign
@@ -999,17 +1006,14 @@ tei_hi =
       ##
       "apex"
       | 
-        ##
+        ## characters scored or struck through at the mid-line level
         "intraline"
       | 
         ##
         "italic"
       | 
-        ## two (or more) letter ligatured or joined
+        ## two (or more) letters ligatured, monogrammed, or therwise joined
         "ligature"
-      | 
-        ##
-        "longa"
       | 
         ##
         "normal"
@@ -1017,19 +1021,16 @@ tei_hi =
         ##
         "reversed"
       | 
-        ##
+        ## characters written with a supralinear line above (e.g. for abbreviation or numerals)
         "supraline"
       | 
-        ##
+        ## Letter(s) taller than those around it, e.g. I-longa
         "tall"
       | 
-        ##
-        "strong"
-      | 
-        ##
+        ## characters written higher than the surrounding text
         "superscript"
       | 
-        ##
+        ## text written with solid line beneath
         "underline"
       | 
         ##
@@ -1038,10 +1039,10 @@ tei_hi =
         ##
         "sling-below"
       | 
-        ##
+        ## text written with solid lines both above and beneath
         "supraline-underline"
       | 
-        ##
+        ## characters written lower than the surrounding text
         "subscript"
       | 
         ## ancient diaeresis
@@ -1265,7 +1266,12 @@ tei_corr =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.typed.attributes,
     empty
   }
@@ -1286,7 +1292,12 @@ tei_reg =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.typed.attributes,
     empty
   }
@@ -1336,7 +1347,12 @@ tei_gap =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_add =
@@ -1428,7 +1444,12 @@ tei_unclear =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_name =
@@ -1557,7 +1578,12 @@ tei_date =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.typed.attributes,
     
     ## indicates the system or calendar to which the date represented by the content of this
@@ -1603,7 +1629,12 @@ tei_time =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.typed.attributes,
     empty
   }
@@ -1630,7 +1661,12 @@ tei_expan =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_ptr =
@@ -3505,7 +3541,12 @@ tei_ex =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_handNotes =
@@ -3542,7 +3583,12 @@ tei_am =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_space =
@@ -3551,7 +3597,12 @@ tei_space =
   element space {
     empty,
     att.global.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     
     ## (dimension) indicates whether the space is horizontal or vertical.
     attribute dim {
@@ -3614,7 +3665,12 @@ tei_supplied =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 att.metrical.attributes =
@@ -3648,7 +3704,10 @@ tei_w =
   element w {
     (text
      | tei_model.gLike
-     | tei_model.segLike
+     | tei_seg
+     | tei_w
+     | tei_m
+     | tei_c
      | tei_model.global
      | tei_model.lPart
      | tei_model.hiLike
@@ -3670,7 +3729,12 @@ tei_m =
   
   ## (morpheme) represents a grammatical morpheme.
   element m {
-    (text | tei_model.gLike | tei_model.segLike | tei_model.global)*,
+    (text
+     | tei_model.gLike
+     | tei_seg
+     | tei_m
+     | tei_c
+     | tei_model.global)*,
     att.global.attributes,
     att.segLike.attributes,
     att.typed.attributes,
@@ -3689,6 +3753,39 @@ tei_c =
     att.global.attributes,
     att.segLike.attributes,
     att.typed.attributes,
+    empty
+  }
+tei_pc =
+  
+  ##  (punctuation character) a character or string of characters regarded as constituting a
+  ##   single punctuation mark.
+  element pc {
+    (text | tei_model.gLike | tei_c)*,
+    att.global.attributes,
+    att.segLike.attributes,
+    att.typed.attributes,
+    
+    ## indicates the extent to which this punctuation mark
+    ##       conventionally separates words or phrases
+    attribute force {
+      
+      ## the punctuation mark is a word separator
+      "strong"
+      | 
+        ## the punctuation mark is not a word separator
+        "weak"
+      | 
+        ## the punctuation mark may or may not be a
+        ## word separator
+        "inter"
+    }?,
+    
+    ## provides a name for the kind of unit delimited by  this punctuation mark.
+    attribute unit { xsd:Name }?,
+    
+    ## indicates whether this punctuation mark precedes or
+    ##       follows the unit it delimits.
+    attribute pre { xsd:boolean }?,
     empty
   }
 att.global.analytic.attributes =
@@ -3717,7 +3814,13 @@ tei_precision =
     ## supplies an XSLT 2.0 pattern which may be used to select
     ##       those portions of the
     ##       document the precision of which is to be specified.
-    attribute pattern { text }?,
+    attribute match { text }?,
+    
+    ## indicates the degree of precision to be assigned as a
+    ##       value between 0 (none) and 1 (optimally precise)
+    attribute degree {
+      xsd:double { minInclusive = "0" maxInclusive = "1" }
+    }?,
     
     ## supplies a standard deviation associated with the value in
     ##       question
@@ -3740,12 +3843,12 @@ tei_certainty =
     ##       uncertain.
     attribute target {
       list { xsd:anyURI+ }
-    },
+    }?,
     
     ## supplies an XSLT 2.0 pattern which may be used to select
     ##       those portions of the
-    ##       document the precision of which is to be specified.
-    attribute pattern { text }?,
+    ##       document the certainty of which is to be specified.
+    attribute match { text }?,
     
     ## indicates more exactly the aspect concerning which
     ##       uncertainty is being expressed: for example, whether the markup
@@ -4027,7 +4130,12 @@ tei_dimensions =
   element dimensions {
     (tei_dim | tei_model.dimLike)*,
     att.global.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     
     ## indicates which aspect of the object is being measured.
     ## Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniatures; 6] binding; 7] box
@@ -4042,7 +4150,12 @@ tei_dim =
     tei_macro.xtext,
     att.global.attributes,
     att.typed.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_height =
@@ -4053,7 +4166,12 @@ tei_height =
   element height {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_depth =
@@ -4062,7 +4180,12 @@ tei_depth =
   element depth {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_width =
@@ -4073,7 +4196,12 @@ tei_width =
   element width {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_heraldry =
@@ -4143,7 +4271,12 @@ tei_origDate =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.typed.attributes,
     empty
   }
@@ -4154,12 +4287,18 @@ tei_origPlace =
   element origPlace {
     tei_macro.xtext,
     att.global.attributes,
+    att.naming.attributes,
     att.datable.attributes,
     att.editLike.attribute.cert,
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_secFol =
@@ -4638,7 +4777,12 @@ tei_origin =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.datable.attributes,
     empty
   }
@@ -4753,7 +4897,12 @@ tei_persName =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     att.personal.attributes,
     att.typed.attributes,
     empty
@@ -4824,7 +4973,12 @@ tei_placeName =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_region =
@@ -4913,7 +5067,12 @@ tei_person =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     
     ## specifies a primary role or classification for the person.
     attribute role {
@@ -4969,7 +5128,12 @@ tei_place =
     att.editLike.attribute.resp,
     att.editLike.attribute.evidence,
     att.editLike.attribute.source,
-    att.dimensions.attributes,
+    att.dimensions.attribute.unit,
+    att.dimensions.attribute.quantity,
+    att.dimensions.attribute.extent,
+    att.dimensions.attribute.precision,
+    att.dimensions.attribute.scope,
+    att.ranging.attributes,
     empty
   }
 tei_nym =
