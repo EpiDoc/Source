@@ -199,15 +199,17 @@
   </xsl:template>
 
   <xsl:template match="hand">
-    <xsl:element name="handNote">
-      <xsl:copy-of select="@*[not(local-name()='id')]"/>
-      <xsl:if test="@id">
-        <xsl:attribute name="xml:id">
-          <xsl:value-of select="@id"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
+    <xsl:if test="//handShift[@new = current()/@id]">
+      <xsl:element name="handNote">
+        <xsl:copy-of select="@*[not(local-name()='id')]"/>
+        <xsl:if test="@id">
+          <xsl:attribute name="xml:id">
+            <xsl:value-of select="@id"/>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="keywords">
@@ -330,7 +332,7 @@
   <xsl:template match="seg">
     <xsl:choose>
       <xsl:when test="@cert='low'">
-          <xsl:apply-templates/>
+        <xsl:apply-templates/>
         <xsl:element name="certainty">
           <xsl:attribute name="match">
             <xsl:text>..</xsl:text>
