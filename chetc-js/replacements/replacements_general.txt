@@ -10,50 +10,106 @@
 # occurences of the symbol in the second capturing group inside the first capturing group.  In 
 # regular expressions, capturing groups are delimited by parentheses.
 
-\s*\[(?:[-\s\]]+)\]\s*(\n)              =   <gap reason="lost" extent="1" unit="line" />$1
-<<(\w+)>>                               =   <app><rdg><del><gap reason="lost" extent="%g1%len1" unit="character"/></del></rdg><rdg><add place="overstrike">$1</add></rdg></app>
-<((?:(-)|\s)+)>                         =   <gap reason="omitted" extent="%g1%len2" unit="character"/>
-([^<])<(\w+)>([^>])                     =   $1<supplied reason="omitted">$2</supplied>$3
-#
-# e.g. [abc . . .]
-#
-\[(\w+)\s*(([.\s])+)\]                  =   <supplied reason="lost">$1</supplied><gap extent="%g2%len3"/>
-((\ẉ)+)                                =   <unclear reason="damage" cert="high">$1</unclear>
-#((\.)+)                                 =   <gap extent="%g1%len2"/>
-(\+)+                                   =   <gap reason="illegible" extent="%g1%len1" unit="character"/>
-\+\s*(\d+)\s*\+                         =   <gap reason="illegible" extent="$1" unit="character"/>
-\+\s*(\d+)\s*(\w)\s*\+                  =   <gap reason="illegible" extent="$1" unit="$2"/>
-(.)\(\?\)                               =   <gap reason="illegible" extent="1" unit="character">$1</gap>
-(\w+)\(!\)                              =   <sic>$1</sic>
-\(i\.e\. ([^\)+])\)                     =   <supplied reason="explanation">$1</supplied>
-(\W|^)\((\w+)\)                         =   $1<mark type="$2"/>
-([\S]+)\(((?:\w|\s)+)\)(\S*)\((\S*)\)   =   <expan>$1<supplied reason="expansion">$2</supplied>$3<supplied reason="abbreviation">$4</supplied></expan> 
-([^(\s]+)\(((?:\w|\s)+)\)(\]*)          =   <expan>$1<supplied reason="abbreviation">$2</supplied>$3</expan>
-(\S+)\((-\s*)+\)                        =   <abbr>$1</abbr>
-(\w)(?:-)\n                             =   $1<lb type="worddiv"/>
-\n                                      =   <lb/>
-(\s|>)\/\d+                             =   $1<lb/>
-(\s|>)\/(\s|<)                          =   $1<lb/>$2
-(\w|>)\/(\w|<)                          =   $1<lb type="worddiv"/>$2
-\(scil. ((?:\w|\s)+)\)                  =   <supplied reason="subaudible">$1</supplied>
-\(i\.\s*e\. ((?:\w|\s)+)\)              =   <supplied reason="explanation">$1</supplied>
-\[([·\s]+)\]                            =   <gap reason="lost" extent="%g1%len1" unit="character"/>
-([^\[]*)\[((?:\w|\s)+)((?:-|\s)+)\]     =   $1<supplied reason="lost">$2<gap id="%mkID1" reason="lost" extent="%g3%len3" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/></supplied>
-#
-# e.g. f[---]
-#
-([^\[]*)\[([-\s\]]+)\]                  =    $1<gap id="%mkID1" reason="lost" extent="%g2%len2" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>
-#
-# e.g. [(centuria) ---]
-#
-([^\[]*)\[([^-\]]+)(\s*)((?:-|\s)+)\]   =   $1[$2<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>]
-([^\[]*)\[(\s*)((?:-|\s)+)([^-\]]+)\]   =   $1<gap id="%mkID1" reason="lost" extent="%g4%len4" unit="character"/><certainty target="%mkID1" locus="unit" degree="low"/>[$4]
-\[([^\]]+)\]                            =    <supplied reason="lost">$1</supplied>
-\[([^\n])+\n                            =    <supplied reason="lost">$1</supplied>
-\{(\w+)\}                               =    <corr sic="$1"></corr>
+
+# Single Angle Bracket Enclosures
+# Placed first before XML tags are inserted
+([^<])<((?:\w|\s)+)>([^>])                  =   $1<supplied reason="omitted">$2</supplied>$3
+<((?:\w|\s)+)>$                  			=   <supplied reason="omitted">$1</supplied>
+^<((?:\w|\s)+)>                   			=   <supplied reason="omitted">$1</supplied>
+
+
+# Double Character Enclosures
+# Double Bracket
+\[\[((.)+)\]\]								=	<del rend="erasure">$1</del>
+ 
+# Double Angle Bracket
+<<((.)+)>>									=	<add place="overstrike">$1</add>
+
+# Double Parentheses
+\(\(((?:\w|\s)+)\)\)                     	=   <g type="$1"/>
+
+
+# Single Character Enclosures
+# Curly Bracket
+\{((?:\w|\s)+)\}                            =    <sic>$1</sic>
+
+# Corner Characters (Unicode Left 231C Right 231D)
+⌜((?:\w|\s)+)⌝								=	<choice><sic>$1</sic><corr>$1</corr></choice>
+
+# Single Quotes
+'((?:\w|\s)+)'								=	<add>$1</add>
+
+# Brackets
+\[-\]										=	<name><gap reason="lost" extent="unknown" unit="character"/></name>
+\s*\[-\s(?:[-\s\]]+)\?\]\s*(\n)*          	=   <gap reason="lost" extent="1" unit="line" id="%mkID1"/><certainty target="%mkID1" locus="extent" degree="low"/>
+\s*\[-\s(?:[-\s\]]+)\]\s*(\n)*          	=   <gap reason="lost" extent="1" unit="line"/>$1
+([^\[]*)\[([-\s\]]+)\]                 		=   $1<gap reason="lost" extent="%g2%len2" unit="character" id="%mkID1"/><certainty target="%mkID1" locus="extent" degree="low"/>
+\[([\.\s]+)\]                          	  	=	<gap reason="lost" extent="%g1%len1" unit="character"/>
+\[c\.((?:\d)+)\]							=	<gap reason="lost" extent="$1" unit="character"/>
+\[([^\]]+)\]                          		=   <supplied reason="lost">$1</supplied>
+\[([^\n])+\n                          		=   <supplied reason="lost">$1</supplied>
+
+
+# Parentheses
+(\S+)\((-\s*)+\)                        			=   <abbr>$1</abbr>
+([A-Za-z0-9]+)\(([A-Za-z0-9]+)\)([A-Za-z0-9]+)		=   <expan><abbr>$1</abbr><ex>$2</ex><abbr>$3</abbr></expan>
+\(([A-Za-z0-9]+)\)([A-Za-z0-9]+)					=   <expan><ex>$1</ex><abbr>$2</abbr></expan>
+([A-Za-z0-9]+)\(([A-Za-z0-9]+)\)					=   <expan><abbr>$1</abbr><ex>$2</ex></expan>
+<\/expan>\(([A-Za-z0-9]+)\)<expan>					=	<ex>$1</ex>
+\(([A-Za-z0-9]+)\)<expan>							=	<expan><ex>$1</ex>
+<\/expan>\(([A-Za-z0-9]+)\)							=	<ex>$1</ex></expan>
+<\/expan>([A-Za-z0-9]+)\(([A-Za-z0-9]+)\)			=	<abbr>$1</abbr><ex>$2</ex></expan>
+<\/ex><\/expan>([A-Za-z0-9]+)						=	</ex><abbr>$1</abbr></expan>
+\(((?:(-)|\s)+)\)		                    		=   <gap reason="omitted" extent="unknown" unit="character"/>
+\(scil. ((?:\w|\s)+)\)                  			=   <supplied reason="subaudible">$1</supplied>
+\(vac.(\?+)\)		                  				=   <space extent="unknown" unit="character"/>
+\(vac.((?:\d)+)\)                  					=   <space extent="$1" unit="character"/>
+\(([A-Za-z0-9]+)\)([A-Za-z0-9]+)\(([A-Za-z0-9]+)\)	=  <expan><ex>$1</ex><abbr>$2</abbr><ex>$3</ex></expan>
+\(((?:\w|\s)+)\)									=   <expan><abbr><am><g type="symbol"/></am></abbr><ex>$1</ex></expan>
+\(!\)												=	<note>!</note>
+<expan><abbr><expan>								=	<expan>
+<\/expan><\/abbr><\/expan>							=	</expan>
+</abbr></expan><expan><ex>							=	</abbr><ex>
+
+
+# Other Markups
+# Underdots (Unicode 0323)
+((\ẉ)+)										=   <unclear>$1</unclear>
+
+# Plus signs
+((\+)+)                                   	=   <gap reason="illegible" extent="%g1%len1" unit="character"/>
+
+# Ellipsis
+\.\.\.										=	<gap reason="ellipsis"/>
+
+# Accented Letters (Unicode 0301)
+((\ẃ)+)										=	<hi rend="apex">$1</hi>
+
+# Supralinear/Overline Characters (Unicode 0305)
+((\w̅)+)										=	<hi rend="supraline">$1</hi>
+
+# Claudian Letters (Unicode TURNED CAPITAL F 2132 | ROMAN NUMERAL REVERSED ONE HUNDRED 2183 | BOX DRAWINGS HEAVY VERTICAL AND RIGHT[Half H] 2523) 
+([Ⅎ+|Ↄ+|┣+])								=	<g type="claudian_y"/>
+
+#Ligatured Letters (Unicode 0361 - on first letter)
+((\w͡\w)+)									=	<hi rend="ligature">$1</hi>
+
+# Dash
+-\s(?:[-\s\]]+)\?\s*(\n)*          			=   <gap reason="lost" extent="unknown" unit="line" id="%mkID1"/><certainty target="%mkID1" locus="extent" degree="low"/>
+-\s(?:[-\s\]]+)\s*(\n)*          			=   <gap reason="lost" extent="unknown" unit="line" />$1
+(\w)(?:-)\n                             	=   $1<lb type="worddiv"/>
+
+# Line Break
+\n											=	<lb n="1"/> 
+
+# Text Direction Right to Left (Unicode LEFTWARDS ARROW 2190)
+^((←)+)										=	<lb rend="right-to-left"/>
+<lb n=\"\d+\"\/>((←)+)						=	<lb rend="right-to-left"/> 
+
+
 #
 # post conversion cleanup
 #
-̣                                       =   null
+̣                                       		=   null
 
 
