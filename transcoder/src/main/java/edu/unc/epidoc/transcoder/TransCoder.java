@@ -9,17 +9,12 @@
 package edu.unc.epidoc.transcoder;
 
 import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
+import edu.unc.epidoc.transcoder.xml.sax.Serializer;
 
 import java.io.*;
 import java.util.*;
-import javax.xml.transform.*;
-import javax.xml.transform.sax.*;
 
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
-import org.apache.xml.serializer.OutputPropertiesFactory;
 import org.xml.sax.*;
-import org.xml.sax.ext.*;
 import org.xml.sax.helpers.*;
 
 /** TransCoder is the main class of the program.  It can easily be incorporated
@@ -272,21 +267,18 @@ public class TransCoder {
         output.close();
     }
     
-    public void writeXML(File source, OutputStream out, TransCoder tc) throws Exception {
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
-            TranscodingContentHandler handler = new TranscodingContentHandler();
-            Serializer serializer = SerializerFactory.getSerializer 
-                          (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
-            serializer.setOutputStream(out);           
-            XMLReader reader = XMLReaderFactory.createXMLReader();
-            reader.setContentHandler(handler);
-            reader.setFeature("http://xml.org/sax/features/validation", false );
-            handler.setup(serializer.asContentHandler(), null,tc);
-            InputSource is = new InputSource(new java.io.FileInputStream(source));
-            is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
-            reader.parse(is);
-        }
+    public void writeXML(File source, OutputStream out) throws Exception {
+        TranscodingContentHandler handler = new TranscodingContentHandler();
+        Serializer serializer = new Serializer();
+        serializer.setOutput(out, "UTF-8");
+        XMLReader reader = XMLReaderFactory.createXMLReader();
+        reader.setContentHandler(handler);
+        reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
+        reader.setFeature("http://xml.org/sax/features/validation", false );
+        handler.setup(serializer, serializer, this);
+        InputSource is = new InputSource(new java.io.FileInputStream(source));
+        is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
+        reader.parse(is);
     }
 
     
@@ -315,6 +307,9 @@ public class TransCoder {
             File tmpSource = null;
             File result = null;
             boolean xmlMode = false;
+            String filter = null;
+            boolean recurse = false;
+            boolean verbose = false;
             try {
             for (int i = 0; i < args.length; i++) {
                 if (args[i].equals("-s")) {
@@ -332,6 +327,15 @@ public class TransCoder {
                 if (args[i].equals("-x")) {
                     xmlMode = true;
                 }
+                if (args[i].equals("-f")) {
+                    filter = "."+args[++i];
+                }
+                if (args[i].equals("-r")) {
+                    recurse = true;
+                }
+                if (args[i].equals("-v")) {
+                    verbose = true;
+                }
                 if (args[i].equals("--help")) {
                     System.out.println("The transcoder can be invoked with arguments denoting the source and result files or directories and the source and result encodings.");
                     System.out.println("Arguments:");
@@ -340,8 +344,12 @@ public class TransCoder {
                     System.out.println("-se  The source encoding (default BetaCode).");
                     System.out.println("-oe  The output encoding (default UnicodeC).");
                     System.out.println("-x   Use XML mode.  Treat the source and result files as XML.  Not needed if the files have a .xml suffix.");
+                    System.out.println("-f   A filter to be used in determining what files to process, e.g. 'xml' for files ending with '.xml'.");
+                    System.out.println("-r   Recursively process the input folder.  '-o' is ignored if this flag is used.");
+                    System.out.println("-v   Verbose output.");
                     System.out.println();
-                    System.out.println("Valid encodings are: BetaCode, PerseusBetaCode (Beta Code using lowercase ASCII), UncidodeC, UnicodeD, GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
+                    System.out.println("Valid encodings are: BetaCode, PerseusBetaCode (Beta Code using lowercase ASCII), Unicode (input only) " +
+                            "UnicodeC (output only), UnicodeD (output only), GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
                     System.exit(0);
                 }
             }
@@ -361,41 +369,71 @@ public class TransCoder {
             }
 
             if (source.isDirectory()) {
-                if (!result.isDirectory()) {
+                File[] files = null;
+                if (recurse) {
+                    files = recursiveFileList(source);
+                } else if (!result.isDirectory()) {
                     System.out.println("If the source is a directory, the result must also be a directory.");
                     System.exit(1);
-                }
-                File[] files = source.listFiles(new FilenameFilter() {
-                    public boolean accept(File dir, String name) {
-                        if (dir.equals(source)) {
-                            File tmp = new File(dir, name);
-                            if (!tmp.isHidden() && !tmp.isDirectory()) {
-                                return true;
+                } else {
+                    files = source.listFiles(new FilenameFilter() {
+                        public boolean accept(File dir, String name) {
+                            if (dir.equals(source)) {
+                                File tmp = new File(dir, name);
+                                if (!tmp.isHidden() && !tmp.isDirectory()) {
+                                    return true;
+                                }
                             }
+                            return false;
                         }
-                        return false;
-                    }
-                });
+                    });
+                }
                 for (int i = 0;  i < files.length; i++) {
-                    File out = new File(result, files[i].getName());
-                    try {
-                        out.createNewFile();
-                        if (files[i].getName().endsWith(".xml") || xmlMode) {
-                            tc.writeXML(files[i], new FileOutputStream(out), tc);
+                    if (filter == null || files[i].getName().endsWith(filter)) {
+                        File out;
+                        if (recurse) {
+                            out = files[i];
                         } else {
-                            tc.write(new FileInputStream(source), new FileOutputStream(out));
+                            out = new File(result, files[i].getName());
                         }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("Can't write to " + out.getAbsolutePath());
+                        try {
+                            File tmp = File.createTempFile("trc", "tmp");
+                            FileOutputStream fos = new FileOutputStream(tmp);
+                            if (files[i].getName().endsWith(".xml") || xmlMode) {
+                                tc.writeXML(files[i], fos);
+                            } else {
+                                tc.write(new FileInputStream(source), fos);
+                            }
+                            tmp.renameTo(out);
+                            if (verbose) {
+                                System.out.println(out);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("Can't write to " + out.getAbsolutePath());
+                        }
                     }
                 }
             } else {
                 try {
-                    if (source.getName().endsWith(".xml") || xmlMode) {
-                        tc.writeXML(source, new FileOutputStream(result), tc);
+                    FileOutputStream fos = null;
+                    File tmp = null;
+                    if (source.equals(result)) {
+                        tmp = File.createTempFile("trc", "tmp");
+                        fos = new FileOutputStream(tmp);
                     } else {
-                        tc.write(new FileInputStream(source), new FileOutputStream(result));
+                        fos = new FileOutputStream(result);
+                    }
+                    if (source.getName().endsWith(".xml") || xmlMode) {
+                        tc.writeXML(source, fos);
+                    } else {
+                        tc.write(new FileInputStream(source), fos);
+                    }
+                    if (tmp != null) {
+                        tmp.renameTo(result);
+                    }
+                    if (verbose) {
+                        System.out.println(result);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -404,6 +442,38 @@ public class TransCoder {
                 }
             }
         }
+    }
+
+    private static File[] recursiveFileList(File in) {
+        // in case we're called with a non-directory file
+        if (!in.isDirectory()) {
+            return new File[] {in};
+        }
+        //add contents of current directory
+        File[] files = in.listFiles(new FileFilter() {
+                public boolean accept(File f) {
+                    if (!f.isDirectory() && !f.isHidden()) {
+                        return true;
+                    }
+                    return false;
+                }
+            });
+        //recurse through subdirectories, adding as we go
+        for (File f : in.listFiles(new FileFilter() {
+                    public boolean accept(File file) {
+                        if (!file.isHidden() && file.isDirectory()) {
+                            return true;
+                        }
+                        return false;
+                    }
+                })) {
+            File[] list = recursiveFileList(f);
+            File[] tmpFiles = new File[files.length+list.length];
+            System.arraycopy(files, 0, tmpFiles, 0, files.length);
+            System.arraycopy(list, 0, tmpFiles, files.length, list.length);
+            files = tmpFiles;
+        }
+        return files;
     }
     
 }

@@ -8,6 +8,7 @@ package edu.unc.epidoc.transcoder.gui;
 
 import edu.unc.epidoc.transcoder.*;
 import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
+import edu.unc.epidoc.transcoder.xml.sax.Serializer;
 
 import java.awt.*;
 import javax.swing.*;
@@ -16,11 +17,7 @@ import java.util.*;
 import javax.xml.transform.*;
 import javax.xml.transform.sax.*;
 
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
-import org.apache.xml.serializer.OutputPropertiesFactory;
 import org.xml.sax.*;
-import org.xml.sax.ext.*;
 import org.xml.sax.helpers.*;
 
 /** This class provides a GUI test interface to the <CODE>Transcoder</CODE>.
@@ -346,7 +343,14 @@ public class Tester extends javax.swing.JFrame {
                     if (!result.exists()) {
                         result.createNewFile();
                     }
-                    FileOutputStream fos = new FileOutputStream(result);
+                    FileOutputStream fos = null;
+                    File tmp = null;
+                    if (source.equals(result)) {
+                        tmp = File.createTempFile("trc", "tmp");
+                        fos = new FileOutputStream(tmp);
+                    } else {
+                        fos = new FileOutputStream(result);
+                    }
                     if (source != null) {
                         if (source.getName().endsWith(".xml")) {
                             convert(source, fos);
@@ -359,6 +363,9 @@ public class Tester extends javax.swing.JFrame {
                         fos.flush();
                         fos.close();
                         conversionArea.setText(s);
+                    }
+                    if (tmp != null) {
+                        tmp.renameTo(result);
                     }
                 } else
                     conversionArea.setText(tc.getString(source));
@@ -373,23 +380,7 @@ public class Tester extends javax.swing.JFrame {
     
     public void convert(File in, OutputStream out) throws TransformerException, 
         TransformerConfigurationException, SAXException, IOException, Exception {
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        if (tFactory.getFeature(SAXSource.FEATURE) && tFactory.getFeature(SAXResult.FEATURE)) {
-            SAXTransformerFactory saxTFactory = (SAXTransformerFactory)tFactory;
-            TranscodingContentHandler handler = new TranscodingContentHandler();
-            Serializer serializer = SerializerFactory.getSerializer 
-                          (OutputPropertiesFactory.getDefaultMethodProperties("xml"));        
-            serializer.setOutputStream(out);           
-            
-            XMLReader reader = XMLReaderFactory.createXMLReader();
-            reader.setContentHandler(handler);
-            reader.setFeature("http://xml.org/sax/features/validation", false );
-            handler.setup(serializer.asContentHandler(), null, this.tc);
-            InputSource is = new InputSource(new java.io.FileInputStream(in));
-            is.setSystemId("/Users/hcayless/Development/EpiDuke/trunk/data/DDB_TEI_XML/");
-            reader.parse(is);
-            
-        }
+        tc.writeXML(in, out);
     }
     
     /** Exit the Application */
