@@ -263,15 +263,6 @@
     </xsl:choose>
   </xsl:template>
 
-  <!--  <xsl:template match="num[contains(@value, '/')]">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*"/>
-       <xsl:attribute name="valueType">
-         <xsl:text>fraction</xsl:text>
-       </xsl:attribute>
-    </xsl:element>
-  </xsl:template>-->
-
   <xsl:template match="persName|name|placeName|geogName">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = ('reg','full','cert'))]"/>
@@ -286,6 +277,31 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="revisionDesc">
+    <xsl:element name="{local-name()}">
+      <xsl:element name="change">
+        <xsl:attribute name="when">
+          <xsl:text>2009-06-27</xsl:text>
+        </xsl:attribute>
+        <xsl:attribute name="who">
+          <xsl:text>GB</xsl:text>
+        </xsl:attribute>
+        <xsl:text>Converted from TEI P4 (EpiDoc DTD v. 6) to P5 (EpiDoc RNG schema)</xsl:text>
+      </xsl:element>
+      <xsl:for-each select="change">
+        <xsl:element name="{local-name()}">
+          <xsl:attribute name="when">
+            <xsl:value-of select="date"/>
+          </xsl:attribute>
+          <xsl:attribute name="who">
+            <xsl:value-of select="respStmt/name"/>
+          </xsl:attribute>
+          <xsl:value-of select="item"/>
+        </xsl:element>
+      </xsl:for-each>
     </xsl:element>
   </xsl:template>
 
@@ -313,22 +329,6 @@
         </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
-
-  <xsl:template match="revisionDesc">
-    <xsl:element name="{local-name()}">
-      <xsl:for-each select="change">
-        <xsl:element name="{local-name()}">
-          <xsl:attribute name="when">
-            <xsl:value-of select="date"/>
-          </xsl:attribute>
-          <xsl:attribute name="who">
-            <xsl:value-of select="respStmt/name"/>
-          </xsl:attribute>
-          <xsl:value-of select="item"/>
-        </xsl:element>
-      </xsl:for-each>
-    </xsl:element>
   </xsl:template>
 
   <xsl:template match="seg">
