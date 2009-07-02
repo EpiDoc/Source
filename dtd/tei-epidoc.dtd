@@ -25,7 +25,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
+	part (Y | N | I | M | F) #IMPLIED
 	rend CDATA #IMPLIED
 	subtype CDATA #IMPLIED
 	type CDATA #IMPLIED
@@ -223,7 +223,7 @@
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	status (free | unknown | restricted) "unknown"
+	status (free | unknown | restricted) #IMPLIED
 	 >
 
 <!ELEMENT bibl 
@@ -240,7 +240,7 @@
 
 <!ATTLIST bibl 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -262,7 +262,7 @@
 
 <!ATTLIST biblFull 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -302,7 +302,7 @@
 
 <!ATTLIST biblStruct 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -322,9 +322,10 @@
 
 <!ATTLIST bloc 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -410,7 +411,7 @@
 <!ATTLIST certainty 
 	ana IDREFS #IMPLIED
 	assertedValue CDATA #IMPLIED
-	degree (high | low) "high"
+	degree (high | low) #IMPLIED
 	desc CDATA #IMPLIED
 	given CDATA #IMPLIED
 	id ID #IMPLIED
@@ -510,9 +511,10 @@
 
 <!ATTLIST country 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -552,7 +554,7 @@
 <!ATTLIST date 
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	dur CDATA #IMPLIED
 	exact (notBefore | notAfter | both | none) #IMPLIED
 	id ID #IMPLIED
@@ -597,9 +599,10 @@
 	ana IDREFS #IMPLIED
 	calendar CDATA #IMPLIED
 	exact CDATA #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -613,12 +616,13 @@
 
 <!ATTLIST day 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	dur CDATA #IMPLIED
 	exact (notBefore | notAfter | both | none) #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	notAfter CDATA #IMPLIED
@@ -649,7 +653,7 @@
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp IDREF #IMPLIED
-	status CDATA "unremarkable"
+	status CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
@@ -666,9 +670,10 @@
 <!ATTLIST distance 
 	ana IDREFS #IMPLIED
 	exact (Y | N | U) #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -712,12 +717,12 @@
 	lang IDREF #IMPLIED
 	met CDATA #IMPLIED
 	n CDATA #IMPLIED
-	org (composite | uniform) "uniform"
-	part (Y | N | I | M | F) "N"
+	org (composite | uniform) #IMPLIED
+	part (Y | N | I | M | F) #IMPLIED
 	real CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
-	sample (initial | medial | final | unknown | complete) "complete"
+	sample (initial | medial | final | unknown | complete) #IMPLIED
 	subtype CDATA #IMPLIED
 	type (apparatus | bibliography | commentary | description | edition | figure | history | textpart | translation) #REQUIRED
 	 >
@@ -785,7 +790,7 @@
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	role CDATA "editor"
+	role CDATA #IMPLIED
 	 >
 
 <!ELEMENT emph 
@@ -823,7 +828,7 @@
 
 <!ATTLIST ex 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -882,7 +887,7 @@
 	n CDATA #IMPLIED
 	name NMTOKEN #REQUIRED
 	org (single | set | bag | list) #IMPLIED
-	rel (eq | ne | sb | ns) "eq"
+	rel (eq | ne | sb | ns) #IMPLIED
 	rend CDATA #IMPLIED
 	 >
 
@@ -957,7 +962,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	rel (eq | ne | sb | ns) "sb"
+	rel (eq | ne | sb | ns) #IMPLIED
 	rend CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
@@ -1018,9 +1023,10 @@
 
 <!ATTLIST geog 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1041,10 +1047,11 @@
 
 <!ATTLIST geogName 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
-	full (yes | abb | init) "yes"
+	cert (high | low) #IMPLIED
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1154,7 +1161,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline | sling-above | sling-below | supraline-underline | subscript | diaeresis | oxia | dasia | varia | psili | perispomeni) #REQUIRED
+	rend (apex | intraline | italic | ligature | longa | normal | reversed | supraline | tall | strong | superscript | underline | sling-above | sling-below | supraline-underline | subscript | diaeresis | oxia | dasia | varia | psili | perispomeni | acute | grave | circumflex | asper | lenis) #REQUIRED
 	type CDATA #IMPLIED
 	 >
 
@@ -1232,7 +1239,7 @@
 	lang IDREF #IMPLIED
 	met CDATA #IMPLIED
 	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
+	part (Y | N | I | M | F) #IMPLIED
 	real CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
@@ -1243,7 +1250,7 @@
 
 <!ATTLIST langUsage 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -1320,12 +1327,12 @@
 	lang IDREF #IMPLIED
 	met CDATA #IMPLIED
 	n CDATA #IMPLIED
-	org (composite | uniform) "uniform"
-	part (Y | N | I | M | F) "N"
+	org (composite | uniform) #IMPLIED
+	part (Y | N | I | M | F) #IMPLIED
 	real CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
-	sample (initial | medial | final | unknown | complete) "complete"
+	sample (initial | medial | final | unknown | complete) #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
@@ -1341,7 +1348,7 @@
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "U"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
 	targets IDREFS #REQUIRED
 	type CDATA #IMPLIED
@@ -1361,7 +1368,7 @@
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	targFunc NMTOKENS #IMPLIED
-	targOrder (Y | N | U) "U"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
@@ -1379,7 +1386,7 @@
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	type CDATA "simple"
+	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT listBibl 
@@ -1392,7 +1399,7 @@
 
 <!ATTLIST listBibl 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -1411,10 +1418,11 @@
 
 <!ATTLIST measure 
 	ana IDREFS #IMPLIED
-	dim (height | width | depth | diameter | none) "none"
+	dim (height | width | depth | diameter | none) #IMPLIED
 	from CDATA #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	precision (circa | exact) #IMPLIED
@@ -1490,12 +1498,13 @@
 
 <!ATTLIST month 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	dur CDATA #IMPLIED
 	exact (notBefore | notAfter | both | none) #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	notAfter CDATA #IMPLIED
@@ -1556,6 +1565,7 @@
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1576,11 +1586,11 @@
 
 <!ATTLIST note 
 	ana IDREFS #IMPLIED
-	anchored (yes | no) "yes"
+	anchored (yes | no) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	place CDATA "not specified"
+	place CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	target CDATA #IMPLIED
@@ -1620,9 +1630,10 @@
 
 <!ATTLIST occasion 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1637,9 +1648,10 @@
 
 <!ATTLIST offset 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1711,10 +1723,11 @@
 
 <!ATTLIST persName 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
-	full (yes | abb | init) "yes"
+	cert (high | low) #IMPLIED
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1735,10 +1748,11 @@
 
 <!ATTLIST placeName 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
-	full (yes | abb | init) "yes"
+	cert (high | low) #IMPLIED
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1803,13 +1817,13 @@
 <!ATTLIST ptr 
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
-	evaluate (all | one | none) "all"
+	evaluate (all | one | none) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
 	target IDREFS #REQUIRED
 	type CDATA #IMPLIED
@@ -1829,6 +1843,7 @@
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -1929,13 +1944,13 @@
 <!ATTLIST ref 
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
-	evaluate (all | one | none) "all"
+	evaluate (all | one | none) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
 	target IDREFS #IMPLIED
 	type CDATA #IMPLIED
@@ -1974,9 +1989,10 @@
 
 <!ATTLIST region 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -2038,9 +2054,10 @@
 
 <!ATTLIST rs 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -2061,13 +2078,13 @@
 
 <!ATTLIST seg 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	function CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	met CDATA #IMPLIED
 	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
+	part (Y | N | I | M | F) #IMPLIED
 	real CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
@@ -2100,9 +2117,10 @@
 
 <!ATTLIST settlement 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -2156,7 +2174,7 @@
 
 <!ATTLIST sourceDesc 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -2168,15 +2186,15 @@
 
 <!ATTLIST space 
 	ana IDREFS #IMPLIED
-	dim (horizontal | vertical) "horizontal"
-	extent CDATA "1"
+	dim (horizontal | vertical) #IMPLIED
+	extent CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	precision (circa | exact) #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	unit CDATA "character"
+	unit CDATA #IMPLIED
 	 >
 
 <!ELEMENT sponsor 
@@ -2205,7 +2223,7 @@
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	rel (eq | ne | sb | ns | lt | le | gt | ge) "eq"
+	rel (eq | ne | sb | ns | lt | le | gt | ge) #IMPLIED
 	rend CDATA #IMPLIED
 	 >
 
@@ -2254,7 +2272,7 @@
 <!ATTLIST supplied 
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	evidence (conjecture | duplicate | external | internal) #IMPLIED
 	hand CDATA #IMPLIED
 	id ID #IMPLIED
@@ -2311,8 +2329,8 @@
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	status (new | update) "new"
-	type CDATA "text"
+	status (new | update) #IMPLIED
+	type CDATA #IMPLIED
 	 >
 
 <!ELEMENT term 
@@ -2354,7 +2372,7 @@
 
 <!ATTLIST textClass 
 	ana IDREFS #IMPLIED
-	default (YES | NO) "NO"
+	default (YES | NO) #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
@@ -2376,10 +2394,10 @@
 	ana IDREFS #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
-	level (a | m | j | s | u) "m"
+	level (a | m | j | s | u) #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
-	type (main | subordinate | parallel | abbreviated) "main"
+	type (main | subordinate | parallel | abbreviated) #IMPLIED
 	 >
 
 <!ELEMENT titleStmt 
@@ -2400,12 +2418,12 @@
 <!ATTLIST unclear 
 	agent CDATA #IMPLIED
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	hand CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
-	reason (damage | execution | undefined) "undefined"
+	reason (damage | execution | undefined) #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
 	 >
@@ -2429,7 +2447,7 @@
 	lemma CDATA #IMPLIED
 	met CDATA #IMPLIED
 	n CDATA #IMPLIED
-	part (Y | N | I | M | F) "N"
+	part (Y | N | I | M | F) #IMPLIED
 	real CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	rhyme CDATA #IMPLIED
@@ -2441,9 +2459,10 @@
 
 <!ATTLIST week 
 	ana IDREFS #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	reg CDATA #IMPLIED
@@ -2478,16 +2497,16 @@
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	doc ENTITY #IMPLIED
-	evaluate (all | one | none) "all"
-	from CDATA "ROOT"
+	evaluate (all | one | none) #IMPLIED
+	from CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
-	to CDATA "DITTO"
+	to CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
@@ -2506,17 +2525,17 @@
 	ana IDREFS #IMPLIED
 	crdate CDATA #IMPLIED
 	doc ENTITY #IMPLIED
-	evaluate (all | one | none) "all"
-	from CDATA "ROOT"
+	evaluate (all | one | none) #IMPLIED
+	from CDATA #IMPLIED
 	href CDATA #IMPLIED
 	id ID #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	resp CDATA #IMPLIED
-	targOrder (Y | N | U) "Y"
+	targOrder (Y | N | U) #IMPLIED
 	targType CDATA #IMPLIED
-	to CDATA "DITTO"
+	to CDATA #IMPLIED
 	type CDATA #IMPLIED
 	 >
 
@@ -2525,12 +2544,13 @@
 
 <!ATTLIST year 
 	ana IDREFS #IMPLIED
-	cert (high | low) "high"
+	cert (high | low) #IMPLIED
 	dur CDATA #IMPLIED
 	exact (notBefore | notAfter | both | none) #IMPLIED
-	full (yes | abb | init) "yes"
+	full (yes | abb | init) #IMPLIED
 	id ID #IMPLIED
 	key CDATA #IMPLIED
+              ref CDATA #IMPLIED
 	lang IDREF #IMPLIED
 	n CDATA #IMPLIED
 	notAfter CDATA #IMPLIED
