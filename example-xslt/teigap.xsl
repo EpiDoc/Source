@@ -82,7 +82,9 @@
         <xsl:call-template name="lost-opener"/>
       </xsl:otherwise>
     </xsl:choose>
-
+    <xsl:if test="preceding-sibling::node()[1][@part='M' or @part='I']">
+      <xsl:text>-</xsl:text>
+    </xsl:if>
     <xsl:call-template name="extent-string"/>
 
     <!-- certainty -->
@@ -96,7 +98,11 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:if>
-
+    
+    <xsl:if test="following-sibling::node()[1][@part='M' or @part='F']">
+      <xsl:text>-</xsl:text>
+    </xsl:if>
+    
     <xsl:choose>
       <xsl:when test="$leiden-style = 'ddbdp' and @unit = 'line' and @extent = 'unknown'"/>
       <xsl:when test="$leiden-style = 'panceira' and @unit = 'line' and @extent = 'unknown'"/>

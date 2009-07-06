@@ -36,6 +36,10 @@
         <xsl:apply-templates/>
         <!-- Found in tpl-certlow.xsl -->
         <xsl:call-template name="cert-low"/>
+        <xsl:if test="ancestor::node()[@part='M' or @part='I']
+                      and last()">
+          <xsl:text>-</xsl:text>
+        </xsl:if>
         <xsl:text>)</xsl:text>
       </xsl:when>
       <xsl:otherwise/>
