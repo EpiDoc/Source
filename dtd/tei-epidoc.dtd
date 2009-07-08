@@ -18,7 +18,7 @@
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
 	| bibl | biblFull | biblStruct | list | listBibl | note 
 	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	| cb | lb | milestone | pb | q)* >
 
 <!ATTLIST ab 
 	ana IDREFS #IMPLIED
@@ -943,7 +943,7 @@
 	| title | ptr | ref | xptr | xref | seg | w | att | tag 
 	| bibl | biblFull | biblStruct | list | listBibl | note 
 	| text | gap | figure | certainty | fs | link | linkGrp 
-	| cb | lb | milestone | pb)* >
+	| cb | lb | milestone | pb | q)* >
 
 <!ATTLIST foreign 
 	ana IDREFS #IMPLIED
@@ -1882,6 +1882,25 @@
 	n CDATA #IMPLIED
 	rend CDATA #IMPLIED
 	 >
+	 
+<!ELEMENT q 
+	(#PCDATA | g | choice | am | ex | subst | abbr | address 
+	| date | dateRange | dateStruct | expan | geogName | measure 
+	| name | num | persName | placeName | rs | add | app | corr 
+	| del | orig | reg | sic | space | supplied | unclear | 
+	handShift | emph | foreign | gloss | hi | soCalled | term 
+	| title | ptr | ref | xptr | xref | seg | w | att | tag 
+	| bibl | biblFull | biblStruct | list | listBibl | note 
+	| text | gap | figure | certainty | fs | link | linkGrp 
+	| cb | lb | milestone | pb)* >
+
+<!ATTLIST q 
+	ana IDREFS #IMPLIED
+	id ID #IMPLIED
+	lang IDREF #IMPLIED
+	n CDATA #IMPLIED
+	rend CDATA #IMPLIED
+	>
 
 <!ELEMENT rdg 
 	(#PCDATA | g | choice | am | ex | subst | abbr | address 
