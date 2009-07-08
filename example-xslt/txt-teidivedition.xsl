@@ -6,7 +6,13 @@
 
   <xsl:template match="div[@type = 'edition']" priority="1">
     <!-- Two line breaks to give space -->
-    <xsl:text>&#xA;&#xD;&#xA;&#xD;</xsl:text>
+    <xsl:choose>
+      <xsl:when test="$leiden-style = 'edh'"/>
+      <xsl:otherwise>
+        <xsl:text>&#xA;&#xD;&#xA;&#xD;</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+    
     <xsl:apply-templates/>
     
     <!-- Apparatus creation: look in tpl-apparatus.xsl for documentation -->
@@ -17,9 +23,21 @@
   </xsl:template>
 
 
-  <xsl:template match="div[starts-with(@type, 'textpart')]" priority="1">
-    <xsl:text>&#xA;&#xD;</xsl:text>
-    <xsl:value-of select="@n"/>
+  <xsl:template match="div[@type = 'textpart']" priority="1">
+    <xsl:choose>
+      <xsl:when test="$leiden-style = 'edh'">
+        <xsl:variable name="cur_parent" select="generate-id(parent::node())"/>
+        <xsl:if test="preceding::div[@type='textpart'][1][generate-id(parent::node())=$cur_parent]"><xsl:text>// </xsl:text></xsl:if>
+        <xsl:text>(</xsl:text>
+        <xsl:value-of select="@n"/>
+        <xsl:text>) </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>&#xA;&#xD;</xsl:text>
+        <xsl:value-of select="@n"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    
     <xsl:apply-templates/>
   </xsl:template>
 
