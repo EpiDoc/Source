@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0"
-    xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
+    xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -16,6 +15,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="ML" when="2009-07-12">stop omitting few tags: orgName element</change>
             <change who="GB" when="2009-06-10">removed dummy 'precision' element</change>
             <change who="GB" when="2008-11-20">Created bare ODD from Roma</change>
         </revisionDesc>
@@ -376,14 +376,11 @@
                 <elementSpec module="namesdates" ident="langKnowledge" mode="delete"/>
                 <elementSpec module="namesdates" ident="langKnown" mode="delete"/>
                 <elementSpec module="namesdates" ident="listEvent" mode="delete"/>
-                <elementSpec module="namesdates" ident="listOrg" mode="delete"/>
                 <elementSpec module="namesdates" ident="location" mode="delete"/>
                 <elementSpec module="namesdates" ident="nameLink" mode="delete"/>
                 <elementSpec module="namesdates" ident="nationality" mode="delete"/>
                 <elementSpec module="namesdates" ident="occupation" mode="delete"/>
                 <elementSpec module="namesdates" ident="offset" mode="delete"/>
-                <elementSpec module="namesdates" ident="org" mode="delete"/>
-                <elementSpec module="namesdates" ident="orgName" mode="delete"/>
                 <elementSpec module="namesdates" ident="population" mode="delete"/>
                 <elementSpec module="namesdates" ident="relation" mode="delete"/>
                 <elementSpec module="namesdates" ident="relationGrp" mode="delete"/>
