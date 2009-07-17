@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
-<!-- ||||||||||||||||||||||||||||||||||||||||| -->
+<!-- |||||||||||||||||||||||||||||||||||||||||| -->
 <!-- ||||  Gabriel BODARD 2008-11-20    |||||| -->
 <!-- |||| w/contribution from TE,HC,EM |||||| -->
-<!-- ||||           Last update 2004-05-26        |||||| -->
-<!-- ||||||||||||||||||||||||||||||||||||||||| -->
+<!-- ||||          Last update 2009-07-17       |||||| -->
+<!-- |||||||||||||||||||||||||||||||||||||||||| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
   xmlns="http://www.tei-c.org/ns/1.0" xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
@@ -387,7 +387,7 @@
   <xsl:template match="titleStmt/title">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
-      <xsl:if test="string(@n)">
+      <xsl:if test="string-length(@n) > 0">
         <xsl:copy-of select="@n"/>
       </xsl:if>
       <xsl:apply-templates/>
