@@ -98,11 +98,11 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:if>
-    
+
     <xsl:if test="following-sibling::node()[1][@part='M' or @part='F']">
       <xsl:text>-</xsl:text>
     </xsl:if>
-    
+
     <xsl:choose>
       <xsl:when test="$leiden-style = 'ddbdp' and @unit = 'line' and @extent = 'unknown'"/>
       <xsl:when test="$leiden-style = 'panceira' and @unit = 'line' and @extent = 'unknown'"/>
@@ -153,6 +153,9 @@
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:value-of select="$cur-dot"/>
               </xsl:when>
+              <xsl:when test="$leiden-style = 'idp-itx'">
+                <xsl:text>3</xsl:text>
+              </xsl:when>
               <xsl:when test="$leiden-style = 'panciera'">
                 <xsl:text>-</xsl:text>
               </xsl:when>
@@ -162,6 +165,16 @@
             </xsl:choose>
           </xsl:when>
 
+          <xsl:when test="$leiden-style = 'edh-idx and number(@extent)">
+            <xsl:choose>
+              <xsl:when test="@extent > 2">
+                <xsl:text>3</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="@extent"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
           <xsl:when test="number(@extent) > $cur-max">
             <xsl:choose>
               <xsl:when test="$leiden-style = 'ddbdp'">
@@ -224,7 +237,8 @@
 
           <xsl:otherwise>
             <xsl:choose>
-              <xsl:when test="@desc = 'vestiges' and $leiden-style = 'ddbdp' and @reason = 'illegible'">
+              <xsl:when
+                test="@desc = 'vestiges' and $leiden-style = 'ddbdp' and @reason = 'illegible'">
                 <xsl:call-template name="tpl-vest">
                   <xsl:with-param name="circa" select="$circa"/>
                 </xsl:call-template>
@@ -278,8 +292,21 @@
           <xsl:when test="$leiden-style = 'london'">
             <xsl:text>---</xsl:text>
           </xsl:when>
-          <xsl:when test="$leiden-style = 'panciera' and dim = 'bottom'">
+          <xsl:when test="$leiden-style = 'panciera' and not(following-sibling::lb)">
             <xsl:text>- - - - - -</xsl:text>
+          </xsl:when>
+          <xsl:when test="$leiden-style = 'edh-itx'">
+            <xsl:choose>
+              <xsl:when test="not(following-sibling::lb)">
+                <xsl:text>&amp;</xsl:text>
+              </xsl:when>
+              <xsl:when test="count(preceding-sibling::lb) = 1">
+                <xsl:text>$</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>6</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
           </xsl:when>
           <xsl:otherwise>
             <xsl:text> - - - - - - - - - - </xsl:text>
@@ -316,6 +343,9 @@
             <xsl:call-template name="tpl-vest">
               <xsl:with-param name="circa" select="$circa"/>
             </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="$leiden-style = 'edh-idx'">
+            <xsl:text>6</xsl:text>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="$cur-dot"/>
