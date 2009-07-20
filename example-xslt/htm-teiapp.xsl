@@ -43,6 +43,7 @@
             <xsl:apply-templates/>
           </xsl:when>
           <xsl:when test="@resp='autopsy'"/>
+          <xsl:when test="parent::app"/>
           <xsl:otherwise>
             <xsl:apply-templates/>
           </xsl:otherwise>
