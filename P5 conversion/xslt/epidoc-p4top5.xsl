@@ -77,6 +77,32 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match="add">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of select="@*[not(local-name() = 'place')]"/>
+      <xsl:attribute name="place">
+        <xsl:choose>
+          <xsl:when test="@place = 'supralinear'">
+            <xsl:text>above</xsl:text>
+          </xsl:when>
+          <xsl:when test="@place = 'infralinear'">
+            <xsl:text>below</xsl:text>
+          </xsl:when>
+          <xsl:when test="@place = 'verso'">
+            <xsl:text>overleaf</xsl:text>
+          </xsl:when>
+          <xsl:when test="@place">
+            <xsl:value-of select="@place"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>unspecified</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+        </xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="certainty">
     <xsl:element name="{local-name()}">
@@ -101,7 +127,6 @@
           </xsl:attribute>
         </xsl:otherwise>
       </xsl:choose>
-
     </xsl:element>
   </xsl:template>
 
