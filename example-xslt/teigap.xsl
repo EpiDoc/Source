@@ -165,7 +165,7 @@
             </xsl:choose>
           </xsl:when>
 
-          <xsl:when test="$leiden-style = 'edh-idx and number(@extent)">
+          <xsl:when test="$leiden-style = 'edh-idx' and number(@extent)">
             <xsl:choose>
               <xsl:when test="@extent > 2">
                 <xsl:text>3</xsl:text>
