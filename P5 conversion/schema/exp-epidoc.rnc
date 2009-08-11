@@ -6,7 +6,7 @@ namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2009-07-12T08:21:19-04:00. 
+# Schema generated from ODD source 2009-08-11T12:06:48-04:00. 
 # TEI Edition: 1.4.1. Last updated on July 1st 2009.
 #
 
@@ -1374,16 +1374,37 @@ tei_add =
     attribute place {
       
       ##
-      "inline"
+      "above"
       | 
         ##
-        "supralinear"
+        "below"
       | 
         ##
-        "infralinear"
+        "bottom"
+      | 
+        ##
+        "inline"
+      | 
+        ##
+        "interlinear"
       | 
         ##
         "left"
+      | 
+        ##
+        "margin"
+      | 
+        ##
+        "mixed"
+      | 
+        ##
+        "opposite"
+      | 
+        ##
+        "overleaf"
+      | 
+        ##
+        "overstrike"
       | 
         ##
         "right"
@@ -1392,22 +1413,7 @@ tei_add =
         "top"
       | 
         ##
-        "bottom"
-      | 
-        ##
-        "opposite"
-      | 
-        ##
-        "verso"
-      | 
-        ##
-        "overstrike"
-      | 
-        ##
-        "mixed"
-      | 
-        ##
-        "margin"
+        "unspecified"
     }?,
     att.global.attributes,
     att.transcriptional.attributes,
@@ -1995,8 +2001,8 @@ tei_lb =
     ##
     attribute type {
       
-      ## this line-beginning appears mid-word
-      "worddiv"
+      ## this line-beginning appears inside a word
+      "inWord"
     }?,
     att.global.attributes,
     att.typed.attribute.subtype,

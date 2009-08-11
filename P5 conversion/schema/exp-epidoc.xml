@@ -15,6 +15,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="GB" when="2009-08-11">changed 'worddiv' to 'inWord'</change>
             <change who="ML" when="2009-07-12">stop omitting few tags: orgName element</change>
             <change who="GB" when="2009-06-10">removed dummy 'precision' element</change>
             <change who="GB" when="2008-11-20">Created bare ODD from Roma</change>
@@ -41,39 +42,6 @@
                 <moduleRef key="namesdates"/>
                 <moduleRef key="textcrit"/>
                 <moduleRef key="figures"/>
-
-                <!--        NEW ELEMENT SPECS        -->
-                <!--<elementSpec ident="precision" mode="add" ns="http://epidoc.sf.net/ns/EpiDoc/8.0">
-                    <classes>
-                        <memberOf key="model.global.meta"/>
-                        <memberOf key="att.dimensions"/>
-                    </classes>
-                    <content>
-                        <rng:empty/>
-                    </content>
-                    <attList>
-                        <attDef ident="target" usage="req">
-                            <datatype minOccurs="1" maxOccurs="unbounded">
-                                <rng:ref name="data.pointer"/>
-                            </datatype>
-                        </attDef>
-                        <attDef ident="locus" usage="req">
-                            <datatype>
-                                <rng:ref name="data.enumerated"/>
-                            </datatype>
-                        </attDef>
-                        <attDef ident="degree" usage="opt">
-                            <datatype>
-                                <rng:ref name="data.probability"/>
-                            </datatype>
-                        </attDef>
-                        <attDef ident="stdDev" usage="opt">
-                            <datatype minOccurs="1" maxOccurs="1">
-                                <rng:ref name="data.numeric"/>
-                            </datatype>
-                        </attDef>
-                    </attList>
-                </elementSpec>-->
 
                 <!--        CHANGED ELEMENT SPECS        -->
                 <elementSpec module="core" ident="add" mode="change">
@@ -246,8 +214,8 @@
                     <attList>
                         <attDef ident="type" mode="replace" usage="opt">
                             <valList type="closed">
-                                <valItem ident="worddiv">
-                                    <desc>this line-beginning appears mid-word</desc>
+                                <valItem ident="inWord">
+                                    <desc>this line-beginning appears inside a word</desc>
                                 </valItem>
                             </valList>
                         </attDef>
