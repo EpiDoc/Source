@@ -189,9 +189,19 @@
           </xsl:if>
         </p>
       </xsl:when>
-
+      
+      <!-- Navigation from HGV Translations -->
+      <xsl:when test="$topNav='hgv' and not(//div[@type='edition']) and //div[@type='translation']">
+        <xsl:variable name="hgv-no" select="substring-after(/TEI.2/@id, 'HGV-')"/>
+        <p>
+          <a href="/navigator/full/trismegistos_{$hgv-no}">Papyrological Navigator</a>
+          <xsl:text> | </xsl:text>
+          <a href="../xml/{$hgv-no}.xml">XML</a>
+        </p>
+      </xsl:when>
+      
       <!-- Navigation from HGV metadata -->
-      <xsl:when test="$topNav = 'ddbdp' and not(//div[@type='edition'])">
+      <xsl:when test="($topNav='ddbdp' or $topNav='hgv') and not(//div[@type='edition'])">
         <xsl:variable name="hgv-no">
           <xsl:value-of select="//bibl[@type='Trismegistos']/biblScope[@type='numbers']"/>
         </xsl:variable>
@@ -206,7 +216,7 @@
           
           <a>
             <xsl:attribute name="href">
-              <xsl:text>../../hgvmeta/xml/</xsl:text>
+              <xsl:text>../../xml/</xsl:text>
               <xsl:value-of select="$meta-dir"/>
               <xsl:text>/</xsl:text>
               <xsl:value-of select="$hgv-no"/>
@@ -216,9 +226,8 @@
           </a>
         </p>
       </xsl:when>
-      <xsl:otherwise>
-        <xsl:variable name="hgv-no"/>
-      </xsl:otherwise>
+
+
     </xsl:choose>
   </xsl:template>
 
@@ -278,9 +287,8 @@
     </xsl:if>
     <!-- Translations -->
     <!-- Extra testing to limit amount of dead translation links -->
-    <xsl:variable name="trans" select="document(concat('../output/data/hgvtrans/xml/',$hgv-no,'.xml'))"/>
-    <xsl:if
-      test="$trans">
+    <xsl:variable name="trans" select="concat($docroot,'/hgvtrans/xml/',$hgv-no,'.xml')"/>
+    <xsl:if test="file:exists(file:new($trans))" xmlns:file="java:java.io.File">
       <xsl:text> | </xsl:text>
       <a>
         <xsl:attribute name="href">

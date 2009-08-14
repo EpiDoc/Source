@@ -5,10 +5,10 @@
   <xsl:template name="css-script">
     
     <link rel="stylesheet" type="text/css" media="screen, projection"
-      href="http://epiduke.cch.kcl.ac.uk/css/global.css"/>
+      href="http://papyri.info/global.css"/>
     
     <xsl:if test="$leiden-style = 'ddbdp' and //div[@type = 'translation']">
-      <script type="text/javascript" src="http://epiduke.cch.kcl.ac.uk/js/overlib.js">&#160;</script>
+      <script type="text/javascript" src="http://papyri.info/js/overlib_mini.js">&#160;</script>
     </xsl:if>
   </xsl:template>
 </xsl:stylesheet>

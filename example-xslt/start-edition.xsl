@@ -29,7 +29,7 @@
   <xsl:include href="htm-teisupplied.xsl"/>
   <xsl:include href="htm-teiterm.xsl"/>
   <xsl:include href="htm-teixref.xsl"/>
-
+  
   <!-- tei stylesheets that are also used by start-txt -->
   <xsl:include href="teiabbrandexpan.xsl"/>
   <xsl:include href="teiaddanddel.xsl"/>
@@ -50,6 +50,7 @@
   <xsl:include href="htm-tpl-lang.xsl"/>
   <xsl:include href="htm-tpl-metadata.xsl"/>
   <xsl:include href="htm-tpl-nav.xsl"/>
+  <xsl:include href="htm-tpl-license.xsl"/>
 
   <!-- global named templates with no html, also used by start-txt -->
   <xsl:include href="tpl-reasonlost.xsl"/>
@@ -69,7 +70,7 @@
           </xsl:if>
           <xsl:text>Greek Leiden Edition View</xsl:text>
         </title>
-
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
         <!-- Found in htm-tpl-cssandscripts.xsl -->
         <xsl:call-template name="css-script"/>
       </head>
@@ -96,6 +97,8 @@
         
         <!-- Main text output -->
         <xsl:apply-templates/>
+        
+        <xsl:call-template name="license"/>
 
       </body>
     </html>

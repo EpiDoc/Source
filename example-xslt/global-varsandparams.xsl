@@ -8,9 +8,9 @@
   </xsl:variable>
   
   <!-- Location of HGV glossary file relative to the current file -->
-  <xsl:variable name="hgv-gloss">
+  <xsl:param name="hgv-gloss">
     <xsl:text>../../../xml/idp.data/trunk/HGV_trans_EpiDoc/glossary.xml</xsl:text>
-  </xsl:variable>
+  </xsl:param>
   
   <!-- Mapping file -->
   <xsl:variable name="mapping-file" select="'../crosswalker/aggregator/mapping/mapping.xml'"/>
@@ -28,6 +28,8 @@
   <xsl:param name="apparatus-style"
     select="document($param-file)//parameter[name = 'apparatus-style']/value[@on = 'yes']"/>
   <xsl:param name="line-inc" select="document($param-file)//parameter[name = 'line-inc']/value"/>
+  
+  <xsl:param name="docroot">../output/data</xsl:param>
   
   <xsl:variable name="all-grc">
     <xsl:text>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZἀἁἂἃἄἅἆἇἈἉἊἋἌἍἎἏΑὰάᾀᾁᾂᾃᾄᾅᾆᾇᾈᾉᾊᾋᾌᾍᾎᾏᾲᾳᾴᾶᾷάέΕἐἑἒἓἔἕἘἙἚἛἜἝὲέΗήἠἡἢἣἤἥἦἧἨἩἪἫἬἭἮἯᾐᾑᾒᾓᾔᾕᾖᾗᾘᾙᾚᾛᾜᾝᾞᾟῂῃῄῆῇὴήΙίϊἰἱἲἳἴἵἶἷἸἹἺἻἼἽἾἿὶίῒΐῖῗΟόὀὁὂὃὄὅὈὉὊὋὌὍὸό΅ύὐὑὒὓὔὕὖὗὙὛὝὟὺύῢΰῦῧϋΩώὠὡὢὣὤὥὦὧὨὩὪὫὬὭὮὯὼώᾠᾡᾢᾣᾤᾥᾦᾧᾨᾩᾪᾫᾬᾭᾮᾯῲῳῴῶῷςῤῥαβγδεζηθικλμνξοπρστυφχψωῬΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ</xsl:text>
