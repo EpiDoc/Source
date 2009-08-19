@@ -4,7 +4,7 @@
   <!-- seg[@type='autopsy'] span added in htm-teiseg.xsl -->
   
   <xsl:template match="seg | w">
-    <xsl:if test="(@part='M' or @part='F') 
+    <xsl:if test="leiden-style='london' and (@part='M' or @part='F') 
                    and not(preceding-sibling::node()[1][self::gap])">
       <xsl:text>-</xsl:text>
     </xsl:if>
@@ -14,7 +14,7 @@
     <!-- Found in tpl-certlow.xsl -->
     <xsl:call-template name="cert-low"/>
     
-    <xsl:if test="(@part='I' or @part='M') 
+    <xsl:if test="leiden-style='london' and (@part='I' or @part='M') 
       and not(following-sibling::node()[1][self::gap])
       and not(descendant::ex[last()])">
       <xsl:text>-</xsl:text>
