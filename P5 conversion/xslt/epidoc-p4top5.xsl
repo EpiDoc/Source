@@ -18,7 +18,7 @@
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
       <xsl:copy-of
-        select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored','degree'))]"/>
+        select="@*[not(local-name()=('id','lang','default','org','sample','part','full','cert','status','anchored','degree','type'))]"/>
       <xsl:if test="@id">
         <xsl:attribute name="xml:id">
           <xsl:value-of select="@id"/>
@@ -34,6 +34,11 @@
       </xsl:if>
       <xsl:if test="number(@degree)">
         <xsl:copy-of select="@degree"/>
+      </xsl:if>
+      <xsl:if test="@type">
+        <xsl:attribute name="type">
+          <xsl:value-of select="translate(@type,' ','-')"/>
+        </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
     </xsl:element>
