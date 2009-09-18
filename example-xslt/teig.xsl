@@ -28,8 +28,14 @@
       <xsl:when test="@type = 'taurho'">
         <xsl:text>&#x2ce8;</xsl:text>
       </xsl:when>
+      <xsl:otherwise>
+        <span class="smaller" style="font-style:italic;">
+          <xsl:text> </xsl:text>
+          <xsl:value-of select="@type"/>
+          <xsl:text> </xsl:text>
+        </span>
+      </xsl:otherwise>
     </xsl:choose>
-    
   </xsl:template>
 
   <!-- ddb specific template -->
