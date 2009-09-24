@@ -15,6 +15,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="GB" when="2009-09-24">created new valList for @unit; added valList for @extent</change>
             <change who="GB" when="2009-08-11">changed 'worddiv' to 'inWord'</change>
             <change who="ML" when="2009-07-12">stop omitting few tags: orgName element</change>
             <change who="GB" when="2009-06-10">removed dummy 'precision' element</change>
@@ -276,11 +277,17 @@
                             </valList>
                         </attDef>
                         <attDef ident="unit" mode="change">
-                            <valList type="semi">
+                            <valList type="semi" mode="replace">
                                 <valItem ident="character"/>
                                 <valItem ident="line"/>
-                                <valItem ident="column"/>
-                                <valItem ident="page"/>
+                                <valItem ident="metre"/>
+                                <valItem ident="cm"/>
+                                <valItem ident="mm"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="extent" mode="change">
+                            <valList type="semi" mode="replace">
+                                <valItem ident="unknown"/>
                             </valList>
                         </attDef>
                     </attList>
