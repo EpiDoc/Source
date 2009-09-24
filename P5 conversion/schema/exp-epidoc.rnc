@@ -6,7 +6,7 @@ namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2009-08-11T12:06:48-04:00. 
+# Schema generated from ODD source 2009-09-24T06:08:53-04:00. 
 # TEI Edition: 1.4.1. Last updated on July 1st 2009.
 #
 
@@ -484,6 +484,27 @@ att.internetMedia.attribute.mimeType =
   attribute mimeType {
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
+att.interpLike.attributes =
+  att.interpLike.attribute.resp,
+  att.interpLike.attribute.type,
+  att.interpLike.attribute.inst,
+  empty
+att.interpLike.attribute.resp =
+  
+  ## (responsible party) indicates who is responsible for the interpretation.
+  attribute resp { xsd:anyURI }?
+att.interpLike.attribute.type =
+  
+  ## indicates what kind of phenomenon is being noted in the passage.
+  ## Sample values include: 1] image; 2] character; 3] theme; 4] allusion
+  attribute type { xsd:Name }?
+att.interpLike.attribute.inst =
+  
+  ## (instances) points to instances of the analysis or interpretation represented
+  ## by the current element.
+  attribute inst {
+    list { xsd:anyURI+ }
+  }?
 att.measurement.attributes =
   att.measurement.attribute.unit,
   att.measurement.attribute.quantity,
@@ -771,7 +792,13 @@ tei_model.pPart.edit =
 tei_model.ptrLike = tei_ptr | tei_ref
 tei_model.lPart = notAllowed
 tei_model.global.meta =
-  tei_index | tei_precision | tei_certainty | tei_link | tei_linkGrp
+  tei_index
+  | tei_interp
+  | tei_interpGrp
+  | tei_precision
+  | tei_certainty
+  | tei_link
+  | tei_linkGrp
 tei_model.milestoneLike = tei_milestone | tei_pb | tei_lb | tei_cb
 tei_model.gLike = tei_g
 tei_model.biblLike =
@@ -1065,7 +1092,7 @@ tei_hi =
         ## ancient circumflex (perispomeni) diacritic
         "circumflex"
       | 
-        ## ancient asper (rough breaking) diacritic
+        ## ancient asper (rough breathing) diacritic
         "asper"
       | 
         ## ancient lenis (smooth breathing) diacritic
@@ -3855,6 +3882,24 @@ att.global.analytic.attribute.ana =
   attribute ana {
     list { xsd:anyURI+ }
   }?
+tei_interp =
+  
+  ## (interpretation) summarizes a specific interpretative annotation which can be linked to a span of text.
+  element interp {
+    (text | tei_model.gLike | tei_model.glossLike)*,
+    att.global.attributes,
+    att.interpLike.attributes,
+    empty
+  }
+tei_interpGrp =
+  
+  ## (interpretation group) collects together a set of related interpretations which share responsibility or type.
+  element interpGrp {
+    (tei_model.glossLike*, tei_interp+),
+    att.global.attributes,
+    att.interpLike.attributes,
+    empty
+  }
 tei_precision =
   
   ## indicates the numerical accuracy or precision  associated
