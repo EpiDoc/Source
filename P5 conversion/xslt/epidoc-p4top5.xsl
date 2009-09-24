@@ -158,6 +158,7 @@
           <xsl:value-of select="generate-id(.)"/>
         </xsl:attribute>
       </xsl:if>
+      <xsl:apply-templates/>
     </xsl:element>
     <xsl:if test="@exact=('notAfter','notBefore')">
       <xsl:element name="precision">
