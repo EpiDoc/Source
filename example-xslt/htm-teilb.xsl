@@ -9,8 +9,8 @@
       <xsl:when test="ancestor::lg and $verse-lines = 'on'">
         <xsl:apply-imports/>
       </xsl:when>
-      
-      <xsl:otherwise>        
+
+      <xsl:otherwise>
         <xsl:variable name="div-loc">
           <xsl:for-each select="ancestor::div[@type= 'textpart']">
             <xsl:value-of select="@n"/>
@@ -22,28 +22,37 @@
             <xsl:value-of select="@n"/>
           </xsl:if>
         </xsl:variable>
-        
+
         <xsl:if
           test="@type='worddiv' and preceding::*[1][not(local-name() = 'space' or local-name() = 'g')]">
           <xsl:text>-</xsl:text>
         </xsl:if>
-        <br id="a{$div-loc}l{$line}"/>
+        <xsl:choose>
+          <xsl:when test="generate-id(self::lb) = generate-id(ancestor::div[1]//lb[1])">
+            <a id="a{$div-loc}l{$line}">
+              <xsl:comment>0</xsl:comment>
+            </a>
+          </xsl:when>
+          <xsl:otherwise>
+            <br id="a{$div-loc}l{$line}"/>
+          </xsl:otherwise>
+        </xsl:choose>
         <xsl:choose>
           <xsl:when test="not(number(@n)) and $leiden-style = 'ddbdp'">
-            <xsl:call-template name="margin-num" />
+            <xsl:call-template name="margin-num"/>
           </xsl:when>
           <xsl:when test="@n mod $line-inc = 0 and not(@n = 0)">
-            <xsl:call-template name="margin-num" />
+            <xsl:call-template name="margin-num"/>
           </xsl:when>
           <xsl:when test="preceding-sibling::*[1][local-name() = 'gap'][@unit = 'line']">
-            <xsl:call-template name="margin-num" />
+            <xsl:call-template name="margin-num"/>
           </xsl:when>
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
-  
+
+
   <xsl:template name="margin-num">
     <span class="linenumber">
       <xsl:value-of select="@n"/>
