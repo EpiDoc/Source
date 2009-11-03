@@ -5,7 +5,8 @@
   
   <xsl:template match="seg | w">
     <xsl:if test="leiden-style='london' and (@part='M' or @part='F') 
-                   and not(preceding-sibling::node()[1][self::gap])">
+                   and not(preceding-sibling::node()[1][self::gap])
+                   and not($edition-type='diplomatic')">
       <xsl:text>-</xsl:text>
     </xsl:if>
     
@@ -16,7 +17,8 @@
     
     <xsl:if test="leiden-style='london' and (@part='I' or @part='M') 
       and not(following-sibling::node()[1][self::gap])
-      and not(descendant::ex[last()])">
+      and not(descendant::ex[last()])
+      and not($edition-type='diplomatic')">
       <xsl:text>-</xsl:text>
     </xsl:if>
   </xsl:template>

@@ -24,7 +24,8 @@
         </xsl:variable>
         
         <xsl:if
-          test="@type='worddiv' and preceding::*[1][not(local-name() = 'space' or local-name() = 'g')] and not($leiden-style = 'edh')">
+          test="@type='worddiv' and preceding::*[1][not(local-name() = 'space' or local-name() = 'g')] and
+          not($leiden-style = 'edh') and not($edition-type='diplomatic')">
           <xsl:text>-</xsl:text>
         </xsl:if>
         <xsl:choose>
