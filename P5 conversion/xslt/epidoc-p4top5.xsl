@@ -7,7 +7,8 @@
 <!-- |||||||||||||||||||||||||||||||||||||||||| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns="http://www.tei-c.org/ns/1.0" xmlns:epidoc="http://epidoc.sf.net/ns/EpiDoc/8.0">
+  xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:date="http://exslt.org/dates-and-times">
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
 
@@ -37,7 +38,7 @@
       </xsl:if>
       <xsl:if test="@type">
         <xsl:attribute name="type">
-          <xsl:value-of select="translate(@type,' ','-')"/>
+          <xsl:value-of select="translate(@type,' +','-_')"/>
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
@@ -263,13 +264,23 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="lb[@type='worddiv']">
     <xsl:element name="lb">
       <xsl:copy-of select="@*[not(local-name() = 'type')]"/>
       <xsl:attribute name="type">
         <xsl:text>inWord</xsl:text>
       </xsl:attribute>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="lem[following-sibling::wit]">
+    <xsl:element name="lem">
+      <xsl:copy-of select="@*"/>
+      <xsl:attribute name="resp">
+        <xsl:value-of select="normalize-space(following-sibling::wit[1])"/>
+      </xsl:attribute>
+      <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
 
@@ -346,17 +357,17 @@
         </xsl:variable>
         <xsl:variable name="opt">
           <xsl:choose>
-          <xsl:when test="contains(ancestor::TEI.2/@n, ';;')">
-            <xsl:number value="0"/>
-          </xsl:when>
+            <xsl:when test="contains(ancestor::TEI.2/@n, ';;')">
+              <xsl:number value="0"/>
+            </xsl:when>
             <xsl:otherwise>
               <xsl:number value="1"/>
             </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
         <xsl:variable name="collen">
-          <xsl:value-of select="string-length(ancestor::TEI.2/@id) - (string-length($volanddoc)+$opt)"
-          />
+          <xsl:value-of
+            select="string-length(ancestor::TEI.2/@id) - (string-length($volanddoc)+$opt)"/>
         </xsl:variable>
         <xsl:variable name="collect">
           <xsl:value-of select="substring(ancestor::TEI.2/@id, 1, number($collen))"/>
@@ -373,7 +384,7 @@
     <xsl:element name="{local-name()}">
       <xsl:element name="change">
         <xsl:attribute name="when">
-          <xsl:text>2009-06-27</xsl:text>
+          <xsl:value-of select="date:date()"/>
         </xsl:attribute>
         <xsl:attribute name="who">
           <xsl:text>GB</xsl:text>
@@ -383,10 +394,21 @@
       <xsl:for-each select="change">
         <xsl:element name="{local-name()}">
           <xsl:attribute name="when">
-            <xsl:value-of select="date"/>
+            <xsl:choose>
+              <xsl:when test="contains(date, '.')">
+                <xsl:value-of select="substring(date,7,4)"/>
+                <xsl:text>-</xsl:text>
+                <xsl:value-of select="substring(date,4,2)"/>
+                <xsl:text>-</xsl:text>
+                <xsl:value-of select="substring(date,1,2)"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="date"/>
+              </xsl:otherwise>
+                          </xsl:choose>
           </xsl:attribute>
           <xsl:attribute name="who">
-            <xsl:value-of select="respStmt/name"/>
+            <xsl:value-of select="respStmt"/>
           </xsl:attribute>
           <xsl:value-of select="item"/>
         </xsl:element>
@@ -488,6 +510,8 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match="wit[preceding-sibling::lem]"/>
 
   <xsl:template match="xptr">
     <xsl:element name="ptr">
