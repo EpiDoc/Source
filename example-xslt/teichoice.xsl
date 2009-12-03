@@ -6,7 +6,7 @@
     <xsl:choose>
       <xsl:when test="child::sic and child::corr">
         <xsl:choose>
-          <xsl:when test="$leiden-style = 'edh'">
+          <xsl:when test="starts-with($leiden-style, 'edh')">
             <xsl:text>&lt;</xsl:text>
             <xsl:apply-templates select="corr"/>
             <xsl:text>=</xsl:text>

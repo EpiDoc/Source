@@ -25,11 +25,11 @@
         
         <xsl:if
           test="@type='worddiv' and preceding::*[1][not(local-name() = 'space' or local-name() = 'g')] and
-          not($leiden-style = 'edh') and not($edition-type='diplomatic')">
+          not(starts-with($leiden-style, 'edh')) and not($edition-type='diplomatic')">
           <xsl:text>-</xsl:text>
         </xsl:if>
         <xsl:choose>
-          <xsl:when test="$leiden-style='edh'">
+          <xsl:when test="starts-with($leiden-style, 'edh')">
             <xsl:variable name="cur_anc" select="generate-id(ancestor::node()[local-name()='lg' or local-name()='ab'])"/>
             <xsl:if test="preceding::lb[1][generate-id(ancestor::node()[local-name()='lg' or local-name()='ab'])=$cur_anc]">
               <xsl:choose>
@@ -52,7 +52,7 @@
           </xsl:when>
           <xsl:when test="@n mod $line-inc = 0 and not(@n = 0)">
             <xsl:choose>
-              <xsl:when test="$leiden-style='edh'">
+              <xsl:when test="starts-with($leiden-style, 'edh')">
                 <xsl:text>(</xsl:text>
                 <xsl:value-of select="@n"/>
                 <xsl:text>) </xsl:text>

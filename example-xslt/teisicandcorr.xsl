@@ -13,7 +13,7 @@
         <xsl:choose>
           <xsl:when test="parent::choice">
             <xsl:choose>
-              <xsl:when test="$leiden-style = 'edh'">
+              <xsl:when test="starts-with($leiden-style, 'edh')">
                 <xsl:apply-templates/>
               </xsl:when>
               <xsl:otherwise/>
@@ -49,7 +49,7 @@
             <xsl:call-template name="cert-low"/>
             <xsl:text>&gt;</xsl:text>
           </xsl:when>
-          <xsl:when test="$leiden-style = 'edh'">
+          <xsl:when test="starts-with($leiden-style, 'edh')">
             <xsl:apply-templates/>
           </xsl:when>
           <xsl:otherwise>

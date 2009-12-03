@@ -7,7 +7,7 @@
   <xsl:template match="div[@type = 'edition']" priority="1">
     <!-- Two line breaks to give space -->
     <xsl:choose>
-      <xsl:when test="$leiden-style = 'edh'"/>
+      <xsl:when test="starts-with($leiden-style, 'edh')"/>
       <xsl:otherwise>
         <xsl:text>&#xA;&#xD;&#xA;&#xD;</xsl:text>
       </xsl:otherwise>
@@ -25,7 +25,7 @@
 
   <xsl:template match="div[@type = 'textpart']" priority="1">
     <xsl:choose>
-      <xsl:when test="$leiden-style = 'edh'">
+      <xsl:when test="starts-with($leiden-style, 'edh')">
         <xsl:variable name="cur_parent" select="generate-id(parent::node())"/>
         <xsl:if test="preceding::div[@type='textpart'][1][generate-id(parent::node())=$cur_parent]"><xsl:text>// </xsl:text></xsl:if>
         <xsl:text>(</xsl:text>

@@ -4,7 +4,7 @@
   
   <xsl:template match="div/head">
     <xsl:choose>
-      <xsl:when test="$leiden-style = 'edh'"/>
+      <xsl:when test="starts-with($leiden-style, 'edh')"/>
       <xsl:otherwise>
         <xsl:apply-templates/>
         <xsl:text>&#xA;&#xD;</xsl:text></xsl:otherwise>
