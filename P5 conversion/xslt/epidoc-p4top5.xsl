@@ -61,7 +61,7 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml" </xsl:processing-instruction>
+      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"</xsl:processing-instruction>
     <!--
       RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
@@ -334,7 +334,8 @@
   <xsl:template match="publicationStmt">
     <xsl:element name="publicationStmt">
       <xsl:element name="authority">
-        <xsl:text>NYU Digital Library Technology Services</xsl:text>
+        <xsl:text>Centre for Computing in the Humanities, King's College London</xsl:text>
+<!--        <xsl:text>NYU Digital Library Technology Services</xsl:text>-->
       </xsl:element>
       <xsl:element name="idno">
         <xsl:attribute name="type">
@@ -342,7 +343,7 @@
         </xsl:attribute>
         <xsl:value-of select="ancestor::TEI.2/@id"/>
       </xsl:element>
-      <xsl:element name="idno">
+      <!--<xsl:element name="idno">
         <xsl:attribute name="type">
           <xsl:text>ddb-perseus-style</xsl:text>
         </xsl:attribute>
@@ -373,7 +374,7 @@
           <xsl:value-of select="substring(ancestor::TEI.2/@id, 1, number($collen))"/>
         </xsl:variable>
         <xsl:value-of select="concat($collect,';',$volanddoc)"/>
-      </xsl:element>
+      </xsl:element>-->
       <xsl:element name="availability">
         <xsl:apply-templates select="p"/>
       </xsl:element>
@@ -465,6 +466,12 @@
         </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="sic[not(ancestor::choice)]">
+    <xsl:element name="surplus">
+      <xsl:apply-templates/>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="space">
