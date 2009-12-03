@@ -51,14 +51,11 @@
             <xsl:call-template name="margin-num" />
           </xsl:when>
           <xsl:when test="@n mod $line-inc = 0 and not(@n = 0)">
-            <xsl:choose>
-              <xsl:when test="starts-with($leiden-style, 'edh')"/>
-              <xsl:otherwise>
+            <xsl:if test="not(starts-with($leiden-style, 'edh'))">
                 <xsl:call-template name="margin-num" />
-              </xsl:otherwise>
-            </xsl:choose>
+              </xsl:if>
           </xsl:when>
-          <xsl:when test="preceding-sibling::*[1][local-name() = 'gap'][@unit = 'line']">
+          <xsl:when test="preceding-sibling::*[1][local-name() = 'gap'][@unit = 'line'] and not(starts-with($leiden-style, 'edh'))">
             <xsl:call-template name="margin-num" />
           </xsl:when>
           <xsl:otherwise>

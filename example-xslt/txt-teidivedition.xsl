@@ -12,9 +12,9 @@
         <xsl:text>&#xA;&#xD;&#xA;&#xD;</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
-    
+
     <xsl:apply-templates/>
-    
+
     <!-- Apparatus creation: look in tpl-apparatus.xsl for documentation -->
     <xsl:if test="$apparatus-style = 'ddbdp'">
       <!-- Framework found in txt-tpl-apparatus.xsl -->
@@ -27,17 +27,16 @@
     <xsl:choose>
       <xsl:when test="starts-with($leiden-style, 'edh')">
         <xsl:variable name="cur_parent" select="generate-id(parent::node())"/>
-        <xsl:if test="preceding::div[@type='textpart'][1][generate-id(parent::node())=$cur_parent]"><xsl:text>// </xsl:text></xsl:if>
-        <xsl:text>(</xsl:text>
-        <xsl:value-of select="@n"/>
-        <xsl:text>) </xsl:text>
+        <xsl:if test="preceding::div[@type='textpart'][1][generate-id(parent::node())=$cur_parent]">
+          <xsl:text>// </xsl:text>
+        </xsl:if>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>&#xA;&#xD;</xsl:text>
         <xsl:value-of select="@n"/>
       </xsl:otherwise>
     </xsl:choose>
-    
+
     <xsl:apply-templates/>
   </xsl:template>
 
