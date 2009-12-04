@@ -10,7 +10,7 @@
 
   <xsl:template match="abbr">
     <xsl:apply-templates/>
-    <xsl:if test="not(ancestor::expan) and not(following-sibling::ex)">
+    <xsl:if test="not(ancestor::expan)">
       <xsl:text>(</xsl:text>
       <xsl:choose>
         <xsl:when test="$leiden-style = 'ddbdp'">
