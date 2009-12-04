@@ -14,6 +14,7 @@
         <!-- Found in teig.xsl -->
         <xsl:call-template name="g-ddbdp" />
       </xsl:when>
+      <xsl:when test="starts-with($leiden-style, 'edh')"/>
       <xsl:when test="$leiden-style = 'london'">
         <xsl:call-template name="g-london" />
       </xsl:when>
