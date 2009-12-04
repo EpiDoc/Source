@@ -148,7 +148,7 @@
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:value-of select="$cur-dot"/>
               </xsl:when>
-              <xsl:when test="$leiden-style = 'idp-itx'">
+              <xsl:when test="$leiden-style = 'edh-itx'">
                 <xsl:text>3</xsl:text>
               </xsl:when>
               <xsl:when test="$leiden-style = 'panciera'">
