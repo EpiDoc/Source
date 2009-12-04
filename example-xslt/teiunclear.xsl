@@ -15,6 +15,9 @@
     </xsl:param>
     
     <xsl:choose>
+      <xsl:when test="starts-with($leiden-style, 'edh')">
+        <xsl:apply-templates/>
+      </xsl:when>
       <xsl:when test="$edition-type = 'diplomatic'">
         <!-- Calculates the number of middots to output -->
         <xsl:variable name="unclear-length">
@@ -58,9 +61,20 @@
 
   <xsl:template name="middot">
     <xsl:param name="unc-len"/>
+    <xsl:variable name="dot-type">
+      <xsl:choose>
+        <xsl:when test="$leiden-style = 'ddbdp'">
+            <xsl:text>&#xa0;&#x0323;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+      <xsl:text>&#xb7;</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+      
+    </xsl:variable>
 
     <xsl:if test="not($unc-len = 0)">
-      <xsl:text>&#xb7;</xsl:text>
+      <xsl:value-of select="$dot-type"/>
       <xsl:call-template name="middot">
         <xsl:with-param name="unc-len" select="$unc-len - 1"/>
       </xsl:call-template>

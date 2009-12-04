@@ -29,21 +29,18 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-
-
-
+  
   <xsl:template match="gap[@reason='omitted']">
     <xsl:choose>
       <xsl:when test="$edition-type = 'diplomatic'"/>
       <xsl:otherwise>
         <xsl:text>&lt;</xsl:text>
         <xsl:call-template name="extent-string"/>
-        <xsl:text>></xsl:text>
+        <xsl:text>&gt;</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
-
+  
   <xsl:template match="gap[@reason='ellipsis']">
     <xsl:choose>
       <xsl:when test="$leiden-style = 'ddbdp' and string(@desc)">
@@ -62,7 +59,6 @@
     </xsl:choose>
   </xsl:template>
 
-
   <xsl:template match="gap[@reason='illegible']">
     <!-- certainty -->
     <xsl:if test="following-sibling::certainty[@target=current()/@id and @degree='low']">
@@ -71,7 +67,6 @@
 
     <xsl:call-template name="extent-string"/>
   </xsl:template>
-
 
   <xsl:template match="gap[@reason='lost']">
     <xsl:choose>
@@ -85,6 +80,7 @@
     <xsl:if test="leiden-style='london' and preceding-sibling::node()[1][@part='M' or @part='I'] and not($edition-type='diplomatic')">
       <xsl:text>-</xsl:text>
     </xsl:if>
+    
     <xsl:call-template name="extent-string"/>
 
     <!-- certainty -->
@@ -113,16 +109,15 @@
     </xsl:choose>
   </xsl:template>
 
-
   <xsl:template name="extent-string">
     <!-- Precision and extentmax of <gap> defined -->
     <xsl:variable name="circa">
-      <xsl:if test="@precision='circa'">
+      <xsl:if test="@precision='circa' and not(starts-with($leiden-style, 'edh'))">
         <xsl:text>c. </xsl:text>
       </xsl:if>
     </xsl:variable>
     <xsl:variable name="extentmax">
-      <xsl:if test="string(@extentmax)">
+      <xsl:if test="string(@extentmax) and not(starts-with($leiden-style, 'edh'))">
         <xsl:text>-</xsl:text>
         <xsl:value-of select="@extentmax"/>
       </xsl:if>
@@ -209,6 +204,9 @@
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:value-of select="$cur-dot"/>
               </xsl:when>
+              <xsl:when test="$leiden-style = 'edh-itx'">
+                <xsl:value-of select="@extent"/>
+              </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="$cur-dot"/>
                 <xsl:text> </xsl:text>
@@ -227,6 +225,9 @@
                   <xsl:with-param name="circa" select="$circa"/>
                 </xsl:call-template>
               </xsl:when>
+              <xsl:when test="$leiden-style = 'edh-itx'">
+                <xsl:text>3</xsl:text>
+              </xsl:when>
               <xsl:otherwise>
                 <xsl:call-template name="dot-out">
                   <xsl:with-param name="cur-num" select="number(@extent)"/>
@@ -242,6 +243,9 @@
                 <xsl:call-template name="tpl-vest">
                   <xsl:with-param name="circa" select="$circa"/>
                 </xsl:call-template>
+              </xsl:when>
+              <xsl:when test="$leiden-style = 'edh-itx'">
+                <xsl:text>3</xsl:text>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:text> - - - </xsl:text>
@@ -314,7 +318,6 @@
         </xsl:choose>
       </xsl:when>
 
-
       <xsl:when test="@extent and @unit='cm'">
         <xsl:choose>
           <xsl:when test="@desc = 'vestiges' and $leiden-style = 'ddbdp' and @reason = 'illegible'">
@@ -335,7 +338,6 @@
           </xsl:otherwise>
         </xsl:choose>
       </xsl:when>
-
 
       <xsl:otherwise>
         <xsl:choose>
@@ -359,7 +361,6 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
 
   <!-- Template for vestiges -->
   <xsl:template name="tpl-vest">
@@ -386,7 +387,6 @@
       </xsl:choose>
     </xsl:if>
   </xsl:template>
-
 
   <!-- Production of dots -->
   <xsl:template name="dot-out">
