@@ -13,6 +13,7 @@
       <xsl:when test="$leiden-style = 'ddbdp'">
         <xsl:call-template name="g-ddbdp"/>
       </xsl:when>
+      <xsl:when test="starts-with($leiden-style, 'edh')"/>
       <xsl:otherwise>
         <xsl:apply-imports/>
       </xsl:otherwise>
