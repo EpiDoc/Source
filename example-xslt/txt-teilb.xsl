@@ -22,7 +22,6 @@
             <xsl:value-of select="@n"/>
           </xsl:if>
         </xsl:variable>
-        
         <xsl:if
           test="@type='worddiv' and preceding::*[1][not(local-name() = 'space' or local-name() = 'g')] and
           not(starts-with($leiden-style, 'edh')) and not($edition-type='diplomatic')">
@@ -33,7 +32,7 @@
             <xsl:variable name="cur_anc" select="generate-id(ancestor::node()[local-name()='lg' or local-name()='ab'])"/>
             <xsl:if test="preceding::lb[1][generate-id(ancestor::node()[local-name()='lg' or local-name()='ab'])=$cur_anc]">
               <xsl:choose>
-              <xsl:when test="ancestor::w | ancestor::name | ancestor::placeName | ancestor::geogName">
+              <xsl:when test="@type='worddiv'">
                 <xsl:text>/</xsl:text>
               </xsl:when>
               <xsl:otherwise>
@@ -47,6 +46,7 @@
           </xsl:otherwise>
         </xsl:choose>
         <xsl:choose>
+          <xsl:when test="starts-with($leiden-style, 'edh')"/>
           <xsl:when test="not(number(@n)) and $leiden-style = 'ddbdp'">
             <xsl:call-template name="margin-num" />
           </xsl:when>
