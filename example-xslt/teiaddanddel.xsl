@@ -7,7 +7,7 @@
     <xsl:apply-templates/>
 
     <xsl:if test="$apparatus-style = 'ddbdp'">
-    <!-- Found in [htm|txt]-tpl-apparatus -->
+      <!-- Found in [htm|txt]-tpl-apparatus -->
       <xsl:call-template name="app-link">
         <xsl:with-param name="location" select="'text'"/>
       </xsl:call-template>
@@ -80,6 +80,11 @@
     </xsl:if>
 
     <xsl:choose>
+      <xsl:when test="starts-with($leiden-style, 'edh')">
+        <xsl:text>[[</xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text>]]</xsl:text>
+      </xsl:when>
       <xsl:when test="$leiden-style = 'ddbdp' and @rend='slashes'">
         <xsl:apply-templates/>
       </xsl:when>
