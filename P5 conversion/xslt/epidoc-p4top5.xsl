@@ -7,10 +7,9 @@
 <!-- |||||||||||||||||||||||||||||||||||||||||| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns="http://www.tei-c.org/ns/1.0"
-  xmlns:date="http://exslt.org/dates-and-times">
+  xmlns="http://www.tei-c.org/ns/1.0" xmlns:date="http://exslt.org/dates-and-times">
 
-  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
+  <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
   <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
   <!-- ||||||||||||  copy all existing elements ||||||||||| -->
@@ -180,6 +179,19 @@
       </xsl:element>
     </xsl:if>
   </xsl:template>
+  
+  <xsl:template match="figure">
+    <xsl:element name="figure">
+      <xsl:element name="graphic">
+        <xsl:attribute name="url">
+          <xsl:value-of select="@href"/>
+        </xsl:attribute>
+      </xsl:element>
+      <xsl:element name="head">
+        <xsl:value-of select="."/>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="gap">
     <xsl:element name="{local-name()}">
@@ -273,7 +285,7 @@
       </xsl:attribute>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="lem[following-sibling::wit]">
     <xsl:element name="lem">
       <xsl:copy-of select="@*"/>
@@ -335,7 +347,7 @@
     <xsl:element name="publicationStmt">
       <xsl:element name="authority">
         <xsl:text>Centre for Computing in the Humanities, King's College London</xsl:text>
-<!--        <xsl:text>NYU Digital Library Technology Services</xsl:text>-->
+        <!--        <xsl:text>NYU Digital Library Technology Services</xsl:text>-->
       </xsl:element>
       <xsl:element name="idno">
         <xsl:attribute name="type">
@@ -343,6 +355,28 @@
         </xsl:attribute>
         <xsl:value-of select="ancestor::TEI.2/@id"/>
       </xsl:element>
+      <xsl:if test="starts-with(//titleStmt/title,'JMR:')">
+        <xsl:for-each select="tokenize(//titleStmt/title,'; ')">
+          <xsl:choose>
+            <xsl:when test="starts-with(.,'JMR')">
+              <xsl:element name="idno">
+                <xsl:attribute name="type">
+                  <xsl:text>JMR</xsl:text>
+                </xsl:attribute>
+                <xsl:value-of select="substring-after(.,'JMR: ')"/>
+              </xsl:element>
+            </xsl:when>
+            <xsl:when test="starts-with(.,'Excel')">
+              <xsl:element name="idno">
+                <xsl:attribute name="type">
+                  <xsl:text>Excel</xsl:text>
+                </xsl:attribute>
+                <xsl:value-of select="substring-after(.,'Excel: ')"/>
+              </xsl:element>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:for-each>
+      </xsl:if>
       <!--<xsl:element name="idno">
         <xsl:attribute name="type">
           <xsl:text>ddb-perseus-style</xsl:text>
@@ -406,7 +440,7 @@
               <xsl:otherwise>
                 <xsl:value-of select="date"/>
               </xsl:otherwise>
-                          </xsl:choose>
+            </xsl:choose>
           </xsl:attribute>
           <xsl:attribute name="who">
             <xsl:value-of select="respStmt"/>
@@ -467,7 +501,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="sic[not(ancestor::choice)]">
     <xsl:element name="surplus">
       <xsl:apply-templates/>
@@ -502,6 +536,26 @@
     </xsl:element>
   </xsl:template>
 
+<!--  <xsl:template match="teiHeader">
+    <xsl:element name="teiHeader">
+      <xsl:apply-templates/>
+    </xsl:element>
+    <xsl:if test="//div//figure[@href]">
+      <xsl:element name="facsimile">
+        <xsl:for-each select="//div//figure[@href]">
+          <xsl:element name="graphic">
+            <xsl:attribute name="url">
+              <xsl:value-of select="@href"/>
+            </xsl:attribute>
+            <xsl:element name="desc">
+              <xsl:value-of select="."/>
+            </xsl:element>
+          </xsl:element>
+        </xsl:for-each>
+      </xsl:element>
+    </xsl:if>
+  </xsl:template>-->
+
   <xsl:template match="titleStmt/title">
     <xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
@@ -517,7 +571,7 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="wit[preceding-sibling::lem]"/>
 
   <xsl:template match="xptr">
