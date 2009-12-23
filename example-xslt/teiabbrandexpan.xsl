@@ -31,18 +31,19 @@
 
   <xsl:template match="ex">
     <xsl:choose>
-      <xsl:when test="$edition-type = 'interpretive'">
+      <xsl:when test="$edition-type = 'diplomatic'"/>
+      <xsl:when test="$leiden-style = 'edh-names' and ancestor::name[@type='praenomen']"/>
+      <xsl:otherwise>
         <xsl:text>(</xsl:text>
         <xsl:apply-templates/>
         <!-- Found in tpl-certlow.xsl -->
         <xsl:call-template name="cert-low"/>
         <xsl:if test="$leiden-style='london' and ancestor::node()[@part='M' or @part='I']
-                      and last()">
+          and last()">
           <xsl:text>-</xsl:text>
         </xsl:if>
         <xsl:text>)</xsl:text>
-      </xsl:when>
-      <xsl:otherwise/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
   
