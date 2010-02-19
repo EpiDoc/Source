@@ -43,26 +43,26 @@
               <xsl:when test="@extent = 'unknown'">
                 <!-- Found in [htm|txt]-teispace.xsl -->
                 <xsl:call-template name="space-content">
-                  <xsl:with-param name="vacat" select="'vac. '"/>
+                  <xsl:with-param name="vacat" select="'vac '"/>
                 </xsl:call-template>
               </xsl:when>
               <xsl:when test="@extent = string(1) and @unit='character'">
                 <xsl:call-template name="space-content">
-                  <xsl:with-param name="vacat" select="'v. '"/>
+                  <xsl:with-param name="vacat" select="'v '"/>
                 </xsl:call-template>
               </xsl:when>
               <xsl:when test="@extent = string(2) and @unit='character'">
                 <xsl:call-template name="space-content">
-                  <xsl:with-param name="vacat" select="'vv. '"/>
+                  <xsl:with-param name="vacat" select="'vv '"/>
                 </xsl:call-template>
               </xsl:when>
-              <xsl:when test="contains('345', @extent) and @unit='character'">
+              <xsl:when test="contains('34', @extent) and @unit='character'">
                 <!-- Found in [htm|txt]-teispace.xsl -->
                 <xsl:call-template name="space-content">
-                  <xsl:with-param name="vacat" select="'vac. '"/>
+                  <xsl:with-param name="vacat" select="'vac '"/>
                 </xsl:call-template>
               </xsl:when>
-              <xsl:when test="@extent >= 6 and @unit='character'">
+              <xsl:when test="@extent >= 5 and @unit='character'">
                 <xsl:call-template name="space-content">
                   <xsl:with-param name="vacat" select="'vacat '"/>
                 </xsl:call-template>
@@ -75,7 +75,7 @@
               </xsl:when>
               <xsl:otherwise>
                 <xsl:call-template name="space-content">
-                  <xsl:with-param name="vacat" select="'vac. '"/>
+                  <xsl:with-param name="vacat" select="'vac '"/>
                 </xsl:call-template>
               </xsl:otherwise>
             </xsl:choose>
