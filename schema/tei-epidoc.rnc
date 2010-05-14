@@ -1,12 +1,11 @@
-default namespace = "http://www.tei-c.org/ns/1.0"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
-namespace teix = "http://www.tei-c.org/ns/Examples"
-namespace xlink = "http://www.w3.org/1999/xlink"
+default namespace tei = "http://www.tei-c.org/ns/1.0"
+namespace xi = "http://www.w3.org/2001/XInclude"
 
-# Schema generated from ODD source 2010-02-15T07:25:53-05:00. 
+# Schema generated from ODD source 2010-05-14T16:05:08Z. 
 # Edition: 1.6.0. Last updated on February 12th 2010.
 #
 
@@ -31,15 +30,15 @@ tei_macro.specialPara =
    | tei_model.divPart
    | tei_model.global)*
 tei_macro.xtext = (text | tei_model.gLike)*
-att.ascribed.attributes = att.ascribed.attribute.who, empty
+att.ascribed.attributes = att.ascribed.attribute.who
 att.ascribed.attribute.who =
   
   ## indicates the person, or group of people, to whom the element content is ascribed.
   attribute who {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.canonical.attributes =
-  att.canonical.attribute.key, att.canonical.attribute.ref, empty
+  att.canonical.attribute.key, att.canonical.attribute.ref
 att.canonical.attribute.key =
   
   ## provides an externally-defined means of identifying the entity (or entities) being
@@ -50,14 +49,13 @@ att.canonical.attribute.ref =
   ## (reference) provides an explicit means of locating a full definition for the entity being named by
   ##         means of one or more URIs.
   attribute ref {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.ranging.attributes =
   att.ranging.attribute.atLeast,
   att.ranging.attribute.atMost,
   att.ranging.attribute.min,
-  att.ranging.attribute.max,
-  empty
+  att.ranging.attribute.max
 att.ranging.attribute.atLeast =
   
   ## gives a minimum estimated value for the approximate measurement.
@@ -100,8 +98,7 @@ att.dimensions.attributes =
   att.dimensions.attribute.unit,
   att.dimensions.attribute.quantity,
   att.dimensions.attribute.extent,
-  att.dimensions.attribute.scope,
-  empty
+  att.dimensions.attribute.scope
 att.dimensions.attribute.precision =
   
   ##
@@ -153,7 +150,11 @@ att.dimensions.attribute.extent =
       (
        ##
        "unknown"
-       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
+       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }),
+      (
+       ##
+       "unknown"
+       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })*
     }
   }?
 att.dimensions.attribute.scope =
@@ -168,8 +169,7 @@ att.datable.w3c.attributes =
   att.datable.w3c.attribute.notBefore,
   att.datable.w3c.attribute.notAfter,
   att.datable.w3c.attribute.from,
-  att.datable.w3c.attribute.to,
-  empty
+  att.datable.w3c.attribute.to
 att.datable.w3c.attribute.period =
   
   ## supplies a pointer to some location defining a named
@@ -246,8 +246,8 @@ att.datable.w3c.attribute.to =
     | xsd:dateTime
   }?
 att.datable.attributes =
-  att.datable.w3c.attributes, att.datable.iso.attributes, empty
-att.declarable.attributes = att.declarable.attribute.default, empty
+  att.datable.w3c.attributes, att.datable.iso.attributes
+att.declarable.attributes = att.declarable.attribute.default
 att.declarable.attribute.default =
   
   ## indicates whether or not this element is selected by default when
@@ -262,21 +262,20 @@ att.declarable.attribute.default =
       ## only one of its kind, in which case it is selected if its parent is selected.
       "false"
   }?
-att.declaring.attributes = att.declaring.attribute.decls, empty
+att.declaring.attributes = att.declaring.attribute.decls
 att.declaring.attribute.decls =
   
   ## identifies one or more declarable elements within the
   ## header, which are understood to apply to the element bearing this
   ## attribute and its content.
   attribute decls {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.divLike.attributes =
   att.metrical.attributes,
   att.divLike.attribute.org,
   att.divLike.attribute.sample,
-  att.divLike.attribute.part,
-  empty
+  att.divLike.attribute.part
 att.divLike.attribute.org =
   
   ## (organization) specifies how the content of the division is organized.
@@ -339,9 +338,7 @@ att.divLike.attribute.part =
       "F"
   }?
 att.responsibility.attributes =
-  att.responsibility.attribute.cert,
-  att.responsibility.attribute.resp,
-  empty
+  att.responsibility.attribute.cert, att.responsibility.attribute.resp
 att.responsibility.attribute.cert =
   
   ##
@@ -358,14 +355,13 @@ att.responsibility.attribute.resp =
   ## (responsible party) indicates the agency responsible for the intervention or interpretation, for example an
   ##         editor or transcriber.
   attribute resp {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.editLike.attributes =
   att.dimensions.attributes,
   att.responsibility.attributes,
   att.editLike.attribute.evidence,
-  att.editLike.attribute.source,
-  empty
+  att.editLike.attribute.source
 att.editLike.attribute.evidence =
   
   ## indicates the nature of the evidence supporting the reliability or accuracy of the
@@ -389,7 +385,7 @@ att.editLike.attribute.source =
   ## contains a list of one or more pointers indicating the sources which support the given
   ##         reading.
   attribute source {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.global.attributes =
   att.global.linking.attributes,
@@ -401,8 +397,7 @@ att.global.attributes =
   att.global.attribute.rend,
   att.global.attribute.rendition,
   att.global.attribute.xmlbase,
-  att.global.attribute.xmlspace,
-  empty
+  att.global.attribute.xmlspace
 att.global.attribute.xmlid =
   
   ## (identifier) provides a unique identifier for the element bearing the attribute.
@@ -413,20 +408,23 @@ att.global.attribute.n =
   ##         the document.
   attribute n {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
     }
   }?
 att.global.attribute.xmllang =
   
   ## (language) indicates the language of the element content using a tag generated
   ##         according to BCP 47
+  ##                         
   attribute xml:lang { xsd:language }?
 att.global.attribute.rend =
   
   ## (rendition) indicates how the element in question was rendered or presented in the source text.
   attribute rend {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
     }
   }?
 att.global.attribute.rendition =
@@ -434,7 +432,7 @@ att.global.attribute.rendition =
   ## points to a description of the rendering or presentation used for this element in the
   ##         source text.
   attribute rendition {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.global.attribute.xmlbase =
   
@@ -459,8 +457,7 @@ att.handFeatures.attributes =
   att.handFeatures.attribute.scribe,
   att.handFeatures.attribute.script,
   att.handFeatures.attribute.medium,
-  att.handFeatures.attribute.scope,
-  empty
+  att.handFeatures.attribute.scope
 att.handFeatures.attribute.scribe =
   
   ## gives a standard name or other identifier for the scribe
@@ -471,12 +468,13 @@ att.handFeatures.attribute.script =
   ## characterizes the particular script or writing style used by
   ## this hand, for example secretary, copperplate, Chancery, Italian, etc.
   attribute script {
-    list { xsd:Name+ }
+    list { xsd:Name, xsd:Name* }
   }?
 att.handFeatures.attribute.medium =
   
   ## describes the tint or type of ink, e.g. brown, or other
   ## writing medium, e.g. pencil
+  ##                         
   attribute medium { xsd:Name }?
 att.handFeatures.attribute.scope =
   
@@ -492,8 +490,7 @@ att.handFeatures.attribute.scope =
       ## this hand is used occasionally in the manuscript
       "minor"
   }?
-att.internetMedia.attributes =
-  att.internetMedia.attribute.mimeType, empty
+att.internetMedia.attributes = att.internetMedia.attribute.mimeType
 att.internetMedia.attribute.mimeType =
   
   ## (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type
@@ -503,8 +500,7 @@ att.internetMedia.attribute.mimeType =
 att.interpLike.attributes =
   att.responsibility.attributes,
   att.interpLike.attribute.type,
-  att.interpLike.attribute.inst,
-  empty
+  att.interpLike.attribute.inst
 att.interpLike.attribute.type =
   
   ## indicates what kind of phenomenon is being noted in the passage.
@@ -515,18 +511,17 @@ att.interpLike.attribute.inst =
   ## (instances) points to instances of the analysis or interpretation represented
   ## by the current element.
   attribute inst {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.measurement.attributes =
   att.measurement.attribute.unit,
   att.measurement.attribute.quantity,
-  att.measurement.attribute.commodity,
-  empty
+  att.measurement.attribute.commodity
 att.measurement.attribute.unit =
   
   ## indicates the units used for the measurement, usually
   ##       using the standard symbol for the desired units.
-  ## Suggested values include: 1] m (metre미터公尺mètremetrometro); 2] kg (kilogram킬로그램公斤kilogrammechilogrammokilogramo); 3] s (second초秒secondesecondosegundo); 4] Hz (hertz헤르츠赫茲hérzio); 5] Pa (pascal파스칼PascalPASCAL); 6] Ω (ohm옴歐姆ohmio); 7] L (litre리터公升litrolitro); 8] t (tonne톤公噸tonnellatatonelada); 9] ha (hectare헥타르公頃ettarohectárea); 10] Å (ångström옹스트롱埃格斯特朗 (單位)angstrom); 11] mL (millilitremillilitromililitro); 12] cm (centimetrecentimètrecentimetrocentímetro); 13] dB (decibel데시벨décibeldecibelio); 14] kbit (kilobit킬로비트); 15] Kibit (kibibit킬로바이비트); 16] kB (kilobytekilo-octet킬로바이트); 17] KiB (kibibytekibioctet킬로바이바이트); 18] MB (megabytemégaoctet메가바이트); 19] MiB (mebibyte메가바이바이트mébioctet)
+  ## Suggested values include: 1] m(metre) ; 2] kg(kilogram) ; 3] s(second) ; 4] Hz(hertz) ; 5] Pa(pascal) ; 6] Ω(ohm) ; 7] L(litre) ; 8] t(tonne) ; 9] ha(hectare) ; 10] Å(ångström) ; 11] mL(millilitre) ; 12] cm(centimetre) ; 13] dB(decibel) ; 14] kbit(kilobit) ; 15] Kibit(kibibit) ; 16] kB(kilobyte) ; 17] KiB(kibibyte) ; 18] MB(megabyte) ; 19] MiB(mebibyte) 
   attribute unit {
     
     ## (metre) SI base unit of length
@@ -601,14 +596,14 @@ att.measurement.attribute.commodity =
   ## indicates the substance that is being measured
   attribute commodity {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
     }
   }?
 att.naming.attributes =
   att.canonical.attributes,
   att.naming.attribute.role,
-  att.naming.attribute.nymRef,
-  empty
+  att.naming.attribute.nymRef
 att.naming.attribute.role =
   
   ## may be used to specify further information about the entity referenced by
@@ -621,9 +616,9 @@ att.naming.attribute.nymRef =
   ##        named by
   ##       the element bearing it.
   attribute nymRef {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
-att.placement.attributes = att.placement.attribute.place, empty
+att.placement.attributes = att.placement.attribute.place
 att.placement.attribute.place =
   
   ## 
@@ -660,18 +655,49 @@ att.placement.attribute.place =
        | 
          ##  in a predefined space, for example left by an earlier scribe.
          "inspace"
-       | xsd:Name)+
+       | xsd:Name),
+      (
+       ## below the line
+       "below"
+       | 
+         ## at the foot of the page
+         "bottom"
+       | 
+         ## in the margin (left, right, or both)
+         "margin"
+       | 
+         ## at the top of the page
+         "top"
+       | 
+         ## on the opposite, i.e. facing, page
+         "opposite"
+       | 
+         ## on the other side of the leaf
+         "overleaf"
+       | 
+         ## above the line
+         "above"
+       | 
+         ## at the end of e.g. chapter or volume.
+         "end"
+       | 
+         ## within the body of the text.
+         "inline"
+       | 
+         ##  in a predefined space, for example left by an earlier scribe.
+         "inspace"
+       | xsd:Name)*
     }
   }?
 att.scoping.attributes =
-  att.scoping.attribute.target, att.scoping.attribute.match, empty
+  att.scoping.attribute.target, att.scoping.attribute.match
 att.scoping.attribute.target =
   
   ## points at one or several  elements or  sets of elements by
   ##       means of one or more
   ##       data pointers, using the URI syntax.
   attribute target {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.scoping.attribute.match =
   
@@ -684,8 +710,7 @@ att.scoping.attribute.match =
 att.segLike.attributes =
   att.metrical.attributes,
   att.segLike.attribute.function,
-  att.segLike.attribute.part,
-  empty
+  att.segLike.attribute.part
 att.segLike.attribute.function =
   
   ## characterizes the function of the segment.
@@ -714,16 +739,16 @@ att.segLike.attribute.part =
       ## (final) the final part of an incomplete segment
       "F"
   }?
-att.sourced.attributes = att.sourced.attribute.ed, empty
+att.sourced.attributes = att.sourced.attribute.ed
 att.sourced.attribute.ed =
   
   ## (edition) supplies an arbitrary identifier for the source edition in which
   ##       the associated feature (for example, a  page, column, or line
   ##       break) occurs at this point in the text.
   attribute ed {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
-att.spanning.attributes = att.spanning.attribute.spanTo, empty
+att.spanning.attributes = att.spanning.attribute.spanTo
 att.spanning.attribute.spanTo =
   
   ## indicates the end of a span initiated by the element
@@ -733,8 +758,7 @@ att.transcriptional.attributes =
   att.editLike.attributes,
   att.transcriptional.attribute.hand,
   att.transcriptional.attribute.status,
-  att.transcriptional.attribute.seq,
-  empty
+  att.transcriptional.attribute.seq
 att.transcriptional.attribute.hand =
   
   ## signifies the hand of the agent which made the intervention.
@@ -753,7 +777,7 @@ att.transcriptional.attribute.seq =
   ## (sequence) assigns a sequence number related to the order in which
   ##       the encoded features carrying this attribute are believed to have occurred.
   attribute seq { xsd:nonNegativeInteger }?
-att.translatable.attributes = att.translatable.attribute.version, empty
+att.translatable.attributes = att.translatable.attribute.version
 att.translatable.attribute.version =
   
   ## specifies the version name or number of the source from
@@ -762,7 +786,7 @@ att.translatable.attribute.version =
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
 att.typed.attributes =
-  att.typed.attribute.type, att.typed.attribute.subtype, empty
+  att.typed.attribute.type, att.typed.attribute.subtype
 att.typed.attribute.type =
   
   ## characterizes the element in some sense, using any convenient
@@ -773,8 +797,30 @@ att.typed.attribute.subtype =
   ## provides a sub-categorization of the element, if needed
   attribute subtype { xsd:Name }?
 tei_model.nameLike.agent = tei_name | tei_orgName | tei_persName
+tei_model.nameLike.agent_alternation =
+  tei_name | tei_orgName | tei_persName
+tei_model.nameLike.agent_sequence = tei_name, tei_orgName, tei_persName
+tei_model.nameLike.agent_sequenceOptional =
+  tei_name?, tei_orgName?, tei_persName?
+tei_model.nameLike.agent_sequenceOptionalRepeatable =
+  tei_name*, tei_orgName*, tei_persName*
+tei_model.nameLike.agent_sequenceRepeatable =
+  tei_name+, tei_orgName+, tei_persName+
 tei_model.segLike = tei_w | tei_m | tei_c | tei_pc | tei_seg
+tei_model.segLike_alternation = tei_w | tei_m | tei_c | tei_pc | tei_seg
+tei_model.segLike_sequence = tei_w, tei_m, tei_c, tei_pc, tei_seg
+tei_model.segLike_sequenceOptional =
+  tei_w?, tei_m?, tei_c?, tei_pc?, tei_seg?
+tei_model.segLike_sequenceOptionalRepeatable =
+  tei_w*, tei_m*, tei_c*, tei_pc*, tei_seg*
+tei_model.segLike_sequenceRepeatable =
+  tei_w+, tei_m+, tei_c+, tei_pc+, tei_seg+
 tei_model.hiLike = tei_hi
+tei_model.hiLike_alternation = tei_hi
+tei_model.hiLike_sequence = tei_hi
+tei_model.hiLike_sequenceOptional = tei_hi?
+tei_model.hiLike_sequenceOptionalRepeatable = tei_hi*
+tei_model.hiLike_sequenceRepeatable = tei_hi+
 tei_model.emphLike =
   tei_foreign
   | tei_emph
@@ -784,8 +830,71 @@ tei_model.emphLike =
   | tei_gloss
   | tei_term
   | tei_title
+tei_model.emphLike_alternation =
+  tei_foreign
+  | tei_emph
+  | tei_distinct
+  | tei_mentioned
+  | tei_soCalled
+  | tei_gloss
+  | tei_term
+  | tei_title
+tei_model.emphLike_sequence =
+  tei_foreign,
+  tei_emph,
+  tei_distinct,
+  tei_mentioned,
+  tei_soCalled,
+  tei_gloss,
+  tei_term,
+  tei_title
+tei_model.emphLike_sequenceOptional =
+  tei_foreign?,
+  tei_emph?,
+  tei_distinct?,
+  tei_mentioned?,
+  tei_soCalled?,
+  tei_gloss?,
+  tei_term?,
+  tei_title?
+tei_model.emphLike_sequenceOptionalRepeatable =
+  tei_foreign*,
+  tei_emph*,
+  tei_distinct*,
+  tei_mentioned*,
+  tei_soCalled*,
+  tei_gloss*,
+  tei_term*,
+  tei_title*
+tei_model.emphLike_sequenceRepeatable =
+  tei_foreign+,
+  tei_emph+,
+  tei_distinct+,
+  tei_mentioned+,
+  tei_soCalled+,
+  tei_gloss+,
+  tei_term+,
+  tei_title+
 tei_model.highlighted = tei_model.hiLike | tei_model.emphLike
+tei_model.highlighted_alternation =
+  tei_model.hiLike_alternation | tei_model.emphLike_alternation
+tei_model.highlighted_sequence =
+  tei_model.hiLike_sequence, tei_model.emphLike_sequence
+tei_model.highlighted_sequenceOptional =
+  tei_model.hiLike_sequenceOptional?,
+  tei_model.emphLike_sequenceOptional?
+tei_model.highlighted_sequenceOptionalRepeatable =
+  tei_model.hiLike_sequenceOptionalRepeatable*,
+  tei_model.emphLike_sequenceOptionalRepeatable*
+tei_model.highlighted_sequenceRepeatable =
+  tei_model.hiLike_sequenceRepeatable+,
+  tei_model.emphLike_sequenceRepeatable+
 tei_model.dateLike = tei_date | tei_time
+tei_model.dateLike_alternation = tei_date | tei_time
+tei_model.dateLike_sequence = tei_date, tei_time
+tei_model.dateLike_sequenceOptional = tei_date?, tei_time?
+tei_model.dateLike_sequenceOptionalRepeatable = tei_date*, tei_time*
+tei_model.dateLike_sequenceRepeatable = tei_date+, tei_time+
 tei_model.dimLike = tei_height | tei_depth | tei_width
 tei_model.measureLike =
   tei_num
@@ -796,9 +905,71 @@ tei_model.measureLike =
   | tei_depth
   | tei_width
   | tei_geo
+tei_model.measureLike_alternation =
+  tei_num
+  | tei_measure
+  | tei_measureGrp
+  | tei_dim
+  | tei_height
+  | tei_depth
+  | tei_width
+  | tei_geo
+tei_model.measureLike_sequence =
+  tei_num,
+  tei_measure,
+  tei_measureGrp,
+  tei_dim,
+  tei_height,
+  tei_depth,
+  tei_width,
+  tei_geo
+tei_model.measureLike_sequenceOptional =
+  tei_num?,
+  tei_measure?,
+  tei_measureGrp?,
+  tei_dim?,
+  tei_height?,
+  tei_depth?,
+  tei_width?,
+  tei_geo?
+tei_model.measureLike_sequenceOptionalRepeatable =
+  tei_num*,
+  tei_measure*,
+  tei_measureGrp*,
+  tei_dim*,
+  tei_height*,
+  tei_depth*,
+  tei_width*,
+  tei_geo*
+tei_model.measureLike_sequenceRepeatable =
+  tei_num+,
+  tei_measure+,
+  tei_measureGrp+,
+  tei_dim+,
+  tei_height+,
+  tei_depth+,
+  tei_width+,
+  tei_geo+
 tei_model.egLike = notAllowed
+tei_model.egLike_alternation = notAllowed
+tei_model.egLike_sequence = empty
+tei_model.egLike_sequenceOptional = empty
+tei_model.egLike_sequenceOptionalRepeatable = empty
+tei_model.egLike_sequenceRepeatable = notAllowed
 tei_model.graphicLike = tei_graphic | tei_binaryObject
+tei_model.graphicLike_alternation = tei_graphic | tei_binaryObject
+tei_model.graphicLike_sequence = tei_graphic, tei_binaryObject
+tei_model.graphicLike_sequenceOptional = tei_graphic?, tei_binaryObject?
+tei_model.graphicLike_sequenceOptionalRepeatable =
+  tei_graphic*, tei_binaryObject*
+tei_model.graphicLike_sequenceRepeatable =
+  tei_graphic+, tei_binaryObject+
 tei_model.offsetLike = tei_geogFeat
+tei_model.offsetLike_alternation = tei_geogFeat
+tei_model.offsetLike_sequence = tei_geogFeat
+tei_model.offsetLike_sequenceOptional = tei_geogFeat?
+tei_model.offsetLike_sequenceOptionalRepeatable = tei_geogFeat*
+tei_model.offsetLike_sequenceRepeatable = tei_geogFeat+
 tei_model.pPart.msdesc =
   tei_handShift
   | tei_catchwords
@@ -813,8 +984,88 @@ tei_model.pPart.msdesc =
   | tei_signatures
   | tei_stamp
   | tei_watermark
+tei_model.pPart.msdesc_alternation =
+  tei_handShift
+  | tei_catchwords
+  | tei_dimensions
+  | tei_heraldry
+  | tei_locus
+  | tei_locusGrp
+  | tei_material
+  | tei_origDate
+  | tei_origPlace
+  | tei_secFol
+  | tei_signatures
+  | tei_stamp
+  | tei_watermark
+tei_model.pPart.msdesc_sequence =
+  tei_handShift,
+  tei_catchwords,
+  tei_dimensions,
+  tei_heraldry,
+  tei_locus,
+  tei_locusGrp,
+  tei_material,
+  tei_origDate,
+  tei_origPlace,
+  tei_secFol,
+  tei_signatures,
+  tei_stamp,
+  tei_watermark
+tei_model.pPart.msdesc_sequenceOptional =
+  tei_handShift?,
+  tei_catchwords?,
+  tei_dimensions?,
+  tei_heraldry?,
+  tei_locus?,
+  tei_locusGrp?,
+  tei_material?,
+  tei_origDate?,
+  tei_origPlace?,
+  tei_secFol?,
+  tei_signatures?,
+  tei_stamp?,
+  tei_watermark?
+tei_model.pPart.msdesc_sequenceOptionalRepeatable =
+  tei_handShift*,
+  tei_catchwords*,
+  tei_dimensions*,
+  tei_heraldry*,
+  tei_locus*,
+  tei_locusGrp*,
+  tei_material*,
+  tei_origDate*,
+  tei_origPlace*,
+  tei_secFol*,
+  tei_signatures*,
+  tei_stamp*,
+  tei_watermark*
+tei_model.pPart.msdesc_sequenceRepeatable =
+  tei_handShift+,
+  tei_catchwords+,
+  tei_dimensions+,
+  tei_heraldry+,
+  tei_locus+,
+  tei_locusGrp+,
+  tei_material+,
+  tei_origDate+,
+  tei_origPlace+,
+  tei_secFol+,
+  tei_signatures+,
+  tei_stamp+,
+  tei_watermark+
 tei_model.pPart.editorial =
   tei_choice | tei_abbr | tei_expan | tei_ex | tei_am | tei_subst
+tei_model.pPart.editorial_alternation =
+  tei_choice | tei_abbr | tei_expan | tei_ex | tei_am | tei_subst
+tei_model.pPart.editorial_sequence =
+  tei_choice, tei_abbr, tei_expan, tei_ex, tei_am, tei_subst
+tei_model.pPart.editorial_sequenceOptional =
+  tei_choice?, tei_abbr?, tei_expan?, tei_ex?, tei_am?, tei_subst?
+tei_model.pPart.editorial_sequenceOptionalRepeatable =
+  tei_choice*, tei_abbr*, tei_expan*, tei_ex*, tei_am*, tei_subst*
+tei_model.pPart.editorial_sequenceRepeatable =
+  tei_choice+, tei_abbr+, tei_expan+, tei_ex+, tei_am+, tei_subst+
 tei_model.pPart.transcriptional =
   tei_sic
   | tei_corr
@@ -826,10 +1077,90 @@ tei_model.pPart.transcriptional =
   | tei_supplied
   | tei_surplus
   | tei_app
+tei_model.pPart.transcriptional_alternation =
+  tei_sic
+  | tei_corr
+  | tei_reg
+  | tei_orig
+  | tei_add
+  | tei_del
+  | tei_unclear
+  | tei_supplied
+  | tei_surplus
+  | tei_app
+tei_model.pPart.transcriptional_sequence =
+  tei_sic,
+  tei_corr,
+  tei_reg,
+  tei_orig,
+  tei_add,
+  tei_del,
+  tei_unclear,
+  tei_supplied,
+  tei_surplus,
+  tei_app
+tei_model.pPart.transcriptional_sequenceOptional =
+  tei_sic?,
+  tei_corr?,
+  tei_reg?,
+  tei_orig?,
+  tei_add?,
+  tei_del?,
+  tei_unclear?,
+  tei_supplied?,
+  tei_surplus?,
+  tei_app?
+tei_model.pPart.transcriptional_sequenceOptionalRepeatable =
+  tei_sic*,
+  tei_corr*,
+  tei_reg*,
+  tei_orig*,
+  tei_add*,
+  tei_del*,
+  tei_unclear*,
+  tei_supplied*,
+  tei_surplus*,
+  tei_app*
+tei_model.pPart.transcriptional_sequenceRepeatable =
+  tei_sic+,
+  tei_corr+,
+  tei_reg+,
+  tei_orig+,
+  tei_add+,
+  tei_del+,
+  tei_unclear+,
+  tei_supplied+,
+  tei_surplus+,
+  tei_app+
 tei_model.pPart.edit =
   tei_model.pPart.editorial | tei_model.pPart.transcriptional
+tei_model.pPart.edit_alternation =
+  tei_model.pPart.editorial_alternation
+  | tei_model.pPart.transcriptional_alternation
+tei_model.pPart.edit_sequence =
+  tei_model.pPart.editorial_sequence,
+  tei_model.pPart.transcriptional_sequence
+tei_model.pPart.edit_sequenceOptional =
+  tei_model.pPart.editorial_sequenceOptional?,
+  tei_model.pPart.transcriptional_sequenceOptional?
+tei_model.pPart.edit_sequenceOptionalRepeatable =
+  tei_model.pPart.editorial_sequenceOptionalRepeatable*,
+  tei_model.pPart.transcriptional_sequenceOptionalRepeatable*
+tei_model.pPart.edit_sequenceRepeatable =
+  tei_model.pPart.editorial_sequenceRepeatable+,
+  tei_model.pPart.transcriptional_sequenceRepeatable+
 tei_model.ptrLike = tei_ptr | tei_ref
+tei_model.ptrLike_alternation = tei_ptr | tei_ref
+tei_model.ptrLike_sequence = tei_ptr, tei_ref
+tei_model.ptrLike_sequenceOptional = tei_ptr?, tei_ref?
+tei_model.ptrLike_sequenceOptionalRepeatable = tei_ptr*, tei_ref*
+tei_model.ptrLike_sequenceRepeatable = tei_ptr+, tei_ref+
 tei_model.lPart = notAllowed
+tei_model.lPart_alternation = notAllowed
+tei_model.lPart_sequence = empty
+tei_model.lPart_sequenceOptional = empty
+tei_model.lPart_sequenceOptionalRepeatable = empty
+tei_model.lPart_sequenceRepeatable = notAllowed
 tei_model.global.meta =
   tei_index
   | tei_interp
@@ -838,12 +1169,81 @@ tei_model.global.meta =
   | tei_certainty
   | tei_link
   | tei_linkGrp
+tei_model.global.meta_alternation =
+  tei_index
+  | tei_interp
+  | tei_interpGrp
+  | tei_precision
+  | tei_certainty
+  | tei_link
+  | tei_linkGrp
+tei_model.global.meta_sequence =
+  tei_index,
+  tei_interp,
+  tei_interpGrp,
+  tei_precision,
+  tei_certainty,
+  tei_link,
+  tei_linkGrp
+tei_model.global.meta_sequenceOptional =
+  tei_index?,
+  tei_interp?,
+  tei_interpGrp?,
+  tei_precision?,
+  tei_certainty?,
+  tei_link?,
+  tei_linkGrp?
+tei_model.global.meta_sequenceOptionalRepeatable =
+  tei_index*,
+  tei_interp*,
+  tei_interpGrp*,
+  tei_precision*,
+  tei_certainty*,
+  tei_link*,
+  tei_linkGrp*
+tei_model.global.meta_sequenceRepeatable =
+  tei_index+,
+  tei_interp+,
+  tei_interpGrp+,
+  tei_precision+,
+  tei_certainty+,
+  tei_link+,
+  tei_linkGrp+
 tei_model.milestoneLike = tei_milestone | tei_pb | tei_lb | tei_cb
+tei_model.milestoneLike_alternation =
+  tei_milestone | tei_pb | tei_lb | tei_cb
+tei_model.milestoneLike_sequence = tei_milestone, tei_pb, tei_lb, tei_cb
+tei_model.milestoneLike_sequenceOptional =
+  tei_milestone?, tei_pb?, tei_lb?, tei_cb?
+tei_model.milestoneLike_sequenceOptionalRepeatable =
+  tei_milestone*, tei_pb*, tei_lb*, tei_cb*
+tei_model.milestoneLike_sequenceRepeatable =
+  tei_milestone+, tei_pb+, tei_lb+, tei_cb+
 tei_model.gLike = tei_g
 tei_model.biblLike =
   tei_bibl | tei_biblStruct | tei_biblFull | tei_msDesc
+tei_model.biblLike_alternation =
+  tei_bibl | tei_biblStruct | tei_biblFull | tei_msDesc
+tei_model.biblLike_sequence =
+  tei_bibl, tei_biblStruct, tei_biblFull, tei_msDesc
+tei_model.biblLike_sequenceOptional =
+  tei_bibl?, tei_biblStruct?, tei_biblFull?, tei_msDesc?
+tei_model.biblLike_sequenceOptionalRepeatable =
+  tei_bibl*, tei_biblStruct*, tei_biblFull*, tei_msDesc*
+tei_model.biblLike_sequenceRepeatable =
+  tei_bibl+, tei_biblStruct+, tei_biblFull+, tei_msDesc+
 tei_model.headLike = tei_head
+tei_model.headLike_alternation = tei_head
+tei_model.headLike_sequence = tei_head
+tei_model.headLike_sequenceOptional = tei_head?
+tei_model.headLike_sequenceOptionalRepeatable = tei_head*
+tei_model.headLike_sequenceRepeatable = tei_head+
 tei_model.labelLike = tei_desc | tei_label
+tei_model.labelLike_alternation = tei_desc | tei_label
+tei_model.labelLike_sequence = tei_desc, tei_label
+tei_model.labelLike_sequenceOptional = tei_desc?, tei_label?
+tei_model.labelLike_sequenceOptionalRepeatable = tei_desc*, tei_label*
+tei_model.labelLike_sequenceRepeatable = tei_desc+, tei_label+
 tei_model.listLike =
   tei_list
   | tei_listBibl
@@ -851,23 +1251,140 @@ tei_model.listLike =
   | tei_listPerson
   | tei_listPlace
   | tei_listNym
+tei_model.listLike_alternation =
+  tei_list
+  | tei_listBibl
+  | tei_listOrg
+  | tei_listPerson
+  | tei_listPlace
+  | tei_listNym
+tei_model.listLike_sequence =
+  tei_list,
+  tei_listBibl,
+  tei_listOrg,
+  tei_listPerson,
+  tei_listPlace,
+  tei_listNym
+tei_model.listLike_sequenceOptional =
+  tei_list?,
+  tei_listBibl?,
+  tei_listOrg?,
+  tei_listPerson?,
+  tei_listPlace?,
+  tei_listNym?
+tei_model.listLike_sequenceOptionalRepeatable =
+  tei_list*,
+  tei_listBibl*,
+  tei_listOrg*,
+  tei_listPerson*,
+  tei_listPlace*,
+  tei_listNym*
+tei_model.listLike_sequenceRepeatable =
+  tei_list+,
+  tei_listBibl+,
+  tei_listOrg+,
+  tei_listPerson+,
+  tei_listPlace+,
+  tei_listNym+
 tei_model.noteLike = tei_note
+tei_model.noteLike_alternation = tei_note
+tei_model.noteLike_sequence = tei_note
+tei_model.noteLike_sequenceOptional = tei_note?
+tei_model.noteLike_sequenceOptionalRepeatable = tei_note*
+tei_model.noteLike_sequenceRepeatable = tei_note+
 tei_model.lLike = tei_l
+tei_model.lLike_alternation = tei_l
+tei_model.lLike_sequence = tei_l
+tei_model.lLike_sequenceOptional = tei_l?
+tei_model.lLike_sequenceOptionalRepeatable = tei_l*
+tei_model.lLike_sequenceRepeatable = tei_l+
 tei_model.pLike = tei_p | tei_ab
+tei_model.pLike_alternation = tei_p | tei_ab
+tei_model.pLike_sequence = tei_p, tei_ab
+tei_model.pLike_sequenceOptional = tei_p?, tei_ab?
+tei_model.pLike_sequenceOptionalRepeatable = tei_p*, tei_ab*
+tei_model.pLike_sequenceRepeatable = tei_p+, tei_ab+
 tei_model.stageLike = tei_stage
+tei_model.stageLike_alternation = tei_stage
+tei_model.stageLike_sequence = tei_stage
+tei_model.stageLike_sequenceOptional = tei_stage?
+tei_model.stageLike_sequenceOptionalRepeatable = tei_stage*
+tei_model.stageLike_sequenceRepeatable = tei_stage+
 tei_model.entryPart = notAllowed
 tei_model.global.edit = tei_gap | tei_addSpan | tei_delSpan | tei_space
+tei_model.global.edit_alternation =
+  tei_gap | tei_addSpan | tei_delSpan | tei_space
+tei_model.global.edit_sequence =
+  tei_gap, tei_addSpan, tei_delSpan, tei_space
+tei_model.global.edit_sequenceOptional =
+  tei_gap?, tei_addSpan?, tei_delSpan?, tei_space?
+tei_model.global.edit_sequenceOptionalRepeatable =
+  tei_gap*, tei_addSpan*, tei_delSpan*, tei_space*
+tei_model.global.edit_sequenceRepeatable =
+  tei_gap+, tei_addSpan+, tei_delSpan+, tei_space+
 tei_model.divPart =
   tei_model.lLike | tei_model.pLike | tei_lg | tei_sp | tei_floatingText
+tei_model.divPart_alternation =
+  tei_model.lLike_alternation
+  | tei_model.pLike_alternation
+  | tei_lg
+  | tei_sp
+  | tei_floatingText
+tei_model.divPart_sequence =
+  tei_model.lLike_sequence,
+  tei_model.pLike_sequence,
+  tei_lg,
+  tei_sp,
+  tei_floatingText
+tei_model.divPart_sequenceOptional =
+  tei_model.lLike_sequenceOptional?,
+  tei_model.pLike_sequenceOptional?,
+  tei_lg?,
+  tei_sp?,
+  tei_floatingText?
+tei_model.divPart_sequenceOptionalRepeatable =
+  tei_model.lLike_sequenceOptionalRepeatable*,
+  tei_model.pLike_sequenceOptionalRepeatable*,
+  tei_lg*,
+  tei_sp*,
+  tei_floatingText*
+tei_model.divPart_sequenceRepeatable =
+  tei_model.lLike_sequenceRepeatable+,
+  tei_model.pLike_sequenceRepeatable+,
+  tei_lg+,
+  tei_sp+,
+  tei_floatingText+
 tei_model.persStateLike = tei_persName
+tei_model.persStateLike_alternation = tei_persName
+tei_model.persStateLike_sequence = tei_persName
+tei_model.persStateLike_sequenceOptional = tei_persName?
+tei_model.persStateLike_sequenceOptionalRepeatable = tei_persName*
+tei_model.persStateLike_sequenceRepeatable = tei_persName+
 tei_model.personLike = tei_org | tei_person | tei_personGrp
 tei_model.personPart = tei_model.persStateLike | tei_bibl
 tei_model.placeTraitLike = notAllowed
 tei_model.placeNamePart =
   tei_placeName | tei_region | tei_settlement | tei_geogName
+tei_model.placeNamePart_alternation =
+  tei_placeName | tei_region | tei_settlement | tei_geogName
+tei_model.placeNamePart_sequence =
+  tei_placeName, tei_region, tei_settlement, tei_geogName
 tei_model.placeNamePart_sequenceOptional =
   tei_placeName?, tei_region?, tei_settlement?, tei_geogName?
+tei_model.placeNamePart_sequenceOptionalRepeatable =
+  tei_placeName*, tei_region*, tei_settlement*, tei_geogName*
+tei_model.placeNamePart_sequenceRepeatable =
+  tei_placeName+, tei_region+, tei_settlement+, tei_geogName+
 tei_model.placeStateLike = tei_model.placeNamePart
+tei_model.placeStateLike_alternation =
+  tei_model.placeNamePart_alternation
+tei_model.placeStateLike_sequence = tei_model.placeNamePart_sequence
+tei_model.placeStateLike_sequenceOptional =
+  tei_model.placeNamePart_sequenceOptional?
+tei_model.placeStateLike_sequenceOptionalRepeatable =
+  tei_model.placeNamePart_sequenceOptionalRepeatable*
+tei_model.placeStateLike_sequenceRepeatable =
+  tei_model.placeNamePart_sequenceRepeatable+
 tei_model.placeEventLike = notAllowed
 tei_model.publicationStmtPart =
   tei_address
@@ -881,7 +1398,21 @@ tei_model.publicationStmtPart =
 tei_model.glossLike =
   tei_desc | tei_gloss | tei_precision | tei_certainty
 tei_model.quoteLike = tei_quote | tei_cit
+tei_model.quoteLike_alternation = tei_quote | tei_cit
+tei_model.quoteLike_sequence = tei_quote, tei_cit
+tei_model.quoteLike_sequenceOptional = tei_quote?, tei_cit?
+tei_model.quoteLike_sequenceOptionalRepeatable = tei_quote*, tei_cit*
+tei_model.quoteLike_sequenceRepeatable = tei_quote+, tei_cit+
 tei_model.qLike = tei_model.quoteLike | tei_said | tei_q
+tei_model.qLike_alternation =
+  tei_model.quoteLike_alternation | tei_said | tei_q
+tei_model.qLike_sequence = tei_model.quoteLike_sequence, tei_said, tei_q
+tei_model.qLike_sequenceOptional =
+  tei_model.quoteLike_sequenceOptional?, tei_said?, tei_q?
+tei_model.qLike_sequenceOptionalRepeatable =
+  tei_model.quoteLike_sequenceOptionalRepeatable*, tei_said*, tei_q*
+tei_model.qLike_sequenceRepeatable =
+  tei_model.quoteLike_sequenceRepeatable+, tei_said+, tei_q+
 tei_model.respLike =
   tei_author
   | tei_editor
@@ -890,13 +1421,87 @@ tei_model.respLike =
   | tei_sponsor
   | tei_funder
   | tei_principal
+tei_model.respLike_alternation =
+  tei_author
+  | tei_editor
+  | tei_respStmt
+  | tei_meeting
+  | tei_sponsor
+  | tei_funder
+  | tei_principal
+tei_model.respLike_sequence =
+  tei_author,
+  tei_editor,
+  tei_respStmt,
+  tei_meeting,
+  tei_sponsor,
+  tei_funder,
+  tei_principal
+tei_model.respLike_sequenceOptional =
+  tei_author?,
+  tei_editor?,
+  tei_respStmt?,
+  tei_meeting?,
+  tei_sponsor?,
+  tei_funder?,
+  tei_principal?
+tei_model.respLike_sequenceOptionalRepeatable =
+  tei_author*,
+  tei_editor*,
+  tei_respStmt*,
+  tei_meeting*,
+  tei_sponsor*,
+  tei_funder*,
+  tei_principal*
+tei_model.respLike_sequenceRepeatable =
+  tei_author+,
+  tei_editor+,
+  tei_respStmt+,
+  tei_meeting+,
+  tei_sponsor+,
+  tei_funder+,
+  tei_principal+
 tei_model.divWrapper =
   tei_meeting
   | tei_dateline
   | tei_epigraph
   | tei_docAuthor
   | tei_docDate
+tei_model.divWrapper_alternation =
+  tei_meeting
+  | tei_dateline
+  | tei_epigraph
+  | tei_docAuthor
+  | tei_docDate
+tei_model.divWrapper_sequence =
+  tei_meeting, tei_dateline, tei_epigraph, tei_docAuthor, tei_docDate
+tei_model.divWrapper_sequenceOptional =
+  tei_meeting?,
+  tei_dateline?,
+  tei_epigraph?,
+  tei_docAuthor?,
+  tei_docDate?
+tei_model.divWrapper_sequenceOptionalRepeatable =
+  tei_meeting*,
+  tei_dateline*,
+  tei_epigraph*,
+  tei_docAuthor*,
+  tei_docDate*
+tei_model.divWrapper_sequenceRepeatable =
+  tei_meeting+,
+  tei_dateline+,
+  tei_epigraph+,
+  tei_docAuthor+,
+  tei_docDate+
 tei_model.divTopPart = tei_model.headLike
+tei_model.divTopPart_alternation = tei_model.headLike_alternation
+tei_model.divTopPart_sequence = tei_model.headLike_sequence
+tei_model.divTopPart_sequenceOptional =
+  tei_model.headLike_sequenceOptional?
+tei_model.divTopPart_sequenceOptionalRepeatable =
+  tei_model.headLike_sequenceOptionalRepeatable*
+tei_model.divTopPart_sequenceRepeatable =
+  tei_model.headLike_sequenceRepeatable+
 tei_model.divTop = tei_model.divWrapper | tei_model.divTopPart
 tei_model.pLike.front =
   tei_head
@@ -907,6 +1512,11 @@ tei_model.pLike.front =
   | tei_docImprint
   | tei_docDate
 tei_model.divBottomPart = notAllowed
+tei_model.divBottomPart_alternation = notAllowed
+tei_model.divBottomPart_sequence = empty
+tei_model.divBottomPart_sequenceOptional = empty
+tei_model.divBottomPart_sequenceOptionalRepeatable = empty
+tei_model.divBottomPart_sequenceRepeatable = notAllowed
 tei_model.divBottom = tei_model.divWrapper | tei_model.divBottomPart
 tei_model.titlepagePart =
   tei_graphic
@@ -924,6 +1534,41 @@ tei_model.msQuoteLike =
   | tei_finalRubric
   | tei_incipit
   | tei_rubric
+tei_model.msQuoteLike_alternation =
+  tei_title
+  | tei_colophon
+  | tei_explicit
+  | tei_finalRubric
+  | tei_incipit
+  | tei_rubric
+tei_model.msQuoteLike_sequence =
+  tei_title,
+  tei_colophon,
+  tei_explicit,
+  tei_finalRubric,
+  tei_incipit,
+  tei_rubric
+tei_model.msQuoteLike_sequenceOptional =
+  tei_title?,
+  tei_colophon?,
+  tei_explicit?,
+  tei_finalRubric?,
+  tei_incipit?,
+  tei_rubric?
+tei_model.msQuoteLike_sequenceOptionalRepeatable =
+  tei_title*,
+  tei_colophon*,
+  tei_explicit*,
+  tei_finalRubric*,
+  tei_incipit*,
+  tei_rubric*
+tei_model.msQuoteLike_sequenceRepeatable =
+  tei_title+,
+  tei_colophon+,
+  tei_explicit+,
+  tei_finalRubric+,
+  tei_incipit+,
+  tei_rubric+
 tei_model.msItemPart =
   tei_model.quoteLike
   | tei_model.respLike
@@ -948,6 +1593,16 @@ tei_model.choicePart =
   | tei_seg
 tei_model.imprintPart =
   tei_publisher | tei_biblScope | tei_pubPlace | tei_distributor
+tei_model.imprintPart_alternation =
+  tei_publisher | tei_biblScope | tei_pubPlace | tei_distributor
+tei_model.imprintPart_sequence =
+  tei_publisher, tei_biblScope, tei_pubPlace, tei_distributor
+tei_model.imprintPart_sequenceOptional =
+  tei_publisher?, tei_biblScope?, tei_pubPlace?, tei_distributor?
+tei_model.imprintPart_sequenceOptionalRepeatable =
+  tei_publisher*, tei_biblScope*, tei_pubPlace*, tei_distributor*
+tei_model.imprintPart_sequenceRepeatable =
+  tei_publisher+, tei_biblScope+, tei_pubPlace+, tei_distributor+
 tei_model.catDescPart = notAllowed
 tei_model.physDescPart_sequenceOptional =
   tei_objectDesc?,
@@ -960,12 +1615,48 @@ tei_model.physDescPart_sequenceOptional =
   tei_sealDesc?,
   tei_accMat?
 tei_model.addressLike = tei_email | tei_address
+tei_model.addressLike_alternation = tei_email | tei_address
+tei_model.addressLike_sequence = tei_email, tei_address
+tei_model.addressLike_sequenceOptional = tei_email?, tei_address?
+tei_model.addressLike_sequenceOptionalRepeatable =
+  tei_email*, tei_address*
+tei_model.addressLike_sequenceRepeatable = tei_email+, tei_address+
 tei_model.nameLike =
   tei_model.nameLike.agent
   | tei_model.offsetLike
   | tei_model.placeStateLike
   | tei_rs
   | tei_model.persNamePart
+tei_model.nameLike_alternation =
+  tei_model.nameLike.agent_alternation
+  | tei_model.offsetLike_alternation
+  | tei_model.placeStateLike_alternation
+  | tei_rs
+  | tei_model.persNamePart_alternation
+tei_model.nameLike_sequence =
+  tei_model.nameLike.agent_sequence,
+  tei_model.offsetLike_sequence,
+  tei_model.placeStateLike_sequence,
+  tei_rs,
+  tei_model.persNamePart_sequence
+tei_model.nameLike_sequenceOptional =
+  tei_model.nameLike.agent_sequenceOptional?,
+  tei_model.offsetLike_sequenceOptional?,
+  tei_model.placeStateLike_sequenceOptional?,
+  tei_rs?,
+  tei_model.persNamePart_sequenceOptional?
+tei_model.nameLike_sequenceOptionalRepeatable =
+  tei_model.nameLike.agent_sequenceOptionalRepeatable*,
+  tei_model.offsetLike_sequenceOptionalRepeatable*,
+  tei_model.placeStateLike_sequenceOptionalRepeatable*,
+  tei_rs*,
+  tei_model.persNamePart_sequenceOptionalRepeatable*
+tei_model.nameLike_sequenceRepeatable =
+  tei_model.nameLike.agent_sequenceRepeatable+,
+  tei_model.offsetLike_sequenceRepeatable+,
+  tei_model.placeStateLike_sequenceRepeatable+,
+  tei_rs+,
+  tei_model.persNamePart_sequenceRepeatable+
 tei_model.global =
   tei_model.global.meta
   | tei_model.milestoneLike
@@ -993,6 +1684,31 @@ tei_model.pPart.data =
   | tei_model.measureLike
   | tei_model.addressLike
   | tei_model.nameLike
+tei_model.pPart.data_alternation =
+  tei_model.dateLike_alternation
+  | tei_model.measureLike_alternation
+  | tei_model.addressLike_alternation
+  | tei_model.nameLike_alternation
+tei_model.pPart.data_sequence =
+  tei_model.dateLike_sequence,
+  tei_model.measureLike_sequence,
+  tei_model.addressLike_sequence,
+  tei_model.nameLike_sequence
+tei_model.pPart.data_sequenceOptional =
+  tei_model.dateLike_sequenceOptional?,
+  tei_model.measureLike_sequenceOptional?,
+  tei_model.addressLike_sequenceOptional?,
+  tei_model.nameLike_sequenceOptional?
+tei_model.pPart.data_sequenceOptionalRepeatable =
+  tei_model.dateLike_sequenceOptionalRepeatable*,
+  tei_model.measureLike_sequenceOptionalRepeatable*,
+  tei_model.addressLike_sequenceOptionalRepeatable*,
+  tei_model.nameLike_sequenceOptionalRepeatable*
+tei_model.pPart.data_sequenceRepeatable =
+  tei_model.dateLike_sequenceRepeatable+,
+  tei_model.measureLike_sequenceRepeatable+,
+  tei_model.addressLike_sequenceRepeatable+,
+  tei_model.nameLike_sequenceRepeatable+
 tei_model.inter =
   tei_model.egLike
   | tei_model.biblLike
@@ -1000,6 +1716,41 @@ tei_model.inter =
   | tei_model.listLike
   | tei_model.stageLike
   | tei_model.qLike
+tei_model.inter_alternation =
+  tei_model.egLike_alternation
+  | tei_model.biblLike_alternation
+  | tei_model.labelLike_alternation
+  | tei_model.listLike_alternation
+  | tei_model.stageLike_alternation
+  | tei_model.qLike_alternation
+tei_model.inter_sequence =
+  tei_model.egLike_sequence,
+  tei_model.biblLike_sequence,
+  tei_model.labelLike_sequence,
+  tei_model.listLike_sequence,
+  tei_model.stageLike_sequence,
+  tei_model.qLike_sequence
+tei_model.inter_sequenceOptional =
+  tei_model.egLike_sequenceOptional?,
+  tei_model.biblLike_sequenceOptional?,
+  tei_model.labelLike_sequenceOptional?,
+  tei_model.listLike_sequenceOptional?,
+  tei_model.stageLike_sequenceOptional?,
+  tei_model.qLike_sequenceOptional?
+tei_model.inter_sequenceOptionalRepeatable =
+  tei_model.egLike_sequenceOptionalRepeatable*,
+  tei_model.biblLike_sequenceOptionalRepeatable*,
+  tei_model.labelLike_sequenceOptionalRepeatable*,
+  tei_model.listLike_sequenceOptionalRepeatable*,
+  tei_model.stageLike_sequenceOptionalRepeatable*,
+  tei_model.qLike_sequenceOptionalRepeatable*
+tei_model.inter_sequenceRepeatable =
+  tei_model.egLike_sequenceRepeatable+,
+  tei_model.biblLike_sequenceRepeatable+,
+  tei_model.labelLike_sequenceRepeatable+,
+  tei_model.listLike_sequenceRepeatable+,
+  tei_model.stageLike_sequenceRepeatable+,
+  tei_model.qLike_sequenceRepeatable+
 tei_model.common = tei_model.divPart | tei_model.inter
 tei_model.phrase =
   tei_model.segLike
@@ -1023,8 +1774,7 @@ tei_model.resourceLike = tei_facsimile
 att.personal.attributes =
   att.naming.attributes,
   att.personal.attribute.full,
-  att.personal.attribute.sort,
-  empty
+  att.personal.attribute.sort
 att.personal.attribute.full =
   
   ## indicates whether the name component is given in full, as an
@@ -1215,7 +1965,7 @@ tei_q =
     
     ## may be used to indicate whether the offset passage is spoken or thought, or to
     ##         characterize it more finely.
-    ## Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreign (foreign wordspalabras extranjerasmots étrangersparole straniere); 6] distinct (linguistically distinctlingüisticamente distintolinguistiquement distinctlinguisticamente distinto); 7] term (technical termtérmino técnicoterme techniquetermine tecnico); 8] emph (rhetorically emphasizedénfasis retóricomis en valeur par un procédé rhétorique.retoricamente marcato); 9] mentioned
+    ## Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreign(foreign words) ; 6] distinct(linguistically distinct) ; 7] term(technical term) ; 8] emph(rhetorically emphasized) ; 9] mentioned
     attribute type {
       
       ## representation of speech
@@ -1330,7 +2080,8 @@ tei_term =
   }
 tei_sic =
   
-  ## (latin for thus or so) contains text reproduced although apparently incorrect or inaccurate.
+  ## (latin for thus or so
+  ##                   ) contains text reproduced although apparently incorrect or inaccurate.
   element sic { tei_macro.paraContent, att.global.attributes, empty }
 tei_corr =
   
@@ -1482,7 +2233,8 @@ tei_unclear =
     ## indicates why the material is hard to transcribe.
     attribute reason {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     
@@ -1697,14 +2449,22 @@ tei_ptr =
     empty
     >> sch:pattern [
          id = "ptr-constraint-ptrAtts"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:ptr"
+           "\x{a}" ~
+           "               "
            sch:report [
              test = "@target and @cRef"
              "the target and cRef\x{a}" ~
              "	attributes are mutually exclusive."
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
     att.pointing.attributes,
@@ -1712,14 +2472,15 @@ tei_ptr =
     (
      ## specifies the destination of the pointer by supplying one or more URI References
      attribute target {
-       list { xsd:anyURI+ }
+       list { xsd:anyURI, xsd:anyURI* }
      }
      | 
        ## (canonical reference) specifies the destination of the pointer by supplying a canonical reference from a
        ##         scheme defined in a refsDecl element in the TEI header
        attribute cRef {
          list {
-           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
          }
        }),
     empty
@@ -1735,14 +2496,15 @@ tei_ref =
     (
      ## specifies the destination of the reference by supplying one or more URI References
      attribute target {
-       list { xsd:anyURI+ }
+       list { xsd:anyURI, xsd:anyURI* }
      }?
      | 
        ## (canonical reference) specifies the destination of the reference by supplying a canonical reference from a
        ##         scheme defined in a refsDecl element in the TEI header
        attribute cRef {
          list {
-           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+           xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
          }
        }?),
     empty
@@ -1818,8 +2580,7 @@ tei_note =
     tei_macro.specialPara,
     att.global.attributes,
     att.placement.attributes,
-    att.responsibility.attribute.cert,
-    att.responsibility.attribute.resp,
+    att.responsibility.attributes,
     
     ## describes the type of note.
     attribute type { xsd:Name }?,
@@ -1830,13 +2591,13 @@ tei_note =
     ## indicates the point (or points) of attachment for a note, or the beginning of the span
     ##         to which the note is attached.
     attribute target {
-      list { xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI* }
     }?,
     
     ## points to the end of the span to which the note is attached, if the note is not embedded
     ##         in the text at that point.
     attribute targetEnd {
-      list { xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI* }
     }?,
     empty
   }
@@ -1923,7 +2684,8 @@ tei_binaryObject =
     ##           Base64.
     attribute encoding {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     empty
@@ -2145,15 +2907,7 @@ tei_title =
     }?,
     
     ## classifies the title according to some convenient typology.
-    ## Sample values include: 1] main; 2] sub (subordinate부titre de
-    ## niveau inférieur, titre de partiesubordinatosubtítulo, título de una parte); 3] alt (alternate이명titre
-    ## alternatif, souvent dans une autre
-    ## langue, par lequel l'oeuvre est
-    ## également connualternativotítulo
-    ## alternativo, a menudo en otra lengua por
-    ## la cual la obra es también conocida.); 4] short; 5] desc (descriptive기술적paraphrase descriptive de l'oeuvre
-    ## ayant les fonctions d'un titredescrittivoparáfrasis descriptiva que funciona
-    ## como el título de una obra.)
+    ## Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] short; 5] desc(descriptive) 
     attribute type { xsd:Name }?,
     empty
   }
@@ -2191,9 +2945,7 @@ tei_biblScope =
     
     ## identifies the type of information conveyed by the element, e.g.
     ##                 columns, pages, volume.
-    ## Suggested values include: 1] vol (volume권el elemento contiene el número de un volumen.); 2] issue; 3] pp (pages페이지pagineel elemento contiene un número de página o el intervalo de páginas.); 4] ll (lines); 5] chap (chapter장capítulo(chapitre) l'élément
-    ##                         contient une indication de chapitre (numéro et/ou
-    ##                         titre)capitolo); 6] part
+    ## Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll (lines) ; 5] chap(chapter) ; 6] part
     attribute type {
       
       ## (volume) the element contains a volume number.
@@ -2289,14 +3041,22 @@ tei_relatedItem =
     (tei_model.biblLike | tei_model.ptrLike)
     >> sch:pattern [
          id = "relatedItem-constraint-targetorcontent"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:relatedItem"
+           "\x{a}" ~
+           "               "
            sch:report [
              test = "@target and string-length(text())>0"
              "If the\x{a}" ~
              "      target attribute is used, the element must be empty"
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
     att.typed.attributes,
@@ -3135,7 +3895,7 @@ tei_catRef =
     
     ## identifies the categories concerned 
     attribute target {
-      list { xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI* }
     },
     
     ## identifies the classification scheme within which the set of categories concerned is
@@ -3183,8 +3943,7 @@ tei_geoDecl =
     att.declarable.attributes,
     
     ## supplies a commonly used code name for the datum employed.
-    ## Suggested values include: 1] WGS84 (World Geodetic System세계 측지 시스템Sistema Geodésico MundialSystème Géodésique Mondialsistema geodetico mondiale); 2] MGRS (Military Grid Reference System군사 좌표 참조 시스템Sistema de Coordenadas MGRSSystème de Référence du Réseau Militaire,
-    ##             (MGRS).sistema di riferimento delle coordinate MGRS); 3] OSGB36 (ordnance survey great britain영국 육지 측량부Système de coordonnées de Grande-Bretagne (OSGB) sistema di riferimento a reticolato OSGB36); 4] ED50 (European Datum coordinate system유럽 자료 좌표 시스템Sistema de coordinadas European Datumsystème de coordonnées de données européen.sistema di riferimento ED50)
+    ## Suggested values include: 1] WGS84(World Geodetic System) ; 2] MGRS(Military Grid Reference System) ; 3] OSGB36(ordnance survey great britain) ; 4] ED50(European Datum coordinate system) 
     [ a:defaultValue = "WGS84" ]
     attribute datum {
       
@@ -3467,12 +4226,12 @@ tei_facsimile =
     att.declaring.attributes,
     empty
   }
-att.global.facs.attributes = att.global.facs.attribute.facs, empty
+att.global.facs.attributes = att.global.facs.attribute.facs
 att.global.facs.attribute.facs =
   
   ## (facsimile) points to all or part of an image which corresponds with the content of the element.
   attribute facs {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 tei_surface =
   
@@ -3492,8 +4251,7 @@ att.coordinated.attributes =
   att.coordinated.attribute.ulx,
   att.coordinated.attribute.uly,
   att.coordinated.attribute.lrx,
-  att.coordinated.attribute.lry,
-  empty
+  att.coordinated.attribute.lry
 att.coordinated.attribute.start =
   
   ## indicates the element within a transcription of the text
@@ -3554,25 +4312,41 @@ tei_addSpan =
     empty
     >> sch:pattern [
          id = "addSpan-constraint-spanTo"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:addSpan"
+           "\x{a}" ~
+           "               "
            sch:assert [
              test = "@spanTo"
              "The spanTo= attribute of "
              sch:name [ ]
              " is required."
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ]
     >> sch:pattern [
          id = "addSpan-constraint-spanTo_fr"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:addSpan"
+           "\x{a}" ~
+           "               "
            sch:assert [
              test = "@spanTo"
              "L'attribut spanTo est requis."
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
     att.transcriptional.attributes,
@@ -3590,8 +4364,12 @@ tei_delSpan =
     empty
     >> sch:pattern [
          id = "delSpan-constraint-spanTo"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:delSpan"
+           "\x{a}" ~
+           "               "
            sch:assert [
              test = "@spanTo"
              "The spanTo= attribute of "
@@ -3599,17 +4377,29 @@ tei_delSpan =
              "\x{a}" ~
              "      is required."
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ]
     >> sch:pattern [
          id = "delSpan-constraint-spanTo_fr"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:delSpan"
+           "\x{a}" ~
+           "               "
            sch:assert [
              test = "@spanTo"
              "L'attribut spanTo est requis."
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
     att.transcriptional.attributes,
@@ -3640,8 +4430,7 @@ tei_handShift =
     empty,
     att.global.attributes,
     att.handFeatures.attributes,
-    att.responsibility.attribute.cert,
-    att.responsibility.attribute.resp,
+    att.responsibility.attributes,
     
     ## identifies the new hand.
     attribute new { xsd:anyURI }?,
@@ -3664,12 +4453,7 @@ tei_space =
   element space {
     tei_model.glossLike*,
     att.global.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     
     ## (dimension) indicates whether the space is horizontal or vertical.
     attribute dim {
@@ -3743,7 +4527,8 @@ tei_surplus =
     ## indicates the grounds for believing this text to be superfluous.
     attribute reason {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     empty
@@ -3751,8 +4536,7 @@ tei_surplus =
 att.metrical.attributes =
   att.metrical.attribute.met,
   att.metrical.attribute.real,
-  att.metrical.attribute.rhyme,
-  empty
+  att.metrical.attribute.rhyme
 att.metrical.attribute.met =
   
   ## (metrical structure, conventional) contains a user-specified encoding for the conventional
@@ -3767,7 +4551,7 @@ att.metrical.attribute.rhyme =
   
   ## (rhyme scheme) specifies the rhyme scheme applicable to a group of verse lines.
   attribute rhyme { xsd:token }?
-att.enjamb.attributes = att.enjamb.attribute.enjamb, empty
+att.enjamb.attributes = att.enjamb.attribute.enjamb
 att.enjamb.attribute.enjamb =
   
   ## (enjambement) indicates that the end of a verse line is marked by enjambement.
@@ -3863,14 +4647,13 @@ tei_pc =
     attribute pre { xsd:boolean }?,
     empty
   }
-att.global.analytic.attributes =
-  att.global.analytic.attribute.ana, empty
+att.global.analytic.attributes = att.global.analytic.attribute.ana
 att.global.analytic.attribute.ana =
   
   ## (analysis) indicates one or more elements containing interpretations of the
   ## element on which the ana attribute appears.
   attribute ana {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 tei_interp =
   
@@ -3969,7 +4752,7 @@ tei_certainty =
     ## indicates conditions assumed in the assignment of a degree
     ##       of confidence.
     attribute given {
-      list { xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI* }
     }?,
     
     ## indicates the degree of confidence assigned to the aspect
@@ -4001,7 +4784,7 @@ tei_link =
     
     ## specifies the identifiers of the elements or passages to be linked or associated. 
     attribute targets {
-      list { xsd:anyURI, xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI, xsd:anyURI* }
     },
     empty
   }
@@ -4062,21 +4845,20 @@ att.global.linking.attributes =
   att.global.linking.attribute.next,
   att.global.linking.attribute.prev,
   att.global.linking.attribute.exclude,
-  att.global.linking.attribute.select,
-  empty
+  att.global.linking.attribute.select
 att.global.linking.attribute.corresp =
   
   ## (corresponds) points to elements that correspond to the current
   ##       element in some way.
   attribute corresp {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.global.linking.attribute.synch =
   
   ## (synchronous) points to elements that are synchronous with the current
   ##       element.
   attribute synch {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.global.linking.attribute.sameAs =
   
@@ -4103,7 +4885,7 @@ att.global.linking.attribute.exclude =
   ## points to elements that are in exclusive alternation
   ##       with the current element.
   attribute exclude {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.global.linking.attribute.select =
   
@@ -4113,10 +4895,10 @@ att.global.linking.attribute.select =
   ##       uncertainty is marked as reduced by the number of alternants not
   ##       selected.
   attribute select {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.pointing.attributes =
-  att.pointing.attribute.type, att.pointing.attribute.evaluate, empty
+  att.pointing.attribute.type, att.pointing.attribute.evaluate
 att.pointing.attribute.type =
   
   ## categorizes the pointer in some respect, using any
@@ -4146,15 +4928,14 @@ att.pointing.attribute.evaluate =
 att.pointing.group.attributes =
   att.pointing.attributes,
   att.pointing.group.attribute.domains,
-  att.pointing.group.attribute.targFunc,
-  empty
+  att.pointing.group.attribute.targFunc
 att.pointing.group.attribute.domains =
   
   ## optionally specifies the identifiers of the elements
   ##       within which all elements indicated by the contents of this
   ##       element lie.
   attribute domains {
-    list { xsd:Name, xsd:Name+ }
+    list { xsd:Name, xsd:Name, xsd:Name* }
   }?
 att.pointing.group.attribute.targFunc =
   
@@ -4164,7 +4945,8 @@ att.pointing.group.attribute.targFunc =
   attribute targFunc {
     list {
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
     }
   }?
 tei_msDesc =
@@ -4198,47 +4980,66 @@ tei_dimensions =
     ((tei_dim | tei_model.dimLike)*)
     >> sch:pattern [
          id = "dimensions-constraint-duplicateDim1"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:dimensions"
+           "\x{a}" ~
+           "               "
            sch:report [
              test = "count(tei:width)> 1"
              "\x{a}" ~
              "	Width element may appear once only\x{a}" ~
              "      "
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ]
     >> sch:pattern [
          id = "dimensions-constraint-duplicateDim2"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:dimensions"
+           "\x{a}" ~
+           "               "
            sch:report [
              test = "count(tei:height)> 1"
              "\x{a}" ~
              "	Height element may appear once only\x{a}" ~
              "      "
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ]
     >> sch:pattern [
          id = "dimensions-constraint-duplicateDim3"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:dimensions"
+           "\x{a}" ~
+           "               "
            sch:report [
              test = "count(tei:depth)> 1"
              "\x{a}" ~
              "	Depth element may appear once only\x{a}" ~
              "      "
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     
     ## indicates which aspect of the object is being measured. 
     ## Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniatures; 6] binding; 7] box
@@ -4253,12 +5054,7 @@ tei_dim =
     tei_macro.xtext,
     att.global.attributes,
     att.typed.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     empty
   }
 tei_height =
@@ -4269,12 +5065,7 @@ tei_height =
   element height {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     empty
   }
 tei_depth =
@@ -4285,12 +5076,7 @@ tei_depth =
   element depth {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     empty
   }
 tei_width =
@@ -4301,12 +5087,7 @@ tei_width =
   element width {
     tei_macro.xtext,
     att.global.attributes,
-    att.dimensions.attribute.unit,
-    att.dimensions.attribute.quantity,
-    att.dimensions.attribute.extent,
-    att.dimensions.attribute.precision,
-    att.dimensions.attribute.scope,
-    att.ranging.attributes,
+    att.dimensions.attributes,
     empty
   }
 tei_heraldry =
@@ -4339,7 +5120,7 @@ tei_locus =
     
     ## supplies a link to one or more transcriptions of the specified range of folios.
     attribute target {
-      list { xsd:anyURI+ }
+      list { xsd:anyURI, xsd:anyURI* }
     }?,
     empty
   }
@@ -4395,6 +5176,7 @@ tei_secFol =
   ## in a codex (typically the beginning of the
   ## second leaf) in order
   ## to provide a unique identifier for it.
+  ## 
   ##
   element secFol { tei_macro.phraseSeq, att.global.attributes, empty }
 tei_signatures =
@@ -4434,8 +5216,12 @@ tei_msIdentifier =
      (tei_msName | tei_altIdentifier)*)
     >> sch:pattern [
          id = "msIdentifier-constraint-msId_minimal"
+         "\x{a}" ~
+         "            "
          sch:rule [
            context = "tei:msIdentifier"
+           "\x{a}" ~
+           "               "
            sch:report [
              test =
                "local-name(*[1])='idno' or                              local-name(*[1])='altIdentifier' or        .='' "
@@ -4443,7 +5229,11 @@ tei_msIdentifier =
              "	    You must supply either a locator of some type or a\x{a}" ~
              "	    name"
            ]
+           "\x{a}" ~
+           "            "
          ]
+         "\x{a}" ~
+         "         "
        ],
     att.global.attributes,
     empty
@@ -4637,7 +5427,7 @@ tei_textLang =
     }?,
     empty
   }
-att.msExcerpt.attributes = att.msExcerpt.attribute.defective, empty
+att.msExcerpt.attributes = att.msExcerpt.attribute.defective
 att.msExcerpt.attribute.defective =
   
   ## indicates whether the passage being quoted is defective,
@@ -5178,7 +5968,8 @@ tei_org =
     ## specifies a primary role or classification for the organization.
     attribute role {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     empty
@@ -5194,7 +5985,7 @@ tei_person =
     
     ## specifies a primary role or classification for the person.
     attribute role {
-      list { xsd:Name+ }
+      list { xsd:Name, xsd:Name* }
     }?,
     
     ## specifies the sex of the person.
@@ -5223,7 +6014,8 @@ tei_personGrp =
     ## specifies the size or approximate size of the group.
     attribute size {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     empty
@@ -5254,10 +6046,109 @@ tei_nym =
     att.typed.attributes,
     
     ## points to constituent nyms 
-    
-    ## Sorry, unable to create schema that uses actual counts minOccurs=1 and maxOccurs=100; approximating to minOccurs=1 and maxOccurs=unbounded.
     attribute parts {
-      list { xsd:anyURI, xsd:anyURI* }
+      list {
+        xsd:anyURI,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?,
+        xsd:anyURI?
+      }
     }?,
     empty
   }
@@ -5273,13 +6164,22 @@ tei_listNym =
   }
 tei_model.persNamePart =
   tei_surname | tei_forename | tei_genName | tei_addName | tei_roleName
+tei_model.persNamePart_alternation =
+  tei_surname | tei_forename | tei_genName | tei_addName | tei_roleName
+tei_model.persNamePart_sequence =
+  tei_surname, tei_forename, tei_genName, tei_addName, tei_roleName
+tei_model.persNamePart_sequenceOptional =
+  tei_surname?, tei_forename?, tei_genName?, tei_addName?, tei_roleName?
+tei_model.persNamePart_sequenceOptionalRepeatable =
+  tei_surname*, tei_forename*, tei_genName*, tei_addName*, tei_roleName*
+tei_model.persNamePart_sequenceRepeatable =
+  tei_surname+, tei_forename+, tei_genName+, tei_addName+, tei_roleName+
 att.datable.iso.attributes =
   att.datable.iso.attribute.when-iso,
   att.datable.iso.attribute.notBefore-iso,
   att.datable.iso.attribute.notAfter-iso,
   att.datable.iso.attribute.from-iso,
-  att.datable.iso.attribute.to-iso,
-  empty
+  att.datable.iso.attribute.to-iso
 att.datable.iso.attribute.when-iso =
   
   ## supplies the value of a date or time in a standard form.
@@ -5380,7 +6280,8 @@ tei_app =
     ## location-referenced method of apparatus markup is used.
     attribute loc {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" },
+        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }*
       }
     }?,
     empty
@@ -5424,13 +6325,13 @@ tei_wit =
     empty
   }
 tei_model.rdgPart = tei_wit
-att.rdgPart.attributes = att.rdgPart.attribute.wit, empty
+att.rdgPart.attributes = att.rdgPart.attribute.wit
 att.rdgPart.attribute.wit =
   
   ## (witness or witnesses) contains a list of one or more sigla indicating the witnesses
   ## which begin or end at this point.
   attribute wit {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.textCritical.attributes =
   att.responsibility.attributes,
@@ -5438,19 +6339,18 @@ att.textCritical.attributes =
   att.textCritical.attribute.type,
   att.textCritical.attribute.cause,
   att.textCritical.attribute.varSeq,
-  att.textCritical.attribute.hand,
-  empty
+  att.textCritical.attribute.hand
 att.textCritical.attribute.wit =
   
   ## (witness or witnesses) contains a list of one or more pointers indicating the witnesses
   ## which attest to a given reading.
   attribute wit {
-    list { xsd:anyURI+ }
+    list { xsd:anyURI, xsd:anyURI* }
   }?
 att.textCritical.attribute.type =
   
   ## classifies the reading according to some useful typology.
-  ## Sample values include: 1] substantive (substantif); 2] orthographic (orthographique)
+  ## Sample values include: 1] substantive; 2] orthographic
   attribute type { xsd:Name }?
 att.textCritical.attribute.cause =
   
