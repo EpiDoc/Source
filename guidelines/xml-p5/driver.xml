@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="xml"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Driver EpiDoc Guidelines</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Released under GNU GPL 3.0</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>created electronically</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <front>
+            <divGen type="toc"/>
+        </front>
+        <body>
+	  <div>
+	      <xi:include href="introeps.xml"/>
+	      <xi:include href="restoration.xml"/>
+	      <xi:include href="erroneoussubstitution.xml"/>
+	      
+	      <xi:include href="../../schema/tei-epidoc.xml"/>
+	  </div>
+        </body>
+    </text>
+</TEI>
