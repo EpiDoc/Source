@@ -1,9 +1,9 @@
-P5ROOT=/usr/share/xml/tei/odd
+P5ROOT=http://www.tei-c.org/release/xml
 LANGUAGE=en
 
-schema:
+schema: compiled
 	xmllint --noent --xinclude tei-epidoc.xml > tei-epidoc-full.xml
-	 roma2 	--localsource=${P5ROOT}/Source/Guidelines/en/guidelines-en.xml tei-epidoc-full.xml .
+	 roma2 	--localsource=p5subset.xml tei-epidoc-full.xml .
 	rm tei-epidoc-full.xml
 
 html:	xml
@@ -16,23 +16,21 @@ html:	xml
 	rm tei-epidoc.xml.compiled
 
 compiled:
-	saxon -o p5subset.xml ${P5ROOT}/Source/Guidelines/en/guidelines-en.xml \
-	${P5ROOT}/Utilities/subset.xsl 
+	curl -s -o odd2odd.xsl ${P5ROOT}/tei/stylesheet/odds2/odd2odd.xsl
+	curl -s -o p5subset.xml ${P5ROOT}/tei/odd/p5subset.xml
 	xmllint --xinclude tei-epidoc.xml | \
 	saxon  -o tei-epidoc.xml.compiled - \
-	/usr/share/xml/tei/stylesheet/odds2/odd2odd.xsl \
+		odd2odd.xsl \
 	    TEIC=true \
 	    localsource=`pwd`/p5subset.xml 
 
 xml: compiled
 	saxon -o tei-epidoc-Guidelines.xml  \
-	tei-epidoc.xml.compiled \
-		/usr/share/xml/tei/stylesheet/odds2/odd2lite.xsl  \
+	tei-epidoc.xml.compiled ${P5ROOT}/tei/stylesheet/odds2/odd2lite.xsl	  \
 	    autoToc=true \
 	    lang=${LANGUAGE} \
 	    doclang=${LANGUAGE} \
 	    documentationLanguage=${LANGUAGE} 
-	rm p5subset.xml
 
 pdftex: xml
 	saxon -o tei-epidoc.tex \
@@ -59,3 +57,4 @@ validate:
 
 clean:
 	-rm tei-epidoc.xml.compiled exnames.xml tei-epidoc-ex.odd tei-epidoc-examples.rng p5subset.xml tei-epidoc-Guidelines.xml
+	-rm odd2odd.xsl p5subset.xml
