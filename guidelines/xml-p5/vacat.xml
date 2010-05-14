@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header$ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="vacat"><head>Transcription where a vacat is evident or suspected</head>
+            <ab><rs type="conformance">leiden</rs></ab>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><p>The element <tag>space/</tag> should be used where a blank space on the stone is considered significant.</p><div id="vacat-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="simple">
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>
+            <list type="ordered" lang="la">
+               <item id="TypoEx-1">Imperator <hi rend="normal">(vac.)</hi> Caesar </item>
+               <item id="TypoEx-2">Valeria <hi rend="normal">(vac. ?)</hi> Atticilla </item>
+               <item id="TypoEx-3">not addressed </item>
+               <item id="TypoEx-4">not addressed </item>
+            </list></item>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+            <list type="ordered" lang="la">
+               <item id="TypoEx-5">Imperator (vac. 3) Caesar </item>
+               <item id="TypoEx-6">Valeria (vac. ?) Atticilla </item>
+               <item id="TypoEx-7">senatus (vac. 3?) populusque </item>
+               <item id="TypoEx-8">not addressed </item>
+            </list></item>
+         <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dow">Dow</xref></title></bibl>: 
+            <list type="ordered">
+               <item id="TypoEx-9">Imperator <hi rend="superscript">vvv.</hi> Caesar </item>
+               <item id="TypoEx-10">Valeria <hi rend="superscript">vvv.?</hi> Atticilla </item>
+               <item id="TypoEx-11">not addressed </item>
+               <item id="TypoEx-12">not addressed </item>
+            </list></item>
+      </list>
+   </div><div id="vacat-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+<item id="Regex-3">
+            blah</item>
+<item id="Regex-4">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="vacat-edition" type="gl-edition" lang="la">
+      <head lang="en">EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">Imperator 
+            <space dim="horizontal" extent="3" unit="character"/> Caesar </item>
+         <item id="EncEx-2">Valeria 
+            <space id="space1" dim="horizontal" extent="3" unit="character"/>
+            <certainty target="space1" locus="#gi" degree="low"/> Atticilla </item>
+         <item id="EncEx-3">senatus 
+            <space id="space2" dim="horizontal" extent="3" unit="character" precision="circa"/>
+             populusque </item>
+         <item id="EncEx-4">dona 
+            <space id="space3" dim="horizontal" extent="5" unit="character" precision="circa"/>
+            
+            <certainty target="space3" locus="#gi" degree="low"/> nobis pacem </item>
+      </list>
+   </div><div id="vacat-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="ordered"><item>The use of the <tag>certainty</tag> element in these examples conforms to the consensus reached in a protacted discussion on the <xref href="http://lsv.uky.edu/archives/markup.html">Markup list</xref> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." (
+         <dateRange from="2002-06-01" to="2002-06-10">1-10 June 2002</dateRange>).</item><item><tag>certainty target="extent"/</tag> has, however, been replaced by <att>precision</att> attribute on <tag>space/</tag> as of Spring 2007.</item></list>
+   </div><div id="vacat-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="ordered">
+         <item>GB (2006-07-19): This section also impinges on the "whitespace" discussion. Ideally, all space on stone should be marked up the same way in the XML (using <tag>space/</tag>), with contextual stylesheets rendering some as (vac.) and others with whitespace—dependent of course on the desires of the project: USEP want more whitespace; InsAph want more (<hi rend="superscript">vv.</hi>).</item>
+      </list>
+   </div><div id="vacat-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>John Bodel</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="vacat-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="vacat-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision$</seg></p>
+      <p id="vacat-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="vacat-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date$</seg></p>
+      <p id="vacat-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author$</seg></p>
+   </div></div>
+

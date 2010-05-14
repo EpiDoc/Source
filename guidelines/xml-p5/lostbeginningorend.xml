@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header$ -->
+
+        <!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude" id="lostbeginningorend">
+	<head>One or more lines completely lost at the beginning or end of a text or fragment (extent
+		uncertain)</head>
+	<div id="lostbeginningorend-typographic" type="gl-typographic" org="uniform" part="N"
+		sample="complete">
+		<head>Traditional typographic representation</head>
+		<list type="simple">
+			<item><bibl default="NO"><title level="a" type="abbreviated">Panciera</title>, <abbr
+						expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl default="NO"
+						><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page"
+						>p.</abbr><biblScope type="pages">4</biblScope></bibl>: <list type="ordered">
+					<item id="TypoEx-1">- - - - - - - - - - - - - - - - -</item>
+				</list></item>
+		</list>
+	</div>
+	<div id="lostbeginningorend-regex" type="gl-regextest">
+		<head>Regular Expression Test</head>
+		<list>
+			<item id="Regex-1">
+				<![CDATA[((^(-|\s)+$))  =   <gap id="%mkIDgap0" reason="lost" unit="line"/>
+            <certainty target="%mkIDgap0" locus="extent" degree="low"/>]]>
+			</item>
+		</list>
+		<link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+	</div>
+	<div id="lostbeginningorend-edition" type="gl-edition" org="uniform" part="N" sample="complete">
+		<head>EpiDoc appearance with standard XSLT</head>
+		<list type="ordered">
+			<item id="EncEx-1">
+				<gap id="gap0" reason="lost" unit="line"/>
+				<certainty target="gap0" locus="extent" degree="low"/>
+			</item>
+		</list>
+	</div>
+	<div id="lostbeginningorend-responsibility" type="gl-responsibility" org="uniform" part="N"
+		sample="complete">
+		<head>Responsibility for this section</head>
+		<listBibl default="NO">
+			<bibl default="NO">
+				<respStmt>
+					<resp>author</resp>
+					<name>Tom Elliott</name>
+				</respStmt>
+			</bibl>
+		</listBibl>
+	</div>
+	<div id="lostbeginningorend-cvs" type="gl-cvs" org="uniform" part="N" sample="complete">
+		<head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+		<p id="lostbeginningorend-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+				cert="high" part="N">$Revision$</seg></p>
+		<p id="lostbeginningorend-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+				cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+		<p id="lostbeginningorend-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+				cert="high" part="N">$Date$</seg></p>
+		<p id="lostbeginningorend-cvs-revision-author">Revision committed by: <seg
+				n="cvs-revision-author" cert="high" part="N">$Author$</seg></p>
+	</div>
+</div>

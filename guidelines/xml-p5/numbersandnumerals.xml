@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header$ -->
+
+        <!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="numbersandnumerals">
+    <head>Numbers and numerals</head>
+    <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p>
+    <p>Different behaviour for Greek and Latin numerals:</p>
+    <div id="numbersandnumerals-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list type="ordered">
+            <item lang="grc" id="TypoEx-1">α´</item>
+            <item lang="grc" id="TypoEx-2">͵αχο´</item>
+            <item lang="grc" id="TypoEx-3"></item>
+            <item lang="la" id="TypoEx-4">XIII</item>
+        </list>
+    </div>
+    <div id="numbersandnumerals-regex" type="gl-regextest">
+        <head>Regular Expression Test</head>
+        <list>
+            <item id="Regex-1"> blah</item>
+            <item id="Regex-2"> blah</item>
+            <item id="Regex-3"> blah</item>
+        </list>
+        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/>
+    </div>
+    <div id="numbersandnumerals-edition" type="gl-edition" lang="la">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item id="EncEx-1">
+                <num value="1" lang="grc">α</num>
+            </item>
+            <item id="EncEx-2">
+                <num value="1670" lang="grc">αχο</num>
+            </item>
+            <item id="EncEx-3" lang="grc"><measure type="currency" unit="stater" value="50">
+                    <num value="50" type="acrophonic"></num>
+                </measure> </item>
+            <item id="EncEx-4">
+                <num lang="la" value="13">XIII</num>
+            </item>
+        </list>
+    </div>
+    <div id="numbersandnumerals-notes" type="gl-notes">
+        <head>Notes</head>
+        <list type="simple">
+            <item>If a numeral is indicated with a supralinear bar or other mark on the stone, this
+                should be separately indicated by a <tag>hi rend="overbar"</tag> element or similar (see section on <xref href="supralinearlines.xml">supralinear lines</xref>).</item>
+            <item>Example 3 above is an acrophonic Greek numeral (for more on which see the
+                guidelines section of <xref href="acrophonic.xml">acrophonics</xref>)</item>
+        </list>
+        <div id="numbersandnumerals-questions" type="gl-questions">
+            <head>Questions and issues</head>
+            <list type="simple">
+                <item>None</item>
+            </list>
+        </div>
+    </div>
+    <div id="numbersandnumerals-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Zaneta Au</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="numbersandnumerals-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="numbersandnumerals-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision$</seg></p>
+        <p id="numbersandnumerals-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="numbersandnumerals-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date$</seg></p>
+        <p id="numbersandnumerals-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author$</seg></p>
+    </div>
+</div>

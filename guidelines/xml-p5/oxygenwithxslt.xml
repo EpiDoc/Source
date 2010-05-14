@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header$ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="oxygenwithxslt" lang="en" rend="integral">
+   <head>Transforming the XML using Oxygen</head>
+   <p>Instructions of how to use the epidoc XSLT stylesheets with your own epidoc files. This was
+      written using Oxygen v7.1</p>
+   <list>
+      <item>With the XML file open in Oxygen, click the "Apply transformation scenario" button.</item>
+      <item>In the "Configure transformation scenario" window, click on "new" to create a new
+         scenario.</item>
+      <item>In the XSLT tab, enter the path for force-namespace-tei.xsl into XSL URL</item>
+      <item>Click on "Parameters", "Add". Enter in "Name", 'standalonecss'. In "Value", enter the
+         path for the location of epidocscreen.css.</item>
+      <item>Back in the XSLT tab, click on "Additional XSLT stylesheets", "Add". Enter the path for
+         epidoc.xsl</item>
+      <item>Return to the XSLT tab, in the Output tab, select "Prompt for file" and "Open in
+         browser".</item>
+      <item>Returning to the original "Configure transformation scenario" window, click "Transform
+         now".</item>
+      <item>Save to a desired location and see the results!</item>
+   </list>
+   <div id="oxygenwithxslt-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl>
+            <respStmt>
+               <resp>author</resp>
+               <name>Zaneta Au</name>
+            </respStmt>
+         </bibl>
+      </listBibl>
+   </div>
+   <div id="oxygenwithxslt-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="oxygenwithxslt-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision$</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date:
+            2006/03/21 16:07:55 $</seg></p>
+      <p id="oxygenwithxslt-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author$</seg></p>
+   </div>
+</div>
