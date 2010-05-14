@@ -1,10 +1,11 @@
 EpiDoc Guidelines
 README.txt
 
-Aim a browser at index.html or guidelines.html. This is the title page. It
-contains links to the table of contents and thereby the rest of the document.
+2010-05-14
 
-Note that this release has only been tested with Firefox 2. It almost will
-certainly fail with versions of Internet Explorer earlier than 7.
+We are currently reorganizing the EpiDoc guidelines portion of the SF
+repository. These are first steps toward bringing the guidelines up to 
+match the latest P5 schema etc. We have tagged the current state of 
+things (before we start changes) as tags/pre-r8-guidelines-upgrade.
 
 See http://epidoc.sf.net for more information about EpiDoc.
