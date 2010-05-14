@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="file:/Users/gabrielbodard/Desktop/sourceforge/schema/odddoc.rng" type="xml"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Erroneous substitution</head>
+    <p>
+        <specList>
+            <specDesc key="choice"/>
+            <specDesc key="corr"/>
+            <specDesc key="sic"/>
+        </specList>
+    </p>
+    <p>Characters written wrongly or transposed in the original source, corrected by the editor. See
+        also discussion in <ptr
+            target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBA"/>. How to </p>
+    <cit>
+        <quote>⌈abc⌉</quote>
+        <bibl corresp="#panciera">
+            <biblScope>9.3</biblScope>
+        </bibl>
+    </cit>
+    <cit>
+        <quote>&lt;abc&gt;</quote>
+        <bibl corresp="#seg"/>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <choice>
+            <corr>abc</corr>
+            <sic>def</sic>
+        </choice>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT207.html#al5" rend="panciera seg"> s<choice>
+            <sic>y</sic>
+            <corr>u</corr>
+        </choice>b </egXML>
+
+</div>
