@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd ~/Sandbox/epidoc.cvs.sourceforge.net/guidelines/staticgen
-rm ~/Sandbox/epidoc-static-gl/*
-python generate.py -c config.xml
-python package.py -d ~/Sandbox/epidoc-static-gl/ -x ~/Sandbox/epidoc.cvs.sourceforge.net/guidelines/src -s ~/Sandbox/epidoc.cvs.sourceforge.net/epidoc-xsl/css
-
