@@ -57,4 +57,4 @@ validate:
 
 clean:
 	-rm tei-epidoc.xml.compiled exnames.xml tei-epidoc-ex.odd tei-epidoc-examples.rng p5subset.xml tei-epidoc-Guidelines.xml
-	-rm odd2odd.xsl p5subset.xml
+	-rm odd2odd.xsl p5subset.xml tei-epidoc-full.xml subset.xsl tei-epidoc_en.html
