@@ -1,7 +1,7 @@
 <xsl:stylesheet
   exclude-result-prefixes="xlink dbk rng tei teix xhtml a edate estr html pantor xd xs xsl"
   extension-element-prefixes="exsl estr edate" 
-  version="1.0"
+  version="2.0"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xlink="http://www.w3.org/1999/xlink"

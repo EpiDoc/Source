@@ -14,8 +14,8 @@
   <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>
   
   <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
-  <xsl:param name="STDOUT">true</xsl:param>
-  <xsl:param name="splitLevel">-1</xsl:param>
+  <xsl:param name="STDOUT">false</xsl:param>
+  <xsl:param name="splitLevel">0</xsl:param>
   <xsl:param name="autoToc">true</xsl:param>
   <xsl:param name="cssFile">epidoc.css</xsl:param>
   <xsl:param name="cssSecondaryFile">epidoc-odd.css</xsl:param>

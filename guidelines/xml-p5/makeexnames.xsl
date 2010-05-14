@@ -12,7 +12,7 @@
     xmlns:rng="http://relaxng.org/ns/structure/1.0"
     extension-element-prefixes="exsl estr edate"
     exclude-result-prefixes="exsl edate estr tei t a rng s teix" 
-    version="1.0">
+    version="2.0">
   
   <xsl:output indent="yes"/>
   <xsl:key name="E" match="tei:elementSpec" use="'1'"/>
