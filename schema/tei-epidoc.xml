@@ -28,7 +28,12 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <p>My TEI Customization&#xD; starts with modules tei, core, textstructure and header</p>
+	  <div>
+	  </div>
+	</body>
+	<back>
+	  <div>
+	    <head>ODD specification</head>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
@@ -386,6 +391,7 @@
                 <elementSpec module="figures" ident="table" mode="delete"/>
                 <elementSpec module="figures" ident="formula" mode="delete"/>
             </schemaSpec>
-        </body>
+	  </div>
+	</back>
     </text>
 </TEI>
