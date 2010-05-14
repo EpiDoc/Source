@@ -19,11 +19,42 @@
     </teiHeader>
     <text>
         <body>
-	      <xi:include href="intro-eps.xml"/>
-	      <xi:include href="intro-eps-fr.xml"/>
-	      <xi:include href="restoration.xml"/>
-	      <xi:include href="erroneoussubstitution.xml"/>
-	      
+            <div>
+                <head>Introductions</head>
+                <xi:include href="intro-intro.xml"/>
+                <xi:include href="intro-eps.xml"/>
+                <xi:include href="intro-faq.xml"/>
+                <xi:include href="intro-howto.xml"/>
+                <xi:include href="intro-step.xml"/>
+                <xi:include href="intro-team.xml"/>
+                <xi:include href="intro-qstart.xml"/>
+                <!--	      <xi:include href="intro-eps-fr.xml"/> -->
+                <xi:include href="intro-wflow.xml"/>
+            </div>
+            <div>
+                <head>Workflow</head>
+                <xi:include href="encode-struct.xml"/>
+                <xi:include href="encode-metadata.xml"/>
+                <div>
+                    <head>Encoding the text</head>
+                    <xi:include href="encode-text.xml"/>
+                    <xi:include href="restoration.xml"/>
+                    <xi:include href="erroneoussubstitution.xml"/>
+                </div>
+                <xi:include href="encode-output.xml"/>
+            </div>
+            <div>
+                <head>Appendices</head>
+                <xi:include href="app-epi.xml"/>
+                <xi:include href="app-papy.xml"/>
+                <xi:include href="app-sigi.xml"/>
+                <xi:include href="app-numi.xml"/>
+                <xi:include href="app-nonWestern.xml"/>
+                <xi:include href="app-DocHist.xml"/>
+                <xi:include href="app-vocab.xml"/>
+                <xi:include href="app-unicode.xml"/>
+            </div>
+
         </body>
 <back>
 	      <xi:include href="../../schema/tei-epidoc.xml"/>
