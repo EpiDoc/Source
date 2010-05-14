@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -29,6 +30,9 @@
         </front>
         <body>
 	  <div>
+	      <xi:include href="../guidelines/xml-p5/introeps.xml"/>
+	      <xi:include href="../guidelines/xml-p5/restoration.xml"/>
+	      <xi:include href="../guidelines/xml-p5/erroneoussubstitution.xml"/>
 	  </div>
 	</body>
 	<back>
