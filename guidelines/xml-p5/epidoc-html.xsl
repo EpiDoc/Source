@@ -11,8 +11,11 @@
     exclude-result-prefixes="tei t a rng s teix" 
     version="2.0">
   
-  <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>
-  
+  <!-- <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
+    <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/>
+    <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
+    <xsl:import href="render-epidoc.xsl"/>
+    
   <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
   <xsl:param name="STDOUT">false</xsl:param>
   <xsl:param name="splitLevel">0</xsl:param>
@@ -21,7 +24,12 @@
   <xsl:param name="cssSecondaryFile">epidoc-odd.css</xsl:param>
   <xsl:param name="TEIC">true</xsl:param>
   <xsl:param name="forceWrap">false</xsl:param>
+    
+    <xsl:template name="egXMLEndHook">
+        <xsl:call-template name="render-epidoc"/>
+    </xsl:template>
 
+    
 </xsl:stylesheet>
 
 

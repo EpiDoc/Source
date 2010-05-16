@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This NVDL file is designed to validate EpiDoc Guidelines authoring files,
+which have multiply namespaced content. -->
+
 <rules xmlns="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"
- startMode="validate">
-
-  <mode name="validate">
-       
-    <namespace ns="http://www.tei-c.org/ns/1.0">
-      <validate schema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng">
-	<mode>
-         <namespace ns="http://relaxng.org/ns/structure/1.0">
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+     startMode="tei">
+    <trigger ns="http://www.tei-c.org/ns/Examples" nameList="ab choice"/>
+    <mode name="tei">
+        <namespace ns="http://www.tei-c.org/ns/1.0">
+            <validate
+                schema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng"/>
+        </namespace>
+        <namespace ns="http://relaxng.org/ns/structure/1.0">
             <validate schema="relax.rng"/>
-          </namespace>
-
-	  <namespace ns="http://www.tei-c.org/ns/Examples">
-	    <validate schema="tei-epidoc-examples.rng">
-	      <mode>
-		<anyNamespace>
-		  <allow/>
-		</anyNamespace>
-	      </mode>
-	    </validate>
-	  </namespace>
-	</mode>
-      </validate>
-    </namespace>
-  </mode>
-  <mode name="attach">
-    <anyNamespace><attach/></anyNamespace>
-  </mode> 
+        </namespace>
+        <namespace ns="http://www.tei-c.org/ns/Examples">
+            <allow useMode="epidoc"/>
+                
+        </namespace>
+    </mode>
+    <mode name="epidoc">
+        <namespace ns="http://www.tei-c.org/ns/Examples">
+            <validate schema="tei-epidoc.rng"/>
+            
+        </namespace>
+    </mode>
 </rules>
