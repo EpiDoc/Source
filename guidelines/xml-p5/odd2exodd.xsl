@@ -1,7 +1,8 @@
 <xsl:stylesheet
-  exclude-result-prefixes="xlink dbk rng tei teix xhtml a edate estr html pantor xd xs xsl"
-  extension-element-prefixes="exsl estr edate" 
+  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
   version="2.0"
+  exclude-result-prefixes="tei xsl rng"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:param name="TEIC">false</xsl:param>
@@ -58,6 +59,7 @@
 	  <group xmlns="http://relaxng.org/ns/structure/1.0">
 	    <zeroOrMore >
 	      <choice>
+		<text xmlns="http://relaxng.org/ns/structure/1.0"/>		
 		<xsl:copy-of
 		    select="document('exnames.xml')/rng:choice/rng:ref"/>
 	      </choice>

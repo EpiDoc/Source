@@ -51,8 +51,8 @@ examples-schema: compiled
 	saxon -o tei-epidoc-ex.odd driver.xml.compiled odd2exodd.xsl TEIC=true
 	saxon  tei-epidoc-ex.odd ${P5ROOT}/tei/stylesheet/odds2/odd2relax.xsl outputDir=. TEIC=true
 
-validate: examples-schema
-	xmllint --noent --xinclude driver.xml > tei-epidoc-full.xml
+validate: 
+	xmllint --encode "utf-8" --noent --xinclude driver.xml > tei-epidoc-full.xml
 	onvdl epidoc.nvdl tei-epidoc-full.xml
 
 clean:
