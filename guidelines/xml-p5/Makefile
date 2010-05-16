@@ -47,8 +47,8 @@ pdf: pdftex
 	mv tei-epidoc.pdf referenceManual.pdf
 
 examples-schema: compiled
-	saxon -o ../../schema/exnames.xml driver.xml.compiled  makeexnames.xsl 
-	saxon -o tei-epidoc-ex.odd driver.xml.compiled odd2exodd.xsl > TEIC=true
+	saxon -o exnames.xml driver.xml.compiled  makeexnames.xsl 
+	saxon -o tei-epidoc-ex.odd driver.xml.compiled odd2exodd.xsl TEIC=true
 	saxon  tei-epidoc-ex.odd ${P5ROOT}/tei/stylesheet/odds2/odd2relax.xsl outputDir=. TEIC=true
 
 validate: examples-schema
