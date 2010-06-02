@@ -261,7 +261,7 @@
   <xsl:template match="keywords">
     <xsl:element name="{local-name()}">
       <xsl:attribute name="scheme">
-        <xsl:text>DDbDP</xsl:text>
+        <xsl:text>IRCyr</xsl:text>
       </xsl:attribute>
       <xsl:apply-templates/>
     </xsl:element>
@@ -286,7 +286,7 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="lem[following-sibling::wit]">
+  <!--<xsl:template match="lem[following-sibling::wit]">
     <xsl:element name="lem">
       <xsl:copy-of select="@*"/>
       <xsl:attribute name="resp">
@@ -294,7 +294,7 @@
       </xsl:attribute>
       <xsl:apply-templates/>
     </xsl:element>
-  </xsl:template>
+  </xsl:template>-->
 
   <xsl:template match="measure">
     <xsl:choose>
@@ -347,7 +347,6 @@
     <xsl:element name="publicationStmt">
       <xsl:element name="authority">
         <xsl:text>Centre for Computing in the Humanities, King's College London</xsl:text>
-        <!--        <xsl:text>NYU Digital Library Technology Services</xsl:text>-->
       </xsl:element>
       <xsl:element name="idno">
         <xsl:attribute name="type">
@@ -377,38 +376,7 @@
           </xsl:choose>
         </xsl:for-each>
       </xsl:if>
-      <!--<xsl:element name="idno">
-        <xsl:attribute name="type">
-          <xsl:text>ddb-perseus-style</xsl:text>
-        </xsl:attribute>
-        <xsl:value-of select="ancestor::TEI.2/@n"/>
-      </xsl:element>
-      <xsl:element name="idno">
-        <xsl:attribute name="type">
-          <xsl:text>ddb-hybrid</xsl:text>
-        </xsl:attribute>
-        <xsl:variable name="volanddoc">
-          <xsl:value-of select="substring-after(ancestor::TEI.2/@n, ';')"/>
-        </xsl:variable>
-        <xsl:variable name="opt">
-          <xsl:choose>
-            <xsl:when test="contains(ancestor::TEI.2/@n, ';;')">
-              <xsl:number value="0"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:number value="1"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="collen">
-          <xsl:value-of
-            select="string-length(ancestor::TEI.2/@id) - (string-length($volanddoc)+$opt)"/>
-        </xsl:variable>
-        <xsl:variable name="collect">
-          <xsl:value-of select="substring(ancestor::TEI.2/@id, 1, number($collen))"/>
-        </xsl:variable>
-        <xsl:value-of select="concat($collect,';',$volanddoc)"/>
-      </xsl:element>-->
+      
       <xsl:element name="availability">
         <xsl:apply-templates select="p"/>
       </xsl:element>
@@ -464,10 +432,15 @@
           <xsl:if test="@cert='low'">
             <xsl:copy-of select="@cert"/>
           </xsl:if>
+          <xsl:if test="not(@type)">
+            <xsl:attribute name="type">
+              <xsl:text>RS-NEEDS-TYPE</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
           <xsl:if test="@reg">
-            <xsl:attribute name="ref">
-              <xsl:value-of select="@type"/>
-              <xsl:text>AL#</xsl:text>
+            <xsl:attribute name="key">
+              <!--<xsl:value-of select="@type"/>
+              <xsl:text>AL#</xsl:text>-->
               <xsl:value-of select="@reg"/>
             </xsl:attribute>
           </xsl:if>
@@ -556,23 +529,11 @@
     </xsl:if>
   </xsl:template>-->
 
-  <xsl:template match="titleStmt/title">
-    <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name() = ('n','level'))]"/>
-      <xsl:if test="string-length(@n) > 0">
-        <xsl:copy-of select="@n"/>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>
-
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-
-  <xsl:template match="wit[preceding-sibling::lem]"/>
 
   <xsl:template match="xptr">
     <xsl:element name="ptr">
