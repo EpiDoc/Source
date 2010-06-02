@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 
-<!-- |||||||||||||||||||||||||||||||||||||||||| -->
-<!-- ||||  Gabriel BODARD 2008-11-20    |||||| -->
-<!-- |||| w/contribution from TE,HC,EM |||||| -->
-<!-- ||||          Last update 2009-07-17       |||||| -->
-<!-- |||||||||||||||||||||||||||||||||||||||||| -->
+<!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+<!-- |XX          Gabriel BODARD 2008-11-20              XX| -->
+<!-- |XX      w/contribution from TE,HC,EM,RV          XX| -->
+<!-- |XX         Last update 2010-06-02                         XX| -->
+<!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
   xmlns="http://www.tei-c.org/ns/1.0" xmlns:date="http://exslt.org/dates-and-times">
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
-  <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- ||||||||||||  copy all existing elements ||||||||||| -->
-  <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
-
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  <!-- |XX          copy all existing elements                     XX| -->
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
       <xsl:copy-of
@@ -43,21 +43,21 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-
-  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- |||||||||||||||| copy all comments  |||||||||||||||| -->
-  <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-
+  
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  <!-- |XX                   copy all comments                       XX| -->
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  
   <xsl:template match="//comment()">
     <xsl:comment>
       <xsl:value-of select="."/>
     </xsl:comment>
   </xsl:template>
 
-  <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
-  <!-- ||||||||||||||     EXCEPTIONS      |||||||||||||| -->
-  <!-- ||||||||||||||||||||||||||||||||||||||||||||||| -->
-
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  <!-- |XX                           EXCEPTIONS                     XX| -->
+  <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
+  
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
       RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"</xsl:processing-instruction>
