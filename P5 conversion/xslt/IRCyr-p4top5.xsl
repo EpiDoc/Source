@@ -14,7 +14,7 @@
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
   <!-- |XX          copy all existing elements                     XX| -->
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
-  
+
   <xsl:template match="*">
     <xsl:element name="{local-name()}">
       <xsl:copy-of
@@ -43,11 +43,11 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
   <!-- |XX                   copy all comments                       XX| -->
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
-  
+
   <xsl:template match="//comment()">
     <xsl:comment>
       <xsl:value-of select="."/>
@@ -57,10 +57,11 @@
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
   <!-- |XX                           EXCEPTIONS                     XX| -->
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
-  
+
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="http://epidoc.googlecode.com/files/exp-epidoc.rng" type="xml"</xsl:processing-instruction>
+      RNGSchema="http://www.stoa.org/epidoc/schema/8/tei-epidoc.rng"
+      type="xml"</xsl:processing-instruction>
     <!--
       RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
@@ -179,7 +180,23 @@
       </xsl:element>
     </xsl:if>
   </xsl:template>
-  
+
+  <xsl:template match="div[@type=('edition','translation')]">
+    <xsl:element name="{local-name()}">
+      <xsl:copy-of
+        select="@*[not(local-name()=('lang','default','org','sample','part','full','status','anchored'))]"/>
+      <xsl:if test="@lang">
+        <xsl:attribute name="xml:lang">
+          <xsl:value-of select="@lang"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:attribute name="xml:space">
+        <xsl:text>preserve</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
   <xsl:template match="figure">
     <xsl:element name="figure">
       <xsl:element name="graphic">
@@ -286,16 +303,6 @@
     </xsl:element>
   </xsl:template>
 
-  <!--<xsl:template match="lem[following-sibling::wit]">
-    <xsl:element name="lem">
-      <xsl:copy-of select="@*"/>
-      <xsl:attribute name="resp">
-        <xsl:value-of select="normalize-space(following-sibling::wit[1])"/>
-      </xsl:attribute>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template>-->
-
   <xsl:template match="measure">
     <xsl:choose>
       <xsl:when test="@dim=('height','width','depth')">
@@ -334,8 +341,8 @@
       </xsl:if>
       <xsl:if test="@reg">
         <xsl:attribute name="nymRef">
-          <xsl:value-of select="local-name()"/>
-          <xsl:text>AL#</xsl:text>
+          <!--<xsl:value-of select="local-name()"/>
+          <xsl:text>AL#</xsl:text>-->
           <xsl:value-of select="@reg"/>
         </xsl:attribute>
       </xsl:if>
@@ -376,7 +383,6 @@
           </xsl:choose>
         </xsl:for-each>
       </xsl:if>
-      
       <xsl:element name="availability">
         <xsl:apply-templates select="p"/>
       </xsl:element>
@@ -387,7 +393,7 @@
     <xsl:element name="{local-name()}">
       <xsl:element name="change">
         <xsl:attribute name="when">
-          <xsl:value-of select="date:date()"/>
+          <xsl:value-of select="substring(date:date(),1,10)"/>
         </xsl:attribute>
         <xsl:attribute name="who">
           <xsl:text>GB</xsl:text>
@@ -411,9 +417,9 @@
             </xsl:choose>
           </xsl:attribute>
           <xsl:attribute name="who">
-            <xsl:value-of select="respStmt"/>
+            <xsl:value-of select="normalize-space(respStmt)"/>
           </xsl:attribute>
-          <xsl:value-of select="item"/>
+          <xsl:value-of select="normalize-space(item)"/>
         </xsl:element>
       </xsl:for-each>
     </xsl:element>
@@ -481,6 +487,21 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="sourceDesc">
+    <xsl:element name="{local-name()}">
+      <xsl:element name="msDesc">
+        <xsl:element name="msIdentifier"/>
+        <xsl:element name="physDesc"/>
+        <xsl:element name="history"/>
+      </xsl:element>
+      <xsl:if test=".//bibl">
+        <xsl:comment>
+          <xsl:copy-of select="normalize-space(.)"/>
+        </xsl:comment>
+      </xsl:if>
+    </xsl:element>
+  </xsl:template>
+
   <xsl:template match="space">
     <xsl:element name="{local-name()}">
       <xsl:choose>
@@ -508,26 +529,6 @@
       </xsl:if>
     </xsl:element>
   </xsl:template>
-
-<!--  <xsl:template match="teiHeader">
-    <xsl:element name="teiHeader">
-      <xsl:apply-templates/>
-    </xsl:element>
-    <xsl:if test="//div//figure[@href]">
-      <xsl:element name="facsimile">
-        <xsl:for-each select="//div//figure[@href]">
-          <xsl:element name="graphic">
-            <xsl:attribute name="url">
-              <xsl:value-of select="@href"/>
-            </xsl:attribute>
-            <xsl:element name="desc">
-              <xsl:value-of select="."/>
-            </xsl:element>
-          </xsl:element>
-        </xsl:for-each>
-      </xsl:element>
-    </xsl:if>
-  </xsl:template>-->
 
   <xsl:template match="unclear">
     <xsl:element name="{local-name()}">
