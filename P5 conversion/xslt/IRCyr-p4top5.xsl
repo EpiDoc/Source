@@ -7,7 +7,7 @@
 <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns="http://www.tei-c.org/ns/1.0" xmlns:date="http://exslt.org/dates-and-times">
+  xmlns="http://www.tei-c.org/ns/1.0">
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
@@ -393,12 +393,12 @@
     <xsl:element name="{local-name()}">
       <xsl:element name="change">
         <xsl:attribute name="when">
-          <xsl:value-of select="substring(date:date(),1,10)"/>
+          <xsl:value-of select="substring(string(current-date()),1,10)"/>
         </xsl:attribute>
         <xsl:attribute name="who">
           <xsl:text>GB</xsl:text>
         </xsl:attribute>
-        <xsl:text>Converted from TEI P4 (EpiDoc DTD v. 6) to P5 (EpiDoc RNG schema)</xsl:text>
+        <xsl:text>Converted from TEI P4 (EpiDoc DTD v. 6) to P5 (EpiDoc RNG schema v. 8)</xsl:text>
       </xsl:element>
       <xsl:for-each select="change">
         <xsl:element name="{local-name()}">
