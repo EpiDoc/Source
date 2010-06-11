@@ -11,8 +11,8 @@
     exclude-result-prefixes="tei t a rng s teix" 
     version="2.0">
   
-  <!-- <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
-    <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/>
+  <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>
+    <!-- <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
     <xsl:import href="render-epidoc.xsl"/>
     
