@@ -63,6 +63,7 @@
       RNGSchema="http://www.stoa.org/epidoc/schema/8/tei-epidoc.rng"
       type="xml"</xsl:processing-instruction>
     <!--
+      RNGSchema="file:///C:/Documents and Settings/gbodard/Desktop/sourceforge/schema/tei-epidoc.rng"
       RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
     <xsl:element name="TEI">
@@ -180,6 +181,9 @@
       </xsl:element>
     </xsl:if>
   </xsl:template>
+  
+  <xsl:template match="div[@type='description']"/>
+  <xsl:template match="div[@type='history'][@subtype='locations']"/>
 
   <xsl:template match="div[@type=('edition','translation')]">
     <xsl:element name="{local-name()}">
@@ -194,6 +198,14 @@
         <xsl:text>preserve</xsl:text>
       </xsl:attribute>
       <xsl:apply-templates/>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="encodingDesc">
+    <xsl:element name="encodingDesc">
+      <xsl:element name="p">
+        <xsl:text>Marked-up according to the EpiDoc Guidelines version 8</xsl:text>
+      </xsl:element>
     </xsl:element>
   </xsl:template>
 
@@ -307,10 +319,15 @@
     <xsl:choose>
       <xsl:when test="@dim=('height','width','depth')">
         <xsl:element name="{@dim}">
-          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision'))]"/>
+          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision','value'))]"/>
           <xsl:if test="@precision='circa'">
             <xsl:attribute name="precision">
               <xsl:text>low</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@value">
+            <xsl:attribute name="quantity">
+              <xsl:value-of select="@value"/>
             </xsl:attribute>
           </xsl:if>
           <xsl:apply-templates/>
@@ -427,8 +444,14 @@
 
   <xsl:template match="rs">
     <xsl:choose>
+      <!--<xsl:when test="@type='criteria'"/>-->
       <xsl:when test="@type='dimensions'">
         <xsl:element name="dimensions">
+          <xsl:apply-templates/>
+        </xsl:element>
+      </xsl:when>
+      <xsl:when test="@type='material'">
+        <xsl:element name="material">
           <xsl:apply-templates/>
         </xsl:element>
       </xsl:when>
@@ -490,9 +513,116 @@
   <xsl:template match="sourceDesc">
     <xsl:element name="{local-name()}">
       <xsl:element name="msDesc">
-        <xsl:element name="msIdentifier"/>
-        <xsl:element name="physDesc"/>
-        <xsl:element name="history"/>
+        <xsl:element name="msIdentifier">
+          <xsl:if test="//rs[@type='invNo']">
+            <xsl:attribute name="type">
+              <xsl:text>invNo</xsl:text>
+            </xsl:attribute>
+            <xsl:value-of select="//rs[@type='invNo'][1]"/>
+          </xsl:if>
+        </xsl:element>
+        <xsl:if test="//rs[@type='invNo'][2]">
+          <xsl:element name="msIdentifier">
+            <xsl:attribute name="type">
+              <xsl:text>invNo</xsl:text>
+            </xsl:attribute>
+            <xsl:value-of select="//rs[@type='invNo'][2]"/>
+          </xsl:element>
+        </xsl:if>
+        <xsl:element name="physDesc">
+          <xsl:element name="objectDesc">
+            <xsl:element name="supportDesc">
+              <xsl:element name="support">
+                <xsl:apply-templates select="//div[@type='description'][@subtype='monument']/p"/>
+              </xsl:element>
+            </xsl:element>
+            <xsl:element name="layoutDesc">
+              <xsl:for-each select="//div[@type='description'][@subtype='text']/p">
+                <xsl:element name="layout">
+                  <xsl:apply-templates/>
+                </xsl:element>
+              </xsl:for-each>
+            </xsl:element>
+          </xsl:element>
+          <xsl:element name="handDesc">
+            <xsl:for-each select="//div[@type='description'][@subtype='letters']/p">
+              <xsl:element name="handNote">
+                <xsl:apply-templates/>
+              </xsl:element>
+            </xsl:for-each>
+          </xsl:element>
+        </xsl:element>
+        <xsl:element name="history">
+          <xsl:element name="origin">
+            <xsl:element name="p">
+              <xsl:apply-templates select="//rs[@type='origLocation']/node()"/>
+            </xsl:element>
+            <xsl:element name="origDate">
+              <xsl:for-each select="//div[@type='description'][@subtype='date']//date[1]">
+                <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert'))]"/>
+                <xsl:if test="@cert='low'">
+                  <xsl:copy-of select="@cert"/>
+                </xsl:if>
+                <xsl:choose>
+                  <xsl:when test="@exact='none'">
+                    <xsl:attribute name="precision">
+                      <xsl:text>low</xsl:text>
+                    </xsl:attribute>
+                  </xsl:when>
+                  <xsl:when test="@precision='circa'">
+                    <xsl:attribute name="precision">
+                      <xsl:text>low</xsl:text>
+                    </xsl:attribute>
+                  </xsl:when>
+                </xsl:choose>
+                <xsl:if test="following-sibling::rs[@type='criteria']">
+                  <xsl:attribute name="evidence">
+                    <xsl:value-of select="translate(following-sibling::rs[@type='criteria'],' ','-')"/>
+                  </xsl:attribute>
+                </xsl:if>
+              </xsl:for-each>
+              <xsl:for-each select="//div[@type='description'][@subtype='date']/p">
+                <xsl:value-of select="normalize-space(.)"/>
+              </xsl:for-each>
+            </xsl:element>
+            <xsl:if
+              test="//div[@type='description'][@subtype='date']//date/@exact=('notAfter','notBefore')">
+              <xsl:element name="precision">
+                <xsl:attribute name="match">
+                  <xsl:text>//origDate/</xsl:text>
+                  <xsl:choose>
+                    <xsl:when test="@exact='notBefore'">
+                      <xsl:text>@notAfter</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="@exact='notAfter'">
+                      <xsl:text>@notBefore</xsl:text>
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:attribute>
+              </xsl:element>
+            </xsl:if>
+          </xsl:element>
+          <xsl:element name="provenance">
+            <xsl:element name="listEvent">
+              <xsl:element name="event">
+                <xsl:attribute name="type">
+                  <xsl:text>found</xsl:text>
+                </xsl:attribute>
+                <xsl:element name="p">
+                  <xsl:apply-templates select="//rs[@type='found']/node()"/>
+                </xsl:element>
+              </xsl:element>
+              <xsl:element name="event">
+                <xsl:attribute name="type">
+                  <xsl:text>observed</xsl:text>
+                </xsl:attribute>
+                <xsl:element name="p">
+                  <xsl:apply-templates select="//rs[@type='lastLocation']/node()"/>
+                </xsl:element>
+              </xsl:element>
+            </xsl:element>
+          </xsl:element>
+        </xsl:element>
       </xsl:element>
       <xsl:if test=".//bibl">
         <xsl:comment>
