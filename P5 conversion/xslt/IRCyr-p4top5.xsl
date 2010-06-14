@@ -3,7 +3,7 @@
 <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
 <!-- |XX          Gabriel BODARD 2008-11-20              XX| -->
 <!-- |XX      w/contribution from TE,HC,EM,RV          XX| -->
-<!-- |XX         Last update 2010-06-02                         XX| -->
+<!-- |XX         Last update 2010-06-14                         XX| -->
 <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -64,7 +64,6 @@
       type="xml"</xsl:processing-instruction>
     <!--
       RNGSchema="file:///C:/Documents and Settings/gbodard/Desktop/sourceforge/schema/tei-epidoc.rng"
-      RNGSchema="file:/c:/tomcat/webapps/cocoon/epidoc-sf/P5%20conversion/schema/exp-epidoc.rng"   type="xml"
       -->
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = ('id','lang'))]"/>
@@ -111,8 +110,10 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="certainty">
-    <xsl:element name="{local-name()}">
+  <xsl:template match="certainty"/>
+  <!--STRIPPING CERTAINTY ELEMENTS BECAUSE IN PRACTICE ALL FOLLOW GAP OR SPACE-->
+  
+    <!--<xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = ('locus','target','degree'))]"/>
       <xsl:attribute name="target">
         <xsl:text>#</xsl:text>
@@ -135,7 +136,7 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:element>
-  </xsl:template>
+  </xsl:template>-->
 
   <xsl:template match="date">
     <xsl:element name="{local-name()}">
@@ -155,20 +156,11 @@
           </xsl:attribute>
         </xsl:when>
       </xsl:choose>
-      <xsl:if test="@exact=('notAfter','notBefore')">
-        <xsl:attribute name="xml:id">
-          <xsl:value-of select="generate-id(.)"/>
-        </xsl:attribute>
-      </xsl:if>
       <xsl:apply-templates/>
-    </xsl:element>
     <xsl:if test="@exact=('notAfter','notBefore')">
       <xsl:element name="precision">
-        <xsl:attribute name="target">
-          <xsl:text>#</xsl:text>
-          <xsl:value-of select="generate-id(.)"/>
-        </xsl:attribute>
-        <xsl:attribute name="pattern">
+        <xsl:attribute name="match">
+          <xsl:text>../</xsl:text>
           <xsl:choose>
             <xsl:when test="@exact='notBefore'">
               <xsl:text>@notAfter</xsl:text>
@@ -180,6 +172,7 @@
         </xsl:attribute>
       </xsl:element>
     </xsl:if>
+    </xsl:element>
   </xsl:template>
   
   <xsl:template match="div[@type='description']"/>
@@ -202,7 +195,7 @@
   </xsl:template>
 
   <xsl:template match="encodingDesc">
-    <xsl:element name="encodingDesc">
+    <xsl:element name="{local-name()}">
       <xsl:element name="p">
         <xsl:text>Marked-up according to the EpiDoc Guidelines version 8</xsl:text>
       </xsl:element>
@@ -251,40 +244,22 @@
           <xsl:text>low</xsl:text>
         </xsl:attribute>
       </xsl:if>
-      <xsl:if test="@id">
-        <xsl:attribute name="xml:id">
-          <xsl:value-of select="@id"/>
-        </xsl:attribute>
-      </xsl:if>
       <xsl:if test="@desc">
         <xsl:element name="desc">
           <xsl:value-of select="@desc"/>
         </xsl:element>
       </xsl:if>
-    </xsl:element>
-  </xsl:template>
-
-  <xsl:template match="handList">
-    <xsl:if test="//handShift">
-      <xsl:element name="handNotes">
-        <xsl:copy-of select="@*"/>
-        <xsl:apply-templates/>
-      </xsl:element>
-    </xsl:if>
-  </xsl:template>
-
-  <xsl:template match="hand">
-    <xsl:if test="//handShift[@new = current()/@id]">
-      <xsl:element name="handNote">
-        <xsl:copy-of select="@*[not(local-name()='id')]"/>
-        <xsl:if test="@id">
-          <xsl:attribute name="xml:id">
-            <xsl:value-of select="@id"/>
+      <xsl:if test="@id and following-sibling::certainty">
+        <xsl:element name="certainty">
+          <xsl:attribute name="match">
+            <xsl:text>..</xsl:text>
           </xsl:attribute>
-        </xsl:if>
-        <xsl:apply-templates/>
-      </xsl:element>
-    </xsl:if>
+          <xsl:attribute name="locus">
+            <xsl:text>name</xsl:text>
+          </xsl:attribute>
+        </xsl:element>
+      </xsl:if>
+    </xsl:element>
   </xsl:template>
 
   <xsl:template match="keywords">
@@ -368,7 +343,7 @@
   </xsl:template>
 
   <xsl:template match="publicationStmt">
-    <xsl:element name="publicationStmt">
+    <xsl:element name="{local-name()}">
       <xsl:element name="authority">
         <xsl:text>Centre for Computing in the Humanities, King's College London</xsl:text>
       </xsl:element>
@@ -444,7 +419,6 @@
 
   <xsl:template match="rs">
     <xsl:choose>
-      <!--<xsl:when test="@type='criteria'"/>-->
       <xsl:when test="@type='dimensions'">
         <xsl:element name="dimensions">
           <xsl:apply-templates/>
@@ -458,9 +432,6 @@
       <xsl:otherwise>
         <xsl:element name="{local-name()}">
           <xsl:copy-of select="@*[not(local-name() = ('reg','full','cert'))]"/>
-          <xsl:if test="@cert='low'">
-            <xsl:copy-of select="@cert"/>
-          </xsl:if>
           <xsl:if test="not(@type)">
             <xsl:attribute name="type">
               <xsl:text>RS-NEEDS-TYPE</xsl:text>
@@ -474,6 +445,16 @@
             </xsl:attribute>
           </xsl:if>
           <xsl:apply-templates/>
+          <xsl:if test="@cert='low'">
+            <xsl:element name="certainty">
+              <xsl:attribute name="match">
+                <xsl:text>..</xsl:text>
+              </xsl:attribute>
+              <xsl:attribute name="locus">
+                <xsl:text>value</xsl:text>
+              </xsl:attribute>
+            </xsl:element>
+          </xsl:if>
         </xsl:element>
       </xsl:otherwise>
     </xsl:choose>
@@ -652,10 +633,15 @@
           <xsl:text>low</xsl:text>
         </xsl:attribute>
       </xsl:if>
-      <xsl:if test="@id">
-        <xsl:attribute name="xml:id">
-          <xsl:value-of select="@id"/>
-        </xsl:attribute>
+      <xsl:if test="@id and following-sibling::certainty">
+        <xsl:element name="certainty">
+          <xsl:attribute name="match">
+            <xsl:text>..</xsl:text>
+          </xsl:attribute>
+          <xsl:attribute name="locus">
+            <xsl:text>name</xsl:text>
+          </xsl:attribute>
+        </xsl:element>
       </xsl:if>
     </xsl:element>
   </xsl:template>
