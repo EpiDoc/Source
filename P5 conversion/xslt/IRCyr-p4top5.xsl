@@ -112,8 +112,8 @@
 
   <xsl:template match="certainty"/>
   <!--STRIPPING CERTAINTY ELEMENTS BECAUSE IN PRACTICE ALL FOLLOW GAP OR SPACE-->
-  
-    <!--<xsl:element name="{local-name()}">
+
+  <!--<xsl:element name="{local-name()}">
       <xsl:copy-of select="@*[not(local-name() = ('locus','target','degree'))]"/>
       <xsl:attribute name="target">
         <xsl:text>#</xsl:text>
@@ -157,24 +157,24 @@
         </xsl:when>
       </xsl:choose>
       <xsl:apply-templates/>
-    <xsl:if test="@exact=('notAfter','notBefore')">
-      <xsl:element name="precision">
-        <xsl:attribute name="match">
-          <xsl:text>../</xsl:text>
-          <xsl:choose>
-            <xsl:when test="@exact='notBefore'">
-              <xsl:text>@notAfter</xsl:text>
-            </xsl:when>
-            <xsl:when test="@exact='notAfter'">
-              <xsl:text>@notBefore</xsl:text>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:attribute>
-      </xsl:element>
-    </xsl:if>
+      <xsl:if test="@exact=('notAfter','notBefore')">
+        <xsl:element name="precision">
+          <xsl:attribute name="match">
+            <xsl:text>../</xsl:text>
+            <xsl:choose>
+              <xsl:when test="@exact='notBefore'">
+                <xsl:text>@notAfter</xsl:text>
+              </xsl:when>
+              <xsl:when test="@exact='notAfter'">
+                <xsl:text>@notBefore</xsl:text>
+              </xsl:when>
+            </xsl:choose>
+          </xsl:attribute>
+        </xsl:element>
+      </xsl:if>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="div[@type='description']"/>
   <xsl:template match="div[@type='history'][@subtype='locations']"/>
 
@@ -558,7 +558,12 @@
                 </xsl:choose>
                 <xsl:if test="following-sibling::rs[@type='criteria']">
                   <xsl:attribute name="evidence">
-                    <xsl:value-of select="translate(following-sibling::rs[@type='criteria'],' ','-')"/>
+                    <xsl:for-each select="following-sibling::rs[@type='criteria']">
+                      <xsl:value-of select="translate(.,' ','-')"/>
+                      <xsl:if test="following-sibling::rs[@type='criteria']">
+                        <xsl:text>-</xsl:text>
+                      </xsl:if>
+                    </xsl:for-each>
                   </xsl:attribute>
                 </xsl:if>
               </xsl:for-each>
