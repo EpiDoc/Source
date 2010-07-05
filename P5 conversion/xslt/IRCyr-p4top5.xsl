@@ -109,6 +109,18 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
+  
+  <xsl:template match="app[@type='previouslyread']">
+    <xsl:element name="supplied">
+      <xsl:attribute name="reason">
+        <xsl:text>undefined</xsl:text>
+      </xsl:attribute>
+      <xsl:attribute name="evidence">
+        <xsl:text>previous-editor</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates select="lem/node()"/>
+    </xsl:element>
+  </xsl:template>
 
   <xsl:template match="certainty"/>
   <!--STRIPPING CERTAINTY ELEMENTS BECAUSE IN PRACTICE ALL FOLLOW GAP OR SPACE-->
