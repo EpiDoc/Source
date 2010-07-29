@@ -1,4 +1,4 @@
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ï»¿XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXX      README.txt for P5 Conversion                            XXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -16,11 +16,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 * Technical requirements:
 
-	These scripts are written in XSLT 2.0 and require a Saxon™ 8 or 9+ environment.
+	These scripts are written in XSLT 2.0 and require a Saxonâ„¢ 8 or 9+ environment.
 
 * How to use it:
 
 	XSLT may be run on an individual EpiDoc XML file, creating a single file output
-	(e.g. via a command-line Saxon™ call or an Oxygen™ transformation scenario)
+	(e.g. via a command-line Saxonâ„¢ call or an Oxygenâ„¢ transformation scenario)
 	or batch-run upon a large collection of files via some other process (e.g. an
-	Oxygen™ project, set of batch files, etc.)
+	Oxygenâ„¢ project, set of batch files, etc.)
