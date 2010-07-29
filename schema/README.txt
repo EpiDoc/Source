@@ -1,8 +1,8 @@
-﻿XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXX      README.txt for EpiDoc ODD and schema              XXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-What it is (my man):
+What it is:
 
 	The EpiDoc RelaxNG schema and the TEI ODD file from which it is generated.
 
@@ -11,7 +11,7 @@ What it is (my man):
 	which is the version that will work with the online Roma tool
 	(http://www.tei-c.org/Roma/), and tei-epidoc.xml, which currently does
 	not work with Roma because it contains only the <schemaSpec> and is
-	designed to be xi:include'd to the full ODD (to include Guidelines
+	designed to be x-included to the full ODD (to include Guidelines
 	etc.)
 
 License:
