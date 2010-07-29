@@ -6,7 +6,6 @@ What it is:
 	
 License:
 	This software is copyright Hugh A. Cayless.  It is licensed under the terms of the GNU LGPL.
-	See http://www.gnu.org/licenses/lgpl.html for details.
 	See LICENSE.txt for license details.
 	
 Supported encodings:
