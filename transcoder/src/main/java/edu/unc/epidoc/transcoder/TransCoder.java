@@ -274,6 +274,7 @@ public class TransCoder {
         XMLReader reader = XMLReaderFactory.createXMLReader();
         reader.setContentHandler(handler);
         reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
+        reader.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
         reader.setFeature("http://xml.org/sax/features/validation", false );
         handler.setup(serializer, serializer, this);
         InputSource is = new InputSource(new java.io.FileInputStream(source));

@@ -14,7 +14,7 @@ public abstract class AbstractGreekConverter extends AbstractConverter {
     
     /** Creates a new instance of AbstractGreekConverter */
     public AbstractGreekConverter() {
-        languages = new String[] {"grc", "gr", "greek"};
+        languages = new String[] {"grc", "gr", "greek", "la-Grek"};
     }
     
 }

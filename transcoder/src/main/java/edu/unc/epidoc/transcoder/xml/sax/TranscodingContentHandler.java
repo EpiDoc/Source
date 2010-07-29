@@ -77,6 +77,10 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
             this.flowTerminators.add(new String[]{"", "p", "container"});
             this.flowTerminators.add(new String[]{"", "lb", "milestone"});
             this.flowTerminators.add(new String[]{"", "l", "container"});
+            this.flowTerminators.add(new String[]{"http://www.tei-c.org/ns/1.0", "div([0-7])?", "container"});
+            this.flowTerminators.add(new String[]{"http://www.tei-c.org/ns/1.0", "p", "container"});
+            this.flowTerminators.add(new String[]{"http://www.tei-c.org/ns/1.0", "lb", "milestone"});
+            this.flowTerminators.add(new String[]{"http://www.tei-c.org/ns/1.0", "l", "container"});
         } else {
             for (Iterator<String[]> i = flowTerminators.iterator(); i.hasNext();) {
                 String[] ft = i.next();
@@ -132,8 +136,13 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
         } else {
             //true if this is a transcode element
             if (NAMESPACE.equals(uri) && name.equals(TC_NAME)) {
-                language = attributes.getValue("lang");
-                languages.push(attributes.getValue("lang"));
+                for (String lang : langAttrs) {
+                    if (attributes.getValue(lang) != null) {
+                        language = attributes.getValue(lang);
+                        break;
+                    }
+                }
+                languages.push(new String(language));
                 if (attributes.getValue("source") != null) {
                     parsers.push(attributes.getValue("source"));
                     try {
@@ -151,12 +160,13 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                     }
                 }
             } else {
-                for (int i = 0; i < langAttrs.length; i++) {
-                    if (attributes.getValue(langAttrs[i]) != null) {
-                        language = attributes.getValue(langAttrs[i]);
+                for (String lang : langAttrs) {
+                    if (attributes.getValue(lang) != null) {
+                        language = attributes.getValue(lang);
+                        break;
                     }
                 }
-                elements.push(new String[] {name, language});
+                elements.push(new String[] {name, new String(language)});
                 this.contentHandler.startElement(uri, name, raw, attributes);
             }
         }
@@ -415,7 +425,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
     }
     
     private static String DEFAULT_LANG = "eng";
-    private String language;
+    private String language = DEFAULT_LANG;
     private String[] langAttrs;
     private TransCoder tc;
     private Stack<String[]> elements;
