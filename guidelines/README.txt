@@ -16,7 +16,7 @@ Technical requirements and limitations:
 	The Guidelines consist of XML files in TEI P5, and as such they need to be transformed using a combination of the XSLT provided here and the example XSLT, for which see example-p5-xslt. The Guidelines are part of the TEI ODD.
           
 How to use it:
-	
+	(Explain to generate HTML Guidelines from XML files - to be added)
 	
        
 
