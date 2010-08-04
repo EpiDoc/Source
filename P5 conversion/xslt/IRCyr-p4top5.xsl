@@ -60,10 +60,10 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="file:///C:/Documents and Settings/gbodard/Desktop/sourceforge/schema/tei-epidoc.rng"
+      RNGSchema="http://www.stoa.org/epidoc/schema/8/tei-epidoc.rng"
       type="xml"</xsl:processing-instruction>
     <!--
-      RNGSchema="http://www.stoa.org/epidoc/schema/8/tei-epidoc.rng"
+      RNGSchema="file:///C:/Documents and Settings/gbodard/Desktop/sourceforge/schema/tei-epidoc.rng"
       -->
     <xsl:element name="TEI">
       <xsl:copy-of select="@*[not(local-name() = ('id','lang'))]"/>
