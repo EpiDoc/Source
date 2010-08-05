@@ -152,7 +152,7 @@
 
   <xsl:template match="date">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert'))]"/>
+      <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert','value'))]"/>
       <xsl:if test="@cert='low'">
         <xsl:copy-of select="@cert"/>
       </xsl:if>
@@ -183,6 +183,11 @@
             </xsl:choose>
           </xsl:attribute>
         </xsl:element>
+      </xsl:if>
+      <xsl:if test="@value">
+        <xsl:attribute name="when">
+          <xsl:value-of select="@value"/>
+        </xsl:attribute>
       </xsl:if>
     </xsl:element>
   </xsl:template>
@@ -322,13 +327,23 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:element name="dim">
-          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision'))]"/>
+          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision','from','to'))]"/>
           <xsl:attribute name="type">
             <xsl:value-of select="@dim"/>
           </xsl:attribute>
           <xsl:if test="@precision='circa'">
             <xsl:attribute name="precision">
               <xsl:text>low</xsl:text>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@from">
+            <xsl:attribute name="atLeast">
+              <xsl:value-of select="@from"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@to">
+            <xsl:attribute name="atMost">
+              <xsl:value-of select="@to"/>
             </xsl:attribute>
           </xsl:if>
           <xsl:apply-templates/>
