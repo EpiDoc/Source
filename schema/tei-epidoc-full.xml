@@ -16,7 +16,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="GB" when="2010-07-05">made hi/@rend optional, repeatable (x4)</change>
+            <change who="GB" when="2010-08-10">deprecated hi/@rend='supraline-underline'</change>
+            <change who="GB" when="2010-07-05">made hi/@rend optional, repeatable (x5)</change>
             <change who="GB" when="2010-06-10">stopped omitting event and listEvent</change>
             <change who="GB" when="2010-02-01">tweaked some descriptions; reversed high and
                 low</change>
@@ -145,7 +146,7 @@
                 <elementSpec ident="hi" module="core" mode="change">
                     <attList>
                         <attDef ident="rend" mode="replace" usage="req">
-                            <datatype maxOccurs="4">
+                            <datatype maxOccurs="5">
                                 <rng:ref name="data.word"/>
                             </datatype>
                             <valList type="semi">
@@ -201,8 +202,9 @@
                                     <desc>characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</desc>
                                 </valItem>
+                                <!--DEPRECATED-->
                                 <valItem ident="supraline-underline">
-                                    <desc>text written with solid lines both above and beneath</desc>
+                                    <desc>DEPRECATED: use supraline and underline in combination</desc>
                                 </valItem>
                                 <valItem ident="tall">
                                     <desc>Letter(s) taller than those around it, e.g. I-longa</desc>
