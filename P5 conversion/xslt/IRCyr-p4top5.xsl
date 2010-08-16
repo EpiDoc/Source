@@ -40,6 +40,9 @@
           <xsl:value-of select="translate(@type,' +','-_')"/>
         </xsl:attribute>
       </xsl:if>
+      <xsl:if test="@part != 'N'">
+        <xsl:copy-of select="@part"/>
+      </xsl:if>
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
@@ -109,7 +112,7 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="app[@type='previouslyread']">
     <xsl:element name="supplied">
       <xsl:attribute name="reason">
@@ -168,6 +171,11 @@
           </xsl:attribute>
         </xsl:when>
       </xsl:choose>
+      <xsl:if test="@value">
+        <xsl:attribute name="when">
+          <xsl:value-of select="@value"/>
+        </xsl:attribute>
+      </xsl:if>
       <xsl:apply-templates/>
       <xsl:if test="@exact=('notAfter','notBefore')">
         <xsl:element name="precision">
@@ -183,11 +191,6 @@
             </xsl:choose>
           </xsl:attribute>
         </xsl:element>
-      </xsl:if>
-      <xsl:if test="@value">
-        <xsl:attribute name="when">
-          <xsl:value-of select="@value"/>
-        </xsl:attribute>
       </xsl:if>
     </xsl:element>
   </xsl:template>
