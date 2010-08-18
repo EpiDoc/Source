@@ -130,9 +130,14 @@
 
   <xsl:template match="date">
     <xsl:element name="{local-name()}">
-      <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert','value'))]"/>
+      <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert','value','dur'))]"/>
       <xsl:if test="@cert='low'">
         <xsl:copy-of select="@cert"/>
+      </xsl:if>
+      <xsl:if test="@dur">
+        <xsl:attribute name="when-iso">
+          <xsl:value-of select="@dur"/>
+        </xsl:attribute>
       </xsl:if>
       <xsl:choose>
         <xsl:when test="@exact='none'">
@@ -514,10 +519,12 @@
       <xsl:element name="msDesc">
         <xsl:element name="msIdentifier">
           <xsl:if test="//rs[@type='invNo']">
-            <xsl:attribute name="type">
-              <xsl:text>invNo</xsl:text>
-            </xsl:attribute>
-            <xsl:value-of select="//rs[@type='invNo'][1]"/>
+            <xsl:element name="idno">
+              <xsl:attribute name="type">
+                <xsl:text>invNo</xsl:text>
+              </xsl:attribute>
+              <xsl:value-of select="//rs[@type='invNo'][1]"/>
+            </xsl:element>
           </xsl:if>
         </xsl:element>
         <xsl:if test="//rs[@type='invNo'][2]">
@@ -558,11 +565,17 @@
             </xsl:element>
             <xsl:element name="origDate">
               <xsl:for-each select="//div[@type='description'][@subtype='date']//date[1]">
-                <xsl:copy-of select="@*[not(local-name()=('precision','exact','cert','type'))]"/>
+                <xsl:copy-of
+                  select="@*[not(local-name()=('precision','exact','cert','type','value'))]"/>
                 <xsl:if test="@cert='low'">
                   <xsl:copy-of select="@cert"/>
                 </xsl:if>
                 <xsl:choose>
+                  <xsl:when test="@value">
+                    <xsl:attribute name="when">
+                      <xsl:value-of select="@value"/>
+                    </xsl:attribute>
+                  </xsl:when>
                   <xsl:when test="@exact='none'">
                     <xsl:attribute name="precision">
                       <xsl:text>low</xsl:text>
@@ -577,7 +590,7 @@
                 <xsl:if test="following-sibling::rs[@type='criteria']">
                   <xsl:attribute name="evidence">
                     <xsl:for-each select="following-sibling::rs[@type='criteria']">
-                      <xsl:value-of select="translate(.,' ','-')"/>
+                      <xsl:value-of select="translate(.,' ,','-')"/>
                       <xsl:if test="following-sibling::rs[@type='criteria']">
                         <xsl:text>-</xsl:text>
                       </xsl:if>
