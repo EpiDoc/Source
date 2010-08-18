@@ -289,7 +289,7 @@
     <xsl:choose>
       <xsl:when test="@dim=('height','width','depth')">
         <xsl:element name="{@dim}">
-          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision','value'))]"/>
+          <xsl:copy-of select="@*[not(local-name()=('type','dim','precision','value','from','to'))]"/>
           <xsl:if test="@precision='circa'">
             <xsl:attribute name="precision">
               <xsl:text>low</xsl:text>
@@ -298,6 +298,16 @@
           <xsl:if test="@value">
             <xsl:attribute name="quantity">
               <xsl:value-of select="@value"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@from">
+            <xsl:attribute name="atLeast">
+              <xsl:value-of select="@from"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@to">
+            <xsl:attribute name="atMost">
+              <xsl:value-of select="@to"/>
             </xsl:attribute>
           </xsl:if>
           <xsl:apply-templates/>
