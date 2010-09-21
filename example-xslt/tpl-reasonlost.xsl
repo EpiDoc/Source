@@ -8,6 +8,10 @@
   <xsl:template name="lost-opener">
     <!-- Relationship: start at x going to y -->
     <xsl:choose>
+      <!-- No bracket before opening gap in EDH-ITX -->
+      <xsl:when test="$leiden-style='edh-itx' and @unit='line' and @extent='unknown' and count(preceding-sibling::lb) = 1"/>
+      <!-- No brackets around multi-line gap in EDH-ITX -->
+      <xsl:when test="$leiden-style='edh-itx' and @unit='line' and number(@extent) > 1"/>
       <!--1.1
         ````````__|__
         ```````|`````|
@@ -224,6 +228,10 @@
       And so the 'y' in the comments should be replaced with 'x' 
     -->
     <xsl:choose>
+      <!-- No bracket after final gap in EDH-ITX -->
+      <xsl:when test="$leiden-style='edh-itx' and @unit='line' and @extent='unknown' and not(following-sibling::lb)"/>
+      <!-- No brackets around multi-line gap in EDH-ITX -->
+      <xsl:when test="$leiden-style='edh-itx' and @unit='line' and number(@extent) > 1"/>
       <!-- 1.1 -->
       <xsl:when test="following-sibling::*[1][@reason='lost']">
         <xsl:if test="following-sibling::node()[1][self::text()][not(translate(normalize-space(.), ' ', '') = '')]">

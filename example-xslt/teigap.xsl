@@ -29,7 +29,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-  
+
   <xsl:template match="gap[@reason='omitted']">
     <xsl:choose>
       <xsl:when test="$edition-type = 'diplomatic'"/>
@@ -40,7 +40,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="gap[@reason='ellipsis']">
     <xsl:choose>
       <xsl:when test="$leiden-style = 'ddbdp' and string(@desc)">
@@ -77,10 +77,11 @@
         <xsl:call-template name="lost-opener"/>
       </xsl:otherwise>
     </xsl:choose>
-    <xsl:if test="leiden-style='london' and preceding-sibling::node()[1][@part='M' or @part='I'] and not($edition-type='diplomatic')">
+    <xsl:if
+      test="leiden-style='london' and preceding-sibling::node()[1][@part='M' or @part='I'] and not($edition-type='diplomatic')">
       <xsl:text>-</xsl:text>
     </xsl:if>
-    
+
     <xsl:call-template name="extent-string"/>
 
     <!-- certainty -->
@@ -95,7 +96,8 @@
       </xsl:choose>
     </xsl:if>
 
-    <xsl:if test="leiden-style='london' and following-sibling::node()[1][@part='M' or @part='F'] and not($edition-type='diplomatic')">
+    <xsl:if
+      test="leiden-style='london' and following-sibling::node()[1][@part='M' or @part='F'] and not($edition-type='diplomatic')">
       <xsl:text>-</xsl:text>
     </xsl:if>
 
@@ -205,7 +207,17 @@
                 <xsl:value-of select="$cur-dot"/>
               </xsl:when>
               <xsl:when test="$leiden-style = 'edh-itx'">
-                <xsl:value-of select="@extent"/>
+                <xsl:choose>
+                  <xsl:when test="number(@extentmax) > 2 or number(@extent) > 2">
+                    <xsl:text>3</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="number(@extentmax) = 2">
+                    <xsl:text>2</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="@extent"/>
+                  </xsl:otherwise>
+                </xsl:choose>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="$cur-dot"/>
@@ -301,11 +313,35 @@
           </xsl:when>
           <xsl:when test="$leiden-style = 'edh-itx'">
             <xsl:choose>
-              <xsl:when test="not(following-sibling::lb)">
+              <xsl:when test="@extent='unknown' and not(following-sibling::lb)">
                 <xsl:text>&amp;</xsl:text>
               </xsl:when>
-              <xsl:when test="count(preceding-sibling::lb) = 1">
+              <xsl:when test="@extent='unknown' and count(preceding-sibling::lb) = 1">
                 <xsl:text>$</xsl:text>
+              </xsl:when>
+              <xsl:when test="number(@extent) > 1">
+                <xsl:variable name="mult-lines" select="'/ [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / [6] / '"/>
+                <xsl:variable name="lines-string">
+                <xsl:choose>
+                  <xsl:when test="not(following-sibling::lb)">
+                    <xsl:value-of select="substring($mult-lines,1,((@extent*6)-1))"/>
+                  </xsl:when>
+                  <xsl:when test="count(preceding-sibling::lb) = 1">
+                    <xsl:value-of select="substring($mult-lines,3,((@extent*6)))"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="substring($mult-lines,1,((@extent*6)+1))"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="@reason='illegible'">
+                    <xsl:value-of select="translate($lines-string,'[]','')"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="$lines-string"/>
+                  </xsl:otherwise>
+                </xsl:choose>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:text>6</xsl:text>
