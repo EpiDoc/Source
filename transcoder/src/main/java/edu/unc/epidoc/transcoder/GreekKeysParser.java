@@ -16,7 +16,7 @@ import java.util.TreeMap;
  */
 public class GreekKeysParser extends AbstractGreekParser {
     
-    /** Creates new UnicodeParser */
+    /** Creates new GreekKeysParser */
     public GreekKeysParser() {
         encoding = "ISO8859_1";
         gkp = new Properties();
