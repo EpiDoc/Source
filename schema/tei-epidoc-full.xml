@@ -16,6 +16,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="GB" when="2010-10-14">deprecated description and history; changed values of @evidence</change>
             <change who="GB" when="2010-08-10">deprecated hi/@rend='supraline-underline'</change>
             <change who="GB" when="2010-07-05">made hi/@rend optional, repeatable (x5)</change>
             <change who="GB" when="2010-06-10">stopped omitting event and listEvent</change>
@@ -34,7 +35,7 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <p>My TEI Customization&#xD; starts with modules tei, core, textstructure and header</p>
+            <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
@@ -89,10 +90,11 @@
                                     <desc>to contain all editorial commentary,
                                         historical/prosopographical discussion, etc.</desc>
                                 </valItem>
+                                <!--DEPRECATED-->
                                 <valItem ident="description">
                                     <desc>to contain description of the object, text campus, and
-                                        lettering; physical commentary (to be deprecated for
-                                        msDesc)</desc>
+                                        lettering; physical commentary (DEPRECATED for
+                                        tei:physDesc)</desc>
                                 </valItem>
                                 <valItem ident="edition">
                                     <desc>to contain the text of the edition itself; may include
@@ -102,10 +104,11 @@
                                     <desc>to contain links to figures and other media representing
                                         the text-object (to be deprecated for facsimile)</desc>
                                 </valItem>
+                                <!--DEPRECATED-->
                                 <valItem ident="history">
                                     <desc>to contain history of the discovery and recording of the
-                                        text-object, including findspot/locations (to be deprecated
-                                        for origin)</desc>
+                                        text-object, including findspot/locations (DEPRECATED
+                                        for tei:history)</desc>
                                 </valItem>
                                 <valItem ident="textpart">
                                     <desc>used to divide a div[type=edition] into multiple parts
@@ -230,8 +233,47 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                <elementSpec module="msdescription" ident="origDate" mode="change">
+                    <attList>
+                        <attDef ident="evidence" mode="replace" usage="opt">
+                            <datatype maxOccurs="6">
+                                <rng:ref name="data.word"/>
+                            </datatype>
+                                <valList type="semi">
+                                    <valItem ident="lettering">
+                                        <desc>Text dated palaeographically</desc>
+                                    </valItem>
+                                    <valItem ident="nomenclature">
+                                        <desc>Text dated by nomenclature or onomastics</desc>
+                                    </valItem>
+                                    <valItem ident="prosopography">
+                                        <desc>Text dated by known persons named or implied within it</desc>
+                                    </valItem>
+                                    <valItem ident="reign">
+                                        <desc>Text dated by the reign of an emperor or other ruler</desc>
+                                    </valItem>
+                                    <valItem ident="titulature">
+                                        <desc>Text dated by the use of official titles</desc>
+                                    </valItem>
+                                </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec module="transcr" ident="supplied" mode="change">
                     <attList>
+                        <attDef ident="evidence" mode="replace" usage="opt">
+                            <datatype maxOccurs="1">
+                                <rng:ref name="data.word"/>
+                            </datatype>
+                            <valList type="semi">
+                                <valItem ident="parallel">
+                                    <desc>Characters supplied from a parallel version of this text, absent from this one</desc>
+                                </valItem>
+                                <valItem ident="previouseditor">
+                                    <desc>Characters visible to a previous editor, now lost/unclear due to damage</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
@@ -265,6 +307,7 @@
                 </elementSpec>
 
                 <!--       CHANGING ATTRIBUTE CLASSES         -->
+                
                 <classSpec type="atts" ident="att.responsibility" mode="change">
                     <attList>
                         <attDef ident="cert" mode="replace">
@@ -275,7 +318,7 @@
                         </attDef>
                     </attList>
                 </classSpec>
-
+                
                 <classSpec type="atts" ident="att.dimensions" mode="change">
                     <attList>
                         <attDef ident="precision" mode="replace">
