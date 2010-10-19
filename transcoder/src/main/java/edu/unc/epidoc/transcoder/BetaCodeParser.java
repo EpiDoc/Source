@@ -92,7 +92,7 @@ public class BetaCodeParser extends AbstractGreekParser {
                             index++;
                             while (!map.isEmpty()) {
                                 String str = (String)map.remove(map.firstKey());
-                                strb.append("_"+str);
+                                strb.append("_").append(str);
                             }
                         }
                     }
@@ -120,7 +120,7 @@ public class BetaCodeParser extends AbstractGreekParser {
                     }
                     while (map.size()>0) {
                         String str = (String)map.remove(map.firstKey());
-                        strb.append("_"+str);
+                        strb.append("_").append(str);
                     }
                 }
             }
