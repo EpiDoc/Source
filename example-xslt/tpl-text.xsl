@@ -7,6 +7,10 @@
       <xsl:when test="$edition-type = 'diplomatic' and ancestor::div[@type='edition'] and not(ancestor::head)">
         <xsl:value-of select="translate(translate(., '&#xb7;&#x387;&#xa; ,.;', ''), $all-grc, $grc-upper-strip)"/>
       </xsl:when>
+      <xsl:when test="$leiden-style='edh-names' and 
+        normalize-space(.) = '' and 
+        following-sibling::*[1][local-name()='w'][@lemma='filius' or @lemma='libertus'] and
+        preceding-sibling::*[1][descendant-or-self::expan]"/>
       <xsl:otherwise>
         <xsl:value-of select="."/>
       </xsl:otherwise>
