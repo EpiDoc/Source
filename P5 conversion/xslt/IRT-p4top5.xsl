@@ -63,7 +63,7 @@
 
   <xsl:template match="TEI.2">
     <xsl:processing-instruction name="oxygen ">
-      RNGSchema="http://www.stoa.org/epidoc/schema/8/tei-epidoc.rng"
+      RNGSchema="http://www.stoa.org/epidoc/schema/8.4/tei-epidoc.rng"
       type="xml"</xsl:processing-instruction>
     <!--
       RNGSchema="file:///C:/Documents and Settings/gbodard/Desktop/sourceforge/schema/tei-epidoc.rng"
@@ -198,6 +198,26 @@
     <xsl:element name="{local-name()}">
       <xsl:element name="p">
         <xsl:text>Marked-up according to the EpiDoc Guidelines version 8</xsl:text>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+
+  <xsl:template match="teiHeader">
+    <xsl:element name="teiHeader">
+      <xsl:apply-templates/>
+    </xsl:element>
+    <xsl:element name="facsimile">
+      <xsl:element name="surface">
+        <xsl:for-each select="div[@type='figure']//figure">
+          <xsl:element name="graphic">
+            <xsl:attribute name="url">
+              <xsl:value-of select="@href"/>
+            </xsl:attribute>
+            <xsl:element name="desc">
+              <xsl:value-of select="."/>
+            </xsl:element>
+          </xsl:element>
+        </xsl:for-each>
       </xsl:element>
     </xsl:element>
   </xsl:template>
@@ -560,7 +580,7 @@
         </xsl:element>
         <xsl:element name="history">
           <xsl:element name="origin">
-            <xsl:element name="p">
+            <xsl:element name="origPlace">
               <xsl:apply-templates select="//rs[@type='origLocation']/node()"/>
             </xsl:element>
             <xsl:element name="origDate">
