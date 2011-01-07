@@ -73,6 +73,16 @@
           <xsl:attribute name="url">
             <xsl:value-of select="t:graphic/@url"/>
           </xsl:attribute>
+          <xsl:attribute name="decls">
+            <xsl:choose>
+              <xsl:when test="ancestor::tdiv[@type='figure'][@subtype='representations']">
+                <xsl:text>#representation</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>#photograph</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:attribute>
           <xsl:element name="desc">
             <xsl:value-of select="t:head"/>
           </xsl:element>
@@ -83,6 +93,9 @@
             <xsl:value-of select="."/>
           </xsl:comment>
       </xsl:for-each>
+      <xsl:if test="not(//t:div[@type='figure']//t:figure)">
+        <xsl:element name="surface"/>
+      </xsl:if>
     </xsl:element>
   </xsl:template>
   
