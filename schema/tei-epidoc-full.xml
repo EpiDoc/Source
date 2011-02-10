@@ -5,8 +5,8 @@
         <fileDesc>
             <titleStmt>
                 <title>EpiDoc schema</title>
-                <author>Gabriel Bodard</author>
-                <author>(plus see revisionDesc below)</author>
+                <author xml:id="GB">Gabriel Bodard</author>
+                <author xml:id="ML">Marion Lamé</author>
             </titleStmt>
             <publicationStmt>
                 <p>Released under GNU GPL 3.0</p>
@@ -16,19 +16,19 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="GB" when="2011-01-20">stopped excluding tei:offset</change>
-            <change who="GB" when="2010-10-14">deprecated description and history; changed values of @evidence</change>
-            <change who="GB" when="2010-08-10">deprecated hi/@rend='supraline-underline'</change>
-            <change who="GB" when="2010-07-05">made hi/@rend optional, repeatable (x5)</change>
-            <change who="GB" when="2010-06-10">stopped omitting event and listEvent</change>
-            <change who="GB" when="2010-02-01">tweaked some descriptions; reversed high and
+            <change who="#GB" when="2011-01-20">stopped excluding tei:offset</change>
+            <change who="#GB" when="2010-10-14">deprecated description and history; changed values of @evidence</change>
+            <change who="#GB" when="2010-08-10">deprecated hi/@rend='supraline-underline'</change>
+            <change who="#GB" when="2010-07-05">made hi/@rend optional, repeatable (x5)</change>
+            <change who="#GB" when="2010-06-10">stopped omitting event and listEvent</change>
+            <change who="#GB" when="2010-02-01">tweaked some descriptions; reversed high and
                 low</change>
-            <change who="GB" when="2009-09-24">created new valList for @unit; added valList for
+            <change who="#GB" when="2009-09-24">created new valList for @unit; added valList for
                 @extent</change>
-            <change who="GB" when="2009-08-11">changed 'worddiv' to 'inWord'</change>
-            <change who="ML" when="2009-07-12">stop omitting few tags: orgName element</change>
-            <change who="GB" when="2009-06-10">removed dummy 'precision' element</change>
-            <change who="GB" when="2008-11-20">Created bare ODD from Roma</change>
+            <change who="#GB" when="2009-08-11">changed 'worddiv' to 'inWord'</change>
+            <change who="#ML" when="2009-07-12">stop omitting few tags: orgName element</change>
+            <change who="#GB" when="2009-06-10">removed dummy 'precision' element</change>
+            <change who="#GB" when="2008-11-20">Created bare ODD from Roma</change>
         </revisionDesc>
     </teiHeader>
     <text>
