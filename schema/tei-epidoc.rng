@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2011-03-02T17:19:29Z. 
+Schema generated from ODD source 2011-03-04T06:04:01Z. 
 Edition: 1.9.0. Last updated on February 21st 2011.
 Edition Location: http://www.tei-c.org/Vault/P5/1.9.0/
 
@@ -3103,7 +3103,10 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="tei_model.placeNamePart">
       <choice>
          <ref name="tei_placeName"/>
+         <ref name="tei_bloc"/>
+         <ref name="tei_country"/>
          <ref name="tei_region"/>
+         <ref name="tei_district"/>
          <ref name="tei_settlement"/>
          <ref name="tei_geogName"/>
       </choice>
@@ -3111,14 +3114,20 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="tei_model.placeNamePart_alternation">
       <choice>
          <ref name="tei_placeName"/>
+         <ref name="tei_bloc"/>
+         <ref name="tei_country"/>
          <ref name="tei_region"/>
+         <ref name="tei_district"/>
          <ref name="tei_settlement"/>
          <ref name="tei_geogName"/>
       </choice>
    </define>
    <define name="tei_model.placeNamePart_sequence">
       <ref name="tei_placeName"/>
+      <ref name="tei_bloc"/>
+      <ref name="tei_country"/>
       <ref name="tei_region"/>
+      <ref name="tei_district"/>
       <ref name="tei_settlement"/>
       <ref name="tei_geogName"/>
    </define>
@@ -3127,7 +3136,16 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_placeName"/>
       </optional>
       <optional>
+         <ref name="tei_bloc"/>
+      </optional>
+      <optional>
+         <ref name="tei_country"/>
+      </optional>
+      <optional>
          <ref name="tei_region"/>
+      </optional>
+      <optional>
+         <ref name="tei_district"/>
       </optional>
       <optional>
          <ref name="tei_settlement"/>
@@ -3141,7 +3159,16 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_placeName"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="tei_bloc"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_country"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="tei_region"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_district"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="tei_settlement"/>
@@ -3155,7 +3182,16 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_placeName"/>
       </oneOrMore>
       <oneOrMore>
+         <ref name="tei_bloc"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_country"/>
+      </oneOrMore>
+      <oneOrMore>
          <ref name="tei_region"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_district"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_settlement"/>
@@ -10226,10 +10262,45 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <empty/>
       </element>
    </define>
+   <define name="tei_bloc">
+      <element name="bloc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bloc) contains the name of a geo-political unit consisting of two or more nation states or
+    countries.</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_country">
+      <element name="country">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(country) contains the name of a geo-political unit, such as a nation, country, colony, or
+    commonwealth, larger than or administratively superior to a region and smaller than a bloc.</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_region">
       <element name="region">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of an administrative unit such as a state, province, or county, larger
     than a settlement, but smaller than a country.</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_district">
+      <element name="district">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of any kind of subdivision of a settlement, such as a parish, ward, or other administrative or geographic unit.</a:documentation>
          <ref name="tei_macro.phraseSeq"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.naming.attributes"/>
@@ -11040,6 +11111,7 @@ lemma and at least one reading.</a:documentation>
                      </optional>
                   </group>
                   <group>
+                     <ref name="tei_rdgGrp"/>
                      <zeroOrMore>
                         <ref name="tei_model.global"/>
                      </zeroOrMore>
@@ -11133,6 +11205,46 @@ location-referenced method of apparatus markup is used.</a:documentation>
                <ref name="tei_model.rdgPart"/>
             </choice>
          </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.textCritical.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_rdgGrp">
+      <element name="rdgGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reading group) within a textual variation,
+groups two or more readings perceived to have a genetic
+relationship or other affinity.</a:documentation>
+         <group>
+            <oneOrMore>
+               <choice>
+                  <group>
+                     <ref name="tei_rdgGrp"/>
+                     <optional>
+                        <ref name="tei_wit"/>
+                     </optional>
+                  </group>
+                  <zeroOrMore>
+                     <group>
+                        <optional>
+                           <group>
+                              <ref name="tei_lem"/>
+                              <optional>
+                                 <ref name="tei_wit"/>
+                              </optional>
+                           </group>
+                        </optional>
+                        <group>
+                           <ref name="tei_model.rdgLike"/>
+                           <optional>
+                              <ref name="tei_wit"/>
+                           </optional>
+                        </group>
+                     </group>
+                  </zeroOrMore>
+               </choice>
+            </oneOrMore>
+         </group>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.textCritical.attributes"/>
          <empty/>
