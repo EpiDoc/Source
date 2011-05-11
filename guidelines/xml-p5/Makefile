@@ -8,7 +8,7 @@ schema: compiled
 
 html:	xml
 	for i in ${LANGUAGE} ; do  \
-	saxon  -o tei-epidoc_$$i.html \
+	saxon  -o:tei-epidoc_$$i.html \
 	driver.xml.compiled epidoc-html.xsl  \
 	 lang=$$i \
 	 doclang=$$i \
@@ -19,13 +19,13 @@ compiled:
 	curl -s -o odd2odd.xsl ${P5ROOT}/tei/stylesheet/odds2/odd2odd.xsl
 	curl -s -o p5subset.xml ${P5ROOT}/tei/odd/p5subset.xml
 	xmllint --xinclude driver.xml | \
-	saxon  -o driver.xml.compiled - \
+	saxon  -o:driver.xml.compiled - \
 		odd2odd.xsl \
 	    TEIC=true \
 	    localsource=`pwd`/p5subset.xml 
 
 xml: compiled
-	saxon -o tei-epidoc-Guidelines.xml  \
+	saxon -o:tei-epidoc-Guidelines.xml  \
 	driver.xml.compiled ${P5ROOT}/tei/stylesheet/odds2/odd2lite.xsl	  \
 	    autoToc=true \
 	    lang=${LANGUAGE} \
@@ -33,7 +33,7 @@ xml: compiled
 	    documentationLanguage=${LANGUAGE} 
 
 pdftex: xml
-	saxon -o tei-epidoc.tex \
+	saxon -o:tei-epidoc.tex \
 	tei-epidoc-Guidelines.xml \
 	epidoc-latex.xsl lang=${LANGUAGE} doclang=${LANGUAGE} documentationLanguage=${LANGUAGE} 
 	perl -p -i -e 's+http://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/++' tei-epidoc.tex
@@ -47,8 +47,8 @@ pdf: pdftex
 	mv tei-epidoc.pdf referenceManual.pdf
 
 examples-schema: compiled
-	saxon -o exnames.xml driver.xml.compiled  makeexnames.xsl 
-	saxon -o tei-epidoc-ex.odd driver.xml.compiled odd2exodd.xsl TEIC=true
+	saxon -o:exnames.xml driver.xml.compiled  makeexnames.xsl 
+	saxon -o:tei-epidoc-ex.odd driver.xml.compiled odd2exodd.xsl TEIC=true
 	saxon  tei-epidoc-ex.odd ${P5ROOT}/tei/stylesheet/odds2/odd2relax.xsl outputDir=. TEIC=true
 
 validate: 
