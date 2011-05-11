@@ -8,8 +8,7 @@ schema: compiled
 
 html:	xml
 	for i in ${LANGUAGE} ; do  \
-	saxon  -o:tei-epidoc_$$i.html \
-	driver.xml.compiled epidoc-html.xsl  \
+	saxon  driver.xml.compiled epidoc-html.xsl  \
 	 lang=$$i \
 	 doclang=$$i \
 	 documentationLanguage=$$i; done 
