@@ -16,8 +16,8 @@
     </div>
     <div>
         <head>EpiDoc</head>
-        <p>Where lines have been lost on the original support and there is nothing to indicate
-            to the editor how these should be restored, this is marked up as a lacuna using the
+        <p>Where lines have been lost on the original support and there is nothing to indicate to
+            the editor how these should be restored, this is marked up as a lacuna using the
             &lt;gap&gt; element. Note that this is usually an empty element, as it marks a point at
             which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
             for examples in which &lt;gap&gt; can contain other elements).</p>
@@ -32,20 +32,12 @@
                 "line" (or indeed some other type of textual unit such as "column", "page"
                 etc.).</item>
         </list>
-       
+
     </div>
 
     <div>
         <cit>
-            <quote>
-                
-                <!-- THESE NEED TO DISPLAY ONE UNDERNEATH ANOTHER AS BELOW --> 
-                
-                [------]
-                [------]
-                [------]
-                
-            </quote>
+            <quote>[------]<lb/> [------]<lb/>[------] </quote>
             <bibl corresp="#panciera">
                 <biblScope>8.5</biblScope>
             </bibl>
