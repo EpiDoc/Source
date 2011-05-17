@@ -2,8 +2,6 @@
 <?oxygen NVDLSchema="epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Chi-Rho</head>
-    <div>
-        <head>TEI</head>
         <p><specList>
                 <specDesc key="expan"/>
                 <specDesc key="abbr"/>
@@ -24,31 +22,32 @@
             transcriber when expanding an abbreviation.</p>
         <p>&lt;hi&gt; (highlighted) marks a word or phrase as graphically distinct from the
             surrounding text, for reasons concerning which no claim is made.</p>
-    </div>
-    <div>
-        <head>EpiDoc</head>
+
         <p>Where a Chi-Rho symbol appears, it BLAH BLAH BLAH</p>
         <list type="bulleted">
             <item>@type indicates the name of the decorative symbol, e.g. leaf.</item>
         </list>
         <p>A Unicode value can be used inside the &lt;g&gt; if desired.</p>
-    </div>
-    <div>
+    
         <cit>
             <quote>☧</quote>
-            <bibl corresp="#pn"/>
+            <bibl corresp="#ddbdp"/>
         </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <expan>
-                <abbr>
-                    <am>
-                        <g type="chi-rho"/>
-                    </am>
-                </abbr>
-                <ex>Χρίστος</ex>
-            </expan>
-        </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+         <g type="chi-rho"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <expan>
+            <abbr>
+                <am>
+                    <g type="chi-rho"/>
+                </am>
+            </abbr>
+            <ex>Χρίστος</ex>
+        </expan>
+    </egXML>
 
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <expan>
@@ -58,9 +57,11 @@
                     </am>
                 </abbr>
                 <ex>Christ</ex>
-            </expan>opher </egXML>
+            </expan>opher
+        </egXML>
 
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <hi rend="ligature">Χρ</hi>υσοφόρος</egXML>
-    </div>
+            <hi rend="ligature">Χρ</hi>υσοφόρος
+        </egXML>
+    
 </div>
