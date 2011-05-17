@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Abbreviation fully expanded</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="expan"/>
+                <specDesc key="ex"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>&lt;expan&gt; (expansion) contains the expansion of an abbreviation.</p>
+        <p>&lt;ex&gt; (editorial expansion) contains a sequence of letters added by an editor or
+            transcriber when expanding an abbreviation.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>The characters that form the entire expansion of an abbreviation (including both the
+            charaters that are present on the original support and those added by the editor) are
+            marked up using &lt;expan&gt;.</p>
+        <p>In addition, the characters added by the editor (i.e. those characters that do not appear
+            on the original support) are indicated with &lt;ex&gt;.</p>
+        <p>Resolved and unresolved abbreviations are treated differently; see section X.2 for an
+            explanation of how to mark up abbreviations for which the expansion is unknown.</p>
+    </div>
+
+    <div>
+        <cit>
+            <quote>a(bc)</quote>
+            <bibl corresp="#panciera">
+                <biblScope>10.1</biblScope>
+            </bibl>
+            <bibl corresp="#seg"/>
+            <bibl corresp="#ddbdp"/>
+        </cit>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <expan>a<ex>bc</ex></expan>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/hgv/8922#20">
+            <expan>Καρ<ex>ανίδι</ex></expan></egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <expan>Iul<ex>ius</ex></expan></egXML>
+    </div>
+
+   
+</div>

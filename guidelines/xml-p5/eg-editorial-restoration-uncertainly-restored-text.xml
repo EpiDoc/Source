@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Editorial restoration: Characters lost and restored tentatively</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="supplied"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>Where text not present in the source is supplied (whether conjecturally or from other
+            witnesses) to fill an apparent gap in the text, the &lt;supplied&gt; element may be
+            used. &lt;supplied&gt; signifies text supplied by the transcriber or editor for any
+            reason, typically because the original cannot be read because of physical damage or loss
+            to the original.</p>
+        <p>@reason indicates why the text has had to be supplied.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>&lt;supplied&gt; indicates text lost from the original support, restored by the editor
+            either by comparison with other texts or through other contextual knowledge.</p>
+        <p>Required attributes: <list type="bulleted">
+                <item>@reason explains why the text has been restored, and for text restored in
+                    lacunae, is given the value "lost" (although other values are possible).</item>
+            </list></p>
+        <p>Optional attributes include: <list type="bulleted">
+                <item>@cert indicates text that is uncertainly restored.</item>
+            </list>
+        </p>
+    </div>
+
+    <div>
+        <head/>
+        <cit>
+            <quote>[?abc]</quote>
+            <bibl corresp="#panciera">
+                <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+            </bibl>
+        </cit>
+
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <supplied reason="lost" cert="low">abc</supplied>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+            ἡμετέρ<supplied reason="lost" cert="low">α μήτηρ</supplied></egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            corresp="http://irt.kcl.ac.uk/irt2009/IRT013.html#1"> Bon<supplied reason="lost"
+                cert="low">ifatius</supplied></egXML>
+    </div>
+
+
+</div>

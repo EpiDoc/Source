@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Lost characters, quantity known</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="gap"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>&lt;gap&gt; (gap) indicates a point where material has been omitted in a
+            transcription, whether for editorial reasons described in the TEI header, as part of
+            sampling practice, or because the material is illegible, invisible, or inaudible.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>Where characters have been lost on the original support and
+            there is nothing to indicate to the editor how these should be restored, this is
+            marked up as a lacuna using the &lt;gap&gt; element. Note that this is usually an
+                empty element, as it marks a point at which the lacuna occurs, and
+                therefore does not contain any content (see sections VIII.7 for examples in
+                which &lt;gap&gt; can contain other elements).</p>
+        <p>For a straightforward lacuna whose extent is known, &lt;gap&gt; should take the
+        following three attributes:</p>
+        <list type="bulleted">
+            <item>@reason explains why the text has been restored, and for a lacuna is
+                usually given the value "lost" (although other values are possible).</item>
+            <item>@quantity indicates how many characters or lines have been lost (where
+                known).</item>
+            <item>@unit indicates what kind of textual unit has been lost, such as
+                "character" or "line" (or indeed some other type of textual unit such as
+                "column", "page" etc.).</item></list>
+
+    </div>
+
+    <div>
+       <cit>
+            <quote>[-5-]</quote>
+            <bibl corresp="#panciera">
+                <!-- THERE APPEARS TO BE NO EXACTLY CORRESPONDING EXAMPLE IN K-P (but cf. 8.3)- IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+            </bibl>
+    </cit> 
+      
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <gap reason="lost" quantity="3" unit="character"/>
+        </egXML>  
+    </div>
+
+    <div>
+       <cit>
+            <quote>[..6..]</quote>
+            <bibl corresp="#seg"/>
+<!-- CHECK  <bibl corresp="#ddbdp"/>-->
+            </cit> 
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <gap reason="lost" quantity="6" unit="character"/>
+        </egXML>
+        
+    </div>
+    
+   
+</div>

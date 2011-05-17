@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Abbreviation partially expanded</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="expan"/>
+                <specDesc key="ex"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>&lt;expan&gt; (expansion) contains the expansion of an abbreviation.</p>
+        <p>&lt;ex&gt; (editorial expansion) contains a sequence of letters added by an editor or
+            transcriber when expanding an abbreviation.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>The characters that form the entire expansion of an abbreviation (including both the
+            charaters that are present on the original support and those added by the editor) are
+            marked up using &lt;expan&gt;.</p>
+        <p>In addition, the characters added by the editor (i.e. those characters that do not appear
+            on the original support) are indicated with &lt;ex&gt;.</p>
+        <p>Resolved and unresolved abbreviations are treated differently; see section X.2 for an
+            explanation of how to mark up abbreviations for which the expansion is unknown.</p>
+    </div>
+    <div>
+        <cit><quote>a(bc-)</quote>
+            <bibl corresp="#panciera">
+            <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+            </bibl>
+            </cit>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <w part="I"><expan>a<ex cert="low">bc</ex></expan></w>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w part="I"><expan>Iul<ex cert="low">ius</ex></expan></w>
+        </egXML>
+        
+        <cit><quote>a(bc )</quote>
+            <bibl corresp="#pn"/>   </cit>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
+            <w part="I"><expan>a<ex cert="low">bc</ex></expan></w>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w part="I"><expan>Καρ<ex cert="low">ανίδι</ex></expan></w></egXML>
+        
+    </div>
+    
+    
+   
+</div>

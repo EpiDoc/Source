@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Monograms</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="expan"/>
+                <specDesc key="abbr"/>
+                <specDesc key="am"/>
+                <specDesc key="g"/>
+                <specDesc key="ex"/>
+                <specDesc key="figure"/>
+                <specDesc key="figDesc"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>&lt;expan&gt; (expansion) contains the expansion of an abbreviation.</p>
+        <p>&lt;abbr&gt; (abbreviation) contains an abbreviation of any sort.</p>
+        <p> &lt;am&gt; (abbreviation marker) contains a sequence of letters or signs present in an
+            abbreviation which are omitted or replaced in the expanded form of the abbreviation</p>
+        <p>&lt;g&gt; (character or glyph) represents a non-standard character or glyph.</p>
+        <p> &lt;ex&gt; (editorial expansion) contains a sequence of letters added by an editor or
+            transcriber when expanding an abbreviation.</p>
+        <p>&lt;figure&gt; groups elements representing or containing graphic information such as an
+            illustration or figure.</p>
+        <p>&lt;figDesc&gt; (description of figure) contains a brief prose description of the
+            appearance or content of a graphic figure, for use when documenting an image without
+            displaying it.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>Where a monogram appears, BLAH BLAH BLAH</p>
+    </div>
+    <div>
+        <cit>
+            <quote>(νικᾷ ἡ τύχη τῶν Πρασίνων.)</quote>
+            <bibl corresp="#iAph"/>
+        </cit>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010404.html">
+            <g type="monogram"/>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <figure>
+                <figDesc>monogram</figDesc>
+            </figure>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            corresp="http://insaph.kcl.ac.uk/iaph2007/iAph070016.html">
+            <expan>
+                <abbr>
+                    <am>
+                        <g type="monogram"/>
+                    </am>
+                </abbr>
+                <ex>Συμβατικίου</ex>
+            </expan>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120541.html">
+            <expan>
+                <abbr>
+                    <expan>
+                        <abbr>
+                            <am><g type="monogram"/></am>
+                        </abbr>
+                        <ex>Ποστύμ</ex>
+                    </expan>
+                </abbr>
+                <ex>ιος</ex>
+            </expan>
+        </egXML>
+    </div>
+</div>

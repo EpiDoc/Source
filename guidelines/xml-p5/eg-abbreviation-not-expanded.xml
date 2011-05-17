@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+    <head>Abbreviation not expanded at all</head>
+    <div>
+        <head>TEI</head>
+        <p><specList>
+                <specDesc key="abbr"/>
+            </specList>
+            <listRef>
+                <ptr target="a"/>
+            </listRef></p>
+        <p>&lt;abbr&gt; (abbreviation) contains an abbreviation of any sort.</p>
+    </div>
+    <div>
+        <head>EpiDoc</head>
+        <p>Where the expansion of the abbreviation is unknown, the characters present on
+            the original support are marked up with the &lt;abbr&gt; element, to indicate that
+                there is an abbreviation even though the editor cannot expand it.</p>
+    </div>
+
+    <div>
+       <cit>
+            <quote>ab(---)</quote>
+            <bibl corresp="#panciera">
+                <biblScope>10.2</biblScope>
+            </bibl>
+            <bibl corresp="#pn"/>
+        </cit> 
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+            <abbr>ab</abbr>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <abbr>pl</abbr></egXML> 
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <abbr>στρατηγ</abbr>
+        </egXML>
+    </div>
+
+    
+        
+        
+      
+   
+</div>
