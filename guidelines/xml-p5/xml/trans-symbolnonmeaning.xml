@@ -2,8 +2,6 @@
 <?oxygen NVDLSchema="epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Symbol (non meaning-bearing)</head>
-    <div>
-        <head>TEI</head>
         <p><specList>
                 <specDesc key="g"/>
             </specList>
@@ -11,34 +9,35 @@
                 <ptr target="a"/>
             </listRef></p>
         <p>&lt;g&gt; (character or glyph) represents a non-standard character or glyph.</p>
-    </div>
-    <div>
-        <head>EpiDoc</head>
         <p>Where a symbol is non meaning-bearing, it should be represented using the element
             &lt;g&gt;, with the following attribute: </p>
         <list type="bulleted">
             <item>@type indicates the name of the decorative symbol, e.g. leaf.</item>
         </list>
-        <p>A Unicode value can be used inside the &lt;g&gt; if desired.</p>
-    </div>
-    <div>
-        <cit>
-            <quote>/ <!-- or Unicode for this? --></quote>
-            <bibl corresp="#pn"> </bibl>
-        </cit>
-
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
-            <g type="slanting-stroke"/>
-        </egXML>
-    </div>
-    <div>
-        <cit>
-            <quote>dr.</quote>
-            <bibl corresp="#seg"/>
-        </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#seg">
+        <p>A Unicode character representing the symbol may also appear inside the &lt;g&gt; if desired.</p>
+    
+    <cit>
+        <quote>((crux))</quote><bibl corresp="#panciera"/> 
+    </cit>
+    <cit>
+        <quote>⊂crux⊃</quote><bibl corresp="#dohnicht"/> 
+    </cit>
+    <cit>
+        <quote>/</quote><bibl corresp="#ddbdp"/> 
+    </cit>
+    <cit>
+        <quote>dr.</quote><bibl corresp="#seg"/>
+    </cit>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT203.html#1">
+        <g type="crux"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.worp;;48#4">
+        <g type="slanting-stroke"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010121.html#1">
             <g type="scroll"/>
         </egXML>
     </div>
