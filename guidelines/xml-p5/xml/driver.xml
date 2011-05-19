@@ -38,8 +38,22 @@
                 <div>
                     <head>Encoding the text</head>
                     <xi:include href="trans-encode-text.xml"/>
-                    <xi:include href="trans-restoration.xml"/>
                     <xi:include href="trans-erroneoussubstitution.xml"/>
+                    <xi:include href="trans-lostcharknown.xml"/>
+                    <xi:include href="trans-lostcharunknown.xml"/>
+                    <xi:include href="trans-lostcharapprox.xml"/>
+                    <xi:include href="trans-lostcharpraenomen.xml"/>
+                    <xi:include href="trans-lostlineknown.xml"/>
+                    <xi:include href="trans-symbol.xml"/>
+                    <xi:include href="trans-symbolchirho.xml"/>
+                    <xi:include href="trans-symbolmonogr.xml"/>
+                    <xi:include href="trans-restored.xml"/>
+                    <xi:include href="trans-restoreduncert.xml"/>
+                    <xi:include href="trans-restoredincomplete.xml"/>
+                    <xi:include href="trans-abbrevfully.xml"/>
+                    <xi:include href="trans-abbrevuncert.xml"/>
+                    <xi:include href="trans-abbrevpartial.xml"/>
+                    <xi:include href="trans-abbrevnotex.xml"/>
                 </div>
                 <xi:include href="encode-output.xml"/>
             </div>
@@ -58,7 +72,7 @@
 
         </body>
         <back>
-            <xi:include href="../../schema/tei-epidoc.xml"/>
+            <xi:include href="../../../schema/tei-epidoc.xml"/>
         </back>
     </text>
 </TEI>
