@@ -1,0 +1,159 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p4/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-vocab" xml:lang="en">
+    <head>Appendix: Bibliography</head>
+    <p>.</p>
+    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <div>
+        <head>Epigraphic and papyrological conventions</head>
+        <p>These publications are the source for the Leiden-style conventions used in the Guidelines and
+        the Example XSLT transformations.</p>
+        <listBibl>
+            <bibl xml:id="ddbdp"><author>Josh Sosin</author> et al., <date>2011</date>, <title
+                    level="a">...</title>, Available: <ref>...</ref></bibl>
+            <bibl xml:id="edh"><author>...</author> et al., <date>...</date>, <title level="a"
+                    >...</title>, Available: <ref>...</ref></bibl>
+            <bibl xml:id="dohnicht"><author>Marcus Dohnicht</author>, <title level="m"
+                    >Zusammenstellung der diakritischen Zeichen zur Wiedergabe der lateinischen
+                    Inschrifttexte der Antike für den Unicode (Entwurft Juli 2000)</title>,
+                    <ref>http://www.csad.ox.ac.uk/varia/unicode/Dohnicht.pdf</ref></bibl>
+            <bibl xml:id="dow"><author>Sterling Dow</author>, <title level="m">Conventions in
+                    editing: a suggested reformulation of the Leiden System</title>, <series><title
+                        level="s">Greek, Roman and Byzantine Studies Scholarly Aids</title>
+                    <biblScope type="volume">2</biblScope></series>, <pubPlace>Durham</pubPlace>,
+                    <date>1969</date></bibl>
+            <bibl xml:id="panciera"><author>Silvio Panciera</author>, <title level="a">Struttura dei
+                    supplementi e segnidiacritici dieci anni dopo</title> in <title level="j"
+                    >Supplementa Italica</title>
+                <biblScope type="volume">8</biblScope>(<date value="1991">1991</date>), <biblScope
+                    type="pages">9-21</biblScope></bibl>
+            <bibl xml:id="poxy"><title level="j">Oxyrhynchus Papyri</title>, Egypt Exploration
+                Society, 1898-</bibl>
+            <bibl id="seg"><title level="j">Supplementum Epigraphicum Graecum</title>, Lugduni
+                Batavorum : Sijthoff, 1923-</bibl>
+        </listBibl>
+    </div>
+    
+    <div>
+        <head>Texts published online with EpiDoc source available</head>
+        <p>These projects are the source of most examples used in the Guidelines.</p>
+        <listBibl>
+            <bibl xml:id="ala">Aphrodisias in late Antiquity</bibl>
+            <bibl xml:id="ddbdp">Duke Databank of Documentary Papyri</bibl>
+            <bibl xml:id="epidat">Datenbank Jüdische Grabsteinepigraphik</bibl>
+            <bibl xml:id="hgv">Heidelberger Gesamtverzeichnis </bibl>
+            <bibl xml:id="iaph">Inscriptions of Aphrodisias</bibl>
+            <bibl xml:id="irt">Inscriptions of Roman Tripolitania</bibl>
+            <bibl xml:id="tvind">Vindolanda Tablets Online</bibl>
+            <bibl xml:id="tvind2">Vindolanda Tablets Revisited</bibl>
+        </listBibl>
+    </div>
+
+    <div>
+        <head>Bibliography on digital epigraphy and text encoding</head>
+        <p>Further reading:</p>
+        <listBibl>
+            <bibl xml:id="alvarez2011"> <author>Fernando-Luis Álvarez</author>, <author>Elena García-Barriocanal</author>
+                and <author>Joaquín-L. Gómez-Pantoja</author>,
+                'Sharing Epigraphic Information as Linked Data', in (eds. Sanchez-Alonso &amp;
+                Athanasiadis), Metadata and semantic research (Springer 2010), pp. 222-234.
+                Available: <ref>http://www.springerlink.com/content/j71267848rvj8522/</ref></bibl>
+            <bibl xml:id="bodard2008"><author>Gabriel Bodard</author>, <title level="a">The
+                    Inscriptions of Aphrodisias as electronic publication: A user's perspective and
+                    a proposed paradigm</title>, in <title level="j">Digital Medievalist</title>
+                <biblScope type="volume">4</biblScope> (<date>2008</date>), Available:
+                    <ref>http://digitalmedievalist.org/journal/4/bodard/</ref></bibl>
+            <bibl xml:id="finney2001"><author>Tim Finney</author>, <title level="m">Converting
+                    Leiden-style Editions to TEI Lite XML</title> (<date>2001</date>), Available:
+                    <ref>http://www.tei-c.org/Sample_Manuals/leiden.html</ref></bibl>
+            <bibl> <author>Alison Babeu</author>, 'Epigraphy', “Rome Wasn’t Digitized in a Day”: Building a
+                Cyberinfrastructure for Digital Classicists Draft Version 1.3—11/18/10, pp. 73-89.
+                CLIR, 2010. Online at: <ref>http://www.clir.org/pubs/archives/Babeu2010.pdf</ref></bibl>
+            <bibl> <author>Roger S. Bagnall</author>, 'Integrating Digital Papyrology', presented at Online
+                Humanities Scholarship: The Shape of Things to Come, University of Virginia, March
+                26-28, 2010. Available: <ref>http://archive.nyu.edu/handle/2451/29592</ref></bibl>
+            <bibl> <author>Gabriel Bodard</author>, 'EpiDoc: Epigraphic Documents in XML for Publication and
+                Interchange', in (ed. F. Feraudi-Gruénais) Latin On Stone: epigraphic research and
+                electronic archives (Lexington Books, 2010), pp. 101-118. </bibl>
+            <bibl><author>Gabriel Bodard</author>, 'Digital Epigraphy and Lexicographical and Onomastic Markup'.
+                Pre-press available: <ref>http://www.stoa.org/archives/1226</ref></bibl>
+            <bibl><author>Hugh Cayless</author>, <author>Charlotte Roueché</author> et al., 'Epigraphy in 2017', Digital Humanities
+                Quarterly 3.1 (2009), available:
+                <ref>http://digitalhumanities.org/dhq/vol/3/1/000030/000030.html</ref></bibl>
+            <bibl><author>Marion Lamé</author>, 'Pour une codification historique des inscriptions', Rivista Storica
+                dell'Antiquità 38 (2008), pp. 213-225. Italian translation, 'Per una codifica
+                storica delle iscrizioni', Griselda Online, 2008. Online at:
+                <ref>http://www.griseldaonline.it/informatica/lame.htm</ref> </bibl>
+            <bibl><author>Anne Mahoney</author>, 'Epigraphy', in (eds. Burnard, O'Brian &amp; Unsworth) Electronic
+                Textual Editing (2006), preview online at
+                <ref>http://www.tei-c.org/Activities/ETE/Preview/mahoney.xml</ref></bibl>
+            <bibl><author>Charlotte Roueché</author> and <author>Gabriel Bodard</author>, 'The Epidoc Aphrodisias Pilot Project',
+                Forum Archaeologiae 23/VI/2002, online at <ref>http://farch.net</ref></bibl>
+            <bibl><author>Charlotte Roueché</author>, 'Digitizing Inscribed Texts', in Text Editing, Print and the
+                Digital World (Ashgate, 2008) pp. 159-168. </bibl>
+            <bibl><author>Joshua D. Sosin</author>, 'Digital Papyrology', Congress of the International Association
+                of Papyrologists, 19 August 2010, Geneva. Available:
+                <ref>http://www.stoa.org/archives/1263</ref></bibl>
+            <bibl xml:id="tei"><author>Text Encoding Initiative</author>, <title level="m">P5:
+                    Guidelines for Electronic Text Encoding and Interchange</title>, Available:
+                    <ref>http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html</ref></bibl>
+            <bibl><author>Charlotte Tupman</author>, 'Contextual epigraphy and XML: digital publication and its
+                application to the study of inscribed funerary monuments', in (eds. Bodard &amp; Mahony)
+                Digital Research in the Study of Classical Antiquity (Ashgate, 2010), pp. 73-86.
+            </bibl>
+        </listBibl>
+    </div>
+
+    <div xml:id="app-vocab-responsibility">
+
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>xx</name>
+                    <name/>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>xx</name>
+                    <name/>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>formatted, edited, revised, munged?</resp>
+                    <name>xx</name>
+                    <name/>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+</div>

@@ -2,8 +2,8 @@
 <?oxygen NVDLSchema="epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Lost characters, praenomen</head>
-    <div>
-        <head>TEI</head>
+    
+        
         <p><specList>
                 <specDesc key="gap"/>
                 <specDesc key="name"/>
@@ -11,19 +11,19 @@
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p>&lt;gap&gt; (gap) indicates a point where material has been omitted in a transcription,
+        <p><gi>gap</gi> (gap) indicates a point where material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
-        <p>&lt;name&gt; BLAH BLAH</p>
-    </div>
-    <div>
-        <head>EpiDoc</head>
+        <p><gi>name</gi> BLAH BLAH</p>
+    
+    
+       
         <p>Where characters have been lost on the original support and there is nothing to indicate
             to the editor how these should be restored, this is marked up as a lacuna using the
-            &lt;gap&gt; element. Note that this is usually an empty element, as it marks a point at
+            <gi>gap</gi> element. Note that this is usually an empty element, as it marks a point at
             which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
-            for examples in which &lt;gap&gt; can contain other elements).</p>
-        <p>For a straightforward lacuna whose extent is known, &lt;gap&gt; should take the following
+            for examples in which <gi>gap</gi> can contain other elements).</p>
+        <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
             <item>@reason explains why the text has been restored, and for a lacuna is usually given
@@ -41,13 +41,13 @@
             <item>@atLeast indicates the minimum number of characters lost.</item>
             <item>@atMost indicates the maximum number of characters lost.</item>
         </list>
-        <p>The &lt;gap&gt; element should also be placed inside a &lt;name&gt; element, to denote
+        <p>The <gi>gap</gi> element should also be placed inside a <gi>name</gi> element, to denote
             the fact that the editor considers the lacuna to have contained a name rather than
             another type of word.</p>
 
-    </div>
+    
 
-    <div>
+    
         <cit>
             <quote>[-]</quote>
             <bibl corresp="#panciera">
@@ -60,13 +60,13 @@
                 <gap reason="lost" atLeast="1" atMost="3" unit="character"/>
             </name>
         </egXML>
-    </div>
+    
 
-    <div>
+    
         <p>PN does not use this convention specifically for praenomina, but does give ranges
             for lacunae, so this example would generate the following output in PN:</p>
         <cit>
-            <quote>[..1-3..]</quote>
+            <quote>[ - 1-3 - ]</quote>
             
             <bibl corresp=""/>
             <!-- CHECK  <bibl corresp="#ddbdp"/>-->
@@ -78,7 +78,7 @@
             </name>
         </egXML>
 
-    </div>
+    
 
 
 </div>

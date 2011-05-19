@@ -2,26 +2,26 @@
 <?oxygen NVDLSchema="epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Lost lines, quantity known</head>
-    <div>
-        <head>TEI</head>
+    
+        
         <p><specList>
                 <specDesc key="gap"/>
             </specList>
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p>&lt;gap&gt; (gap) indicates a point where material has been omitted in a transcription,
+        <p><gi>gap</gi> (gap) indicates a point where material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
-    </div>
-    <div>
-        <head>EpiDoc</head>
+    
+   
+       
         <p>Where lines have been lost on the original support and there is nothing to indicate to
             the editor how these should be restored, this is marked up as a lacuna using the
-            &lt;gap&gt; element. Note that this is usually an empty element, as it marks a point at
+            <gi>gap</gi> element. Note that this is usually an empty element, as it marks a point at
             which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
-            for examples in which &lt;gap&gt; can contain other elements).</p>
-        <p>For a straightforward lacuna whose extent is known, &lt;gap&gt; should take the following
+            for examples in which <gi>gap</gi> can contain other elements).</p>
+        <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
             <item>@reason explains why the text has been restored, and for a lacuna is usually given
@@ -33,9 +33,9 @@
                 etc.).</item>
         </list>
 
-    </div>
+    
 
-    <div>
+    
         <cit>
             <quote>[------]<lb/> [------]<lb/>[------] </quote>
             <bibl corresp="#panciera">
@@ -46,9 +46,9 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
             <gap reason="lost" quantity="3" unit="line"/>
         </egXML>
-    </div>
+    
 
-    <div>
+    
         <cit>
             <quote>[3 lines missing]</quote>
             <bibl corresp="pn"/>
@@ -58,7 +58,7 @@
             <gap reason="lost" quantity="3" unit="line"/>
         </egXML>
 
-    </div>
+    
 
 
 </div>

@@ -8,19 +8,19 @@
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p>&lt;g&gt; (character or glyph) represents a non-standard character or glyph.</p>
+        <p><gi>g</gi> (character or glyph) represents a non-standard character or glyph.</p>
         <p>Where a symbol is non meaning-bearing, it should be represented using the element
-            &lt;g&gt;, with the following attribute: </p>
+            <gi>g</gi>, with the following attribute: </p>
         <list type="bulleted">
             <item>@type indicates the name of the decorative symbol, e.g. leaf.</item>
         </list>
-        <p>A Unicode character representing the symbol may also appear inside the &lt;g&gt; if desired.</p>
+        <p>A Unicode character representing the symbol may also appear inside the <gi>g</gi> if desired.</p>
     
     <cit>
-        <quote>((crux))</quote><bibl corresp="#panciera"/> 
+        <quote>((crux))</quote><bibl corresp="#panciera"><biblScope>19</biblScope></bibl> 
     </cit>
     <cit>
-        <quote>⊂crux⊃</quote><bibl corresp="#dohnicht"/> 
+        <quote>⊂crux⊃</quote><bibl corresp="#dohnicht"><biblScope>4</biblScope></bibl> 
     </cit>
     <cit>
         <quote>/</quote><bibl corresp="#ddbdp"/> 
@@ -29,16 +29,19 @@
         <quote>dr.</quote><bibl corresp="#seg"/>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT203.html#1">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT203.html#1" 
+        rend="panciera dohnicht">
         <g type="crux"/>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.worp;;48#4">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.worp;;48#4" 
+        rend="ddbdp">
         <g type="slanting-stroke"/>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010121.html#1">
-            <g type="scroll"/>
-        </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010121.html#1"
+        rend="panciera london">
+         <g type="scroll"/>
+     </egXML>
     </div>
 </div>

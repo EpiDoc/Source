@@ -2,26 +2,22 @@
 <?oxygen NVDLSchema="epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Lost characters, quantity approximate</head>
-    <div>
-        <head>TEI</head>
-        <p><specList>
+    <p><specList>
                 <specDesc key="gap"/>
             </specList>
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p>&lt;gap&gt; (gap) indicates a point where material has been omitted in a transcription,
+        <p><gi>gap</gi> (gap) indicates a point where material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
-    </div>
-    <div>
-        <head>EpiDoc</head>
+    
         <p>Where characters have been lost on the original support and there is nothing to indicate
             to the editor how these should be restored, this is marked up as a lacuna using the
-            &lt;gap&gt; element. Note that this is usually an empty element, as it marks a point at
+            <gi>gap</gi> element. Note that this is usually an empty element, as it marks a point at
             which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
-            for examples in which &lt;gap&gt; can contain other elements).</p>
-        <p>For a straightforward lacuna whose extent is known, &lt;gap&gt; should take the following
+            for examples in which <gi>gap</gi> can contain other elements).</p>
+        <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
             <item>@reason explains why the text has been restored, and for a lacuna is usually given
@@ -38,11 +34,10 @@
             <item>@precision should be given a value of "low" to denotes the fact that there is a
                 degree of imprecision about the value given in @quantity (i.e. circa).</item>
         </list>
-    </div>
+    
 
-    <div>
         <cit>
-            <quote>[c.7]</quote>
+            <quote>[<hi rend="underline"><hi rend="superscript">c.7</hi></hi>]</quote>
             <!-- Actually this should have three hyphens inside the square brackets with the c.7 displaying above the the hyphens. -->
             <bibl corresp="#panciera">
                 <biblScope>8.3</biblScope>
@@ -50,23 +45,23 @@
         </cit>
 
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
             <gap reason="lost" quantity="7" unit="character" precision="low"/>
         </egXML>
 
-    </div>
+    
 
-    <div>
+    
        <cit>
             <quote>[- ca.7 -]</quote>
             <bibl corresp="#pn"/>
             </cit> 
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="" >
             <gap reason="lost" quantity="7" unit="character" precision="low"/>
         </egXML>
 
-    </div>
+    
 
 
 </div>
