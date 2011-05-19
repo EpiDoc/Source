@@ -17,6 +17,17 @@
                                     <String xml:space="preserve">XSL</String>
                                 </field>
                                 <field name="url">
+                                    <String xml:space="preserve">xml/driver.xml</String>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="name">
+                                    <String xml:space="preserve">EpiDoc P5 Guidelines HTML</String>
+                                </field>
+                                <field name="type">
+                                    <String xml:space="preserve">XSL</String>
+                                </field>
+                                <field name="url">
                                     <String xml:space="preserve">driver.xml</String>
                                 </field>
                             </scenarioAssociation>
@@ -131,7 +142,7 @@
                                     <String xml:space="preserve"></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${cfdu}/epidoc-html.xsl</String>
+                                    <String xml:space="preserve">../xslt/epidoc-html.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String xml:space="preserve">${currentFileURL}</String>
@@ -152,7 +163,7 @@
                                     <Boolean xml:space="preserve">false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <null/>
+                                    <File xml:space="preserve">../output/raw.html</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean xml:space="preserve">false</Boolean>
@@ -167,7 +178,7 @@
                                     <Boolean xml:space="preserve">false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean xml:space="preserve">false</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
                                     <Boolean xml:space="preserve">false</Boolean>
