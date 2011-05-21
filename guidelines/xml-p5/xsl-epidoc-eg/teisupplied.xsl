@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: teisupplied.xsl 1450 2008-08-07 13:17:24Z zau $ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:t="http://www.tei-c.org/ns/Examples"
+                xmlns:t="http://www.tei-c.org/ns/Examples" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="t" 
                 version="1.0">
 
   <xsl:template match="t:supplied[@reason='lost']">
-      <xsl:if test="$leiden-style = 'ddbdp' and child::t:*[1][local-name() = 'milestone'][@rend = 'paragraphos']">
+      <xsl:if test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch') and child::t:*[1][local-name() = 'milestone'][@rend = 'paragraphos']">
          <br/>
       </xsl:if>
       <xsl:choose>
@@ -53,10 +53,10 @@
             </xsl:choose>
             <!-- Found in tpl-cert-low.xsl -->
         <xsl:call-template name="cert-low"/>
-            <!-- Found in tpl-reasonlost.xsl -->
             <xsl:if test="following-sibling::node()[1][local-name()='lb' and @type='inWord']">
                <xsl:text>-</xsl:text>
             </xsl:if>
+            <!-- Found in tpl-reasonlost.xsl -->
         <xsl:call-template name="lost-closer"/>
          </xsl:otherwise>
       </xsl:choose>
@@ -65,6 +65,7 @@
 
   <xsl:template match="t:supplied[@reason='omitted']">
       <xsl:choose>
+         <xsl:when test="$edition-type='diplomatic'"/>
          <xsl:when test="@evidence = 'parallel'">
         <!-- Found in [htm|txt]-teisupplied.xsl -->
         <xsl:call-template name="supplied-parallel"/>

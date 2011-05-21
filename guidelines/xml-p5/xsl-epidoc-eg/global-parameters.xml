@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xm-well_formed path="C:\epiduke\code\epidoc_xslt\global-parameters.dtd"?>
 <parameters>
   <!-- HTML site navigation -->
   <parameter>
@@ -11,19 +10,23 @@
   <parameter>
     <name>leiden-style</name>
     <value>ddbdp</value>
+    <value>dohnicht</value>
     <value>edh-itx</value>
     <value>edh-names</value>
     <value>edh-web</value>
     <value>ila</value>
     <value>london</value>
     <value on="yes">panciera</value>
+    <value>petrae</value>
     <value>seg</value>
+    <value>sammelbuch</value>
   </parameter>
   
   <parameter>
     <name>meta-style</name>
     <value on="yes">default</value>
     <value>hgv</value>
+    <value>sammelbuch</value>
   </parameter>
   
   <parameter>
@@ -42,6 +45,7 @@
     <name>apparatus-style</name>
     <value on="yes">default</value>
     <value>ddbdp</value>
+    <!-- NB: change this parameter locally if you're running PN or SoSOL process! -->
   </parameter>
   
   <!-- Line increment -->

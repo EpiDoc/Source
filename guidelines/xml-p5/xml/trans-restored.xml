@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen NVDLSchema="epidoc.nvdl"?>
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Editorial restoration: Characters lost but restored by modern editor</head>
     
@@ -15,17 +15,17 @@
             used. <gi>supplied</gi> signifies text supplied by the transcriber or editor for any
             reason, typically because the original cannot be read because of physical damage or loss
             to the original.</p>
-        <p>@reason indicates why the text has had to be supplied.</p>
+        <p><att>reason</att> indicates why the text has had to be supplied.</p>
         
         
         <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
             either by comparison with other texts or through other contextual knowledge.</p>
         <p>Required attributes: <list type="bulleted">
-                <item>@reason explains why the text has been restored, and for text restored in
+                <item><att>reason</att> explains why the text has been restored, and for text restored in
                     lacunae, is given the value "lost" (although other values are possible).</item>
             </list></p>
         <p>Optional attributes include: <list type="bulleted">
-                <item>@cert indicates text that is uncertainly restored.</item>
+                <item><att>cert</att> indicates text that is uncertainly restored.</item>
             </list>
         </p>
     

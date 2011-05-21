@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen NVDLSchema="epidoc.nvdl"?>
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Monograms</head>
-        <p><specList>
+        <p>
+            <specList>
                 <specDesc key="expan"/>
                 <specDesc key="abbr"/>
                 <specDesc key="am"/>
@@ -13,7 +14,8 @@
             </specList>
             <listRef>
                 <ptr target="a"/>
-            </listRef></p>
+            </listRef>
+        </p>
         <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation.</p>
         <p><gi>abbr</gi> (abbreviation) contains an abbreviation of any sort.</p>
         <p> <gi>am</gi> (abbreviation marker) contains a sequence of letters or signs present in an

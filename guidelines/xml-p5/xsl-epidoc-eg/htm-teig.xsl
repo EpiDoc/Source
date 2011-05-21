@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: htm-teig.xsl 1450 2008-08-07 13:17:24Z zau $ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:t="http://www.tei-c.org/ns/Examples"
+                xmlns:t="http://www.tei-c.org/ns/Examples" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="t" 
                 version="1.0">
   
   <!-- Import templates can be found in teig.xsl -->
@@ -13,7 +13,7 @@
     
      <xsl:choose>
         <xsl:when test="starts-with($leiden-style, 'edh')"/>
-         <xsl:when test="$leiden-style = 'ddbdp'">
+         <xsl:when test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch')">
         <!-- Found in teig.xsl -->
         <xsl:call-template name="g-ddbdp"/>
          </xsl:when>
@@ -29,10 +29,15 @@
             </em>
             <xsl:text> </xsl:text>
          </xsl:when>
-         <xsl:otherwise>
-            <i>
-               <xsl:apply-imports/>
-            </i>
+        <xsl:when test="$leiden-style = 'dohnicht'">
+           <xsl:text>⊂</xsl:text>
+           <xsl:apply-imports/>
+           <xsl:text>⊃</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+           <xsl:text>((</xsl:text>
+           <xsl:apply-imports/>
+           <xsl:text>))</xsl:text>
          </xsl:otherwise>
       </xsl:choose>
     

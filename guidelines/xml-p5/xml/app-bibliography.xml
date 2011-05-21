@@ -23,7 +23,7 @@ http://epidoc.sf.net.
 
 End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p4/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
-<?oxygen NVDLSchema="epidoc.nvdl"?>
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-bibliography" xml:lang="en">
     <head>Appendix: Bibliography</head>
@@ -34,7 +34,7 @@ End license statement: do not remove -->
         the Example XSLT transformations.</p>
         <listBibl>
             <bibl xml:id="ddbdp"><author>Josh Sosin</author> et al., <date>2011</date>, <title
-                    level="a">...</title>, Available: <ref>...</ref></bibl>
+                    level="a">Papyrological conventions used in the Duke Databank</title>, Available: <ref>...</ref></bibl>
             <bibl xml:id="edh"><author>...</author> et al., <date>...</date>, <title level="a"
                     >...</title>, Available: <ref>...</ref></bibl>
             <bibl xml:id="dohnicht"><author>Marcus Dohnicht</author>, <title level="m"
@@ -45,15 +45,23 @@ End license statement: do not remove -->
                     editing: a suggested reformulation of the Leiden System</title>, <series><title
                         level="s">Greek, Roman and Byzantine Studies Scholarly Aids</title>
                     <biblScope type="volume">2</biblScope></series>, <pubPlace>Durham</pubPlace>,
-                    <date>1969</date></bibl>
+                <date>1969</date></bibl>
+            <bibl xml:id="krummreypanciera"><author>Has Krummrey</author> &amp; <author>Silvio Panciera</author>, 
+                <title level="a">Criteri di edizione e segni diacritici</title> in <title level="j"
+                    >Tituli</title>
+                <biblScope type="volume">2</biblScope> (<date>1980</date>), <biblScope
+                    type="pages">205-215</biblScope></bibl>
             <bibl xml:id="panciera"><author>Silvio Panciera</author>, <title level="a">Struttura dei
-                    supplementi e segnidiacritici dieci anni dopo</title> in <title level="j"
+                supplementi e segnidiacritici dieci anni dopo</title> in <title level="j"
                     >Supplementa Italica</title>
-                <biblScope type="volume">8</biblScope>(<date value="1991">1991</date>), <biblScope
+                <biblScope type="volume">8</biblScope> (<date>1991</date>), <biblScope
                     type="pages">9-21</biblScope></bibl>
             <bibl xml:id="poxy"><title level="j">Oxyrhynchus Papyri</title>, Egypt Exploration
-                Society, 1898-</bibl>
-            <bibl id="seg"><title level="j">Supplementum Epigraphicum Graecum</title>, Lugduni
+            Society, 1898-</bibl>
+            <bibl xml:id="robert"><author>Louis Robert</author> with <author>Jeanne Robert</author>,
+                <title level="m">Fouilles d'Amyzon en Carie</title>, Paris: De Boccard, <date>1983</date>, pp. 9-11
+                on <title level="a">Signes critiques du corpus et édition</title></bibl>
+            <bibl xml:id="seg"><title level="j">Supplementum Epigraphicum Graecum</title>, Lugduni
                 Batavorum : Sijthoff, 1923-</bibl>
         </listBibl>
     </div>

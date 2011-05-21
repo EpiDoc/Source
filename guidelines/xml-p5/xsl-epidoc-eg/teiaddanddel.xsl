@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: teiaddanddel.xsl 1510 2008-08-14 15:27:51Z zau $ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:t="http://www.tei-c.org/ns/Examples" version="1.0">
+   xmlns:t="http://www.tei-c.org/ns/Examples" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="t"  version="1.0">
    <!-- Contains templates for subst, add and del -->
-
+   
+   <!-- Imported by htm-teiaddanddel.xsl or called directly from start-txt.xsl -->
+   
    <xsl:template match="t:subst">
       <xsl:apply-templates/>
 
@@ -18,7 +20,7 @@
 
    <xsl:template match="t:add">
       <xsl:choose>
-         <xsl:when test="$leiden-style = 'ddbdp'">
+         <xsl:when test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch')">
             <xsl:choose>
                <xsl:when test="parent::t:subst"/>
                <xsl:when test="@place = 'above'">
@@ -26,6 +28,12 @@
                </xsl:when>
                <xsl:when test="@place = 'below'">
                   <xsl:text>/</xsl:text>
+               </xsl:when>
+               <xsl:when test="@place = 'left'">
+                  <xsl:text>(added at left: </xsl:text>
+               </xsl:when>
+               <xsl:when test="@place = 'right'">
+                  <xsl:text>(added at right: </xsl:text>
                </xsl:when>
             </xsl:choose>
          </xsl:when>
@@ -45,7 +53,7 @@
       <xsl:call-template name="cert-low"/>
 
       <xsl:choose>
-         <xsl:when test="$leiden-style = 'ddbdp'">
+         <xsl:when test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch')">
             <xsl:choose>
                <xsl:when test="parent::t:subst"/>
                <xsl:when test="@place = 'above'">
@@ -53,6 +61,9 @@
                </xsl:when>
                <xsl:when test="@place = 'below'">
                   <xsl:text>\</xsl:text>
+               </xsl:when>
+               <xsl:when test="@place = 'left' or @place = 'right'">
+                  <xsl:text>)</xsl:text>
                </xsl:when>
             </xsl:choose>
          </xsl:when>
@@ -86,10 +97,10 @@
             <xsl:apply-templates/>
             <xsl:text>]]</xsl:text>
          </xsl:when>
-         <xsl:when test="$leiden-style = 'ddbdp' and @rend='slashes'">
+         <xsl:when test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch') and @rend='slashes'">
             <xsl:apply-templates/>
          </xsl:when>
-         <xsl:when test="$leiden-style = 'ddbdp' and @rend='cross-strokes'">
+         <xsl:when test="($leiden-style = 'ddbdp' or $leiden-style = 'sammelbuch') and @rend='cross-strokes'">
             <xsl:apply-templates/>
          </xsl:when>
          <xsl:when test="parent::t:subst"/>

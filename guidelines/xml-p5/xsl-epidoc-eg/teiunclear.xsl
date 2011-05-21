@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: teiunclear.xsl 1256 2008-07-15 16:17:16Z gbodard $ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:t="http://www.tei-c.org/ns/Examples" version="1.0">
+   xmlns:t="http://www.tei-c.org/ns/Examples" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="t"  version="1.0">
 
    <xsl:template match="t:unclear">
       <xsl:param name="text-content">
@@ -43,9 +43,9 @@
          </xsl:when>
          <xsl:otherwise>
             <xsl:choose>
-               <xsl:when test="g">
+               <xsl:when test="t:g">
                   <xsl:apply-templates/>
-                  <!-- find some way to indicate the unclear status of this word -->
+                  <!-- templates (including tests for parent::unclear) are in teig.xsl -->
                </xsl:when>
                <xsl:otherwise>
                   <xsl:call-template name="subpunct">

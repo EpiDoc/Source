@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen NVDLSchema="epidoc.nvdl"?>
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
     <head>Lost characters, praenomen</head>
     
@@ -26,20 +26,20 @@
         <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
-            <item>@reason explains why the text has been restored, and for a lacuna is usually given
+            <item><att>reason</att> explains why the text has been restored, and for a lacuna is usually given
                 the value "lost" (although other values are possible).</item>
-            <item>@quantity indicates how many characters or lines have been lost (where
+            <item><att>quantity</att> indicates how many characters or lines have been lost (where
                 known).</item>
-            <item>@unit indicates what kind of textual unit has been lost, such as "character" or
+            <item><att>unit</att> indicates what kind of textual unit has been lost, such as "character" or
                 "line" (or indeed some other type of textual unit such as "column", "page"
                 etc.).</item>
         </list>
         <p>In cases in which a praenomen has been lost, the quantity of characters missing should be
             extrapolated (this is usually between 1 and 3 letters). Therefore, in addition to the
-            @reason and @unit attributes, a further two attributes should be added:</p>
+            <att>reason</att> and <att>unit</att> attributes, a further two attributes should be added:</p>
         <list type="bulleted">
-            <item>@atLeast indicates the minimum number of characters lost.</item>
-            <item>@atMost indicates the maximum number of characters lost.</item>
+            <item><att>atLeast</att> indicates the minimum number of characters lost.</item>
+            <item><att>atMost</att> indicates the maximum number of characters lost.</item>
         </list>
         <p>The <gi>gap</gi> element should also be placed inside a <gi>name</gi> element, to denote
             the fact that the editor considers the lacuna to have contained a name rather than

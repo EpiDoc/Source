@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: teiorig.xsl 900 2008-05-09 11:47:58Z zau $ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:t="http://www.tei-c.org/ns/Examples"
+                xmlns:t="http://www.tei-c.org/ns/Examples" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="t" 
                 version="1.0">  
   
   <!--<xsl:template match="orig">
@@ -15,7 +15,7 @@
     </xsl:choose>
   </xsl:template>-->
   
-  <xsl:template match="t:orig[not(parent::choice)]//text()" priority="1">
+  <xsl:template match="t:orig[not(parent::t:choice)]//text()" priority="1">
       <xsl:value-of select="translate(., $all-grc, $grc-upper-strip)"/>
   </xsl:template>
   
