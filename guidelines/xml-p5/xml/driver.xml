@@ -22,19 +22,35 @@
             <div>
                 <head>Introductions</head>
                 <xi:include href="intro-intro.xml"/>
+                <!--	      <xi:include href="intro-eps-fr.xml"/> -->
                 <xi:include href="intro-eps.xml"/>
                 <xi:include href="intro-faq.xml"/>
                 <xi:include href="intro-howto.xml"/>
                 <xi:include href="intro-step.xml"/>
                 <xi:include href="intro-team.xml"/>
                 <xi:include href="intro-qstart.xml"/>
-                <!--	      <xi:include href="intro-eps-fr.xml"/> -->
                 <xi:include href="intro-wflow.xml"/>
             </div>
             <div>
-                <head>Workflow</head>
+                <head>Markup</head>
                 <xi:include href="encode-struct.xml"/>
                 <xi:include href="encode-metadata.xml"/>
+                <div>
+                    <head>Encoding supporting data</head>
+                    <xi:include href="supp-description.xml"/>
+                    <xi:include href="supp-descobject.xml"/>
+                    <xi:include href="supp-desctext.xml"/>
+                    <xi:include href="supp-descletters.xml"/>
+                    <xi:include href="supp-history.xml"/>
+                    <xi:include href="supp-historigdate.xml"/>
+                    <xi:include href="supp-historigin.xml"/>
+                    <xi:include href="supp-histfound.xml"/>
+                    <xi:include href="supp-histmodern.xml"/>
+                    <xi:include href="supp-bibliography.xml"/>
+                    <xi:include href="supp-translation.xml"/>
+                    <xi:include href="supp-commentary.xml"/>
+                    <xi:include href="supp-indexing.xml"/>
+                </div>
                 <div>
                     <head>Encoding the text</head>
                     <xi:include href="trans-encode-text.xml"/>
