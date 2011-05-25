@@ -18,8 +18,11 @@
         </fileDesc>
     </teiHeader>
     <text>
+        <front>
+            <divGen type="toc"/>
+        </front>
         <body>
-            <div>
+            <div xml:id="introductions">
                 <head>Introductions</head>
                 <xi:include href="intro-intro.xml"/>
                 <!--	      <xi:include href="intro-eps-fr.xml"/> -->
@@ -31,11 +34,11 @@
                 <xi:include href="intro-qstart.xml"/>
                 <xi:include href="intro-wflow.xml"/>
             </div>
-            <div>
+            <div xml:id="markup">
                 <head>Markup</head>
                 <xi:include href="encode-struct.xml"/>
                 <xi:include href="encode-metadata.xml"/>
-                <div>
+                <div xml:id="supportingdata" >
                     <head>Encoding supporting data</head>
                     <xi:include href="supp-description.xml"/>
                     <xi:include href="supp-descobject.xml"/>
@@ -51,7 +54,7 @@
                     <xi:include href="supp-commentary.xml"/>
                     <xi:include href="supp-indexing.xml"/>
                 </div>
-                <div>
+                <div xml:id="transcription" >
                     <head>Encoding the text</head>
                     <xi:include href="trans-encode-text.xml"/>
                     <xi:include href="trans-erroneoussubstitution.xml"/>
@@ -73,7 +76,7 @@
                 </div>
                 <xi:include href="encode-output.xml"/>
             </div>
-            <div>
+            <div xml:id="appendices">
                 <head>Appendices</head>
                 <xi:include href="app-epi.xml"/>
                 <xi:include href="app-papy.xml"/>
