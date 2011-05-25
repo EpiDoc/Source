@@ -34,7 +34,21 @@
                 <xi:include href="intro-qstart.xml"/>
                 <xi:include href="intro-wflow.xml"/>
             </div>
-            <div xml:id="markup">
+            
+            <div xml:id="appendices">
+                <head>Appendices</head>
+                <xi:include href="app-epi.xml"/>
+                <xi:include href="app-papy.xml"/>
+                <xi:include href="app-sigi.xml"/>
+                <xi:include href="app-numi.xml"/>
+                <xi:include href="app-nonWestern.xml"/>
+                <xi:include href="app-DocHist.xml"/>
+                <xi:include href="app-vocab.xml"/>
+                <xi:include href="app-unicode.xml"/>
+                <xi:include href="app-bibliography.xml"/>
+            </div>
+            
+            <div xml:id="markup" rend="notinToc">
                 <head>Markup</head>
                 <xi:include href="encode-struct.xml"/>
                 <xi:include href="encode-metadata.xml"/>
@@ -75,20 +89,8 @@
                     <xi:include href="trans-abbrevnotex.xml"/>
                 </div>
                 <xi:include href="encode-output.xml"/>
-            </div>
-            <div xml:id="appendices">
-                <head>Appendices</head>
-                <xi:include href="app-epi.xml"/>
-                <xi:include href="app-papy.xml"/>
-                <xi:include href="app-sigi.xml"/>
-                <xi:include href="app-numi.xml"/>
-                <xi:include href="app-nonWestern.xml"/>
-                <xi:include href="app-DocHist.xml"/>
-                <xi:include href="app-vocab.xml"/>
-                <xi:include href="app-unicode.xml"/>
-                <xi:include href="app-bibliography.xml"/>
-            </div>
-
+</div>
+            
         </body>
         <back>
             <xi:include href="../../../schema/tei-epidoc.xml"/>

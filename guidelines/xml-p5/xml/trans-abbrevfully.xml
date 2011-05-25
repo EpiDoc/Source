@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
-<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevfully">
     <head>Abbreviation fully expanded</head>
     <p><specList>
                 <specDesc key="expan"/>
@@ -41,6 +41,12 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <expan>Iul<ex>ius</ex></expan></egXML>
     
-
-   
+    <div xml:id="trans-abbrevfully-responsibility">
+        
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
+        </listBibl>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
-<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevpartial">
     <head>Abbreviation partially expanded</head>
     
         <p><specList>
@@ -12,9 +12,8 @@
             </listRef></p>
         <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation.</p>
         <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
-            transcriber when expanding an abbreviation.</p>
+        transcriber when expanding an abbreviation.</p>
     
-        <head>EpiDoc</head>
         <p>The characters that form the entire expansion of an abbreviation (including both the
             charaters that are present on the original support and those added by the editor) are
             marked up using <gi>expan</gi>.</p>
@@ -37,17 +36,23 @@
             <w part="I"><expan>Iul<ex cert="low">ius</ex></expan></w>
         </egXML>
         
-        <cit><quote>a(bc )</quote>
-            <bibl corresp="#pn"/>   </cit>
+    <cit>
+        <quote>a(bc&#xa0;&#xa0;)</quote>
+        <bibl corresp="#pn"/>
+    </cit>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
             <w part="I"><expan>a<ex cert="low">bc</ex></expan></w>
         </egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <w part="I"><expan>Καρ<ex cert="low">ανίδι</ex></expan></w></egXML>
+
+    <div xml:id="trans-abbrevpartial-responsibility">
         
-    
-    
-    
-   
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
+        </listBibl>
+    </div>
 </div>
