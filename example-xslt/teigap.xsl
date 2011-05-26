@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: teigap.xsl 1487 2008-08-11 14:38:11Z zau $ -->
+<!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <!-- Templates imported by [htm|txt]teigap.xsl -->
 

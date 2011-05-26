@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: start-txt.xsl 1510 2008-08-14 15:27:51Z zau $ -->
+<!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <xsl:output method="text" encoding="UTF-8" indent="yes" xml:space="preserve"/>

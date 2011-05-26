@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: htm-teiforeign.xsl 1449 2008-08-07 12:59:21Z zau $ -->
+<!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   
   <xsl:template match="foreign">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: htm-tpl-apparatus.xsl 1497 2008-08-12 13:51:16Z zau $ -->
+<!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <!-- Apparatus creation: look in tpl-apparatus.xsl for documentation -->
   <xsl:include href="tpl-apparatus.xsl"/>

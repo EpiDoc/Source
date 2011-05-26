@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: htm-tpl-nav.xsl 1564 2008-08-21 13:48:22Z zau $ -->
+<!-- $Id$ -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <!-- Called from start-edition.xsl -->
 

@@ -34,7 +34,7 @@ use strict;
 use English;
 use diagnostics;
 
-my $version = '$Id: dtdfix.pl,v 1.2 2005-08-18 17:07:04 paregorios Exp $';
+my $version = '$Id$';
 
 sub fixattlist ($); # prototype
 
