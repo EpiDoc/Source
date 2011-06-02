@@ -39,14 +39,31 @@
         <bibl corresp="#ddbdp"/>
     </cit>
    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
+        corresp="#panciera">
         <supplied reason="lost">abc</supplied>
     </egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
         corresp="http://irt.kcl.ac.uk/irt2009/IRT986.html#1">
-        <supplied reason="lost">In</supplied>comparabilis</egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        <supplied reason="lost">In</supplied>comparabilis
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
         corresp="http://papyri.info/hgv/18216#17">
-        <supplied reason="lost" cert="low">ὁμο</supplied>λογῶ</egXML>
+        <supplied reason="lost" cert="low">ὁμο</supplied>λογῶ
+    </egXML>
+    <note>If a span of restored is broken by other intervening structural markup (e.g. word and name tags, 
+        or even if these are not used, abbreviations and numbers), the text may be divided between two or more
+        <gi>supplied</gi> elements, and the rendering XSLT will correctly omit redundant square brackets between
+        these spans.</note>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT027.html">
+        <w><supplied reason="lost">diui</supplied></w>
+        <name><supplied reason="lost">Tra</supplied>iani</name>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT028.html">
+        <supplied reason="lost"><expan>co<ex>n</ex>s<ex>uli</ex></expan></supplied>
+        <num><supplied reason="lost">I</supplied>V</num>
+    </egXML>
    
 </div>
