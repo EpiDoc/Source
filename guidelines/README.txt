@@ -46,7 +46,15 @@ How to use it:
             this manual step. A transformation configuration has been added to 
             the Oxygen project file (EpiDoc Schema to egXML Schema).
 
-    (Explain how to generate HTML Guidelines from XML files - to be added)
+    Generate HTML Guidelines from XML files
+    
+        1. Make sure you have a full checkout of the SVN repository.
+        2. Run the script: ./xml-p5/copyxslts.py
+        3. Open OxygenXML and open the project file: 
+            ./xml-p5/Guidelines-generation-project.xpr
+        4. Open the xml file: ./xml-p5/xml/driver.xml
+        5. Run the local transform configured against it (EpiDoc P5 Guidelines HTML)
+        6. Results of the transformation will be output to ./xml-p5/output/
 	
        
 
