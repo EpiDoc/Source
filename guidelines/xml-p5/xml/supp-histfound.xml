@@ -28,29 +28,70 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histfound" xml:lang="en">
     <head>Findspot and find context</head>
     <p>(provenance)</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
-    
+
+    <p>All matters related to the provenance of a document are encoded in the Manuscript Description
+            (<tag>msDesc</tag>) portion of the TEI header. In particular, they are placed within the
+            <tag>history</tag> subsection.</p>
+        
+        <p>See further: <list>
+                <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mshy"
+                        >TEI Guidelines, sub "History"</ref>.</item>
+                <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-historigin"
+                        >EpiDoc Guidelines, sub "Original Location of Object"</ref></item>
+                <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-histmodern"
+                        >EpiDoc Guidelines, sub "Modern or last known locations"</ref></item>
+            </list></p>
+    <p>Within the <tag>history</tag> subsection, relevant information is grouped by "events" in the
+        life of the document. Information related to the finding of a document and the associated
+        context is presented in one or more <tag>event type="found"</tag> elements. Generally, there
+        will only be one such element, unless separate fragments of the document were found in
+        different locations. The information within each <tag>event</tag> element can take the form
+        of one or more paragraphs of prose, or of a list (with appropriate TEI tags used as
+        necessary). As appropriate, place names, personal names and other information worthy of
+        indexing, linking or querying should be tagged appropriately (e.g., with
+        <tag>persName</tag>, <tag>placeName</tag>, etc.). Note the following examples.</p>
+
+    <div>
+        <head>Example from the Corpus of Campa Inscriptions project</head>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+        
+        <event type="found">
+            <p>
+                <list>
+                    <item>Village: 
+                        <placeName type="village" 
+                            ref="http://www.geonames.org/1580102/huong-que-2.html"
+                            >Hương Quê</placeName> (Thôn 6)</item>
+                    <item>Commune: 
+                        <placeName type="commune" notBefore="2008">Hương An</placeName> 
+                        (before 2008 : 
+                        <placeName type="commune" notAfter="2007">Quế Phú</placeName>)</item>
+                    <item>District: 
+                        <placeName type="district" 
+                            ref="http://www.geonames.org/1905520/huyen-que-son.html"
+                            >Quế Sơn</placeName></item>
+                    <item>Province: 
+                        <placeName type="province" 
+                            ref="http://www.geonames.org/1905516/tinh-quang-nam.html"
+                            >Quảng Nam</placeName></item>
+                    <item>Country: 
+                        <placeName type="country" 
+                            ref="http://www.geonames.org/1905516/tinh-quang-nam.html">
+                            Vietnam</placeName></item>
+                </list></p>
+        </event>
+    </egXML></div>
+
     <div xml:id="intro-faq-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                    <resp>initial content</resp>
+                    <name ref="http://isaw.nyu.edu/people/staff/tom-elliott/">Tom Elliott</name>
+                    <name/>
+                </respStmt>
             </bibl>
         </listBibl>
     </div>
