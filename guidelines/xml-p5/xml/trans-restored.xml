@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restored">
     <head>Editorial restoration: Characters lost but restored by modern editor</head>
     
@@ -40,15 +39,15 @@
     </cit>
    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="#panciera">
+        corresp="#panciera" xml:lang="la">
         <supplied reason="lost">abc</supplied>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT986.html#1">
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT986.html#1" xml:lang="la">
         <supplied reason="lost">In</supplied>comparabilis
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="http://papyri.info/hgv/18216#17">
+        corresp="http://papyri.info/hgv/18216#17" xml:lang="grc">
         <supplied reason="lost" cert="low">ὁμο</supplied>λογῶ
     </egXML>
     <note>If a span of restored is broken by other intervening structural markup (e.g. word and name tags, 
@@ -56,12 +55,12 @@
         <gi>supplied</gi> elements, and the rendering XSLT will correctly omit redundant square brackets between
         these spans.</note>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT027.html">
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT027.html" xml:lang="la">
         <w><supplied reason="lost">diui</supplied></w>
         <name><supplied reason="lost">Tra</supplied>iani</name>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT028.html">
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT028.html" xml:lang="la">
         <supplied reason="lost"><expan>co<ex>n</ex>s<ex>uli</ex></expan></supplied>
         <num><supplied reason="lost">I</supplied>V</num>
     </egXML>
