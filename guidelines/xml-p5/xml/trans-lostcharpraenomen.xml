@@ -26,8 +26,8 @@
         <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
-            <item><att>reason</att> explains why the text has been restored, and for a lacuna is usually given
-                the value "lost" (although other values are possible).</item>
+            <item><att>reason</att> explains why the text has been restored, and for a lacuna is given
+                the value "lost" (other values denote other kinds of non-transcribable text).</item>
             <item><att>quantity</att> indicates how many characters or lines have been lost (where
                 known).</item>
             <item><att>unit</att> indicates what kind of textual unit has been lost, such as "character" or
@@ -36,7 +36,7 @@
         </list>
         <p>In cases in which a praenomen has been lost, the quantity of characters missing should be
             extrapolated (this is usually between 1 and 3 letters). Therefore, in addition to the
-            <att>reason</att> and <att>unit</att> attributes, a further two attributes should be added:</p>
+            <att>reason</att> and <att>unit</att> attributes, a further two attributes should be used:</p>
         <list type="bulleted">
             <item><att>atLeast</att> indicates the minimum number of characters lost.</item>
             <item><att>atMost</att> indicates the maximum number of characters lost.</item>
@@ -44,9 +44,6 @@
         <p>The <gi>gap</gi> element should also be placed inside a <gi>name</gi> element, to denote
             the fact that the editor considers the lacuna to have contained a name rather than
             another type of word.</p>
-
-    
-
     
         <cit>
             <quote>[-]</quote>
@@ -55,30 +52,22 @@
             </bibl>
         </cit>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-            <name>
-                <gap reason="lost" atLeast="1" atMost="3" unit="character"/>
-            </name>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
+            <name><gap reason="lost" atLeast="1" atMost="3" unit="character"/></name>
         </egXML>
-    
-
-    
-        <p>PN does not use this convention specifically for praenomina, but does give ranges
-            for lacunae, so this example would generate the following output in PN:</p>
-        <cit>
-            <quote>[ - 1-3 - ]</quote>
-            
-            <bibl corresp=""/>
-            <!-- CHECK  <bibl corresp="#ddbdp"/>-->
-        </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
-            <name>
-                <gap reason="lost" atLeast="1" atMost="3" unit="character"/>
-            </name>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/psi;7;769#1" rend="ddbdp">
+            <num><gap reason="lost" atLeast="12" atMost="15" unit="character"/></num>
         </egXML>
-
+<note>PN does not use this convention specifically for praenomina, but does allow ranges of extent
+for lacunae, e.g. when known to be a number, or length of lacuna is approximate.</note>
     
-
-
+    <div xml:id="trans-lostcharpraenomen-responsibility">
+        
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>Author</resp><name>CLT</name></respStmt></bibl>
+            <bibl><respStmt><resp>Author</resp><name>GB</name></respStmt></bibl>
+            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
+        </listBibl>
+    </div>
 </div>
