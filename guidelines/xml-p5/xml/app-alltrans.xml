@@ -1,0 +1,148 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p4/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-alltrans" xml:lang="en">
+    <head>Appendix: All Transcription Guidelines</head>
+    <p>description tba...</p>
+    
+    <list>
+        <head>Structure</head>
+        <item>Columns, fragments, sections, pages and other breaks</item>
+        <item>Lines and line breaks</item>
+        <item>Word divided across lines</item>
+        <item>Direction of text</item>
+        <item>Verse lines</item>
+        <item>Metrical fragment</item>
+        <item>Non-structural text parts</item>
+        <item>Paragraphos, horizontal rule, etc.</item>
+    </list>
+    
+    <list>
+        <head>Transcription</head>
+        <item>Clear text</item>
+        <item>Uninterpreted characters (Leiden uppercase)</item>
+        <item>Ambiguous characters (Leiden underdot)</item>
+        <item>Abiguous characters with alternatives offered</item>
+        <item>Erased but legible text</item>
+        <item>Erased and illegible but restored</item>
+        <item>Erased and lost</item>
+        <item>Marked for deletion by slashes etc.</item>
+        <item>Text struct over erasure</item>
+        <item>Ancient correction, both original and new text read</item>
+        <item>Ancient correction, original illegible or lost</item>
+        <item>Text added by ancient hand</item>
+        <item>Text added with sling etc.</item>
+        <item>Illegible characters, quantity known</item>
+        <item>Illegible characters, quantity unknown</item>
+        <item>Illegible characters, quantity approximate</item>
+        <item>Illegible lines, quantity known</item>
+        <item>Illegible lines, quantity unknown</item>
+        <item>Illegible lines, quantity approximate</item>
+        <item>Possible illegible lines</item>
+        <item>Illegible text, other units</item>
+        <item><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></item>
+        <item><ref target="trans-lostcharunknown.html">Lost characters, quantity unknown</ref></item>
+        <item><ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref></item>
+        <item><ref target="trans-lostcharpraenomen.html">Lost praenomen or number (length extrapolated)</ref></item>
+        <item>Lost characters, metre reconstructed</item>
+        <item><ref target="trans-lostlineknown.html">Lost lines, quantity known</ref></item>
+        <item>Lost lines, quantity unknown</item>
+        <item>Lost lines, quantity approximate</item>
+        <item>Lines possibly lost / text possibly breaks</item>
+        <item>Lacuna, other units</item>
+        <item>Vacat, measured in characters (horizontal space)</item>
+        <item>Vacat, measured in lines (vertical space)</item>
+        <item>Vacat, measured in other units</item>
+        <item>Possible vacat</item>
+        <item>Change in scribe or hand</item>
+        <item>Text not completed (omission not restored)</item>
+    </list>
+    
+    <list>
+        <head>Form and appearance</head>
+        <item>Characters highlighted or set apart in some way</item>
+        <item>Apices and other ancient diacritics</item>
+        <item>Supralinear lines, etc.</item>
+        <item>Raised or lowered characters</item>
+        <item>Tall or small characters</item>
+        <item>reversed or inverted letters</item>
+        <item>Claudian letters</item>
+        <item>Ligatures</item>
+        <item><ref target="trans-symbol.html">Symbols</ref></item>
+        <item><ref target="trans-symbolchirho.html">Symbols: Chi-rho</ref></item>
+        <item><ref target="trans-symbolmonogr.html">Symbols: monograms</ref></item>
+    </list>
+    
+    <list>
+        <head>Editorial interventions</head>
+        <item><ref target="trans-restored.html">Restored text</ref></item>
+        <item><ref target="trans-restoreduncert.html">Uncertainly restored text</ref></item>
+        <item><ref target="trans-restoredincomplete.html">Incompletely restored text</ref></item>
+        <item>Text visible to previous editor</item>
+        <item>Text restored from parallel copy</item>
+        <item>Superfluous characters</item>
+        <item>Supplement of omitted characters</item>
+        <item><ref target="trans-erroneoussubstitution.html">Correction of erroneous characters</ref></item>
+        <item>Correction (without specifying if omitted or erroneous)</item>
+        <item><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></item>
+        <item><ref target="trans-abbrevuncert.html">Abbreviation uncertainly expanded</ref></item>
+        <item><ref target="trans-abbrevpartiial.html">Abbreviation partially expanded</ref></item>
+        <item><ref target="trans-abbrevnotex.html">Abbreviation not expanded at all</ref></item>
+        <item>Expansion of abbreviation include mark</item>
+        <item>Expansion of symbol to word</item>
+        <item>Words omitted by editor</item>
+        <item>Foreign text omitted from edition</item>
+        <item>Editor makes "subaudible" word manifest</item>
+        <item>Editor's explanation of breviatio</item>
+        <item>Editor's note</item>
+    </list>
+    
+    <list>
+        <head>Interpretation</head>
+        <item>Numeral, value known</item>
+        <item>Numeral, value unknown</item>
+        <item>Fraction, value known</item>
+        <item>Fraction, value unknown</item>
+        <item>Numeral with tick</item>
+        <item>Numeral with range of possible values</item>
+        <item>Numeral with non-congruent possible values</item>
+        <item>Acrophonic and other numbers</item>
+        <item>Quotation marks</item>
+        <item>Text in a language other than that of the main text</item>
+    </list>
+    
+    <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <div xml:id="app-alltrans-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

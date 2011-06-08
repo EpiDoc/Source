@@ -19,8 +19,8 @@
   <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
   <xsl:param name="STDOUT">false</xsl:param>
   <xsl:param name="splitLevel">0</xsl:param>
-  <xsl:param name="autoToc">true</xsl:param>
-  <xsl:param name="cssFile">../output/epidoc.css</xsl:param>
+  <xsl:param name="autoToc">false</xsl:param>
+  <xsl:param name="cssFile">../output/css/epidoc.css</xsl:param>
   <xsl:param name="cssSecondaryFile">../schema/epidoc-odd.css</xsl:param>
   <xsl:param name="TEIC">true</xsl:param>
   <xsl:param name="forceWrap">false</xsl:param>
@@ -40,11 +40,11 @@
             <li>TEI definition: 
             <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-{@key}.html">
                 <xsl:value-of select="@key"/>
-            </a>.
+            </a>
                 <xsl:if test="//tei:elementSpec[@ident=current()/@key]">
-                    Customized in Epidoc: <a href="ref-{@key}.html">
+                    ; EpiDoc-specific customization: <a href="ref-{@key}.html">
                         <xsl:value-of select="@key"/>
-                    </a>.
+                    </a>
                 </xsl:if>
             </li>
         </xsl:for-each>
