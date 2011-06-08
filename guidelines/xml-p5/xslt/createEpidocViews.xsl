@@ -43,7 +43,7 @@
     <xsl:template match="*" mode="identity_change">
         <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:copy-of select="@*"/>
-            <xsl:apply-templates select="*" mode="identity_change"/>
+            <xsl:apply-templates select="* | text()" mode="identity_change"/>
         </xsl:element>
     </xsl:template>
     

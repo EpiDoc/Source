@@ -11,7 +11,7 @@
     exclude-result-prefixes="tei t a rng s teix" 
     version="2.0">
   
-<!--    <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>-->
+    <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>
     <!-- <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
     <xsl:import href="render-epidoc.xsl"/>
@@ -34,6 +34,22 @@
         </xsl:if>-->
     </xsl:template>
 
+    <xsl:template match="tei:specList">
+        <ul class='speclit'>
+        <xsl:for-each select="tei:specDesc">
+            <li>TEI definition: 
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-{@key}.html">
+                <xsl:value-of select="@key"/>
+            </a>.
+                <xsl:if test="//tei:elementSpec[@ident=current()/@key]">
+                    Customized in Epidoc: <a href="ref-{@key}.html">
+                        <xsl:value-of select="@key"/>
+                    </a>.
+                </xsl:if>
+            </li>
+        </xsl:for-each>
+        </ul>
+    </xsl:template>
 
     <!--<xsl:template match="tei:cit">
         
