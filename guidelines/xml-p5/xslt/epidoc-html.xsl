@@ -11,7 +11,7 @@
     exclude-result-prefixes="tei t a rng s teix" 
     version="2.0">
   
-    <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>
+<!--    <xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>-->
     <!-- <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
     <xsl:import href="render-epidoc.xsl"/>
@@ -27,9 +27,18 @@
     
     <xsl:template name="egXMLEndHook">
         <xsl:call-template name="render-epidoc"/>
+       <!-- <xsl:if test="@corresp">
+            <xsl:choose>
+                <xsl:when test=""></xsl:when>
+            </xsl:choose>
+        </xsl:if>-->
     </xsl:template>
 
-    
+
+    <!--<xsl:template match="tei:cit">
+        
+    </xsl:template>
+    -->
 </xsl:stylesheet>
 
 
