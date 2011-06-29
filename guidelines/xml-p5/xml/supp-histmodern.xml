@@ -27,9 +27,14 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histmodern" xml:lang="en">
     <head>Modern or last known locations</head>
-    <p>(provenance)</p>
+    <p>(provenance; observed locations)</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
-    
+    <p>All matters related to the provenance of a document are encoded in the Manuscript Description (<tag>msDesc</tag>) portion of the TEI header. In particular, they are placed within the <tag>history</tag> subsection.<note>See further: <list>
+        <item><ref  target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mshy">TEI Guidelines, sub "History"</ref>.</item>
+        <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-historigin">EpiDoc Guidelines, sub "Original Location of Object"</ref></item>
+        <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-histmodern">EpiDoc Guidelines, sub "Findspot and find context"</ref></item>
+    </list></note></p>
+    <p>Within the <tag>history</tag> subsection, relevant information is grouped by "events" in the life of the document. Information related to documented, modern sightings (observations) of a document and the associated context is presented in one or more <tag>event type="observed"</tag> elements. This information within each <tag>event</tag> element can take the form of one or more paragraphs of prose, or of a list (with appropriate TEI tags used as necessary). As appropriate, place names, personal names and other information worthy of indexing, linking or querying should be tagged appropriately (e.g., with <tag>persName</tag>, <tag>placeName</tag>, etc.). Note the following examples.</p>
     <div xml:id="intro-faq-responsibility">
     
         <head>Responsibility for this section</head>
