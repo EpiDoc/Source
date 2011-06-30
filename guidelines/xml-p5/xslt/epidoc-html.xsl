@@ -20,7 +20,7 @@
   <xsl:param name="STDOUT">false</xsl:param>
   <xsl:param name="splitLevel">0</xsl:param>
   <xsl:param name="autoToc">false</xsl:param>
-  <xsl:param name="cssFile">../output/css/epidoc.css</xsl:param>
+  <xsl:param name="cssFile">css/epidoc.css</xsl:param>
   <xsl:param name="cssSecondaryFile">../schema/epidoc-odd.css</xsl:param>
   <xsl:param name="TEIC">true</xsl:param>
   <xsl:param name="forceWrap">false</xsl:param>

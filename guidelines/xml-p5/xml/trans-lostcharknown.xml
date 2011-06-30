@@ -33,29 +33,42 @@
 
 
     <cit>
-        <quote>[-5-]</quote>
+        <quote>[...]</quote>
         <bibl corresp="#panciera">
-            <!-- THERE APPEARS TO BE NO EXACTLY CORRESPONDING EXAMPLE IN K-P (but cf. 8.3)- IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+            <biblScope>8.3</biblScope>
         </bibl>
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="ddbdp panciera">
         <gap reason="lost" quantity="3" unit="character"/>
     </egXML>
-
-
-
+    
     <cit>
-        <quote>[..6..]</quote>
-        <bibl corresp="#seg"/>
-        <!-- CHECK  <bibl corresp="#ddbdp"/>-->
+        <quote>[  ̣  ̣  ̣  ̣  ̣  ̣]</quote>
+        <bibl corresp="#ddbdp"/>
     </cit>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp panciera">
         <gap reason="lost" quantity="6" unit="character"/>
     </egXML>
-
-
+    
+    <cit>
+        <quote>[ -ca. 9- ]</quote>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp panciera">
+        <gap reason="lost" quantity="9" unit="character"/>
+    </egXML>
+    
+   
+    <div xml:id="trans-lostcharknown-responsibility">
+        
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>Authors</resp><name>Charlotte Tupman</name><name>Gabriel Bodard</name></respStmt></bibl>
+        </listBibl>
+    </div>
 
 
 </div>
