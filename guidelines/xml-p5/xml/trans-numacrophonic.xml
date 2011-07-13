@@ -1,0 +1,67 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-numacrophonic" xml:lang="en">
+    <head>Acrophonic Numbers</head>
+    <p><!-- gloss --></p>
+    <p><specList>
+        <specDesc key="num"/>
+    </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p> 
+    
+    <p>Acrophonic numeral signs use the first letter of certain numbers and currency values to stand for the whole: pi stands for πέντε,
+        delta for δέκα, heta for ἑκατόν, and so on. Individual signs may be combined within a single character to represent compund values:
+        the value 50, for example, in the acrophonic system is represented by a delta (δέκα: 10) written within a pi (πέντε: 5),
+        to indicate 5 x 10.</p>
+    <p>The Greek acrophonic numerals are now in Unicode, and EpiDoc recommend that these characters now be used and simply tagged
+        as any other numeral or currency measure.</p>
+    
+    <cit>
+        <quote><!-- conventional rendering --></quote>
+        <bibl corresp="#panciera">
+            <biblScope>...</biblScope>
+        </bibl>
+        <bibl corresp="#ddbdp"/>
+        <!-- etc. -->
+    </cit>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+        <measure type="currency" unit="stater"> <num value="50" type="acrophonic" /> </measure> 
+    </egXML>
+    
+    
+    <div xml:id="trans-numacrophonic-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+        </listBibl>
+    </div>
+</div>
