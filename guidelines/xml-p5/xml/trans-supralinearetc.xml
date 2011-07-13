@@ -22,12 +22,12 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p4/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/trans-supralinearetc.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-supralinearetc" xml:lang="en">
     <head>Supralinear line, underline or strikethrough</head>
-    <p>Linear features such supralinear lines, underlining, or strikethrough should be indicated using the <gi>hi</gi> with
+    <p>Linear features such supralinear lines, underlining, or strikethrough should be indicated using the <gi>hi</gi> element with
         an appropriate <att>rend</att> value.</p>
     <p><specList>
         <specDesc key="hi"/>
@@ -50,22 +50,30 @@ End license statement: do not remove -->
     
     <cit type="underline">
         <quote><hi rend="underline">a</hi> <hi rend="underline">b</hi> <hi rend="underline">c</hi></quote>
-        <bibl corresp="#panciera">
-            <biblScope><!-- NEED VALUE, IF THERE IS ONE --></biblScope>
-        </bibl>
+        <!--<bibl corresp="#panciera">
+            <biblScope>not mentioned</biblScope>
+        </bibl>-->
         <bibl corresp="#ddbdp"/>
     </cit>
     
     <cit type="intraline">
         <quote><hi rend="intraline">a</hi> <hi rend="intraline">b</hi> <hi rend="intraline">c</hi></quote>
-        <bibl corresp="#panciera">
-            <biblScope><!-- NEED VALUE, IF THERE IS ONE --></biblScope>
-        </bibl>
+        <!--<bibl corresp="#panciera">
+            <biblScope>not mentioned</biblScope>
+        </bibl>-->
         <bibl corresp="#ddbdp"/>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
         <hi rend="supraline">abc</hi>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="papyri.info" rend="ddbdp">
+        <hi rend="underline">abc</hi>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="papyri.info" rend="ddbdp">
+        <hi rend="intraline">abc</hi>
     </egXML>
     
     
@@ -73,7 +81,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
