@@ -1,0 +1,65 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p4/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian" xml:lang="en">
+    <head>Claudian letters</head>
+    <p><!--gloss--></p>
+    <p><specList>
+        <specDesc key="g"/>
+    </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p> 
+    
+    <p><!--More prose explanation--></p>
+    <p> (pref Unicode?)</p>
+    <p>It is an assumption in EpiDoc that these characters should and will eventually be included in Unicode, at which point the markup
+        we use will change (although some markup will still be necessary for purposes of traditional rendering, searching, etc.).
+        In the meantime, the markup listed above should be used.</p>
+    
+    <cit>
+        <quote><!-- conventional rendering --></quote>
+        <bibl corresp="#panciera">
+            <biblScope>IV.3</biblScope>
+        </bibl>
+        <bibl corresp="#ddbdp"/>
+        <!-- etc. -->
+    </cit>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+        <g type="claudian_y"/>, <g type="claudian_bs"/>, <g type="claudian_ps"/>, <g type="claudian_v"/> or now  Unicode characters
+    </egXML>
+    
+    <div xml:id="trans-claudian-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+        </listBibl>
+    </div>
+</div>
