@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+    
+    EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+    Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+    Additional contributors' copyright may be designated in individual source files.
+    
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    
+    Information about the EpiDoc community can be obtained via 
+    http://epidoc.sf.net.
+    
+    End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lostlineknown">
     <head>Lost lines, quantity known</head>
@@ -33,32 +56,29 @@
                 etc.).</item>
         </list>
 
-    
-
-    
         <cit>
             <quote>[------]<lb/> [------]<lb/>[------] </quote>
             <bibl corresp="#panciera">
                 <biblScope>8.5</biblScope>
             </bibl>
         </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-            <gap reason="lost" quantity="3" unit="line"/>
-        </egXML>
-    
-
-    
         <cit>
             <quote>[3 lines missing]</quote>
-            <bibl corresp="pn"/>
+            <bibl corresp="#ddbdp"/>
         </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
+    
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
             <gap reason="lost" quantity="3" unit="line"/>
         </egXML>
 
-    
+    <div xml:id="lostlineknown-responsibility">
+        
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name>Gabriel Bodard</name></respStmt></bibl>
+            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+        </listBibl>
+    </div>
 
 
 </div>
