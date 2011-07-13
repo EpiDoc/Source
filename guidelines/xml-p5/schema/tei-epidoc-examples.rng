@@ -11374,6 +11374,26 @@ displaying it.</a:documentation>
          <group xmlns:rng="http://relaxng.org/ns/structure/1.0">
             <zeroOrMore>
                <choice>
+                  
+                  <attribute name="corresp">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current
+                        element in some way.</a:documentation>
+                     <list>
+                        <ref name="tei_data.pointer"/>
+                        <zeroOrMore>
+                           <ref name="tei_data.pointer"/>
+                        </zeroOrMore>
+                     </list>
+                  </attribute>
+                  <attribute name="rend">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+                     <list>
+                        <ref name="tei_data.word"/>
+                        <zeroOrMore>
+                           <ref name="tei_data.word"/>
+                        </zeroOrMore>
+                     </list>
+                  </attribute>
                   <text/>
                   <ref name="tei_TEI"/>
                   <ref name="tei_ab"/>
