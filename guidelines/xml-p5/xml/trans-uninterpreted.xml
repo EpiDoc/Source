@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-uninterpreted" xml:lang="en">
-    <head>Uninterpreted Characters<></head>
+    <head>Uninterpreted characters</head>
     <p>Clear but incomprehensible letters</p>
     <p><specList>
         <specDesc key="orig"/>
@@ -35,20 +35,33 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p>Transcription with no uncertainty about the form of the character(s), but the editor prefers not to resolve them.</p>
-    <p> (uppercase) </p>
+    <p>Characters clearly read but not interpreted by the editor, conventionally written in uppercase in a Leiden
+    transcription, should be tagged using the <gi>orig</gi> element. The characters need not be written in uppercase
+    (in fact arguably it may be better if they were not), although characters such as Latin <foreign xml:lang="la">V</foreign>
+    or Greek <foreign xml:lang="grc">Σ</foreign>, which cannot be assigned an unambiguous lowercase form when
+    uninterpreted, may be safer in uppercase.</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>ABC</quote>
         <bibl corresp="#panciera">
             <biblScope>III.2</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        <bibl corresp="#seg"/>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <orig>abc</orig>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="la">
+        <orig>V</orig>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="grc">
+        <orig>Σ</orig>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT480.html" rend="panciera seg">
+        <orig>sppo</orig>
     </egXML>
     
     
@@ -56,7 +69,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Beatrice Lietz</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
