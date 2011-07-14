@@ -11394,6 +11394,14 @@ displaying it.</a:documentation>
                         </zeroOrMore>
                      </list>
                   </attribute>
+                     <optional>
+                        <attribute name="xml:lang">
+                           <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated
+                              according to BCP 47
+                           </a:documentation>
+                           <ref name="tei_data.language"/>
+                        </attribute>
+                     </optional>
                   <text/>
                   <ref name="tei_TEI"/>
                   <ref name="tei_ab"/>
