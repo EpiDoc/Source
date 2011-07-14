@@ -1,0 +1,75 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-textpart" xml:lang="en">
+    <head>Textpart</head>
+    <p><!--gloss--></p>
+    <p><specList>
+        <specDesc key="div"/>
+    </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p> 
+    
+    <!-- Following text is taken from P4 Guidelines -->
+    <p>Units of the text that are separated and usually numbered independently by epigraphers—including fragments, columns,
+        sections, chapters, independent texts on a single stone, marks, stamps, or graffiti grouped together, etc.—
+        should be similarly divided and numbered in EpiDoc. Each division containing a separate unit of text should be wrapped
+        in a separate ab inside a <eg><![CDATA[<div type="textpart">]]></eg> (the type attribute may also name the kind of text-part
+        being encoded in the form, e.g., <![CDATA[<div type="textpart_fragment">]]>.</p>
+
+    <p>These units may, of course, nest in almost any combination. If there are non-hierarchical overlaps between units
+        (e.g. sections and columns) then one unit has to be selected as the "top level" division, and the other broken up
+        between the larger division. These smaller, broken divisions may be connected using the n attribute or a <gi>link</gi> element.</p>
+
+    <p>Where unit within a single, continuous text need to be marked (for example, multiple blocks in a long relief text) the
+        <gi>milestone</gi> element should be used instead to mark the point at which a break in the support occurs.</p>
+                
+                
+    <cit>
+        <quote><!-- conventional rendering --></quote>
+        <bibl corresp="#panciera">
+            <biblScope>...</biblScope>
+        </bibl>
+        <bibl corresp="#ddbdp"/>
+        <!-- etc. -->
+    </cit>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <!-- example markup -->
+    </egXML>
+    
+    
+        <div xml:id="trans-textpart-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+        </listBibl>
+    </div>
+</div>
