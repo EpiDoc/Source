@@ -39,7 +39,8 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>a&#x0361;b</quote>
+        <quote>a&#x0361;bc</quote>
         <bibl corresp="#panciera">
             <biblScope>IV.4</biblScope>
         </bibl>
@@ -47,15 +48,15 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <hi rend="ligature">ab</hi>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <hi rend="ligature">abc</hi>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="insaph"><!--find real e.g.-->
         ἀρχιερέω<hi rend="ligature" xml:id="hi1">ν</hi> <hi rend="ligature" xml:id="hi2">ἐ</hi>κγόνου <link targets="hi1 hi2" />
     </egXML>
     
@@ -64,7 +65,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
