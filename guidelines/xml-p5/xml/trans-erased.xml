@@ -35,27 +35,39 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>Characters erased in antiquity but still legible (more or less clearly), conventionally written within double square brackets in a Leiden
+        transcription, should be tagged using the <gi>del</gi> element,, assigning to his <att>rend</att> attribute the value "erased".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[[abc]] or [[ABC]] or [[ạḅc̣]]</quote>
         <bibl corresp="#panciera">
             <biblScope>V.1</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        <bibl corresp="#seg"/>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <del rend="erasure">αβ</del>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <del rend="erasure">abc</del>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <del rend="erasure"><orig>abc</orig></del>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <del rend="erasure"><unclear>abc</unclear></del>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/p.cair.masp;3;67340">
+        <del rend="erasure"><unclear>Ε</unclear>ὐπρεπ<unclear>εία</unclear></del>
+    </egXML>
     
     <div xml:id="trans-erased-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Beatrice Lietz</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
