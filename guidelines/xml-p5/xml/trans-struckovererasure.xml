@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-struckovererasure" xml:lang="en">
-    <head>Text Struck Over Erasure/head>
+    <head>Text Struck Over Erasure</head>
     <p><!--gloss--></p>
     <p><specList>
         <specDesc key="add"/>
@@ -38,19 +38,25 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <!-- QUESTION - EpiDoc GL Catalogue (Google Docs) for this item references <subst> element,
-        but Cheat Sheet for same item only uses <add> element in example. Which is correct?
-        
+        but Cheat Sheet for same item only uses <add> element in example. Which is correct?-->
+    
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>&lt;&lt;abc&gt;&gt;</quote>
         <bibl corresp="#panciera">
             <biblScope>VI.1</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+    </cit>
+    <cit>
+        <quote>abc</quote>
+        <bibl corresp="#ddbdp"></bibl>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <add place="overstrike">αβγ</add>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
+        <add place="overstrike">abc</add>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="papyri.info.eg?" rend="panciera ddbdp">
+        <subst><add place="overstrike">αβγ</add><del>δεζ</del></subst>
     </egXML>
     
     
@@ -58,7 +64,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
