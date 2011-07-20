@@ -22,14 +22,13 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/trans-ambiguous.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ambiguousalt" xml:lang="en">
-    <head>Ambiguous Characters with Alternatives Offered</head>
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ambiguous" xml:lang="en">
+    <head>Ambiguous Characters (Leiden underdotted)</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="choice"/>
         <specDesc key="unclear"/>
     </specList>
         <!--<listRef>
@@ -39,24 +38,27 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>a&#323;b&#323;c&#323;</quote>
+        <bibl corresp="#krummreypanciera">
+            <biblScope>III.3</biblScope>
+        </bibl>
         <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+            <biblScope>12.I</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+       <unclear>abc</unclear>
     </egXML>
     
     
-    <div xml:id="trans-ambiguousalt-responsibility">
+    <div xml:id="trans-ambiguous-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
