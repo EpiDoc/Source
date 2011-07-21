@@ -11394,14 +11394,24 @@ displaying it.</a:documentation>
                         </zeroOrMore>
                      </list>
                   </attribute>
-                     <optional>
-                        <attribute name="xml:lang">
-                           <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated
-                              according to BCP 47
-                           </a:documentation>
-                           <ref name="tei_data.language"/>
-                        </attribute>
-                     </optional>
+                  <attribute name="xml:lang">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated
+                        according to BCP 47
+                     </a:documentation>
+                     <ref name="tei_data.language"/>
+                  </attribute>
+                  <attribute name="xml:space">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be 
+                        managed by  applications. </a:documentation>
+                     <choice>
+                        <value>default</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should treat white space according to the
+                           default XML white space handling rules</a:documentation>
+                        <value>preserve</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should preserve unchanged any and all
+                           white space in the source</a:documentation>
+                     </choice>
+                  </attribute>
                   <text/>
                   <ref name="tei_TEI"/>
                   <ref name="tei_ab"/>
