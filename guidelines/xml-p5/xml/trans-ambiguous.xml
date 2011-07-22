@@ -29,14 +29,16 @@ End license statement: do not remove -->
     <head>Ambiguous Characters (Leiden underdotted)</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="unclear"/>
-    </specList>
+            <specDesc key="unclear"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where a character is in evidence on the support but its exact identity is not clear, the
+            <gi>unclear</gi> element should be used to express the editor's uncertainty as to its
+        correct interpretation.</p>
+
     <cit>
         <quote>a&#323;b&#323;c&#323;</quote>
         <bibl corresp="#krummreypanciera">
@@ -48,18 +50,25 @@ End license statement: do not remove -->
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-       <unclear>abc</unclear>
+        <unclear>abc</unclear>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-ambiguous-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>contributor</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>

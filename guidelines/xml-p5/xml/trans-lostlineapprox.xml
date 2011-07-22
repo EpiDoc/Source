@@ -29,38 +29,50 @@ End license statement: do not remove -->
     <head>Lost Lines, Quantity Approximate (Circa or Range) </head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where lines appear to be missing but the editor is unsure as to the precise number of lines
+        that have been lost, this is expressed using the <gi>gap</gi> element, which should either
+        be given an attribute of <att>precision</att> with the value "low" (to express 'circa'), or
+        be given a range of possible lines lost using the attributes <att>atLeast</att> and
+            <att>atMost</att>.</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[- - - - - -]</quote>
         <bibl corresp="#panciera">
             <biblScope>VIII.5</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <gap reason="lost" quantity="1" unit="line" precision="low"/>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <gap reason="lost" atLeast="3" atMost="5" unit="line"/>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-lostlineapprox-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
