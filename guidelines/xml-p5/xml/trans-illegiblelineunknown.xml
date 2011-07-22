@@ -29,34 +29,44 @@ End license statement: do not remove -->
     <head>Illegible Lines, Quantity Unknown</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where vestiges of lines remain, but they cannot be recognised and their quantity is unknown,
+        they should be placed in a <gi>gap</gi> element and given a <att>reason</att> attribute with
+        a value of "illegible" and an <att>extent</att> attribute with a value of "unknown".</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[- - - - - -]</quote>
         <bibl corresp="#panciera">
             <biblScope>VIII.5</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <gap reason="lost" extent="unknown" unit="line"/>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="illegible" extent="unknown" unit="line"/>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-illegiblelineunknown-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
