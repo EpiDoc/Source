@@ -29,35 +29,61 @@ End license statement: do not remove -->
     <head>Erased and Illegible / Restored</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="del"/>
-        <specDesc key="supplied"/>
-    </specList>
+            <specDesc key="del"/>
+            <specDesc key="supplied"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Characters which have been erased in antiquity and are illegible, or restored by the modern
+        editor, should be tagged using the <gi>del</gi> element, whose <att>rend</att> attribute
+        should have a value of "erasure". The text supplied by the editor should be placed within a
+            <gi>supplied</gi> element inside the <gi>del</gi> element. Where the characters cannot
+        be understood or are unclear, <gi>orig</gi> and <gi>unclear</gi> elements should be used
+        respectively.</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[[abc]] or [[ABC]] or [[ạḅc̣]]</quote>
         <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+            <biblScope>V.2</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+     
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+        <del rend="erasure"><supplied reason="lost">abc</supplied></del>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <del rend="erasure"><supplied reason="lost"><orig>abc</orig></supplied></del>
+    </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <del rend="erasure"><supplied reason="lost"><unclear>abc</unclear></supplied></del>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://www.papyri.info/ddbdp/p.cair.masp;3;67340">
+        <del rend="erasure"><supplied reason="lost"><unclear>Ε</unclear>ὐπρεπ<unclear>εία</unclear></supplied></del>
+    </egXML>
+
+
     <div xml:id="trans-erasedillegible-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Beatrice Lietz</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

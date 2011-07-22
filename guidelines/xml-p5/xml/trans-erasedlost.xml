@@ -29,35 +29,44 @@ End license statement: do not remove -->
     <head>Erased and Lost</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="del"/>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="del"/>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Characters erased in antiquity and completely lost should be tagged using the <gi>del</gi>
+        element, assigning to the <att>rend</att> attribute the value "erasure". A <gi>gap</gi>
+        element should be placed inside the <gi>del</gi> and given <att>reason</att>,
+            <att>quantity</att> and <att>unit</att> attributes.</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[[[...]]] or [[[<hi rend="underline"><hi rend="superscript">c.7</hi></hi>]]] or [[[---]]]</quote>
         <bibl corresp="#panciera">
             <biblScope>V.3</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <del rend="erasure"><gap reason="lost" quantity="3" unit="character"/></del>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-erasedlost-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Beatrice Lietz</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
