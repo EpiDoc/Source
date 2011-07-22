@@ -29,34 +29,45 @@ End license statement: do not remove -->
     <head>Lost Lines, Quantity Unknown></head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where lines have been lost on the original support and there is nothing to indicate to the
+        editor how these should be restored, this is marked up as a lacuna using the <gi>gap</gi>
+        element. If the number of lines is unknown, the <att>extent</att> attribute should be given
+        a value of "unknown".</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>- - - - - -</quote>
         <bibl corresp="#panciera">
             <biblScope>VIII.6</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <gap reason="lost" unit="line" extent="unknown" />
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="lost" unit="line" extent="unknown"/>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-lostlineunknown-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>

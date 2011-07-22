@@ -29,36 +29,48 @@ End license statement: do not remove -->
     <head>Lines Possibly Lost / Text Possibly Breaks </head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="gap"/>
-        <specDesc key="certainty"/>
-    </specList>
+            <specDesc key="gap"/>
+            <specDesc key="certainty"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where lines are possibly lost or the text possibly breaks, a <gi>gap</gi> element should be
+        used. To express uncertainty as to whether or not a line is actually present, a
+            <gi>certainty</gi> element with a <att>match</att> attribute corresponding to the parent
+        element (i.e. the <gi>gap</gi> element) should be given an attribute <att>locus</att> with a
+        value of "name".</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>- - - - - - -?</quote>
         <bibl corresp="#panciera">
             <biblScope>VIII.7</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <gap reason="lost" extent="unknown" unit="line">
-            <certainty match=".. " locus="name"/></gap>
+            <certainty match=".." locus="name"/>
+        </gap>
     </egXML>
-    
-    
+
     <div xml:id="trans-possiblylost-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
