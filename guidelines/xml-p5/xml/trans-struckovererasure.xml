@@ -29,17 +29,19 @@ End license statement: do not remove -->
     <head>Text Struck Over Erasure</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="add"/>
-    </specList>
+            <specDesc key="subst"/>
+            <specDesc key="add"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
-    <!-- QUESTION - EpiDoc GL Catalogue (Google Docs) for this item references <subst> element,
-        but Cheat Sheet for same item only uses <add> element in example. Which is correct?-->
-    
+            </listRef>--></p>
+
+    <p>Where text has been erased and overstruck or corrected, it should be placed inside a
+            <gi>subst</gi> element. Inside the <gi>subst</gi> element, the erased text should be
+        placed within a <gi>del</gi> element, and the correction or overstrike inside an
+            <gi>add</gi> element, which should have a <att>place</att> attribute with a value of
+        "overstrike".</p>
+
     <cit>
         <quote>&lt;&lt;abc&gt;&gt;</quote>
         <bibl corresp="#panciera">
@@ -48,25 +50,37 @@ End license statement: do not remove -->
     </cit>
     <cit>
         <quote>abc</quote>
-        <bibl corresp="#ddbdp"></bibl>
+        <bibl corresp="#ddbdp"/>
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
         <add place="overstrike">abc</add>
     </egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="papyri.info.eg?" rend="panciera ddbdp">
-        <subst><add place="overstrike">αβγ</add><del>δεζ</del></subst>
+        <subst>
+            <add place="overstrike">αβγ</add>
+            <del>δεζ</del>
+        </subst>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-struckovererasure-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
