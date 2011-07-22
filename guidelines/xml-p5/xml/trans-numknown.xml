@@ -29,39 +29,53 @@ End license statement: do not remove -->
     <head>Numbers/numerals of Known Value</head>
     <p><!-- gloss --></p>
     <p><specList>
-        <specDesc key="num"/>
-    </specList>
+            <specDesc key="num"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>The numeral should be placed inside a <gi>num</gi> element and given an appropriate
+            <att>value</att> attribute, e.g. "8", "42", etc. If it is a particular kind of numeral,
+        e.g. acrophonic, it can be given a <att>type</att> attribute with a value of
+        "acrophonic".</p>
+
     <cit>
         <quote><hi rend="supraline">XII</hi></quote>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" xml:lang="la">
         <num value="12">XII</num>
     </egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph080058.html#6-1"
-        xml:lang="grc" rend="london ddbdp">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph080058.html#6-1" xml:lang="grc"
+        rend="london ddbdp">
         <num value="12">ιβ</num>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="grc">
         <num type="acrophonic"><!-- acrophonic example? --></num>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-numknown-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
