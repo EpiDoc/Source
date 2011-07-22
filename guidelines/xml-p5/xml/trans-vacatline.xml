@@ -35,10 +35,12 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>The <gi>space</gi> element should be used wherever there is an intentional space left on the
+        support: i.e. a space that never contained text. If the space is measured in lines, the
+        <att>unit</att> attribute should have a value of "line".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>(vac.3)</quote>
         <bibl corresp="#panciera">
             <biblScope>XI.2</biblScope>
         </bibl>
@@ -46,7 +48,7 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <space dim="horizontal" extent="3" unit="line" />
     </egXML>
     
@@ -55,8 +57,16 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

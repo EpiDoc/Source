@@ -29,38 +29,48 @@ End license statement: do not remove -->
     <head>Vacat Measured in Characters</head>
     <p>Space left on stone</p>
     <p><specList>
-        <specDesc key="space"/>
-    </specList>
+            <specDesc key="space"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>The <gi>space</gi> element should be used wherever there is an intentional space left on the
+        support: i.e. a space that never contained text. If the space is measured in characters, the
+            <att>unit</att> attribute should have a value of "character".</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>(vac.3)</quote>
         <bibl corresp="#panciera">
             <biblScope>XI.2</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <space quantity="1" unit="character"/>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <space quantity="3" unit="character"/>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-vacatchar-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
