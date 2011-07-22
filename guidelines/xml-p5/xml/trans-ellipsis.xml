@@ -27,7 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ellipsis" xml:lang="en">
     <head>Words Omitted by Editor for Brevity></head>
-    <p>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text</p>
+    <p>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text.</p>
     <p><specList>
         <specDesc key="gap"/>
     </specList>
@@ -35,10 +35,10 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>The omitted words should be placed inside a <gi>gap</gi> element whose <att>reason</att> attribute should have a value of "ellipsis".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>... or [...]</quote>
         <bibl corresp="#panciera">
             <biblScope>XI.4</biblScope>
         </bibl>
@@ -55,8 +55,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

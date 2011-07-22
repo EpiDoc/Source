@@ -35,10 +35,10 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>The subaudible characters should be placed within a <hi>supplied</hi> element whose <att>reason</att> attribute should have a value of "subaudible".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>(scil. <hi rend="italic">abc</hi>)</quote>
         <bibl corresp="#panciera">
             <biblScope>X.4</biblScope>
         </bibl>
@@ -46,7 +46,7 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         clarissima <supplied reason="subaudible" cert="high">femina</supplied> Iulia
     </egXML>
     
@@ -55,8 +55,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>
