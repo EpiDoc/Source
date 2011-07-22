@@ -27,7 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-textnotcompleted" xml:lang="en">
     <head>Text not completed (omission not restored)</head>
-    <p>Letters omitted because the stonecutter did not carry out the text to the end.</p>
+    <p>Letters omitted (but not restored) because the stonecutter did not carry out the text to the end.</p>
     <p><specList>
         <specDesc key="gap"/>
     </specList>
@@ -35,10 +35,10 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>Where text has been omitted and is not restored, a <gi>gap</gi> element should be used, and its <att>reason</att> attribute should have a value of "omitted".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>(---)</quote>
         <bibl corresp="#panciera">
             <biblScope>X.5</biblScope>
         </bibl>
@@ -59,8 +59,16 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
