@@ -26,65 +26,55 @@
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restoredincomplete">
     <head>Editorial restoration: Word incompletely restored</head>
-    
-        
-        <p><specList>
-                <specDesc key="supplied"/>
-                <specDesc key="w"/>
-                <specDesc key="gap"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
-        <p><gi>gap</gi> (gap) indicates a point where material has been omitted in a
-            transcription, whether for editorial reasons described in the TEI header, as part of
-            sampling practice, or because the material is illegible, invisible, or inaudible.</p>
-        <p><gi>supplied</gi> signifies text supplied by the transcriber or editor for any
-            reason, typically because the original cannot be read because of physical damage or loss
-            to the original.</p>
-        <p><gi>w</gi> BLAH BLAH</p>
-    
-    
-        
-        <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
-            either by comparison with other texts or through other contextual knowledge.</p>
-        <p>Required attributes: <list type="bulleted">
-                <item><att>reason</att> explains why the text has been restored, and for text restored in
-                    lacunae, is given the value "lost" (although other values are possible).</item>
-            </list></p>
-        <p>Optional attributes include: <list type="bulleted">
-                <item><att>cert</att> indicates text that is uncertainly restored.</item>
-            </list>
-        </p>
-    
-    
-        <cit>
-            <quote>abc[..?..]</quote>
-            <bibl corresp="#panciera">
-                <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
-            </bibl>
-        </cit>
 
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="CHECK">
-            <w part="I"><supplied reason="lost">abc</supplied></w><gap reason="lost"/>
-        </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"
-            corresp="http://irt.kcl.ac.uk/irt2009/IRT126.html#5">
-            <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/></egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <gap reason="lost"/><w part="M"><supplied reason="lost">ae</supplied></w><gap
-                reason="lost"/></egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap
-                reason="lost"/></egXML>
-    
-    
+    <p><specList>
+            <specDesc key="supplied"/>
+            <specDesc key="w"/>
+            <specDesc key="gap"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+
+    <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
+        either by comparison with other texts or through other contextual knowledge. Where a word
+        cannot be completely restored, the missing part should be indicated by a <gi>gap</gi>
+        element. A <gi>w</gi> element shold be used with a <att>part</att> attribute that explains
+        which part of the word is missing, i.e. 'I' (initial), "M" (middle), "F" (final).</p>
+
+
+    <cit>
+        <quote>abc[..?..]</quote>
+        <bibl corresp="#panciera">
+            <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+        </bibl>
+    </cit>
+
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <w part="I"><supplied reason="lost">abc</supplied></w><gap reason="lost"/>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT126.html#5">
+        <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/></egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <gap reason="lost"/><w part="M"><supplied reason="lost">ae</supplied></w><gap reason="lost"
+        /></egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap reason="lost"
+        /></egXML>
+
+
     <div xml:id="trans-restoredincomplete-responsibility">
-        
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
             <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
