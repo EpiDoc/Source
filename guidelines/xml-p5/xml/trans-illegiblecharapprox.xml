@@ -29,16 +29,20 @@ End license statement: do not remove -->
     <head>Illegible Characters, Quantity Approximate (Circa or Range)</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
+            </listRef>--></p>
+
+    <p>Where vestiges of characters remain, but they cannot be recognised and their quantity is
+        approximate, they should be placed in a <gi>gap</gi> element and given a <att>reason</att>
+        attribute with a value of "illegible", and either an attribute of <att>precision</att> with
+        the value "low" (to express 'circa'), or a range of possible characters lost using the
+        attributes <att>atLeast</att> and <att>atMost</att>.</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>[<hi rend="underline"><hi rend="superscript">c.5</hi></hi>]</quote>
         <bibl corresp="#panciera">
             <biblScope>VIII.3</biblScope>
         </bibl>
@@ -46,21 +50,29 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <gap reason="lost" quantity="5" unit="character" precision="low"/>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="illegible" quantity="5" unit="character" precision="low"/>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <gap reason="lost" atLeast="4" atMost="6" unit="character"/>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="illegible" atLeast="4" atMost="6" unit="character"/>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-illegiblecharapprox-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
