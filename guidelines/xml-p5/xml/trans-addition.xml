@@ -29,41 +29,56 @@ End license statement: do not remove -->
     <head>Text Addition by Ancient Hand</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="add"/>
-    </specList>
+            <specDesc key="add"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    <p>text added by ancient hand (place=above, below, left..)</p>
-    <p>In traditional Leiden the place of added text is not specified in the transcription, but noted in the apparatus or commentary.
-        This added information, recorded here by use of the place attribute, is therefore optional and may be omitted without harm.</p>
-    
+            </listRef>--></p>
+
+    <p>Text added by ancient hand (place = above, below, left etc.)</p>
+    <p>In traditional Leiden the place of added text is not specified in the transcription, but
+        noted in the apparatus or commentary. This added information, recorded here by use of the
+        place attribute, is therefore optional and may be omitted without harm. If it is to be
+        included in the transcription, the <gi>add</gi> element should be used, with a
+            <att>place</att> attribute whose value should reflect the position of the added text
+        ("above", "below", "left" etc.).</p>
+
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>'abc'</quote>
         <bibl corresp="#panciera">
             <biblScope>VII.1</biblScope>
         </bibl>
+    </cit>
+
+    <cit>
+        <quote>\abc/ (above), /abc\ (below)</quote>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <add place="above">αβ</add>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ddbdp">
         <add place="below">αβ</add>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-addition-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
