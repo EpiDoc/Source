@@ -35,19 +35,21 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>Where vestiges of characters remain, but they cannot be recognised and their quantity is
+        unknown, they should be placed in a <gi>gap</gi> element and given a <att>reason</att>
+        attribute with a value of "illegible" and an <att>extent</att> attribute with a value of "unknown".</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
+        <quote>[- - -]</quote>
+        <bibl corresp="#panciera"> <!-- VIII.3 is a normal gap (characters lost, extent unknown) - there is no Panciera section corresponding exactly to 'Illegible Characters, Quantity Unknown' but I think this would be rendered the same way -->
             <biblScope>VIII.3</biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <gap reason="lost" extent="unknown" unit="character"/>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="illegible" extent="unknown" unit="character"/>
     </egXML>
     
     
@@ -55,8 +57,8 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>
