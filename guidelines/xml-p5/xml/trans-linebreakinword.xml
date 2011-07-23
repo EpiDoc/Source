@@ -27,7 +27,8 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreakinword" xml:lang="en">
     <head>Line Breaks In Words</head>
-    <p>>Words divided across lines should be indicated by <att>type</att> in <gi>lb</gi> with value of "inWord".</p>
+    <p>>Words divided across lines should be indicated by <att>type</att> in <gi>lb</gi> with value of "inWord".  This, among other things, generates
+        the hyphen at the end of the preceding line in XSLT).</p>
     <p><specList>
         <specDesc key="lb"/>
     </specList>
@@ -35,20 +36,18 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
     
-    <p><!--More prose explanation--></p>
+    <p>For further explanation of the <gi>lb</gi> element, see the guidance for Line Breaks.</p>
     <p></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        <quote><lb/>proc<lb type="inWord"/>urator</quote>
+        <bibl corresp="#london"/>
+       
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
+        imper<lb n="7" type="inWord"/>ator
     </egXML>
     
     
@@ -56,8 +55,21 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Gabriel Bodard</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
