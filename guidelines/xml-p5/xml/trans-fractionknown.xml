@@ -38,16 +38,21 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
-        </bibl>
+        <quote>λβ</quote>
+        <bibl corresp="#ddbdp"/>
+        <!-- etc. -->
+    </cit>
+    <cit>
+        <quote>&#x10175;</quote>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <num type="fraction" value="0.5">1/2</num>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ddbdp" rend="panciera ddbdp">
+        <num type="fraction" value="1/32">λβ</num>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ddbdp" rend="panciera ddbdp">
+        <num type="fraction" value="1/2">&#x10175;</num>
     </egXML>
     
     
@@ -55,7 +60,7 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
