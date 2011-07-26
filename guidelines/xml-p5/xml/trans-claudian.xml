@@ -27,39 +27,65 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian" xml:lang="en">
     <head>Claudian letters</head>
-    <p><!--gloss--></p>
+    <p>Three characters created by the Emperor Claudius to represent sounds or sound combinations that were not unambiguously represented
+        by existing Latin characters: &#x2183;(Unicode 2183: antisigma, representing PS or BS); &#x2C75; (Unicode 2C75: sonus medius, 
+        representing vowel bwteen U and I; later represented with Y); &#x2132; (Unicode 2132: digamma inversum, representing consonantal U).</p>
     <p><specList>
         <specDesc key="g"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    </specList></p> 
     
-    <p><!--More prose explanation--></p>
-    <p> (pref Unicode?)</p>
-    <p>It is an assumption in EpiDoc that these characters should and will eventually be included in Unicode, at which point the markup
-        we use will change (although some markup will still be necessary for purposes of traditional rendering, searching, etc.).
-        In the meantime, the markup listed above should be used.</p>
+    <p>Before these characters were represented by Unicode codepoints, Latin epigraphers were in the habit of transcribing these using the Latin 
+        characters to which they correspond (PS, BS, Y or V respectively). When transcribing such an edition, the <gi>g</gi> element should be used with the
+        expansion in the <att>type</att> (preceded by "claudian_"). When the character itself is simply included in a Latin word, the Unicode character
+        may simply be included in the text with no markup. Or the <gi>g</gi> element might be wrapped around the Unicode character.</p>
+    <p>It may also be a good idea, for the sake of indexing and parsing words, to regularize (using <gi>choice</gi>, <gi>orig</gi> and <gi>reg</gi>)
+        words containing these letters to their more conventional Latin spellings (see final example below, and cf.
+       <ref target="trans-regularization.html">Regularization</ref>).</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>IV.3</biblScope>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        <quote>y, bs, ps, v</quote>
+        <bibl corresp="#krummreypanciera"><biblScope>IV.3</biblScope></bibl>
+        <bibl corresp="#panciera"><biblScope>19</biblScope></bibl>
+    </cit>
+    <cit>
+        <quote>Nymphabus Y;
+            privatis V</quote>
+        <bibl corresp="#krummreypanciera"><biblScope>IV.3</biblScope></bibl>
+    </cit>
+    <cit>
+        <quote>⊂y⊃, ⊂bs⊃, ⊂ps⊃, ⊂v⊃</quote>
+        <bibl corresp="#dohnicht"><biblScope>3</biblScope></bibl>
+    </cit>
+    <cit>
+        <quote>&#x2C75;, &#x2183;, &#x2183;, &#x2132;</quote>
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <g type="claudian_y"/>, <g type="claudian_bs"/>, <g type="claudian_ps"/>, <g type="claudian_v"/> or now  Unicode characters
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera dohnicht">
+        <g type="claudian_y"/>, <g type="claudian_bs"/>, <g type="claudian_ps"/>, <g type="claudian_v"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera dohnicht ddbdp">
+        &#x2C75;, &#x2183;, &#x2183;, &#x2132;
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera dohnicht ddbdp">
+        <g type="claudian_y">&#x2C75;</g>, <g type="claudian_bs">&#x2183;</g>, <g type="claudian_ps">&#x2183;</g>, <g type="claudian_v">&#x2132;</g>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#krummreypanciera" rend="panciera dohnicht">
+        N<g type="claudian_y">&#x2C75;</g>mphabus;
+        pri<g type="claudian_v">&#x2132;</g>atis
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#krummreypanciera" rend="panciera dohnicht ddbdp">
+        <choice><orig>N&#x2C75;mphabus</orig><reg>Nymphabus</reg></choice>
     </egXML>
     
     <div xml:id="trans-claudian-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
