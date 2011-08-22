@@ -26,58 +26,72 @@
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevuncert">
     <head>Abbreviation uncertainly expanded</head>
     
-        <p><specList>
-                <specDesc key="expan"/>
-                <specDesc key="ex"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
-        <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation.</p>
+    <p>
+        <specList>
+            <specDesc key="abbr"/>
+            <specDesc key="ex"/>
+            <specDesc key="expan"/>
+        </specList>
+    </p>
+        <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation. The characters that form the
+            entire expansion of an abbreviation (including both the charaters that are present on the original
+            support and those added by the editor) should be encompassed within the <gi>expan</gi>. The characters
+            that appear on the support are usually (although not obligatorily) contained in <gi>abbr</gi>.</p>
         <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
-            transcriber when expanding an abbreviation.</p>
-   
-        <p>The characters that form the entire expansion of an abbreviation (including both the
-            charaters that are present on the original support and those added by the editor) are
-            marked up using <gi>expan</gi>.</p>
-        <p>In addition, the characters added by the editor (i.e. those characters that do not appear
-            on the original support) are indicated with <gi>ex</gi>.</p>
-        <p>Resolved and unresolved abbreviations are treated differently; see section X.2 for an
-            explanation of how to mark up abbreviations for which the expansion is unknown.</p>
-
+            transcriber when expanding an abbreviation. The characters expanded or supplied by the editor (i.e. those characters that do not appear
+            on the original support) are included in the <gi>ex</gi>. In the case of uncertainly expanded abbreviations,
+            it is generally these expanded characters that are the source of the uncertainty, so the <gi>ex</gi> element
+            carries the <att>cert</att> attribute with a value of "low".</p>
+    <p>Where the <gi>expan</gi> contains more than one string of supplied or expanded characters, or
+        the abbreviation itself contains characters that are lost but restored, then the uncertainty of the expansion
+        may stem from some or all of these restorations. An editor may indicate this complexity by attaching
+        <att>cert</att>="low" on one or more of these elements, or may simply record the uncertainty of the
+        entire word by attaching <att>cert</att> to the <gi>expan</gi> element (see example below).</p>    
+    <p>Completely unresolved abbreviations are treated differently; see section <ref target="trans-abbrevnotex.html">Abbreviation
+        not expanded</ref> for an explanation of how to mark up abbreviations for which the expansion is completely unknown 
+        (or where the editor is too uncertain even to offer an expansion).</p>
   
         <cit>
             <quote>a(bc?)</quote>
             <bibl corresp="#panciera">
-                    <biblScope>X.1</biblScope>-->
+                    <biblScope>X.1</biblScope>
             </bibl>
         </cit>
-
-
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
             <expan>a<ex cert="low">bc</ex></expan>
         </egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <expan>Iul<ex cert="low">ius</ex></expan></egXML>
-
+            <expan>Iul<ex cert="low">ius</ex></expan>
+        </egXML>
 
         <cit>
             <quote>a(bc(?))</quote>
             <bibl corresp="#pn"/>
         </cit>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn" rend="ddbdp">
             <expan>a<ex cert="low">bc</ex></expan>
         </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <expan>Καρ<ex cert="low">ανίδι</ex></expan></egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp">
+            <expan>Καρ<ex cert="low">ανίδι</ex></expan>
+        </egXML>
+    
+    <cit>
+        <quote>[F]el(icitati)(?)</quote>
+        <bibl corresp="#rib"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
+        <expan cert="low"><abbr><supplied reason="lost">F</supplied>el</abbr><ex>icitati</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
+        <expan><abbr><supplied reason="lost" cert="low">F</supplied>el</abbr><ex cert="low">icitati</ex></expan>
+    </egXML>
     
     <div xml:id="trans-abbrevuncert-responsibility">
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
