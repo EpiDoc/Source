@@ -3,8 +3,8 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2011-03-04T06:04:01Z. 
-Edition: 1.9.0. Last updated on February 21st 2011.
+Schema generated from ODD source 2011-09-14T11:22:36Z. 
+Edition: 1.9.0. Last updated on February 25th 2011.
 Edition Location: http://www.tei-c.org/Vault/P5/1.9.0/
 
 --><!----><define name="tei_macro.paraContent">
@@ -9077,6 +9077,12 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin place) contains any form of place name, used to identify the
 place of origin for a manuscript or manuscript part. </a:documentation>
          <ref name="tei_macro.phraseSeq"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="tei_data.word"/>
+            </attribute>
+         </optional>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.naming.attributes"/>
          <ref name="tei_att.datable.attributes"/>
@@ -9342,15 +9348,19 @@ exclusive of any rubric or colophon which might follow it.
                </oneOrMore>
             </choice>
          </group>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.msExcerpt.attributes"/>
          <optional>
             <attribute name="class">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the text types or classifications applicable to this
-item</a:documentation>
-               <ref name="tei_data.code"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <list>
+                  <ref name="tei_data.pointer"/>
+                  <zeroOrMore>
+                     <ref name="tei_data.pointer"/>
+                  </zeroOrMore>
+               </list>
             </attribute>
          </optional>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.msExcerpt.attributes"/>
          <empty/>
       </element>
    </define>

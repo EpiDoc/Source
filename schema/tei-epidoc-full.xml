@@ -19,6 +19,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2011-09-14">added att.typed to origPlace (temporary fix);
+                made msItem/@class repeatable (temporary fix)</change>
             <change who="#SV" when="2011-03-03">stop omitting tags: bloc, country, district, rdgGrp</change>
             <change who="#GB" when="2011-01-20">stopped excluding tei:offset</change>
             <change who="#GB" when="2010-10-14">deprecated description and history; changed values of @evidence</change>
@@ -240,32 +242,50 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                <elementSpec ident="msItem" module="msdescription" mode="change">
+                    <attList>
+                        <attDef ident="class" mode="replace" usage="opt">
+                            <datatype minOccurs="1" maxOccurs="unbounded">
+                                <rng:ref name="data.pointer"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </elementSpec>
                 <elementSpec module="msdescription" ident="origDate" mode="change">
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="6">
                                 <rng:ref name="data.word"/>
                             </datatype>
-                                <valList type="semi">
-                                    <valItem ident="lettering">
-                                        <desc>Text dated palaeographically</desc>
-                                    </valItem>
-                                    <valItem ident="nomenclature">
-                                        <desc>Text dated by nomenclature or onomastics</desc>
-                                    </valItem>
-                                    <valItem ident="prosopography">
-                                        <desc>Text dated by known persons named or implied within it</desc>
-                                    </valItem>
-                                    <valItem ident="reign">
-                                        <desc>Text dated by the reign of an emperor or other ruler</desc>
-                                    </valItem>
-                                    <valItem ident="titulature">
-                                        <desc>Text dated by the use of official titles</desc>
-                                    </valItem>
-                                    <valItem ident="internal-date">
-                                        <desc>Text dated by explicit internal date</desc>
-                                    </valItem>
-                                </valList>
+                            <valList type="semi">
+                                <valItem ident="lettering">
+                                    <desc>Text dated palaeographically</desc>
+                                </valItem>
+                                <valItem ident="nomenclature">
+                                    <desc>Text dated by nomenclature or onomastics</desc>
+                                </valItem>
+                                <valItem ident="prosopography">
+                                    <desc>Text dated by known persons named or implied within it</desc>
+                                </valItem>
+                                <valItem ident="reign">
+                                    <desc>Text dated by the reign of an emperor or other ruler</desc>
+                                </valItem>
+                                <valItem ident="titulature">
+                                    <desc>Text dated by the use of official titles</desc>
+                                </valItem>
+                                <valItem ident="internal-date">
+                                    <desc>Text dated by explicit internal date</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                <elementSpec ident="origPlace" module="msdescription" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="add" usage="opt">
+                            <datatype>
+                                <rng:ref name="data.word"/>
+                            </datatype>
                         </attDef>
                     </attList>
                 </elementSpec>
