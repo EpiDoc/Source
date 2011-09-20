@@ -26,15 +26,18 @@
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevfully">
     <head>Abbreviation fully expanded</head>
     <p><specList>
-                <specDesc key="expan"/>
-                <specDesc key="ex"/>
+        <specDesc key="expan"/>
+        <specDesc key="ex"/>
+        <specDesc key="supplied"/>
             </specList>
-            <listRef>
+            <!--<listRef>
                 <ptr target="a"/>
-            </listRef></p>
-        <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
-        <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
-        transcriber when expanding an abbreviation.</p>
+                </listRef>--></p>
+    <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
+    <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
+       transcriber when expanding an abbreviation.</p>
+    <p><gi>supplied</gi> signifies text supplied by the transcriber or editor, which in the case of
+        abbreviations, will typically be supplementary words.</p>
     
     
         <p>The characters that form the entire expansion of an abbreviation (including both the
@@ -42,11 +45,18 @@
             marked up using <gi>expan</gi>.</p>
         <p>In addition, the characters added by the editor (i.e. those characters that do not appear
             on the original support) are indicated with <gi>ex</gi>.</p>
+        <p>If the abbreviated text tacitly implies a supplementary word or words which are understood
+            but omitted from the original support (e.g., <foreign xml:lang="la">tribu</foreign>,
+            <foreign xml:lang="la">filius</foreign>, etc.), the abbreviation may be encoded in two
+            different ways depending on the rendering desired. In the first, all omitted text is enclosed
+            within <gi>ex</gi>. In the second, only the characters which form part of the word actually
+            abbreviated are enclosed within <gi>ex</gi>, while the word(s) omitted but understood are
+            enclosed within a <gi>supplied</gi> element, whose <att>reason</att> attribute should be
+            given a value of "subaudible". See examples below.</p>
         <p>Resolved and unresolved abbreviations are treated differently; see section X.2 for an
             explanation of how to mark up abbreviations for which the expansion is unknown.</p>
     
 
-    
         <cit>
             <quote>a(bc)</quote>
             <bibl corresp="#panciera">
@@ -54,6 +64,7 @@
             </bibl>
             <bibl corresp="#seg"/>
             <bibl corresp="#ddbdp"/>
+            <bibl corresp="#rib"/>
         </cit>
 
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
@@ -63,13 +74,20 @@
             <expan>Καρ<ex>ανίδι</ex></expan></egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <expan>Iul<ex>ius</ex></expan></egXML>
+       <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#rib">
+           <!-- example from RIB 293 -->
+            <expan>Poll<ex>ia</ex></expan> <supplied reason="subaudible">tribu</supplied></egXML>
+       <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#rib">
+           <!-- example from RIB 293 -->
+           <expan>Poll<ex>ia tribu</ex></expan></egXML>
     
     <div xml:id="trans-abbrevfully-responsibility">
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>added text and example</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name></respStmt></bibl>-->
         </listBibl>
     </div>
 </div>
