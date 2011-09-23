@@ -32,10 +32,21 @@ Technical Requirements:
 
 How to use it:
 
-	**NB**:
-	instructions for the use of Roma to generate the EpiDoc schema are
-	under construction
+      To generate the schema:
+	1. edit the ODD (tei-epidoc-full.xml) to make any changes to the EpiDoc schema.
+	*NB* that as a matter of policy the EpiDoc schema should be a conformant
+	subset of the latest TEI schema (only exceptions being when the dev TEI ODD
+	contains changes that will not make it into the TEI release for 1-6 months).
+	2. Go to http://www.tei-c.org/Roma/ and "Open existing customization".
+	Select tei-epidoc-full.xml from your local file system.
+	3. Select "Start".
+	4. Select "Schema".
+	5. Select "RELAX NG schema (XML syntax).
+	6. Save to your local file system.
+	7. Test thoroughly (and ask for support on Markup to test) before committing as
+	canonical new EpiDoc schema.
 
+      To validate:
 	If using Oxygen to edit XML files, a processing instruction such as:
 
 	<?oxygen
