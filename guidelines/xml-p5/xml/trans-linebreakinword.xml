@@ -27,8 +27,9 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreakinword" xml:lang="en">
     <head>Line Breaks In Words</head>
-    <p>>Words divided across lines should be indicated by <att>type</att> in <gi>lb</gi> with value of "inWord".  This, among other things, generates
-        the hyphen at the end of the preceding line in XSLT).</p>
+    <p>>Words divided across lines (i.e. where the line-break does not indicate a word-break) 
+        should be indicated by <att>break</att> in <gi>lb</gi> with value of "no".
+        This, among other things, allows the XSLT to generate the hyphen at the end of the preceding line.</p>
     <p><specList>
         <specDesc key="lb"/>
     </specList>
@@ -40,14 +41,14 @@ End license statement: do not remove -->
     <p></p>
     
     <cit>
-        <quote><lb/>proc<lb type="inWord"/>urator</quote>
+        <quote><lb/>proc<lb break="no"/>urator</quote>
         <bibl corresp="#london"/>
        
     </cit>
     
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
-        imper<lb n="7" type="inWord"/>ator
+        imper<lb n="7" break="no"/>ator
     </egXML>
     
     
