@@ -19,7 +19,9 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="#GB" when="2011-09-14">added att.typed to origPlace (temporary fix);
+            <change who="#GB" when="2011-09-25">removed modification of lb/@type and added vocab control for lb/@break</change>
+            <change who="#GB" when="2011-09-24">added att.typed to provenance and origPlace (temporary fix)</change>
+            <change who="#GB" when="2011-09-14">added type to origPlace (temporary fix);
                 made msItem/@class repeatable (temporary fix)</change>
             <change who="#SV" when="2011-03-03">stop omitting tags: bloc, country, district, rdgGrp</change>
             <change who="#GB" when="2011-01-20">stopped excluding tei:offset</change>
@@ -232,10 +234,10 @@
                     <desc>Line-beginning: marks the start of each line of the text, including the
                         first</desc>
                     <attList>
-                        <attDef ident="type" mode="replace" usage="opt">
-                            <valList type="closed">
-                                <valItem ident="inWord">
-                                    <desc>this line-beginning appears inside a word, i.e. would be
+                        <attDef ident="break" mode="replace" usage="opt">
+                            <valList type="semi">
+                                <valItem ident="no">
+                                    <desc>this line-beginning should no be taken as a word-break, i.e. word would be
                                         hyphenated in a printed text</desc>
                                 </valItem>
                             </valList>
@@ -281,13 +283,14 @@
                     </attList>
                 </elementSpec>
                 <elementSpec ident="origPlace" module="msdescription" mode="change">
-                    <attList>
-                        <attDef ident="type" mode="add" usage="opt">
-                            <datatype>
-                                <rng:ref name="data.word"/>
-                            </datatype>
-                        </attDef>
-                    </attList>
+                    <classes mode="change">
+                        <memberOf mode="add" key="att.typed"/>
+                    </classes>
+                </elementSpec>
+                <elementSpec ident="provenance" module="msdescription" mode="change">
+                    <classes mode="change">
+                        <memberOf mode="add" key="att.typed"/>
+                    </classes>
                 </elementSpec>
                 <elementSpec module="transcr" ident="supplied" mode="change">
                     <attList>

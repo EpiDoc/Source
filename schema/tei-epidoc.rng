@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2011-09-14T11:22:36Z. 
+Schema generated from ODD source 2011-09-23T16:40:44Z. 
 Edition: 1.9.0. Last updated on February 25th 2011.
 Edition Location: http://www.tei-c.org/Vault/P5/1.9.0/
 
@@ -9077,12 +9077,7 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin place) contains any form of place name, used to identify the
 place of origin for a manuscript or manuscript part. </a:documentation>
          <ref name="tei_macro.phraseSeq"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="tei_data.word"/>
-            </attribute>
-         </optional>
+         <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.naming.attributes"/>
          <ref name="tei_att.datable.attributes"/>
@@ -9949,6 +9944,7 @@ concerning the origin of  a manuscript or manuscript part. </a:documentation>
 concerning a single identifiable episode during the history of a manuscript
 or manuscript part, after its creation but before its acquisition. </a:documentation>
          <ref name="tei_macro.specialPara"/>
+         <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.datable.attributes"/>
          <empty/>
