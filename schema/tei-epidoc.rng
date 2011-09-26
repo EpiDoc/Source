@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2011-09-23T16:40:44Z. 
+Schema generated from ODD source 2011-09-26T19:01:48Z. 
 Edition: 1.9.0. Last updated on February 25th 2011.
 Edition Location: http://www.tei-c.org/Vault/P5/1.9.0/
 
@@ -5552,20 +5552,21 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                         first</a:documentation>
          <empty/>
          <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <attribute name="break">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+Suggested values include: 1] no</a:documentation>
                <choice>
-                  <value>inWord</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">this line-beginning appears inside a word, i.e. would be
+                  <value>no</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">this line-beginning should no be taken as a word-break, i.e. word would be
                                         hyphenated in a printed text</a:documentation>
+                  <data type="Name"/>
                </choice>
             </attribute>
          </optional>
          <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.typed.attribute.subtype"/>
+         <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.sourced.attributes"/>
          <ref name="tei_att.spanning.attributes"/>
-         <ref name="tei_att.breaking.attributes"/>
          <empty/>
       </element>
    </define>
@@ -9945,6 +9946,7 @@ concerning a single identifiable episode during the history of a manuscript
 or manuscript part, after its creation but before its acquisition. </a:documentation>
          <ref name="tei_macro.specialPara"/>
          <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.responsibility.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.datable.attributes"/>
          <empty/>

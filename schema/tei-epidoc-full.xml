@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2011-09-26">added att.responsibility to provenance (temporary fix)</change>
             <change who="#GB" when="2011-09-25">removed modification of lb/@type and added vocab control for lb/@break</change>
             <change who="#GB" when="2011-09-24">added att.typed to provenance and origPlace (temporary fix)</change>
             <change who="#GB" when="2011-09-14">added type to origPlace (temporary fix);
@@ -290,6 +291,7 @@
                 <elementSpec ident="provenance" module="msdescription" mode="change">
                     <classes mode="change">
                         <memberOf mode="add" key="att.typed"/>
+                        <memberOf mode="add" key="att.responsibility"/>
                     </classes>
                 </elementSpec>
                 <elementSpec module="transcr" ident="supplied" mode="change">
