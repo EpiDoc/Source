@@ -50,7 +50,7 @@ How to use it:
 	If using Oxygen to edit XML files, a processing instruction such as:
 
 	<?oxygen
-	  RNGSchema="http://www.stoa.org/epidoc/schema/8.4/tei-epidoc.rng"
+	  RNGSchema="http://www.stoa.org/epidoc/schema/8.9/tei-epidoc.rng"
         type="xml"?>
 
 	at the top of the XML file will instruct the editor to validate
