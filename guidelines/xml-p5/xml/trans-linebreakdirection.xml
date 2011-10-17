@@ -51,14 +51,18 @@ End license statement: do not remove -->
     <cit>
         <quote><!-- conventional rendering --></quote>
         <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+            <biblScope></biblScope>
         </bibl>
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
-        <lb rend="right-to-left" />abc<lb />
+        <lb/>abc
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+        <lb rend="right-to-left"/>abc
     </egXML>
     
     
@@ -66,8 +70,21 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Gabriel Bodard</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

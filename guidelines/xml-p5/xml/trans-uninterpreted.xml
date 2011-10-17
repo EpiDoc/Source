@@ -29,18 +29,21 @@ End license statement: do not remove -->
     <head>Uninterpreted characters</head>
     <p>Clear but incomprehensible letters</p>
     <p><specList>
-        <specDesc key="orig"/>
-    </specList>
+            <specDesc key="orig"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p>Characters clearly read but not interpreted by the editor, conventionally written in uppercase in a Leiden
-    transcription, should be tagged using the <gi>orig</gi> element. The characters need not be written in uppercase
-    (in fact arguably it may be better if they were not), although characters such as Latin <foreign xml:lang="la">V</foreign>
-    or Greek <foreign xml:lang="grc">Σ</foreign>, which cannot be assigned an unambiguous lowercase form when
-    uninterpreted, may be safer in uppercase.</p>
-    
+            </listRef>--></p>
+
+    <p>Characters clearly read but not interpreted by the editor, conventionally written in
+        uppercase in a Leiden transcription, should be tagged using the <gi>orig</gi> element. The
+        characters need not be written in uppercase (in fact arguably it may be better if they were
+        not), although characters such as Latin <foreign xml:lang="la">V</foreign> or Greek <foreign
+            xml:lang="grc">Σ</foreign>, which cannot be assigned an unambiguous lowercase form when
+        uninterpreted, may be safer in uppercase. The example EpiDoc P5 stylesheets currently output
+        uppercase letters in the HTML whether or not the letters are in lower or
+        uppercase in the XML.</p>
+
     <cit>
         <quote>ABC</quote>
         <bibl corresp="#panciera">
@@ -48,7 +51,7 @@ End license statement: do not remove -->
         </bibl>
         <bibl corresp="#seg"/>
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <orig>abc</orig>
     </egXML>
@@ -58,19 +61,25 @@ End license statement: do not remove -->
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="grc">
         <orig>Σ</orig>
     </egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples"
         corresp="http://irt.kcl.ac.uk/irt2009/IRT480.html" rend="panciera seg">
         <orig>sppo</orig>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-uninterpreted-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Beatrice Lietz</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Beatrice Lietz</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>

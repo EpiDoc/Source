@@ -35,10 +35,11 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p>
 
-    <p>A <gi>milestone</gi> is used to describe the support, rather than the structure of the text.
+    <p>A <gi>milestone</gi> is used to describe the support, rather than the structure, of the text.
         It can be used to mark a point in the text at which the support changes in some respect, for
-        instance if a text is inscribed across a series of blocks. This can be represented by giving
-        the <gi>milestone</gi> element a <att>unit</att> attribute value of "block". Each
+        instance where a text is inscribed across a series of blocks and the editor wants to show
+        the point at which one block ends and another begins. This can be represented by giving the
+            <gi>milestone</gi> element a <att>unit</att> attribute value of "block". Each
             <gi>milestone</gi> can also be given an <att>n</att> attribute to allow the blocks (or
         whatever non-structural textpart is being described) to be numbered.</p>
 
@@ -48,7 +49,7 @@ End license statement: do not remove -->
     </cit>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london"> ὁ Ῥωμαίω<milestone
-            unit="block" n="iii"/>ν καθὼς καὶ τὰ </egXML>
+            unit="block" n="iii"/>ν καθὼς καὶ τὰ</egXML>
 
     <div xml:id="trans-nonstructural-responsibility">
 
