@@ -29,48 +29,75 @@ End license statement: do not remove -->
     <head>Verse Lines</head>
     <p><!--gloss--></p>
     <p><specList>
-        <specDesc key="lg"/>
-        <specDesc key="l"/>
-    </specList>
+            <specDesc key="lg"/>
+            <specDesc key="l"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p><!--More prose explanation--></p>
-    
-    <!-- Following text is taken from P4 Guidelines -->
-    <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <gi>lb</gi>
-        (line-break) empty element to mark the point at which the line breaks. (see Lines.) In addition to marking epigraphic
-        lines, which is obligatory, an editor may choose to tag verse groups and lines using the TEI <gi>lg</gi> (line-group)
-        and <gi>l</gi> (line) elements.</p>
+            </listRef>--></p>
 
-    <p>Within the verse lines, however, the start of each line of text on the support still needs to be marked with an <gi>lb</gi>
-        element. In other words, <gi>lg</gi> and <gi>l</gi> are replacing the containing <gi>ab</gi>, but not the <gi>lb</gi>s.
-        (See example 2 below.)</p>
-    
-    <p>The line-group and line elements may contain attributes recording metre, execution, rhyme, etc.</p> 
-    
-    
+    <!-- Following text is based on P4 Guidelines but seems to apply just as well to P5 -->
+    <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines)
+        using the <gi>lb</gi> (line-break) empty element to mark the point at which the line breaks
+        (see <ref target="http://www.stoa.org/epidoc/gl/dev/trans-linebreak.html">Lines and line
+            breaks</ref>.) In addition to marking epigraphic lines, which is obligatory, an editor
+        may choose to tag verse groups and lines using the <gi>lg</gi> (line-group) and
+            <gi>l</gi> (line) elements.</p>
+
+    <p>Within the verse lines, however, the start of each line of text on the support still needs to
+        be marked with an <gi>lb</gi> element. In other words, <gi>lg</gi> and <gi>l</gi> are
+        replacing the containing <gi>ab</gi>, but not the <gi>lb</gi>s. </p>
+
+    <p>The line-group and line elements may contain attributes recording metre, execution, rhyme,
+        etc.</p>
+
+
     <cit>
         <quote><!-- conventional rendering --></quote>
         <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+            <biblScope/>
         </bibl>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        <bibl corresp="#irt"/>
+        <bibl corresp="#iaph"/>
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT918.html">
+        <l><lb n="1"/>Quaesii multum quot <lb n="2"/>memoriae tradere</l>
+    </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010131.html">
+        <lg>
+            <lb n="1"/>
+            <l><unclear reason="damage">τ</unclear>ῆς μεγάλης ἀ<lb n="2" break="no"/>ρετῆς τοῦτον<lb
+                    n="3"/>μέγαν ἡγεμον<unclear reason="damage">ῆ</unclear>α</l>
+            <lb n="4"/>
+            <l>Ἑλλάδιον <lb n="5"/><supplied reason="lost">Κ</supplied>ᾶρες στῆ<supplied
+                    reason="lost">σα</supplied>ν<lb n="6"/><supplied reason="lost"
+                    >ἀ</supplied><unclear reason="undefined">μ</unclear>ειβ<unclear reason="damage"
+                    >ό</unclear>μ<supplied reason="lost">ενο</supplied><unclear reason="damage"
+                    >ι</unclear>.</l>
+        </lg>
     </egXML>
     
-    
+    <!--Could not find any examples of <l> in DDBDP-->
+
     <div xml:id="trans-verseline-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
