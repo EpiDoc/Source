@@ -66,7 +66,16 @@ End license statement: do not remove -->
         corresp="http://irt.kcl.ac.uk/irt2009/IRT480.html" rend="panciera seg">
         <orig>sppo</orig>
     </egXML>
-
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT006.html">
+        <gap reason="lost" atLeast="1" atMost="2" unit="character"/><orig>a</orig><gap reason="lost" atLeast="1" atMost="2" unit="character"/><orig>a</orig>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010120.html">
+        <orig n="unresolved">ε<unclear reason="damage">κ</unclear></orig>
+    </egXML>
+    
+    <!-- DDBDP only seems to use <orig> as part of <choice> - I can't find any standalone examples of <orig> there -->
 
     <div xml:id="trans-uninterpreted-responsibility">
 
