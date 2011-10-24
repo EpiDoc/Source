@@ -38,6 +38,7 @@
         <quote>abc</quote>
         <bibl corresp="#ddbdp"/>
     </cit>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ddbdp" rend="ddbdp">
         <choice>
             <reg>abc</reg>
@@ -45,12 +46,18 @@
         </choice>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;1;100#7">
+        <choice><reg>τιμὴν</reg><orig>τειμην</orig></choice>
+    </egXML>
+    
+    <!-- No IRT or iAph examples-->
     
     <div xml:id="trans-regularization-responsibility">
         
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
