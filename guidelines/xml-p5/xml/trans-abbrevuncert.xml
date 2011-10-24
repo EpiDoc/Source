@@ -57,31 +57,45 @@
                     <biblScope>X.1</biblScope>
             </bibl>
         </cit>
+    
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
             <expan>a<ex cert="low">bc</ex></expan>
         </egXML>
+    
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <expan>Iul<ex cert="low">ius</ex></expan>
+        </egXML>
+    
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT732.html#2">
+            <seg part="I"><expan><abbr>Aug</abbr><ex cert="low">ust</ex></expan></seg>
         </egXML>
 
         <cit>
             <quote>a(bc(?))</quote>
             <bibl corresp="#pn"/>
         </cit>
+    
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#pn" rend="ddbdp">
             <expan>a<ex cert="low">bc</ex></expan>
         </egXML>
+    
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp">
             <expan>Καρ<ex cert="low">ανίδι</ex></expan>
+        </egXML>
+    
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;1;116#15">
+            <expan><ex cert="low">ἔτους</ex></expan> <num value="29"><unclear>κ</unclear>θ</num>
         </egXML>
     
     <cit>
         <quote>[F]el(icitati)(?)</quote>
         <bibl corresp="#rib"/>
     </cit>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
         <expan cert="low"><abbr><supplied reason="lost">F</supplied>el</abbr><ex>icitati</ex></expan>
     </egXML>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
         <expan><abbr><supplied reason="lost" cert="low">F</supplied>el</abbr><ex cert="low">icitati</ex></expan>
     </egXML>
