@@ -26,60 +26,67 @@
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restoreduncert">
     <head>Editorial restoration: Characters lost and restored tentatively</head>
-    
-        
-        <p><specList>
-                <specDesc key="supplied"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
-        <p>Where text not present in the source is supplied (whether conjecturally or from other
-            witnesses) to fill an apparent gap in the text, the <gi>supplied</gi> element may be
-            used. <gi>supplied</gi> signifies text supplied by the transcriber or editor for any
-            reason, typically because the original cannot be read because of physical damage or loss
-            to the original.</p>
-        <p><att>reason</att> indicates why the text has had to be supplied.</p>
-    
-    
-        
-        <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
-            either by comparison with other texts or through other contextual knowledge.</p>
-        <p>Required attributes: <list type="bulleted">
-                <item><att>reason</att> explains why the text has been restored, and for text restored in
-                    lacunae, is given the value "lost" (although other values are possible).</item>
-            </list></p>
-        <p>Optional attributes include: <list type="bulleted">
-                <item><att>cert</att> indicates text that is uncertainly restored.</item>
-            </list>
-        </p>
-    
-
-    
-
-        <cit>
-            <quote>[?abc]</quote>
-            <bibl corresp="#panciera">
-                <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
-            </bibl>
-        </cit>
 
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-            <supplied reason="lost" cert="low">abc</supplied>
-        </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
-            ἡμετέρ<supplied reason="lost" cert="low">α μήτηρ</supplied></egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"
-            corresp="http://irt.kcl.ac.uk/irt2009/IRT013.html#1"> Bon<supplied reason="lost"
-                cert="low">ifatius</supplied></egXML>
+    <p><specList>
+            <specDesc key="supplied"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+    <p>Where text not present in the source is supplied (whether conjecturally or from other
+        witnesses) to fill an apparent gap in the text, the <gi>supplied</gi> element may be used.
+            <gi>supplied</gi> signifies text supplied by the transcriber or editor for any reason,
+        typically because the original cannot be read because of physical damage or loss to the
+        original.</p>
+    <p><att>reason</att> indicates why the text has had to be supplied.</p>
+
+
+
+    <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
+        either by comparison with other texts or through other contextual knowledge.</p>
+    <p>Required attributes: <list type="bulleted">
+            <item><att>reason</att> explains why the text has been restored, and for text restored
+                in lacunae, is given the value "lost" (although other values are possible).</item>
+        </list></p>
+    <p>Optional attributes include: <list type="bulleted">
+            <item><att>cert</att> indicates text that is uncertainly restored.</item>
+        </list>
+    </p>
+
+    <cit>
+        <quote>[?abc]</quote>
+        <bibl corresp="#panciera">
+            <!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>-->
+        </bibl>
+    </cit>
+
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <supplied reason="lost" cert="low">abc</supplied>
+    </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+        ἡμετέρ<supplied reason="lost" cert="low">α μήτηρ</supplied>
+    </egXML>
     
-    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT013.html#1"> 
+        Bon<supplied reason="lost" cert="low">ifatius</supplied>
+    </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;1;101#34">
+        <supplied reason="lost" cert="low">τόκους</supplied> 
+    </egXML>
+
     <div xml:id="trans-restoreduncert-responsibility">
-        
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
             <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
