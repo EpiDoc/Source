@@ -27,33 +27,33 @@
 
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restored">
     <head>Editorial restoration: Characters lost but restored by modern editor</head>
-    
-        
-        <p><specList>
-                <specDesc key="supplied"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
-        <p>Where text not present in the source is supplied (whether conjecturally or from other
-            witnesses) to fill an apparent gap in the text, the <gi>supplied</gi> element may be
-            used. <gi>supplied</gi> signifies text supplied by the transcriber or editor for any
-            reason, typically because the original cannot be read because of physical damage or loss
-            to the original.</p>
-        <p><att>reason</att> indicates why the text has had to be supplied.</p>
-        
-        
-        <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
-            either by comparison with other texts or through other contextual knowledge.</p>
-        <p>Required attributes: <list type="bulleted">
-                <item><att>reason</att> explains why the text has been restored, and for text restored in
-                    lacunae, is given the value "lost" (although other values are possible).</item>
-            </list></p>
-        <p>Optional attributes include: <list type="bulleted">
-                <item><att>cert</att> indicates text that is uncertainly restored.</item>
-            </list>
-        </p>
-    
+
+
+    <p><specList>
+            <specDesc key="supplied"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+    <p>Where text not present in the source is supplied (whether conjecturally or from other
+        witnesses) to fill an apparent gap in the text, the <gi>supplied</gi> element may be used.
+            <gi>supplied</gi> signifies text supplied by the transcriber or editor for any reason,
+        typically because the original cannot be read because of physical damage or loss to the
+        original.</p>
+    <p><att>reason</att> indicates why the text has had to be supplied.</p>
+
+
+    <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
+        either by comparison with other texts or through other contextual knowledge.</p>
+    <p>Required attributes: <list type="bulleted">
+            <item><att>reason</att> explains why the text has been restored, and for text restored
+                in lacunae, is given the value "lost" (although other values are possible).</item>
+        </list></p>
+    <p>Optional attributes include: <list type="bulleted">
+            <item><att>cert</att> indicates text that is uncertainly restored.</item>
+        </list>
+    </p>
+
 
     <cit>
         <quote>[abc]</quote>
@@ -63,45 +63,55 @@
         <bibl corresp="#seg"/>
         <bibl corresp="#ddbdp"/>
     </cit>
-   
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="#panciera" xml:lang="la">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" corresp="#panciera" xml:lang="la">
         <supplied reason="lost">abc</supplied>
     </egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT986.html#1" xml:lang="la">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" corresp="http://irt.kcl.ac.uk/irt2009/IRT986.html#1" xml:lang="la">
         <supplied reason="lost">In</supplied>comparabilis
     </egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"
-        corresp="http://papyri.info/hgv/18216#17" xml:lang="grc">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" corresp="http://papyri.info/hgv/18216#17" xml:lang="grc">
         <supplied reason="lost" cert="low">ὁμο</supplied>λογῶ
     </egXML>
-    <note>If a span of restored is broken by other intervening structural markup (e.g. word and name tags, 
-        or even if these are not used, abbreviations and numbers), the text may be divided between two or more
-        <gi>supplied</gi> elements, and the rendering XSLT will correctly omit redundant square brackets between
-        these spans.</note>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT027.html" xml:lang="la">
+
+    <note>If a span of restored is broken by other intervening structural markup (e.g. word and name
+        tags, or even if these are not used, abbreviations and numbers), the text may be divided
+        between two or more <gi>supplied</gi> elements, and the rendering XSLT will correctly omit
+        redundant square brackets between these spans.</note>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" corresp="http://irt.kcl.ac.uk/irt2009/IRT027.html" xml:lang="la">
         <w><supplied reason="lost">diui</supplied></w>
         <name><supplied reason="lost">Tra</supplied>iani</name>
     </egXML>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" 
-        corresp="http://irt.kcl.ac.uk/irt2009/IRT028.html" xml:lang="la">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" corresp="http://irt.kcl.ac.uk/irt2009/IRT028.html" xml:lang="la">
         <supplied reason="lost"><expan>co<ex>n</ex>s<ex>uli</ex></expan></supplied>
         <num><supplied reason="lost">I</supplied>V</num>
     </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;1;100">
+        κεχαραγμένο<supplied reason="lost">ν</supplied>
+    </egXML>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples"
         corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010001.html#5">
         <supplied reason="lost">Καῖσαρ καὶ ἡ σύ</supplied>νκλητος</egXML>
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples"
         corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010001.html#1">
         <supplied reason="lost" cert="low">οὗτος ὁ τόπο</supplied>ς ἱερὸς ἄσυ</egXML>
-    
+
     <div xml:id="trans-restored-responsibility">
-        
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
             <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
