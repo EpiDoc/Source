@@ -38,7 +38,7 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
+        <quote>"abc"</quote>
         <bibl corresp="#panciera">
             <biblScope>...</biblScope>
         </bibl>
@@ -46,16 +46,21 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="#panciera">
         We are the Knights who say <q>Ni!</q>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/p.oxy;75;5063#15" rend="ddbdp">
+        ὅτι <q>πέμψον μοι τὰ σιδήρια</q>
+    </egXML>
+    
+    <!-- No examples from IRT or iAph -->
     
     <div xml:id="trans-quotation-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
