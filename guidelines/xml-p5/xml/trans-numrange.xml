@@ -47,16 +47,21 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="#panciera">
+        <num atLeast="26" atMost="29">XXVI<gap reason="lost" extent="unknown" unit="character"/></num>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;11;2050#4">
+        <num atLeast="30" atMost="39"><supplied reason="lost">τρι</supplied>άκον<supplied reason="lost">τα </supplied><gap reason="lost" quantity="5" unit="character"/></num>
+    </egXML>
+    
+    <!-- No IRT or iAph examples-->
     
     <div xml:id="trans-numrange-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
