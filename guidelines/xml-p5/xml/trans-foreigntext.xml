@@ -46,16 +46,23 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="#panciera">
         <foreign xml:lang="la">lapis philosophicus</foreign>
     </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT021.html" rend="#london">
+        For the lost line 6 Aurigemma, loc. cit., suggests <foreign xml:lang="la">matris castrorum</foreign>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://www.papyri.info/ddbdp/bgu;4;1094" rend="#ddbdp"> <!-- milestone 4, line 1  -->
+        <foreign xml:lang="cop"> <num value="3">γ</num> lin</foreign>
+    </egXML>
     
     <div xml:id="trans-foreigntext-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
