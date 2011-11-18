@@ -8,10 +8,7 @@
 
 package edu.unc.epidoc.transcoder;
 
-import java.io.*;
-import java.lang.*;
 import java.util.Properties;
-import java.util.StringTokenizer;
 
 /** Handles conversion to the Unicode Form C encoding (with composed diacriticals).
  * @author Hugh A. Cayless
@@ -30,8 +27,8 @@ public class UnicodeCConverter extends AbstractGreekConverter {
         }
     }
     
-    private Properties unfcc;
-    private Properties unfdc;
+    protected Properties unfcc;
+    protected Properties unfdc;
     
     /** Convert the input String to a String in Unicode Form C with
      * characters greater than 127 escaped as XML character entities.

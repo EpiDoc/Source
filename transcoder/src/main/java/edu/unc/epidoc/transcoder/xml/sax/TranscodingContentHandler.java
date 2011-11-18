@@ -43,7 +43,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
      * @param tc A pre-configured TransCoder
      * @param useAttribute The local name of an attribute to be used as a 
      * signal to transcode the contents of an element (default "lang").
-     * @param lang THe default language (default "eng").
+     * @param lang The default language (default "eng").
      * @param flowTerminators A List of String triples 
      * ([namespace, name, container|milestone]) that  will cause the 
      * TranscodingContentHandler's text buffer to flush.  The default are <p> 

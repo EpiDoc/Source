@@ -7,18 +7,14 @@
 package edu.unc.epidoc.transcoder.gui;
 
 import edu.unc.epidoc.transcoder.*;
-import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
-import edu.unc.epidoc.transcoder.xml.sax.Serializer;
 
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
 import javax.xml.transform.*;
-import javax.xml.transform.sax.*;
 
 import org.xml.sax.*;
-import org.xml.sax.helpers.*;
 
 /** This class provides a GUI test interface to the <CODE>Transcoder</CODE>.
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
