@@ -29,7 +29,8 @@ End license statement: do not remove -->
     <head>Metrical Fragments</head>
     <p>metrical fragment within line (cf. lacuna with known metre)</p>
     <p><specList>
-        <specDesc key="elements"/>
+        <specDesc key="gap"/>
+        <specDesc key="seg"/>
     </specList>
         <!--<listRef>
             <ptr target="a"/>
@@ -38,16 +39,15 @@ End license statement: do not remove -->
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+        <quote> [ ˉ  ˘  ˘  ˉ  ˘ ]ι̣χ̣ων λουτ̣ρ̣ὸν ἀκηράσιον</quote>
+        <bibl corresp="#ircyr">
+            <biblScope>A.92</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
+        <seg met="+--+-"><gap reason="lost" quantity="9" unit="character" precision="low"/></seg><unclear>ιχ</unclear>ων 
+        λου<unclear>τρ</unclear>ὸν ἀκηράσιον
     </egXML>
     
     
@@ -55,7 +55,7 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
