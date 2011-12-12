@@ -35,9 +35,12 @@
                                 select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/iaph2007/iAph'),'.html')"
                             />
                         </xsl:variable>
-                        <xsl:value-of select="number(substring($filename,1,2))"/>
-                        <xsl:text>.</xsl:text>
-                        <xsl:value-of select="number(substring($filename,3,4))"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="number(substring($filename,1,2))"/>
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="number(substring($filename,3,4))"/>
+                        </xsl:element>
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp, 'http://insaph.kcl.ac.uk/ala2004/')">
                         <xsl:text>ALA: </xsl:text>
@@ -46,7 +49,10 @@
                                 select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/ala2004/inscription/eAla'),'.html')"
                             />
                         </xsl:variable>
-                        <xsl:value-of select="number($filename)"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="number($filename)"/>
+                        </xsl:element>
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp, 'http://irt.kcl.ac.uk/')">
                         <xsl:text>IRT: </xsl:text>
@@ -55,8 +61,11 @@
                                 select="substring-before(substring-after(@corresp,'http://irt.kcl.ac.uk/irt2009/IRT'),'.html')"
                             />
                         </xsl:variable>
-                        <xsl:value-of select="number(translate($filename,'abcdefghi',''))"/>
-                        <xsl:value-of select="translate($filename,'0123456789','')"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="number(translate($filename,'abcdefghi',''))"/>
+                            <xsl:value-of select="translate($filename,'0123456789','')"/>
+                        </xsl:element>
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp, 'http://papyri.info/ddbdp/')">
                         <xsl:text>DDbDP: </xsl:text>
@@ -65,7 +74,10 @@
                                 select="substring-after(@corresp,'http://papyri.info/ddbdp/')"
                             />
                         </xsl:variable>
-                        <xsl:value-of select="translate($filename,';','.')"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="translate($filename,';','.')"/>
+                        </xsl:element>
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
                         <xsl:for-each select="//tei:bibl[@xml:id = current()/@corresp]/tei:author">
