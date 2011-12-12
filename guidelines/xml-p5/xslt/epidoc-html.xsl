@@ -62,7 +62,7 @@
                         <xsl:text>DDbDP: </xsl:text>
                         <xsl:variable name="filename">
                             <xsl:value-of
-                                select="substring-before(substring-after(@corresp,'http://papyri.info/ddbdp/'),'/')"
+                                select="substring-after(@corresp,'http://papyri.info/ddbdp/')"
                             />
                         </xsl:variable>
                         <xsl:value-of select="translate($filename,';','.')"/>

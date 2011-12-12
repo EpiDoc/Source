@@ -24,7 +24,7 @@
         <ul>
             <xsl:choose>
                 <xsl:when test="not(@rend)">
-                    <li><strong>Panciera:</strong> 
+                    <li><strong>Default style:</strong> 
                     <!-- get current egXML from panciera view -->
                         <xsl:copy-of select="document('../xml/views/panciera/examples.xml')//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"/>
                     </li>
@@ -32,7 +32,7 @@
                 <xsl:otherwise>                    
                     <xsl:for-each select="tokenize(@rend, ' ')">
                         <!-- here's where I'd like to specify the leiden style, based on the current token value from @rend, before processing the children -->
-                        <li><strong><xsl:value-of select="."/>:</strong> 
+                        <li><strong><xsl:value-of select="."/> style:</strong> 
                             <xsl:copy-of select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"/>
                         </li>
                     </xsl:for-each>
