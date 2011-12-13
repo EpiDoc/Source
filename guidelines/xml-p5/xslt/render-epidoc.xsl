@@ -32,7 +32,7 @@
                         <xsl:if test=". != 'panciera'">
                             <li><strong>
                                 <xsl:choose>
-                                    <xsl:when test=". = 'ddbdp">
+                                    <xsl:when test=". = 'ddbdp'">
                                         <xsl:text>DDbDP</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
