@@ -22,22 +22,30 @@
         
         <p>Transformation using the example EpiDoc P5 stylesheets:</p>
         <ul>
-            <xsl:choose>
-                <xsl:when test="not(@rend)">
-                    <li><strong>Default style:</strong> 
+                    <li><strong>Default style (Panciera):</strong> 
                     <!-- get current egXML from panciera view -->
                         <xsl:copy-of select="document('../xml/views/panciera/examples.xml')//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"/>
                     </li>
-                </xsl:when>
-                <xsl:otherwise>                    
+                
+                <xsl:if test="@rend">                    
                     <xsl:for-each select="tokenize(@rend, ' ')">
-                        <!-- here's where I'd like to specify the leiden style, based on the current token value from @rend, before processing the children -->
-                        <li><strong><xsl:value-of select="."/> style:</strong> 
+                        <xsl:if test=". != 'panciera'">
+                            <li><strong>
+                                <xsl:choose>
+                                    <xsl:when test=". = 'ddbdp">
+                                        <xsl:text>DDbDP</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="."/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                style:</strong> 
                             <xsl:copy-of select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"/>
-                        </li>
+                            </li>
+                        </xsl:if>
                     </xsl:for-each>
-                </xsl:otherwise>
-            </xsl:choose></ul>
+                </xsl:if>
+            </ul>
     </xsl:template>
         
     
