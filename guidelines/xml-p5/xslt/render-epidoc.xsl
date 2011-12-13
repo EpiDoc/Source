@@ -35,6 +35,18 @@
                                     <xsl:when test=". = 'ddbdp'">
                                         <xsl:text>DDbDP</xsl:text>
                                     </xsl:when>
+                                    <xsl:when test=". = 'edh'">
+                                        <xsl:text>EDH</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'london'">
+                                        <xsl:text>London</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'panciera'">
+                                        <xsl:text>Panciera</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'seg'">
+                                        <xsl:text>SEG</xsl:text>
+                                    </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="."/>
                                     </xsl:otherwise>
