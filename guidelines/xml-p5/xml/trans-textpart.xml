@@ -37,13 +37,13 @@ End license statement: do not remove -->
 
     <p>Units of the text that are separated and usually numbered independently by
         epigraphers—including fragments, columns, sections, chapters, independent texts on a single
-        stone, marks, stamps, or graffiti grouped together, etc.— should be similarly divided and
+        stone, marks, stamps, or graffiti grouped together — should be similarly divided and
         numbered in EpiDoc. Each division containing a separate unit of text should be wrapped in a
         separate <gi>ab</gi> inside a <egXML xmlns="http://www.tei-c.org/ns/Examples"
             corresp="#london"><div type="textpart"/></egXML> (the <att>subtype</att> attribute may
-        also name the kind of text-part being encoded in the form, e.g. <egXML
+        also name the kind of textpart being encoded in the form, e.g. <egXML
             xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="#london"><div type="textpart"
-                subtype="column"/></egXML>.</p>
+                subtype="column"/></egXML>. Its values are unrestricted.</p>
 
     <p>These units may, of course, nest in almost any combination. If there are non-hierarchical
         overlaps between units (e.g. sections and columns) then one unit has to be selected as the
@@ -51,7 +51,7 @@ End license statement: do not remove -->
         broken divisions may be connected using the <att>n</att> attribute or a <gi>link</gi>
         element.</p>
 
-    <p>Where unit within a single, continuous text need to be marked (for example, multiple blocks
+    <p>Where a unit within a single, continuous text need to be marked (for example, multiple blocks
         in a long relief text) the <gi>milestone</gi> element should be used instead to mark the
         point at which a break in the support occurs.</p>
 

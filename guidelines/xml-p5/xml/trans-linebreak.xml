@@ -35,16 +35,14 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
    
-    
-    <!-- Following text taken from P4 Guidelines (modified by CT) -->
     <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <gi>lb</gi>,
         though the expansion "line-begins" is in many ways a more useful way of thinking about this element.  <gi>lb</gi> is an empty element
         to mark the point at which the line breaks (or begins).</p>
 
     <p>Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition
-        of an entire line needs to be marked in an attribute on the preceeding <gi>lb</gi>. For this reason, therefore, it is
+        of an entire line needs to be marked in an attribute on the preceding <gi>lb</gi>. For this reason, therefore, it is
         our convention to place an <gi>lb</gi> at the beginning of every epigraphic line in the edition, including the first.
-        Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current at the following line-break.
+        Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current and the following line-break.
         (See example below.)</p>
 
     <cit>
@@ -56,7 +54,7 @@ End license statement: do not remove -->
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london">
         <lb n="5"/>abc
     </egXML>
->
+
     
     <div xml:id="trans-linebreak-responsibility">
     
