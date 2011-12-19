@@ -36,17 +36,15 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p>
 
-    <!-- Following text is based on P4 Guidelines but seems to apply just as well to P5 -->
     <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines)
         using the <gi>lb</gi> (line-break) empty element to mark the point at which the line breaks
-        (see <ref target="http://www.stoa.org/epidoc/gl/dev/trans-linebreak.html">Lines and line
-            breaks</ref>.) In addition to marking epigraphic lines, which is obligatory, an editor
-        may choose to tag verse groups and lines using the <gi>lg</gi> (line-group) and
-            <gi>l</gi> (line) elements.</p>
+        (or begins - see <ref target="trans-linebreak.html">Line breaks</ref>.) In addition to marking
+        epigraphic lines, which is obligatory, an editor may choose to tag verse groups and lines
+        using the <gi>lg</gi> (line-group) and <gi>l</gi> (line) elements.</p>
 
     <p>Within the verse lines, however, the start of each line of text on the support still needs to
-        be marked with an <gi>lb</gi> element. In other words, <gi>lg</gi> and <gi>l</gi> are
-        replacing the containing <gi>ab</gi>, but not the <gi>lb</gi>s. </p>
+        be marked with an <gi>lb</gi>. In other words, <gi>lg</gi> and <gi>l</gi> are
+        replacing the containing <gi>ab</gi>, but not the <gi>lb</gi>s.</p>
 
     <p>The line-group and line elements may contain attributes recording metre, execution, rhyme,
         etc.</p>
@@ -81,7 +79,7 @@ End license statement: do not remove -->
                     >ι</unclear>.</l>
         </lg>
     </egXML>
-    
+
     <!--Could not find any examples of <l> in DDBDP-->
 
     <div xml:id="trans-verseline-responsibility">
