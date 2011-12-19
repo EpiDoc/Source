@@ -36,7 +36,7 @@
             <ptr target="a"/>
         </listRef></p>
     <p>Where text not present in the source is supplied (whether conjecturally or from other
-        witnesses) to fill an apparent gap in the text, the <gi>supplied</gi> element may be used.
+        witnesses) to fill an apparent gap in the text, <gi>supplied</gi> may be used.
             <gi>supplied</gi> signifies text supplied by the transcriber or editor for any reason,
         typically because the original cannot be read because of physical damage or loss to the
         original.</p>
@@ -49,12 +49,7 @@
             <item><att>reason</att> explains why the text has been restored, and for text restored
                 in lacunae, is given the value "lost" (although other values are possible).</item>
         </list></p>
-    <p>Optional attributes include: <list type="bulleted">
-            <item><att>cert</att> indicates text that is uncertainly restored.</item>
-        </list>
-    </p>
-
-
+   
     <cit>
         <quote>[abc]</quote>
         <bibl corresp="#panciera">
@@ -76,7 +71,7 @@
         <supplied reason="lost" cert="low">ὁμο</supplied>λογῶ
     </egXML>
 
-    <note>If a span of restored is broken by other intervening structural markup (e.g. word and name
+    <note>If a span of restored text is broken by other intervening structural markup (e.g. word and name
         tags, or even if these are not used, abbreviations and numbers), the text may be divided
         between two or more <gi>supplied</gi> elements, and the rendering XSLT will correctly omit
         redundant square brackets between these spans.</note>
@@ -98,11 +93,7 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
         corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010001.html#5">
         <supplied reason="lost">Καῖσαρ καὶ ἡ σύ</supplied>νκλητος</egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
-        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010001.html#1">
-        <supplied reason="lost" cert="low">οὗτος ὁ τόπο</supplied>ς ἱερὸς ἄσυ</egXML>
-
+    
     <div xml:id="trans-restored-responsibility">
 
         <head>Responsibility for this section</head>
