@@ -36,19 +36,19 @@
         <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation. The characters that form the
             entire expansion of an abbreviation (including both the charaters that are present on the original
             support and those added by the editor) should be encompassed within the <gi>expan</gi>. The characters
-            that appear on the support are usually (although not obligatorily) contained in <gi>abbr</gi>.</p>
+            that appear on the support are usually contained in <gi>abbr</gi> (although this is not obligatory).</p>
         <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
             transcriber when expanding an abbreviation. The characters expanded or supplied by the editor (i.e. those characters that do not appear
             on the original support) are included in the <gi>ex</gi>. In the case of uncertainly expanded abbreviations,
             it is generally these expanded characters that are the source of the uncertainty, so the <gi>ex</gi> element
-            carries the <att>cert</att> attribute with a value of "low".</p>
+            carries a <att>cert</att> with a value of "low".</p>
     <p>Where the <gi>expan</gi> contains more than one string of supplied or expanded characters, or
         the abbreviation itself contains characters that are lost but restored, then the uncertainty of the expansion
         may stem from some or all of these restorations. An editor may indicate this complexity by attaching
         <att>cert</att>="low" on one or more of these elements, or may simply record the uncertainty of the
-        entire word by attaching <att>cert</att> to the <gi>expan</gi> element (see example below).</p>    
+        entire word by attaching <att>cert</att> to the <gi>expan</gi> (see example below).</p>    
     <p>Completely unresolved abbreviations are treated differently; see section <ref target="trans-abbrevnotex.html">Abbreviation
-        not expanded</ref> for an explanation of how to mark up abbreviations for which the expansion is completely unknown 
+        not expanded at all</ref> for an explanation of how to mark up abbreviations for which the expansion is completely unknown 
         (or where the editor is too uncertain even to offer an expansion).</p>
   
         <cit>

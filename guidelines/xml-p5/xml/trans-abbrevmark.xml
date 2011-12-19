@@ -27,20 +27,21 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevmark" xml:lang="en">
     <head>Expansion of abbreviation including symbol/characters</head>
-    <p>When the abbreviated form contains markers not in the expanded form, such as additional letters or punctuation, best practice is
-        to put these in <gi>am</gi> elements, which the standard stylesheets will omit when rendering the expanded form.</p>
+    <p>When the abbreviated form contains a marker that does not exist in the expanded form, such as
+        an additional letter or punctuation, best practice is to put these inside an <gi>am</gi> element,
+        which the standard stylesheets will omit when rendering the expanded form.</p>
     <p><specList>
-        <specDesc key="expan"/>
-        <specDesc key="ex"/>
-        <specDesc key="am"/>
-        <specDesc key="abbr"/>
-    </specList>
+            <specDesc key="expan"/>
+            <specDesc key="ex"/>
+            <specDesc key="am"/>
+            <specDesc key="abbr"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
+            </listRef>--></p>
+
     <p><!--More prose explanation--></p>
-    
+
     <cit>
         <quote><!-- conventional rendering --></quote>
         <bibl corresp="#panciera">
@@ -49,26 +50,37 @@ End license statement: do not remove -->
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <expan><abbr>Aug<am>g</am></abbr><ex>usti duo</ex></expan>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://irt.kcl.ac.uk/irt2009/IRT788.html#3">
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT788.html#3">
         <expan><abbr><am><g type="sestertius"/></am></abbr><ex>sestertios</ex></expan>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/sb;14;11692#1">
-        <expan><abbr><am><g type="dot"/><g type="reverse-slanting-stroke"/></am></abbr><ex cert="low">ὡς ἐτῶν</ex></expan>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/sb;14;11692#1">
+        <expan><abbr><am><g type="dot"/><g type="reverse-slanting-stroke"/></am></abbr><ex
+                cert="low">ὡς ἐτῶν</ex></expan>
     </egXML>
 
-    
+
     <div xml:id="trans-abbrevmark-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>

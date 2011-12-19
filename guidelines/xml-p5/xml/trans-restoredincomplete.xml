@@ -39,9 +39,13 @@
 
     <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
         either by comparison with other texts or through other contextual knowledge. Where a word
-        cannot be completely restored, the missing part should be indicated by a <gi>gap</gi>
-        element. A <gi>w</gi> element shold be used with a <att>part</att> attribute that explains
-        which part of the word is missing, i.e. 'I' (initial), "M" (middle), "F" (final).</p>
+        cannot be completely restored, the missing part should be indicated by a <gi>gap</gi>. A
+            <gi>w</gi> element shold be used with a <att>part</att> attribute that explains which
+        part of the word is missing: <list type="bulleted">
+            <item>'I' (initial)</item>
+            <item>"M" (middle)</item>
+            <item>"F" (final)</item>
+        </list></p>
 
 
     <cit>
@@ -55,27 +59,27 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <w part="I"><supplied reason="lost">abc</supplied></w><gap reason="lost"/>
     </egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
         corresp="http://irt.kcl.ac.uk/irt2009/IRT126.html#5">
         <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/></egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <gap reason="lost"/><w part="M"><supplied reason="lost">ae</supplied></w><gap reason="lost"
         />
     </egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap reason="lost"
-        />
+        <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap reason="lost"/>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://irt.kcl.ac.uk/irt2009/IRT087.html#1">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT087.html#1">
         <gap reason="lost" extent="unknown" unit="character"/><w part="F">ui</w>
     </egXML>
 
-<!-- No DDBDP examples -->
-    
+    <!-- No DDBDP examples -->
+
     <div xml:id="trans-restoredincomplete-responsibility">
 
         <head>Responsibility for this section</head>

@@ -27,16 +27,18 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ellipsis" xml:lang="en">
     <head>Words Omitted by Editor for Brevity></head>
-    <p>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or quoting a text.</p>
+    <p>Word or words omitted for the sake of brevity or emphasis by the editor while discussing or
+        quoting a text.</p>
     <p><specList>
-        <specDesc key="gap"/>
-    </specList>
+            <specDesc key="gap"/>
+        </specList>
         <!--<listRef>
             <ptr target="a"/>
-            </listRef>--></p> 
-    
-    <p>The omitted words should be placed inside a <gi>gap</gi> element whose <att>reason</att> attribute should have a value of "ellipsis".</p>
-    
+            </listRef>--></p>
+
+    <p>The omitted words should be placed inside a <gi>gap</gi> element whose <att>reason</att>
+        attribute should have a value of "ellipsis".</p>
+
     <cit>
         <quote>... or [...]</quote>
         <bibl corresp="#panciera">
@@ -45,25 +47,37 @@ End license statement: do not remove -->
         <bibl corresp="#ddbdp"/>
         <!-- etc. -->
     </cit>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <gap reason="ellipsis"/>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://irt.kcl.ac.uk/irt2009/IRT738.html"> <!-- BUT this is in the Apparatus, not the edition.  It's the only example in IRT -->
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://irt.kcl.ac.uk/irt2009/IRT738.html">
         <gap reason="ellipsis"/>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;2;459#1">
-        <gap reason="ellipsis" quantity="1" unit="line"><desc>Demotic</desc></gap>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;2;459#1">
+        <gap reason="ellipsis" quantity="1" unit="line">
+            <desc>Demotic</desc>
+        </gap>
     </egXML>
-    
+
     <div xml:id="trans-ellipsis-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
