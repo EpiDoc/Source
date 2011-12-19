@@ -37,12 +37,11 @@ End license statement: do not remove -->
             </listRef>--></p>
 
     <p>Where vestiges of characters or lines possibly remain, but they cannot be recognised and
-        their quantity is unknown, a <gi>gap</gi> element should be used, and given a
-            <att>reason</att> attribute with a value of "illegible" and an <att>extent</att>
-        attribute with a value of "unknown". To express uncertainty as to whether or not an
-        illegible character or line is actually present, a <gi>certainty</gi> element with a
-            <att>match</att> attribute corresponding to the parent element (i.e. the <gi>gap</gi>
-        element) should be given an attribute <att>locus</att> with a value of "name".</p>
+        their quantity is unknown, a <gi>gap</gi> should be used, and given a <att>reason</att>
+        attribute with a value of "illegible" and an <att>extent</att> with a value of "unknown". To
+        express uncertainty as to whether or not an illegible character or line is actually present,
+        a <gi>certainty</gi> with a <att>match</att> corresponding to the parent element (i.e. the
+            <gi>gap</gi>) should be given a <att>locus</att> with a value of "name".</p>
 
     <cit>
         <quote>[- - -?]</quote>
@@ -65,26 +64,29 @@ End license statement: do not remove -->
         </gap>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/chla;5;286">
-        <gap reason="illegible" quantity="3" unit="character"><certainty match=".." locus="name"/></gap>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/chla;5;286">
+        <gap reason="illegible" quantity="3" unit="character">
+            <certainty match=".." locus="name"/>
+        </gap>
     </egXML>
 
-<!-- No IRT or iAph examples -->
-    
+    <!-- No IRT or iAph examples -->
+
     <div xml:id="trans-possiblyillegible-responsibility">
 
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt>
-                <resp>author</resp>
-                <name>Scott Vanderbilt</name>
-                <name/>
-            </respStmt></bibl>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
             <bibl><respStmt>
-                <resp>author</resp>
-                <name>Charlotte Tupman</name>
-                <name/>
-            </respStmt></bibl>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>

@@ -31,15 +31,15 @@
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p><gi>gap</gi> (gap) indicates a point where material has been omitted in a transcription,
+        <p><gi>gap</gi> (gap) indicates a point at which material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
     
         <p>Where characters have been lost on the original support and there is nothing to indicate
             to the editor how these should be restored, this is marked up as a lacuna using the
             <gi>gap</gi> element. Note that this is usually an empty element, as it marks a point at
-            which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
-            for examples in which <gi>gap</gi> can contain other elements).</p>
+            which the lacuna occurs, and therefore does not contain any content <!--(see sections VIII.7
+            for examples in which <gi>gap</gi> can contain other elements)-->.</p>
         <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
