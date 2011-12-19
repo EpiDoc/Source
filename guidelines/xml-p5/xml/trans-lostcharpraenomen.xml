@@ -34,16 +34,16 @@
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p><gi>gap</gi> (gap) indicates a point at which material has been omitted in a transcription,
+        <p>A <gi>gap</gi> (gap) indicates a point at which material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
-        <p><gi>name</gi> BLAH BLAH</p>
+    <p><gi>name</gi> indicates a proper noun or noun phrase.</p>
     
     
        
         <p>Where characters have been lost on the original support and there is nothing to indicate
-            to the editor how these should be restored, this is marked up as a lacuna using the
-            <gi>gap</gi> element. Note that this is usually an empty element, as it marks a point at
+            to the editor how these should be restored, this is marked up as a lacuna using
+            <gi>gap</gi>. Note that this is usually an empty element, as it marks a point at
             which the lacuna occurs, and therefore does not contain any content (see sections VIII.7
             for examples in which <gi>gap</gi> can contain other elements).</p>
         <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
@@ -58,13 +58,13 @@
                 etc.).</item>
         </list>
         <p>In cases in which a praenomen has been lost, the quantity of characters missing should be
-            extrapolated (this is usually between 1 and 3 letters). Therefore, in addition to the
-            <att>reason</att> and <att>unit</att> attributes, a further two attributes should be used:</p>
+            extrapolated (this is usually between 1 and 3 letters). Therefore, in addition to 
+            <att>reason</att> and <att>unit</att>, a further two attributes should be used:</p>
         <list type="bulleted">
             <item><att>atLeast</att> indicates the minimum number of characters lost.</item>
             <item><att>atMost</att> indicates the maximum number of characters lost.</item>
         </list>
-        <p>The <gi>gap</gi> element should also be placed inside a <gi>name</gi> element, to denote
+        <p><gi>gap</gi> should also be placed inside <gi>name</gi>, to denote
             the fact that the editor considers the lacuna to have contained a name rather than
             another type of word.</p>
     
