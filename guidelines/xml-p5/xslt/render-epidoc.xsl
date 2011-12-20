@@ -35,6 +35,9 @@
                                 <xsl:when test=". = 'panciera'">
                                     <xsl:text>Default style (Panciera)</xsl:text>
                                 </xsl:when>
+                                <xsl:when test=". = 'ddbdp'">
+                                    <xsl:text>DDbDP</xsl:text>
+                                </xsl:when>
                                 <xsl:when test=". = 'dohnicht'">
                                     <xsl:text>Dohnicht</xsl:text>
                                 </xsl:when>
@@ -53,7 +56,9 @@
                                 <xsl:otherwise>
                                     <xsl:value-of select="."/>
                                 </xsl:otherwise>
-                            </xsl:choose> style:</strong>
+                            </xsl:choose>
+                          <xsl:text> style:</xsl:text>
+                        </strong>
                         <xsl:copy-of
                             select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"
                         />
