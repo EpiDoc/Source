@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#SV" when="2012-01-09">stop omitting location</change>
             <change who="#GB" when="2011-09-26">added att.responsibility to provenance (temporary fix)</change>
             <change who="#GB" when="2011-09-25">removed modification of lb/@type and added vocab control for lb/@break</change>
             <change who="#GB" when="2011-09-24">added att.typed to provenance and origPlace (temporary fix)</change>
@@ -441,7 +442,6 @@
                 <elementSpec module="namesdates" ident="geoFeat" mode="delete"/>
                 <elementSpec module="namesdates" ident="langKnowledge" mode="delete"/>
                 <elementSpec module="namesdates" ident="langKnown" mode="delete"/>
-                <elementSpec module="namesdates" ident="location" mode="delete"/>
                 <elementSpec module="namesdates" ident="nameLink" mode="delete"/>
                 <elementSpec module="namesdates" ident="nationality" mode="delete"/>
                 <elementSpec module="namesdates" ident="occupation" mode="delete"/>
