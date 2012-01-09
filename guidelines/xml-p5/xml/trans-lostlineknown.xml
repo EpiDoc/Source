@@ -55,8 +55,9 @@
                 "line" (or indeed some other type of textual unit such as "column", "page"
                 etc.).</item>
         </list>
-
-        <cit>
+    
+        <div>
+            <cit>
             <quote>[------]<lb/> [------]<lb/>[------] </quote>
             <bibl corresp="#panciera">
                 <biblScope>8.5</biblScope>
@@ -66,14 +67,16 @@
             <quote>[3 lines missing]</quote>
             <bibl corresp="#ddbdp"/>
         </cit>
-    
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
             <gap reason="lost" quantity="3" unit="line"/>
         </egXML>
+        </div>
     
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;11;2070">
+        <div>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;11;2070">
             <gap reason="lost" quantity="5" unit="line"/> 
         </egXML>
+        </div>
     
     <!-- No IRT examples except for @quantity="1" -->
 
@@ -81,7 +84,8 @@
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt>
+                <respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
