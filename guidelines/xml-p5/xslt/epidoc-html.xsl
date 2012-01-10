@@ -124,23 +124,13 @@
         <xsl:text> </xsl:text><xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="tei:respStmt">
+        <xsl:apply-templates select="tei:name"/>, <xsl:apply-templates select="tei:resp"/><xsl:text> </xsl:text>
+    </xsl:template>
+    
     <xsl:template name="formatHeadingNumber">
         <xsl:param name="text"/>
         <xsl:param name="toc"/>
-        <!--<span class="headingNumber">
-            <xsl:choose>
-                <xsl:when test="$toc =''">
-                    <xsl:copy-of select="$text"/>
-                </xsl:when>
-                <xsl:when test="number(normalize-space($text))&lt;10">
-                    <xsl:text> </xsl:text>
-                    <xsl:copy-of select="$text"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:copy-of select="$text"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </span>-->
     </xsl:template>
 
 </xsl:stylesheet>
