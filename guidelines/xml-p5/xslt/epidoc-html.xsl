@@ -113,7 +113,7 @@
     <xsl:template match="tei:cit/tei:bibl">
             <xsl:if test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
                 <span class="ref">
-                    <xsl:for-each select="//tei:bibl[@xml:id = current()/@corresp]/tei:author">
+                    <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
                         <xsl:value-of select="."/>
                         <xsl:if test="following-sibling::tei:author">
                             <xsl:text>/</xsl:text>
@@ -121,7 +121,26 @@
                     </xsl:for-each>
                 </span>
             </xsl:if>
-        <xsl:apply-templates/>
+        <xsl:text> </xsl:text><xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template name="formatHeadingNumber">
+        <xsl:param name="text"/>
+        <xsl:param name="toc"/>
+        <!--<span class="headingNumber">
+            <xsl:choose>
+                <xsl:when test="$toc =''">
+                    <xsl:copy-of select="$text"/>
+                </xsl:when>
+                <xsl:when test="number(normalize-space($text))&lt;10">
+                    <xsl:text> </xsl:text>
+                    <xsl:copy-of select="$text"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="$text"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>-->
     </xsl:template>
 
 </xsl:stylesheet>
