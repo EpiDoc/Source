@@ -40,8 +40,20 @@ End license statement: do not remove -->
     the examples offered here are of numbers whose values are non-sequential; for instance, a two-digit number where
     the units value survives, but the tens unit does not.</p>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/...">
-        <!-- example markup -->
+    <p>No example rendering in standard epigraphic conventions.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" xml:lang="grc">
+        Φαῶφι <num value="11"><gap reason="lost" quantity="1" unit="character"/>α
+            <certainty match="../@value" locus="value" assertedValue="21"/></num>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" xml:lang="la">
+        <num value="4"><gap reason="lost" quantity="1" unit="character"/>III
+            <certainty match="../@value" locus="value" assertedValue="8"/>
+            <certainty match="../@value" locus="value" assertedValue="13"/>
+            <certainty match="../@value" locus="value" assertedValue="53"/>
+            <certainty match="../@value" locus="value" assertedValue="103"/>
+        </num>
     </egXML>
     
     
