@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-01-11">added "inverted" and "small" to suggested values for hi[@rend]</change>
             <change who="#GB" when="2012-01-11">removed customization of provenance, origPlace, msItem</change>
             <change who="#SV" when="2012-01-09">stop omitting location</change>
             <change who="#GB" when="2011-09-26">added att.responsibility to provenance (temporary fix)</change>
@@ -188,6 +189,9 @@
                                 <valItem ident="intraline">
                                     <desc>characters scored or struck through at the mid-line level</desc>
                                 </valItem>
+                                <valItem ident="inverted">
+                                    <desc>character(s) inverted or rotated with respect to the rest of the text</desc>
+                                </valItem>
                                 <valItem ident="italic">
                                     <desc/>
                                 </valItem>
@@ -201,13 +205,16 @@
                                     <desc/>
                                 </valItem>
                                 <valItem ident="reversed">
-                                    <desc/>
+                                    <desc>characters reversed (backward-facing) with respect to the rest of the line of text</desc>
                                 </valItem>
                                 <valItem ident="sling-above">
                                     <desc/>
                                 </valItem>
                                 <valItem ident="sling-below">
                                     <desc/>
+                                </valItem>
+                                <valItem ident="small">
+                                    <desc>Letter(s) smaller than those around them</desc>
                                 </valItem>
                                 <valItem ident="subscript">
                                     <desc>characters written lower than the surrounding text</desc>

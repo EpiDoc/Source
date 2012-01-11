@@ -47,11 +47,10 @@ How to use it:
 	canonical new EpiDoc schema.
 
       To validate:
-	If using Oxygen to edit XML files, a processing instruction such as:
+	If using Oxygen or similar editor to edit XML files, a processing instruction such as:
 
-	<?oxygen
-	  RNGSchema="http://www.stoa.org/epidoc/schema/8.9/tei-epidoc.rng"
-        type="xml"?>
+	<?xml-model href="http://www.stoa.org/epidoc/schema/8.10/tei-epidoc.rng"
+	                        schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 	at the top of the XML file will instruct the editor to validate
 	against this schema.
