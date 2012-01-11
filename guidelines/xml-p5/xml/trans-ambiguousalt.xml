@@ -27,28 +27,37 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ambiguousalt" xml:lang="en">
     <head>Ambiguous Characters with Alternatives Offered</head>
-    <p><!--gloss--></p>
-    <p><specList>
+    <p>Sometimes an editor will record traces of a surviving ambiguous or damaged character, but rather
+    than simply underdotting the chosen interpretation, she will list several possibilities (usually in an apparatus
+    or note). This concept is encoded in EpiDoc using the <gi>choice</gi> element to group several 
+        <gi>unclear</gi>s.</p>
+    <p>
+        <specList>
         <specDesc key="choice"/>
         <specDesc key="unclear"/>
     </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+        </p> 
     
-    <p><!--More prose explanation--></p>
+    <p>No example in standard epigraphic conventions.</p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
+        <quote>What survives of the last letter before the break is consonant with Γ, Ε, Ζ, Ξ, Π, Σ, Τ</quote>
+        <bibl>
+            <author>Joyce M. Reynolds</author>
+            <ref>http://insaph.kcl.ac.uk/iaph2007/iAph090043.html</ref>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
-    </cit>
+    </cit>   
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph090043.html">
+        <choice>
+            <unclear>Γ</unclear>
+            <unclear>Ε</unclear>
+            <unclear>Ζ</unclear>
+            <unclear>Ξ</unclear>
+            <unclear>Π</unclear>
+            <unclear>Σ</unclear>
+            <unclear>Τ</unclear>
+        </choice>
     </egXML>
     
     

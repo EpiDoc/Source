@@ -27,35 +27,48 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-charactershighlighted" xml:lang="en">
     <head>Characters highlighted or set apart in some way</head>
-    <p><!--gloss--></p>
-    <p><specList>
-        <specDesc key="hi"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>There are many common ways in which letters are set apart from surrounding text in inscriptions
+    and papyri: characters may be larger, smaller, in different color ink, differently styled letters, serifed or 
+    decorated in various ways. EpiDoc defines a few common types of such highlighting, but the <gi>hi</gi>
+    element may be used for arbitrarily highlighted characters.</p>
+    <p>
+        <specList>
+            <specDesc key="hi"/>
+        </specList>
+    </p> 
     
-    <p><!--More prose explanation--></p>
+    <p>Highlighted characters or words should be tagged using the <gi>hi</gi> element, with a <att>rend</att>
+    attribute specifying the kind of highlighting. For the most common values of <att>rend</att>, see the separate
+    sections listed below. If none of these values apply to the case you are marking up, new values of
+    <att>rend</att> may be coined for this purpose. Note that the EpiDoc example stylesheets will most likely
+    not handle these "unbound" variants of <gi>hi</gi>.</p>
     
-    <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>...</biblScope>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
-    </cit>
+    <p>See also separate sections on:</p>
+    <list>
+        <item><ref target="trans-apices.html">Apices and other ancient diacritics</ref></item>
+        <item><ref target="trans-supralinearetc.html">Supralinear lines, etc.</ref></item>
+        <item><ref target="trans-raisedlowered.html">Raised or lowered characters</ref></item>
+        <item><ref target="trans-tallorsmall.html">Tall or small characters</ref></item>
+        <item><ref target="trans-reversed.html">Reversed or inverted letters</ref></item>
+        <item><ref target="trans-claudian.html">Claudian letters</ref></item>
+        <item><ref target="trans-ligature.html">Ligatures</ref></item>
+    </list>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    <p>No example in standard epigraphic conventions.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <hi rend="red">πρεσβύτης</hi>
     </egXML>
     
-    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <hi rend="italic">legi</hi>
+    </egXML>
+
     <div xml:id="trans-charactershighlighted-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>

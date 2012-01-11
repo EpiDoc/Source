@@ -27,36 +27,50 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevsymbol" xml:lang="en">
     <head>Expansion of symbol</head>
-    <p><!--gloss--></p>
-    <p><specList>
-        <specDesc key="expan"/>
-        <specDesc key="ex"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>A word expanded, not from an abbreviation or suspension of letters in the text, but from a symbol
+    or glyph on the stone/page. The symbol may or may not be recorded in the markup.</p>
+    <p>
+        <specList>
+            <specDesc key="abbr"/>
+            <specDesc key="am"/>
+            <specDesc key="expan"/>
+            <specDesc key="ex"/>
+            <specDesc key="g"/>
+        </specList>
+    </p> 
     
-    <p><!--More prose explanation--></p>
+    <p>When an entire word is resolved by the editor on the basis not of an abbreviation per se, but of a symbolic mark
+    or ideogram, such as the denarius symbol, the glyph for year or half, the solidus for a synonymous patronymic or
+    freedman, Tyrolean 'et', and such symbols, a traditional edition generally does not represent the symbol itself, only
+    showing the expanded word in parentheses. In the simplest case, EpiDoc can simply replicate this practice, using
+    <gi>expan</gi> and <gi>ex</gi> to encode the expanded word without any <gi>abbr</gi> recorded.</p>
     
-    <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope>X.3</biblScope>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
-    </cit>
+    <p>It is preferable however, where possible, to encode fully the characters on the stone as well as the editor's
+    interpretation of them. In this case the <gi>abbr</gi> element will be used, with the addition of an <gi>am</gi>
+    (abbreviation mark), to indicate that the symbol, while part of the abbreviation, is not part of the resolved
+    word. </p>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
-    </egXML>
+   <div>
+       <cit>
+           <quote>(ἀρτάβης)</quote>
+           <bibl corresp="#poxy"/>
+       </cit>    
+       <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#poxy" rend="ddbdp">
+           <expan><ex>ἀρτάβης</ex></expan>
+       </egXML>
+   </div>
     
+    <div>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ircyr" rend="london">
+            <expan><abbr><am><g type="year">𐅹</g></am></abbr><ex>ἔτους</ex></expan>
+        </egXML>
+    </div>
     
     <div xml:id="trans-abbrevsymbol-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
