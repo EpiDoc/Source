@@ -27,13 +27,16 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-reversed" xml:lang="en">
     <head>Reversed letters; inverted (or rotated) letters</head>
-    <p><!--gloss--></p>
-    <p><specList>
-        <specDesc key="hi"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>Letters that are reversed (e.g. right-to-left) or inverted (rotated) with respect to the alignment
+    of the surrounding text. These characters are considered to be set apart from the main body of text
+    by their changed orientation, and so are marked with the <gi>hi</gi> tag. This element should not
+    be used to indicate text that is all written in reverse, or boustrophedon documents (for which see
+        <ref target="trans-linebreakdirection.html">Direction of Text</ref>).</p>
+    <p>
+        <specList>
+            <specDesc key="hi"/>
+        </specList>
+    </p> 
     
     <p><!--More prose explanation--></p>
     
@@ -42,8 +45,6 @@ End license statement: do not remove -->
         <bibl corresp="#panciera">
             <biblScope>...</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
@@ -54,13 +55,16 @@ End license statement: do not remove -->
         Εὐα<hi rend="reversed">ν</hi>τήτῳ
     </egXML>
     
-    <!-- No examples from DDBDP or IRT -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="rib" corresp="#rib"><!-- in RIB 1483 -->
+        <hi rend="inverted">F</hi>VRIO
+    </egXML>
     
     <div xml:id="trans-reversed-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
