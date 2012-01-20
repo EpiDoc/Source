@@ -29,12 +29,11 @@ End license statement: do not remove -->
     <head>Ligatured letters</head>
     <p>Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters,
         such as adjacent M and N, but more broadly any two joined or superimposed characters.</p>
-    <p><specList>
-        <specDesc key="hi"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>
+        <specList>
+            <specDesc key="hi"/>
+        </specList>
+    </p> 
     
     <p><!--More prose explanation--></p>
     
@@ -44,28 +43,29 @@ End license statement: do not remove -->
         <bibl corresp="#panciera">
             <biblScope>IV.4</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
         <hi rend="ligature">ab</hi>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
         <hi rend="ligature">abc</hi>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"><!--find real e.g.-->
-        ἀρχιερέω<hi rend="ligature" xml:id="hi1">ν</hi> <hi rend="ligature" xml:id="hi2">ἐ</hi>κγόνου <link targets="hi1 hi2" />
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://irt.kcl.ac.uk/irt2009/IRT991.html">
         <hi rend="ligature">ae</hi>
     </egXML>
     
-    <!-- No examples from DDBDP -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="petrae">
+    <!-- example from IOSPE Byz. 18 -->
+        Εὐ<supplied reason="omitted">σ</supplied>εβί<hi rend="ligature">ου</hi>
+    </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010189.html">
+        ἀρχιερέω<hi rend="ligature" xml:id="hi1">ν</hi> <hi rend="ligature" xml:id="hi2">ἐ</hi>κγόνου <link targets="hi1 hi2" />
+    </egXML>
+        
     <div xml:id="trans-ligature-responsibility">
     
         <head>Responsibility for this section</head>
@@ -73,7 +73,6 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
 </div>

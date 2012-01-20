@@ -28,14 +28,13 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-addition" xml:lang="en">
     <head>Text Addition by Ancient Hand</head>
     <p><!--gloss--></p>
-    <p><specList>
+    <p>
+        <specList>
             <specDesc key="add"/>
         </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p>
+    </p>
 
-    <p>Text added by ancient hand (place = above, below, left etc.)</p>
+    <p>Text added by ancient hand (above, below, left etc.)</p>
     <p>In traditional Leiden the place of added text is not specified in the transcription, but
         noted in the apparatus or commentary. This added information, recorded here by use of the
         place attribute, is therefore optional and may be omitted without harm. If it is to be
@@ -44,7 +43,7 @@ End license statement: do not remove -->
         ("above", "below", "left" etc.).</p>
 
     <cit>
-        <quote>'abc'</quote>
+        <quote>`abc´</quote>
         <bibl corresp="#panciera">
             <biblScope>VII.1</biblScope>
         </bibl>
@@ -53,19 +52,18 @@ End license statement: do not remove -->
     <cit>
         <quote>\abc/ (above), /abc\ (below)</quote>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp london petrae">
         <add place="above">αβ</add>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#ddbdp" rend="panciera ddbdp london petrae">
         <add place="below">αβ</add>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://irt.kcl.ac.uk/irt2009/IRT029.html">
-            <add place="above"><w lemma="imperator" part="I"><expan><abbr>Imp</abbr><ex>erator</ex></expan></w></add>
+            <add place="above"><expan><abbr>Imp</abbr><ex>erator</ex></expan></add>
     </egXML>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/p.cair.zen;4;59580"> 
@@ -81,13 +79,12 @@ End license statement: do not remove -->
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Scott Vanderbilt</name>
-                    <name/>
                 </respStmt></bibl>
             <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+            </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
