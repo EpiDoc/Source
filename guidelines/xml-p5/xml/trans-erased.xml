@@ -41,25 +41,27 @@ End license statement: do not remove -->
         using the <gi>del</gi> element, whose <att>rend</att> should have a value of
         "erasure". Where the characters cannot be understood or are unclear, <gi>orig</gi> and
             <gi>unclear</gi> elements should be used respectively.</p>
-
+    
     <cit>
         <quote>[[abc]] or [[ABC]] or [[ạḅc̣]]</quote>
         <bibl corresp="#panciera">
             <biblScope>V.1</biblScope>
         </bibl>
+    </cit>
+    <cit>
+        <quote>&#x27e6;αβγ&#x27e7;</quote>
         <bibl corresp="#ddbdp"/>
-        <bibl corresp="#seg"/>
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
         <del rend="erasure">abc</del>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
         <del rend="erasure"><orig>abc</orig></del>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
         <del rend="erasure"><unclear>abc</unclear></del>
     </egXML>
 
@@ -86,10 +88,15 @@ End license statement: do not remove -->
                     <name/>
                 </respStmt></bibl>
             <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+                <name/>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Gabriel Bodard</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

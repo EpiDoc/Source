@@ -27,30 +27,39 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-erasedlost" xml:lang="en">
     <head>Erased and Lost</head>
-    <p><!--gloss--></p>
-    <p><specList>
+    <p>Text deliberately erased in antiquity of which no trace now remains on the stone or papyrus, 
+        and which cannot be restored by the editor.</p>
+    <p>
+        <specList>
             <specDesc key="del"/>
             <specDesc key="gap"/>
         </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p>
+    </p>
+    
+    <p>Two different TEI tags are used to indicate erased and un-restored text: the <gi>del</gi> element
+    indicates the editor's assertion than the text was purposefully erased by an ancient hand (rather than, say,
+    damaged by accident, weather or modern activity); the <gi>gap</gi> element indicates more objectively
+    that whatever text or other decoration was originally inscribed on this surface is no longer evident at all.</p>
 
-    <p>Characters erased in antiquity and completely lost should be tagged using the <gi>del</gi>
-        element, assigning to the <att>rend</att> the value "erasure". A <gi>gap</gi>
-        element should be placed inside the <gi>del</gi> and given a <att>reason</att>,
-            <att>quantity</att> and <att>unit</att> attributes.</p>
-
+    <p>Characters erased in antiquity and completely lost should therefore be tagged using the <gi>del</gi>
+        element (if appropriate assigning to the <att>rend</att> attribue a value, most likely "erasure"). A <gi>gap</gi>
+        element should be placed inside the <gi>del</gi>, to indicate that the erased text is not restored,
+        and will be given a <att>reason</att>, <att>unit</att>, and either <att>quantity</att> or <att>extent</att> 
+        attributes, as usual.</p>
+    
     <cit>
         <quote>[[[...]]] or [[[<hi rend="underline"><hi rend="superscript">c.7</hi></hi>]]] or [[[---]]]</quote>
         <bibl corresp="#panciera">
             <biblScope>V.3</biblScope>
         </bibl>
+    </cit>
+    
+    <cit>
+        <quote>&#x27e6;[ - ca.? - ]&#x27e7;</quote>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera london ddbdp">
         <del rend="erasure"><gap reason="lost" quantity="3" unit="character"/></del>
     </egXML>
 
@@ -69,11 +78,15 @@ End license statement: do not remove -->
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Beatrice Lietz</name>
-                </respStmt></bibl>
+            </respStmt></bibl>
             <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                </respStmt></bibl>
+                <resp>author</resp>
+                <name>Charlotte Tupman</name>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Gabriel Bodard</name>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
