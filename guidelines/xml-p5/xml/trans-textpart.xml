@@ -27,23 +27,25 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-textpart" xml:lang="en">
     <head>Textpart</head>
-    <p><!--gloss--></p>
-    <p><specList>
+    <p>Divisions of the edited text such as fragments, columns, chapters or versions in different languages.</p>
+    <p>
+        <specList>
             <specDesc key="div"/>
+            <specDesc key="milestone"/>
         </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p>
+    </p>
 
     <p>Units of the text that are separated and usually numbered independently by
-        epigraphers—including fragments, columns, sections, chapters, independent texts on a single
-        stone, marks, stamps, or graffiti grouped together — should be similarly divided and
-        numbered in EpiDoc. Each division containing a separate unit of text should be wrapped in a
-        separate <gi>ab</gi> inside a <egXML xmlns="http://www.tei-c.org/ns/Examples"
-            corresp="#london"><div type="textpart"/></egXML> (the <att>subtype</att> attribute may
-        also name the kind of textpart being encoded in the form, e.g. <egXML
-            xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="#london"><div type="textpart"
-                subtype="column"/></egXML>. Its values are unrestricted.</p>
+        epigraphers and papyrologists—including fragments, columns, sections, chapters, independent texts on a single
+        stone, marks, stamps, or graffiti grouped together—should be divided and
+        numbered on the same basis in EpiDoc. The use of XML should not change the need for
+        dividing and numbering the text in a way that makes semantic and intuitive sense to the editor.</p>
+        
+        <p>Each division containing a separate section of text should be wrapped in a
+            separate <gi>ab</gi> inside a <gi>div</gi> with an <att>type</att>="textpart". It is often useful
+            (although not obligatory) also to provide a <att>subtype</att> attribute naming the kind of subdivision
+            of text being recorded here; <att>subtype</att> is not constrained, but common values might include
+            "fragment", "column", "section", etc.</p>
 
     <p>These units may, of course, nest in almost any combination. If there are non-hierarchical
         overlaps between units (e.g. sections and columns) then one unit has to be selected as the
@@ -59,10 +61,9 @@ End license statement: do not remove -->
     <cit>
         <quote>Section A</quote>
         <bibl corresp="#london"/>
-
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="#london">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
         <div type="textpart" subtype="section" n="A"/>
     </egXML>
 
