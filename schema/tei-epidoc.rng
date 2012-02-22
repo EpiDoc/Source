@@ -3,9 +3,9 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-01-11T09:12:19Z. 
-Edition: 2.0.0 Last updated on 16th December 2011.
-Edition Location: http://www.tei-c.org/Vault/P5/2.0.0/
+Schema generated from ODD source 2012-02-22T10:08:19Z. 
+Edition: 2.0.2 Last updated on 2nd February 2012.
+Edition Location: http://www.tei-c.org/Vault/P5/2.0.2/
 
 --><!----><define name="tei_macro.paraContent">
       <zeroOrMore>
@@ -4495,7 +4495,7 @@ to others within the personal name.</a:documentation>
          <ref name="tei_macro.paraContent"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeresis; 6] grave; 7] intraline; 8] italic; 9] lenis; 10] ligature; 11] normal; 12] reversed; 13] sling-above; 14] sling-below; 15] subscript; 16] superscript; 17] supraline; 18] supraline-underline; 19] tall; 20] underline</a:documentation>
+Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeresis; 6] grave; 7] intraline; 8] inverted; 9] italic; 10] lenis; 11] ligature; 12] normal; 13] reversed; 14] sling-above; 15] sling-below; 16] small; 17] subscript; 18] superscript; 19] supraline; 20] supraline-underline; 21] tall; 22] underline</a:documentation>
             <list>
                <choice>
                   <value>acute</value>
@@ -4512,6 +4512,8 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ancient grave (varia) diacritic</a:documentation>
                   <value>intraline</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters scored or struck through at the mid-line level</a:documentation>
+                  <value>inverted</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">character(s) inverted or rotated with respect to the rest of the text</a:documentation>
                   <value>italic</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>lenis</value>
@@ -4521,11 +4523,13 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                   <value>normal</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>reversed</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters reversed (backward-facing) with respect to the rest of the line of text</a:documentation>
                   <value>sling-above</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>sling-below</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>small</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) smaller than those around them</a:documentation>
                   <value>subscript</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written lower than the surrounding text</a:documentation>
                   <value>superscript</value>
@@ -4557,6 +4561,8 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ancient grave (varia) diacritic</a:documentation>
                      <value>intraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters scored or struck through at the mid-line level</a:documentation>
+                     <value>inverted</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">character(s) inverted or rotated with respect to the rest of the text</a:documentation>
                      <value>italic</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>lenis</value>
@@ -4566,11 +4572,13 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>normal</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>reversed</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters reversed (backward-facing) with respect to the rest of the line of text</a:documentation>
                      <value>sling-above</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>sling-below</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value>small</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) smaller than those around them</a:documentation>
                      <value>subscript</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written lower than the surrounding text</a:documentation>
                      <value>superscript</value>
@@ -4603,6 +4611,8 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ancient grave (varia) diacritic</a:documentation>
                      <value>intraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters scored or struck through at the mid-line level</a:documentation>
+                     <value>inverted</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">character(s) inverted or rotated with respect to the rest of the text</a:documentation>
                      <value>italic</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>lenis</value>
@@ -4612,11 +4622,13 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>normal</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>reversed</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters reversed (backward-facing) with respect to the rest of the line of text</a:documentation>
                      <value>sling-above</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>sling-below</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value>small</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) smaller than those around them</a:documentation>
                      <value>subscript</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written lower than the surrounding text</a:documentation>
                      <value>superscript</value>
@@ -4649,6 +4661,8 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ancient grave (varia) diacritic</a:documentation>
                      <value>intraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters scored or struck through at the mid-line level</a:documentation>
+                     <value>inverted</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">character(s) inverted or rotated with respect to the rest of the text</a:documentation>
                      <value>italic</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>lenis</value>
@@ -4658,11 +4672,13 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>normal</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>reversed</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters reversed (backward-facing) with respect to the rest of the line of text</a:documentation>
                      <value>sling-above</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>sling-below</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value>small</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) smaller than those around them</a:documentation>
                      <value>subscript</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written lower than the surrounding text</a:documentation>
                      <value>superscript</value>
@@ -4695,6 +4711,8 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ancient grave (varia) diacritic</a:documentation>
                      <value>intraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters scored or struck through at the mid-line level</a:documentation>
+                     <value>inverted</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">character(s) inverted or rotated with respect to the rest of the text</a:documentation>
                      <value>italic</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>lenis</value>
@@ -4704,11 +4722,13 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>normal</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>reversed</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters reversed (backward-facing) with respect to the rest of the line of text</a:documentation>
                      <value>sling-above</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      <value>sling-below</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value>small</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) smaller than those around them</a:documentation>
                      <value>subscript</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written lower than the surrounding text</a:documentation>
                      <value>superscript</value>
@@ -9034,7 +9054,7 @@ element on which the ana attribute appears.</a:documentation>
          <optional>
             <attribute name="assertedValue">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an alternative value for the aspect of the markup in
-question—an alternative generic identifier, transcription,
+question — an alternative generic identifier, transcription,
 or attribute value, or the identifier of an anchor element (to
 indicate an alternative starting or ending location).  If an
 assertedValue is given, the confidence level specified by
@@ -11068,6 +11088,7 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
         notation.</a:documentation>
          <text/>
          <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.declaring.attributes"/>
          <empty/>
       </element>
    </define>
