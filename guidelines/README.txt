@@ -49,20 +49,18 @@ How to use it:
     Generate HTML Guidelines from XML files
     
         1. Make sure you have a full checkout of the SVN repository.
-        <!-- 2. Run the script: ./xml-p5/copyxslts.py -->
         2. Open OxygenXML and open the project file: 
             ./xml-p5/Guidelines-generation-project.xpr
         3. Open the xml file: ./xml-p5/xml/driver.xml
-	<!-- 4. if you have python installed, run xxx.py; otherwise:-->
-	4. If you need to run the XML examples (this is your first run,
-	   or you've changed content) then run the local transformation scenarios:
+	4. If you need to run all the XML transforms (this is your first run,
+	   or you've changed content) then run the XSLT transformation scenarios:
 		* Generate DDBDP Examples
 		* Generate Dohnicht Examples
 		* Generate EDH Web Examples
 		* Generate London Examples
 		* Generate Panciera Examples
 		* Generate Seg Examples
-        5. Run the guidelines generation scenario against it (EpiDoc P5 Guidelines HTML)
+        5. Run the guidelines generation XSLT scenario against it ("EpiDoc P5 Guidelines HTML")
         6. Results of the transformation will be output to ./xml-p5/output/
 	
        
