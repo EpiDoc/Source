@@ -1,75 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="11.2">
+<project version="13.1">
     <meta>
-        <filters directoryPatterns="" filePatterns=""
-            positiveFilePatterns="" showHiddenFiles="false"/>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="11.2">
+            <serialized version="13.1" xml:space="preserve">
                 <map>
                     <entry>
-                        <String xml:space="preserve">scenario.associations</String>
+                        <String>scenario.associations</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="name">
-                                    <String xml:space="preserve">EpiDoc P5 Guidelines HTML</String>
+                                    <String>EpiDoc P5 Guidelines HTML</String>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">xml/driver.xml</String>
+                                    <String>xml/driver.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate Panciera Examples</String>
+                                    <String>EpiDoc P5 Guidelines HTML</String>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">xml/trans-erased.xml</String>
+                                    <String>xml/toc.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="name">
-                                    <String xml:space="preserve">EpiDoc P5 Guidelines HTML</String>
+                                    <String>EpiDoc P5 Guidelines HTML</String>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">driver.xml</String>
+                                    <String>xml/trans-ligature.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="name">
-                                    <String xml:space="preserve">EpiDoc P5 Guidelines HTML</String>
+                                    <String>EpiDoc P5 Guidelines HTML</String>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">xml/trans-ligature.xml</String>
+                                    <String>driver.xml</String>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="name">
+                                    <String>Generate Panciera Examples</String>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="url">
+                                    <String>xml/trans-erased.xml</String>
                                 </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>
                     </entry>
                     <entry>
-                        <String xml:space="preserve">scenarios</String>
+                        <String>scenarios</String>
                         <scenario-array>
                             <scenario>
                                 <field name="advancedOptionsMap">
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute DDXQuery</String>
+                                    <String>Execute DDXQuery</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -78,55 +88,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">DD_XQUERY</String>
+                                    <String>DD_XQUERY</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -135,7 +145,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">DataDirect</String>
+                                    <String>DataDirect</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -146,70 +156,70 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">EpiDoc P5 Guidelines HTML</String>
+                                    <String>EpiDoc P5 Guidelines HTML</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/epidoc-html.xsl</String>
+                                    <String>../xslt/epidoc-html.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">../output/index.html</File>
+                                    <File>../output/index.html</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -218,7 +228,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -229,70 +239,70 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">EpiDoc Schema to egXML Schema</String>
+                                    <String>EpiDoc Schema to egXML Schema</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../schema/schema2egSchema.xsl</String>
+                                    <String>../schema/schema2egSchema.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -301,7 +311,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -312,98 +322,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate DDBDP Examples</String>
+                                    <String>Generate DDBDP Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/ddbdp/examples.xml</File>
+                                    <File>./views/ddbdp/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">ddbdp</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>ddbdp</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -414,98 +427,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate Dohnicht Examples</String>
+                                    <String>Generate Dohnicht Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/dohnicht/examples.xml</File>
+                                    <File>./views/dohnicht/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">dohnicht</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>dohnicht</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -516,98 +532,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate EDH Web Examples</String>
+                                    <String>Generate EDH Web Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/edh-web/examples.xml</File>
+                                    <File>./views/edh-web/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">edh-web</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>edh-web</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -618,98 +637,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate London Examples</String>
+                                    <String>Generate London Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/london/examples.xml</File>
+                                    <File>./views/london/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">london</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>london</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -720,70 +742,70 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate Panciera Examples</String>
+                                    <String>Generate Panciera Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/panciera/examples.xml</File>
+                                    <File>./views/panciera/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -792,7 +814,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -803,98 +825,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate Petrae Examples</String>
+                                    <String>Generate Petrae Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/petrae/examples.xml</File>
+                                    <File>./views/petrae/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">petrae</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>petrae</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -905,98 +930,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate RIB Examples</String>
+                                    <String>Generate RIB Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/rib/examples.xml</File>
+                                    <File>./views/rib/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">rib</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>rib</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1007,98 +1035,101 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Generate Seg Examples</String>
+                                    <String>Generate Seg Examples</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
-                                    <String xml:space="preserve">pdf</String>
+                                    <String>pdf</String>
                                 </field>
                                 <field name="fOProcessorName">
-                                    <String xml:space="preserve">Apache FOP</String>
+                                    <String>Apache FOP</String>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">../xslt/createEpidocViews.xsl</String>
+                                    <String>../xslt/createEpidocViews.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XSL</String>
+                                    <String>XSL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File xml:space="preserve">./views/seg/examples.xml</File>
+                                    <File>./views/seg/examples.xml</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list>
-                                    <transformationParameter>
-                                    <field name="paramDescription">
-                                    <paramDescriptor>
-                                    <field name="localName">
-                                    <String xml:space="preserve">leiden-style</String>
-                                    </field>
-                                    <field name="prefix">
-                                    <null/>
-                                    </field>
-                                    <field name="namespace">
-                                    <null/>
-                                    </field>
-                                    </paramDescriptor>
-                                    </field>
-                                    <field name="value">
-                                    <String xml:space="preserve">seg</String>
-                                    </field>
-                                    </transformationParameter>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>leiden-style</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>seg</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                        </transformationParameter>
                                     </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE</String>
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1109,13 +1140,13 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute XQuery</String>
+                                    <String>Execute XQuery</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -1124,55 +1155,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XQUERY</String>
+                                    <String>XQUERY</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -1181,7 +1212,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE XQuery</String>
+                                    <String>Saxon-PE XQuery</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1192,13 +1223,13 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute XQuery v10.2</String>
+                                    <String>Execute XQuery v10.2</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -1207,55 +1238,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XQUERY</String>
+                                    <String>XQUERY</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -1264,7 +1295,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE XQuery</String>
+                                    <String>Saxon-PE XQuery</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1275,13 +1306,13 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute XQuery v10.3</String>
+                                    <String>Execute XQuery v10.3</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -1290,55 +1321,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XQUERY</String>
+                                    <String>XQUERY</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -1347,7 +1378,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE XQuery</String>
+                                    <String>Saxon-PE XQuery</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1358,13 +1389,13 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute XQuery v11.1</String>
+                                    <String>Execute XQuery v11.1</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -1373,55 +1404,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">XQUERY</String>
+                                    <String>XQUERY</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -1430,7 +1461,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">Saxon-PE XQuery</String>
+                                    <String>Saxon-PE XQuery</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1441,13 +1472,13 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String xml:space="preserve">Execute SQL</String>
+                                    <String>Execute SQL</String>
                                 </field>
                                 <field name="baseURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="footerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="fOPMethod">
                                     <null/>
@@ -1456,55 +1487,55 @@
                                     <null/>
                                 </field>
                                 <field name="headerURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String xml:space="preserve">${currentFileURL}</String>
+                                    <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="defaultScenario">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="isFOPPerforming">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String xml:space="preserve">SQL</String>
+                                    <String>SQL</String>
                                 </field>
                                 <field name="saveAs">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="openInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="locationToOpenInBrowserURL">
-                                    <String xml:space="preserve"></String>
+                                    <String></String>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInXMLPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean xml:space="preserve">false</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
-                                    <Boolean xml:space="preserve">true</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
                                     <list/>
@@ -1513,7 +1544,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String xml:space="preserve">JDBC</String>
+                                    <String>JDBC</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1522,8 +1553,8 @@
                         </scenario-array>
                     </entry>
                     <entry>
-                        <String xml:space="preserve">scenarios.load.from.project</String>
-                        <Boolean xml:space="preserve">true</Boolean>
+                        <String>scenarios.load.from.project</String>
+                        <Boolean>true</Boolean>
                     </entry>
                 </map>
             </serialized>
