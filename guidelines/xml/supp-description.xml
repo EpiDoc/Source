@@ -27,8 +27,15 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-description" xml:lang="en">
     <head>Physical description</head>
-    <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>Information describing the physical aspects of an inscription is encoded in the <gi>physDesc</gi> element, which is part of
+        the <gi>teiHeader</gi>. The following subsections of these guidelines address specific aspects of this encoding:</p>
+    <list>
+        <item><ref target="supp-descobject.html">Description and dimensions of monument or object</ref></item>
+        <item><ref target="supp-desctext.html">Description and layout of text field or campus</ref></item>
+        <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
+    </list>
+    
+    <p><specList><specDesc key="physDesc"/></specList></p>
     
     <div xml:id="intro-faq-responsibility">
     
@@ -37,20 +44,8 @@ End license statement: do not remove -->
             <bibl>
                 <respStmt>
                     <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                    <name>Tom Elliott</name>
+                </respStmt>
             </bibl>
         </listBibl>
     </div>
