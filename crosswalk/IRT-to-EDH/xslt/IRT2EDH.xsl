@@ -5,7 +5,8 @@
     <!-- 
      IRT - generate table for EDH
      RV 07-07-2009 ; GB 2009-12-08
-     note: run on ../../02_master/workspace.xml
+     latest revision: 2012-06-21 GB
+     note: run on ../xml-in/tables/inscriptions.xml
      *note:* must first have run Edition2EDH and Names2EDN
 -->
 
@@ -86,12 +87,12 @@
                             <hoehe>
                                 <xsl:choose>
                                     <xsl:when test="number($rss/rs[1]//measure[@dim='height'][1])">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='height'][1] * 100"/>
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='height'][1]) * 100"/>
                                     </xsl:when>
-                                    <xsl:when test="$rss/rs[1]//measure[@dim='height'][1][@from]">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='height'][1]/@from * 100"
+                                    <xsl:when test="number($rss/rs[1]//measure[@dim='height'][1]/@from)">
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='height'][1]/@from) * 100"
                                         />
                                     </xsl:when>
                                 </xsl:choose>
@@ -99,12 +100,12 @@
                             <breite>
                                 <xsl:choose>
                                     <xsl:when test="number($rss/rs[1]//measure[@dim='width'][1])">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='width'][1] * 100"/>
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='width'][1]) * 100"/>
                                     </xsl:when>
-                                    <xsl:when test="$rss/rs[1]//measure[@dim='width'][1][@from]">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='width'][1]/@from * 100"
+                                    <xsl:when test="number($rss/rs[1]//measure[@dim='width'][1]/@from)">
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='width'][1]/@from) * 100"
                                         />
                                     </xsl:when>
                                 </xsl:choose>
@@ -112,12 +113,12 @@
                             <tiefe>
                                 <xsl:choose>
                                     <xsl:when test="number($rss/rs[1]//measure[@dim='depth'][1])">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='depth'][1] * 100"/>
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='depth'][1]) * 100"/>
                                     </xsl:when>
-                                    <xsl:when test="$rss/rs[1]//measure[@dim='depth'][1][@from]">
-                                        <xsl:number
-                                            value="$rss/rs[1]//measure[@dim='depth'][1]/@from * 100"
+                                    <xsl:when test="number($rss/rs[1]//measure[@dim='depth'][1]/@from)">
+                                        <xsl:value-of
+                                            select="number($rss/rs[1]//measure[@dim='depth'][1]/@from) * 100"
                                         />
                                     </xsl:when>
                                 </xsl:choose>
@@ -132,10 +133,10 @@
                                 </xsl:variable>
                                 <xsl:choose>
                                     <xsl:when test="number($letterh//measure[1])">
-                                        <xsl:number value="$letterh//measure[1] * 100"/>
+                                        <xsl:value-of select="number($letterh//measure[1]) * 100"/>
                                     </xsl:when>
                                     <xsl:when test="$letterh//measure[1][@from]">
-                                        <xsl:number value="$letterh//measure[1]/@from * 100"/>
+                                        <xsl:value-of select="number($letterh//measure[1]/@from) * 100"/>
                                     </xsl:when>
                                 </xsl:choose>
                             </bh>
