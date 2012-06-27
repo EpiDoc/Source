@@ -39,10 +39,18 @@
     </pattern>
     <pattern name="Check for untagged words">
         <rule context="//t:div[@type='edition']">
-            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:num
-                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note)][not(translate(normalize-space(translate(.,',.;:','')),' ','')='')]">
+            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:num
+                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note)][not(translate(normalize-space(translate(.,',.;:··','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
+        </rule>
+    </pattern>
+    <pattern name="Check for problems with names and persnames">
+        <rule context="//t:div[@type='edition']//t:name">
+            <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
+        </rule>
+        <rule context="//t:div[@type='edition']//t:persName">
+            <report test="not(@type=('divine','emperor','royal','attested'))"><name/> @type needs to be one of 'divine','emperor','royal','attested'</report>
         </rule>
     </pattern>
     
