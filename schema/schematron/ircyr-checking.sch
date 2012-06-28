@@ -53,6 +53,16 @@
             <report test="not(@type=('divine','emperor','royal','attested'))"><name/> @type needs to be one of 'divine','emperor','royal','attested'</report>
         </rule>
     </pattern>
+    <pattern name="Problems with abbreviations/expansions">
+        <rule context="//t:ex">
+            <report test="not(ancestor::t:expan)"><name/> should only appear inside expan</report>
+        </rule>
+        <rule context="//t:expan">
+            <report test="not(descendant::t:ex)"><name/> should contain ex</report>
+            <report test="descendant::text()[not(ancestor::t:ex or ancestor::t:abbr)]">all text in expan should be in abbr or ex</report>
+        </rule>
+
+    </pattern>
     
     
 </schema>
