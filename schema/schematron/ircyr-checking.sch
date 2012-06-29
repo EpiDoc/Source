@@ -40,7 +40,7 @@
     <pattern name="Check for untagged words">
         <rule context="//t:div[@type='edition']">
             <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:num
-                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note)][not(translate(normalize-space(translate(.,',.;:··','')),' ','')='')]">
+                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;:··','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
         </rule>
@@ -59,7 +59,7 @@
         </rule>
         <rule context="//t:expan">
             <report test="not(descendant::t:ex)"><name/> should contain ex</report>
-            <report test="descendant::text()[not(ancestor::t:ex or ancestor::t:abbr)]">all text in expan should be in abbr or ex</report>
+            <report test="descendant::text()[not(translate(normalize-space(.),' ','')='')][not(ancestor::t:ex or ancestor::t:abbr)]">all text in expan should be in abbr or ex</report>
         </rule>
 
     </pattern>
