@@ -39,7 +39,7 @@
     </pattern>
     <pattern name="Check for untagged words">
         <rule context="//t:div[@type='edition']">
-            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:num
+            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:num or ancestor::t:surplus
                 or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;:··','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
@@ -50,7 +50,7 @@
             <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
         </rule>
         <rule context="//t:div[@type='edition']//t:persName">
-            <report test="not(@type=('divine','emperor','royal','attested','other'))"><name/> @type needs to be one of 'divine','emperor','royal','attested'</report>
+            <report test="not(@type=('divine','emperor','royal','attested','other'))"><name/> @type needs to be one of 'divine','emperor','royal','attested','other'</report>
         </rule>
     </pattern>
     <pattern name="Problems with abbreviations/expansions">
