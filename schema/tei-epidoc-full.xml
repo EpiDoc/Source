@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-07-09">stopped omitting join; added idno to content of person and place</change>
             <change who="#GB" when="2012-01-11">added "inverted" and "small" to suggested values for hi[@rend]</change>
             <change who="#GB" when="2012-01-11">removed customization of provenance, origPlace, msItem</change>
             <change who="#SV" when="2012-01-09">stop omitting location</change>
@@ -247,7 +248,7 @@
                         <attDef ident="break" mode="replace" usage="opt">
                             <valList type="semi">
                                 <valItem ident="no">
-                                    <desc>this line-beginning should no be taken as a word-break, i.e. word would be
+                                    <desc>this line-beginning should not be taken as a word-break, i.e. word would be
                                         hyphenated in a printed text</desc>
                                 </valItem>
                             </valList>
@@ -282,6 +283,58 @@
                             </valList>
                         </attDef>
                     </attList>
+                </elementSpec>
+                <elementSpec ident="person" module="namesdates" mode="change">
+                    <content>
+                        <choice xmlns="http://relaxng.org/ns/structure/1.0">
+                            <oneOrMore>
+                                <ref name="model.pLike"/>
+                            </oneOrMore>
+                            <zeroOrMore>
+                                <choice>
+                                    <ref name="model.personPart"/>
+                                    <ref name="model.global"/>
+                                    <ref name="idno"/>
+                                </choice>
+                            </zeroOrMore>
+                        </choice>
+                    </content>
+                </elementSpec>
+                <elementSpec ident="place" module="namesdates" mode="change">
+                    <content>
+                        <group xmlns="http://relaxng.org/ns/structure/1.0">
+                            <zeroOrMore>
+                                <ref name="model.headLike"/>
+                            </zeroOrMore>
+                            <choice>
+                                <group>
+                                    <zeroOrMore>
+                                        <ref name="model.pLike"/>
+                                    </zeroOrMore>
+                                </group>
+                                <zeroOrMore>
+                                    <choice>
+                                        <ref name="model.labelLike"/>
+                                        <ref name="model.placeStateLike"/>
+                                        <ref name="model.placeEventLike"/>
+                                    </choice>
+                                </zeroOrMore>
+                            </choice>
+                            <zeroOrMore>
+                                <choice>
+                                    <ref name="model.noteLike"/>
+                                    <ref name="model.biblLike"/>
+                                    <ref name="idno"/>
+                                </choice>
+                            </zeroOrMore>
+                            <zeroOrMore>
+                                <choice>
+                                    <ref name="model.placeLike"/>
+                                    <ref name="listPlace"/>
+                                </choice>
+                            </zeroOrMore>
+                        </group>
+                    </content>
                 </elementSpec>
                 <elementSpec module="transcr" ident="supplied" mode="change">
                     <attList>
@@ -415,7 +468,6 @@
                 <elementSpec module="linking" ident="alt" mode="delete"/>
                 <elementSpec module="linking" ident="altGrp" mode="delete"/>
                 <elementSpec module="linking" ident="anchor" mode="delete"/>
-                <elementSpec module="linking" ident="join" mode="delete"/>
                 <elementSpec module="linking" ident="joinGrp" mode="delete"/>
                 <elementSpec module="linking" ident="timeline" mode="delete"/>
                 <elementSpec module="linking" ident="when" mode="delete"/>
