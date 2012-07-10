@@ -25,7 +25,7 @@
     </pattern>
     <pattern name="Check for gaps in supplied">
         <rule context="//t:div[@type='edition']//t:gap[not(@reason='ellipsis')]">
-            <report test="ancestor::t:supplied">Supplied may not contain <name/></report>
+            <report test="ancestor::t:supplied[not(@reason='undefined')]">Supplied may not contain <name/></report>
         </rule>
     </pattern>
     <pattern name="checking for Leiden sigla">
@@ -40,7 +40,7 @@
     <pattern name="Check for untagged words">
         <rule context="//t:div[@type='edition']">
             <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:num or ancestor::t:surplus
-                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;:··','')),' ','')='')]">
+                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;··','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
         </rule>
@@ -56,6 +56,7 @@
     <pattern name="Problems with abbreviations/expansions">
         <rule context="//t:ex">
             <report test="not(ancestor::t:expan)"><name/> should only appear inside expan</report>
+            <report test="parent::t:abbr"><name/> should not be a child of abbr</report>
         </rule>
         <rule context="//t:expan">
             <report test="not(descendant::t:ex)"><name/> should contain ex</report>
