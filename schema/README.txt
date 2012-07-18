@@ -49,7 +49,7 @@ How to use it:
       To validate:
 	If using Oxygen or similar editor to edit XML files, a processing instruction such as:
 
-	<?xml-model href="http://www.stoa.org/epidoc/schema/8.11/tei-epidoc.rng"
+	<?xml-model href="http://www.stoa.org/epidoc/schema/8.12/tei-epidoc.rng"
 	                        schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 	at the top of the XML file will instruct the editor to validate
