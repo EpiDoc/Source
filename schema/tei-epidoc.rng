@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-07-09T11:01:46Z. 
+Schema generated from ODD source 2012-08-13T12:29:53Z. 
 Edition: 2.1.0. Last updated on 17th June 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 
@@ -3212,29 +3212,53 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="tei_model.persStateLike">
       <choice>
          <ref name="tei_persName"/>
+         <ref name="tei_floruit"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.persStateLike_alternation">
       <choice>
          <ref name="tei_persName"/>
+         <ref name="tei_floruit"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.persStateLike_sequence">
       <ref name="tei_persName"/>
+      <ref name="tei_floruit"/>
+      <ref name="tei_state"/>
    </define>
    <define name="tei_model.persStateLike_sequenceOptional">
       <optional>
          <ref name="tei_persName"/>
+      </optional>
+      <optional>
+         <ref name="tei_floruit"/>
+      </optional>
+      <optional>
+         <ref name="tei_state"/>
       </optional>
    </define>
    <define name="tei_model.persStateLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="tei_persName"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_floruit"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_state"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.persStateLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="tei_persName"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_floruit"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_state"/>
       </oneOrMore>
    </define>
    <define name="tei_model.persEventLike">
@@ -3383,17 +3407,20 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       <choice>
          <ref name="tei_model.placeNamePart"/>
          <ref name="tei_location"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.placeStateLike_alternation">
       <choice>
          <ref name="tei_model.placeNamePart_alternation"/>
          <ref name="tei_location"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.placeStateLike_sequence">
       <ref name="tei_model.placeNamePart_sequence"/>
       <ref name="tei_location"/>
+      <ref name="tei_state"/>
    </define>
    <define name="tei_model.placeStateLike_sequenceOptional">
       <optional>
@@ -3401,6 +3428,9 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       </optional>
       <optional>
          <ref name="tei_location"/>
+      </optional>
+      <optional>
+         <ref name="tei_state"/>
       </optional>
    </define>
    <define name="tei_model.placeStateLike_sequenceOptionalRepeatable">
@@ -3410,6 +3440,9 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       <zeroOrMore>
          <ref name="tei_location"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_state"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.placeStateLike_sequenceRepeatable">
       <oneOrMore>
@@ -3417,6 +3450,9 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_location"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_state"/>
       </oneOrMore>
    </define>
    <define name="tei_model.placeEventLike">
@@ -11218,6 +11254,16 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <empty/>
       </element>
    </define>
+   <define name="tei_floruit">
+      <element name="floruit">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about a person's period of activity.</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_geo">
       <element name="geo">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(geographical coordinates) contains any expression of a set of geographic coordinates, representing a point, line, or area on the surface of the earth in some
@@ -11547,6 +11593,45 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_state">
+      <element name="state">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range.</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="tei_state"/>
+            </oneOrMore>
+            <group>
+               <zeroOrMore>
+                  <ref name="tei_model.headLike"/>
+               </zeroOrMore>
+               <oneOrMore>
+                  <ref name="tei_model.pLike"/>
+               </oneOrMore>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="tei_model.noteLike"/>
+                     <ref name="tei_model.biblLike"/>
+                  </choice>
+               </zeroOrMore>
+            </group>
+            <group>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="tei_model.labelLike"/>
+                     <ref name="tei_model.noteLike"/>
+                     <ref name="tei_model.biblLike"/>
+                  </choice>
+               </zeroOrMore>
+            </group>
+         </choice>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
          <empty/>
       </element>
    </define>
