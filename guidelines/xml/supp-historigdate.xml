@@ -27,8 +27,26 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-historigdate" xml:lang="en">
     <head>Original date of text and/or object</head>
-    <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>The date of origin of the text (or in some cases, of the object or some other feature, decoration, or reuse of it),
+    whether the result of the editor's analysis or an explicit, internal date. May also record date ranges, degrees of precision
+    and dating criteria.</p>
+    
+    <p><specList>
+        <specDesc key="origDate"/>
+        <specDesc key="precision"/>
+    </specList></p>
+    
+    <p>...<!--basic dating, including ranges/spans, with examples--></p>
+    
+    <div>
+        <head>Precision</head>
+        <p>...<!-- including different precision for notBefore/notAfter; medium=block dates, low=circa --></p>
+    </div>
+    
+    <div>
+        <head>Dating criteria</head>
+        <p>...<!-- @evidence, suggest typology, example values --></p>
+    </div>
     
     <div xml:id="intro-faq-responsibility">
     

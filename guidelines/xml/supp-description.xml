@@ -27,6 +27,9 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-description" xml:lang="en">
     <head>Physical description</head>
+    
+    <p><specList><specDesc key="physDesc"/></specList></p>
+    
     <p>Information describing the physical aspects of an inscription is encoded in the <gi>physDesc</gi> element, which is part of
         the <gi>teiHeader</gi>. The following subsections of these guidelines address specific aspects of this encoding:</p>
     <list>
@@ -35,7 +38,12 @@ End license statement: do not remove -->
         <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
     </list>
     
-    <p><specList><specDesc key="physDesc"/></specList></p>
+    <p>
+        If, rather than breaking down the description of various aspects of the support, the editor prefers a single 
+        unstructured prose passage describing the object, the <gi>physDesc</gi> may contain one or more <gi>p</gi>
+        (paragraph) elements as an alternative to (but not in addition to) the structured elements described in the
+        sections linked above.
+    </p>
     
     <div xml:id="intro-faq-responsibility">
     
@@ -45,6 +53,7 @@ End license statement: do not remove -->
                 <respStmt>
                     <resp>author</resp>
                     <name>Tom Elliott</name>
+                    <name>Gabriel bodard</name>
                 </respStmt>
             </bibl>
         </listBibl>
