@@ -50,7 +50,7 @@
             <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
         </rule>
         <rule context="//t:div[@type='edition']//t:persName">
-            <report test="not(@type=('divine','emperor','royal','attested','other'))"><name/> @type needs to be one of 'divine','emperor','royal','attested','other'</report>
+            <report test="not(@type=('divine','emperor','ruler','consul','attested','other'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other'</report>
         </rule>
     </pattern>
     <pattern name="Problems with abbreviations/expansions">
