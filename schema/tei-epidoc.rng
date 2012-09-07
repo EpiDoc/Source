@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-08-13T12:29:53Z. 
+Schema generated from ODD source 2012-09-07T10:40:41Z. 
 Edition: 2.1.0. Last updated on 17th June 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 
@@ -11289,7 +11289,10 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </oneOrMore>
             <zeroOrMore>
-               <ref name="tei_listRelation"/>
+               <choice>
+                  <ref name="tei_listRelation"/>
+                  <ref name="tei_relation"/>
+               </choice>
             </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
@@ -11314,7 +11317,10 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </oneOrMore>
             <zeroOrMore>
-               <ref name="tei_listRelation"/>
+               <choice>
+                  <ref name="tei_relation"/>
+                  <ref name="tei_listRelation"/>
+               </choice>
             </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
@@ -11340,7 +11346,10 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </oneOrMore>
             <zeroOrMore>
-               <ref name="tei_listRelation"/>
+               <choice>
+                  <ref name="tei_relation"/>
+                  <ref name="tei_listRelation"/>
+               </choice>
             </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
@@ -11365,7 +11374,10 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </oneOrMore>
             <zeroOrMore>
-               <ref name="tei_listRelation"/>
+               <choice>
+                  <ref name="tei_listRelation"/>
+                  <ref name="tei_relation"/>
+               </choice>
             </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
@@ -11452,9 +11464,14 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
       <element name="listRelation">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides information about relationships identified amongst people, places, and
     organizations, either informally as prose or as formally expressed relation links.  [15.2.2. ]</a:documentation>
-         <oneOrMore>
-            <ref name="tei_model.pLike"/>
-         </oneOrMore>
+         <choice>
+            <oneOrMore>
+               <ref name="tei_model.pLike"/>
+            </oneOrMore>
+            <oneOrMore>
+               <ref name="tei_relation"/>
+            </oneOrMore>
+         </choice>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
@@ -11593,6 +11610,97 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_relation">
+      <element name="relation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(relationship) describes any kind of relationship or linkage amongst a
+  specified group of objects, places, events or people. [15.2.2. ]</a:documentation>
+         <optional>
+            <ref name="tei_desc"/>
+         </optional>
+    
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="relation-constraint-activemutual">
+            <rule context="tei:relation">
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0" test="@active and @mutual">Only one of the attributes
+	'active' and 'mutual' may be supplied</report>
+            </rule>
+         </pattern>
+    
+  
+    
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="relation-constraint-activepassive">
+            <rule context="tei:relation">
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0" test="@passive and not(@active)">the attribute 'passive'
+	may be supplied only if the attribute 'active' is
+	supplied</report>
+            </rule>
+         </pattern>
+    
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.canonical.attributes"/>
+         <ref name="tei_att.sortable.attributes"/>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="type"
+                       a:defaultValue="personal">
+               <a:documentation>categorizes the relationship in some respect, e.g. as social, personal or other.
+Suggested values include: 1] social; 2] personal; 3] other</a:documentation>
+               <choice>
+                  <value>social</value>
+                  <a:documentation>relationship concerned with social roles</a:documentation>
+                  <value>personal</value>
+                  <a:documentation>relationship concerned with personal roles, e.g. kinship, marriage, etc.</a:documentation>
+                  <value>other</value>
+                  <a:documentation>other kinds of relationship</a:documentation>
+                  <data type="Name"/>
+               </choice>
+            </attribute>
+         </optional>
+         <attribute name="name">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a name for the kind of relationship of which this is an instance.</a:documentation>
+            <ref name="tei_data.enumerated"/>
+         </attribute>
+         <optional>
+            <attribute name="passive">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the passive participants in a non-mutual relationship.</a:documentation>
+               <list>
+                  <ref name="tei_data.pointer"/>
+                  <zeroOrMore>
+                     <ref name="tei_data.pointer"/>
+                  </zeroOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <choice>
+            <optional>
+               <attribute name="active">
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the active participants in a non-mutual relationship, or all the participants in a mutual
+                    one.</a:documentation>
+                  <list>
+                     <ref name="tei_data.pointer"/>
+                     <zeroOrMore>
+                        <ref name="tei_data.pointer"/>
+                     </zeroOrMore>
+                  </list>
+               </attribute>
+            </optional>
+            <optional>
+               <attribute name="mutual">
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a list of participants amongst all of whom the relationship holds equally.</a:documentation>
+                  <list>
+                     <ref name="tei_data.pointer"/>
+                     <zeroOrMore>
+                        <ref name="tei_data.pointer"/>
+                     </zeroOrMore>
+                  </list>
+               </attribute>
+            </optional>
+         </choice>
          <empty/>
       </element>
    </define>
@@ -11980,7 +12088,10 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </oneOrMore>
             <zeroOrMore>
-               <ref name="tei_listRelation"/>
+               <choice>
+                  <ref name="tei_listRelation"/>
+                  <ref name="tei_relation"/>
+               </choice>
             </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
