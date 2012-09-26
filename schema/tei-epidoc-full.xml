@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-09-26">Stopped omitting damage</change>
             <change who="#GB" when="2012-09-20">Added spoken module; deleted all elements from that module</change>
             <change who="#GB" when="2012-09-07">stopped omitting relation</change>
             <change who="#GB" when="2012-08-13">stopped omitting floruit and state</change>
@@ -446,7 +447,6 @@
                 <elementSpec module="textstructure" ident="titlePage" mode="delete"/>
                 <elementSpec module="textstructure" ident="titlePart" mode="delete"/>
                 <elementSpec module="textstructure" ident="trailer" mode="delete"/>
-                <elementSpec module="transcr" ident="damage" mode="delete"/>
                 <elementSpec module="transcr" ident="damageSpan" mode="delete"/>
                 <elementSpec module="transcr" ident="fw" mode="delete"/>
                 <elementSpec module="transcr" ident="restore" mode="delete"/>
