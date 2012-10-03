@@ -25,33 +25,34 @@ End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-bibliography" xml:lang="en">
-    <head>Encoding the Bibliography</head>
-    <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-structure" xml:lang="en">
+    <head>Structure of an EpiDoc edition</head>
+    <p>A high-altitude introduction to the structure and shape of an EpiDoc edition, 
+        introducing the TEI P5 approach to manuscript description and history,
+        the divisions in the body, etc.</p>
     
-    <div xml:id="supp-bibliography-responsibility">
+    <!--<p>
+        <specList>
+            <specDesc key="elements"/>
+        </specList>
+    </p>-->
+    
+    <p>Most of the features that most commonly occur in an epigraphic/papyrological edition are catered for
+        by specific locations in an EpiDoc file. This document aims to give an overview of those locations.
+        Individual pages in the <ref target="app-allsupp.html">Supporting Data</ref> section of the Guidelines
+        will give more detailed information on each of these elements and features.</p>
+    
+    <p></p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <!-- example markup -->
+    </egXML>
+    
+    <div xml:id="supp-structure-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>Author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
