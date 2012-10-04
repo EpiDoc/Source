@@ -42,10 +42,64 @@ End license statement: do not remove -->
         Individual pages in the <ref target="app-allsupp.html">Supporting Data</ref> section of the Guidelines
         will give more detailed information on each of these elements and features.</p>
     
-    <p></p>
+    <p>A relatively simple EpiDoc file containing descriptive and historical information about an
+        inscription might look something like:</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <!-- example markup -->
+        <TEI>
+            <teiHeader>
+                <fileDesc>
+                    <titleStmt><title>title of inscription</title></titleStmt>
+                    <publicationStmt><p>publication information</p></publicationStmt>
+                    <sourceDesc>
+                        <msDesc>
+                            <msIdentifier><repository>museum/archive</repository><idno>inventory number</idno></msIdentifier>
+                            <physDesc>
+                                <objectDesc>
+                                    <supportDesc>
+                                        <support>description of object/monument</support>
+                                    </supportDesc>
+                                    <layoutDesc>
+                                        <layout>description of text field/campus</layout>
+                                    </layoutDesc>
+                                </objectDesc>
+                                <handDesc>
+                                    <handNote>description of letters</handNote>
+                                </handDesc>
+                            </physDesc>
+                            <history>
+                                <origin>
+                                    <origPlace>Place of origin</origPlace>
+                                    <origDate>Date of origin</origDate>
+                                </origin>
+                                <provenance type="found">
+                                    Findspot and circumstances/context
+                                </provenance>
+                                <provenance type="observed">
+                                    modern location(s) (if different from repository, above)
+                                </provenance>
+                            </history>
+                        </msDesc>
+                    </sourceDesc>
+                </fileDesc>
+            </teiHeader>
+            <text>
+                <body>
+                    <div type="edition">
+                        <ab>Greek or Latin text here</ab>
+                    </div>
+                    <div type="translation">
+                        <p>translation</p>
+                    </div>
+                    <div type="commentary">
+                        <p>commentary</p>
+                    </div>
+                    <div type="bibliography">
+                        <p>bibliography of previous editions, discussion, etc.</p>
+                    </div>
+                </body>
+            </text>
+        </TEI>
     </egXML>
     
     <div xml:id="supp-structure-responsibility">
