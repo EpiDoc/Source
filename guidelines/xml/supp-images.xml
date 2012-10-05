@@ -1,0 +1,82 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-images" xml:lang="en">
+    <head>Images, figures and facsimile</head>
+    <p>It is possible to link to digital versions of photographs, drawings, squeezes and other images or
+        representations of the text (or other views of the support) using the <gi>facsimile</gi> element.
+    </p>
+    
+    <p>
+        <specList>
+            <specDesc key="facsimile"/>
+            <specDesc key="surface"/>
+            <specDesc key="graphic"/>
+        </specList>
+    </p>
+    
+    <p>
+        discussion to be added
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <facsimile>
+            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/77_AA_33.jpg"/>
+        </facsimile>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <facsimile>
+            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/78_G_20.jpg"><desc>Squeeze (1978)</desc></graphic>
+            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/94_D_16.jpg"><desc>Photograph of monument (1994)</desc></graphic>
+            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala32.jpg"><desc>Drawing of reconstructed monument (1999)</desc></graphic>
+        </facsimile>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <facsimile>
+            <surface n="i"><desc>Face of inscribed base</desc>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/72_L_27A.jpg"><desc>Photograph (1972)</desc></graphic>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_pr_046.jpg"><desc>Squeeze</desc></graphic>
+            </surface>
+            <surface><desc>Top of base</desc>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_94_55_03.jpg"><desc>Photograph (1994)</desc></graphic>
+            </surface>
+            <surface><desc>Inscription on head of statue</desc>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala254.jpg"><desc>Drawing (2001)</desc></graphic>
+            </surface>
+        </facsimile>
+    </egXML>
+    
+    <div xml:id="supp-images-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descdimensions" xml:lang="en">
+    <head>Dimensions of object or campus</head>
+    <p>The <gi>dimensions</gi> element, generally placed within the <gi>support</gi> or 
+        <gi>layout</gi> or their descendents, may be used to record the dimensions, in any appropriate
+        unit, of the monument, support, fragment, text field, or other aspect of the text or object being described.</p>
+    <p>
+        <specList>
+            <specDesc key="dimensions"/>
+            <specDesc key="height"/>
+            <specDesc key="width"/>
+            <specDesc key="depth"/>
+            <specDesc key="dim"/>
+        </specList>
+    </p>
+    
+    <p>The most common uses for dimensions in an epigraphic/papyrological edition are to record (a) the dimensions
+        of the text-bearing object, usually giving height, width and depth/thickness, or (b) those of the text field,
+        usually giving only height and width. For these the TEI element <gi>dimensions</gi> should be used;
+        this element must contain <emph>only</emph> the individual elements <gi>height</gi>, <gi>width</gi>
+        and <gi>depth</gi> (or, for dimensions other than the three linear ones, <gi>dim</gi>, which may take an
+        <att>type</att> such as "diameter", "arc", etc.).</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <dimensions unit="cm">
+            <height>196</height>
+            <width>71</width>
+            <depth precision="low">17</depth>
+        </dimensions>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <support>
+            Colonnette of marble, spirally fluted and tapering to a point 
+            (<dimensions>
+                <dim unit="metre" atMost="0.24" atLeast="0.11" type="diameter">0.24-0.11</dim>
+                <height unit="metre">0.55</height>
+            </dimensions>).
+        </support>
+    </egXML>
+    
+    <div xml:id="supp-descdimensions-responsibility">
+    
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

@@ -22,36 +22,45 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml/supp-desctext.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-desctext" xml:lang="en">
-    <head>Description and layout of text field or campus</head>
-    <p>Information about the layout and placement of the text on the object is encoded within a
-    <gi>layoutDesc</gi> element in the manuscript description area.</p>
-    
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-publication" xml:lang="en">
+    <head>Publication information</head>
+    <p>Information about the current publication and licensing status of the inscription/papyrus edition
+        should be recorded in the <gi>titleStmt</gi> and <gi>publicationStmt</gi> elements in the header.</p>
     <p>
         <specList>
-            <specDesc key="layoutDesc"/>
-            <specDesc key="layout"/>
-            <specDesc key="dimensions"/>
-            <specDesc key="rs"/>
+           <specDesc key="titleStmt"/>
+           <specDesc key="title"/>
+           <specDesc key="editor"/>
+           <specDesc key="publicationStmt"/>
+           <specDesc key="idno"/>
+           <specDesc key="availability"/>
+           <specDesc key="licence"/>
         </specList>
     </p>
     
-    <p>
-        discussion to be added
-    </p>
-    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <layout><rs type="execution" key="scalpro">Inscribed</rs> on the façade above the door within a panel 
-            (<dimensions>
-                <width unit="metre">0.65</width>
-                <height unit="metre">0.34</height>
-            </dimensions>).</layout>
+        <titleStmt>
+            <title>Verse honours for Oikoumenios</title>
+            <editor>Joyce M. Reynolds</editor>
+            <editor>Charlotte M. Roueché</editor>
+        </titleStmt>
     </egXML>
     
-    <div xml:id="supp-desctext-responsibility">    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <publicationStmt>
+            <idno type="filename">Byz212</idno>
+            <availability>
+                <licence target="http://creativecommons.org/licenses/by/3.0/">
+                    Licensed under a Creative Commons-Attribution 3.0 licence.
+                </licence>
+            </availability>
+        </publicationStmt>
+    </egXML>
+    
+    <div xml:id="supp-publication-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>

@@ -29,7 +29,8 @@
     <head>Appendix: All Supporting Data Guidelines</head>
 
     <list>
-        <item><ref target="supp-structure.html">Structure of an EpiDoc edition</ref></item>
+        <head><ref target="supp-structure.html">Structure of an EpiDoc edition</ref></head>
+        <item>See below for detailed guidance on individual elements</item>
     </list>
 
     <div>
@@ -38,6 +39,8 @@
             <head><ref target="supp-description.html">Physical description</ref></head>
             <item><ref target="supp-descobject.html">Description and dimensions of monument or object</ref></item>
             <item><ref target="supp-desctext.html">Description and layout of text field or campus</ref></item>
+            <item><ref target="supp-descdimensions.html">Dimensions (of object or campus)</ref></item>
+            <item><ref target="supp-descdecor.html">Decoration or iconography</ref></item>
             <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
         </list>
         <list>
@@ -46,17 +49,26 @@
             <item><ref target="supp-historigin.html">Original location or locations</ref></item>
             <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
             <item><ref target="supp-histmodern.html">Last known location, other modern locations</ref></item>
+            <item><ref target="supp-histinvno.html">Inventory numbers and repository</ref></item>
         </list>
     </div>
 
     <div>
         <head>Other commentary and documentary sections of the edition</head>
         <list>
-            <item><ref target="supp-commentary.html">Commentary (line-by-line or introductory)</ref></item>
-            <item>External apparatus criticus</item>
+            <item><ref target="supp-apparatus.html">External apparatus criticus</ref></item>
             <item><ref target="supp-translation.html">Translation</ref></item>
+            <item><ref target="supp-commentary.html">Commentary (line-by-line or introductory)</ref></item>
             <item><ref target="supp-bibliography.html">Bibliography</ref></item>
-            <item>Figures or facsimile</item>
+            <item><ref target="supp-images.html">Figures or facsimile</ref></item>
+        </list>
+    </div>
+    
+    <div>
+        <head>Metadata</head>
+        <list>
+            <item><ref target="supp-publication.html">Title and publication information</ref></item>
+            <item><ref target="supp-languages.html">Languages and scripts</ref></item>
         </list>
     </div>
 
@@ -74,7 +86,6 @@
     </div>
     
     <div xml:id="app-allsupp-responsibility">
-        
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>Author</resp><name>Gabriel Bodard</name></respStmt></bibl>

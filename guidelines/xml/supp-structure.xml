@@ -27,15 +27,15 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-structure" xml:lang="en">
     <head>Structure of an EpiDoc edition</head>
-    <p>A high-altitude introduction to the structure and shape of an EpiDoc edition, 
+    <p>This section introduces the structure and shape of an EpiDoc edition, 
         introducing the TEI P5 approach to manuscript description and history,
         the divisions in the body, etc.</p>
     
-    <!--<p>
+    <p>
         <specList>
-            <specDesc key="elements"/>
+            <specDesc key="msDesc"/>
         </specList>
-    </p>-->
+    </p>
     
     <p>Most of the features that most commonly occur in an epigraphic/papyrological edition are catered for
         by specific locations in an EpiDoc file. This document aims to give an overview of those locations.
@@ -50,21 +50,22 @@ End license statement: do not remove -->
             <teiHeader>
                 <fileDesc>
                     <titleStmt><title>title of inscription</title></titleStmt>
-                    <publicationStmt><p>publication information</p></publicationStmt>
+                    <publicationStmt><idno type="filename"></idno></publicationStmt>
                     <sourceDesc>
                         <msDesc>
                             <msIdentifier><repository>museum/archive</repository><idno>inventory number</idno></msIdentifier>
                             <physDesc>
                                 <objectDesc>
                                     <supportDesc>
-                                        <support>description of object/monument</support>
+                                        <support>description of object/monument (likely to include <material/>
+                                        and <objectType/> information, <dimensions/>, etc.)</support>
                                     </supportDesc>
                                     <layoutDesc>
                                         <layout>description of text field/campus</layout>
                                     </layoutDesc>
                                 </objectDesc>
                                 <handDesc>
-                                    <handNote>description of letters</handNote>
+                                    <handNote>description of letters, possibly including <height>letter-heights</height></handNote>
                                 </handDesc>
                             </physDesc>
                             <history>
@@ -83,13 +84,17 @@ End license statement: do not remove -->
                     </sourceDesc>
                 </fileDesc>
             </teiHeader>
+            <facsimile><graphic url="photograph of text or monument"/></facsimile>
             <text>
                 <body>
                     <div type="edition">
-                        <ab>Greek or Latin text here</ab>
+                        <ab>Greek or Latin (etc.) text here</ab>
+                    </div>
+                    <div type="apparatus">
+                        <p>external apparatus criticus (if applicable)</p>
                     </div>
                     <div type="translation">
-                        <p>translation</p>
+                        <p>translation(s)</p>
                     </div>
                     <div type="commentary">
                         <p>commentary</p>
@@ -102,8 +107,7 @@ End license statement: do not remove -->
         </TEI>
     </egXML>
     
-    <div xml:id="supp-structure-responsibility">
-    
+    <div xml:id="supp-structure-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>Author</resp><name>Gabriel Bodard</name></respStmt></bibl>

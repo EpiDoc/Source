@@ -22,39 +22,37 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml/supp-desctext.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-desctext" xml:lang="en">
-    <head>Description and layout of text field or campus</head>
-    <p>Information about the layout and placement of the text on the object is encoded within a
-    <gi>layoutDesc</gi> element in the manuscript description area.</p>
-    
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-title" xml:lang="en">
+    <head>Languages and scripts</head>
+    <p>gloss</p>
+    <!-- can have div's or p's  here. Divs are for subsections. -->
     <p>
         <specList>
-            <specDesc key="layoutDesc"/>
-            <specDesc key="layout"/>
-            <specDesc key="dimensions"/>
-            <specDesc key="rs"/>
+            <specDesc key="langUsage"/>
+            <specDesc key="language"/>
+            <specDesc key="textLang"/>
         </specList>
     </p>
     
-    <p>
-        discussion to be added
-    </p>
-    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <layout><rs type="execution" key="scalpro">Inscribed</rs> on the façade above the door within a panel 
-            (<dimensions>
-                <width unit="metre">0.65</width>
-                <height unit="metre">0.34</height>
-            </dimensions>).</layout>
+        <langUsage>
+            <language ident="grc">Ancient Greek</language>
+            <language ident="grc-Latn">Ancient Greek written in latin script</language>
+            <language ident="el">Modern Greek</language>
+            <language ident="he">Hebrew</language>
+            <language ident="la">Latin</language>
+            <language ident="la-Grek">Latin written in Greek script</language>
+        </langUsage>
     </egXML>
     
-    <div xml:id="supp-desctext-responsibility">    
+    <div xml:id="supp-title-responsibility">
+    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>
