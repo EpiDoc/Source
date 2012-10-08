@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-09-26T08:53:27Z. 
+Schema generated from ODD source 2012-10-08T10:05:27Z. 
 Edition: 2.1.0. Last updated on 17th June 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 
@@ -1491,73 +1491,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_seg"/>
       </choice>
    </define>
-   <define name="tei_model.segLike_alternation">
-      <choice>
-         <ref name="tei_w"/>
-         <ref name="tei_m"/>
-         <ref name="tei_c"/>
-         <ref name="tei_pc"/>
-         <ref name="tei_seg"/>
-      </choice>
-   </define>
-   <define name="tei_model.segLike_sequence">
-      <ref name="tei_w"/>
-      <ref name="tei_m"/>
-      <ref name="tei_c"/>
-      <ref name="tei_pc"/>
-      <ref name="tei_seg"/>
-   </define>
-   <define name="tei_model.segLike_sequenceOptional">
-      <optional>
-         <ref name="tei_w"/>
-      </optional>
-      <optional>
-         <ref name="tei_m"/>
-      </optional>
-      <optional>
-         <ref name="tei_c"/>
-      </optional>
-      <optional>
-         <ref name="tei_pc"/>
-      </optional>
-      <optional>
-         <ref name="tei_seg"/>
-      </optional>
-   </define>
-   <define name="tei_model.segLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_w"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_m"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_c"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_pc"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_seg"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.segLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_w"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_m"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_c"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_pc"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_seg"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.hiLike">
       <choice>
          <ref name="tei_hi"/>
@@ -1703,40 +1636,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_model.hiLike"/>
          <ref name="tei_model.emphLike"/>
       </choice>
-   </define>
-   <define name="tei_model.highlighted_alternation">
-      <choice>
-         <ref name="tei_model.hiLike_alternation"/>
-         <ref name="tei_model.emphLike_alternation"/>
-      </choice>
-   </define>
-   <define name="tei_model.highlighted_sequence">
-      <ref name="tei_model.hiLike_sequence"/>
-      <ref name="tei_model.emphLike_sequence"/>
-   </define>
-   <define name="tei_model.highlighted_sequenceOptional">
-      <optional>
-         <ref name="tei_model.hiLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.emphLike_sequenceOptional"/>
-      </optional>
-   </define>
-   <define name="tei_model.highlighted_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.hiLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.emphLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.highlighted_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.hiLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.emphLike_sequenceRepeatable"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.dateLike">
       <choice>
@@ -1921,40 +1820,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_binaryObject"/>
       </choice>
    </define>
-   <define name="tei_model.graphicLike_alternation">
-      <choice>
-         <ref name="tei_graphic"/>
-         <ref name="tei_binaryObject"/>
-      </choice>
-   </define>
-   <define name="tei_model.graphicLike_sequence">
-      <ref name="tei_graphic"/>
-      <ref name="tei_binaryObject"/>
-   </define>
-   <define name="tei_model.graphicLike_sequenceOptional">
-      <optional>
-         <ref name="tei_graphic"/>
-      </optional>
-      <optional>
-         <ref name="tei_binaryObject"/>
-      </optional>
-   </define>
-   <define name="tei_model.graphicLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_graphic"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_binaryObject"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.graphicLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_graphic"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_binaryObject"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.offsetLike">
       <choice>
          <ref name="tei_offset"/>
@@ -2011,161 +1876,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_stamp"/>
          <ref name="tei_watermark"/>
       </choice>
-   </define>
-   <define name="tei_model.pPart.msdesc_alternation">
-      <choice>
-         <ref name="tei_catchwords"/>
-         <ref name="tei_dimensions"/>
-         <ref name="tei_heraldry"/>
-         <ref name="tei_locus"/>
-         <ref name="tei_locusGrp"/>
-         <ref name="tei_material"/>
-         <ref name="tei_objectType"/>
-         <ref name="tei_origDate"/>
-         <ref name="tei_origPlace"/>
-         <ref name="tei_secFol"/>
-         <ref name="tei_signatures"/>
-         <ref name="tei_stamp"/>
-         <ref name="tei_watermark"/>
-      </choice>
-   </define>
-   <define name="tei_model.pPart.msdesc_sequence">
-      <ref name="tei_catchwords"/>
-      <ref name="tei_dimensions"/>
-      <ref name="tei_heraldry"/>
-      <ref name="tei_locus"/>
-      <ref name="tei_locusGrp"/>
-      <ref name="tei_material"/>
-      <ref name="tei_objectType"/>
-      <ref name="tei_origDate"/>
-      <ref name="tei_origPlace"/>
-      <ref name="tei_secFol"/>
-      <ref name="tei_signatures"/>
-      <ref name="tei_stamp"/>
-      <ref name="tei_watermark"/>
-   </define>
-   <define name="tei_model.pPart.msdesc_sequenceOptional">
-      <optional>
-         <ref name="tei_catchwords"/>
-      </optional>
-      <optional>
-         <ref name="tei_dimensions"/>
-      </optional>
-      <optional>
-         <ref name="tei_heraldry"/>
-      </optional>
-      <optional>
-         <ref name="tei_locus"/>
-      </optional>
-      <optional>
-         <ref name="tei_locusGrp"/>
-      </optional>
-      <optional>
-         <ref name="tei_material"/>
-      </optional>
-      <optional>
-         <ref name="tei_objectType"/>
-      </optional>
-      <optional>
-         <ref name="tei_origDate"/>
-      </optional>
-      <optional>
-         <ref name="tei_origPlace"/>
-      </optional>
-      <optional>
-         <ref name="tei_secFol"/>
-      </optional>
-      <optional>
-         <ref name="tei_signatures"/>
-      </optional>
-      <optional>
-         <ref name="tei_stamp"/>
-      </optional>
-      <optional>
-         <ref name="tei_watermark"/>
-      </optional>
-   </define>
-   <define name="tei_model.pPart.msdesc_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_catchwords"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_dimensions"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_heraldry"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_locus"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_locusGrp"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_material"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_objectType"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_origDate"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_origPlace"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_secFol"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_signatures"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_stamp"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_watermark"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.pPart.msdesc_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_catchwords"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_dimensions"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_heraldry"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_locus"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_locusGrp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_material"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_objectType"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_origDate"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_origPlace"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_secFol"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_signatures"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_stamp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_watermark"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.pPart.editorial">
       <choice>
@@ -2469,40 +2179,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_model.pPart.transcriptional"/>
       </choice>
    </define>
-   <define name="tei_model.pPart.edit_alternation">
-      <choice>
-         <ref name="tei_model.pPart.editorial_alternation"/>
-         <ref name="tei_model.pPart.transcriptional_alternation"/>
-      </choice>
-   </define>
-   <define name="tei_model.pPart.edit_sequence">
-      <ref name="tei_model.pPart.editorial_sequence"/>
-      <ref name="tei_model.pPart.transcriptional_sequence"/>
-   </define>
-   <define name="tei_model.pPart.edit_sequenceOptional">
-      <optional>
-         <ref name="tei_model.pPart.editorial_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.pPart.transcriptional_sequenceOptional"/>
-      </optional>
-   </define>
-   <define name="tei_model.pPart.edit_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.pPart.editorial_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.pPart.transcriptional_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.pPart.edit_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.pPart.editorial_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.pPart.transcriptional_sequenceRepeatable"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.linePart">
       <choice>
          <ref name="tei_model.segLike"/>
@@ -2519,56 +2195,7 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_ref"/>
       </choice>
    </define>
-   <define name="tei_model.ptrLike_alternation">
-      <choice>
-         <ref name="tei_ptr"/>
-         <ref name="tei_ref"/>
-      </choice>
-   </define>
-   <define name="tei_model.ptrLike_sequence">
-      <ref name="tei_ptr"/>
-      <ref name="tei_ref"/>
-   </define>
-   <define name="tei_model.ptrLike_sequenceOptional">
-      <optional>
-         <ref name="tei_ptr"/>
-      </optional>
-      <optional>
-         <ref name="tei_ref"/>
-      </optional>
-   </define>
-   <define name="tei_model.ptrLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_ptr"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_ref"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.ptrLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_ptr"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_ref"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.lPart">
-      <notAllowed/>
-   </define>
-   <define name="tei_model.lPart_alternation">
-      <notAllowed/>
-   </define>
-   <define name="tei_model.lPart_sequence">
-      <empty/>
-   </define>
-   <define name="tei_model.lPart_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="tei_model.lPart_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="tei_model.lPart_sequenceRepeatable">
       <notAllowed/>
    </define>
    <define name="tei_model.global.meta">
@@ -2583,129 +2210,8 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_link"/>
          <ref name="tei_linkGrp"/>
          <ref name="tei_join"/>
+         <ref name="tei_joinGrp"/>
       </choice>
-   </define>
-   <define name="tei_model.global.meta_alternation">
-      <choice>
-         <ref name="tei_index"/>
-         <ref name="tei_substJoin"/>
-         <ref name="tei_listTranspose"/>
-         <ref name="tei_interp"/>
-         <ref name="tei_interpGrp"/>
-         <ref name="tei_precision"/>
-         <ref name="tei_certainty"/>
-         <ref name="tei_link"/>
-         <ref name="tei_linkGrp"/>
-         <ref name="tei_join"/>
-      </choice>
-   </define>
-   <define name="tei_model.global.meta_sequence">
-      <ref name="tei_index"/>
-      <ref name="tei_substJoin"/>
-      <ref name="tei_listTranspose"/>
-      <ref name="tei_interp"/>
-      <ref name="tei_interpGrp"/>
-      <ref name="tei_precision"/>
-      <ref name="tei_certainty"/>
-      <ref name="tei_link"/>
-      <ref name="tei_linkGrp"/>
-      <ref name="tei_join"/>
-   </define>
-   <define name="tei_model.global.meta_sequenceOptional">
-      <optional>
-         <ref name="tei_index"/>
-      </optional>
-      <optional>
-         <ref name="tei_substJoin"/>
-      </optional>
-      <optional>
-         <ref name="tei_listTranspose"/>
-      </optional>
-      <optional>
-         <ref name="tei_interp"/>
-      </optional>
-      <optional>
-         <ref name="tei_interpGrp"/>
-      </optional>
-      <optional>
-         <ref name="tei_precision"/>
-      </optional>
-      <optional>
-         <ref name="tei_certainty"/>
-      </optional>
-      <optional>
-         <ref name="tei_link"/>
-      </optional>
-      <optional>
-         <ref name="tei_linkGrp"/>
-      </optional>
-      <optional>
-         <ref name="tei_join"/>
-      </optional>
-   </define>
-   <define name="tei_model.global.meta_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_index"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_substJoin"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_listTranspose"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_interp"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_interpGrp"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_precision"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_certainty"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_link"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_linkGrp"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_join"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.global.meta_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_index"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_substJoin"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_listTranspose"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_interp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_interpGrp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_precision"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_certainty"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_link"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_linkGrp"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_join"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.milestoneLike">
       <choice>
@@ -2715,73 +2221,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_lb"/>
          <ref name="tei_cb"/>
       </choice>
-   </define>
-   <define name="tei_model.milestoneLike_alternation">
-      <choice>
-         <ref name="tei_milestone"/>
-         <ref name="tei_gb"/>
-         <ref name="tei_pb"/>
-         <ref name="tei_lb"/>
-         <ref name="tei_cb"/>
-      </choice>
-   </define>
-   <define name="tei_model.milestoneLike_sequence">
-      <ref name="tei_milestone"/>
-      <ref name="tei_gb"/>
-      <ref name="tei_pb"/>
-      <ref name="tei_lb"/>
-      <ref name="tei_cb"/>
-   </define>
-   <define name="tei_model.milestoneLike_sequenceOptional">
-      <optional>
-         <ref name="tei_milestone"/>
-      </optional>
-      <optional>
-         <ref name="tei_gb"/>
-      </optional>
-      <optional>
-         <ref name="tei_pb"/>
-      </optional>
-      <optional>
-         <ref name="tei_lb"/>
-      </optional>
-      <optional>
-         <ref name="tei_cb"/>
-      </optional>
-   </define>
-   <define name="tei_model.milestoneLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_milestone"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_gb"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_pb"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_lb"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_cb"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.milestoneLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_milestone"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_gb"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_pb"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_lb"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_cb"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.gLike">
       <choice>
@@ -3037,29 +2476,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_note"/>
       </choice>
    </define>
-   <define name="tei_model.noteLike_alternation">
-      <choice>
-         <ref name="tei_note"/>
-      </choice>
-   </define>
-   <define name="tei_model.noteLike_sequence">
-      <ref name="tei_note"/>
-   </define>
-   <define name="tei_model.noteLike_sequenceOptional">
-      <optional>
-         <ref name="tei_note"/>
-      </optional>
-   </define>
-   <define name="tei_model.noteLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_note"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.noteLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_note"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.lLike">
       <choice>
          <ref name="tei_l"/>
@@ -3167,62 +2583,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_space"/>
       </choice>
    </define>
-   <define name="tei_model.global.edit_alternation">
-      <choice>
-         <ref name="tei_gap"/>
-         <ref name="tei_addSpan"/>
-         <ref name="tei_delSpan"/>
-         <ref name="tei_space"/>
-      </choice>
-   </define>
-   <define name="tei_model.global.edit_sequence">
-      <ref name="tei_gap"/>
-      <ref name="tei_addSpan"/>
-      <ref name="tei_delSpan"/>
-      <ref name="tei_space"/>
-   </define>
-   <define name="tei_model.global.edit_sequenceOptional">
-      <optional>
-         <ref name="tei_gap"/>
-      </optional>
-      <optional>
-         <ref name="tei_addSpan"/>
-      </optional>
-      <optional>
-         <ref name="tei_delSpan"/>
-      </optional>
-      <optional>
-         <ref name="tei_space"/>
-      </optional>
-   </define>
-   <define name="tei_model.global.edit_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_gap"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_addSpan"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_delSpan"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_space"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.global.edit_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_gap"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_addSpan"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_delSpan"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_space"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.divPart">
       <choice>
          <ref name="tei_model.lLike"/>
@@ -3231,62 +2591,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_sp"/>
       </choice>
    </define>
-   <define name="tei_model.divPart_alternation">
-      <choice>
-         <ref name="tei_model.lLike_alternation"/>
-         <ref name="tei_model.pLike_alternation"/>
-         <ref name="tei_lg"/>
-         <ref name="tei_sp"/>
-      </choice>
-   </define>
-   <define name="tei_model.divPart_sequence">
-      <ref name="tei_model.lLike_sequence"/>
-      <ref name="tei_model.pLike_sequence"/>
-      <ref name="tei_lg"/>
-      <ref name="tei_sp"/>
-   </define>
-   <define name="tei_model.divPart_sequenceOptional">
-      <optional>
-         <ref name="tei_model.lLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.pLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_lg"/>
-      </optional>
-      <optional>
-         <ref name="tei_sp"/>
-      </optional>
-   </define>
-   <define name="tei_model.divPart_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.lLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.pLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_lg"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_sp"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.divPart_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.lLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.pLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_lg"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_sp"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.persStateLike">
       <choice>
          <ref name="tei_persName"/>
@@ -3294,78 +2598,10 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_state"/>
       </choice>
    </define>
-   <define name="tei_model.persStateLike_alternation">
-      <choice>
-         <ref name="tei_persName"/>
-         <ref name="tei_floruit"/>
-         <ref name="tei_state"/>
-      </choice>
-   </define>
-   <define name="tei_model.persStateLike_sequence">
-      <ref name="tei_persName"/>
-      <ref name="tei_floruit"/>
-      <ref name="tei_state"/>
-   </define>
-   <define name="tei_model.persStateLike_sequenceOptional">
-      <optional>
-         <ref name="tei_persName"/>
-      </optional>
-      <optional>
-         <ref name="tei_floruit"/>
-      </optional>
-      <optional>
-         <ref name="tei_state"/>
-      </optional>
-   </define>
-   <define name="tei_model.persStateLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_persName"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_floruit"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_state"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.persStateLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_persName"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_floruit"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_state"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.persEventLike">
       <choice>
          <ref name="tei_event"/>
       </choice>
-   </define>
-   <define name="tei_model.persEventLike_alternation">
-      <choice>
-         <ref name="tei_event"/>
-      </choice>
-   </define>
-   <define name="tei_model.persEventLike_sequence">
-      <ref name="tei_event"/>
-   </define>
-   <define name="tei_model.persEventLike_sequenceOptional">
-      <optional>
-         <ref name="tei_event"/>
-      </optional>
-   </define>
-   <define name="tei_model.persEventLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_event"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.persEventLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_event"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.personLike">
       <choice>
@@ -3567,29 +2803,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_certainty"/>
       </choice>
    </define>
-   <define name="tei_model.certLike_alternation">
-      <choice>
-         <ref name="tei_certainty"/>
-      </choice>
-   </define>
-   <define name="tei_model.certLike_sequence">
-      <ref name="tei_certainty"/>
-   </define>
-   <define name="tei_model.certLike_sequenceOptional">
-      <optional>
-         <ref name="tei_certainty"/>
-      </optional>
-   </define>
-   <define name="tei_model.certLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_certainty"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.certLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_certainty"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.glossLike">
       <choice>
          <ref name="tei_model.certLike"/>
@@ -3713,95 +2926,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_principal"/>
       </choice>
    </define>
-   <define name="tei_model.respLike_alternation">
-      <choice>
-         <ref name="tei_author"/>
-         <ref name="tei_editor"/>
-         <ref name="tei_respStmt"/>
-         <ref name="tei_meeting"/>
-         <ref name="tei_sponsor"/>
-         <ref name="tei_funder"/>
-         <ref name="tei_principal"/>
-      </choice>
-   </define>
-   <define name="tei_model.respLike_sequence">
-      <ref name="tei_author"/>
-      <ref name="tei_editor"/>
-      <ref name="tei_respStmt"/>
-      <ref name="tei_meeting"/>
-      <ref name="tei_sponsor"/>
-      <ref name="tei_funder"/>
-      <ref name="tei_principal"/>
-   </define>
-   <define name="tei_model.respLike_sequenceOptional">
-      <optional>
-         <ref name="tei_author"/>
-      </optional>
-      <optional>
-         <ref name="tei_editor"/>
-      </optional>
-      <optional>
-         <ref name="tei_respStmt"/>
-      </optional>
-      <optional>
-         <ref name="tei_meeting"/>
-      </optional>
-      <optional>
-         <ref name="tei_sponsor"/>
-      </optional>
-      <optional>
-         <ref name="tei_funder"/>
-      </optional>
-      <optional>
-         <ref name="tei_principal"/>
-      </optional>
-   </define>
-   <define name="tei_model.respLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_author"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_editor"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_respStmt"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_meeting"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_sponsor"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_funder"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_principal"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.respLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_author"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_editor"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_respStmt"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_meeting"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_sponsor"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_funder"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_principal"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.divWrapper">
       <choice>
          <ref name="tei_meeting"/>
@@ -3811,100 +2935,10 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_docDate"/>
       </choice>
    </define>
-   <define name="tei_model.divWrapper_alternation">
-      <choice>
-         <ref name="tei_meeting"/>
-         <ref name="tei_dateline"/>
-         <ref name="tei_epigraph"/>
-         <ref name="tei_docAuthor"/>
-         <ref name="tei_docDate"/>
-      </choice>
-   </define>
-   <define name="tei_model.divWrapper_sequence">
-      <ref name="tei_meeting"/>
-      <ref name="tei_dateline"/>
-      <ref name="tei_epigraph"/>
-      <ref name="tei_docAuthor"/>
-      <ref name="tei_docDate"/>
-   </define>
-   <define name="tei_model.divWrapper_sequenceOptional">
-      <optional>
-         <ref name="tei_meeting"/>
-      </optional>
-      <optional>
-         <ref name="tei_dateline"/>
-      </optional>
-      <optional>
-         <ref name="tei_epigraph"/>
-      </optional>
-      <optional>
-         <ref name="tei_docAuthor"/>
-      </optional>
-      <optional>
-         <ref name="tei_docDate"/>
-      </optional>
-   </define>
-   <define name="tei_model.divWrapper_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_meeting"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_dateline"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_epigraph"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_docAuthor"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_docDate"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.divWrapper_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_meeting"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_dateline"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_epigraph"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_docAuthor"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_docDate"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.divTopPart">
       <choice>
          <ref name="tei_model.headLike"/>
       </choice>
-   </define>
-   <define name="tei_model.divTopPart_alternation">
-      <choice>
-         <ref name="tei_model.headLike_alternation"/>
-      </choice>
-   </define>
-   <define name="tei_model.divTopPart_sequence">
-      <ref name="tei_model.headLike_sequence"/>
-   </define>
-   <define name="tei_model.divTopPart_sequenceOptional">
-      <optional>
-         <ref name="tei_model.headLike_sequenceOptional"/>
-      </optional>
-   </define>
-   <define name="tei_model.divTopPart_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.headLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.divTopPart_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.headLike_sequenceRepeatable"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.divTop">
       <choice>
@@ -3924,21 +2958,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       </choice>
    </define>
    <define name="tei_model.divBottomPart">
-      <notAllowed/>
-   </define>
-   <define name="tei_model.divBottomPart_alternation">
-      <notAllowed/>
-   </define>
-   <define name="tei_model.divBottomPart_sequence">
-      <empty/>
-   </define>
-   <define name="tei_model.divBottomPart_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="tei_model.divBottomPart_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="tei_model.divBottomPart_sequenceRepeatable">
       <notAllowed/>
    </define>
    <define name="tei_model.divBottom">
@@ -3968,84 +2987,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_incipit"/>
          <ref name="tei_rubric"/>
       </choice>
-   </define>
-   <define name="tei_model.msQuoteLike_alternation">
-      <choice>
-         <ref name="tei_title"/>
-         <ref name="tei_colophon"/>
-         <ref name="tei_explicit"/>
-         <ref name="tei_finalRubric"/>
-         <ref name="tei_incipit"/>
-         <ref name="tei_rubric"/>
-      </choice>
-   </define>
-   <define name="tei_model.msQuoteLike_sequence">
-      <ref name="tei_title"/>
-      <ref name="tei_colophon"/>
-      <ref name="tei_explicit"/>
-      <ref name="tei_finalRubric"/>
-      <ref name="tei_incipit"/>
-      <ref name="tei_rubric"/>
-   </define>
-   <define name="tei_model.msQuoteLike_sequenceOptional">
-      <optional>
-         <ref name="tei_title"/>
-      </optional>
-      <optional>
-         <ref name="tei_colophon"/>
-      </optional>
-      <optional>
-         <ref name="tei_explicit"/>
-      </optional>
-      <optional>
-         <ref name="tei_finalRubric"/>
-      </optional>
-      <optional>
-         <ref name="tei_incipit"/>
-      </optional>
-      <optional>
-         <ref name="tei_rubric"/>
-      </optional>
-   </define>
-   <define name="tei_model.msQuoteLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_title"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_colophon"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_explicit"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_finalRubric"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_incipit"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_rubric"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.msQuoteLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_title"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_colophon"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_explicit"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_finalRubric"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_incipit"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_rubric"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.msItemPart">
       <choice>
@@ -4082,62 +3023,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_pubPlace"/>
          <ref name="tei_distributor"/>
       </choice>
-   </define>
-   <define name="tei_model.imprintPart_alternation">
-      <choice>
-         <ref name="tei_publisher"/>
-         <ref name="tei_biblScope"/>
-         <ref name="tei_pubPlace"/>
-         <ref name="tei_distributor"/>
-      </choice>
-   </define>
-   <define name="tei_model.imprintPart_sequence">
-      <ref name="tei_publisher"/>
-      <ref name="tei_biblScope"/>
-      <ref name="tei_pubPlace"/>
-      <ref name="tei_distributor"/>
-   </define>
-   <define name="tei_model.imprintPart_sequenceOptional">
-      <optional>
-         <ref name="tei_publisher"/>
-      </optional>
-      <optional>
-         <ref name="tei_biblScope"/>
-      </optional>
-      <optional>
-         <ref name="tei_pubPlace"/>
-      </optional>
-      <optional>
-         <ref name="tei_distributor"/>
-      </optional>
-   </define>
-   <define name="tei_model.imprintPart_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_publisher"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_biblScope"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_pubPlace"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_distributor"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.imprintPart_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_publisher"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_biblScope"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_pubPlace"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_distributor"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.catDescPart">
       <notAllowed/>
@@ -4348,62 +3233,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_model.nameLike"/>
       </choice>
    </define>
-   <define name="tei_model.pPart.data_alternation">
-      <choice>
-         <ref name="tei_model.dateLike_alternation"/>
-         <ref name="tei_model.measureLike_alternation"/>
-         <ref name="tei_model.addressLike_alternation"/>
-         <ref name="tei_model.nameLike_alternation"/>
-      </choice>
-   </define>
-   <define name="tei_model.pPart.data_sequence">
-      <ref name="tei_model.dateLike_sequence"/>
-      <ref name="tei_model.measureLike_sequence"/>
-      <ref name="tei_model.addressLike_sequence"/>
-      <ref name="tei_model.nameLike_sequence"/>
-   </define>
-   <define name="tei_model.pPart.data_sequenceOptional">
-      <optional>
-         <ref name="tei_model.dateLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.measureLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.addressLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.nameLike_sequenceOptional"/>
-      </optional>
-   </define>
-   <define name="tei_model.pPart.data_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.dateLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.measureLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.addressLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.nameLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.pPart.data_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.dateLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.measureLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.addressLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.nameLike_sequenceRepeatable"/>
-      </oneOrMore>
-   </define>
    <define name="tei_model.inter">
       <choice>
          <ref name="tei_model.egLike"/>
@@ -4413,84 +3242,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_model.stageLike"/>
          <ref name="tei_model.qLike"/>
       </choice>
-   </define>
-   <define name="tei_model.inter_alternation">
-      <choice>
-         <ref name="tei_model.egLike_alternation"/>
-         <ref name="tei_model.biblLike_alternation"/>
-         <ref name="tei_model.labelLike_alternation"/>
-         <ref name="tei_model.listLike_alternation"/>
-         <ref name="tei_model.stageLike_alternation"/>
-         <ref name="tei_model.qLike_alternation"/>
-      </choice>
-   </define>
-   <define name="tei_model.inter_sequence">
-      <ref name="tei_model.egLike_sequence"/>
-      <ref name="tei_model.biblLike_sequence"/>
-      <ref name="tei_model.labelLike_sequence"/>
-      <ref name="tei_model.listLike_sequence"/>
-      <ref name="tei_model.stageLike_sequence"/>
-      <ref name="tei_model.qLike_sequence"/>
-   </define>
-   <define name="tei_model.inter_sequenceOptional">
-      <optional>
-         <ref name="tei_model.egLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.biblLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.labelLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.listLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.stageLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="tei_model.qLike_sequenceOptional"/>
-      </optional>
-   </define>
-   <define name="tei_model.inter_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="tei_model.egLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.biblLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.labelLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.listLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.stageLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_model.qLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-   </define>
-   <define name="tei_model.inter_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="tei_model.egLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.biblLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.labelLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.listLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.stageLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_model.qLike_sequenceRepeatable"/>
-      </oneOrMore>
    </define>
    <define name="tei_model.common">
       <choice>
@@ -4656,6 +3407,23 @@ to others within the personal name.</a:documentation>
         surrounding text, for reasons concerning which no claim is
         made.  [3.3.2.2.  3.3.2. ]</a:documentation>
          <ref name="tei_macro.paraContent"/>
+         <ref name="tei_att.global.attribute.xmlid"/>
+         <ref name="tei_att.global.attribute.n"/>
+         <ref name="tei_att.global.attribute.xmllang"/>
+         <ref name="tei_att.global.attribute.rendition"/>
+         <ref name="tei_att.global.attribute.xmlbase"/>
+         <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.linking.attribute.corresp"/>
+         <ref name="tei_att.global.linking.attribute.synch"/>
+         <ref name="tei_att.global.linking.attribute.sameAs"/>
+         <ref name="tei_att.global.linking.attribute.copyOf"/>
+         <ref name="tei_att.global.linking.attribute.next"/>
+         <ref name="tei_att.global.linking.attribute.prev"/>
+         <ref name="tei_att.global.linking.attribute.exclude"/>
+         <ref name="tei_att.global.linking.attribute.select"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
+         <ref name="tei_att.global.facs.attribute.facs"/>
+         <ref name="tei_att.global.change.attribute.change"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
 Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeresis; 6] grave; 7] intraline; 8] inverted; 9] italic; 10] lenis; 11] ligature; 12] normal; 13] reversed; 14] sling-above; 15] sling-below; 16] small; 17] subscript; 18] superscript; 19] supraline; 20] supraline-underline; 21] tall; 22] underline</a:documentation>
@@ -4910,16 +3678,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                </optional>
             </list>
          </attribute>
-         <ref name="tei_att.global.attribute.xmlid"/>
-         <ref name="tei_att.global.attribute.n"/>
-         <ref name="tei_att.global.attribute.xmllang"/>
-         <ref name="tei_att.global.attribute.rendition"/>
-         <ref name="tei_att.global.attribute.xmlbase"/>
-         <ref name="tei_att.global.attribute.xmlspace"/>
-         <ref name="tei_att.global.linking.attributes"/>
-         <ref name="tei_att.global.analytic.attributes"/>
-         <ref name="tei_att.global.facs.attributes"/>
-         <ref name="tei_att.global.change.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5183,6 +3941,9 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <zeroOrMore>
             <ref name="tei_model.glossLike"/>
          </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.duration.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
          <attribute name="reason">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
@@ -5215,9 +3976,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                <ref name="tei_data.enumerated"/>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.duration.iso.attributes"/>
-         <ref name="tei_att.editLike.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5226,6 +3984,9 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(addition) contains letters, words, or phrases inserted in the text by an
         author, scribe, annotator, or corrector. [3.4.3. ]</a:documentation>
          <ref name="tei_macro.paraContent"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.transcriptional.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
          <optional>
             <attribute name="place">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -5261,9 +4022,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                </choice>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.transcriptional.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5283,6 +4041,8 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word, phrase, or passage which cannot be transcribed with certainty because it
         is illegible or inaudible in the source. [11.3.3.1.  3.4.3. ]</a:documentation>
          <ref name="tei_macro.xtext"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
          <optional>
             <attribute name="reason">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates why the material is hard to transcribe.</a:documentation>
@@ -5309,8 +4069,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                <ref name="tei_data.enumerated"/>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.editLike.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5927,6 +4685,10 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line break) Line-beginning: marks the start of each line of the text, including the
                         first [3.10.3.  7.2.5. ]</a:documentation>
          <empty/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.sourced.attributes"/>
+         <ref name="tei_att.spanning.attributes"/>
          <optional>
             <attribute name="break">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
@@ -5939,10 +4701,6 @@ Suggested values include: 1] no</a:documentation>
                </choice>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
-         <ref name="tei_att.sourced.attributes"/>
-         <ref name="tei_att.spanning.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7652,17 +6410,6 @@ represented within a text. [2.4.2.  2.4.  15.3.2. ]</a:documentation>
          <ref name="tei_att.docStatus.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.typed.attributes"/>
-         <optional>
-            <attribute name="target">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to one or more elements that belong to this change.</a:documentation>
-               <list>
-                  <ref name="tei_data.pointer"/>
-                  <zeroOrMore>
-                     <ref name="tei_data.pointer"/>
-                  </zeroOrMore>
-               </list>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -7698,14 +6445,6 @@ with either the creation of a source text or the revision of an encoded text. </
          </oneOrMore>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
-         <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="ordered"
-                       a:defaultValue="true">
-               <a:documentation>indicates whether the ordering of its child change
-elements is to be considered significant or not</a:documentation>
-               <ref name="tei_data.truthValue"/>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -8052,6 +6791,10 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
                </zeroOrMore>
             </optional>
          </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.divLike.attributes"/>
+         <ref name="tei_att.typed.attribute.subtype"/>
+         <ref name="tei_att.declaring.attributes"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
@@ -8072,7 +6815,7 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
                                         multiple text-parts</a:documentation>
                <value>figure</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain links to figures and other media representing
-                                        the text-object (to be deprecated for facsimile)</a:documentation>
+                                        the text-object (DEPRECATED for tei:facsimile)</a:documentation>
                <value>history</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain history of the discovery and recording of the
                                         text-object, including findspot/locations (DEPRECATED
@@ -8085,10 +6828,6 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
                                         modern languages</a:documentation>
             </choice>
          </attribute>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.divLike.attributes"/>
-         <ref name="tei_att.typed.attribute.subtype"/>
-         <ref name="tei_att.declaring.attributes"/>
          <empty/>
       </element>
    </define>
@@ -8123,9 +6862,9 @@ constituents, as given on a title page. [4.6. ]</a:documentation>
             <zeroOrMore>
                <ref name="tei_model.global"/>
             </zeroOrMore>
-            <oneOrMore>
+            <zeroOrMore>
                <ref name="tei_model.global"/>
-            </oneOrMore>
+            </zeroOrMore>
          </group>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.canonical.attributes"/>
@@ -8418,22 +7157,6 @@ that space, zones of interest within that space, and transcriptions of the
          <ref name="tei_att.coordinated.attributes"/>
          <ref name="tei_att.declaring.attributes"/>
          <ref name="tei_att.typed.attributes"/>
-         <optional>
-            <attribute name="attachment">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the method by which this surface is or was
-         connected to the main surface
-Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
-               <ref name="tei_data.enumerated"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="flipping">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether the
-      surface is attached and folded in such a way as to provide two
-      writing surfaces</a:documentation>
-               <ref name="tei_data.truthValue"/>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -8539,18 +7262,6 @@ of a point on a line enclosing the area.</a:documentation>
                      <ref name="tei_data.point"/>
                   </zeroOrMore>
                </list>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="rotate"
-                       a:defaultValue="0">
-               <a:documentation>indicates the amount by which this zone has been
-         rotated clockwise, with respect to the normal orientation of
-         the parent surface element as implied by the
-         dimensions given in the msDesc element or by the
-         coordinates of the surface itself. The orientation
-         is expressed in arc degrees.</a:documentation>
-               <ref name="tei_data.count"/>
             </attribute>
          </optional>
          <empty/>
@@ -8757,6 +7468,21 @@ the space.</a:documentation>
   reason, typically because the original cannot be read because of
   physical damage or loss to the original. [11.3.3.1. ]</a:documentation>
          <ref name="tei_macro.paraContent"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.editLike.attribute.source"/>
+         <ref name="tei_att.editLike.attribute.instant"/>
+         <ref name="tei_att.dimensions.attribute.precision"/>
+         <ref name="tei_att.dimensions.attribute.unit"/>
+         <ref name="tei_att.dimensions.attribute.quantity"/>
+         <ref name="tei_att.dimensions.attribute.extent"/>
+         <ref name="tei_att.dimensions.attribute.scope"/>
+         <ref name="tei_att.ranging.attribute.atLeast"/>
+         <ref name="tei_att.ranging.attribute.atMost"/>
+         <ref name="tei_att.ranging.attribute.min"/>
+         <ref name="tei_att.ranging.attribute.max"/>
+         <ref name="tei_att.ranging.attribute.confidence"/>
+         <ref name="tei_att.responsibility.attribute.cert"/>
+         <ref name="tei_att.responsibility.attribute.resp"/>
          <optional>
             <attribute name="evidence">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
@@ -8790,11 +7516,6 @@ Suggested values include: 1] parallel; 2] previouseditor</a:documentation>
                                         text</a:documentation>
             </choice>
          </attribute>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.editLike.attribute.source"/>
-         <ref name="tei_att.editLike.attribute.instant"/>
-         <ref name="tei_att.dimensions.attributes"/>
-         <ref name="tei_att.responsibility.attributes"/>
          <empty/>
       </element>
    </define>
@@ -8858,13 +7579,6 @@ Suggested values include: 1] parallel; 2] previouseditor</a:documentation>
          <ref name="tei_att.placement.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <optional>
-            <attribute name="function">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the function (for example  status, insertion,
-	 deletion, transposition) of the mark.</a:documentation>
-               <ref name="tei_data.word"/>
-            </attribute>
-         </optional>
-         <optional>
             <attribute name="target">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies one or more elements to which the function
 	 indicated by the metamark applies. </a:documentation>
@@ -8899,18 +7613,6 @@ Suggested values include: 1] parallel; 2] previouseditor</a:documentation>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.spanning.attributes"/>
          <ref name="tei_att.transcriptional.attributes"/>
-         <optional>
-            <attribute name="target">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to one or more elements representing the
-	 interventions which are being reasserted.</a:documentation>
-               <list>
-                  <ref name="tei_data.pointer"/>
-                  <zeroOrMore>
-                     <ref name="tei_data.pointer"/>
-                  </zeroOrMore>
-               </list>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -8948,18 +7650,6 @@ Suggested values include: 1] parallel; 2] previouseditor</a:documentation>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.spanning.attributes"/>
          <ref name="tei_att.transcriptional.attributes"/>
-         <optional>
-            <attribute name="target">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to one or more elements representing the
-	 interventions which are to be reverted or undone.</a:documentation>
-               <list>
-                  <ref name="tei_data.pointer"/>
-                  <zeroOrMore>
-                     <ref name="tei_data.pointer"/>
-                  </zeroOrMore>
-               </list>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -9477,6 +8167,31 @@ values for @target</assert>
          <empty/>
       </element>
    </define>
+   <define name="tei_joinGrp">
+      <element name="joinGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(join group) groups a collection of join elements and possibly pointers. [16.7. ]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.glossLike"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <choice>
+                  <ref name="tei_join"/>
+                  <ref name="tei_ptr"/>
+               </choice>
+            </oneOrMore>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.pointing.group.attributes"/>
+         <optional>
+            <attribute name="result">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the result of the joins gathered in this collection.</a:documentation>
+               <ref name="tei_data.name"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_att.global.linking.attributes">
       <ref name="tei_att.global.linking.attribute.corresp"/>
       <ref name="tei_att.global.linking.attribute.synch"/>
@@ -9815,6 +8530,23 @@ or phrase, typically found as part of a blazon, coat of arms, etc.
                <ref name="tei_model.global"/>
             </choice>
          </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attribute.source"/>
+         <ref name="tei_att.editLike.attribute.instant"/>
+         <ref name="tei_att.dimensions.attribute.precision"/>
+         <ref name="tei_att.dimensions.attribute.unit"/>
+         <ref name="tei_att.dimensions.attribute.quantity"/>
+         <ref name="tei_att.dimensions.attribute.extent"/>
+         <ref name="tei_att.dimensions.attribute.scope"/>
+         <ref name="tei_att.ranging.attribute.atLeast"/>
+         <ref name="tei_att.ranging.attribute.atMost"/>
+         <ref name="tei_att.ranging.attribute.min"/>
+         <ref name="tei_att.ranging.attribute.max"/>
+         <ref name="tei_att.ranging.attribute.confidence"/>
+         <ref name="tei_att.responsibility.attribute.cert"/>
+         <ref name="tei_att.responsibility.attribute.resp"/>
+         <ref name="tei_att.typed.attributes"/>
          <optional>
             <attribute name="evidence">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
@@ -9923,13 +8655,6 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
                </list>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.datable.attributes"/>
-         <ref name="tei_att.editLike.attribute.source"/>
-         <ref name="tei_att.editLike.attribute.instant"/>
-         <ref name="tei_att.dimensions.attributes"/>
-         <ref name="tei_att.responsibility.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -11585,6 +10310,9 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                </choice>
             </zeroOrMore>
          </choice>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.sortable.attributes"/>
          <optional>
             <attribute name="role">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a primary role or classification for the person.</a:documentation>
@@ -11608,9 +10336,6 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
                <ref name="tei_data.enumerated"/>
             </attribute>
          </optional>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.editLike.attributes"/>
-         <ref name="tei_att.sortable.attributes"/>
          <empty/>
       </element>
    </define>
