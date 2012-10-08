@@ -19,6 +19,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-10-08">removed description/history/figure and underline-supraline, following deprecation 2 years ago</change>
             <change who="#GB" when="2012-10-05">switched to using @except on moduleRef instead of @mode="delete" on elementSpec</change>
             <change who="#GB" when="2012-09-26">Stopped omitting damage</change>
             <change who="#GB" when="2012-09-20">Added spoken module; deleted all elements from that module</change>
@@ -116,26 +117,9 @@
                                     <desc>to contain all editorial commentary,
                                         historical/prosopographical discussion, etc.</desc>
                                 </valItem>
-                                <!--DEPRECATED-->
-                                <valItem ident="description">
-                                    <desc>to contain description of the object, text campus, and
-                                        lettering; physical commentary (DEPRECATED for
-                                        tei:physDesc)</desc>
-                                </valItem>
                                 <valItem ident="edition">
                                     <desc>to contain the text of the edition itself; may include
                                         multiple text-parts</desc>
-                                </valItem>
-                                <!--DEPRECATED-->
-                                <valItem ident="figure">
-                                    <desc>to contain links to figures and other media representing
-                                        the text-object (DEPRECATED for tei:facsimile)</desc>
-                                </valItem>
-                                <!--DEPRECATED-->
-                                <valItem ident="history">
-                                    <desc>to contain history of the discovery and recording of the
-                                        text-object, including findspot/locations (DEPRECATED
-                                        for tei:history)</desc>
                                 </valItem>
                                 <valItem ident="textpart">
                                     <desc>used to divide a div[type=edition] into multiple parts
@@ -238,10 +222,6 @@
                                 <valItem ident="supraline">
                                     <desc>characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</desc>
-                                </valItem>
-                                <!--DEPRECATED-->
-                                <valItem ident="supraline-underline">
-                                    <desc>DEPRECATED: use supraline and underline in combination</desc>
                                 </valItem>
                                 <valItem ident="tall">
                                     <desc>Letter(s) taller than those around it, e.g. I-longa</desc>
