@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-10-08T10:05:27Z. 
+Schema generated from ODD source 2012-10-09T09:53:34Z. 
 Edition: 2.1.0. Last updated on 17th June 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 
@@ -2210,7 +2210,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="tei_link"/>
          <ref name="tei_linkGrp"/>
          <ref name="tei_join"/>
-         <ref name="tei_joinGrp"/>
       </choice>
    </define>
    <define name="tei_model.milestoneLike">
@@ -3426,7 +3425,7 @@ to others within the personal name.</a:documentation>
          <ref name="tei_att.global.change.attribute.change"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeresis; 6] grave; 7] intraline; 8] inverted; 9] italic; 10] lenis; 11] ligature; 12] normal; 13] reversed; 14] sling-above; 15] sling-below; 16] small; 17] subscript; 18] superscript; 19] supraline; 20] supraline-underline; 21] tall; 22] underline</a:documentation>
+Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeresis; 6] grave; 7] intraline; 8] inverted; 9] italic; 10] lenis; 11] ligature; 12] normal; 13] reversed; 14] sling-above; 15] sling-below; 16] small; 17] subscript; 18] superscript; 19] supraline; 20] tall; 21] underline</a:documentation>
             <list>
                <choice>
                   <value>acute</value>
@@ -3468,8 +3467,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                   <value>supraline</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</a:documentation>
-                  <value>supraline-underline</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">DEPRECATED: use supraline and underline in combination</a:documentation>
                   <value>tall</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) taller than those around it, e.g. I-longa</a:documentation>
                   <value>underline</value>
@@ -3517,8 +3514,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>supraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</a:documentation>
-                     <value>supraline-underline</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">DEPRECATED: use supraline and underline in combination</a:documentation>
                      <value>tall</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) taller than those around it, e.g. I-longa</a:documentation>
                      <value>underline</value>
@@ -3567,8 +3562,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>supraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</a:documentation>
-                     <value>supraline-underline</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">DEPRECATED: use supraline and underline in combination</a:documentation>
                      <value>tall</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) taller than those around it, e.g. I-longa</a:documentation>
                      <value>underline</value>
@@ -3617,8 +3610,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>supraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</a:documentation>
-                     <value>supraline-underline</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">DEPRECATED: use supraline and underline in combination</a:documentation>
                      <value>tall</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) taller than those around it, e.g. I-longa</a:documentation>
                      <value>underline</value>
@@ -3667,8 +3658,6 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
                      <value>supraline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</a:documentation>
-                     <value>supraline-underline</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">DEPRECATED: use supraline and underline in combination</a:documentation>
                      <value>tall</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letter(s) taller than those around it, e.g. I-longa</a:documentation>
                      <value>underline</value>
@@ -6806,20 +6795,9 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
                <value>commentary</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain all editorial commentary,
                                         historical/prosopographical discussion, etc.</a:documentation>
-               <value>description</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain description of the object, text campus, and
-                                        lettering; physical commentary (DEPRECATED for
-                                        tei:physDesc)</a:documentation>
                <value>edition</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain the text of the edition itself; may include
                                         multiple text-parts</a:documentation>
-               <value>figure</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain links to figures and other media representing
-                                        the text-object (DEPRECATED for tei:facsimile)</a:documentation>
-               <value>history</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">to contain history of the discovery and recording of the
-                                        text-object, including findspot/locations (DEPRECATED
-                                        for tei:history)</a:documentation>
                <value>textpart</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">used to divide a div[type=edition] into multiple parts
                                         (fragments, columns, faces, etc.)</a:documentation>
@@ -8162,31 +8140,6 @@ values for @target</assert>
                   <value>branches</value>
                   <a:documentation>the children of the subtrees indicated by the targets attribute become the children of the virtual element (i.e. the roots of the subtrees are discarded)</a:documentation>
                </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_joinGrp">
-      <element name="joinGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(join group) groups a collection of join elements and possibly pointers. [16.7. ]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <ref name="tei_model.glossLike"/>
-            </zeroOrMore>
-            <oneOrMore>
-               <choice>
-                  <ref name="tei_join"/>
-                  <ref name="tei_ptr"/>
-               </choice>
-            </oneOrMore>
-         </group>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.pointing.group.attributes"/>
-         <optional>
-            <attribute name="result">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the result of the joins gathered in this collection.</a:documentation>
-               <ref name="tei_data.name"/>
             </attribute>
          </optional>
          <empty/>
