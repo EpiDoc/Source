@@ -46,6 +46,14 @@ How to use it:
             this manual step. A transformation configuration has been added to 
             the Oxygen project file (EpiDoc Schema to egXML Schema).
 
+            (*) An extra step is currently required in order to allow the attributes
+            @corresp, @rend, @xml:lang and @xml:space to validate on the egXML
+            element. After re-generating the guidelines schema, a few new attributes
+            should be added at the start of the first <choice> element inside the
+            definition for "egXML". These lines can be found in a file named
+            to-add-to-gl-schema.xml (in the /guidelines/schema directory).
+            
+
     Generate HTML Guidelines from XML files
     
         1. Make sure you have a full checkout of the SVN repository.
