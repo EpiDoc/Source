@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -80,7 +82,7 @@
                     scriptStmt shift u vocal writing"/>
                 
                 <!--        CHANGED ELEMENT SPECS        -->
-                <elementSpec module="core" ident="add" mode="change">
+                <elementSpec ident="add" module="core" mode="change">
                     <attList>
                         <attDef ident="place" mode="replace">
                             <valList type="closed">
@@ -133,7 +135,38 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec module="core" ident="gap" mode="change">
+                <elementSpec ident="ex" module="transcr" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="ex">
+                        <constraint>
+                            <sch:rule context="t:ex">
+                                <sch:report test="not(ancestor::t:expan)"><sch:name/> should only appear inside expan</sch:report>
+                                <sch:report test="parent::t:abbr"><sch:name/> should not be a child of abbr</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
+                <elementSpec ident="expan" module="transcr" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="expan">
+                        <constraint>
+                            <sch:rule context="t:expan">
+                                <sch:report test="not(descendant::t:ex)"><sch:name/> should contain ex</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
+                <elementSpec ident="gap" module="core" mode="change">
+                    <constraintSpec ident="gap" scheme="isoschematron">
+                        <constraint>
+                            <sch:rule context="t:gap">
+                                <sch:report test="@quantity and @extent"><sch:name/> 
+                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
+                                @unit is required</sch:report>
+                                <sch:report test="not(@reason='ellipsis') and ancenstor::t:supplied"><sch:name/>
+                                may not appear within supplied text</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
@@ -247,7 +280,7 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec module="msdescription" ident="origDate" mode="change">
+                <elementSpec ident="origDate" module="msdescription" mode="change">
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="6">
@@ -271,6 +304,9 @@
                                 </valItem>
                                 <valItem ident="internal-date">
                                     <desc>Text dated by explicit internal date</desc>
+                                </valItem>
+                                <valItem ident="context">
+                                    <desc>Archaeological, epigraphic, iconographic or other context of the text support</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -328,7 +364,7 @@
                         </group>
                     </content>
                 </elementSpec>
-                <elementSpec module="transcr" ident="supplied" mode="change">
+                <elementSpec ident="supplied" module="transcr" mode="change">
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="1">
