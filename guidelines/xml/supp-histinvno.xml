@@ -27,7 +27,10 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histinvno" xml:lang="en">
     <head>Inventory numbers and repository</head>
-    <p>gloss</p>
+    <p>Recording the holding institution of a manuscript or text-bearing object and inventory number
+        in a museum or library catalogue, if applicable; the common name or label of the object if it has
+        no official inventory number.
+    </p>
     
     <p>
         <specList>
@@ -37,6 +40,13 @@ End license statement: do not remove -->
             <specDesc key="idno"/>
             <specDesc key="altIdentifier"/>
         </specList>
+    </p>
+    
+    <p>The TEI requires some kind of manuscript identifier (<gi>msIdentifier</gi>) to be encoded as
+        part of the manuscript description in any edition, either institution plus identifier
+        (<gi>repository</gi>+<gi>idno</gi>), or a generic manuscript name (<gi>msname</gi>). For epigraphy, where
+        many objects are not held or catalogued by institutions but may be in situ, stray, in private collections
+        or even lost, we may need to apply these definitions loosely in order to complete these elements.
     </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -55,7 +65,7 @@ End license statement: do not remove -->
     <div xml:id="supp-histinvno-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

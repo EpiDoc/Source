@@ -47,6 +47,20 @@ End license statement: do not remove -->
         and <gi>depth</gi> (or, for dimensions other than the three linear ones, <gi>dim</gi>, which may take an
         <att>type</att> such as "diameter", "arc", etc.).</p>
     
+    <p>If normalization is desired, the <att>quantity</att> attribute on each dimension may be used to contain
+        a mathematically actionable expression of the value (fraction expressed as decimal, or inches expressed
+        as metric, for example). Approximate dimensions (often indicated "ca." or "circa." in print) 
+        should be tagged with the attribute <att>precision</att>="low". Dimensions that vary across the object
+        (e.g. a tapering column wider at the base than at the top), should be given
+        <att>min</att> and <att>max</att> attributes, rather than <att>quantity</att>.
+    </p>
+    
+    <p>If <att>precision</att> is used in combination with <att>min</att> and <att>max</att>,
+        the low precision is understood to refer to both these values. For more complicated expressions,
+        the <gi>precision</gi> element may be used to make different precision statements about each
+        of these attributes.
+    </p>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <dimensions unit="cm">
             <height>196</height>
@@ -59,10 +73,19 @@ End license statement: do not remove -->
         <support>
             Colonnette of marble, spirally fluted and tapering to a point 
             (<dimensions>
-                <dim unit="metre" atMost="0.24" atLeast="0.11" type="diameter">0.24-0.11</dim>
-                <height unit="metre">0.55</height>
+                <dim unit="metre" min="0.24" max="0.11" type="diameter">0.24-0.11</dim>
+                <height unit="metre" quantity="0.55">0.55</height>
             </dimensions>).
         </support>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <handNote>
+            Letter heights:
+            <height min="0.01" max="0.015">0.01 - c. 0.015</height>
+                <precision match="preceding::height/@min" precision="high"/>
+                <precision match="preceding::height/@max" precision="low"/>
+        </handNote>
     </egXML>
     
     <div xml:id="supp-descdimensions-responsibility">

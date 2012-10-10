@@ -28,36 +28,31 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lostcharnumeral" xml:lang="en">
     <head>Lost Characters, Numeral</head>
     <p><!--gloss--></p>
-    <p><specList>
-        <specDesc key="gap"/>
-        <specDesc key="num"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>
+        <specList>
+            <specDesc key="gap"/>
+            <specDesc key="num"/>
+        </specList>
+    </p> 
     
     <p><!--More prose explanation--></p>
     
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
+        <quote>L[.]</quote>
+        <!--<bibl>
             <biblScope>...</biblScope>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
+        </bibl>-->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <!-- example markup -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+        <num atLeast="51" atMost="55">L<gap reason="lost" quantity="1" unit="character"/></num>
     </egXML>
     
     
     <div xml:id="trans-lostcharnumeral-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name><!--your name--></name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
