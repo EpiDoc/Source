@@ -28,21 +28,42 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-historigdate" xml:lang="en">
     <head>Original date of text and/or object</head>
     <p>The date of origin of the text (or in some cases, of the object or some other feature, decoration, or reuse of it),
-    whether the result of the editor's analysis or an explicit, internal date. May also record date ranges, degrees of precision
-    and dating criteria.</p>
+    whether the result of the editor's analysis or an explicit, internal date. May also record possible ranges of dates,
+    degrees of precision and dating criteria.</p>
     
     <p><specList>
         <specDesc key="origDate"/>
         <specDesc key="precision"/>
     </specList></p>
     
+    <p>
+        The date of orgin of the text (or object, if different) should be recorded in an <gi>origDate</gi> element
+        in the <gi>origin</gi> section of the manuscript description area. If different dates need to be recorded
+        for text and object, different texts on the same support, or different interventions in the same text, the
+        <gi>origDate</gi> may be repeated, or the entire <gi>history</gi> may be embedded in multiple
+        <gi>msPart</gi>s.
+    </p>
+    
+    <p>
+        It is generally recommended to encode the dating information in numerical form, following the 
+        proleptic Julian calendar, using the att.datable.custom attributes on the <gi>origDate</gi> element.
+        (Because the default dating system assumed by the TEI is the Gregorian calendar, the dating element
+        should always carry a <att>datingMethod</att> attribute pointing to a <gi>calendar</gi> element in the
+        header--or to an external authority for the Julian calendar, such as
+        <ref>http://en.wikipedia.org/wiki/Julian_calendar</ref>.)
+    </p>
+    
+    <p>
+        attributes...
+    </p>
+    
     <p>... basic dating, including ranges/spans, with examples ...</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origDate when-custom="0139" datingMethod="Julian">139 C.E.</origDate>
+        <origDate when-custom="0139" datingMethod="#Julian">139 C.E.</origDate>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origDate notBefore-custom="-0420-12-11" notAfter-custom="-0419-12-10" datingMethod="Julian">
+        <origDate notBefore-custom="-0420-12-11" notAfter-custom="-0419-12-10" datingMethod="#Julian">
             December 11th, 420 to December 10th, 419 B.C.E.
         </origDate>
     </egXML>
@@ -52,19 +73,19 @@ End license statement: do not remove -->
         <p>... including different precision for notBefore/notAfter; medium=block dates, low=circa ...</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="-0100" notAfter-custom="0100" precision="medium" datingMethod="Julian">
+            <origDate notBefore-custom="-0100" notAfter-custom="0100" precision="medium" datingMethod="#Julian">
                 First century B.C. to first century A.D.
             </origDate>
         </egXML>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate when-custom="-0355" precision="low" datingMethod="Julian">
+            <origDate when-custom="-0355" precision="low" datingMethod="#Julian">
                 Circa 355 B.C.E.
             </origDate>
         </egXML>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="Julian">
+            <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="#Julian">
                 First half first century C.E., but certainly after the death of Augustus.
                 <precision match="../@notAfter-custom" precision="low"/>
                 <precision match="../@notBefore-custom" precision="high"/>
@@ -77,7 +98,7 @@ End license statement: do not remove -->
         <p>... @evidence, suggest typology, example values ...</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium" evidence="lettering nomenclature">
+            <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium" evidence="lettering nomenclature" datingMethod="#Julian">
                 Late fourth century (lettering and nomenclature).
             </origDate>
         </egXML>
