@@ -54,17 +54,30 @@ End license statement: do not remove -->
     </p>
     
     <p>
-        attributes...
+        A specific date, whether a single day, month, or year in the Julian calendar, can be expressed using
+        the <att>when-custom</att> attribute, which should be laid out in the same form as a W3 date (albeit
+        in the Julian, not Gregorian calendar). In other words:
+        <list type="ordered">
+            <item>A year should be encoded in four digits, with leading zeroes as necessary (i.e. 14 C.E. should be "0014")</item>
+            <item>B.C.E./B.C. dates should be recorded as negative numbers (i.e. preceded by "-"); NB there is no year "0"</item>
+            <item>Month and day should be encoded in two digits, with leading zero as necessary (i.e. January 7th should be "--01-07")</item>
+            <item>A year may appear without months or day; a year+month may appear without day</item>
+        </list>
     </p>
     
-    <p>... basic dating, including ranges/spans, with examples ...</p>
+    <p>
+        A date within a range (such as the reign of an emperor, or a century for e.g. palaeographically dated text)
+        should be encoded using the <att>notBefore-custom</att> and <att>notAfter-custom</att> attributes, marking the beginning
+        and end of the possible span of dates. The date formats of these attributes are the same as for
+        <gi>when-custom</gi>.
+    </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <origDate when-custom="0139" datingMethod="#Julian">139 C.E.</origDate>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origDate notBefore-custom="-0420-12-11" notAfter-custom="-0419-12-10" datingMethod="#Julian">
-            December 11th, 420 to December 10th, 419 B.C.E.
+        <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10" datingMethod="#Julian">
+            December 11th, 20 to December 10th, 19 B.C.E.
         </origDate>
     </egXML>
     
@@ -87,8 +100,8 @@ End license statement: do not remove -->
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="#Julian">
                 First half first century C.E., but certainly after the death of Augustus.
-                <precision match="../@notAfter-custom" precision="low"/>
                 <precision match="../@notBefore-custom" precision="high"/>
+                <precision match="../@notAfter-custom" precision="low"/>
             </origDate>
         </egXML>
     </div>

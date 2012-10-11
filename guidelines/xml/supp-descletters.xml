@@ -26,32 +26,36 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descletters" xml:lang="en">
-    <head>Description of letters or hands</head>
+    <head>Description of hands and letters</head>
     <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
     
-    <div xml:id="intro-faq-responsibility">
+    <p>
+        <specList>
+            <specDesc key="handDesc"/>
+            <specDesc key="handNote"/>
+            <specDesc key="height"/>
+        </specList>
+    </p>
     
+    <p>
+        discussion to be added
+    </p>
+    
+    <p>See also <ref target="supp-descdimensions.html">Dimensions</ref> for more information on tagging object, campus or letter dimensions.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <handDesc>
+            <handNote>
+                <height unit="metre">0.015</height>; lunate sigma and epsilon; ligatured ΜΝ in l. 3.
+            </handNote>
+        </handDesc>
+    </egXML>
+    
+    <div xml:id="intro-faq-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

@@ -61,6 +61,8 @@
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
+                
+                <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
                 <moduleRef key="header"/>
@@ -413,15 +415,15 @@
 
                 <!--       CHANGING ATTRIBUTE CLASSES         -->
                 
-                <classSpec type="atts" ident="att.responsibility" mode="change">
-                    <attList>
-                        <attDef ident="cert" mode="replace">
-                            <valList type="closed">
-                                <valItem ident="low"/>
-                                <valItem ident="high"/>
-                            </valList>
-                        </attDef>
-                    </attList>
+                <classSpec type="atts" ident="att.datable.custom" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="datable.custom">
+                         <constraint>
+                             <sch:rule context="t:*">
+                                 <sch:report test="@when-custom and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
+                                     @when-custom must be a date in the form (-)YYYY[-MM[-DD]]</sch:report>
+                             </sch:rule>
+                         </constraint>
+                     </constraintSpec>
                 </classSpec>
                 
                 <classSpec type="atts" ident="att.dimensions" mode="change">
@@ -445,6 +447,17 @@
                         <attDef ident="extent" mode="change">
                             <valList type="semi" mode="replace">
                                 <valItem ident="unknown"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </classSpec>
+                
+                <classSpec type="atts" ident="att.responsibility" mode="change">
+                    <attList>
+                        <attDef ident="cert" mode="replace">
+                            <valList type="closed">
+                                <valItem ident="low"/>
+                                <valItem ident="high"/>
                             </valList>
                         </attDef>
                     </attList>
