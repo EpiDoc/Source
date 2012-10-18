@@ -27,20 +27,36 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descletters" xml:lang="en">
     <head>Description of hands and letters</head>
-    <p>gloss</p>
+    <p>Descriptive information about the hands, palaeography or writing styles used in the text should be encoded
+        within the <gi>handDesc</gi> section of the document header.</p>
     
     <p>
         <specList>
             <specDesc key="handDesc"/>
             <specDesc key="handNote"/>
             <specDesc key="height"/>
+            <specDesc key="hi"/>
         </specList>
     </p>
     
     <p>
-        discussion to be added
+        The description of hand(s) may include information on letterforms and heights (or other dimensions, such
+        as line-heights), palaeographic features including dating, ligatures, abbreviation marks, unusual characters
+        and other symbols or textual features. On the whole only letterheights are tagged in this section (with
+        <gi>height</gi>), although dating may also be marked in principle (if it is different from the information
+        recorded in <gi>origDate</gi>).
     </p>
-    
+    <p>  
+        Ligatures, while sometimes listed here manually, may be better captured
+        by tagging in the transcribed text as <gi>hi</gi> with <att>rend</att> of "ligature" and mechanically
+        generating a list of instances in the output. See also <ref target="trans-ligature.html">Ligatures</ref>.
+    </p>    
+    <p>
+        If multiple hands are described, each should be given a separate <gi>handNote</gi>, each bearing either
+        an <att>n</att> (corresponding to a numbered section in the transcribed text), or an <att>xml:id</att>
+        to which a <gi>handShift</gi> element in the transcription may point.
+        See also <ref target="trans-handshift.html">Change of hand or scribe</ref>.
+    </p>
     <p>See also <ref target="supp-descdimensions.html">Dimensions</ref> for more information on tagging object, campus or letter dimensions.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -55,7 +71,6 @@ End license statement: do not remove -->
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

@@ -82,8 +82,21 @@ End license statement: do not remove -->
     </egXML>
     
     <div>
-        <head>Precision</head>
-        <p>... including different precision for notBefore/notAfter; medium=block dates, low=circa ...</p>
+        <head>Certainty and precision</head>
+        <p>
+            Not all texts are dated confidently to a specific year or firm span of years. If a date given is flagged
+            explicitly as less certain than usual (for example, either with a "?" or a formulation such as "just possibly")
+            the <gi>origDate</gi> may be given a <att>cert</att> attribute with a value of "low". If a date is flagged
+            as approximate (which is different from being uncertain; often written "circa", "ca." or "c.") <gi>origDate</gi>
+            should be given an <att>precision</att> with a value of low. If a date range is specified (with
+            <att>notBefore-custom</att> and <att>notAfter-custom</att>) whose start and end points are essentially
+            arbitrary, such as a century or half-century for a palaeographical date, then a <att>precision</att> of 
+            "medium" should be given, to indicate that the start and end-points are both notional. 
+        </p>
+        <p>
+            In a few cases, a text may be dated within a span of dates with a notional end-point but a firm
+            <foreign xml:lang="la">terminus post quem</foreign>.
+        </p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <origDate notBefore-custom="-0100" notAfter-custom="0100" precision="medium" datingMethod="#Julian">
@@ -109,6 +122,9 @@ End license statement: do not remove -->
     <div>
         <head>Dating criteria</head>
         <p>... @evidence, suggest typology, example values ...</p>
+        <p>Cf <ref target="https://docs.google.com/spreadsheet/ccc?key=0As1AGmWRrRdUdGNJWm9HdDhsQ0RkRFc4dkQwZGZQRVE"
+            >EpiDoc dating criteria vocabulary</ref> (Google Spreadsheet)</p>
+        
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium" evidence="lettering nomenclature" datingMethod="#Julian">
