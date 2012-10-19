@@ -419,7 +419,7 @@
                     <constraintSpec scheme="isoschematron" ident="datable.custom">
                          <constraint>
                              <sch:rule context="t:*">
-                                 <sch:report test="@when-custom and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
+                                 <sch:report test="@when-custom contains(@datingMethod,'julian') and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
                                      @when-custom must be a date in the form (-)YYYY[-MM[-DD]]</sch:report>
                              </sch:rule>
                          </constraint>

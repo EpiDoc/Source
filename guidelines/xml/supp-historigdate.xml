@@ -73,10 +73,10 @@ End license statement: do not remove -->
     </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origDate when-custom="0139" datingMethod="#Julian">139 C.E.</origDate>
+        <origDate when-custom="0139" datingMethod="#julian">139 C.E.</origDate>
     </egXML>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10" datingMethod="#Julian">
+        <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10" datingMethod="#julian">
             December 11th, 20 to December 10th, 19 B.C.E.
         </origDate>
     </egXML>
@@ -95,26 +95,28 @@ End license statement: do not remove -->
         </p>
         <p>
             In a few cases, a text may be dated within a span of dates with a notional end-point but a firm
-            <foreign xml:lang="la">terminus post quem</foreign>.
+            <foreign xml:lang="la">terminus post quem</foreign>. To record this in XML, a <gi>precision</gi>
+            element may be placed inside the <gi>origDate</gi> to point to whichever of the attributes represents
+            the less concrete end-point. (See third example below.)
         </p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="-0100" notAfter-custom="0100" precision="medium" datingMethod="#Julian">
+            <origDate notBefore-custom="-0100" notAfter-custom="0100" precision="medium" datingMethod="#julian">
                 First century B.C. to first century A.D.
             </origDate>
         </egXML>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate when-custom="-0355" precision="low" datingMethod="#Julian">
+            <origDate when-custom="-0355" precision="low" datingMethod="#julian">
                 Circa 355 B.C.E.
             </origDate>
         </egXML>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="#Julian">
+            <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="#julian">
                 First half first century C.E., but certainly after the death of Augustus.
                 <precision match="../@notBefore-custom" precision="high"/>
-                <precision match="../@notAfter-custom" precision="low"/>
+                <precision match="../@notAfter-custom" precision="medium"/>
             </origDate>
         </egXML>
     </div>
@@ -127,7 +129,7 @@ End license statement: do not remove -->
         
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium" evidence="lettering nomenclature" datingMethod="#Julian">
+            <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium" evidence="lettering nomenclature" datingMethod="#julian">
                 Late fourth century (lettering and nomenclature).
             </origDate>
         </egXML>
