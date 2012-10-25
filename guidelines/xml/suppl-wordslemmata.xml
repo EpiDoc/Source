@@ -27,8 +27,23 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="suppl-wordslemmata" xml:lang="en">
     <head>Words and Lemmatization</head>
-    <p></p>
+    <p>
+        <specList>
+            <specDesc key="w"/>
+        </specList>
+    </p>
+    <p>Explicit markup of words and their lemmatization is optional. It is done with the 'word' element to markup lexical words as they appear on the monument.</p>
+    <p>There are two ways to indicate the uninflected form of the word. In the first case, the 'word' element could have a 'lemma' attribute, where the uninflected form is put.
+    In the second case, the 'word' element could have a 'lemmaRef' attribute, where a url to an online dictionary could be put, e. g. a reference to Perseus Digital Library.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <w lemma="ἵστημι">ἕστηκα</w>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <w lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=fero&amp;la=la">tulisti</w>
+    </egXML>
     
     <div xml:id="intro-faq-responsibility">
     
