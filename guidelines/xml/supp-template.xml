@@ -25,33 +25,28 @@ End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="suppl-geognames" xml:lang="en">
-    <head>Place names and geographical terms mentioned in the text</head>
-    <p></p>
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-XXXXX" xml:lang="en">
+    <head>head</head>
+    <p>gloss</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p><specList>
+        <specDesc key="elements"/>
+    </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p>
     
-    <div xml:id="intro-faq-responsibility">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <!-- example markup -->
+    </egXML>
+    
+    <div xml:id="supp-XXXXX-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>
