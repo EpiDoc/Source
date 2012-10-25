@@ -27,8 +27,31 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="suppl-geognames" xml:lang="en">
     <head>Place names and geographical terms mentioned in the text</head>
-    <p></p>
+    <p>Tags used for marking up of places and other geographical features as rivers, mountains etc.</p>
+    <p>
+        <specList>
+        <specDesc key="placeName"/>
+        <specDesc key="geogName"/>
+        <specDesc key="place"/>
+        </specList>
+    </p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <placeName nymRef="Συρία">Συρίας</placeName>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <placeName type="ethnic" nymRef="Cyrenensis">Cyrenensium</placeName>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <geogName nymRef="Εὐφράτης">Εὐφράτης</geogName>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <persName type="divine" key="phison"><geogName nymRef="Φίσων">Φίσων</geogName></persName>
+    </egXML>
     
     <div xml:id="intro-faq-responsibility">
     

@@ -27,8 +27,18 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="suppl-prosopography" xml:lang="en">
     <head>Personal names and prosopography</head>
-    <p></p>
+    <p>
+        <specList>
+            <specDesc key="persName"/>
+            <specDesc key="name"/>
+        </specList>
+    </p>
+    
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <persName type="attested"><name type="praenomen"><expan>M<ex>arcus</ex></expan></name> <name type="gentilicium">Iulius</name> <name type="cognomen">Aurelianus</name></persName>
+    </egXML>
     
     <div xml:id="intro-faq-responsibility">
     
