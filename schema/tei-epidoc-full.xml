@@ -21,6 +21,9 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-10-31">reverted div[type=history] for now;
+                added schematron constraints for @when-custom, abbreviations, and gaps
+                added corpus model (but omitted everything except particDesc and settingDesc)</change>
             <change who="#GB" when="2012-10-08">removed description/history/figure and underline-supraline, following deprecation 2 years ago</change>
             <change who="#GB" when="2012-10-05">switched to using @except on moduleRef instead of @mode="delete" on elementSpec</change>
             <change who="#GB" when="2012-09-26">Stopped omitting damage</change>
@@ -82,6 +85,8 @@
                 <moduleRef key="figures" except="cell formula row table"/>
                 <moduleRef key="spoken" except="broadcast equipment incident kinesic pause recording recordingStmt
                     scriptStmt shift u vocal writing"/>
+                <moduleRef key="corpus" except="activity channel constitution derivation domain factuality interaction locale
+                    preparedness purpose setting textDesc"/>
                 
                 <!--        CHANGED ELEMENT SPECS        -->
                 <elementSpec ident="add" module="core" mode="change">
@@ -125,6 +130,10 @@
                                     <desc>to contain the text of the edition itself; may include
                                         multiple text-parts</desc>
                                 </valItem>
+                                <valItem ident="history">
+                                    <desc>*DEPRECATED* records the history of the object, text, or edition
+                                        (Now use tei:msDesc/tei:history except for "text constituted from")</desc>
+                                </valItem>
                                 <valItem ident="textpart">
                                     <desc>used to divide a div[type=edition] into multiple parts
                                         (fragments, columns, faces, etc.)</desc>
@@ -164,7 +173,7 @@
                                     may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
                                 <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
                                 @unit is required</sch:report>
-                                <sch:report test="not(@reason='ellipsis') and ancenstor::t:supplied"><sch:name/>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::t:supplied"><sch:name/>
                                 may not appear within supplied text</sch:report>
                             </sch:rule>
                         </constraint>
@@ -419,7 +428,7 @@
                     <constraintSpec scheme="isoschematron" ident="datable.custom">
                          <constraint>
                              <sch:rule context="t:*">
-                                 <sch:report test="@when-custom contains(@datingMethod,'julian') and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
+                                 <sch:report test="@when-custom[contains(@datingMethod,'julian')] and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
                                      @when-custom must be a date in the form (-)YYYY[-MM[-DD]]</sch:report>
                              </sch:rule>
                          </constraint>
