@@ -5,6 +5,8 @@
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
+                
+                <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
                 <moduleRef key="header"/>
@@ -24,10 +26,13 @@
                 <moduleRef key="figures" except="cell formula row table"/>
                 <moduleRef key="spoken" except="broadcast equipment incident kinesic pause recording recordingStmt
                     scriptStmt shift u vocal writing"/>
+                <moduleRef key="corpus" except="activity channel constitution derivation domain factuality interaction locale
+                    preparedness purpose setting textDesc"/>
                 
                 <!--        CHANGED ELEMENT SPECS        -->
-                <elementSpec module="core" ident="add" mode="change">
+                <elementSpec ident="add" module="core" mode="change">
                     <attList>
+                        <!-- constraining values of add/@place -->
                         <attDef ident="place" mode="replace">
                             <valList type="closed">
                                 <valItem ident="above"/>
@@ -48,6 +53,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- constraining values of div/@type -->
                 <elementSpec ident="div" mode="change" module="textstructure">
                     <attList>
                         <attDef ident="type" mode="replace" usage="req">
@@ -67,6 +74,10 @@
                                     <desc>to contain the text of the edition itself; may include
                                         multiple text-parts</desc>
                                 </valItem>
+                                <valItem ident="history">
+                                    <desc>*DEPRECATED* records the history of the object, text, or edition
+                                        (Now use tei:msDesc/tei:history except for "text constituted from")</desc>
+                                </valItem>
                                 <valItem ident="textpart">
                                     <desc>used to divide a div[type=edition] into multiple parts
                                         (fragments, columns, faces, etc.)</desc>
@@ -79,7 +90,45 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec module="core" ident="gap" mode="change">
+                
+                <!-- testing for <ex> outside of <expan> -->
+                <elementSpec ident="ex" module="transcr" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="ex">
+                        <constraint>
+                            <sch:rule context="t:ex">
+                                <sch:report test="not(ancestor::t:expan)"><sch:name/> should only appear inside expan</sch:report>
+                                <sch:report test="parent::t:abbr"><sch:name/> should not be a child of abbr</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
+                
+                <!-- testing for <expan> with no descendant <ex> -->
+                <elementSpec ident="expan" module="transcr" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="expan">
+                        <constraint>
+                            <sch:rule context="t:expan">
+                                <sch:report test="not(descendant::t:ex)"><sch:name/> should contain ex</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
+                
+                <!-- testing for <gap> with not quantity/extent, no unit, or contained in supplied -->
+                <elementSpec ident="gap" module="core" mode="change">
+                    <constraintSpec ident="gap" scheme="isoschematron">
+                        <constraint>
+                            <sch:rule context="t:gap">
+                                <sch:report test="@quantity and @extent"><sch:name/> 
+                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
+                                @unit is required</sch:report>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::t:supplied"><sch:name/>
+                                may not appear within supplied text</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    <!-- constraining values of gap/@reason -->
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
@@ -101,9 +150,12 @@
                                 </valItem>
                             </valList>
                         </attDef>
+                        <!-- removing gap/@dur (not needed in EpiDoc) -->
                         <attDef ident="dur" mode="delete"/>
                     </attList>
                 </elementSpec>
+                
+                <!-- suggesting but not constraining values of hi/@rend -->
                 <elementSpec ident="hi" module="core" mode="change">
                     <attList>
                         <attDef ident="rend" mode="replace" usage="req">
@@ -179,9 +231,12 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- change definition of <lb> to "line beginning" -->
                 <elementSpec ident="lb" mode="change" module="core">
-                    <desc>Line-beginning: marks the start of each line of the text, including the
-                        first</desc>
+                    <gloss>line-beginning</gloss>
+                    <desc>marks the start of each line of the text, including the first</desc>
+                    <!-- offer value "no" for lb/@break -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
                             <valList type="semi">
@@ -193,7 +248,9 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec module="msdescription" ident="origDate" mode="change">
+                
+                <!-- suggested attribute values for origDate/@evidence -->
+                <elementSpec ident="origDate" module="msdescription" mode="change">
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="6">
@@ -218,64 +275,31 @@
                                 <valItem ident="internal-date">
                                     <desc>Text dated by explicit internal date</desc>
                                 </valItem>
+                                <valItem ident="context">
+                                    <desc>Archaeological, epigraphic, iconographic or other context of the text support</desc>
+                                </valItem>
                             </valList>
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="person" module="namesdates" mode="change">
-                    <content>
-                        <choice xmlns="http://relaxng.org/ns/structure/1.0">
-                            <oneOrMore>
-                                <ref name="model.pLike"/>
-                            </oneOrMore>
-                            <zeroOrMore>
-                                <choice>
-                                    <ref name="model.personPart"/>
-                                    <ref name="model.global"/>
-                                    <ref name="idno"/>
-                                </choice>
-                            </zeroOrMore>
-                        </choice>
-                    </content>
-                </elementSpec>
-                <elementSpec ident="place" module="namesdates" mode="change">
+                
+                <!-- temporary bug fix until TEI 2.2.1: space should contain certLike -->
+                <elementSpec ident="space" module="transcr" mode="change">
                     <content>
                         <group xmlns="http://relaxng.org/ns/structure/1.0">
                             <zeroOrMore>
-                                <ref name="model.headLike"/>
-                            </zeroOrMore>
-                            <choice>
-                                <group>
-                                    <zeroOrMore>
-                                        <ref name="model.pLike"/>
-                                    </zeroOrMore>
-                                </group>
-                                <zeroOrMore>
-                                    <choice>
-                                        <ref name="model.labelLike"/>
-                                        <ref name="model.placeStateLike"/>
-                                        <ref name="model.placeEventLike"/>
-                                    </choice>
-                                </zeroOrMore>
-                            </choice>
-                            <zeroOrMore>
                                 <choice>
-                                    <ref name="model.noteLike"/>
-                                    <ref name="model.biblLike"/>
-                                    <ref name="idno"/>
-                                </choice>
-                            </zeroOrMore>
-                            <zeroOrMore>
-                                <choice>
-                                    <ref name="model.placeLike"/>
-                                    <ref name="listPlace"/>
+                                    <ref name="model.descLike"/>
+                                    <ref name="model.certLike"/>
                                 </choice>
                             </zeroOrMore>
                         </group>
                     </content>
                 </elementSpec>
-                <elementSpec module="transcr" ident="supplied" mode="change">
+                
+                <elementSpec ident="supplied" module="transcr" mode="change">
                     <attList>
+                        <!-- suggested attribute list for supplied/@evidence -->
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="1">
                                 <rng:ref name="data.word"/>
@@ -289,6 +313,7 @@
                                 </valItem>
                             </valList>
                         </attDef>
+                        <!-- constrained attribute list for supplied/@reason -->
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
@@ -315,6 +340,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
                 <elementSpec ident="unclear" module="textranscr" mode="change">
                     <content>
                         <rng:ref name="macro.xtext"/>
@@ -323,15 +350,15 @@
 
                 <!--       CHANGING ATTRIBUTE CLASSES         -->
                 
-                <classSpec type="atts" ident="att.responsibility" mode="change">
-                    <attList>
-                        <attDef ident="cert" mode="replace">
-                            <valList type="closed">
-                                <valItem ident="low"/>
-                                <valItem ident="high"/>
-                            </valList>
-                        </attDef>
-                    </attList>
+                <classSpec type="atts" ident="att.datable.custom" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="datable.custom">
+                         <constraint>
+                             <sch:rule context="t:*">
+                                 <sch:report test="@when-custom[contains(@datingMethod,'julian')] and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
+                                     @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                             </sch:rule>
+                         </constraint>
+                     </constraintSpec>
                 </classSpec>
                 
                 <classSpec type="atts" ident="att.dimensions" mode="change">
@@ -355,6 +382,17 @@
                         <attDef ident="extent" mode="change">
                             <valList type="semi" mode="replace">
                                 <valItem ident="unknown"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </classSpec>
+                
+                <classSpec type="atts" ident="att.responsibility" mode="change">
+                    <attList>
+                        <attDef ident="cert" mode="replace">
+                            <valList type="closed">
+                                <valItem ident="low"/>
+                                <valItem ident="high"/>
                             </valList>
                         </attDef>
                     </attList>

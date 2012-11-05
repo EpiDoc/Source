@@ -21,8 +21,10 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="#GB" when="2012-10-31">reverted div[type=history] for now;
-                added schematron constraints for @when-custom, abbreviations, and gaps
+            <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
+            <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI bug</change>
+            <change who="#GB" when="2012-11-05">removed customization of person and place, now catered for by TEI 2.2.0</change>
+            <change who="#GB" when="2012-10-31">added schematron constraints for @when-custom, abbreviations, and gaps
                 added corpus model (but omitted everything except particDesc and settingDesc)</change>
             <change who="#GB" when="2012-10-08">removed description/history/figure and underline-supraline, following deprecation 2 years ago</change>
             <change who="#GB" when="2012-10-05">switched to using @except on moduleRef instead of @mode="delete" on elementSpec</change>
@@ -91,6 +93,7 @@
                 <!--        CHANGED ELEMENT SPECS        -->
                 <elementSpec ident="add" module="core" mode="change">
                     <attList>
+                        <!-- constraining values of add/@place -->
                         <attDef ident="place" mode="replace">
                             <valList type="closed">
                                 <valItem ident="above"/>
@@ -111,6 +114,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- constraining values of div/@type -->
                 <elementSpec ident="div" mode="change" module="textstructure">
                     <attList>
                         <attDef ident="type" mode="replace" usage="req">
@@ -130,10 +135,6 @@
                                     <desc>to contain the text of the edition itself; may include
                                         multiple text-parts</desc>
                                 </valItem>
-                                <valItem ident="history">
-                                    <desc>*DEPRECATED* records the history of the object, text, or edition
-                                        (Now use tei:msDesc/tei:history except for "text constituted from")</desc>
-                                </valItem>
                                 <valItem ident="textpart">
                                     <desc>used to divide a div[type=edition] into multiple parts
                                         (fragments, columns, faces, etc.)</desc>
@@ -146,6 +147,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- testing for <ex> outside of <expan> -->
                 <elementSpec ident="ex" module="transcr" mode="change">
                     <constraintSpec scheme="isoschematron" ident="ex">
                         <constraint>
@@ -156,6 +159,8 @@
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
+                
+                <!-- testing for <expan> with no descendant <ex> -->
                 <elementSpec ident="expan" module="transcr" mode="change">
                     <constraintSpec scheme="isoschematron" ident="expan">
                         <constraint>
@@ -165,6 +170,8 @@
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
+                
+                <!-- testing for <gap> with not quantity/extent, no unit, or contained in supplied -->
                 <elementSpec ident="gap" module="core" mode="change">
                     <constraintSpec ident="gap" scheme="isoschematron">
                         <constraint>
@@ -178,6 +185,7 @@
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
+                    <!-- constraining values of gap/@reason -->
                     <attList>
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
@@ -199,9 +207,12 @@
                                 </valItem>
                             </valList>
                         </attDef>
+                        <!-- removing gap/@dur (not needed in EpiDoc) -->
                         <attDef ident="dur" mode="delete"/>
                     </attList>
                 </elementSpec>
+                
+                <!-- suggesting but not constraining values of hi/@rend -->
                 <elementSpec ident="hi" module="core" mode="change">
                     <attList>
                         <attDef ident="rend" mode="replace" usage="req">
@@ -277,9 +288,12 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- change definition of <lb> to "line beginning" -->
                 <elementSpec ident="lb" mode="change" module="core">
-                    <desc>Line-beginning: marks the start of each line of the text, including the
-                        first</desc>
+                    <gloss>line-beginning</gloss>
+                    <desc>marks the start of each line of the text, including the first</desc>
+                    <!-- offer value "no" for lb/@break -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
                             <valList type="semi">
@@ -291,6 +305,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- suggested attribute values for origDate/@evidence -->
                 <elementSpec ident="origDate" module="msdescription" mode="change">
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
@@ -323,60 +339,24 @@
                         </attDef>
                     </attList>
                 </elementSpec>
-                <elementSpec ident="person" module="namesdates" mode="change">
-                    <content>
-                        <choice xmlns="http://relaxng.org/ns/structure/1.0">
-                            <oneOrMore>
-                                <ref name="model.pLike"/>
-                            </oneOrMore>
-                            <zeroOrMore>
-                                <choice>
-                                    <ref name="model.personPart"/>
-                                    <ref name="model.global"/>
-                                    <ref name="idno"/>
-                                </choice>
-                            </zeroOrMore>
-                        </choice>
-                    </content>
-                </elementSpec>
-                <elementSpec ident="place" module="namesdates" mode="change">
+                
+                <!-- temporary bug fix until TEI 2.2.1: space should contain certLike -->
+                <elementSpec ident="space" module="transcr" mode="change">
                     <content>
                         <group xmlns="http://relaxng.org/ns/structure/1.0">
                             <zeroOrMore>
-                                <ref name="model.headLike"/>
-                            </zeroOrMore>
-                            <choice>
-                                <group>
-                                    <zeroOrMore>
-                                        <ref name="model.pLike"/>
-                                    </zeroOrMore>
-                                </group>
-                                <zeroOrMore>
-                                    <choice>
-                                        <ref name="model.labelLike"/>
-                                        <ref name="model.placeStateLike"/>
-                                        <ref name="model.placeEventLike"/>
-                                    </choice>
-                                </zeroOrMore>
-                            </choice>
-                            <zeroOrMore>
                                 <choice>
-                                    <ref name="model.noteLike"/>
-                                    <ref name="model.biblLike"/>
-                                    <ref name="idno"/>
-                                </choice>
-                            </zeroOrMore>
-                            <zeroOrMore>
-                                <choice>
-                                    <ref name="model.placeLike"/>
-                                    <ref name="listPlace"/>
+                                    <ref name="model.descLike"/>
+                                    <ref name="model.certLike"/>
                                 </choice>
                             </zeroOrMore>
                         </group>
                     </content>
                 </elementSpec>
+                
                 <elementSpec ident="supplied" module="transcr" mode="change">
                     <attList>
+                        <!-- suggested attribute list for supplied/@evidence -->
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="1">
                                 <rng:ref name="data.word"/>
@@ -390,6 +370,7 @@
                                 </valItem>
                             </valList>
                         </attDef>
+                        <!-- constrained attribute list for supplied/@reason -->
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
@@ -416,6 +397,8 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
                 <elementSpec ident="unclear" module="textranscr" mode="change">
                     <content>
                         <rng:ref name="macro.xtext"/>
@@ -429,7 +412,7 @@
                          <constraint>
                              <sch:rule context="t:*">
                                  <sch:report test="@when-custom[contains(@datingMethod,'julian')] and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
-                                     @when-custom must be a date in the form (-)YYYY[-MM[-DD]]</sch:report>
+                                     @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
                              </sch:rule>
                          </constraint>
                      </constraintSpec>
