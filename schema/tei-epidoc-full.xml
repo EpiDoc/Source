@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
-    xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:rng="http://relaxng.org/ns/structure/1.0"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
@@ -21,6 +21,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron declaration</change>
             <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
             <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI bug</change>
             <change who="#GB" when="2012-11-05">removed customization of person and place, now catered for by TEI 2.2.0</change>
@@ -152,9 +153,9 @@
                 <elementSpec ident="ex" module="transcr" mode="change">
                     <constraintSpec scheme="isoschematron" ident="ex">
                         <constraint>
-                            <sch:rule context="t:ex">
-                                <sch:report test="not(ancestor::t:expan)"><sch:name/> should only appear inside expan</sch:report>
-                                <sch:report test="parent::t:abbr"><sch:name/> should not be a child of abbr</sch:report>
+                            <sch:rule context="tei:ex">
+                                <sch:report test="not(ancestor::tei:expan)"><sch:name/> should only appear inside expan</sch:report>
+                                <sch:report test="parent::tei:abbr"><sch:name/> should not be a child of abbr</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
@@ -164,8 +165,8 @@
                 <elementSpec ident="expan" module="transcr" mode="change">
                     <constraintSpec scheme="isoschematron" ident="expan">
                         <constraint>
-                            <sch:rule context="t:expan">
-                                <sch:report test="not(descendant::t:ex)"><sch:name/> should contain ex</sch:report>
+                            <sch:rule context="tei:expan">
+                                <sch:report test="not(descendant::tei:ex)"><sch:name/> should contain ex</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
@@ -175,12 +176,12 @@
                 <elementSpec ident="gap" module="core" mode="change">
                     <constraintSpec ident="gap" scheme="isoschematron">
                         <constraint>
-                            <sch:rule context="t:gap">
+                            <sch:rule context="tei:gap">
                                 <sch:report test="@quantity and @extent"><sch:name/> 
                                     may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
                                 <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
                                 @unit is required</sch:report>
-                                <sch:report test="not(@reason='ellipsis') and ancestor::t:supplied"><sch:name/>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied"><sch:name/>
                                 may not appear within supplied text</sch:report>
                             </sch:rule>
                         </constraint>
@@ -410,7 +411,7 @@
                 <classSpec type="atts" ident="att.datable.custom" mode="change">
                     <constraintSpec scheme="isoschematron" ident="datable.custom">
                          <constraint>
-                             <sch:rule context="t:*">
+                             <sch:rule context="tei:*">
                                  <sch:report test="@when-custom[contains(@datingMethod,'julian')] and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
                                      @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
                              </sch:rule>
