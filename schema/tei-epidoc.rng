@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-11-07T10:07:50Z. 
+Schema generated from ODD source 2012-11-07T10:38:18Z. 
 Edition: 2.2.0. Last updated on 25th October 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.2.0/
 
@@ -3984,13 +3984,13 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:t="http://www.tei-c.org/ns/1.0"
-                      context="t:gap">
+                      context="tei:gap">
                <sch:report test="@quantity and @extent">
                   <sch:name/> 
                                     may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
                <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
                                 @unit is required</sch:report>
-               <sch:report test="not(@reason='ellipsis') and ancestor::t:supplied">
+               <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied">
                   <sch:name/>
                                 may not appear within supplied text</sch:report>
             </sch:rule>
@@ -4336,8 +4336,8 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:t="http://www.tei-c.org/ns/1.0"
-                      context="t:expan">
-               <sch:report test="not(descendant::t:ex)">
+                      context="tei:expan">
+               <sch:report test="not(descendant::tei:ex)">
                   <sch:name/> should contain ex</sch:report>
             </sch:rule>
          </pattern>
@@ -6525,8 +6525,6 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
                <ref name="tei_text"/>
             </choice>
          </group>
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="t"
-             uri="http://www.tei-c.org/ns/1.0"/>
     
          <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="tei"
              uri="http://www.tei-c.org/ns/1.0"/>
@@ -7402,10 +7400,10 @@ author, scribe, annotator, or corrector. [11.3.1.4. ]</a:documentation>
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:t="http://www.tei-c.org/ns/1.0"
-                      context="t:ex">
-               <sch:report test="not(ancestor::t:expan)">
+                      context="tei:ex">
+               <sch:report test="not(ancestor::tei:expan)">
                   <sch:name/> should only appear inside expan</sch:report>
-               <sch:report test="parent::t:abbr">
+               <sch:report test="parent::tei:abbr">
                   <sch:name/> should not be a child of abbr</sch:report>
             </sch:rule>
          </pattern>
