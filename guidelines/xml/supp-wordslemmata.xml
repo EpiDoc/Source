@@ -27,32 +27,48 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-wordslemmata" xml:lang="en">
     <head>Words and Lemmatization</head>
-    <p>Tagging lexical words in the text</p>
+    <p>Tagging lexical words in the text and/or linking to lemmata for purposes of indexing or search.</p>
     <p>
         <specList>
             <specDesc key="w"/>
         </specList>
     </p>
-    <p>Explicit markup of words (tokenization) and identification of their dictionary headwords (lemmatization) is optional.
-        
-        It is done with the 'word' element to markup lexical words as they appear on the monument.</p>
-    <p>There are two ways to indicate the uninflected form of the word. In the first case, the 'word' element could have a 'lemma' attribute, where the uninflected form is put.
-    In the second case, the 'word' element could have a 'lemmaRef' attribute, where a url to an online dictionary could be put, e. g. a reference to Perseus Digital Library.</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>Explicit markup of words (tokenization) and identification of their dictionary headwords (lemmatization)
+        are both optional. Many projects simply leave these features unmarked, or rely on automated processes
+        in search software to detect word-breaks and link to lemmatizing tools such as <term>Morpheus</term>.
+        (The Papyrological Navigator, Perseus, and the TLG all use methods similar to this.)</p>
+    
+    <p>To explicitly mark-up lexical words in a papyrological or epigraphic text, however, each word in the text
+        should be enclosed in a <gi>w</gi> element. (For ease of processing, it is advised that inter-word spacing,
+        punctuation and other features be left outside of this element, and if possible there should be no spaces
+        or carriage returns within the <gi>w</gi> element.)</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT022.xml">
+        <w>maximo</w> <w>tribunicia</w> <w>potestate</w> <num>XXIIII</num> <w>imperatori</w>
+    </egXML>
+    
+    <p>To record the lemma or dictionary headword of the word in question, the simplest solution is to enter
+        the uninflected form in a <att>lemma</att> attribute, which may be used, for example, to generate the entries
+        in a lexical index to the corpus.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <w lemma="ἵστημι">ἕστηκα</w>
     </egXML>
     
+    <p>A slightly more sophisticated solution is to enter in a <att>lemmaRef</att>
+        attribute a URL or other URI that points to the entry for the word in question in a database or online dictionary.
+        This solution allows for better disambiguation of homonymous words, for example, or linking to morphological
+        and statistical information about the word.</p>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <w lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=fero&amp;la=la">tulisti</w>
     </egXML>
     
-    <div xml:id="supp-wordslemmata-responsibility">
-    
+    <div xml:id="supp-wordslemmata-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

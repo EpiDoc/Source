@@ -26,7 +26,8 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-prosopography" xml:lang="en">
-    <head>Personal names and prosopography</head>
+    <head>Personal names and prosopographical links</head>
+    <p>Tagging of names, person references, and links to prosopographical disambiguation.</p>
     <p>
         <specList>
             <specDesc key="persName"/>
@@ -34,34 +35,66 @@ End license statement: do not remove -->
         </specList>
     </p>
     
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>
+        Personal names in the text may be tagged using the <gi>persName</gi> element.
+    </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <persName type="attested"><name type="praenomen"><expan>M<ex>arcus</ex></expan></name> <name type="gentilicium">Iulius</name> <name type="cognomen">Aurelianus</name></persName>
+        <persName>Amias Olympias</persName>
+    </egXML>
+    
+    <p>TEI includes several elements for marking up the individual subparts of a personal name,
+        including <gi>forename</gi>, <gi>surname</gi>, <gi>addName</gi>, <gi>genName</gi>
+        and <gi>roleName</gi>. Most EpiDoc projects however have decided that these do not 
+        unproblematically map onto the nomenclature of Greek and Roman antiquity, or other cultures
+        whose documentary texts are being encoded, and so the more generic element <gi>name</gi>
+        has been used to encode the individual names within a complete person reference. The 
+        <att>type</att> attribute on <gi>name</gi> may be used to specify the class of name.
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT095.xml">
+        <persName type="attested">
+            <name type="praenomen"><expan><abbr>Q</abbr><ex>uinto</ex></expan></name>
+            <name type="gentilicium">Flauio</name> 
+            <name type="cognomen">Hiceto</name>
+        </persName>
+    </egXML>
+    
+    <p>Where a personal name string includes a patronymic, or other references to people such as
+        adoptive father, husband, owner/patron etc., a further <gi>persName</gi> element may be nested
+        inside the first, such that, for example, "Apollonios son of Adrastos" is identified as one person, while
+        his father "Adrastos" is another.
+    </p>
+    
+    <p>Just as the <ref target="supp-wordslemmata.html">lemmata of words</ref> may be recorded to facilitate
+        indexing or searching, names may be linked to their nominative-singular form (or similar in other languages).
+        No <att>lemma</att> attribute is available on <gi>name</gi> or <gi>persName</gi>, however, so the more
+        involved attribute <att>nymRef</att> should be used instead. This attribute should contain a URL or other
+        URI pointing to the standard form of this name in a database or online onomasticon. <emph>Note</emph>
+        that the <att>nymRef</att> attribute identifies the standard form of a name, not the unique person to whom
+        this name refers (on which see below).
+    </p>
+    
+    <p>
+        Individual persons may also identified by a <att>ref</att> attribute containing a URL or other URI pointing
+        to an entry in a person database or online prosopography.
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/xml/iAph010004.xml">
+        <persName ref="prosopography.xml#p128"><name nymRef="nametable.xml#Εὔμαχος">Εὔμαχος</name> 
+            <persName ref="prosopography.xml#p129"><name nymRef="nametable.xml#Ἀθηνάγορας">Ἀθηναγόρου</name> <w>τοῦ</w> 
+                <persName ref="prosopography.xml#p130"><name nymRef="nametable.xml#Ἀθηνάγορας">Ἀθηναγόρου</name> <w>τοῦ</w> 
+                    <persName ref="prosopography.xml#p131"><name nymRef="nametable.xml#Εὔμαχος">Εὐμάχου</name></persName>
+                </persName>
+            </persName>
+            <name nymRef="nametable.xml#Διογένης">Διογένης</name></persName>
     </egXML>
     
     <div xml:id="intro-faq-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>
