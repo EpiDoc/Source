@@ -27,7 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-geognames" xml:lang="en">
     <head>Place names and geographical terms mentioned in the text</head>
-    <p>Tags used for marking up of places and other geographical features as rivers, mountains etc.</p>
+    <p>Elements used for identifying references to places and other geographical features.</p>
     <p>
         <specList>
         <specDesc key="placeName"/>
@@ -35,46 +35,58 @@ End license statement: do not remove -->
         <specDesc key="place"/>
         </specList>
     </p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <p>References to places (such as settlements, regions, nations), peoples (such as ethnic groups, civic populations)
+        and other geographical features (such as seas, mountains, rivers) can be identified in the transcribed text using
+        the elements <gi>placeName</gi> (for mostly political entities: cities, nations, etc.) or <gi>geogName</gi> (for
+        physical features: rivers, mountains, etc.).
+    </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <placeName nymRef="Συρία">Συρίας</placeName>
+        <placeName>Συρίας</placeName>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <placeName type="ethnic" nymRef="Cyrenensis">Cyrenensium</placeName>
+        <geogName>Tamesis</geogName>
+    </egXML>
+    
+    <p>
+        Further information about the kind of geographical entity being named may be specified using a <att>type</att>
+        attribute, for example identifying ethnic names as opposed to the place names themselves; or sub-categorising
+        geographic names as the type of physical entity being names.
+    </p>
+    
+    <p>
+        Names may be linked using the attribute <att>nymRef</att>, which will contain a URL or other URI pointing to the standard
+        form of this name (nominative singular; normalized spelling) in a local XML table or database or online onomasticon.
+        More usefully the names may be linked using the <att>ref</att> attribute to a place identifier, via a pointer to a local place
+        database or online gazzetteer such as Pleiades.
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <placeName type="ethnic" nymRef="placenames.xml#Cyrenensis" ref="mentionedplace.xml#cyrene">Cyrenensium</placeName>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <geogName nymRef="Εὐφράτης">Εὐφράτης</geogName>
+        <geogName type="river" nymRef="placenames.xml#Εὐφράτης" ref="http://pleiades.stoa.org/places/912849">Εὐφράτης</geogName>
     </egXML>
     
+    <p>
+        Personifications of places, for example, may be tagged as both <gi>placeName</gi> and <gi>persName</gi>, so they may
+        be indexed or searched in either category.
+    </p>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <persName type="divine" key="phison"><geogName nymRef="Φίσων">Φίσων</geogName></persName>
+        <persName type="divine" ref="divinities.xml#phison">
+            <geogName ref="http://pleiades.stoa.org/places/59851">Φίσων</geogName>
+        </persName>
     </egXML>
     
     <div xml:id="intro-faq-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

@@ -26,32 +26,51 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-datesage" xml:lang="en">
-    <head>Dates and month names; age at death on funerary texts</head>
-    <p></p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <head>Dates, dating formulae, ages</head>
+    <p>gloss</p>
+    <p>
+        <specList>
+            <specDesc key="date"/>
+            <specDesc key="rs"/>
+            <specDesc key="calendar"/>
+        </specList>
+    </p>
+    
+    <p>month names</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        ἔτι καὶ μηνεὶ <rs type="month" nymRef="months.xml#Ξανθικός">Ξανθικῷ</rs>
+    </egXML>
+    
+    <p>mentioned date</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        ἐτελεύτισεν <date>μινὶ Παυνὶ ἑβδόμι</date>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <calendar xml:id="creationOfWorld"><p>"Since the creation of the world"</p></calendar>
+        <!--  -->
+        <date when="1382-06-28" when-custom="6890-06-20" datingMethod="#creationOfWorld">
+            μηνὶ Ἰουνίου εἰς <num>κ</num> ἔτους <num>ςωϞ</num> 
+        </date>
+    </egXML>
+    
+    <p>age at death</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT844.xml">
+        biuerunt <date dur="P70Y9M">annos plus minus septuaginta menses IX</date>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT835.xml">
+        uixit <date dur="P3Y6M14D">annos III menses VI dies XIIII</date>
+    </egXML>
     
     <div xml:id="intro-faq-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
