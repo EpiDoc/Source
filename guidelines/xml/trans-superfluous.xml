@@ -28,12 +28,14 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-superfluous" xml:lang="en">
     <head>Superfluous Text</head>
     <p>Letters erroneously included in the text, which the editor suppresses.</p>
-    <p><specList>
-        <specDesc key="surplus"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+    <p>
+        <specList>
+            <specDesc key="surplus"/>
+        </specList>
+        <listRef>
+            <ptr target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHOM"/>
+        </listRef>
+    </p> 
     
     <p>The letters which have been erroneously included in the text should be placed within a <gi>surplus</gi>.</p>
     

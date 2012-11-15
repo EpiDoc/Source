@@ -67,26 +67,29 @@ End license statement: do not remove -->
         <div type="textpart" subtype="section" n="A"/>
     </egXML>
 
-
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="fragment" n="a"><ab/></div>
+        <div type="textpart" subtype="fragment" n="b"><ab/></div>
+        <div type="textpart" subtype="fragment" n="c"><ab/></div>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="section" n="i">
+            <div type="textpart" subtype="fragment" n="a"><ab/></div>
+            <div type="textpart" subtype="fragment" n="b"><ab/></div>
+        </div>
+        <div type="textpart" subtype="section" n="ii">
+            <div type="textpart" subtype="fragment" n="c"><ab/></div>
+            <div type="textpart" subtype="fragment" n="d"><ab/></div>
+        </div>
+    </egXML>
+    
     <div xml:id="trans-textpart-responsibility">
-
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                    <name/>
-            </respStmt></bibl>
-            <bibl><respStmt>
-                <resp>author</resp>
-                <name>Gabriel Bodard</name>
-                <name/>
-            </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
