@@ -28,7 +28,16 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-cleartext" xml:lang="en">
     <head>Clear text</head>
     
-    <p>Text which is completely legible and requires no editorial intervention.</p>
+    <p>Text which is completely legible and requires no editorial intervention should be passed through the
+        transformation with no modification or enhancement.
+    </p>
+    
+    <p>
+        The only special feature worth highlighting is that <emph>the presence or absense of</emph> whitespace in the XML
+        will be preserved in any output (HTML, ODF, etc.), so spaces of any kind (including tabs, newlines, etc.) should only
+        be placed between words. To preserve this behaviour, it is recommended that the <gi>div</gi> containing the
+        transcribed text should be given the attribute <att>xml:space</att> with a value of "preserve".
+    </p>
     
     <cit>
         <quote>abc</quote>
@@ -44,11 +53,11 @@ End license statement: do not remove -->
     
     
     <div xml:id="trans-cleartext-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Beatrice Lietz</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Beatrice Lietz</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
