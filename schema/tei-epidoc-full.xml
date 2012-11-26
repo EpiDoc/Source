@@ -21,6 +21,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-11-21">stopped omitting birth and death</change>
             <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron declaration</change>
             <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
             <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI bug</change>
@@ -82,7 +83,7 @@
                     unicodeName value"/>
                 <moduleRef key="linking" except="alt altGrp anchor joinGrp timeline when"/>
                 <moduleRef key="msdescription"/>
-                <moduleRef key="namesdates" except="affiliation age birth climate death education faith geoFeat langKnowledge
+                <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
                 <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit variantEncoding witDetail witEnd witStart witness"/>
                 <moduleRef key="figures" except="cell formula row table"/>
