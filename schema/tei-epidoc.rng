@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2012-11-07T10:38:18Z. 
+Schema generated from ODD source 2012-11-29T07:39:23Z. 
 Edition: 2.2.0. Last updated on 25th October 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.2.0/
 
@@ -502,7 +502,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
                 context="tei:*[@calendar]">
             <sch:assert test="string-length(.) gt 0">@calendar indicates the system or calendar to which the date represented by the content of this element belongs, but this element has no textual content.</sch:assert>
           </sch:rule>
@@ -1163,7 +1163,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
                 context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
             <sch:assert test="count(@target)">@targetLang can only be used if @target is specified.</sch:assert>
           </sch:rule>
@@ -2611,6 +2611,8 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    </define>
    <define name="tei_model.persEventLike">
       <choice>
+         <ref name="tei_birth"/>
+         <ref name="tei_death"/>
          <ref name="tei_event"/>
       </choice>
    </define>
@@ -3983,15 +3985,13 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:t="http://www.tei-c.org/ns/1.0"
+                      xmlns:tei="http://www.tei-c.org/ns/1.0"
                       context="tei:gap">
-               <sch:report test="@quantity and @extent">
-                  <sch:name/> 
+               <sch:report test="@quantity and @extent">gap 
                                     may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-               <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
+               <sch:report test="@quantity and not(@unit)">If gap has @quantity then
                                 @unit is required</sch:report>
-               <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied">
-                  <sch:name/>
+               <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap
                                 may not appear within supplied text</sch:report>
             </sch:rule>
          </pattern>
@@ -4335,10 +4335,9 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:t="http://www.tei-c.org/ns/1.0"
+                      xmlns:tei="http://www.tei-c.org/ns/1.0"
                       context="tei:expan">
-               <sch:report test="not(descendant::tei:ex)">
-                  <sch:name/> should contain ex</sch:report>
+               <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
             </sch:rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -4355,7 +4354,7 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
             <rule context="tei:ptr">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@target and @cRef">Only one of the
 	attributes 'target' and 'cRef' may be supplied.</report>
             </rule>
@@ -4379,7 +4378,7 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
             <rule context="tei:ref">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@target and @cRef">Only one of the
 	attributes 'target' and 'cRef' may be supplied.</report>
             </rule>
@@ -5142,7 +5141,7 @@ Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll (lines
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="@target and count( child::* ) &gt; 0">If the 'target' attribute is used, the
         relatedItem element must be empty</sch:report>
             </rule>
@@ -5153,7 +5152,7 @@ Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll (lines
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="@target or child::*">A relatedItem element should have either a 'target' attribute
         or a child element to indicate the related bibliographic item</sch:assert>
             </rule>
@@ -5240,7 +5239,7 @@ Suggested values include: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll (lines
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 0">An lg element
         must contain at least one child l, lg or gap element.</sch:assert>
             </rule>
@@ -7321,7 +7320,7 @@ of a point on a line enclosing the area.</a:documentation>
                <sch:assert xmlns:s="http://www.ascc.net/xml/schematron" xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="@spanTo">The spanTo= attribute of <sch:name/> is required.</sch:assert>
             </rule>
          </pattern>
@@ -7333,7 +7332,7 @@ of a point on a line enclosing the area.</a:documentation>
                <sch:assert xmlns:s="http://www.ascc.net/xml/schematron" xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="@spanTo">L'attribut spanTo est requis.</sch:assert>
             </rule>
          </pattern>
@@ -7367,7 +7366,7 @@ author, scribe, annotator, or corrector. [11.3.1.4. ]</a:documentation>
             <rule context="tei:delSpan">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@spanTo">The spanTo= attribute of <name/> is required.</assert>
             </rule>
          </pattern>
@@ -7378,7 +7377,7 @@ author, scribe, annotator, or corrector. [11.3.1.4. ]</a:documentation>
             <rule context="tei:delSpan">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@spanTo">L'attribut spanTo est requis.</assert>
             </rule>
          </pattern>
@@ -7399,12 +7398,10 @@ author, scribe, annotator, or corrector. [11.3.1.4. ]</a:documentation>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:t="http://www.tei-c.org/ns/1.0"
+                      xmlns:tei="http://www.tei-c.org/ns/1.0"
                       context="tei:ex">
-               <sch:report test="not(ancestor::tei:expan)">
-                  <sch:name/> should only appear inside expan</sch:report>
-               <sch:report test="parent::tei:abbr">
-                  <sch:name/> should not be a child of abbr</sch:report>
+               <sch:report test="not(ancestor::tei:expan)">ex should only appear inside expan</sch:report>
+               <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
             </sch:rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -7468,6 +7465,18 @@ hand, or the beginning of a scribal stint. [11.3.2.1. ]</a:documentation>
                </choice>
             </zeroOrMore>
          </group>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="space-constraint-space">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:tei="http://www.tei-c.org/ns/1.0"
+                      context="tei:space">
+               <sch:report test="@quantity and @extent">space 
+                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
+               <sch:report test="@quantity and not(@unit)">If space has @quantity then
+                                    @unit is required</sch:report>
+            </sch:rule>
+         </pattern>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.dimensions.attributes"/>
          <optional>
@@ -7508,7 +7517,7 @@ the space.</a:documentation>
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="child::tei:add and child::tei:del">
         Subst must have at least one child add and at least one child del</assert>
             </rule>
@@ -8102,7 +8111,7 @@ of the markup named by the locus attribute.</a:documentation>
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="@target and @targets">You may not supply both 
 	@target and @targets</sch:report>
             </rule>
@@ -8115,7 +8124,7 @@ of the markup named by the locus attribute.</a:documentation>
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="not(@target) and not(@targets)">You must
 	supply either @target or @targets</sch:report>
             </rule>
@@ -8128,7 +8137,7 @@ of the markup named by the locus attribute.</a:documentation>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="contains(@target,' ')">You must supply at least two
 values for @target</sch:assert>
             </rule>
@@ -8219,7 +8228,7 @@ values for @target</sch:assert>
             <rule context="tei:join">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@target and @targets">You may not supply both 
 	@target and @targets</report>
             </rule>
@@ -8231,7 +8240,7 @@ values for @target</sch:assert>
             <rule context="tei:join">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="not(@target) and not(@targets)">You must
 	supply either @target or @targets</report>
             </rule>
@@ -8243,7 +8252,7 @@ values for @target</sch:assert>
             <rule context="tei:join">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="contains(@target,' ')">You must supply at least two
 values for @target</assert>
             </rule>
@@ -8451,7 +8460,7 @@ typically by means of annotations at the foot of the page. [10.3.7. ]</a:documen
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="count(tei:width)&gt; 1">
 	Width element may appear once only
       </report>
@@ -8462,7 +8471,7 @@ typically by means of annotations at the foot of the page. [10.3.7. ]</a:documen
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="count(tei:height)&gt; 1">
 	Height element may appear once only
       </report>
@@ -8473,7 +8482,7 @@ typically by means of annotations at the foot of the page. [10.3.7. ]</a:documen
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="count(tei:depth)&gt; 1">
 	Depth element may appear once only
       </report>
@@ -8856,7 +8865,7 @@ the  manuscript being described.  [10.4. ]</a:documentation>
             <rule context="tei:msIdentifier">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="local-name(*[1])='idno' or                              local-name(*[1])='altIdentifier' or        .='' ">
 	    You must supply either a locator of some type or a
 	    name</report>
@@ -10131,6 +10140,28 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <empty/>
       </element>
    </define>
+   <define name="tei_birth">
+      <element name="birth">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(birth) contains information about a person's birth, such as its date and place. [15.2.2. ]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_death">
+      <element name="death">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(death) contains information about a person's death, such as its date and place. [15.2.2. ]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_event">
       <element name="event">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(event) contains data relating to any kind of significant event associated with a person, place, or organization.</a:documentation>
@@ -10549,7 +10580,7 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
             <rule context="tei:relation">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@active and @mutual">Only one of the attributes
 	'active' and 'mutual' may be supplied</report>
             </rule>
@@ -10562,7 +10593,7 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
             <rule context="tei:relation">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:t="http://www.tei-c.org/ns/1.0"
+                       xmlns:tei="http://www.tei-c.org/ns/1.0"
                        test="@passive and not(@active)">the attribute 'passive'
 	may be supplied only if the attribute 'active' is
 	supplied</report>
@@ -11145,7 +11176,7 @@ lemma and usually one or more reading or a note on the relevant passage. [12.1.1
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:t="http://www.tei-c.org/ns/1.0"
+                           xmlns:tei="http://www.tei-c.org/ns/1.0"
                            test="count( descendant::tei:lem[ generate-id(       current() ) = generate-id( ancestor::tei:app[1] ) ]) &lt;       2">Only one &lt;lem&gt; element may appear within a single
       apparatus entry, whether it appears outside a &lt;rdgGrp&gt;
       element or within it.</sch:assert>

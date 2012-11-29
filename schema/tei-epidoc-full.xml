@@ -21,6 +21,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2012-11-29">suppressed schematron constraint on att.datable.custom</change>
+            <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added constraints for space</change>
             <change who="#GB" when="2012-11-21">stopped omitting birth and death</change>
             <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron declaration</change>
             <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
@@ -150,39 +152,39 @@
                     </attList>
                 </elementSpec>
                 
-                <!-- testing for <ex> outside of <expan> -->
                 <elementSpec ident="ex" module="transcr" mode="change">
+                <!-- testing for <ex> outside of <expan> -->
                     <constraintSpec scheme="isoschematron" ident="ex">
                         <constraint>
                             <sch:rule context="tei:ex">
-                                <sch:report test="not(ancestor::tei:expan)"><sch:name/> should only appear inside expan</sch:report>
-                                <sch:report test="parent::tei:abbr"><sch:name/> should not be a child of abbr</sch:report>
+                                <sch:report test="not(ancestor::tei:expan)">ex should only appear inside expan</sch:report>
+                                <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
                 
-                <!-- testing for <expan> with no descendant <ex> -->
                 <elementSpec ident="expan" module="transcr" mode="change">
+                <!-- testing for <expan> with no descendant <ex> -->
                     <constraintSpec scheme="isoschematron" ident="expan">
                         <constraint>
                             <sch:rule context="tei:expan">
-                                <sch:report test="not(descendant::tei:ex)"><sch:name/> should contain ex</sch:report>
+                                <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
                 
-                <!-- testing for <gap> with not quantity/extent, no unit, or contained in supplied -->
                 <elementSpec ident="gap" module="core" mode="change">
+                <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
                     <constraintSpec ident="gap" scheme="isoschematron">
                         <constraint>
                             <sch:rule context="tei:gap">
-                                <sch:report test="@quantity and @extent"><sch:name/> 
+                                <sch:report test="@quantity and @extent">gap 
                                     may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-                                <sch:report test="@quantity and not(@unit)">If <sch:name/> has @quantity then
+                                <sch:report test="@quantity and not(@unit)">If gap has @quantity then
                                 @unit is required</sch:report>
-                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied"><sch:name/>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap
                                 may not appear within supplied text</sch:report>
                             </sch:rule>
                         </constraint>
@@ -342,8 +344,19 @@
                     </attList>
                 </elementSpec>
                 
-                <!-- temporary bug fix until TEI 2.2.1: space should contain certLike -->
                 <elementSpec ident="space" module="transcr" mode="change">
+                    <!-- testing for <space> with both quantity/extent or no unit -->
+                    <constraintSpec ident="space" scheme="isoschematron">
+                        <constraint>
+                            <sch:rule context="tei:space">
+                                <sch:report test="@quantity and @extent">space 
+                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If space has @quantity then
+                                    @unit is required</sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                <!-- temporary bug fix until TEI 2.2.1: space should contain certLike -->
                     <content>
                         <group xmlns="http://relaxng.org/ns/structure/1.0">
                             <zeroOrMore>
@@ -409,16 +422,20 @@
 
                 <!--       CHANGING ATTRIBUTE CLASSES         -->
                 
-                <classSpec type="atts" ident="att.datable.custom" mode="change">
+                <!--<classSpec type="atts" ident="att.datable.custom" mode="change">
                     <constraintSpec scheme="isoschematron" ident="datable.custom">
                          <constraint>
-                             <sch:rule context="tei:*">
-                                 <sch:report test="@when-custom[contains(@datingMethod,'julian')] and not(matches(@when-custom,'-?(\d{4})?(-\d{2}(-\d{2})?)?'))">
-                                     @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                             <sch:rule context="tei:*[contains(@datingMethod,'julian')]">
+                                 <sch:report test="@when-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                                 <sch:report test="@notBefore-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @notBefore-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                                 <sch:report test="@notAfter-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @notAfter-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
                              </sch:rule>
                          </constraint>
                      </constraintSpec>
-                </classSpec>
+                </classSpec>-->
                 
                 <classSpec type="atts" ident="att.dimensions" mode="change">
                     <attList>
