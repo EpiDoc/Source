@@ -49,9 +49,9 @@ How to use it:
       To validate:
 	If using Oxygen or similar editor to edit XML files, processing instructions such as:
 
-	<?xml-model href="http://www.stoa.org/epidoc/schema/8.14/tei-epidoc.rng"
+	<?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
                                 schematypens="http://relaxng.org/ns/structure/1.0"?>
-	<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
+	<?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
                                 schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 	at the top of the XML file will instruct the editor to validate

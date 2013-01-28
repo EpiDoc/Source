@@ -21,6 +21,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2013-01-28">removed temp customization of space (fixed in TEI 2.3.0)</change>
             <change who="#GB" when="2012-11-29">suppressed schematron constraint on att.datable.custom</change>
             <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added constraints for space</change>
             <change who="#GB" when="2012-11-21">stopped omitting birth and death</change>
@@ -356,17 +357,6 @@
                             </sch:rule>
                         </constraint>
                     </constraintSpec>
-                <!-- temporary bug fix until TEI 2.2.1: space should contain certLike -->
-                    <content>
-                        <group xmlns="http://relaxng.org/ns/structure/1.0">
-                            <zeroOrMore>
-                                <choice>
-                                    <ref name="model.descLike"/>
-                                    <ref name="model.certLike"/>
-                                </choice>
-                            </zeroOrMore>
-                        </group>
-                    </content>
                 </elementSpec>
                 
                 <elementSpec ident="supplied" module="transcr" mode="change">
