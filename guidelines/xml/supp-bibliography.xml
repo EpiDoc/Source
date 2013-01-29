@@ -27,31 +27,59 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-bibliography" xml:lang="en">
     <head>Encoding the Bibliography</head>
-    <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>The bibliographical citations with an epigraphic/papyrological edition
+        (to be distinguished from the master bibliography of a project or publication).</p>
+    
+    <div>
+        <head>Master bibliography</head>
+        <p>It is generally recommended that a master bibliography, containing all works cited
+        in a publication or project (whether including discussions or only </p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listBibl>
+                <bibl xml:id="applebaum1979"><author>Shimon <surname>Applebaum</surname></author>,
+                    <date>1979</date>, <title level="m">Jews and Greeks in Ancient Cyrene</title>,
+                    <pubPlace>Leuven</pubPlace>.</bibl>
+                <bibl xml:id="jmr1971a"><author>Joyce M. <surname>Reynolds</surname></author>,
+                    <date>1971</date>, <title level="a">Zawiet Msus</title>,
+                    <title level="j">Libya Antiqua</title> <biblScope type="issue">8</biblScope>,
+                    <biblScope type="pp">39-42</biblScope></bibl>
+            </listBibl>
+        </egXML>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listBibl>
+                <biblStruct xml:id="b0290">
+                    <analytic>
+                        <author><surname>Feissel</surname><forename>D.</forename></author>
+                        <title level="a">Inscriptions byzantines de Ténos</title>
+                    </analytic>
+                    <monogr>
+                        <title level="j">BCH</title>
+                        <imprint><date>1980</date></imprint>
+                        <biblScope type="issue">104</biblScope>
+                        <biblScope type="pp">477-518</biblScope>
+                    </monogr>
+                </biblStruct>
+            </listBibl>
+        </egXML>
+    </div>
+    
+    <div>
+        <head>Bibliographic citations</head>
+        <p></p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <bibl><ptr target="biblio.xml#jmr1971a"/> <citedRange>40</citedRange></bibl>
+        </egXML>
+
+    </div>
     
     <div xml:id="supp-bibliography-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

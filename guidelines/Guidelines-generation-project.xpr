@@ -10,11 +10,41 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../schema/tei-epidoc.rng</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>EpiDoc Schema to egXML Schema</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>xml/driver.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>EpiDoc P5 Guidelines HTML</String>
+                                        <String>EpiDoc Schema to egXML Schema</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../example-p5-xslt/start-edition.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>EpiDoc Schema to egXML Schema</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
