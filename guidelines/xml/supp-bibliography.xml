@@ -33,7 +33,16 @@ End license statement: do not remove -->
     <div>
         <head>Master bibliography</head>
         <p>It is generally recommended that a master bibliography, containing all works cited
-        in a publication or project (whether including discussions or only </p>
+        in a publication or project (whether including discussions or only previous publications
+        of texts) be encoded in a separate, single file. This might validate to the EpiDoc schema
+        or to a generic TEI bibliographic schema, or could even be a free-standing database, or
+        a HTML page with an <att>id</att> for each bibliographical entry.</p>
+        
+        <p>If encoding in TEI, the bibliography should comprise a structured list either of 
+        <gi>bibl</gi> elements (recommended) or <gi>biblStruct</gi> elements (probably
+        overkill for most projects, but see second example below). An <att>xml:id</att> on each
+        item will allow referencing or linking from the localized bibliographic citations in
+        individual texts.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <listBibl>
@@ -67,19 +76,51 @@ End license statement: do not remove -->
     
     <div>
         <head>Bibliographic citations</head>
-        <p></p>
+        <p>Individual texts will often contain multiple bibliographic citations, for example to works
+        cited in commentary, the source of translations of photographs, and most importantly, to
+        previous publications of the same text by other scholars. Within an EpiDoc edition, such
+        citations should be contained in the <tag>div type="bibliography"</tag>, either in an
+        unstructured <gi>p</gi> (if the bibliography is a paragraph of free text with connecting prose
+        such as, "First published in ..., from notebooks; reprinted in ...; whence ... . Later re-edited from autopsy by..." etc.)
+        or in a <gi>listBibl</gi> if the citations are a simple (or numbered) list.</p>
+        
+        <p>Each bibliographic citation may be encoded relatively simply in a <gi>bibl</gi> element
+        in the form that is desired in the online (or print) edition, be that a full bibliographic reference or
+        abbreviated author + date or similar. It is often useful, however, to link back to the entry in
+        a bibliographic authority (generally the master bibliography), for example so that:
+        <list type="ordered">
+            <item>edition can hyperlink back from short title to a full or even annotated bibliography;</item>
+            <item>bibliographic citations (full or short) can be automatically generated from the main
+                bibliography, providing more consistency and reducing the need for multiple entry of
+                identical information;</item>
+            <item>a bibliographic concordance can be generated (using the <gi>idno</gi> of the current
+            edition, the <att>xml:id</att> of the bibliographic item, and the <gi>citedRange</gi> of the 
+            bibliographic citation in the edition.</item>
+        </list>
+        </p>
+        
+        <p>Assuming a master bibliography in TEI containing the entries from the first example above,
+        the bibliographic citation below would (a) point to the Reynolds 1971 title therein, and (b) state
+        unambiguously that the text in whose edition this citation appears was previously published as
+        number 3 in her edition.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <bibl><ptr target="biblio.xml#jmr1971a"/> <citedRange>40</citedRange></bibl>
+            <bibl><ptr target="biblio.xml#jmr1971a"/> <citedRange>3</citedRange></bibl>
         </egXML>
+        
+        <p>This would allow, firstly, the edition to display text such as <q>Reynolds 1971, 3</q> or
+        <q>Reynolds, 'Zawiet Msus' (1971), no. 3</q> or similar; and secondly a bibliographic
+        concordance to be generated that lists all of the inscriptions in each previous publication,
+        showing which inscription in the current collection corresponds to each. (See for example the
+            <ref target="http://insaph.kcl.ac.uk/iaph2007/inscriptions/concordance/publication/jmr1980.html">InsAph
+            concordance</ref> for a Reynolds article.)</p>
 
     </div>
     
     <div xml:id="supp-bibliography-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
