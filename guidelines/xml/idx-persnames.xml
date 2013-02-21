@@ -25,7 +25,7 @@ End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-prosopography" xml:lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-persnames" xml:lang="en">
     <head>Personal names and prosopographical links</head>
     <p>Tagging of names, person references, and links to prosopographical disambiguation.</p>
     <p>
@@ -66,7 +66,7 @@ End license statement: do not remove -->
         his father "Adrastos" is another.
     </p>
     
-    <p>Just as the <ref target="supp-wordslemmata.html">lemmata of words</ref> may be recorded to facilitate
+    <p>Just as the <ref target="idx-wordslemmata.html">lemmata of words</ref> may be recorded to facilitate
         indexing or searching, names may be linked to their nominative-singular form (or similar in other languages).
         No <att>lemma</att> attribute is available on <gi>name</gi> or <gi>persName</gi>, however, so the more
         involved attribute <att>nymRef</att> should be used instead. This attribute should contain a URL or other
