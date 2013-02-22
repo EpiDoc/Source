@@ -27,31 +27,30 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-socialterms" xml:lang="en">
     <head>Military, religious, socio-economic terminology</head>
-    <p></p>
+    <p>Military terminology, titulature, religious indicators, social/political/economic vocabulary are not currently being tagged in a specific way.</p>
+    <p>
+        <specList>
+            <specDesc key="w"/>
+            <specDesc key="rs"/>
+        </specList>
+    </p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>One way of extracting this terminology is through the vocabulary, using the @lemma attribute of the <gi>w</gi> element.</p>
+    
+    <p>Another way could be using the <gi>rs</gi> element and the different values of the @type attribute could be similar to the categories 
+        used by the <ref target="http://edh-www.adw.uni-heidelberg.de/inschrift/erweiterteSuche">EDH</ref>. A @key or a @ref attribute could point to an authoriry list.</p>
+    
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <rs type="military"><expan><abbr>uet</abbr><ex>eranus</ex></expan></rs>, IRT 108.
+        </egXML>
+    <!-- IRT example-->
+    
     
     <div xml:id="intro-faq-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
