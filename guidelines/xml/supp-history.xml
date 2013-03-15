@@ -27,8 +27,20 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-history" xml:lang="en">
     <head>History, dating and locations of object</head>
-    <p>gloss</p>
+    <p>Information on the provenance, history and modern location of the monument, when known. Encoded in the <gi>history</gi> element, part of the <gi>msDesc</gi>. Depending on the information available, 
+    the following subsections could be used:</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    <list>
+        <item><ref target="supp-historigdate.html">Date of origin</ref></item>
+        <item><ref target="supp-histinvno.html">Inventory numbers and repository</ref></item>
+        <item><ref target="supp-histlocations.html">Locations</ref>:
+            <list>
+                <item><ref target="supp-historigin.html">Original location or locations</ref></item>
+                <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
+                <item><ref target="supp-histmodern.html">Last known location, other modern locations</ref></item>
+            </list>
+        </item>
+    </list>
     
     <div xml:id="supp-history-responsibility">
     
@@ -37,14 +49,9 @@ End license statement: do not remove -->
             <bibl>
                 <respStmt>
                     <resp>author</resp>
+                    <name>Simona Stoyanova</name>
                     <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                </respStmt>
             </bibl>
         </listBibl>
     </div>
