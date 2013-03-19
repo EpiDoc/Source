@@ -32,28 +32,32 @@ Technical Requirements:
 
 How to use it:
 
-      To generate the schema:
-	1. edit the ODD (tei-epidoc-full.xml) to make any changes to the EpiDoc schema.
-	*NB* that as a matter of policy the EpiDoc schema should be a conformant
-	subset of the latest TEI schema (only exceptions being when the dev TEI ODD
-	contains changes that will not make it into the TEI release for 1-6 months).
-	2. Go to http://www.tei-c.org/Roma/ and "Open existing customization".
-	Select tei-epidoc-full.xml from your local file system.
-	3. Select "Start".
-	4. Select "Schema".
-	5. Select "RELAX NG schema (XML syntax).
-	6. Save to your local file system.
-	7. Test thoroughly (and ask for support on Markup to test) before committing as
-	canonical new EpiDoc schema.
+     1.  To validate your EpiDoc files in an editor:
+               If using Oxygen or similar editor to edit XML files, processing instructions such as:
 
-      To validate:
-	If using Oxygen or similar editor to edit XML files, processing instructions such as:
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
+                         schematypens="http://relaxng.org/ns/structure/1.0"?>
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
+                         schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-	<?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
-                                schematypens="http://relaxng.org/ns/structure/1.0"?>
-	<?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
-                                schematypens="http://purl.oclc.org/dsdl/schematron"?>
+               at the top of the XML file (above the <TEI> element but below the <?xml?>
+               declaration will instruct the editor to validate against this schema
+               (as RelaxNG and Schematron respectively).
 
-	at the top of the XML file will instruct the editor to validate
-	against this schema (as RelaxNG and Schematron respectively).
+               You may also point at a local copy of the tei-epidoc.rng file.
 
+      2. To generate a new version of the schema from the ODD:
+               1. edit the ODD (tei-epidoc-full.xml) to make any changes to the EpiDoc schema.
+               *NB* that as a matter of policy the EpiDoc schema should be a conformant
+               subset of the latest TEI schema (only exceptions being when the dev TEI ODD
+               contains changes that will not make it into the TEI release for 1-6 months).
+               2. Go to http://www.tei-c.org/Roma/ and "Open existing customization".
+               Select tei-epidoc-full.xml from your local file system.
+               3. Select "Start".
+               4. Select "Schema".
+               5. Select "RELAX NG schema (XML syntax).
+               6. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
+               7. Test thoroughly (and ask for support on Markup to test) before committing as
+               canonical new EpiDoc schema.
+
+See https://sourceforge.net/p/epidoc/wiki/Schema/ for more information on the EpiDoc schema and how to use it.
