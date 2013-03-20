@@ -27,9 +27,39 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-historigin" xml:lang="en">
     <head>Original location of object</head>
-    <p>gloss</p>
+    <p>Placed in the <gi>msDesc</gi> section of the TEI header, within the <gi>history</gi> subsection.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
+    <p>
+        <specList>
+            <specDesc key="origPlace"/>
+        </specList>
+    </p>
+
+    <p>The information in the <gi>origPlace</gi> could be linked to an internal list of places/monuments with a <gi>ref</gi> or a <gi>key</gi>. 
+        Sometimes the original place is the same as the <ref target="supp-histfound.html">findspot</ref>, in which case there is no need to repeat it.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <origPlace>Probably from the cella wall.</origPlace>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <origPlace>Perhaps <rs type="monuList" key="db1047">Shrine of the Dioscuri</rs></origPlace>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <origPlace ref="origPlace.xml#p003" n="1">
+            <seg xml:lang="ru">Херсон</seg>
+            <seg xml:lang="en">Chersonesos</seg>
+        </origPlace>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <origPlace>Findspot.</origPlace>
+    </egXML>
+    
+    
+
     <div xml:id="supp-historigin-responsibility">
     
         <head>Responsibility for this section</head>
@@ -42,9 +72,9 @@ End license statement: do not remove -->
             </bibl>
             <bibl>
                 <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                    <resp>author</resp>
+                    <name>Simona Stoyanova</name>
+                </respStmt>
             </bibl>
         </listBibl>
     </div>
