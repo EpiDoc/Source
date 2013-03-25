@@ -56,7 +56,7 @@ public class HellasParser extends AbstractGreekParser {
         strb.delete(0,strb.length());
         if (in != null) {
             char ch = chArray[index];
-            System.out.println("Character: " + String.valueOf(ch));
+            System.out.println("Character: '" + String.valueOf(ch) + "'");
             index++;
             map.clear();
             escape.delete(0,escape.length());
@@ -78,7 +78,7 @@ public class HellasParser extends AbstractGreekParser {
 
             while (escape.length() > 0) {
                 String result = lookup(escape.toString());
-                System.out.println("Looked up: " + result.length());
+                System.out.println("Looked up: '" + result.length() + "'");
                 if (result.equals(escape.toString())) {
                     escape.deleteCharAt(escape.length() - 1);
                     index -= 1;
@@ -98,7 +98,7 @@ public class HellasParser extends AbstractGreekParser {
                 }
             }
         }
-        System.out.println("Returns: " + strb);
+        System.out.println("Returns: '" + strb + "'");
         return strb.toString();
     }
 
