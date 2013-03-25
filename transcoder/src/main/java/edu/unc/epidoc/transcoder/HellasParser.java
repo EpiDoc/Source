@@ -56,7 +56,7 @@ public class HellasParser extends AbstractGreekParser {
         strb.delete(0,strb.length());
         if (in != null) {
             char ch = chArray[index];
-            System.out.println("Character: '" + String.valueOf(ch) + "'");
+            System.out.println("\nCharacter: '" + String.valueOf(ch) + "'");
             index++;
             map.clear();
             escape.delete(0,escape.length());
@@ -74,11 +74,11 @@ public class HellasParser extends AbstractGreekParser {
                 }
             }
 
-            System.out.println(escape.length());
+            System.out.println("length : " + escape.length());
 
             while (escape.length() > 0) {
                 String result = lookup(escape.toString());
-                System.out.println("Looked up: '" + result.length() + "'");
+                System.out.println("Looked up: '" + escape.toString() + "' of length: " + result.length());
                 if (result.equals(escape.toString())) {
                     escape.deleteCharAt(escape.length() - 1);
                     index -= 1;
@@ -89,11 +89,13 @@ public class HellasParser extends AbstractGreekParser {
             }
 
             if (strb.length() == 0) {
-                if(isPunctuation(ch) || Character.isWhitespace(ch)) {
+                if(isPunctuation(ch) || Character.isWhitespace(ch) || Character.isDigit(ch)) {
+                    System.out.println("Puctuation or whitespace or digit");
                     strb.append(ch);
                     index++;
                 } else {
                     strb.append('?');
+                    System.out.println("Je ne comprends pas!");
                     index++;
                 }
             }
@@ -121,15 +123,18 @@ public class HellasParser extends AbstractGreekParser {
         switch (ch) {
             case '!':
             case '"':
+            case '\'':
             case '&':
             case '(':
             case ')':
             case '§':
-            case 'Ô':
-            case 'à':
-            case 'ç':
-            case 'è':
-            case 'ï':
+            case 0xD4: // Ô
+            case 0xE0: // à
+            case 0xE7: // ç
+            case 0xE8: // è
+            case 0xE9: // é
+            case 0xEF: // ï
+            case 0xEB: // ë
             case '/': // underdot
                 return true;
             default:
@@ -145,6 +150,7 @@ public class HellasParser extends AbstractGreekParser {
             case ';':
             case '_':
             case '-':
+            case 0x2019: // smart apostrophe
                 return true;
             default:
                 return false;
