@@ -27,8 +27,9 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-history" xml:lang="en">
     <head>History, dating and locations of object</head>
-    <p>Information on the provenance, history and modern location of the monument, when known. Encoded in the <gi>history</gi> element, part of the <gi>msDesc</gi>. Depending on the information available, 
-    the following subsections could be used:</p>
+    <p>Information on the provenance, history and modern location of the monument, when known.
+        Encoded in the <gi>history</gi> element, part of the <gi>msDesc</gi>. Depending on the information available, 
+        the following subsections could be used:</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     <list>
         <item><ref target="supp-historigdate.html">Date of origin</ref></item>
@@ -42,17 +43,40 @@ End license statement: do not remove -->
         </item>
     </list>
     
-    <div xml:id="supp-history-responsibility">
+    <p>If detailed historical, dating and provenance information is not known (e.g. for an object or manuscript long held in
+    a repository or private collection), a general description of the history of the object may be given in one or more <gi>p</gi>
+    element rather than the structured elements described in these sections.</p>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <history> 
+            <origin>
+                <origDate>Second to third centuries C.E.</origDate> 
+                <origPlace>
+                    <placeName type="ancientFindspot">Aphrodisias</placeName>: probably in the grounds of the Temple of Aphrodite. 
+                </origPlace>
+            </origin>
+            <provenance type="found" when="1968">
+                <p>Re-used in the City Walls.</p>
+            </provenance>
+            <provenance type="observed" when="2012">
+                <p>Aphrodisias Museum.</p>
+            </provenance>
+        </history>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <history>
+            <p>The stone may have been in the private collection of Pr Cresson, who invited Louis Robert 
+                to read and translate the inscription. Robert recorded no information on its provenance and its
+                later whereabouts are unknown. It has never emerged on the antiquities market.</p>
+        </history>
+    </egXML>
+    
+    <div xml:id="supp-history-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                    <name>xx</name>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

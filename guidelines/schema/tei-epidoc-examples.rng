@@ -494,8 +494,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          </attribute>
       </optional>
    </define>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="calendar-constraint-calendar">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="calendar-constraint-calendar">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -552,8 +551,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    </define>
    <define name="tei_att.declarable.attribute.default">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="default"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="default"
                     a:defaultValue="false">
             <a:documentation>indicates whether or not this element is selected by default when
 its parent is selected.</a:documentation>
@@ -589,8 +587,7 @@ attribute and its content.</a:documentation>
    </define>
    <define name="tei_att.fragmentable.attribute.part">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="part"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="part"
                     a:defaultValue="N">
             <a:documentation>specifies whether or not its parent element is fragmented
       in some way, typically by some other overlapping structure : for
@@ -620,8 +617,7 @@ attribute and its content.</a:documentation>
    </define>
    <define name="tei_att.divLike.attribute.org">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="org"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="org"
                     a:defaultValue="uniform">
             <a:documentation>(organization) specifies how the content of the division is organized.</a:documentation>
             <choice>
@@ -639,8 +635,7 @@ attribute and its content.</a:documentation>
    </define>
    <define name="tei_att.divLike.attribute.sample">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="sample"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="sample"
                     a:defaultValue="complete">
             <a:documentation>indicates whether this division is a sample of the
 		original source and if so, from which part.</a:documentation>
@@ -664,8 +659,7 @@ attribute and its content.</a:documentation>
    </define>
    <define name="tei_att.docStatus.attribute.status">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="status"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="status"
                     a:defaultValue="draft">
             <a:documentation>describes the status of a document either currently or, when
 associated with a dated element, at the time indicated.
@@ -771,8 +765,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    </define>
    <define name="tei_att.editLike.attribute.instant">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="instant"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="instant"
                     a:defaultValue="false">
             <a:documentation>indicates whether this is an instant revision or not.</a:documentation>
             <ref name="tei_data.xTruthValue"/>
@@ -1400,8 +1393,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </attribute>
       </optional>
    </define>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="spanTo-constraint-spanTo-2">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="spanTo-constraint-spanTo-2">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1412,8 +1404,7 @@ The element indicated by @spanTo must follow the current element <sch:name/>
          </sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="spanTo-constraint-spanTo-3">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="spanTo-constraint-spanTo-3">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1483,8 +1474,7 @@ The element indicated by @spanTo must follow the current element <sch:name/>
    </define>
    <define name="tei_att.transcriptional.attribute.status">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="status"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="status"
                     a:defaultValue="unremarkable">
             <a:documentation>indicates the effect of the intervention, for example in
       the case of a deletion, strikeouts
@@ -3484,8 +3474,7 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    </define>
    <define name="tei_att.personal.attribute.full">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="full"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="full"
                     a:defaultValue="yes">
             <a:documentation>indicates whether the name component is given in full, as an
 abbreviation or simply as an initial.</a:documentation>
@@ -3894,8 +3883,7 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.ascribed.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="aloud"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="aloud"
                        a:defaultValue="unknown">
                <a:documentation>may be used to indicate whether the quoted matter is regarded as having been vocalized
         or signed.</a:documentation>
@@ -3903,8 +3891,7 @@ Suggested values include: 1] acute; 2] apex; 3] asper; 4] circumflex; 5] diaeres
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="direct"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="direct"
                        a:defaultValue="true">
                <a:documentation>may be used to indicate whether the quoted matter is regarded as direct or indirect
         speech.</a:documentation>
@@ -4581,8 +4568,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="type"
                        a:defaultValue="simple">
                <a:documentation>describes the form of the list.
 Suggested values include: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documentation>
@@ -4671,8 +4657,7 @@ Suggested values include: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:docume
          <ref name="tei_att.responsibility.attributes"/>
          <ref name="tei_att.typed.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="anchored"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="anchored"
                        a:defaultValue="true">
                <a:documentation>indicates whether the copy text shows the exact place of reference for the note.</a:documentation>
                <ref name="tei_data.truthValue"/>
@@ -5424,8 +5409,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="lg-constraint-atleast1oflggapl">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="lg-constraint-atleast1oflggapl">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5535,8 +5519,7 @@ Suggested values include: 1] setting; 2] entrance; 3] exit; 4] business; 5] nove
          </group>
          <ref name="tei_att.global.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="version"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="version"
                        a:defaultValue="5.0">
                <a:documentation>The version of the TEI scheme</a:documentation>
                <ref name="tei_data.version"/>
@@ -5604,8 +5587,7 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
          </group>
          <ref name="tei_att.global.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="type"
                        a:defaultValue="text">
                <a:documentation>specifies the kind of document to which the header is attached, for example whether it
         is a corpus or individual text.
@@ -5791,8 +5773,7 @@ distribution of a text. [2.2.4. ]</a:documentation>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="status"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="status"
                        a:defaultValue="unknown">
                <a:documentation>supplies a code identifying the current availability of the text. </a:documentation>
                <choice>
@@ -5978,8 +5959,7 @@ during the encoding of a text. [2.3.3.  2.3.  15.3.2. ]</a:documentation>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="status"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="status"
                        a:defaultValue="unknown">
                <a:documentation>indicates the degree of correction applied to the text. </a:documentation>
                <choice>
@@ -5995,8 +5975,7 @@ during the encoding of a text. [2.3.3.  2.3.  15.3.2. ]</a:documentation>
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="method"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="method"
                        a:defaultValue="silent">
                <a:documentation>indicates the method adopted to indicate corrections within the text. </a:documentation>
                <choice>
@@ -6026,8 +6005,7 @@ during the encoding of a text. [2.3.3.  2.3.  15.3.2. ]</a:documentation>
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="method"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="method"
                        a:defaultValue="silent">
                <a:documentation>indicates the method adopted to indicate normalizations within the text. </a:documentation>
                <choice>
@@ -6075,8 +6053,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="form"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="form"
                        a:defaultValue="unknown">
                <a:documentation>specifies how quotation marks are indicated within the text.</a:documentation>
                <text/>
@@ -6095,8 +6072,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="eol"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="eol"
                        a:defaultValue="some">
                <a:documentation>(end-of-line) indicates whether or not end-of-line hyphenation has been retained in a text.</a:documentation>
                <choice>
@@ -6453,8 +6429,7 @@ codes used elsewhere in the text. [2.3.7.  2.3. ]</a:documentation>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="datum"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="datum"
                        a:defaultValue="WGS84">
                <a:documentation>supplies a commonly used code name for the datum employed.
 Suggested values include: 1] WGS84(World Geodetic System) ; 2] MGRS(Military Grid Reference System) ; 3] OSGB36(ordnance survey great britain) ; 4] ED50(European Datum coordinate system) </a:documentation>
@@ -6750,8 +6725,7 @@ with either the creation of a source text or the revision of an encoded text. </
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="ordered"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="ordered"
                        a:defaultValue="true">
                <a:documentation>indicates whether the ordering of its child change
 elements is to be considered significant or not</a:documentation>
@@ -6781,14 +6755,12 @@ teiCorpus element. [4.  15.1. ]</a:documentation>
             </choice>
          </group>
     
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-             prefix="tei"
+         <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="tei"
              uri="http://www.tei-c.org/ns/1.0"/>
     
   
     
-         <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-             prefix="rng"
+         <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="rng"
              uri="http://relaxng.org/ns/structure/1.0"/>
     
          <ref name="tei_att.global.attributes"/>
@@ -7553,8 +7525,7 @@ of a point on a line enclosing the area.</a:documentation>
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="rotate"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="rotate"
                        a:defaultValue="0">
                <a:documentation>indicates the amount by which this zone has been
          rotated clockwise, with respect to the normal orientation of
@@ -7576,8 +7547,7 @@ of a point on a line enclosing the area.</a:documentation>
     
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="addSpan-constraint-spanTo">
             <rule context="tei:addSpan">
-               <sch:assert xmlns:s="http://www.ascc.net/xml/schematron"
-                           xmlns="http://www.tei-c.org/ns/1.0"
+               <sch:assert xmlns:s="http://www.ascc.net/xml/schematron" xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -7587,11 +7557,9 @@ of a point on a line enclosing the area.</a:documentation>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="addSpan-constraint-spanTo_fr">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="addSpan-constraint-spanTo_fr">
             <rule context="tei:addSpan">
-               <sch:assert xmlns:s="http://www.ascc.net/xml/schematron"
-                           xmlns="http://www.tei-c.org/ns/1.0"
+               <sch:assert xmlns:s="http://www.ascc.net/xml/schematron" xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -7635,8 +7603,7 @@ author, scribe, annotator, or corrector. [11.3.1.4. ]</a:documentation>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="delSpan-constraint-spanTo_fr">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="delSpan-constraint-spanTo_fr">
             <rule context="tei:delSpan">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -8367,8 +8334,7 @@ of the markup named by the locus attribute.</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. ]</a:documentation>
          <empty/>
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="link-constraint-linkTargets1">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="link-constraint-linkTargets1">
             <rule context="tei:link">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -8382,8 +8348,7 @@ of the markup named by the locus attribute.</a:documentation>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="link-constraint-linkTargets2">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="link-constraint-linkTargets2">
             <rule context="tei:link">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -8397,8 +8362,7 @@ of the markup named by the locus attribute.</a:documentation>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="link-constraint-linkTargets3">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="link-constraint-linkTargets3">
             <rule context="tei:link">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -8474,8 +8438,7 @@ values for @target on <sch:name/>
             </choice>
          </zeroOrMore>
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="join-constraint-joinTargets1">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="join-constraint-joinTargets1">
             <rule context="tei:join">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -8488,8 +8451,7 @@ You may not supply both @target and @targets on <name/>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="join-constraint-joinTargets2">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="join-constraint-joinTargets2">
             <rule context="tei:join">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -8502,8 +8464,7 @@ You must supply either @target or @targets on <name/>
     
   
     
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="join-constraint-joinTargets3">
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="join-constraint-joinTargets3">
             <rule context="tei:join">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -8536,8 +8497,7 @@ You must supply at least two values for @target on <name/>
             </attribute>
          </optional>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="scope"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="scope"
                        a:defaultValue="root">
                <a:documentation>indicates whether the targets to be joined include the entire element indicated (the entire subtree including its root), or just the children of the target (the branches of the subtree).</a:documentation>
                <choice>
@@ -9436,8 +9396,7 @@ complement or alternative to the  more detailed information  carried by
    </define>
    <define name="tei_att.msExcerpt.attribute.defective">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="defective"
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="defective"
                     a:defaultValue="false">
             <a:documentation>indicates whether the passage being quoted is defective,
       i.e. incomplete through loss or damage.</a:documentation>
@@ -10872,8 +10831,7 @@ distinct manuscript or part of a manuscript, now forming part of a composite man
          <ref name="tei_att.canonical.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="type"
                        a:defaultValue="personal">
                <a:documentation>categorizes the relationship in some respect, e.g. as social, personal or other.
 Suggested values include: 1] social; 2] personal; 3] other</a:documentation>
@@ -11470,43 +11428,6 @@ series of setting elements. [15.2.  2.4. ]</a:documentation>
          <group xmlns:rng="http://relaxng.org/ns/structure/1.0">
             <zeroOrMore>
                <choice>
-                  <attribute name="corresp">
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current
-                        element in some way.</a:documentation>
-                     <list>
-                        <ref name="tei_data.pointer"/>
-                        <zeroOrMore>
-                           <ref name="tei_data.pointer"/>
-                        </zeroOrMore>
-                     </list>
-                  </attribute>
-                  <attribute name="rend">
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
-                     <list>
-                        <ref name="tei_data.word"/>
-                        <zeroOrMore>
-                           <ref name="tei_data.word"/>
-                        </zeroOrMore>
-                     </list>
-                  </attribute>
-                  <attribute name="xml:lang">
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated
-                        according to BCP 47
-                     </a:documentation>
-                     <ref name="tei_data.language"/>
-                  </attribute>
-                  <attribute name="xml:space">
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be 
-                        managed by  applications. </a:documentation>
-                     <choice>
-                        <value>default</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should treat white space according to the
-                           default XML white space handling rules</a:documentation>
-                        <value>preserve</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should preserve unchanged any and all
-                           white space in the source</a:documentation>
-                     </choice>
-                  </attribute>
                   <text/>
                   <ref name="tei_TEI"/>
                   <ref name="tei_ab"/>
@@ -11820,6 +11741,43 @@ series of setting elements. [15.2.  2.4. ]</a:documentation>
                   <ref name="tei_width"/>
                   <ref name="tei_wit"/>
                   <ref name="tei_zone"/>
+                  <attribute name="corresp">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current
+                        element in some way.</a:documentation>
+                     <list>
+                        <ref name="tei_data.pointer"/>
+                        <zeroOrMore>
+                           <ref name="tei_data.pointer"/>
+                        </zeroOrMore>
+                     </list>
+                  </attribute>
+                  <attribute name="rend">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+                     <list>
+                        <ref name="tei_data.word"/>
+                        <zeroOrMore>
+                           <ref name="tei_data.word"/>
+                        </zeroOrMore>
+                     </list>
+                  </attribute>
+                  <attribute name="xml:lang">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated
+                        according to BCP 47
+                     </a:documentation>
+                     <ref name="tei_data.language"/>
+                  </attribute>
+                  <attribute name="xml:space">
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be 
+                        managed by  applications. </a:documentation>
+                     <choice>
+                        <value>default</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should treat white space according to the
+                           default XML white space handling rules</a:documentation>
+                        <value>preserve</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the processor should preserve unchanged any and all
+                           white space in the source</a:documentation>
+                     </choice>
+                  </attribute>
                </choice>
             </zeroOrMore>
          </group>
