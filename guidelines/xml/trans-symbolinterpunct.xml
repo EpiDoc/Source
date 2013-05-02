@@ -1,0 +1,54 @@
+<!-- Start license statement: do not remove 
+    
+    EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+    Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+    Additional contributors' copyright may be designated in individual source files.
+    
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    
+    Information about the EpiDoc community can be obtained via 
+    http://epidoc.sf.net.
+    
+    End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/trans-symbol.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-symbol">
+    <head>Symbol: interpuncts</head>
+        <p><specList>
+                <specDesc key="g"/>
+            </specList></p>
+        <p><gi>g</gi> (character or glyph) represents a non-standard or non-alphabetic character or glyph.</p>
+        
+        <p>(discuss typology of interpuncts?)</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT900.html">
+        M <g type="stop"/> Fydel et F <g type="stop"/> Thesylgum 
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT116.html">
+        Flauii Diodo <g type="interpunct"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/chla;29;865#al37">
+        posita super sacta <g type="dipunct"/> evvangelia <g type="dipunct"/> actionariis sce 
+    </egXML>
+    
+    <div xml:id="trans-symbol-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

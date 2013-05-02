@@ -27,15 +27,105 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-petrae" xml:lang="en">
     <head>Appendix: Aligning EpiDoc transcription with PETRAE</head>
-    <p>tba</p>
+    <p><!--gloss this section--></p>
+    
+    <div>
+        <head>Conventions for epigraphic transcription</head>
+        <p>See PETRAE conventions at <ref>http://petrae.tge-adonis.fr/index.php/inscriptions/aide</ref>.</p>
+        <table>
+            <row>
+                <cell>[ ]</cell>
+                <cell>Restitution des lettres disparues</cell>
+                <cell><ref target="trans-restored.html">Editorial restoration: Characters lost but restored by modern editor</ref></cell>
+            </row>
+            <row>
+                <cell>( )</cell>
+                <cell>Résolution d'abbréviation</cell>
+                <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+            </row>
+            <row>
+                <cell>〚 〛</cell>
+                <cell>Érasure</cell>
+                <cell><ref target="trans-erased.html">Erased but legible text</ref>
+                    and <ref target="trans-erasedillegible.html">Erased and illegible but restored</ref></cell>
+            </row>
+            <row>
+                <cell>`Aug´</cell>
+                <cell>Lettres ligaturées</cell>
+                <cell><ref target="trans-ligature.html">Ligatured letters</ref></cell>
+            </row>
+            <row>
+                <cell>{ }</cell>
+                <cell>Suppression de lettres gravées par erreur</cell>
+                <cell><ref target="trans-superfluous.html">Superfluous characters</ref></cell>
+            </row>
+            <row>
+                <cell>&lt; &gt;</cell>
+                <cell>Inclusion de lettres qui n'étaient pas présentes dans la pierre</cell>
+                <cell><ref target="trans-omitted.html">Supplement of omitted characters</ref></cell>
+            </row>
+            <row>
+                <cell>˹ ˺</cell>
+                <cell>Lettres corrigées d'après une copie ou un manuscrit peu fiable</cell>
+                <cell>???</cell>
+            </row>
+            <row>
+                <cell>+</cell>
+                <cell>Lettre non identifiable</cell>
+                <cell><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref>
+                    and <ref target="trans-illegiblecharunknown.html">Illegible characters, quantity unknown</ref></cell>
+            </row>
+            <row>
+                <cell>[...]</cell>
+                <cell>Lacune non restituable de longueur déterminée : chaque point indique une lettre manquante</cell>
+                <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
+            </row>
+            <row>
+                <cell>[ - - - ]</cell>
+                <cell>Lacune de longueur indéterminée dans une ligne ou, ligne manquante, mais certaine</cell>
+                <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity unknown</ref>
+                    and <ref target="trans-lostlineknown.html">Lost lines, quantity known</ref></cell>
+            </row>
+            <row>
+                <cell>- - -</cell>
+                <cell>Ligne(s) manquante(s) non restituable(s) en nombre indéterminé</cell>
+                <cell><ref target="trans-lostlineunknown.html">Lost lines, quantity unknown</ref></cell>
+            </row>
+            <row>
+                <cell>▴</cell>
+                <cell>Point de séparation</cell>
+                <cell><ref target="trans-symbolinterpunct.html">Symbols: interpuncts</ref></cell>
+            </row>
+            <row>
+                <cell>❦</cell>
+                <cell>Hedera</cell>
+                <cell><ref target="trans-symbol.html">Symbols</ref></cell>
+            </row>
+            <row>
+                <cell>ẹṭ </cell>
+                <cell>Lettre pointée : lettre qui ne se lit pas entièrement sur la pierre</cell>
+                <cell><ref target="trans-ambiguous.html">Ambiguous characters</ref></cell>
+            </row>
+            <row>
+                <cell>uac.</cell>
+                <cell>uacat</cell>
+                <cell><ref target="trans-vacatchar.html">Vacat, characters</ref>
+                    and <ref target="trans-vacatline.html">Vacat, lines</ref></cell>
+            </row>
+        </table>
+    </div>
+    
+    <div>
+        <head>Supporting and descriptive fields</head>
+        <p>tba</p>
+    </div>
     
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
     <div xml:id="app-epi-petrae-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>xx</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
