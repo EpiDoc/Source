@@ -28,10 +28,10 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-petrae" xml:lang="en">
     <head>Appendix: Aligning EpiDoc transcription with PETRAE</head>
     <p><!--gloss this section--></p>
-    
+    <p>See PETRAE conventions at <ref target="http://petrae.tge-adonis.fr/index.php/inscriptions/aide">http://petrae.tge-adonis.fr/index.php/inscriptions/aide</ref>.</p>
     <div>
         <head>Conventions for epigraphic transcription</head>
-        <p>See PETRAE conventions at <ref>http://petrae.tge-adonis.fr/index.php/inscriptions/aide</ref>.</p>
+        
         <table>
             <row>
                 <cell>[ ]</cell>
@@ -81,13 +81,13 @@ End license statement: do not remove -->
                 <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
             </row>
             <row>
-                <cell>[ - - - ]</cell>
+                <cell>[&#xa0;-&#xa0;-&#xa0;-&#xa0;]</cell>
                 <cell>Lacune de longueur indéterminée dans une ligne ou, ligne manquante, mais certaine</cell>
                 <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity unknown</ref>
                     and <ref target="trans-lostlineknown.html">Lost lines, quantity known</ref></cell>
             </row>
             <row>
-                <cell>- - -</cell>
+                <cell>-&#xa0;-&#xa0;-</cell>
                 <cell>Ligne(s) manquante(s) non restituable(s) en nombre indéterminé</cell>
                 <cell><ref target="trans-lostlineunknown.html">Lost lines, quantity unknown</ref></cell>
             </row>
@@ -117,7 +117,38 @@ End license statement: do not remove -->
     
     <div>
         <head>Supporting and descriptive fields</head>
-        <p>tba</p>
+        <list type="gloss">
+            <label>Numéro PETRAE (numéro absolu) : par ex. 16/1/14/xxx où 16 désigne les Gaules, 1 la province d'Aquitaine, 14 la cité de Périgueux</label>
+            <item><ref target="supp-publication.html">Title and publication information</ref>
+                and <ref target="supp-histinvno.html">Inventory numbers and repository</ref></item>
+            <label>Lieu de découverte (nom antique et nom moderne) et une présentation succinte qui tient lieu de titre.</label>
+            <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
+            <label>Description de la pierre : indication de la nature du support et du matériau, état de conservation du monument, élément de décoration</label>
+            <item><ref target="supp-descobject.html">Description and dimensions of monument or object</ref></item>
+            <label>Date, circonstances, lieu et contexte local de découverte</label>
+            <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
+            <label>Lieu et institution de conservation avec indication du n° d'inventaire dans le musée ou la collection</label>
+            <item><ref target="supp-histmodern.html">Modern locations</ref>
+                and <ref target="supp-histinvno.html">Inventory numbers and repository</ref></item>
+            <label>Dimension du monument (longueur/largeur/hauteur)</label>
+            <item><ref target="supp-descdimensions.html">Dimensions</ref></item>
+            <label>Description du champ épigraphique, avec la (ou les) face(s) du support où se trouve le champ, les dimensions (éventuellement)</label>
+            <item><ref target="supp-desctext.html">Description and layout of text field or campus</ref></item>
+            <label>Datation du texte</label>
+            <item><ref target="supp-historigdate.html">Date of origin</ref></item>
+            <label>Commentaires sur la mise en page, définition de l'écriture et commentaire sur la forme et la qualité des lettres (s'il y a lieu)</label>
+            <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
+            <label>Bibliographie: sauf exception, on ne donne pas la bibliographie antérieure au CIL.</label>
+            <item><ref target="supp-bibliography.html">Bibliography</ref></item>
+            <label>Texte : on donne d'abord ligne par ligne, avec alignement à gauche, le texte en capitales avec les signes séparatifs. Il permet de se faire clairement une idée de ce qui a été lu et doit être considéré comme un état de l'information scientifique. On transcrit ensuite, ligne par ligne, avec alignement à gauche, l'inscription en minuscules, sans redonner les signes séparatifs, mais avec la ponctuation ordinaire d'un texte littéraire latin.</label>
+            <item><ref target="app-alltrans.html">Transcription guidelines</ref></item>
+            <label>Apparat critique : on ne donne ordinairement pas les lectures antérieures au CIL, sauf lorqu'elles mérite quelques considérations, notamment pour les inscriptions aujourd'hui perdues</label>
+            <item><ref target="supp-apparatus.html">External apparatus criticus</ref></item>
+            <label>Traduction</label>
+            <item><ref target="supp-translation.html">Translation</ref></item>
+            <label>Photos</label>
+            <item><ref target="supp-images.html">Figures or facsimile</ref></item>
+        </list>
     </div>
     
     <!-- can have div's or p's  here. Divs are for subsections. -->
