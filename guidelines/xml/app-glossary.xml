@@ -29,13 +29,36 @@ End license statement: do not remove -->
     <head>Appendix: Glossary</head>
     
     <list type="gloss">
-        <label>Morpheus</label>
+        <label xml:id="leiden">Leiden, Leiden Conventions</label>
+        <item>A set of rules for the encoding of classical epigraphic and papyrological texts
+        using simple, arbitrary and unambiguous symbols to represent editorial observations
+        and interventions, e.g. '[' and ']' for lost text (restored or lacuna). There are several minor variations
+        on Leiden now in use (<ref target="app-epi-panciera.html">Krummrey-Panciera</ref>
+        and <ref target="app-epi-petrae.html">PETRAE</ref> perhaps prominent among them).
+        A good summary of Leiden can be found at
+        <ref target="http://en.wikipedia.org/wiki/Leiden_Conventions">en.wikipedia.org/wiki/Leiden_Conventions</ref></item>
+        <label xml:id="leidenplus">Leiden+ (Leiden-plus)</label>
+        <item>Leiden+ is a system of text markup, based very closely on <ref target="#leiden">Leiden</ref>
+        but including new signs and combinations for complex apparatus markup, for example, devised for the
+        Papyrological Editor's "tags-free" editing environment. Full description and documentation of Leiden+
+        is at <ref target="http://papyri.info/editor/help">papyri.info/editor/help</ref>.</item>
+        <label xml:id="morpheus">Morpheus</label>
         <item>The Morpheus morphological analysis service is a tool originally developed by Perseus,
             versions of which are in use by Papyri.info and the TLG for lemmatizing their Greek texts.
             The Perseus version of the tool also caters for Latin and Arabic lemmatization.
             [<ref target="https://wiki.projectbamboo.org/display/BDOC/Morphological+Analysis+Service"
                 >Reference page for Morphological Analysis Service</ref>]
         </item>
+        <label xml:id="tei">TEI</label>
+        <item>Text Encoding Initiative. Guidelines and tools for the encoding of literary and historical texts
+        in <ref target="#xml">XML</ref>. It is the format on which EpiDoc is based. The latest TEI Guidelines
+        can be found online at
+            <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html</ref>.</item>
+        <label xml:id="xml">XML</label>
+        <item>Extensible Markup Language. A text-based encoding format that allows the structured
+        encoding of text or data in human- and machine-readable format. It is the technical basis of both
+        <ref target="#tei">TEI</ref> and EpiDoc, and is a standard maintained by the World-wide Web Consortium. See
+            <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref> for the spec and further description.</item>
     </list>
     
     
