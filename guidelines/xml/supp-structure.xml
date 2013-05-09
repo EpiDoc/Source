@@ -25,7 +25,10 @@ End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-structure" xml:lang="en">
+<div xmlns="http://www.tei-c.org/ns/1.0" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xml:id="supp-structure" 
+    xml:lang="en">
     <head>Structure of an EpiDoc edition</head>
     <p>This section introduces the structure and shape of an EpiDoc edition, 
         introducing the TEI P5 approach to manuscript description and history,
@@ -46,65 +49,7 @@ End license statement: do not remove -->
         inscription might look something like:</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <TEI>
-            <teiHeader>
-                <fileDesc>
-                    <titleStmt><title>title of inscription</title></titleStmt>
-                    <publicationStmt><idno type="filename"></idno></publicationStmt>
-                    <sourceDesc>
-                        <msDesc>
-                            <msIdentifier><repository>museum/archive</repository><idno>inventory number</idno></msIdentifier>
-                            <physDesc>
-                                <objectDesc>
-                                    <supportDesc>
-                                        <support>description of object/monument (likely to include <material/>
-                                        and <objectType/> information, <dimensions/>, etc.)</support>
-                                    </supportDesc>
-                                    <layoutDesc>
-                                        <layout>description of text field/campus</layout>
-                                    </layoutDesc>
-                                </objectDesc>
-                                <handDesc>
-                                    <handNote>description of letters, possibly including <height>letter-heights</height></handNote>
-                                </handDesc>
-                            </physDesc>
-                            <history>
-                                <origin>
-                                    <origPlace>Place of origin</origPlace>
-                                    <origDate>Date of origin</origDate>
-                                </origin>
-                                <provenance type="found">
-                                    Findspot and circumstances/context
-                                </provenance>
-                                <provenance type="observed">
-                                    modern location(s) (if different from repository, above)
-                                </provenance>
-                            </history>
-                        </msDesc>
-                    </sourceDesc>
-                </fileDesc>
-            </teiHeader>
-            <facsimile><graphic url="photograph of text or monument"/></facsimile>
-            <text>
-                <body>
-                    <div type="edition">
-                        <ab>Greek or Latin (etc.) text here</ab>
-                    </div>
-                    <div type="apparatus">
-                        <p>external apparatus criticus (if applicable)</p>
-                    </div>
-                    <div type="translation">
-                        <p>translation(s)</p>
-                    </div>
-                    <div type="commentary">
-                        <p>commentary</p>
-                    </div>
-                    <div type="bibliography">
-                        <p>bibliography of previous editions, discussion, etc.</p>
-                    </div>
-                </body>
-            </text>
-        </TEI>
+        <xi:include href="ex-epidoctemplate.xml"/>
     </egXML>
     
     <div xml:id="supp-structure-responsibility">    
