@@ -26,61 +26,71 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="toc" xml:lang="en">
-    <head>EpiDoc Guidelines</head>
-    <head type="subtitle">Ancient documents in TEI XML</head>
-    
-        <p>The Encoding Guidelines themselves contain descriptions of the textual, descriptive and other
-        features that are often recorded in Epidoc, and the elements and attributes that are used to 
-        encode them.
-        They are divided into three sections: 
-        encoding descriptive and other information about the document and text-bearing object;
-        encoding transcriptions of epigraphic and other texts;
-        and encoding the vocabularies and other data used for indexing, searching and concording the editions. 
-        Within each major section, elements and their attributes are organized thematically, but there are
-        potentially more useful entry-points into this information from the communities of practice indices.</p>
-    <p>In order to make it easier for different disciplinary groups or communities of practice to use the
-        Epidoc Guidelines, this section provides targetted approaches. These provide customized strategies
-        and overall structures, as well as specific mappings from known conventions to EpiDoc features.</p>
-    
+    <head>EpiDoc Guidelines: Ancient documents in TEI XML</head>
+
+    <p>EpiDoc is an international, collaborative effort that provides guidelines and tools for encoding scholarly and
+        educational editions of ancient documents. These are the <title>Guidelines</title> produced by the
+        collaborative. In addition, the <ref target="http://epidoc.sf.net">EpiDoc Website</ref> provides access to all
+        the tools and collaboration environments supported by the collaborative.</p>
+
+    <p>EpiDoc uses a subset of the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html">Text
+            Encoding Initiative's (TEI) standard</ref> for the representation of texts in digital form using the <ref
+            target="http://en.wikipedia.org/wiki/XML">Extensible Markup Language (XML)</ref>, a technical standard
+        promulgated by the World-Wide Web Consortium. It addresses not only the transcription and editorial preparation
+        of the texts themselves, but also the the history and materiality of the objects on which the texts appear.</p>
+
+    <p>These <title>Guidelines</title> contain descriptions of the textual, descriptive, and other features that are
+        often expressed with EpiDoc, as well as the TEI elements and attributes that are used to encode them. The links
+        below provide a number of entry points into the full document and should be thought of more as a series of
+        thematic indexes into the content of the <title>Guidelines</title>, rather than a single "Table of Contents" that reflects an
+        ordered, hierarchical document structure.</p>
+
+    <div>
+        <head>Browse Guidelines</head>
         <div>
-            <head>Browse Guidelines</head>
-            <div>
-                <head>All guidelines pages:</head>
-                <list>
-                    <item><ref target="app-alltrans.html">Transcription Guidelines</ref></item>
-                    <item><ref target="app-allsupp.html">Supporting Data Guidelines</ref></item>
-                    <item><ref target="app-allidx.html">Vocabularies and Indexing Guidelines</ref></item>
-                </list>
-            </div>
-        
-            <div>
-                <head>Guidelines for specialized communities:</head>
-                <list>
-                   <item><ref target="app-epi-panciera.html">Text transcription following Krummrey-Panciera 1980</ref></item>
-                    <item><ref target="app-epi-petrae.html">Text transcription following PETRAE</ref></item>
-                    <item><ref target="app-papy-ddbdp.html">Text transcription following DDbDP</ref></item>
-                   <item><ref target="app-epi-edh.html">Supporting data following EDH</ref></item>
-                    <item><ref target="app-papy-ddbdp.html">Supporting data following HGV</ref></item>
-                    <item><ref target="app-papy-ddbdp.html">Supporting data following APIS</ref></item>
-                 </list>
-            </div>
-        </div>
-    
-        <div>
-            <head>Appendices</head>
+            <head>All guidelines pages:</head>
             <list>
-                <item><ref target="intro-eps.html">Introduction for Epigraphers</ref></item>
-                <!--<item><ref target="app-unicode.html">Unicode</ref></item>-->
-                <item><ref target="app-bibliography.html">Bibliography</ref></item>
-                <item><ref target="app-glossary.html">Glossary</ref></item>
+                <item><ref target="app-alltrans.html">Transcription Guidelines</ref></item>
+                <item><ref target="app-allsupp.html">Supporting Data Guidelines</ref></item>
+                <item><ref target="app-allidx.html">Vocabularies and Indexing Guidelines</ref></item>
             </list>
         </div>
-        
-    <div xml:id="toc-responsibility">    
+
+        <div>
+            <head>Guidelines for specialized communities:</head>
+            <list>
+                <item><ref target="app-epi-panciera.html">Text transcription following Krummrey-Panciera
+                    1980</ref></item>
+                <item><ref target="app-epi-petrae.html">Text transcription following PETRAE</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Text transcription following DDbDP</ref></item>
+                <item><ref target="app-epi-edh.html">Supporting data following EDH</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Supporting data following HGV</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Supporting data following APIS</ref></item>
+            </list>
+        </div>
+    </div>
+
+    <div>
+        <head>Appendices</head>
+        <list>
+            <item><ref target="intro-eps.html">Introduction for Epigraphers</ref></item>
+            <!--<item><ref target="app-unicode.html">Unicode</ref></item>-->
+            <item><ref target="app-bibliography.html">Bibliography</ref></item>
+            <item><ref target="app-glossary.html">Glossary</ref></item>
+        </list>
+    </div>
+
+    <div xml:id="toc-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Elli Mylonas</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
