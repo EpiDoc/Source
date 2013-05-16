@@ -56,7 +56,8 @@ public class HellasParser extends AbstractGreekParser {
         strb.delete(0,strb.length());
         if (in != null) {
             char ch = chArray[index];
-            System.out.println("\nCharacter: '" + String.valueOf(ch) + "'");
+            //System.out.println("\nCharacter: '" + ch + "'");
+            //System.out.println("Unicode: " + Integer.toHexString(ch | 0x10000).substring(1));
             index++;
             map.clear();
             escape.delete(0,escape.length());
@@ -65,20 +66,26 @@ public class HellasParser extends AbstractGreekParser {
             if (hasNext() && isHellasPrefix(ch)) {
                 // Prefix
                 escape.append(chArray[index]);
+                //System.out.println("Prefix; added caracter: '" + chArray[index] + "'");
+                //System.out.println("Unicode: " + Integer.toHexString(chArray[index] | 0x10000).substring(1));
+
                 index++;
 
                 if(hasNext() && isHellasPrefix(chArray[index])) {
                     // Second Level Prefix
                     escape.append(chArray[index]);
+                    //System.out.println("Prefix; added caracter: '" + chArray[index] + "'");
+                    //System.out.println("Unicode: " + Integer.toHexString(chArray[index] | 0x10000).substring(1));
+
                     index++;
                 }
             }
 
-            System.out.println("length : " + escape.length());
+            //System.out.println("length : " + escape.length());
 
             while (escape.length() > 0) {
                 String result = lookup(escape.toString());
-                System.out.println("Looked up: '" + escape.toString() + "' of length: " + result.length());
+                //System.out.println("Looked up: '" + escape.toString() + "' of length: " + result.length());
                 if (result.equals(escape.toString())) {
                     escape.deleteCharAt(escape.length() - 1);
                     index -= 1;
@@ -90,17 +97,17 @@ public class HellasParser extends AbstractGreekParser {
 
             if (strb.length() == 0) {
                 if(isPunctuation(ch) || Character.isWhitespace(ch) || Character.isDigit(ch)) {
-                    System.out.println("Puctuation or whitespace or digit");
+                    //System.out.println("Puctuation or whitespace or digit");
                     strb.append(ch);
                     index++;
                 } else {
                     strb.append('?');
-                    System.out.println("Je ne comprends pas!");
+                    //System.out.println("Je ne comprends pas!");
                     index++;
                 }
             }
         }
-        System.out.println("Returns: '" + strb + "'");
+        //System.out.println("Returns: '" + strb + "'");
         return strb.toString();
     }
 
