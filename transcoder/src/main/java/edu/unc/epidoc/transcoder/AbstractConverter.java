@@ -15,7 +15,7 @@ import java.util.*;
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
  */
 public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Converter {
-    
+
     /** Convert the input String to a String in the desired encoding with
      * characters greater than 127 escaped as XML character entities.
      * @param in The String to be converted
@@ -23,14 +23,14 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
      *
      */
     public abstract String convertToCharacterEntities(Parser in);
-    
+
     /** Convert the input String to a String in the desired encoding.
      * @param in The String to be converted.
      * @return The converted String.
      *
      */
     public abstract String convertToString(Parser in);
-    
+
     /** Returns the encoding method supported by this <CODE>Converter</CODE>.
      * @return The encoding.
      *
@@ -38,7 +38,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
     public String getEncoding() {
         return new String(encoding);
     }
-    
+
     /** Provides a means of querying the <CODE>Converter</CODE>'s properties.
      * @param name The name of the property to be queried.
      * @return The value of the property.
@@ -49,9 +49,11 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
             return new Boolean(unrec.equals(""));
         if ("supported-languages".equals(name))
             return languages;
+        if ("supported-fonts".equals(name))
+            return fonts;
         return null;
     }
-    
+
     /** Provides a mechanism for setting properties that alter the
      * processing behavior of the <CODE>Converter</CODE>.
      * @param name The property name.
@@ -71,7 +73,7 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
                 languages = (String[])value;
         }
     }
-    
+
     /** Provides a method of checking whether the Converter supports a
      * particular language.
      * @param lang The language code.
@@ -84,7 +86,29 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
                 return true;
         return false;
     }
-    
+
+    /** Provides a method of checking whether the Converter supports a
+     * particular font.
+     * @param font The name of the Font.
+     * @return Whether the font is supported.
+     *
+     */
+    public boolean supportsFont(String font) {
+        for (int i = 0; i < fonts.length; i++)
+            if (fonts[i].equalsIgnoreCase(font))
+                return true;
+        return false;
+    }
+
+    /** Returns the first supported font
+     */
+    public String getDefaultFont() {
+        if (fonts.length > 0) {
+            return fonts[0];
+        }
+        return null;
+    }
+
     protected String[] split(String str) {
         StringTokenizer st = new StringTokenizer(str, "_");
         int tokenCount = st.countTokens();
@@ -94,10 +118,11 @@ public abstract class AbstractConverter implements edu.unc.epidoc.transcoder.Con
         }
         return result;
     }
-    
+
     protected String encoding = "UTF8";
     protected String[] languages;
+    protected String[] fonts;
     protected String unrecognizedChar = "?";
     protected String unrec = unrecognizedChar;
-    
+
 }

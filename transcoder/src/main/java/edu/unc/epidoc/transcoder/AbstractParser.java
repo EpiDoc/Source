@@ -13,16 +13,17 @@ import java.io.UnsupportedEncodingException;
  * New <CODE>Parser</CODE>s can be created by extending this class.
  * @author Hugh A. Cayless (hcayless@email.unc.edu)
  */
-public abstract class AbstractParser implements Parser {    
-    
+public abstract class AbstractParser implements Parser {
+
     protected String encoding = "UTF8";
     protected String[] languages;
-    
+    protected String[] fonts;
+
     protected char[] chArray;
     protected int index;
     protected int length;
     protected String in;
-    
+
     /** Returns the encoding method supported by this <CODE>Parser</CODE>.
      * @return The encoding.
      *
@@ -30,18 +31,20 @@ public abstract class AbstractParser implements Parser {
     public String getEncoding() {
         return new String(encoding);
     }
-    
+
     /** Provides a means of querying the <CODE>Parser</CODE>'s properties.
      * @param name The name of the property to be queried.
      * @return The value of the property.
      *
      */
     public Object getProperty(String name) {
-        if ("supported-languages".equals(name)) 
+        if ("supported-languages".equals(name))
             return languages;
+        if ("supported-fonts".equals(name))
+            return fonts;
         return null;
     }
-    
+
     /** Provides a means of checking whether anything remains to
      * be parsed from the input String.
      * @return Whether or not anything remains to be parsed.
@@ -53,13 +56,13 @@ public abstract class AbstractParser implements Parser {
         else
             return false;
     }
-    
+
     /** Returns the next parsed character as a String.
      * @return The name of the parsed character.
      *
      */
     public abstract String next();
-    
+
     /** Provides a mechanism for setting properties that alter the
      * processing behavior of the <CODE>Converter</CODE>.
      * @param name The property name.
@@ -72,10 +75,10 @@ public abstract class AbstractParser implements Parser {
                 languages = (String[])value;
         }
     }
-    
+
     /** Sets the <CODE>String</CODE> to be parsed.
      * @param in The <CODE>String</CODE> to be parsed.
-     * @throws java.io.UnsupportedEncodingException 
+     * @throws java.io.UnsupportedEncodingException
      *
      */
     public void setString(String in) throws UnsupportedEncodingException{
@@ -84,14 +87,14 @@ public abstract class AbstractParser implements Parser {
         index = 0;
         length = chArray.length;
     }
-    
+
     public void setStringBuffer(StringBuffer in, int start, int len) {
         this.in = in.toString();
         this.chArray = this.in.toCharArray();
         index = start;
         length = len + start;
     }
-    
+
     /** Provides a method of checking whether the <CODE>Parser</CODE> supports a
      * particular language.
      * @param lang The language code.
@@ -104,5 +107,27 @@ public abstract class AbstractParser implements Parser {
                 return true;
         return false;
     }
-    
+
+
+    /** Provides a method of checking whether the <CODE>Parser</CODE> supports a
+     * particular font.
+     * @param font The name of the Font.
+     * @return Whether the font is supported.
+     *
+     */
+    public boolean supportsFont(String font) {
+        for (int i = 0; i < fonts.length; i++)
+            if (fonts[i].equalsIgnoreCase(font))
+                return true;
+        return false;
+    }
+
+    /** Returns the first supported font
+     */
+    public String getDefaultFont() {
+        if (fonts.length > 0) {
+            return fonts[0];
+        }
+        return null;
+    }
 }
