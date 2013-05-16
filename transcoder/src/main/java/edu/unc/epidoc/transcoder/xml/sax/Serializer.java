@@ -166,6 +166,7 @@ public class Serializer
 
     protected boolean milestone = false;
 
+    protected boolean fStandalone = false;
     //
     // Constructors
     //
@@ -203,6 +204,11 @@ public class Serializer
              ? (PrintWriter)writer : new PrintWriter(writer);
 
     } // setOutput(java.io.Writer)
+
+    /** Sets whether output is standalone. */
+    public void setStandalone(boolean standalone) {
+        fStandalone = standalone;
+    } // setStandalone(boolean)
 
     //
     // ContentHandler methods
@@ -272,11 +278,16 @@ public class Serializer
                 fOut.print(fXML11 ? "1.1" : "1.0");
                 fOut.print("\" encoding=\"");
                 fOut.print(encoding);
+
+                if (fStandalone) {
+                    fOut.print("\" standalone=\"yes");
+                }
+
                 fOut.println("\"?>");
                 fOut.print(dtd);
                 fOut.flush();
             }
-            
+
         }
 
         fElementDepth++;
