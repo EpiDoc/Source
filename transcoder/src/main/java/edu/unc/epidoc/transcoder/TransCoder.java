@@ -8,6 +8,7 @@
 package edu.unc.epidoc.transcoder;
 
 import edu.unc.epidoc.transcoder.xml.sax.TranscodingContentHandler;
+import edu.unc.epidoc.transcoder.xml.sax.TranscodingWordContentHandler;
 import edu.unc.epidoc.transcoder.xml.sax.Serializer;
 
 import java.io.*;
@@ -31,8 +32,8 @@ import org.xml.sax.helpers.*;
  *  TransCoder tc = new TransCoder("GreekKeys", "UnicodeC");
  *  String result = tc.getString(new File("C:/temp/test.txt"));
  * </PRE>
- * 
- * Invoking the Transcoder against a String:	
+ *
+ * Invoking the Transcoder against a String:
  * <PRE>
  *    String source = "A)/NDRA MOI E)/NNEPE, MOU=SA";
  *    TransCoder tc = new TransCoder();
@@ -285,6 +286,22 @@ public class TransCoder {
     reader.parse(is);
   }
 
+  public void writewordXML(File source, OutputStream out) throws Exception {
+    TranscodingWordContentHandler handler = new TranscodingWordContentHandler();
+    Serializer serializer = new Serializer();
+    serializer.setStandalone(true);
+    serializer.setOutput(out, "UTF-8");
+    XMLReader reader = XMLReaderFactory.createXMLReader();
+    reader.setContentHandler(handler);
+    reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
+    reader.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
+    reader.setFeature("http://xml.org/sax/features/validation", false);
+    handler.setup(serializer, serializer, this);
+    InputSource is = new InputSource(new java.io.FileInputStream(source));
+    is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
+    reader.parse(is);
+  }
+
   /** Get the result <CODE>String</CODE> from the input <CODE>String</CODE>.
    * Characters with codes above 127 will be returned as XML character entities.
    * @param in The <CODE>String</CODE> to be transcoded.
@@ -298,8 +315,8 @@ public class TransCoder {
 
   /**
    * Main method for the Transcoder class when launched from the command line.
-   * @param args An array consisting either of: a String to be transcoded plus 
-   * the source and result encodings, or: a source file, a result file, plus 
+   * @param args An array consisting either of: a String to be transcoded plus
+   * the source and result encodings, or: a source file, a result file, plus
    * the source and result encodings.
    */
   public static void main(String[] args) {
@@ -310,6 +327,7 @@ public class TransCoder {
       File tmpSource = null;
       File result = null;
       boolean xmlMode = false;
+      boolean wordxmlMode = false;
       boolean textMode = !xmlMode;
       String filter = null;
       boolean recurse = false;
@@ -329,10 +347,18 @@ public class TransCoder {
             tc.setConverter(args[++i]);
           }
           if (args[i].equals("-x")) {
+            wordxmlMode = false;
             xmlMode = true;
             textMode = false;
           }
+          if (args[i].equals("-w")) {
+            wordxmlMode = true;
+            xmlMode = false;
+            textMode = false;
+          }
+
           if (args[i].equals("-t")) {
+            wordxmlMode = false;
             textMode = true;
             xmlMode = false;
           }
@@ -353,6 +379,7 @@ public class TransCoder {
             System.out.println("-se  The source encoding (default BetaCode).");
             System.out.println("-oe  The output encoding (default UnicodeC).");
             System.out.println("-x   Use XML mode.  Treat the source and result files as XML.  Not needed if the files have a .xml suffix.");
+            System.out.println("-w   Use Word XML mode.  Treat the source and result files as word XML. Transcode only paragraphs formatted in the appropriate font");
             System.out.println("-t   Use text mode. Treat all files as plain text, regardless of their extension.");
             System.out.println("-f   A filter to be used in determining what files to process, e.g. 'xml' for files ending with '.xml'.");
             System.out.println("-r   Recursively process the input folder.  '-o' is ignored if this flag is used.");
@@ -410,8 +437,10 @@ public class TransCoder {
             try {
               File tmp = File.createTempFile("trc", "tmp");
               FileOutputStream fos = new FileOutputStream(tmp);
-              if ((files[i].getName().endsWith(".xml") && !textMode) || xmlMode) {
+              if ((files[i].getName().endsWith(".xml") && !textMode && !wordxmlMode) || xmlMode) {
                 tc.writeXML(files[i], fos);
+              } else if (wordxmlMode) {
+                tc.writewordXML(files[i], fos);
               } else {
                 tc.write(new FileInputStream(files[i]), fos);
               }
@@ -435,8 +464,10 @@ public class TransCoder {
           } else {
             fos = new FileOutputStream(result);
           }
-          if ((source.getName().endsWith(".xml") && !textMode) || xmlMode) {
+          if ((source.getName().endsWith(".xml") && !textMode && !wordxmlMode) || xmlMode) {
             tc.writeXML(source, fos);
+          } else if (wordxmlMode) {
+            tc.writewordXML(source, fos);
           } else {
             tc.write(new FileInputStream(source), fos);
           }
