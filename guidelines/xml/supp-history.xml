@@ -26,57 +26,86 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-history" xml:lang="en">
-    <head>History, dating and locations of object</head>
-    <p>Information on the provenance, history and modern location of the monument, when known.
-        Encoded in the <gi>history</gi> element, part of the <gi>msDesc</gi>. Depending on the information available, 
-        the following subsections could be used:</p>
+    <head>Provenance of the text-bearing object</head>
     <!-- can have div's or p's  here. Divs are for subsections. -->
-    <list>
-        <item><ref target="supp-historigdate.html">Date of origin</ref></item>
-        <item><ref target="supp-histinvno.html">Inventory numbers and repository</ref></item>
-        <item><ref target="supp-histlocations.html">Locations</ref>:
-            <list>
-                <item><ref target="supp-historigin.html">Original location or locations</ref></item>
-                <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
-                <item><ref target="supp-histmodern.html">Last known location, other modern locations</ref></item>
-            </list>
-        </item>
-    </list>
-    
-    <p>If detailed historical, dating and provenance information is not known (e.g. for an object or manuscript long held in
-    a repository or private collection), a general description of the history of the object may be given in one or more <gi>p</gi>
-    element rather than the structured elements described in these sections.</p>
-    
+
+    <p>EpiDoc provides for both detail and flexibility in describing what is known or recorded about the origin and
+        subsequent history of a text-bearing object. This information is collected in a <gi>history</gi> element that is
+        part of the <gi>msDesc</gi> in the <gi>teiHeader</gi>. Within <gi>history</gi>, one first encodes an
+            <gi>origin</gi> element, which is used to lay out what is known about the date(s) and location(s) associated
+        with the original (historic) creation and publication of the object (the <gi>origDate</gi> and
+            <gi>origPlace</gi> elements are provided for each of these purposes).</p> 
+    <p>After the <gi>origin</gi> element, the editor may create one or more <gi>provenance</gi> elements, each of which
+        describes a discrete event in the history of the object, capturing whatever is known and relevant in the way of
+        temporal and spatial information. Examples of provenance events include: (modern) place and date of finding or
+        subsequent observation and recording.</p>
+    <p>Here is an example adapted from the 
+        <ref target="http://insaph.kcl.ac.uk/iaph2007/">Inscriptions of Aphrodisias</ref> project:</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <history> 
+        <history>
             <origin>
-                <origDate>Second to third centuries C.E.</origDate> 
-                <origPlace>
-                    <placeName type="ancientFindspot">Aphrodisias</placeName>: probably in the grounds of the Temple of Aphrodite. 
-                </origPlace>
+                <origDate>Second to third centuries C.E.</origDate>
+                <origPlace><placeName type="ancient">Aphrodisias</placeName>: probably in the grounds of the 
+                    Temple of Aphrodite.</origPlace>
             </origin>
             <provenance type="found" when="1968">
-                <p>Re-used in the City Walls.</p>
+                <p>Re-used in the City Walls of <placeName type="ancient">Aphrodisias</placeName>.</p>
             </provenance>
             <provenance type="observed" when="2012">
                 <p>Aphrodisias Museum.</p>
             </provenance>
         </history>
     </egXML>
-    
+    <p>If detailed historical, dating and provenance information is not known (e.g. for an object or manuscript long
+        held in a repository or private collection), a general description of the history of the object may be given in
+        one or more <gi>p</gi> element (as shown below) rather than using the structured elements described above.</p>
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <history>
-            <p>The stone may have been in the private collection of Pr Cresson, who invited Louis Robert 
-                to read and translate the inscription. Robert recorded no information on its provenance and its
-                later whereabouts are unknown. It has never emerged on the antiquities market.</p>
+            <p>The stone may have been in the private collection of Pr Cresson, who invited Louis Robert to read and
+                translate the inscription. Robert recorded no information on its provenance and its later whereabouts
+                are unknown. It has never emerged on the antiquities market.</p>
         </history>
     </egXML>
-    
+
+    <p>More detailed discussion and specific examples (e.g., for dealing with a range of possible places of origin or
+        fragmentary objects whose component parts have been separated in modern times) see the following sections of the
+        guidelines:</p>
+    <list>
+        <item><ref target="supp-historigdate.html">Date of origin</ref></item>
+        <item><ref target="supp-histlocations.html">Locations</ref>: <list>
+                <item><ref target="supp-historigin.html">Original location or locations</ref></item>
+                <item><ref target="supp-histfound.html">Place and context of finding</ref></item>
+                <item><ref target="supp-histmodern.html">Last known location, other modern locations</ref></item>
+            </list>
+        </item>
+    </list>
+    <p>Note that inventory numbers, repository information and related indicia are treated in a separate part of
+            <gi>msDesc</gi> (a sibling element of <gi>history</gi> called <gi>msIdentifier</gi>). The encoding of this
+        information is described in the <ref target="supp-histinvno.html">Inventory numbers and repository</ref>
+        section.</p>
+
+
+
+
+
     <div xml:id="supp-history-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Simona Stoyanova</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>
