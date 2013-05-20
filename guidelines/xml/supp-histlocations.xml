@@ -28,12 +28,12 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histlocations" xml:lang="en">
     <head>Dates and locations of modern observations</head>
     <p>NB: Guidance for encoding information about the original and historical disposition of the text-bearing object is
-        provided in the sections on <ref target="supp-historigin.html">Original location of the text-bearing object</ref>
-        and <ref target="supp-historigdate.html">Original date of text and/or object</ref>.</p>
-    <p>It is customary in producing an edition of a pre-modern manuscript, papyrus, inscription, and the like to
-        enumerate the occasions on which modern persons encountered and reported seminal information about the
-        text-bearing object, its condition and disposition, etc., together with associated bibliographic reference. The
-        initial such observation is often the occasion of finding, sometimes in situ, sometimes in circumstances or
+        provided in the sections on <ref target="supp-historigin.html">Original location of the text-bearing
+            object</ref> and <ref target="supp-historigdate.html">Original date of text and/or object</ref>.</p>
+    <p>It is customary in producing an edition of a pre-modern manuscript, papyrus, inscription, or other text-bearing
+        object to enumerate the occasions on which modern persons encountered and reported seminal information about the
+        object, its condition and disposition, etc., together with associated bibliographic references where possible.
+        The initial such observation is often the occasion of finding, sometimes in situ, sometimes in circumstances or
         reuse, sometimes already in the context of a modern collection. There follow other observations, culminating in
         the "last observed location" or "current location."</p>
     <p>Following general TEI guidance, EpiDoc treats each such observation as a discrete event in space and time, and
@@ -49,47 +49,12 @@ End license statement: do not remove -->
             used to encode a modern observation event during which the editor (i.e., the person creating the present
             edition) personally examined the object</item>
     </list>
-    <p>Locations may be tagged in various contexts in the description of the text-bearing object: in <gi>origPlace</gi>,
-            <gi>provenance</gi> (for find-place or modern locations). This page describes the issues that all of these
-        locations share, rather than duplicating them in each section. </p>
-    <p>
-        <specList>
-            <specDesc key="place"/>
-            <specDesc key="placeName"/>
-            <specDesc key="geogName"/>
-        </specList>
-    </p>
-    <p>Placenames and geognames can be identified in several different ways. One way is with a <gi>ref</gi> which points
-        to the an internal gazetteer. Another option is to link to an external database (<ref
-            target="http://pleiades.stoa.org/">Pleiades</ref>, <ref target="http://www.geonames.org/"
-        >Geonames</ref>).</p>
-
-    <p>For specific types of placenames see the following subsections: </p>
+    <p>A general example is provided in the main section on <ref target="supp-history.html">Provence of the text-bearing object</ref>. Specific guidance for
+        each type of provenance event is provided in its own section as follows:</p>
     <list>
-        <item><ref target="supp-historigin.html">original location</ref></item>
-        <item><ref target="supp-histfound.html">place of finding</ref></item>
-        <item><ref target="supp-histmodern.html">modern locations</ref></item>
+        <item><ref target="supp-histfound.html">Discovery (finding, findspot)</ref></item>
+        <item><ref target="supp-histmodern.html">Observation and autopsy, including "current/last location"</ref></item>
     </list>
-
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <origPlace ref="origPlace.xml#p003">
-            <seg xml:lang="ru">Херсон</seg>
-            <seg xml:lang="en">Chersonesos</seg>
-        </origPlace>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <geogName type="modernCountry" key="LY">Libya</geogName>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <placeName type="ancientFindspot" ref="http://pleiades.stoa.org/places/373732" key="db911">Apollonia</placeName>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <placeName type="modernFindspot" ref="http://sws.geonames.org/81584">Marsa Suza</placeName>
-    </egXML>
 
     <div xml:id="supp-histlocations-responsibility">
         <head>Responsibility for this section</head>
@@ -103,11 +68,11 @@ End license statement: do not remove -->
                     <name>Simona Stoyanova</name>
                 </respStmt></bibl>
             <bibl><respStmt>
-                <resp>author</resp>
-                <name>Tom Elliott</name>
-            </respStmt></bibl>
-            
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt></bibl>
+
         </listBibl>
-        
+
     </div>
 </div>

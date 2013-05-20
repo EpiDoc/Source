@@ -27,60 +27,60 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histfound" xml:lang="en">
     <head>Findspot and find context</head>
-    <p>(provenance)</p>
 
-    <p>All matters related to the provenance of a document are encoded in the Manuscript Description
-            (<tag>msDesc</tag>) portion of the TEI header. In particular, they are placed within the
-            <tag>history</tag> subsection.</p>
-        
-        <p>See further: <list>
-                <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mshy"
-                        >TEI Guidelines, sub "History"</ref>.</item>
-                <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-historigin"
-                        >EpiDoc Guidelines, sub "Original Location of Object"</ref></item>
-                <item><ref target="http://www.stoa.org/epidoc/gl/dev/markup.html#supp-histmodern"
-                        >EpiDoc Guidelines, sub "Modern or last known locations"</ref></item>
-            </list></p>
-    <p>Within the <tag>history</tag> subsection, relevant information is grouped by "events" in the
-        life of the document. Information related to the finding of a document and the associated
-        context is presented in one or more <tag>event type="found"</tag> elements. Generally, there
-        will only be one such element, unless separate fragments of the document were found in
-        different locations. The information within each <tag>event</tag> element can take the form
-        of one or more paragraphs of prose, or of a list (with appropriate TEI tags used as
-        necessary). As appropriate, place names, personal names and other information worthy of
-        indexing, linking or querying should be tagged appropriately (e.g., with
-        <tag>persName</tag>, <tag>placeName</tag>, etc.). Note the following examples.</p>
+    <p>All matters related to the provenance of a document are encoded in the Manuscript Description (<gi>msDesc</gi>)
+        portion of the TEI header. In particular, they are placed within the <gi>history</gi> subsection (see further
+            <ref target="supp-history.html">the general section on provenance</ref>.</p>
+
+    <p>Standard EpiDoc files include all relevant spatial, temporal, and circumstantial information about the initial
+        discovery of a text-bearing object in a <gi>provenance</gi> tag with a <att>type</att> attribute bearing the
+        value "found". Generally, there will only be one such element, unless separate fragments of the document were
+        found in different locations. The information within each <gi>provenance</gi> element can take the form of one
+        or more paragraphs of prose, or of a list (with appropriate TEI tags used as necessary). Sometimes circumstances
+        and editorial approach will dictate that the contents of <gi>provenance</gi> element be largely prose; other
+        times a more data-oriented encoding approach may be indicated. In either case, best practice is to tag place
+        names, personal names and other information worthy of indexing, linking or querying appropriately (e.g., with
+            <gi>persName</gi>, <gi>placeName</gi>, etc.).</p>
 
     <div>
-        <head>Example from the Corpus of Campa Inscriptions project</head>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <head>Examples</head>
+
+        <p>Here is an example adapted from a milestone published in <ref target="http://irt.kcl.ac.uk/irt2009/index.html">The Inscriptions of Roman Tripolitania</ref>:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <provenance type="found">
+                <placeName key="db648">Coast Road: Oea-Lepcis Magna</placeName>: <rs type="monuList" key="db669">Gasr
+                    Garabulli</rs>: in the Concessione Gherardi, 1 km. West of the village. </provenance>
+        </egXML>
         
-        <event type="found">
-            <p>
-                <list>
-                    <item>Village: 
-                        <placeName type="village" 
-                            ref="http://www.geonames.org/1580102/huong-que-2.html"
-                            >Hương Quê</placeName> (Thôn 6)</item>
-                    <item>Commune: 
-                        <placeName type="commune" notBefore="2008">Hương An</placeName> 
-                        (before 2008 : 
-                        <placeName type="commune" notAfter="2007">Quế Phú</placeName>)</item>
-                    <item>District: 
-                        <placeName type="district" 
-                            ref="http://www.geonames.org/1905520/huyen-que-son.html"
-                            >Quế Sơn</placeName></item>
-                    <item>Province: 
-                        <placeName type="province" 
-                            ref="http://www.geonames.org/1905516/tinh-quang-nam.html"
-                            >Quảng Nam</placeName></item>
-                    <item>Country: 
-                        <placeName type="country" 
-                            ref="http://www.geonames.org/1905516/tinh-quang-nam.html">
-                            Vietnam</placeName></item>
-                </list></p>
-        </event>
-    </egXML></div>
+        <p>And another adapted from an ostracon published in <ref target="http://papyri.info">Papyri.info</ref>:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <provenance type="found">
+                Roman dump at <placeName ref="http://pleiades.stoa.org/places/785986">Berenike</placeName>.
+            </provenance>
+        </egXML>
+        
+        <p>And a third from the <ref target="http://isaw.nyu.edu/publications/inscriptions/campa/">Corpus of the Inscriptions of Cāmpa</ref> project, 
+            demonstrating the use of standard TEI date attributes to indicate the timing of the discovery:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <provenance type="found" notAfter="1999">
+                <ab>
+                    It seems that this piece was part of the private collection of Mr. Vũ Kim Lộc in Hồ Chí 
+                    Minh City at least until 1999, when Anne-Valérie Schweyer published a study of other 
+                    objects in the same collection (<ref target="C0205.xml">C. 205</ref>,
+                    <ref target="C0206.xml">C. 206</ref>,
+                    <ref target="C0207.xml">C. 207</ref>) although without mentioning the present item and
+                    <ref target="C0209.xml">C. 209</ref>.
+                </ab>
+            </provenance>
+        </egXML>
+    </div>
+    
+    <div>
+        <head>Linking place of origin to place of finding</head>
+        <p>It is often desireable, when objects are thought to have been found in situ, to indicate the
+        relationship between place of finding and place of origin. Guidance and examples are provided 
+        in the section on <ref target="supp-historigin.html">Original location of the text-bearing object</ref>.</p>
+    </div>
 
     <div xml:id="intro-faq-responsibility">
 
@@ -88,7 +88,7 @@ End license statement: do not remove -->
         <listBibl>
             <bibl>
                 <respStmt>
-                    <resp>initial content</resp>
+                    <resp>author</resp>
                     <name ref="http://isaw.nyu.edu/people/staff/tom-elliott/">Tom Elliott</name>
                     <name/>
                 </respStmt>
