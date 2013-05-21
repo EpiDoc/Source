@@ -157,6 +157,10 @@ div.stdheader {
    text-decoration: none;
 }
 
+body > div > * {
+  margin-right: 200px;
+}
+
 /* section headings */
 #hdr h1 { color: red; }
 h1 {
@@ -182,11 +186,18 @@ h3 {
 
 
 h1.maintitle {
-   margin-left: 100px;
    font-family: Arial,Helvetica,sans-serif;
+   margin-right: 0px;
    font-weight: bold;
    bottom: 5px;
 }
+
+h1.maintitle:before {
+  content: url("../img/epidoc-logo-150.jpg") !important;
+  float:right;
+}
+
+
 
 h1.title {
    margin-left: 100px;
@@ -642,6 +653,17 @@ span.hi {
    font-weight: bold;
 }
 
+/* overrides the epidoc-odd.css, which adds pointy brackets to tag unnecessarily, */
+/* and highlights tags and attributes */
+
+span.tag:before, span.tag:after {
+  content:"" !important;
+}
+
+span.tag, span.gi, span.att {
+  background-color: #b8d8f2;
+}
+
 /* from drama */
 span.actor {  
 	   font-style:italic;
@@ -737,3 +759,18 @@ span.wordtypeNN, span.wordtypeNNS {
 span.wordtypeVVD,span.wordtypeVVN,span.wordtypeVVN,span.wordtypeVVZ,span.wordtypeVVG, span.wordtypeVV {
     color: red;
     }
+
+
+nav {
+  position: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+nav > span {
+  padding: 10px;
+}
+
+.footer {
+  display: none;
+}
