@@ -30,12 +30,13 @@ End license statement: do not remove -->
     <!-- can have div's or p's  here. Divs are for subsections. -->
 
     <p>EpiDoc provides for both detail and flexibility in describing what is known or recorded about the origin and
-        subsequent history of a text-bearing object. This information is collected in a <gi>history</gi> element that is
-        part of the <gi>msDesc</gi> in the <gi>teiHeader</gi>. Within <gi>history</gi>, one first encodes an
-            <gi>origin</gi> element, which is used to lay out what is known about the date(s) and location(s) associated
-        with the original (historic) creation and publication of the object (the <gi>origDate</gi> and
-            <gi>origPlace</gi> elements are provided for each of these purposes).</p> 
-    <p>After the <gi>origin</gi> element, the editor may create one or more <gi>provenance</gi> elements, each of which
+        subsequent history of a text-bearing object. As described in the <ref
+            target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mshy">History Section of the TEI
+            Guidelines</ref>, this information is collected in a <gi>history</gi> element that is part of the
+            <gi>msDesc</gi> in the <gi>teiHeader</gi>. Within <gi>history</gi>, one first encodes an <gi>origin</gi>
+        element, which is used to lay out what is known about the date(s) and location(s) associated with the original
+        (historic) creation and publication of the object (the <gi>origDate</gi> and <gi>origPlace</gi> elements are
+        provided for each of these purposes). After the <gi>origin</gi> element, the editor may create one or more <gi>provenance</gi> elements, each of which
         describes a discrete event in the history of the object, capturing whatever is known and relevant in the way of
         temporal and spatial information. Examples of provenance events include: (modern) place and date of finding or
         subsequent observation and recording.</p>
@@ -84,6 +85,7 @@ End license statement: do not remove -->
             <gi>msDesc</gi> (a sibling element of <gi>history</gi> called <gi>msIdentifier</gi>). The encoding of this
         information is described in the <ref target="supp-histinvno.html">Inventory numbers and repositories</ref>
         section.</p>
+    
 
 
 
