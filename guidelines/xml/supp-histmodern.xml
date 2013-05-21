@@ -28,28 +28,139 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histmodern" xml:lang="en">
     <head>Modern or last known locations</head>
     <!-- can have div's or p's  here. Divs are for subsections. -->
-    <p>Within the <tag>history</tag> subsection, relevant information is grouped by "events" in the life of the document. Information related to documented, modern sightings (observations) of a document and the associated context is presented in one or more <tag>event type="observed"</tag> elements. This information within each <tag>event</tag> element can take the form of one or more paragraphs of prose, or of a list (with appropriate TEI tags used as necessary). As appropriate, place names, personal names and other information worthy of indexing, linking or querying should be tagged appropriately (e.g., with <tag>persName</tag>, <tag>placeName</tag>, etc.). Note the following examples.</p>
-    <div xml:id="intro-faq-responsibility">
+
+    <p>All matters related to the provenance of a document are encoded in the Manuscript Description (<gi>msDesc</gi>)
+        portion of the TEI header. In particular, they are placed within the <gi>history</gi> subsection (see further
+            <ref target="supp-history.html">the general section on provenance</ref>).</p>
+
+    <p>When producing a scholarly edition of a pre-modern text, it is often essential to encode what is known about the
+        modern history of observation and recording. Ideally, this account begins with <ref target="supp-histfound.html"
+            >the discovery of the text-bearing object (findspot)</ref>, details each substantive subsequent instance of
+        reporting, and culminates in a report of the last-known or last-observed location. Such a history can provide
+        important insight into the likely original location of the object. It places both published bibliography and
+        unpublished archival materials (such as early travelers' notebooks) into a chronological sequence that is
+        sometimes crucial to determining the origins of variant readings and supplements. The editor can use this
+        history to signal her own moments of interaction with the text-bearing object and, in conjunction with <ref
+            target="supp-histinvno.html">inventory and repository information encoded elsewhere in the edition</ref>,
+        can equip the reader with the ability to locate, verify, and build upon the present edition.</p>
+
+
+    <p>Just like the description of discovery and place of finding, TEI/EpiDoc uses a separate <gi>provenance</gi>
+        element to record each subsequent instance of modern observation, including the final "last known location".
+        Extended prose can be used, but it is best practice to markup the spatial and temporal components wherever
+        possible in order to facilitate subsequent processing, search index creation, and the like.</p>
     
+    <p>EpiDoc recognizes the following values for the <att>type</att> attribute on <gi>provenance</gi>:</p>
+    <list>
+        <item><tag>provenance type="found"</tag>: see <ref target="supp-histfound.html">Findspot and find context</ref></item>
+        <item><tag>provenance type="observed"</tag>: indicates any event involving observation of the text-bearing
+        object</item>
+        <item><tag>provenance type="autopsy"</tag>: a special case of <tag>provenance type="observed"</tag> during
+        which an editor of the current edition directly examined the text-bearing object and transcribed the text</item>
+        <item><tag>provenance type="not-observed"</tag>: a report of an unsuccessful attempt or attempts to find a previously
+        reported text-bearing object</item>
+    </list>
+
+    <p>Here is an example adapted from the Inscriptions of Aphrodisias:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <history>
+            <origin>
+                <origDate evidence="reign titulature lettering" notBefore-custom="0250-12" notAfter-custom="0251-01"
+                    >December 250 - January 251</origDate>
+                <origPlace>Theatre of Aphrosidias: north parodos wall</origPlace>
+            </origin>
+            <provenance xml:id="copy-picenini" type="found" notBefore="1705-08-19" notAfter="1705-08-23">The first known
+                copy of the inscription was made by Picenini in 1705 (10102, 30v), whence Sherard (10101, 41). The stone
+                was evidently reused in the late antique construction of the city walls, having been moved from from its
+                original location at the theatre to its present location, enmured in the western portion of the south
+                wall of the city.</provenance>
+            <provenance xml:id="copy-wood" type="observed" notBefore="1750-10-01" notAfter="1750-10-03"> Copied by Wood
+                (14, f45v), but not published. </provenance>
+            <provenance xml:id="copy-raoul" type="observed" notAfter="1835"> Copied by Raoul-Rochette. </provenance>
+            <provenance xml:id="copy-fellows" type="observed" when="1840"> Copied by Fellows. </provenance>
+            <provenance xml:id="copy-loew" type="observed" when="1841"> Copied by Loew. </provenance>
+            <provenance xml:id="copy-bailie" type="observed" when="1842"> Perhaps copied by Bailie. </provenance>
+            <provenance xml:id="copy-waddington" type="observed" when="1850"> Copied by Waddington. </provenance>
+            <provenance xml:id="record-gaudin" type="observed" when="1904"> Recorded by Gaudin (142). </provenance>
+            <provenance xml:id="record-mama" type="observed" when="1934"> Recorded by the MAMA Expedition. </provenance>
+            <provenance xml:id="record-nyu" type="observed" when="1965"> Recorded by the NYU Expedition. </provenance>
+            <provenance xml:id="autopsy-reynolds" type="autopsy" when="1982"> Text transcribed at the findspot by
+                Reynolds. </provenance>
+        </history>
+    </egXML>
+
+    <p>Here is another example, adapted from the Corpus of the Inscriptions of Campā:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <history>
+            <origin>
+                <origPlace type="location">
+                    <placeName type="temple" ref="cic-geo:chien-dan">Chiên Đàn</placeName>
+                </origPlace>
+                <origDate>
+                    <date calendar="Julian" notBefore="1000" notAfter="1025">early 11<hi rend="superscript">th</hi>
+                        century</date><note>We believe that this inscription is to be dated earlier than previous
+                        scholars have assumed. See Cf. <bibl><ptr target="cic-bibl:ECIC-III"/>: <biblScope>454 n.
+                                36</biblScope></bibl>.</note>
+                </origDate>
+            </origin>
+            <provenance type="observed" notAfter="1892">
+                <ab>This boulder was found before 1892, when it was first mentioned in the literature (<bibl><ptr
+                            target="cic-bibl:paris-1892"/>: <biblScope>141</biblScope></bibl>), and said to have been
+                    observed at the <quote>towers of <placeName>An-don</placeName></quote>;</ab>
+                <ab>mentioned again in 1896 (<bibl><ptr target="cic-bibl:aymonier-1896a"/></bibl> and <bibl><ptr
+                            target="cic-bibl:aymonier-1896b"/>: <biblScope>94</biblScope></bibl>) as <quote>inscription
+                        of <placeName>Qua My</placeName>, at 60 km to the South slightly eastward of Tourane</quote>,
+                    and tentatively assigned to the 11th century CE.</ab>
+                <ab>The inscription was inventoried as <ptr target="#inv-general"/> in <bibl><ptr
+                            target="cic-bibl:coedes-1908"/>: <biblScope>44</biblScope></bibl>, in association with place
+                    name <placeName>Hoà-mi</placeName>; inscription and stone were inventoried <bibl><ptr
+                            target="cic-bibl:parmentier-1909"/>: <biblScope>278</biblScope></bibl>, correctly attributed
+                    the Chiên Đàn site (here spelt Chiên Đàng), and assigned to the late 11th century CE.</ab>
+            </provenance>
+            <provenance type="observed" when="1900">
+                <p>Moved by C. Paris to his concession in Phong Lệ in 1900, and from there to the antiquities park in
+                    Tourane in 1901.</p>
+            </provenance>
+            <provenance type="observed" notAfter="1919">
+                <ab>Registered in the Tourane Museum in 1919, with inventory number <ptr target="#inv-musee-parmentier"
+                    /> (<bibl><ptr target="cic-bibl:parmentier-1919"/>: <biblScope>12</biblScope></bibl>), that was
+                    subsequently mentioned in the improved inventory of inscriptions (<ptr target="cic-bibl:coedes-1923"
+                    />). </ab>
+            </provenance>
+            <provenance type="observed" notBefore="2009">
+                <ab>We identified fragment A encased in a wall of the Đà Nẵng Museum in 2009. It has since then been
+                    removed from the encasing and according to our latest information is now kept in storage. We
+                    observed fragment B <foreign>in situ</foreign> on <date when="20090920"/>.</ab>
+            </provenance>
+            <provenance type="not-observed" notBefore="2009">
+                <ab>We were unable to find fragment C during any of our visits to Vietnam since 2009.<note>From the
+                        earliest references, the sources speak of an inscription in three fragments. <bibl><ptr
+                                target="cic-bibl:parmentier-1919"/></bibl> suggests that the original rock was willfully
+                        split into three fragment <quote>at the hands of the coolies of Paris</quote>; he mentions that
+                        the fragment held in the Museum had been <quote>detached from the block and transported at the
+                            order of C. Paris to his concession of Phong-lệ before 1900; brought to the Tourane Garden
+                            in 1901 and registered under the provisional number n° 105</quote>. We think that these
+                        accusations of vandalism may not be fair, because Camille Paris himself, in the first ever
+                        report of the inscription, clearly states that the stone was already broken in three pieces when
+                        he found it. For reasons unknown to us, this report is not cited in any of the publications of
+                        Parmentier and Cœdès, and could thus come to be forgotten by subsequent generations of
+                        scholars.</note></ab>
+            </provenance>
+        </history>
+    </egXML>
+
+
+
+    <div xml:id="intro-faq-responsibility">
+
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                    <resp>Tom Elliott</resp>
+                    <name>author</name>
+                    <name/>
+                </respStmt>
             </bibl>
         </listBibl>
     </div>
