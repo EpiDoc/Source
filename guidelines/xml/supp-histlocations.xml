@@ -31,12 +31,6 @@ End license statement: do not remove -->
     <p rend="discrete">NB: Guidance for encoding information about the original and historical disposition of the text-bearing object is
         provided in the sections on <ref target="supp-historigin.html">Original location of the text-bearing
             object</ref> and <ref target="supp-historigdate.html">Original date of text and/or object</ref>.</p>
-    <p>It is customary in producing an edition of a pre-modern manuscript, papyrus, inscription, or other text-bearing
-        object to enumerate the occasions on which modern persons encountered and reported seminal information about the
-        object, its condition and disposition, etc., together with associated bibliographic references where possible.
-        The initial such observation is often the occasion of finding, sometimes in situ, sometimes in circumstances or
-        reuse, sometimes already in the context of a modern collection. There follow other observations, culminating in
-        the "last observed location" or "current location."</p>
  <div rend="tag-defs">
   <head>Relevant element documentation (TEI):</head>
   <p>
@@ -47,7 +41,13 @@ End license statement: do not remove -->
    </specList>
   </p>
  </div>
- <div>
+ <div><p>It is customary in producing an edition of a pre-modern manuscript, papyrus, inscription, or other text-bearing
+        object to enumerate the occasions on which modern persons encountered and reported seminal information about the
+        object, its condition and disposition, etc., together with associated bibliographic references where possible.
+        The initial such observation is often the occasion of finding, sometimes in situ, sometimes in circumstances or
+        reuse, sometimes already in the context of a modern collection. There follow other observations, culminating in
+        the "last observed location" or "current location."</p>
+ 
     <p>Following general TEI guidance, EpiDoc treats each such observation as a discrete event in space and time, and
         encodes each in a separate <gi>provenance</gi> element in the <gi>history</gi> section of the header. The
             <att>type</att> attribute is used with the following standard values to distinguish the major types of
