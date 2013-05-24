@@ -696,14 +696,32 @@ span.tag:before, span.tag:after {
   content:"" !important;
 }
 
-span.tag, span.gi, span.att {
+span.tag, span.gi, span.att, a.gi {
   border: 1px solid grey;
-      border-radius: 0.4em;
+    border-radius: 0.4em;
     box-shadow: 0.2em 0.2em 0.1em #888888;
     font-family: monospace;
-     background-color: #FFFFCC;  
+    background-color: #FFFFCC;  
     padding: 3px;
     font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+a.gi:before {
+    content: "<";
+}
+
+a.gi:after {
+    content: ">";
+}
+
+a.gi {
+    border: 1.5px solid blue;
+}
+
+a.gi:visited {
+    border: 1.5px solid purple;
 }
 
 /* from drama */
@@ -886,4 +904,6 @@ div.tag-defs > h2 {
     padding-right: 0.5em;
     list-style-position: outside;
 }
+
+
 
