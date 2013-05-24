@@ -30,7 +30,8 @@ End license statement: do not remove -->
     <p>The <gi>dimensions</gi> element, generally placed within the <gi>support</gi> or 
         <gi>layout</gi> or their descendents, may be used to record the dimensions, in any appropriate
         unit, of the monument, support, fragment, text field, or other aspect of the text or object being described.</p>
-    <p>
+    <div rend="tag-defs">
+        <head>Relevant element documentation:</head><p>
         <specList>
             <specDesc key="dimensions"/>
             <specDesc key="height"/>
@@ -38,8 +39,8 @@ End license statement: do not remove -->
             <specDesc key="depth"/>
             <specDesc key="dim"/>
         </specList>
-    </p>
-    
+    </p></div>
+    <div>
     <p>The most common uses for dimensions in an epigraphic/papyrological edition are to record (a) the dimensions
         of the text-bearing object, usually giving height, width and depth/thickness, or (b) those of the text field,
         usually giving only height and width. For these the TEI element <gi>dimensions</gi> should be used;
@@ -87,7 +88,7 @@ End license statement: do not remove -->
                 <precision match="preceding::height/@max" precision="low"/>
         </handNote>
     </egXML>
-    
+    </div>
     <div xml:id="supp-descdimensions-responsibility">
     
         <head>Responsibility for this section</head>

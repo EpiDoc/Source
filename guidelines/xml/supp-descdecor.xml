@@ -27,18 +27,20 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descdecor" xml:lang="en">
     <head>Description of decoration or iconography</head>
+    <div rend="tag-defs">
+        <head>Relevant element documentation:</head><p>
+            <specList>
+                <specDesc key="decoDesc"/>
+                <specDesc key="decoNote"/>
+                <specDesc key="rs"/>
+            </specList>
+        </p></div>
+<div>
     <p>Iconography, decorative features or other imagery on the support or alongside the text may be described in prose
     as part of the description of object and/or text campus, or may be encoded in its own section using the
     <gi>decoDesc</gi> and <gi>decoNote</gi> elements. In the former case, some projects have used
     an <gi>rs</gi> with <att>type</att> of "decoration" to tag keywords within the description for indexing.</p>
     
-    <p>
-        <specList>
-            <specDesc key="decoDesc"/>
-            <specDesc key="decoNote"/>
-            <specDesc key="rs"/>
-        </specList>
-    </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <decoDesc>
@@ -51,7 +53,7 @@ End license statement: do not remove -->
             White marble sarcophagus with columnar <rs type="decoration">arcade</rs> design.
         </support>
     </egXML>
-    
+    </div>
     <div xml:id="supp-descdecor-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>

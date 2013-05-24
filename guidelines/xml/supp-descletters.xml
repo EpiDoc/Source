@@ -27,9 +27,11 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descletters" xml:lang="en">
     <head>Description of hands and letters</head>
-    <p>Descriptive information about the hands, palaeography or writing styles used in the text should be encoded
+    <p rend="page-gloss">Descriptive information about the hands, palaeography or writing styles used in the text should be encoded
         within the <gi>handDesc</gi> section of the document header.</p>
     
+<div rend="tag-defs">
+    <head>Relevant element documentation:</head>
     <p>
         <specList>
             <specDesc key="handDesc"/>
@@ -38,7 +40,8 @@ End license statement: do not remove -->
             <specDesc key="hi"/>
         </specList>
     </p>
-    
+</div>  
+    <div>
     <p>
         The description of hand(s) may include information on letterforms and heights (or other dimensions, such
         as line-heights), palaeographic features including dating, ligatures, abbreviation marks, unusual characters
@@ -66,7 +69,7 @@ End license statement: do not remove -->
             </handNote>
         </handDesc>
     </egXML>
-    
+    </div>
     <div xml:id="intro-faq-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>

@@ -27,7 +27,10 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descobject" xml:lang="en">
     <head>Description of object or support</head>
-    <p>
+    <p rend="page-gloss">The physical description of a text-bearing object (i.e., support) is encoded in the
+            <gi>supportDesc</gi> element.</p>
+    <div rend="tag-defs">
+        <head>Relevant element documentation:</head><p>
         <specList>
            <specDesc key="supportDesc"/>
            <specDesc key="support"/>
@@ -35,11 +38,11 @@ End license statement: do not remove -->
            <specDesc key="objectType"/>
            <specDesc key="dimensions"/>
         </specList>
-    </p>
+    </p></div>
     
-    <p>The physical description of a text-bearing object (i.e., support) is encoded in the <gi>supportDesc</gi> element. Although the TEI supplies a
-    range of elements within <gi>supportDesc</gi> most EpiDoc projects to date have only found it necessary to make use of one of these: 
-    <gi>support</gi>. Within the <gi>support</gi> element, there are two different ways in which the relevant information may be structured.</p>
+    <div><p>Although the TEI supplies a range of elements within <gi>supportDesc</gi> most EpiDoc projects to date have only
+        found it necessary to make use of one of these: <gi>support</gi>. Within the <gi>support</gi> element, there are
+        two different ways in which the relevant information may be structured.</p>
     
     <p>In the first approach, one produces one or more paragraphs of descriptive prose (wrapped in 
     <gi>p</gi> elements as appropriate). Within this prose, certain classes of information are specially tagged, including the material out
@@ -71,7 +74,7 @@ End license statement: do not remove -->
             </dimensions>
         </support>
     </egXML>
-    
+    </div>
     <div xml:id="supp-descobject-responsibility">
     
         <head>Responsibility for this section</head>

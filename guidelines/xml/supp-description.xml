@@ -28,40 +28,45 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-description" xml:lang="en">
     <head>Physical description</head>
     
-    <p><specList><specDesc key="physDesc"/></specList></p>
+    <div rend="tag-defs">
+        <head>Relevant element documentation:</head>
+        <p><specList><specDesc key="physDesc"/></specList></p></div>
     
-    <p>Information describing the physical aspects of an inscription is encoded in the <gi>physDesc</gi> element, which is part of
-        the <gi>teiHeader</gi>. The following subsections of these guidelines address specific aspects of this encoding:</p>
-    <list>
-        <item><ref target="supp-descobject.html">Description and dimensions of monument or object</ref></item>
-        <item><ref target="supp-desctext.html">Description and layout of text field or campus</ref></item>
-        <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
-        <item><ref target="supp-descdecor.html">Decoration or iconography</ref></item>
-        <item><ref target="supp-descdimensions.html">Dimensions (of object, campus or letters)</ref></item>
-    </list>
-    
-    <p>
-        If, rather than breaking down the description of various aspects of the support, the editor prefers a single 
-        unstructured prose passage describing the object, the <gi>physDesc</gi> may contain one or more <gi>p</gi>
-        (paragraph) elements as an alternative to (but not in addition to) the structured elements described in the
-        sections linked above.
-    </p>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <physDesc>
-            <objectDesc>
-                <supportDesc>
-                    <support><p><material>Bronze</material> Sextarius</p></support>
-                </supportDesc>
-                <layoutDesc>
-                    <layout>inscribed on the outside just below the rim</layout>
-                </layoutDesc>
-            </objectDesc>
-            <handDesc>
-                <handNote>Fourth-century A.D. script; <height>0.02</height> </handNote> 
-            </handDesc>
-        </physDesc>
-    </egXML>
+    <div>
+        <p>Information describing the physical aspects of an inscription is encoded in the <gi>physDesc</gi> element, which
+            is part of the <gi>teiHeader</gi>.</p>
+        
+        <p>The following subsections of these guidelines address specific aspects of this encoding:</p>
+        <list style="clear:both">
+            <item><ref target="supp-descobject.html">Description and dimensions of monument or object</ref></item>
+            <item><ref target="supp-desctext.html">Description and layout of text field or campus</ref></item>
+            <item><ref target="supp-descletters.html">Description of letters or hands</ref></item>
+            <item><ref target="supp-descdecor.html">Decoration or iconography</ref></item>
+            <item><ref target="supp-descdimensions.html">Dimensions (of object, campus or letters)</ref></item>
+        </list>
+        
+        <p>If, rather than breaking down the description of various aspects of the support, the editor prefers a single
+            unstructured prose passage describing the object, the <gi>physDesc</gi> may contain one or more <gi>p</gi>
+            (paragraph) elements as an alternative to (but not in addition to) the structured elements described in the
+            sections linked above.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <physDesc>
+                <objectDesc>
+                    <supportDesc>
+                        <support><p><material>Bronze</material> Sextarius</p></support>
+                    </supportDesc>
+                    <layoutDesc>
+                        <layout>inscribed on the outside just below the rim</layout>
+                    </layoutDesc>
+                </objectDesc>
+                <handDesc>
+                    <handNote>Fourth-century A.D. script; <height>0.02</height> </handNote> 
+                </handDesc>
+            </physDesc>
+        </egXML>
+        
+    </div>
     
     <div xml:id="intro-faq-responsibility">
     
@@ -73,7 +78,7 @@ End license statement: do not remove -->
                     <name>Tom Elliott</name>
                 </respStmt>
             </bibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
         </listBibl>
     </div>
