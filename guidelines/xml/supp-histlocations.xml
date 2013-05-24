@@ -27,7 +27,8 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histlocations" xml:lang="en">
     <head>Dates and locations of modern observations</head>
-    <p>NB: Guidance for encoding information about the original and historical disposition of the text-bearing object is
+ 
+    <p rend="discrete">NB: Guidance for encoding information about the original and historical disposition of the text-bearing object is
         provided in the sections on <ref target="supp-historigin.html">Original location of the text-bearing
             object</ref> and <ref target="supp-historigdate.html">Original date of text and/or object</ref>.</p>
     <p>It is customary in producing an edition of a pre-modern manuscript, papyrus, inscription, or other text-bearing
@@ -36,6 +37,17 @@ End license statement: do not remove -->
         The initial such observation is often the occasion of finding, sometimes in situ, sometimes in circumstances or
         reuse, sometimes already in the context of a modern collection. There follow other observations, culminating in
         the "last observed location" or "current location."</p>
+ <div rend="tag-defs">
+  <head>Relevant element documentation (TEI):</head>
+  <p>
+   <specList>
+    <specDesc key="history"/>
+    <specDesc key="provenance"/>
+    <specDesc key="teiHeader"/>
+   </specList>
+  </p>
+ </div>
+ <div>
     <p>Following general TEI guidance, EpiDoc treats each such observation as a discrete event in space and time, and
         encodes each in a separate <gi>provenance</gi> element in the <gi>history</gi> section of the header. The
             <att>type</att> attribute is used with the following standard values to distinguish the major types of
@@ -55,6 +67,7 @@ End license statement: do not remove -->
         <item><ref target="supp-histfound.html">Discovery (finding, findspot)</ref></item>
         <item><ref target="supp-histmodern.html">Observation and autopsy, including "current/last location"</ref></item>
     </list>
+ </div>
 
     <div xml:id="supp-histlocations-responsibility">
         <head>Responsibility for this section</head>
