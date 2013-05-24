@@ -23,16 +23,18 @@ Free Software Foundation, Inc.,
 
 body.simple {
    color: #000000;
-   background-color: #FFFFFF;
-   margin: 10pt;
+    background-color: #996633;
+   margin: 0px;
+   padding: 0px;
 }
 
 body{
    color: #000000;
-   background-color: #FFFFFF;
+   background-color: #AAAAAA;
    margin: 10pt;
-   padding:0;
-   font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+   margin: 0px;
+   padding: 0px;
+   font-family: Arial, Helvetica, sans-serif;
 }
 
 body.pagetable {
@@ -110,7 +112,8 @@ body.pagetable {
 
 /* the main title */
 div.stdheader {
-      border-bottom: 1pt solid black;
+      /* border-bottom: 1pt solid black; */
+      margin-left: 1em;
 }
 
 #hdr{
@@ -161,6 +164,11 @@ body > div > * {
   margin-right: 200px;
 }
 
+body.simple > div > * {
+    margin: 0px;
+}
+
+
 /* section headings */
 #hdr h1 { color: red; }
 h1 {
@@ -187,9 +195,17 @@ h3 {
 
 h1.maintitle {
    font-family: Arial,Helvetica,sans-serif;
-   margin-right: 0px;
    font-weight: bold;
-   bottom: 5px;
+   margin: 0px;
+   margin-left: 0.5em;
+   line-height: 1em;
+   color: white;
+   text-transform: capitalize;
+}
+
+h1.maintitle a {
+       text-decoration: none;
+       color: inherit;
 }
 
 h1.maintitle:before {
@@ -572,6 +588,26 @@ div.indent5 {
 div.indent6 {
    margin-left: 6em;
 }
+
+body > div.teidiv, body.simple {
+    /* background-color: #5A5A5A; */
+    background-color: #996633;
+    margin: 0px;
+    padding: 2em;
+    width: 1050px;
+}
+body > div.teidiv > div.teidiv, body > div.tei_body {
+    max-width: 800px;
+    padding: 0.8em 2em;
+    margin: 1em;
+    background-color: #FEFEFE;
+        border-radius: 0.4em;
+    border: 1px solid grey;
+}
+
+body > div.tei_body {
+    
+}
 /* misc */
 .plain {
    font-weight: bold;
@@ -661,7 +697,13 @@ span.tag:before, span.tag:after {
 }
 
 span.tag, span.gi, span.att {
-  background-color: #b8d8f2;
+  border: 1px solid grey;
+      border-radius: 0.4em;
+    box-shadow: 0.2em 0.2em 0.1em #888888;
+    font-family: monospace;
+     background-color: #FFFFCC;  
+    padding: 3px;
+    font-weight: bold;
 }
 
 /* from drama */
@@ -705,7 +747,10 @@ span.upLink {
    font-style: italic;
 }
 p, div.p {
- margin-top: 0.3em;
+ margin: 1.5em 0px;
+ line-height: 1.4em;
+ text-justify: auto;
+ text-align: justify;
 }
 /* bibl */
 span.titlem {
@@ -762,15 +807,83 @@ span.wordtypeVVD,span.wordtypeVVN,span.wordtypeVVN,span.wordtypeVVZ,span.wordtyp
 
 
 nav {
-  position: block;
-  margin: auto;
+  display: block;
   margin-bottom: 20px;
+  margin-left: 1.4em;
+  margin-top: 2em;
+  padding: 0px;
+  width: 860px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  line-height: 0.8em;
 }
 
 nav > span {
-  padding: 10px;
+  padding: 0.8em;
+  background-color: #AAA;
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+  border-right: 1px solid gray;
+}
+
+nav > a {
+  padding: 0.8em;
+  background-color: #DDD;
+  border-top-right-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+  margin-right: 1em;
+  text-decoration: none;
+  color: black;
+}
+
+nav > a:hover {
+    background-color: white;
 }
 
 .footer {
   display: none;
 }
+
+div.tag-defs {
+    border: 1px solid grey;
+    float: left;
+    padding: 1em;
+    padding-top: 0.6em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    border-radius: 0.4em;
+    box-shadow: 0.2em 0.2em 0.1em #888888;
+}
+
+div.tag-defs > h2 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.egXML_valid {
+    clear:both;
+    border-radius: 0.4em;
+    box-shadow: 0.2em 0.2em 0.1em #888888;
+    border: 1px solid grey;
+    margin: 1.2em 0px !important;
+    overflow-wrap: break-word;
+}
+
+.page-gloss {
+    font-weight: bold;
+    font-style: italic;
+    
+}
+
+.tag-defs > ul {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    list-style-position: outside;
+}
+
