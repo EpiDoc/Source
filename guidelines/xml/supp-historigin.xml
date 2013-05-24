@@ -35,8 +35,27 @@ End license statement: do not remove -->
         object's origin. <gi>origPlace</gi> is normally accompanied by an <gi>origDate</gi> element (<ref
             target="supp-historigdate.html">q.v.</ref>), which is used to encode information about the date of
         origin.</p>
-
-    <p><gi>origPlace</gi> has the same basic content model in the TEI as a <gi>p</gi> (paragraph) tag, so its contents
+    <div rend="tag-defs">
+        <head>Relevant element documentation (TEI):</head>
+        <p>
+            <specList>
+                <specDesc key="history"/>
+                <specDesc key="msDesc"/>
+                <specDesc key="origin"/>
+                <specDesc key="origDate"/>
+                <specDesc key="origPlace"/>
+                <specDesc key="p"/>
+                <specDesc key="placeName"/>
+                <specDesc key="provenance"/>
+                <specDesc key="rs"/>
+                <specDesc key="seg"/>
+                <specDesc key="teiHeader"/>
+            </specList>
+        </p>
+    </div>
+    
+    <div>
+        <p><gi>origPlace</gi> has the same basic content model in the TEI as a <gi>p</gi> (paragraph) tag, so its contents
         can range from plain text to highly structured and cross-linked data (or a combination of both). The following
         examples illustrate some of the options.</p>
 
@@ -159,18 +178,9 @@ End license statement: do not remove -->
         </egXML>
 
     </div>
-
-    <div>
-        <head>Relevant sections of the TEI Guidelines</head>
-        <p>
-            <specList>
-                <specDesc key="origPlace"/>
-                <specDesc key="placeName"/>
-                <specDesc key="rs"/>
-            </specList>
-        </p>
     </div>
 
+    
     <div xml:id="supp-historigin-responsibility">
 
         <head>Responsibility for this section</head>
