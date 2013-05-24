@@ -83,17 +83,21 @@ End license statement: do not remove -->
         </egXML>
         <p>This example encodes a date range, again in Julian calendar:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10" datingMethod="#julian"> December
-                11th, 20 to December 10th, 19 B.C.E. </origDate>
+            <origDate 
+             notBefore-custom="-0020-12-11" 
+             notAfter-custom="-0019-12-10" 
+             datingMethod="#julian">December 11th, 20 to December 10th, 19 B.C.E.</origDate>
         </egXML>
         <p>This example uses the custom dating attributes on the <gi>origDate</gi> element to express a date in the
             Julian calendar that is derived from a date recorded on an inscription in the <ref
                 target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka era</ref>.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="1409" notAfter-custom="1410"
-                datingMethod="http://en.wikipedia.org/wiki/Julian_calendar"> The text records a composition date of
-                    <date calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date> (Śaka) </origDate>
-        </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate 
+notBefore-custom="1409" 
+notAfter-custom="1410"
+datingMethod="http://en.wikipedia.org/wiki/Julian_calendar">The text records a composition 
+  date of <date 
+   calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date>(Śaka)</origDate>
+</egXML>
 
         <div>
             <head>Certainty and precision</head>
@@ -120,13 +124,14 @@ End license statement: do not remove -->
                 <origDate when-custom="-0355" precision="low" datingMethod="#julian"> Circa 355 B.C.E. </origDate>
             </egXML>
 
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <origDate notBefore-custom="0015" notAfter-custom="0050" datingMethod="#julian"> First half first
-                    century C.E., but certainly after the death of Augustus. <precision match="../@notBefore-custom"
-                        precision="high"/>
-                    <precision match="../@notAfter-custom" precision="medium"/>
-                </origDate>
-            </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate 
+notBefore-custom="0015"  
+notAfter-custom="0050" 
+datingMethod="#julian">First half first century C.E., but certainly after the death of Augustus. 
+  <precision match="../@notBefore-custom" precision="high"/>
+  <precision match="../@notAfter-custom" precision="medium"/>
+</origDate>
+</egXML>
         </div>
 
         <div>
@@ -137,9 +142,12 @@ End license statement: do not remove -->
 
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium"
-                    evidence="lettering nomenclature" datingMethod="#julian"> Late fourth century (lettering and
-                    nomenclature). </origDate>
+                <origDate 
+                 notBefore-custom="0367" 
+                 notAfter-custom="0400" 
+                 precision="medium"
+                 evidence="lettering nomenclature" 
+                 datingMethod="#julian"> Late fourth century (lettering and nomenclature). </origDate>
             </egXML>
         </div>
 
