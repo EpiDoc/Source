@@ -27,25 +27,33 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreakdirection" xml:lang="en">
     <head>Line Breaks: Direction of Text</head>
-    <p><!--gloss--></p>
-    <p><specList>
-            <specDesc key="lb"/>
-        </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p>
-
-    <p><!--More prose explanation--></p>
-
+    <p rend="tag-defs">
+        <specList>
+                <specDesc key="lb"/>
+            </specList>
+    </p>
     <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi>, attributes on this
         element can be understood to refer to the content of that line, i.e. all text before the
-        following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>).</p>
+        following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>).
+    At present, therefore, EpiDoc recommends the use of the following values in the <att>rend</att>
+    attribute on the <gi>lb</gi> immediately preceding the line of text in question:</p>
+    
+    <list>
+        <item><tag>lb rend="right-to-left"</tag></item>
+        <item><tag>lb rend="left-to-right"</tag></item>
+    </list>
 
     <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as
         it is the default direction. One might need to use <att>rend</att> in the case of boustrophedon text, for instance.</p>
 
     <p>Other values of <att>rend</att> can be created in the case of texts written vertically, in
         a circle or spiral, or otherwise unusually.</p>
+    
+    <p>Note: as of 31 May 2013, the EpiDoc Example Stylesheets do not provide any support for the handling of these
+        recommended values. There is a bug report (<ref target="https://sourceforge.net/p/epidoc/bugs/118/">Ticket no.
+            118</ref>) open against the stylesheets for this reason, which should be consulted for the current state of
+        affairs. If this deficiency still obtained at the time this guidelines page was last generated, it is surely
+        reflected in the rendering of the examples below.</p>
 
 
     <cit>
@@ -57,13 +65,24 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <lb/>abc</egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+        <ab><lb/>abc</ab></egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <lb rend="right-to-left"/>abc</egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+        <ab><lb rend="right-to-left"/>abc</ab>
+    </egXML>
 
-
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+        <ab>
+            <lb rend="left-to-right"/>abc
+            <lb rend="right-to-left"/>def
+            <lb rend="left-to-right"/>ghi
+            <lb rend="left-to-right"/>jkl
+            <lb rend="right-to-left"/>mno
+        </ab>
+    </egXML>
+    
     <div xml:id="trans-linebreakdirection-responsibility">
 
         <head>Responsibility for this section</head>
@@ -71,18 +90,17 @@ End license statement: do not remove -->
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Scott Vanderbilt</name>
-                    <name/>
                 </respStmt></bibl>
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
-                    <name/>
                 </respStmt></bibl>
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Charlotte Tupman</name>
-                    <name/>
                 </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
