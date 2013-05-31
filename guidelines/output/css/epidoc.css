@@ -873,7 +873,7 @@ nav > a:hover {
   display: none;
 }
 
-div.tag-defs {
+div.tag-defs, ul.speclit {
     border: 1px solid grey;
     float: left;
     padding: 1em;
@@ -885,7 +885,13 @@ div.tag-defs {
     border-radius: 0.4em;
     box-shadow: 0.2em 0.2em 0.1em #888888;
     max-width: 45%;
+    list-style-position: inside;
 }
+
+ul.speclit {
+ padding-top: 1em;
+}
+
 
 div.tag-defs > h2 {
     margin: 0px;
