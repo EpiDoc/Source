@@ -24,6 +24,8 @@ public abstract class AbstractParser implements Parser {
     protected int length;
     protected String in;
 
+    protected boolean verbose = false;
+
     /** Returns the encoding method supported by this <CODE>Parser</CODE>.
      * @return The encoding.
      *
@@ -129,5 +131,11 @@ public abstract class AbstractParser implements Parser {
             return fonts[0];
         }
         return null;
+    }
+
+    public void log(String message) {
+        if (verbose) {
+            System.out.println(message);
+        }
     }
 }
