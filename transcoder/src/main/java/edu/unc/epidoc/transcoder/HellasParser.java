@@ -23,7 +23,7 @@ public class HellasParser extends AbstractGreekParser {
     /** Creates new HellasParser */
     public HellasParser() {
         // debugging
-        verbose = true;
+        verbose = false;
 
         encoding = "UTF8";
         if (properties.isEmpty()) {
@@ -110,23 +110,29 @@ public class HellasParser extends AbstractGreekParser {
 
                         log("Looked up: '" + attempt.toString() + "' of length: " + attempt.length());
 
-                        if (!result.equals(escape.toString())) {
+                        if (!result.equals(attempt.toString())) {
+                            // result is different from  attempt -> we have found a match
                             break perm;
+                        } else {
+                            result = escape.toString();
                         }
                 }
 
 
                 if (result.equals(escape.toString())) {
+                    // no matches found with this combination, let's reduce one character
                     escape.deleteCharAt(escape.length() - 1);
                     index -= 1;
 
                     if (index == underdotIndex) {
+                        // if we added the aunderdot at this point, remove it as well
                         underdotted = false;
                         index -= 1;
                         log("Removed underdot flag");
                     }
 
                 } else {
+                    // Valid match!
                     strb.append(result);
                     log("Appended " + result);
                     break;
@@ -188,7 +194,7 @@ public class HellasParser extends AbstractGreekParser {
             case '&':
             case '(':
             case ')':
-            case '§':
+            case 0xa7: // §
             case 0xD4: // Ô
             case 0xE0: // à
             case 0xE7: // ç
@@ -211,7 +217,6 @@ public class HellasParser extends AbstractGreekParser {
             case ';':
             case '_':
             case '-':
-            case '?':
             case 0x2019: // smart apostrophe
                 return true;
             default:

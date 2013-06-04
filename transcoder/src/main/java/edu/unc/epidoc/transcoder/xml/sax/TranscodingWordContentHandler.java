@@ -193,6 +193,23 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
   public void endElement(String uri, String name, String raw)
   throws SAXException {
     this.currentElt = name;
+    // transcode if charBuffer has elements:
+    if (this.charBuffer.length() > 0) {
+
+        // transcode
+        // System.out.println("\nTranscode:" + this.charBuffer);
+        String out = "";
+
+        try {
+          out = this.tc.getString(this.charBuffer, 0, this.charBuffer.length());
+          this.contentHandler.characters(out.toCharArray(), 0, out.length());
+        } catch (Exception e) {
+          throw new SAXException(e);
+        } finally {
+          this.charBuffer.delete(0, this.charBuffer.length());
+        }
+    }
+
 
     // name of the last pushed element
     String lastPushedElt = "";
@@ -241,15 +258,8 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
     try {
       if(tc.getParser().supportsFont(font)) {
         // if current parser supports current font
-        // transcode
-        String out = "";
-        try {
-
-          out = this.tc.getString(new String(c, start, len));
-          this.contentHandler.characters(out.toCharArray(), 0, out.length());
-        } catch (Exception e) {
-          throw new SAXException(e);
-        }
+        // save for transcoding
+        this.charBuffer.append(c, start, len);
       } else {
         this.contentHandler.characters(c, start, len);
       }
@@ -341,6 +351,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
   private Stack<String> converters;
   private StringBuffer charBuffer = new StringBuffer();
   private String currentElt;
+
 
   // Paragpah Node
   private static String P_NODE = "p";
