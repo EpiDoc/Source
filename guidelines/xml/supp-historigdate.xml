@@ -72,16 +72,16 @@ End license statement: do not remove -->
             </list>
         </p>
 
-        <p> A date within a range (such as the reign of an emperor, or a century for e.g. palaeographically dated text)
-            should be encoded using the <att>notBefore-custom</att> and <att>notAfter-custom</att> attributes, marking
-            the beginning and end of the possible span of dates. The date formats of these attributes are the same as
-            for <gi>when-custom</gi>. </p>
+        <p> A date within a range (such as an event occurring with the reign of an emperor such as the raising of a milestone,
+            or a century for, e.g., palaeographically dated text) should be encoded using the <att>notBefore-custom</att> and
+            <att>notAfter-custom</att> attributes, marking the beginning and end of the possible span of dates. The date formats
+            of these attributes are the same as for <gi>when-custom</gi>. </p>
 
         <p>This example encodes a simple Julian date:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <origDate when-custom="0139" datingMethod="#julian">139 C.E.</origDate>
         </egXML>
-        <p>This example encodes a date range, again in Julian calendar:</p>
+        <p>This example encodes a date occurring within a range, again in Julian calendar:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <origDate 
              notBefore-custom="-0020-12-11" 
@@ -91,13 +91,12 @@ End license statement: do not remove -->
         <p>This example uses the custom dating attributes on the <gi>origDate</gi> element to express a date in the
             Julian calendar that is derived from a date recorded on an inscription in the <ref
                 target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka era</ref>.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate 
-notBefore-custom="1409" 
-notAfter-custom="1410"
-datingMethod="http://en.wikipedia.org/wiki/Julian_calendar">The text records a composition 
-  date of <date 
-   calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date>(Śaka)</origDate>
-</egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate 
+               notBefore-custom="1409" 
+               notAfter-custom="1410"
+               datingMethod="http://en.wikipedia.org/wiki/Julian_calendar">The text records a composition 
+               date of <date calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date>(Śaka)</origDate>
+        </egXML>
 
         <div>
             <head>Certainty and precision</head>
@@ -149,6 +148,17 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
                  evidence="lettering nomenclature" 
                  datingMethod="#julian"> Late fourth century (lettering and nomenclature). </origDate>
             </egXML>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <origDate 
+                 when-custom="0152-08-23"
+                 precision="high"
+                 evidence="consulship" 
+                 datingMethod="#julian"> 23 August 152 C.E. </origDate>
+                 <!-- ... Glabrione et H[om]ulo co(n)s(ulibus) (a(nte) d(iem)) X K(alendas) Sept(embres) (RIB 309) -->
+            </egXML>
+
+
         </div>
 
     </div>
@@ -158,6 +168,7 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
+                    <name>Scott Vanderbilt</name>
                 </respStmt></bibl>
         </listBibl>
     </div>
