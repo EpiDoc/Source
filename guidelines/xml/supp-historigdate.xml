@@ -72,10 +72,10 @@ End license statement: do not remove -->
             </list>
         </p>
 
-        <p> A date within a range (such as an event occurring with the reign of an emperor such as the raising of a milestone,
+        <p> A date within a range (such as an event occurring within the reign of an emperor, e.g., the raising of a milestone,
             or a century for, e.g., palaeographically dated text) should be encoded using the <att>notBefore-custom</att> and
             <att>notAfter-custom</att> attributes, marking the beginning and end of the possible span of dates. The date formats
-            of these attributes are the same as for <gi>when-custom</gi>. </p>
+            of these attributes are the same as for <att>when-custom</att>. </p>
 
         <p>This example encodes a simple Julian date:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -149,15 +149,17 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
                  datingMethod="#julian"> Late fourth century (lettering and nomenclature). </origDate>
             </egXML>
 
+            <p>This example encodes a date certain within a particular consular year:</p>
+
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <origDate 
                  when-custom="0152-08-23"
                  precision="high"
                  evidence="consulship" 
                  datingMethod="#julian"> 23 August 152 C.E. </origDate>
-                 <!-- ... Glabrione et H[om]ulo co(n)s(ulibus) (a(nte) d(iem)) X K(alendas) Sept(embres) (RIB 309) -->
+                 <!-- ... Glabrione et H[om]ulo co(n)s(ulibus) (a(nte) d(iem)) X K(alendas) Sept(embres)
+                          (RIB 309) -->
             </egXML>
-
 
         </div>
 
@@ -168,8 +170,11 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
             <bibl><respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
-                    <name>Scott Vanderbilt</name>
                 </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
