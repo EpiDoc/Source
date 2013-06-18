@@ -112,24 +112,26 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
 
     if(NAMESPACE.equals(uri) && (name.equals(R_NODE) || name.equals(P_NODE))) {
 
-      //System.out.println("pushed font " + font);
+      font = DEFAULT_FONT;
+
+      log("pushed font " + font);
       // always record current font on <R_NODE> and <P_NODE>
       fonts.push(font);
 
-      //System.out.println("pushed element " + name);
+      log("pushed element " + name);
       elements.push(new String[] {name, new String(fonts.peek())});
 
     } else if((NAMESPACE.equals(uri) && name.equals(PPR_NODE)) && lastPushedElt.equals(P_NODE)) {
-      //System.out.println("pushed element " + name);
+      log("pushed element " + name);
       elements.push(new String[] {name, new String(fonts.peek())});
 
     } else if((NAMESPACE.equals(uri) && name.equals(RPR_NODE)) &&
                 (lastPushedElt.equals(R_NODE) || lastPushedElt.equals(PPR_NODE))) {
 
-      //System.out.println("pushed element " + name);
+      log("pushed element " + name);
       elements.push(new String[] {name, new String(fonts.peek())});
-    } else if((NAMESPACE.equals(uri) && name.equals(RFONTS_NODE)) && lastPushedElt.equals(RPR_NODE)) {
 
+    } else if((NAMESPACE.equals(uri) && name.equals(RFONTS_NODE)) && lastPushedElt.equals(RPR_NODE)) {
 
       for (String fontAttr : fontAttrs) {
         if (attributes.getValue(fontAttr) != null) {
@@ -143,7 +145,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
         // get the appropriate forn to convert to
         String conv_font = tc.getConverter().getDefaultFont();
 
-        //System.out.println(conv_font);
+        log("Conversion font " + conv_font);
 
 
         AttributesImpl new_attrs = new AttributesImpl(attributes);
@@ -163,16 +165,16 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
       fonts.pop();
 
       // push new font
-      //System.out.println("pushed font " + font);
+      log("pushed font " + font);
       fonts.push(new String(font));
 
 
-      //System.out.println("pushed element " + name);
+      log("pushed element " + name);
       elements.push(new String[] {name, new String(font)});
 
     } else if((NAMESPACE.equals(uri) && name.equals(T_NODE)) && lastPushedElt.equals(RPR_NODE)) {
       // TEXT ELEMENT
-      //System.out.println("pushed element " + name);
+      log("pushed element " + name);
       elements.push(new String[] {name, new String(fonts.peek())});
     } else {
 
@@ -197,11 +199,13 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
     if (this.charBuffer.length() > 0) {
 
         // transcode
-        // System.out.println("\nTranscode:" + this.charBuffer);
+        log("\nTranscode:");
         String out = "";
 
         try {
+          log("from " + this.charBuffer);
           out = this.tc.getString(this.charBuffer, 0, this.charBuffer.length());
+          log("to " + out);
           this.contentHandler.characters(out.toCharArray(), 0, out.length());
         } catch (Exception e) {
           throw new SAXException(e);
@@ -223,7 +227,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
       if(NAMESPACE.equals(uri) && (name.equals(R_NODE) || name.equals(P_NODE))) {
 
         // pop fonts in <R_NODE> and <P_NODE>
-        //System.out.println("popped element " + name);
+        log("popped element " + name);
         elements.pop();
         fonts.pop();
         font = fonts.peek();
@@ -233,7 +237,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
                   name.equals(RFONTS_NODE) ||
                   name.equals(T_NODE))) {
         // pop any other element
-        //System.out.println("popped element " + name);
+        log("popped element " + name);
         elements.pop();
       } else {
 
@@ -340,6 +344,12 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
     lexicalHandler.startEntity(name);
   }
 
+  public void log(String message) {
+      if (verbose) {
+          System.out.println(message);
+      }
+  }
+
 
   private static String DEFAULT_FONT = "Palatino";
   private String font = DEFAULT_FONT;
@@ -351,6 +361,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
   private Stack<String> converters;
   private StringBuffer charBuffer = new StringBuffer();
   private String currentElt;
+  private Boolean verbose = false;
 
 
   // Paragpah Node
