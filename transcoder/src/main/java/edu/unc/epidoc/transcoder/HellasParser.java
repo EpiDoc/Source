@@ -11,6 +11,7 @@ package edu.unc.epidoc.transcoder;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.TreeMap;
+import java.util.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class HellasParser extends AbstractGreekParser {
     /** Creates new HellasParser */
     public HellasParser() {
         // debugging
-        verbose = false;
+        verbose = true;
 
         encoding = "UTF8";
         if (properties.isEmpty()) {
@@ -53,8 +54,8 @@ public class HellasParser extends AbstractGreekParser {
     private StringBuffer strb = new StringBuffer();
     private TreeMap<String,String> map = new TreeMap<String,String>();
     private StringBuffer escape = new StringBuffer();
-    private boolean underdotted = false;
-    private int underdotIndex = -1;
+    private Stack<Character> specialPrefix = new Stack<Character>();
+    private Stack<Integer> specialPrefixIndex  = new Stack<Integer>();
 
     /** Returns the next parsed character as a String.
      * @return The name of the parsed character.
@@ -66,17 +67,15 @@ public class HellasParser extends AbstractGreekParser {
 
             // reset flags, map, and escape
             map.clear();
-            underdotted = false;
-            underdotIndex = -1;
             escape.delete(0,escape.length());
 
             do {
                 // run once, and again if character is prefix
-                // unless it is the underdot, in which case, just record it's occurence.
-                if (isUnderdot(chArray[index])) {
-                    underdotted = true;
-                    underdotIndex = index;
-                    log("Added Underdot flag");
+                // unless it is special prefix, in which case, just record it's occurence.
+                if (isHellasSpecialPrefix(chArray[index])) {
+                    specialPrefixIndex.push(index);
+                    specialPrefix.push(chArray[index]);
+                    log("Added Special  prefix " + Integer.toHexString(chArray[index] | 0x10000).substring(1));
                 } else {
                     escape.append(chArray[index]);
                     log("Added caracter: '" + chArray[index] + "'");
@@ -124,12 +123,18 @@ public class HellasParser extends AbstractGreekParser {
                     escape.deleteCharAt(escape.length() - 1);
                     index -= 1;
 
-                    if (index == underdotIndex) {
-                        // if we added the aunderdot at this point, remove it as well
-                        underdotted = false;
-                        index -= 1;
-                        log("Removed underdot flag");
+                    log("special prefix stack size " + specialPrefixIndex.size());
+
+                    if (specialPrefixIndex.size() > 0 ) {
+                        if (index == specialPrefixIndex.peek()) {
+                            // if special prefix at this location, remove it as well
+                            specialPrefixIndex.pop();
+                            specialPrefix.pop();
+                            index -= 1;
+                            log("Popped a specialprefix");
+                        }
                     }
+
 
                 } else {
                     // Valid match!
@@ -139,11 +144,12 @@ public class HellasParser extends AbstractGreekParser {
                 }
             }
 
-            if (underdotted) {
-                String underdot = lookup(Character.toString((char) 0x2044));
-                log(underdot);
-                strb.append('_').append(underdot);
-                log("Appended Underdot");
+            while (specialPrefix.size() > 0) {
+                // append special prefixes as postfixes
+                String special_prefix_postfixed = lookup(Character.toString(specialPrefix.pop()));
+                specialPrefixIndex.pop();
+                strb.append('_').append(special_prefix_postfixed);
+                log("appended special prefix as postfix " + special_prefix_postfixed);
             }
 
             if (strb.length() == 0) {
@@ -177,12 +183,14 @@ public class HellasParser extends AbstractGreekParser {
         return ga.getProperty(lookup(ch));
     }
 
-    protected static boolean isUnderdot(char ch) {
+    protected static boolean isHellasSpecialPrefix(char ch) {
 
-        if (ch == 0x2044) { // underdot
-            return true;
-        } else {
-            return false;
+        switch(ch) {
+            case 'Ù': // macron
+            case 0x2044:  // underdot
+                return true;
+            default:
+                return false;
         }
     }
 
@@ -194,6 +202,12 @@ public class HellasParser extends AbstractGreekParser {
             case '&':
             case '(':
             case ')':
+            case '{':
+            case 0x201c: // “
+            case 0x2018: // ‘
+            case 0x00b6: // ¶
+            case 0x00AB: // «
+            case 0x00A1: // ¡
             case 0xa7: // §
             case 0xD4: // Ô
             case 0xE0: // à
@@ -202,10 +216,9 @@ public class HellasParser extends AbstractGreekParser {
             case 0xE9: // é
             case 0xEF: // ï
             case 0xEB: // ë
-            case 0x2044: // underdot
                 return true;
             default:
-                return false;
+                return isHellasSpecialPrefix(ch);
         }
     }
 
