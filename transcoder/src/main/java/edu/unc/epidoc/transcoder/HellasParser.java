@@ -148,7 +148,12 @@ public class HellasParser extends AbstractGreekParser {
                 // append special prefixes as postfixes
                 String special_prefix_postfixed = lookup(Character.toString(specialPrefix.pop()));
                 specialPrefixIndex.pop();
-                strb.append('_').append(special_prefix_postfixed);
+
+                // add as postfix
+                if (strb.length() > 0) {
+                    strb.append('_');
+                }
+                strb.append(special_prefix_postfixed);
                 log("appended special prefix as postfix " + special_prefix_postfixed);
             }
 
@@ -186,7 +191,7 @@ public class HellasParser extends AbstractGreekParser {
     protected static boolean isHellasSpecialPrefix(char ch) {
 
         switch(ch) {
-            case 'Ù': // macron
+            case 0x00db: // macron
             case 0x2044:  // underdot
                 return true;
             default:

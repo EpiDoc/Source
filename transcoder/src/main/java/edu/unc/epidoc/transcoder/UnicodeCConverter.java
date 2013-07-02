@@ -14,7 +14,7 @@ import java.util.Properties;
  * @author Hugh A. Cayless
  */
 public class UnicodeCConverter extends AbstractGreekConverter {
-    
+
     /** Creates new UnicodeNormalizationFormCConverter */
     public UnicodeCConverter() {
         unfcc = new Properties();
@@ -26,10 +26,10 @@ public class UnicodeCConverter extends AbstractGreekConverter {
         } catch (Exception e) {
         }
     }
-    
+
     protected Properties unfcc;
     protected Properties unfdc;
-    
+
     /** Convert the input String to a String in Unicode Form C with
      * characters greater than 127 escaped as XML character entities.
      * @param in The String to be converted
@@ -47,7 +47,7 @@ public class UnicodeCConverter extends AbstractGreekConverter {
         }
         return result.toString();
     }
-    
+
     /** Convert the input String to a String in Unicode Form C.
      * @param in The String to be converted.
      * @return The converted String.
