@@ -24,7 +24,7 @@ public class HellasParser extends AbstractGreekParser {
     /** Creates new HellasParser */
     public HellasParser() {
         // debugging
-        verbose = true;
+        verbose = false;
 
         encoding = "UTF8";
         if (properties.isEmpty()) {
@@ -235,7 +235,10 @@ public class HellasParser extends AbstractGreekParser {
             case ';':
             case '_':
             case '-':
+            case 0x00a0: // non-breaking space
+            case 0x2026: // elipsis
             case 0x2019: // smart apostrophe
+            case 0x005c: // solidus reverse
                 return true;
             default:
                 return false;
