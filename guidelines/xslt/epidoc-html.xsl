@@ -10,6 +10,7 @@
     <!--<xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>-->
     <!-- <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
+    <xsl:import href="elementsIndex.xsl"/>
     <xsl:import href="render-epidoc.xsl"/>
 
     <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
@@ -23,7 +24,9 @@
 
     <xsl:template name="egXMLEndHook">
         <xsl:call-template name="render-epidoc"/>
+        <xsl:element name="br"/>
         <xsl:if test="@corresp">
+            <xsl:text>(</xsl:text>
             <xsl:element name="span">
                 <xsl:attribute name="class">
                     <xsl:text>ref</xsl:text>
@@ -90,6 +93,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:element>
+            <xsl:text>)</xsl:text>
         </xsl:if>
     </xsl:template>
 
