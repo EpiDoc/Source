@@ -136,5 +136,33 @@
         <xsl:param name="text"/>
         <xsl:param name="toc"/>
     </xsl:template>
+    
+    <xsl:template match="tei:term[@target]">
+        <xsl:element name="a">
+            <xsl:attribute name="class" select="'glossary'"/>
+            <xsl:if test="//tei:*/@xml:id = substring-after(current()/@target,'#')">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="//tei:*[@xml:id=substring-after(current()/@target,'#')][1]/ancestor::tei:div[parent::tei:body]/@xml:id"/>
+                    <xsl:text>.html</xsl:text>
+                    <xsl:value-of select="@target"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:attribute name="title">
+                <xsl:choose>
+                    <xsl:when test="//tei:label/@xml:id = substring-after(current()/@target,'#')">
+                        <xsl:value-of select="normalize-space(//tei:label[@xml:id = substring-after(current()/@target,'#')][1])"/>
+                        <xsl:text>: </xsl:text>
+                        <xsl:value-of select="normalize-space(//tei:label[@xml:id = substring-after(current()/@target,'#')][1]/following-sibling::tei:item[1])"/>
+                    </xsl:when>
+                    <xsl:when test="//tei:bibl/@xml:id = substring-after(current()/@target,'#')">
+                        <xsl:value-of select="normalize-space(.)"/>
+                        <xsl:text>: </xsl:text>
+                        <xsl:value-of select="normalize-space(//tei:bibl[@xml:id = substring-after(current()/@target,'#')])"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
 
 </xsl:stylesheet>

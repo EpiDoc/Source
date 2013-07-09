@@ -28,22 +28,27 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="toc" xml:lang="en">
     <head>EpiDoc Guidelines: Ancient documents in TEI XML</head>
 
-    <p>EpiDoc is an international, collaborative effort that provides guidelines and tools for encoding scholarly and
+    <p>EpiDoc is an international, collaborative effort that provides guidelines and tools for <term target="#encoding">encoding</term> scholarly and
         educational editions of ancient documents. These are the <title>Guidelines</title> produced by the
         collaborative. In addition, the <ref target="http://epidoc.sf.net">EpiDoc Website</ref> provides access to all
         the tools and collaboration environments supported by the collaborative.</p>
 
-    <p>EpiDoc uses a subset of the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html">Text
-            Encoding Initiative's (TEI) standard</ref> for the representation of texts in digital form using the <ref
-            target="http://en.wikipedia.org/wiki/XML">Extensible Markup Language (XML)</ref>, a technical standard
-        promulgated by the World-Wide Web Consortium. It addresses not only the transcription and editorial preparation
-        of the texts themselves, but also the the history and materiality of the objects on which the texts appear.</p>
+    <p>EpiDoc uses a subset of the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Text
+            Encoding Initiative</ref>'s (<term target="#TEI">TEI</term>) standard for the representation of texts in digital form using the
+        <term target="#xml">Extensible Markup Language (XML)</term>, a technical standard
+        promulgated by the <term target="#w3c">World-Wide Web Consortium</term>. It addresses not only the
+        transcription and editorial preparation of the texts themselves, but also the the history and materiality
+        of the objects on which the texts appear.</p>
 
     <p>These <title>Guidelines</title> contain descriptions of the textual, descriptive, and other features that are
-        often expressed with EpiDoc, as well as the TEI elements and attributes that are used to encode them. The links
-        below provide a number of entry points into the full document and should be thought of more as a series of
-        thematic indexes into the content of the <title>Guidelines</title>, rather than a single "Table of Contents" that reflects an
-        ordered, hierarchical document structure.</p>
+        often expressed with EpiDoc, as well as the <term target="#TEI">TEI</term> elements and attributes that are used
+        to encode them. The links below provide a number of entry points into the full document and should be thought of more
+        as a series of thematic indexes into the content of the <title>Guidelines</title>, rather than a single "Table of Contents"
+        that reflects an ordered, hierarchical document structure.</p>
+    
+    <list>
+        <item><ref target="intro-intro.html">Introduction to the Guidelines</ref></item>
+    </list>
 
     <div>
         <head>Browse Guidelines</head>
@@ -89,20 +94,9 @@ End license statement: do not remove -->
     <div xml:id="toc-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Elli Mylonas</name>
-                </respStmt></bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Tom Elliott</name>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
