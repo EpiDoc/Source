@@ -90,7 +90,10 @@ End license statement: do not remove -->
         </egXML>
         <p>This example uses the custom dating attributes on the <gi>origDate</gi> element to express a date in the
             Julian calendar that is derived from a date recorded on an inscription in the <ref
-                target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka era</ref>.</p>
+                target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka era</ref>. (The <att>calendar</att> attribute
+            records the calendrical system of the date recorded by this element, wheras <att>datingMethod</att>
+            records the system to which the date is normalized in the <att>xx-custom</att> attributes. Normalization would
+            otherwise be assumed to be to the Gregorian calendar.)</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate 
                notBefore-custom="1409" 
                notAfter-custom="1410"
@@ -135,7 +138,8 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
 
         <div>
             <head>Dating criteria</head>
-            <p>... @evidence, suggest typology, example values ...</p>
+            <!-- ... @evidence, suggest typology, example values ... -->
+            <p></p>
             <p>Cf <ref target="https://docs.google.com/spreadsheet/ccc?key=0As1AGmWRrRdUdGNJWm9HdDhsQ0RkRFc4dkQwZGZQRVE"
                     >EpiDoc dating criteria vocabulary</ref> (Google Spreadsheet)</p>
 
@@ -146,7 +150,7 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
                  notAfter-custom="0400" 
                  precision="medium"
                  evidence="lettering nomenclature" 
-                 datingMethod="#julian"> Late fourth century (lettering and nomenclature). </origDate>
+                 datingMethod="#julian">Late fourth century (lettering and nomenclature).</origDate>
             </egXML>
 
             <p>This example encodes a date certain within a particular consular year:</p>
@@ -156,7 +160,7 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
                  when-custom="0152-08-23"
                  precision="high"
                  evidence="consulship" 
-                 datingMethod="#julian"> 23 August 152 C.E. </origDate>
+                 datingMethod="#julian">23 August 152 C.E.</origDate>
                  <!-- ... Glabrione et H[om]ulo co(n)s(ulibus) (a(nte) d(iem)) X K(alendas) Sept(embres)
                           (RIB 309) -->
             </egXML>
@@ -167,14 +171,8 @@ datingMethod="#julian">First half first century C.E., but certainly after the de
     <div xml:id="intro-faq-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                <resp>author</resp>
-                <name>Scott Vanderbilt</name>
-            </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
