@@ -34,15 +34,16 @@ End license statement: do not remove -->
             <term target="#encoding">encoding</term>, processing and publishing of such texts.
         EpiDoc's home page on the web may be found at <ref target="http://epidoc.sf.net"
             >http://epidoc.sf.net</ref>.</p>
+
     <p>The present document (the <title>EpiDoc Guidelines</title>) is the on-going product of the
-        EpiDoc community's work over several years. It describes and documents how to encode the
-        various features of epigraphic and papyrological documents, based on the core principles of
-        the disciplines (e.g. the so-called <term target="#leiden">Leiden Conventions</term> for
-        transcriptional features, data structures such as <term target="#eagle">EAGLE</term> and
-        others for descriptive and historical elements). The <title>Guidelines</title> should be
-        used in conjunction with the EpiDoc schema, against which documents marked up according to
-        these principles should validate, and the EpiDoc Example <term target="#xslt">XSLT</term>,
-        which attempts to provide a basic rendering for each feature described.</p>
+        EpiDoc community's work over several years. It describes how to encode the various features
+        of epigraphic and papyrological documents, based on the core principles of the scholarly
+        text editing (e.g. the so-called <term target="#leiden">Leiden Conventions</term> for
+        transcriptional features, and data models such as <term target="#eagle">EAGLE</term> for
+        descriptive and historical elements). The <title>Guidelines</title> should be used in
+        conjunction with the EpiDoc schema, against which documents marked up according to these
+        principles should validate, and the EpiDoc Example <term target="#xslt">XSLT</term>, which
+        attempts to provide a basic rendering for each feature described.</p>
 
     <p>The <title>EpiDoc Guidelines</title> cannot attempt to give full explanation of how to set up
         an EpiDoc project, generate a website, build search tools, or other technical or
@@ -51,15 +52,17 @@ End license statement: do not remove -->
         they are exclusively a guide to the XML encoding of the features of an ancient documentary
         text edition that are most often needed in epigraphic and similar scholarship.</p>
 
-    <p>The <title>EpiDoc Guidelines</title> are intended to complement the Leiden Conventions that
-        have been in use in epigraphy and papyrology for over 80 years and are well understood in
-        the discipline. The <title>Guidelines</title> assume that Leiden is an adequate basis for
-        the intellectual distinctions recorded in a transcription of an ancient text, and base the
-        recommendations and examples upon these distinctions. It is often possible for TEI to record
-        distinctions that are finer or deeper than Leiden, and some such possibilities are described
-        herein, but these <title>Guidelines</title> do not recommend replacing standard epigraphic
-        or papyrological practice with such new principles. Likewise, the default behaviour of the
-        EpiDoc Example XSLT is to produce Leiden rendering of EpiDoc-encoded texts.</p>
+    <p>The <title>EpiDoc Guidelines</title> are intended to complement the <term target="#leiden"
+            >Leiden Conventions</term> (hereafter "Leiden") that have been in use in epigraphy and
+        papyrology for over 80 years and are well understood in many philological and documentary
+        disciplines. The <title>Guidelines</title> assume that Leiden is an adequate basis for the
+        intellectual distinctions recorded in a transcription of a pre-modern text, and base the
+        recommendations and examples upon these distinctions without enshrining It is often possible
+        for TEI to record distinctions that are finer or deeper than Leiden, and some such
+        possibilities are described herein, but these <title>Guidelines</title> do not recommend
+        replacing standard epigraphic or papyrological practice with such new principles. Likewise,
+        the default behaviour of the EpiDoc Example XSLT is to produce Leiden rendering of
+        EpiDoc-encoded texts.</p>
 
     <p>Although there is no single convention for the structure of an epigraphic or papyrological
         edition, in the way that Leiden sets out the critical marks for the transcribed text, the
