@@ -33,6 +33,15 @@ End license statement: do not remove -->
         <item>Encoding in this context means the conversion of human-readable information into
             machine-readable information, e.g. in the form of XML.</item>
 
+        <label xml:id="epidoc-schema">EpiDoc Example Stylesheets</label>
+        <item>Software code, written in the Extensible Stylesheet Language (XSL; see <term
+                target="#xslt">XSLT</term>), and intended for use in transforming EpiDoc XML files
+            into other formats (chiefly text and HTML) using a range of standard typographical
+            conventions (e.g., <term target="#leiden">Leiden</term>). Documentation and further
+            information are to be found on the <ref
+                target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">Stylesheets page in the
+                EpiDoc Wiki</ref>.</item>
+
         <label xml:id="epidoc-schema">EpiDoc Schema</label>
         <item>A formally structured set of rules that tells an XML editor or processor what elements,
             attributes and other content are available in an EpiDoc file and how these are to be
@@ -119,6 +128,11 @@ End license statement: do not remove -->
                     <resp>author</resp>
                     <name>Laura Löser</name>
                 </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Tom Elliott</name>
+            </respStmt></bibl>
+            
         </listBibl>
     </div>
 </div>
