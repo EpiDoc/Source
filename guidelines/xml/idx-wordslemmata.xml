@@ -43,7 +43,7 @@ End license statement: do not remove -->
         punctuation and other features be left outside of this element, and if possible there should be no spaces
         or carriage returns within the <gi>w</gi> element.)</p>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT022.xml">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://irt.kcl.ac.uk/irt2009/IRT022.html">
         <w>maximo</w> <w>tribunicia</w> <w>potestate</w> <num>XXIIII</num> <w>imperatori</w>
     </egXML>
     
@@ -63,6 +63,23 @@ End license statement: do not remove -->
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <w lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=fero&amp;la=la">tulisti</w>
     </egXML>
+    
+    <div>
+        <head>Multiple lemmata</head>
+        <p>If a single word tag contains more than one indexable word (e.g. "populusque" in Latin or 
+        "κἀκ" in Greek), or an incomplete word is ambiguous and might correspond to either of two or more lemmata
+        (e.g. ΕΚΦΕΥΞ), then all lemmata that should be indexed may be included in the <att>lemma</att>
+            attribute, separated by spaces:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w lemma="suus que">suisque</w>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w lemma="καὶ ἐκ">κἀκ</w>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w lemma="ἔκφευξις ἐκφεύγω" part="I">ΕΚΦΕΥΞ</w><gap reason="lost" extent="unknown" unit="character"/>
+        </egXML>
+    </div>
     
     <div xml:id="idx-wordslemmata-responsibility">    
         <head>Responsibility for this section</head>
