@@ -53,7 +53,7 @@ End license statement: do not remove -->
                             <ref target="http://www.edb.uniba.it/">Epigraphic Database Bari (EDB)</ref>
                         </item>
                         <item>
-                            <ref target="http://www.uni-heidelberg.de/institute/sonst/adw/edh/" xml:lang="de">Epigraphische Datenbank Heidelberg (EDH)</ref>
+                        	<ref target="http://edh-www.adw.uni-heidelberg.de/home" xml:lang="de">Epigraphische Datenbank Heidelberg (EDH)</ref>
                         </item>
                         <item>
                             <ref target="http://www.edr-edr.it/">Epigraphic Database Roma (EDR)</ref>
@@ -162,8 +162,8 @@ End license statement: do not remove -->
     <div xml:id="IntroEpigraphers-epidoc">
         <head>The EpiDoc Customization: TEI for Epigraphers</head>
         <p>
-			Au sein de ce cadre général, la <ref target="http://epidoc.sf.net">Communauté EpiDoc</ref> travaille depuis l'an 2000 à développer une version spécifique
-			des règles TEI adaptées aux besoins particuliers des épigraphistes. L'idée fut lancée par <ref target="http://www.unc.edu/~thomase/">Tom Elliott</ref>, 
+			Au sein de ce cadre général, la <ref target="http://epidoc.sf.net/">Communauté EpiDoc</ref> travaille depuis l'an 2000 à développer une version spécifique
+        	des règles TEI adaptées aux besoins particuliers des épigraphistes. L'idée fut lancée par <ref target="http://isaw.nyu.edu/people/staff/tom-elliott">Tom Elliott</ref>, 
 			historien de l'Antiquité à l'Université de Caroline du Nord (campus de Chapel Hill). L'objectif est à la fois de faire la plus grande utilisation possible
 			du travail déjà effectué et de veiller à ce que la manière dont la documentation épigraphique est traitée soit la plus proche possible de la manière dont
 			sont traités les autres textes, plutôt que de s'éloigner de ces méthodes.
@@ -173,8 +173,8 @@ End license statement: do not remove -->
 			l'information pertinente à l'objet porteur de l'inscription. 
 		</p>
         <p>
-			Afin d'accompagner le language EpiDoc, la communauté EpiDoc a créé un jeu de <ref target="guidelines.xml">"guidelines"</ref> et de 
-			<ref target="epidev.xml">logiciels</ref>, ainsi qu'une <ref target="http://epidocumentation.pbwiki.com">documentation</ref> expliquant comment utiliser
+			Afin d'accompagner le language EpiDoc, la communauté EpiDoc a créé un jeu de <ref target="index.html">"guidelines"</ref> et de 
+        	<ref target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">logiciels</ref>, ainsi qu'une <ref target="http://epidoc.sf.net/">documentation</ref> expliquant comment utiliser
 			le langage, les outils et tous les autres éléments constitutifs de la "méthode EpiDoc".
 			L'objectif est de créer un cadre qu'il sera aisé d'apprendre et d'utiliser, y compris pour des chercheurs n'ayant aucune expérience technique ou manquant
 			d'appuis.
@@ -186,58 +186,39 @@ End license statement: do not remove -->
 			traiter de l'ensemble des champs susceptibles d'être présents dans une publication épigraphique, en ce compris :
 			<list>
                 <item>
-                    <ref target="taggingtext.xml">L'édition du texte épigraphique en lui même</ref>
+                	<ref target="app-alltrans.html">L'édition du texte épigraphique en lui même</ref>
                 </item>
                 <item>
-                    <ref target="describing.xml">La description du texte, de son support et de son contexte</ref>
+                	<ref target="supp-description.html">La description du texte, de son support et de son contexte</ref>
                 </item>
-                <item><ref target="translation.xml">Une traduction du texte</ref></item>
-                <item><ref target="commentary.xml">Un commentaire scientifique</ref> du texte, de ses difficultés et de ce qui fait son attrait</item>
-                <item><ref target="history.xml">Une histoire de la découverte, de l'historiographie et de l'interprétation du texte</ref> jusqu'à la présente édition</item>
-                <item><ref target="bibliographicreferences.xml">Une bibliographie</ref> pertinente (xref)</item>
-            </list> Voir également: <ref target="documentstructure.xml">Structure du document</ref>. </p>
+				<item><ref target="supp-translation.html">Une traduction du texte</ref></item>
+				<item><ref target="supp-commentary.html">Un commentaire scientifique</ref> du texte, de ses difficultés et de ce qui fait son attrait</item>
+				<item><ref target="supp-history.html">Une histoire de la découverte, de l'historiographie et de l'interprétation du texte</ref> jusqu'à la présente édition</item>
+				<item><ref target="supp-bibliography.html">Une bibliographie</ref> pertinente (xref)</item>
+			</list> Voir également: <ref target="supp-structure.xml">Structure du document</ref>. </p>
         <p>
 			D'autres domaines présentement à l'étude sont, notamment, ceux relatifs au développement de l'interopérabilité. Un outil de conversion automatique de texte
-			en document au format XML EpiDoc a déjà été développé : le <ref target="chetc.xml">Chapel Hill Electronic Text Converter(CHETC)</ref>.
+			en document au format XML EpiDoc a déjà été développé : le <ref target="http://wiki.digitalclassicist.org/Chapel_Hill_Electronic_Text_Converter_%28CHETC%29">Chapel Hill Electronic Text Converter(CHETC)</ref>.
 			D'autres travaux visent à permettre l'utilisation de lexiques de contrôle. Ainsi le projet Inscriptions of Aphrodisias travaille de manière rapprochée avec le
 			<ref target="http://www.lgpn.ox.ac.uk/">Lexicon of Greek Personal Names</ref> afin d'assurer une documentation exaustive et conforme aux normes en usage. 	
 		</p>
         <p>
 			Ce travail, mené sous la conduite du Dr. Elliott, a été entrepris par une série de chercheurs travaillant de manière concertée et veillant à rester régulièrement
 			en contact avec le reste de la profession. L'équipe bénéficie également de l'expérience d'un projet EpiDoc bien établit, les <ref target="http://vindolanda.csad.ox.ac.uk/exhibition/">Vindolanda Tablets on line</ref>, 
-			et de deux projets actuellement en cours, l'<ref target="http://dev.stg.brown.edu/projects/USEpigraphy/">US Epigraphy Project (USEP)</ref> (avec l'appui des universités de
+        	et de deux projets actuellement en cours, l'<ref target="http://usepigraphy.brown.edu/">US Epigraphy Project (USEP)</ref> (avec l'appui des universités de
 			Brown, Princeton and Rutgers), et le <ref target="http://insaph.kcl.ac.uk">Inscriptions of Aphrodisias Project (InsAph)</ref> (avec l'appui de l'<ref target="http://www.ahrc.ac.uk">Arts and Humanities Research Council</ref>). 
-			Ce généreux support de l'AHRC a également permit la tenue d'un <ref target="sprintsandstorm.xml">atelier de réflexion intensif en 2006</ref> durant lequel les
+        	Ce généreux support de l'AHRC a également permit la tenue d'un <ref target="http://www.insaph.kcl.ac.uk/project/calendar/index.html">atelier de réflexion intensif en 2006</ref> durant lequel les
 			présentes "guidelines" purent être réorganisées.
 		</p>
     </div>
     <div xml:id="IntroEpigraphers-responsibility" type="gl-responsibility">
         <head>Responsables de cette section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>Auteur</resp>
-                    <name>Charlotte Roueché</name>
-                </respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>Auteur</resp>
-                    <name>Julia Flanders</name>
-                </respStmt>
-            </bibl>
-			<bibl>
-                <respStmt>
-                    <resp>Traduction française</resp>
-                    <name>Pascal Lemaire</name>
-                </respStmt>
-            </bibl>            
-			<bibl>
-                <respStmt>
-                    <resp>Rendu via TEI-Lite et diverses opérations de mise en page</resp>
-                    <name>Tom Elliott</name>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>Auteur</resp><name>Charlotte Roueché</name></respStmt></bibl>
+            <bibl><respStmt><resp>Auteur</resp><name>Julia Flanders</name></respStmt></bibl>
+        	<bibl><respStmt><resp>Traduction française</resp><name>Pascal Lemaire</name></respStmt></bibl>
+        	<bibl><respStmt><resp>Rendu via TEI-Lite et diverses opérations de mise en page</resp><name>Tom Elliott</name></respStmt></bibl>            
+        	<bibl><respStmt><resp>Correction de plusieurs liens</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
