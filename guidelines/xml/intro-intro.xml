@@ -39,12 +39,13 @@ End license statement: do not remove -->
         EpiDoc community's work over several years. It describes how to encode the various features
         of epigraphic and papyrological documents, based on the core principles of scholarly text
         editing (e.g. the so-called <term target="#leiden">Leiden Conventions</term> for
-        transcriptional features, and data models such as <term target="#eagle">EAGLE</term> for
-        descriptive and historical elements). The <title>Guidelines</title> should be used in
-        conjunction with the <title><term target="#epidoc-schema">EpiDoc Schema</term></title>,
-        against which documents marked up according to these principles should validate, and the
-                <title><term target="#epidoc-stylesheets">EpiDoc Example Stylesheets</term></title>,
-        which attempt to provide a basic rendering for each feature described.</p>
+        transcriptional features, and data models such as <term target="#eagle">Electronic Archive of
+            Greek and Latin Epigraphy (EAGLE)</term> for descriptive and historical elements). The
+            <title>Guidelines</title> should be used in conjunction with the <title><term
+                target="#epidoc-schema">EpiDoc Schema</term></title>, against which documents marked
+        up according to these principles should validate, and the <title><term
+                target="#epidoc-stylesheets">EpiDoc Example Stylesheets</term></title>, which attempt
+        to provide a basic rendering for each feature described.</p>
 
     <p>The <title>EpiDoc Guidelines</title> cannot undertake to give full explanation of how to set up
         an EpiDoc project, generate a website, build search tools, or other technical or
@@ -54,25 +55,32 @@ End license statement: do not remove -->
         text edition that are most often needed in epigraphic and similar scholarship.</p>
 
     <p>The <title>EpiDoc Guidelines</title> are intended to complement the <term target="#leiden"
-            >Leiden Conventions</term> (hereafter "Leiden") that have been in use in epigraphy and
-        papyrology for over 80 years and are well understood in many philological and documentary
-        disciplines. The <title>Guidelines</title> assume that Leiden is an adequate basis for the
-        intellectual distinctions recorded in a transcription of a pre-modern text, and base the
-        recommendations and examples upon these distinctions without enshrining It is often possible
-        for TEI to record distinctions that are finer or deeper than Leiden, and some such
-        possibilities are described herein, but these <title>Guidelines</title> do not recommend
-        replacing standard epigraphic or papyrological practice with such new principles. Likewise,
-        the default behaviour of the EpiDoc Example XSLT is to produce Leiden rendering of
-        EpiDoc-encoded texts.</p>
+            >Leiden Conventions</term> (hereafter "Leiden"), which have been in use in epigraphy and
+        papyrology for over 80 years and are understood in many philological and documentary fields.
+        The <title>Guidelines</title> assume that Leiden is an adequate basis for the intellectual
+        distinctions recorded in an edition of a pre-modern text, and base their recommendations and
+        examples upon these distinctions without requiring the specific typographical conventions and
+        sigla recommended therein. That is, EpiDoc seeks clearly to record in XML such textual
+        interventions as an editor's supplement for characters wholly lost to damage, but does not
+        specify that such supplements must be rendered within "square brackets" ("[" and "]") in the
+        XML itself or in any downstream output. That said, it is the default behaviour of the
+            <title>EpiDoc Example Stylesheets</title> to produce a Leiden rendering of EpiDoc-encoded
+        texts. It is often possible for TEI to record distinctions that are finer or deeper than
+        Leiden, and some such possibilities are described herein, but these <title>Guidelines</title>
+        do not recommend replacing standard epigraphic or papyrological practice with such new
+        principles.</p>
 
     <p>Although there is no single convention for the structure of an epigraphic or papyrological
         edition, in the way that Leiden sets out the critical marks for the transcribed text, the
-            <title>EpiDoc Guidelines</title> (and <term target="#xslt">XSLT</term>) take a similar
-        approach to data structures such as <term target="#eagle">EAGLE</term>, <term
-            target="#petrae">PETRAE</term> or <term target="#apis">APIS</term>: namely that the
-        discipline already has rigorous models of good practice in structuring editions, we merely
-        recommend the encoding of the same distinctions to which scholars are accustomed in TEI
-        XML.</p>
+            <title>EpiDoc Guidelines</title> (and the <title><term target="epidoc-stylesheets">EpiDoc
+                Stylesheets</term></title>) take a similar approach to the data models employed by
+        projects and collaborations like the <term target="#apis">Advanced Papyrological Information
+            System (APIS)</term>, <term target="#eagle">EAGLE</term>, and <term target="#petrae"
+                ><foreign xml:lang="fr">Programme d’enregistrement, de traitement et de recherche
+                automatique en épigraphie</foreign> (PETRAE)</term>: namely that the discipline
+        already has rigorous models of good practice in structuring editions. We merely recommend the
+        encoding in TEI XML of the same data and observations that scholars have already found
+        essential or useful in practice.</p>
 
     <p>The <title>Guidelines</title> produced and recommended by the EpiDoc community represent a
         subset of and refinement to the <ref
