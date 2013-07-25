@@ -26,15 +26,71 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-papy-apis" xml:lang="en">
-    <head>Appendix: Aligning EpiDoc supporting data with APIS</head>
-    <p>tba</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <head>Appendix: Aligning EpiDoc supporting data with <term ref="#apis">APIS</term></head>
     
-    <div xml:id="app-papy-apis-responsibility">
+    <p><ref target="http://www.columbia.edu/cu/libraries/inside/projects/apis/guidelines.html">See APIS Metadata Guidelines</ref></p>
     
-        <head>Responsibility for this section</head>
+    <table>
+        <row>
+            <cell>Title</cell>
+            <cell><ref target="supp-publication.html">Title and Publication Information</ref></cell>
+        </row>
+        <row>
+            <cell>Author</cell>
+            <cell><ref target="supp-publication.html">Title and Publication Information</ref></cell>
+        </row>
+        <row>
+            <cell>Summary</cell>
+            <cell><ref target="idx-keywords.html">General keywords and taxonomies</ref></cell>
+        </row>
+        <row>
+            <cell>Publications</cell>
+            <cell><ref target="supp-bibliography.html">Bibliography</ref></cell>
+        </row>
+        <row>
+            <cell>Inventory Id</cell>
+            <cell><ref target="supp-histinvno.html">Repositories and inventory numbers</ref></cell>
+        </row>
+        <row>
+            <cell>Physical Description</cell>
+            <cell><ref target="supp-description.html">Physical Description</ref></cell>
+        </row>
+        <row>
+            <cell>Provenance</cell>
+            <cell><ref target="supp-histlocations.html">Dates and locations of modern observations</ref></cell>
+        </row>
+        <row>
+            <cell>Original Language</cell>
+            <cell><ref target="supp-language.html">Languages and scripts</ref></cell>
+        </row>
+        <row>
+            <cell>Date</cell>
+            <cell><ref target="supp-historigdate.html">Date of origin</ref></cell>
+        </row>
+        <row>
+            <cell>General notes</cell>
+            <cell>cf. <ref target="supp-commentary.html">Commentary</ref></cell>
+        </row>
+        <row>
+            <cell>Subjects</cell>
+            <cell><ref target="idx-keywords.html">General keywords and taxonomies</ref></cell>
+        </row>
+        <row>
+            <cell>License</cell>
+            <cell><ref target="supp-publication.html">Title and publication information</ref></cell>
+        </row>
+        <row>
+            <cell>Custodial History</cell>
+            <cell><ref target="supp-histmodern.html">Modern observations</ref>
+                or <ref target="supp-histinvno.html">Repositories and inventory numbers</ref></cell>
+        </row>
+    </table>
+    
+    
+    <div xml:id="app-papy-apis-responsibility" type="gl-responsibility">
+    <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

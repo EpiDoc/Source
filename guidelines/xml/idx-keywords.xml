@@ -22,26 +22,96 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml/idx-keywords.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-keywords" xml:lang="en">
     <head>General keywords, other taxonomies</head>
     <p>
         <specList>
+            <specDesc key="msContents"/>
+            <specDesc key="summary"/>
+            <specDesc key="textClass"/>
+            <specDesc key="keywords"/>
             <specDesc key="rs"/>
+            <specDesc key="seg"/>
+            <specDesc key="term"/>
         </specList>
     </p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
-    <p></p>
+    <p>General keywords or index terms of any other kind can be tagged (by default using <gi>rs</gi>,
+        but any other semantically appropriate elemt may be captured for this purpose)
+        anywhere in the document where they appear in running text: e.g. in the Greek or Latin edition,
+        translations, commentary, or any of the descriptive fields in the header. Depending on the needs
+        of a particular project and any internal or external taxonomies in use, such a tag might look something like:</p>
     
-    <div xml:id="intro-faq-responsibility">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <provenance type="observed">
+            <p>Outside the <rs type="monuList" key="db934">Cyrene Sculpture Museum</rs>.</p>
+        </provenance>
+    </egXML>
     
-        <head>Responsibility for this section</head>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <title><rs type="textType">Honours</rs> for an emperor</title>
+    </egXML>
+    
+    <p>The above examples could be indexed using project-specific code for the purpose of generating
+    indices, a search form, or for sorting or filtering texts. If a taxonomy is also in use, the <gi>rs</gi> may
+    carry <att>ref</att> for the purpose of normalizing to a term in this taxonomy. In the example below, normalization
+        is to the <term ref="#eagle">EDR</term> vocabulary for materials (see 
+        <ref target="https://docs.google.com/spreadsheet/ccc?key=0AnmDUyfP6SvFcGh2dmVydWZ6NW5zSGJmOEtOQWE4TFE#gid=0"
+            >Rei Material GoogleDoc</ref>):</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <material ref="edr:marmor">Blue-veined white marble.</material>
+    </egXML>
+        
+    <div>
+        <head>Subjects or keywords describing text</head>
+        <p>General keywords that do not belong in any particular part of the text or supporting data of
+        the edition may be gathered conveniently in a <gi>keywords</gi> element in the header. These keywords
+        will generally be used only for purposes of search, indexing, or compatibility within a larger collection, rather
+        than appearing in the human-readable part of the edition.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <textClass>
+                <keywords scheme="IRCyr">
+                    <term><placeName type="ancientRegion" key="Cyrene">Cyrenaica</placeName></term>
+                    <term><placeName type="modernCountry" ref="iso3166-1:LY">Libya</placeName></term>
+                    <term><placeName type="modernFindspot" ref="http://sws.geonames.org/81584">Marsa Suza</placeName></term>
+                </keywords>
+            </textClass>
+        </egXML>
+        
+        <p>For keywords, subject terms or descriptions that apply specifically to the categorization or definition
+        of the text, the <gi>msContents</gi> and <gi>summary</gi> may be used to contain either a list of
+        terms or general prose description, as in the examples below:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <msContents>
+                <summary corresp="edr:oper-publ-priv-que">
+                    <seg xml:lang="ru">Строительная надпись.</seg>
+                    <seg xml:lang="en">Building inscription.</seg>
+                </summary>
+            </msContents>
+        </egXML>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/apis/hermitage.apis.17">
+            <msContents>
+                <summary>This is the first 2 lines of P.Lond. IV 1370, a letter (entagion)
+                    from the governor of Egypt, Kurrah b. Sharik, to the pagarch, Basilius,
+                    seeking remedy of a deficit in the "embola," or grain tax</summary>
+            </msContents>
+        </egXML>
+        
+    </div>
+    
+    <div xml:id="idx-keywords-responsibility" type="gl-responsibility">
+    <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

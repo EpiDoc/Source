@@ -38,13 +38,16 @@ End license statement: do not remove -->
             moving this to an electronic environment - for example, finding a font which will permit underdotting; but most of us have now adjusted to
             these new constraints.</p>
         <p>The difficulty of rendering such conventions and, in particular, Greek characters in consistent fonts and on the Web has tended to delay
-            the publication of full epigraphic texts online; instead, enormously rich search collections have been created, most notably: <list type="unordered">
-                <item>the <ref target="http://www.eagle-eagle.it">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</ref> constituent databases, operated under the aegis of the Association Internationale d'Epigraphie Grecque et Latine (AIEGL): <list type="unordered">
+            the publication of full epigraphic texts online; instead, enormously rich search collections have been created, most notably:
+            <list type="unordered">
+                <item>the <ref target="http://www.eagle-eagle.it">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</ref> 
+                    constituent databases, operated under the aegis of the Association Internationale d'Epigraphie Grecque et Latine (AIEGL):
+                    <list type="unordered">
                         <item>
                             <ref target="http://www.edb.uniba.it/">Epigraphic Database Bari (EDB)</ref>
                         </item>
                         <item>
-                            <ref target="http://www.uni-heidelberg.de/institute/sonst/adw/edh/" xml:lang="de">Epigraphische Datenbank Heidelberg
+                            <ref target="http://edh-www.adw.uni-heidelberg.de/home" xml:lang="de">Epigraphische Datenbank Heidelberg
                             (EDH)</ref>
                         </item>
                         <item>
@@ -55,7 +58,7 @@ End license statement: do not remove -->
                 <item>the Packard Humanities Institue collection of Greek texts, <ref target="http://epigraphy.packhum.org/inscriptions/" n="PHI Greek                         Epigraphic Texts Online">available online</ref> since 2005.</item>
             </list>
         </p>
-        <p>See also: <ref target="conformance.xml">Conformance (EpiDoc Compatibility)</ref>.</p>
+        <p>See also: <ref target="http://www.stoa.org/epidoc/gl/5/conformance.html">Conformance (EpiDoc Compatibility)</ref>.</p>
         <p>All these developments have therefore been determined by the state of the existing technologies, as these have evolved over the 20th
             century. The object of EpiDoc is to exploit new and rich technologies for the traditional purposes of epigraphy. Many of the processes
             described above have involved struggling agaist the technological standards - for example, in print publications - in order to accommodate
@@ -122,9 +125,9 @@ End license statement: do not remove -->
     </div>
     <div xml:id="IntroEpigraphers-epidoc">
         <head>The EpiDoc Customization: TEI for Epigraphers</head>
-        <p>Within this framework, the <ref target="http://epidoc.sf.net">EpiDoc community</ref> has
+        <p>Within this framework, the <ref target="http://epidoc.sf.net/">EpiDoc community</ref> has
             been working, since 2000, to develop a custom version of the TEI Guidelines to support
-            the particular needs of epigraphers. The idea was launched by <ref target="http://www.unc.edu/~thomase/">Tom Elliott</ref>, an ancient historian at the
+            the particular needs of epigraphers. The idea was launched by <ref target="http://isaw.nyu.edu/people/staff/tom-elliott">Tom Elliott</ref>, an ancient historian at the
             University of North Carolina at Chapel Hill; the aim is both to make the fullest
             possible use of the work that has already been done, and also to ensure that texts which
             happen to be inscribed are handled in a manner consistent with that used for other
@@ -135,8 +138,8 @@ End license statement: do not remove -->
             all of the significant features of inscriptions and also represent the accompanying
             information about the epigraphic object itself.</p>
         <p>To accompany the EpiDoc encoding language, the EpiDoc community has also produced a set
-            of <ref target="guidelines.xml">encoding guidelines</ref> and <ref target="epidev.xml">software
-            tools</ref>, as well as <ref target="http://epidocumentation.pbwiki.com">documentation</ref> which
+            of <ref target="index.html">encoding guidelines</ref> and <ref target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">software
+                tools</ref>, as well as <ref target="http://epidoc.sf.net/">documentation</ref> which
             describes how to use the encoding language, the tools, and the other elements of the
             EpiDoc method. The goal is to establish a framework that is easy to learn and use, even
             for scholars with no technical background or support. This may sound improbable, but the
@@ -144,50 +147,45 @@ End license statement: do not remove -->
             the existing series of sigla.</p>
         <p>The group has worked to develop expressions for all the agreed epigraphic conventions.
             They have expanded this guidance to address the various fields which may be presented in
-            an epigraphic publication, including: <list>
+            an epigraphic publication, including: 
+            <list>
                 <item>
-                    <ref target="taggingtext.xml">the edition of the epigraphic text itself</ref>
+                    <ref target="app-alltrans.html">the edition of the epigraphic text itself</ref>
                 </item>
                 <item>
-                    <ref target="describing.xml">descriptions of the text, support and context</ref>
+                    <ref target="supp-description.html">descriptions of the text, support and context</ref>
                 </item>
-                <item><ref target="translation.xml">a translation of the text</ref></item>
-                <item><ref target="commentary.xml">a scholarly commentary</ref> related to the text and its unique problems and items
+                <item><ref target="supp-translation.html">a translation of the text</ref></item>
+                <item><ref target="supp-commentary.html">a scholarly commentary</ref> related to the text and its unique problems and items
                     of interest</item>
-                <item><ref target="history.xml">a history of the discovery, documentation, and interpretation of the text</ref>
+                <item><ref target="supp-history.html">a history of the discovery, documentation, and interpretation of the text</ref>
                     leading to its present publication</item>
-                <item><ref target="bibliographicreferences.xml">a bibliography</ref> relevant to this text (xref)</item>
-            </list> See further: <ref target="documentstructure.xml">Document Structure</ref>. </p>
+                <item><ref target="supp-bibliography.html">a bibliography</ref> relevant to this text (xref)</item>
+            </list> 
+            See further: <ref target="supp-structure.xml">Document Structure</ref>. </p>
         <p>Further areas under active exploration include developing interoperability. A software tool for converting texts in normal epigraphic
-            markup into EpiDoc XML has already been developed (the so-called <ref target="chetc.xml">Chapel Hill Electronic Text Converter
+            markup into EpiDoc XML has already been developed (the so-called <ref target="http://wiki.digitalclassicist.org/Chapel_Hill_Electronic_Text_Converter_%28CHETC%29">Chapel Hill Electronic Text Converter
             (CHETC)</ref>). Other areas involve the use of authoritative lexica. For example, the Inscriptions of Aphrodisias project is working
             closely with the <ref target="http://www.lgpn.ox.ac.uk/">Lexicon of Greek Personal Names</ref>, to ensure full coverage and consistent
             usage. </p>
         <p>The work, led by Dr. Elliott, has been undertaken by various individual scholars working in close collaboration, and in regular contact
-            with the wider profession. They have drawn on the experience of an established EpiDoc project, the <ref target="http://vindolanda.csad.ox.ac.uk/exhibition/">Vindolanda Tablets on line</ref>, and two current projects: the <ref target="http://dev.stg.brown.edu/projects/USEpigraphy/">US Epigraphy Project (USEP)</ref> (supported by Brown, Princeton and Rutgers
-            Universities), and the <ref target="http://insaph.kcl.ac.uk">Inscriptions of Aphrodisias Project (InsAph)</ref> (supported by the <ref target="http://www.ahrc.ac.uk">Arts and Humanities Research Council</ref>). The generous support of the AHRC allowed for the <ref target="sprintsandstorm.xml">intensive workshop in March 2006</ref> where these guidelines were refined. </p>
+            with the wider profession. They have drawn on the experience of an established EpiDoc project, the
+            <ref target="http://vindolanda.csad.ox.ac.uk/exhibition/">Vindolanda Tablets on line</ref>, 
+            and two current projects: the <ref target="http://dev.stg.brown.edu/projects/USEpigraphy/">US Epigraphy Project (USEP)</ref>
+            (supported by Brown, Princeton and Rutgers
+            Universities), and the <ref target="http://insaph.kcl.ac.uk">Inscriptions of Aphrodisias Project (InsAph)</ref>
+            (supported by the <ref target="http://www.ahrc.ac.uk">Arts and Humanities Research Council</ref>). 
+            The generous support of the AHRC allowed for the
+            <ref target="http://www.insaph.kcl.ac.uk/project/calendar/index.html">intensive workshop in March 2006</ref> 
+            where these guidelines were refined. </p>
     </div>
     <div xml:id="IntroEpigraphers-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Roueché</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Julia Flanders</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>coerced from TEI-Lite and various reformatting edits</resp>
-                    <name>Tom Elliott</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Roueché</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Julia Flanders</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>coerced from TEI-Lite and various reformatting edits</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>fixed and updated many links</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
