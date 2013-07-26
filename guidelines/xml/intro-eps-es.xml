@@ -26,25 +26,31 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="intro-eps-es" xml:lang="en">
-    <head>Introduction for Epigraphers</head>
-    <p>The concepts behind EpiDoc bring together, for epigraphers, traditional and entirely modern editorial methods and conventions.</p>
+    <head>Introducción para los epigrafistas</head>
+    <p>Los principios sobre los que se sustenta el sistema EpiDoc reúnen convenciones y métodos de edición tradicionales y modernos para epigrafistas.</p>
     <div xml:id="intro-eps-es-conventions">
-        <head>Epigraphic conventions</head>
-        <p> Over the last century, epigraphers have wrestled with the issues involved in representing non-verbal information within their written
-            texts. Until the end of the 19th century publishers could be expected to produce a facsimile of the text, but this became decreasingly
-            common, and publishers did not demonstrate a parallel willingness to provide a full photographic record of every text. The conventions
-            which have been painfully developed to indicate missing text, abbreviations, etc. have been more or less generally agreed since the 1930s
-            and overlap, to some extent, with those used in papyrology and palaeography. All epigraphers have had to deal with the issues involved in
-            moving this to an electronic environment - for example, finding a font which will permit underdotting; but most of us have now adjusted to
-            these new constraints.</p>
-        <p>The difficulty of rendering such conventions and, in particular, Greek characters in consistent fonts and on the Web has tended to delay
-            the publication of full epigraphic texts online; instead, enormously rich search collections have been created, most notably: <list type="unordered">
-                <item>the <ref target="http://www.eagle-eagle.it">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</ref> constituent databases, operated under the aegis of the Association Internationale d'Epigraphie Grecque et Latine (AIEGL): <list type="unordered">
+        <head>Las convenciones epigráficas</head>
+        <p> A lo largo del último siglo, los epigrafistas han batallado con los problemas derivados de la representación de información 
+            no verbal en sus textos. Hasta finales del siglo XIX, los editores elaboraban una edición diplomática del texto acompañada 
+            por una representación gráfica de la pieza, práctica que, sin embargo, se volvió cada vez más infrecuente. 
+            Por otra parte, las casas editoriales se mostraron reacias a publicar una o más imágenes por cada epígrafe, 
+            lo que implicó una considerable pérdida de información. Las convenciones para indicar texto perdido, abreviaturas, etc., 
+            fueron desarrolladas con gran esfuerzo, solapándose, hasta cierto punto, con las utilizadas en papirología y paleografía. 
+            Sobre su uso, y si bien existe común acuerdo entre los investigadores desde la década de 1930, todos los epigrafistas han tenido 
+            que lidiar con los problemas que conlleva trasladar las convenciones a medios electrónicos (por ejemplo, encontrar una fuente 
+            que permita añadir puntos bajo las letras), aunque muchos de nosotros ya nos hemos adaptado a estos nuevos inconvenientes.</p>
+        
+        <p>La dificultad de transmitir estas convenciones y, en particular, 
+            la complejidad de representar los caracteres griegos en la web, ha provocado un retraso en la publicación de corpora 
+            completos en línea. En su lugar, han sido creadas bases de datos enormemente ricas, entre las que destacan: <list type="unordered">
+                <item>Las bases de datos del 
+                    <ref target="http://www.eagle-eagle.it">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</ref> 
+                    desarrolladas bajo la tutela de la Association Internationale d’Épigraphie Grecque et Latine (AIEGL): <list type="unordered">
                         <item>
                             <ref target="http://www.edb.uniba.it/">Epigraphic Database Bari (EDB)</ref>
                         </item>
                         <item>
-                            <ref target="http://www.uni-heidelberg.de/institute/sonst/adw/edh/" xml:lang="de">Epigraphische Datenbank Heidelberg
+                            <ref target="http://edh-www.adw.uni-heidelberg.de/home" xml:lang="de">Epigraphische Datenbank Heidelberg
                             (EDH)</ref>
                         </item>
                         <item>
@@ -52,120 +58,162 @@ End license statement: do not remove -->
                         </item>
                     </list>
                 </item>
-                <item>the Packard Humanities Institue collection of Greek texts, <ref target="http://epigraphy.packhum.org/inscriptions/" n="PHI Greek                         Epigraphic Texts Online">available online</ref> since 2005.</item>
+                <item>La colección de textos griegos del Packard Humanities Institute, 
+                    <ref target="http://epigraphy.packhum.org/inscriptions/" n="PHI Greek Epigraphic Texts Online">
+                        disponible en línea </ref> desde 2005.</item>
             </list>
         </p>
-        <p>See also: <ref target="http://www.stoa.org/epidoc/gl/5/conformance.html">Conformance (EpiDoc Compatibility)</ref>.</p>
-        <p>All these developments have therefore been determined by the state of the existing technologies, as these have evolved over the 20th
-            century. The object of EpiDoc is to exploit new and rich technologies for the traditional purposes of epigraphy. Many of the processes
-            described above have involved struggling agaist the technological standards - for example, in print publications - in order to accommodate
-            as many of our requirements as possible. Over the period it has become steadily more difficult to persuade conventional publishers to meet
-            our requirements for inserting meta-textual information, unless at prohibitive expense. At the same time, the expectations as to the
-            volume of information which should accompany a text have risen greatly; as well as information about physical circumstances, photographic
-            illustration has become standard.</p>
-        <p>In the last 15 years scholars generally have been dealing with similar requirements to incorporate meta-data within texts in their
-            electronic form, and tools have emerged which make this increasingly easy and make the results increasingly valuable. The word-processing
-            software that has been familiar since the 1980s allows us to control the formatting of our texts, using markup which by now is invisibly
-            embedded by the software. The more demanding requirements of large-scale document collections - legal papers, industrial documentation,
-            commercial publishing - led in the 1980s to the investigation of ways to insert a wider range of information and instructions within
-            electronic texts. At first the emphasis was on inserting formatting instructions, but there soon emerged methods of including more complex
-            semantic information concerning document structure and even content. A simple example is marking up a book title as a title, rather than
-            simply marking it as being italicized. The use of this more abstract markup permits a separation of structure and presentation, where
-            structure is comparatively fundamental to the document's genre, while presentation may be varied depending on the form of publication. In
-            a way, this shift represents a return to an earlier mode in which authors dealt with the substance of the text and all details of
-            presentation were handled in the publishing process - a distinction which has been lost in the days of camera-ready copy.</p>
-        <p>The protocols which emerged from this latter effort were standardized in the late 1980s as the Standard Generalized Markup Language, and
-            more recently were given a simpler and more flexible form for use in the world-wide web as XML: the <ref target="http://www.w3.org/XML/">Extensible Markup Language</ref>. XML is now widely used by scholars in a broad range of humanistic disciplines to capture/represent
-            and preserve research materials for a wide range of purposes.</p>
-        <p>The attractions of XML for epigraphers are therefore considerable. For example: missing material can be marked up as such, and then
-            presented within square brackets; at the same time, a search can be instructed only to interrogate text which has not been marked up as
-            missing (so only definitely attested terms). Uncertain letters can be marked up as such, and a decision made later as to whether to render
-            them with an underdot or in another way. Words can be lemmatised during editing, to create indices which grow as the collection grows.
-            What is important, however, at this juncture is to repeat the 'Leyden' exercise; that is, to agree electronic equivalents of the various
-            sigla that we use. Firstly, this is valuable simply in order to save time and trouble; but also consistency - without imposing uniformity
-            - continues to be valuable. Not only does it support the user, as on the printed page; but documents edited in this way and published
-            electronically will then be exploitable together, even if they have been prepared separately.</p>
-        <p>The need for agreed standards is not limited to epigraphy. Since 1987 an international consortium of scholars principally in the humanities
-            has been working together to develop and refine a set of guidelines for describing the structure and content of documents. The results of
-            this endeavour have produced an encoding language, realized in XML and described by the name of the group - TEI, the <ref target="http://www.tei-c.org/">Text Encoding Initiatve</ref>.</p>
+        <p>Véase también:  <ref target="http://www.stoa.org/epidoc/gl/5/conformance.html">Conformance (EpiDoc Compatibility)</ref>.</p>
+        
+        <p> Todos estos logros han estado condicionados, por tanto, por el estado de las tecnologías existentes y 
+            su evolución a lo largo del siglo XX. Objetivo de EpiDoc es explotar las nuevas tecnologías en aras de alcanzar 
+            los propósitos tradicionales de la epigrafía. Por ello, muchos de los procesos arriba descritos han supuesto una lucha 
+            contra las limitaciones tecnológicas (por ejemplo, en publicaciones impresas) con el propósito de responder al mayor número 
+            posible de exigencias de carácter epigráfico. Durante este periodo, y a menos que se asumiesen elevados costes, 
+            resultaba cada vez más complicado convencer a las editoriales tradicionales para que aceptasen las condiciones relativas a 
+            la inserción de información meta-textual. De forma simultánea, las expectativas con respecto al volumen de información que debería 
+            acompañar al texto han aumentado enormemente: además de la información relativa a los aspectos formales, lo normal es añadir
+            una reproducción fotográfica. </p>
+       
+        <p>En los últimos 15 años, los investigadores se han enfrentado, por lo general, a problemas similares en lo referente 
+            a la incorporación de meta-datos dentro de textos en formato electrónico, surgiendo así herramientas que simplifican 
+            cada vez más esta labor y que, a la vez, revalorizan los resultados. Los procesadores de textos, habituales desde la 
+            década de 1980, nos permiten controlar el formato de los escritos utilizando una señalización que, en la actualidad, 
+            es insertada automáticamente por el propio software. A partir de 1980, la mayor exigencia en las necesidades técnicas por 
+            parte de vastas colecciones documentales (escritos legales, documentación industrial, publicaciones comerciales,...) conllevaron 
+            la investigación de nuevas formas de inserción de un amplio repertorio de características e instrucciones. 
+            Al principio, se hizo especial hincapié en insertar órdenes de formateo, aunque pronto surgieron métodos para incluir información 
+            semántica más compleja en lo que a la estructura del documento y a su contenido se refiere. Un sencillo ejemplo de esto 
+            sería el señalar un título de libro como título, en lugar de destacarlo en cursiva. Así, el uso más abstracto de una señalización 
+            permite establecer una separación entre estructura y presentación, donde la estructura es propia al género del documento, 
+            mientras que la presentación puede variar dependiendo de la forma de publicación. En cierto modo, pues, este cambio 
+            representa un retorno al estadio anterior, en el cual los autores trataban con la sustancia del texto y todos los detalles 
+            de presentación se solucionaban durante el proceso de publicación, distinción que se ha perdido con la llegada de los sistemas 
+            de reproducción fotográfica. </p>
+        
+        <p>Los protocolos surgidos de este último esfuerzo se estandarizaron a finales de los años ochenta bajo la denominación 
+            Standard Generalized Markup Language, si bien recientemente se les ha dado una forma más sencilla y flexible para su uso en la web, 
+            conocida como XML:  <ref target="http://www.w3.org/XML/">Extensible Markup Language</ref>. 
+            Hoy en día, el XML es utilizado frecuentemente por los expertos en un gran número de disciplinas humanísticas para recopilar, 
+            representar y conservar materiales de investigación empleados con multitud de propósitos.</p>
+        
+        <p>Los atractivos del XML para los epigrafistas son, por consiguiente, considerables. Por ejemplo, es posible señalar el texto perdido 
+            como tal, para luego presentarlo entre corchetes. Al mismo tiempo, es posible hacer una búsqueda sobre texto que no ha sido señalado 
+            como perdido (es decir, sólo sobre términos atestiguados). Las letras inciertas también pueden señalarse como tales, y decidir en 
+            otro momento si editarlas con un punto debajo o de otro modo. Durante la edición, es posible además seleccionar palabras como términos 
+            de búsqueda, lo cual permite crear índices que aumentan de forma simultánea al incremento de la propia colección. 
+            Sin embargo, en las condiciones actuales, lo esencial sería emular las ‘convenciones de Leiden’, es decir, 
+            acordar los equivalentes electrónicos de los distintos signos diacríticos usados. En primer lugar, este gesto resultaría 
+            extremadamente útil no sólo por el ahorro de tiempo y trabajo; sino también, por el hecho de ofrecer una homologación coherente 
+            (aunque exenta de uniformidad). No son pocas las ventajas: por un lado, el sistema expone la información al usuario igual que 
+            una página impresa; mientras que por el otro, los documentos editados de este modo y publicados en formato electrónico pueden 
+            ser utilizados de forma conjunta con posterioridad, aunque hayan sido preparados separadamente por diferentes equipos. </p>
+        
+        <p>La necesidad de acordar estándares no se limita a la epigrafía. Desde 1987, un grupo internacional de investigadores 
+            (principalmente del ámbito de las humanidades), han unido esfuerzos para desarrollar y refinar un conjunto de guías para describir 
+            la estructura y el contenido de los documentos. Los resultados de esta labor se han plasmado en la producción de un lenguaje de 
+            codificación realizado en XML, y denominado como el propio grupo: TEI, o 
+            <ref target="http://www.tei-c.org/">Text Encoding Initiatve</ref>.</p>
+    
     </div>
     <div xml:id="IntroEpigraphers-TEI">
-        <head>TEI for Epigraphers: What is it, why use it?</head>
-        <p>The Text Encoding Initiative is a research effort aimed at defining an encoding language that encompasses the needs of humanities scholars
-            very generally. There are two essential goals motivating the development of the TEI. The first is to enable scholars to represent their
-            research materials in digital form using a descriptive language that mirrors the kinds of analytical terms and concepts that are familiar
-            and essential to humanistic scholarship. The second goal is to enable scholars to share the resulting materials intelligibly, by using a
-            common descriptive language. </p>
-        <p>We can think of the TEI encoding language as resembling a human language: a core of shared terms at the center, surrounded by less widely
-            shared vocabularies including local usage, specialized terminology, and other variations. At the core of the TEI are the common terms and
-            concepts that are broadly shared by scholars in most disciplines: features like paragraphs, generic textual divisions, headings, lists,
-            and so forth. More specialized elements are grouped together according to their applications: for instance, elements for detailed encoding
-            of names, elements for representing features of manuscripts, elements for capturing the structure of dictionaries, and so forth. The TEI
-            is intentionally organized into modules in this way, so that scholars working in specific disciplinary areas may use only the modules
-            relevant to their work, and omit the others. The TEI can thus achieve a great deal of breadth without burdening individual scholars and
-            projects with the necessity of mastering a very large domain, much of which is only relevant to other disciplines. On the contrary, the
-            TEI encoding language can be very directly targeted at a specific domain or task, and can be limited to what is essential to the
-            individual project's work. </p>
-        <p>Like a human language, TEI can be used in a way that draws on a rich and nuanced vocabulary, with detailed encoding that describes a great
-            many textual phenomena, but it can also be used very simply, using only a few essential concepts that describe only the most basic textual
-            facts: sections, headings, paragraphs. The more detailed the encoding, the more one can do with it, but factors such as time, cost,
-            available staff, and local expertise may place constraints on the level of detail that is feasible. </p>
-        <p>In addition to providing an encoding system that scholars can use in its original state, the TEI also provides a way for scholarly projects
-            to define custom versions of the TEI language which include modifications that are necessary to support specific local needs. Because
-            these custom versions operate within the overall TEI framework, they can use its broadly shared core of terms and concepts, thereby
-            avoiding unnecessary work in reinventing these. And because the TEI provides a common framework for creating and describing
-            customizations, these can be shared easily and meaningfully. As a result, groups of scholars in particular disciplines can articulate the
-            specific goals and methods which characterize their work, and the differences which distinguish them from others working in related
-            fields. Instead of mutually unintelligible approaches, different projects can produce results whose differences result from real
-            disagreements rather than simple random divergence. </p>
+        <head>TEI para epigrafistas: ¿qué es? y ¿por qué usarlo?</head>
+        <p>La Text Encoding Iniciative (TEI) es un trabajo de investigación destinado a definir un lenguaje de codificación que 
+            englobe, de forma general, las necesidades de los investigadores de humanidades. Dos propósitos fundamentales motivan el desarrollo de TEI.
+            El primero de ellos es permitir a los investigadores la transcripción de sus textos en formato digital, 
+            usando un lenguaje descriptivo que refleje los diferentes términos y conceptos analíticos, usuales y necesarios en las disciplinas 
+            de humanidades. El segundo objetivo es permitir a los investigadores compartir sus resultados con la comunidad científica de forma 
+            inteligible, usando para ello un lenguaje descriptivo común. </p>
+        
+        <p> Podemos pensar en el lenguaje de codificación TEI como algo parecido al lenguaje humano: un núcleo de términos comunes en el centro,
+            rodeado por un vocabulario menos difundido, como localismos, términos especializados, y otras variantes. En el centro de TEI están 
+            los términos y conceptos comunes empleados por investigadores procedentes de un gran número de disciplinas: 
+            elementos como párrafos, divisores de textos, encabezamientos, listas, etc. Otros elementos más especializados se agrupan 
+            conjuntamente de acuerdo a sus funciones: por ejemplo, signos para la codificación detallada de nombres, signos para representar 
+            las características de un manuscrito, signos para reproducir la estructura de diccionarios, etc. TEI está intencionalmente 
+            organizada de esta forma, en módulos, para que los investigadores que trabajen en áreas específicas de conocimiento puedan emplear 
+            únicamente los componentes relativos a su trabajo, omitiendo el resto. TEI puede, por tanto, ofrecer una gran libertad de trabajo 
+            sin abrumar a los investigadores o a los proyectos con la necesidad de aprender vastos conocimientos, la mayor parte de los cuales 
+            resultan pertinentes sólo a ciertas disciplinas. Así, el sistema TEI de codificación del lenguaje puede ser enfocado de forma directa 
+            a un ámbito o tarea específica, limitándose a un aspecto concreto y esencial de un proyecto. </p>
+        
+        <p>Como un lenguaje humano, TEI puede utilizarse de forma extensa, empleando un vocabulario rico y lleno de matices, 
+            con una codificación detallada que permita describir diferentes fenómenos textuales; aunque también puede utilizarse de forma 
+            sencilla, empleando sólo conceptos esenciales que representen exclusivamente elementos textuales básicos: 
+            secciones, encabezamientos y párrafos. Cuanto más detallada sea la codificación, más posibilidades de tratamiento existen; 
+            aunque factores como el tiempo, los costes, el personal disponible y la experiencia particular pueden limitar el nivel de 
+            codificación.</p>
+        
+        <p>Además de proveer de un sistema de codificación que los investigadores puedan usar en su forma original, 
+            TEI puede ser ajustada por los propios proyectos de investigación, creando versiones “a medida”, que respondan a necesidades 
+            específicas. Como estas versiones particulares de TEI operan dentro del marco general del sistema, no es necesario reinventar 
+            el núcleo común: estas pueden emplear un amplio repertorio de términos y conceptos, evitando la innecesaria labor de crearlos. 
+            Por otra parte, y como TEI ofrece un marco común para crear y describir versiones particulares, estas pueden ser compartidas 
+            de forma sencilla y plenamente significativa. Así, y aunque procedentes de diversas disciplinas, los grupos de investigación 
+            pueden expresar con claridad los objetivos y métodos que caracterizan su trabajo, y las diferencias que los distinguen de otros, 
+            pese a proceder de áreas afines. En lugar de emplear enfoques ininteligibles, diversos proyectos de investigación pueden producir 
+            resultados cuyas diferencias sean el resultado de desacuerdos reales, más que de divergencias fortuitas.  </p>
         <p/>
+    
     </div>
     <div xml:id="IntroEpigraphers-epidoc">
-        <head>The EpiDoc Customization: TEI for Epigraphers</head>
-        <p>Within this framework, the <ref target="http://epidoc.sf.net">EpiDoc community</ref> has
-            been working, since 2000, to develop a custom version of the TEI Guidelines to support
-            the particular needs of epigraphers. The idea was launched by <ref target="http://www.unc.edu/~thomase/">Tom Elliott</ref>, an ancient historian at the
-            University of North Carolina at Chapel Hill; the aim is both to make the fullest
-            possible use of the work that has already been done, and also to ensure that texts which
-            happen to be inscribed are handled in a manner consistent with that used for other
-            texts, and not distanced from them. The EpiDoc customization removes irrelevant elements
-            from the main body of the TEI, and it adds provisions for the specific kinds of
-            transcription, analysis, description, and classification that are essential for
-            epigraphic work. The result is a simple yet powerful language which can be used to mark
-            all of the significant features of inscriptions and also represent the accompanying
-            information about the epigraphic object itself.</p>
-        <p>To accompany the EpiDoc encoding language, the EpiDoc community has also produced a set
-            of <ref target="guidelines.xml">encoding guidelines</ref> and <ref target="epidev.xml">software
-            tools</ref>, as well as <ref target="http://epidocumentation.pbwiki.com">documentation</ref> which
-            describes how to use the encoding language, the tools, and the other elements of the
-            EpiDoc method. The goal is to establish a framework that is easy to learn and use, even
-            for scholars with no technical background or support. This may sound improbable, but the
-            enterprise is of the same order as learning to mark-up a standard epigraphic text, with
-            the existing series of sigla.</p>
-        <p>The group has worked to develop expressions for all the agreed epigraphic conventions.
-            They have expanded this guidance to address the various fields which may be presented in
-            an epigraphic publication, including: <list>
+        <head>EpiDoc personalizado: TEI para epigrafistas.</head>
+       
+        <p>Dentro de este marco general y desde el año 2000, la <ref target="http://epidoc.sf.net/">comunidad EpiDoc</ref> 
+            ha estado trabajando para desarrollar una versión específica de las normas TEI, 
+            con el objetivo de apoyar las necesidades propias de los epigrafistas. La idea fue promovida por
+            <ref target="http://isaw.nyu.edu/people/staff/tom-elliott">Tom Elliott</ref>, 
+            un historiador de la antigüedad de la Universidad de Carolina del Norte (campus de Chapel Hill), 
+            con un doble propósito: explotar al máximo los beneficios del trabajo ya realizado y asegurar que los epígrafes 
+            se trataban de la forma más próxima posible a como se trataban otro tipo de textos. 
+            Así, EpiDoc elimina elementos irrelevantes del núcleo de TEI, añadiendo los componentes necesarios 
+            para los tipos específicos de transcripción, análisis, descripción y clasificación, esenciales para el trabajo epigráfico. 
+            El resultado es, simplemente, un lenguaje todavía más potente, que puede ser empleado para señalar todas las características 
+            de las inscripciones y también para representar la información relativa al objeto que porta el epígrafe.</p>
+        
+        <p>Para acompañar el lenguaje de codificación EpiDoc, la comunidad EpiDoc ha creado también una serie de  
+            <ref target="index.html">líneas maestras</ref> y <ref target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">herramientas de software</ref>, 
+            así como  <ref target="http://epidoc.sf.net/">documentación</ref> 
+            que describe cómo usar el lenguaje de codificación, los instrumentos y el resto de elementos del método EpiDoc. 
+            El propósito es establecer un marco general fácil de aprender y de usar, incluso por parte de investigadores 
+            que carezcan de una experiencia y/o asistencia de carácter técnico. Aunque pueda parecer improbable, 
+            la labor es en realidad similar al aprendizaje de la edición de un epígrafe estándar con los signos existentes.</p>
+        
+        <p>El grupo ha trabajado para tratar de representar todas las convenciones epigráficas en uso, 
+            ampliando la guía para abordar los varios aspectos que deben ser representados en una publicación de carácter epigráfico, 
+            incluyendo: <list>
                 <item>
-                    <ref target="taggingtext.xml">the edition of the epigraphic text itself</ref>
+                    <ref target="app-alltrans.html">La edición del texto epigráfico en sí mismo.</ref>
                 </item>
                 <item>
-                    <ref target="describing.xml">descriptions of the text, support and context</ref>
+                    <ref target="supp-description.html">Las descripciones del texto, soporte y contexto.</ref>
                 </item>
-                <item><ref target="translation.xml">a translation of the text</ref></item>
-                <item><ref target="commentary.xml">a scholarly commentary</ref> related to the text and its unique problems and items
-                    of interest</item>
-                <item><ref target="history.xml">a history of the discovery, documentation, and interpretation of the text</ref>
-                    leading to its present publication</item>
-                <item><ref target="bibliographicreferences.xml">a bibliography</ref> relevant to this text (xref)</item>
-            </list> See further: <ref target="documentstructure.xml">Document Structure</ref>. </p>
-        <p>Further areas under active exploration include developing interoperability. A software tool for converting texts in normal epigraphic
-            markup into EpiDoc XML has already been developed (the so-called <ref target="chetc.xml">Chapel Hill Electronic Text Converter
-            (CHETC)</ref>). Other areas involve the use of authoritative lexica. For example, the Inscriptions of Aphrodisias project is working
-            closely with the <ref target="http://www.lgpn.ox.ac.uk/">Lexicon of Greek Personal Names</ref>, to ensure full coverage and consistent
-            usage. </p>
-        <p>The work, led by Dr. Elliott, has been undertaken by various individual scholars working in close collaboration, and in regular contact
-            with the wider profession. They have drawn on the experience of an established EpiDoc project, the <ref target="http://vindolanda.csad.ox.ac.uk/exhibition/">Vindolanda Tablets on line</ref>, and two current projects: the <ref target="http://dev.stg.brown.edu/projects/USEpigraphy/">US Epigraphy Project (USEP)</ref> (supported by Brown, Princeton and Rutgers
-            Universities), and the <ref target="http://insaph.kcl.ac.uk">Inscriptions of Aphrodisias Project (InsAph)</ref> (supported by the <ref target="http://www.ahrc.ac.uk">Arts and Humanities Research Council</ref>). The generous support of the AHRC allowed for the <ref target="sprintsandstorm.xml">intensive workshop in March 2006</ref> where these guidelines were refined. </p>
+                <item><ref target="supp-translation.html">La traducción del texto.</ref></item>
+                <item><ref target="supp-commentary.html">El comentario científico </ref> del texto y sus problemas o aspectos de interés.</item>
+                <item><ref target="supp-history.html">La historia del descubrimiento, de la historiografía y de la interpretación del texto </ref>
+                    hasta la presente publicación.</item>
+                <item><ref target="supp-bibliography.html">La bibliografía </ref> relevante (xref).</item>
+            </list> Véase también:  <ref target="supp-structure.xml">Estructura del documento</ref>. </p>
+        
+        <p>Actualmente, existen otras áreas en estudio, como aquellas relativas al desarrollo de la interoperabilidad. 
+            Así, se ha desarrollado una herramienta de software destinada a convertir textos editados según el sistema tradicional epigráfico 
+            en EpiDoc XML, el llamado <ref target="http://wiki.digitalclassicist.org/Chapel_Hill_Electronic_Text_Converter_%28CHETC%29">Chapel Hill Electronic Text Converter
+                (CHETC)</ref>. Otras áreas incluyen el uso de léxicos especializados. 
+            Por ejemplo, el proyecto de las inscripciones de Aphrodisias está trabajando estrechamente con el 
+            <ref target="http://www.lgpn.ox.ac.uk/">Lexicon of Greek Personal Names</ref>, 
+            con el objetivo de garantizar la documentación exhaustiva y conforme a las normas en uso del mismo.</p>
+        
+        <p>La labor, dirigida por el Dr. Elliott, ha sido asumida por diferentes investigadores que trabajan en estrecha colaboración, 
+            manteniendo además un contacto regular con el resto de profesionales. El equipo se ha beneficiado de las ventajas de 
+            un proyecto EpiDoc ya consolidado, las  
+            <ref target="http://vindolanda.csad.ox.ac.uk/exhibition/">Vindolanda Tablets on line</ref>, 
+            y de otros dos proyectos que se encuentran actualmente en curso: el 
+            <ref target="http://usepigraphy.brown.edu/">US Epigraphy Project (USEP)</ref> 
+            (con el apoyo de las universidades de Brown, Princeton y Rutgers), y el 
+            <ref target="http://insaph.kcl.ac.uk">Inscriptions of Aphrodisias Project (InsAph)</ref> 
+            (con el apoyo del <ref target="http://www.ahrc.ac.uk">Arts and Humanities Research Council</ref>). 
+            De hecho, el generoso apoyo de AHRC permitió celebrar un 
+            <ref target="http://www.insaph.kcl.ac.uk/project/calendar/index.html"> workshop intensivo en Marzo de 2006</ref>, donde fue perfeccionada la presente guía. </p>
     </div>
     <div xml:id="intro-eps-es-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
@@ -175,6 +223,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>translated</resp><name>Núria Garcia Casacuberta</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>translated</resp><name>Celia Sánchez Natalías</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>coerced from TEI-Lite and various reformatting edits</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>tagged and updated links</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
