@@ -35,13 +35,13 @@ How to use it:
      1.  To validate your EpiDoc files in an editor:
                If using Oxygen or similar editor to edit XML files, processing instructions such as:
 
-               <?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.17/tei-epidoc.rng"
                          schematypens="http://relaxng.org/ns/structure/1.0"?>
-               <?xml-model href="http://www.stoa.org/epidoc/schema/8.16/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.17/tei-epidoc.rng"
                          schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
                at the top of the XML file (above the <TEI> element but below the <?xml?>
-               declaration will instruct the editor to validate against this schema
+               declaration) will instruct the editor to validate against this schema
                (as RelaxNG and Schematron respectively).
 
                You may also point at a local copy of the tei-epidoc.rng file.
@@ -55,9 +55,19 @@ How to use it:
                Select tei-epidoc-full.xml from your local file system.
                3. Select "Start".
                4. Select "Schema".
-               5. Select "RELAX NG schema (XML syntax).
+               5. Select "RELAX NG schema (XML syntax)".
                6. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
                7. Test thoroughly (and ask for support on Markup to test) before committing as
                canonical new EpiDoc schema.
+
+      3. How to decide which schema to use:
+               1. if your project is complete and more or less static, it is recommend you use
+               the most recent numbered release of the schema as of your publication,
+               because this file will remain stable indefinitely;
+               2. if your project is in active development and you are comfortable following
+               the changes in the community fora such as the MARKUP list, and updating
+               your XML if the schema changes, you should use the /latest/ release
+               (http://www.stoa.org/epidoc/schema/8.17/tei-epidoc.rng)
+               which will be updated whenever a new schema is released.
 
 See https://sourceforge.net/p/epidoc/wiki/Schema/ for more information on the EpiDoc schema and how to use it.
