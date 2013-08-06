@@ -11,8 +11,18 @@ Previous versions
 -----------------
 
 8.16 - Announced to MARKUP 2013-01-28 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1301&L=MARKUP&P=R450&1=MARKUP>
+    * new element `<citedRange>` (inherited from TEI 2.3.0)
+    * both citedRange and BiblScope take new attribute `@unit` instead of type (inherited from TEI 2.3.0)
+
 8.15
+
 8.14 - Announced to MARKUP 2012-11-05 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1211&L=MARKUP&P=R2&1=MARKUP>
+    * introduction of element <listApp>; addition of <idno> to the content model of <person> 
+and <place> (inherited from TEI 2.2.0)
+    * inclusion of <particDesc> and <settingDesc>
+    *removal of div/@type= description, history & figure (deprecated 2 years ago)
+    * added some schematron constraints, notably for abbreviations and gaps 
+
 8.13 - Announced to MARKUP 2012-09-26 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1209&L=MARKUP&P=R658&1=MARKUP>
 8.12 - Announced to MARKUP 2012-07-09 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1207&L=MARKUP&P=R2&1=MARKUP>
 8.11 - Announced to MARKUP 2012-02-22 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1202&L=MARKUP&P=R1896&1=MARKUP>
