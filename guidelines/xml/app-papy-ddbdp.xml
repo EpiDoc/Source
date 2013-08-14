@@ -28,14 +28,91 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-papy-ddbdp" xml:lang="en">
     <head>Appendix: Aligning EpiDoc with DDbDP</head>
     <p>tba</p>
+    <table>
+        <row>
+            <cell>α(βγ)</cell>
+            <cell>Modern expansion of an abbreviation</cell>
+            <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+        </row>
+        <row>
+            <cell>[αβγ]</cell>
+            <cell>Text lost, restored by the editor</cell>
+            <cell><ref target="trans-restored.html">Restored text</ref></cell>
+        </row>
+        <row>
+            <cell>[........]</cell>
+            <cell>Up to 8 characters lost, cannot be restored</cell>
+            <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
+        </row>
+        <row>
+            <cell>[ - ca.4 - ]</cell>
+            <cell>Approximate number of characters lost, cannot be restored</cell>
+            <cell><ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
+        </row>
+        <row>
+            <cell>[ - ca.9 - ]</cell>
+            <cell>More than 8 characters lost, cannot be restored; note: DDbDP practice assumes that assertion of losses greater than 8 characters is imprecise, whether the editor writes [..........] or [- ca.10 - ]</cell>
+            <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref> and <ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
+        </row>
+        <row>
+            <cell>[ - ca.? - ]</cell>
+            <cell>Unknown number of characters lost, cannot be restored</cell>
+            <cell><ref target="trans-lostcharunknown.html"></ref></cell>
+        </row>
+        <row>
+            <cell>&lt;αβγ&gt;</cell>
+            <cell>Characters erroneously omitted by the scribe, added by modern editor</cell>
+            <cell><ref target="trans-omitted.html">Supplement of omitted characters</ref></cell>
+        </row>
+        <row>
+            <cell>\αβγ/</cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell>/αβγ\</cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell>{αβγ}</cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell>α̣β̣γ̣</cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell><hi rend="underline">αβγ</hi></cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell>〚αβγ〛</cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell></cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+        <row>
+            <cell></cell>
+            <cell></cell>
+            <cell><ref target="trans-.html"></ref></cell>
+        </row>
+    </table>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>Table above taken from <term ref="#ddbdp">DDbDP Conventions</term>.
+        See also: <ref target="http://papyri.info/editor/documentation?docotype=text">http://papyri.info/editor/documentation?docotype=text</ref></p>
     
     <div xml:id="app-papy-ddbdp-responsibility">
-    
-        <head>Responsibility for this section</head>
+    <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>xx</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
