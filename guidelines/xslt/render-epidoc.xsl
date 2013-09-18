@@ -36,7 +36,7 @@
                                     <xsl:text>Default style (Panciera)</xsl:text>
                                 </xsl:when>
                                 <xsl:when test=". = 'ddbdp'">
-                                    <xsl:text>DDbDP</xsl:text>
+                                    <xsl:text>Duke Databank</xsl:text>
                                 </xsl:when>
                                 <xsl:when test=". = 'dohnicht'">
                                     <xsl:text>Dohnicht</xsl:text>

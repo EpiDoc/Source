@@ -12,7 +12,8 @@
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
     <xsl:import href="elementsIndex.xsl"/>
     <xsl:import href="render-epidoc.xsl"/>
-
+    <xsl:import href="tpl-analytic.xsl"/>
+    
     <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
     <xsl:param name="STDOUT">false</xsl:param>
     <xsl:param name="splitLevel">0</xsl:param>
@@ -21,6 +22,8 @@
     <xsl:param name="cssSecondaryFile">../schema/epidoc-odd.css</xsl:param>
     <xsl:param name="TEIC">true</xsl:param>
     <xsl:param name="forceWrap">false</xsl:param>
+    <xsl:param name="analytics">off</xsl:param>
+    <!--<xsl:param name="googleAnalytics">UA-43203560-1</xsl:param>-->
 
     <xsl:template name="egXMLEndHook">
         <xsl:call-template name="render-epidoc"/>
@@ -164,5 +167,19 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template name="javascriptHook">
+        <!-- overriding template in Sebastian's XSLT in order to import Google Analytics code -->
+        <!-- the $analytics template is "off" by default, but should be set to "on" when making a final, day zero release -->
+        <xsl:if test="$analytics='on'"><xsl:call-template name="analytic"/></xsl:if>
+        <!-- For future reference, what we *really* need to do here is:
+           1.   change the svn:external to point to the Github version of Sebastian's XSLT
+                    (see https://github.com/TEIC/Stylesheets
+                     and http://www.leewillis.co.uk/including-git-repo-svn-external/ for guidance)
+            2.  create a $googleAnalytics variable with the code we want (UA-43203560-1)
+        -->
+    </xsl:template>
+    
+    
 
 </xsl:stylesheet>
