@@ -61,11 +61,11 @@
                             <xsl:value-of select="number($filename)"/>
                         </xsl:element>
                     </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://irt.kcl.ac.uk/')">
+                    <xsl:when test="starts-with(@corresp, 'http://inslib.kcl.ac.uk/')">
                         <xsl:text>IRT: </xsl:text>
                         <xsl:variable name="filename">
                             <xsl:value-of
-                                select="substring-before(substring-after(@corresp,'http://irt.kcl.ac.uk/irt2009/IRT'),'.html')"
+                                select="substring-before(substring-after(@corresp,'http://inslib.kcl.ac.uk/irt2009/IRT'),'.html')"
                             />
                         </xsl:variable>
                         <xsl:element name="a">
