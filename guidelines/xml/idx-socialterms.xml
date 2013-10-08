@@ -27,14 +27,17 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-socialterms" xml:lang="en">
     <head>Military, religious, socio-economic terminology</head>
-    <p>Military terminology, titulature, religious indicators, social/political/economic vocabulary are not currently being tagged in a specific way.</p>
+    <p>Military terminology, titulature, religious indicators, social/political/economic vocabulary,
+        all terms in <term target="#EDH">EDH</term>, are not often tagged in EpiDoc projects, although
+        they can be useful if <term target="#crosswalk">crosswalking</term> to
+        <term target="#eagle">EAGLE</term> is desired.</p>
     <p>
         <specList>
             <specDesc key="w"/>
             <specDesc key="rs"/>
         </specList>
     </p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    
     <p>One way of extracting this terminology is through the vocabulary, using the @lemma attribute of the <gi>w</gi> element.</p>
     
     <p>Another way could be using the <gi>rs</gi> element and the different values of the @type attribute could be similar to the categories 

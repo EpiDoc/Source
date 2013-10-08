@@ -27,7 +27,8 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-titlesoffices" xml:lang="en">
     <head>Titles, offices, political posts, honorifics, occupations</head>
-    <p>Tagging of different types of offices, posts, titles etc.</p>
+    <p>Tagging of different types of offices, posts, and other titles in the transcribed text or elsewhere,
+    usually for the purposes of indexing or searching the corpus.</p>
     <p>
         <specList>
             <specDesc key="w"/>
@@ -35,24 +36,33 @@ End license statement: do not remove -->
         </specList>
     </p>
     
-    <p>Titles, offices, posts etc. in the text could be extracted from the vocabulary. They can be tagged using the @lemma attribute of the <gi>w</gi>.</p> 
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>There are two broad methods for generating indices of titles, occupations and the like in an EpiDoc edition:</p>
     
-        
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+    <p>(1) Using a defined list of lemmatized words, and drawing these from the general word list
+    (assuming words are lemmatized in the first place). A specific indexer could pull terms such as
+        <foreign xml:lang="la">consul, comes, beneficarius, quaestor</foreign>,
+        <foreign xml:lang="grc">ἀρχών, εὐτυχὴς, σχολαστικός</foreign> into themed indices of
+        titles and the like. If words are explicitly lemmatized in the text (as in the example below, using
+        the <att>lemma</att> attribute of the <gi>w</gi> element) no extra
+    encoding is needed; alternatively the lemmata might be pulled from a list generated from the texts
+    by a tool such as <term target="#morpheus">Morpheus</term>.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <w lemma="consul"><expan><abbr>co</abbr><ex>n</ex><abbr>s</abbr><ex>ul</ex></expan></w>
         </egXML>
     
-    <p>Another way to do it could be using the <gi>rs</gi> element with @type="office" and a @key or a @ref pointing to an authority list.</p>
+    <p>(2) Another more explicit way to tag titulature in a transcribed text might be to use the 
+        <gi>rs</gi> element with a defined <att>type</att> attribute, to encode arbitrary categories of
+        <ref target="idx-keywords.html">terms and keywords</ref> within the text, regardless of their language,
+        spelling or expression. In this case, ideally a <att>ref</att> or <att>key</att> attribute would point to an
+        <ref target="idx-other.html">authority list</ref> elsewhere in the project.</p>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120644.html">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120644.html">
             <rs type="official" key="archon">ἀρχόντων</rs>
         </egXML>
     
-    
           <div xml:id="intro-faq-responsibility">
         <head>Responsibility for this section</head>
-        <p></p>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>

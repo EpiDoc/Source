@@ -29,6 +29,18 @@ End license statement: do not remove -->
     <head>Appendix: Glossary</head>
 
     <list type="gloss">
+        <label xml:id="crosswalk">Crosswalk, crosswalking</label>
+        <item>A general term for moving data from the format of one encoding scheme or database
+        to another. In EpiDoc terms, it often refers to the dynamic transformation (potentially reversible) of
+        the semantic distinctions of epigraphic and papyrological editions between EpiDoc XML and
+        one or more database of texts or catalogue records. Prominent crosswalks performed by the EpiDoc
+        community include: the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
+        format of <term target="#EDH">EDH</term>; the migration of the <term target="#ddb">Duke Databank</term>,
+        <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> content to EpiDoc as part of the
+            Papyri.info project; the current conversion of the <term target="#eagle">EAGLE</term> constituent
+            databases into EpiDoc XML as part of the <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
+        project.</item>
+        
         <label xml:id="encoding">Encoding</label>
         <item>Encoding in this context means the conversion of human-readable information into
             machine-readable information, e.g. in the form of XML.</item>
@@ -78,11 +90,11 @@ End license statement: do not remove -->
         <item>The Morpheus morphological analysis service is a tool originally developed by <term
                 target="#perseus">Perseus</term>, versions of which are in use by Papyri.info and the
             TLG for lemmatizing their Greek texts. The Perseus version of the tool also caters for
-            Latin and Arabic lemmatization. [More information at <ref
+            Latin and Arabic lemmatization. (More information at <ref
                 target="https://wikihub.berkeley.edu/display/pbamboo/Morphological+Analysis+Service+Contract+Description+-+v1.1.1"
                 >Bamboo</ref> and <ref
                     target="http://sites.tufts.edu/perseusupdates/2012/11/01/morphology-service-beta/"
-                    >Perseus</ref>.] </item>
+                    >Perseus</ref>.)</item>
 
         <label xml:id="perseus">Perseus</label>
         <item><ref target="http://www.perseus.tufts.edu">The Perseus Digital Library Project</ref>
@@ -90,6 +102,13 @@ End license statement: do not remove -->
             number of texts. Searches and a number of tools can be used directly on the website while
             reading, e.g. the <term target="#morpheus">Morpheus</term> dictionary tool for Greek and Latin
             texts.</item>
+        
+        <label xml:id="pleiades">Pleiades</label>
+        <item>A gazetteer of places and place names from the ancient world, building on the project that produced
+            the Barrington Atlas of the Greek and Roman World. Pleiades assigns unique identifiers to all places,
+            enabling a web of Linked Data such as that curated by the
+            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. Pleiades can be found at
+            <ref target="http://pleiades.stoa.org/">pleiades.stoa.org</ref>.</item>
 
         <label xml:id="TEI">TEI</label>
         <item>Text Encoding Initiative. Guidelines and tools for the encoding of literary and
