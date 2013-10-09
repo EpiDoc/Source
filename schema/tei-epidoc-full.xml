@@ -12,6 +12,7 @@
                 <author xml:id="ML">Marion Lamé</author>
                 <author xml:id="EM">Elli Mylonas</author>
                 <author xml:id="SV">Scott Vanderbilt</author>
+                <author xml:id="SS">Simona Stoyanova</author>
             </titleStmt>
             <publicationStmt>
                 <p>Released under GNU GPL 3.0</p>
@@ -23,6 +24,7 @@
         <revisionDesc>
             <!-- release 8.17: 2013-08-08 - Aligned TEI with TEI v. 2.5.0 -->
             <!-- release 8.16: 2013-01-28 - Aligned TEI with TEI v. 2.3.0 -->
+            <change who="#SS" when="2013-10-09">removed anchor from the linking module</change>
             <change who="#GB" when="2013-01-28">removed temp customization of space (fixed in TEI 2.3.0)</change>
             <change who="#GB" when="2012-11-29">suppressed schematron constraint on att.datable.custom</change>
             <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added constraints for space</change>
@@ -87,7 +89,7 @@
                 <moduleRef key="certainty" except="respons"/>
                 <moduleRef key="gaiji" except="char charDecl charName charProp glyph glyphName localName mapping
                     unicodeName value"/>
-                <moduleRef key="linking" except="alt altGrp anchor joinGrp timeline when"/>
+                <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
                 <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
