@@ -1,0 +1,160 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml/app-epi-krummreypanciera.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-krummreypanciera" xml:lang="en">
+    <head>Appendix: Aligning EpiDoc with Krummrey-Panciera 1980</head>
+    <p>The diacritical signs as enumerated in <term target="#krummreypanciera">Krummrey Panciera 1980</term>,
+    with links to EpiDoc guidance for encoding each semantic distinction expressed thereby in <term target="#TEI">TEI</term> XML.</p>
+    
+    <list type="gloss">
+        <head>I. Praemonenda</head>
+        <label>1. (print diplomatic transcription if no photograph available)</label>
+        <item>Not applicable. The markup for interpretive and diplomatic editions should be identical;
+            a stylesheet transformation will deal with any rendering differences required.
+            (No reference to diplomatic transcription in Gudielines?)</item>
+        <label>2. (close square brackets at beginning and end of lines, unless in linear presentation)</label>
+        <item>Same recommendation applies to EpiDoc. (Not in Guidelines?)</item>
+        <label>3. </label>
+        <item>?</item>
+        <label>4. (don't add spacing between or around diacritical signs when within a word)</label>
+        <item>Same recommendation applies to EpiDoc. (Not in Guidelines?)</item>
+        <label>5. (summary of following sections)</label>
+        <item>Not applicable.</item>
+    </list>
+    <list type="gloss">
+        <head>II. Versuum paginarumque diuisio</head>
+        <label>1. abc /<hi rend="superscript">5</hi> abc</label>
+        <item><ref target="trans-linebreak.html">Lines and line breaks</ref></item>
+        <label>2. abc // abc</label>
+        <item><ref target="trans-textpart.html">Columns, fragments, sections, pages and other breaks</ref></item>
+    </list>
+    <list type="gloss">
+        <head>III. Literae Communes</head>
+        <label>1. abc</label>
+        <item><ref target="trans-cleartext.html">Clear text</ref></item>
+        <label>2. ABC</label>
+        <item><ref target="trans-uninterpreted.html">Uninterpreted characters</ref></item>
+        <label>3. a&#x323;b&#x323;c&#x323;</label>
+        <item><ref target="trans-ambiguous.html">Ambiguous characters</ref></item>
+        <label>4. +++</label>
+        <item><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref></item>
+        <label>5. <hi rend="underline">abc</hi></label>
+        <item><ref target="trans-previouseditor.html">Text visible to previous editor</ref></item>
+    </list>
+    <list type="gloss">
+        <head>IV. Litterarum formae notabiliores</head>
+        <label>1. á, é, í, ó, ú</label>
+        <item><ref target="trans-apices.html">Apices</ref></item>
+        <label>2. <hi rend="supraline">abc</hi>, <hi rend="trans-supralinearetc.html">V</hi></label>
+        <item><ref target="trans-supraline">Supralinear line, etc.</ref></item>
+        <label>3, ((y)), ((bs)), ((ps)), ((v))</label>
+        <item><ref target="trans-claudian.html">Claudian letters</ref></item>
+        <label>4. a&#x0361;b, a&#x0361;bc</label>
+        <item><ref target="trans-ligature.html">Ligatures</ref></item>
+    </list>
+    <list type="gloss">
+        <head>V. Litterae erasae</head>
+        <label>1. 〚abc〛 aut 〚ABC〛 aut 〚a&#x323;b&#x323;c&#x323;〛</label>
+        <item><ref target="trans-erased.html">Erased but legible text</ref></item>
+        <label>2. 〚[abc]〛</label>
+        <item><ref target="trans-erasedillegible.html">Erased and illegible but restored</ref></item>
+        <label>3. 〚[...]〛aut 〚[<hi rend="superscript"><hi rend="underline"> c. 5 </hi></hi>]〛 aut 〚[- - -]〛</label>
+        <item><ref target="trans-erasedlost.html">Erased and lost</ref></item>
+    </list>
+    <list type="gloss">
+        <head>VI. Literae in litura scriptae</head>
+        <label>1. «abc» aut «ABC» aut «a&#x323;b&#x323;c&#x323;»</label>
+        <item><ref target="trans-struckovererasure.html">Text struck over erasure</ref> and <ref target="trans-erased.html">Erased but legible text</ref></item>
+        <label>2. «[abc]»</label>
+        <item><ref target="trans-struckovererasure.html">Text struck over erasure</ref> and <ref target="trans-erasedillegible.html">Erased and illegible but restored</ref></item>
+        <label>3. «[...]»aut «[<hi rend="superscript"><hi rend="underline"> c. 5 </hi></hi>]» aut «[- - -]»</label>
+        <item><ref target="trans-struckovererasure.html">Text struck over erasure</ref> and <ref target="trans-erasedlost.html">Erased and lost</ref></item>
+    </list>
+    <list type="gloss">
+        <head>VII. Additamenta antiqua</head>
+        <label>1. `abc´</label>
+        <item><ref target="trans-addition.html">Text added by ancient hand</ref></item>
+    </list>
+    <list type="gloss">
+        <head>VIII. Litterae deperditae</head>
+        <label>1. [abc]</label>
+        <item><ref target="trans-restored.html">Restored text</ref></item>
+        <label>2. [...]</label>
+        <item><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></item>
+        <label>3. [<hi rend="superscript"><hi rend="underline"> c. 5 </hi></hi>] aut [- - -]</label>
+        <item><ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref> and
+            <ref target="trans-lostcharunknown.html">Lost characters, quantity unknown</ref></item>
+        <label>4. [ - ]</label>
+        <item><ref target="trans-lostcharpraenomen.html">Lost characters, quantity extrapolated (e.g. praenomen or number)</ref></item>
+        <label>5. [ - - - - - - ]</label>
+        <item><ref target="trans-lostlineknown.html">Lost lines, quantity known</ref></item>
+        <label>6. - - - - - -</label>
+        <item><ref target="trans-lostlineunknown.html">Lost lines, quantity unknown</ref></item>
+        <label>7. [ - - - ?], [ - ?], [- - - - - - ?], - - - - - - ?</label>
+        <item><ref target="trans-possiblylost.html">Lines possibly lost / text possibly breaks</ref></item>
+    </list>
+    <list type="gloss">
+        <head>IX. Litterae ab editore expunctae adiectae correctae</head>
+        <label>1. {abc}</label>
+        <item><ref target="trans-superfluous.html">Superfluous characters</ref></item>
+        <label>2. &lt;abc&gt;</label>
+        <item><ref target="trans-omitted.html">Supplement of omitted characters</ref></item>
+        <label>3. &#x2e22;abc&#x2e23;</label>
+        <item><ref target="trans-erroneoussubstitution.html">Erroneous substitution</ref></item>
+    </list>
+    <list type="gloss">
+        <head>X. Verba breviata notae verba subaudita inscriptiones non finitae</head>
+        <label>1. a(bc)</label>
+        <item><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></item>
+        <label>2. a(- - -)</label>
+        <item><ref target="trans-abbrevnotex.html">Abbreviation not expanded at all</ref></item>
+        <label>3. (abc)</label>
+        <item><ref target="trans-abbrevsymbol.html">Expansion of symbol to word</ref></item>
+        <label>4. (<hi rend="italic">scil.</hi> abc)</label>
+        <item><ref target="trans-subaudible.html">Editor makes subaudible word manifest</ref></item>
+        <label>5. (- - -)</label>
+        <item><ref target="trans-textnotcompleted.html">Text not completed (omission not restored)</ref></item>
+    </list>
+    <list type="gloss">
+        <head>XI. Aliae notae editoris</head>
+        <label>1. (!)</label>
+        <item><ref target="trans-editorsnote.html">Editor's note</ref></item>
+        <label>2. <hi rend="superscript">vac.3</hi> aut <hi rend="superscript">vac.c.3</hi> aut <hi rend="superscript">vac.</hi></label>
+        <item><ref target="trans-vacatchar.html">vacat measured in characters (horizontal space)</ref></item>
+        <label>3. <hi rend="superscript">vac.?</hi></label>
+        <item><ref target="trans-possiblevacat.html">Possible vacat</ref></item>
+        <label>4. ... , [...]</label>
+        <item><ref target="trans-ellipsis.html">Words omitted by editor</ref></item>
+    </list>
+    
+    <div xml:id="app-epi-panciera-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         </listBibl>
+    </div>
+</div>

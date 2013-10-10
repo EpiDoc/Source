@@ -26,79 +26,91 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-panciera" xml:lang="en">
-    <head>Appendix: Aligning EpiDoc with Krummrey-Panciera 1980</head>
-    <p>The diacritical signs as enumerated in <ref target="#krummreypanciera">Krummrey Panciera 1980</ref>,
-    with links to EpiDoc guidance for encoding each semantic distinction expressed thereby in <term ref="#TEI">TEI</term> XML.</p>
+    <head>Appendix: Aligning EpiDoc with Panciera 1991</head>
+    <p>The diacritical signs as enumerated in <ref target="#panciera">Panciera 1991</ref>,
+    with links to EpiDoc guidance for encoding each semantic distinction expressed thereby in
+        <term ref="#TEI">TEI</term> XML.</p>
     
     <list type="gloss">
-        <head>I. Praemonenda</head>
-        <label>...</label>
-        <item>...</item>
-    </list>
-    <list type="gloss">
-        <head>II. Versuum paginarumque diuisio</head>
-        <label>1. abc /<hi rend="superscript">5</hi> abc</label>
-        <item><ref target="trans-linebreak.html">Lines and line breaks</ref></item>
-        <label>2. abc // abc</label>
-        <item><ref target="trans-textpart.html">Columns, fragments, sections, pages and other breaks</ref></item>
-    </list>
-    <list type="gloss">
-        <head>III. Literae Communes</head>
-        <label>1. abc</label>
-        <item><ref target="trans-cleartext.html">Clear text</ref></item>
-        <label>2. ABC</label>
-        <item><ref target="trans-uninterpreted.html">Uninterpreted characters</ref></item>
-        <label>3. a&#x323;b&#x323;c&#x323;</label>
+        <head>A. Litterae in lapide exstantes</head>
+        <label>I. Litterae ita laesae ut certius extra tituli contextum agnosci non possunt</label>
         <item><ref target="trans-ambiguous.html">Ambiguous characters</ref></item>
-        <label>4. +++</label>
-        <item><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref></item>
-        <label>5. <hi rend="underline">abc</hi></label>
+        <label>II. Litterae errore substitutae quas editor correxit</label>
+        <item><ref target="trans-erroneoussubstitution.html">Erroneous substitution</ref></item>
+        <label>III. Litterae errore adiectae quas editor expunxit</label>
+        <item><ref target="trans-superfluous.html">Superfluous characters</ref></item>
+        <label>IV. Additamentum antiquum ad textum corrigendum aut supplendum</label>
+        <item><ref target="trans-addition.html">Text added by ancient hand</ref></item>
+        <label>V. Litterae antiquitus erasae quae tamen legentur</label>
+        <item><ref target="trans-erased.html">Erased but legible text</ref></item>
+        <label>VI. Litterae loco erasarum insculptae</label>
+        <item><ref target="trans-struckovererasure.html">Text struck over erasure</ref></item>
+        <label>VII. Vestigia litterarum ita corruptarum ut nullo modo agnosci possint</label>
+        <item><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref> and 
+            <ref target="trans-illegiblecharunknown.html">quantity unknown</ref></item>
+        <label>VIII. Litterae planae lectionis quae tamen in incerto est utrum ad initium verbi an ad
+            medium an ad finem pertineant an ad verbum plus quam unum</label>
+        <item><ref target="trans-uninterpreted.html">Uninterpreted characters</ref></item>
+    </list>
+    <list type="gloss">
+        <head>B. Litterae omissae vel deperditae</head>
+        <label>I. Litterae errore omissae quas editor adiecit</label>
+        <item><ref target="trans-omitted.html">Supplement of omitted characters</ref></item>
+        <label>II. Litterae omissae quod lapicida inscriptionem ad finem non perduxit</label>
+        <item><ref target="trans-textnotcompleted.html">Text not completed (omission not restored)</ref></item>
+        <label>III. Litterae omissae compendii causa quas editor explevit</label>
+        <item><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></item>
+        <label>IV. Litterae quae a prioribus descriptae postea perierunt</label>
         <item><ref target="trans-previouseditor.html">Text visible to previous editor</ref></item>
+        <label>V. Litterae fortuito superficiei damno vel fractura omnino deperditae
+            quarum numerus sive computari potest sive non potest</label>
+        <item><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref>, 
+            <ref target="trans-lostcharapprox.html">quantity approximate</ref> and
+            <ref target="trans-lostcharunknown.html">quantity unknown</ref></item>
+        <label>VI. Lacuna sive unius integri versus sive integrorum versuum quorum numerus incertus est</label>
+        <item><ref target="trans-lostlineknown.html">Lost lines, quantity known</ref> and
+            <ref target="trans-lostlineunknown.html">quantity unknown</ref></item>
+        <label>VII. Litterae omnino deperditae quas editor supplevit</label>
+        <item><ref target="trans-restored.html">Restored text</ref></item>
+        <label>VIII. Litterae antiquitus omnino erasae quarum numerus sive computari potest sive non potest</label>
+        <item><ref target="trans-erasedlost.html">Erased and lost</ref></item>
     </list>
     <list type="gloss">
-        <head>IV. Litterarum formae notabiliores</head>
-        <label>1. á, é, í, ó, ú</label>
-        <item><ref target="trans-apices.html">Apices</ref></item>
-        <label>2. <hi rend="supraline">abc</hi>, <hi rend="trans-supralinearetc.html">V</hi></label>
-        <item><ref target="trans-supraline">Supralinear line, etc.</ref></item>
-        <label>3, ((y)), ((bs)), ((ps)), ((v))</label>
-        <item><ref target="trans-claudian.html">Claudian letters</ref></item>
-        <label>4. a&#x0361;b, a&#x0361;bc</label>
+        <head>C. Varia</head>
+        <label>I. Litterae conexae</label>
         <item><ref target="trans-ligature.html">Ligatures</ref></item>
-    </list>
-    <list type="gloss">
-        <head>V. Litterae erasae</head>
-        <label>V.1</label>
-        <item>...</item>
-    </list>
-    <list type="gloss">
-        <head>VI. Literae in litura scriptae</head>
-        <label>VI.1</label>
-        <item>...</item>
-    </list>
-    <list type="gloss">
-        <head>VII. Additamenta antiqua</head>
-        <label>VII.1</label>
-        <item>...</item>
-    </list>
-    <list type="gloss">
-        <head>VIII. </head>
-        <label></label>
+        <label>II. Litterae quae dicuntur Claudianae</label>
+        <item><ref target="trans-claudian.html">Claudian letters</ref></item>
+        <label>III. I longa</label>
+        <item><ref target="trans-tallorsmall.html">Tall or small characters</ref></item>
+        <label>IV. Vocales apicibus notatae</label>
+        <item><ref target="trans-apices.html">Apices</ref></item>
+        <label>V. Litterae et notae numerorum lineis notatae</label>
+        <item><ref target="trans-supraline">Supralinear line, etc.</ref></item>
+        <label>VI. Puncta hederae</label>
+        <item><ref target="trans-symbol.html">Symbols</ref> and 
+            <ref target="trans-symbolinterpunct.html">Interpuncts</ref></item>
+        <label>VII. Verbum ab editore loco litterae inversae positum</label>
         <item></item>
-    </list>
-    <list type="gloss">
-        <head>IX. </head>
-        <label></label>
+        <label>VIII. Verbum ab editore loco notae positum</label>
         <item></item>
-    </list>
-    <list type="gloss">
-        <head>X. </head>
-        <label></label>
+        <label>IX. Verbum subauditum quod editor menifestum facit</label>
         <item></item>
-    </list>
-    <list type="gloss">
-        <head>XI. </head>
-        <label></label>
+        <label>X. Verbum ab loco anaglyphi positum</label>
+        <item></item>
+        <label>XI. Nota editoris ut lector attento animo aliquid perpendat</label>
+        <item></item>
+        <label>XII. Nota editoris quae ponitur post aliquid de quo quaeritur</label>
+        <item></item>
+        <label>XIII. Partes versus quae non inscriptae fuisse videntur</label>
+        <item></item>
+        <label>XIV. Verba praetermissa in textum laudando</label>
+        <item></item>
+        <label>XV. Linearum diviso</label>
+        <item></item>
+        <label>XVI. Versuum diviso</label>
+        <item></item>
+        <label>XVII. Paginarum diviso</label>
         <item></item>
     </list>
     
