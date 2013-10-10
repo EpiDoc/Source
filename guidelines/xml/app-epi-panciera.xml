@@ -27,12 +27,13 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-panciera" xml:lang="en">
     <head>Appendix: Aligning EpiDoc with Panciera 1991</head>
-    <p>The diacritical signs as enumerated in <ref target="#panciera">Panciera 1991</ref>,
+    <p>The diacritical signs as enumerated in <term target="#panciera">Panciera 1991</term>,
     with links to EpiDoc guidance for encoding each semantic distinction expressed thereby in
-        <term ref="#TEI">TEI</term> XML.</p>
+        <term target="#TEI">TEI</term> XML.</p>
     
-    <list type="gloss">
+    <div>
         <head>A. Litterae in lapide exstantes</head>
+    <list type="gloss">
         <label>I. Litterae ita laesae ut certius extra tituli contextum agnosci non possunt</label>
         <item><ref target="trans-ambiguous.html">Ambiguous characters</ref></item>
         <label>II. Litterae errore substitutae quas editor correxit</label>
@@ -52,8 +53,11 @@ End license statement: do not remove -->
             medium an ad finem pertineant an ad verbum plus quam unum</label>
         <item><ref target="trans-uninterpreted.html">Uninterpreted characters</ref></item>
     </list>
-    <list type="gloss">
+    </div>
+    
+    <div>
         <head>B. Litterae omissae vel deperditae</head>
+    <list type="gloss">
         <label>I. Litterae errore omissae quas editor adiecit</label>
         <item><ref target="trans-omitted.html">Supplement of omitted characters</ref></item>
         <label>II. Litterae omissae quod lapicida inscriptionem ad finem non perduxit</label>
@@ -75,8 +79,11 @@ End license statement: do not remove -->
         <label>VIII. Litterae antiquitus omnino erasae quarum numerus sive computari potest sive non potest</label>
         <item><ref target="trans-erasedlost.html">Erased and lost</ref></item>
     </list>
-    <list type="gloss">
+    </div>
+    
+    <div>
         <head>C. Varia</head>
+    <list type="gloss">
         <label>I. Litterae conexae</label>
         <item><ref target="trans-ligature.html">Ligatures</ref></item>
         <label>II. Litterae quae dicuntur Claudianae</label>
@@ -113,6 +120,7 @@ End license statement: do not remove -->
         <label>XVII. Paginarum diviso</label>
         <item></item>
     </list>
+    </div>
     
     <div xml:id="app-epi-panciera-responsibility">
         <head>Responsibility for this section</head>
