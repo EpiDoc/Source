@@ -251,7 +251,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
             } else {
                 if (charBuffer.length() > 0) {
                     if(tc.getParser().supportsLanguage(language)) {
-                        String out = "";
+                        String out;
                         try {
                             out = this.tc.getString(this.charBuffer, start, len);
                             this.contentHandler.characters(out.toCharArray(), 0, out.length());
@@ -263,7 +263,7 @@ public class TranscodingContentHandler implements ContentHandler, LexicalHandler
                     }
                 } else {
                     if(tc.getParser().supportsLanguage(language)) {
-                        String out = "";
+                        String out;
                         try {
                             out = this.tc.getString(new String(c, start, len));
                             this.contentHandler.characters(out.toCharArray(), 0, out.length());
