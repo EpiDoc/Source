@@ -27,9 +27,8 @@ public abstract class AbstractGreekConverter extends AbstractConverter {
     Class c = this.getClass();
     String prefix = c.getSimpleName().replaceFirst("Converter$", "");
 
-    try {
-      File f = new File(c.getResource(prefix + "Fonts.properties").toURI());
-      if (f.exists()) {
+    try {;
+      if (null != c.getResource(prefix + "Fonts.properties")) {
         font_props.load(c.getResourceAsStream(prefix + "Fonts.properties"));
         fonts = font_props.getProperty("Fonts").split(",");
       }

@@ -29,8 +29,7 @@ public abstract class AbstractGreekParser extends AbstractParser {
     String prefix = c.getSimpleName().replaceFirst("Parser$", "");
 
     try {
-      File f = new File(c.getResource(prefix + "Fonts.properties").toURI());
-      if (f.exists()) {
+      if (null != c.getResource(prefix + "Fonts.properties")) {
         font_props.load(c.getResourceAsStream(prefix + "Fonts.properties"));
         fonts = font_props.getProperty("Fonts").split(",");
       }
