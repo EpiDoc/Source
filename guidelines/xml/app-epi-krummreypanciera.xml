@@ -35,15 +35,17 @@ End license statement: do not remove -->
     <list type="gloss">
         
         <label>1. (print diplomatic transcription if no photograph available)</label>
-        <item>Not applicable. The markup for interpretive and diplomatic editions should be identical;
-            a stylesheet transformation will deal with any rendering differences required.
+        <item>Not applicable. A single EpIDoc-encoded edition can be used to generate both interpretive and
+            diplomatic views via different stylesheet transformations.
             (No reference to diplomatic transcription in Gudielines?)</item>
         <label>2. (close square brackets at beginning and end of lines, unless in linear presentation)</label>
         <item>Same recommendation applies to <gi>supplied</gi> elements in EpiDoc. (Not in Guidelines?)</item>
-        <label>3. </label>
-        <item>?</item>
+        <label>3. (don't use italics or underline for notes in text)</label>
+        <item>Not applicable.</item>
         <label>4. (don't add spacing between or around diacritical signs when within a word)</label>
         <item>Same recommendation applies to EpiDoc. (Not in Guidelines?)</item>
+        <label>5. (not all combinations of diacritical notes have been given; just nest them)</label>
+        <item>Same applies to EpiDoc, but no specific guidance required.</item>
     </list>
     </div>
     
@@ -186,6 +188,7 @@ End license statement: do not remove -->
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>help deciphering Hans Krummrey's Latin</resp><name>Hugh Cayless</name></respStmt></bibl>
          </listBibl>
     </div>
 </div>
