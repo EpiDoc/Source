@@ -38,48 +38,42 @@ End license statement: do not remove -->
     At present, therefore, EpiDoc recommends the use of the following values in the <att>rend</att>
     attribute on the <gi>lb</gi> immediately preceding the line of text in question:</p>
     
-    <list>
-        <item><tag>lb rend="right-to-left"</tag></item>
-        <item><tag>lb rend="left-to-right"</tag></item>
-    </list>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <lb rend="left-to-right"/>
+        <lb rend="right-to-left"/>
+    </egXML>
 
     <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as
         it is the default direction. One might need to use <att>rend</att> in the case of boustrophedon text, for instance.</p>
 
     <p>Other values of <att>rend</att> can be created in the case of texts written vertically, in
-        a circle or spiral, or otherwise unusually.</p>
+        a circle or spiral, or otherwise unusually. (But these values are not currently handled by the Example Stylesheets.)</p>
     
-    <p>Note: as of 31 May 2013, the EpiDoc Example Stylesheets do not provide any support for the handling of these
+    <!--<p>Note: as of 31 May 2013, the EpiDoc Example Stylesheets do not provide any support for the handling of these
         recommended values. There is a bug report (<ref target="https://sourceforge.net/p/epidoc/bugs/118/">Ticket no.
             118</ref>) open against the stylesheets for this reason, which should be consulted for the current state of
         affairs. If this deficiency still obtained at the time this guidelines page was last generated, it is surely
-        reflected in the rendering of the examples below.</p>
+        reflected in the rendering of the examples below.</p>-->
 
 
     <cit>
-        <quote><!-- conventional rendering --></quote>
-        <bibl corresp="#panciera">
-            <biblScope/>
-        </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
-    </cit>
+        <quote>abc  ← </quote>
+        <bibl corresp="#seg"/></cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
         <ab><lb/>abc</ab></egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
         <ab><lb rend="right-to-left"/>abc</ab>
     </egXML>
 
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="seg">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
         <ab>
-            <lb rend="left-to-right"/>abc
-            <lb rend="right-to-left"/>def
-            <lb rend="left-to-right"/>ghi
-            <lb rend="left-to-right"/>jkl
-            <lb rend="right-to-left"/>mno
+            <lb n="1" rend="right-to-left"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb
+               n="2" break="no" rend="left-to-right"/><supplied reason="lost">θ</supplied>ανόντος
+            ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb
+               n="3" break="no" rend="right-to-left"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
         </ab>
     </egXML>
     
@@ -87,18 +81,9 @@ End license statement: do not remove -->
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
         </listBibl>
