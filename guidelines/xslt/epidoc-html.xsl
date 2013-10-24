@@ -6,7 +6,7 @@
     xmlns:rng="http://relaxng.org/ns/structure/1.0" exclude-result-prefixes="tei t a rng s teix"
     version="2.0">
     
-    <xsl:import href="TEI-Stylesheets/odds2/odd2html.xsl"/>
+    <xsl:import href="TEI-Stylesheets/odds/odd2html.xsl"/>
     <!--<xsl:import href="http://www.tei-c.org/release/xml/tei/stylesheet/odds2/odd2html.xsl"/>-->
     <!-- <xsl:import href="/Applications/oxygen/frameworks/tei/xml/tei/stylesheet/odds2/odd2html.xsl"/> -->
     <!-- <xsl:import href="../../example-p5-xslt/htm-imports.xsl"/> -->
