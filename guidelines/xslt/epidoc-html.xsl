@@ -76,14 +76,18 @@
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp, 'http://papyri.info/ddbdp/')">
                         <xsl:text>DDbDP: </xsl:text>
-                        <xsl:variable name="filename">
-                            <xsl:value-of
-                                select="substring-after(@corresp,'http://papyri.info/ddbdp/')"
-                            />
-                        </xsl:variable>
+                        <xsl:variable name="filename" select="substring-after(@corresp,'http://papyri.info/ddbdp/')"/>
                         <xsl:element name="a">
                             <xsl:attribute name="href" select="@corresp"/>
                             <xsl:value-of select="translate($filename,';','.')"/>
+                        </xsl:element>
+                    </xsl:when>
+                    <xsl:when test="starts-with(@corresp,'http://epigraphy.packhum.org')">
+                        <xsl:text>PHI: </xsl:text>
+                        <xsl:variable name="filename" select="substring-after(@corresp,'http://epigraphy.packhum.org/inscriptions/oi?ikey=')"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="$filename"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
