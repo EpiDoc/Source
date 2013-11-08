@@ -27,31 +27,72 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-translation" xml:lang="en">
     <head>Translation</head>
-    <p>gloss</p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>Tagging the translation of the text into English or another (usually modern) language.</p>
+   
+   <p>At the most general level, it is worth saying that almost anything that can be tagged in the
+   transcribed text division of an epigraphic or papyrological edition can in principle also be tagged
+   in the translation division. In practice, however, far less markup will appear in most translations,
+   in some cases almost none at all.</p>
+    
+    <div>
+        <head>Features of the division</head>
+        <p>The translation or translations should be contained in a division of the body of the TEI file,
+            with a <att>type</att> attribute identifying it as a translation division.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="translation"><p>...</p></div>
+        </egXML>
+        <p>The translation might be subcategorized in some way. For instance, an edition might contain
+        more than one translation into a single language, according to a particular typology; the translation
+        <gi>div</gi>s could therefore bear <att>subtype</att> attributes with values such as "literal", "poetic",
+        "free" and so forth. Perhaps more commonly, an edition might encode translations in more than one
+        modern language, which would then be differentiated by means of <att>xml:lang</att> attributes.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="translation" xml:lang="en">
+                <p>In the year 6960, in the 13th (or 10th) indiction. With the Lord's help, the wall was completed. 
+                    Christ, come as a Helper, to ... Kosta. In the year 6960.</p>
+            </div>
+            <div type="translation" xml:lang="ru">
+                <p>6960, в 13-й (или: 10-й) индикт (?). С [Божьей] помощью окончена стена. 
+                    Приди Помощником, Христе, к ... Косте. В 6960 году.</p>
+             </div>
+        </egXML>
+        <p>Separate translations might be encoded for different texts or parts of the text in an edition,
+            perhaps most appropriately on a <tag>div type="textpart"</tag> within the translation division, rather
+            than on the top-level division.
+        The correspondence between parts of the transcription and of the translation might be recorded
+        in an attribute such as <att>n</att> (giving the number or letter of the corresponding section), or
+        more formally, <att>corresp</att>, linking directly to the <att>xml:id</att> of a division containing
+        the corresponding text.</p>
+        <p>Other means of differentiating multiple translations, using the various TEI attributes on <gi>div</gi>
+        are imaginable.</p>
+    </div>
+    
+    <div>
+        <head>Features of the translated text</head>
+        <p>As noted above, the translation is likely to require far fewer features of markup than the 
+        transcribed text itself. The features most commonly tagged in translations include:</p>
+        <list>
+            <item><ref target="trans-restored.html">Restored text</ref>: (<tag>supplied reason="lost"</tag>)
+                to tag restored text (most often entire words or phrases,
+            since the translation will seldom align with the original text more finely than this);</item>
+            <item><ref target="trans-subaudible.html">Editor makes "subaudible" word
+                manifest</ref>: (<tag>supplied reason="subaudible"</tag>)
+                to tag words or phrases added by way of
+            clarification in the translation that were not present in the transcription;</item>
+            <item><ref target="trans-editorsnote.html">Editor's note</ref>: (<gi>note</gi>)
+            to tag the editor's words that are not part of the translation per se, such as "i.e. 212 CE",
+            or "unclear".</item>
+            <item><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref>: (<gi>expan</gi>, <gi>ex</gi>)
+            most often used to indicate names, if at all, abbreviated in the original;</item>
+            <item><ref target="trans-lostcharunknown.html">Lost characters</ref> (<gi>gap</gi>)
+            to indicate significant spans of lacuna in the original text.</item>
+        </list>
+    </div>
     
     <div xml:id="intro-faq-responsibility">
-    
-        <head>Responsibility for this section</head>
+    <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

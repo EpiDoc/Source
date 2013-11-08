@@ -8,11 +8,16 @@ What it is:
 	of digital editions of primary source documents like inscriptions or
 	papyri.
 	The canonical version of the Guidelines are also available in HTML at 
-	http://www.stoa.org/epidoc/gl/
+	http://www.stoa.org/epidoc/gl/latest/
 
 License:
     The EpiDoc Guidelines is copyright the contributors. 
 	See LICENSE.txt for license details.
+
+To cite the EpiDoc Guidelines, please use the following information:
+	Tom Elliott, Gabriel Bodard, Elli Mylonas, Simona Stoyanova, Charlotte Tupman,
+	Scott Vanderbilt, et al. (2007-2013), EpiDoc Guidelines: Ancient documents in
+	TEI XML (Version 8). Available: http://www.stoa.org/epidoc/gl/latest/.
 
 Technical requirements and limitations:
     The Guidelines consist of XML files in TEI P5 (see guidelines/xml/), and as such

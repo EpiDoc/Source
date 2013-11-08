@@ -67,7 +67,7 @@ How to use it:
                2. if your project is in active development and you are comfortable following
                the changes in the community fora such as the MARKUP list, and updating
                your XML if the schema changes, you should use the /latest/ release
-               (http://www.stoa.org/epidoc/schema/8.17/tei-epidoc.rng)
+               (http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng)
                which will be updated whenever a new schema is released.
 
 See https://sourceforge.net/p/epidoc/wiki/Schema/ for more information on the EpiDoc schema and how to use it.

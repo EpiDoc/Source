@@ -37,29 +37,36 @@
             <listRef>
                 <ptr target="a"/>
             </listRef></p>
-        <p><gi>expan</gi> (expansion) contains the expansion of an abbreviation.</p>
+        <p><gi>expan</gi> (expansion) contains the fully expanded form of an abbreviated word.</p>
         <p><gi>abbr</gi> (abbreviation) contains an abbreviation of any sort.</p>
-        <p> <gi>am</gi> (abbreviation marker) contains a sequence of letters or signs present in an
+        <p><gi>am</gi> (abbreviation marker) contains a sequence of letters or signs present in an
             abbreviation which are omitted or replaced in the expanded form of the abbreviation</p>
-        <p><gi>g</gi> (character or glyph) represents a non-standard character or glyph.</p>
-        <p> <gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
+        <p><gi>g</gi> (character or glyph) represents a non-standard character or glyph;
+            <att>type</att> indicates the name of the decorative symbol, e.g. leaf..</p>
+        <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an editor or
             transcriber when expanding an abbreviation.</p>
         <p><gi>hi</gi> (highlighted) marks a word or phrase as graphically distinct from the
             surrounding text, for reasons concerning which no claim is made.</p>
 
-        <p>Where a Chi-Rho symbol appears, it BLAH BLAH BLAH</p>
-        <list type="bulleted">
-            <item><att>type</att> indicates the name of the decorative symbol, e.g. leaf.</item>
-        </list>
-        <p>A Unicode value can be used inside the <gi>g</gi> if desired.</p>
+        <p>Where a Chi-Rho symbol appears, it may have a range of different semantic values
+        (abbreviation or logogram for "Christ" or "Christian"; a general nonverbal  indication of faith
+        or affiliation; ligature of Χ and Ρ outside of any Christian context), or the editor may prefer not
+        to give any interpretation of the import of the symbol. The examples below show a few of the ways
+        in which this variety might be handled.</p>
+        
+        <p>A Unicode value (for example U+2627) may be used inside the <gi>g</gi> if desired.</p>
     
         <cit>
             <quote>☧</quote>
             <bibl corresp="#ddbdp"/>
         </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
-         <g type="chi-rho"/>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp panciera" corresp="#ddbdp">
+        <g type="chi-rho"/>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp">
+        <g type="chi-rho">☧</g>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
@@ -98,8 +105,8 @@
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

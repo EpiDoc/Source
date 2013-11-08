@@ -36,11 +36,13 @@ End license statement: do not remove -->
             </listRef>--></p> 
     
     <p>A <gi>space</gi> should be used wherever there is an intentional space left on the
-        support: i.e. a space that never contained text (vacat).  Its <att>unit</att> should be "cm" or whatever
-        unit the editor requires.</p>
+        support: i.e. a space that never contained text (vacat).  A <att>unit</att> attribute should
+        record the units of measurement in whatever form the editor requires (common values include
+        "metre", "cm"), and a <att>quantity</att> attribute should record the number of such units
+        measured.</p>
     
     <cit>
-        <quote>(vac.3)</quote>
+        <quote>(vac.4.2cm)</quote>
         <bibl corresp="#panciera">
             <biblScope>XI.2</biblScope>
         </bibl>
@@ -48,7 +50,7 @@ End license statement: do not remove -->
         <!-- etc. -->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
         <space extent="4.2" unit="cm" />
     </egXML>
     
@@ -58,16 +60,9 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-        <bibl><respStmt>
-            <resp>author</resp>
-            <name>Scott Vanderbilt</name>
-            <name/>
-        </respStmt></bibl>
-        <bibl><respStmt>
-            <resp>author</resp>
-            <name>Charlotte Tupman</name>
-            <name/>
-        </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
