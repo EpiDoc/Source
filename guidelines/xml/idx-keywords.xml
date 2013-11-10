@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-keywords" xml:lang="en">
-    <head>General keywords, other taxonomies</head>
+    <head>Type of text, general keywords, other taxonomies</head>
     <p>
         <specList>
             <specDesc key="msContents"/>
@@ -38,10 +38,42 @@ End license statement: do not remove -->
             <specDesc key="term"/>
         </specList>
     </p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <p>There is no specific <term target="#TEI">TEI</term> tag for the category or type of text, so different projects
+    have found different approaches to the encoding of this information. One approach was to use a bespoke 
+    <gi>rs</gi> (reference string) element, with <att>type</att> of "textType", around the relevant word in the
+    edition, often in the title:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph040311.html">
+        <title><rs type="textType">Honours</rs> for an emperor</title>
+    </egXML>
+    
+    <p>Another approach is to include the category of text in a list of keywords in
+        <gi>msContents</gi>/<gi>summary</gi>:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <msContents>
+            <summary corresp="#doc1 #doc4">
+                <seg>Building inscription</seg>
+                <seg>Demonstrative</seg>
+            </summary>
+        </msContents>
+        <!-- example from IOSPE V 2 -->
+    </egXML>
+    
+    <p>Perhaps the most TEI-compliant, although least specific, solution would be to include text category information
+    in <gi>textClass</gi>/<gi>keywords</gi>:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/hgv/28115">
+        <textClass>
+            <keywords scheme="hgv">
+                <term>Brief (privat)</term>
+            </keywords>
+        </textClass>
+    </egXML>
     
     <p>General keywords or index terms of any other kind can be tagged (by default using <gi>rs</gi>,
-        but any other semantically appropriate elemt may be captured for this purpose)
+        but any other semantically appropriate element may be captured for this purpose)
         anywhere in the document where they appear in running text: e.g. in the Greek or Latin edition,
         translations, commentary, or any of the descriptive fields in the header. Depending on the needs
         of a particular project and any internal or external taxonomies in use, such a tag might look something like:</p>
@@ -50,10 +82,6 @@ End license statement: do not remove -->
         <provenance type="observed">
             <p>Outside the <rs type="monuList" key="db934">Cyrene Sculpture Museum</rs>.</p>
         </provenance>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <title><rs type="textType">Honours</rs> for an emperor</title>
     </egXML>
     
     <p>The above examples could be indexed using project-specific code for the purpose of generating

@@ -38,16 +38,22 @@ End license statement: do not remove -->
         </specList>
     </p>
     
-    <p>One way of extracting this terminology is through the vocabulary, using the @lemma attribute of the <gi>w</gi> element.</p>
+    <p>One way of extracting this terminology is through the vocabulary, using the <att>lemma</att> attribute of the <gi>w</gi> element.</p>
     
-    <p>Another way could be using the <gi>rs</gi> element and the different values of the @type attribute could be similar to the categories 
-        used by the <ref target="http://edh-www.adw.uni-heidelberg.de/inschrift/erweiterteSuche">EDH</ref>. A @key or a @ref attribute could point to an authoriry list.</p>
+    <p>Another way could be using the <gi>rs</gi> element and the different values of the <att>type</att> attribute
+        could be similar to the categories used by the <term target="#EDH">EDH</term>.
+        A <att>key</att> or a <att>ref</att> attribute could point to an authority list 
+        (see <ref target="idx-nontei.html">External Authorities (non-TEI)</ref>).</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT108.html">
-            <rs type="military"><expan><abbr>uet</abbr><ex>eranus</ex></expan></rs>,
-        </egXML>
-    <!-- IRT example-->
+         <rs type="military"><expan><abbr>uet</abbr><ex>eranus</ex></expan></rs>
+    </egXML>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT330.html">
+        <title><rs type="socecon">Building dedication to Tiberius for road paving</rs></title>
+    </egXML>
+
+
     
     <div xml:id="intro-faq-responsibility">
         <head>Responsibility for this section</head>
