@@ -27,55 +27,64 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-desctext" xml:lang="en">
     <head>Description and layout of text field or campus</head>
-    <p rend="page-gloss">Information about the layout and placement of the text on the object is encoded within a
-    <gi>layoutDesc</gi> element in the manuscript description area.</p>
-    
+    <p rend="page-gloss">Information about the layout and placement of the text on the object is
+        encoded within a <gi>layoutDesc</gi> element in the manuscript description area.</p>
+
     <div rend="tag-defs">
-        <head>Relevant element documentation:</head><p>
-        <specList>
-            <specDesc key="layoutDesc"/>
-            <specDesc key="layout"/>
-            <specDesc key="dimensions"/>
-            <specDesc key="rs"/>
-        </specList>
-    </p></div>
-    
-    <div><p>
-        Description of the text field(s) or campus of an inscription or text may include features such as the
-        shape and dimensions of the text area, its placement on one or more face or in columns, direction
-        and orientation of text (although cf. <ref target="trans-linebreakdirection.html">Direction of Text</ref>),
-        the presence of margins, mouldings, or guide-lines, the relationship of each text to any decoration
-        or other physical feature of the object (a text laid out in the four corners of a cross, for example) 
-        or the relationship of multiple texts to one another.
-    </p>
-    
-    <p>
-        For the sake of compatibility with the <ref>EAGLE</ref> databases, some projects have tagged the
-        form of execution of the text (incised, scratched, stamped, etc.) with an <gi>rs</gi> with <att>type</att>
-        of "execution". (See further the <ref target="https://docs.google.com/spreadsheet/ccc?key=0AnmDUyfP6SvFcGh2dmVydWZ6NW50R1JLOEtUbEwwTEE"
-            >authority list: Sciptura</ref> [Google Spreadsheet] for suggested typology.)
-    </p>
-    
-    <p>See also <ref target="supp-descdimensions.html">Dimensions</ref> for more information on tagging object, campus or letter dimensions.</p>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <layout><rs type="execution" key="scalpro">Inscribed</rs> on the façade above the door within a panel 
-            (<dimensions>
-                <width unit="metre">0.65</width>
-                <height unit="metre">0.34</height>
-            </dimensions>).</layout>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <layout>
-            i. Between the arms of the cross. ii. Above the cross. iii. Below the cross.
-        </layout>
-    </egXML>
+        <head>Relevant element documentation:</head>
+        <p>
+            <specList>
+                <specDesc key="layoutDesc"/>
+                <specDesc key="layout"/>
+                <specDesc key="dimensions"/>
+                <specDesc key="rs"/>
+            </specList>
+        </p>
     </div>
-    <div xml:id="supp-desctext-responsibility">    
+
+    <div>
+        <p> Description of the text field(s) or campus of an inscription or text may include
+            features such as the shape and dimensions of the text area, its placement on one or more
+            face or in columns, direction and orientation of text (although cf. <ref
+                target="trans-linebreakdirection.html">Direction of Text</ref>), the presence of
+            margins, mouldings, or guide-lines, the relationship of each text to any decoration or
+            other physical feature of the object (a text laid out in the four corners of a cross,
+            for example) or the relationship of multiple texts to one another. </p>
+
+        <p> For the sake of compatibility with the <ref>EAGLE</ref> databases, some projects have
+            tagged the form of execution of the text (incised, scratched, stamped, etc.) with an
+                <gi>rs</gi> with <att>type</att> of "execution". (See further the <ref
+                target="https://docs.google.com/spreadsheet/ccc?key=0AnmDUyfP6SvFcGh2dmVydWZ6NW50R1JLOEtUbEwwTEE"
+                >authority list: Sciptura</ref> [Google Spreadsheet] for suggested typology.) </p>
+
+        <p>See also <ref target="supp-descdimensions.html">Dimensions</ref> for more information on
+            tagging object, campus or letter dimensions.</p>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <layout><rs type="execution" key="scalpro">Inscribed</rs> on the façade above the door
+                within a panel (<dimensions>
+                    <width unit="metre">0.65</width>
+                    <height unit="metre">0.34</height>
+                </dimensions>).</layout>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <layout> i. Between the arms of the cross. ii. Above the cross. iii. Below the cross.
+            </layout>
+        </egXML>
+        
+        <p>You can align your definitions by aligning to a local or to an external <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p>
+    
+    </div>
+    <div xml:id="supp-desctext-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>

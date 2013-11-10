@@ -26,32 +26,116 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-nontei" xml:lang="en">
-    <head>Alists not in TEI</head>
-    <p></p>
+    <head>External Vocabularies (non TEI)</head>
+    <p>Controlled Vocabularies and Authority Lists available online</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+<p>If you want to link to a specific definition of an information as a reference, you might want to
+        point to external vocabularies, contribute in those with new terms and align where possible.
+        In your Epidoc file you can insert then reference to this Authority Lists or Controlled
+        Vocabularies.</p>
     
+   <p>The easiest way to do this is by inserting a stable uri into the element with a <att>ref</att> as in the following example.</p> 
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <objectType ref="http://www.eagle-network.eu/voc/objtyp/lod/29">Altar</objectType>    
+    </egXML>
+    
+    <p>The information contained in the TEI header which 
+        contains the type of monument on which the inscription. 
+        The uri in the <att>ref</att> is taken by an external vocabulary, 
+        which in this case is a vocabulary developed by the EAGLE consortium.
+    </p>
+    
+    <p>These are the elements in which you might like to refer to an external source of information to align you definition</p>
+    <p>For each of these there might be many external vocabularies, which are listed below each one.</p>
+    
+    <list>
+        
+        <item> <!--this needs a link from the page -->
+            <ref target="idx-keywords.html">Type of Inscription</ref>
+            <list>
+            <item><ref target="http://www.eagle-network.eu/voc/typins/">EAGLE Type of Inscription Vocabulary</ref></item>
+            </list>
+        </item>
+        <item>
+            <ref target="supp-descobject.html">Object Type</ref>
+            <list>
+                <item><ref target="http://www.eagle-network.eu/voc/objtyp/">EAGLE Object Type Vocabulary (including monuments)</ref>
+                </item>
+<!--                <item><ref target="">Getty Museum</ref></item>
+                <item><ref target="">English Heritage</ref></item>-->
+            </list>
+        </item>
+        <item>
+            <ref target="supp-desctext.html">Engraving Technique</ref>
+            <list>
+                <item><ref target="http://www.eagle-network.eu/voc/writing/">EAGLE Engraving Tecnique Vocabulary</ref>
+                </item>
+            </list>
+        </item>
+       <item>
+           <ref target="supp-description.html">Material</ref>
+           <list>
+               <item><ref target="http://www.eagle-network.eu/voc/material/">EAGLE Material Vocabulary. 
+                   This Vocabulary integrates values from the first three 
+                   hierarchical levels of the Salizburg Simplified Petrography</ref>
+               </item>
+               <item><ref target="http://chc.sbg.ac.at/sri/thesaurus/">Salizburg Simplified Petrography</ref></item>
+           </list>
+        </item>
+        <item>
+            <ref target="supp-historigdate.html">Date of Origin</ref>
+            <list>
+                <item><ref target="http://www.eagle-network.eu/voc/dates/">EAGLE Dating Criteria Vocabulary</ref>
+                </item>
+  <!--         <item>Periodo</item>-->
+            </list>
+        </item>
+        <item>
+            <ref target="supp-description.html">State of preservation</ref>
+            <list>
+                <item>
+                    <ref target="http://www.eagle-network.eu/voc/statepreserv/">Eagle State of Preservation vocabulary</ref>
+                </item>
+            </list>
+        </item>
+        <item>
+            <ref target="supp-descdecor.html">Decoration</ref>
+            <list>
+                <item>
+                    <ref target="http://www.eagle-network.eu/voc/decor/">Eagle Decoration vocabulary</ref>
+                </item>
+            </list>
+        </item>
+    </list>
+    
+<p>To link to the Eagle Vocabularies, you can browse them on Tematres and then insert the 
+    uri which is built in the following form: http://www.eagle-network.eu/voc/objtyp/lod/63</p>
+    
+    <p> If you already have XML files in EpiDoc and want to 
+        insert the links, you might find useful the XSLT (still under development)
+        used by the Epigraphic Database Heidelberg, which you can find <ref target="https://github.com/PietroLiuzzo/popwithvoc/blob/master/populateFromList.xsl">here</ref>
+    </p>
+        
     <div xml:id="idx-nontei-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl>
                 <respStmt>
                     <resp>author</resp>
                     <name>Simona Stoyanova</name>
-                <name/></respStmt>
+                    <name/>
+                </respStmt>
             </bibl>
             <bibl>
                 <respStmt>
                     <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
+                    <name>Pietro Liuzzo</name>
+                    <name/>
+                </respStmt>
             </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            
         </listBibl>
     </div>
 </div>

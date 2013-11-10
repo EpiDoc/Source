@@ -28,36 +28,49 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descdecor" xml:lang="en">
     <head>Description of decoration or iconography</head>
     <div rend="tag-defs">
-        <head>Relevant element documentation:</head><p>
+        <head>Relevant element documentation:</head>
+        <p>
             <specList>
                 <specDesc key="decoDesc"/>
                 <specDesc key="decoNote"/>
                 <specDesc key="rs"/>
             </specList>
-        </p></div>
-<div>
-    <p>Iconography, decorative features or other imagery on the support or alongside the text may be described in prose
-    as part of the description of object and/or text campus, or may be encoded in its own section using the
-    <gi>decoDesc</gi> and <gi>decoNote</gi> elements. In the former case, some projects have used
-    an <gi>rs</gi> with <att>type</att> of "decoration" to tag keywords within the description for indexing.</p>
-    
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <decoDesc>
-            <decoNote>Egg and dart moulding along the top of the block.</decoNote>
-        </decoDesc>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph110035.html">
-        <support>
-            White marble sarcophagus with columnar <rs type="decoration">arcade</rs> design.
-        </support>
-    </egXML>
+        </p>
+    </div>
+    <div>
+        <p>Iconography, decorative features or other imagery on the support or alongside the text
+            may be described in prose as part of the description of object and/or text campus, or
+            may be encoded in its own section using the <gi>decoDesc</gi> and <gi>decoNote</gi>
+            elements. In the former case, some projects have used an <gi>rs</gi> with
+                <att>type</att> of "decoration" to tag keywords within the description for
+            indexing.</p>
+
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <decoDesc>
+                <decoNote>Egg and dart moulding along the top of the block.</decoNote>
+            </decoDesc>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+            corresp="http://insaph.kcl.ac.uk/iaph2007/iAph110035.html">
+            <support> White marble sarcophagus with columnar <rs type="decoration">arcade</rs>
+                design. </support>
+        </egXML>
+        
+        <p>You can align your definitions by aligning to a local or to an external <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p>
+        
     </div>
     <div xml:id="supp-descdecor-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                    <name/>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>
