@@ -27,31 +27,51 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-other" xml:lang="en">
     <head>Other/generic authority lists</head>
-    <p></p>
+    <p>Other vocabularies or authority lists not specially catered for by <term target="#TEI">TEI</term>
+        person, place, event, etc. elements.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
-    <div xml:id="idx-other-responsibility">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <list>
+            <item xml:id="pictura">
+                <term xml:lang="ru">дипинто</term>
+                <term xml:lang="en">dipinto</term>
+            </item>
+            <item xml:id="scalpro">
+                <term xml:lang="ru">лапидарный</term>
+                <term xml:lang="en">lapidary</term>
+            </item>
+            <item xml:id="scariphatis">
+                <term xml:lang="ru">граффито</term>
+                <term xml:lang="en">graffito</term>
+            </item>
+        </list>
+        <!-- example from IOSPE -->
+    </egXML>
     
-        <head>Responsibility for this section</head>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <list>
+            <item xml:id="mon1">
+                <term xml:lang="ru">плита</term>
+                <gloss xml:lang="en">panel</gloss>
+            </item>
+            <item xml:id="mon2">
+                <term xml:lang="ru">плитка</term>
+                <gloss xml:lang="en">small panel</gloss>
+            </item> 
+            <item xml:id="mon3">
+                <term xml:lang="ru">стела</term>
+                <gloss xml:lang="en">stele</gloss>
+            </item>
+        </list>
+        <!-- example from IOSPE -->
+    </egXML>
+    
+    <div xml:id="idx-other-responsibility">
+    <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

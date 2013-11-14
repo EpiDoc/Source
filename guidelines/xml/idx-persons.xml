@@ -26,20 +26,46 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-persons" xml:lang="en">
-    <head>Persons/nyms</head>
-    <p></p>
+    <head>Indexing and controlling persons and names</head>
+    <p>When person-referencess and/or individual names are tagged in the epigraphic text
+        (see under <ref target="idx-persnames.html">Personal names</ref>)
+        it may also be useful to maintain an authority of names or persons (onomasticon or prosopography),
+        either in TEI or in <ref target="idx-nontei.html">an external database format</ref>.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <listPerson>
+            <person xml:id="person1">
+                <persName xml:lang="grc">Κόστας</persName>
+                <persName xml:lang="ru">Коста</persName>
+                <persName xml:lang="en">Kostas</persName>
+                <floruit notBefore="1451" notAfter="1452"><seg xml:lang="ru">1451–1452 гг.</seg><seg xml:lang="en">1451–1452 C.E.</seg></floruit>
+            </person>
+            <person xml:id="person2">
+                <persName xml:lang="grc">Θεόδωρος</persName>
+                <persName xml:lang="ru">Феодор</persName>
+                <persName xml:lang="en">Theodoros</persName>
+                <floruit notBefore="1439" notAfter="1439"><seg xml:lang="ru">1439 г.</seg><seg xml:lang="en">1439 C.E.</seg></floruit>
+            </person>
+        </listPerson>
+        <!-- example from IOSPE -->
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <listNym>
+            <nym xml:id="Ἰωάννης"><ab>Ἰωάννης</ab></nym>
+            <nym xml:id="Κόστα"><ab>Κόστα</ab></nym>
+            <nym xml:id="Στέφανος"><ab>Στέφανος</ab></nym>
+        </listNym>
+        <!-- example from IOSPE -->
+    </egXML>
     
     <div xml:id="idx-persons-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
