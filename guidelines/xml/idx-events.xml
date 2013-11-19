@@ -27,31 +27,30 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-events" xml:lang="en">
     <head>Events</head>
-    <p></p>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p>A list of historical events (battles, coronations, conversions, marriages, etc.)</p>
+    <p>
+        <specList>
+            <specDesc key="listEvent"/>
+            <specDesc key="event"/>
+            <specDesc key="label"/>
+        </specList>
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <listEvent>
+            <event xml:id="event0" from="0161" to="0166"><label>Parthian War</label></event>
+            <event xml:id="event1" when="0212"><label>Citizenship Edict of Caracalla</label></event>
+            <event xml:id="event2" from="0222-03-13" to="0235-03-18"><label>Reign of Severus Alexander</label></event>
+            <event xml:id="event3" when="0583"><label>Birth of the "New Theodosius"</label></event>
+        </listEvent>
+    </egXML>
+    
     
     <div xml:id="idx-events-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>formatted, edited, revised, munged?</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
