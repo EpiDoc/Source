@@ -1,0 +1,49 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-app-inline" xml:lang="en">
+    <head>Inline apparatus criticus</head>
+    <p>gloss</p>
+    <!-- can have div's or p's  here. Divs are for subsections. -->
+    <p><specList>
+        <specDesc key="app"/>
+        <specDesc key="lem"/>
+        <specDesc key="rdg"/>
+        <specDesc key="note"/>
+    </specList></p>
+     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <!-- example markup -->
+    </egXML>
+    
+    <div xml:id="supp-app-inline-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Hugh Cayless</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
