@@ -31,22 +31,26 @@ End license statement: do not remove -->
     <list type="gloss">
         <label xml:id="crosswalk">Crosswalk, crosswalking</label>
         <item>A general term for moving data from the format of one encoding scheme or database
-        to another. In EpiDoc terms, it often refers to the dynamic transformation (potentially reversible) of
+        to another. In EpiDoc terms, it often refers to the dynamic transformation of
         the semantic distinctions of epigraphic and papyrological editions between EpiDoc XML and
-        one or more database of texts or catalogue records. Prominent crosswalks performed by the EpiDoc
-        community include: the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
-        format of <term target="#EDH">EDH</term>; the migration of the <term target="#ddb">Duke Databank</term>,
+        one or more database of texts or catalogue records. These "crosswalks" may take place in either direction, or
+        in some cases in both directions and reversible without loss of information.
+        Prominent crosswalks performed by the EpiDoc community include: 
+        the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
+        format of <term target="#EDH">EDH</term>;
+            the migration of the <term target="#ddb">Duke Databank</term>,
         <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> content to EpiDoc as part of the
-            Papyri.info project; the current conversion of the <term target="#eagle">EAGLE</term> constituent
+            Papyri.info project (the HGV-to-EpiDoc is lossless and bidirectional);
+            the current conversion of the <term target="#eagle">EAGLE</term> constituent
             databases into EpiDoc XML as part of the <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
         project.</item>
         
         <label xml:id="encoding">Encoding</label>
         <item>Encoding in this context means the conversion of human-readable information into
-            machine-readable information, e.g. in the form of XML.</item>
+            machine-readable information, e.g. in the form of <term target="#xml">XML</term>.</item>
 
         <label xml:id="epidoc-stylesheets">EpiDoc Example Stylesheets</label>
-        <item>Software code, written in the Extensible Stylesheet Language (XSL; see <term
+        <item>Software code, written in the Extensible Stylesheet Language (XSL or <term
                 target="#xslt">XSLT</term>), and intended for use in transforming EpiDoc XML files
             into other formats (chiefly text and HTML) using a range of standard typographical
             conventions (e.g., <term target="#leiden">Leiden</term>). Documentation and further
@@ -133,8 +137,11 @@ End license statement: do not remove -->
         <label xml:id="xslt">XSLT</label>
         <item>Extensible Stylesheet Language Transformations. XSLT is a language that can convert
                 <term target="#xml">XML</term> documents into either different XML or other forms, e.g.
-            the HTML format used for websites. A useful introduction to XSLT is offered by <ref
-                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>. </item>
+            the HTML format used for websites, the import format for a database, or the Open Document Format
+            behind a word-processing document. The <term target="#epidoc-stylesheets">EpiDoc Stylesheets</term>
+            are an example of XSLT used to transform EpiDoc XML to common display formats.
+            A useful introduction to XSLT is offered by <ref
+                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>.</item>
     </list>
 
     <div xml:id="app-glossary-responsibility">

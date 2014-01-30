@@ -27,6 +27,15 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histinvno" xml:lang="en">
     <head>Inventory numbers and repository</head>
+    <p>
+        <specList>
+            <specDesc key="msIdentifier"/>
+            <specDesc key="msName"/>
+            <specDesc key="repository"/>
+            <specDesc key="idno"/>
+            <specDesc key="altIdentifier"/>
+        </specList>
+    </p>
     <p>Recording in an edition the past and present inventory and catalog numbers associated with a text-bearing object
         can provide users of the edition essential information for locating the object for autopsy and for correlating
         references in publications and archival materials. Accordingly, TEI/EpiDoc requires some kind of manuscript
@@ -113,20 +122,6 @@ End license statement: do not remove -->
             </altIdentifier>
         </msIdentifier>
     </egXML>
-    
-    <div>
-        <head>Related sections in the TEI Guidelines</head>
-        <p>
-            <specList>
-                <specDesc key="msIdentifier"/>
-                <specDesc key="msName"/>
-                <specDesc key="repository"/>
-                <specDesc key="idno"/>
-                <specDesc key="altIdentifier"/>
-            </specList>
-        </p>
-        
-    </div>
     
     <div xml:id="supp-histinvno-responsibility">
         <head>Responsibility for this section</head>
