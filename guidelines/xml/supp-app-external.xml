@@ -27,21 +27,87 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-app-external" xml:lang="en">
     <head>External apparatus criticus</head>
-    <p>gloss</p>
+    <p>An external division of the edition in which all apparatus criticus features and notes are explicitly tagged.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     <p><specList>
+        <specDesc key="listApp"/>
         <specDesc key="app"/>
         <specDesc key="lem"/>
         <specDesc key="rdg"/>
         <specDesc key="note"/>
     </specList></p>
+    
+    <p>The simplest entry in an epigraphic or papyrological apparatus criticus is a general comment on 
+    the text as a whole, with no specific line reference or textual feature described. (Like all external apparatus
+    features described in this page, this example should appear in the <tag>div type="apparatus"</tag>, and
+    perhaps be grouped together in a <gi>listApp</gi>.)
+    </p>
      
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <!-- example markup -->
+        <div type="apparatus">
+        <listApp>
+            <app><note>The face is very weathered, all readings are uncertain.</note></app>
+        </listApp>
+    </div>
+    </egXML> 
+    
+    <p>The second example is of a simple comment, but tied to a particular line or text fragment:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <app loc="a 7">
+            <note>The erasure in this line is ineffective but indubitably deliberate.</note>
+        </app>
+    </egXML>
+    
+    <p>Alternative restorations, perhaps recording the opinion of previous editors or attributing
+        current readings to them, may also be tagged explicitly in the external apparatus division:
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <app loc="i 3">
+            <lem>καθο<supplied reason="lost">σίωσις</supplied></lem>
+            <rdg resp="#tdb1971">καθ<supplied reason="lost">όλου</supplied></rdg>
+        </app>
+    </egXML>
+    
+    <p>An <gi>app</gi> element in the external apparatus may also point directly to a feature
+    tagged within the text transcription division, in order to comment upon it, or simply to display
+    the marked-up feature without duplicating the markup. (Similar to the practice of
+    <ref target="supp-app-inline.html">inline apparatus</ref> discussed elsewhere.)
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <choice xml:id="choice3">
+            <corr>σύμπαντα</corr>
+            <sic>σινπαταν</sic>
+        </choice>
+        <!-- ... -->
+        <app loc="12" from="#choice3">
+            <note>so Mommsen, without comment.</note>
+        </app>
+    </egXML>
+    
+    <p>Variant readings may also arise not from a disagreement among editors, but from genuine
+    ambiguity in reading. An unclear letter with several possible interpretations might appear in the
+    apparatus (or in the text itself) as:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <choice xml:id="choice4">
+            <unclear>τ</unclear> 
+            <unclear>γ</unclear>
+            <unclear>ε</unclear>
+            <unclear>ζ</unclear>
+            <unclear>ξ</unclear>
+            <unclear>π</unclear>
+            <unclear>σ</unclear>
+        </choice>
+        <!-- ... -->
+        <app loc="4" from="#choice4">
+            <note>What survives of the last letter before the break is consonant with Τ, Γ, Ε, Ζ, Ξ, Π, Σ</note>
+        </app>
     </egXML>
     
     <div xml:id="supp-app-external-responsibility">
-    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>

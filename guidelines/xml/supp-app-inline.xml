@@ -51,6 +51,11 @@ End license statement: do not remove -->
     </egXML>
     <note>generates aparatus: 23. BL 3.8 : ὡ[ς (ἐτῶν) ιϛ] prev. ed.</note>
     
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/cpr;4;171">
+        <app type="alternative"><lem><expan>Λευκ<ex>ο</ex>γ<ex>ίου</ex></expan></lem><rdg>Λευκῶ<add place="above">ν</add></rdg></app>
+    </egXML>
+    <note>generates apparatus: r.17. or Λευκῶ\ν/</note>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.col;4;114">
         <choice><reg>ὑστερῶμεν</reg><orig>ὑσστερῶμεν</orig></choice>
     </egXML>
@@ -69,7 +74,7 @@ End license statement: do not remove -->
     <p>The only core EpiDoc project that uses inline tagging to generate apparatus criticus and has
         contributed the <term target="#xslt">XSLT</term> to the <term target="#epidoc-stylesheets">EpiDoc
         Example Stylesheets</term> is the <term target="#ddb">DDbDP</term>. The code for generating
-        the apparatus text is therefore idiosyncratic and would liekly require customization and rewriting for
+        the apparatus text is therefore idiosyncratic and would likely require customization and rewriting for
         most other projects.
     </p>
     
