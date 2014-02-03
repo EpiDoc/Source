@@ -61,6 +61,12 @@ End license statement: do not remove -->
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;153">
         <hi rend="subscript"><num value="10">ι</num> <num value="1/16" rend="tick">ιϛ</num></hi>
     </egXML>
+   
+   <p>In some cases we can have one letter directly on top of another, as a manuscript variant, rather than a correction. For this purpose we use another value of the @rend attribute, called 'stacked'. 
+       Here is an example from the second volume of <hi rend="italics">Fragmenta Historicorum Graecorum</hi>: <ref>https://archive.org/stream/fragmentahistori02mueluoft#page/3/mode/1up</ref>.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        Κάδμο<hi rend="stacked">ο</hi>ν
+    </egXML>
     
     <!-- No IRT or iAph examples -->
     
