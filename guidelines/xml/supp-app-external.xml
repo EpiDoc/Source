@@ -36,7 +36,7 @@ End license statement: do not remove -->
         <specDesc key="rdg"/>
         <specDesc key="note"/>
     </specList></p>
-    
+     
     <p>The simplest entry in an epigraphic or papyrological apparatus criticus is a general comment on 
     the text as a whole, with no specific line reference or textual feature described. (Like all external apparatus
     features described in this page, this example should appear in the <tag>div type="apparatus"</tag>, and
@@ -51,7 +51,9 @@ End license statement: do not remove -->
     </div>
     </egXML> 
     
-    <p>The second example is of a simple comment, but tied to a particular line or text fragment:</p>
+    <p>The second example is of a simple comment, but tied to a particular line or text fragment 
+        (using in this case the attribute <att>loc</att>, which contains a human-readable or "canonical"
+        citation for the line referenced):</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <app loc="a 7">
