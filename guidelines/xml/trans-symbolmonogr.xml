@@ -53,7 +53,9 @@
             appearance or content of a graphic figure, for use when documenting an image without
             displaying it.</p>
 
-        <p>Where a monogram appears, BLAH BLAH BLAH</p>
+        <p>Where a monogram appears as part of the transcribed text of an inscription,
+            there are a range of different ways to handle this in encoding, depending on the scholarly
+            intent, and our ability to read and expand any textual content.</p>
     
         <cit>
             <quote>(νικᾷ ἡ τύχη τῶν Πρασίνων.)</quote>
@@ -99,7 +101,7 @@
         </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT863.html">
-        <figure><graphic url=""/><head>monogram</head></figure> <!-- This uses <head> rather than <figDesc> - is it ok? -->
+        <figure><head>monogram</head></figure> <!-- This uses <head> rather than <figDesc> - is it ok? -->
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/p.col;8;244">
@@ -110,8 +112,8 @@
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
     
