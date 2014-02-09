@@ -10,9 +10,12 @@ What it is:
 	There are two copies of the ODD in this directory: tei-epidoc-full.xml,
 	which is the version that will work with the online Roma tool
 	(http://www.tei-c.org/Roma/), and tei-epidoc.xml, which currently does
-	not work with Roma because it contains only the <schemaSpec> and is
+	not work with Roma because it contains only the `<schemaSpec>` and is
 	designed to be x-included to the full ODD (to include Guidelines
 	etc.)
+	WHENEVER YOU MAKE A CHANGE TO THE FILE tei-epidoc-full.xml (WHICH SHOULD BE
+	CONSIDERED THE MASTER VERSION), PLEASE ALSO COPY THE `<schemaSpec>` OVER
+	INTO THE FILE tei-epidoc.xml SO THAT FILE IS ALSO UP-TO-DATE.
 
 License:
 
