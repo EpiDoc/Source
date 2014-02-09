@@ -3,14 +3,16 @@ RELEASE NOTES
 
 Latest version - 8.18 - Announced to MARKUP 2014-02-12
 ---------------------
+    * Release technician: Simona Stoyanova
     * Schema: allowed the use of <anchor> from the linking module (Perseus requirement)
     * Schema: added the value 'stacked' to hi/@rend (DFHG requirement)
+    * Schema: @source added; values of biblScope and citedRange @unit aligned and made consistent (inherited from TEI 2.6.0)
     * Guidelines: restructured and improved title page; added Structure of EpiDoc edition at top level; added links to several external guidelines (Papyri.info; Telamon; DFHG)
     * Guidelines: prose improved and many new examples added throughout
     * Guidelines: pages added for both inline and external apparatus criticus guidelines
     * Guidelines: added Google Analytics code to guidelines, to help future tracking and metrics
     * Guidelines: pages on indexing terms and controlled vocabularies populated; links to EAGLE and other external vocabularies
-    * XSLT: ddbdp style: display of numbers with ticks fixed; tests for deletion improved to apparatus no longer breaks
+    * XSLT: ddbdp style: display of numbers with ticks fixed; tests for deletion improved so apparatus no longer breaks
     * XSLT: iospe style: display of a few symbols improved; structure of iospe edition-structure improved
     * XSLT: default style: text directionality display added
 
@@ -18,6 +20,7 @@ Latest version - 8.18 - Announced to MARKUP 2014-02-12
 Previous versions
 -----------------
 8.17 - Announced to MARKUP 2013-08-06 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1308&L=markup&P=513>
+    * Release technician: Scott Vanderbilt
     * Guidelines: added translations of intro for epigraphers in to Italian, German, Bulgarian, Spanish
     * Guidelines: links to glossary and bibliography from prose of guidelines
     * Guidelines: several new examples given and prose added
@@ -27,10 +30,11 @@ Previous versions
     * three components brought into synch for the first time
     
 8.16 - Announced to MARKUP 2013-01-28 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1301&L=MARKUP&P=R450&1=MARKUP>
+    * Release technician: Gabriel Bodard
     * new element `<citedRange>` (inherited from TEI 2.3.0)
     * both citedRange and BiblScope take new attribute `@unit` instead of type (inherited from TEI 2.3.0)
 
-8.15
+8.15 (apparently not announced?)
 
 8.14 - Announced to MARKUP 2012-11-05 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1211&L=MARKUP&P=R2&1=MARKUP>
     * introduction of element <listApp>; addition of <idno> to the content model of <person> 
