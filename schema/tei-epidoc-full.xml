@@ -22,7 +22,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- release 8.18: 2014-02-12 - Aligned schema with TEI v. 2.6.0 -->
+            <!-- release 8.18: 2014-02-13 - Aligned schema with TEI v. 2.6.0 -->
+            <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to fix problem with TEI 2.6.0)</change>
             <change who="#SS" when="2013-12-05">added the value 'stacked' in hi @rend</change>
             <change who="#SS" when="2013-10-09">stopped omitting anchor from the linking module</change>
             <!-- release 8.17: 2013-08-08 - Aligned schema with TEI v. 2.5.0 -->
@@ -125,6 +126,13 @@
                             </valList>
                         </attDef>
                     </attList>
+                </elementSpec>
+                
+                <!-- temporarily adding att.global to altIdentifier -->
+                <elementSpec ident="altIdentifier" module="msDescription" mode="change">
+                    <classes mode="change">
+                        <memberOf key="att.global"/>
+                    </classes>
                 </elementSpec>
                 
                 <!-- constraining values of div/@type -->
