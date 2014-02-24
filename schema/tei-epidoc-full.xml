@@ -22,6 +22,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request on Markup)</change>
             <!-- release 8.18: 2014-02-13 - Aligned schema with TEI v. 2.6.0 -->
             <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to fix problem with TEI 2.6.0)</change>
             <change who="#SS" when="2013-12-05">added the value 'stacked' in hi @rend</change>
@@ -96,7 +97,7 @@
                 <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-                <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit variantEncoding witDetail witEnd witStart witness"/>
+                <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
                 <moduleRef key="figures" except="cell formula row table"/>
                 <moduleRef key="spoken" except="broadcast equipment incident kinesic pause recording recordingStmt
                     scriptStmt shift u vocal writing"/>
