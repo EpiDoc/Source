@@ -22,7 +22,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request on Markup)</change>
+            <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from Gaiji (requested by DASI), and phr from Analysis (requested by Coptic Scriptorium)</change>
+            <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request from IGLouvre)</change>
             <!-- release 8.18: 2014-02-13 - Aligned schema with TEI v. 2.6.0 -->
             <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to fix problem with TEI 2.6.0)</change>
             <change who="#SS" when="2013-12-05">added the value 'stacked' in hi @rend</change>
@@ -89,9 +90,9 @@
                     opener postscript salute signed titlePage titlePart trailer"/>
                 <moduleRef key="transcr" except="damageSpan fw restore"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
-                <moduleRef key="analysis" except="cl phr s span spanGrp"/>
+                <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
-                <moduleRef key="gaiji" except="char charDecl charName charProp glyph glyphName localName mapping
+                <moduleRef key="gaiji" except="char charName charProp localName mapping
                     unicodeName value"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
                 <moduleRef key="msdescription"/>
