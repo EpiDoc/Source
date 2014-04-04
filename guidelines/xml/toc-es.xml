@@ -1,7 +1,7 @@
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
-Edition 8 copyright © 2008-2014 by all contributors listed in <div type="gl-responsibility">, below.
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
 Additional contributors' copyright may be designated in individual source files.
 
 This program is free software; you can redistribute it and/or
@@ -26,106 +26,111 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="toc-es" xml:lang="es">
-    <head>EpiDoc Guidelines: Ancient documents in TEI XML</head>
- 
-    <p>EpiDoc is an international, collaborative effort that provides guidelines and tools for
-        <term target="#encoding">encoding</term> scholarly and
-        educational editions of ancient documents. These are the <title>Guidelines</title> produced by the
-        collaborative. In addition, the <ref target="http://epidoc.sf.net">EpiDoc Website</ref> provides access to all
-        the tools and collaboration environments supported by the collaborative.</p>
- 
-    <p>EpiDoc uses a subset of the <term target="#TEI">Text
-        Encoding Initiative</term>'s standard for the representation of texts
-        in digital form using the <term target="#xml">Extensible Markup Language (XML)</term>, a technical standard
-        promulgated by the <term target="#w3c">World-Wide Web Consortium</term>. It addresses not only the
-        transcription and editorial preparation of the texts themselves, but also the the history and materiality
-        of the objects on which the texts appear.</p>
+    <head>Guía de Uso de EpiDoc: Documentos antiguos en TEI XML</head>
+	<p>EpiDoc es un esfuerzo internacional y colaborativo que proporciona pautas y herramientas para 
+	<term target="#encoding-es">codificar</term> ediciones académicas y didácticas de documentos antiguos. 
+	El presente texto es su <title>Guía de Uso</title>, producida por sus colaboradores. Además, el sitio 
+	<ref target="http://epidoc.sf.net">Web EpiDoc</ref> proporciona 
+	acceso a todas las herramientas y a los entornos necesarios.</p>
 
-    <p>These <title>Guidelines</title> contain descriptions of the textual, descriptive, and other features that are
-        often expressed with EpiDoc, as well as the <term target="#TEI">TEI</term> elements and attributes that are used
-        to encode them. The links below provide a number of entry points into the full document and should be thought of more
-        as a series of thematic indexes into the content of the <title>Guidelines</title>, rather than a single "table of contents"
-        that reflects an ordered, hierarchical document structure.</p>
+	<p>EpiDoc emplea un subconjunto de <term target="#TEI-es">Text Encoding Initiative</term> 
+	para la representación de textos de forma digital usando el <term target="#xml-es">Extensible Markup Language (XML)</term>, 
+	un estándar técnico promulgado por el <term target="#w3c-es">World-Wide Web Consortium</term>. 
+	No sólo está dirigido a la transcripción y a la preparación editorial de textos, 
+	sino también a la historia y a la materialidad de los objetos en los que los textos aparecen.</p>
+	
+ 
+    <p> La presente <title>Guía de Uso</title> contiene descripciones de las características 
+	textuales y descriptivas, entre otras, que suelen expresarse con EpiDoc, así como los elementos 
+	y atributos <term target="#TEI-es">TEI</term> que se emplean para codificarlos. Los vínculos de la parte 
+	inferior proporcionan numerosas entradas al documento completo y deben entenderse como una serie de 
+	índices temáticos al contenido de la <title>Guía de Uso</title> más que  como una simple 
+	tabla de contenidos que refleje una estructura ordenada y jerárquica del documento.</p>
 
-    <div>
-        <head>Browse Guidelines</head>
+
+<div>
+        <head>Buscar en la Guía</head>
         <list>
-            <item><ref target="intro-intro.html">Introduction to the Guidelines</ref></item>
-            <item><ref target="supp-structure.html">Overview of EpiDoc structure</ref></item>
+            <item><ref target="intro-intro-es.html">Introducción a la Guía</ref>
+                (<ref target="intro-intro.html" n="How to use the Guidelines (inglés)">en</ref>)</item>
+            <item><ref target="supp-structure.html">Panorámica de la estructura de EpiDoc</ref></item>
         </list>
         
         <div>
-            <head>Full listing of guidelines pages:</head>
+            <head>Listado completo de las páginas de la Guía:</head>
             <list>
-                <item><ref target="app-allsupp.html">Descriptive and historical data</ref></item>
-                <item><ref target="app-alltrans.html">Text transcription</ref></item>
-                <item><ref target="app-allidx.html">Vocabularies and indexing terms</ref></item>
+                <item><ref target="app-allsupp.html">Datos descriptivos e históricos</ref></item>
+                <item><ref target="app-alltrans.html">Transcripción de textos</ref></item>
+                <item><ref target="app-allidx.html">Términos de vocabularios e indexación</ref></item>
             </list>
         </div>
 
         <div xml:id="external">
-            <head>Externally maintained guidelines for specialized communities:</head>
+            <head>Guías mantenidas por terceros para comunidades especializadas:</head>
             <list>
                 <item><ref target="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc"
-                    >EpiDoc Cheatsheet</ref> (used in internal and external training)</item>
-                <item><ref target="http://papyri.info/editor/documentation?docotype=text">Papyri.info EpiDoc/Leiden+ help and examples</ref></item>
-                <item><ref target="http://epixml.proclassics.org/">Telamon EpiDoc Guidelines (Bulgarian)</ref></item>
+                    >EpiDoc Cheatsheet</ref> (usado para formación a nivel interno y externo)</item>
+                <item><ref target="http://papyri.info/editor/documentation?docotype=text">Ayuda y ejemplos de Papyri.info EpiDoc/Leiden+</ref></item>
+                <item><ref target="http://epixml.proclassics.org/">Guía Telamon de EpiDoc (en búlgaro)</ref></item>
                 <item><ref target="https://docs.google.com/document/d/1T6_2QXx1NVRE5irlQtYKtgkZhJTcq07_wjrWhoRpO1k"
-                    >Digital Fragmenta Historicum Graecorum encoding guidelines</ref> (Monica Berti et al., Leipzig)</item>
+                    >Guía de codificación digital de los Fragmenta Historicum Graecorum</ref> (Monica Berti et al., Leipzig)</item>
                 <item><ref target="http://insaphdocumentation.pbworks.com/"
-                    >Local Guidelines from King's College London (InsAph, InsLib, IOSPE projects)</ref></item>
+                    >Guías locales del King's College London ( proyectos InsAph, InsLib, IOSPE)</ref></item>
             </list>
         </div>
         <div xml:id="internal">
-            <head>Correspondences between EpiDoc and other community guidelines:</head>
+            <head>Correspondencias entre la Guía de EpiDoc y las de otras comunidades:</head>
             <list>
-                <item><ref target="app-epi-petrae.html">Text transcription and supporting material following PETRAE</ref></item>
-                <item><ref target="app-papy-ddbdp.html">Text transcription following DDbDP</ref></item>
-                <item><ref target="app-papy-apis.html">Descriptive data following APIS</ref></item>
-                <item><ref target="app-epi-krummreypanciera.html">Text transcription following Krummrey-Panciera 1980</ref></item>
-                <item><ref target="app-epi-panciera.html">Text transcription following Panciera 1991</ref></item>
-                <item><ref target="app-papy-hgv.html">Descriptive data following HGV</ref></item>
+                <item><ref target="app-epi-petrae.html">Transcripción de textos y materiales de soporte según PETRAE</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Transcripción de textos según DDbDP</ref></item>
+                <item><ref target="app-papy-apis.html">Datos descriptivos según APIS</ref></item>
+                <item><ref target="app-epi-krummreypanciera.html">Transcripción de textos según Krummrey-Panciera 1980</ref></item>
+                <item><ref target="app-epi-panciera.html">Transcripción de textos según Krummrey-Panciera 1991</ref></item>
+                <item><ref target="app-papy-hgv.html">Datos descriptivos según HGV</ref></item>
             </list>
         </div>
     </div>
 
     <div>
-        <head>Appendices</head>
+        <head>Anexos</head>
         <list>
-            <item><ref target="intro-eps.html">Gentle Introduction to EpiDoc for Epigraphers</ref>
-                <list>
-                    <item><ref target="intro-eps-bg.html">Въведение за епиграфи</ref> (bg)</item>
-                    <item><ref target="intro-eps-de.html">Einführung für Epigraphiker</ref> (de)</item>
-                    <item><ref target="intro-eps-es.html">Introducción para epigrafistas</ref> (es)</item>
-                    <item><ref target="intro-eps-fr.html">Introduction pour les épigraphistes</ref> (fr)</item>
-                    <item><ref target="intro-eps-it.html">Introduzione per Epigrafisti</ref> (it)</item>
-                </list></item>
-            <item><ref target="app-bibliography.html">Bibliography</ref></item>
-            <item><ref target="app-glossary.html">Glossary</ref></item>
-            <item><ref target="app-elements.html">Index of TEI elements</ref></item>
+            <item><ref target="intro-eps-es.html">Primera introducción al marcaje para epigrafistas</ref>
+                (<ref target="intro-eps-bg.html" n="Деликатно въведение в маркирането с xml за епиграфи (búlgaro)">bg</ref>)
+                (<ref target="intro-eps-de.html" n="Erste Einführung in die Textauszeichnung für Epigraphiker (alemán)">de</ref>)
+                (<ref target="intro-eps.html" n="Gentle Introduction to Mark-up for Epigraphers (inglés)">en</ref>)
+                (<ref target="intro-eps-fr.html" n="Introduction pour les épigraphistes (francés)">fr</ref>)
+                (<ref target="intro-eps-it.html" n="Codifica per Epigrafisti, un'introduzione gentile (italiano)">it</ref>)
+            </item>
+            <item><ref target="app-bibliography.html">Bibliografía</ref></item>
+            <item><ref target="app-glossary-es.html">Glosario</ref>
+                (<ref target="app-glossary.html" n="Glossary (inglés)">en</ref>)</item>
+            <item><ref target="app-elements.html">Índice de elementos TEI</ref></item>
         </list>
     </div>
     
     <div>
-        <p>You can also download a zipped copy of the latest <ref target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Guidelines</ref> from our Files section if you need to use them offline. </p>
+        <p>También se puede descargar una copia en zip de la versión más reciente de la  
+            <ref target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Guía</ref> 
+            desde nuestra sección "Archivos" (Files) si se necesita trabajar sin conexión. </p>
         
-    <p>To cite the EpiDoc Guidelines, please use the following information:</p>
+        <p>Para citar la Guía de EpiDoc, por favor use la siguiente información: </p>
     <quote>
         <bibl>Tom Elliott, Gabriel Bodard, Elli Mylonas, Simona Stoyanova, Charlotte Tupman, Scott Vanderbilt, et al.
-            (<date>2007-2013</date>),
-            <title level="m">EpiDoc Guidelines: Ancient documents in TEI XML</title> (Version 8). Available:
+            (<date>2007-2014</date>),
+            <title level="m">EpiDoc Guidelines: Ancient documents in TEI XML</title> (Versión 8). Disponible en:
             <ref target="http://www.stoa.org/epidoc/gl/latest/">http://www.stoa.org/epidoc/gl/latest/</ref>.</bibl>
     </quote>
     </div>
 
-    <div xml:id="toc-es-responsibility">
-        <head>Responsibility for this section</head>
+    <div xml:id="toc-es-responsibility" type="gl-responsibility">
+        <head>Responsables de esta sección</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Spanish</resp><name></name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>autora</resp><name>Elli Mylonas</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>autora</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>traducido al español</resp><name> María José Estarán Tolosa</name></respStmt></bibl>
+            <bibl><respStmt><resp>traducido al español</resp><name>Núria Garcia Casacuberta</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

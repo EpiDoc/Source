@@ -1,7 +1,7 @@
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
-Edition 8 copyright © 2008-2014 by all contributors listed in <div type="gl-responsibility">, below.
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
 Additional contributors' copyright may be designated in individual source files.
 
 This program is free software; you can redistribute it and/or
@@ -26,131 +26,160 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-glossary-es" xml:lang="es">
-    <head>Appendix: Glossary</head>
+    <head>Apéndice: Glosario</head>
  
     <list type="gloss">
-        <label xml:id="crosswalk">Crosswalk, crosswalking</label>
-        <item>A general term for moving data from the format of one encoding scheme or database
-        to another. In EpiDoc terms, it often refers to the dynamic transformation of
-        the semantic distinctions of epigraphic and papyrological editions between EpiDoc XML and
-        one or more database of texts or catalogue records. These "crosswalks" may take place in either direction, or
-        in some cases in both directions and reversible without loss of information.
-        Prominent crosswalks performed by the EpiDoc community include: 
-        the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
-        format of <term target="#EDH">EDH</term>;
-            the migration of the <term target="#ddb">Duke Databank</term>,
-        <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> content to EpiDoc as part of the
-            Papyri.info project (the HGV-to-EpiDoc is lossless and bidirectional);
-            the current conversion of the <term target="#eagle">EAGLE</term> constituent
-            databases into EpiDoc XML as part of the <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
-        project.</item>
+        <label xml:id="crosswalk-es">Crosswalk, crosswalking</label>
+        <item>Éste es un término general para designar el hecho de traspasar datos 
+            del formato de un patrón de codificación a otro o de una base de datos a otra. 
+            En lo concerniente a EpiDoc, la mayoría de las veces se refiere a la conversión dinámica 
+            de las distinciones semánticas de las ediciones epigráficas y papirológicas entre 
+            el patrón XML de EpiDoc y una o varias bases de datos de textos o registros de catálogos. 
+            Estos traspasos pueden darse en las dos direcciones (EpiDoc a base de datos o base de datos a EpiDoc), 
+            e incluso en algunos casos en ambas direcciones de modo reversible sin que ello ocasione 
+            pérdida alguna de información. Algunos traspasos destacados que ha llevado a cabo la comunidad EpiDoc incluyen: 
+            la conversión de <term target="#IRT">IRT</term> desde el patrón de EpiDoc 
+            al formato de la base de datos <term target="#EDH">EDH</term>;
+            la migración de contenidos del <term target="#ddb">Duke Databank</term>,
+            <term target="#hgv">HGV</term> y <term target="#apis">APIS</term> a EpiDoc como parte del 
+            proyecto Papyri.info (HGV a EpiDoc no conlleva pérdidas y es bidireccional); 
+            además de la conversión, actualmente en desarrollo, de las bases de datos 
+            <term target="#eagle">EAGLE</term> al XML de EpiDoc, como parte del proyecto
+            <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
+        </item>
         
-        <label xml:id="encoding">Encoding</label>
-        <item>Encoding in this context means the conversion of human-readable information into
-            machine-readable information, e.g. in the form of <term target="#xml">XML</term>.</item>
+        <label xml:id="encoding-es">Encoding, codificación</label>
+        <item>En este contexto, la codificación se refiere a la conversión de información 
+            inteligible para las personas a información que pueda ser interpretada 
+            por una máquina, por ejemplo en forma de lenguaje <term target="#xml-es">XML</term>.</item>
 
-        <label xml:id="epidoc-stylesheets">EpiDoc Example Stylesheets</label>
-        <item>Software code, written in the Extensible Stylesheet Language (XSL or <term
-                target="#xslt">XSLT</term>), and intended for use in transforming EpiDoc XML files
-            into other formats (chiefly text and HTML) using a range of standard typographical
-            conventions (e.g., <term target="#leiden">Leiden</term>). Documentation and further
-            information are to be found on the <ref
-                target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">Stylesheets page in the
-                EpiDoc Wiki</ref>.</item>
+        <label xml:id="epidoc-stylesheets-es">EpiDoc Example Stylesheets</label>
+        <item>Se trata de un código de software escrito en Extensible Stylesheet Language 
+            (lenguaje extensible de hojas de estilo, designado habitualmente por las siglas XSL o <term
+                target="#xslt-es">XSLT</term>), cuyo objetivo es la transformación de los ficheros EpiDoc 
+            en XML a otros formatos (principalmente texto y HTML). Para ello se emplea un gran abanico 
+            de convenciones tipográficas estándar (por ejemplo,  <term target="#leiden-es">Leiden</term>). 
+            Se puede encontrar documentación y más información en la <ref
+                target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">
+                página de las hojas de estilo en la wiki de EpiDoc</ref>.</item>
 
-        <label xml:id="epidoc-schema">EpiDoc Schema</label>
-        <item>A formally structured set of rules that tells an XML editor or processor what elements,
-            attributes and other content are available in an EpiDoc file and how these are to be
-            structured. Documentation and further information are to be found on the <ref
-                target="https://sourceforge.net/p/epidoc/wiki/Schema/">Schema page in the EpiDoc
-                Wiki</ref>.</item>
+        <label xml:id="epidoc-schema-es">EpiDoc Schema, patrón de EpiDoc</label>
+        <item> Conjunto de normas que se rigen por una estructura formal con el objetivo de ordenar 
+            a un editor o procesador de XML qué elementos, atributos u otro contenido está disponible 
+            en un fichero EpiDoc y cómo estructurarlos. Para documentación y más información, véase la <ref
+                target="https://sourceforge.net/p/epidoc/wiki/Schema/">página sobre el patrón en la wiki de EpiDoc</ref>.</item>
 
-        <label xml:id="leiden">Leiden, Leiden Conventions</label>
-        <item>A set of rules for the encoding of classical epigraphic and papyrological texts using
-            simple, arbitrary and unambiguous symbols to represent editorial observations and
-            interventions, e.g. '[' and ']' for lost text (restored or lacuna). There are several
-            minor variations on Leiden now in use (<ref target="app-epi-panciera.html"
-                >Krummrey-Panciera</ref> and <ref target="app-epi-petrae.html">PETRAE</ref> perhaps
-            prominent among them). A good summary of Leiden can be found at <ref
-                target="http://en.wikipedia.org/wiki/Leiden_Conventions"
-                >en.wikipedia.org/wiki/Leiden_Conventions</ref></item>
+        <label xml:id="leiden-es">Leiden, Convenciones de Leiden</label>
+        <item>Conjunto de normas para la codificación de textos clásicos en soporte epigráfico y papirológico. 
+            Se emplean símbolos sencillos, arbitrarios y exentos de ambigüedad con el fin de representar 
+            observaciones de los editores así como sus intervenciones. Por ejemplo, se escribe entre ‘[’ y ‘]’ 
+            el texto perdido ya sea porque se haya restituido o simplemente para indicar la laguna. 
+            Existen algunas variaciones menores en el sistema de Leiden usado hoy en día, quizás las más destacadas sean  
+            <ref target="app-epi-panciera.html"
+                >Krummrey-Panciera</ref> y <ref target="app-epi-petrae.html">PETRAE</ref>. 
+            Un breve resumen sobre las Convenciones de Leiden se puede encontrar en <ref
+                target="http://es.wikipedia.org/wiki/Convenio_de_Leiden">Wikipedia</ref>.</item>
 
-        <label xml:id="leidenplus">Leiden+ (Leiden-plus)</label>
-        <item>Leiden+ is a system of text markup, based very closely on <term target="#leiden"
-                >Leiden</term> but including new signs and combinations for complex apparatus markup,
-            for example, devised for the Papyrological Editor's "tags-free" editing environment. Full
-            description and documentation of Leiden+ is at <ref
+        <label xml:id="leidenplus-es">Leiden+ (Leiden-plus)</label>
+        <item>Leiden+ es un sistema de marcaje de texto que se basa principalmente en las
+            <term target="#leiden-es">Convenciones de Leiden </term> pero que incluye nuevos signos y combinaciones para 
+            el marcaje de aparatos complejos, por ejemplo las inventadas para el medio de edición 
+            sin etiquetas (tags-free) del <term target="pe">Papyrological Editor </term>. 
+            Se puede encontrar una descripción completa además de documentación sobre Leiden+ en:  <ref
                 target="http://papyri.info/editor/help">papyri.info/editor/help</ref>.</item>
 
-        <label xml:id="markup">Markup</label>
-        <item>Markup language in a way to encode a text's contents in order to enable different ways
-            of representation and e.g. to extract information to be collected for indexes, or search
-            tools (cf. <term target="#encoding">Encoding</term>).<lb/> "Markup" is sometimes also used
-            as shorthand for <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">the
-                Markup List</ref>, an email list for the discussion of EpiDoc and other ancient text
-            markup matters.</item>
+        <label xml:id="markup-es">Markup, marcaje</label>
+        <item>El lenguaje de marcaje es un modo de codificar los contenidos de un texto con el objetivo 
+            de posibilitar distintos modelos de presentación además de, por ejemplo, facilitar 
+            la extracción de informaciones concretas para elaborar índices o para herramientas de búsqueda. 
+            (Véase también:  <term target="#encoding-es">Encoding, codificación</term>).
+            <lb/> Markup también se usa a veces como abreviación de 
+            <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">
+                Markup List</ref>, es decir, una lista de discusión vía correo electrónico sobre temas 
+            referentes a EpiDoc y otros asuntos de marcaje de textos antiguos.</item>
 
-        <label xml:id="morpheus">Morpheus</label>
-        <item>The Morpheus morphological analysis service is a tool originally developed by <term
-                target="#perseus">Perseus</term>, versions of which are in use by Papyri.info and the
-            TLG for lemmatizing their Greek texts. The Perseus version of the tool also caters for
-            Latin and Arabic lemmatization. (More information at <ref
+        <label xml:id="morpheus-es">Morpheus</label>
+        <item> El servicio de análisis morfológico Morpheus es una herramienta desarrollada originariamente por  <term
+            target="#perseus-es">Perseus</term>. Papyri.info y el TLG emplean algunas versiones del mismo 
+            para la lematización de sus textos griegos. La herramienta disponible en Perseus también ofrece 
+            lematización en latín y en árabe. Para más información: <ref
                 target="https://wikihub.berkeley.edu/display/pbamboo/Morphological+Analysis+Service+Contract+Description+-+v1.1.1"
-                >Bamboo</ref> and <ref
+                >Bamboo</ref> y <ref
                     target="http://sites.tufts.edu/perseusupdates/2012/11/01/morphology-service-beta/"
-                    >Perseus</ref>.)</item>
-
-        <label xml:id="perseus">Perseus</label>
-        <item><ref target="http://www.perseus.tufts.edu">The Perseus Digital Library Project</ref>
-            studies the progression from physical to digital libraries and offers an increasing
-            number of texts. Searches and a number of tools can be used directly on the website while
-            reading, e.g. the <term target="#morpheus">Morpheus</term> dictionary tool for Greek and Latin
-            texts.</item>
+                    >Perseus</ref>.</item>
         
-        <label xml:id="pleiades">Pleiades</label>
-        <item>A gazetteer of places and place names from the ancient world, building on the project that produced
-            the Barrington Atlas of the Greek and Roman World. Pleiades assigns unique identifiers to all places,
-            enabling a web of Linked Data such as that curated by the
-            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. Pleiades can be found at
+        <label xml:id="pn-es">Papyrological Navigator (PN)</label>
+        <item>Es la interfaz de búsqueda de la plataforma 
+            <ref target="http://papyri.info/">Papyri.info</ref>. Incluye las bases de datos <term target="#ddb">DDbDP</term>,
+            <term target="#hgv">HGV</term> y
+            <term target="#apis">APIS</term> entre otras. </item>
+        
+        <label xml:id="pe-es">Papyrological editor (PE)</label>
+        <item> Se trata de la herramienta de edición y administración de texto de la plataforma
+            <ref target="http://papyri.info/">Papyri.info</ref>. Permite las contribuciones y enmiendas 
+            en comunidad al corpus de papirología documental, especialmente a través de la interfaz de edición sin etiquetas (tags-free) de 
+            <term target="#leidenplus-es">Leiden+</term>.</item>
+        
+        <label xml:id="perseus-es">Perseus</label>
+        <item> El proyecto <ref target="http://www.perseus.tufts.edu">Perseus Digital Library</ref>
+            estudia la progresión de las bibliotecas de físicas a digitales y ofrece un gran número 
+            de textos que va en aumento. Se pueden realizar búsquedas directamente en su web, 
+            además de usar una serie de herramientas mientras se leen los textos, 
+            como por ejemplo la herramienta diccionario para latín y griego 
+            <term target="#morpheus-es">Morpheus</term>.</item>
+        
+        <label xml:id="pleiades-es">Pleiades</label>
+        <item>Se trata de un diccionario geográfico de lugares y topónimos del mundo antiguo, 
+            continuador del proyecto que creó el Barrington Atlas of the Greek and Roman World. 
+            Pleiades asigna identificadores específicos a todos los lugares, produciendo así una web 
+            de datos linkados como la desarrollada por el 
+            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. 
+            Pleiades se puede consultar en:
             <ref target="http://pleiades.stoa.org/">pleiades.stoa.org</ref>.</item>
 
-        <label xml:id="TEI">TEI</label>
-        <item>Text Encoding Initiative. Guidelines and tools for the encoding of literary and
-            historical texts in <term target="#xml">XML</term>. It is the format on which EpiDoc is
-            based. The latest TEI Guidelines can be found online at <ref
+        <label xml:id="TEI-es">TEI</label>
+        <item>Text Encoding Initiative, o Iniciativa para la Codificación de Textos. Consiste en una serie
+            de guías y herramientas para la codificación de textos literarios e históricos en <term target="#xml-es">XML</term>.
+            Éste es el formato en el que se basa EpiDoc. La versión más reciente de las guías de
+            TEI se puede encontrar en <ref
                 target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html"
-                >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html</ref>.</item>
+                >http://www.tei-c.org/release/doc/tei-p5-doc/es/html/index-toc.html</ref>.</item>
 
-        <label xml:id="w3c">World Wide Web Consortium</label>
-        <item>The World Wide Web Consortium (W3C) is an international community developing standards
-            to be used across the Internet. The public can take part, but there is also full-time
-            staff and entire organizations that are members of the endeavour. For further
-            information, see: www.w3.org.</item>
+        <label xml:id="w3c-es">World Wide Web Consortium</label>
+        <item>El World Wide Web Consortium (W3C) 
+            es una comunidad internacional que desarrolla estándares para ser usados en Internet. 
+            El público general puede participar en él, aunque también hay personal a tiempo completo, 
+            así como organizaciones enteras que dedican sus esfuerzos a este consorcio. 
+            Para más información, véase: <ref target= "www.w3.org">www.w3.org.</ref> </item>
 
-        <label xml:id="xml">XML</label>
-        <item>Extensible Markup Language. A text-based encoding format that allows the structured
-            encoding of text or data in human- and machine-readable format. It is the technical basis
-            of both <term target="#TEI">TEI</term> and EpiDoc, and is a standard maintained by the
-            World-wide Web Consortium. See <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>
-            for the spec and further description.</item>
+        <label xml:id="xml-es">XML</label>
+        <item>Extensible Markup Language, o lenguaje de marcaje extensible. 
+            Se trata de un formato para la codificación basado en el texto que permite la 
+            codificación estructurada de textos o datos en un formato legible tanto para 
+            las personas como para las máquinas. Conforma la base técnica de las  
+            <term target="#TEI-es">TEI</term> y, por consiguiente, de EpiDoc. Es también uno de los estándares mantenidos 
+            por el World Wide Web Consortium. Véase <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>
+            para la descripción detallada y mayores informaciones.</item>
 
-        <label xml:id="xslt">XSLT</label>
-        <item>Extensible Stylesheet Language Transformations. XSLT is a language that can convert
-                <term target="#xml">XML</term> documents into either different XML or other forms, e.g.
-            the HTML format used for websites, the import format for a database, or the Open Document Format
-            behind a word-processing document. The <term target="#epidoc-stylesheets">EpiDoc Stylesheets</term>
-            are an example of XSLT used to transform EpiDoc XML to common display formats.
-            A useful introduction to XSLT is offered by <ref
-                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>.</item>
+        <label xml:id="xslt-es">XSLT</label>
+        <item> Siglas en inglés de Extensible Stylesheet Language Transformations. XSLT es un lenguaje que convierte documentos 
+            <term target="#xml-es">XML</term>  en, o bien XML distintos, o bien a otros formatos como el HTML 
+            (usado para páginas web), el formato de importación para bases de datos o el formato Open Document 
+            que está detrás de un procesador de textos. Las  <term target="#epidoc-stylesheets-es">hojas de estilo (Stylesheets) de EpiDoc </term>
+            son un ejemplo de XSLT empleado para la transformación de documentos EpiDoc en XML 
+            a formatos de presentación comunes. <ref
+                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>
+        ofrece una útil introducción al XSLT. </item>
     </list>
 
-    <div xml:id="app-glossary-es-responsibility">
-        <head>Responsibility for this section</head>
+    <div xml:id="app-glossary-es-responsibility" type="gl-responsibility">
+        <head>Responsables de esta sección</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Laura Löser</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Spanish</resp><name></name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>autora</resp><name>Laura Löser</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>traducido al español</resp><name>Núria Garcia Casacuberta</name></respStmt></bibl>
+            <bibl><respStmt><resp>traducido al español</resp><name>María José Estarán</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
