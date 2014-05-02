@@ -27,44 +27,82 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-language" xml:lang="en">
     <head>Languages and scripts</head>
-    <p>gloss</p>
-    <p>
-        <specList>
-            <specDesc key="langUsage"/>
-            <specDesc key="language"/>
-            <specDesc key="textLang"/>
-        </specList>
-    </p>
+    <p>TEI/EpiDoc provides mechanisms for encoding languages and scripts (writing systems) as they relate to the contents of an EpiDoc file and to the text(s) described and transcribed therein. In doing so, we make use of Internet standards for the identification of these languages and scripts. This portion of the <title>Guidelines</title> addresses all relevant aspects.</p>
+    <div rend="tag-defs">
+        <head>Relevant element documentation (TEI):</head>
+        <p>
+            <specList>
+                <specDesc key="langUsage"/>
+                <specDesc key="language"/>
+                <specDesc key="textLang"/>
+                <specDesc key="foreign"/>
+            </specList>
+        </p>
+    </div>
+    <div>
+        <head>Indicating languages and scripts used in an EpiDoc file</head>
+        <p>TEI and EpiDoc follow the best current practice outlined in the Network Working Group's <ref target="http://tools.ietf.org/html/rfc5646">RFC 5646: <title>Tags for Identifying Languages</title></ref>, which establishes the norms for same on an Internet-wide basis. The RFC and supporting documents define a syntax for creating short strings of characters (<soCalled>language tags</soCalled>) that function as unique identifiers for any desired combination of language and script. These tags are composed of <soCalled>subtags</soCalled> for language qua language, writing sysem (script), and regional and dialectical variation. The RFC also establishes a process for registration and maintenance of these subtags by the <ref target="https://www.iana.org/">Internet Assigned Numbers Authority</ref>.</p>
+        <p>A valid EpiDoc file must make use of subtags recorded in the <ref target="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">IANA Language Subtag Registry</ref>. Many EpiDoc creators will already be familiar with some of these codes from other digital projects, for example:</p>
+        <list type="bulleted">
+            <item>Grek = Greek script</item>
+            <item>Latn = Latin script</item>
+            <item>en = English language (assumed to be in its standard script: Latn)</item>
+            <item>fr = French language (assumed to be in its standard script: Latn)</item>
+            <item>el = Modern Greek language (1453-; assumed to be in its standard script: Grek)</item>
+            <item>grc = Ancient Greek language (to 1453; assumed to be in its standard script: Grek)</item>
+            <item>grc-Latn = Ancient Greek Language (to 1453), rendered in Latin script</item>
+        </list>
+        <p>When the IANA registry does not provide appropriate codes, then an EpiDoc project may devise "private use subtags", so long as they are internally defined in the EpiDoc file as outlined in the following paragraph and so long as they conform syntactically to the specifications laid out in RFC 5646, sections <ref target="http://tools.ietf.org/html/rfc5646#section-2.1">2.1: Syntax</ref> and <ref target="http://tools.ietf.org/html/rfc5646#section-4.6">4.6: Considerations for Private Use Subtags</ref>. For example, the Campā Inscriptions team determined that the two Cham language subtags (cja = Western Cham and cjm = Eastern Cham) and the associated script subtag (Cham) were substantively different from the ancient Cham language and script represented in the inscriptions. Therefore the private use subtag "x-oldcam-latn-ci" was invented and given the project-specific meaning "Old Cam language in Old Cam script transliterated in Latin characters." Whenever possible, EpiDoc projects and practitioners should undertake to register new subtags with the IANA for the benefit of others. A procedure for same is set out in RFC 5646 <ref target="http://tools.ietf.org/html/rfc5646#section-3.5">Section 3.5</ref>.</p>
+        <p>Describe langUsage here.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <langUsage>
+                <language ident="ar">Arabic</language>
+                <language ident="cop">Coptic</language>
+                <language ident="egy-Egyd">Egyptian in Demotic script</language>
+                <language ident="egy-Egyh">Egyptian in Hieratic script</language>
+                <language ident="egy-Egyp">Egyptian Hieroglyphic</language>
+                <language ident="etr">Etruscan</language>
+                <language ident="el">Modern Greek</language>
+                <language ident="grc">Ancient Greek</language>
+                <language ident="grc-Latn">Ancient Greek written in latin script</language>
+                <language ident="he">Hebrew</language>
+                <language ident="la">Latin</language>
+                <language ident="la-Grek">Latin written in Greek script</language>
+            </langUsage>
+        </egXML>
+    </div>
+    <div>
+        <head>Character Encodings and Fonts</head>
+    </div>
+    <div>
+        <head>Indicating the modern language and script used throughout the EpiDoc file</head>
+    </div>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <langUsage>
-            <language ident="ar">Arabic</language>
-            <language ident="cop">Coptic</language>
-            <language ident="egy-Egyd">Egyptian in Demotic script</language>
-            <language ident="egy-Egyh">Egyptian in Hieratic script</language>
-            <language ident="egy-Egyp">Egyptian Hieroglyphic</language>
-            <language ident="etr">Etruscan</language>
-            <language ident="el">Modern Greek</language>
-            <language ident="grc">Ancient Greek</language>
-            <language ident="grc-Latn">Ancient Greek written in latin script</language>
-            <language ident="he">Hebrew</language>
-            <language ident="la">Latin</language>
-            <language ident="la-Grek">Latin written in Greek script</language>
-        </langUsage>
-    </egXML>
+    <div>
+        <head>Signaling the languages and scripts used in the texts and translations being presented</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <textLang mainLang="grc" otherLangs="grc-Latn la">
+                Inscription in ancient Greek with some words transcribed in Latin characters, and
+                later annotation in Latin.
+            </textLang>
+        </egXML>
+    </div>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <textLang mainLang="grc" otherLangs="grc-Latn la">
-            Inscription in ancient Greek with some words transcribed in Latin characters, and
-            later annotation in Latin.
-        </textLang>
-    </egXML>
+    <div>
+        <head>Marking transitions in language and/or script in the text</head>
+    </div>
+    
+    
+    
+    
+   
     
     <div xml:id="supp-title-responsibility">
     
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
