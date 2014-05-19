@@ -57,8 +57,9 @@
         </egXML>
 
     <p>Resolved and unresolved abbreviations are treated slightly differently, in that there is no
-        expanded word nor editorial expansion, so only the <gi>abbr</gi> need be tagged;
-        see <ref target="trans-abbrevnotex.html">Abbreviation not expanded at all</ref> for more detail
+        expanded word nor editorial expansion, so only the <gi>abbr</gi> (whose semantics is therefore
+        unchanged) need be tagged.
+        See <ref target="trans-abbrevnotex.html">Abbreviation not expanded at all</ref> for more detail
         on marking up abbreviations for which the expansion is unknown.</p>
     
     <cit>
@@ -89,6 +90,16 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
         corresp="http://inslib.kcl.ac.uk/irt2009/IRT024.html">
         <expan><abbr>trib</abbr><ex>unicia</ex></expan>
+    </egXML>
+    
+    <p>A suspended rather than abbreviated word is tagged in precisely the same way, with the undertstanding
+        (both semantically and by processing such as rendering XSLT and indexing tools)
+    that multiple <gi>abbr</gi> elements within a single <gi>expan</gi> are considered to compose
+        a single abbreviation between them. For example, in the case of "QQ" expanding to "q(uin)q(uennalis)", we might
+    encode as follows:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <expan><abbr>q</abbr><ex>uin</ex><abbr>q</abbr><ex>uennalis</ex></expan>
     </egXML>
 
     <p>If the abbreviated text tacitly implies a supplementary word or words which are understood
