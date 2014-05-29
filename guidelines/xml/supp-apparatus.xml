@@ -27,18 +27,51 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-apparatus" xml:lang="en">
     <head xml:lang="la">Apparatus criticus</head>
-    <p>Critical apparatus is a standard feature of scholarly editions in which variant readings and related comments are presented to readers as a compressed list immediately following the text, organized by line numbers therein.</p>
+    <p>Critical apparatus is a standard feature of scholarly editions in which variant readings and other
+        philological comments are presented to readers as a compressed list immediately following the text, 
+        organized by line numbers therein.</p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     <p><specList>
         <specDesc key="div"/>
     </specList></p>
 
-    <p>Form and content of the apparatus varies from one discipline to another in the humanities. In manuscript studies and literary philology, the <abbr>app. crit.</abbr> is generally differentiated from a separate <ref target="supp-commentary.html">line-by-line commentary</ref>, and is devoted narrowly to the documentation of variant readings found in extant witnesses. In epigraphic and papyrological practice, where there is normally only one ancient witness to a text, the apparatus regularly treats divergeant or erroneous readings published by prior editors, alternative restorations and emendations, and comments on form and appearance (e.g., transposition of letters) that cannot be clearly represented in the text itself. Epigraphers and papyrologists often also include a commentary (line-by-line or otherwise) in which more extended discussion of the text and its interpretation and historical significance can be addressed.</p>
-    <p>EpiDoc provides two methods of encoding the sort of information that is traditionally placed in the critical apparatus. The <ref target="supp-app-inline.html">in-line approach</ref> makes use of tags placed directly in the text, which can then be interpreted during post-processing for display in a line-by-line form. In the <ref target="supp-app-external.html">external approach</ref>, the apparatus is encoded explicitly in a separate <tag>div type="apparatus"</tag> element. The individual apparatus entries in such an external division are tied back to the text using standard TEI linking attributes.</p>
+    <p>Form and content of the apparatus varies from one discipline to another in the humanities.
+        In manuscript studies and literary philology, the <abbr>app. crit.</abbr> is generally differentiated
+        from a separate <ref target="supp-commentary.html">line-by-line commentary</ref>, 
+        and is devoted narrowly to the documentation of variant readings found in extant witnesses.
+        In epigraphic and papyrological practice, where there is normally only one ancient witness to a text,
+        the apparatus regularly treats divergeant or erroneous readings published by prior editors,
+        alternative restorations and emendations, and comments on form and appearance
+        (e.g., transposition of letters) that cannot be clearly represented in the text itself. 
+        Epigraphers and papyrologists often also include a commentary (line-by-line or otherwise) 
+        in which more extended discussion of the text and its interpretation and historical significance can be addressed.</p>
+    
+    <p>EpiDoc recommends choosing between two methods of encoding
+        the sort of information that is traditionally placed in the critical apparatus:</p>
+    <p>Probably the most commonly used in EpiDoc projects is the 
+        <ref target="supp-app-external.html">external approach</ref>
+        (cf. <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPLO">TEI "location-referenced"</ref>),
+        in which the apparatus is encoded explicitly in a separate
+        <tag>div type="apparatus"</tag> element. The individual apparatus entries in such an external division
+        are tied back to the text using standard TEI linking attributes
+        (generally <att>loc</att> pointing to line numbers).
+        This method requires relatively simple XSLT to produce acceptable output, but the 
+        <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> do not currently cater for this out of the box.</p>
+    <p>The <ref target="supp-app-inline.html">in-line approach</ref>
+        (cf. <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS">TEI "parallel segmentation method"</ref>)
+        makes use of tags placed directly in the text,
+        which can then be interpreted during post-processing for display in a line-by-line form.
+        Currently the only EpiDoc project to have implemented this is the
+        <ref target="#ddb">Duke Databank of Documentary Papyri</ref>,
+        and any other project wishing to do so would need some significant work on the
+        <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term>
+        to get the behaviour they required.
+    </p>
+    
     <p>Specific guidance for each approach is provided in its own section as follows:</p>
     <list>
-        <item><ref target="supp-app-inline.html">In-line apparatus</ref></item>
         <item><ref target="supp-app-external.html">External apparatus</ref></item>
+        <item><ref target="supp-app-inline.html">In-line apparatus</ref></item>
     </list>
     <div xml:id="supp-apparatus-responsibility">
     
