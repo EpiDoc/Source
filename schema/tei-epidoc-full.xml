@@ -45,6 +45,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per https://sourceforge.net/p/epidoc/feature-requests/67/)</change>
             <change who="#GB" when="2014-03-04">stopped omitting s from Analysis (requested by Perseus)</change>
             <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from Gaiji (requested by DASI), and phr from Analysis (requested by Coptic Scriptorium)</change>
             <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request from IGLouvre)</change>
@@ -112,7 +113,7 @@ End license statement: do not remove -->
                 <moduleRef key="header"/>
                 <moduleRef key="textstructure" except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
                     opener postscript salute signed titlePage titlePart trailer"/>
-                <moduleRef key="transcr" except="damageSpan fw restore"/>
+                <moduleRef key="transcr" except="damageSpan restore"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
                 <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
