@@ -160,10 +160,6 @@ div.stdheader {
    text-decoration: none;
 }
 
-body > div > * {
-  margin-right: 200px;
-}
-
 body.simple > div > * {
     margin: 0px;
 }
@@ -208,13 +204,6 @@ h1.maintitle a {
        text-decoration: none;
        color: inherit;
 }
-
-h1.maintitle:before {
-  content: url("../img/epidoc-logo-150.jpg") !important;
-  float:right;
-}
-
-
 
 h1.title {
    margin-left: 100px;
@@ -595,10 +584,8 @@ body > div.teidiv, body.simple {
     background-color: #996633;
     margin: 0px;
     padding: 2em;
-    width: 1050px;
 }
 body > div.teidiv > div.teidiv, body > div.tei_body {
-    max-width: 800px;
     padding: 0.8em 2em;
     margin: 1em;
     background-color: #FEFEFE;
@@ -845,7 +832,6 @@ nav {
   margin-left: 1.4em;
   margin-top: 2em;
   padding: 0px;
-  width: 860px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8em;
   line-height: 0.8em;
