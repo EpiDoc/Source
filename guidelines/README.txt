@@ -72,6 +72,8 @@ How to use it:
 		* Generate EDH Web Examples
 		* Generate London Examples
 		* Generate Panciera Examples
+		* Generate Petrae Examples
+		* Generate RIB Examples
 		* Generate Seg Examples
         5. Run the guidelines generation XSLT scenario against it ("EpiDoc P5 Guidelines HTML")
         6. Results of the transformation will be output to guidelines/output/
