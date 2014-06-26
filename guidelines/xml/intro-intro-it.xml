@@ -1,7 +1,7 @@
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
-Edition 8 copyright © 2008-2014 by all contributors listed in <div type="gl-responsibility">, below.
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
 Additional contributors' copyright may be designated in individual source files.
 
 This program is free software; you can redistribute it and/or
@@ -19,194 +19,225 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Information about the EpiDoc community can be obtained via 
-http://epidoc.sf.net.
+http://EpiDoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://EpiDoc.svn.sourceforge.net/svnroot/EpiDoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
  
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="intro-intro-it" xml:lang="it">
-    <head>General Introduction to the EpiDoc Guidelines</head>
-
-    <p>EpiDoc is a loose collaborative of projects and scholars working with ancient source
-        documents in <term target="#tei">Text Encoding Initiative</term> (TEI) <term target="#xml"
-            >XML</term>, and devising recommendations, tools, and good practice for the digital
-            <term target="#encoding">encoding</term>, processing and publishing of such texts.
-        EpiDoc's home page on the web may be found at <ref target="http://epidoc.sf.net"
-            >http://epidoc.sf.net</ref>.</p>
-
-    <p>The present document (the <title>EpiDoc Guidelines</title>) is the on-going product of the
-        EpiDoc community's work over several years. It describes how to encode the various features
-        of epigraphic and papyrological documents, based on the core principles of scholarly text
-        editing (e.g. the so-called <term target="#leiden">Leiden Conventions</term> for
-        transcriptional features, and data models such as <term target="#eagle">Electronic Archive of
-            Greek and Latin Epigraphy (EAGLE)</term> for descriptive and historical elements). The
-            <title>Guidelines</title> should be used in conjunction with the <title><term
-                target="#epidoc-schema">EpiDoc Schema</term></title>, against which documents marked
-        up according to these principles should validate, and the <title><term
-                target="#epidoc-stylesheets">EpiDoc Example Stylesheets</term></title>, which attempt
-        to provide a basic rendering for each feature described.</p>
-
-    <p>The <title>EpiDoc Guidelines</title> cannot undertake to give full explanation of how to set up
-        an EpiDoc project, generate a website, build search tools, or other technical or
-        collaborative tasks required for the publication of encoded texts online. No more are the
-            <title>Guidelines</title> a full introduction to epigraphy or papyrology;
-        they are exclusively a guide to the XML encoding of the features of an ancient documentary
-        text edition that are most often needed in epigraphic and similar scholarship.</p>
-
-    <p>Although there is no single convention for the structure of an epigraphic or papyrological
-        edition the
-        <title>EpiDoc Guidelines</title> (and the <title><term target="epidoc-stylesheets">EpiDoc
-            Stylesheets</term></title>) take an approach that is in accord with the data models employed by
-        projects and collaborations like the <term target="#apis">Advanced Papyrological Information
-            System (APIS)</term>, <term target="#eagle">EAGLE</term>, and <term target="#petrae"
-                ><foreign xml:lang="fr">Programme d’enregistrement, de traitement et de recherche
-                    automatique en épigraphie</foreign> (PETRAE)</term>. As the discipline if epigrpaphy in general
-        digital epigraphy in particular, 
-        already have rigorous models of good practice in structuring editions, we merely recommend the
-        encoding in TEI XML of the same data and observations that scholars have already found
-        essential or useful in practice.</p>
-    
-    <p>The <title>EpiDoc Guidelines</title> are intended to complement the <term target="#leiden"
-            >Leiden Conventions</term> (hereafter "Leiden"), which have been in use in epigraphy and
-        papyrology for over 80 years and are understood in many philological and documentary fields.
-        The <title>Guidelines</title> assume that Leiden is an adequate basis for the intellectual
-        distinctions recorded in an edition of a pre-modern text, and base their recommendations and
-        examples upon these distinctions without requiring the specific typographical conventions and
-        sigla recommended therein. That is, EpiDoc seeks clearly to record in XML such textual
-        interventions as an editor's supplement for characters wholly lost to damage, but does not
-        specify that such supplements must be rendered within "square brackets" ("[" and "]") in the
-        XML itself or in any downstream output. That said, it is the default behaviour of the
-            <title>EpiDoc Example Stylesheets</title> to produce a Leiden rendering of EpiDoc-encoded
-        texts. It is often possible for TEI to record distinctions that are finer or deeper than
-        Leiden, and some such possibilities are described herein, but these <title>Guidelines</title>
-        do not recommend replacing standard epigraphic or papyrological practice with such new
-        principles.</p>
-
-    <p>The <title>Guidelines</title> produced and recommended by the EpiDoc community represent a
-        subset of and refinement to the <title><ref
-                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
-                Guidelines</ref></title>, which recommend the XML encoding of a wide range of
-        literary and historical texts and linguistic corpora. Just as EpiDoc is a specialization of
-        the TEI for ancient documents and objects, recommending only those elements, attributes and
-        objects of value for this specific sub-community, the <title>EpiDoc Guidelines</title> are
-        intended to supplement (and by no means replace) the <title>TEI Guidelines</title>.
-        Especially the reference and technical sections of the TEI remain an invaluable resource for
-        users of EpiDoc, who will often find lists of elements, explanations of attribute values or
-        data types, examples of usage in a wide range of contexts and extensive prose descriptions of
-        markup features useful. The <title>EpiDoc Guidelines</title> recommend a rather restricted
-        set of TEI elements, content models, attributes and values, such that an EpiDoc file is
-        always also a valid TEI file, but not every TEI file is valid EpiDoc. Where the <title>EpiDoc
-            Guidelines</title> are more restrictive than the TEI, the former should be considered to
-        supercede the latter; but where the TEI goes into more detail, or offers a more useful range
-        of examples, it should of course be consulted and considered the canonical source for all
-        EpiDoc usage.</p>
-    
+    <head>Come usare le Linee Guida EpiDoc</head>
+    <p>EpiDoc è una collaborazione in senso ampio di progetti e studiosi che lavorano su risorse
+        documentarie antiche in <term target="#xml">XML</term> TEI (<term target="#tei">Text
+            Encoding Initiative</term>), e progettano raccomandazioni, strumenti e buona pratica per
+        la <term target="#encoding">codifica</term> digitale, il trattamento e la pubblicazione di
+        tali testi. La home page di EpiDoc sul web si trova presso <ref
+            target="http://epidoc.sf.net">http://EpiDoc.sf.net</ref>.</p>
+    <p>Questo documento (le <title>Linee Guida EpiDoc</title>) è il prodotto in continuo mutamento
+        del lavoro svolto dalla comunità EpiDoc in diversi anni. Descrive come codificare i vari
+        elementi caratteristici dei documenti epigrafici e papirologici, basandosi sui principi base
+        dell'ecdotica dei testi (come per esempio le <term target="#leiden">Convenzioni
+            Leiden</term> per quanto riguarda la trascrizione, e modelli di dati <term
+            target="#eagle">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</term> per
+        quanto riguarda elementi stotici e descrittivi). Le <title>Linee Guida</title> devono essere
+        usate in coppia con lo <title><term target="#epidoc-schema">Schema EpiDoc </term></title>,
+        con cui i documenti codificati secondo tali principi devono essere validati, e con gli
+                <title><term target="#epidoc-stylesheets">EpiDoc Example Stylesheets</term> (fogli
+            di stile esemplari)</title>, che rappresentano un tentativo di resa grafica per ogni
+        elemento caratteristico descritto.</p>
+    <p>Le <title>Linee Guida EpiDoc</title> non hanno la pretesa di rappresentare una spiegazione
+        esaustiva di come iniziare un progetto EpiDoc, generare un sito web, costruire uno strumento
+        di ricerca, o altri lavori tecnici o collaborativi necessari alla pubblicazione online di
+        testi codificati. Né le <title>Linee Guida</title> rappresentano una introduzione completa
+        all'epigrafia o alla papirologia; esse vogliono esclusivamente essere una guida alla
+        codifica in XML delle caratteristiche dell'edizione di testi documentari antichi, sempre più
+        necessaria nello studio dell'epigrafia.</p>
+    <p>Anche se non esiste una singola convenzione per la strutturazione di un'edizione epigrafica o
+        papirologica, le <title>Linee Guida EpiDoc</title> (e i <title><term
+                target="epidoc-stylesheets">Fogli di Stile EpiDoc</term></title>) adottano una
+        strategia che è in accordo con i modelli di dati impiegati in progetti e collaborazioni
+        quali l'<term target="#apis">Advanced Papyrological Information System (APIS)</term>, <term
+            target="#eagle">EAGLE</term>, e il <term target="#petrae"><foreign xml:lang="fr"
+                >Programme d’enregistrement, de traitement et de recherche automatique en
+                épigraphie</foreign> (PETRAE)</term>. Dato che la disciplina dell'epigrafia in
+        generale, e dell'epigrafia digitale nel particolare, possie già dei modelli rigorosi per una
+        buona pratica nella strutturazione delle edizioni, ci limitiamo a raccomandare la codifica
+        in XML degli stessi dati e delle stesse osservazioni che altri studiosi hanno già stabilito
+        essere essenziali o utili.</p>
+    <p>Le <title>Linee Guida EpiDoc</title> intendono essere un complemento alle <term
+            target="#leiden">Convenzioni Leiden</term> (da qui in poi "Leiden"), in uso da oltre 80
+        anni in epigrafia e papirologia, e comunemente usate e comprese in vari campi filologici e
+        documentari. Le <title>Linee Guida</title> danno per scontato che Leiden sia una base
+        adeguata per le distinzioni intellettuali registrate nell'edizione di un testo pre-moderno,
+        e basano le proprie raccomandazioni e esempi su tali distinzioni senza aver bisogno delle
+        specifiche convenzioni tipografiche e sigle raccomandate. Ciò significa che EpiDoc intende
+        chiaramente registrare in XML tali interventi testuali quali i supplimenti di un editore per
+        caratteri persi o danneggiati, ma non specifica, nell'XML o in prodotti susseguenti, che
+        tali supplementi debbano essere resi all'interno di parentesi quadre ("[" e "]"). Detto
+        questo, il comportamento predefinito degli <title>EpiDoc Example Stylesheets</title> è
+        quello di produrre una resa Leiden per i testi codificati con EpiDoc. A volte è possibile
+        per la TEI di registrare distinzioni che sono più sottili o precise di Leiden, e tali
+        possibilità sono descritte qui sotto, ma queste <title>Linee Guida</title> raccomandano di
+        non rimpiazzare pratiche standard di epigrafia e papirologia con suddetti nuovi
+        principi.</p><p> Le <title>Linee Guida</title> prodotte e raccomandate dalla comunità EpiDoc
+        rappresentano una sottocategoria e un raffinamento delle <title><ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Linee Guida
+                TEI </ref></title>, che contengono raccomandazioni sulla codifica in XML di una
+        vasta gamma di testi letterari e storici, e di corpora linguistici. Nello stesso modo in cui
+        EpiDoc è una specializzazione delle raccomandazioni TEI per documenti e oggetti antichi,
+        concentrandosi solo su quegli elementi, attributi e oggetti che abbiano un valore ben
+        preciso per una comunità specifica, le <title>Linee Guida EpiDoc</title> sono da intendersi
+        come supplemento (e non in alcun modo un rimpiazzo) delle <title>Linee Guida TEI</title>. In
+        particolar modo le sezioni tecniche e di referenza della TEI rimangono una risorsa
+        inestimabile per chiunque faccia uso di EpiDoc, vi si potranno trovare liste di elementi,
+        spiegazioni dei valori di attributi o tipologie di dati, esempi in una vasta gamma di
+        contesti e una descrizioni esaustive delle caratteristiche della codifica. Le <title>Linee
+            Guida EpiDoc</title> raccomandano un numero ristretto di elementi, modelli di contenuto,
+        attributi e valori TEI; in questo modo, un documento EpiDoc sarà sempre un documento TEI
+        valido, ma non necessariamente un documento TEI potrà essere un documento EpiDoc valido. Ove
+        le <title>Linee Guida EpiDoc</title> sono più restrittive di quelle TEI, le prime sono
+        intese a sostituire queste ultime, ma nel caso in cui le linee guida TEI vadano più nel
+        dettaglio, o offrano una gamma più vasta di esempi queste dovrebbero ovviamente essere
+        consultate e considerate la risorsa canonica per tutti gli usi EpiDoc. </p>
     <div xml:id="structure">
-        <head>Structure and Features of the <title>EpiDoc Guidelines</title></head>
-
-        <p>There are several pathways into the individual pages that make up the body of the
-                <title>EpiDoc Guidelines</title>.</p>
+        <head>Struttura e caratteristiche delle <title>Linee Guida EpiDoc</title></head>
+        <p>Ci sono diverse strade che portano alle singole pagine che costituiscono il corpo
+            centrale delle <title>Linee Guida EpiDoc </title>.</p>
         <list type="bulleted">
-            <item>Three main tables of contents collect together all of these pages under the
-                categories: <ref rend="bold" target="app-alltrans.html">Transcription</ref> (those
-                features relating to the content, appearance, restoration and basic interpretation of
-                the text itself); <ref rend="bold" target="app-allsupp.html">Supporting Data</ref>
-                (including the description of the object or manuscript, the history of the object and
-                its discovery, bibliographical and other editorial information); and <ref rend="bold"
-                    target="app-allidx.html">Vocabulary and Indexing</ref> (terms and features tagged
-                in the text for purpose of vocabulary control or indexing, searching and
-                faceting).</item>
-            <item><ref target="index.html#special">Several sections</ref> offer organized and
-                selected lists of guidance pages according to the categories generally followed by
-                users of specialized communities (for example, the epigraphic transcription
-                guidelines of <term target="#krummreypanciera">Krummrey-Panciera</term>; the
-                papyrological features as recorded by the <term target="#apis">APIS</term> database).
-                These sections are under construction, and should be considered informational rather
-                than normative. Suggestions of new sections of this kind are welcome.</item>
-            <item>Finally the <title>Guidelines</title> contain supporting appendices, such as the
-                    <ref target="app-glossary.html">glossary of technical and specialized
-                terms</ref>, and a <ref target="app-bibliography.html">bibliography</ref> of
-                epigraphic and papyrological authorities, example EpiDoc corpora, and on digital
-                publication of ancient texts generally. An <ref target="app-elements.html">index to
-                    the <title>Guidelines</title> by TEI elements mentioned</ref> allows readers to
-                find all epigraphic features in which a given element is part of the recommended
-                usage.</item>
+            <item>Tre principali tavole dei contenuti (indici? come si dice in italiano?) riuniscono
+                tutte queste pagine sotto le seguenti categorie: <ref rend="bold"
+                    target="app-alltrans.html">Trascrizione (translation)</ref> (quelle
+                caratteristiche/peculiarità/funzioni che riguardano il contenuto, l'aspetto, il
+                ripristino e l'interpretazione base del testo stesso); <ref rend="bold"
+                    target="app-allsupp.html">Dati di supporto (Supporting Data)</ref> (comprendenti
+                la descrizione dell'oggetto o del manoscritto, la storia dell'oggetto e della sua
+                scoperta, informazioni bibliografiche e editoriali); e <ref rend="bold"
+                    target="app-allidx.html">Vocabolario e Indicizzazione (Vocabulary and
+                    Idexing)</ref> (termini e caratteristiche marcate nel testo per ragione di
+                controllo dei vocaboli o indicizzazione, ricerca e sfaccettatura (?)).</item>
+            <item><ref target="index.html#special">Svariate sezioni (Several Sections)</ref> offre
+                liste organizate e selezionate di pagine guida secondo le categorie solitamente
+                usate da utenti di cominità specialiste (per esempio, le linee guida di trascrizione
+                epigrafica di <term target="#krummreypanciera">Krummrey-Panciera</term>; le
+                caratteristiche papirologiche registrate dal database <term target="#apis"
+                    >APIS</term>). Questa parte è in costruzione, e dovrebbe essere considerata
+                istruttiva più che normativa. Suggerimenti su altre sezioni di questo tipo sono
+                benvenuti.</item>
+            <item>Infine, le <title>Linee Guida</title> contengono appendici di supporto, quali il
+                    <ref target="app-glossary.html">glossario di termini tecnici e specialistici
+                    (glossary of technical and specialized terms)</ref>, e una <ref
+                    target="app-bibliography.html">bibliografia (bibliography)</ref> di (dati)
+                autorevoli di tipo epigrafico e papirologico corpora EpiDoc esemplari, e
+                informazioni sulla pubblicazione digitale di testi antichi in generale. Un <ref
+                    target="app-elements.html">indice alle <title>Linee Guida</title> per elemento
+                    TEI menzionato (index to the <title>Guidelines</title> by TEI elements
+                    mentioned)</ref> permette all'utente di trovare tutte le caratteristiche
+                epigrafiche in cui un dato elemento è parte dell'uso raccomandato.</item>
         </list>
-
-        <p>Individual pages in the <title>Guidelines</title> are organised by epigraphic or
-            papyrological concept, rather than by TEI element name. So, for instance, all pages
-            involving abbreviations are grouped together (<ref
-                target="app-alltrans.html#editorial-interventions">under the Editorial Interventions
-                rubric</ref>), regardless of what TEI elements are specified. Each
-                <title>Guidelines</title> page has a regular structure: first, a brief explanation of
-            the title of a page (e.g., for <ref target="trans-uninterpreted.html">the page entitled
-                ‘Uninterpreted Characters’</ref>, there is an explanation “Clear but incomprehensible
-            letters”). The relevant TEI element (or elements) are displayed in a box underneath,
-            including a link to the <title>TEI Guidelines</title> page for that element. There then
-            follows a prose explanation of the EpiDoc recommendations for the use of those TEI
-            elements, including details of relevant attributes and values.</p>
-
-        <p>Below this explanation there are usually a few examples of the usage in context.
-            Especially in the case of transcriptional features, the <title>Guidelines</title> will
-            list conventional renderings of the issue in question according to common epigraphic or
-            papyrological transcription guidelines, such as <term target="#krummreypanciera"
-                >Krummrey-Panciera</term> and the <term target="#ddb">Duke Databank</term>.</p>
-
-        <p>The XML examples show the recommended markup for the various types of each transcriptional
-            feature, e. g. different cases of <ref target="trans-abbrevmark.html">expansion of an
-                abbreviation which includes a symbol</ref>. The examples often list several markup options
-            depending on the level of detail desired. Below the examples there is a series of
-            renderings (or a different rendering after each example) which represent the several
-            outputs available in the example EpiDoc P5 stylesheets. The default output is following
-            the <term target="#krummreypanciera">Krummrey-Panciera</term> conventions. The others
-            include the SEG style, the London style and the DDbDP style. Below each example there is
-            a reference pointing to its source. Most of the examples are taken from the <term
-                target="#insaph">Inscriptions of Aphrodisias</term>, the <term target="#irt"
-                >Inscriptions of Roman Tripolitania</term> and the <term target="#ddb">Duke Databank
-                of Documentary Papyri</term>. </p>
+        <p>Le singole pagine delle <title>Linee Guida</title> sono roganizzate per concetto
+            epigrafico o papirologico, e non per nome dell'elemento TEI. Per cui, per esempio, tutte
+            le pagine che si occupano di abbreviazioni sono raggruppate sotto la <ref
+                target="app-alltrans.html#editorial-interventions">Rubrica degli interventi
+                editoriali (Editorial Interventions rubric)</ref>), indipendentemente da quale
+            elemento TEI vi è specificato. Ogni pagina delle <title>Linee Guida</title> è
+            strutturata allo stesso modo: per prima c'è una breve spiegazione del titolo della
+            pagina (es., per la pagina intitolata <ref target="trans-uninterpreted.html">Caratteri
+                non Interpretati ( ‘Uninterpreted Characters’)</ref>, vi è una spiegazione “Lettere
+            chiare ma incomprensibili”). L'elemento (o gli elementi) TEI rilevanti sono mostrati in
+            una tavola più sotto, che include un link alle pagine delle <title>Linee Guida
+                TEi</title> relative a quell'elemento. Segue una spiegazione delle raccomandazioni
+            EpiDoc per l'uso dei detti elementi TEI, inclusi dettagli su attributi e valori
+            relativi.</p>
+        <p>Sotto a queste spiegazioni ci sono in genere una serie di esempi di uso in contesto.
+            Specialmente in caso di caratteristiche di trascrizione, le <title>Linee Guida</title>
+            elencano rese abituali del problema in questione secondo le più comuni convenzioni
+            epigrafiche e papirologiche, quali le <term target="#krummreypanciera"
+                >Krummrey-Panciera</term> e il <term target="#ddb">Duke Databank</term>.</p>
+        <p>Gli esempi in XML mostrano la codifica raccomandata per ogni tipo di caratteristica della
+            trascrizione, per es. i vari casi di <ref target="trans-abbrevmark.html">espansione di
+                un'abbreviazione che include un simbolo (?)</ref>. Gli esempi solitamente mostrano
+            varie opzioni di codifica, a seconda del livello di dettaglio desiderato. Sotto gli
+            esempi vi è una serie di rese/esecuzioni/rappresentazioni (o una resa diversa sotto ogni
+            esempio) che rappresentano gli svariati output disponibili nei fogli di stile esemplari
+            di EpiDoc P5. L'output di default segue le convenzioni <term target="#krummreypanciera"
+                >Krummrey-Panciera</term>. Altri includono lo stile SEG, lo Stile Londra (London
+            style) e lo stile DDbDP. Sotto ad ogni esempio vi è una referenza alla fonte. La maggior
+            parte degli esempi deriva dalle <term target="#insaph">Inscriptions of Aphrodisias
+                (Iscrizioni di Aphrodisia)</term>, dalle <term target="#irt">Inscriptions of Roman
+                Tripolitania (Iscrizioni della Tripolitania romana)</term> e dalla <term
+                target="#ddb">Duke Databank of Documentary Papyri (Databank Duke dei papiri
+                documentari)</term>. </p>
     </div>
-
     <div xml:id="more">
-        <head>Training, Tools, and Support</head>
-        
-        <p>These <title>Guidelines</title> are in essence a reference source. For more in-depth
-            training or support, other resources might be available. Members of the EpiDoc community
-            run occasional training schools, sometimes funded by major projects (such as seve̛ral
-            workshops run during the Inscriptions of Aphrodisias Project, 2004-2008); more
-            information on these training events can be found on the <ref
-                target="http://sourceforge.net/p/epidoc/wiki/Training/">Training page in the EpiDoc
-                Wiki</ref>. Those new to EpiDoc and text encoding might also find general training
-            sessions on TEI (some listed in <ref
-                target="http://wiki.tei-c.org/index.php/Current_events">TEI Events list</ref>)
-            useful.</p>
-
-        <p>EpiDoc can be authored and edited using any standard tool for XML (several of which are
-            listed on the <ref target="http://wiki.tei-c.org/index.php/Category:Editing_tools"
-                >Editing Tools page of the TEI wiki</ref>); basic training in the use of such tools
-            is usually included in both EpiDoc and TEI training events, or any XML tutorial. Other
-            tools for publishing, searching and otherwise processing EpiDoc and TEI files include the
-            XML transformation languages <ref target="http://www.w3schools.com/xsl/xsl_intro.asp"
-                >XSLT</ref> and <ref target="http://www.w3schools.com/xquery/xquery_intro.asp"
-                >XQuery</ref>, and general searching platforms such as <ref
-                target="http://lucene.apache.org/solr/">Solr</ref> and TEI-specific open source tools
-            like <ref target="https://github.com/kcl-ddh/kiln">Kiln</ref> and the <ref
+        <head>Corsi, strumenti e supporto</head>
+        <p>Queste <title>Linee Guida</title> sono essenzialmente una risorsa di riferimento. Per una
+            formazione più dettagliata o supporto sono disponibili altre risorse. I membri della
+            comunità EpiDoc tengono occasionalmente corsi di formazione, a volte finanziati da vari
+            progetti (come per esempio gli svariati workshop tenuti durante lo sviluppo del progetto
+            Inscriptions of Aphrodisias, 2004-2008); ulteriori informazioni su tali corsi di
+            formazione possono essere trovati presso la <ref
+                target="http://sourceforge.net/p/epidoc/wiki/Training/">Training page nella Wiki di
+                EpiDoc</ref>. Coloro che non avessero precedenti conoscenze su EpiDoc e sulla
+            codifica dei testi, possono inoltre trovare utili i corsi generici di formazione TEI
+            (alcuni dei quali elencati nella <ref
+                target="http://wiki.tei-c.org/index.php/Current_events">TEI Events list (lista di
+                eventi TEI)</ref>).</p>
+        <p>I documenti in EpiDoc possono essere creati e modificati usando un qualsiasi strumento
+            standard per (molti dei quali sono elencati nella<ref
+                target="http://wiki.tei-c.org/index.php/Category:Editing_tools">pagina "Editing
+                Tools" della wiki TEI</ref>); un corso base sull'uso di tali strumenti è solitamente
+            incluso sia negli eventi di formazione EpiDoc sia in quelli TEI, o in un qualsiasi
+            tutorial sull'XML. Altri strumenti per la pubblicazione, la ricerca e il trattamento dei
+            documenti EpiDoc e TEI includono i linguaggi di trasformazione XML <ref
+                target="http://www.w3schools.com/xsl/xsl_intro.asp">XSLT</ref> e <ref
+                target="http://www.w3schools.com/xquery/xquery_intro.asp">XQuery</ref>, e
+            piattaforme di ricerca generiche quali <ref target="http://lucene.apache.org/solr/"
+                >Solr</ref> e strumenti open source specifici TEI quali <ref
+                target="https://github.com/kcl-ddh/kiln">Kiln</ref> e il <ref
                 target="https://github.com/papyri/navigator">Papyrological Navigator</ref>.</p>
-
-        <p>As always, the first port of call for help with any topic not covered by these guidelines
-            should be the <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">Markup
-                list</ref>.</p>
+        <p>Come di consueto, il primo punto ri riferimento per ogni questione non coperta da queste
+            linee guida dovrebbe essere la lista di discussione <ref
+                target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">Markup</ref>.</p>
     </div>
-    
     <div xml:id="intro-intro-it-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Laura Löser</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Italian</resp><name></name></respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Laura Löser</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Simona Stoyanova</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>translated to Italian</resp>
+                    <name>Eleonora Litta</name>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>
