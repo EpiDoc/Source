@@ -25,53 +25,64 @@
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevnotex">
     <head>Abbreviation not expanded at all</head>
-    
-        <p><specList>
-                <specDesc key="abbr"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
-        <p><gi>abbr</gi> (abbreviation) contains an abbreviation of any sort.</p>
 
-        <p>Where the expansion of the abbreviation is unknown, the characters present on
-            the original support are marked up with the <gi>abbr</gi> element, with no <gi>expan</gi>, to indicate that
-                there is an abbreviation even though the editor cannot expand it.</p>
-    
-       <cit>
-            <quote>ab(---)</quote>
-            <bibl corresp="#panciera">
-                <biblScope>X.2</biblScope>
-            </bibl>
-            <bibl corresp="#ddbdp"/>
-        </cit> 
+    <p>
+        <specList>
+            <specDesc key="abbr"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef>
+    </p>
+    <p><gi>abbr</gi> (abbreviation) contains an abbreviation of any sort.</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-            <abbr>ab</abbr>
-        </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-            <abbr>pl</abbr>
-        </egXML> 
+    <p>Where the expansion of the abbreviation is unknown, the characters present on the original
+        support are marked up with the <gi>abbr</gi> element, with no <gi>expan</gi>, to indicate
+        that there is an abbreviation even though the editor cannot expand it.</p>
+
+    <cit>
+        <quote>ab(---)</quote>
+        <bibl corresp="#panciera">
+            <biblScope>X.2</biblScope>
+        </bibl>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <abbr>ab</abbr>
+    </egXML>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-            <abbr>στρατηγ</abbr>
-        </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT011.html#al1">
-            <abbr>S</abbr> <!-- Why is this in uppercase?  Should it have an <orig> instead? -->
-        </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;14#5">
+        <abbr>pl</abbr>
+    </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+        <abbr>στρατηγ</abbr>
+    </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT011.html#al1">
+        <abbr>S</abbr>
+    </egXML>
+
+    <!-- Why is this in uppercase?  Should it have an <orig> instead? -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;1;14#5">
         <abbr>δειλ</abbr>
     </egXML>
-    
-    
+
+
     <div xml:id="trans-abbrevnotex-responsibility">
-        
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt>
+            </bibl>
             <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>

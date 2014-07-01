@@ -27,20 +27,21 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-publication" xml:lang="en">
     <head>Publication information</head>
-    <p>Information about the current publication and licensing status of the inscription/papyrus edition
-        should be recorded in the <gi>titleStmt</gi> and <gi>publicationStmt</gi> elements in the header.</p>
+    <p>Information about the current publication and licensing status of the inscription/papyrus
+        edition should be recorded in the <gi>titleStmt</gi> and <gi>publicationStmt</gi> elements
+        in the header.</p>
     <p>
         <specList>
-           <specDesc key="titleStmt"/>
-           <specDesc key="title"/>
-           <specDesc key="editor"/>
-           <specDesc key="publicationStmt"/>
-           <specDesc key="idno"/>
-           <specDesc key="availability"/>
-           <specDesc key="licence"/>
+            <specDesc key="titleStmt"/>
+            <specDesc key="title"/>
+            <specDesc key="editor"/>
+            <specDesc key="publicationStmt"/>
+            <specDesc key="idno"/>
+            <specDesc key="availability"/>
+            <specDesc key="licence"/>
         </specList>
     </p>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <titleStmt>
             <title>Verse honours for Oikoumenios</title>
@@ -48,23 +49,55 @@ End license statement: do not remove -->
             <editor>Charlotte M. Roueché</editor>
         </titleStmt>
     </egXML>
-    
+
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <publicationStmt>
             <authority>IOSPE Project</authority>
             <idno type="filename">Byz212</idno>
             <availability>
-                <licence target="http://creativecommons.org/licenses/by/3.0/">
-                    Licensed under a Creative Commons-Attribution 3.0 licence.
-                </licence>
+                <licence target="http://creativecommons.org/licenses/by/3.0/"> Licensed under a
+                    Creative Commons-Attribution 3.0 licence. </licence>
             </availability>
         </publicationStmt>
     </egXML>
-    
-    <div xml:id="supp-publication-responsibility">    
+
+    <p>Additional information can be added to state particular licencing status of photos for
+        example.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="http://edh-www.adw.uni-heidelberg.de/edh/inschrift/HD058118">
+        <graphic n="UTS_5" url="https://commons.wikimedia.org/wiki/File:UTS_5.png">
+            <desc> Frgament from Ulpia Traiana Sarmizegetusa. Face and Drawing. <ref type="license"
+                    target="creativecommons.org/licenses/by-sa/3.0/"> Licensed under the Creative
+                    Commons Attribution-ShareAlike 3.0 Unported license. </ref>
+            </desc>
+        </graphic>
+    </egXML>
+
+    <p>Also more specific licencing status associated with the translation might be expressed in the
+        same way if needed.</p>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="translation">
+            <p> To the emperor Caesar Nerva Traianus, son of the divine Nerva, Augustus, Germanicus,
+                Dacicus </p>
+            <desc>
+                <ref type="license" target="http://creativecommons.org/licenses/by-sa/3.0/">
+                    Licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported licence.
+                </ref>
+            </desc>
+        </div>
+    </egXML>
+
+    <div xml:id="supp-publication-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                    <name>Pietro Liuzzo</name>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>
