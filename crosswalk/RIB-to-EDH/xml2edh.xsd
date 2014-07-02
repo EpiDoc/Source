@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="EDH">
+        <!-- root element EDH -->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="record" maxOccurs="unbounded">
+                    <!-- container element record -->
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tmUri" type="type_tmUri" minOccurs="0"/>
+                            <xs:element name="provinz" type="type_provinz"/>
+                            <xs:element name="land" type="type_land"/>
+                            <xs:element name="fo_antik" type="type_fo_antik" minOccurs="0"/>
+                            <xs:element name="fo_modern" type="type_fo_modern" minOccurs="0"/>
+                            <xs:element name="fundjahr" type="type_fundjahr" minOccurs="0"/>
+                            <xs:element name="fundstelle" type="type_fundstelle" minOccurs="0"/>
+                            <xs:element name="aufbewahrung" type="type_aufbewahrung" minOccurs="0"/>
+                            <xs:element name="dekor" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="i_gattung" type="type_i_gattung" minOccurs="0"/>
+                            <xs:element name="denkmaltyp" type="type_denkmaltyp" minOccurs="0"/>
+                            <xs:element name="material" type="type_material" minOccurs="0"/>
+                            <xs:element name="hoehe" type="type_masse" minOccurs="0"/>
+                            <xs:element name="breite" type="type_masse" minOccurs="0"/>
+                            <xs:element name="tiefe" type="type_masse" minOccurs="0"/>
+                            <xs:element name="bh" type="type_masse" minOccurs="0"/>
+                            <xs:element name="metrik" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="sprache" type="type_sprache"/>
+                            <xs:element name="datierung_von" type="type_datierung" minOccurs="0"/>
+                            <xs:element name="datierung_bis" type="type_datierung" minOccurs="0"/>
+                            <xs:element name="soziales" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="religion" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="geographie" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="militaer" type="type_boolean" minOccurs="0"/>
+                            <xs:element name="beleg" type="type_beleg" minOccurs="0"/>
+                            <xs:element name="bearbeiter" type="type_bearbeiter"/>
+                            <xs:element name="datum" type="xs:date"/>
+                            <xs:element name="lit" type="type_lit"/>
+                            <xs:element name="kommentar" type="type_kommentar" minOccurs="0"/>
+                            <xs:element name="personen" type="type_personen" minOccurs="0"/>
+                            <xs:element name="textus" type="type_textus"/>
+                        </xs:sequence>
+                        <xs:attribute name="ref" type="xs:anyURI"/>
+                        <!-- attribute ref for container element record  -->
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- type definitions -->
+    <xs:simpleType name="type_tmUri">
+        <xs:restriction base="xs:anyURI">
+            <xs:pattern value="http://www.trismegistos.org/text/\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_provinz">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Aemilia \(Regio VIII\)\??"/>
+            <xs:pattern value="Apulia et Calabria \(Regio II\)\??"/>
+            <xs:pattern value="Arabia\??"/>
+            <xs:pattern value="Armenia\??"/>
+            <xs:pattern value="Asia\??"/>
+            <xs:pattern value="Baetica\??"/>
+            <xs:pattern value="Barbaricum\??"/>
+            <xs:pattern value="Belgica\??"/>
+            <xs:pattern value="Bithynia et Pontus\??"/>
+            <xs:pattern value="Britannia\??"/>
+            <xs:pattern value="Bruttium et Lucania \(Regio III\)\??"/>
+            <xs:pattern value="Cappadocia\??"/>
+            <xs:pattern value="Cilicia\??"/>
+            <xs:pattern value="Corsica\??"/>
+            <xs:pattern value="Creta\??"/>
+            <xs:pattern value="Cyprus\??"/>
+            <xs:pattern value="Cyrene\??"/>
+            <xs:pattern value="Dacia\??"/>
+            <xs:pattern value="Dalmatia\??"/>
+            <xs:pattern value="Epirus\??"/>
+            <xs:pattern value="Etruria \(Regio VII\)\??"/>
+            <xs:pattern value="Galatia\??"/>
+            <xs:pattern value="Germania inferior\??"/>
+            <xs:pattern value="Germania superior\??"/>
+            <xs:pattern value="Hispania citerior\??"/>
+            <xs:pattern value="Provincia incerta\??"/>
+            <xs:pattern value="Iudaea\??"/>
+            <xs:pattern value="Latium et Campania \(Regio I\)\??"/>
+            <xs:pattern value="Liguria \(Regio IX\)\??"/>
+            <xs:pattern value="Lugdunensis\??"/>
+            <xs:pattern value="Lusitania\??"/>
+            <xs:pattern value="Lycia et Pamphylia\??"/>
+            <xs:pattern value="Macedonia\??"/>
+            <xs:pattern value="Mauretania Caesariensis\??"/>
+            <xs:pattern value="Mauretania Tingitana\??"/>
+            <xs:pattern value="Mesopotamia\??"/>
+            <xs:pattern value="Moesia inferior\??"/>
+            <xs:pattern value="Moesia superior\??"/>
+            <xs:pattern value="Narbonensis\??"/>
+            <xs:pattern value="Noricum\??"/>
+            <xs:pattern value="Numidia\??"/>
+            <xs:pattern value="Pannonia inferior\??"/>
+            <xs:pattern value="Pannonia superior\??"/>
+            <xs:pattern value="Picenum \(Regio V\)\??"/>
+            <xs:pattern value="Raetia\??"/>
+            <xs:pattern value="Regnum Bospori\??"/>
+            <xs:pattern value="Roma\??"/>
+            <xs:pattern value="Samnium \(Regio IV\)\??"/>
+            <xs:pattern value="Sardinia\??"/>
+            <xs:pattern value="Sicilia, Melita\??"/>
+            <xs:pattern value="Syria\??"/>
+            <xs:pattern value="Thracia\??"/>
+            <xs:pattern value="Transpadana \(Regio XI\)\??"/>
+            <xs:pattern value="Umbria \(Regio VI\)\??"/>
+            <xs:pattern value="Venetia et Histria \(Regio X\)\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_land">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Albania\??"/>
+            <xs:pattern value="Algeria\??"/>
+            <xs:pattern value="Andorra\??"/>
+            <xs:pattern value="Armenia\??"/>
+            <xs:pattern value="Austria\??"/>
+            <xs:pattern value="Azerbaijan\??"/>
+            <xs:pattern value="Belgium\??"/>
+            <xs:pattern value="Bosnia and Herzegovina\??"/>
+            <xs:pattern value="Bulgaria\??"/>
+            <xs:pattern value="Croatia\??"/>
+            <xs:pattern value="Cyprus\??"/>
+            <xs:pattern value="Czech Republic\??"/>
+            <xs:pattern value="Denmark\??"/>
+            <xs:pattern value="Egypt\??"/>
+            <xs:pattern value="France\??"/>
+            <xs:pattern value="Georgia\??"/>
+            <xs:pattern value="Germany\??"/>
+            <xs:pattern value="Gibraltar\??"/>
+            <xs:pattern value="Greece\??"/>
+            <xs:pattern value="Hungary\??"/>
+            <xs:pattern value="Iraq\??"/>
+            <xs:pattern value="Israel\??"/>
+            <xs:pattern value="Italy\??"/>
+            <xs:pattern value="Jordan\??"/>
+            <xs:pattern value="Kazakhstan\??"/>
+            <xs:pattern value="Kosovo\??"/>
+            <xs:pattern value="Kyrgyzstan\??"/>
+            <xs:pattern value="Lebanon\??"/>
+            <xs:pattern value="Libyan Arab Jamahiriya\??"/>
+            <xs:pattern value="Liechtenstein\??"/>
+            <xs:pattern value="Luxembourg\??"/>
+            <xs:pattern value="Macedonia\??"/>
+            <xs:pattern value="Malta\??"/>
+            <xs:pattern value="Moldova\??"/>
+            <xs:pattern value="Monaco\??"/>
+            <xs:pattern value="Montenegro\??"/>
+            <xs:pattern value="Morocco\??"/>
+            <xs:pattern value="Netherlands\??"/>
+            <xs:pattern value="Poland\??"/>
+            <xs:pattern value="Portugal\??"/>
+            <xs:pattern value="Romania\??"/>
+            <xs:pattern value="Russia\??"/>
+            <xs:pattern value="San Marino\??"/>
+            <xs:pattern value="Saudi Arabia\??"/>
+            <xs:pattern value="Serbia\??"/>
+            <xs:pattern value="Slovakia\??"/>
+            <xs:pattern value="Slovenia\??"/>
+            <xs:pattern value="Spain\??"/>
+            <xs:pattern value="Sudan\??"/>
+            <xs:pattern value="Sweden\??"/>
+            <xs:pattern value="Switzerland\??"/>
+            <xs:pattern value="Syrian Arab Republic\??"/>
+            <xs:pattern value="Tajikistan\??"/>
+            <xs:pattern value="Tunisia\??"/>
+            <xs:pattern value="Turkey\??"/>
+            <xs:pattern value="Ukraine\??"/>
+            <xs:pattern value="United Kingdom\??"/>
+            <xs:pattern value="unknown\??"/>
+            <xs:pattern value="Uzbekistan\??"/>
+            <xs:pattern value="Vatican City State\??"/>
+            <xs:pattern value="Yemen\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="type_fo_antik">
+        <xs:simpleContent>
+            <xs:extension base="fo_antik">
+                <xs:attribute name="pleiades" type="type_pleiadesURI"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="fo_antik">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_pleiadesURI">
+        <xs:restriction base="xs:anyURI">
+            <xs:pattern value="http://pleiades.stoa.org/places/\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="type_fo_modern">
+        <xs:simpleContent>
+            <xs:extension base="fo_modern">
+                <xs:attribute name="geonames" type="type_geonamesURI"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="fo_modern">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_geonamesURI">
+        <xs:restriction base="xs:anyURI">
+            <xs:pattern value="http://www.geonames.org/\d+.*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_fundjahr">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="-?\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_fundstelle">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="90"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_aufbewahrung">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_boolean">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="J?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_i_gattung">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Acclamation\??)?"/>
+            <xs:pattern value="Adnuntiatio\??"/>
+            <xs:pattern value="Assignation inscription\??"/>
+            <xs:pattern value="Boundary inscription\??"/>
+            <xs:pattern value="Building/dedicatory inscription\??"/>
+            <xs:pattern value="Calendar\??"/>
+            <xs:pattern value="Defixio\??"/>
+            <xs:pattern value="Elogium\??"/>
+            <xs:pattern value="Epitaph\??"/>
+            <xs:pattern value="Honorific inscription\??"/>
+            <xs:pattern value="Identification inscription\??"/>
+            <xs:pattern value="Label\??"/>
+            <xs:pattern value="List\??"/>
+            <xs:pattern value="Mile-/Leaguestone\??"/>
+            <xs:pattern value="Military diploma\??"/>
+            <xs:pattern value="Owner/artist inscription\??"/>
+            <xs:pattern value="Prayer\??"/>
+            <xs:pattern value="Private legal inscription\??"/>
+            <xs:pattern value="Public legal inscription\??"/>
+            <xs:pattern value="Seat inscription\??"/>
+            <xs:pattern value="Votive inscription\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_denkmaltyp">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Altar\??)?"/>
+            <xs:pattern value="Architectural member\??"/>
+            <xs:pattern value="Bar\??"/>
+            <xs:pattern value="Base\??"/>
+            <xs:pattern value="Bench\??"/>
+            <xs:pattern value="Block\??"/>
+            <xs:pattern value="Bust\??"/>
+            <xs:pattern value="Cippus\??"/>
+            <xs:pattern value="Cliff\??"/>
+            <xs:pattern value="Cupa\??"/>
+            <xs:pattern value="Diptych\??"/>
+            <xs:pattern value="Fortification\??"/>
+            <xs:pattern value="Fountain\??"/>
+            <xs:pattern value="Grave monument\??"/>
+            <xs:pattern value="Herm\??"/>
+            <xs:pattern value="Honorific/votive arch\??"/>
+            <xs:pattern value="Honorific/votive column\??"/>
+            <xs:pattern value="Instrumentum domesticum\??"/>
+            <xs:pattern value="Instrumentum militare\??"/>
+            <xs:pattern value="Instrumentum sacrum\??"/>
+            <xs:pattern value="Jewellery\??"/>
+            <xs:pattern value="Mile-/Leaguestone\??"/>
+            <xs:pattern value="Olla\??"/>
+            <xs:pattern value="Paving stone\??"/>
+            <xs:pattern value="Relief\??"/>
+            <xs:pattern value="Sarcophagus\??"/>
+            <xs:pattern value="Sculpture\??"/>
+            <xs:pattern value="Shield\??"/>
+            <xs:pattern value="Slab\??"/>
+            <xs:pattern value="Statue\??"/>
+            <xs:pattern value="Statue base\??"/>
+            <xs:pattern value="Stele\??"/>
+            <xs:pattern value="Table\??"/>
+            <xs:pattern value="Tabula\??"/>
+            <xs:pattern value="Tessera\??"/>
+            <xs:pattern value="Tile\??"/>
+            <xs:pattern value="Urn\??"/>
+            <xs:pattern value="Weapon\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_material">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Rocks\??)?"/>
+            <xs:pattern value="indefinite\??"/>
+            <xs:pattern value="Magmatic Rocks\??"/>
+            <xs:pattern value="Andesite\??"/>
+            <xs:pattern value="Aplit\??"/>
+            <xs:pattern value="Basalt\??"/>
+            <xs:pattern value="Granite\??"/>
+            <xs:pattern value="Porphyry\??"/>
+            <xs:pattern value="Syenite\??"/>
+            <xs:pattern value="Metamorphic Rocks\??"/>
+            <xs:pattern value="Gneiss\??"/>
+            <xs:pattern value="Marble (colour indefinite)\??"/>
+            <xs:pattern value="Marble, white\??"/>
+            <xs:pattern value="Marble, veined / coloured\??"/>
+            <xs:pattern value="Quartzite\??"/>
+            <xs:pattern value="Slate\??"/>
+            <xs:pattern value="Soapstone\??"/>
+            <xs:pattern value="Biological Sediments\??"/>
+            <xs:pattern value="Carbonaceous Limestone\??"/>
+            <xs:pattern value="Shell limestone\??"/>
+            <xs:pattern value="Chemical Sediments\??"/>
+            <xs:pattern value="Oolite\??"/>
+            <xs:pattern value="Travertine\??"/>
+            <xs:pattern value="Clastic Sediments\??"/>
+            <xs:pattern value="Breccia\??"/>
+            <xs:pattern value="Calc-Sinter / Alabaster\??"/>
+            <xs:pattern value="Calcareous Tuff\??"/>
+            <xs:pattern value="Conglomerate\??"/>
+            <xs:pattern value="Lime marl / marl\??"/>
+            <xs:pattern value="Limestone\??"/>
+            <xs:pattern value="Molasse\??"/>
+            <xs:pattern value="Sandstone\??"/>
+            <xs:pattern value="Pyroclastic Sediments\??"/>
+            <xs:pattern value="Nenfro\??"/>
+            <xs:pattern value="Peperino\??"/>
+            <xs:pattern value="Trachytes\??"/>
+            <xs:pattern value="Volcanic Tuff\??"/>
+            <xs:pattern value="Minerals\??"/>
+            <xs:pattern value="Agate\??"/>
+            <xs:pattern value="Carnelian\??"/>
+            <xs:pattern value="Haematite\??"/>
+            <xs:pattern value="Heliotrope\??"/>
+            <xs:pattern value="Jasper\??"/>
+            <xs:pattern value="Lapislazuli\??"/>
+            <xs:pattern value="Magnetite\??"/>
+            <xs:pattern value="Onyx\??"/>
+            <xs:pattern value="Opal\??"/>
+            <xs:pattern value="Sardonyx\??"/>
+            <xs:pattern value="Volcanic Tuff\??"/>
+            <xs:pattern value="Metals\??"/>
+            <xs:pattern value="indefinite\??"/>
+            <xs:pattern value="Brass\??"/>
+            <xs:pattern value="Bronze\??"/>
+            <xs:pattern value="Copper\??"/>
+            <xs:pattern value="Gold\??"/>
+            <xs:pattern value="Iron\??"/>
+            <xs:pattern value="Lead\??"/>
+            <xs:pattern value="Silver\??"/>
+            <xs:pattern value="Tin\??"/>
+            <xs:pattern value="other materials / substances\??"/>
+            <xs:pattern value="Amber\??"/>
+            <xs:pattern value="Bone\??"/>
+            <xs:pattern value="Clay\??"/>
+            <xs:pattern value="Enamel\??"/>
+            <xs:pattern value="Glass\??"/>
+            <xs:pattern value="Ivory\??"/>
+            <xs:pattern value="Leather\??"/>
+            <xs:pattern value="Plaster\??"/>
+            <xs:pattern value="Stucco\??"/>
+            <xs:pattern value="Wax\??"/>
+            <xs:pattern value="Wood\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_masse">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{0,4}\.\d)?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_sprache">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Celtic\??"/>
+            <xs:pattern value="Greek\??"/>
+            <xs:pattern value="Hebrew\??"/>
+            <xs:pattern value="Iberian\??"/>
+            <xs:pattern value="Italic\??"/>
+            <xs:pattern value="Latin\??"/>
+            <xs:pattern value="Palmyrenic\??"/>
+            <xs:pattern value="Punic\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_datierung">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="-?\d{4}(-\d{2}){0,2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_beleg">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(completed - no image)?"/>
+            <xs:pattern value="completed - checked with drawing"/>
+            <xs:pattern value="completed - checked with photo"/>
+            <xs:pattern value="completed - checked through autopsy"/>
+            <xs:pattern value="provisional"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_bearbeiter">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="type_lit">
+        <xs:sequence>
+            <xs:element name="lit_line" type="type_lit_line" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="type_lit_line">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="type_kommentar">
+        <xs:sequence>
+            <xs:element name="komm_line" type="type_komm_line" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="type_komm_line">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="type_personen">
+        <xs:sequence>
+            <xs:element name="person" type="type_person" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="type_person">
+        <xs:sequence>
+            <xs:element name="name" type="type_string240" minOccurs="0"/>
+            <xs:element name="praenomen" type="type_string100" minOccurs="0"/>
+            <xs:element name="nomen" type="type_string100" minOccurs="0"/>
+            <xs:element name="cognomen" type="type_string100" minOccurs="0"/>
+            <xs:element name="supernomen" type="type_string100" minOccurs="0"/>
+            <xs:element name="tribus" type="type_tribus" minOccurs="0"/>
+            <xs:element name="origo" type="type_string150" minOccurs="0"/>
+            <xs:element name="geschlecht" type="type_geschlecht" minOccurs="0"/>
+            <xs:element name="status" type="type_status" minOccurs="0"/>
+            <xs:element name="beruf" type="type_boolean" minOccurs="0"/>
+            <xs:element name="l_jahre" minOccurs="0" type="type_lebenszeit"/>
+            <xs:element name="l_monate" minOccurs="0" type="type_lebenszeit"/>
+            <xs:element name="l_tage" minOccurs="0" type="type_lebenszeit"/>
+            <xs:element name="l_stunden" minOccurs="0" type="type_lebenszeit"/>
+        </xs:sequence>
+        <xs:attribute name="n" use="required" type="xs:positiveInteger"/>
+    </xs:complexType>
+
+    <xs:simpleType name="type_string240">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="240"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_string100">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_string150">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_tribus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(Aelia\??)?"/>
+            <xs:pattern value="Aemilia\??"/>
+            <xs:pattern value="Aniensis\??"/>
+            <xs:pattern value="Arnensis\??"/>
+            <xs:pattern value="Camilia\??"/>
+            <xs:pattern value="Claudia\??"/>
+            <xs:pattern value="Clustumina\??"/>
+            <xs:pattern value="Collinaxs:ma\??"/>
+            <xs:pattern value="Cornelia\??"/>
+            <xs:pattern value="Esquilina\??"/>
+            <xs:pattern value="Fabia\??"/>
+            <xs:pattern value="Falerna\??"/>
+            <xs:pattern value="Galeria\??"/>
+            <xs:pattern value="Horatia\??"/>
+            <xs:pattern value="Lemonia\??"/>
+            <xs:pattern value="Maecia\??"/>
+            <xs:pattern value="Menenia\??"/>
+            <xs:pattern value="Oufentina\??"/>
+            <xs:pattern value="Palatina\??"/>
+            <xs:pattern value="Papiria\??"/>
+            <xs:pattern value="Pollia\??"/>
+            <xs:pattern value="Pomptina\??"/>
+            <xs:pattern value="Publilia\??"/>
+            <xs:pattern value="Pupinia\??"/>
+            <xs:pattern value="Quirina\??"/>
+            <xs:pattern value="Romilia\??"/>
+            <xs:pattern value="Sabatina\??"/>
+            <xs:pattern value="Scaptia\??"/>
+            <xs:pattern value="Sergia\??"/>
+            <xs:pattern value="Stellatina\??"/>
+            <xs:pattern value="Suburana\??"/>
+            <xs:pattern value="Sulpicia\??"/>
+            <xs:pattern value="Teretina\??"/>
+            <xs:pattern value="Tromentina\??"/>
+            <xs:pattern value="Ulpia\??"/>
+            <xs:pattern value="Velina\??"/>
+            <xs:pattern value="Voltinia\??"/>
+            <xs:pattern value="Voturia\??"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_geschlecht">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((M|W)\??)?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_status">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{0,1})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_lebenszeit">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(-?\d{0,3})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="type_textus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
