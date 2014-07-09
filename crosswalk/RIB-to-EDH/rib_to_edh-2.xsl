@@ -25,11 +25,14 @@
    
      to be run on:  RIB files list, produces one file with all records.
     
+   possible improvements after 07-2014
+     origo can be taken from: placeName[@type'origo'] in persName or in some cases from rs[@type='origo']
+     
      
 -->
 
 
-    <xsl:import href="../../EPIDOC-XSLT/start-txt.xsl"/>
+    <xsl:import href="../../EPIDOC-XSLT/start-txt.xsl"/><!--to be adapted to local or absolute path--> 
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
     <xsl:strip-space elements="w name"/>
