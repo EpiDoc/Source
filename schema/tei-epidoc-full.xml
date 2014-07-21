@@ -33,6 +33,7 @@ End license statement: do not remove -->
                 <author xml:id="GB">Gabriel Bodard</author>
                 <author xml:id="TE">Tom Elliott</author>
                 <author xml:id="ML">Marion Lamé</author>
+                <author xml:id="EMo">Emmanualle Morlock</author>
                 <author xml:id="EM">Elli Mylonas</author>
                 <author xml:id="SS">Simona Stoyanova</author>
                 <author xml:id="SV">Scott Vanderbilt</author>
@@ -45,6 +46,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear -> core; datatype in lb/@break)</change>
             <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per https://sourceforge.net/p/epidoc/feature-requests/67/)</change>
             <change who="#GB" when="2014-03-04">stopped omitting s from Analysis (requested by Perseus)</change>
             <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from Gaiji (requested by DASI), and phr from Analysis (requested by Coptic Scriptorium)</change>
@@ -156,7 +158,7 @@ End license statement: do not remove -->
                 </elementSpec>
                 
                 <!-- temporarily adding att.global to altIdentifier -->
-                <elementSpec ident="altIdentifier" module="msDescription" mode="change">
+                <elementSpec ident="altIdentifier" module="msdescription" mode="change">
                     <classes mode="change">
                         <memberOf key="att.global"/>
                     </classes>
@@ -342,10 +344,13 @@ End license statement: do not remove -->
                 <!-- change definition of <lb> to "line beginning" -->
                 <elementSpec ident="lb" mode="change" module="core">
                     <gloss>line-beginning</gloss>
-                    <desc>marks the start of each line of the text, including the first</desc>
+                    <desc>marks the start of each line of the transcribed text, including the first</desc>
                     <!-- offer value "no" for lb/@break -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
+                            <datatype>
+                                <rng:ref name="data.enumerated"/>
+                            </datatype>
                             <valList type="semi">
                                 <valItem ident="no">
                                     <desc>this line-beginning should not be taken as a word-break, i.e. word would be
@@ -449,7 +454,7 @@ End license statement: do not remove -->
                 </elementSpec>
                 
                 <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
-                <elementSpec ident="unclear" module="textranscr" mode="change">
+                <elementSpec ident="unclear" module="core" mode="change">
                     <content>
                         <rng:ref name="macro.xtext"/>
                     </content>
