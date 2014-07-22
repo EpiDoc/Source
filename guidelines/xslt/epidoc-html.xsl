@@ -3,7 +3,8 @@
     xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:t="http://www.thaiopensource.com/ns/annotations"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0" exclude-result-prefixes="tei t a rng s teix"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    exclude-result-prefixes="tei t a rng s teix"
     version="2.0">
     
     <xsl:import href="TEI-Stylesheets/odds/odd2html.xsl"/>
@@ -188,7 +189,8 @@
     
     <xsl:template name="javascriptHook">
         <!-- overriding template in Sebastian's XSLT in order to import Google Analytics code -->
-        <!-- the $analytics template is "off" by default, but should be set to "on" when making a final, day zero release -->
+        <!-- the $analytics parameter (above) is "off" by default,
+            but should be temporarily set to "on" in the Oxygen scenario when making a final, "day zero" release -->
         <xsl:if test="$analytics='on'"><xsl:call-template name="analytic"/></xsl:if>
         <!-- For future reference, what we *really* need to do here is:
            1.   change the svn:external to point to the Github version of Sebastian's XSLT
@@ -198,6 +200,21 @@
         -->
     </xsl:template>
     
+    <xsl:template name="stdfooter">
+        <xsl:param name="style" select="'plain'"/>
+        <xsl:param name="file"/>
+        <!-- overriding the TEI XSLT to add an EpiDoc specific footer -->
+        <div class="stdfooter">
+            <address>
+                <p class="version">
+                    <xsl:text>EpiDoc version: </xsl:text>
+                <xsl:value-of select="//tei:seg[@type='version']"/></p>
+                <p class="creationdate">
+                <xsl:text>Date: </xsl:text>
+                <xsl:value-of select="substring(string(current-date()),1,10)"/></p>
+            </address>
+        </div>
+    </xsl:template>
     
 
 </xsl:stylesheet>

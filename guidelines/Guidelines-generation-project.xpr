@@ -10,6 +10,21 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>xslt/epidoc-html.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>EpiDoc P5 Guidelines HTML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>xml/driver.xml</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -213,7 +228,7 @@
                                                 </paramDescriptor>
                                             </field>
                                             <field name="value">
-                                                <String>on</String>
+                                                <String>off</String>
                                             </field>
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
