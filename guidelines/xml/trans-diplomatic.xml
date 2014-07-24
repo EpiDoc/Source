@@ -1,0 +1,56 @@
+<!-- Start license statement: do not remove 
+    
+    EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+    Edition 8 copyright © 2008-2014 by all contributors listed in <div type="gl-responsibility">, below.
+    Additional contributors' copyright may be designated in individual source files.
+    
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    
+    Information about the EpiDoc community can be obtained via 
+    http://epidoc.sf.net.
+    
+    End license statement: do not remove -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-diplomatic">
+    <head>Diplomatic Transcriptions</head>
+    
+    <p>A diplomatic transcription in epigraphic or papyrological terms is one that records
+    only the characters as they appear on the support, with minimal or no editorial intervention
+    or interpretation. It differs from a drawing in that individual letters are identified, usually to Unicode codepoints,
+    but will often be written in uppercase, without spaces, punctuation or diacritics (unless these are
+    in the source document), and without restoring lacunae or expanding abbreviations.</p>
+    
+    <p>It is generally an assumption in the EpiDoc workflow and tooling that a diplomatic transcription
+    can be generated from the underlying XML as an alternative, or parallel, view to the interpretive
+    edition following the normal <term target="#leiden">Leiden Conventions</term>. In the 
+        <term target="#epidoc-stylesheers">EpiDoc Example Stylesheets</term>
+    changing the parameter <code>$edition-type</code> to "diplomatic" will lead the XSLT to
+    leave abbreviations unresolved, treat <gi>supplied</gi> elements as <gi>gap</gi>s, transform
+    text nodes to uppercase, unaccented, unspaced text, and so forth, creating a fair reproduction
+    of what a diplomatic edition is expected to look like.</p>
+    
+    <p>A few diplomatic features, such as unusually-shaped characters, partially lost letters at
+    the ends of lines, internal spacing in Imperial inscriptions, are not terribly well handled by these 
+    transformation templates. In addition, some communities may feel that a separate diplomatic
+    edition, where different decisions in the transcription are made, would be desirable. This could
+    perhaps be encoded as a <tag>div type="edition" subtype="diplomatic"</tag>.</p>
+
+    <div xml:id="trans-diplomatic-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
