@@ -5,8 +5,6 @@
     
     <xsl:import href="../../example-p5-xslt/start-edition.xsl"/>
     
-    <xsl:param name="leiden-style">panciera</xsl:param> <!-- This is just default. Pass other params from Saxon -->
-    
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
     
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet">
@@ -23,7 +21,10 @@
     
     <xsl:template match="/">
         <egXMLs xmlns="http://www.tei-c.org/ns/1.0">
-            <xsl:apply-templates select="$context//tei:egXML"/>
+            <xsl:apply-templates select="$context//tei:egXML">
+                <xsl:with-param name="parm-edition-type" select="$edition-type" tunnel="yes"/>
+                <xsl:with-param name="parm-leiden-style" select="$leiden-style" tunnel="yes"/>
+            </xsl:apply-templates>
         </egXMLs>
     </xsl:template>
     
