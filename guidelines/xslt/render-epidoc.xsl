@@ -33,7 +33,7 @@
                         <strong>
                             <xsl:choose>
                                 <xsl:when test=". = 'panciera'">
-                                    <xsl:text>Default style (Panciera)</xsl:text>
+                                    <xsl:text>Default (Panciera)</xsl:text>
                                 </xsl:when>
                                 <xsl:when test=". = 'ddbdp'">
                                     <xsl:text>Duke Databank</xsl:text>
@@ -41,7 +41,7 @@
                                 <xsl:when test=". = 'dohnicht'">
                                     <xsl:text>Dohnicht</xsl:text>
                                 </xsl:when>
-                                <xsl:when test=". = 'edh'">
+                                <xsl:when test=". =('edh','edh-web')">
                                     <xsl:text>EDH</xsl:text>
                                 </xsl:when>
                                 <xsl:when test=". = 'london'">
