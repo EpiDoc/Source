@@ -26,71 +26,76 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="toc-bg" xml:lang="bg">
-    <head>EpiDoc Guidelines: Ancient documents in TEI XML</head>
+    <head>EpiDoc Насоки: Антични документи в TEI XML формат</head>
  
-    <p>EpiDoc is an international, collaborative effort that provides guidelines and tools for
-        <term target="#encoding">encoding</term> scholarly and
-        educational editions of ancient documents. These are the <title>Guidelines</title> produced by the
-        collaborative. In addition, the <ref target="http://epidoc.sf.net">EpiDoc Website</ref> provides access to all
-        the tools and collaboration environments supported by the collaborative.</p>
+    <p>EpiDoc е международен проект, основаващ се на взаимно  сътрудничество, който предлага насоки и инструменти за 
+        <term target="#encoding">кодиране</term> на научни и образователни издания на антични документи. 
+        Настоящият текст представлява <title>Насоки</title>, които са продукт от усилията на екипа 
+        от сътрудници. В допълнение,<ref target="http://epidoc.sf.net">сайтът на EpiDoc</ref> осигурява достъп до 
+        всички инструменти и среди на сътрудничество, поддържани от екипа.</p>
  
-    <p>EpiDoc uses a subset of the <term target="#TEI">Text
-        Encoding Initiative</term>'s standard for the representation of texts
-        in digital form using the <term target="#xml">Extensible Markup Language (XML)</term>, a technical standard
-        promulgated by the <term target="#w3c">World-Wide Web Consortium</term>. It addresses not only the
-        transcription and editorial preparation of the texts themselves, but also the the history and materiality
-        of the objects on which the texts appear.</p>
+    <p>EpiDoc се позовава на стандарта на <term target="#TEI">Text
+        Encoding Initiative</term> за пресъздаване на текстове в дигитален формат, 
+        използвайки <term target="#xml">Extensible Markup Language (XML)</term>, технически стандарт, разпространен от
+        <term target="#w3c">World-Wide Web Consortium</term>. Той е насочен не само към транскрибирането
+        и редакторската подготовка на самите текстове, но също така и към историята и материала на обектите,
+        върху които се намира текстът.</p>
 
-    <p>These <title>Guidelines</title> contain descriptions of the textual, descriptive, and other features that are
-        often expressed with EpiDoc, as well as the <term target="#TEI">TEI</term> elements and attributes that are used
-        to encode them. The links below provide a number of entry points into the full document and should be thought of more
-        as a series of thematic indexes into the content of the <title>Guidelines</title>, rather than a single "table of contents"
-        that reflects an ordered, hierarchical document structure.</p>
+    <p>Настоящите <title>Насоки</title> съдържат описания на текстовите, описателните и други особености, 
+        които често се изразяват чрез EpiDoc, а също така и чрез елементи на <term target="#TEI">TEI</term> 
+        и атрибути, използвани за тяхното кодиране. Връзките по-долу предлагат  няколко отправни точки към целия документ, 
+        които трябва да се смятат по-скоро за поредица от тематични индекси към съдържанието на <title>Насоките</title>, 
+        отколкото за „съдържание“ само по себе си, отразяващо подредена и йерархична структура на документа.</p>
 
     <div>
-        <head>Browse Guidelines</head>
+        <head>Търсене в Насоките</head>
         <list>
-            <item><ref target="intro-intro.html">Introduction to the Guidelines</ref></item>
-            <item><ref target="supp-structure.html">Overview of EpiDoc structure</ref></item>
+            <item><ref target="intro-intro-bg.html">Въведение към Насоките</ref>
+                (<ref target="intro-intro.html" n="How to Use the EpiDoc Guidelines (English)">en</ref>)
+                (<ref target="intro-intro-es.html" n="Introducción general a la Guía de uso EpiDoc (Spanish)">es</ref>)
+                (<ref target="intro-intro-fr.html" n="Introduction générale aux Guidelines EpiDoc (French)">fr</ref>)
+                (<ref target="intro-intro-it.html" n="Come usare le Linee Guida EpiDoc (Italian)">it</ref>)
+            </item>
+            <item><ref target="supp-structure.html">Преглед на структурата на EpiDoc</ref></item>
         </list>
         
         <div>
-            <head>Full listing of guidelines pages:</head>
+            <head>Пълен списък на страниците, посветени на Насоките:</head>
             <list>
-                <item><ref target="app-allsupp.html">Descriptive and historical data</ref></item>
-                <item><ref target="app-alltrans.html">Text transcription</ref></item>
-                <item><ref target="app-allidx.html">Vocabularies and indexing terms</ref></item>
+                <item><ref target="app-allsupp.html">Описателни и исторически данни</ref></item>
+                <item><ref target="app-alltrans.html">Транскрибиране на текст</ref></item>
+                <item><ref target="app-allidx.html">Лексеми и понятия за индексиране</ref></item>
             </list>
         </div>
 
         <div xml:id="external">
-            <head>Externally maintained guidelines for specialized communities:</head>
+            <head>Насоки, поддържани от външни източници за специализирани общности:</head>
             <list>
                 <item><ref target="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc"
-                    >EpiDoc Leiden Cheatsheet</ref> (used in internal and external training)</item>
-                <item><ref target="http://papyri.info/editor/documentation?docotype=text">Papyri.info EpiDoc/Leiden+ help and examples</ref></item>
-                <item><ref target="http://epixml.proclassics.org/">Telamon EpiDoc Guidelines (Bulgarian)</ref></item>
+                    >EpiDoc Leiden Cheatsheet</ref> (използван в курсове на обучение)</item>
+                <item><ref target="http://papyri.info/editor/documentation?docotype=text">Papyri.info EpiDoc/Leiden+ помощ и примери</ref></item>
+                <item><ref target="http://epixml.proclassics.org/">Telamon EpiDoc Насоки (на български)</ref></item>
                 <item><ref target="https://docs.google.com/document/d/1T6_2QXx1NVRE5irlQtYKtgkZhJTcq07_wjrWhoRpO1k"
-                    >Digital Fragmenta Historicum Graecorum encoding guidelines</ref> (Monica Berti et al., Leipzig)</item>
+                    >Насоки за дигитално кодиране на Fragmenta Historicum Graecorum</ref> (Моника Берти и др.,Лайпциг)</item>
                 <item><ref target="http://insaphdocumentation.pbworks.com/"
-                    >Local Guidelines from King's College London (InsAph, InsLib, IOSPE projects)</ref></item>
+                    >Местни насоки от King's College London (проекти InsAph, InsLib, IOSPE)</ref></item>
             </list>
         </div>
         <div xml:id="internal">
-            <head>Correspondences between EpiDoc and other community guidelines:</head>
+            <head>Съответствия между насоките на EpiDoc и тези на други общности:</head>
             <list>
-                <item><ref target="app-epi-petrae.html">Text transcription and supporting material following PETRAE</ref></item>
-                <item><ref target="app-papy-ddbdp.html">Text transcription following DDbDP</ref></item>
-                <item><ref target="app-papy-apis.html">Descriptive data following APIS</ref></item>
-                <item><ref target="app-epi-krummreypanciera.html">Text transcription following Krummrey-Panciera 1980</ref></item>
-                <item><ref target="app-epi-panciera.html">Text transcription following Panciera 1991</ref></item>
-                <item><ref target="app-papy-hgv.html">Descriptive data following HGV</ref></item>
+                <item><ref target="app-epi-petrae.html">Транскрибиране на текст и описание на физическия носител според PETRAE</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Транскрибиране на текст според DDbDP</ref></item>
+                <item><ref target="app-papy-apis.html">Описателни данни според APIS</ref></item>
+                <item><ref target="app-epi-krummreypanciera.html">Транскрибиране на текст според Krummrey-Panciera 1980</ref></item>
+                <item><ref target="app-epi-panciera.html">Транскрибиране на текст според Panciera 1991</ref></item>
+                <item><ref target="app-papy-hgv.html">Описателни данни според HGV</ref></item>
         </list>
         </div>
     </div>
 
     <div>
-        <head>Appendices</head>
+        <head>Приложения</head>
         <list>
             <item><ref target="intro-eps-bg.html">Деликатно въведение в маркирането с xml за епиграфи</ref>
                 (<ref target="intro-eps-de.html" n="Erste Einführung in die Textauszeichnung für Epigraphiker (German)">de</ref>)
@@ -99,33 +104,38 @@ End license statement: do not remove -->
                 (<ref target="intro-eps-fr.html" n="Introduction pour les épigraphistes (French)">fr</ref>)
                 (<ref target="intro-eps-it.html" n="Codifica per Epigrafisti, un'introduzione gentile (Italian)">it</ref>)
             </item>
-            <item><ref target="app-bibliography.html">Bibliography</ref></item>
-            <item><ref target="app-glossary.html">Glossary</ref></item>
-            <item><ref target="app-elements.html">Index of TEI elements</ref></item>
+            <item><ref target="app-bibliography.html">Библиография</ref></item>
+            <item><ref target="app-glossary.html">Речник</ref>
+                (<ref target="app-glossary-es.html" n="Glossary (English)">en</ref>)
+                (<ref target="app-glossary-es.html" n="Glosario (Spanish)">es</ref>)
+                (<ref target="app-glossary-fr.html" n="Glossaire (French)">fr</ref>)
+                (<ref target="app-glossary-it.html" n="Glossario (Italian)">it</ref>)
+            </item>
+            <item><ref target="app-elements.html">Показалец на TEI елементи</ref></item>
         </list>
     </div>
     
     <div>
-        <p>You can also download a zipped copy of the latest <ref target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Guidelines</ref> from our Files section if you need to use them offline. </p>
+        <p>Също така може да свалите и архивирано копие на последния вариант на <ref target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Насоките</ref> от нашия раздел „Файлове“, ако желаете да ги използвате офлайн. </p>
         
-    <p>To cite the EpiDoc Guidelines, please use the following information:</p>
+        <p>При цитиране на Насоките за EpiDoc, моля, използвайте следната информация:</p>
     <quote>
         <bibl>Tom Elliott, Gabriel Bodard, Elli Mylonas, Simona Stoyanova, Charlotte Tupman, Scott Vanderbilt, et al.
             (<date>2007-2013</date>),
-            <title level="m">EpiDoc Guidelines: Ancient documents in TEI XML</title> (Version 8). Available:
+            <title level="m">EpiDoc Guidelines: Ancient documents in TEI XML</title> (Version 8). Достъпни на: 
             <ref target="http://www.stoa.org/epidoc/gl/latest/">http://www.stoa.org/epidoc/gl/latest/</ref>.</bibl>
     </quote>
     </div>
 
     <div xml:id="toc-bg-responsibility">
-        <head>Responsibility for this section</head>
+        <head>Отговорни лица за този раздел:</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Bulgarian</resp><name></name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Bulgarian</resp><name></name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Габриел Бодар</name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Ели Милонас</name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Том Елиът</name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Симона Стоянова</name></respStmt></bibl>
+            <bibl><respStmt><resp>преведе на български език</resp><name>Мария Дончева</name></respStmt></bibl>
+            <bibl><respStmt><resp>редактор на превода</resp><name>Полина Йорданова</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

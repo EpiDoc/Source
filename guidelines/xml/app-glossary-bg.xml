@@ -26,132 +26,135 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-glossary-bg" xml:lang="bg">
-    <head>Appendix: Glossary</head>
+    <head>ПРИЛОЖЕНИЕ: РЕЧНИК</head>
  
     <list type="gloss">
-        <label xml:id="crosswalk">Crosswalk, crosswalking</label>
-        <item>A general term for moving data from the format of one encoding scheme or database
-        to another. In EpiDoc terms, it often refers to the dynamic transformation of
-        the semantic distinctions of epigraphic and papyrological editions between EpiDoc XML and
-        one or more database of texts or catalogue records. These "crosswalks" may take place in either direction, or
-        in some cases in both directions and reversible without loss of information.
-        Prominent crosswalks performed by the EpiDoc community include: 
-        the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
-        format of <term target="#EDH">EDH</term>;
-            the migration of the <term target="#ddb">Duke Databank</term>,
-        <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> content to EpiDoc as part of the
-            Papyri.info project (the HGV-to-EpiDoc is lossless and bidirectional);
-            the current conversion of the <term target="#eagle">EAGLE</term> constituent
-            databases into EpiDoc XML as part of the <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
-        project.</item>
+        <label xml:id="crosswalk-bg">Crosswalk, crosswalking</label>
+        <item>Основно понятие за преобразуване на данни от формата на една схема за кодиране
+            или база данни в друга. Що се касае до EpiDoc понятията,  този термин често се 
+            отнася до динамичното преобразуване на семантични различия на епиграфски и 
+            папироложки издания между EpiDoc XML и една или повече база данни от текстове или 
+            каталогови регистри. Тези "crosswalks" могат да се осъществят в която и да е посока,
+            или в някои случаи в двете посоки и обратно без загуба на информация. Известни 
+            "crosswalks" на EpiDoc общността включват: преобразуването на  <term target="#IRT">IRT</term> 
+            от EpiDoc във формата на база данните <term target="#EDH">EDH</term>;
+            прехвърлянето на съдържания от <term target="#ddb">Duke Databank</term>,
+            <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> в EpiDoc като част 
+            от проекта Papyri.info (процесът от HGV в EpiDoc е двупосочен и без загуби);
+            текущото преобразуване на базата данни на  <term target="#eagle">EAGLE</term> в EpiDoc XML 
+            като част от проекта <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>.</item>
         
-        <label xml:id="encoding">Encoding</label>
-        <item>Encoding in this context means the conversion of human-readable information into
-            machine-readable information, e.g. in the form of <term target="#xml">XML</term>.</item>
+        <label xml:id="encoding-bg">Encoding</label>
+        <item>В настоящия контекст терминът „кодиране“ означава преобразуване на информация четима 
+            от човешки същества  в машинно четима информация, например под формата на  <term target="#xml-bg">XML</term>.</item>
 
-        <label xml:id="epidoc-stylesheets">EpiDoc Example Stylesheets</label>
-        <item>Software code, written in the Extensible Stylesheet Language (XSL or <term
-                target="#xslt">XSLT</term>), and intended for use in transforming EpiDoc XML files
-            into other formats (chiefly text and HTML) using a range of standard typographical
-            conventions (e.g., <term target="#leiden">Leiden</term>). Documentation and further
-            information are to be found on the <ref
+        <label xml:id="epidoc-stylesheets-bg">EpiDoc Example Stylesheets</label>
+        <item>Софтуерен код, написан на  Extensible Stylesheet Language (XSL or <term
+            target="#xslt-bg">XSLT</term>), чиято цел е трансформиране на файлове в EpiDoc XML 
+            в други формати (главно текстови и HTML). За тази цел се използват редица стандартни 
+            типографски практики (например <term target="#leiden-bg">Leiden</term>). Документация и допълнителна информация 
+            може да намерите на <ref
                 target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">Stylesheets page in the
                 EpiDoc Wiki</ref>.</item>
 
-        <label xml:id="epidoc-schema">EpiDoc Schema</label>
-        <item>A formally structured set of rules that tells an XML editor or processor what elements,
-            attributes and other content are available in an EpiDoc file and how these are to be
-            structured. Documentation and further information are to be found on the <ref
+        <label xml:id="epidoc-schema-bg">EpiDoc Schema</label>
+        <item>Набор от правила с формална структура, който показва на редактора или обработващия 
+            базата данни в XML кои елементи, атрибути и друго съдържание са достъпни в EpiDoc файл 
+            и как те да бъдат структурирани. Документация и допълнителна информация 
+            може да бъде намерена на <ref
                 target="https://sourceforge.net/p/epidoc/wiki/Schema/">Schema page in the EpiDoc
                 Wiki</ref>.</item>
 
-        <label xml:id="leiden">Leiden, Leiden Conventions</label>
-        <item>A set of rules for the encoding of classical epigraphic and papyrological texts using
-            simple, arbitrary and unambiguous symbols to represent editorial observations and
-            interventions, e.g. '[' and ']' for lost text (restored or lacuna). There are several
-            minor variations on Leiden now in use (<ref target="app-epi-panciera.html"
-                >Krummrey-Panciera</ref> and <ref target="app-epi-petrae.html">PETRAE</ref> perhaps
-            prominent among them). A good summary of Leiden can be found at <ref
+        <label xml:id="leiden-bg">Leiden, Leiden Conventions</label>
+        <item>Набор от правила за кодиране на класически епиграфски и папироложки текстове. 
+            Използват се опростени, произволни и недвусмислени символи, които пресъздават 
+            редакторските наблюдения и интервенции, например квадратните скоби '[' и ']' се използват да 
+            обозначат изгубен текст (който е възстановен или е налице празно място „lacuna“). 
+            Има няколко леки вариации на Leiden, които понастоящем са в употреба (може би най-известните 
+            сред тях са  (<ref target="app-epi-panciera.html"
+                >Krummrey-Panciera</ref> и <ref target="app-epi-petrae.html">PETRAE</ref>). Обобщена информация 
+            за това какво представлява Leiden може да намерите на <ref
                 target="http://en.wikipedia.org/wiki/Leiden_Conventions"
                 >en.wikipedia.org/wiki/Leiden_Conventions</ref></item>
 
-        <label xml:id="leidenplus">Leiden+ (Leiden-plus)</label>
-        <item>Leiden+ is a system of text markup, based very closely on <term target="#leiden"
-                >Leiden</term> but including new signs and combinations for complex apparatus markup,
-            for example, devised for the Papyrological Editor's "tags-free" editing environment. Full
-            description and documentation of Leiden+ is at <ref
+        <label xml:id="leidenplus-bg">Leiden+ (Leiden-plus)</label>
+        <item>Leiden+ е система за текстово маркиране, която се основава предимно на  <term target="#leiden-bg"
+            >Leiden</term> но в същото време включва нови знаци и комбинации за маркиране на сложни апарати, 
+            например специално разработената за средата за редакторство „без етикети“ "tags-free" на  Papyrological Editor.
+            Пълно описание и документацията, касаеща Leiden+, е на адрес: <ref
                 target="http://papyri.info/editor/help">papyri.info/editor/help</ref>.</item>
 
-        <label xml:id="markup">Markup</label>
-        <item>Markup language in a way to encode a text's contents in order to enable different ways
-            of representation and e.g. to extract information to be collected for indexes, or search
-            tools (cf. <term target="#encoding">Encoding</term>).<lb/> "Markup" is sometimes also used
-            as shorthand for <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">the
-                Markup List</ref>, an email list for the discussion of EpiDoc and other ancient text
-            markup matters.</item>
+        <label xml:id="markup-bg">Markup</label>
+        <item>Езикът за маркиране е начин за кодиране на текстове, с цел създаване на различни подходи 
+            за представяне и извличане на информация за изготвяне на индекси или инструменти за търсене 
+            (срав. <term target="#encoding-bg">Encoding</term>).<lb/> "Markup" понякога се използва като 
+            съкращение на <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">the
+                Markup List</ref>, списък, в който се дискутират по електронен път теми, касаещи EpiDoc 
+            и други въпроси около маркирането на антични текстове.</item>
 
-        <label xml:id="morpheus">Morpheus</label>
-        <item>The Morpheus morphological analysis service is a tool originally developed by <term
-                target="#perseus">Perseus</term>, versions of which are in use by Papyri.info and the
-            TLG for lemmatizing their Greek texts. The Perseus version of the tool also caters for
-            Latin and Arabic lemmatization. (More information at <ref
+        <label xml:id="morpheus-bg">Morpheus</label>
+        <item>Морфологичният анализ на Morpheus е инструмент, първоначално разработен от  <term
+            target="#perseus-bg">Perseus</term>. Неговите версии се използват от Papyri.info и 
+            TLG за лематизиране на гръцки текстове. Perseus версията на този инструмент също спомага за 
+            лематизиране на латински и арабски текстове. (За повече информация:  <ref
                 target="https://wikihub.berkeley.edu/display/pbamboo/Morphological+Analysis+Service+Contract+Description+-+v1.1.1"
                 >Bamboo</ref> and <ref
                     target="http://sites.tufts.edu/perseusupdates/2012/11/01/morphology-service-beta/"
                     >Perseus</ref>.)</item>
 
-        <label xml:id="perseus">Perseus</label>
-        <item><ref target="http://www.perseus.tufts.edu">The Perseus Digital Library Project</ref>
-            studies the progression from physical to digital libraries and offers an increasing
-            number of texts. Searches and a number of tools can be used directly on the website while
-            reading, e.g. the <term target="#morpheus">Morpheus</term> dictionary tool for Greek and Latin
-            texts.</item>
+        <label xml:id="perseus-bg">Perseus</label>
+        <item>Проектът <ref target="http://www.perseus.tufts.edu">Perseus Digital Library</ref>
+            изучава напредъка на библиотеките от физически към дигитални и предлага нарастващ брой 
+            текстове в тяхна подкрепа. Могат да се приложат търсения директно в уеб страницата, а също 
+            така и редица инструменти докато трае процесът на четене, като например инструментът 
+            Речник за гръцки и латински текстове<term target="#morpheus-bg">Morpheus</term>.</item>
         
-        <label xml:id="pleiades">Pleiades</label>
-        <item>A gazetteer of places and place names from the ancient world, building on the project that produced
-            the Barrington Atlas of the Greek and Roman World. Pleiades assigns unique identifiers to all places,
-            enabling a web of Linked Data such as that curated by the
-            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. Pleiades can be found at
+        <label xml:id="pleiades-bg">Pleiades</label>
+        <item>Справочник с места и топоними от античния свят, съставен въз основа на проекта, 
+            чийто продукт е Barrington Atlas of the Greek and Roman World. Pleiades задава 
+            уникални идентификатори на всички места, като по този начин опосредства съществуването 
+            на мрежа от свързани данни по подобие на тази, която е поддържана от 
+            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. Може да намерите Pleiades на
             <ref target="http://pleiades.stoa.org/">pleiades.stoa.org</ref>.</item>
 
-        <label xml:id="TEI">TEI</label>
-        <item>Text Encoding Initiative. Guidelines and tools for the encoding of literary and
-            historical texts in <term target="#xml">XML</term>. It is the format on which EpiDoc is
-            based. The latest TEI Guidelines can be found online at <ref
+        <label xml:id="TEI-bg">TEI</label>
+        <item>Text Encoding Initiative (Инициатива за Кодиране на Текстове). Съставлява насоки 
+            и инструменти за кодиране на литературни и исторически текстове в <term target="#xml-bg">XML</term>. 
+            Това е форматът, върху който се основава EpiDoc. Последните Насоки за TEI могат да се намерят онлайн на адрес: <ref
                 target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html"
                 >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html</ref>.</item>
 
-        <label xml:id="w3c">World Wide Web Consortium</label>
-        <item>The World Wide Web Consortium (W3C) is an international community developing standards
-            to be used across the Internet. The public can take part, but there is also full-time
-            staff and entire organizations that are members of the endeavour. For further
-            information, see: www.w3.org.</item>
+        <label xml:id="w3c-bg">World Wide Web Consortium</label>
+        <item>The World Wide Web Consortium (W3C) е международна общност, която разработва стандарти, 
+            приложими в Интернет. Общността е отворена, но също така разполага с персонал на 
+            пълно работно време и цели организации, които членуват в тази общност. 
+            За допълнителна информация: www.w3.org.</item>
 
-        <label xml:id="xml">XML</label>
-        <item>Extensible Markup Language. A text-based encoding format that allows the structured
-            encoding of text or data in human- and machine-readable format. It is the technical basis
-            of both <term target="#TEI">TEI</term> and EpiDoc, and is a standard maintained by the
-            World-wide Web Consortium. See <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>
-            for the spec and further description.</item>
+        <label xml:id="xml-bg">XML</label>
+        <item>Абревиатура на Extensible Markup Language. Формат за текстово кодиране, позволяващ 
+            структурирано кодиране на текст или данни във формат, четим както от хора, така и от машини. 
+            Това е техническата основа на <term target="#TEI-bg">TEI</term> и EpiDoc, и е стандарт, поддържан от 
+            World-wide Web Consortium. Виж <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>
+            за по-детайлно описание.</item>
 
-        <label xml:id="xslt">XSLT</label>
-        <item>Extensible Stylesheet Language Transformations. XSLT is a language that can convert
-                <term target="#xml">XML</term> documents into either different XML or other forms, e.g.
-            the HTML format used for websites, the import format for a database, or the Open Document Format
-            behind a word-processing document. The <term target="#epidoc-stylesheets">EpiDoc Stylesheets</term>
-            are an example of XSLT used to transform EpiDoc XML to common display formats.
-            A useful introduction to XSLT is offered by <ref
-                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>.</item>
+        <label xml:id="xslt-bg">XSLT</label>
+        <item>Абревиатура на Extensible Stylesheet Language Transformations. XSLT е език, който конвертира 
+            <term target="#xml-bg">XML</term> документи в различен XML или други формати, като например HTML, 
+            който се използва за уебсайтове, форматът за импортиране за база данни или форматът Open Document, 
+            който стои зад обработването на текстови файлове.<term target="#epidoc-stylesheets-bg">EpiDoc Stylesheets</term>
+            са пример за  XSLT, използван за трансформиране на EpiDoc XML в общоприети формати за визуализация. 
+           <ref
+                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref> предлагат полезно въведение в XSLT.</item>
     </list>
 
     <div xml:id="app-glossary-bg-responsibility">
-        <head>Responsibility for this section</head>
+        <head>Отговорни лица за този раздел</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Laura Löser</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Bulgarian</resp><name></name></respStmt></bibl>
-            <bibl><respStmt><resp>translated to Bulgarian</resp><name></name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Габриел Бодар</name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Лаура Льосер</name></respStmt></bibl>
+            <bibl><respStmt><resp>автор</resp><name>Том Елиът</name></respStmt></bibl>
+            <bibl><respStmt><resp>преведе на български език</resp><name>Мария Дончева</name></respStmt></bibl>
+            <bibl><respStmt><resp>редактор на превода</resp><name>Полина Йорданова</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
