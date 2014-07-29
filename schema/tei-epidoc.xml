@@ -4,7 +4,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
+                <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
                 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -12,17 +12,17 @@
                 <moduleRef key="header"/>
                 <moduleRef key="textstructure" except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
                     opener postscript salute signed titlePage titlePart trailer"/>
-                <moduleRef key="transcr" except="damageSpan fw restore"/>
+                <moduleRef key="transcr" except="damageSpan restore"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
-                <moduleRef key="analysis" except="cl phr s span spanGrp"/>
+                <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
-                <moduleRef key="gaiji" except="char charDecl charName charProp glyph glyphName localName mapping
+                <moduleRef key="gaiji" except="char charName charProp localName mapping
                     unicodeName value"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
                 <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-                <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit variantEncoding witDetail witEnd witStart witness"/>
+                <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
                 <moduleRef key="figures" except="cell formula row table"/>
                 <moduleRef key="spoken" except="broadcast equipment incident kinesic pause recording recordingStmt
                     scriptStmt shift u vocal writing"/>
@@ -52,6 +52,13 @@
                             </valList>
                         </attDef>
                     </attList>
+                </elementSpec>
+                
+                <!-- temporarily adding att.global to altIdentifier -->
+                <elementSpec ident="altIdentifier" module="msdescription" mode="change">
+                    <classes mode="change">
+                        <memberOf key="att.global"/>
+                    </classes>
                 </elementSpec>
                 
                 <!-- constraining values of div/@type -->
@@ -234,10 +241,13 @@
                 <!-- change definition of <lb> to "line beginning" -->
                 <elementSpec ident="lb" mode="change" module="core">
                     <gloss>line-beginning</gloss>
-                    <desc>marks the start of each line of the text, including the first</desc>
+                    <desc>marks the start of each line of the transcribed text, including the first</desc>
                     <!-- offer value "no" for lb/@break -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
+                            <datatype>
+                                <rng:ref name="data.enumerated"/>
+                            </datatype>
                             <valList type="semi">
                                 <valItem ident="no">
                                     <desc>this line-beginning should not be taken as a word-break, i.e. word would be
@@ -341,7 +351,7 @@
                 </elementSpec>
                 
                 <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
-                <elementSpec ident="unclear" module="textranscr" mode="change">
+                <elementSpec ident="unclear" module="core" mode="change">
                     <content>
                         <rng:ref name="macro.xtext"/>
                     </content>
