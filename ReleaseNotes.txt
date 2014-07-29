@@ -1,8 +1,31 @@
 RELEASE NOTES
 =============
 
-Latest version - 8.18 - Announced to MARKUP 2014-02-12
+Latest version - 8.19 - Announced to MARKUP 2014-07-31
 ---------------------
+    * Release technician: Charlotte Tupman
+    * Schema: stopped omitting variantEncoding element (requested by IGLouvre)
+    * Schema: stopped omitting charDecl, glyph, glyphName elements (requested by DASI)
+    * Schema: stopped omitting phr element (requested by Coptic Scriptorium)
+    * Schema: stopped omitting s element (requested by Perseus)
+    * Schema: stopped omitting fw element (requested by )
+    * Schema: fixed TEI errors in ODD: msdescription; unclear; datatype of lb/@break (Emmanuelle Morlock)
+    * Guidelines: changes examples in Apparatus to use @source rather then @resp (as per new TEI attribute)
+    * Guidelines: added translations of toc, how-to, and glossary in Spanish, Italian, French, Bulgarian
+    * Guidelines: added guidelines for language tags
+    * Guidelines: improved discussion of EpiDoc "internal" (=parallel segmentation) and "external" (=location referenced) apparatus
+    * Guidelines: Created a new "Cheatsheet" for edition structure
+    * Guidelines: 
+    * XSLT: various apparatus and structure fixes from DDBDP
+    * XSLT: new template for internal "mini-apparatus" from IOSPE
+    * XSLT: 
+    * XSLT: 
+    * XSLT: 
+
+
+Previous versions
+-----------------
+8.18 - Announced to MARKUP 2014-02-12
     * Release technician: Simona Stoyanova
     * Schema: allowed the use of <anchor> from the linking module (Perseus requirement)
     * Schema: added the value 'stacked' to hi/@rend (DFHG requirement)
@@ -17,9 +40,6 @@ Latest version - 8.18 - Announced to MARKUP 2014-02-12
     * XSLT: iospe style: display of a few symbols improved; structure of iospe edition-structure improved
     * XSLT: default style: text directionality display added
 
-
-Previous versions
------------------
 8.17 - Announced to MARKUP 2013-08-06 <http://lsv.uky.edu/scripts/wa.exe?A2=ind1308&L=markup&P=513>
     * Release technician: Scott Vanderbilt
     * Guidelines: added translations of intro for epigraphers in to Italian, German, Bulgarian, Spanish
