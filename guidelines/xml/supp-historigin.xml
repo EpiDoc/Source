@@ -56,7 +56,35 @@ End license statement: do not remove -->
     
     <div>
         <p><gi>origPlace</gi> has the same basic content model in the TEI as a <gi>p</gi> (paragraph) tag, so its contents
-        can range from plain text to highly structured and cross-linked data (or a combination of both). The following
+        can range from plain text to highly structured and cross-linked data (or a combination of both).</p>
+        <p><gi>origPlace</gi> can carry both the <att>type</att> and <att>subtype</att> attributes. EpiDoc does not require the use of these attributes, nor does it constrain their values via the schema; however, the following values for the <att>type</att> attribute are recommended if useful for a given project:</p>
+        <table>
+            <row role="label">
+                <cell><att>type</att></cell>
+                <cell>notes</cell>
+            </row>
+            <row>
+                <cell>composed</cell>
+                <cell>place of original (ancient) composition of the text</cell>
+            </row>
+            <row>
+                <cell>executed</cell>
+                <cell>place of original (ancient) execution of the text; i.e., where the physical support was when the text we have was placed upon it</cell>
+            </row>
+            <row>
+                <cell>sent</cell>
+                <cell>for a letter or other transmitted document: whence it was dispatched in antiquity</cell>
+            </row>
+            <row>
+                <cell>received</cell>
+                <cell>for a letter or other transmitted document: where it was delivered in antiquity</cell>
+            </row>
+            <row>
+                <cell>stored</cell>
+                <cell>for a portable document, such as a codex or papyrus roll, where it was habitually stored in antiquity</cell>
+            </row>
+        </table>
+        <p>The following
         examples illustrate some of the options.</p>
 
     <div>
