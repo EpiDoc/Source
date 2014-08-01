@@ -53,14 +53,55 @@ End license statement: do not remove -->
             <att>type</att> attribute is used with the following standard values to distinguish the major types of
         events:</p>
     <list rend="spacious">
-        <item><tag>provenance type="found"</tag> is used to encode information about the initial modern observation of a
-            text-bearing object</item>
+        <item><tag>provenance type="found"</tag> is used to encode information about the first appearance, or key re-appearance, of the text-bearing object in modern times</item>
         <item><tag>provenance type="observed"</tag> is used to encode information about subsequent modern
             observations</item>
-        <item><tag>provenance type="autopsy"</tag> is a special case of <tag>provenance type="observed"</tag> that is
-            used to encode a modern observation event during which the editor (i.e., the person creating the present
-            edition) personally examined the object</item>
+        <item><tag>provenance type="not-observed"</tag> is used to encode information about a specific, unsuccessful attempt to locate an object in a presumed or previously recorded location</item>
+        <item><tag>provenance type="transferred"</tag> is used to encode information about documentable modern relocations of the text-bearing object</item>
     </list>
+     <p>NB: the old recommendation of <tag>provenance type="autopsy"</tag> as a special case of <tag>provenance type="observed"</tag> is now deprecated in favor of <tag>provenance type="observed" subtype="autopsied"</tag>. See further, below.</p>
+     <p>Some print editions, databases, and active projects are able to provide even more detail concerning the nature of provenance events (e.g., whether a transfer was a simple move within an institution's storage areas or the transport of the object to another institution entirely). When it is desireable to encode such fine distinctions in a machine-actionable manner (e.g., for the creation of indices or for faceted search), the <att>subtype</att> attribute can be employed. The following standard values for <att>subtype</att> are suggested:</p>
+     <list>
+         <head>standard values for <att>subtype</att> on <tag>provenance type="found"</tag></head>
+         <item>"discovered"</item>
+         <item>"rediscovered"</item>
+         <item>"first-seen"</item>
+         <item>"first-recorded"</item>
+     </list>
+     <list>
+         <head>standard values for <att>subtype</att> on <tag>provenance type="observed"</tag></head>
+         <item>"seen"</item>
+         <item>"recorded"</item>
+         <item>"identified"</item>
+         <item>"photographed"</item>
+         <item>"autopsied": an event during which the editor (i.e., the person creating the present
+             edition) personally examined the object</item>
+         <item>"squeeze-taken"</item>
+         <item>"rubbing-taken"</item>
+         <item>"ink-transfer-taken"</item>
+         <item>"reported"</item>
+         <item>"built-into"</item>
+         <item>"reappeared"</item>
+     </list>
+     <list>
+         <head>standard values for <att>subtype</att> on <tag>provenance type="not-observed"</tag></head>
+         <item>"lost"</item>
+         <item>"stolen"</item>
+         <item>"destroyed"</item>
+         <item>"drawn"</item>
+         <item>"reported-lost"</item>
+         <item>"reported-stolen"</item>
+         <item>"reported-destroyed"</item>
+     </list>
+     <list>
+         <head>standard values for <att>subtype</att> on <tag>provenance type="transferred"</tag></head>
+         <item>"moved"</item>
+         <item>"sold"</item>
+         <item>"given"</item>
+         <item>"loaned"</item>
+     </list>
+     
+         
     <p>A general example is provided in the main section on <ref target="supp-history.html">Provence of the text-bearing object</ref>. Specific guidance for
         each type of provenance event is provided in its own section as follows:</p>
     <list>
@@ -84,7 +125,15 @@ End license statement: do not remove -->
                     <resp>author</resp>
                     <name>Tom Elliott</name>
                 </respStmt></bibl>
-
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>James Cowey</name>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+            </respStmt></bibl>
+            
         </listBibl>
 
     </div>

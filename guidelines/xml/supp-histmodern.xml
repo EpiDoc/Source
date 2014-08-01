@@ -64,15 +64,14 @@ End license statement: do not remove -->
         possible in order to facilitate subsequent processing, search index creation, and the like.</p>
     
     <p>EpiDoc recognizes the following values for the <att>type</att> attribute on <gi>provenance</gi>:</p>
-    <list rend="spacious">
-        <item><tag>provenance type="found"</tag>: see <ref target="supp-histfound.html">Findspot and find context</ref></item>
-        <item><tag>provenance type="observed"</tag>: indicates any event involving observation of the text-bearing
-        object</item>
-        <item><tag>provenance type="autopsy"</tag>: a special case of <tag>provenance type="observed"</tag> during
-        which an editor of the current edition directly examined the text-bearing object and transcribed the text</item>
-        <item><tag>provenance type="not-observed"</tag>: a report of an unsuccessful attempt or attempts to find a previously
-        reported text-bearing object</item>
-    </list>
+     <list rend="spacious">
+         <item><tag>provenance type="found"</tag> is used to encode information about the first appearance, or key re-appearance, of the text-bearing object in modern times; see <ref target="supp-histfound.html">Findspot and find context</ref></item>
+         <item><tag>provenance type="observed"</tag> is used to encode information about subsequent modern
+             observations</item>
+         <item><tag>provenance type="not-observed"</tag> is used to encode information about a specific, unsuccessful attempt to locate an object in a presumed or previously recorded location</item>
+         <item><tag>provenance type="transferred"</tag> is used to encode information about documentable modern relocations of the text-bearing object</item>
+     </list>
+     <p>Recommended, optional values for <att>subtype</att> are available if there is a need to make computationally actionable distinctions between different circumstances of finding (see list in <ref target="supp-histlocations.html">Dates and locations of modern observations</ref>). NB: the old recommendation of <tag>provenance type="autopsy"</tag> as a special case of <tag>provenance type="observed"</tag> is now deprecated in favor of <tag>provenance type="observed" subtype="autopsied"</tag>.</p>
 
 <!-- ATTENTION: DO NOT REFORMAT THE FOLLOWING EXAMPLES: WHITESPACE MATTERS! -->
 <p>Here is an example adapted from the <ref target="http://insaph.kcl.ac.uk/iaph2007/index.html">Inscriptions
@@ -257,6 +256,14 @@ End license statement: do not remove -->
                     <name/>
                 </respStmt>
             </bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>James Cowey</name>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

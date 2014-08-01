@@ -29,7 +29,7 @@ End license statement: do not remove -->
     <head>Findspot and find context</head>
     <p>All matters related to the provenance of a document are encoded in the Manuscript Description (<gi>msDesc</gi>)
         portion of the TEI header. In particular, they are placed within the <gi>history</gi> subsection (see further
-            <ref target="supp-history.html">the general section on provenance</ref>).</p>
+        <ref target="supp-history.html">Dates and locations of modern observations</ref>).</p>
  <div rend="tag-defs">
   <head>Relevant element documentation (TEI):</head>
   <p>
@@ -48,7 +48,8 @@ End license statement: do not remove -->
     <p>Standard EpiDoc files include all relevant spatial, temporal, and circumstantial information about the initial
         discovery of a text-bearing object in a <gi>provenance</gi> tag with a <att>type</att> attribute bearing the
         value "found". Generally, there will only be one such element, unless separate fragments of the document were
-        found in different locations. The information within each <gi>provenance</gi> element can take the form of one
+        found in different locations. Recommended, optional values for <att>subtype</att> are available if there is a need to make computationally actionable distinctions between different circumstances of finding (see list in <ref target="supp-histlocations.html">Dates and locations of modern observations</ref>).</p>
+     <p>The information within each <gi>provenance</gi> element can take the form of one
         or more paragraphs of prose, or of a list (with appropriate TEI tags used as necessary). Sometimes circumstances
         and editorial approach will dictate that the contents of <gi>provenance</gi> element be largely prose; other
         times a more data-oriented encoding approach may be indicated. In either case, best practice is to tag place
@@ -123,6 +124,14 @@ demonstrating the use of standard TEI date attributes to indicate the timing of 
                     <name>Gabriel Bodard</name>
                 </respStmt>
             </bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>James Cowey</name>
+            </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott Vanderbilt</name>
+            </respStmt></bibl>
             
         </listBibl>
     </div>
