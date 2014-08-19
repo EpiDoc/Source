@@ -24,62 +24,53 @@
     End license statement: do not remove -->
 <!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/trans-restoredincomplete.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
-<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restoredincomplete">
-    <head>Editorial restoration: Word incompletely restored</head>
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lacunasegmented">
+    <head>Editorial restoration: Segmented or adjacent lacunae</head>
 
     <p>
         <specList>
             <specDesc key="supplied"/>
-            <specDesc key="w"/>
-            <specDesc key="seg"/>
             <specDesc key="gap"/>
         </specList>
     </p>
 
-    <p><gi>supplied</gi> indicates text lost from the original support, restored by the editor
-        either by comparison with other texts or through other contextual knowledge. Where a word
-        cannot be completely restored, the missing part should be indicated by a <gi>gap</gi>. A
-            <gi>w</gi> element shold be used with a <att>part</att> attribute that explains which
-        part of the word is missing: <list type="bulleted">
-            <item>'I' (initial)</item>
-            <item>"M" (middle)</item>
-            <item>"F" (final)</item>
-        </list></p>
-
+    <p>When a single lacuna in the transcribed edition is represented by a combination of restored text,
+        (<gi>supplied</gi>) and lost sections (<gi>gap</gi>), these need to be encoded as distinct entities in
+        EpiDoc, although they are perceived as part of a single lacuna in the Leiden representation. The 
+        <term target="#epidoc-stylesheets">EpiDoc Example XSLT</term> includes a template which will ensure
+        extra square brackets are not printed between the two parts of the lacuna (i.e. "[abc ...]" not "[abc] [...]").
+    </p>
     <cit>
-        <quote>abc[..?..]</quote>
+        <quote>[abc ..?..]</quote>
     </cit>
-
-
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <w part="I"><supplied reason="lost">abc</supplied></w><gap reason="lost"/>
     </egXML>
-    <note>Note that adjacent <gi>supplied</gi> and <gi>gap</gi> elements will not result in 
-        redundant square brackets within a single lacune in the Example EpiDoc XSLT (see
-    <ref target="trans-lacunasegmented.html">Segmented or adjacent lacunae</ref>).</note>
-
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
         corresp="http://inslib.kcl.ac.uk/irt2009/IRT126.html#al5">
-        <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/></egXML>
-
+        <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/>
+    </egXML>
+    <note>cf. <ref target="trans-restoredincomplete.html">Word incompletely restored</ref>.</note>
+    
+    <p>The same applies if two spans of adjacent restored text need to be split into distinct
+    <gi>supplied</gi> elements to avoid overlapping tags, as for example forming part of a personal name
+    or an abbreviation.</p>
+    <cit>
+        <quote>Au[g(usti) Lici]nia</quote>
+    </cit>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <gap reason="lost"/><w part="M"><supplied reason="lost">ae</supplied></w><gap reason="lost"
-        />
+        <expan><abbr>Au</abbr><supplied reason="lost"><abbr>g</abbr><ex>usti</ex></supplied></expan>
+        <supplied reason="lost">Lici</supplied>nia
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap reason="lost"/>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
-        corresp="http://inslib.kcl.ac.uk/irt2009/IRT087.html#al1">
-        <gap reason="lost" extent="unknown" unit="character"/><w part="F">ui</w>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
+        <name>Καῖσ<supplied reason="lost">αρ</supplied></name> 
+        <supplied reason="lost">Σεβαστὸς</supplied>
     </egXML>
 
     <div xml:id="trans-restoredincomplete-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
