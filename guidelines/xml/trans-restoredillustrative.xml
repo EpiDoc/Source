@@ -36,7 +36,8 @@
         </specList>
     </p>
     
-    <p></p>
+    <p>An editorial note inside a restoration may mean different things. In the first exaple the editor clarifies something about what has been restored. In EpiDoc this is put in a <gi>note</gi> inside the <gi>supplied</gi>.</p>
+    <p>In the latter examples the editor cannot supply a restoration, but can only suppose what may have stood there. This comment is tagged as a descritpion of the <gi>gap</gi>, in a <gi>desc</gi>.</p>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <supplied reason="lost"><note>e.g.</note> Αὐτοκράτορος</supplied>
@@ -44,6 +45,10 @@
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera"> 
         <gap reason="lost" quantity="1" unit="line"><desc>mileage figure</desc></gap>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="lost" quantity="4" unit="chars"><desc>nomen auctoris</desc></gap>
     </egXML>
     
 
