@@ -28,26 +28,35 @@
     <head>Editorial restoration: example or illustrative supplement</head>
 
 
-    <p><specList>
-        <specDesc key="desc"/>
-        <specDesc key="gap"/>
-        <specDesc key="note"/>
-        <specDesc key="supplied"/>
+    <p>
+        <specList>
+            <specDesc key="desc"/>
+            <specDesc key="gap"/>
+            <specDesc key="note"/>
+            <specDesc key="supplied"/>
         </specList>
     </p>
     
-    <p>An editorial note inside a restoration may mean different things. In the first exaple the editor clarifies something about what has been restored. In EpiDoc this is put in a <gi>note</gi> inside the <gi>supplied</gi>.</p>
-    <p>In the latter examples the editor cannot supply a restoration, but can only suppose what may have stood there. This comment is tagged as a descritpion of the <gi>gap</gi>, in a <gi>desc</gi>.</p>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <supplied reason="lost"><note>e.g.</note> Αὐτοκράτορος</supplied>
+    <p>An editorial note inside a restoration may mean different things. In the first examples the editor clarifies
+        something about what has been restored. In EpiDoc this is put in a <gi>note</gi> inside the <gi>supplied</gi>.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+        <supplied reason="lost">Αὐτοκράτορος <note>κτλ</note></supplied>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera"> 
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+        <supplied reason="lost"><note>e.g.</note> ἵνα τὸν</supplied>
+    </egXML>
+    
+    
+    <p>In the following examples the editor cannot supply a restoration, but can only give the general category of
+        what may have stood there. This comment is tagged as a description of the <gi>gap</gi>, in a <gi>desc</gi>.</p>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera"> 
         <gap reason="lost" quantity="1" unit="line"><desc>mileage figure</desc></gap>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=77668">
         <gap reason="lost" quantity="4" unit="chars"><desc>nomen auctoris</desc></gap>
     </egXML>
     
