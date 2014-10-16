@@ -107,6 +107,14 @@
                             </xsl:if>
                         </xsl:for-each>
                     </xsl:when>
+                    <xsl:when test="starts-with(@corresp, 'http://romaninscriptionsofbritain.org/inscriptions/')">
+                        <xsl:text>RIB: </xsl:text>
+                        <xsl:variable name="filename" select="substring-after(@corresp,'http://romaninscriptionsofbritain.org/inscriptions/')"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href" select="@corresp"/>
+                            <xsl:value-of select="$filename"/>
+                        </xsl:element>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:element name="a">
                             <xsl:attribute name="href" select="@corresp"/>
