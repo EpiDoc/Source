@@ -143,19 +143,67 @@
             </xsl:for-each>
         </ul>
     </xsl:template>
+    
+    <xsl:template match="tei:cit">
+        <xsl:element name="p">
+            <xsl:element name="strong">
+                <xsl:apply-templates select="tei:bibl"/>
+                <xsl:text>: </xsl:text>
+            </xsl:element>
+            <xsl:apply-templates select="tei:quote"/>
+        </xsl:element>
+    </xsl:template>
 
     <xsl:template match="tei:cit/tei:bibl">
             <xsl:if test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
-                <span class="ref">
-                    <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
-                        <xsl:value-of select="."/>
-                        <xsl:if test="following-sibling::tei:author">
-                            <xsl:text>/</xsl:text>
-                        </xsl:if>
-                    </xsl:for-each>
-                </span>
+                    <xsl:element name="a">
+                        <xsl:attribute name="class" select="'glossary'"/>
+                        <xsl:attribute name="href">
+                            <xsl:text>app-bibliography.html</xsl:text>
+                            <xsl:value-of select="@corresp"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="normalize-space(//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')])"/>
+                        </xsl:attribute>
+                    <xsl:choose>
+                        <xsl:when test="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author/tei:name[@type='surname']">
+                            <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
+                                <xsl:value-of select="tei:name[@type='surname']"/>
+                                <xsl:if test="following-sibling::tei:author">
+                                    <xsl:text>/</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
+                            <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
+                                <xsl:value-of select="."/>
+                                <xsl:if test="following-sibling::tei:author">
+                                    <xsl:text>/</xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:title[1]"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:if test="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:date">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:date[1]"/>
+                    </xsl:if>
+                 </xsl:element>
             </xsl:if>
-        <xsl:text> </xsl:text><xsl:apply-templates/>
+            <xsl:apply-templates/>
+            <xsl:if test="following-sibling::tei:bibl"><xsl:text>; </xsl:text></xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="tei:cit/tei:bibl/tei:biblScope">
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    
+    <xsl:template match="tei:cit/tei:quote">
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="tei:respStmt">
