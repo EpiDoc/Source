@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs tei teix" version="2.0">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" 
+    exclude-result-prefixes="xs tei teix" version="2.0">
 
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet">
         <xd:desc>
@@ -60,7 +61,7 @@
                           <xsl:text> style:</xsl:text>
                         </strong>
                         <xsl:copy-of
-                            select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"
+                            select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
                         />
                     </li>
                 </xsl:for-each>

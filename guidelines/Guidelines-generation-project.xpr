@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="14.2">
+<project version="16.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="14.2" xml:space="preserve">
-                <map>
+            <serialized version="16.1" xml:space="preserve">
+                <serializableOrderedMap>
                     <entry>
                         <String>scenario.associations</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xslt/epidoc-html.xsl</String>
+                                    <String>xml/driver.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -25,7 +25,36 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xml/driver.xml</String>
+                                    <String>xslt/epidoc-html.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>Generate DDBDP Examples</String>
+                                        <String>Generate Dohnicht Examples</String>
+                                        <String>Generate EDH Web Examples</String>
+                                        <String>Generate London Examples</String>
+                                        <String>Generate Panciera Examples</String>
+                                        <String>Generate Petrae Examples</String>
+                                        <String>Generate RIB Examples</String>
+                                        <String>Generate Seg Examples</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../P/pleiades-periods-for-periodo/listing.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -102,6 +131,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -186,6 +218,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>../output/index.html</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>../output/index.html</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -334,6 +369,9 @@
                                 <field name="outputFile">
                                     <File>../guidelines/schema/tei-epidoc-examples.rng</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>../guidelines/schema/tei-epidoc-examples.rng</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -416,6 +454,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>./views/ddbdp/examples.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>./views/ddbdp/examples.xml</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -522,6 +563,9 @@
                                 <field name="outputFile">
                                     <File>./views/dohnicht/examples.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>./views/dohnicht/examples.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -626,6 +670,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>./views/edh-web/examples.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>./views/edh-web/examples.xml</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -732,6 +779,9 @@
                                 <field name="outputFile">
                                     <File>./views/london/examples.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>./views/london/examples.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -837,6 +887,9 @@
                                 <field name="outputFile">
                                     <File>./views/panciera/examples.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>./views/panciera/examples.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -919,6 +972,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>./views/petrae/examples.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>./views/petrae/examples.xml</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -1025,6 +1081,9 @@
                                 <field name="outputFile">
                                     <File>./views/rib/examples.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>./views/rib/examples.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1129,6 +1188,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>./views/seg/examples.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>./views/seg/examples.xml</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -1235,6 +1297,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1316,6 +1381,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -1401,6 +1469,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1482,6 +1553,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -1567,6 +1641,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1614,7 +1691,7 @@
                         <String>validation.scenarios</String>
                         <validationScenario-array/>
                     </entry>
-                </map>
+                </serializableOrderedMap>
             </serialized>
         </options>
     </meta>
