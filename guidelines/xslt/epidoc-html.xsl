@@ -14,6 +14,7 @@
     <xsl:import href="elementsIndex.xsl"/>
     <xsl:import href="render-epidoc.xsl"/>
     <xsl:import href="tpl-analytic.xsl"/>
+    <xsl:import href="tpl-search.xsl"/>
     
     <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
     <xsl:param name="STDOUT">false</xsl:param>
@@ -248,6 +249,7 @@
         <!-- the $analytics parameter (above) is "off" by default,
             but should be temporarily set to "on" in the Oxygen scenario when making a final, "day zero" release -->
         <xsl:if test="$analytics='on'"><xsl:call-template name="analytic"/></xsl:if>
+        <xsl:call-template name="search"/>
         <!-- For future reference, what we *really* need to do here is:
            1.   change the svn:external to point to the Github version of Sebastian's XSLT
                     (see https://github.com/TEIC/Stylesheets
