@@ -16,7 +16,7 @@ $(window).load(function() {
   $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
   var go =  $("#searchBtn");
   go.click(function(evt){
-      var url = window.location.host + "/" + window.location.pathname.replace(/\/[^/]+$/, "");
+      var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
       window.open("https://www.google.com/?gws_rd=ssl#q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
     });
 });
