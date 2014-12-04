@@ -4,7 +4,7 @@
 
 The /latest/ directory inside /gl/ is the "latest
 stable (numbered) release" of the EpiDoc Guidelines
-(copy of /8.18/ or whatever the latest is).
+(copy of /8.20/ or whatever the latest is).
 The contents of this directory should ONLY be updated
 or overwritten when a formal EpiDoc release is being made.
 
