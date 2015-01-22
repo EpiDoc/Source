@@ -39,8 +39,8 @@
                         </choice>
                     </group>
                 </zeroOrMore>
-                <ref name="att.global.attributes"/>
-                <ref name="att.source.attributes"/>
+                <ref name="tei_att.global.attributes"/>
+                <ref name="tei_att.source.attributes"/>
             </xsl:element>
         </xsl:element>
         <start>
