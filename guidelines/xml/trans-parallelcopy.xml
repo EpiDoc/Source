@@ -28,24 +28,26 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-parallelcopy" xml:lang="en">
     <head>Parallel Text</head>
     <p>Text restored from parallel copy</p>
-    <p><specList>
+    <p>
+        <specList>
             <specDesc key="supplied"/>
         </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p>
+    </p>
 
-    <p>Where text is restored by the editor from a parallel copy, this should be indicated by using
-        the usual <gi>supplied</gi> tag, but with an <att>evidence</att> with a value of
+    <p>Where text is restored by the editor from a parallel copy (e.g. a papyrus with the same literary text, or an 
+        inscription with a more complete version of a decree or imperial letter), this should be indicated with
+        a <gi>supplied</gi> element, indicating the parallel source by <att>evidence</att> with a value of
         "parallel".</p>
+    <p>In most epigraphic/papyrological styles this text will be displayed with underline only (similarly to 
+        <ref target="trans-previouseditor.html">Previous Editor</ref>), but in the Duke Databank the text
+        may also be enclosed in square brackets to indicate the fact that  the text is now completely lost (as 
+        opposed to merely unclear, corrupt or uncertain).
+        <!-- add explanation of different handling in DCLP -->
+    </p>
 
     <cit>
-        <quote>[abc]</quote>
-        <bibl corresp="#panciera">
-            <biblScope>VIII.1</biblScope>
-        </bibl>
+        <quote>a&#818;b&#818;c&#818; or [a&#818;b&#818;c&#818;]</quote>
         <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
@@ -53,25 +55,21 @@ End license statement: do not remove -->
     </egXML>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;13;2216#4">
-        <supplied evidence="parallel" reason="undefined">ς ἐπιστολῆς Θεοδώρου</supplied>
+        <supplied reason="lost">καὶ ἀναγν</supplied>ωσθείσης̣ <supplied reason="lost">τῆ</supplied><supplied evidence="parallel" reason="undefined">ς ἐπιστολῆς Θεοδώρου</supplied>
     </egXML>
     
-    <!-- No IRT or iAph examples -->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <supplied evidence="parallel" reason="lost">abc</supplied>
+    </egXML>
+    
+    <!-- Add example from DCLP -->
 
     <div xml:id="trans-parallelcopy-responsibility">
-
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                    <name/>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

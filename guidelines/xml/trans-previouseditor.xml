@@ -35,39 +35,39 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p>
 
-    <p>The text which was read by a previous editor should be enclosed within <gi>supplied</gi>,
-        whose <att>reason</att> should have a value of "undefined" and whose <att>evidence</att>
-       should have a value of "previouseditor".</p>
+    <p>The text which was visible to a previous editor but is now lost or illegible should be indicated
+        with a <gi>supplied</gi> element with <att>evidence</att> with a value of "previouseditor".</p>
+    <p>In most epigraphic/papyrological styles this text will be displayed with underline only (similarly to 
+        <ref target="trans-parallel.html">Parallel Copy</ref>), and so it is largely academic whether the required
+        <att>reason</att> attribute has a value of "lost" or the more generic "undefined", but in the Duke Databank
+        the text may also be enclosed in square brackets to indicate the fact that  the text is now completely lost
+        (as opposed to merely unclear, corrupt or uncertain).
+    </p>
 
     <cit>
-        <quote><hi rend="underline">abc</hi></quote>
+        <quote>a&#818;b&#818;c&#818;</quote>
         <bibl corresp="#panciera">
             <biblScope>III.5</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
     </cit>
-
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <supplied reason="undefined" evidence="previouseditor">αβγ</supplied>
+        <supplied reason="undefined" evidence="previouseditor">abc</supplied>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <supplied reason="lost" evidence="previouseditor">αβγ</supplied>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london ddbdp" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120108.html">
+        <supplied reason="lost" evidence="previouseditor">ὑπ</supplied>ὲρ τῆς τῶν | <supplied reason="lost" evidence="previouseditor">κυ</supplied>ρίων Αὐτοκρα|<supplied reason="lost" evidence="previouseditor">τ</supplied>όρων
     </egXML>
 
-    <!-- No real examples found -->
 
     <div xml:id="trans-previouseditor-responsibility">
-
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                    <name/>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
