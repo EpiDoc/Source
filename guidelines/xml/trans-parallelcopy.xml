@@ -50,16 +50,24 @@ End license statement: do not remove -->
         <bibl corresp="#ddbdp"/>
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
-        <supplied reason="undefined" evidence="parallel">abc</supplied>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;13;2216#4">
-        <supplied reason="lost">καὶ ἀναγν</supplied>ωσθείσης̣ <supplied reason="lost">τῆ</supplied><supplied evidence="parallel" reason="undefined">ς ἐπιστολῆς Θεοδώρου</supplied>
+    <p>The first example demonstrates that, when the reason for the parallel supplementation is "undefined", the
+    Duke Databank follows the general pattern.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london ddbdp" corresp="#panciera">
+        <supplied evidence="parallel" reason="undefined">abc</supplied>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+    <p>The second example illustrates the different in approach between the Duke Databank and other styles
+    when the reason for supplementation is complete loss.</p>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london ddbdp" corresp="#ddbdp">
         <supplied evidence="parallel" reason="lost">abc</supplied>
+    </egXML>
+    
+    <p>A more complex example illustrates the expressiveness of the Duke Databank approach when 
+    dealing with a lacunose and damaged text.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;13;2216#4">
+        <supplied reason="lost">καὶ ἀναγν</supplied>ωσθείσης̣ <supplied reason="lost">τῆ</supplied><supplied evidence="parallel" reason="undefined">ς ἐπιστολῆς Θεοδώρου</supplied>
     </egXML>
     
     <!-- Add example from DCLP -->
