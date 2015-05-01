@@ -60,6 +60,7 @@
                             </xsl:choose>
                           <xsl:text> style:</xsl:text>
                         </strong>
+                        <xsl:text> </xsl:text>
                         <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
                             mode="epidoc-force-html-namespace" />
                         <!-- <xsl:copy-of
@@ -79,6 +80,26 @@
                     <xsl:copy-of select="@*" />
                     <xsl:apply-templates mode="epidoc-force-html-namespace"/>
                 </xsl:element>
+            </xsl:when>
+            <xsl:when test="self::text()">
+                <xsl:variable name="normed-value" select="normalize-space(.)"/>
+                <xsl:choose>
+                    <xsl:when test="$normed-value=' '">
+                        <xsl:text> </xsl:text>
+                    </xsl:when>
+                    <xsl:when test="string-length($normed-value)=0">
+                        <xsl:text> </xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="substring(., 1, 1)=' ' and preceding-sibling::node()[1]/self::element()">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
+                        <xsl:value-of select="$normed-value"/>
+                        <xsl:if test="substring(., string-length(.), 1)=' ' and following-sibling::node()[1]/self::element()">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:copy-of select="."/>
