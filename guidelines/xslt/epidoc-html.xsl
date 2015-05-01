@@ -156,7 +156,8 @@
     </xsl:template>
 
     <xsl:template match="tei:cit/tei:bibl">
-            <xsl:if test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
+        <xsl:choose>
+            <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
                     <xsl:element name="a">
                         <xsl:attribute name="class" select="'glossary'"/>
                         <xsl:attribute name="href">
@@ -192,9 +193,14 @@
                         <xsl:value-of select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:date[1]"/>
                     </xsl:if>
                  </xsl:element>
-            </xsl:if>
-            <xsl:apply-templates/>
-            <xsl:if test="following-sibling::tei:bibl"><xsl:text>; </xsl:text></xsl:if>
+            </xsl:when>
+            <xsl:when test="starts-with(@corresp,'#') and not(//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')])">
+                <xsl:text>according to </xsl:text>
+                <xsl:value-of select="substring-after(current()/@corresp, '#')"/>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:apply-templates/>
+        <xsl:if test="following-sibling::tei:bibl"><xsl:text>; </xsl:text></xsl:if>
     </xsl:template>
     
     <xsl:template match="tei:cit/tei:bibl/tei:biblScope">

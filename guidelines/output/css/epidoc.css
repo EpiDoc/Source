@@ -500,6 +500,7 @@ p.caption {
    vertical-align : top;
 }
 /* specialized divs */
+
 div.letter {
    margin-left: 2em;
    margin-right: 2em;
@@ -888,6 +889,9 @@ ul.speclit {
  padding-top: 1em;
 }
 
+ul.speclit + * + * {
+  clear: both;
+}
 
 div.tag-defs > h2 {
     margin: 0px;
