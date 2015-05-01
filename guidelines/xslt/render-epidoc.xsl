@@ -60,14 +60,32 @@
                             </xsl:choose>
                           <xsl:text> style:</xsl:text>
                         </strong>
-                        <xsl:copy-of
-                            select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
-                        />
+                        <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
+                            mode="epidoc-force-html-namespace" />
+                        <!-- <xsl:copy-of
+                            select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"  
+                        /> -->
                     </li>
                 </xsl:for-each>
             </ul>
         </xsl:if>
     </xsl:template>
-
+    
+    <xsl:template match="node()" mode="epidoc-force-html-namespace">
+        <xsl:choose>
+            <xsl:when test="self::element()">
+                <xsl:element name="{local-name()}"
+                    namespace="http://www.w3.org/1999/xhtml">
+                    <xsl:copy-of select="@*" />
+                    <xsl:apply-templates mode="epidoc-force-html-namespace"/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    
 
 </xsl:stylesheet>
