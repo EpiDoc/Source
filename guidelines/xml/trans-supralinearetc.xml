@@ -30,16 +30,14 @@ End license statement: do not remove -->
     <p>Linear features such supralinear lines, underlining, or strikethrough should be indicated using <gi>hi</gi> with
         an appropriate <att>rend</att> value.</p>
     <p><specList>
-        <specDesc key="hi"/>
-    </specList>
-        <!--<listRef>
-            <ptr target="a"/>
-            </listRef>--></p> 
+            <specDesc key="hi"/>
+        </specList>
+    </p> 
     
-    <p><!--More prose explanation--></p>
     <p>The use of <gi>hi</gi> to indicate the physical appearance or decoration of characters on the stone or page is
         separate from any tagging of what that decoration might represent in the text. (See, e.g., numbers and numerals).</p>
     
+    <p>These examples show the encoding and handling of a line above the text (a "supra-linear line"):</p>
     <cit>
         <quote><hi rend="supraline">a</hi><hi rend="supraline">b</hi><hi rend="supraline">c</hi></quote>
         <bibl corresp="#panciera">
@@ -47,40 +45,34 @@ End license statement: do not remove -->
         </bibl>
         <bibl corresp="#ddbdp"/>
     </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp" corresp="#panciera">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="#panciera">
         <hi rend="supraline">abc</hi>
     </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;153">
+        <hi rend="supraline">θε</hi>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT022.html">
+        <num value="8000"><hi rend="supraline">VIII</hi></num>
+    </egXML>    
     
+    <p>This example shows the encoding and handling of a line below the text (a "sub-linear line"):</p>    
     <cit>
         <quote><hi rend="underline">a</hi><hi rend="underline">b</hi><hi rend="underline">c</hi></quote>
-        <!--<bibl corresp="#panciera">
-            <biblScope>not mentioned</biblScope>
-        </bibl>-->
         <bibl corresp="#ddbdp"/>
     </cit>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
         <hi rend="underline">abc</hi>
     </egXML>
     
+    <p>This example shows the encoding and handling of a line through the text (a "intra-linear line"):</p>
     <cit>
         <quote><hi rend="intraline">a</hi><hi rend="intraline">b</hi><hi rend="intraline">c</hi></quote>
-        <!--<bibl corresp="#panciera">
-            <biblScope>not mentioned</biblScope>
-        </bibl>-->
         <bibl corresp="#ddbdp"/>
     </cit>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
         <hi rend="intraline">abc</hi>
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;153">
-        <hi rend="supraline">θε</hi>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT022.html">
-        <num value="8000"><hi rend="supraline">VIII</hi></num>
-    </egXML>
     
     <div xml:id="trans-supralinearetc-responsibility">
     
@@ -89,6 +81,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name><name/></respStmt></bibl>
             <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
