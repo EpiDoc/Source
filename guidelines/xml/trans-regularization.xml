@@ -25,7 +25,8 @@
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-regularization">
     <head>Regularization</head>
-    <p>Regularized spellings of irregular forms, such as dialect forms, late spellings, phonetic spellings, etc.</p>
+    <p>Regularized spellings of irregular forms, such as dialect forms, late spellings, 
+        phonetic spellings, etc.</p>
     <p>
         <specList>
             <specDesc key="choice"/>
@@ -33,7 +34,25 @@
             <specDesc key="orig"/>
         </specList>
     </p>
-    <p>...</p>
+    <p>If your project makes a distinction between text corrected as a result of scribal
+        error (i.e. <ref target="trans-erroneoussubstitution.html">Correction of Erroneous 
+            Characters</ref>) and text normalized or regularized from a dialect or phonetic
+    spelling, grammatical form, etc., perhaps because of the consideration that the latter is not
+    strictly speaking <emph>wrong</emph>, then these normalizations can be tagged
+    with <gi>orig</gi> (the original, scribal form) and <gi>reg</gi> (the regularized form). As with
+        <gi>sic</gi> and <gi>corr</gi>, these will be grouped in a <gi>choice</gi> element,
+    indicating that they are two editorial versions of the same span of text, and should
+    be read as alternatives, not shown side by side.</p>
+    
+    <p>It is most common to mark a regularization of this kind at the level of the whole
+    word, rather than of individual characters affected, as in the DDbDP and IOSPE
+    examples given below. This will make it easier to generate an apparatus reading for
+    the regularized form (or the original form, depending on which you want to privilege),
+    but it may also be impossible to identify individual affected characters in a dialect
+    spelling or grammatical form. On the other hand, tagging the individial characters
+    might make it easier to index or search for specific features, such as the iotacism of ι and ει
+    in the final example below.</p>
+    
     <cit>
         <quote>abc</quote>
         <bibl corresp="#ddbdp"/>
@@ -41,19 +60,30 @@
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
         <choice>
-            <reg>abc</reg>
-            <orig>def</orig>
+            <reg>def</reg>
+            <orig>abc</orig>
         </choice>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;100#7">
-        <choice><reg>τιμὴν</reg><orig>τειμην</orig></choice>
+        <choice>
+            <reg>τιμὴν</reg>
+            <orig>τειμην</orig>
+        </choice>
     </egXML>
     
-    <!-- No IRT or iAph examples-->
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="iospe" corresp="http://iospe.kcl.ac.uk/5.14.html">
+        <choice>
+            <orig>κέντ<supplied reason="lost">ρον</supplied></orig>
+            <reg>κάστρον</reg>
+        </choice> 
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        τ<choice><reg>ι</reg><orig>ει</orig></choice>μὴν
+    </egXML>
     
     <div xml:id="trans-regularization-responsibility">
-        
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
