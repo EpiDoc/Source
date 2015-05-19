@@ -72,40 +72,43 @@ End license statement: do not remove -->
         <p>For the sake of consistency, the following optional <att>type</att>values are recommended for specifying the
         type of duration being marked up.</p>
         <list type="bulleted">
-            <item>life-span</item>
+            <item>age </item>
+            <item>age-at-death</item>
             <item>military-service-span</item>
             <item>marriage-span</item>
-            <item>age </item>
         </list>
         
         <list type="gloss">
-            <label>life-span</label>
+            <label>Age (of person possibly still alive)</label>
             <item>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://romaninscriptionsofbritain.org/inscriptions/960">
-                    v(ixit) <date type="life-span" dur="P20Y">an(nos) <num atLeast="20">XX</num></date>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <!-- Simona to add example of Aischylos from Parian Marble -->
                 </egXML>
             </item>
-            <label>military-service-span</label>
+            <label>Age at death (i.e. completed life-span)</label>
+            <item>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT844.html">
+                    biuerunt <date type="age" dur="P70Y9M">annos plus minus septuaginta menses IX</date>
+                </egXML>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT835.html">
+                    uixit <date type="age" dur="P3Y6M14D">annos III menses VI dies XIIII</date>
+                </egXML>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://romaninscriptionsofbritain.org/inscriptions/960">
+                        v(ixit) <date type="life-span" dur="P20Y">an(nos) <num atLeast="20">XX</num></date>
+                </egXML>
+            </item>
+            <label>Military service span</label>
             <item>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://romaninscriptionsofbritain.org/inscriptions/485">
                     <date type="military-service-span" dur="P13Y">stip(endiorum) <num value="13">XIII</num></date>
                 </egXML>
             </item>
-            <label>marriage-span</label>
+            <label>Marriage span</label>
             <item>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://romaninscriptionsofbritain.org/inscriptions/295">
                     <date type="marriage-span" dur="P30Y">a(nno) <num value="30">XXX</num></date>
                 </egXML>
             </item>
-            <label>age (e.g., at death)</label>
-            <item>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT844.html">
-            biuerunt <date type="age" dur="P70Y9M">annos plus minus septuaginta menses IX</date>
-        </egXML>
-        
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT835.html">
-            uixit <date type="age" dur="P3Y6M14D">annos III menses VI dies XIIII</date>
-        </egXML></item>
         </list>
     </div>
     
