@@ -46,6 +46,8 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
+                "appInfo" (from header), and "metamark retrace" (from transcr).</change>
             <!-- release 8.20: 2014-12-02 - Aligned schema with TEI v. 2.7.0 -->
             <!-- release 8.19: 2014-07-31 - Aligned schema with TEI v. 2.6.0 -->
             <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear -> core; datatype in lb/@break)</change>
@@ -114,17 +116,17 @@ End license statement: do not remove -->
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
                 <moduleRef key="tei"/>
-                <moduleRef key="header"/>
+                <moduleRef key="header" except="appInfo"/>
                 <moduleRef key="textstructure" except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
                     opener postscript salute signed titlePage titlePart trailer"/>
-                <moduleRef key="transcr" except="damageSpan restore"/>
+                <moduleRef key="transcr" except="damageSpan metamark restore retrace"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
                 <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
                 <moduleRef key="gaiji" except="char charName charProp localName mapping
                     unicodeName value"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
-                <moduleRef key="msdescription"/>
+                <moduleRef key="msdescription" except="accMat additions catchwords heraldry secFol signatures stamp watermark"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
                 <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
