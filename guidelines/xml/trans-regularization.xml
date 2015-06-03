@@ -79,9 +79,16 @@
         </choice> 
     </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
         τ<choice><reg>ι</reg><orig>ει</orig></choice>μὴν
     </egXML>
+    <p>As shown in this last example, the in-word regularization does not currently display anything
+        in any <code>$leiden-style</code>, because there is no Leiden siglum for "regularized spellings";
+        editorial practice is usually to print irregular spellings uncorrected, or sometimes to treat them as
+        errors (and therefore display as in <ref target="trans-erroneoussubstitution.html">Erroneous Substitution</ref>).
+        Customization of the stylesheets will therefore be required to use regularization in a different way
+        from DDbDP or IOSPE.
+    </p>
     
     <div xml:id="trans-regularization-responsibility">
         <head>Responsibility for this section</head>
