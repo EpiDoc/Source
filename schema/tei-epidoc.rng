@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-06-02T18:27:38Z. .  
+Schema generated from ODD source 2015-06-03T13:17:51Z. .  
 --><!----><define name="tei_macro.paraContent">
       <zeroOrMore>
          <choice>
@@ -8276,6 +8276,20 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="tei_charProp">
+      <element name="charProp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
+         <group>
+            <choice>
+               <ref name="tei_localName"/>
+            </choice>
+            <ref name="tei_value"/>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_charDecl">
       <element name="charDecl">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
@@ -8304,6 +8318,12 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
                <ref name="tei_model.descLike"/>
             </zeroOrMore>
             <zeroOrMore>
+               <ref name="tei_charProp"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="tei_mapping"/>
+            </zeroOrMore>
+            <zeroOrMore>
                <ref name="tei_figure"/>
             </zeroOrMore>
             <zeroOrMore>
@@ -8321,6 +8341,31 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
       <element name="glyphName">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
          <text/>
+         <ref name="tei_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_localName">
+      <element name="localName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</a:documentation>
+         <text/>
+         <ref name="tei_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_mapping">
+      <element name="mapping">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character mapping) contains one or more characters which are related to the parent character or glyph in some respect, as specified by the type attribute. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
+         <ref name="tei_macro.xtext"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_value">
+      <element name="value">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</a:documentation>
+         <ref name="tei_macro.xtext"/>
          <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>

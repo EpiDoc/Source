@@ -46,6 +46,9 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2015-06-03">removing customization of altIdentifier (see 2014-02-10) now fixed in TEI</change>
+            <change who="#GB" when="2015-06-03">stopped omitting "charProp localName mapping unicodeName value"
+                from gaiji (requested by IOSPE)</change>
             <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
                 "appInfo" (from header), and "metamark retrace" (from transcr).</change>
             <!-- release 8.20: 2014-12-02 - Aligned schema with TEI v. 2.7.0 -->
@@ -123,8 +126,7 @@ End license statement: do not remove -->
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
                 <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
-                <moduleRef key="gaiji" except="char charName charProp localName mapping
-                    unicodeName value"/>
+                <moduleRef key="gaiji" except="char charName unicodeName"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
                 <moduleRef key="msdescription" except="accMat additions catchwords heraldry secFol signatures stamp watermark"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
@@ -159,13 +161,6 @@ End license statement: do not remove -->
                             </valList>
                         </attDef>
                     </attList>
-                </elementSpec>
-                
-                <!-- temporarily adding att.global to altIdentifier -->
-                <elementSpec ident="altIdentifier" module="msdescription" mode="change">
-                    <classes mode="change">
-                        <memberOf key="att.global"/>
-                    </classes>
                 </elementSpec>
                 
                 <!-- constraining values of div/@type -->
