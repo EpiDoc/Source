@@ -26,142 +26,119 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-glossary-fi" xml:lang="en">
-    <head>Appendix: Glossary</head>
+    <head>Liite: Sanasto</head>
  
     <list type="gloss">
         <label xml:id="crosswalk-fi">Crosswalk, crosswalking</label>
-        <item>A general term for moving data from the format of one encoding scheme or database
-        to another. In EpiDoc terms, it often refers to the dynamic transformation of
-        the semantic distinctions of epigraphic and papyrological editions between EpiDoc XML and
-        one or more database of texts or catalogue records. These "crosswalks" may take place in either direction, or
-        in some cases in both directions and reversible without loss of information.
-        Prominent crosswalks performed by the EpiDoc community include: 
-        the conversion of <term target="#IRT">IRT</term> from EpiDoc to the database
-        format of <term target="#EDH">EDH</term>;
-            the migration of the <term target="#ddb">Duke Databank</term>,
-        <term target="#hgv">HGV</term> and <term target="#apis">APIS</term> content to EpiDoc as part of the
-            Papyri.info project (the HGV-to-EpiDoc is lossless and bidirectional);
-            the current conversion of the <term target="#eagle">EAGLE</term> constituent
-            databases into EpiDoc XML as part of the <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref>
-        project.</item>
+        <item>Yleisluontoinen termi, jolla kuvataan tiedon siirtämistä ja muuntamista yhdestä skeemasta 
+        tai tietokannasta toiseen. EpiDocin puitteissa se usein viittaa epigrafisten ja papyrologisten editioiden 
+        semanttisten erojen dynaamiseen muuntamiseen EpiDoc XML:n ja yhden tai useamman tekstitietokannan 
+        tai luettelotietueen välillä. Muuntaminen voi tapahtua kumpaan suuntaan tahansa tai joissakin tapauksissa 
+        molempiin suuntiin, ja se on käännettävissä takaisin alkuperäiseen tiedon katoamatta.            
+        EpiDoc yhteisön suorittamista ristimuunnoksista huomattavimpia ovat: 
+        <term target="#IRT">IRT</term>:n muuntaminen EpiDocista <term target="#EDH">EDH</term> tietokantaformaattiin;           
+        <term target="#ddb">Duke Databank</term>in, <term target="#hgv">HGV</term>:n ja <term target="#apis">APIS</term>:in 
+        sisältöjen siirto EpiDociin osana Papyri.info -projektia (HGV-EpiDoc -muunnos on häviötön ja kaksisuuntainen);
+        meneillään oleva <term target="#eagle">EAGLE</term>:n sisältämien tietokantojen muuntaminen EpiDoc XML:ksi osana
+        <ref target="http://www.eagle-network.eu/">EAGLE Europeana</ref> projektia.</item>
         
-        <label xml:id="encoding-fi">Encoding</label>
-        <item>Encoding in this context means the conversion of human-readable information into
-            machine-readable information, e.g. in the form of <term target="#xml">XML</term>.</item>
+        <label xml:id="encoding-fi">Koodaaminen (Encoding)</label>
+        <item>Tässä yhteydessä koodaaminen tarkoittaa ihmisen luettavissa olevan tiedon muuntamista koneluettavaan muotoon, 
+            esim. <term target="#xml-fi">XML</term>-muodossa.</item>
 
-        <label xml:id="epidoc-stylesheets-fi">EpiDoc Example Stylesheets</label>
-        <item>Software code, written in the Extensible Stylesheet Language (XSL or <term
-                target="#xslt">XSLT</term>), and intended for use in transforming EpiDoc XML files
-            into other formats (chiefly text and HTML) using a range of standard typographical
-            conventions (e.g., <term target="#leiden">Leiden</term>). Documentation and further
-            information are to be found on the <ref
-                target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">Stylesheets page in the
-                EpiDoc Wiki</ref>.</item>
+        <label xml:id="epidoc-stylesheets-fi">EpiDoc tyyliarkkimallit (EpiDoc Example Stylesheets)</label>
+        <item>Ohjelmakoodi, joka on kirjoitettu Extensible Stylesheet Language:lla (XSL or <term
+            target="#xslt">XSLT</term>), ja joka on tarkoitettu käytettäväksi muunnettaessa EpiDoc XML -tiedostoja muihin formaatteihin 
+            (pääasiassa tekstiksi ja HTML:ksi) käyttäen tavanomaisten typografisten merkintätapojen valikoimaa 
+            (esim. <term target="#leiden-fi">Leidenin merkintätapaa</term>). Kuvaus ja lisätietoa löytyy 
+            <ref target="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">Stylesheet-sivulta EpiDocin wikissä</ref>.</item>
 
-        <label xml:id="epidoc-schema-fi">EpiDoc Schema</label>
-        <item>A formally structured set of rules that tells an XML editor or processor what elements,
-            attributes and other content are available in an EpiDoc file and how these are to be
-            structured. Documentation and further information are to be found on the <ref
-                target="https://sourceforge.net/p/epidoc/wiki/Schema/">Schema page in the EpiDoc
-                Wiki</ref>.</item>
+        <label xml:id="epidoc-schema-fi">EpiDoc-skeema (EpiDoc Schema)</label>
+        <item>Muodollisesti jäsennetty sarja sääntöjä, jotka kertovat XML-editorille tai prosessorille, 
+            mitkä elementit, attribuutit ja muut sisällöt ovat sallittuja EpiDoc-tiedostossa ja miten niiden tulee olla järjestettyjä. 
+            Kuvaus ja lisätiedot <ref target="https://sourceforge.net/p/epidoc/wiki/Schema/">Schema-sivulta EpiDocin wikissä</ref>.</item>
 
-        <label xml:id="leiden-fi">Leiden, Leiden Conventions</label>
-        <item>A set of rules for the encoding of classical epigraphic and papyrological texts using
-            simple, arbitrary and unambiguous symbols to represent editorial observations and
-            interventions, e.g. '[' and ']' for lost text (restored or lacuna). There are several
-            minor variations on Leiden now in use (<ref target="app-epi-panciera.html"
-                >Krummrey-Panciera</ref> and <ref target="app-epi-petrae.html">PETRAE</ref> perhaps
-            prominent among them). A good summary of Leiden can be found at <ref
-                target="http://en.wikipedia.org/wiki/Leiden_Conventions"
-                >en.wikipedia.org/wiki/Leiden_Conventions</ref></item>
+        <label xml:id="leiden-fi">Leidenin merkintätapa (Leiden, Leiden Conventions)</label>
+        <item>Piirtokirjoitusten ja papyrustekstien transkribointia varten luotu sääntökokoelma, jossa käytetään selkeitä, 
+            yksiselitteisiä ja sopimuksenvaraisia symboleita kuvaamaan editoijan havaintoja ja tulkintoja. 
+            Esim. hakasulkeet ”[” ja ”]” kuvaavat kadonnutta tekstin osaa sisältäen joko editorin tekemän täydennyksen tai aukon tekstissä. 
+            Käytössä on useita Leidenin merkintätavan variaatioita (tunnetuimpia näistä lienevät <ref target="app-epi-panciera.html">Krummrey-Panciera</ref> 
+            ja <ref target="app-epi-petrae.html">PETRAE</ref>). Hyvä yhteenveto Leidenin merkintätavasta löytyy sivulta 
+            <ref target="http://en.wikipedia.org/wiki/Leiden_Conventions" >en.wikipedia.org/wiki/Leiden_Conventions</ref>.</item>
 
         <label xml:id="leidenplus-fi">Leiden+ (Leiden-plus)</label>
-        <item>Leiden+ is a system of text markup, based very closely on <term target="#leiden"
-                >Leiden</term> but including new signs and combinations for complex apparatus markup,
-            for example, devised for the <term target="#pe">Papyrological Editor</term>'s "tags-free" editing environment. Full
-            description and documentation of Leiden+ is at <ref
-                target="http://papyri.info/editor/help">papyri.info/editor/help</ref>.</item>
+        <item>Leiden+ on merkintäkieli, joka perustuu hyvin vahvasti<term target="#leiden-fi">Leidenin merkintätapaan</term>, 
+            mutta sisältää uusia merkkejä ja merkintäyhdistelmiä, jotka mahdollistavat esimerkiksi monimutkaisten apparaattimerkintöjen tekemisen. 
+            Leiden+ on kehitetty <term target="#pe">Papyrologisen editorin</term> ”tagitonta” editointiympäristöä varten. Yksityiskohtainen kuvaus ja 
+            tapausesimerkkejä löytyy osoitteesta <ref target="http://papyri.info/editor/help">papyri.info/editor/help</ref>.</item>
 
-        <label xml:id="markup-fi">Markup</label>
-        <item>Markup language in a way to encode a text's contents in order to enable different ways
-            of representation and e.g. to extract information to be collected for indexes, or search
-            tools (cf. <term target="#encoding">Encoding</term>).<lb/> "Markup" is sometimes also used
-            as shorthand for <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">the
-                Markup List</ref>, an email list for the discussion of EpiDoc and other ancient text
-            markup matters.</item>
+        <label xml:id="markup-fi">Merkintäkieli (Markup)</label>
+        <item>Merkintäkieltä käytetään tekstin ominaisuuksien ja piirteiden kuvaamiseen koodauskielellä. 
+            Tällä tavoin koodattu aineisto voidaan esittää monilla eri tavoilla ja siitä voidaan poimia yksityiskohtaisia tietoja 
+            esim. indeksien laatimista varten tai siihen voidaan soveltaa erilaisia hakutyökaluja (ks. <term target="#encoding-fi">Encoding</term>).<lb/> 
+            "Markup" -sanaa käytetään toisinaan myös lyhenteenä viittaamassa sanoihin <ref target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">Markup List</ref>, joka on sähköpostilista, jonka kautta keskustellaan 
+            EpiDocista ja muista vanhojen tekstien merkintätapoihin liittyvistä seikoista.</item>
 
         <label xml:id="morpheus-fi">Morpheus</label>
-        <item>The Morpheus morphological analysis service is a tool originally developed by <term
-                target="#perseus">Perseus</term>, versions of which are in use by Papyri.info and the
-            TLG for lemmatizing their Greek texts. The Perseus version of the tool also caters for
-            Latin and Arabic lemmatization. (More information at <ref
-                target="https://wikihub.berkeley.edu/display/pbamboo/Morphological+Analysis+Service+Contract+Description+-+v1.1.1"
-                >Bamboo</ref> and <ref
-                    target="http://sites.tufts.edu/perseusupdates/2012/11/01/morphology-service-beta/"
-                    >Perseus</ref>.)</item>
+        <item>Morpheus, morfologinen analyysipalvelu, on työkalu, jonka alun perin kehitti <term target="#perseus-fi">Perseus</term>. Papyri.info ja TLG käyttävät sen eri versioita 
+            sisältämiensä kreikankielisten tekstien lemmatisoinnissa. Perseuksen versio soveltuu myös latinan- ja arabiankielisten tekstien lemmatisointiin.
+           (Lisätietoja <ref target="https://wikihub.berkeley.edu/display/pbamboo/Morphological+Analysis+Service+Contract+Description+-+v1.1.1"
+                >Bamboo</ref> ja <ref target="http://sites.tufts.edu/perseusupdates/2012/11/01/morphology-service-beta/">Perseus</ref>.)</item>
         
-        <label xml:id="pn-fi">Papyrological Navigator (PN)</label>
-        <item>The search and browse interface of the <ref target="http://papyri.info/">Papyri.info</ref> platform,
-        which incorporates the <term target="#ddb">DDbDP</term>, 
-            <term target="#hgv">HGV</term>, 
-            <term target="#apis">APIS</term> and other papyrological databases.</item>
+        <label xml:id="pn-fi">Papyrologinen navigaattori (PN)</label>
+        <item><ref target="http://papyri.info/">Papyri.info</ref> -alustan haku- ja selausliittymä, joka sisältää <term target="#ddb">DDbDP</term>-, <term target="#hgv">HGV</term>- ja <term target="#apis">APIS</term>-tietokannat 
+            sekä joitakin muita papyrologisia tietokantoja.</item>
         
-        <label xml:id="pe-fi">Papyrological editor (PE)</label>
-        <item>The text-editing, management and editorial workflow tool of the
-            <ref target="http://papyri.info/">Papyri.info</ref> platform, allowing community contribution to
-        and emendation of the corpus of documentary papyrology, notably via the tags-free
-        <term target="#leidenplus">Leiden+</term> editing interface.</item>
+        <label xml:id="pe-fi">Papyrologinen editori (PE)</label>
+        <item><ref target="http://papyri.info/">Papyri.info</ref> -alustan työkalu tekstien editointia ja hallintaa sekä 
+            toimitustyön eri vaiheiden hallintaa varten. PE on yhteisöllinen editointityöskentelyn väline ja sitä kautta kenen tahansa 
+            on mahdollista osallistua tekstien tallentamiseen dokumentaaristen papyrusten tietokantaan samoin kuin siellä jo olevien 
+            editioiden parantamiseen. Papyrologisessa editorissa käytetään tagitonta <term target="#leidenplus-fi">Leiden+</term> editointiliittymää.</item>
         
         <label xml:id="perseus-fi">Perseus</label>
-        <item><ref target="http://www.perseus.tufts.edu">The Perseus Digital Library Project</ref>
-            studies the progression from physical to digital libraries and offers an increasing
-            number of texts. Searches and a number of tools can be used directly on the website while
-            reading, e.g. the <term target="#morpheus">Morpheus</term> dictionary tool for Greek and Latin
-            texts.</item>
+        <item><ref target="http://www.perseus.tufts.edu">Perseus Digital Library -projekti</ref> tutkii kirjaston kehityskulkua 
+            materiaalisesta digitaaliseen muotoon ja tarjoaa luettavaksi jatkuvasti kasvavan kokoelman tekstejä. 
+            Sivustolla voi paitsi lukea myös tehdä erilaisia hakuja ja käyttää myös joitakin muita sen sisältämiä työkaluja kuten 
+            esim. <term target="#morpheus-fi">Morpheuksen</term> sanakirjatyökalua kreikan- ja latinankielisiin teksteihin.
+           </item>
         
         <label xml:id="pleiades-fi">Pleiades</label>
-        <item>A gazetteer of places and place names from the ancient world, building on the project that produced
-            the Barrington Atlas of the Greek and Roman World. Pleiades assigns unique identifiers to all places,
-            enabling a web of Linked Data such as that curated by the
-            <ref target="http://pelagios-project.blogspot.com/">Pelagios project</ref>. Pleiades can be found at
+        <item>Vanhan ja keskiajan maailman paikkojen ja paikannimien hakemisto, joka perustuu teoksen 
+            the Barrington Atlas of the Greek and Roman World tuottaneeseen projektiin. Pleiades antaa kaikille paikoille yksilölliset 
+            tunnisteet ja luo sitä kautta edellytyksiä sellaisen toisiinsa linkitetyn tiedon verkoston rakentumiseen, jollaista 
+            mm. <ref target="http://pelagios-project.blogspot.com/">Pelagios-projekti</ref> organisoi ja kehittää. Pleiades löytyy osoitteesta
             <ref target="http://pleiades.stoa.org/">pleiades.stoa.org</ref>.</item>
 
         <label xml:id="TEI-fi">TEI</label>
-        <item>Text Encoding Initiative. Guidelines and tools for the encoding of literary and
-            historical texts in <term target="#xml">XML</term>. It is the format on which EpiDoc is
-            based. The latest TEI Guidelines can be found online at <ref
-                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html"
+        <item>Lyhennys sanoista Text Encoding Initiative. Ohjeisto ja työkalut kirjallisten ja historiallisten tekstien koodaamiseen <term target="#xml-fi">XML</term>-kielellä. 
+            EpiDoc perustuu tähän formaattiin. Viimeisin TEI ohjeisto löytyy verkosta <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html"
                 >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html</ref>.</item>
 
         <label xml:id="w3c-fi">World Wide Web Consortium</label>
-        <item>The World Wide Web Consortium (W3C) is an international community developing standards
-            to be used across the Internet. The public can take part, but there is also full-time
-            staff and entire organizations that are members of the endeavour. For further
-            information, see: <ref target="http://www.w3.org/">www.w3.org</ref>.</item>
+        <item>World Wide Web konsortio (W3C) on kansainvälinen yhteisö, joka kehittää standardeja käytettäväksi eri puolilla internetiä. 
+            Kuka tahansa voi osallistua kehitystyöhön, mutta hankkeessa työskentelee myös palkattuja työntekijöitä ja sen jäsenistöön 
+            kuuluu kokonaisia organisaatioitakin. Lisätietoja, ks. <ref target="http://www.w3.org/">www.w3.org</ref>.</item>
 
         <label xml:id="xml-fi">XML</label>
-        <item>Extensible Markup Language. A text-based encoding format that allows the structured
-            encoding of text or data in human- and machine-readable format. It is the technical basis
-            of both <term target="#TEI">TEI</term> and EpiDoc, and is a standard maintained by the
-            World-wide Web Consortium. See <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>
-            for the spec and further description.</item>
+        <item>Lyhennys sanoista Extensible Markup Language. Tekstimuotoinen rakenteellinen kuvauskieli, jolla voi koodata tekstiä 
+            tai tietoa ihmisen ja koneen luettavissa olevaan muotoon. Sekä <term target="#TEI-fi">TEI</term> että EpiDoc perustuvat tähän teknologiaan. 
+            XML on standardi, jota ylläpitää World Wide Web Consortium. Tarkempi kuvaus ja lisätiedot, ks. <ref target="http://www.w3.org/XML/">www.w3.org/XML</ref>.</item>
 
         <label xml:id="xslt-fi">XSLT</label>
-        <item>Extensible Stylesheet Language Transformations. XSLT is a language that can convert
-                <term target="#xml">XML</term> documents into either different XML or other forms, e.g.
-            the HTML format used for websites, the import format for a database, or the Open Document Format
-            behind a word-processing document. The <term target="#epidoc-stylesheets">EpiDoc Stylesheets</term>
-            are an example of XSLT used to transform EpiDoc XML to common display formats.
-            A useful introduction to XSLT is offered by <ref
-                target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref>.</item>
+        <item>Lyhennys sanoista Extensible Stylesheet Language Transformations. XSLT on merkintäkieli, jolla voi muuntaa 
+            <term target="#xml-fi">XML</term>-tiedostoja joko toisenlaiseen XML-merkintäkieleen tai johonkin muuhun muotoon kuten 
+            esim. HTML-formaattiin, jota käytetään verkkosivujen koodaamisessa, tai johonkin tuontiformaattiin tietokantaa rakennettaessa 
+            tai Open Document formaattiin, jota käytetään tekstinkäsittelyohjelmissa. <term target="#epidoc-stylesheets-fi">EpiDoc-tyyliarkit</term> 
+            ovat esimerkki XSLT:stä, jolla muunnetaan EpiDoc XML -tiedostot yleisiin esitysformaatteihin. 
+            Hyödyllinen johdatus XSLT-merkintäkieleen löytyy <ref target="http://www.w3schools.com/xsl/xsl_intro.asp">W3 Schools</ref> sivustolta.</item>
     </list>
 
     <div xml:id="app-glossary-fi-responsibility">
-        <head>Responsibility for this section</head>
+        <head>Vastuussa tästä osiosta</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Laura Löser</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>kirjoittaja</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>kirjoittaja</resp><name>Laura Löser</name></respStmt></bibl>
+            <bibl><respStmt><resp>kirjoittaja</resp><name>Tom Elliott</name></respStmt></bibl>
             <bibl><respStmt><resp>suomentaja</resp><name>Katariina Kankaanpää</name></respStmt></bibl>
             <bibl><respStmt><resp>suomentaja</resp><name>Marja Vierros</name></respStmt></bibl>
         </listBibl>
