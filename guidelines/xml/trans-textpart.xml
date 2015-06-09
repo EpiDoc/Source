@@ -56,7 +56,14 @@ End license statement: do not remove -->
     <p>Where a unit within a single, continuous text need to be marked (for example, multiple blocks
         in a long relief text) the <gi>milestone</gi> element should be used instead to mark the
         point at which a break in the support occurs.</p>
-
+    
+    <p>Where two distinct texts appear on one support (e.g. two distinct inscriptions on one stone),
+        they can either be encoded in one single EpiDoc file or in two separate files. This is an editorial decision and EpiDoc
+        does not dictate the use of one method over the other. If encoding the two texts in a single file,
+    two separate <gi>div</gi>s with <att>type</att> of "textpart" should be used within the edition division.
+        Each translation, commentary, bibliography etc. should also be divided into two textparts in order to record information
+        separately about each text. If encoding the texts in two separate files, a link can be provided (or at the least a mention can be made)
+        in the commentary directing the reader to the other text that appears on the same support.</p>
 
     <cit>
         <quote>Section A</quote>

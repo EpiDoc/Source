@@ -33,7 +33,20 @@
         transcription and editorial representation of the texts themselves are grouped together in a separate index
         entitled <ref target="./app-alltrans.html">List of All Transcription Guidelines</ref>.</p>
     <div>
-        <head>Basic XML File Structure</head>
+        <head>Basic EpiDoc XML File Structure</head>
+        <p>The main divisions in the body of an EpiDoc file are:</p>
+        <list>
+            <item>Edition
+                <list>
+                    <item>Textpart</item>
+                </list>
+            </item>
+            <item>Translation</item>
+            <item>Apparatus</item>
+            <item>Commentary</item>
+            <item>Bibliography</item>
+        </list>
+        <p>For further detail on each of these divisions, see:</p>
         <p><ref target="supp-structure.html">Structure of an EpiDoc edition</ref>:</p>
             <list><item>one of the most useful pages in
             these <title>Guidelines</title>. It documents the basic layout of a typical EpiDoc file, going beyond the
@@ -96,6 +109,7 @@
             <bibl><respStmt><resp>Author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>Author</resp><name>Simona Stoyanova</name></respStmt></bibl>
             <bibl><respStmt><resp>Author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>Author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

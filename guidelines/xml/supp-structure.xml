@@ -55,10 +55,57 @@ End license statement: do not remove -->
         <xi:include href="ex-epidoctemplate.xml"/>
     </egXML>
     
+    <div>
+        <head>Edition</head>
+        <p><gi>div</gi> with <att>type</att> of "edition".
+            The edition division contains the epigraphic, papyrological (etc.) text itself as well as editorial interventions
+            (i.e. representations in EpiDoc of the Leiden sigla) that are to be applied to the text.
+            Leiden equivalence is a minimum requirement; further detail on editorial interventions can be included as required.
+            <att>xml:lang</att> is a required attribute, unless textparts have individual languages (see immediately below).</p>
+        <p>The edition division can be divided using <gi>div</gi> elements with an <att>type</att> of "textpart", which is a constrained value.
+            If textparts have individual languages, <att>xml:lang</att> should be added to each textpart.
+            An edition may have any number of textparts, which can be further subdivided using <att>subtype</att> with unconstrained values
+            (e.g. "fragment", "column" or whatever description is relevant to that particular text).
+            For detailed discussion and examples see <ref target="app-alltrans.html">List Of All Transcription Guidelines</ref>.</p>
+    </div>
+    
+    <div>
+        <head>Translation</head>
+        <p><gi>div</gi> with <att>type</att> of "translation".
+            The translation division follows the same rules as for the edition, but will usually contains much less markup, and is likely to have a simpler structure.
+        The language of the translation division can be encoded using <att>lang</att> (with two- or three- letter language codes e.g. "de", "fr", "en").
+        The source or responsibility for the translation can be encoded using <att>source</att> or <att>resp</att>.
+        The translation division can be given a <att>subtype</att> (unconstrained) to describe it further, e.g. "literal", "literary", "pedagogical" etc.
+            For detailed discussion and examples see <ref target="supp-translation.html">Translation</ref></p>
+    </div>
+    
+    <div>
+        <head>Apparatus</head>
+        <p><gi>div</gi> with <att>type</att> of "apparatus".
+        The TEI apparatus module is designed for Lachmannian <hi rend="italic">apparatus criticus</hi>, which allows for multiple witnesses to a text.
+        The epigraphic <hi rend="italic">apparatus criticus</hi> is likely to include comments on letterforms; supplements; interpretations; and the readings of previous editors.
+            For detailed discussion and examples see <ref target="supp-apparatus.html">Apparatus Criticus</ref>.</p>
+    </div>
+    
+    <div>
+        <head>Commentary</head>
+        <p><gi>div</gi> with <att>type</att> of "commentary".
+        The commentary division will usually be written in prose, and might contain general discussion of the context of the text or the support, further information about dating criteria, external references, comments on specific sections of the text etc.</p>
+    </div>
+    
+    <div>
+        <head>Bibliography</head>
+        <p><gi>div</gi> with <att>type</att> of "bibliography".
+        The bibliography division can contain both free-standing content and links to the master bibliography, using <gi>listBibl</gi> with any number of <gi>bibl</gi> elements.
+        This division can be subdivided further using <att>subtype</att> with unconstrained values that might include e.g. "principal", "derived", "discussion" etc.
+            For detailed discussion and examples see <ref target="supp-bibliography.html">Encoding the Bibliography</ref>.</p>
+    </div>
+    
     <div xml:id="supp-structure-responsibility">    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>Author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>Author</resp><name>Charlotte Tupman</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
