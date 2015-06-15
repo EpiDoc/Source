@@ -46,6 +46,8 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
+                and "metamark retrace" (from transcr)</change>
             <change who="#GB" when="2015-06-03">removing customization of altIdentifier (see 2014-02-10) now fixed in TEI</change>
             <change who="#GB" when="2015-06-03">stopped omitting "charProp localName mapping unicodeName value"
                 from gaiji (requested by IOSPE)</change>
@@ -122,13 +124,13 @@ End license statement: do not remove -->
                 <moduleRef key="header" except="appInfo"/>
                 <moduleRef key="textstructure" except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
                     opener postscript salute signed titlePage titlePart trailer"/>
-                <moduleRef key="transcr" except="damageSpan metamark restore retrace"/>
+                <moduleRef key="transcr" except="damageSpan restore"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
                 <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
                 <moduleRef key="gaiji" except="char charName unicodeName"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
-                <moduleRef key="msdescription" except="accMat additions catchwords heraldry secFol signatures stamp watermark"/>
+                <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
                 <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
