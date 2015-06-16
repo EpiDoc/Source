@@ -2,18 +2,22 @@ RELEASE NOTES
 =============
 
 
-Latest version - 8.21 - Announced to MARKUP 2015-06-??
+Latest version - 8.21 - Announced to MARKUP 2015-06-18
 ------------------------------------------------------
 
     * Release technician: Gabriel Bodard
-    * XSLT: fixed bugs in 
-    * Schema: omitted elements accMat additions catchwords heraldry secFol signatures stamp watermark (from msdescription), appInfo (from header), and metamark retrace (from transcr)
+    * XSLT: fixed bugs in diplomatic rendering of edition (for IOSPE)
+    * XSLT: fixed issues with Leiden display, e.g. underlining
+    * XSLT: fixed issues with handling of EpiDoc structure (for training workshops)
+    * XSLT: implemented handing tei:g/@ref instead of @type (IOSPE style only, so far)
+    * Schema: omitted element appInfo (from header)
     * Schema: aligned with TEI version 2.8.0
     * Schema: tei:bibl/@type no longer valid (inherited from TEI)
+    * Schema: tei:m may contain tei:hi (pre-empting agreed TEI change)
     * Guidelines: added Finnish translation of general introduction for epigraphers (thanks to Marja Vierros and Kateriina Kankaan)
-    * Guidelines: 
-    * Guidelines: 
-    * Guidelines: 
+    * Guidelines: added guidance for use of @type on tei:date with @dur, categorizing durations (requested by RIB and Marmor Parium)
+    * Guidelines: added examples of different ways to handle `<reg> and <orig>` (requested by Laura Löser)
+    * Guidelines: added guidance on encoding multiple texts on one support, and summary of EpiDoc division structure (training material --> formal guidelines)
 
 Previous versions
 -----------------
