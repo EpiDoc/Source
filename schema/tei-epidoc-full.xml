@@ -46,6 +46,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2015-06-16">added temporary customization of tei:m to allow model.hiLike content</change>
             <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
                 and "metamark retrace" (from transcr)</change>
             <change who="#GB" when="2015-06-03">removing customization of altIdentifier (see 2014-02-10) now fixed in TEI</change>
@@ -361,6 +362,24 @@ End license statement: do not remove -->
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- adding temporary customization of <m> (2015-06-16), to be removed once TEI have implemented this -->
+                <elementSpec ident="m" module="analysis" mode="change">
+                    <content>
+                        <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                            <choice>
+                                <text/>
+                                <ref name="model.gLike"/>
+                                <ref name="model.hiLike"/>
+                                <ref name="seg"/>
+                                <ref name="m"/>
+                                <ref name="c"/>
+                                <ref name="model.global"/>
+                            </choice>
+                        </zeroOrMore>
+                    </content>
+                </elementSpec>
+                
                 
                 <!-- suggested attribute values for origDate/@evidence -->
                 <elementSpec ident="origDate" module="msdescription" mode="change">
