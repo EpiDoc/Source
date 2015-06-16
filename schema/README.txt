@@ -38,9 +38,9 @@ How to use it:
      1.  To validate your EpiDoc files in an editor:
                If using Oxygen or similar editor to edit XML files, processing instructions such as:
 
-               <?xml-model href="http://www.stoa.org/epidoc/schema/8.20/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.21/tei-epidoc.rng"
                          schematypens="http://relaxng.org/ns/structure/1.0"?>
-               <?xml-model href="http://www.stoa.org/epidoc/schema/8.20/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/8.21/tei-epidoc.rng"
                          schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
                at the top of the XML file (above the <TEI> element but below the <?xml?>

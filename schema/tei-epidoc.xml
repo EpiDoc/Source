@@ -12,13 +12,13 @@
                 <moduleRef key="header" except="appInfo"/>
                 <moduleRef key="textstructure" except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
                     opener postscript salute signed titlePage titlePart trailer"/>
-                <moduleRef key="transcr" except="damageSpan metamark restore retrace"/>
+                <moduleRef key="transcr" except="damageSpan restore"/>
                 <moduleRef key="verse" except="caesura metDecl metSym rhyme"/>
                 <moduleRef key="analysis" except="cl span spanGrp"/>
                 <moduleRef key="certainty" except="respons"/>
                 <moduleRef key="gaiji" except="char charName unicodeName"/>
                 <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
-                <moduleRef key="msdescription" except="accMat additions catchwords heraldry secFol signatures stamp watermark"/>
+                <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates" except="affiliation age climate education faith geoFeat langKnowledge
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
                 <moduleRef key="textcrit" except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
@@ -249,6 +249,24 @@
                         </attDef>
                     </attList>
                 </elementSpec>
+                
+                <!-- adding temporary customization of <m> (2015-06-16), to be removed once TEI have implemented this -->
+                <elementSpec ident="m" module="analysis" mode="change">
+                    <content>
+                        <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                            <choice>
+                                <text/>
+                                <ref name="model.gLike"/>
+                                <ref name="model.hiLike"/>
+                                <ref name="seg"/>
+                                <ref name="m"/>
+                                <ref name="c"/>
+                                <ref name="model.global"/>
+                            </choice>
+                        </zeroOrMore>
+                    </content>
+                </elementSpec>
+                
                 
                 <!-- suggested attribute values for origDate/@evidence -->
                 <elementSpec ident="origDate" module="msdescription" mode="change">
