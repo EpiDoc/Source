@@ -27,7 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-datesage" xml:lang="en">
     <head>Dates, dating formulae, ages</head>
-    <p>gloss</p>
+    <p>Recording expressions of dates and durations in the transcribed text.</p>
     <p>
         <specList>
             <specDesc key="date"/>
@@ -36,13 +36,15 @@ End license statement: do not remove -->
         </specList>
     </p>
      
-    <p>month names</p>
+    <p>Names of months, days of the week, or various other periods of time in the text, may be tagged
+    as a reference string (<gi>rs</gi>) for purposes of indexing or other processing, as in the example below:</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         ἔτι καὶ μηνεὶ <rs type="month" nymRef="months.xml#Ξανθικός">Ξανθικῷ</rs>
     </egXML>
     
-    <p>mentioned date</p>
+    <p>Explicit dates that appear in the text (whether or not they can be parsed into Julian years)
+    may also be tagged using the <gi>date</gi> element.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         ἐτελεύτισεν <date>μινὶ Παυνὶ ἑβδόμι</date>
@@ -106,6 +108,13 @@ End license statement: do not remove -->
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://romaninscriptionsofbritain.org/inscriptions/960">
                         v(ixit) <date type="life-span" dur="P20Y">an(nos) <num atLeast="20">XX</num></date>
                 </egXML>
+            </item>
+            <label>Office span</label>
+            <item>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    βασιεύοντος Ἀθηνῶν Αἰσχύλου, <date type="office-span" dur="P21Y">ἔτους εἰκοστοῦ καὶ ἑνός</date>
+                </egXML>
+                <note>Digital Marmor Parium</note>
             </item>
             <label>Military service span</label>
             <item>
