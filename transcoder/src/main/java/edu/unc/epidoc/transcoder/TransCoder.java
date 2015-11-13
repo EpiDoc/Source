@@ -13,6 +13,7 @@ import edu.unc.epidoc.transcoder.xml.sax.Serializer;
 
 import java.io.*;
 import java.util.*;
+import java.util.zip.*;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -287,10 +288,15 @@ public class TransCoder {
   }
 
   public void writewordXML(File source, OutputStream out) throws Exception {
+    //unpack docx file
+    File zip = Zipper.unzip(source);
+    source = new File(zip.getAbsolutePath() + File.separator + "word" + File.separator + "document.xml");
+    File result = new File(source.getAbsolutePath() + ".tmp");
+    FileOutputStream fo = new FileOutputStream(result);
     TranscodingWordContentHandler handler = new TranscodingWordContentHandler();
     Serializer serializer = new Serializer();
     serializer.setStandalone(true);
-    serializer.setOutput(out, "UTF-8");
+    serializer.setOutput(fo, "UTF-8");
     XMLReader reader = XMLReaderFactory.createXMLReader();
     reader.setContentHandler(handler);
     reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
@@ -300,6 +306,11 @@ public class TransCoder {
     InputSource is = new InputSource(new java.io.FileInputStream(source));
     is.setSystemId(source.getAbsoluteFile().getParentFile().getAbsolutePath() + "/");
     reader.parse(is);
+    //clean up and re-zip to docx
+    source.delete();
+    result.renameTo(source);
+    Zipper.zip(zip, out);
+    Zipper.deleteAll(zip);
   }
 
   /** Get the result <CODE>String</CODE> from the input <CODE>String</CODE>.
@@ -379,14 +390,14 @@ public class TransCoder {
             System.out.println("-se  The source encoding (default BetaCode).");
             System.out.println("-oe  The output encoding (default UnicodeC).");
             System.out.println("-x   Use XML mode.  Treat the source and result files as XML.  Not needed if the files have a .xml suffix.");
-            System.out.println("-w   Use Word XML mode.  Treat the source and result files as word XML. Transcode only paragraphs formatted in the appropriate font");
+            System.out.println("-w   Use Word XML mode.  Treat the source and result files as word XML (.docx files only!). Transcode only text formatted in the appropriate font");
             System.out.println("-t   Use text mode. Treat all files as plain text, regardless of their extension.");
             System.out.println("-f   A filter to be used in determining what files to process, e.g. 'xml' for files ending with '.xml'.");
             System.out.println("-r   Recursively process the input folder.  '-o' is ignored if this flag is used.");
             System.out.println("-v   Verbose output.");
             System.out.println();
             System.out.println("Valid encodings are: BetaCode, PerseusBetaCode (Beta Code using lowercase ASCII), Unicode (input only) "
-                    + "UnicodeC (output only), UnicodeD (output only), GreekKeys, SGreek, SPIonic, GreekXLit (output only).");
+                    + "UnicodeC (output only), UnicodeD (output only), GreekKeys (input ony; Word .docx files only), SGreek, SPIonic, GreekXLit (output only).");
             System.exit(0);
           }
         }
@@ -458,6 +469,7 @@ public class TransCoder {
         try {
           FileOutputStream fos = null;
           File tmp = null;
+          
           if (source.equals(result)) {
             tmp = File.createTempFile("trc", "tmp");
             fos = new FileOutputStream(tmp);
@@ -518,5 +530,96 @@ public class TransCoder {
       files = tmpFiles;
     }
     return files;
+  }
+  
+  private static class Zipper {
+
+    static final int BUFFER = 2048;
+
+    static File unzip(File z) {
+      File tmpDir = null;
+      try {
+        tmpDir = new File(z.getParent() + File.separator + z.getName() + ".tmp");
+        if (tmpDir.exists()) {
+          deleteAll(tmpDir);
+        }
+        tmpDir.mkdir();
+        BufferedOutputStream dest = null;
+        FileInputStream fis = new FileInputStream(z);
+        ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
+        ZipEntry entry;
+        while ((entry = zis.getNextEntry()) != null) {
+          int count;
+          byte data[] = new byte[BUFFER];
+          File out = new File(tmpDir.getAbsolutePath() + File.separator + entry.getName());
+          out.getParentFile().mkdirs();
+          FileOutputStream fos = new FileOutputStream(out);
+          dest = new BufferedOutputStream(fos, BUFFER);
+          while ((count = zis.read(data, 0, BUFFER))
+                  != -1) {
+            dest.write(data, 0, count);
+          }
+          dest.flush();
+          dest.close();
+        }
+        zis.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      return tmpDir;
+    }
+    
+    static void zip (File tmpDir, OutputStream dest) {
+      try {
+         BufferedInputStream origin = null;
+         ZipOutputStream out = new ZipOutputStream(new 
+           BufferedOutputStream(dest));
+         //out.setMethod(ZipOutputStream.DEFLATED);
+         byte data[] = new byte[BUFFER];
+         // get a list of files from current directory
+         List<File> files = listAll(tmpDir);
+
+         for (File f : files) {
+            FileInputStream fi = new 
+              FileInputStream(f);
+            origin = new 
+              BufferedInputStream(fi, BUFFER);
+            ZipEntry entry = new ZipEntry(f.getAbsolutePath().substring(tmpDir.getAbsolutePath().length() + 1));
+            out.putNextEntry(entry);
+            int count;
+            while((count = origin.read(data, 0, 
+              BUFFER)) != -1) {
+               out.write(data, 0, count);
+            }
+            origin.close();
+         }
+         out.close();
+      } catch(Exception e) {
+         e.printStackTrace();
+      }
+   }
+    
+    static void deleteAll(File dir) {
+      for (File f : dir.listFiles()) {
+        if (f.isDirectory()) {
+          deleteAll(f);
+        } else {
+          f.delete();
+        }
+      }
+      dir.delete();
+    }
+    
+    static List<File> listAll(File dir) {
+      List<File> files = new ArrayList<File>();
+      for (File f : dir.listFiles()) {
+        if (f.isDirectory()) {
+          files.addAll(listAll(f));
+        } else {
+          files.add(f);
+        }
+      }
+      return files;
+    }
   }
 }

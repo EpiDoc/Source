@@ -142,7 +142,7 @@ public class TranscodingWordContentHandler implements ContentHandler, LexicalHan
 
       if(tc.getParser().supportsFont(font)) {
 
-        // get the appropriate forn to convert to
+        // get the appropriate font to convert to
         String conv_font = tc.getConverter().getDefaultFont();
 
         log("Conversion font " + conv_font);

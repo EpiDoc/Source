@@ -18,7 +18,7 @@ public class GreekKeysParser extends AbstractGreekParser {
     
     /** Creates new GreekKeysParser */
     public GreekKeysParser() {
-        encoding = "ISO8859_1";
+        encoding = "UTF8";
         gkp = new Properties();
         ga = new Properties();
         try {
@@ -45,7 +45,7 @@ public class GreekKeysParser extends AbstractGreekParser {
             if (!isPrefixDiacritical(chArray[index])) 
                 strb.append(lookup(chArray[index]));
             index++;
-            if (chArray[index - 1] == '\u0073' || chArray[index - 1] == '\u0077') {
+            if (chArray[index - 1] == '\uF073' || chArray[index - 1] == '\uF077') {
                 if(!hasNext() || !Character.isLetter(chArray[index]))
                     strb.append("Fixed");
             } else {
@@ -75,18 +75,22 @@ public class GreekKeysParser extends AbstractGreekParser {
     
     private String lookup(char ch) {
         String key = String.valueOf(ch);
-        return gkp.getProperty(key, key);
+        String result = gkp.getProperty(key, key);
+        if (key.equals(result) && Character.UnicodeBlock.of(ch) == Character.UnicodeBlock.PRIVATE_USE_AREA) {
+          return Character.toString((char)((int)ch - 61440));
+        } else {
+          return result;
+        }
     }
     
     private String lookupAccent(char ch) {
-        String key = String.valueOf(ch);
         return ga.getProperty(lookup(ch));
     }
     
     private boolean isPostCombiningDiacritical(char ch) {
         switch (ch) {
-            case '\u0060':
-            case '\u002B':
+            case '\uF060':
+            case '\uF02B':
                 return true;
             default:
                 return false;
@@ -96,17 +100,17 @@ public class GreekKeysParser extends AbstractGreekParser {
     /* true with diacriticals used in combination with capitals */
     private boolean isPrefixDiacritical(char ch) {
         switch (ch) {
-            case '\u0080':
-            case '\u0081':
-            case '\u0082':
-            case '\u0083':
-            case '\u0084':
-            case '\u0085':
-            case '\u0086':
-            case '\u0087':
-            case '\u0088':
-            case '\u0089':
-            case '\u008A':
+            case '\uF080':
+            case '\uF081':
+            case '\uF082':
+            case '\uF083':
+            case '\uF084':
+            case '\uF085':
+            case '\uF086':
+            case '\uF087':
+            case '\uF088':
+            case '\uF089':
+            case '\uF08A':
                 return true;
             default:
                 return false;
