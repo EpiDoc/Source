@@ -30,8 +30,8 @@ End license statement: do not remove -->
     <p>This section of the EpiDoc Guidelines provides direction for encoding the date of origin of
         the text (or in some cases, of the object or some other feature, decoration, or reuse of
         it), whether the result of the editor's analysis or an explicit, internal date. Guidance is
-        also provided on recording possible ranges of dates, degrees of precision and dating
-        criteria.</p>
+        also provided on recording possible ranges of dates, named historical periods,
+        degrees of precision and dating criteria.</p>
     <div rend="tag-defs">
         <head>Relevant element documentation (TEI):</head>
         <p>
@@ -43,67 +43,66 @@ End license statement: do not remove -->
     </div>
 
     <div>
-
-
-
-
-        <p> The date of orgin of the text (or object, if different) should be recorded in an
-                <gi>origDate</gi> element in the <gi>origin</gi> section of the manuscript
-            description area (see <ref target="supp-history.html">the general section on
-                provenance</ref> for context). If different dates need to be recorded for text and
-            object, different texts on the same support, or different interventions in the same
-            text, the <gi>origDate</gi> may be repeated, or the entire <gi>history</gi> may be
-            embedded in multiple <gi>msPart</gi>s. </p>
-
-        <p> It is generally recommended to encode the dating information in numerical form,
-            following the proleptic Julian calendar, using the att.datable.custom attributes on the
-                <gi>origDate</gi> element. These "custom" date attributes are required because the
-            default dating system assumed by the basic TEI date attributes (att.datable) is the
-            Gregorian calendar. Moreover, therefore, the dating element should always carry a
-                <att>datingMethod</att> attribute pointing to a <gi>calendar</gi> element in the
-            header--or to an external authority for the Julian calendar, such as
-            http://en.wikipedia.org/wiki/Julian_calendar.</p>
-
-        <p> A specific date, whether a single day, month, or year in the Julian calendar, can be
-            expressed using the <att>when-custom</att> attribute, which should be laid out in the
-            same form as an <ref target="http://www.w3.org/TR/NOTE-datetime">ISO 8601/W3C date</ref>
-            (albeit in the Julian, not Gregorian calendar). In other words: <list type="ordered">
-                <item>A year should be encoded in four digits, with leading zeroes as necessary
-                    (i.e. 14 C.E. should be "0014")</item>
-                <item>B.C.E./B.C. dates should be recorded as negative numbers (i.e. preceded by
-                    "-"); NB there is no year "0"</item>
-                <item>Month and day should be encoded in two digits, with leading zero as necessary
-                    (i.e. January 7th should be "--01-07")</item>
-                <item>A year may appear without months or day; a year+month may appear without
-                    day</item>
-            </list>
-        </p>
-
-        <p> A date within a range (such as an event occurring within the reign of an emperor, e.g.,
-            the raising of a milestone, or a century for, e.g., palaeographically dated text) should
-            be encoded using the <att>notBefore-custom</att> and <att>notAfter-custom</att>
-            attributes, marking the beginning and end of the possible span of dates. The date
-            formats of these attributes are the same as for <att>when-custom</att>. </p>
-
-        <p>This example encodes a simple Julian date:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate when-custom="0139" datingMethod="#julian">139 C.E.</origDate>
-        </egXML>
-        <p>This example encodes a date occurring within a range, again in Julian calendar:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10"
-                datingMethod="#julian">December 11th, 20 to December 10th, 19 B.C.E.</origDate>
-        </egXML>
-        <p>This example uses the custom dating attributes on the <gi>origDate</gi> element to
-            express a date in the Julian calendar that is derived from a date recorded on an
-            inscription in the <ref target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka
-                era</ref>. (The <att>calendar</att> attribute records the calendrical system of the
-            date recorded by this element, wheras <att>datingMethod</att> records the system to
-            which the date is normalized in the <att>xx-custom</att> attributes. Normalization would
-            otherwise be assumed to be to the Gregorian calendar.)</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate notBefore-custom="1409" notAfter-custom="1410" datingMethod="http://en.wikipedia.org/wiki/Julian_calendar">The text records a composition 
-               date of <date calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date>(Śaka)</origDate>
-        </egXML>
+            <p> The date of orgin of the text (or object, if different) should be recorded in an
+                    <gi>origDate</gi> element in the <gi>origin</gi> section of the manuscript
+                description area (see <ref target="supp-history.html">the general section on
+                    provenance</ref> for context). If different dates need to be recorded for text and
+                object, different texts on the same support, or different interventions in the same
+                text, the <gi>origDate</gi> may be repeated, or the entire <gi>history</gi> may be
+                embedded in multiple <gi>msPart</gi>s. </p>
+    
+            <p> It is generally recommended to encode the dating information in numerical form,
+                following the proleptic Julian calendar, using the att.datable.custom attributes on the
+                    <gi>origDate</gi> element. These "custom" date attributes are required because the
+                default dating system assumed by the basic TEI date attributes (att.datable) is the
+                Gregorian calendar. Moreover, therefore, the dating element should always carry a
+                    <att>datingMethod</att> attribute pointing to a <gi>calendar</gi> element in the
+                header--or to an external authority for the Julian calendar, such as
+                http://en.wikipedia.org/wiki/Julian_calendar.</p>
+    
+            <p> A specific date, whether a single day, month, or year in the Julian calendar, can be
+                expressed using the <att>when-custom</att> attribute, which should be laid out in the
+                same form as an <ref target="http://www.w3.org/TR/NOTE-datetime">ISO 8601/W3C date</ref>
+                (albeit in the Julian, not Gregorian calendar). In other words: <list type="ordered">
+                    <item>A year should be encoded in four digits, with leading zeroes as necessary
+                        (i.e. 14 C.E. should be "0014")</item>
+                    <item>B.C.E./B.C. dates should be recorded as negative numbers (i.e. preceded by
+                        "-"); NB there is no year "0"</item>
+                    <item>Month and day should be encoded in two digits, with leading zero as necessary
+                        (i.e. January 7th should be "--01-07")</item>
+                    <item>A year may appear without months or day; a year+month may appear without
+                        day</item>
+                </list>
+            </p>
+    
+        <div>
+            <head>Date range</head>
+            <p> A date within a range (such as an event occurring within the reign of an emperor, e.g.,
+                the raising of a milestone, or a century for, e.g., palaeographically dated text) should
+                be encoded using the <att>notBefore-custom</att> and <att>notAfter-custom</att>
+                attributes, marking the beginning and end of the possible span of dates. The date
+                formats of these attributes are the same as for <att>when-custom</att>.</p>
+    
+            <p>This example encodes a simple Julian date:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <origDate when-custom="0139" datingMethod="#julian">139 C.E.</origDate>
+            </egXML>
+            <p>This example encodes a date occurring within a range, again in Julian calendar:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <origDate notBefore-custom="-0020-12-11" notAfter-custom="-0019-12-10"
+                    datingMethod="#julian">December 11th, 20 to December 10th, 19 B.C.E.</origDate>
+            </egXML>
+            <p>This example uses the custom dating attributes on the <gi>origDate</gi> element to
+                express a date in the Julian calendar that is derived from a date recorded on an
+                inscription in the <ref target="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka
+                    era</ref>. (The <att>calendar</att> attribute records the calendrical system of the
+                date recorded by this element, wheras <att>datingMethod</att> records the system to
+                which the date is normalized in the <att>xx-custom</att> attributes. Normalization would
+                otherwise be assumed to be to the Gregorian calendar.)</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><origDate notBefore-custom="1409" notAfter-custom="1410" datingMethod="http://en.wikipedia.org/wiki/Julian_calendar">The text records a composition 
+                   date of <date calendar="http://en.wikipedia.org/wiki/Shalivahana_era">1331</date>(Śaka)</origDate>
+            </egXML>
+        </div>
 
         <div>
             <head>Certainty and precision</head>
@@ -140,13 +139,36 @@ End license statement: do not remove -->
 </origDate>
 </egXML>
             
-            <p>You can align your definitions by aligning to a local or to an external <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p>
+            <p>You can align your definitions by aligning to a local or to an external
+                <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p>
             
+        </div>
+        
+        <div>
+            <head>Named historical periods</head>
+            <p>In some cases, rather than (or as well as) a specific or approximate numerical date range,
+            scholars will date an inscription by a named historical period, such as "Hellenistic," "Imperial,"
+            "Byzantine" or "Early Dynastic." If desired, the historical period may be encoded in the 
+            <gi>origDate</gi> element using the <att>period</att> attribute, pointing to the <term>URI</term>
+            of a vocabulary for historical periods such as <ref target="http://perio.do/">PeriodO</ref>
+            or a Wikidata page. (This period need not correspond precisely to the numerical date range
+            offered, if any.)</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <origDate notBefore="-0332" notAfter="-0200" precision="medium"
+                    period="http://n2t.net/ark:/99152/p0m63njc4hd" evidence="lettering">
+                    Early Hellenistic (lettering)</origDate>
+            </egXML>
+        
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <origDate when="-3000" precision="low"
+                    period="https://www.wikidata.org/wiki/Q187979" evidence="context">
+                    Early Dynastic Period (context)</origDate>
+            </egXML>
         </div>
 
         <div>
             <head>Dating criteria</head>
-            <!-- ... @evidence, suggest typology, example values ... -->
             <p>The criteria for the date given in the <gi>origDate</gi> element may be expressed in
                 the <att>evidence</att> attribute. The contents of this attribute should be thought
                 of as a series of space-delimited tokens rather than a sentence of prose. That is to
@@ -170,18 +192,19 @@ End license statement: do not remove -->
                 many may for example want to sub-divide the term "context" into subcategories such
                 as "archaeological context", "architectural context", "epigraphic context",
                 "historical context".</p>
-            <p>Cf. <ref
+            <p>Cf. <list><item><ref
                     target="https://docs.google.com/spreadsheet/ccc?key=0As1AGmWRrRdUdGNJWm9HdDhsQ0RkRFc4dkQwZGZQRVE"
-                    >EpiDoc dating criteria vocabularies</ref> (Google Spreadsheet)</p>
-
-
+                    >EpiDoc dating criteria vocabularies</ref> (Google Spreadsheet)</item>
+                <item><ref target="http://www.eagle-network.eu/voc/dates.html">EAGLE vocabulary - Dating Criteria</ref> (SKOS)</item>
+            </list></p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium"
                     evidence="lettering nomenclature" datingMethod="#julian">Late fourth century
                     (lettering and nomenclature).</origDate>
             </egXML>
 
-            <p>This example encodes a date certain within a particular consular year:</p>
+            <p>This example encodes a certain date within a particular consular year:</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <origDate when-custom="0152-08-23" precision="high" evidence="consulship"
@@ -196,18 +219,8 @@ End license statement: do not remove -->
     <div xml:id="intro-faq-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
