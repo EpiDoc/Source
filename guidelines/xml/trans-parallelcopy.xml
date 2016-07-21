@@ -38,6 +38,14 @@ End license statement: do not remove -->
         inscription with a more complete version of a decree or imperial letter), this should be indicated with
         a <gi>supplied</gi> element, indicating the parallel source by <att>evidence</att> with a value of
         "parallel".</p>
+    
+    <p>Because <att>reason</att> is a required attribute on <gi>supplied</gi> in EpiDoc
+    (to distinguish between lost, omitted, subaudible etc. supplements in Leiden)
+    in the case of text restored from a parallel copy, where Leiden is typically ambiguous
+    about the current state of preservation, the value of <att>reason</att> = "undefined" is
+    permitted to reflect this ambiguity.
+    </p>
+    
     <p>In most epigraphic/papyrological styles this text will be displayed with underline only (similarly to 
         <ref target="trans-previouseditor.html">Previous Editor</ref>), but in the Duke Databank the text
         may also be enclosed in square brackets to indicate the fact that  the text is now completely lost (as 
@@ -50,7 +58,7 @@ End license statement: do not remove -->
         <bibl corresp="#ddbdp"/>
     </cit>
 
-    <p>The first example demonstrates that, when the reason for the parallel supplementation is "undefined", the
+    <p>The first example demonstrates that, when the <att>reason</att> for the parallel supplementation is "undefined", the
     Duke Databank follows the general pattern.</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london ddbdp" corresp="#panciera">
         <supplied evidence="parallel" reason="undefined">abc</supplied>
