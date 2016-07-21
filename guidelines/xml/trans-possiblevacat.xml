@@ -27,7 +27,8 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-possiblevacat" xml:lang="en">
     <head>Possible Vacat</head>
-    <p><!--gloss--></p>
+    <p>Editor marks space left uninscribed on the support, but expresses doubt as to whether 
+        this is the correct encoding.</p>
     <p><specList>
             <specDesc key="space"/>
             <specDesc key="certainty"/>
@@ -38,9 +39,10 @@ End license statement: do not remove -->
 
     <p>A <gi>space</gi> should be used wherever there is an intentional space left on the
         support: i.e. a space that never contained text (vacat). To express uncertainty as to whether or not
-        a vacat is actually present, a <gi>certainty</gi> element with a <att>match</att>
+        a vacat is actually present (as opposed to text erased or lost, say),
+        a <gi>certainty</gi> element with a <att>match</att>
         corresponding to the parent element (i.e. the <gi>gap</gi> element) should be given a
-        <att>locus</att> with a value of "name".</p>
+        <att>locus</att> with a value of "name" (meaning the <gi>space</gi> element may not be correct).</p>
 
     <cit>
         <quote>(vac.?)</quote>
@@ -58,21 +60,16 @@ End license statement: do not remove -->
     </egXML>
 
    <!-- The only real examples I can find are of <space extent="unknown", and this is under discussion... -->
+    
+    <divGen type="seealso"/>
 
     <div xml:id="trans-possiblevacat-responsibility">
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Scott Vanderbilt</name>
-                    <name/>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

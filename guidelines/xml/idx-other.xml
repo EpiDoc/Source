@@ -29,6 +29,14 @@ End license statement: do not remove -->
     <head>Other/generic authority lists</head>
     <p>Other vocabularies or authority lists not specially catered for by <term target="#TEI">TEI</term>
         person, place, event, etc. elements.</p>
+    <p>
+        <specList>
+            <specDesc key="list"/>
+            <specDesc key="item"/>
+            <specDesc key="term"/>
+            <specDesc key="gloss"/>
+        </specList>
+    </p>
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -66,6 +74,8 @@ End license statement: do not remove -->
         </list>
         <!-- example from IOSPE -->
     </egXML>
+    
+    <divGen type="seealso"/>
     
     <div xml:id="idx-other-responsibility">
     <head>Responsibility for this section</head>

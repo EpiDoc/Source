@@ -27,10 +27,23 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-persons" xml:lang="en">
     <head>Indexing and controlling persons and names</head>
+    
+    <p>
+        <specList>
+            <specDesc key="person"/>
+            <specDesc key="listPerson"/>
+            <specDesc key="persName"/>
+            <specDesc key="nym"/>
+            <specDesc key="listNym"/>
+        </specList>
+    </p>
+    
     <p>When person-referencess and/or individual names are tagged in the epigraphic text
         (see under <ref target="idx-persnames.html">Personal names</ref>)
         it may also be useful to maintain an authority of names or persons (onomasticon or prosopography),
         either in TEI or in <ref target="idx-nontei.html">an external database format</ref>.</p>
+    
+    
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -59,6 +72,8 @@ End license statement: do not remove -->
         </listNym>
         <!-- example from IOSPE -->
     </egXML>
+    
+    <divGen type="seealso"/>
     
     <div xml:id="idx-persons-responsibility">
     

@@ -254,7 +254,8 @@
         <xsl:variable name="curpage" select="generate-id(ancestor::tei:div[parent::tei:body])"/>
         <h3>See also:</h3>
         <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
-                <p>Pages citing <xsl:value-of select="@key"/>:</p>
+            <xsl:if test="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
+                <p>Pages citing &lt;<xsl:value-of select="@key"/>&gt;:</p>
                 <ul>
                     <xsl:for-each select="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
                     <li>
@@ -262,8 +263,9 @@
                             <xsl:value-of select="ancestor::tei:div[parent::tei:body]/tei:head[1]"/>
                         </a>
                     </li>
-             </xsl:for-each>
-             </ul>
+                </xsl:for-each>
+            </ul>
+         </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
