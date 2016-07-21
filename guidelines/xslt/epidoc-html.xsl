@@ -63,7 +63,7 @@
                             <xsl:value-of select="number($filename)"/>
                         </xsl:element>
                     </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://inslib.kcl.ac.uk/')">
+                    <xsl:when test="starts-with(@corresp, 'http://inslib.kcl.ac.uk/irt2009/')">
                         <xsl:text>IRT: </xsl:text>
                         <xsl:variable name="filename">
                             <xsl:value-of
@@ -248,6 +248,23 @@
             </xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="tei:divGen[@type='seealso']">
+        <xsl:variable name="curpage" select="generate-id(ancestor::tei:div[parent::tei:body])"/>
+        <h3>See also:</h3>
+        <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
+                <p>Pages citing <xsl:value-of select="@key"/>:</p>
+                <ul>
+                    <xsl:for-each select="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
+                    <li>
+                        <a href="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'.html')}">
+                            <xsl:value-of select="ancestor::tei:div[parent::tei:body]/tei:head[1]"/>
+                        </a>
+                    </li>
+             </xsl:for-each>
+             </ul>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template name="javascriptHook">
