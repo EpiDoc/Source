@@ -252,21 +252,23 @@
     
     <xsl:template match="tei:divGen[@type='seealso']">
         <xsl:variable name="curpage" select="generate-id(ancestor::tei:div[parent::tei:body])"/>
-        <h3>See also:</h3>
-        <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
-            <xsl:if test="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
-                <p>Other pages describing &lt;<xsl:value-of select="@key"/>&gt;:</p>
-                <ul>
-                    <xsl:for-each select="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
-                    <li>
-                        <a href="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'.html')}">
-                            <xsl:value-of select="ancestor::tei:div[parent::tei:body]/tei:head[1]"/>
-                        </a>
-                    </li>
-                </xsl:for-each>
-            </ul>
-         </xsl:if>
-        </xsl:for-each>
+        <div class="seealso">
+            <h3>See also:</h3>
+            <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
+                <xsl:if test="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
+                    <p>Other pages describing &lt;<xsl:value-of select="@key"/>&gt;:</p>
+                    <ul>
+                        <xsl:for-each select="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
+                        <li>
+                            <a href="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'.html')}">
+                                <xsl:value-of select="ancestor::tei:div[parent::tei:body]/tei:head[1]"/>
+                            </a>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+             </xsl:if>
+            </xsl:for-each>
+        </div>
     </xsl:template>
     
     <xsl:template name="javascriptHook">
@@ -301,6 +303,11 @@
     
     
 	<xsl:template match="tei:back"/>
+    
+            <xsl:template name="upLink">
+                <xsl:param name="up"/>
+                <xsl:param name="title"/>
+            </xsl:template>
 	
 	<xsl:template name="previousLink"/>
 	
