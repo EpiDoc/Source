@@ -28,18 +28,23 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-commentary" xml:lang="en">
     <head>Commentary</head>
     <p>gloss</p>
+    <div rend="tag-defs">
+        <head>Relevant element documentation:</head>
+        <p>
+            <specList>
+                <specDesc key="div"/>
+            </specList>
+        </p>
+    </div>
+    
     <!-- can have div's or p's  here. Divs are for subsections. -->
     
-    <div xml:id="intro-faq-responsibility">
+    <divGen type="seeAlso"/>
     
+    <div xml:id="intro-faq-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>xx</name>
-                <name/></respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>xx</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

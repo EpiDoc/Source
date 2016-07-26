@@ -27,7 +27,14 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-history" xml:lang="en">
     <head>Provenance of the text-bearing object</head>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
+    
+        <p>
+            <specList>
+                <specDesc key="history"/>
+                <specDesc key="origin"/>
+                <specDesc key="provenance"/>
+            </specList>
+        </p>
 
     <p>EpiDoc provides for both detail and flexibility in describing what is known or recorded about the origin and
         subsequent history of a text-bearing object. As described in the <ref
@@ -86,28 +93,14 @@ End license statement: do not remove -->
         information is described in the <ref target="supp-histinvno.html">Inventory numbers and repositories</ref>
         section.</p>
     
-
-
-
-
+    <divGen type="seeAlso"/>
 
     <div xml:id="supp-history-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Simona Stoyanova</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt></bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Tom Elliott</name>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
