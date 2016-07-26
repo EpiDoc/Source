@@ -25,20 +25,13 @@
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lostlineknown">
     <head>Lost lines, quantity known</head>
-    
-        
-        <p><specList>
+    <p><specList>
                 <specDesc key="gap"/>
-            </specList>
-            <listRef>
-                <ptr target="a"/>
-            </listRef></p>
+            </specList></p>
         <p>A <gi>gap</gi> indicates a point at which material has been omitted in a transcription,
             whether for editorial reasons described in the TEI header, as part of sampling practice,
             or because the material is illegible, invisible, or inaudible.</p>
     
-   
-       
         <p>Where lines have been lost on the original support and there is nothing to indicate to
             the editor how these should be restored, this is marked up as a lacuna using 
             <gi>gap</gi>. Note that this is usually an empty element, as it marks a point at
@@ -47,16 +40,15 @@
         <p>For a straightforward lacuna whose extent is known, <gi>gap</gi> should take the following
             three attributes:</p>
         <list type="bulleted">
-            <item><att>reason</att> explains why the text has been restored, and for a lacuna is usually given
-                the value "lost" (although other values are possible).</item>
-            <item><att>quantity</att> indicates how many characters or lines have been lost (where
-                known).</item>
+            <item><att>reason</att> explains why the text has been restored, which for a lacuna is 
+                the value "lost".</item>
             <item><att>unit</att> indicates what kind of textual unit has been lost, such as "character" or
                 "line" (or indeed some other type of textual unit such as "column", "page"
                 etc.).</item>
+            <item><att>quantity</att> indicates the number of characters, lines, etc. thought to have been lost.</item>
         </list>
     
-        <div>
+        
             <cit>
             <quote>[------]<lb/> [------]<lb/>[------] </quote>
             <bibl corresp="#panciera">
@@ -67,26 +59,26 @@
             <quote>[3 lines missing]</quote>
             <bibl corresp="#ddbdp"/>
         </cit>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
-            <gap reason="lost" quantity="3" unit="line"/>
-        </egXML>
-        </div>
-    
-        <div>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera ddbdp">
+                <gap reason="lost" quantity="3" unit="line"/>
+            </egXML>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;11;2070">
-            <gap reason="lost" quantity="5" unit="line"/> 
-        </egXML>
-        </div>
+                <gap reason="lost" quantity="5" unit="line"/> 
+            </egXML>
+        
     
     <!-- No IRT examples except for @quantity="1" -->
+
+    <divGen type="seealso"/>
 
     <div xml:id="lostlineknown-responsibility">
         
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt>
-                <respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <!--<bibl><respStmt><resp>contributor</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 
