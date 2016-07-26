@@ -22,59 +22,56 @@
         <xsl:variable name="cur-div-id" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
 
         <xsl:if test="@rend">
-            <p>Transformation using the example EpiDoc P5 stylesheets:</p>
-            <ul>
-                <!--<li><strong>Default style (Panciera):</strong> 
-                    <!-\- get current egXML from panciera view -\->
-                        <xsl:copy-of select="document('../xml/views/panciera/examples.xml')//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]"/>
-                    </li>-->
-
-                <xsl:for-each select="tokenize(@rend, ' ')">
-                    <li>
-                        <strong>
-                            <xsl:choose>
-                                <xsl:when test=". = 'panciera'">
-                                    <xsl:text>Default (Panciera)</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'ddbdp'">
-                                    <xsl:text>Duke Databank</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'dohnicht'">
-                                    <xsl:text>Dohnicht</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". =('edh','edh-web')">
-                                    <xsl:text>EDH</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'petrae'">
-                                    <xsl:text>Petrae</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'iospe'">
-                                    <xsl:text>IOSPE</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'london'">
-                                    <xsl:text>London</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'rib'">
-                                    <xsl:text>RIB</xsl:text>
-                                </xsl:when>
-                                <xsl:when test=". = 'seg'">
-                                    <xsl:text>SEG</xsl:text>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="."/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                          <xsl:text> style:</xsl:text>
-                        </strong>
-                        <xsl:text> </xsl:text>
-                        <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
-                            mode="epidoc-force-html-namespace" />
-                        <!-- <xsl:copy-of
-                            select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"  
-                        /> -->
-                    </li>
-                </xsl:for-each>
-            </ul>
+            <div class="rend">
+                <p>Transformation using the example EpiDoc P5 stylesheets:</p>
+                <ul>
+                    <xsl:for-each select="tokenize(@rend, ' ')">
+                        <li>
+                            <strong>
+                                <xsl:choose>
+                                    <xsl:when test=". = 'panciera'">
+                                        <xsl:text>Default (Panciera)</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'ddbdp'">
+                                        <xsl:text>Duke Databank</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'dohnicht'">
+                                        <xsl:text>Dohnicht</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". =('edh','edh-web')">
+                                        <xsl:text>EDH</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'petrae'">
+                                        <xsl:text>Petrae</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'iospe'">
+                                        <xsl:text>IOSPE</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'london'">
+                                        <xsl:text>London</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'rib'">
+                                        <xsl:text>RIB</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test=". = 'seg'">
+                                        <xsl:text>SEG</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="."/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                              <xsl:text> style:</xsl:text>
+                            </strong>
+                            <xsl:text> </xsl:text>
+                            <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
+                                mode="epidoc-force-html-namespace" />
+                            <!-- <xsl:copy-of
+                                select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"  
+                            /> -->
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </div>
         </xsl:if>
     </xsl:template>
     

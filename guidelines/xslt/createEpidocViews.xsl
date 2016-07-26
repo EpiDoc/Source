@@ -30,9 +30,9 @@
     
     <xsl:template match="tei:egXML">
         <xsl:variable name="num">
-            <xsl:number count="tei:egXML" from="tei:div"></xsl:number>
+            <xsl:number count="tei:egXML" from="tei:div[parent::tei:body]"/>
         </xsl:variable>
-        <egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="{concat(parent::tei:div/@xml:id,'#', $num)}">
+        <egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'#', $num)}">
             <xsl:apply-templates />
         </egXML>
     </xsl:template>

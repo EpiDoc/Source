@@ -29,102 +29,104 @@
 
     <xsl:template name="egXMLEndHook">
         <xsl:call-template name="render-epidoc"/>
-        <xsl:element name="br"/>
+        <!--<xsl:element name="br"/>-->
         <xsl:if test="@corresp">
-            <xsl:text>(</xsl:text>
-            <xsl:element name="span">
-                <xsl:attribute name="class">
-                    <xsl:text>ref</xsl:text>
-                </xsl:attribute>
-                <xsl:choose>
-                    <xsl:when test="starts-with(@corresp, 'http://insaph.kcl.ac.uk/iaph2007/')">
-                        <xsl:text>InsAph: </xsl:text>
-                        <xsl:variable name="filename">
-                            <xsl:value-of
-                                select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/iaph2007/iAph'),'.html')"
-                            />
-                        </xsl:variable>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="number(substring($filename,1,2))"/>
-                            <xsl:text>.</xsl:text>
-                            <xsl:value-of select="number(substring($filename,3,4))"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://insaph.kcl.ac.uk/ala2004/')">
-                        <xsl:text>ALA: </xsl:text>
-                        <xsl:variable name="filename">
-                            <xsl:value-of
-                                select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/ala2004/inscription/eAla'),'.html')"
-                            />
-                        </xsl:variable>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="number($filename)"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://inslib.kcl.ac.uk/irt2009/')">
-                        <xsl:text>IRT: </xsl:text>
-                        <xsl:variable name="filename">
-                            <xsl:value-of
-                                select="substring-before(substring-after(@corresp,'http://inslib.kcl.ac.uk/irt2009/IRT'),'.html')"
-                            />
-                        </xsl:variable>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="number(translate($filename,'abcdefghi',''))"/>
-                            <xsl:value-of select="translate($filename,'0123456789','')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://papyri.info/ddbdp/')">
-                        <xsl:text>DDbDP: </xsl:text>
-                        <xsl:variable name="filename" select="substring-after(@corresp,'http://papyri.info/ddbdp/')"/>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="translate($filename,';','.')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp,'http://epigraphy.packhum.org')">
-                        <xsl:text>PHI: </xsl:text>
-                        <xsl:variable name="filename" select="substring-after(@corresp,'http://epigraphy.packhum.org/inscriptions/oi?ikey=')"/>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="$filename"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp,'http://edh-www.adw.uni-heidelberg.de/edh/inschrift')">
-                        <xsl:text>EDH: </xsl:text>
-                        <xsl:variable name="filename" select="substring-after(@corresp,'http://edh-www.adw.uni-heidelberg.de/edh/inschrift/')"/>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="$filename"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
-                        <xsl:for-each select="//tei:bibl[@xml:id = current()/@corresp]/tei:author">
-                            <xsl:value-of select="."/>
-                            <xsl:if test="following-sibling::tei:author">
-                                <xsl:text>/</xsl:text>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </xsl:when>
-                    <xsl:when test="starts-with(@corresp, 'http://romaninscriptionsofbritain.org/inscriptions/')">
-                        <xsl:text>RIB: </xsl:text>
-                        <xsl:variable name="filename" select="substring-after(@corresp,'http://romaninscriptionsofbritain.org/inscriptions/')"/>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:value-of select="$filename"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href" select="@corresp"/>
-                            <xsl:text>Source</xsl:text>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:element>
-            <xsl:text>)</xsl:text>
+            <div class="rend">
+                 <xsl:text>(</xsl:text>
+                 <xsl:element name="span">
+                     <xsl:attribute name="class">
+                         <xsl:text>ref</xsl:text>
+                     </xsl:attribute>
+                     <xsl:choose>
+                         <xsl:when test="starts-with(@corresp, 'http://insaph.kcl.ac.uk/iaph2007/')">
+                             <xsl:text>InsAph: </xsl:text>
+                             <xsl:variable name="filename">
+                                 <xsl:value-of
+                                     select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/iaph2007/iAph'),'.html')"
+                                 />
+                             </xsl:variable>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="number(substring($filename,1,2))"/>
+                                 <xsl:text>.</xsl:text>
+                                 <xsl:value-of select="number(substring($filename,3,4))"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp, 'http://insaph.kcl.ac.uk/ala2004/')">
+                             <xsl:text>ALA: </xsl:text>
+                             <xsl:variable name="filename">
+                                 <xsl:value-of
+                                     select="substring-before(substring-after(@corresp,'http://insaph.kcl.ac.uk/ala2004/inscription/eAla'),'.html')"
+                                 />
+                             </xsl:variable>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="number($filename)"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp, 'http://inslib.kcl.ac.uk/irt2009/')">
+                             <xsl:text>IRT: </xsl:text>
+                             <xsl:variable name="filename">
+                                 <xsl:value-of
+                                     select="substring-before(substring-after(@corresp,'http://inslib.kcl.ac.uk/irt2009/IRT'),'.html')"
+                                 />
+                             </xsl:variable>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="number(translate($filename,'abcdefghi',''))"/>
+                                 <xsl:value-of select="translate($filename,'0123456789','')"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp, 'http://papyri.info/ddbdp/')">
+                             <xsl:text>DDbDP: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'http://papyri.info/ddbdp/')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="translate($filename,';','.')"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp,'http://epigraphy.packhum.org')">
+                             <xsl:text>PHI: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'http://epigraphy.packhum.org/inscriptions/oi?ikey=')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="$filename"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp,'http://edh-www.adw.uni-heidelberg.de/edh/inschrift')">
+                             <xsl:text>EDH: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'http://edh-www.adw.uni-heidelberg.de/edh/inschrift/')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="$filename"/>
+                             </xsl:element>
+                         </xsl:when>
+                          <xsl:when test="starts-with(@corresp, 'http://romaninscriptionsofbritain.org/inscriptions/')">
+                             <xsl:text>RIB: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'http://romaninscriptionsofbritain.org/inscriptions/')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="$filename"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
+                             <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
+                                 <xsl:value-of select="if(tei:name) then tei:name else ."/>
+                                 <xsl:if test="following-sibling::tei:author">
+                                     <xsl:text>/</xsl:text>
+                                 </xsl:if>
+                             </xsl:for-each>
+                         </xsl:when>
+                        <xsl:otherwise>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:text>Source</xsl:text>
+                             </xsl:element>
+                         </xsl:otherwise>
+                     </xsl:choose>
+                 </xsl:element>
+                 <xsl:text>)</xsl:text>
+            </div>
         </xsl:if>
     </xsl:template>
 
