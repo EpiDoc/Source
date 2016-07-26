@@ -16,7 +16,7 @@
 
     <xsl:template name="render-epidoc">
         <xsl:variable name="cur-num">
-            <xsl:number count="teix:egXML" from="tei:div"/>
+            <xsl:number count="teix:egXML" level="any" from="tei:div[parent::tei:body]"/>
         </xsl:variable>
 
         <xsl:variable name="cur-div-id" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
@@ -65,10 +65,7 @@
                             <xsl:text> </xsl:text>
                             <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"
                                 mode="epidoc-force-html-namespace" />
-                            <!-- <xsl:copy-of
-                                select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"  
-                            /> -->
-                        </li>
+                         </li>
                     </xsl:for-each>
                 </ul>
             </div>
