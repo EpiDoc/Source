@@ -19,7 +19,7 @@
             <xsl:number count="teix:egXML" from="tei:div"/>
         </xsl:variable>
 
-        <xsl:variable name="cur-div-id" select="parent::tei:div/@xml:id"/>
+        <xsl:variable name="cur-div-id" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
 
         <xsl:if test="@rend">
             <p>Transformation using the example EpiDoc P5 stylesheets:</p>
@@ -44,6 +44,12 @@
                                 </xsl:when>
                                 <xsl:when test=". =('edh','edh-web')">
                                     <xsl:text>EDH</xsl:text>
+                                </xsl:when>
+                                <xsl:when test=". = 'petrae'">
+                                    <xsl:text>Petrae</xsl:text>
+                                </xsl:when>
+                                <xsl:when test=". = 'iospe'">
+                                    <xsl:text>IOSPE</xsl:text>
                                 </xsl:when>
                                 <xsl:when test=". = 'london'">
                                     <xsl:text>London</xsl:text>
