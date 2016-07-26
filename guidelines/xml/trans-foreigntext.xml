@@ -22,50 +22,109 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml-p5/xml/introeps.xml 1159 2010-05-14 11:02:59Z paregorios $ -->
+<!-- $Header: https://epidoc.svn.sourceforge.net/svnroot/epidoc/trunk/guidelines/xml/foreigntext.xml 1159 2010-05-14 11:02:59Z gbodard $ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-foreigntext" xml:lang="en">
-    <head>Foreign</head>
-    <p>The <gi>foreign</gi> element identifies a word or phrase as belonging to a language other than that of the surrounding text. <!-- Explain that language codes can be added --></p>
+    <head>Multi-language texts</head>
+    <p>Where isolated foreign words appear in a text otherwise in a single language,
+        or when a text has significant parts in two or more languages (bilinguals, glosses, etc.).</p>
     <p><specList>
+        <specDesc key="ab"/>
+        <specDesc key="div"/>
         <specDesc key="foreign"/>
+        <specDesc key="gloss"/>
+        <specDesc key="seg"/>
+        <specDesc key="term"/>
     </specList>
     </p> 
     
-    <p></p>
-    
-    <cit>
-        <quote><!-- conventional rendering --></quote>
+    <div>
+        <head>1. Foreign words</head>
+        <p>The <gi>foreign</gi> element identifies a word or phrase as belonging to a language
+            other than that of the surrounding text. It is usually useful to apply the attribute
+            <att>xml:lang</att> with a language code (see <ref target="supp-language.html">Languages and Scripts</ref>)
+            to identify the language of the embedded word.</p>
+        <!--<cit>
+            <quote><hi rend="italic">lapis philosophicus</hi></quote>
         <bibl corresp="#panciera">
             <biblScope>...</biblScope>
         </bibl>
-        <bibl corresp="#ddbdp"/>
-        <!-- etc. -->
-    </cit>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+    </cit>                                                                                                                   NOT IN PANCIERA?
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
         <foreign xml:lang="la">lapis philosophicus</foreign>
-    </egXML>
+    </egXML>-->
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT021.html">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT021.html">
         For the lost line 6 Aurigemma, loc. cit., suggests <foreign xml:lang="la">matris castrorum</foreign>
     </egXML>
+    </div>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;4;1094"> 
-        <foreign xml:lang="cop"> <num value="3">γ</num> lin</foreign>
-    </egXML>
+    <div><head>2. Meaningful divisions</head>
+    <p>Where significantly sized and meaningfully divided passages of the text and in different languages,
+    it is advisable to use <tag>div type="textpart"</tag> with an <att>xml:lang</att> on each, perhaps rather than
+    declaring a single default language on the <tag>div type="edition"</tag>.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT481.html">
+            <div type="edition" xml:space="preserve">
+                <div type="textpart" xml:lang="la" n="a">
+                    <ab><lb/>Caecilius Diodorus <gap reason="lost"/>
+                        <lb/>Caesaris delubrum a<gap reason="lost"/></ab>
+                </div>
+                <div type="textpart" xml:lang="grc" n="b">
+                    <ab><lb/>Καικίλιος Διόδωρος ἅμα <gap reason="lost"/>
+                       <lb/>ἐκ τῶν ἰδίων εὔξατο θ<gap reason="lost"/></ab>
+                </div>
+            </div>
+        </egXML>
+        
+    </div>
+    
+    <div><head>3. Arbitrary blocks</head>
+    <p>Where significant, multiline blocks of text are in each of two or more languages, but these blocks
+    are not considered otherwise meaningful or part of the citation scheme of the document, 
+    it is enough to tag each block with an <gi>ab</gi>, to which the <att>xml:lang</att> may be added.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT481.html">
+            <div type="edition" xml:space="preserve">
+                <ab xml:lang="la"><lb/><gap reason="lost"/>dium murum supra<gap reason="lost"/>
+                   <lb/><gap reason="lost"/>tribunicia potestate<gap reason="lost"/></ab>
+                <ab xml:lang="grc"><lb/><gap reason="lost"/>υς μόνος τὸν ναὸν <gap reason="lost"/>
+                   <lb/><gap reason="lost"/>δεων αὐτοκράτορ<gap reason="lost"/></ab>
+            </div>
+        </egXML>
+    </div>
+    
+    <div><head>4. Glosses and dictionaries</head>
+    <p>A text that is made up of words or phrases in one language, and glosses or translations in
+    one or more others, may be tagged with a series of <gi>term</gi> and <gi>gloss</gi> elements,
+    inline, and each bearing the <att>xml:lang</att> specifying the language of the short phrase.
+    Alternatively, if the specific and rich semantics of <gi>term</gi> and <gi>gloss</gi> are to be
+    avoided, <gi>seg</gi> may be used to mark arbitrary spans of text as being in one language
+    or another.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <term xml:id="seq1" xml:lang="san-Brah">mahībhujām·</term>
+            <gloss target="#seq1" xml:lang="pyx">tg'am·ḥ d'iṁ tiṁ pmir·ḥ CV naḥ</gloss>
+            <term xml:id="seq2" xml:lang="san-Brah">°unnata</term>
+            <gloss target="#seq2" xml:lang="pyx">kd'ir·ṁ tra v'a kv'iṁ</gloss>
+            <term xml:id="seq3" xml:lang="san-Brah">porusa</term>
+            <gloss target="#seq3" xml:lang="pyx">°o saṁḥ pir·ṁ tg'a</gloss>
+        </egXML>
+        <p>In this example, from the <title>Corpus of Pyu Inscriptions</title> project, <att>xml:id</att>
+        and <att>corresp</att> attributes are used to link the Pyu <gi>gloss</gi>es with the Sanskrit <gi>term</gi>s
+        of which each is a translation or equivalent.</p>
+    </div>
     
     <divGen type="seealso"/>
     
     <div xml:id="trans-foreigntext-responsibility">
-        
-        <!-- ddbdp example is from milestone 4, line 1  -->
-    
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Arlo Griffiths</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Marc Miyaki</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
