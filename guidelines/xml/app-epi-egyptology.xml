@@ -26,119 +26,334 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-egyptology" xml:lang="en">
-    <head>Appendix: Aligning EpiDoc with Egytology and Coptic</head>
-    
+    <head>Appendix: Aligning EpiDoc with Egyptological philological markup</head>
+
     <table>
         <row>
-            <cell>α(βγ)</cell>
-            <cell>Modern expansion of an abbreviation</cell>
-            <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+            <cell rend="label">Traditional philological markup</cell>
+            <cell rend="label">Phenomenon</cell>
+            <cell rend="label">EpiDoc Guidelines</cell>
         </row>
         <row>
-            <cell>[αβγ]</cell>
-            <cell>Text lost, restored by the editor</cell>
-            <cell><ref target="trans-restored.html">Restored text</ref></cell>
+            <cell cols="3"><hi rend="bold">Line breaks, layout</hi></cell>
         </row>
         <row>
-            <cell>[........]</cell>
-            <cell>Up to 8 characters lost, cannot be restored</cell>
-            <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
+            <cell>jmn.t (2) pw <lb/>jmn.t |² pw</cell>
+            <cell>Line or column(!) with indication of direction (no matter whether the primary
+                writing direction is in lines or in columns)</cell>
+            <cell><ref target="trans-linebreak.html">Line break </ref><lb/> and <ref
+                target="trans-linebreakdirection.html">Line break with indication of
+                direction</ref></cell>
         </row>
         <row>
-            <cell>[ - ca.4 - ]</cell>
-            <cell>Approximate number of characters lost, cannot be restored</cell>
-            <cell><ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
+            <cell>j(2)mn.t <lb/>j|²mn.t</cell>
+            <cell> Line or column(!) column break inside a word </cell>
+            <cell><ref target="trans-linebreakinword.html">Line break, inside word</ref></cell>
         </row>
         <row>
-            <cell>[ - ca.9 - ]</cell>
-            <cell>More than 8 characters lost, cannot be restored; note: DDbDP practice assumes that assertion of losses greater than 8 characters is imprecise, whether the editor writes [..........] or [- ca.10 - ]</cell>
+            <cell><hi rend="underline">jmn.t</hi> pw <lb/> &#x1E25;sb.t 10</cell>
+            <cell>Highlighted characters (e.g., rubrum, tall characters in Demotic) </cell>
+            <cell><ref target="trans-charactershighlighted.html">Highlighted characters</ref></cell>
+        </row>
+        <row>
+            <cell>s&#xa723; (space left free) &#x0131;&#x0357;rm &#xa723;rsn </cell>
+            <cell>Free space on the text support in a line </cell>
+            <cell><ref target="trans-vacatchar.html"> Vacat (measured in quadrats)</ref></cell>
+        </row>
+        <row>
+            <cell cols="3"><hi rend="bold">Text destruction</hi></cell>
+        </row>
+        <row>
+            <cell>s&#xa723; [...] &#xa723;rsn </cell>
+            <cell> Gap of unknown length, completely destroyed </cell>
+            <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity not
+                known</ref></cell>
+        </row>
+        <row>
+            <cell>s&#xa723; &#x2308;...&#x2309; &#xa723;rsn </cell>
+            <cell> Gap of unknown length, barely legible </cell>
+            <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity not
+                known</ref></cell>
+        </row>
+        <row>
+            <cell>s&#xa723; [--ca. 3 Q.--] &#x0131;&#x0357;rm </cell>
+            <cell> Gap of certain or approximate length, completely destroyed </cell>
             <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref>
-                and <ref target="trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
+                <lb/> or <ref target="trans-illegiblecharapprox.html">Lost characters, quantity
+                    approximate</ref></cell>
         </row>
         <row>
-            <cell>[ - ca.? - ]</cell>
-            <cell>Unknown number of characters lost, cannot be restored</cell>
-            <cell><ref target="trans-lostcharunknown.html"></ref></cell>
+            <cell>s&#xa723; &#x2308;--ca. 3 Q.--&#x2309; &#x0131;&#x0357;rm </cell>
+            <cell> Gap of certain or approximate length, barely legible </cell>
+            <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref>
+                <lb/> and <ref target="trans-illegiblecharapprox.html">Lost characters, quantity
+                    approximate</ref></cell>
         </row>
         <row>
-            <cell>&lt;αβγ&gt;</cell>
-            <cell>Characters erroneously omitted by the scribe, added by modern editor</cell>
-            <cell><ref target="trans-omitted.html">Supplement of omitted characters</ref></cell>
+            <cell>j[mn].t</cell>
+            <cell>Modern reconstruction in gap </cell>
+            <cell><ref target="trans-restored.html">Restored text</ref>
+                <lb/> and <ref target="trans-restoreduncert.html">Restored text, uncertain
+                </ref><lb/> or <ref target="trans-parallelcopy.html">Text restored from parallel
+                    copy</ref></cell>
         </row>
         <row>
-            <cell>\αβγ/</cell>
-            <cell>Text added above the line in antiquity</cell>
-            <cell><ref target="trans-addition.html">Text added by ancient hand</ref></cell>
+            <cell/>
+            <cell>Characters now lost, but recorded by earlier scholars</cell>
+            <cell><ref target="trans-previouseditor.html">Text visible to previous
+                editor</ref></cell>
         </row>
         <row>
-            <cell>/αβγ\</cell>
-            <cell>Text added below the line in antiquity</cell>
-            <cell><ref target="trans-addition.html">Text added by ancient hand</ref></cell>
+            <cell>j&#x2308;mn&#x2309;.t </cell>
+            <cell>Partial destruction, but perfectly or unambiguously legible </cell>
+            <cell><ref target="trans-damaged.html">Damaged text</ref>
+                <lb/> or <ref target="trans-ambiguous.html">Ambiguous characters </ref></cell>
         </row>
         <row>
-            <cell>{αβγ}</cell>
-            <cell>Superfluous letters removed by the editor</cell>
+            <cell cols="3"><hi rend="bold">Modern editorial marks</hi></cell>
+        </row>
+        <row>
+            <cell>jmn{.t}-r&#xa725; </cell>
+            <cell>Erroneous ancient addition </cell>
             <cell><ref target="trans-superfluous.html">Superfluous text</ref></cell>
         </row>
         <row>
-            <cell>α̣β̣γ̣</cell>
-            <cell>Underdotted by editor to indicate characters ambiguous outside of context, characters damaged,
-                illegible or otherwise uncertain</cell>
-            <cell><ref target="trans-ambiguous.html">Ambiguous characters (Leiden underdot)</ref></cell>
+            <cell>zw{r}j </cell>
+            <cell> Traditional ‘superfluous’ double spelling </cell>
+            <cell><ref target="trans-superfluous.html">Superfluous text</ref></cell>
         </row>
         <row>
-            <cell><hi rend="underline">αβγ</hi></cell>
-            <cell>Characters seen by a previous editor now lost, or attested in an ancient duplicate</cell>
-            <cell><ref target="trans-previouseditor.html">Text visible to previous editor</ref>
-                and <ref target="trans-parallelcopy.html">Text restored from parallel copy</ref></cell>
+            <cell>jmn&#x2329;.w&#x232a; </cell>
+            <cell>Erroneous ancient omission </cell>
+            <cell><ref target="trans-omitted.html">Supplement of omitted characters</ref></cell>
         </row>
         <row>
-            <cell>〚αβγ〛</cell>
-            <cell>Characters deleted in antiquity</cell>
-            <cell><ref target="trans-erased.html">Erased but legible text</ref> and
-                <ref target="trans-erasedlost.html">Erased and lost</ref></cell>
+            <cell>jmn.{t}&#x2329;w&#x232a; </cell>
+            <cell>Erroneous ancient substitution </cell>
+            <cell><ref target="trans-erroneoussubstitution.html">Erroneous substitution</ref></cell>
         </row>
         <row>
-            <cell>vac.</cell>
-            <cell>Space left empty</cell>
-            <cell><ref target="trans-vacatchar.html">Vacat measured in charactrers</ref></cell>
+            <cell>w{d}&#x2329;&#x1e0f;&#x232a;=f</cell>
+            <cell>Regularization of transcription, according to Old Egyptian spelling </cell>
+            <cell><ref target="trans-regularization.html">Regularization</ref></cell>
         </row>
         <row>
-            <cell>-&#xa0;ca.?&#xa0;-</cell>
-            <cell>Traces Illegible / vestiges</cell>
-            <cell><ref target="trans-illegiblecharunknown.html">Illegible characters, quantity unknown</ref></cell>
+            <cell>s&#x1e0f;m.t(w)=f <lb/> pr(j)=f<lb/> &#x0131;&#x0357;w=f (&#x1E25;r)
+                sdm<lb/></cell>
+            <cell>Regularization of transcription (towards plene spelling or reconstruction
+                according to grammatical theory)</cell>
+            <cell><ref target="trans-regularization.html">Regularization</ref></cell>
         </row>
         <row>
-            <cell>……..</cell>
-            <cell>Up to 8 characters illegible</cell>
-            <cell><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref></cell>
+            <cell cols="3"><hi rend="bold">Ancient editorial work</hi></cell>
         </row>
         <row>
-            <cell>-&#xa0;ca.9&#xa0;-</cell>
-            <cell>More than 8 characters illegible; note: DDbDP practice assumes that assertion of illegible characters of length greater than 8 is imprecise.</cell>
-            <cell><ref target="trans-illegiblecharknown.html">Illegible characters, quantity known</ref> and 
-                <ref target="trans-illegiblecharapprox.html">Illegible characters, quantity approximate</ref></cell>
+            <cell>&#x27e6;jmn-r&#xa725; nb&#x27e7;-n&#x1e6f;r.(w)</cell>
+            <cell> Characters deleted in antiquity</cell>
+            <cell><ref target="trans-erased.html"> Erased but legible text</ref>
+                <lb/> and <ref target="trans-erasedillegible.html">Erased and illegible</ref>
+                <lb/> and <ref target="trans-erasedlost.html">Erased and lost</ref></cell>
         </row>
         <row>
-            <cell>-&#xa0;ca.?&#xa0;-</cell>
-            <cell> Unknown number of characters illegible</cell>
-            <cell><ref target="trans-illegiblecharunknown.html">Illegible characters, quantity unknown</ref></cell>
+            <cell>((no specific mark))</cell>
+            <cell> Addition above/below the line </cell>
+            <cell><ref target="trans-addition.html">Text added by ancient hand</ref></cell>
         </row>
         <row>
-            <cell>--&#xa0;--&#xa0;--&#xa0;--&#xa0;--&#xa0;--&#xa0;--</cell>
-            <cell>Break in papyrus/ostracon/tablet, resulting in unknown number of lost lines</cell>
-            <cell><ref target="trans-lostlineunknown.html">Lost lines, quantity unknown</ref> 
-                and <ref target="trans-possiblylost.html">Lines possibly lost / text possibly breaks</ref></cell>
+            <cell><hi>Varia</hi></cell>
+            <cell/>
+            <cell/>
+        </row>
+        <row>
+            <cell>jmn.t (unfinished) </cell>
+            <cell> Text not completed </cell>
+            <cell><ref target="trans-textnotcompleted.html">Text not completed</ref></cell>
         </row>
     </table>
-    <p>Table above taken from <term ref="#ddbdp">DDbDP Conventions</term>.
-        See also: <ref target="http://papyri.info/editor/documentation?docotype=text">Leiden+ Help Page</ref>.</p>
-    
+    <p>See also: <ref target="http://hdl.handle.net/21.11101/0000-0000-9E0C-2?urlappend=TEI:Body"
+            >Annotated Text Databases in Egyptology and Coptic Studies</ref>.</p>
+
+    <div xml:id="app-epi-egyptology-unicode">
+        <head>Unicode codes of specific Egyptological transliteration letters</head>
+
+        <table>
+            <row>
+                <cell rend="label">Char</cell>
+                <cell rend="label">Unicode</cell>
+                <cell rend="label">Char</cell>
+                <cell rend="label">Unicode</cell>
+                <cell rend="label">Name</cell>
+            </row>
+            <row>
+                <cell>&#xA723;</cell>
+                <cell>U+A723 </cell>
+                <cell>&#xA722;</cell>
+                <cell>U+A722</cell>
+                <cell>Egyptological Alif</cell>
+            </row>
+            <row>
+                <cell>&#xA725;</cell>
+                <cell>U+A725 </cell>
+                <cell>&#xA724;</cell>
+                <cell>U+A724</cell>
+                <cell>Egyptological Ain</cell>
+            </row>
+            <row>
+                <cell>&#x0131;&#x0357;</cell>
+                <cell>U+0131&amp;U+0357 </cell>
+                <cell>&#x0049;&#x0357;</cell>
+                <cell>U+0049&amp;U+0357</cell>
+                <cell>Egyptological Yod (var.)</cell>
+            </row>
+            <row>
+                <cell>&#x0069;&#x032F;</cell>
+                <cell>U+0069&amp;U+032F </cell>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x00EF;</cell>
+                <cell>U+00EF </cell>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x0075;&#x032F;</cell>
+                <cell>U+0075&amp;U+032F </cell>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x02BE;</cell>
+                <cell>U+02BE </cell>
+                <cell/>
+                <cell/>
+                <cell>Egyptological Secondary Alif</cell>
+            </row>
+            <row>
+                <cell>&#x1E25;</cell>
+                <cell>U+1E25 </cell>
+                <cell>&#x1E24;</cell>
+                <cell>U+1E24</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E2B;</cell>
+                <cell>U+1E2B </cell>
+                <cell>&#x1E2A;</cell>
+                <cell>U+1E2A</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E96;</cell>
+                <cell>U+1E96 </cell>
+                <cell>&#x0048;&#x0331;</cell>
+                <cell>U+0048&amp;U+0331</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x0068;&#x032D;</cell>
+                <cell>U+0068&amp;U+032D </cell>
+                <cell>&#x0048;&#x032D;</cell>
+                <cell>U+0048&amp;U+032D</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x015B;</cell>
+                <cell>U+015B </cell>
+                <cell>&#x015A;</cell>
+                <cell>U+015A</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x0161;</cell>
+                <cell>U+0161 </cell>
+                <cell>&#x0160;</cell>
+                <cell>U+0160</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E33;</cell>
+                <cell>U+1E33 </cell>
+                <cell>&#x1E32;</cell>
+                <cell>U+1E32</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E6D;</cell>
+                <cell>U+1E6D </cell>
+                <cell>&#x1E6C;</cell>
+                <cell>U+1E6C</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E6F;</cell>
+                <cell>U+1E6F </cell>
+                <cell>&#x1E6E;</cell>
+                <cell>U+1E6E</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x010D;</cell>
+                <cell>U+010D </cell>
+                <cell>&#x010C;</cell>
+                <cell>U+010C</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x1E0F;</cell>
+                <cell>U+1E0F </cell>
+                <cell>&#x1E0E;</cell>
+                <cell>U+1E0E</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x010D;&#x0323;</cell>
+                <cell>U+010D&amp;U+0323 </cell>
+                <cell>&#x010C;&#x0323;</cell>
+                <cell>U+010C&amp;U+0323</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x2329;</cell>
+                <cell>U+2329 </cell>
+                <cell>&#x232A;</cell>
+                <cell>U+232A</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x2308;</cell>
+                <cell>U+2308 </cell>
+                <cell>&#x2309;</cell>
+                <cell>U+2309</cell>
+                <cell/>
+            </row>
+            <row>
+                <cell>&#x2E17;</cell>
+                <cell>U+2E17 </cell>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+        </table>
+        <p>See also: <ref target="http://hdl.handle.net/21.11101/0000-0000-9E1A-2">Egyptological
+                transliteration systems in Unicode</ref>.</p>
+    </div>
+
     <div xml:id="app-epi-egyptology-responsibility">
-    <head>Responsibility for this section</head>
+        <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Daniel Werning</name></respStmt></bibl>
-            <bibl><respStmt><resp>created template</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Daniel A. Werning</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>created template</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
