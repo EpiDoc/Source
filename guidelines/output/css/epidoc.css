@@ -1,5 +1,5 @@
 /* 
-** Copyright 2005 TEI Consortium
+** Copyright 2007-2016 the authors
 
 $Id: epidoc.css 1425 2011-05-26 14:37:21Z gabrielbodard $
 
@@ -17,6 +17,13 @@ Free Software Foundation, Inc.,
 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
+
+/* Web fonts */
+
+@font-face {
+  font-family: 'New Athena Unicode';
+  src: url(http://www.stoa.org/epidoc/gl/assets/newathu5.woff);
+}
 
 
 /* main layout */
@@ -923,7 +930,16 @@ div.seealso {
     border: 1px solid grey;
     margin: 1.2em 0px !important;
     overflow: auto;
-    text-wrap: normal;
+}
+
+div#egytable table tbody tr:nth-child(n+2) td:nth-child(1) {
+    font-family: 'New Athena Unicode';
+    font-size: 110%;
+}
+
+div#unicodetable table tbody tr:nth-child(n+2) td:nth-child(odd) {
+    font-family: 'New Athena Unicode';
+    font-size: 110%;
 }
 
 .page-gloss {

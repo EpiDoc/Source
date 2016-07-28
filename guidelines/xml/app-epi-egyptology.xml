@@ -28,7 +28,7 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-egyptology" xml:lang="en">
     <head>Appendix: Aligning EpiDoc with Egyptological philological markup</head>
 
-    <table>
+    <table xml:id="egytable">
         <row>
             <cell rend="label">Traditional philological markup</cell>
             <cell rend="label">Phenomenon</cell>
@@ -38,7 +38,7 @@ End license statement: do not remove -->
             <cell cols="3"><hi rend="bold">Line breaks, layout</hi></cell>
         </row>
         <row>
-            <cell>jmn.t (2) pw <lb/>jmn.t |² pw</cell>
+            <cell xml:lang="egy">jmn.t (2) pw <lb/>jmn.t |² pw</cell>
             <cell>Line or column(!) with indication of direction (no matter whether the primary
                 writing direction is in lines or in columns)</cell>
             <cell><ref target="trans-linebreak.html">Line break </ref><lb/> and <ref
@@ -46,17 +46,17 @@ End license statement: do not remove -->
                 direction</ref></cell>
         </row>
         <row>
-            <cell>j(2)mn.t <lb/>j|²mn.t</cell>
+            <cell xml:lang="egy">j(2)mn.t <lb/>j|²mn.t</cell>
             <cell> Line or column(!) column break inside a word </cell>
             <cell><ref target="trans-linebreakinword.html">Line break, inside word</ref></cell>
         </row>
         <row>
-            <cell><hi rend="underline">jmn.t</hi> pw <lb/> &#x1E25;sb.t 10</cell>
+            <cell xml:lang="egy"><hi rend="underline">jmn.t</hi> pw <lb/> &#x1E25;sb.t 10</cell>
             <cell>Highlighted characters (e.g., rubrum, tall characters in Demotic) </cell>
             <cell><ref target="trans-charactershighlighted.html">Highlighted characters</ref></cell>
         </row>
         <row>
-            <cell>s&#xa723; (space left free) &#x0131;&#x0357;rm &#xa723;rsn </cell>
+            <cell xml:lang="egy">s&#xa723; (space left free) &#x0131;&#x0357;rm &#xa723;rsn </cell>
             <cell>Free space on the text support in a line </cell>
             <cell><ref target="trans-vacatchar.html"> Vacat (measured in quadrats)</ref></cell>
         </row>
@@ -64,33 +64,33 @@ End license statement: do not remove -->
             <cell cols="3"><hi rend="bold">Text destruction</hi></cell>
         </row>
         <row>
-            <cell>s&#xa723; [...] &#xa723;rsn </cell>
+            <cell xml:lang="egy">s&#xa723; [...] &#xa723;rsn </cell>
             <cell> Gap of unknown length, completely destroyed </cell>
             <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity not
                 known</ref></cell>
         </row>
         <row>
-            <cell>s&#xa723; &#x2308;...&#x2309; &#xa723;rsn </cell>
+            <cell xml:lang="egy">s&#xa723; &#x2308;...&#x2309; &#xa723;rsn </cell>
             <cell> Gap of unknown length, barely legible </cell>
             <cell><ref target="trans-lostcharunknown.html">Lost characters, quantity not
                 known</ref></cell>
         </row>
         <row>
-            <cell>s&#xa723; [--ca. 3 Q.--] &#x0131;&#x0357;rm </cell>
+            <cell xml:lang="egy">s&#xa723; [--ca. 3 Q.--] &#x0131;&#x0357;rm </cell>
             <cell> Gap of certain or approximate length, completely destroyed </cell>
             <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref>
                 <lb/> or <ref target="trans-illegiblecharapprox.html">Lost characters, quantity
                     approximate</ref></cell>
         </row>
         <row>
-            <cell>s&#xa723; &#x2308;--ca. 3 Q.--&#x2309; &#x0131;&#x0357;rm </cell>
+            <cell xml:lang="egy">s&#xa723; &#x2308;--ca. 3 Q.--&#x2309; &#x0131;&#x0357;rm </cell>
             <cell> Gap of certain or approximate length, barely legible </cell>
             <cell><ref target="trans-lostcharknown.html">Lost characters, quantity known</ref>
                 <lb/> and <ref target="trans-illegiblecharapprox.html">Lost characters, quantity
                     approximate</ref></cell>
         </row>
         <row>
-            <cell>j[mn].t</cell>
+            <cell xml:lang="egy">j[mn].t</cell>
             <cell>Modern reconstruction in gap </cell>
             <cell><ref target="trans-restored.html">Restored text</ref>
                 <lb/> and <ref target="trans-restoreduncert.html">Restored text, uncertain
@@ -104,7 +104,7 @@ End license statement: do not remove -->
                 editor</ref></cell>
         </row>
         <row>
-            <cell>j&#x2308;mn&#x2309;.t </cell>
+            <cell xml:lang="egy">j&#x2308;mn&#x2309;.t </cell>
             <cell>Partial destruction, but perfectly or unambiguously legible </cell>
             <cell><ref target="trans-damaged.html">Damaged text</ref>
                 <lb/> or <ref target="trans-ambiguous.html">Ambiguous characters </ref></cell>
@@ -113,32 +113,32 @@ End license statement: do not remove -->
             <cell cols="3"><hi rend="bold">Modern editorial marks</hi></cell>
         </row>
         <row>
-            <cell>jmn{.t}-r&#xa725; </cell>
+            <cell xml:lang="egy">jmn{.t}-r&#xa725; </cell>
             <cell>Erroneous ancient addition </cell>
             <cell><ref target="trans-superfluous.html">Superfluous text</ref></cell>
         </row>
         <row>
-            <cell>zw{r}j </cell>
+            <cell xml:lang="egy">zw{r}j </cell>
             <cell> Traditional ‘superfluous’ double spelling </cell>
             <cell><ref target="trans-superfluous.html">Superfluous text</ref></cell>
         </row>
         <row>
-            <cell>jmn&#x2329;.w&#x232a; </cell>
+            <cell xml:lang="egy">jmn&#x2329;.w&#x232a; </cell>
             <cell>Erroneous ancient omission </cell>
             <cell><ref target="trans-omitted.html">Supplement of omitted characters</ref></cell>
         </row>
         <row>
-            <cell>jmn.{t}&#x2329;w&#x232a; </cell>
+            <cell xml:lang="egy">jmn.{t}&#x2329;w&#x232a; </cell>
             <cell>Erroneous ancient substitution </cell>
             <cell><ref target="trans-erroneoussubstitution.html">Erroneous substitution</ref></cell>
         </row>
         <row>
-            <cell>w{d}&#x2329;&#x1e0f;&#x232a;=f</cell>
+            <cell xml:lang="egy">w{d}&#x2329;&#x1e0f;&#x232a;=f</cell>
             <cell>Regularization of transcription, according to Old Egyptian spelling </cell>
             <cell><ref target="trans-regularization.html">Regularization</ref></cell>
         </row>
         <row>
-            <cell>s&#x1e0f;m.t(w)=f <lb/> pr(j)=f<lb/> &#x0131;&#x0357;w=f (&#x1E25;r)
+            <cell xml:lang="egy">s&#x1e0f;m.t(w)=f <lb/> pr(j)=f<lb/> &#x0131;&#x0357;w=f (&#x1E25;r)
                 sdm<lb/></cell>
             <cell>Regularization of transcription (towards plene spelling or reconstruction
                 according to grammatical theory)</cell>
@@ -148,7 +148,7 @@ End license statement: do not remove -->
             <cell cols="3"><hi rend="bold">Ancient editorial work</hi></cell>
         </row>
         <row>
-            <cell>&#x27e6;jmn-r&#xa725; nb&#x27e7;-n&#x1e6f;r.(w)</cell>
+            <cell xml:lang="egy">&#x27e6;jmn-r&#xa725; nb&#x27e7;-n&#x1e6f;r.(w)</cell>
             <cell> Characters deleted in antiquity</cell>
             <cell><ref target="trans-erased.html"> Erased but legible text</ref>
                 <lb/> and <ref target="trans-erasedillegible.html">Erased and illegible</ref>
@@ -165,7 +165,7 @@ End license statement: do not remove -->
             <cell/>
         </row>
         <row>
-            <cell>jmn.t (unfinished) </cell>
+            <cell xml:lang="egy">jmn.t (unfinished) </cell>
             <cell> Text not completed </cell>
             <cell><ref target="trans-textnotcompleted.html">Text not completed</ref></cell>
         </row>
@@ -185,16 +185,16 @@ End license statement: do not remove -->
                 <cell rend="label">Name</cell>
             </row>
             <row>
-                <cell>&#xA723;</cell>
+                <cell xml:lang="egy">&#xA723;</cell>
                 <cell>U+A723 </cell>
-                <cell>&#xA722;</cell>
+                <cell xml:lang="egy">&#xA722;</cell>
                 <cell>U+A722</cell>
                 <cell>Egyptological Alif</cell>
             </row>
             <row>
-                <cell>&#xA725;</cell>
+                <cell xml:lang="egy">&#xA725;</cell>
                 <cell>U+A725 </cell>
-                <cell>&#xA724;</cell>
+                <cell xml:lang="egy">&#xA724;</cell>
                 <cell>U+A724</cell>
                 <cell>Egyptological Ain</cell>
             </row>
@@ -346,14 +346,8 @@ End license statement: do not remove -->
     <div xml:id="app-epi-egyptology-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Daniel A. Werning</name>
-                </respStmt></bibl>
-            <bibl><respStmt>
-                    <resp>created template</resp>
-                    <name>Gabriel Bodard</name>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Daniel A. Werning</name></respStmt></bibl>
+            <bibl><respStmt><resp>created template</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
