@@ -9,16 +9,20 @@ Latest version
 
     * Release technician: Elli Mylonas
     * XSLT: added supplied[@reason=omitted] to elements that generate internal apparatus (for IOSPE project)
-    * XSLT: added spans around tei:gap and text field (for DCLP project)
+    * XSLT: added spans around tei:gap and text field to handle  (for DCLP project)
     * XSLT: disambiguated matching text() nodes in square bracket remove script (to fix bug revealed by above)
     * XSLT: fixed problem with uppercasing of Greek (and especially lunate sigma) in diplomatic view
     * XSLT: added edition-style template for Dodona Online project
     * Schema: removed temporary customization of tei:m (allowing child tei:hi); now legal in TEI
     * Schema: inherited changes from TEI release 3.0.0 (especially att.global.responsibility; att.source)
     * Guidelines: redesigned front page, indices and external links
-    * Guidelines: 
+    * Guidelines: added "see also" crossreferences to the end of all GL pages with element references
     * Guidelines: added concordance of EpiDoc to Egyptological practice
-    * Guidelines: 
+    * Guidelines: added perio.do and wikidata examples to tei:origDate/@period
+    * Guidelines: fixed font display of rendered examples from fixed-width to sans
+    * Guidelines: forced display of Egyptian transcription to New Athena Unicode (web font)
+    * Guidelines: description and examples of various approaches to multi-language texts (thanks to Corpus of Pyu Inscriptions)
+    * Guidelines: new page on handling of whitespace in mixed-content elements
 
 
 Previous versions
@@ -43,8 +47,8 @@ Previous versions
 8.20.1 - Announced to MARKUP 2014-12-04
 This is a BUGFIX release for XSLT only. Guidelines and Schema remain unchanged at 8.20.
 
-	* Release technician: Tom Elliott
-	* XSLT: gbodard fixed an ambiguous template match for tei:app with [r2313](https://sourceforge.net/p/epidoc/code/2313/)
+    * Release technician: Tom Elliott
+    * XSLT: gbodard fixed an ambiguous template match for tei:app with [r2313](https://sourceforge.net/p/epidoc/code/2313/)
 
 8.20 - Announced to MARKUP 2014-11-20
 
