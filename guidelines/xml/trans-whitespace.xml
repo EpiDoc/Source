@@ -58,6 +58,14 @@
             <ex>ustus</ex>
         </expan>
     </egXML>
+    
+    <p>The following example will have no spaces around any of the parts of the abbreviation. However, if there were any line feeds inside <gi>expan</gi>
+    they would be preserved.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"  rend="ddbdp"
+        corresp="http://papyri.info/hgv/8922#20">
+        <expan>Καρ<ex>ανίδι</ex></expan>
+    </egXML>
 
     <p>If spaces appear in formatted Epidoc output where they don't belong, the first thing to do is
         to check the XML source files for spaces or linefeeds have been inserted during the encoding
