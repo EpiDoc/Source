@@ -23,9 +23,16 @@
     
     End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
-<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-diplomatic">
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-whitespace">
     <head>Managing Whitespace in Transcriptions</head>
 
+    <p><specList>
+        <specDesc key="expan"/>
+    </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p>
+    
     <p>In diplomatic and edited transcriptions, default Epidoc whitespace handling may not always
         produce expected results. Problems arise in several situations, the most common of which is
         spaces that appear before or after a phrase-level element. XML treats whitespace differently
@@ -37,12 +44,19 @@
         of lines - lines that are wrapped for readability do not have space or linefeed characters
         separating them, they just appear to.</p>
 
-    <p>In the example below, <gi>expan</gi> may have subelements <gi>abbr</gi> and <gi>ex</gi>
-        as well as free text. In this case, spaces before or after the subelements
-        will result in spaces appearing in the output. </p>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+    <p>In the examples below, <gi>expan</gi> takes subelements <gi>abbr</gi> and <gi>ex</gi>
+        as well as free text. In the second case, spaces before or after the subelements
+        result in spaces appearing in the output. </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" rend="panciera">
         <expan><abbr>Aug</abbr><ex>ustus</ex></expan>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" rend="panciera">
+        <expan>
+            <abbr>Aug</abbr>
+            <ex>ustus</ex>
+        </expan>
     </egXML>
 
     <p>If spaces appear in formatted Epidoc output where they don't belong, the first thing to do is
@@ -61,10 +75,7 @@
     <div xml:id="trans-whitespace-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                    <name>Elli Mylonas</name>
-                </respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
