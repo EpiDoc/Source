@@ -2,8 +2,29 @@ RELEASE NOTES
 =============
 
 
-Latest version - 8.21 - Announced to MARKUP 2015-06-18
-------------------------------------------------------
+Latest version
+-------------------------
+
+ 8.22 - Announced to MARKUP 2016-08-03
+
+    * Release technician: Elli Mylonas
+    * XSLT: added supplied[@reason=omitted] to elements that generate internal apparatus (for IOSPE project)
+    * XSLT: added spans around tei:gap and text field (for DCLP project)
+    * XSLT: disambiguated matching text() nodes in square bracket remove script (to fix bug revealed by above)
+    * XSLT: fixed problem with uppercasing of Greek (and especially lunate sigma) in diplomatic view
+    * XSLT: added edition-style template for Dodona Online project
+    * Schema: removed temporary customization of tei:m (allowing child tei:hi); now legal in TEI
+    * Schema: inherited changes from TEI release 3.0.0 (especially att.global.responsibility; att.source)
+    * Guidelines: redesigned front page, indices and external links
+    * Guidelines: 
+    * Guidelines: added concordance of EpiDoc to Egyptological practice
+    * Guidelines: 
+
+
+Previous versions
+-------------------------
+
+8.21 - Announced to MARKUP 2015-06-18
 
     * Release technician: Gabriel Bodard
     * XSLT: fixed bugs in diplomatic rendering of edition (for IOSPE)
@@ -19,8 +40,6 @@ Latest version - 8.21 - Announced to MARKUP 2015-06-18
     * Guidelines: added examples of different ways to handle `<reg> and <orig>` (requested by Laura Löser)
     * Guidelines: added guidance on encoding multiple texts on one support, and summary of EpiDoc division structure (training material --> formal guidelines)
 
-Previous versions
------------------
 8.20.1 - Announced to MARKUP 2014-12-04
 This is a BUGFIX release for XSLT only. Guidelines and Schema remain unchanged at 8.20.
 
