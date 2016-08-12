@@ -27,17 +27,57 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-geognames" xml:lang="en">
     <head>Place names and geographical terms mentioned in the text</head>
-    <p rend="page-gloss">Elements used for identifying references to places and other geographical features.</p>
+    <p rend="page-gloss">Elements used for identifying references to places and other geographical features,
+        groups or entities.</p>
     <div rend="tag-defs">
         <head>Relevant element documentation (TEI):</head>
         <p>
             <specList>
                 <specDesc key="placeName"/>
                 <specDesc key="geogName"/>
+                <specDesc key="orgName"/>
                 <specDesc key="place"/>
             </specList>
         </p>
     </div>
+    
+    <div>
+        <head>Names of places (cities, settlements)</head>
+        <p>If explicit annotation of named entities is desired,  
+            references to places (such as settlements, regions, nations) may be identified in the
+            transcribed text using the <gi>placeName</gi> element. </p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120214.html">
+            <placeName>Συρίας</placeName>
+        </egXML>
+     
+        <div>
+            <head>Linking to place authorities</head>
+            <p>To </p>
+        </div>
+        
+        <div>
+            <head>Normalizing placename spelling</head>
+            <p>...</p>
+        </div>
+    </div>
+    
+    <div>
+        <head>Names of geographical features (rivers, mountains)</head>
+        <p>...</p>
+    
+        <div>
+            <head>Divine geographic features</head>
+            <p>...</p>
+        </div>
+    </div>
+    
+    <div>
+        <head>Names of ethnic groups or tribes</head>
+        <p>...</p>
+    </div>
+
+
 
     <div>
         <p>References to places (such as settlements, regions, nations), peoples (such as ethnic groups, civic
@@ -45,9 +85,7 @@ End license statement: do not remove -->
             transcribed text using the elements <gi>placeName</gi> (for mostly political entities: cities, nations,
             etc.) or <gi>geogName</gi> (for physical features: rivers, mountains, etc.). </p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <placeName>Συρίας</placeName>
-        </egXML>
+        
 
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <geogName>Tamesis</geogName>
