@@ -932,16 +932,6 @@ div.seealso {
     overflow: auto;
 }
 
-div#egytable table tbody tr:nth-child(n+2) td:nth-child(1) {
-    font-family: 'New Athena Unicode';
-    font-size: 110%;
-}
-
-div#unicodetable table tbody tr:nth-child(n+2) td:nth-child(odd) {
-    font-family: 'New Athena Unicode';
-    font-size: 110%;
-}
-
 .page-gloss {
     font-weight: bold;
     font-style: italic;
@@ -1013,3 +1003,12 @@ p.creationdate {
 	text-decoration: line-through;
 }
 
+:lang(egy) 	{
+    font-family: 'New Athena Unicode', 'Cardo', 'Arial Unicode MS', 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-size: 110%;
+}
+
+.egyptian {
+    font-family: 'New Athena Unicode', 'Cardo', 'Arial Unicode MS', 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-size: 150%;
+}

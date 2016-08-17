@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:teix="http://www.tei-c.org/ns/Examples"
     xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:t="http://www.thaiopensource.com/ns/annotations"
@@ -315,4 +315,90 @@
 	
 	<xsl:template name="nextLink"/>
 	
+	<!--
+	    <xsl:template match="*[@xml:lang]">
+	    <xsl:attribute name="lang"><xsl:value-of select="."/></xsl:attribute>
+	        <xsl:apply-templates/>
+	</xsl:template>
+	-->
+
+    <xsl:template match="tei:cell">
+        <xsl:variable name="cellname">
+            <xsl:choose>
+                <xsl:when test="parent::tei:row[tei:match(@rend,'thead')]">th</xsl:when>
+                <xsl:when test="parent::tei:row[@role='label' and not(preceding::tei:row)]">th</xsl:when>
+                <xsl:otherwise>td</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:element name="{$cellname}">
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name(.) = 'width' or name(.) =
+                        'border' or name(.) = 'cellspacing'
+                        or name(.) = 'cellpadding'">
+                        <xsl:copy-of select="."/>
+                    </xsl:when>
+                    <xsl:when test="name(.)='rend' and starts-with(.,'width:')">
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="substring-after(.,'width:')"/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='rend' and starts-with(.,'class:')">
+                        <xsl:attribute name="class">
+                            <xsl:value-of select="substring-after(.,'class:')"/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='rend' and starts-with(.,'style=')">
+                        <xsl:attribute name="style">
+                            <xsl:value-of select="substring-after(.,'style=')"/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='rend'">
+                        <xsl:attribute name="class">
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='cols'">
+                        <xsl:attribute name="colspan">
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='rows'">
+                        <xsl:attribute name="rowspan">
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name(.)='xml:lang'">
+                        <xsl:attribute name="lang">
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="local-name(.)='align'">
+                        <xsl:attribute name="align">
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:choose>
+                <xsl:when test="@align"/>
+                <xsl:when test="not($cellAlign='left')">
+                    <xsl:attribute name="style">
+                        <xsl:text>text-align:</xsl:text>
+                        <xsl:value-of select="$cellAlign"/>
+                    </xsl:attribute>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:if test="@role and not (@rend)">
+                <xsl:attribute name="class">
+                    <xsl:value-of select="@role"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@xml:id">	   
+                <xsl:call-template name="makeAnchor"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
 </xsl:stylesheet>
