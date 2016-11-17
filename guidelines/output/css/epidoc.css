@@ -20,6 +20,8 @@ Free Software Foundation, Inc.,
 
 /* Web fonts */
 
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
 @font-face {
   font-family: 'New Athena Unicode';
   src: url(http://www.stoa.org/epidoc/gl/assets/newathu5.woff);
@@ -30,7 +32,7 @@ Free Software Foundation, Inc.,
 
 body.simple {
    color: #000000;
-    background-color: #996633;
+   background-color: #996633;
    margin: 0px;
    padding: 0px;
 }
@@ -1004,6 +1006,6 @@ p.creationdate {
 }
 
 :lang(egy) 	{
-    font-family: 'New Athena Unicode', 'Cardo', 'Arial Unicode MS', 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-family: 'New Athena Unicode', 'Noto Sans', 'Cardo', 'Arial Unicode MS', 'Lucida Grande', Arial, Helvetica, sans-serif;
     font-size: 110%;
 }
