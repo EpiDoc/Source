@@ -62,6 +62,9 @@ How to use it:
     Generate HTML Guidelines from XML files
     
         1. Make sure you have a full checkout of the SVN repository.
+        2. Make a copy of the Oxygen project file guidelines/Guidelines-generation-project.xpreg, 
+             and name it guidelines/Guidelines-generation-project.xpr. This is necessary because the project
+            file is changed by using it. When you are finished, you can discard the new project file.
         2. Open OxygenXML and open the project file: 
             guidelines/Guidelines-generation-project.xpr
         3. Open the xml file: guidelines/xml/driver.xml
@@ -75,7 +78,7 @@ How to use it:
 		* Generate Petrae Examples
 		* Generate RIB Examples
 		* Generate Seg Examples
-        5. Run the guidelines generation XSLT scenario against it ("EpiDoc P5 Guidelines HTML")
+        5. Run the guidelines generation XSLT scenario against it (Scenario called: "EpiDoc P5 Guidelines HTML")
         6. Results of the transformation will be output to guidelines/output/
 	
        
