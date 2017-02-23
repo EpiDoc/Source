@@ -62,6 +62,8 @@ How to use it:
                6. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
                7. Test thoroughly (and ask for support on Markup to test) before committing as
                canonical new EpiDoc schema.
+               8. Copy the whole `<schemaSpec>` from tei-epidoc-full.xml into tei-epidoc.xml
+               to keep the files in synch.
 
       3. How to decide which schema to use:
                1. if your project is complete and more or less static, it is recommend you use
