@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
-<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="xml"?>
 
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
+  <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en" 
+    source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
                 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
