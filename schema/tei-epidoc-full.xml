@@ -46,6 +46,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <!-- release 8.23: 2017-03-14 - Aligned schema with TEI v. 3.1.0 -->
             <!-- release 8.22: 2016-08-03 - Aligned schema with TEI v. 3.0.0 -->
             <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next release will inherit from TEI)</change>
             <!-- release 8.21: 2015-06-19 - Aligned schema with TEI v. 2.8.0 -->
@@ -121,7 +122,7 @@ End license statement: do not remove -->
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
           <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en" 
-            source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
+    source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
                 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -365,7 +366,25 @@ End license statement: do not remove -->
                             </valList>
                         </attDef>
                     </attList>
-                </elementSpec>                
+                </elementSpec>
+                
+                <!-- adding temporary customization of <m> (2015-06-16), to be removed once TEI have implemented this -->
+                <elementSpec ident="m" module="analysis" mode="change">
+                    <content>
+                        <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                            <choice>
+                                <text/>
+                                <ref name="model.gLike"/>
+                                <ref name="model.hiLike"/>
+                                <ref name="seg"/>
+                                <ref name="m"/>
+                                <ref name="c"/>
+                                <ref name="model.global"/>
+                            </choice>
+                        </zeroOrMore>
+                    </content>
+                </elementSpec>
+                
                 
                 <!-- suggested attribute values for origDate/@evidence -->
                 <elementSpec ident="origDate" module="msdescription" mode="change">
@@ -462,7 +481,7 @@ End license statement: do not remove -->
                 <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
                 <elementSpec ident="unclear" module="core" mode="change">
                     <content>
-                        <macroRef key="macro.xtext"/>
+                        <rng:ref name="macro.xtext"/>
                     </content>
                 </elementSpec>
 
