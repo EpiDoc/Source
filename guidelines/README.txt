@@ -3,7 +3,8 @@
 ********************************************************************************
 
 What it is:
-    The EpiDoc Guidelines is a prose document intended to provide
+
+	The EpiDoc Guidelines is a prose document intended to provide
 	complete guidance for the application of TEI markup to the preparation
 	of digital editions of primary source documents like inscriptions or
 	papyri.
@@ -11,16 +12,19 @@ What it is:
 	http://www.stoa.org/epidoc/gl/latest/
 
 License:
-    The EpiDoc Guidelines is copyright the contributors. 
+
+	The EpiDoc Guidelines is copyright the contributors. 
 	See LICENSE.txt for license details.
 
 To cite the EpiDoc Guidelines, please use the following information:
+
 	Tom Elliott, Gabriel Bodard, Elli Mylonas, Simona Stoyanova, Charlotte Tupman,
-	Scott Vanderbilt, et al. (2007-2013), EpiDoc Guidelines: Ancient documents in
+	Scott Vanderbilt, et al. (2007-2017), EpiDoc Guidelines: Ancient documents in
 	TEI XML (Version 8). Available: http://www.stoa.org/epidoc/gl/latest/.
 
 Technical requirements and limitations:
-    The Guidelines consist of XML files in TEI P5 (see guidelines/xml/), and as such
+
+	The Guidelines consist of XML files in TEI P5 (see guidelines/xml/), and as such
 	they need to be transformed using a combination of the TEI XSLT 
 	provided here and the example XSLT, for which see example-p5-xslt. 
 	The Guidelines are part of the TEI ODD.
