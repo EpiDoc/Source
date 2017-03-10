@@ -40,7 +40,6 @@
                     </group>
                 </zeroOrMore>
                 <ref name="tei_att.global.attributes"/>
-                <ref name="tei_att.source.attributes"/>
             </xsl:element>
         </xsl:element>
         <start>
