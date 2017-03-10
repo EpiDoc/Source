@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0">
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0" exclude-result-prefixes="rng">
 
     <xsl:output method="xml" indent="yes"/>
 
@@ -46,6 +46,10 @@
             <ref name="tei_egXML"/>
         </start>
     </xsl:template>
+  
+  <xsl:template match="rng:name[@ns='http://www.tei-c.org/ns/Examples']">
+    <nsName ns="http://www.tei-c.org/ns/Examples"/>
+  </xsl:template>
 
     <xsl:template match="*">
         <xsl:call-template name="copier"/>

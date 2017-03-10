@@ -76,7 +76,7 @@
          <anyName>
             <except>
                <nsName ns="http://www.tei-c.org/ns/1.0"/>
-               <name ns="http://www.tei-c.org/ns/Examples">egXML</name>
+               <nsName ns="http://www.tei-c.org/ns/Examples"/>
             </except>
          </anyName>
          <zeroOrMore>
@@ -12578,7 +12578,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
    </define>
    <define name="tei_egXML">
       <element name="egXML">
-         <zeroOrMore xmlns:rng="http://relaxng.org/ns/structure/1.0">
+         <zeroOrMore>
             <group>
                <choice>
                   <text/>
@@ -12918,11 +12918,10 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
                </choice>
             </group>
          </zeroOrMore>
-         <ref xmlns:rng="http://relaxng.org/ns/structure/1.0"
-              name="tei_att.global.attributes"/>
+         <ref name="tei_att.global.attributes"/>
       </element>
    </define>
-   <start xmlns:rng="http://relaxng.org/ns/structure/1.0">
+   <start>
       <ref name="tei_egXML"/>
    </start>
 </grammar>
