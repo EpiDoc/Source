@@ -50,7 +50,7 @@ How to use it:
                You may also point at a local copy of the tei-epidoc.rng file.
 
       2. To generate a new version of the schema from the ODD:
-               1. edit the ODD (tei-epidoc-full.xml) to make any changes to the EpiDoc schema.
+               1. edit the ODD (tei-epidoc.xml) to make any changes to the EpiDoc schema.
                *NB* that as a matter of policy the EpiDoc schema should be a conformant
                subset of the latest TEI schema (only exceptions being when the dev TEI ODD
                contains changes that will not make it into the TEI release for 1-6 months).
@@ -62,8 +62,6 @@ How to use it:
                6. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
                7. Test thoroughly (and ask for support on Markup to test) before committing as
                canonical new EpiDoc schema.
-               8. Copy the whole `<schemaSpec>` from tei-epidoc-full.xml into tei-epidoc.xml
-               to keep the files in synch.
 
       3. How to decide which schema to use:
                1. if your project is complete and more or less static, it is recommend you use
