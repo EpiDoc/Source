@@ -6,17 +6,6 @@ What it is:
 
 	The EpiDoc RelaxNG schema and the TEI ODD file from which it is generated.
 
-	**Temporary notice**:
-	There are two copies of the ODD in this directory: tei-epidoc-full.xml,
-	which is the version that will work with the online Roma tool
-	(http://www.tei-c.org/Roma/), and tei-epidoc.xml, which currently does
-	not work with Roma because it contains only the `<schemaSpec>` and is
-	designed to be x-included to the full ODD (to include Guidelines
-	etc.)
-	WHENEVER YOU MAKE A CHANGE TO THE FILE tei-epidoc-full.xml (WHICH SHOULD BE
-	CONSIDERED THE MASTER VERSION), PLEASE ALSO COPY THE `<schemaSpec>` OVER
-	INTO THE FILE tei-epidoc.xml SO THAT FILE IS ALSO UP-TO-DATE.
-
 License:
 
 	The TEI Schema is copyright the TEI Consortium
@@ -28,8 +17,8 @@ License:
 
 Technical Requirements:
 
-	The ODD requires the Roma tool (and associated dependencies) to generate
-	the RelaxNG schema. The schema (whose canonical released versions live at
+	The ODD requires the OxGarage tool to generate the RelaxNG schema.
+	The schema (whose canonical released versions live at
 	http://www.stoa.org/epidoc/schema/) may be used by any XML editor or
 	processing environment to validate EpiDoc XML files.
 
@@ -54,14 +43,17 @@ How to use it:
                *NB* that as a matter of policy the EpiDoc schema should be a conformant
                subset of the latest TEI schema (only exceptions being when the dev TEI ODD
                contains changes that will not make it into the TEI release for 1-6 months).
-               2. Go to http://www.tei-c.org/Roma/ and "Open existing customization".
-               Select tei-epidoc-full.xml from your local file system.
-               3. Select "Start".
-               4. Select "Schema".
-               5. Select "RELAX NG schema (XML syntax)".
-               6. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
-               7. Test thoroughly (and ask for support on Markup to test) before committing as
+               2. Go to http://www.tei-c.org/oxgarage/
+               3. Select "Convert from:" -> "Document" -> "ODD Document"
+               4. Select "Convert to:" "RELAX NG SCHEMA"
+               5. Under "Select file to convert" press "Browse" and select tei-epidoc.xml
+                  from your local file system.
+               6. Press "Convert".
+               7. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
+               8. Test thoroughly (and ask for support on Markup to test) before committing as
                canonical new EpiDoc schema.
+         To generate the compiled ODD, repeat the above, only changing point (3) from
+         "RELAX NG Schema" to "Compiled ODD Document"
 
       3. How to decide which schema to use:
                1. if your project is complete and more or less static, it is recommend you use
