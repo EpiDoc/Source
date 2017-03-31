@@ -23,8 +23,7 @@ Information about the EpiDoc community can be obtained via
 http://epidoc.sf.net.
 
 End license statement: do not remove -->
-<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+<?xml-model href="../schema/epidoc.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
     xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <teiHeader>
         <fileDesc>
@@ -245,10 +244,9 @@ End license statement: do not remove -->
             
 
             <!--<xi:include href="encode-output.xml"/>-->
-            
+            <div>
+                <xi:include href="../../schema/tei-epidoc-full.xml" xpointer="element(/1/2/2/2)"/>
+            </div>
         </body>
-        <back>
-            <xi:include href="../../schema/tei-epidoc.xml"/>
-        </back>
     </text>
 </TEI>
