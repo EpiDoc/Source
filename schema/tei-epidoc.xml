@@ -33,10 +33,13 @@ End license statement: do not remove -->
                 <author xml:id="GB">Gabriel Bodard</author>
                 <author xml:id="TE">Tom Elliott</author>
                 <author xml:id="ML">Marion Lamé</author>
+                <author xml:id="PL">Pietro Liuzzo</author>
                 <author xml:id="EMo">Emmanuelle Morlock</author>
                 <author xml:id="EM">Elli Mylonas</author>
                 <author xml:id="SS">Simona Stoyanova</author>
+                <author xml:id="CT">Charlotte Tupman</author>
                 <author xml:id="SV">Scott Vanderbilt</author>
+                <author xml:id="PY">Polina Yordanova</author>
             </titleStmt>
             <publicationStmt>
                 <p>Released under GNU GPL 3.0</p>
@@ -46,10 +49,10 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- release 8.23: 2017-03-14 - Aligned schema with TEI v. 3.1.0 -->
-            <!-- release 8.22: 2016-08-03 - Aligned schema with TEI v. 3.0.0 -->
+            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v. 3.1.0</change>
+            <change who="#EM" when="2016-08-03">release 8.22: Aligned schema with TEI v. 3.0.0</change>
             <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next release will inherit from TEI)</change>
-            <!-- release 8.21: 2015-06-19 - Aligned schema with TEI v. 2.8.0 -->
+            <change who="#GB" when="2015-06-19">release 8.21: Aligned schema with TEI v. 2.8.0</change>
             <change who="#GB" when="2015-06-16">added temporary customization of tei:m to allow model.hiLike content</change>
             <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
                 and "metamark retrace" (from transcr)</change>
@@ -58,25 +61,25 @@ End license statement: do not remove -->
                 from gaiji (requested by IOSPE)</change>
             <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
                 "appInfo" (from header), and "metamark retrace" (from transcr).</change>
-            <!-- release 8.20: 2014-12-02 - Aligned schema with TEI v. 2.7.0 -->
-            <!-- release 8.19: 2014-07-31 - Aligned schema with TEI v. 2.6.0 -->
+            <change who="#PL" when="2014-12-02">release 8.20: Aligned schema with TEI v. 2.7.0</change>
+            <change who="#CT" when="2014-07-31">release 8.19: Aligned schema with TEI v. 2.6.0</change>
             <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear -> core; datatype in lb/@break)</change>
             <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per https://sourceforge.net/p/epidoc/feature-requests/67/)</change>
             <change who="#GB" when="2014-03-04">stopped omitting s from Analysis (requested by Perseus)</change>
             <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from Gaiji (requested by DASI), and phr from Analysis (requested by Coptic Scriptorium)</change>
             <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request from IGLouvre)</change>
-            <!-- release 8.18: 2014-02-13 - Aligned schema with TEI v. 2.6.0 -->
+            <change who="#SS" when="2014-02-13">release 8.18: Aligned schema with TEI v. 2.6.0</change>
             <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to fix problem with TEI 2.6.0)</change>
             <change who="#SS" when="2013-12-05">added the value 'stacked' in hi @rend</change>
             <change who="#SS" when="2013-10-09">stopped omitting anchor from the linking module</change>
-            <!-- release 8.17: 2013-08-08 - Aligned schema with TEI v. 2.5.0 -->
-            <!-- release 8.16: 2013-01-28 - Aligned schema with TEI v. 2.3.0 -->
+            <change who="#SV" when="2013-08-08">release 8.17: Aligned schema with TEI v. 2.5.0</change>
+            <change who="#GB" when="2013-01-28">release 8.16: Aligned schema with TEI v. 2.3.0</change>
             <change who="#GB" when="2013-01-28">removed temp customization of space (fixed in TEI 2.3.0)</change>
             <change who="#GB" when="2012-11-29">suppressed schematron constraint on att.datable.custom</change>
             <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added constraints for space</change>
             <change who="#GB" when="2012-11-21">stopped omitting birth and death</change>
             <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron declaration</change>
-            <!-- release 8.15: 2012-11-05 - Aligned schema with TEI v. 2.2.0 -->
+            <change who="#GB" when="2012-11-05">release 8.15: Aligned schema with TEI v. 2.2.0</change>
             <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
             <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI bug</change>
             <change who="#GB" when="2012-11-05">removed customization of person and place, now catered for by TEI 2.2.0</change>
