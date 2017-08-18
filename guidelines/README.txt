@@ -73,6 +73,7 @@ How to use it:
 		* Generate DDBDP Examples
 		* Generate Dohnicht Examples
 		* Generate EDH Web Examples
+		* Generate IOSPE Examples
 		* Generate London Examples
 		* Generate Panciera Examples
 		* Generate Petrae Examples
