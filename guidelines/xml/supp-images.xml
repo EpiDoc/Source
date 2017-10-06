@@ -27,13 +27,14 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-images" xml:lang="en">
     <head>Images, figures and facsimile</head>
-    <p>Many EpiDoc projects will need to refer users to images of the text-bearing objects treated by the projects, and to other relevant
-        imagery that provides context or comparison. Such images may be photographs or drawings ("copies") of the objects themselves 
-        or of intermediary derivatives like squeezes, rubbings, and ink-transfers (estampages), as well as other kinds of maps, plans, and 
-        illustrations. The TEI provides a variety of mechanisms for making reference to such visual materials, whether published alongside
-        the textual material produced by the project or published by third parties online or in print.
-    </p>
-    
+    <p>Many EpiDoc projects will need to refer users to images of the text-bearing objects treated
+        by the projects, and to other relevant imagery that provides context or comparison. Such
+        images may be photographs or drawings ("copies") of the objects themselves or of
+        intermediary derivatives like squeezes, rubbings, and ink-transfers (estampages), as well as
+        other kinds of maps, plans, and illustrations. The TEI provides a variety of mechanisms for
+        making reference to such visual materials, whether published alongside the textual material
+        produced by the project or published by third parties online or in print. </p>
+
     <p>
         <specList>
             <specDesc key="facsimile"/>
@@ -41,55 +42,87 @@ End license statement: do not remove -->
             <specDesc key="graphic"/>
         </specList>
     </p>
-    
-    <p>When an EpiDoc project publishes digital images of an inscribed object alongside textual material, the TEI recommends the facsimile 
-        element for indicating and describing the images and connecting them to the textual and analytic material.  The encoding approach
-        outlined in the 
-        <ref  target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHFAX"
-            ><bibl><title level="m">TEI Guidelines</title>, chapter <biblScope unit="chapter">11.1</biblScope> "Digital Fascimiles"</bibl></ref> 
-        should be followed by EpiDoc projects. The following examples illustrate the application of the facsimile element (and some of its 
-        optional subordinate elements) in an EpiDoc context. 
-        <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/examples-facsimile.html">Additional examples drawn from the TEI Guidelines</ref> 
-        may also provide helpful encoding patterns.
-    </p>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <facsimile>
-            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/77_AA_33.jpg"/>
-        </facsimile>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <facsimile>
-            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/78_G_20.jpg"><desc>Squeeze (1978)</desc></graphic>
-            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/94_D_16.jpg"><desc>Photograph of monument (1994)</desc></graphic>
-            <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala32.jpg"><desc>Drawing of reconstructed monument (1999)</desc></graphic>
-        </facsimile>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <facsimile>
-            <surface n="i"><desc>Face of inscribed base</desc>
-                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/72_L_27A.jpg"><desc>Photograph (1972)</desc></graphic>
-                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_pr_046.jpg"><desc>Squeeze</desc></graphic>
-            </surface>
-            <surface><desc>Top of base</desc>
-                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_94_55_03.jpg"><desc>Photograph (1994)</desc></graphic>
-            </surface>
-            <surface><desc>Inscription on head of statue</desc>
-                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala254.jpg"><desc>Drawing (2001)</desc></graphic>
-            </surface>
-        </facsimile>
-    </egXML>
-    
+
+    <div xml:id="facsimile">
+        <head>Encoding Digital Facsimiles</head>
+        <p>When an EpiDoc project publishes digital images of an inscribed object alongside textual
+            material, the TEI recommends the facsimile element for indicating and describing the
+            images and connecting them to the textual and analytic material. The encoding approach
+            outlined in the <ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHFAX"
+                        ><bibl><title level="m">TEI Guidelines</title>, chapter <biblScope
+                        unit="chapter">11.1</biblScope> "Digital Fascimiles"</bibl></ref> should be
+            followed by EpiDoc projects. The following examples illustrate the application of the
+            facsimile element (and some of its optional subordinate elements) in an EpiDoc context.
+                <ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/examples-facsimile.html"
+                >Additional examples drawn from the TEI Guidelines</ref> may also provide helpful
+            encoding patterns. </p>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <facsimile>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/77_AA_33.jpg"/>
+            </facsimile>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <facsimile>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/78_G_20.jpg">
+                    <desc>Squeeze (1978)</desc>
+                </graphic>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/94_D_16.jpg">
+                    <desc>Photograph of monument (1994)</desc>
+                </graphic>
+                <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala32.jpg">
+                    <desc>Drawing of reconstructed monument (1999)</desc>
+                </graphic>
+            </facsimile>
+        </egXML>
+
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <facsimile>
+                <surface n="i">
+                    <desc>Face of inscribed base</desc>
+                    <graphic url="http://insaph.kcl.ac.uk/images/photo/full/72_L_27A.jpg">
+                        <desc>Photograph (1972)</desc>
+                    </graphic>
+                    <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_pr_046.jpg">
+                        <desc>Squeeze</desc>
+                    </graphic>
+                </surface>
+                <surface>
+                    <desc>Top of base</desc>
+                    <graphic url="http://insaph.kcl.ac.uk/images/photo/full/NY_94_55_03.jpg">
+                        <desc>Photograph (1994)</desc>
+                    </graphic>
+                </surface>
+                <surface>
+                    <desc>Inscription on head of statue</desc>
+                    <graphic url="http://insaph.kcl.ac.uk/images/photo/full/smith-ala254.jpg">
+                        <desc>Drawing (2001)</desc>
+                    </graphic>
+                </surface>
+            </facsimile>
+        </egXML>
+    </div>
+    <div xml:id="external">
+        <head>Citing Externally Published Imagery</head>
+        <p>to be added</p>
+    </div>
     <divGen type="seealso"/>
-    
+
     <div xml:id="supp-images-responsibility">
-    
+
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
