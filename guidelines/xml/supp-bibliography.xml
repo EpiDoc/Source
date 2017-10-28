@@ -87,8 +87,95 @@ End license statement: do not remove -->
                 </biblStruct>
             </listBibl>
         </egXML>
-    </div>
 
+
+
+    </div>
+    <div>
+        <head>Master bibliography in Zotero</head>
+        <p>You may want to maintain your bibliography in a Zotero group library or into your
+            personal Zotero library and use that for your EpiDoc project.</p>
+        <p>You can export a master bibliography in TEI from Zotero to work following the guidelines
+            above.</p>
+        <p>You can also use directly the Zotero API to print your bibliography using the example Stylesheets.</p>
+        <p>To do the latter you will need to</p>
+        <list type="ordered">
+            <item>Enter data correctly in Zotero</item>
+            <item>Enter citations in your file (see below)</item>
+            <item>Compile the bibliography and style the citations with the a <ref
+                    target="http://citationstyles.org/">CLS Style</ref> (it is very wise to use the
+                available ones, but you can still create your own)</item>
+        </list>
+        <p>To use this feature of the Example Stylesheets you will have to select a value for the
+            parameter <emph>bibliography</emph>.</p>
+        <list>
+            <item>none: (default), applies any other locally specified templates and does neither of
+                the following</item>
+            <item>localTEI: the path to the TEI xml bibliography file needs to be given in the
+                parameter localBibl, with a relative path from the xslt (default location, the
+                parent directory of the xslt). This will look up for each bibl the value given in
+                any ptr/@target and print author or editor and date from the TEI bibliography</item>
+            <item>zotero: selecting this will use the example stylesheets to call the Zotero API.
+                There are a series of other parameters which need to be set <list>
+                    <item>parameter <emph>ZoteroUorG</emph> : which selects if the target library in
+                        zotero is a group library (default) or a user library </item>
+                    <item>parameter <emph>ZoteroKey</emph> : which gives the key to the library (for
+                        the time being it defaults on the EAGLE group bibliography) </item>
+                    <item>parameter <emph>ZoteroNS</emph> : specifies a namespace, if tags in the
+                        Zotero library use any (default on nothing) </item>
+                    <item>parameter <emph>ZoteroStyle</emph> : specifies the Zotero Style to be used
+                        for the output (defaults on the chicago-author-date, as I think Zotero does
+                        anyway)</item>
+
+                </list>
+            </item>
+        </list>
+        <p>The assumptions here are that you have an accessible and open library in Zotero, and
+            that you have assigned a tag to each record you want to use, perhaps with a prefix, in
+            case the same bibliography is used by several projects.</p>
+        <p>Given the defaults above, if nothing but <emph>bibliography=zotero</emph> is specified,
+            the transformation will then look into the EAGLE group library for items with tags equal
+            to the ones given in each <gi>ptr</gi> with <att>target</att> of each <gi>bibl</gi> and
+            will return <gi>bibl</gi> elements present in a <tag>div[@type='bibliography']</tag> as
+            full citations, whereas it will print a formatted citation for the other <gi>bibl</gi>,
+            wherever they occur. The tag assigned in Zotero MUST be uniquely assigned in the
+            library.</p>
+        <p>This is testable using the parameter <emph>edn-structure=eagle</emph> parameter.</p>
+        <p>The following example, adapted from the Beta Maṣāḥǝft project, shows the encoding using
+                <gi>bibl</gi> and a <gi>ptr</gi> with <att>target</att> equal to the Zotero tag, in
+            two different contexts, the bibliography and a citation in the edition. The following explanation will clarify the settings and the output.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="edition">
+                <bibl>
+                    <ptr target="RIE1"/>
+                    <citedRange unit="page">279-280</citedRange>
+                </bibl>
+            </div>
+            <div type="bibliography">
+                <bibl>
+                    <ptr target="RIE1"/>
+                </bibl>
+            </div>
+        </egXML>
+        <p>The project uses a Group library in Zotero, so <emph>ZoteroUorG=group</emph> has been
+            left to the default value, <emph>ZoteroKey</emph> has been set to the group key 358366
+            of the EthioStudies group.</p>
+        <p>This Group Library is use by several projects, so the <emph>ZoteroNS</emph> parameter has
+            been set to that used by this project, <emph>bm:</emph>. One could haveThe project has
+            also its own style, and therefore the <emph>ZoteroStyle</emph> parameter has been set to
+            hiob-ludolf-centre-for-ethiopian-studies, the short name of the style saved in the CSL
+            repository.</p>
+        <p>Full guidelines used by this project for the data entry in the bibliography and for the style specification can be seen here <ref
+                target="https://betamasaheft.github.io/bibliography/">Zotero HLCES bibliography
+                workflow</ref>.</p>
+        <p>This transformation will thus call for each entry the Zotero API for the <ref
+                target="https://www.zotero.org/groups/358366/ethiostudies/items/itemKey/VUIEAENC"
+                >record with the zotero tag bm:RIE1</ref> and print for the first <gi>bibl</gi>
+            Bernard et al. 1991, 279-280, for the second "RIE I. Bernard, É., A.J. Drewes, and R.
+            Schneider 1991. <emph>Recueil des Inscriptions de l’Éthiopie des périodes pré-axoumite et
+            axoumite, Introduction de Fr. Anfray</emph>, I: Les documents (Paris: Diffusion de Boccard,
+            1991)."</p>
+    </div>
     <div>
         <head>Bibliographic citations</head>
         <p>Individual texts will often contain multiple bibliographic citations, for example to
@@ -201,8 +288,10 @@ End license statement: do not remove -->
         <listBibl>
             <bibl><respStmt>
                     <resp>author</resp>
-                    <name>Gabriel Bodard</name>
+                <name>Gabriel Bodard</name>
                 </respStmt></bibl>
+            
+            <bibl><respStmt><resp>Author</resp><name>Pietro Liuzzo</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
