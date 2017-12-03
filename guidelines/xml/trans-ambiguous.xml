@@ -27,24 +27,33 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ambiguous" xml:lang="en">
     <head>Ambiguous Characters (Leiden underdotted)</head>
-    <p>Character of which at least traces survive, but not adequately to identify
-        the letter unambiguously outside of its context.</p>
+    <p>Character of which at least traces survive, but not adequately to identify the letter
+        unambiguously outside of its context.</p>
     <p>
         <specList>
             <specDesc key="unclear"/>
         </specList>
     </p>
 
-    <p>An incomplete or ill-executed character whose interpretation would be ambiguous outside
-        of its context (traditionally rendered with an underdot in Leiden) should be tagged using the 
-        <gi>unclear</gi> element. (Cf. <ref target="trans-damaged.html">Damaged but not ambiguous characters</ref>.)</p>
-    
-    <p>Note that the EpiDoc use of the <gi>unclear</gi> element is significantly more restricted than
-    the default TEI definition. In EpiDoc, because the category "unclear" refers specifically to the
-    physical state of the letters on the support, and not to editorial ambiguity or uncertainty about the
-    interpretation of words or names, for example, only character data or a <gi>g</gi> tag may appear
-    inside the <gi>unclear</gi> element. Stretches of ambiguous text that span words, lines, or other tagged
-    features, should therefore be marked with multiple <gi>unclear</gi> elements.</p>
+    <p>An incomplete or ill-executed character whose interpretation would be ambiguous outside of
+        its context (traditionally rendered with an underdot in Leiden) should be tagged using the
+            <gi>unclear</gi> element. (Cf. <ref target="trans-damaged.html">Damaged but not
+            ambiguous characters</ref>.)</p>
+
+    <p>The <gi>unclear</gi> element may be given the attribute <att>reason</att>, but this is not
+        required by EpiDoc, as the use of the <gi>unclear</gi> element is sufficient to meet the
+        distinctions that the Leiden conventions make.</p>
+
+    <p>It is important to note that the EpiDoc use of the <gi>unclear</gi> element is very
+        significantly more restricted than the default TEI definition, which allows for a large
+        variety of elements to appear within <gi>unclear</gi>. For example, default TEI would allow
+            <gi>unclear</gi> to contain elements such as <gi>persName</gi>, <gi>date</gi>,
+            <gi>num</gi>, and <gi>choice</gi>. In EpiDoc, because the category "unclear" refers to
+        the physical state of specific characters on the support, and not to editorial ambiguity or
+        uncertainty about the interpretation of words or names, for example, <hi rend="italic"
+            >only</hi> character data or a <gi>g</gi> tag may appear inside the <gi>unclear</gi>
+        element. Stretches of ambiguous text that span words, lines, names, dates, or other tagged
+        features, should therefore be marked with multiple <gi>unclear</gi> elements.</p>
 
     <cit>
         <quote>a&#x323;b&#x323;c&#x323;</quote>
@@ -61,34 +70,43 @@ End license statement: do not remove -->
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
         <unclear>abc</unclear>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT027.html">
-        <unclear>T</unclear><supplied reason="lost">rai</supplied>ani
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph110223.html">
-        <supplied reason="lost">Δ</supplied><unclear reason="damage">η</unclear>μοφάντου
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT027.html">
+        <unclear>T</unclear><supplied reason="lost">rai</supplied>ani </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph110223.html">
+        <supplied reason="lost">Δ</supplied><unclear reason="damage">η</unclear>μοφάντου </egXML>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;1;102"> συμβόλου μ<unclear>ία</unclear>
     </egXML>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;102"> 
-        συμβόλου μ<unclear>ία</unclear>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://iospe.kcl.ac.uk/5.15.html">
+        <w><unclear>Ἀνέθη</unclear>σα<unclear>ν</unclear></w>
+        <w><unclear>οἱ</unclear></w>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://iospe.kcl.ac.uk/5.15.html">
-        <w><unclear>Ἀνέθη</unclear>σα<unclear>ν</unclear></w> <w><unclear>οἱ</unclear></w>
+
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/c.ep.lat;;142"> Clau<unclear>dio</unclear>
+        <unclear>Tib</unclear><supplied reason="lost">eriano</supplied>
     </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="http://papyri.info/ddbdp/c.ep.lat;;142">
-        Clau<unclear>dio</unclear> <unclear>Tib</unclear><supplied reason="lost">eriano</supplied>
-    </egXML>
-    
+
     <divGen type="seealso"/>
-    
+
     <div xml:id="trans-ambiguous-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
