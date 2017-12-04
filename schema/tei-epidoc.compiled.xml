@@ -7,10 +7,13 @@
                 <author xml:id="GB">Gabriel Bodard</author>
                 <author xml:id="TE">Tom Elliott</author>
                 <author xml:id="ML">Marion Lamé</author>
+                <author xml:id="PL">Pietro Liuzzo</author>
                 <author xml:id="EMo">Emmanuelle Morlock</author>
                 <author xml:id="EM">Elli Mylonas</author>
                 <author xml:id="SS">Simona Stoyanova</author>
+                <author xml:id="CT">Charlotte Tupman</author>
                 <author xml:id="SV">Scott Vanderbilt</author>
+                <author xml:id="PY">Polina Yordanova</author>
             </titleStmt>
             <publicationStmt>
                 <p>Released under GNU GPL 3.0</p>
@@ -20,69 +23,113 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <!-- release 8.23: 2017-03-14 - Aligned schema with TEI v. 3.1.0 -->
-            <!-- release 8.22: 2016-08-03 - Aligned schema with TEI v. 3.0.0 -->
-            <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next release will inherit from TEI)</change>
-            <!-- release 8.21: 2015-06-19 - Aligned schema with TEI v. 2.8.0 -->
-            <change who="#GB" when="2015-06-16">added temporary customization of tei:m to allow model.hiLike content</change>
-            <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
-                and "metamark retrace" (from transcr)</change>
-            <change who="#GB" when="2015-06-03">removing customization of altIdentifier (see 2014-02-10) now fixed in TEI</change>
-            <change who="#GB" when="2015-06-03">stopped omitting "charProp localName mapping unicodeName value"
-                from gaiji (requested by IOSPE)</change>
-            <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol signatures stamp watermark" (from msdescription),
-                "appInfo" (from header), and "metamark retrace" (from transcr).</change>
-            <!-- release 8.20: 2014-12-02 - Aligned schema with TEI v. 2.7.0 -->
-            <!-- release 8.19: 2014-07-31 - Aligned schema with TEI v. 2.6.0 -->
-            <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear -&gt; core; datatype in lb/@break)</change>
-            <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per https://sourceforge.net/p/epidoc/feature-requests/67/)</change>
-            <change who="#GB" when="2014-03-04">stopped omitting s from Analysis (requested by Perseus)</change>
-            <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from Gaiji (requested by DASI), and phr from Analysis (requested by Coptic Scriptorium)</change>
-            <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit module (as per request from IGLouvre)</change>
-            <!-- release 8.18: 2014-02-13 - Aligned schema with TEI v. 2.6.0 -->
-            <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to fix problem with TEI 2.6.0)</change>
+            <change who="#CT" when="2017-12-04">added description of the EpiDoc usage of unclear</change>
+            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v.
+                3.1.0</change>
+            <change who="#EM" when="2016-08-03">release 8.22: Aligned schema with TEI v.
+                3.0.0</change>
+            <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next
+                release will inherit from TEI)</change>
+            <change who="#GB" when="2015-06-19">release 8.21: Aligned schema with TEI v.
+                2.8.0</change>
+            <change who="#GB" when="2015-06-16">added temporary customization of tei:m to allow
+                model.hiLike content</change>
+            <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions
+                catchwords heraldry secFol signatures stamp watermark" (from msdescription), and
+                "metamark retrace" (from transcr)</change>
+            <change who="#GB" when="2015-06-03">removing customization of altIdentifier (see
+                2014-02-10) now fixed in TEI</change>
+            <change who="#GB" when="2015-06-03">stopped omitting "charProp localName mapping
+                unicodeName value" from gaiji (requested by IOSPE)</change>
+            <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol
+                signatures stamp watermark" (from msdescription), "appInfo" (from header), and
+                "metamark retrace" (from transcr).</change>
+            <change who="#PL" when="2014-12-02">release 8.20: Aligned schema with TEI v.
+                2.7.0</change>
+            <change who="#CT" when="2014-07-31">release 8.19: Aligned schema with TEI v.
+                2.6.0</change>
+            <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear -&gt;
+                core; datatype in lb/@break)</change>
+            <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per
+                https://sourceforge.net/p/epidoc/feature-requests/67/)</change>
+            <change who="#GB" when="2014-03-04">stopped omitting s from Analysis (requested by
+                Perseus)</change>
+            <change who="#GB" when="2014-03-03">stopped omitting charDecl, glyph, glyphName from
+                Gaiji (requested by DASI), and phr from Analysis (requested by Coptic
+                Scriptorium)</change>
+            <change who="#GB" when="2014-02-24">stopped omitting variantEncoding from textcrit
+                module (as per request from IGLouvre)</change>
+            <change who="#SS" when="2014-02-13">release 8.18: Aligned schema with TEI v.
+                2.6.0</change>
+            <change who="#GB" when="2014-02-10">temporarily adding att.global to altIdentifier (to
+                fix problem with TEI 2.6.0)</change>
             <change who="#SS" when="2013-12-05">added the value 'stacked' in hi @rend</change>
-            <change who="#SS" when="2013-10-09">stopped omitting anchor from the linking module</change>
-            <!-- release 8.17: 2013-08-08 - Aligned schema with TEI v. 2.5.0 -->
-            <!-- release 8.16: 2013-01-28 - Aligned schema with TEI v. 2.3.0 -->
-            <change who="#GB" when="2013-01-28">removed temp customization of space (fixed in TEI 2.3.0)</change>
-            <change who="#GB" when="2012-11-29">suppressed schematron constraint on att.datable.custom</change>
-            <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added constraints for space</change>
+            <change who="#SS" when="2013-10-09">stopped omitting anchor from the linking
+                module</change>
+            <change who="#SV" when="2013-08-08">release 8.17: Aligned schema with TEI v.
+                2.5.0</change>
+            <change who="#GB" when="2013-01-28">release 8.16: Aligned schema with TEI v.
+                2.3.0</change>
+            <change who="#GB" when="2013-01-28">removed temp customization of space (fixed in TEI
+                2.3.0)</change>
+            <change who="#GB" when="2012-11-29">suppressed schematron constraint on
+                att.datable.custom</change>
+            <change who="#GB" when="2012-11-29">improved schematron constraints for gap, date; added
+                constraints for space</change>
             <change who="#GB" when="2012-11-21">stopped omitting birth and death</change>
-            <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron declaration</change>
-            <!-- release 8.15: 2012-11-05 - Aligned schema with TEI v. 2.2.0 -->
-            <change who="#GB" when="2012-11-05">added comments explaining ODD customizations below</change>
-            <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI bug</change>
-            <change who="#GB" when="2012-11-05">removed customization of person and place, now catered for by TEI 2.2.0</change>
-            <change who="#GB" when="2012-10-31">added schematron constraints for @when-custom, abbreviations, and gaps
-                added corpus model (but omitted everything except particDesc and settingDesc)</change>
-            <change who="#GB" when="2012-10-08">removed description/history/figure and underline-supraline, following deprecation 2 years ago</change>
-            <change who="#GB" when="2012-10-05">switched to using @except on moduleRef instead of @mode="delete" on elementSpec</change>
+            <change who="#GB" when="2012-11-07">change TEI namespace to tei: to match Schematron
+                declaration</change>
+            <change who="#GB" when="2012-11-05">release 8.15: Aligned schema with TEI v.
+                2.2.0</change>
+            <change who="#GB" when="2012-11-05">added comments explaining ODD customizations
+                below</change>
+            <change who="#GB" when="2012-11-05">temporarily added certLike to space to patch a TEI
+                bug</change>
+            <change who="#GB" when="2012-11-05">removed customization of person and place, now
+                catered for by TEI 2.2.0</change>
+            <change who="#GB" when="2012-10-31">added schematron constraints for @when-custom,
+                abbreviations, and gaps added corpus model (but omitted everything except particDesc
+                and settingDesc)</change>
+            <change who="#GB" when="2012-10-08">removed description/history/figure and
+                underline-supraline, following deprecation 2 years ago</change>
+            <change who="#GB" when="2012-10-05">switched to using @except on moduleRef instead of
+                @mode="delete" on elementSpec</change>
             <change who="#GB" when="2012-09-26">Stopped omitting damage</change>
-            <change who="#GB" when="2012-09-20">Added spoken module; deleted all elements from that module</change>
+            <change who="#GB" when="2012-09-20">Added spoken module; deleted all elements from that
+                module</change>
             <change who="#GB" when="2012-09-07">stopped omitting relation</change>
             <change who="#GB" when="2012-08-13">stopped omitting floruit and state</change>
-            <change who="#GB" when="2012-07-09">stopped omitting join; added idno to content of person and place</change>
-            <change who="#GB" when="2012-01-11">added "inverted" and "small" to suggested values for hi[@rend]</change>
-            <change who="#GB" when="2012-01-11">removed customization of provenance, origPlace, msItem</change>
+            <change who="#GB" when="2012-07-09">stopped omitting join; added idno to content of
+                person and place</change>
+            <change who="#GB" when="2012-01-11">added "inverted" and "small" to suggested values for
+                hi[@rend]</change>
+            <change who="#GB" when="2012-01-11">removed customization of provenance, origPlace,
+                msItem</change>
             <change who="#SV" when="2012-01-09">stop omitting location</change>
-            <change who="#GB" when="2011-09-26">added att.responsibility to provenance (temporary fix)</change>
-            <change who="#GB" when="2011-09-25">removed modification of lb/@type and added vocab control for lb/@break</change>
-            <change who="#GB" when="2011-09-24">added att.typed to provenance and origPlace (temporary fix)</change>
-            <change who="#GB" when="2011-09-14">added type to origPlace (temporary fix);
-                made msItem/@class repeatable (temporary fix)</change>
-            <change who="#SV" when="2011-03-03">stop omitting tags: bloc, country, district, rdgGrp</change>
+            <change who="#GB" when="2011-09-26">added att.responsibility to provenance (temporary
+                fix)</change>
+            <change who="#GB" when="2011-09-25">removed modification of lb/@type and added vocab
+                control for lb/@break</change>
+            <change who="#GB" when="2011-09-24">added att.typed to provenance and origPlace
+                (temporary fix)</change>
+            <change who="#GB" when="2011-09-14">added type to origPlace (temporary fix); made
+                msItem/@class repeatable (temporary fix)</change>
+            <change who="#SV" when="2011-03-03">stop omitting tags: bloc, country, district,
+                rdgGrp</change>
             <change who="#GB" when="2011-01-20">stopped excluding tei:offset</change>
-            <change who="#GB" when="2010-10-14">deprecated description and history; changed values of @evidence</change>
+            <change who="#GB" when="2010-10-14">deprecated description and history; changed values
+                of @evidence</change>
             <change who="#GB" when="2010-08-10">deprecated hi/@rend='supraline-underline'</change>
             <change who="#GB" when="2010-07-05">made hi/@rend optional, repeatable (x5)</change>
-            <change who="#TE" when="2010-05-14">added xincludes for 3 example components in guidelines</change>
+            <change who="#TE" when="2010-05-14">added xincludes for 3 example components in
+                guidelines</change>
             <change who="#GB" when="2010-06-10">stopped omitting event and listEvent</change>
             <change who="#GB" when="2010-02-01">tweaked some descriptions; reversed high and
                 low</change>
             <change who="#GB" when="2009-09-24">created new valList for @unit; added valList for
                 @extent</change>
-            <change who="#EM" when="2009-09-17">undid deleted analysis elements: interp, interpGrp</change>
+            <change who="#EM" when="2009-09-17">undid deleted analysis elements: interp,
+                interpGrp</change>
             <change who="#GB" when="2009-08-11">changed 'worddiv' to 'inWord'</change>
             <change who="#ML" when="2009-07-12">stop omitting few tags: orgName element</change>
             <change who="#GB" when="2009-06-10">removed dummy 'precision' element</change>
@@ -95,7 +142,7 @@
         </front>
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
-          <schemaSpec xmlns:teix="http://www.tei-c.org/ns/Examples" ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"><classSpec module="tei" type="atts" ident="att.ascribed">
+            <schemaSpec xmlns:teix="http://www.tei-c.org/ns/Examples" ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -7667,10 +7714,12 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
                                     <desc>ancient grave (varia) diacritic</desc>
                                 </valItem>
                                 <valItem ident="intraline">
-                                    <desc>characters scored or struck through at the mid-line level</desc>
+                                    <desc>characters scored or struck through at the mid-line
+                                        level</desc>
                                 </valItem>
                                 <valItem ident="inverted">
-                                    <desc>character(s) inverted or rotated with respect to the rest of the text</desc>
+                                    <desc>character(s) inverted or rotated with respect to the rest
+                                        of the text</desc>
                                 </valItem>
                                 <valItem ident="italic">
                                     <desc/>
@@ -7679,13 +7728,15 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
                                     <desc>ancient lenis (smooth breathing) diacritic</desc>
                                 </valItem>
                                 <valItem ident="ligature">
-                                    <desc>two (or more) letters ligatured, monogrammed, or therwise joined</desc>
+                                    <desc>two (or more) letters ligatured, monogrammed, or therwise
+                                        joined</desc>
                                 </valItem>
                                 <valItem ident="normal">
                                     <desc/>
                                 </valItem>
                                 <valItem ident="reversed">
-                                    <desc>characters reversed (backward-facing) with respect to the rest of the line of text</desc>
+                                    <desc>characters reversed (backward-facing) with respect to the
+                                        rest of the line of text</desc>
                                 </valItem>
                                 <valItem ident="sling-above">
                                     <desc/>
@@ -7713,7 +7764,8 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
                                     <desc>text written with solid line beneath</desc>
                                 </valItem>
                                 <valItem ident="stacked">
-                                    <desc>a character written directly above another character (as opposed to superscript)</desc>
+                                    <desc>a character written directly above another character (as
+                                        opposed to superscript)</desc>
                                 </valItem>
                             </valList>
                         </attDef></attList><exemplum xml:lang="en">
@@ -9190,12 +9242,12 @@ Normalization</ref>
     sei es auf Grund der Auswahlpraxis, sei es weil das Material nicht lesbar, nicht sichtbar oder nicht hörbar ist.</desc><classes><memberOf key="att.global"/><memberOf key="model.global.edit"/><memberOf key="att.timed"/><memberOf key="att.editLike"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.descLike"/><classRef key="model.certLike"/></alternate></content><constraintSpec ident="gap" scheme="isoschematron">
                         <constraint>
                             <sch:rule context="tei:gap">
-                                <sch:report test="@quantity and @extent">gap 
-                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-                                <sch:report test="@quantity and not(@unit)">If gap has @quantity then
-                                @unit is required</sch:report>
-                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap
-                                may not appear within supplied text</sch:report>
+                                <sch:report test="@quantity and @extent">gap may have @quantity (a
+                                    figure) or @extent (a descriptive text value) but not
+                                    both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If gap has @quantity
+                                    then @unit is required</sch:report>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap may not appear within supplied text</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec><attList><attDef ident="reason" mode="replace" usage="req">
@@ -9573,14 +9625,8 @@ Normalization</ref>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COEDADD">3.4.3. Additions, Deletions, and Omissions</ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="unclear"><gloss versionDate="2009-01-06" xml:lang="fr">incertain</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a word, phrase, or passage which cannot be transcribed with certainty because it
-        is illegible or inaudible in the source.</desc><desc versionDate="2007-12-20" xml:lang="ko">원본에서 읽거나 듣기 어려워서 분명하게 전사할 수 없는 단어, 구, 단락들을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">在來源文本中難以辨認或聽懂而無法確實轉錄的單字、詞組、或段落。</desc><desc versionDate="2008-04-05" xml:lang="ja">元資料からは判読できないまたは聞こえないという理由で，確実に転記でき ない語句や一節を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient un mot, une expression ou bien un passage qui
-        ne peut être transcrit avec certitude parce qu'il est illisible ou inaudible dans la source.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una palabra, frase o pasaje que no puede ser
-        transcita con certeza, ya que en la fuente es ilegible o incomprensible.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una parola, una frase o un brano che non può
-        essere trascritto con certezza perché è parzialmente illeggibile o incomprensibile
-        nell'originale.</desc><desc versionDate="2016-11-24" xml:lang="de">
-      enthält ein Wort, einen Satz oder eine Textpassage, welche in der Quelle nicht oder nur schwer lesbar bzw. hörbar ist.
-  </desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/><memberOf key="model.linePart"/><memberOf key="model.choicePart"/><memberOf key="att.editLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.xtext"/></content><attList><attDef ident="reason" usage="opt">
+</elementSpec><elementSpec rend="change" module="core" ident="unclear"><gloss versionDate="2009-01-06" xml:lang="fr">incertain</gloss><desc rend="replace">Character that cannot be identified unambiguously outside of its context.
+                        May contain character data and <gi>g</gi> only.</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/><memberOf key="model.linePart"/><memberOf key="model.choicePart"/><memberOf key="att.editLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.xtext"/></content><attList><attDef ident="reason" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">indicates why the material is hard to transcribe.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">전사하기 어려운 이유를 표시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">指出資料難以轉錄的原因。</desc>
@@ -11076,7 +11122,8 @@ Measures</ref>
 </elementSpec><elementSpec rend="change" module="core" ident="expan"><gloss versionDate="2005-01-14" xml:lang="en">expansion</gloss><gloss versionDate="2007-12-20" xml:lang="ko">확장 표기</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">縮寫還原</gloss><gloss versionDate="2009-01-06" xml:lang="fr">expansion</gloss><gloss versionDate="2007-05-04" xml:lang="es">expansión</gloss><gloss versionDate="2007-01-21" xml:lang="it">espansione</gloss><gloss versionDate="2016-11-25" xml:lang="de">Abkürzungsauflösung</gloss><desc versionDate="2005-01-14" xml:lang="en">contains the expansion of an abbreviation.</desc><desc versionDate="2007-12-20" xml:lang="ko">약어의 확장(비약어) 표기</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個縮寫詞的還原形式。</desc><desc versionDate="2008-04-05" xml:lang="ja">省略形の元の表現を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient l'expansion d'une abréviation.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene la expansión de una abreviatura.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene l'esapnsione di un'abbreviazione.</desc><desc versionDate="2016-11-25" xml:lang="de">enthält die aufgelöste Form einer Abkürzung.</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.editorial"/><memberOf key="model.choicePart"/><memberOf key="att.editLike"/></classes><content><macroRef key="macro.phraseSeq"/></content><constraintSpec scheme="isoschematron" ident="expan">
                         <constraint>
                             <sch:rule context="tei:expan">
-                                <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
+                                <sch:report test="not(descendant::tei:ex)">expan should contain
+                                    ex</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec><attList/><exemplum xml:lang="en">
@@ -12837,14 +12884,15 @@ Elements</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS5">3.10.3. Milestone
 Elements</ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="lb"><gloss rend="replace">line-beginning</gloss><desc rend="replace">marks the start of each line of the transcribed text, including the first</desc><classes><memberOf key="att.global"/><memberOf key="model.milestoneLike"/><memberOf key="att.typed"/><memberOf key="att.edition"/><memberOf key="att.spanning"/><memberOf key="att.breaking"/></classes><content/><attList><attDef ident="break" mode="replace" usage="opt">
+</elementSpec><elementSpec rend="change" module="core" ident="lb"><gloss rend="replace">line-beginning</gloss><desc rend="replace">marks the start of each line of the transcribed text, including the
+                        first</desc><classes><memberOf key="att.global"/><memberOf key="model.milestoneLike"/><memberOf key="att.typed"/><memberOf key="att.edition"/><memberOf key="att.spanning"/><memberOf key="att.breaking"/></classes><content/><attList><attDef ident="break" mode="replace" usage="opt">
                             <datatype>
                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="no">
-                                    <desc>this line-beginning should not be taken as a word-break, i.e. word would be
-                                        hyphenated in a printed text</desc>
+                                    <desc>this line-beginning should not be taken as a word-break,
+                                        i.e. word would be hyphenated in a printed text</desc>
                                 </valItem>
                             </valList>
                         </attDef></attList><exemplum xml:lang="en">
@@ -24759,8 +24807,10 @@ the resumption <anchor xml:id="a23"/> of the text. ...</p>
   transcriber when expanding an abbreviation.</desc><desc versionDate="2007-12-20" xml:lang="ko">축약을 확장할 때 편집자 또는 전사자에 의해 추가된 문자열을 포함한다.</desc><desc versionDate="2008-04-06" xml:lang="es">contiene una secuencia de letras añadidas por un editor o transcriptor al expandir una abreviatura.</desc><desc versionDate="2008-04-05" xml:lang="ja">編集者や転記者が，省略形を元に戻した結果の文字列を示す．</desc><desc versionDate="2008-03-30" xml:lang="fr">contient une succession de lettres ajoutées par un éditeur ou un transcripteur pour développer une abréviation.</desc><desc versionDate="2007-11-06" xml:lang="it">contiene una sequenza di lettere aggiunte da un revisore o trascrittore in fase di espansione di un'abbreviazione</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.editorial"/><memberOf key="model.choicePart"/><memberOf key="att.editLike"/></classes><content><macroRef key="macro.xtext"/></content><constraintSpec scheme="isoschematron" ident="ex">
                         <constraint>
                             <sch:rule context="tei:ex">
-                                <sch:report test="not(ancestor::tei:expan)">ex should only appear inside expan</sch:report>
-                                <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
+                                <sch:report test="not(ancestor::tei:expan)">ex should only appear
+                                    inside expan</sch:report>
+                                <sch:report test="parent::tei:abbr">ex should not be a child of
+                                    abbr</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec><attList/><exemplum xml:lang="en">
@@ -25113,10 +25163,11 @@ l'abréviation</desc>
 </elementSpec><elementSpec rend="change" module="transcr" ident="space"><gloss versionDate="2007-06-12" xml:lang="fr">espace</gloss><desc versionDate="2005-01-14" xml:lang="en">indicates the location of a significant space in the text.</desc><desc versionDate="2007-12-20" xml:lang="ko">복사본에서 중요한 공간의 위치를 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">指出來源文件中出現大片空白的位置。</desc><desc versionDate="2008-04-05" xml:lang="ja">元資料にある重要な空白の場所を示す．</desc><desc versionDate="2009-11-16" xml:lang="fr">permet de situer un espace significatif dans le texte édité.</desc><desc versionDate="2007-05-04" xml:lang="es">indica la localización de un espacio significativo en el texto de copia.</desc><desc versionDate="2007-01-21" xml:lang="it">indica la posizione di uno spazio significativo nel testo copia</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.global.edit"/><memberOf key="att.dimensions"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.descLike"/><classRef key="model.certLike"/></alternate></content><constraintSpec ident="space" scheme="isoschematron">
                         <constraint>
                             <sch:rule context="tei:space">
-                                <sch:report test="@quantity and @extent">space 
-                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-                                <sch:report test="@quantity and not(@unit)">If space has @quantity then
-                                    @unit is required</sch:report>
+                                <sch:report test="@quantity and @extent">space may have @quantity (a
+                                    figure) or @extent (a descriptive text value) but not
+                                    both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If space has @quantity
+                                    then @unit is required</sch:report>
                             </sch:rule>
                         </constraint>
                     </constraintSpec><attList><attDef ident="dim" usage="rec">
@@ -25323,10 +25374,12 @@ used to mark normal inter-word space or the like.</p>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="parallel">
-                                    <desc>Characters supplied from a parallel version of this text, absent from this one</desc>
+                                    <desc>Characters supplied from a parallel version of this text,
+                                        absent from this one</desc>
                                 </valItem>
                                 <valItem ident="previouseditor">
-                                    <desc>Characters visible to a previous editor, now lost/unclear due to damage</desc>
+                                    <desc>Characters visible to a previous editor, now lost/unclear
+                                        due to damage</desc>
                                 </valItem>
                             </valList>
                         </attDef></attList><exemplum xml:lang="en">
@@ -29289,10 +29342,12 @@ externally.</p>
                                     <desc>Text dated by nomenclature or onomastics</desc>
                                 </valItem>
                                 <valItem ident="prosopography">
-                                    <desc>Text dated by known persons named or implied within it</desc>
+                                    <desc>Text dated by known persons named or implied within
+                                        it</desc>
                                 </valItem>
                                 <valItem ident="reign">
-                                    <desc>Text dated by the reign of an emperor or other ruler</desc>
+                                    <desc>Text dated by the reign of an emperor or other
+                                        ruler</desc>
                                 </valItem>
                                 <valItem ident="titulature">
                                     <desc>Text dated by the use of official titles</desc>
@@ -29301,7 +29356,8 @@ externally.</p>
                                     <desc>Text dated by explicit internal date</desc>
                                 </valItem>
                                 <valItem ident="context">
-                                    <desc>Archaeological, epigraphic, iconographic or other context of the text support</desc>
+                                    <desc>Archaeological, epigraphic, iconographic or other context
+                                        of the text support</desc>
                                 </valItem>
                             </valList>
                         </attDef></attList><exemplum xml:lang="en">

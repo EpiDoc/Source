@@ -5,7 +5,11 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2017-03-06T15:20:23Z. .  
+Schema generated from ODD source 2017-12-04T16:04:46Z. .
+TEI Edition: Version 3.1.0. Last updated on
+	15th December 2016, revision d3f5e70
+TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.1.0/
+  
 --><!----><define name="tei_macro.paraContent">
       <zeroOrMore>
          <choice>
@@ -465,7 +469,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@when]">
         <sch:report role="nonfatal" test="@notBefore|@notAfter|@from|@to">The @when attribute cannot be used with any other att.datable.w3c attributes.</sch:report>
       </sch:rule>
@@ -475,7 +478,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@from]">
         <sch:report role="nonfatal" test="@notBefore">The @from and @notBefore attributes cannot be used together.</sch:report>
       </sch:rule>
@@ -485,7 +487,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@to]">
         <sch:report role="nonfatal" test="@notAfter">The @to and @notAfter attributes cannot be used together.</sch:report>
       </sch:rule>
@@ -510,7 +511,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@calendar]">
             <sch:assert test="string-length(.) gt 0">
 @calendar indicates the system or calendar to which the date represented by the content of this element
@@ -1251,7 +1251,6 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@subtype]">
         <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
       </sch:rule>
@@ -1280,7 +1279,6 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
             <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
           </sch:rule>
@@ -1451,7 +1449,6 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@spanTo]">
             <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
 The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
@@ -1494,7 +1491,6 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
                 context="tei:*[@schemeVersion]">
             <sch:assert test="@scheme and not(@scheme = 'free')">
               @schemeVersion can only be used if @scheme is specified.
@@ -3682,7 +3678,6 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
             <rule context="tei:p">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="(ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure)">
         Abstract model violation: Paragraphs may not contain other paragraphs or ab elements.
       </report>
@@ -3693,7 +3688,6 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
             <rule context="tei:p">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.
       </report>
@@ -4259,15 +4253,14 @@ Normalization 12. Critical Apparatus]</a:documentation>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:gap">
-               <sch:report test="@quantity and @extent">gap 
-                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-               <sch:report test="@quantity and not(@unit)">If gap has @quantity then
-                                @unit is required</sch:report>
-               <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap
-                                may not appear within supplied text</sch:report>
-            </sch:rule>
+                                <sch:report test="@quantity and @extent">gap may have @quantity (a
+                                    figure) or @extent (a descriptive text value) but not
+                                    both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If gap has @quantity
+                                    then @unit is required</sch:report>
+                                <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap may not appear within supplied text</sch:report>
+                            </sch:rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.timed.attribute.start"/>
@@ -4362,7 +4355,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="tei_unclear">
       <element name="unclear">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.4.3. Additions, Deletions, and Omissions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Character that cannot be identified unambiguously outside of its context. May contain character data and g only. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="tei_macro.xtext"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
@@ -4625,10 +4618,10 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:expan">
-               <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
-            </sch:rule>
+                                <sch:report test="not(descendant::tei:ex)">expan should contain
+                                    ex</sch:report>
+                            </sch:rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
@@ -4644,7 +4637,6 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
             <rule context="tei:ptr">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@target and @cRef">Only one of the
 attributes @target and @cRef may be supplied on <name/>.</report>
             </rule>
@@ -4667,7 +4659,6 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             <rule context="tei:ref">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@target and @cRef">Only one of the
 	attributes @target' and @cRef' may be supplied on <name/>
                </report>
@@ -4758,7 +4749,6 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:list[@type='gloss']">
 	              <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
             </sch:rule>
@@ -5482,7 +5472,6 @@ Sample values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] sho
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="@target and count( child::* ) &gt; 0">
 If the @target attribute on <sch:name/> is used, the
 relatedItem element must be empty</sch:report>
@@ -5494,7 +5483,6 @@ relatedItem element must be empty</sch:report>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="@target or child::*">A relatedItem element should have either a 'target' attribute
         or a child element to indicate the related bibliographic item</sch:assert>
             </rule>
@@ -5527,7 +5515,6 @@ relatedItem element must be empty</sch:report>
             <rule context="tei:l">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
       </report>
@@ -5588,7 +5575,6 @@ relatedItem element must be empty</sch:report>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 0">An lg element
         must contain at least one child l, lg or gap element.</sch:assert>
             </rule>
@@ -5598,7 +5584,6 @@ relatedItem element must be empty</sch:report>
             <rule context="tei:lg">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
       </report>
@@ -6340,9 +6325,9 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="tei-epidoc-quotation-quotationContents-constraint-report-15">
             <rule context="tei:quotation">
-               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="not(@marks) and not (tei:p)">
 On <name/>, either the @marks attribute should be used, or a paragraph of description provided</report>
             </rule>
@@ -7513,7 +7498,6 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             <rule context="tei:div">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
       </report>
@@ -7524,7 +7508,6 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             <rule context="tei:div">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.
       </report>
@@ -8072,7 +8055,6 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
             </rule>
          </pattern>
@@ -8082,7 +8064,6 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="@spanTo">L'attribut spanTo est requis.</sch:assert>
             </rule>
          </pattern>
@@ -8113,7 +8094,6 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             <rule context="tei:delSpan">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@spanTo">The @spanTo attribute of <name/> is required.</assert>
             </rule>
          </pattern>
@@ -8122,7 +8102,6 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             <rule context="tei:delSpan">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@spanTo">L'attribut spanTo est requis.</assert>
             </rule>
          </pattern>
@@ -8142,11 +8121,12 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:ex">
-               <sch:report test="not(ancestor::tei:expan)">ex should only appear inside expan</sch:report>
-               <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
-            </sch:rule>
+                                <sch:report test="not(ancestor::tei:expan)">ex should only appear
+                                    inside expan</sch:report>
+                                <sch:report test="parent::tei:abbr">ex should not be a child of
+                                    abbr</sch:report>
+                            </sch:rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
@@ -8227,13 +8207,13 @@ Sample values include: 1] header; 2] footer; 3] pageNum(page number) ; 4] lineNu
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:space">
-               <sch:report test="@quantity and @extent">space 
-                                    may have @quantity (a figure) or @extent (a descriptive text value) but not both</sch:report>
-               <sch:report test="@quantity and not(@unit)">If space has @quantity then
-                                    @unit is required</sch:report>
-            </sch:rule>
+                                <sch:report test="@quantity and @extent">space may have @quantity (a
+                                    figure) or @extent (a descriptive text value) but not
+                                    both</sch:report>
+                                <sch:report test="@quantity and not(@unit)">If space has @quantity
+                                    then @unit is required</sch:report>
+                            </sch:rule>
          </pattern>
          <ref name="tei_att.global.attribute.xmlid"/>
          <ref name="tei_att.global.attribute.n"/>
@@ -8297,7 +8277,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum(page number) ; 4] lineNu
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="child::tei:add and child::tei:del">
                   <name/> must have at least one child add and at least one child del</assert>
             </rule>
@@ -8610,7 +8589,6 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
             <rule context="tei:s">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="tei:s">You may not nest one s element within
       another: use seg instead</report>
             </rule>
@@ -9145,7 +9123,6 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="contains(normalize-space(@target),' ')">You must supply at least two values for @target or  on <sch:name/>
                </sch:assert>
             </rule>
@@ -9179,7 +9156,6 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
             <rule context="tei:ab">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="(ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)">
         Abstract model violation: ab may not contain paragraphs or other ab elements.
       </report>
@@ -9190,7 +9166,6 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
             <rule context="tei:ab">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="ancestor::tei:l or ancestor::tei:lg">
         Abstract model violation: Lines may not contain higher-level divisions such as p or ab.
       </report>
@@ -9238,7 +9213,6 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
             <rule context="tei:join">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="contains(@target,' ')">
 You must supply at least two values for @target on <name/>
                </assert>
@@ -9343,7 +9317,6 @@ You must supply at least two values for @target on <name/>
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            role="nonfatal"
                            test="ancestor::tei:msDesc">WARNING: deprecated use of element — The <sch:name/> element will not be allowed outside of msDesc as of 2018-10-01.</sch:assert>
             </rule>
@@ -9366,7 +9339,6 @@ You must supply at least two values for @target on <name/>
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="count(tei:width)&gt; 1">
 The element <name/> may appear once only
       </report>
@@ -9377,7 +9349,6 @@ The element <name/> may appear once only
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="count(tei:height)&gt; 1">
 The element <name/> may appear once only
       </report>
@@ -9388,7 +9359,6 @@ The element <name/> may appear once only
             <rule context="tei:dimensions">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="count(tei:depth)&gt; 1">
 The element <name/> may appear once only
       </report>
@@ -9688,7 +9658,6 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            role="nonfatal"
                            test="ancestor::tei:msDesc">WARNING: deprecated use of element — The <sch:name/> element will not be allowed outside of msDesc as of 2018-10-01.</sch:assert>
             </rule>
@@ -9707,7 +9676,6 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            role="nonfatal"
                            test="ancestor::tei:msDesc">WARNING: deprecated use of element — The <sch:name/> element will not be allowed outside of msDesc as of 2018-10-01.</sch:assert>
             </rule>
@@ -9795,7 +9763,6 @@ Suggested values include: 1] lettering; 2] nomenclature; 3] prosopography; 4] re
             <rule context="tei:msIdentifier">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="not(parent::tei:msPart) and       (local-name(*[1])='idno' or       local-name(*[1])='altIdentifier' or       normalize-space(.)='')">An msIdentifier must contain either a repository or location of some type, or a manuscript name</report>
             </rule>
          </pattern>
@@ -11892,7 +11859,6 @@ Suggested values include: 1] paper; 2] parch(parchment) ; 3] mixed</a:documentat
             <rule context="tei:relation">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@ref or @key or @name">One of the attributes  'name', 'ref' or 'key' must be supplied</assert>
             </rule>
          </pattern>
@@ -11901,7 +11867,6 @@ Suggested values include: 1] paper; 2] parch(parchment) ; 3] mixed</a:documentat
             <rule context="tei:relation">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@active and @mutual">Only one of the attributes
 @active and @mutual may be supplied</report>
             </rule>
@@ -11911,7 +11876,6 @@ Suggested values include: 1] paper; 2] parch(parchment) ; 3] mixed</a:documentat
             <rule context="tei:relation">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
                        test="@passive and not(@active)">the attribute 'passive'
 	may be supplied only if the attribute 'active' is
 	supplied</report>
@@ -12349,7 +12313,6 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="count(tei:lem) &lt; 2">Only one &lt;lem&gt; element may appear within a &lt;rdgGrp&gt;</sch:assert>
             </rule>
          </pattern>
@@ -12397,7 +12360,6 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="tei:variantEncoding">
                <sch:assert test="(@location != 'external') or (@method != 'parallel-segmentation')">
               The @location value "external" is inconsistent with the
