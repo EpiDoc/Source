@@ -34,7 +34,7 @@ End license statement: do not remove -->
     </p>
     <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi>, attributes on this
         element can be understood to refer to the content of that line, i.e. all text before the
-        following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>).
+        following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>). 
     At present, therefore, EpiDoc recommends the use of the following values in the <att>style</att>
     attribute on the <gi>lb</gi> immediately preceding the line of text in question:</p>
     
@@ -43,10 +43,11 @@ End license statement: do not remove -->
         <lb style="text-direction:r-to-l"/>
     </egXML>
 
-    <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as
-        it is the default direction. One might need to use <att>rend</att> in the case of boustrophedon text, for instance.</p>
+    <p>Note that including the directionality of the text on <gi>lb</gi> is a customized usage of the element, which is an empty element in TEI. The direction of texts can also be indicated on higher-level elements, including <gi>div</gi>, if the <att>style</att> attribute applies to all text within that element.</p> 
+    <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, if
+        it is the default direction of the script in question. One might need to use <att>style</att> in the case of boustrophedon text, for instance.</p>
 
-    <p>Other values of <att>rend</att> can be created in the case of texts written vertically, in
+    <p>Other values of <att>style</att> can be created in the case of texts written vertically, in
         a circle or spiral, or otherwise unusually. (But these values are not currently handled by the Example Stylesheets.)</p>
     
     <!--<p>Note: as of 31 May 2013, the EpiDoc Example Stylesheets do not provide any support for the handling of these
