@@ -121,8 +121,34 @@ End license statement: do not remove -->
                 </facsimile>
             </egXML>
         </div>
+        <div xml:id="using-zone">
+            <head>Using the <gi>zone</gi> element</head>
+            <p>Within <gi>facsimile</gi>, EpiDoc follows default TEI in allowing <gi>surface</gi> to
+                contain the <gi>zone</gi> element, which defines any two-dimensional area within
+                    <gi>surface</gi>. This permits the editor to identify a section of the support
+                and to associate it with an area within the facsimile in which it is represented. A
+                zone may be of any shape: a rectangular zone can be defined using <att>ulx</att>,
+                    <att>uly</att>, <att>lrx</att>, and <att>lry</att>, while a polygonal zone can
+                be defined using <att>points</att>. These same attributes can also be used on the
+                    <gi>surface</gi> element itself. More complex examples <ref
+                    target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/examples-zone.html"
+                    >can be found in the TEI Guidelines.</ref></p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <facsimile>
+                    <surface>
+                        <desc>Face of the inscribed altar.</desc>
+                        <graphic url="../images/a0001.jpg">
+                            <desc>Photograph (2014)</desc>
+                        </graphic>
+                        <zone ulx="240" uly="25" lrx="400" lry="280">Column B of the inscribed
+                            text.</zone>
+                    </surface>
+                </facsimile>
+            </egXML>
+        </div>
         <!-- using-facsimile -->
-    </div> <!-- facsimile -->
+    </div>
+    <!-- facsimile -->
     <div xml:id="external">
         <head>Citing Externally Published Images of the Text-bearing Object</head>
         <p>When signalling the availability of images published externally to the EpiDoc project
@@ -138,8 +164,8 @@ End license statement: do not remove -->
                     <bibl type="printed">G. Cavallo - H.Maehler, Greek Bookhands, pl.10b</bibl>
                     <bibl type="online">
                         <title level="m">Berliner Papyrusdatenbank</title>: "<title level="a">P.
-                            11629 a+b: Fragmente aus Kallimachos, Aitia I und III.</title>,"
-                        <ptr target="http://berlpap.smb.museum/03174/"/>
+                            11629 a+b: Fragmente aus Kallimachos, Aitia I und III.</title>," <ptr
+                            target="http://berlpap.smb.museum/03174/"/>
                     </bibl>
                 </listBibl>
             </div>
@@ -160,9 +186,13 @@ End license statement: do not remove -->
                     <name>Tom Elliott</name>
                 </respStmt></bibl>
             <bibl><respStmt>
-                <resp>author</resp>
-                <name>Arlo Griffiths</name>
-            </respStmt></bibl>
+                    <resp>author</resp>
+                    <name>Arlo Griffiths</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
         </listBibl>
     </div>
 </div>
