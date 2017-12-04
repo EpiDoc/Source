@@ -35,12 +35,12 @@ End license statement: do not remove -->
     <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi>, attributes on this
         element can be understood to refer to the content of that line, i.e. all text before the
         following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>).
-    At present, therefore, EpiDoc recommends the use of the following values in the <att>rend</att>
+    At present, therefore, EpiDoc recommends the use of the following values in the <att>style</att>
     attribute on the <gi>lb</gi> immediately preceding the line of text in question:</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <lb rend="left-to-right"/>
-        <lb rend="right-to-left"/>
+        <lb style="text-direction:l-to-r"/>
+        <lb style="text-direction:r-to-l"/>
     </egXML>
 
     <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as
@@ -64,16 +64,16 @@ End license statement: do not remove -->
         <ab><lb/>abc</ab></egXML>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-        <ab><lb rend="right-to-left"/>abc</ab>
+        <ab><lb style="text-direction:r-to-l"/>abc</ab>
     </egXML>
 
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
         <ab>
-            <lb n="1" rend="right-to-left"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb
-               n="2" break="no" rend="left-to-right"/><supplied reason="lost">θ</supplied>ανόντος
+            <lb n="1" style="text-direction:r-to-l"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb
+                n="2" break="no" style="text-direction:l-to-r"/><supplied reason="lost">θ</supplied>ανόντος
             ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb
-               n="3" break="no" rend="right-to-left"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
+                n="3" break="no" style="text-direction:r-to-l"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
         </ab>
     </egXML>
     
@@ -88,6 +88,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
