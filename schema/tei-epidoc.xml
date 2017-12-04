@@ -223,6 +223,15 @@ End license statement: do not remove -->
 
                 <!-- constraining values of div/@type -->
                 <elementSpec ident="div" mode="change" module="textstructure">
+                    <constraintSpec scheme="isoschematron" ident="div">
+                        <constraint>
+                            <sch:rule context="tei:div">
+                                <sch:report test="@type != 'textpart' and parent::tei:div and @type!=parent::tei:div/@type">
+                                    Divs other than @type=textpart may not nest in divs of different @type
+                                </sch:report>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
                     <attList>
                         <attDef ident="type" mode="replace" usage="req">
                             <valList type="closed">
