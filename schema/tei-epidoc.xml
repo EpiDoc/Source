@@ -548,8 +548,7 @@ End license statement: do not remove -->
                 <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
                 <elementSpec ident="unclear" module="core" mode="change">
                     <desc>Character that cannot be identified unambiguously outside of its context.
-                        The EpiDoc usage of <gi>unclear</gi> restricts its contents to character
-                        data and <gi>g</gi> only.</desc>
+                        May contain character data and <gi>g</gi> only.</desc>
                     <content>
                         <rng:ref name="macro.xtext"/>
                     </content>
