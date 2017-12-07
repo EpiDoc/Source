@@ -48,9 +48,8 @@ End license statement: do not remove -->
         and <gi>roleName</gi>. Most EpiDoc projects however have decided that these do not 
         unproblematically map onto the nomenclature of Greek and Roman antiquity, or other cultures
         whose documentary texts are being encoded, and so the more generic element <gi>name</gi>
-        has been used to encode the individual names within a complete person reference. The 
-        <att>type</att> attribute on <gi>name</gi> may be used to specify the class of name.
-    </p>
+        has been used to encode the individual names within a complete person reference.  The
+        <att>type</att> attribute on <gi>name</gi> may be used to specify the class of name. </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT095.html">
         <persName type="attested">
@@ -60,7 +59,7 @@ End license statement: do not remove -->
         </persName>
     </egXML>
     
-    <p>The reccommended usage of <att>type</att> on <gi>persName</gi>, as applied in projects using the London style (IAph, IRT, IRCyr, IOSPE), 
+    <p>The recommended usage of <att>type</att> on <gi>persName</gi>, as applied in projects using the London style (IAph, IRT, IRCyr, IOSPE), 
                 inlcudes five values:
                 <list>
                     <item>attested</item> <note>- stands for "Person attested locally"-- other than emperors, consuls, gods</note>
@@ -74,27 +73,46 @@ End license statement: do not remove -->
     </p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://iospe.kcl.ac.uk/5.115.html">
-        <persName type="attested" ref="#person138"><name nymRef="Θεόδωρος">Θεωδόρου</name></persName>
+        <persName type="attested" ref="#person138"><name>Θεωδόρου</name></persName>
     </egXML>
     
+    <p>Just as the <ref target="idx-wordslemmata.html">lemmata of words</ref> may be recorded to
+        facilitate indexing or searching, names may be linked to their nominative-singular form (or
+        similar in other languages). No <att>lemma</att> attribute is available on <gi>name</gi> or
+            <gi>persName</gi>, however, so the more involved attribute <att>nymRef</att> should be
+        used instead. This attribute can be used to link the instance of a name in text to a
+        corresponding <gi>nym</gi> element that provides additional information about orthography,
+        primary reference form (e.g., nominative singular), etc. Best practice is to develop a
+        separate xml file in which the <gi>nym</gi> elements are encoded, usually inside a
+            <gi>nymList</gi>. The following examples assume the existence of such a separate file
+        (nametable.xml) and generally make use of the nominative form of the name as the linking
+        value, appearing after the hash (#) character in <att>nymRef</att> and without hash or other
+        prefix in the <att>xml:id</att> on the corresponding <gi>nym</gi>. More information on the
+        extensive options available for describing the name and its forms inside the <gi>nym</gi>
+        element may be found in <ref
+            target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDNYM">the TEI
+            Guidelines section "13.3.5 Names and Nyms"</ref>. <emph>Note</emph> that the
+            <att>nymRef</att> attribute links to information about the standard form of a name, not
+        to the unique person to whom a name instance refers (on which see below). </p>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT941.html">
-        <persName type="emperor"><name nymRef="Marcus" type="praenomen"><expan><abbr>M</abbr><ex>arco</ex></expan></name> 
-            <name nymRef="Aurellius" type="gentilicium">Aurellio</name> <name nymRef="Antoninus" type="gentilicium">Antonino</name>
-            <name nymRef="Pius" type="cognomen">Pio</name> <name nymRef="Felix" type="cognomen">Felici</name> 
-            <name nymRef="Augustus" type="cognomen"><expan><abbr>Aug</abbr><ex>usto</ex></expan></name> 
-            <name nymRef="Parthicus" type="cognomen">Parthico</name> 
-            <w lemma="magnus">maximo</w> <name nymRef="Britannicus" type="cognomen">Britanico</name> 
-            <w lemma="magnus">maximo</w> <name nymRef="Germanicus" type="cognomen">Germanico</name>
+        <persName type="emperor"><name nymRef="nametable.xml#Marcus" type="praenomen"><expan><abbr>M</abbr><ex>arco</ex></expan></name> 
+            <name nymRef="nametable.xml#Aurellius" type="gentilicium">Aurellio</name> <name nymRef="nametable.xml#Antoninus" type="gentilicium">Antonino</name>
+            <name nymRef="nametable.xml#Pius" type="cognomen">Pio</name> <name nymRef="nametable.xml#Felix" type="cognomen">Felici</name> 
+            <name nymRef="nametable.xml#Augustus" type="cognomen"><expan><abbr>Aug</abbr><ex>usto</ex></expan></name> 
+            <name nymRef="nametable.xml#Parthicus" type="cognomen">Parthico</name> 
+            <w lemma="magnus">maximo</w> <name nymRef="nametable.xml#Britannicus" type="cognomen">Britanico</name> 
+            <w lemma="magnus">maximo</w> <name nymRef="nametable.xml#Germanicus" type="cognomen">Germanico</name>
         </persName>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://iospe.kcl.ac.uk/5.108.html">
         <persName type="divine" key="ststephen"><roleName><w lemma="ἅγιος">ἁγήου</w></roleName>
-            <name nymRef="Στέφανος">Στεφάνου</name></persName>
+            <name nymRef="nametable.xml#Στέφανος">Στεφάνου</name></persName>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph090035.html">
-        <persName type="other"><name nymRef="Ἀνχίσης">Ἀνχίσου</name></persName>
+        <persName type="other"><name nymRef="nametable.xml#Ἀνχίσης">Ἀνχίσου</name></persName>
     </egXML>
     
     <p>A personal name of an attested individual, including cognomina but not "Imperator", shoud be tagged as a <gi>name</gi>.
@@ -106,15 +124,6 @@ End license statement: do not remove -->
         adoptive father, husband, owner/patron etc., a further <gi>persName</gi> element may be nested
         inside the first, such that, for example, "Apollonios son of Adrastos" is identified as one person, while
         his father "Adrastos" is another.
-    </p>
-    
-    <p>Just as the <ref target="idx-wordslemmata.html">lemmata of words</ref> may be recorded to facilitate
-        indexing or searching, names may be linked to their nominative-singular form (or similar in other languages).
-        No <att>lemma</att> attribute is available on <gi>name</gi> or <gi>persName</gi>, however, so the more
-        involved attribute <att>nymRef</att> should be used instead. This attribute should contain a URL or other
-        URI pointing to the standard form of this name in a database or online onomasticon. <emph>Note</emph>
-        that the <att>nymRef</att> attribute identifies the standard form of a name, not the unique person to whom
-        this name refers (on which see below).
     </p>
     
     <p>
