@@ -52,7 +52,7 @@ How to use it:
                7. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
                8. Test thoroughly (and ask for support on Markup to test) before committing as
                canonical new EpiDoc schema.
-         To generate the compiled ODD, repeat the above, only changing point (3) from
+         To generate the compiled ODD, repeat the above, only changing point (4) from
          "RELAX NG Schema" to "Compiled ODD Document"
 
       3. How to decide which schema to use:
