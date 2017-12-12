@@ -24,7 +24,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="#SJD" when="2017-12-07">release 9.0: Aligned schema with TEI v. 3.2.0</change>
+            <change who="#SJD" when="2017-12-12">release 9.0: Aligned schema with TEI v. 3.2.0</change>
             <change who="#GB" when="2017-12-04">added schematron to tei:div to prevent nesting of non-alike divs</change>
             <change who="#CT" when="2017-12-04">added description of the EpiDoc usage of unclear</change>
             <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v.
@@ -12887,8 +12887,7 @@ Elements</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS5">3.10.3. Milestone
 Elements</ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="lb"><gloss rend="replace">line-beginning</gloss><desc rend="replace">marks the start of each line of the transcribed text, including the
-                        first</desc><classes><memberOf key="att.global"/><memberOf key="model.milestoneLike"/><memberOf key="att.typed"/><memberOf key="att.edition"/><memberOf key="att.spanning"/><memberOf key="att.breaking"/></classes><content/><attList><attDef ident="break" mode="replace" usage="opt">
+</elementSpec><elementSpec rend="change" module="core" ident="lb"><gloss rend="replace">line-beginning</gloss><desc rend="replace">marks the start of each line of the transcribed text, including the first</desc><classes><memberOf key="att.global"/><memberOf key="model.milestoneLike"/><memberOf key="att.typed"/><memberOf key="att.edition"/><memberOf key="att.spanning"/><memberOf key="att.breaking"/></classes><content/><attList><attDef ident="break" mode="replace" usage="opt">
                             <datatype>
                                 <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
                             </datatype>
