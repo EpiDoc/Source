@@ -47,14 +47,15 @@ End license statement: do not remove -->
 
     <p>It is important to note that the EpiDoc use of the <gi>unclear</gi> element is very
         significantly more restricted than the default TEI definition, which allows for a large
-        variety of elements to appear within <gi>unclear</gi>. For example, default TEI would allow
-            <gi>unclear</gi> to contain elements such as <gi>persName</gi>, <gi>date</gi>,
-            <gi>num</gi>, and <gi>choice</gi>. In EpiDoc, because the category "unclear" refers to
+        variety of elements to appear within <gi>unclear</gi>. In EpiDoc, the category "unclear" refers to
         the physical state of specific characters on the support, and not to editorial ambiguity or
-        uncertainty about the interpretation of words or names, for example, <hi rend="italic"
-            >only</hi> character data or a <gi>g</gi> tag may appear inside the <gi>unclear</gi>
-        element. Stretches of ambiguous text that span words, lines, names, dates, or other tagged
-        features, should therefore be marked with multiple <gi>unclear</gi> elements.</p>
+        uncertainty about the interpretation of words or names (which is indicated using <gi>cert</gi>).
+        Because <gi>unclear</gi> is only concerned with the state of the characters on the support, and not 
+        with any interpretation of those characters (such as whether several characters represent a number, name, vel sim.),
+        <hi rend="italic">only</hi> character data or a <gi>g</gi> tag may appear inside the <gi>unclear</gi>
+        element. Accordingly, no elements related to the interpretation of the text should nest within <gi>unclear</gi>,; 
+        stretches of ambiguous text that span words, lines, names, dates, or other tagged
+        features should therefore be marked with multiple <gi>unclear</gi> elements.</p>
 
     <cit>
         <quote>a&#x323;b&#x323;c&#x323;</quote>
@@ -108,6 +109,10 @@ End license statement: do not remove -->
                     <resp>author</resp>
                     <name>Charlotte Tupman</name>
                 </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Scott DiGiulio</name>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>
