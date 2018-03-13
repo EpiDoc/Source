@@ -33,7 +33,8 @@
             <xsl:number count="tei:egXML" level="any" from="tei:div[parent::tei:body]"/>
         </xsl:variable>
         <egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'#', $num)}">
-            <xsl:apply-templates />
+          <xsl:variable name="output"><xsl:apply-templates /></xsl:variable>
+          <xsl:apply-templates select="$output" mode="sqbrackets"/>
         </egXML>
     </xsl:template>
     
