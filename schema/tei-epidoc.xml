@@ -23,7 +23,7 @@ http://epidoc.sf.net.
 
 End license statement: do not remove -->
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -39,6 +39,7 @@ End license statement: do not remove -->
                 <author xml:id="SV">Scott Vanderbilt</author>
                 <author xml:id="PY">Polina Yordanova</author>
                 <author xml:id="SJD">Scott DiGiulio</author>
+                <author xml:id="HC">Hugh Cayless</author>
             </titleStmt>
             <publicationStmt>
                 <p>Released under GNU GPL 3.0</p>
@@ -48,6 +49,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#HC" when="2018-09-18">switched datatype references to Pure Odd syntax</change>
             <change who="GB" when="2018-03-13">removed customisation of tei:m (should have been
                 deleted 2 years ago)</change>
             <change who="#SJD" when="2017-12-12">release 9.0: Aligned schema with TEI v. 3.2.0</change>
@@ -342,7 +344,7 @@ End license statement: do not remove -->
                     <attList>
                         <attDef ident="rend" mode="replace" usage="req">
                             <datatype maxOccurs="5">
-                                <rng:ref name="data.word"/>
+                                <dataRef key="teidata.word"/>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="acute">
@@ -430,7 +432,7 @@ End license statement: do not remove -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
                             <datatype>
-                                <rng:ref name="data.enumerated"/>
+                                <dataRef key="teidata.enumerated"/>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="no">
@@ -448,7 +450,7 @@ End license statement: do not remove -->
                     <attList>
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="6">
-                                <rng:ref name="data.word"/>
+                                <dataRef key="teidata.word"/>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="lettering">
@@ -500,7 +502,7 @@ End license statement: do not remove -->
                         <!-- suggested attribute list for supplied/@evidence -->
                         <attDef ident="evidence" mode="replace" usage="opt">
                             <datatype maxOccurs="1">
-                                <rng:ref name="data.word"/>
+                                <dataRef key="teidata.word"/>
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="parallel">
@@ -546,7 +548,7 @@ End license statement: do not remove -->
                     <desc>Character that cannot be identified unambiguously outside of its context.
                         May contain character data and <gi>g</gi> only.</desc>
                     <content>
-                        <rng:ref name="macro.xtext"/>
+                        <macroRef key="macro.xtext"/>
                     </content>
                 </elementSpec>
 
