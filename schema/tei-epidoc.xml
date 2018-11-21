@@ -49,6 +49,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2018-11-21">temporarily added att.canonical to `date` (pending next TEI release)</change>
             <change who="#HC" when="2018-09-18">switched datatype references to Pure Odd syntax</change>
             <change who="GB" when="2018-03-13">removed customisation of tei:m (should have been
                 deleted 2 years ago)</change>
@@ -226,6 +227,13 @@ End license statement: do not remove -->
                             </valList>
                         </attDef>
                     </attList>
+                </elementSpec>
+                
+                <!-- temporarily adding att.canonical to date, pending next TEI release in 2019 -->
+                <elementSpec ident="date" mode="change" module="core">
+                    <classes mode="change">
+                        <memberOf key="att.canonical"/>
+                    </classes>
                 </elementSpec>
 
                 <!-- constraining values of div/@type -->
