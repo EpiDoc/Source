@@ -43,7 +43,7 @@ How to use it:
                *NB* that as a matter of policy the EpiDoc schema should be a conformant
                subset of the latest TEI schema (only exceptions being when the dev TEI ODD
                contains changes that will not make it into the TEI release for 1-6 months).
-               2. Go to http://www.tei-c.org/oxgarage/
+               2. Go to http://oxgarage.tei-c.org/
                3. Select "Convert from:" -> "Document" -> "ODD Document"
                4. Select "Convert to:" "RELAX NG SCHEMA"
                5. Under "Select file to convert" press "Browse" and select tei-epidoc.xml
