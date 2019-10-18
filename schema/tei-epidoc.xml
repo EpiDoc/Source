@@ -49,6 +49,8 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2019-10-18">added new values to origDate/@evidence, as per discussion on Markup</change>
+            <change who="#GB" when="2019-10-16">added dictionaries module, with elements form, gen and lang (as per FR #134</change>
             <change who="#GB" when="2019-07-12">fixing bug in ODD to allow tei:teiCorpus as root element</change>
             <change who="#HC" when="2019-07-11">Corrected TEI subset URI to use HTTPS</change>
             <change who="#GB" when="2018-11-21">temporarily added att.canonical to `date` (pending next TEI release)</change>
@@ -466,29 +468,32 @@ End license statement: do not remove -->
                                 <dataRef key="teidata.word"/>
                             </datatype>
                             <valList type="semi">
+                                <valItem ident="archaeological-context">
+                                    <desc>Dated by the archaeolgical context, stratigraphy or associated finds</desc>
+                                </valItem>
+                                <valItem ident="internal-date">
+                                    <desc>Dated by explicit internal date</desc>
+                                </valItem>
                                 <valItem ident="lettering">
                                     <desc>Text dated palaeographically</desc>
+                                </valItem>
+                                <valItem ident="material-context">
+                                    <desc>Dated by the material, iconographic or other physical context of the object itself</desc>
                                 </valItem>
                                 <valItem ident="nomenclature">
                                     <desc>Text dated by nomenclature or onomastics</desc>
                                 </valItem>
-                                <valItem ident="prosopography">
-                                    <desc>Text dated by known persons named or implied within
-                                        it</desc>
+                                <valItem ident="office">
+                                    <desc>Text dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
                                 </valItem>
-                                <valItem ident="reign">
-                                    <desc>Text dated by the reign of an emperor or other
-                                        ruler</desc>
+                                <valItem ident="prosopography">
+                                    <desc>Text dated by known persons named or implied within it</desc>
+                                </valItem>
+                                <valItem ident="textual-context">
+                                    <desc>Dated via textual or linguistic context (other than explicit date or titles)</desc>
                                 </valItem>
                                 <valItem ident="titulature">
-                                    <desc>Text dated by the use of official titles</desc>
-                                </valItem>
-                                <valItem ident="internal-date">
-                                    <desc>Text dated by explicit internal date</desc>
-                                </valItem>
-                                <valItem ident="context">
-                                    <desc>Archaeological, epigraphic, iconographic or other context
-                                        of the text support</desc>
+                                    <desc>Dated by the use of official titles</desc>
                                 </valItem>
                             </valList>
                         </attDef>

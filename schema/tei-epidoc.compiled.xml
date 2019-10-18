@@ -25,6 +25,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2019-10-18">added new values to origDate/@evidence, as per discussion on Markup</change>
+            <change who="#GB" when="2019-10-16">added dictionaries module, with elements form, gen and lang (as per FR #134</change>
             <change who="#GB" when="2019-07-12">fixing bug in ODD to allow tei:teiCorpus as root element</change>
             <change who="#HC" when="2019-07-11">Corrected TEI subset URI to use HTTPS</change>
             <change who="#GB" when="2018-11-21">temporarily added att.canonical to `date` (pending next TEI release)</change>
@@ -3099,6 +3101,24 @@ this name in the form of a set of whitespace-separated values, for example the o
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONARS">3.5.1. Referring Strings</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDNYM">13.3.5. Names and Nyms</ref>
   </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="tei" type="atts" ident="att.notated">
+  <desc versionDate="2013-01-11" xml:lang="en">provides an attribute to indicate any specialised notation used for element content.</desc>
+  
+  <attList>
+    <attDef ident="notation" usage="opt">
+      <desc versionDate="2012-03-26" xml:lang="en">names the notation used for the content of the element.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">요소 내용으로 사용되어 앞서 정의된 표기법 이름을 제시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供先前已定義過、適用於該元素內容的記號名稱。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該要素の内容にある既定表記法の名前を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">précise le nom d'une notation définie précédemment,
+        utilisée dans le contenu de l'élément.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica el nombre de una anotación definida
+        previamente y usada para el contenido de un elemento.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce il nome di un'annotazione definita
+        precedentemente utilizzata come contenuto dell'elemento.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+    </attDef>
+  </attList>
 </classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="tei" type="atts" ident="att.placement">
   <desc versionDate="2006-06-08" xml:lang="en">provides attributes for describing where on the source page or
   object a textual element appears.</desc>
@@ -29282,29 +29302,32 @@ externally.</p>
                                 <dataRef key="teidata.word"/>
                             </datatype>
                             <valList type="semi">
+                                <valItem ident="archaeological-context">
+                                    <desc>Dated by the archaeolgical context, stratigraphy or associated finds</desc>
+                                </valItem>
+                                <valItem ident="internal-date">
+                                    <desc>Dated by explicit internal date</desc>
+                                </valItem>
                                 <valItem ident="lettering">
                                     <desc>Text dated palaeographically</desc>
+                                </valItem>
+                                <valItem ident="material-context">
+                                    <desc>Dated by the material, iconographic or other physical context of the object itself</desc>
                                 </valItem>
                                 <valItem ident="nomenclature">
                                     <desc>Text dated by nomenclature or onomastics</desc>
                                 </valItem>
-                                <valItem ident="prosopography">
-                                    <desc>Text dated by known persons named or implied within
-                                        it</desc>
+                                <valItem ident="office">
+                                    <desc>Text dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
                                 </valItem>
-                                <valItem ident="reign">
-                                    <desc>Text dated by the reign of an emperor or other
-                                        ruler</desc>
+                                <valItem ident="prosopography">
+                                    <desc>Text dated by known persons named or implied within it</desc>
+                                </valItem>
+                                <valItem ident="textual-context">
+                                    <desc>Dated via textual or linguistic context (other than explicit date or titles)</desc>
                                 </valItem>
                                 <valItem ident="titulature">
-                                    <desc>Text dated by the use of official titles</desc>
-                                </valItem>
-                                <valItem ident="internal-date">
-                                    <desc>Text dated by explicit internal date</desc>
-                                </valItem>
-                                <valItem ident="context">
-                                    <desc>Archaeological, epigraphic, iconographic or other context
-                                        of the text support</desc>
+                                    <desc>Dated by the use of official titles</desc>
                                 </valItem>
                             </valList>
                         </attDef></attList><exemplum xml:lang="en">
@@ -37789,7 +37812,752 @@ généralement dans des textes oraux</desc>
         <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAH">15.2. Contextual Information</ref>
         <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD4">2.4. The Profile Description</ref>
     </listRef>
-</elementSpec><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="PH" xml:id="DPH" ident="transcr"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CE" xml:id="DCE" ident="certainty"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TS" xml:id="DTS" ident="spoken"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CC" xml:id="DCCHDR" ident="corpus"/></schemaSpec>
+</elementSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" xml:id="COMPDICT" type="model" ident="model.entryLike" predeclare="true">
+  <desc versionDate="2007-10-03" xml:lang="en">groups elements structurally analogous to paragraphs within dictionaries.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전 내에서 문단과 구조적으로 유사한 요소들을 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集字典的基礎標籤組所獨有的元件層次元素。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書において，構造上段落に相当する要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments structurellement analogues aux
+    paragraphes dans des dictionnaires.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos componentes de nivel que son
+    exclusivos del conjunto de la etiqueta base para diccionarios.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa quegli elementi a livello di componenti
+    esclusivi per l'insieme di marcatori per dizionari.</desc>
+  <classes>
+      <memberOf key="model.common"/>
+  </classes>
+  <listRef>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DIBO">9.1. Dictionary Body and Overall Structure</ref>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. The TEI Class System</ref>
+  </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" xml:id="DIGLOBAL" type="atts" ident="att.lexicographic">
+  <desc versionDate="2016-02-15" xml:lang="en">provides a set of attributes common to all elements in the dictionary module.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전용 기본 태그 세트의 요소에서 이용 가능한 전반적 속성들의 집합을 정의한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">定義一組全域屬性值，可用於字典的基礎標籤組之元素上。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書向けのタグ集合にある要素に付与可能な，グローバル属性を定義する．</desc>
+  <desc versionDate="2009-05-28" xml:lang="fr">définit un ensemble d'attributs globaux disponibles pour les éléments appartenant à l'ensemble des balises de base dédié aux dictionnaires.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">define el conjunto de  atributos globales posibles para los elementos del conjunto de etiquetas base para diccionarios</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi globali disponibili per gli elementi dell'insieme base di marcatori per i dizionari.</desc>
+  <classes>
+    <memberOf key="att.datcat"/>
+  </classes>
+  <attList>
+    <attDef ident="expand" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">développé</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">gives an expanded form of information presented more concisely in the dictionary</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">사전에서 더 간결하게 제시된 정보의 확장형을 제시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一形式擴充的資訊，其以較簡潔的方式呈現於字典中</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">辞書中では簡易表記されているものの完全記述を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">donne une forme développée de l'information présentée de manière plus concise dans le dictionnaire.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proporciona de manera expandida la información presentada brevemente en el diccionario</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce la forma estesa dellel informazioni presentate in modo più coinciso nel dizionario.</desc>
+      <datatype><textNode/></datatype>
+      <exemplum xml:lang="und">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <gramGrp>
+            <pos expand="noun">n</pos>
+          </gramGrp>
+        </egXML>
+      </exemplum>
+      <exemplum versionDate="2016-05-24" xml:lang="fr">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <gramGrp>
+            <pos expand="nom">n.</pos>
+          </gramGrp>
+        </egXML>
+      </exemplum>
+    </attDef>
+    <attDef ident="norm" usage="opt">
+      <gloss versionDate="2007-07-04" xml:lang="en">normalized</gloss>
+      <gloss versionDate="2007-12-20" xml:lang="ko"> 표준화</gloss>
+      <gloss versionDate="2008-04-06" xml:lang="es">normalizado</gloss>
+      <gloss versionDate="2008-03-30" xml:lang="fr">normalisé</gloss>
+      <gloss versionDate="2007-11-06" xml:lang="it">normalizzato</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">gives a normalized form of information given by the source text in a
+                non-normalized form</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">비표준형으로 원본 텍스트에서 제시된 정보의 표준형을 제시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一規格化形式的資訊，其來源文件為非規格化形式</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該テキストを，正規形を示す．</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">donne une forme normalisée de
+					l'information fournie par le texte source sous une forme non normalisée.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proprorciona de manera normalizada información dada en el texto fuente de manera no normalizada</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce la forma normalizzata delle informazioni contenute nel testo di origine in forma non normalizzata.</desc>
+      <datatype><dataRef key="teidata.text"/></datatype>
+      <exemplum xml:lang="en">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <gramGrp>
+            <pos norm="noun">n</pos>
+          </gramGrp>
+        </egXML>
+      </exemplum>
+      <exemplum versionDate="2008-04-06" xml:lang="fr">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Grand-Robert">
+          <gramGrp>
+            <pos norm="nom">n.</pos>
+          </gramGrp>
+        </egXML>
+      </exemplum>
+    </attDef>
+    <attDef ident="split" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">graphies distinctes</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">gives the list of split values for a merged form</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">통합형에 대한 분리 값의 목록을 제시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一合併形式的split值列表</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">構成部分をリストで示す．</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">donne la liste des valeurs distinctes d'une forme fusionnée.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proporciona una lista de valores de abertura para una forma fusionada</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce la lista dei valori suddivisi di una forma unita.</desc>
+      <datatype><dataRef key="teidata.text"/></datatype>
+    </attDef>
+    <attDef ident="value" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">valeur</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">gives a value which lacks any realization in the printed source text.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">인쇄된 원본 텍스트에서 누락된 값을 제시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個尚未在書面來源文件中呈現的屬性值</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">印刷されているテキスト上では欠如している情報を示す．</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">indique une valeur qui manque à un quelconque fragment du texte source imprimé.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proporciona un valor que carece de cualquier realización en el texto fuente impreso</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce un valore privo di qualsiasi realizzazione nel testo di origine a mezzo stampa.</desc>
+      <datatype><dataRef key="teidata.text"/></datatype>
+    </attDef>
+    <attDef ident="orig" usage="opt">
+      <gloss versionDate="2007-07-04" xml:lang="en">original</gloss>
+      <gloss versionDate="2007-12-20" xml:lang="ko">원본</gloss>
+      <gloss versionDate="2007-11-06" xml:lang="it">originale</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">gives the original string or is the empty string when the element does not appear
+                in the source text.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">원본 문자열을 제시하거나 요소가 원본텍스트에 나타나지 않을 때는 공백 문자열을 제시한다.</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">indique la chaîne originale ou contient une chaîne vide si l'élément n'apparaît pas dans le texte source.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">當該元素未出現於來源文件中，提供其原文字串或空白字串。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">元の文字列を示す．当該要素が元資料に無い場合には空になる．</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">da la serie original o la serie vacía cuando el elemento no aparece en el texto fuente</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce la stringa originale o la srtinga vuota quando l'elemento non compare nel testo di origine.</desc>
+      <datatype><dataRef key="teidata.text"/></datatype>
+    </attDef>
+    <attDef ident="location" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">localisation</gloss>
+      <desc versionDate="2013-12-08" xml:lang="en">indicates an <gi>anchor</gi> element typically elsewhere in the document, but possibly in another document, 
+                which is the original location of this component.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">문서의 다른 위치에서 이 성분의 원본 위치를 지시하는 <gi>anchor</gi> 요소에 대한 참조를 제공한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">參照到文件中的元素<gi>anchor</gi>，指出此元件的原文位置。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該要素の元の場所を特定する要素<gi>anchor</gi>への参照を示す．</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">fournit une référence à un élément <gi>anchor</gi> se trouvant ailleurs dans le document TEI, pour indiquer la localisation de ce composant.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proporciona una referencia a un elemento <gi>anchor</gi> que aparece en algún punto del documento indicando la localización original de ese componente.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce un riferimento per un elemento <gi>anchor</gi> in una altra porzione del documento indicando la localizzazione origiraria del componente.</desc>
+      <datatype><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+    <attDef ident="mergedIn" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">fusionné</gloss>
+      <desc versionDate="2007-07-04" xml:lang="en">gives a reference to another element, where the original appears as a merged form.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">다른 요소에 대한 참조를 제시하며, 여기서 원본은 통합형이다.</desc>
+      <desc versionDate="2008-04-06" xml:lang="es">proporciona una referencia a otro elemento, donde el original aparece como una forma combinada.</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">元データが統合されて出現している，ある要素への参照を示す．</desc>
+      <desc versionDate="2008-03-30" xml:lang="fr">donne une référence à un autre élément, où
+l'original apparaît comme une forme fusionnée.</desc>
+      <desc versionDate="2007-11-06" xml:lang="it">fa riferimento a un altro elemento, laddove quello originale si presenti come forma risultanteda una fusione</desc>
+      <datatype><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+    <attDef ident="opt" usage="opt">
+      <gloss versionDate="2007-07-04" xml:lang="en">optional</gloss>
+      <gloss versionDate="2007-12-20" xml:lang="ko">수의적</gloss>
+      <gloss versionDate="2008-04-06" xml:lang="es">facultativo</gloss>
+      <gloss versionDate="2009-05-28" xml:lang="fr">facultatif</gloss>
+      <gloss versionDate="2007-11-06" xml:lang="it">facoltativo</gloss>
+      <desc versionDate="2005-10-10" xml:lang="en">indicates whether the element is optional or not</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">요소가 수의적인지 아닌지를 나타낸다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出該元素是否必備</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該要素が選択的かどうかを示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">indique si l'élément est facultatif ou pas.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica si el elemento es opcional o no.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica se l'elemento è opzionale o meno.</desc>
+      <datatype><dataRef key="teidata.truthValue"/></datatype>
+      <defaultVal>false</defaultVal>
+      
+    </attDef>
+  </attList>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DIEN">9.2. The Structure of Dictionary Entries</ref>
+  </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" xml:id="MORPH" type="model" ident="model.morphLike">
+  <desc versionDate="2007-10-03" xml:lang="en">groups elements which provide morphological information within a dictionary entry.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전 표제 항목 내의 형태론적 정보를 제공하는 요소들을 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集字典標籤組中提供型態資訊的元素。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書項目内にある，形態素情報を示す要素をまとめる．</desc>
+  <desc versionDate="2009-05-27" xml:lang="fr">regroupe des éléments qui donnent des informations
+    morphologiques dans une entrée de dictionnaire</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos que proporcionan información
+    morfológica al interno de un conjunto de etiquetas de diccionario.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che forniscono informazioni
+    morfologiche all'interno dell'insieme di marcatori del dizionario.</desc>
+  <classes>
+    <memberOf key="model.gramPart"/>
+  </classes>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITP">9.3. Top-level Constituents of Entries</ref>
+  </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" type="model" ident="model.lexicalRefinement">
+  <desc versionDate="2013-01-11" xml:lang="en">elements adding further precision to the lexico-grammatical information
+    provided for a dictionary entry.</desc>
+  <classes>
+    <memberOf key="model.gramPart"/>
+  </classes>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" xml:id="GRAMINFO" type="model" ident="model.gramPart">
+  <desc versionDate="2007-10-03" xml:lang="en">groups elements allowed within a <gi>gramGrp</gi> element in a dictionary.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전의<gi>gramGrp</gi> 요소 내에서 허용된 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集字典中元素<gi>gramGrp</gi>內的有效元素。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書の要素<gi>gramGrp</gi>の中で使える要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des élements autorisés dans l'élément
+      <gi>gramGrp</gi>.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos permitidos al interno del elemento
+      <gi>gramGrp</gi> en un diccionario.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">in un dizionario, raggruppa quegli elementi ammessi
+    all'interno di un elemento <gi>gramGrp</gi>.</desc>
+  <classes>
+      <memberOf key="model.formPart"/>
+  </classes>
+  <listRef>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPGR">9.3.2. Grammatical Information</ref>
+  </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" xml:id="FORMINFO" type="model" ident="model.formPart">
+  <desc versionDate="2005-10-10" xml:lang="en">groups elements allowed within a <gi>form</gi> element in a dictionary.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전의 <gi>form</gi> 요소 내에서 허용된 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集字典中元素<gi>form</gi>內的有效元素。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書の要素<gi>form</gi>中にある要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments autorisés sous un élément
+    <gi>form</gi> dans un dictionnaire</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos permitidos al interno de un elemento
+      <gi>form</gi> en un diccionario.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">in un dizionario, raggruppa gli elementi ammesi
+    all'inerno di un elemento <gi>form</gi>
+   </desc>
+  <classes/>
+
+  <listRef>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPFO">9.3.1. Information on Written and Spoken Forms</ref>
+  </listRef>
+</classSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" predeclare="true" module="dictionaries" type="model" ident="model.ptrLike.form">
+  <desc versionDate="2007-10-03" xml:lang="en">groups elements used for purposes of location of particular orthographic or pronunciation
+    forms within a dictionary entry.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전 표제 항목 내의 특정한 철자 또는 발음 형태의 위치를 지정하는 요소들을 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集該字典中的元素，這些元素指向標題字的拼字或發音形式。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書項目内で，特定の正書法や発音形式の場所を示す要素をまとめる．</desc>
+  <desc versionDate="2009-10-06" xml:lang="fr">regroupe des éléments utilisés pour localiser
+    des formes orthographiques ou phonétiques particulières dans une entrée de dictionnaire.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos de la base del diccionario que
+    indican las forma ortográfica o la pronunciación del lema.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">in un dizionario raggruppa gli elementi che indirizzano a
+    frome ortografiche o pronuncie di un lemma.</desc>
+  <classes>
+    <memberOf key="model.phrase"/>
+  </classes>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DI">9. Dictionaries</ref>
+  </listRef>
+</classSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" ident="form">
+  <gloss versionDate="2005-01-14" xml:lang="en">form information group</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">형태 정보군</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">形式資訊群</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">groupe d'informations sur une forme dans une entrée</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">grupo de información de forma</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">gruppo di informazioni sulla form</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">groups all the information on the written and spoken forms of one headword.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">하나의 표제어에 대한 문어와 구어 형태에 관한 모든 정보군</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集一個標題字在書寫及發音形式方面的所有資訊。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">ひとつの見出し語の書記または発話形式の情報を全てまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe toutes les informations relatives à la
+    morphologie et à la prononciation d'une entrée</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa toda la información relativa a la forma oral y
+    escrita de una palabra.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutte le informazioni sulle form scritte e
+    orali di un lemma</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    
+    <memberOf key="model.entryPart"/>
+    <memberOf key="model.formPart"/>
+    <memberOf key="att.lexicographic"/>
+  </classes>
+  <content>
+    
+      <alternate minOccurs="0" maxOccurs="unbounded">
+        <textNode/>
+        <classRef key="model.gLike"/>
+        <classRef key="model.phrase"/>
+        <classRef key="model.inter"/>
+        <classRef key="model.formPart"/>
+        <classRef key="model.global"/>
+      </alternate>
+    
+  </content>
+  <attList>
+    <attDef ident="type" usage="opt">
+      <desc versionDate="2005-01-14" xml:lang="en">classifies form as simple, compound, etc.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">단일어, 복합어 등으로 형태를 분류한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">形式的類型有單一字彙、複合字等。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">単純形，複合形などに分類する．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">qualifie la forme comme simple, composée, etc.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">clasifica la forma como simple, compuesta, etc.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">classifica la forma in simplice, composta, ecc.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <valList type="semi">
+        <valItem ident="simple">
+          <desc versionDate="2007-06-27" xml:lang="en">single free lexical item</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">단일 자립 어휘 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">單一字彙項目</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">elemento léxico libre</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">ひとつの語彙項目．</desc>
+          <desc versionDate="2009-02-23" xml:lang="fr">item lexical simple</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una singola unità lessicale libera</desc>
+        </valItem>
+        <valItem ident="lemma">
+          <desc versionDate="2007-06-27" xml:lang="en">the headword itself</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">표제어 자체</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">標題字本身</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">lema</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">見出し語．</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">l'entrée proprement dite</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">il lemma</desc>
+        </valItem>
+        <valItem ident="variant">
+          <desc versionDate="2007-06-27" xml:lang="en">a variant form</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">변이형</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">變體形式</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una variante de la forma principal</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">異形．</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">variante</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una variante</desc>
+        </valItem>
+        <valItem ident="compound">
+          <desc versionDate="2007-06-27" xml:lang="en">word formed from simple lexical items</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">단일 어휘 항목들로 형성된 단어</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">由不同單一字彙項目組成的複合字</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">palabra formada por elementos léxicos simples</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">ひとつの語彙項目から作られた単語．</desc>
+          <desc versionDate="2009-02-23" xml:lang="fr">mot formé d'items lexicaux simples</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">parola formata a partire da un'unità lessicale
+            semplice</desc>
+        </valItem>
+        <valItem ident="derivative">
+          <desc versionDate="2007-06-27" xml:lang="en">word derived from headword</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">표제어로부터 파생된 단어</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">由標題字衍生出的派生詞</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">palabra derivada del lema</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">見出し語から派生した単語．</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">mot dérivé de l'entrée</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">parola derivata da un lemma</desc>
+        </valItem>
+        <valItem ident="inflected">
+          <desc versionDate="2007-06-27" xml:lang="en">word in other than usual dictionary form</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">일반적 사전형과 다른 형태의 단어</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">字尾有屈折變化的形式</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">palabra que aparece con una forma distinta de la
+            habitual en los diccionarios</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">一般的な辞書の形式にはない単語．</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">mot dans une autre forme que la forme habituelle
+            du dictionnaire</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">parola in una forma diversa da quella solita del
+            dizionario</desc>
+        </valItem>
+        <valItem ident="phrase">
+          <desc versionDate="2007-06-27" xml:lang="en">multiple-word lexical item</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">다중어 어휘 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">多重字彙項目組成的片語</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">elemento léxico de palabras combinadas</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">複合語である語彙項目．</desc>
+          <desc versionDate="2009-02-23" xml:lang="fr">item lexical à plusieurs mots</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">unità lessicale formata da più parole</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="mul">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <form>
+        <orth>zaptié</orth>
+        <orth>zaptyé</orth>
+      </form>
+    </egXML>
+    <p>(from TLFi)</p>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-TLFI">
+      <entry>
+        <form>
+          <orth>zaptié</orth>
+          <orth>zaptyé</orth>
+        </form>
+        <def>Gendarme ottoman</def>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <form>
+        <orth>證明</orth>
+        <orth>証明</orth>
+      </form>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPFO">9.3.1. Information on Written and Spoken Forms</ref>
+  </listRef>
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" ident="gen">
+  <equiv name="grammaticalGender" uri="http://www.tc37sc4.org"/>
+  <gloss versionDate="2005-01-14" xml:lang="en">gender</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">성</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">性別</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">genre</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">género</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">genere</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">identifies the morphological gender of a lexical item, as given in the dictionary.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전에 제시된 어휘항목의 형태론적 성을 표시한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">說明字彙項目的性別。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書中の語彙項目にある文法形態素の性を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">identifie le genre morphologique d'un élément
+			lexical, tel qu'il est donné par le dictionnaire.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">identifica el género morfológico de un elemento léxico, como viene dado en el diccionario.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">identifica il genere morfologico di un'unità lessicale, secondo la modalità del dizionario.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.morphLike"/>
+    <memberOf key="att.lexicographic"/>
+  </classes>
+  <content>
+    <macroRef key="macro.paraContent"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form>
+          <orth>pamplemousse</orth>
+        </form>
+        <gramGrp>
+          <pos>noun</pos>
+          <gen>masculine</gen>
+        </gramGrp>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form>
+          <orth>pamplemousse</orth>
+        </form>
+        <gramGrp>
+          <pos>nom</pos>
+          <gen>masculin</gen>
+        </gramGrp>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form>
+          <orth>pamplemousse</orth>
+        </form>
+        <gramGrp>
+          <pos>名詞</pos>
+          <gen>陽性</gen>
+        </gramGrp>
+      </entry>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p rend="dataDesc">May contain character data and phrase-level elements. Typical content
+            will be <mentioned>masculine</mentioned>, <mentioned>feminine</mentioned>,
+            <mentioned>neuter</mentioned> etc.</p>
+    <p>This element is synonymous with <tag>gram type="gender"</tag>.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">Contient des caractères et des éléments du niveau expression. Le
+      contenu type sera : <mentioned>masculin</mentioned>,
+      <mentioned>féminin</mentioned>, <mentioned>neutre</mentioned>, etc.</p>
+    <p>Cet élément est synonyme de<tag>gram type="gender"</tag>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc">
+    文字データや句レベルの要素をとるかもしれない．よくあるのは，
+    <mentioned>男性</mentioned>, <mentioned>女性</mentioned>,
+    <mentioned>中性</mentioned>など．
+    </p>
+    <p>
+    当該要素は，<tag>gram type="gender"</tag>と同義である．
+    </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPFO">9.3.1. Information on Written and Spoken Forms</ref>
+  </listRef>
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" module="dictionaries" ident="lang">
+  <gloss versionDate="2005-01-14" xml:lang="en">language name</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">언어명</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">語言名稱</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">nom de la langue</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">nombre de lengua</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">nome di un alingua</gloss>
+  <desc versionDate="2012-12-27" xml:lang="en">contains the name of a language mentioned in etymological or other linguistic discussion.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">어원적 또는 기타 언어적 논의에서 언급된 언어의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">在詞源學或其他語言學相關訊息中所提到的語言。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">語源学または他の言語学上の論議で現れる言語名を示す．</desc>
+  <desc versionDate="2009-04-08" xml:lang="fr"> nom de la langue mentionnée des informations de nature
+    linguistique (étymologique ou autre)</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">el nombre de una lengua mencionada en una información
+    etimológica o lingüística de cualquier tipo.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">il nome di una lingua menzionata nell'etimologia o in
+    altra discussione linguistica.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.nameLike"/>
+    <memberOf key="att.lexicographic"/>
+  </classes>
+  <content>
+    <macroRef key="macro.paraContent"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form><orth>publish</orth> ... </form>
+        <etym><lang>ME.</lang><mentioned>publisshen</mentioned>,
+          <lang>F.</lang><mentioned>publier</mentioned>, <lang>L.</lang><mentioned>publicare,
+            publicatum</mentioned>. <xr>See <ref>public</ref>; cf. <ref>2d -ish</ref>.</xr></etym>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-TLFI">
+      <entry>
+        <form><orth>publier</orth> ... </form>
+        <etym>Emprunté au <lang>latin</lang>
+               <mentioned>publicare</mentioned>
+               <def>mettre à la disposition du public ; montrer au public ; publier (un livre)</def> ,
+              <label>dérivé de </label>
+               <mentioned>publicus</mentioned>, <xr>v.
+            <ref>public1</ref>
+               </xr>. La forme <mentioned>puplier</mentioned>, <mentioned>poplier</mentioned>
+               <label>attesté en </label>
+               <lang>anc. fr.</lang>
+               <xr> (v. <ref>supra, <bibl>Grand
+                  dictionnaire de la langue française</bibl>. et.
+              <bibl>Tobler-Lommatzsch</bibl>
+                  </ref>.)</xr> à côté de<mentioned> publier</mentioned>,
+            que l'on trouve à partir de la <date>2e moitié du XIIIe s.</date>
+               <bibl>[ms. de la <date>fin XIIIe s.</date>] </bibl>
+               <bibl>(Légende de Girart de
+              Roussillon, 64 dans Tobler-Lommatzsch),</bibl> est une <label>altération
+              d'après</label>
+               <mentioned> peuple</mentioned>.</etym>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form><orth>佛陀</orth> ... </form>
+        <etym>從<lang>梵語</lang>
+               <term>buddha</term>傳入的<lang>中古漢語</lang>音譯; </etym>
+      </entry>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p rend="dataDesc">May contain character data mixed with phrase-level elements.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">Peut contenir des caractères combinés avec des éléments du niveau
+    expression.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc"> 句レベル要素と共に文字データを含むかもしれない． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPET">9.3.4. Etymological Information</ref>
+  </listRef>
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" validUntil="2017-03-01" module="dictionaries" ident="oVar">
+  <gloss versionDate="2005-01-14" xml:lang="en">orthographic-variant reference</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">철자-변이 참조</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">拼字變化參照</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">référence de variante orthographique</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">referencia de variante ortográfica</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">riferimento alla variante ortografica</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">in a dictionary example, indicates a reference to variant orthographic form(s) of the
+    headword.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전 예제에서 표제어의 변이 철자 형식에 대한 참조를 표시한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">在字典範例中，參照出標題字的拼字變化形式。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書の用例で，見出し語の複数ある正書形式への参照を示す．</desc>
+  <desc versionDate="2009-04-08" xml:lang="fr">dans un exemple de dictionnaire, indique une référence à
+    une/des variante(s) orthographique(s) du mot-vedette.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">en un diccionario, indica una referencia a una forma/s de
+    variante ortográfica del lema.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">nell'esempio in un dizionario, indica un riferimento alla
+    variante (varianti) ortografica del lemma.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.ptrLike.form"/>
+    <memberOf key="att.lexicographic"/>
+    <memberOf key="att.pointing"/>
+  </classes>
+  <content>
+    
+      <alternate minOccurs="0" maxOccurs="unbounded">
+        <textNode/>
+        <classRef key="model.gLike"/>
+        <elementRef key="oRef"/>
+      </alternate>
+    
+  </content>
+  <attList>
+    <attDef ident="type" usage="opt">
+      <desc versionDate="2005-01-14" xml:lang="en">indicates the kind of variant involved.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">관련된 변이 종류를 표시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出變化種類。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">示された変化形の種類を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">indique le type de variante impliquée</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica el tipo de variante implicada</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica il tipo di variante.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <valList type="open">
+        <valItem ident="pt">
+          <gloss versionDate="2005-01-14" xml:lang="en">past tense</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">passé</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">pasado</gloss>
+        </valItem>
+        <valItem ident="pp">
+          <gloss versionDate="2005-01-14" xml:lang="en">past participle</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">participe passé</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">participio passato</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">participio pasado</gloss>
+        </valItem>
+        <valItem ident="prp">
+          <gloss versionDate="2005-01-14" xml:lang="en">present participle</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">participe présent</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">participio presente</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">participio presente</gloss>
+        </valItem>
+        <valItem ident="f">
+          <gloss versionDate="2005-01-14" xml:lang="en">feminine</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">féminin</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">femminile</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">femenino</gloss>
+        </valItem>
+        <valItem ident="pl">
+          <gloss versionDate="2005-01-14" xml:lang="en">plural</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">pluriel</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">plurale</gloss>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form>
+          <orth>take</orth>
+        </form>
+        <cit type="example">
+          <quote>Mr Burton <oVar type="pt">took</oVar> us for French</quote>
+        </cit>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Colette-Ecole">
+      <entry>
+        <form>
+          <orth>soprani</orth>
+        </form>
+        <cit type="example">
+          <quote>Les <oVar type="pl">sopranos</oVar> piaillent avec conviction. là-bas au
+              lointain, l' hymne du matin s' élève en un doux murmure... </quote>
+        </cit>
+      </entry>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n27">
+      <entry>
+        <form>
+          <orth>卻</orth>
+        </form>
+        <cit type="example">
+          <quote>感我此言良久立，<oVar type="異體字">却</oVar> 坐促弦弦轉急</quote>
+        </cit>
+      </entry>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2016-03-09" xml:lang="en">
+    <p>This element is deprecated: the <gi>oRef</gi> element should be used in its place.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">Caractères ou<gi>oRef</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc"> 文字データまたは要素<gi>oRef</gi>． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DI">9. Dictionaries</ref>
+  </listRef>
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" validUntil="2017-03-01" module="dictionaries" ident="pVar">
+  <gloss versionDate="2005-01-14" xml:lang="en">pronunciation-variant reference</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">발음-변이 참조</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">發音變化參照</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">référence à une variante de prononciation</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">referencia a una variante en la pronunciación</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">riferimento alla variante della pronuncia</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">in a dictionary example, indicates a reference to variant pronunciation(s) of the headword.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전의 예에서 표제어의 변이 발음 참조를 표시한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">在字典範例中，參照出標題字的發音變化形式。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">辞書の用例中で，見出し語の，異なる発音への参照を示す．</desc>
+  <desc versionDate="2009-04-08" xml:lang="fr">dans un exemple de dictionnaire, indique une référence à
+    une ou des variante(s) de prononciation du mot-vedette.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">en un diccionario, indica una referencia a una variante
+    de pronunciación del lema.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">in un esempio in un dizionario, indica un riferimento a
+    una o più varianti della pronuncia del lemma.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.ptrLike.form"/>
+    <memberOf key="att.pointing"/>
+    <memberOf key="att.lexicographic"/>
+    <memberOf key="att.notated"/>
+  </classes>
+  <content>   
+      <alternate minOccurs="0" maxOccurs="unbounded">
+        <textNode/>
+        <classRef key="model.gLike"/>
+        <elementRef key="pRef"/>
+      </alternate>
+  </content>
+  
+  <exemplum xml:lang="de">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <entry>
+        <form>
+          <orth>umfahren</orth>
+          <pron xml:id="umfahren1a">umf'ahren</pron>
+          <pron xml:id="umfahren2a">'umfahren</pron>
+        </form>
+        <cit>
+          <quote>Weil Paul die Pfütze <pVar target="#umfahren1a">um'fuhr</pVar>, blieb er trocken.</quote>
+        </cit>
+        <cit>
+          <quote>Weil Paul das Schild <pVar target="#umfahren2a">'umfuhr</pVar>, ging es kaputt.</quote>
+        </cit>
+      </entry>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2016-03-09" xml:lang="en">
+    <p>This element is deprecated: the <gi>pRef</gi> element should be used in its place.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">Caractères ou <gi>pRef</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc"> 文字列または要素<gi>pRef</gi>． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DI">9. Dictionaries</ref>
+  </listRef>
+</elementSpec><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="PH" xml:id="DPH" ident="transcr"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CE" xml:id="DCE" ident="certainty"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TS" xml:id="DTS" ident="spoken"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CC" xml:id="DCCHDR" ident="corpus"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" n="DI" xml:id="DDIBO" ident="dictionaries"/></schemaSpec>
         </body>
     </text>
 </TEI>
