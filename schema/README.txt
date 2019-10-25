@@ -9,7 +9,7 @@ What it is:
 License:
 
 	The TEI Schema is copyright the TEI Consortium
-	(http://www.tei-c.org/Guidelines/access.xml#body.1_div.2).
+	(https://tei-c.org/guidelines/licensing-and-citation/).
 	To the extent that the EpiDoc ODD and schema have been customized and
 	amount to transformative versions of the original schema, they are
 	copyright Gabriel Bodard and the other contributors (as listed in
@@ -19,7 +19,7 @@ Technical Requirements:
 
 	The ODD requires the OxGarage tool to generate the RelaxNG schema.
 	The schema (whose canonical released versions live at
-	http://www.stoa.org/epidoc/schema/) may be used by any XML editor or
+	https://www.stoa.org/epidoc/schema/) may be used by any XML editor or
 	processing environment to validate EpiDoc XML files.
 
 How to use it:
@@ -27,9 +27,9 @@ How to use it:
      1.  To validate your EpiDoc files in an editor:
                If using Oxygen or similar editor to edit XML files, processing instructions such as:
 
-               <?xml-model href="http://www.stoa.org/epidoc/schema/9.0/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/9.1/tei-epidoc.rng"
                          schematypens="http://relaxng.org/ns/structure/1.0"?>
-               <?xml-model href="http://www.stoa.org/epidoc/schema/9.0/tei-epidoc.rng"
+               <?xml-model href="http://www.stoa.org/epidoc/schema/9.1/tei-epidoc.rng"
                          schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
                at the top of the XML file (above the <TEI> element but below the <?xml?>
@@ -40,10 +40,10 @@ How to use it:
 
       2. To generate a new version of the schema from the ODD:
                1. edit the ODD (tei-epidoc.xml) to make any changes to the EpiDoc schema.
-               *NB* that as a matter of policy the EpiDoc schema should be a conformant
-               subset of the latest TEI schema (only exceptions being when the dev TEI ODD
-               contains changes that will not make it into the TEI release for 1-6 months).
-               2. Go to http://oxgarage.tei-c.org/
+                  *NB* that as a matter of policy the EpiDoc schema should be a conformant
+                  subset of the latest TEI schema (only exceptions being when the dev TEI ODD
+                  contains changes that will not make it into the TEI release for 1-6 months).
+               2. Go to https://oxgarage.tei-c.org
                3. Select "Convert from:" -> "Document" -> "ODD Document"
                4. Select "Convert to:" "RELAX NG SCHEMA"
                5. Under "Select file to convert" press "Browse" and select tei-epidoc.xml
@@ -51,7 +51,7 @@ How to use it:
                6. Press "Convert".
                7. Save to your local file system as tei-epidoc.rng (or a project-specific variant).
                8. Test thoroughly (and ask for support on Markup to test) before committing as
-               canonical new EpiDoc schema.
+                  canonical new EpiDoc schema.
          To generate the compiled ODD, repeat the above, only changing point (4) from
          "RELAX NG Schema" to "Compiled ODD Document"
 
@@ -62,7 +62,7 @@ How to use it:
                2. if your project is in active development and you are comfortable following
                the changes in the community fora such as the MARKUP list, and updating
                your XML if the schema changes, you should use the /latest/ release
-               (http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng)
+               (https://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng)
                which will be updated whenever a new schema is released.
 
 See https://sourceforge.net/p/epidoc/wiki/Schema/ for more information on the EpiDoc schema and how to use it.
