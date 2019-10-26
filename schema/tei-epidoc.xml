@@ -49,8 +49,11 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#SV" when="2019-10-25">Backed out addition of att.canonical to `date` since TEI v. 3.6.0 renders
+                that change redundant</change>
+            <change who="#SV" when="2019-10-25">Aligned schema with TEI v. 3.6.0</change>
             <change who="#GB" when="2019-10-18">added new values to origDate/@evidence, as per discussion on Markup</change>
-            <change who="#GB" when="2019-10-16">added dictionaries module, with elements form, gen and lang (as per FR #134</change>
+            <change who="#GB" when="2019-10-16">added dictionaries module, with elements form, gen and lang (as per FR #134)</change>
             <change who="#GB" when="2019-07-12">fixing bug in ODD to allow tei:teiCorpus as root element</change>
             <change who="#HC" when="2019-07-11">Corrected TEI subset URI to use HTTPS</change>
             <change who="#GB" when="2018-11-21">temporarily added att.canonical to `date` (pending next TEI release)</change>
@@ -60,14 +63,11 @@ End license statement: do not remove -->
             <change who="#SJD" when="2017-12-12">release 9.0: Aligned schema with TEI v. 3.2.0</change>
             <change who="#GB" when="2017-12-04">added schematron to tei:div to prevent nesting of non-alike divs</change>
             <change who="#CT" when="2017-12-04">added description of the EpiDoc usage of unclear</change>
-            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v.
-                3.1.0</change>
-            <change who="#EM" when="2016-08-03">release 8.22: Aligned schema with TEI v.
-                3.0.0</change>
+            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v. .1.0</change>
+            <change who="#EM" when="2016-08-03">release 8.22: Aligned schema with TEI v. 3.0.0</change>
             <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next
                 release will inherit from TEI)</change>
-            <change who="#GB" when="2015-06-19">release 8.21: Aligned schema with TEI v.
-                2.8.0</change>
+            <change who="#GB" when="2015-06-19">release 8.21: Aligned schema with TEI v. 2.8.0</change>
             <change who="#GB" when="2015-06-16">added temporary customization of tei:m to allow
                 model.hiLike content</change>
             <change who="#GB" when="2015-06-15">temporarily reversed omission of "accMat additions
@@ -80,10 +80,8 @@ End license statement: do not remove -->
             <change who="#GB" when="2015-05-29">omitted "accMat additions catchwords heraldry secFol
                 signatures stamp watermark" (from msdescription), "appInfo" (from header), and
                 "metamark retrace" (from transcr).</change>
-            <change who="#PL" when="2014-12-02">release 8.20: Aligned schema with TEI v.
-                2.7.0</change>
-            <change who="#CT" when="2014-07-31">release 8.19: Aligned schema with TEI v.
-                2.6.0</change>
+            <change who="#PL" when="2014-12-02">release 8.20: Aligned schema with TEI v. 2.7.0</change>
+            <change who="#CT" when="2014-07-31">release 8.19: Aligned schema with TEI v. 2.6.0</change>
             <change who="#EMo" when="2014-07-18">fixed TEI errors in ODD (msdescription; unclear ->
                 core; datatype in lb/@break)</change>
             <change who="#GB" when="2014-05-29">stopped omitting fw from trancr (as per
@@ -179,7 +177,7 @@ End license statement: do not remove -->
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI teiCorpus" xml:lang="en"
-                source="https://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
+                source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml">
 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -234,13 +232,6 @@ End license statement: do not remove -->
                             </valList>
                         </attDef>
                     </attList>
-                </elementSpec>
-                
-                <!-- temporarily adding att.canonical to date, pending next TEI release in 2019 -->
-                <elementSpec ident="date" mode="change" module="core">
-                    <classes mode="change">
-                        <memberOf key="att.canonical"/>
-                    </classes>
                 </elementSpec>
 
                 <!-- constraining values of div/@type -->
