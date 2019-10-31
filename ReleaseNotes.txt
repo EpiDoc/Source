@@ -9,19 +9,19 @@ Latest version
 
     * Schema: inherited changes from TEI release 3.6.0 (including adding att.canonical to `<date>`)
     * Schema: removed now redundant customisation of `<m>` to allow it to contain model-hiLike (because now incorporated into TEI schema)
-    * Schema: allowed elements `<form>`, `<gen>` and `<lang>` in `<nym>`
+    * Schema: allowed elements `<form>`, `<gen>` and `<lang>` in `<nym>` [Bug #134]
     * Schema: added values to `origDate`/@evidence
     * Schema: added `<teiCorpus>` to root elements for EpiDoc
-    * Schema: added @xml:lang from `<ab>` to `<div>` with @class='textpart' (when textparts are in different languages)
 
     * Guidelines: added (with examples) that both @source and @resp are now allowed attributes for `<div type="translation">`
     * Guidelines: in bibliography updated links to IGCyr, GVCyr, added ISicily
     * Guidelines: changes to support Egyptological rendering
    
     * XSLT: improved handling of ligatured characters marked up as `<hi rend="ligature">`
-    * XSLT: added support for values of @xml:lang on `<div>` with @type='textpart'
+    * XSLT: added support for values of @xml:lang on `<div>` with @type='textpart' [Bug #171]
     * XSLT: removed redundant temporary directory "0-example-p5-xslt-LOCKED" after XSLT moved to Git
     * XSLT: Corrected TEI subset URI to use HTTPS
+    * XSLT: given more visibility to Zotero handling parameters in README and in inslib structure template.
 
 9.0 - Announced to MARKUP 2017-12-12 [email](https://lsv.uky.edu/scripts/wa.exe?A2=ind1712&L=MARKUP&F=&S=&P=5550)
     * Release technician: Scott DiGiulio

@@ -49,21 +49,20 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#SV" when="2019-10-31">release 9.1: Aligned schema with TEI v. 3.6.0</change>
             <change who="#SV" when="2019-10-25">Backed out addition of att.canonical to `date` since TEI v. 3.6.0 renders
                 that change redundant</change>
-            <change who="#SV" when="2019-10-25">Aligned schema with TEI v. 3.6.0</change>
             <change who="#GB" when="2019-10-18">added new values to origDate/@evidence, as per discussion on Markup</change>
             <change who="#GB" when="2019-10-16">added dictionaries module, with elements form, gen and lang (as per FR #134)</change>
             <change who="#GB" when="2019-07-12">fixing bug in ODD to allow tei:teiCorpus as root element</change>
             <change who="#HC" when="2019-07-11">Corrected TEI subset URI to use HTTPS</change>
             <change who="#GB" when="2018-11-21">temporarily added att.canonical to `date` (pending next TEI release)</change>
-            <change who="#HC" when="2018-09-18">switched datatype references to Pure Odd syntax</change>
-            <change who="GB" when="2018-03-13">removed customisation of tei:m (should have been
-                deleted 2 years ago)</change>
+            <change who="#HC" when="2018-09-18">switched datatype references to Pure ODD syntax</change>
+            <change who="#GB" when="2018-03-13">removed customisation of tei:m (should have been deleted 2 years ago)</change>
             <change who="#SJD" when="2017-12-12">release 9.0: Aligned schema with TEI v. 3.2.0</change>
             <change who="#GB" when="2017-12-04">added schematron to tei:div to prevent nesting of non-alike divs</change>
             <change who="#CT" when="2017-12-04">added description of the EpiDoc usage of unclear</change>
-            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v. .1.0</change>
+            <change who="#PY" when="2017-03-14">release 8.23: Aligned schema with TEI v. 3.1.0</change>
             <change who="#EM" when="2016-08-03">release 8.22: Aligned schema with TEI v. 3.0.0</change>
             <change who="#GB" when="2015-10-21">Removed temporary customization of tei:m (from next
                 release will inherit from TEI)</change>
