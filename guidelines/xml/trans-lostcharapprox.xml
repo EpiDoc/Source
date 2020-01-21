@@ -88,6 +88,15 @@
             <gap reason="lost" quantity="7" unit="character" precision="low"/>
         </egXML>
     
+    
+    <p>Where the editor prefers to give a range within which the possible extent of the lacuna may fall (e.g. "10-12 characters"), this may be encoded using the <att>atLeast</att> and <att>atMost</att> attibutes:</p>
+    
+    <cit><quote>[— 5-7 —]</quote>
+    <bibl corresp="#ircyr"><citedRange>C.427</citedRange></bibl></cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="London">
+        <gap reason="lost" atLeast="5" atMost="7" unit="character"/>
+    </egXML>
+    
     <divGen type="seealso"/>
     
     <div xml:id="trans-lostcharapprox-responsibility">
@@ -98,7 +107,6 @@
                 <respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt>
                 <respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt>
             </bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
         </listBibl>
     </div>
 </div>
