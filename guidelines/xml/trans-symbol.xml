@@ -27,7 +27,10 @@
 <div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-symbol">
     <head>Symbol (non meaning-bearing)</head>
         <p><specList>
-                <specDesc key="g"/>
+            <specDesc key="g"/>
+            <specDesc key="glyph"/>
+            <specDesc key="charDecl"/>
+            <specDesc key="prefixDef"/>
             </specList>
             <listRef>
                 <ptr target="a"/>
@@ -36,10 +39,40 @@
         <p>Where a symbol is non meaning-bearing, it should be represented using the element
             <gi>g</gi>, with the following attribute: </p>
         <list type="bulleted">
-            <item><att>type</att> indicates the name of the decorative symbol, e.g. leaf.</item>
+            <item><att>ref</att> pointing to a <gi>glyph</gi> listed in <gi>charDecl</gi>.</item>
+            <item>in the past many projects used <att>type</att>.</item>
         </list>
         <p>A Unicode character representing the symbol may also appear inside the <gi>g</gi> if desired.</p>
+    <p>The <att>ref</att> attribute in <gi>g</gi> can be used in various ways.</p>
     
+   <p> The following encoding  </p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+        <g ref="#crux"/>
+    </egXML>
+    <p>exepcts that a <gi>charDecl</gi> is present in the document. This will look like the following.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+        <charDecl>
+            <glyph xml:id="crux">
+                <glyphName>Crux</glyphName>
+                <charProp>
+                    <localName>glyph-display</localName>
+                    <value>&#x2020;</value>
+                </charProp>
+            </glyph>
+        </charDecl>
+    </egXML>
+    <p>You may add this to your files, or include it as appropriate. A list is available with the example stylesheet (with variable solutions according to the parameters settings), which is used as a default where <gi>charDecl</gi> is missing.</p>
+    <p>You may wish to point to this list of glyphs in a separate file, in which case you can use in ref a path to this resource.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+        <g ref="/mysytem/chardecl.xml#crux"/>
+    </egXML>
+    <p>If you use prefixes, defined in <gi>prefixDef</gi>, you may use a shorthand. Assuming you have defined this prefix to be glyph, you may use</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+        <prefixDef ident="glyph" matchPattern="([a-zA-Z0-9]+)" replacementPattern="/mysytem/chardecl.xml#$1"/>
+        ...
+        <g ref="glyph:crux"/>
+    </egXML>
+    <p>The full path or prefixed method allows also to define different sources for your <gi>charDecl</gi>, so that you may only have to add the one which are missing, unless you want to contribute them directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>
     <cit>
         <quote>((crux))</quote><bibl corresp="#panciera"><biblScope>19</biblScope></bibl> 
     </cit>
@@ -52,6 +85,10 @@
     <cit>
         <quote>dr.</quote><bibl corresp="#seg"/>
     </cit>
+    
+    
+    <p>The projects providing the following examples used <att>type</att> when 
+        this was the suggested way of encoding.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT203.html#al1" 
         rend="panciera dohnicht">
@@ -68,6 +105,9 @@
          <g type="scroll"/>
      </egXML>
     
+    
+    <divGen type="chardecl"/>
+    
     <divGen type="seealso"/>
     
     <div xml:id="trans-symbol-responsibility">
@@ -75,7 +115,7 @@
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
-            <!--<bibl><respStmt><resp>formatted, edited, revised, munged?</resp><name>xx</name><name/></respStmt></bibl>-->
+            <bibl><respStmt><resp>Added g/@ref as per FR 81</resp><name>Pietro Maria Liuzzo</name><name/></respStmt></bibl>
         </listBibl>
     </div>
 </div>

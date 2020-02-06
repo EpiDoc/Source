@@ -62,18 +62,18 @@
         </cit>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp panciera" corresp="#ddbdp">
-        <g type="chi-rho"/>
+        <g ref="#chi-rho"/>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp">
-        <g type="chi-rho">☧</g>
+        <g ref="#chi-rho">☧</g>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
         <expan>
             <abbr>
                 <am>
-                    <g type="chi-rho"/>
+                    <g ref="#chi-rho"/>
                 </am>
             </abbr>
             <ex>Χρίστος</ex>
@@ -84,7 +84,7 @@
             <expan>
                 <abbr>
                     <am>
-                        <g type="chi-rho"/>
+                        <g ref="#chi-rho"/>
                     </am>
                 </abbr>
                 <ex>Christ</ex>
@@ -98,7 +98,8 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT863.html">
         Α<g type="chi-rho"/>Ω
     </egXML>
-    
+    <p>Instead of using <att>type</att> in <gi>g</gi>, as the project providing this example did when 
+        this was the suggested way of encoding, the recommended use of <tag>g[@ref]</tag> in <ref target="trans-symbol.html">Symbol (Non Meaning-Bearing)</ref> should be preferred now.</p>
     <!-- No DDBDP examples -->
     
     <divGen type="seealso"/>
