@@ -57,6 +57,7 @@ End license statement: do not remove -->
         (generally <att>loc</att> pointing to line numbers).
         This method requires relatively simple XSLT to produce acceptable output, but the 
         <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> does not currently cater for this out of the box.</p>
+    
     <p>The <ref target="supp-app-inline.html">in-line approach</ref>
         (cf. <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS">TEI "parallel segmentation method"</ref>)
         makes use of tags placed directly in the text,
@@ -67,6 +68,17 @@ End license statement: do not remove -->
         <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term>
         to get the behaviour it required.
     </p>
+    
+    <p>There are a number of features which you may want to appear in your apparatus or in a separate apparatus section, which are not explicitly encoded as apparatus notes with either of the
+    above methods. <ref target="supp-app-stylesheets.html">The EpiDoc example Stylesheets</ref> provide some support to render these in several ways.</p>
+    <p>It is very important to decide on the approach you want to follow and remain consistent to that, to avoid inconsistencies, although both methods are acceptable 
+        and independent of the way you may
+        want to display or not your apparatus notes. The fact that you decide to use <gi>app</gi> in the text, following the in-line approach, does not dictate automatically that you want an apparatus 
+    which includes also other features, as the fact  that you use the external approach does not dictate that you do not want anything which you have actually encoded in the text to be printed in an apparatus section. These
+    things are determined at the level of the rendering, not with the encoding, and you may chose what to do, as far as you are consistent with yourself.</p>
+    <p>Although the external-apparatus approach is the recommended way to encode apparatus notes, you may wish not to have to produce one such note in <tag>div[@type='apparatus']</tag> for each
+        <gi>choice</gi> element you encoded and want in an apparatus. To inform your encoding decision, here you can find a list of the possibilities currently 
+        offered by the <ref target="supp-app-stylesheets.html">The EpiDoc example Stylesheets</ref>.</p>
     
     <p>Specific guidance for each approach is provided in its own section as follows:</p>
     <list>

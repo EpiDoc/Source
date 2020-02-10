@@ -34,17 +34,9 @@ End license statement: do not remove -->
         <specDesc key="app"/>
         <specDesc key="lem"/>
         <specDesc key="rdg"/>
-        <specDesc key="choice"/>
-        <specDesc key="reg"/>
-        <specDesc key="orig"/>
-        <specDesc key="hi"/>
-        <specDesc key="del"/>
     </specList></p>
     
-    <p>Features that might need to be generated to produce a standard epigraphic or papyrological
-    apparatus criticus include: variant readings and restorations from previous editors; corrections of 
-    erroneous or non-standard spellings or grammar in the text; observations about highlighted or other
-    unusual characters, deletion marks and other symbols.</p>    
+       
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/bgu;1;154">
         <app type="editorial"><lem source="#BL_3.8">ἡ<supplied reason="lost"><expan>προγ<ex>εγραμμένη</ex></expan></supplied></lem><rdg>ὡ<supplied reason="lost">ς <expan><ex>ἐτῶν</ex></expan> ιϛ</supplied></rdg></app>
@@ -56,26 +48,13 @@ End license statement: do not remove -->
     </egXML>
     <note>generates apparatus: r.17. or Λευκῶ\ν/</note>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.col;4;114">
-        <choice><reg>ὑστερῶμεν</reg><orig>ὑσστερῶμεν</orig></choice>
-    </egXML>
-    <note>generates aparatus: a.3. l. ὑστερῶμεν</note>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/o.bu.njem;;3">
-        <choice><reg>aquam</reg><orig>aqua</orig></choice>
-    </egXML>
-    <note>generates aparatus: 6. l. aquam</note>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.lips;1;98">
-        <del rend="cross-strokes"><handShift new="m4"/><gap reason="lost" extent="unknown" unit="line"/></del>
-    </egXML>
-    <note>generates aparatus: v.1. Text canceled with cross-strokes</note>
 
-    <p>The only core EpiDoc project that uses inline tagging to generate apparatus criticus and has
+    <p>Only few EpiDoc project use inline tagging to generate apparatus criticus.  <term target="#ddb">DDbDP</term> has
         contributed the <term target="#xslt">XSLT</term> to the <term target="#epidoc-stylesheets">EpiDoc
-        Example Stylesheets</term> is the <term target="#ddb">DDbDP</term>. The code for generating
-        the apparatus text is therefore idiosyncratic and would likely require customization and rewriting for
-        most other projects.
+            Example Stylesheets</term> which supports this. <ref target="supp-app-stylesheets.html">This page</ref> 
+        explains the options you may use in the <term target="#epidoc-stylesheets">EpiDoc
+                Example Stylesheets</term> and what is covered at the moment.
     </p>
     
     <divGen type="seealso"/>

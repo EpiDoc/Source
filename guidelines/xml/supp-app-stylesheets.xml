@@ -1,0 +1,213 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Id: supp-app-inline.xml 2493 2016-12-06 16:11:58Z gabrielbodard $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-app-stylesheets" xml:lang="en">
+    <head>What the EpiDoc Example Stylesheet can do for your apparatus</head>
+    <p>We discuss here what the <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> support as options to render your apparatus, in order 
+        to inform your encoding decisions about apparatus notes and features you may want to be recorded in an apparatus at the visualization level.</p>
+    
+    <p><specList>
+        <specDesc key="app"/>
+        <specDesc key="lem"/>
+        <specDesc key="rdg"/>
+        <specDesc key="choice"/>
+        <specDesc key="reg"/>
+        <specDesc key="orig"/>
+        <specDesc key="hi"/>
+        <specDesc key="del"/>
+    </specList></p>
+    
+    <p>Your first option is to have all what you actually want in your apparatus encoded explicitly in your <tag>div[@type='apparatus']</tag>, 
+        as described in the <ref target="supp-app-external">external apparatus method</ref>. The content of this <gi>div</gi> is always rendered by default by the <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term>.</p>
+    <p>If, however, you wish to have in the apparatus you want to publish also, for example, features of the text which you may have encoded in the text with <gi>choice</gi> or <gi>del</gi>
+        these will not be there unless you tell your processor to show them. <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> provide a parameter
+        $internal-app-style which can be used to produce a separate, additional apparatus section beside your encoded <tag>div[@type='apparatus']</tag>. 
+        
+    </p>
+    
+    <p>Setting a value for this parameter will return you, according to the value selected more or less features, as detailed in this comparison table:
+        <ref target="https://docs.google.com/spreadsheets/d/14OvKGP1KFhmtyfsI2xLzNz8lZernmKnQzKxWPCkFa9o/edit#gid=1845600146">Apparatus Features Collation</ref>.</p>
+   
+   <table>
+       <row role="label">
+           <cell>feature</cell>
+           <cell>example</cell>
+           <cell>$internal-app-style = iospe</cell>
+           <cell>$internal-app-style = minex</cell>
+           <cell>$internal-app-style = fullex</cell>
+           <cell>$internal-app-style=ddbdp</cell>
+       </row>
+       <row>
+           <cell><ref target="trans-correction">Correction Without Specification</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <w part="I">τ<corr>ι</corr>μο</w>
+           </egXML></cell>
+           <cell></cell>
+           <cell></cell>
+           <cell>l.1 ι corr.</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell><ref target="trans-erroneoussubstitution">Erroneous Substitution</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <w>α<supplied reason="lost">ὐ</supplied>θ<supplied reason="lost">έν</supplied>τ<choice><corr>ο</corr><sic>α</sic></choice>υ</w>
+           </egXML></cell>
+           <cell>3: orig. Α.Θ..ΤΑΥ</cell>
+           <cell>l.3 sic, orig. α</cell>
+           <cell>l.3 sic, orig. α</cell>
+           <cell>3. l. ο (corr)</cell>
+       </row>
+       <row>
+           <cell><ref target="trans-regularization">Regularization</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <choice>
+               <reg>τιμὴν</reg>
+               <orig>τειμην</orig>
+               </choice>
+           </egXML></cell>
+           <cell></cell>
+           <cell>l.4 τειμην orig., reg. τιμὴν</cell>
+           <cell>l.4 τειμην orig., reg. τιμὴν</cell>
+           <cell>4. l. τιμὴν</cell>
+       </row>
+       <row>
+           <cell><ref target="trans-ambiguousalt">Ambiguous Characters with Alternatives offered</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <choice><unclear>Γ</unclear>
+                   <unclear>Ε</unclear>
+                   <unclear>Ζ</unclear></choice>
+           </egXML></cell>
+           <cell></cell>
+           <cell></cell>
+           <cell>l.5 Γ aut Ε aut Ζ aut Ξ aut Π aut Σ aut Τ</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell><ref target="trans-ancientcorrection">Ancient Corrections (Where Both Old And New Text Can Be Read)</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <subst>
+                   <add place="inline">τέσσαρας</add>
+                   <del rend="corrected">τεσσαρες</del>
+               </subst>
+           </egXML></cell>
+           <cell>6: corr. ex ΤΕΣΣΑΡΕΣ</cell>
+           <cell></cell>
+           <cell>l.6 del τεσσαρες</cell>
+           <cell>6. corr. ex τεσσαρες</cell>
+       </row>
+       <row>
+           <cell><ref target="trans-ancientcorrectionlost">Ancient Corrections (Old Text Lost)</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               public<add place="overstrike">a</add>e
+           </egXML></cell>
+           <cell></cell>
+           <cell></cell>
+           <cell>l.7 a overstrike</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell><ref target="trans-addition">Addition By Ancient Hand</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <add place="above">αβ</add>
+           </egXML></cell>
+           <cell></cell>
+           <cell></cell>
+           <cell>l.8 αβ add above</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell><ref target="trans-raisedlowered">Raised/Lowered Characters</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <expan>πρ<hi rend="superscript">οσ</hi>
+                   <ex>γίνεται</ex>
+               </expan>
+           </egXML></cell>
+           <cell>9: οσ s.l.</cell>
+           <cell></cell>
+           <cell>l.9 οσ superscript</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell><ref target="trans-omitted">Omitted Letters</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples">
+               Valent<supplied reason="omitted">in</supplied>iani
+           </egXML></cell>
+           <cell>13: orig. VALENTIANI</cell>
+           <cell></cell>
+           <cell>l.13 in omitted</cell>
+           <cell></cell>
+       </row>
+       <row>
+           <cell>Text  cancelled with strokes</cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/p.lips;1;98">
+               <del rend="cross-strokes"><handShift new="m4"/><gap reason="lost" extent="unknown" unit="line"/></del>
+           </egXML></cell>
+           <cell></cell>
+           <cell></cell>
+           <cell>l.14 cross-strokes</cell>
+           <cell>14. Text canceled with cross-strokes</cell>
+       </row>
+       <row>
+           <cell><ref target="supp-app-inline">Parallel Segementation Apparatus note / Editorial notes</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/bgu;1;154">
+               <app type="editorial"><lem source="#BL_3.8">ἡ<supplied reason="lost"><expan>προγ<ex>εγραμμένη</ex></expan></supplied></lem><rdg>ὡ<supplied reason="lost">ς <expan><ex>ἐτῶν</ex></expan> ιϛ</supplied></rdg></app>
+           </egXML></cell>
+           <cell></cell>
+           <cell>l.10 #BL_3.8, ὡ[ς (ἐτῶν) ιϛ]</cell>
+           <cell>l.10 #BL_3.8, ὡ[ς (ἐτῶν) ιϛ]</cell>
+           <cell>10. ὡ[ς (ἐτῶν) ιϛ] prev. ed.</cell>
+       </row>
+       <row>
+           <cell><ref target="supp-app-inline">Parallel Segementation Apparatus note / Alternative readings</ref></cell>
+           <cell><egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/cpr;4;171">
+               <app type="alternative"><lem><expan>Λευκ<ex>ο</ex>γ<ex>ίου</ex></expan></lem><rdg>Λευκῶ<add place="above">ν</add></rdg></app>
+           </egXML></cell>
+           <cell></cell>
+           <cell>l.11 or Λευκῶ`ν´</cell>
+           <cell>l.11 or Λευκῶ`ν´</cell>
+           <cell>11. or Λευκῶ`ν´</cell>
+       </row>
+   </table>
+    
+    <p>Some of these options for the value of the variable will also output in a separate section the contents of <ref target="supp-app-external">inline apparatus notes</ref>.</p>
+    
+    <p>So you can have using the <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> two separate sections, with your annotations inline and in the <tag>div[@type="apparatus"]</tag>.
+        You may however also wish to mix these up, and have one apparatus section only which contains both informations. This is supported in the <term target="'#epidoc-stylesheets">EpiDoc Example XSLT</term> by the
+    $mixed-app-style, which will produce, with the same optional values as $internal-app-style, an apparatus which has a separate note for each line for which either an 
+        <gi>app</gi> element with <att>loc</att> exists or one of the selected features in the corresponding line.</p>
+    
+    <p>So, how to encode your apparatus? It is your choice, but the most frequent choice made by projects so far is to use the <ref target="supp-app-external">external apparatus method</ref>.</p>
+    
+    <divGen type="seealso"/>
+    
+    <div xml:id="supp-app-stylesheets-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Pietro Maria Liuzzo</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
