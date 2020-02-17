@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!-- Start license statement: do not remove 
     
 EpiDoc Schema
@@ -235,7 +237,7 @@ End license statement: do not remove -->
 
                 <!-- constraining values of div/@type -->
                 <elementSpec ident="div" mode="change" module="textstructure">
-                    <constraintSpec scheme="isoschematron" ident="div">
+                    <constraintSpec scheme="schematron" ident="div">
                         <constraint>
                             <sch:rule context="tei:div">
                                 <sch:report test="@type != 'textpart' and parent::tei:div and @type!=parent::tei:div/@type">
@@ -248,26 +250,26 @@ End license statement: do not remove -->
                         <attDef ident="type" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="apparatus">
-                                    <desc>to contain apparatus criticus or textual notes</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain apparatus criticus or textual notes</desc>
                                 </valItem>
                                 <valItem ident="bibliography">
-                                    <desc>to contain bibliographical information, previous
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain bibliographical information, previous
                                         publications, etc.</desc>
                                 </valItem>
                                 <valItem ident="commentary">
-                                    <desc>to contain all editorial commentary,
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain all editorial commentary,
                                         historical/prosopographical discussion, etc.</desc>
                                 </valItem>
                                 <valItem ident="edition">
-                                    <desc>to contain the text of the edition itself; may include
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain the text of the edition itself; may include
                                         multiple text-parts</desc>
                                 </valItem>
                                 <valItem ident="textpart">
-                                    <desc>used to divide a div[type=edition] into multiple parts
+                                    <desc xml:lang="en" versionDate="2020-02-17">used to divide a div[type=edition] into multiple parts
                                         (fragments, columns, faces, etc.)</desc>
                                 </valItem>
                                 <valItem ident="translation">
-                                    <desc>to contain a translation of the text into one or more
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain a translation of the text into one or more
                                         modern languages</desc>
                                 </valItem>
                             </valList>
@@ -277,7 +279,7 @@ End license statement: do not remove -->
 
                 <elementSpec ident="ex" module="transcr" mode="change">
                     <!-- testing for <ex> outside of <expan> -->
-                    <constraintSpec scheme="isoschematron" ident="ex">
+                    <constraintSpec scheme="schematron" ident="ex">
                         <constraint>
                             <sch:rule context="tei:ex">
                                 <sch:report test="not(ancestor::tei:expan)">ex should only appear
@@ -291,7 +293,7 @@ End license statement: do not remove -->
 
                 <elementSpec ident="expan" module="transcr" mode="change">
                     <!-- testing for <expan> with no descendant <ex> -->
-                    <constraintSpec scheme="isoschematron" ident="expan">
+                    <constraintSpec scheme="schematron" ident="expan">
                         <constraint>
                             <sch:rule context="tei:expan">
                                 <sch:report test="not(descendant::tei:ex)">expan should contain
@@ -303,7 +305,7 @@ End license statement: do not remove -->
 
                 <elementSpec ident="gap" module="core" mode="change">
                     <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
-                    <constraintSpec ident="gap" scheme="isoschematron">
+                    <constraintSpec ident="gap" scheme="schematron">
                         <constraint>
                             <sch:rule context="tei:gap">
                                 <sch:report test="@quantity and @extent">gap may have @quantity (a
@@ -322,23 +324,23 @@ End license statement: do not remove -->
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
-                                    <desc>Text completely lost from the surface and
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text completely lost from the surface and
                                         unrecoverable</desc>
                                 </valItem>
                                 <valItem ident="illegible">
-                                    <desc>Traces of text remains on the surface but cannot be
+                                    <desc xml:lang="en" versionDate="2020-02-17">Traces of text remains on the surface but cannot be
                                         interpreted</desc>
                                 </valItem>
                                 <valItem ident="omitted">
-                                    <desc>Text erroneously omitted from the surface by the
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text erroneously omitted from the surface by the
                                         scribe/cutter</desc>
                                 </valItem>
                                 <valItem ident="ellipsis">
-                                    <desc>Text omitted from the edition by the editor, for whatever
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor, for whatever
                                         reason (brevity, context, language, etc.)</desc>
                                 </valItem>
                                 <valItem ident="undefined">
-                                    <desc>Text omitted from the edition by the editor 
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor 
                                         without specification of current state of this text
                                         (NB this should not be possible with valid Leiden Conventions)</desc>
                                 </valItem>
@@ -358,75 +360,75 @@ End license statement: do not remove -->
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="acute">
-                                    <desc>ancient acute (oxia, tonos) diacritic</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient acute (oxia, tonos) diacritic</desc>
                                 </valItem>
                                 <valItem ident="apex">
-                                    <desc/>
+                                    
                                 </valItem>
                                 <valItem ident="asper">
-                                    <desc>ancient asper (rough breathing) diacritic</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient asper (rough breathing) diacritic</desc>
                                 </valItem>
                                 <valItem ident="circumflex">
-                                    <desc>ancient circumflex (perispomeni) diacritic</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient circumflex (perispomeni) diacritic</desc>
                                 </valItem>
                                 <valItem ident="diaeresis">
-                                    <desc>ancient diaeresis</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient diaeresis</desc>
                                 </valItem>
                                 <valItem ident="grave">
-                                    <desc>ancient grave (varia) diacritic</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient grave (varia) diacritic</desc>
                                 </valItem>
                                 <valItem ident="intraline">
-                                    <desc>characters scored or struck through at the mid-line
+                                    <desc xml:lang="en" versionDate="2020-02-17">characters scored or struck through at the mid-line
                                         level</desc>
                                 </valItem>
                                 <valItem ident="inverted">
-                                    <desc>character(s) inverted or rotated with respect to the rest
+                                    <desc xml:lang="en" versionDate="2020-02-17">character(s) inverted or rotated with respect to the rest
                                         of the text</desc>
                                 </valItem>
                                 <valItem ident="italic">
-                                    <desc/>
+                                    
                                 </valItem>
                                 <valItem ident="lenis">
-                                    <desc>ancient lenis (smooth breathing) diacritic</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">ancient lenis (smooth breathing) diacritic</desc>
                                 </valItem>
                                 <valItem ident="ligature">
-                                    <desc>two (or more) letters ligatured, monogrammed, or therwise
+                                    <desc xml:lang="en" versionDate="2020-02-17">two (or more) letters ligatured, monogrammed, or therwise
                                         joined</desc>
                                 </valItem>
                                 <valItem ident="normal">
-                                    <desc/>
+                                    
                                 </valItem>
                                 <valItem ident="reversed">
-                                    <desc>characters reversed (backward-facing) with respect to the
+                                    <desc xml:lang="en" versionDate="2020-02-17">characters reversed (backward-facing) with respect to the
                                         rest of the line of text</desc>
                                 </valItem>
                                 <valItem ident="sling-above">
-                                    <desc/>
+                                    
                                 </valItem>
                                 <valItem ident="sling-below">
-                                    <desc/>
+                                    
                                 </valItem>
                                 <valItem ident="small">
-                                    <desc>Letter(s) smaller than those around them</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Letter(s) smaller than those around them</desc>
                                 </valItem>
                                 <valItem ident="subscript">
-                                    <desc>characters written lower than the surrounding text</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">characters written lower than the surrounding text</desc>
                                 </valItem>
                                 <valItem ident="superscript">
-                                    <desc>characters written higher than the surrounding text</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">characters written higher than the surrounding text</desc>
                                 </valItem>
                                 <valItem ident="supraline">
-                                    <desc>characters written with a supralinear line above (e.g. for
+                                    <desc xml:lang="en" versionDate="2020-02-17">characters written with a supralinear line above (e.g. for
                                         abbreviation or numerals)</desc>
                                 </valItem>
                                 <valItem ident="tall">
-                                    <desc>Letter(s) taller than those around it, e.g. I-longa</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Letter(s) taller than those around it, e.g. I-longa</desc>
                                 </valItem>
                                 <valItem ident="underline">
-                                    <desc>text written with solid line beneath</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">text written with solid line beneath</desc>
                                 </valItem>
                                 <valItem ident="stacked">
-                                    <desc>a character written directly above another character (as
+                                    <desc xml:lang="en" versionDate="2020-02-17">a character written directly above another character (as
                                         opposed to superscript)</desc>
                                 </valItem>
                             </valList>
@@ -436,8 +438,8 @@ End license statement: do not remove -->
 
                 <!-- change definition of <lb> to "line beginning" -->
                 <elementSpec ident="lb" mode="change" module="core">
-                    <gloss>line-beginning</gloss>
-                    <desc>marks the start of each line of the transcribed text, including the first</desc>
+                    <gloss xml:lang="en" versionDate="2020-02-17">line-beginning</gloss>
+                    <desc xml:lang="en" versionDate="2020-02-17">marks the start of each line of the transcribed text, including the first</desc>
                     <!-- offer value "no" for lb/@break -->
                     <attList>
                         <attDef ident="break" mode="replace" usage="opt">
@@ -446,7 +448,7 @@ End license statement: do not remove -->
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="no">
-                                    <desc>this line-beginning should not be taken as a word-break,
+                                    <desc xml:lang="en" versionDate="2020-02-17">this line-beginning should not be taken as a word-break,
                                         i.e. word would be hyphenated in a printed text</desc>
                                 </valItem>
                             </valList>
@@ -464,31 +466,31 @@ End license statement: do not remove -->
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="archaeological-context">
-                                    <desc>Dated by the archaeolgical context, stratigraphy or associated finds</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Dated by the archaeolgical context, stratigraphy or associated finds</desc>
                                 </valItem>
                                 <valItem ident="internal-date">
-                                    <desc>Dated by explicit internal date</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Dated by explicit internal date</desc>
                                 </valItem>
                                 <valItem ident="lettering">
-                                    <desc>Text dated palaeographically</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated palaeographically</desc>
                                 </valItem>
                                 <valItem ident="material-context">
-                                    <desc>Dated by the material, iconographic or other physical context of the object itself</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Dated by the material, iconographic or other physical context of the object itself</desc>
                                 </valItem>
                                 <valItem ident="nomenclature">
-                                    <desc>Text dated by nomenclature or onomastics</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by nomenclature or onomastics</desc>
                                 </valItem>
                                 <valItem ident="office">
-                                    <desc>Text dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
                                 </valItem>
                                 <valItem ident="prosopography">
-                                    <desc>Text dated by known persons named or implied within it</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by known persons named or implied within it</desc>
                                 </valItem>
                                 <valItem ident="textual-context">
-                                    <desc>Dated via textual or linguistic context (other than explicit date or titles)</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Dated via textual or linguistic context (other than explicit date or titles)</desc>
                                 </valItem>
                                 <valItem ident="titulature">
-                                    <desc>Dated by the use of official titles</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Dated by the use of official titles</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -497,7 +499,7 @@ End license statement: do not remove -->
 
                 <elementSpec ident="space" module="transcr" mode="change">
                     <!-- testing for <space> with both quantity/extent or no unit -->
-                    <constraintSpec ident="space" scheme="isoschematron">
+                    <constraintSpec ident="space" scheme="schematron">
                         <constraint>
                             <sch:rule context="tei:space">
                                 <sch:report test="@quantity and @extent">space may have @quantity (a
@@ -519,11 +521,11 @@ End license statement: do not remove -->
                             </datatype>
                             <valList type="semi">
                                 <valItem ident="parallel">
-                                    <desc>Characters supplied from a parallel version of this text,
+                                    <desc xml:lang="en" versionDate="2020-02-17">Characters supplied from a parallel version of this text,
                                         absent from this one</desc>
                                 </valItem>
                                 <valItem ident="previouseditor">
-                                    <desc>Characters visible to a previous editor, now lost/unclear
+                                    <desc xml:lang="en" versionDate="2020-02-17">Characters visible to a previous editor, now lost/unclear
                                         due to damage</desc>
                                 </valItem>
                             </valList>
@@ -532,22 +534,22 @@ End license statement: do not remove -->
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
-                                    <desc>Restoration of text completely lost from the
+                                    <desc xml:lang="en" versionDate="2020-02-17">Restoration of text completely lost from the
                                         surface</desc>
                                 </valItem>
                                 <valItem ident="omitted">
-                                    <desc>Supplement of text erroneously omitted from the surface by
+                                    <desc xml:lang="en" versionDate="2020-02-17">Supplement of text erroneously omitted from the surface by
                                         the scribe/cutter</desc>
                                 </valItem>
                                 <valItem ident="subaudible">
-                                    <desc>Editorial supplement of words subaudible to the native
+                                    <desc xml:lang="en" versionDate="2020-02-17">Editorial supplement of words subaudible to the native
                                         reader</desc>
                                 </valItem>
                                 <valItem ident="explanation">
-                                    <desc>Editorial explanation of oblique text in original</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Editorial explanation of oblique text in original</desc>
                                 </valItem>
                                 <valItem ident="undefined">
-                                    <desc>Text restored (e.g. from earlier witness or alternate
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text restored (e.g. from earlier witness or alternate
                                         copy) without specification of current state of this
                                         text</desc>
                                 </valItem>
@@ -558,7 +560,7 @@ End license statement: do not remove -->
 
                 <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
                 <elementSpec ident="unclear" module="core" mode="change">
-                    <desc>Character that cannot be identified unambiguously outside of its context.
+                    <desc xml:lang="en" versionDate="2020-02-17">Character that cannot be identified unambiguously outside of its context.
                         May contain character data and <gi>g</gi> only.</desc>
                     <content>
                         <macroRef key="macro.xtext"/>
@@ -568,7 +570,7 @@ End license statement: do not remove -->
                 <!--       CHANGING ATTRIBUTE CLASSES         -->
 
                 <!--<classSpec type="atts" ident="att.datable.custom" mode="change">
-                    <constraintSpec scheme="isoschematron" ident="datable.custom">
+                    <constraintSpec scheme="schematron" ident="datable.custom">
                          <constraint>
                              <sch:rule context="tei:*[contains(@datingMethod,'julian')]">
                                  <sch:report test="@when-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
