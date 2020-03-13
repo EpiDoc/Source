@@ -1,0 +1,200 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="toc-pt-br" xml:lang="en">
+    <head>Normas EpiDoc: Documentos antigos em TEI XML</head>
+    <p>(Esta página em <ref target="toc-bg.html">Búlgaro</ref> | <ref target="toc-es.html"
+            >Espanhol</ref> | <ref target="toc-it.html">Italiano</ref>) </p>
+    <p>EpiDoc é um esforço colaborativo internacional que fornece normas e ferramentas para a <term
+            target="#encoding">codificação</term> de edições de pesquisa ou educacionais de
+        documentos antigos. Estas páginas são as <title>Normas EpiDoc</title> produzidas pelo
+        colaborativo. Além delas, o <ref target="http://epidoc.sf.net">EpiDoc Website</ref> fornece
+        o acesso a outras ferramentas e ambientes de colaboração que recebem suporte do
+        colaborativo. </p>
+    <p>EpiDoc especifica um subconjunto do padrão <term target="#TEI">Text Encoding
+            Initiative</term>(Iniciativa de Codificação de Texto) para a representação de textos em
+        forma digital, fazendo uso de <term target="#xml">Extensible Markup Language (XML)</term>,
+        um padrão técnico promulgado pelo <term target="#w3c">World-Wide Web
+        Consortium</term>(Consórcio da Rede Mundial), endereçado não apenas à transcrição ou à
+        preparação editorial dos textos em si, mas também à história, materialidade e metadata dos
+        objetos onde aparecem os textos.</p>
+    <p>Estas <title>Normas</title> contém descrições das características textuais, descritivas e
+        outras que são expressas com o EpiDoc, bem como os elementos e atributos <term target="#TEI"
+            >TEI</term> utilizados para codificá-los. As páginas abaixo fornecem uma série de pontos
+        de entrada para a documentação completa, através de uma quantidade de índices temáticos do
+        conteúdo das <title>Normas</title>, em vez de um único índice refletindo uma estrutura de
+        documentos ordenada e hierárquica (e inexistente). </p>
+    <div>
+        <head>Navegue pelas Normas</head>
+        <list>
+            <item><ref target="intro-intro.html">Como Utilizar as Normas EpiDoc</ref> (<ref
+                    target="intro-intro-bg.html" n="Въведение към Насоките за EpiDoc (Bulgrian)"
+                    >bg</ref>) (<ref target="intro-intro-de.html"
+                    n="Einführung in die EpiDoc Richtlinien (German)">de</ref>) (<ref
+                    target="intro-intro-es.html"
+                    n="Introducción general a la Guía de uso EpiDoc (Spanish)">es</ref>) (<ref
+                    target="intro-intro-fi.html" n="Kuinka EpiDoc-ohjeistoa käytetään (Finnish)"
+                    >fi</ref>) (<ref target="intro-intro-fr.html"
+                    n="Introduction générale aux Guidelines EpiDoc (French)">fr</ref>) (<ref
+                    target="intro-intro-it.html" n="Come usare le Linee Guida EpiDoc (Italian)"
+                    >it</ref>) </item>
+            <item><ref target="supp-structure.html">Visão Geral da Estrutura EpiDoc</ref></item>
+            <item><ref target="http://epidoc.sourceforge.net/">Homepage EpiDoc no
+                SourceForge</ref></item>
+        </list>
+        <div xml:id="internal">
+            <head>Índice por tipo de transcrição:</head>
+            <list>
+                <item><ref target="app-epi-petrae.html">Transcrição de texto e dados descritivos de
+                        acordo com PETRAE</ref></item>
+                <item><ref target="app-papy-ddbdp.html">Transcriçãode texto de acordo com
+                        DDbDP</ref></item>
+                <item><ref target="app-papy-apis.html">Dados descritivos de acordo com
+                    APIS</ref></item>
+                <item><ref target="app-epi-krummreypanciera.html">Transcrição de texto de acordo com
+                        Krummrey-Panciera 1980</ref></item>
+                <item><ref target="app-epi-panciera.html">Transcrição de texto de acordo com
+                        Panciera 1991</ref></item>
+                <item><ref target="app-papy-hgv.html">Dados descritivos de acordo com
+                    HGV</ref></item>
+                <item><ref target="app-epi-egyptology.html">Transcrição de texto em
+                        Egyptologia</ref></item>
+                <item><ref target="app-epi-oracc.html">Transcrição de texto de acordo com
+                        Oracc</ref></item>
+                <item><ref target="app-epi-ceipac.html">Transcrição de texto de acordo com
+                        CEIPAC</ref></item>
+                <!--<item><ref target="app-epi-eagle.html">Dados descritivos de acordocom EAGLE </ref> (em breve)</item>
+                <item><ref target="app-epi-edh.html">Dados descritivos de acordo com EDH</ref> (em breve)</item>
+                <item><ref target="app-epi-edr.html">Dados descritivos de acordo com EDR</ref> (em breve)</item>-->
+            </list>
+        </div>
+        <div>
+            <head>Listas temáticas das páginas das normas: </head>
+            <list>
+                <item><ref target="app-allsupp.html">Dados descritivos e históricos</ref></item>
+                <item><ref target="app-alltrans.html">Transcriçãode texto</ref></item>
+                <item><ref target="supp-images.html">Imagens e Figuras</ref></item>
+                <item><ref target="app-allidx.html">Termos de vocabulário e indexadores</ref></item>
+            </list>
+        </div>
+    </div>
+    <div>
+        <head>Apêndices</head>
+        <list>
+            <item><ref target="intro-eps.html">Suave introdução à Marcação para Epigrafistas</ref>
+                    (<ref target="intro-eps-bg.html"
+                    n="Деликатно въведение в маркирането с xml за епиграфи (Bulgarian)">bg</ref>)
+                    (<ref target="intro-eps-de.html"
+                    n="Erste Einführung in die Textauszeichnung für Epigraphiker (German)">de</ref>)
+                    (<ref target="intro-eps-es.html"
+                    n="Primera introducción al marcaje para epigrafistas (Spanish)">es</ref>) (<ref
+                    target="intro-eps-fi.html"
+                    n="Kevyt johdatus EpiDoc-merkintäkieleen epigraafikoille (Finnish)">fi</ref>)
+                    (<ref target="intro-eps-fr.html"
+                    n="Introduction pour les épigraphistes (French)">fr</ref>) (<ref
+                    target="intro-eps-it.html"
+                    n="Codifica per Epigrafisti, un'introduzione gentile (Italian)">it</ref>) </item>
+            <item><ref target="app-bibliography.html">Bibliografia</ref></item>
+            <item><ref target="app-glossary.html">Glossário</ref> (<ref
+                    target="app-glossary-bg.html" n="Речник (Bulgarian)">bg</ref>) (<ref
+                    target="app-glossary-es.html" n="Glosario (Spanish)">es</ref>) (<ref
+                    target="app-glossary-fi.html" n="Liite: Sanasto (Finnish)">fi</ref>) (<ref
+                    target="app-glossary-fr.html" n="Glossaire (French)">fr</ref>) (<ref
+                    target="app-glossary-it.html" n="Glossario (Italian)">it</ref>) </item>
+            <item><ref target="app-elements.html">Índice de elementos TEI</ref></item>
+        </list>
+        <div xml:id="external">
+            <head>Normas mantidas externamente para comunidades especializadas:</head>
+            <list>
+                <item><ref
+                        target="https://svn.code.sf.net/p/epidoc/code/trunk/guidelines/msword/cheatsheet.pdf"
+                        >Lista de Dicas Leiden EpiDoc</ref> (utilizada em workshops de
+                    treinamento)</item>
+                <item><ref
+                        target="https://svn.code.sf.net/p/epidoc/code/trunk/guidelines/msword/structure-cheatsheet.pdf"
+                        >Lista de Dicas de Estrutura EpiDoc</ref> (utilizada em workshops de
+                    treinamento)</item>
+                <item><ref target="http://papyri.info/editor/documentation?docotype=text"
+                        >Papyri.info EpiDoc/Leiden + ajuda e exemplos</ref></item>
+                <item><ref target="http://epixml.proclassics.org/">Normas Telamon EpiDoc</ref>
+                    (Búlgaro)</item>
+                <item><ref
+                        target="https://docs.google.com/document/d/1T6_2QXx1NVRE5irlQtYKtgkZhJTcq07_wjrWhoRpO1k"
+                        >Normas de codificação digital Fragmenta Historicum Graecorum</ref> (Monica
+                    Berti et al., Leipzig)</item>
+                <item><ref target="http://insaphdocumentation.pbworks.com/">Normas locais do King's
+                        College London</ref> (projetos InsAph, InsLib, IOSPE)</item>
+                <item><ref target="http://hdl.handle.net/21.11101/0000-0000-9E0C-2">Codificação TEI
+                        em Egiptologia e Coptologia</ref> (Daniel Werning, HU Berlin)</item>
+            </list>
+        </div>
+    </div>
+    <div>
+        <p>Você também pode fazer o download de uma cópia zipada das <ref
+                target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Normas</ref>
+            atualizadas para sua seção Arquivos, se precisar utilizá-las offline. </p>
+        <p>Você pode consultar versões antigas das Normas na área<ref
+                target="https://sourceforge.net/projects/epidoc/files/Guidelines/">Acervo</ref> da
+            seção Arquivos.</p>
+        <p>Para citar as Normas EpiDoc, por favor utilize as seguintes informações:</p>
+        <quote>
+            <bibl>Tom Elliott, Gabriel Bodard, Elli Mylonas, Simona Stoyanova, Charlotte Tupman,
+                Scott Vanderbilt, et al. (2007-2017), Normas EpiDoc: Documentos antigos em TEI
+                XML(Versão 8). Disponível em:<ref target="http://www.stoa.org/epidoc/gl/latest/"
+                    >http://www.stoa.org/epidoc/gl/latest/</ref>.</bibl>
+        </quote>
+    </div>
+    <div xml:id="toc-responsibility" type="gl-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Elli Mylonas</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Tom Elliott</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Simona Stoyanova</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

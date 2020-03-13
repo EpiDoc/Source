@@ -1,0 +1,126 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-textpart-pt-br" xml:lang="en">
+    <head>Textpart</head>
+    <p>Divisões do texto editado, como fragmentos, colunas, capítulos ou versões em diferentes
+        línguas.</p>
+    <p>
+        <specList>
+            <specDesc key="div"/>
+            <specDesc key="milestone"/>
+        </specList>
+    </p>
+    <p>Unidades de texto que são separadas e geralmente numeradas de forma independente por
+        epígrafos e papirólogos — inclusive fragmentos, colunas, seções, capítulos, textos
+        independentes em uma única pedra, marcos, selos, ou grafiti agrupado — que devem
+        serdivididos e numerados na mesma base no EpiDoc. O uso de XML não deve mudar a necessidade
+        de dividir e numerar o texto de uma maneira que façasentido intuitivo e semântico para o
+        editor.</p>
+    <p>Cada divisão contendo uma parte separada do texto deve estar dentro de um elemento
+            <gi>ab</gi> separado, e dentro de um <gi>div</gi> com um atributo
+        <att>type</att>="textpart". É muitas vezes útil (apesar de não obrigatório) fornecer também
+        um atributo <att>subtype</att> dando um nome para o tipo de subdivisão de texto gravado
+        aqui; <att>subtype</att> não é restrito, mas alguns dos valores comuns podem incluir
+        "fragment", "column", "section", etc.</p>
+    <p>Estas unidades podem, é claro, se encaixar em quase qualquer combinação. Se existirem
+        sobreposições não hierárquicas entre as unidades (como seções e colunas), então uma unidade
+        deve ser escolhida como a divisão "top level", e as outras repartidas dentro da divisão
+        maior. Estas divisões menores, repartidas, podem ser interligadas com o uso de um atributo
+            <att>n</att> ou do elemento <gi>link</gi>.</p>
+    <p>Nos casos em que uma unidade dentro de um texto contínuo deve receber marcação (por exemplo,
+        múltiplos blocos de um texto longo) o elemento <gi>milestone</gi> deve ser utilizado,
+        paramarcar o ponto em que ocorre uma quebra no suporte.</p>
+    <p>Nos casos em que dois textos distintos aparecem no mesmo suporte (como, por exemplo, duas
+        inscrições distintas numa mesma pedra), eles podem ser codificados em um único arquivo
+        EpiDoc file ou em dois arquivos separados. Esta é uma decisão editorial, e o EpiDoc nãodita
+        a escolah de um método sobre outro. Se a codificação dos dois textos for em um único
+        arquivo, dois <gi>div</gi> separados com o <att>type</att> "textpart" deve ser utilizado
+        dentro da divisão de edição. Cada tradução, comentário, bibliografia, etc. deve também ser
+        divididas em dois textparts, de modo a registrarinformação separadamente para cada texto. Se
+        a codificação for feita em dois arquivos separados, pode ser criado um link (ou ao menos ele
+        pode ser mencionado) no comentário, direcionando o leitor ao outro texto que aparece no
+        mesmo suporte. </p>
+    <cit>
+        <quote>Section A</quote>
+        <bibl corresp="#london"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
+        <div type="textpart" subtype="section" n="A"/>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="fragment" n="a">
+            <ab/>
+        </div>
+        <div type="textpart" subtype="fragment" n="b">
+            <ab/>
+        </div>
+        <div type="textpart" subtype="fragment" n="c">
+            <ab/>
+        </div>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="section" n="i">
+            <div type="textpart" subtype="fragment" n="a">
+                <ab/>
+            </div>
+            <div type="textpart" subtype="fragment" n="b">
+                <ab/>
+            </div>
+        </div>
+        <div type="textpart" subtype="section" n="ii">
+            <div type="textpart" subtype="fragment" n="c">
+                <ab/>
+            </div>
+            <div type="textpart" subtype="fragment" n="d">
+                <ab/>
+            </div>
+        </div>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-textpart-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Scott Vanderbilt</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

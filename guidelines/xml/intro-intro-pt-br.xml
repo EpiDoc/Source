@@ -1,0 +1,221 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+ 
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="intro-intro-pt-br" xml:lang="en">
+    <head>Como usar as Normas EpiDoc</head>
+    <p>EpiDoc é um colaborativo informal, de projetos e pesquisadores que trabalham com documentos
+        fonte antigos em <term target="#tei">Text Encoding Initiative</term> (TEI) <term
+            target="#xml">XML</term>, que produz recomendações, ferramentas e boas práticas para o
+        processamento digital e a publicação de tais textos. A página do EpiDoc na web se encontra
+        em <ref target="http://epidoc.sf.net">http://epidoc.sf.net</ref>.</p>
+    <p>O presente documento, as <title>Normas EpiDoc</title>, é resultado do trabalho contínuo da
+        comunidade EpiDoc ao longo de diversos anos. Ele descreve a forma de codificar as diversas
+        características de documentos epigráficos e em papiro, baseado nos princípios centrais de
+        edição de textos acadêmicos (por exemplo, as chamadas<term target="#leiden">Leiden
+            Conventions</term> para os elementos de transcrição, e modelos de dados como o <term
+            target="#eagle">Electronic Archive of Greek and Latin Epigraphy (EAGLE)</term> para os
+        elementos descritivos e históricos). As normas devem ser utilizadas em conjunto com o
+                <title><term target="#epidoc-schema">EpiDoc Schema</term></title>, que valida os
+        documentos marcados de acordo com estes princípios, e os <title><term
+                target="#epidoc-stylesheets">EpiDoc Example Stylesheets</term></title>, que tentam
+        fornecer uma versão básica de cada elemento descrito.</p>
+    <p>As <title>Normas EpiDoc</title> não tentam dar a explicação completa de como montar um
+        projeto EpiDoc, como gerar um site, construir mecanismos de busca ou outras tarefas
+        tecnológicas necessárias para a publicação de textos codificados online.
+            Estas<title>Normas</title> também não são uma introdução completa à epigrafia ou
+        papirologia; elas são, exclusivamente, um guia para a codificação XML dos elementos de
+        edição de texto de documentos antigos que são mais frequentemente necessários em epigrafia e
+        pesquisas similares.</p>
+    <p>Apesar de não existir uma convenção única para a estruturação de edições epigráficas ou em
+        papiro, as <title>Normas EpiDoc</title> (e as <title><term target="epidoc-stylesheets"
+                >EpiDoc Stylesheets</term></title> - Folhas de Estilo EpiDoc) fazem uso de enfoque
+        utilizado pelos modelos de dados utilizados por projetos e colaborações como o <term
+            target="#apis">Advanced Papyrological Information System (APIS)</term>, <term
+            target="#eagle">EAGLE</term>, e <term target="#petrae"><foreign xml:lang="fr">Programme
+                d’enregistrement, de traitement et de recherche automatique en épigraphie</foreign>
+            (PETRAE)</term>. Como a área de epigrafia, de um modo geral (e epigrafia digital em
+        particular), já possui modelos rigorosos de boas práticas na estruturação de suas edições,
+        nós simplesmente recomendamos a codificação em TEI XML dos mesmos dados e observações que os
+        pesquisadores já consideraram úteis ou essenciais na prática.</p>
+    <p>As <title>Normas EpiDoc</title> têm a intenção de complementar as <term target="#leiden"
+            >Leiden Conventions</term> (a partir de agora chamadas apenas de "Leiden"), que já estão
+        em uso na epigrafia e papirologia por mais de 80 anos e são conhecidas em muitos campos
+        filológicos e documentais. As <title>Normas</title> partem do princípio que Leiden é uma
+        base adequada para as distinções intelectuais registradas em uma edição de texto
+        pré-moderno, e baseiam suas recomendações e exemplos nestas distinções sem requerer as
+        convenções tipográficas e siglas específicas recomendadas nas Leiden. Isto significa que
+        EpiDoc procura registrar com clareza, em XML, intervenções textuais como um suplemento do
+        editor para caracteres perdidos por dano, mas não especifica que tais suplementos devam ser
+        escritos dentro de "colchetes" ("[" e "]") no próprio XML ou em qualquer outro produto
+        derivado. Dito isto, é o comportamento padrão das <title>Folhas Exemplo de Estilo EpiDoc
+        </title> produzir uma renderização em Leiden de textos codificados em EpiDoc. Muitas vezes,
+        é possível registrar distinções em TEI que sejam mais sutis ou mais profundas que em Leiden,
+        e algumas destas possibilidades estão descritas aqui, mas estas <title>Normas</title> não
+        recomendam substituir práticas padrão de epigrafia ou papirologia por estes novos
+        princípios. </p>
+    <p>As <title>Normas</title> produzidas e recomendadas pela comunidade EpiDoc representam um
+        subconjunto e um refino das <title><ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
+                Guidelines</ref></title> (Normas TEI), que recomendam a codificação XML de uma ampla
+        variedade corpos de textos literários e históricos. Da mesma forma que EpiDoc é uma
+        especialização para o TEI de objetos e documentos antigos, recomendando apenas aqueles
+        elementos, atributos e objetos de valor para esta subcomunidade específica, as <title>Normas
+            EpiDoc</title> têm a intenção de complementar (de forma alguma substituir) as
+            <title>Normas TEI </title>. As seções de referência e técnicas do TEI, especialmente,
+        permanecem como recursos valiosos para os usuários do EpiDoc, que muitas vezes vão achar
+        úteis as listas de elementos, as explicações de valores de atributos ou de tipos de dados e
+        os exemplos de uso em uma grande variedade de contextos e a extensa descrição em prosa dos
+        elementos de marcação. As <title>Normas EpiDoc</title> recomendam um conjunto bastante
+        restrito de elementos, modelos de conteúdo, atributos e valores TEI, tanto que um arquivo
+        EpiDoc é também um arquivo válido TEI, mas nem todo arquivo TEI é válido para o EpiDoc. Nas
+        áreas onde as <title>Normas EpiDoc</title> são mais restritivas que as TEI, as primeiras
+        devem suplantar as segundas; mas nas situações onde as TEI entram em maiores detalhes ou
+        oferecem um espectro maior de exemplos, deveriam, é claro, ser consultadas e consideradas a
+        fonte canônica para todo o uso EpiDoc.</p>
+    <div xml:id="structure">
+        <head>Estrutura e Características das <title>Normas EpiDoc</title></head>
+        <p>Existem diversas vias de entrada para cada página que compõe o corpus das <title>Normas
+                EpiDoc </title>.</p>
+        <list type="bulleted">
+            <item>Três índices principais agrupam todas estas páginas dentro das categorias: <ref
+                    rend="bold" target="app-alltrans.html">Transcrição</ref> (os elementos relativos
+                a conteúdo, aparência, restauração e interpretação básica do texto em si);<ref
+                    rend="bold" target="app-allsupp.html">Dados de Suporte</ref> (incluindo a
+                descrição do objeto ou manuscrito, a história do objeto e de sua descoberta,
+                informação bibliográfica ou outra informação editorial); e <ref rend="bold"
+                    target="app-allidx.html">Vocabulário e Indexação</ref> (termos e características
+                marcadas no texto com o objetivo de controlar ou indexar vocabulário, busca e
+                faceting).</item>
+            <item><ref target="index.html#special">Diversas seções</ref> oferecem listas
+                selecionadas e organizadas de acordo com as categorias geralmente utilizadas pelos
+                usuários de comunidades especializadas (por exemplo, as normas de transcrição
+                epigráfica de <term target="#krummreypanciera">Krummrey-Panciera</term>; as
+                características de papirologia como registradas no <term target="#apis">APIS</term>
+                ). Estas seções estão em desenvolvimento, e devem ser consideradas informativas em
+                vez de normativas. Sugestões de novas seções deste tipo são bem vindas.</item>
+            <item>Finalmente, as <title>Normas</title> contém apêndices de suporte, tais como <ref
+                    target="app-glossary.html">glosário de termos técnicos e especializados</ref>, e
+                uma <ref target="app-bibliography.html">bibliografia</ref> de autoridades de
+                epigrafia e papirologia, por exemplo o EpiDoc corpora, e, em termos gerais, de
+                publicação de textos antigos. Um <ref target="app-elements.html">índice para as
+                        <title>Normas </title> organizado por elemento TEI mencionado</ref> permite
+                aos leitores encontrar todas as características epigráficas que recomendam o uso de
+                um dado elemento. </item>
+        </list>
+        <p>Páginas individuais nas <title>Normas</title> são organizadas por conceito epigráfico ou
+            papirológico, não por nome de elemento TEI. Desta forma, por exemplo, todas as páginas
+            que lidam com abreviaturas estão agrupadas, (<ref
+                target="app-alltrans.html#editorial-interventions">sob a rubrica Intervenções
+                Editoriais</ref>), independente de quais elementos TEI são especificados. Cada
+            página das <title>Normas</title> tem uma estrutura regular: primeiro, uma breve
+            explicação do título da página (para <ref target="trans-uninterpreted.html">a página
+                entitulada ‘Caracteres Não Interpretados’</ref>, por exemplo, existe uma explicação
+            “Letras claras, mas incompreensíveis”). O elemento (ou elementos) TEI relevante(s)
+            fica(m) exposto(s) em uma caixa logo abaixo, com um link para a página das <title>Normas
+                TEI</title> para aquele elemento. A seguir, há uma explicação textual das
+            recomendações EpiDoc para o uso daquele(s) elemento(s) TEI, incluindo detalhes dos
+            valores e atributos relevantes.</p>
+        <p>Abaixo desta explicação geralmente aparecem alguns exemplos de contexto de uso. As
+                <title>Normas</title>, especialmente nos casos de elementos de transcrição, listam
+            renderizações convencionais da publicação em questão de acordo com normas papirológicas
+            ou epigráficas, como a <term target="#krummreypanciera">Krummrey-Panciera</term> e o
+                <term target="#ddb">Duke Databank</term>.</p>
+        <p>Os exemplos de XML mostram a marcação recomendada para os diversos tipos de elemento de
+            transcrição, como por exemplo os diferentes casos de <ref target="trans-abbrevmark.html"
+                >expansão de uma abreviatura que inclui um símbolo</ref>. Os exemplos muitas vezes
+            listam várias opções de marcação, dependendo do nível de detalhamento desejado. Abaixo
+            dos exemplos aparece uma série de renderizações (ou uma renderização diferente depois de
+            cada exemplo) que representa os diversos outputs disponíveis nos exemplos das folhas de
+            estilo EpiDoc P5. O output padrão é seguir as convenções <term
+                target="#krummreypanciera">Krummrey-Panciera</term>. Outros output incluem o estilo
+            SEG, o estilo London e o estilo DDbDP. Abaixo de cada exemplo existe uma referênca que
+            aponta sua fonte. A maior parte dos exemplos é tirada das <term target="#iaph"
+                >Inscrições de Aphrodisias</term>, das <term target="#irt">Inscrições da
+                Tripolitania Romana</term> e do <term target="#ddb">Duke Databank de Documentos em
+                Papiro</term>. </p>
+    </div>
+    <div xml:id="more">
+        <head>Treinamento, Ferramentas e Suporte</head>
+        <p>Estas <title>Normas</title> são, em essência, uma fonte de referência. Para treinamento e
+            suporte mais aprofundado pode haver outros recursos disponíveis. Membros da comunidade
+            EpiDoc coordenam escolas de treinamento ocasionais, algumas vezes patrocinadas por
+            projetos de grande porte (como os diversos workshops ministrados surante o Projeto
+            Inscrições de Aphrodisias, 2004-2008); maiores informações a respeito destes eventos de
+            treinamento podem ser encontradas na<ref
+                target="http://sourceforge.net/p/epidoc/wiki/Training/">Página de Treinamento na
+                EpiDoc Wiki</ref>. Aqueles que iniciaram recentemente tanto o EpiDoc quanto
+            codificação de texto também podem achar útil diversas sessões de treinamento em TEI
+            (algumas encontradas na <ref target="http://wiki.tei-c.org/index.php/Current_events"
+                >lista de Eventos TEI</ref>).</p>
+        <p>EpiDoc pode ser ampliado e editado através do uso de qualquer ferramenta padrão de XML
+            (diversas delas estão listadas na <ref
+                target="http://wiki.tei-c.org/index.php/Category:Editing_tools">página Ferramentas
+                de Edição do TEI Wiki</ref>);treinamento básico no uso destas ferramentas é
+            geralmente incluído tanto nos eventos de treinamento em EpiDoc quanto nos de TEI, ou
+            qualquer tutorial de XML. Outras ferramentas para publicação, busca ou quaisquer outros
+            arquivos de processamento de EpiDoc e TEI incluem as linguagens de transformação de XML
+                <ref target="http://www.w3schools.com/xsl/xsl_intro.asp">XSLT</ref> and <ref
+                target="http://www.w3schools.com/xquery/xquery_intro.asp">XQuery</ref>, plataformas
+            genéricas de busca, como <ref target="http://lucene.apache.org/solr/">Solr</ref> e
+            ferramentas open source específicas de TEI como <ref
+                target="https://github.com/kcl-ddh/kiln">Kiln</ref> e o <ref
+                target="https://github.com/papyri/navigator">Papyrological Navigator</ref>.</p>
+        <p>Como sempre, o ponto de partida para obter ajuda a respeito de qualquer tópico que não
+            seja coberto por estas normas deve ser a <ref
+                target="https://sourceforge.net/p/epidoc/wiki/MarkupList/">lista de
+            Marcação</ref>.</p>
+    </div>
+    <div xml:id="intro-intro-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Laura Löser</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Simona Stoyanova</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Tom Elliott</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

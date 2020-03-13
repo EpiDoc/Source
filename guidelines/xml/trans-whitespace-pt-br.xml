@@ -1,0 +1,93 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-whitespace-pt-br">
+    <head>Gerenciando Espaço em Branco em Transcrições</head>
+    <p><specList>
+            <specDesc key="expan"/>
+        </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p>
+    <p>Em transcrições diplomáticas e editadas, o tratamento padrão do Epidoc para lidar com o
+        espaço em branco pode não produzir os resultados desejados. Problemas ocorrem em diversas
+        ocasiões, a mais comum sendo espaços que aparecem antes e depois de um elemento de frase. O
+        XML trata espaço em branco de forma diferente quando ele aparece dentro de um elemento
+        definido para conter apenas subelementos e nenhum texto livre, e elementos cuja definição
+        permite uma mistura de texto com outros elementos. No primeiro caso, o espaço em branco em
+        torno dos elementos contidos será ignorado. No segundo caso, espaços e retornos serão
+        tratados como texto, e aparecerão formatados na saída como espaço único. Isto se complica
+        devido à forma com que os editores, como o oXygen XML lidam com marcação de linhas - linhas
+        marcadas para aumentar a legibilidade não têm espaços ou caracteres linefeed as separando,
+        só parecem ter.</p>
+    <p>Nos exemplos abaixo, <gi>expan</gi> recebe os subelementos <gi>abbr</gi> e <gi>ex</gi> e
+        também algum texto livre. No segundo caso, espaços antes ou depois dos subelementos aparecem
+        no resultado final. </p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" rend="panciera">
+        <expan><abbr>Aug</abbr><ex>ustus</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" rend="panciera">
+        <expan>
+            <abbr>Aug</abbr>
+            <ex>ustus</ex>
+        </expan>
+    </egXML>
+    <p>O exemploaseguir não terá espaços em torno de qualquer das partes da abreviação. Entretanto,
+        se houver line feeds dentro do <gi>expan</gi> eles serão mantidos.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" rend="ddbdp" corresp="http://papyri.info/ddbdp/bgu;1;154">
+        <expan>Καρ<ex>ανίδι</ex></expan>
+    </egXML>
+    <p>Se aparecerem, em um output formatado pelo Epidoc, espaços em branco onde estes não deveriam
+        estar, a primeira coisa a fazer é verificar os arquivos fonte no XML para procurar espaços
+        ou linefeeds que tenhamsido inseridos durante o processodecodificação, muitas vezes para
+        melhorar a leitura.</p>
+    <p>Em alguns casos, por exemplo quando se codifica inscrições em hebraico ou arábico que usam um
+        sistema de escrita da direita para a esquerda, é necessário usar line feeds antes das tags,
+        para preservar a direcionalidade. Quando é importante preservar oespaço em branco exatamente
+        como foi inserido, você deve configurar a propriedade <tag>xsl:preserve-space</tag> no
+        início de seu arquivo de transformação xsl, e identificar os elementos para os quais isto se
+        aplica. Então você pode gerencias espaço em branco explicitamente durante o processo de
+        formatação.</p>
+    <divGen type="seealso"/>
+    <div xml:id="trans-whitespace-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Elli Mylonas</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restoredincomplete-pt-br">
+    <head>Restauração Editorial: palavra com restauro incompleto</head>
+    <p>
+        <specList>
+            <specDesc key="supplied"/>
+            <specDesc key="w"/>
+            <specDesc key="seg"/>
+            <specDesc key="gap"/>
+        </specList>
+    </p>
+    <p>O elemento <gi>supplied</gi> indica texto perdido no suporte original, restaurado pelo
+        editor, seja por comparação com outros textos ou através de conhecimento contextual. Quando
+        uma palavra nãopode ser completamente restaurada, a parte perdida deve ser marcada por um
+            <gi>gap</gi>. Um elemento <gi>w</gi> deve ser utilizado com um atributo <att>part</att>,
+        que indica qual parte da palavra está faltando: <list type="bulleted">
+            <item>'I' (início)</item>
+            <item>"M" (meio)</item>
+            <item>"F" (final)</item>
+        </list></p>
+    <cit>
+        <quote>abc[..?..]</quote>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <w part="I"><supplied reason="lost">abc</supplied></w><gap reason="lost"/>
+    </egXML>
+    <note>Note que os elementos adjacentes <gi>supplied</gi> e <gi>gap</gi> não irão resultar em
+        colchetes redundantes dentro de uma mesma lacuna no Example EpiDoc XSLT (veja <ref
+            target="trans-lacunasegmented.html">Lacunas Segmentadas ou Adjacentes</ref>).</note>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT126.html#al5">
+        <w part="I"><supplied reason="lost">sta</supplied></w><gap reason="lost"/></egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="lost"/><w part="M"><supplied reason="lost">ae</supplied></w><gap reason="lost"
+        />
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <gap reason="lost"/><w part="F"><supplied reason="lost">e</supplied></w><gap reason="lost"/>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT087.html#al1">
+        <gap reason="lost" extent="unknown" unit="character"/><w part="F">ui</w>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-restoredincomplete-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

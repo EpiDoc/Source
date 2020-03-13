@@ -1,0 +1,78 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreak-pt-br" xml:lang="en">
+    <head>Quebras de linhaLine breaks</head>
+    <p><!--gloss--></p>
+    <p><specList>
+            <specDesc key="lb"/>
+        </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p>
+    <p>O EpiDoc segue a prática TEI de marcação das quebras de linha no suporte (diferente de
+        versos) utilizando o elemento <gi>lb</gi>, apesar da expansão "line-begins" ser de muitas
+        formas uma maneira mais útil de se pensar este elemento. O <gi>lb</gi> é um elemento vazio
+        que marca o ponto unde uma linha quebra (ou inicia).</p>
+    <p>Por não haver um elemento que encapsule as linhas, qualquer informação sobre o número,
+        representação ou condição de toda uma linha deve ser marcada em um atributo no <gi>lb</gi>
+        precedente. Por este motivo, portanto, é nossa convenção colocar um <gi>lb</gi> no início de
+        cada linha epigráfica da edição, inclusive na primeira. Qualquer <att>rend</att> ou
+        atributos de numeração neste <gi>lb</gi> se refere a todo o texto entre a atual e a próxima
+        quebra de linha. (Ver exemplo abaixo.)</p>
+    <cit>
+        <quote>5</quote>
+        <bibl corresp="#london"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london">
+        <lb n="5"/>abc </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-linebreak-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Scott Vanderbilt</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

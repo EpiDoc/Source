@@ -1,0 +1,66 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-cleartext-pt-br" xml:lang="en">
+    <head>Texto Claro</head>
+    <p>Texto que é inteiramente legível e não requer intervenção editorial deve passar pela
+        transformação sem melhorias ou modificações. </p>
+    <p>A única propriedade que deve ser destacada é que <emph>a presença ou ausência de </emph>
+        espaço em branco no XML será preservada em qualquer renderização final (HTML, ODF, etc.),
+        portanto os espaços de qualquer tipo (inclusive tabulações, novas linhas, etc.) só devem ser
+        inseridos entre palavras. Para preservar este comportamento, recomenda-se que a <gi>div</gi>
+        contendo o texto transcrito receba o atributo <att>xml:space</att> com o valor "preserve". </p>
+    <cit>
+        <quote>abc</quote>
+        <bibl corresp="#panciera">
+            <biblScope>III.1</biblScope>
+        </bibl>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera"> abc </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-cleartext-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Beatrice Lietz</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

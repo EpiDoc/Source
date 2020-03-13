@@ -1,0 +1,85 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-restoreduncert-pt-br">
+    <head>Restauração Editorial: Caracteres perdidos e restaurados de modo incerto</head>
+    <p><specList>
+            <specDesc key="supplied"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+    <p>Nos casos em que o texto que não está presente na fonte é fornecido (seja por conjectura ou
+        por outras testemunhas) para preencher uma falha aparente no texto, pode-se usar o elemento
+            <gi>supplied</gi>. <gi>supplied</gi> significa que o texto foi fornecido pelo
+        transcritor ou editor por qualquer razão, tipicamente porque o original não pode ser lido
+        devido a dano físico ou perda no original.</p>
+    <p><att>reason</att> indica porque o texto teve de ser fornecido.</p>
+    <p><gi>supplied</gi> indica texto perdido no suporte original, restaurado pelo editor, seja por
+        comparação com outros textos, seja por conhecimento contextual.</p>
+    <p>Atributos necessários: <list type="bulleted">
+            <item><att>reason</att> explica porque o texto foi restaurado; para textos restaurados
+                dentro de lacunas, este elemento recebe o valor  "lost" (apesar de outros valores
+                serem possíveis).</item>
+        </list></p>
+    <p>Atributos opcionais incluem: <list type="bulleted">
+            <item><att>cert</att> com o valor "low" indica texto que foi restaurado de maneira
+                incerta.</item>
+        </list>
+    </p>
+    <cit>
+        <quote>[?abc]</quote>
+        <bibl corresp="#panciera"
+            ><!-- THERE APPEARS TO BE NO CORRESPONDING EXAMPLE IN K-P or SEG - IS THE QUOTE CORRECT? <biblScope></biblScope>--></bibl>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <supplied reason="lost" cert="low">abc</supplied>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera"> ἡμετέρ<supplied
+            reason="lost" cert="low">α μήτηρ</supplied>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT013.html#al1"> Bon<supplied reason="lost"
+            cert="low">ifatius</supplied>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;1;101#34">
+        <supplied reason="lost" cert="low">τόκους</supplied>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-restoreduncert-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
+            <!--<bibl><respStmt><resp>formatado, editado, revisado, mungado?</resp><name>xx</name><name/></respStmt></bibl>-->
+        </listBibl>
+    </div>
+</div>

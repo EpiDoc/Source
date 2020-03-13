@@ -1,0 +1,119 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevuncert-pt-br">
+    <head>Abreviação expandida de modo incerto</head>
+    <p>
+        <specList>
+            <specDesc key="abbr"/>
+            <specDesc key="ex"/>
+            <specDesc key="expan"/>
+        </specList>
+    </p>
+    <p><gi>expan</gi> (expansão) contém a expansão de uma abreviação. Os caracteres que formam a
+        expansão completa de uma abreviação (incluindo tanto os caracteres que estão presentes no
+        suporte original quanto aqueles adicionados pelo editor) devem ficar contidos dentro do
+            <gi>expan</gi>. Os caracteres que aparecem no suporte geralmente ficam contidos em
+            <gi>abbr</gi> (apesar disto não ser obrigatório).</p>
+    <p><gi>ex</gi> (expansão editorial) contém uma sequência de letras adicionadas por um editor ou
+        transcritor quando este expande uma abreviação. Os caracteres expandidos ou fornecidos pelo
+        editor (isto é, aqueles caracteres que não aparecem no suporte original) são incluídos no
+            <gi>ex</gi>. No caso de incerteza a respeito da expansão das abreviações, geralmente são
+        estes caracteres expandidos a origem da incerteza, portanto o elemento <gi>ex</gi> leva
+        consigo um <att>cert</att> com o valor "low".</p>
+    <p>Quando o <gi>expan</gi> contém mais de uma cadeia de caracteres fornecidos ou expandidos, ou
+        quando a abreviação em si contém caracteres que se perderam e foram restaurados, então a
+        incerteza pode vir de algumas ou todas estas restaurações. Um editor pode indicar esta
+        complexidade, anexando <att>cert</att>="low" a um ou mais destes elementos, ou pode
+        simplesmente registrar esta incerteza a respeito de toda a palavra anexando <att>cert</att>
+        ao <gi>expan</gi> (veja exemplo abaixo).</p>
+    <p>Abreviações sem solução são tratadas de forma diferente; veja a seção <ref
+            target="trans-abbrevnotex.html">Abreviação não expandida</ref> fpara ter uma explicação
+        sobre como fazer a marcação de abreviações cujas expansões são completamente desconhecidas
+        (ou quando o editor está inseguro demais para oferecer uma proposta de expansão).</p>
+    <cit>
+        <quote>a(bc?)</quote>
+        <bibl corresp="#panciera">
+            <biblScope>X.1</biblScope>
+        </bibl>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <expan>a<ex cert="low">bc</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+        <expan>Iul<ex cert="low">ius</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT732.html#al2">
+        <seg part="I"><expan><abbr>Aug</abbr><ex cert="low">ust</ex></expan></seg>
+    </egXML>
+    <cit>
+        <quote>a(bc(?))</quote>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <expan>a<ex cert="low">bc</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <expan>Καρ<ex cert="low">ανίδι</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://papyri.info/ddbdp/bgu;1;116#15">
+        <expan><ex cert="low">ἔτους</ex></expan>
+        <num value="29"><unclear>κ</unclear>θ</num>
+    </egXML>
+    <cit>
+        <quote>[F]el(icitati)(?)</quote>
+        <bibl corresp="#rib"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
+        <expan cert="low"><abbr><supplied reason="lost"
+            >F</supplied>el</abbr><ex>icitati</ex></expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp london">
+        <expan><abbr><supplied reason="lost" cert="low">F</supplied>el</abbr><ex cert="low"
+                >icitati</ex></expan>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-abbrevuncert-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

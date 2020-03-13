@@ -1,0 +1,109 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-regularization-pt-br">
+    <head>Regularização</head>
+    <p>Regularização da escrita de formas irregulares, como dialetos, grafia tardia, grafia
+        fonética, , etc.</p>
+    <p>
+        <specList>
+            <specDesc key="choice"/>
+            <specDesc key="reg"/>
+            <specDesc key="orig"/>
+        </specList>
+    </p>
+    <p>Se o seu projeto faz distinção entre texto corrigido como resultado de erro do escriba (como
+        em <ref target="trans-erroneoussubstitution.html">Correção de Caracteres Errôneos</ref>) e o
+        texto normalizado ou regularizado de um dialeto ou grafia fonética, forma gramatical, etc.,
+        talvez por considerar que estes últimos não são estritamente <emph>errados</emph>, então
+        estas normalizações podem ser marcadas com o elemento <gi>orig</gi> (a forma original do
+        escriba) e <gi>reg</gi> (a forma regularizada. Como em <gi>sic</gi> e <gi>corr</gi>, estes
+        elementos serão agrupados num elemento <gi>choice</gi>, indicando que são duas versões
+        editoriais do mesmo trecho de texto, devendo ser lidas como alternativas e não mostradas
+        lado a lado.</p>
+    <p>É mais comum marcar uma regularização deste tipo a nível da palavra, em vez de marcar os
+        caracteres afetados, como nos exemplos de DDbDP e IOSPE mostrados abaixo. Isto torna mais
+        fácil de gerar uma leitura de aparato da forma regularizada (ou da forma original,
+        dependendo de qual você pretende enfatizar), mas também pode trornar impossível de
+        identificar os caracteres individualmente afetados em uma grafia de dialeto ou forma
+        gramatical. Por outro lado, marcar os caracteres individualmente pode tornar mais fácil
+        indexar ou buscar por caraterísticas específicas, como o iotacismo de ι e ει no exemplo
+        final abaixo.</p>
+    <cit>
+        <quote>abc</quote>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <choice>
+            <reg>def</reg>
+            <orig>abc</orig>
+        </choice>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;1;100#7">
+        <choice>
+            <reg>τιμὴν</reg>
+            <orig>τειμην</orig>
+        </choice>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="iospe"
+        corresp="http://iospe.kcl.ac.uk/5.14.html">
+        <choice>
+            <orig>κέντ<supplied reason="lost">ρον</supplied></orig>
+            <reg>κάστρον</reg>
+        </choice>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera"> τ<choice>
+            <reg>ι</reg>
+            <orig>ει</orig>
+        </choice>μὴν </egXML>
+    <p>Como foi mostrado neste último exemplo, a regularização dentro da palavra não aparecerá em
+        qualquer <code>$leiden-style</code>, porque não existe siglum no Leiden para "grafias
+        regularizadas"; geralmente, a prática editorial é imprimir grafias irregulares sem correção,
+        ou algumas vezes tratá-las como erros (e portanto mostrá-las como no caso de <ref
+            target="trans-erroneoussubstitution.html">Substituição Errônea</ref>). Vai ser,
+        portanto, necessária uma customização das folhas de estilo para utilizar a regularização de
+        forma diferente das utilizadas em DDbDP ou IOSPE. </p>
+    <divGen type="seealso"/>
+    <div xml:id="trans-regularization-responsibility">
+        <head>Responsabillidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

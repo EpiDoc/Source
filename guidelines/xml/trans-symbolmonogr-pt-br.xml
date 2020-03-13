@@ -1,0 +1,129 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-symbolmonogr-pt-br">
+    <head>Monogramas</head>
+    <p>
+        <specList>
+            <specDesc key="expan"/>
+            <specDesc key="abbr"/>
+            <specDesc key="am"/>
+            <specDesc key="g"/>
+            <specDesc key="ex"/>
+            <specDesc key="figure"/>
+            <specDesc key="figDesc"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef>
+    </p>
+    <p><gi>expan</gi> (expansão) contém a expansão de uma abreviação.</p>
+    <p><gi>abbr</gi> (abreviação) contém uma abreviação de qualquer tipo.</p>
+    <p>
+        <gi>am</gi> (abbreviation marker - marcador de abreviação) contém uma sequência de letras ou
+        sinais presentes em uma abreviação que são omitidos ou substituídos na versão expandida da
+        abreviação</p>
+    <p><gi>g</gi> (caracter ou glifo) representa um caracter ou glifo fora do padrão.</p>
+    <p>
+        <gi>ex</gi> (expansão editorial) contém uma sequência de letras acrescentadas pelo editor ou
+        transcritor quando expande uma abreviação.</p>
+    <p><gi>figure</gi> agrupa elementos que representam ou contém informação gráfica, como uma
+        ilustração ou uma figura.</p>
+    <p><gi>figDesc</gi> (descrição da figura) contém uma breve descrição em prosa da aparência ou
+        conteúdo de uma imagem gráfica , para uso quando se está documentando uma imagem, sem
+        precisar mostrá-la.</p>
+    <p>Nos casos em que o monograma aparece como parte de um texto transcrito de uma inscrição,
+        existe uma série de maneiras diferentes de lidar com isso através de codificação, dependendo
+        da intenção de pesquisa e na nossa habilidade de ler e expandir qualquer conteúdo
+        textual.</p>
+    <cit>
+        <quote>(νικᾷ ἡ τύχη τῶν Πρασίνων.)</quote>
+        <bibl corresp="#iAph"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010404.html#">
+        <g type="monogram"/>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <figure>
+            <figDesc>monogram</figDesc>
+        </figure>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph070016.html#">
+        <expan>
+            <abbr>
+                <am>
+                    <g type="monogram"/>
+                </am>
+            </abbr>
+            <ex>Συμβατικίου</ex>
+        </expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph120541.html#">
+        <expan>
+            <abbr>
+                <expan>
+                    <abbr>
+                        <am><g type="monogram"/></am>
+                    </abbr>
+                    <ex>Ποστύμ</ex>
+                </expan>
+            </abbr>
+            <ex>ιος</ex>
+        </expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT863.html">
+        <figure>
+            <head>monogram</head>
+        </figure>
+        <!-- This uses <head> rather than <figDesc> - is it ok? -->
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/p.col;8;244"> δι εμυ απα ολ επιφανιυ <g type="monogram"/>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-symbolmonogr-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

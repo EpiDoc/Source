@@ -1,0 +1,99 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-erased-pt-br" xml:lang="en">
+    <head>Texto Apagado, mas Legível</head>
+    <p><!--gloss--></p>
+    <p><specList>
+            <specDesc key="del"/>
+            <specDesc key="orig"/>
+            <specDesc key="unclear"/>
+        </specList>
+        <!--<listRef>
+            <ptr target="a"/>
+            </listRef>--></p>
+    <p>Caracteres apagados na Antiguidade, mas ainda legíveis (com uma certa clareza) devem ser
+        marcados com o elemento <gi>del</gi>, cujo atributo <att>rend</att> deve ter o valor
+        "erasure". No caso dos caracteres que não estão claros ou não podem ser compreendidos,
+        deve-se utilizar os elementos <gi>orig</gi> e <gi>unclear</gi>, respectivamente.</p>
+    <cit>
+        <quote>[[abc]] or [[ABC]] or [[ạḅc̣]]</quote>
+        <bibl corresp="#panciera">
+            <biblScope>V.1</biblScope>
+        </bibl>
+    </cit>
+    <cit>
+        <quote>&#x27e6;αβγ&#x27e7;</quote>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
+        <del rend="erasure">abc</del>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
+        <del rend="erasure"><orig>abc</orig></del>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
+        <del rend="erasure"><unclear>abc</unclear></del>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT149.html">
+        <del rend="erasure"><orig>gn</orig></del>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph090014.html">
+        <del rend="erasure">Νέρων<sic n="superfluous">ι</sic></del>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/p.cair.masp;3;67340">
+        <del rend="erasure"><unclear>Ε</unclear>ὐπρεπ<unclear>εία</unclear></del>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-erased-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Beatrice Lietz</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                    <name/>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>traduzido para o Português por</resp>
+                <name>Assunção Medeiros</name>
+            </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

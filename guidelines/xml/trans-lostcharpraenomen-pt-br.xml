@@ -1,0 +1,105 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lostcharpraenomen-pt-br">
+    <head>Caracteres perdidos, praenomen</head>
+    <p><specList>
+            <specDesc key="gap"/>
+            <specDesc key="name"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+    <p>Um <gi>gap</gi> (gap) indica um ponto onde material está omitido na transcrição, seja por
+        razões editoriais descritas no TEI header, como parte de uma prática de amostragem, seja
+        porque o material está ilegível, invisível ou inaudível.</p>
+    <p><gi>name</gi> indica um nome próprio ou oração nominal.</p>
+    <p>Nos casos onde caracteres se perderam no suporte original e não há nada que indique ao editor
+        como estes devem ser restaurados, isto se marca como uma lacuna, com o uso do elemento
+            <gi>gap</gi>. Observe que este é geralmente um elemento vazio, já que marca um ponto
+        onde ocorre uma lacuna, e portento não existe conteúdo
+        <!--(veja seções VIII.7 para encontrar exemplos onde <gi>gap</gi> pode congter outros elementos)-->.</p>
+    <p>Para uma lacuna simples, cujo tamanho é conhecido, <gi>gap</gi> pode receber os três
+        seguintes atributos:</p>
+    <list type="bulleted">
+        <item><att>reason</att> explica porque o texto foi restaurado, e no caso de uma lacuna
+            geralmente recebe o valor "lost" (apesar de poder receber outros valores).</item>
+        <item><att>quantity</att> indica quantos caracteres ou linhas foram perdidos (nos casos em
+            que se sabe).</item>
+        <item><att>unit</att> indica que tipo de unidadede texto se perdeu, como "character" ou
+            "line" (ou mesmo algum outro tipo de unidade textual, como "column", "page"
+            etc.).</item>
+    </list>
+    <p>Em casos onde um praenomen se perdeu, a quantidade de caracteres perdidos deve ser
+        extrapolada (fica entre 1 e 3 letras). Portanto, além de <att>reason</att> e
+        <att>unit</att>, mais dois atributos devem ser utlizados:</p>
+    <list type="bulleted">
+        <item><att>atLeast</att> indica o número mínimo de caracteres perdidos.</item>
+        <item><att>atMost</att> indica o númeor máximo de caracteres perdidos.</item>
+    </list>
+    <p><gi>gap</gi> também deve ser colocado dentro de <gi>name</gi>, para denotar o fato que o
+        editor considera que a lacuna continha um nome em vez de outro tipo de palavra.</p>
+    <cit>
+        <quote>[-]</quote>
+        <bibl corresp="#panciera">
+            <biblScope>8.4</biblScope>
+        </bibl>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera ddbdp" corresp="#panciera">
+        <name>
+            <gap reason="lost" atLeast="1" atMost="3" unit="character"/>
+        </name>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/psi;7;769#1">
+        <num>
+            <gap reason="lost" atLeast="12" atMost="15" unit="character"/>
+        </num>
+    </egXML>
+    <!-- Cannot find any <name> examples in DDBDP, IRT or iAph -->
+    <note>PN does not use this convention specifically for praenomina, but does allow ranges of
+        extent for lacunae, e.g. when known to be a number, or length of lacuna is
+        approximate.</note>
+    <divGen type="seealso"/>
+    <div xml:id="trans-lostcharpraenomen-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>Autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>Autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

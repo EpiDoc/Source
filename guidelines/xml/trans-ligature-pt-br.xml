@@ -1,0 +1,87 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature-pt-br" xml:lang="en">
+    <head>Letras em ligadura</head>
+    <p>Letras unidas em ligadura, tecnicamente aquelas que compartilham um único traço (geralmente
+        um vertical) que faz parte dos dois caracteres, como um M e um N adjacentes; de forma mais
+        ampla, quaisquer dois caracteres unidos ou superpostos.</p>
+    <p>
+        <specList>
+            <specDesc key="hi"/>
+        </specList>
+    </p>
+    <p><!--More prose explanation--></p>
+    <cit>
+        <quote>a&#x0361;b</quote>
+        <quote>a&#x0361;bc</quote>
+        <bibl corresp="#panciera">
+            <biblScope>IV.4</biblScope>
+        </bibl>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
+        <hi rend="ligature">ab</hi>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera" rend="panciera">
+        <hi rend="ligature">abc</hi>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT991.html">
+        <hi rend="ligature">ae</hi>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="petrae">
+        <!-- example from IOSPE Byz. 18 --> Εὐ<supplied reason="omitted">σ</supplied>εβί<hi
+            rend="ligature">ου</hi>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010189.html"> ἀρχιερέω<hi rend="ligature"
+            xml:id="hi1">ν</hi>
+        <hi rend="ligature" xml:id="hi2">ἐ</hi>κγόνου <link target="hi1 hi2"/>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-ligature-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Scott Vanderbilt</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

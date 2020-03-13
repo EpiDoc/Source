@@ -1,0 +1,112 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ambiguous-pt-br" xml:lang="en">
+    <head>Caracteres ambíguos (ponto subescrito do Leiden) </head>
+    <p>Um caractere que tem traços preservados, mas não o suficiente para que se identifique a letra
+        sem ambiguidade fora de seu contexto.</p>
+    <p>
+        <specList>
+            <specDesc key="unclear"/>
+        </specList>
+    </p>
+    <p>Um caractere incompleto ou mal executado, cuja interpretação seja ambígua fora de seu
+        contexto (tradicionalmente representada com um ponto subescrito no Leiden) deve receber a
+        tag do elemento <gi>unclear</gi> (Veja <ref target="trans-damaged.html">Caracteres
+            danificados (mas legíveis)</ref>). O uso do <gi>unclear</gi> pelo EpiDoc é voltado
+        apenas para a preservação ou execução física do caractere.</p>
+    <p>O elemento <gi>unclear</gi> pode receber o atributo <att>reason</att>, mas isto não é
+        necessário para o EpiDoc, já que o uso do elemento <gi>unclear</gi> é suficiente para
+        atender as distinções feitas pelas convenções Leiden.</p>
+    <p>É importante observar que o uso do elemento <gi>unclear</gi> pelo EpiDoc é significativamente
+        mais restrito que a definição default do TEI, que permite que uma ampla variedade de
+        elementos apareçam dentro de <gi>unclear</gi>. Em EpiDoc, a categoria "unclear" se refere ao
+        estado físico de um caractere específico no suporte, e não a uma ambiguidade editorial ou
+        uma incerteza sobre a interpretação de palavras ou nomes (que é indicado com o uso de
+            <gi>cert</gi>). Pelo fato de <gi>unclear</gi> se referir apenas ao estado de caracteres
+        no suporte, e não a qualquer interpretação destes caracteres (como a possibilidade de
+        diversos caracteres representarem um número, nome, vel sim.), <hi rend="italic">apenas</hi>
+        dados de caractere ou uma tag <gi>g</gi> pode aparecer dentro do elemento <gi>unclear</gi>.
+        Da mesma forma, nenhum elemento relacionado com a interpretação do texto deve ficar dentro
+        de <gi>unclear</gi>; partes de texto ambíguo que incluem palavras, linhas, nomes, datas e
+        outras características com tags devem, portanto, ser marcadas com múltiplos elementos
+            <gi>unclear</gi>.</p>
+    <cit>
+        <quote>a&#x323;b&#x323;c&#x323;</quote>
+        <bibl corresp="#krummreypanciera">
+            <biblScope>III.3</biblScope>
+        </bibl>
+        <bibl corresp="#panciera">
+            <biblScope>12.I</biblScope>
+        </bibl>
+        <bibl corresp="#ddbdp"/>
+        <!-- etc. -->
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#panciera">
+        <unclear>abc</unclear>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT027.html">
+        <unclear>T</unclear><supplied reason="lost">rai</supplied>ani </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph110223.html">
+        <supplied reason="lost">Δ</supplied><unclear reason="damage">η</unclear>μοφάντου </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/bgu;1;102"> συμβόλου μ<unclear>ία</unclear>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://iospe.kcl.ac.uk/5.15.html">
+        <w><unclear>Ἀνέθη</unclear>σα<unclear>ν</unclear></w>
+        <w><unclear>οἱ</unclear></w>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp"
+        corresp="http://papyri.info/ddbdp/c.ep.lat;;142"> Clau<unclear>dio</unclear>
+        <unclear>Tib</unclear><supplied reason="lost">eriano</supplied>
+    </egXML>
+    <divGen type="seealso"/>
+    <div xml:id="trans-ambiguous-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Scott DiGiulio</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

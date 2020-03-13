@@ -1,0 +1,111 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-symbolchirho-pt-br">
+    <head>Chi-Rho</head>
+    <p><specList>
+            <specDesc key="expan"/>
+            <specDesc key="abbr"/>
+            <specDesc key="am"/>
+            <specDesc key="g"/>
+            <specDesc key="ex"/>
+            <specDesc key="hi"/>
+        </specList>
+        <listRef>
+            <ptr target="a"/>
+        </listRef></p>
+    <p><gi>expan</gi> (expansão) contém a forma expandida de uma palavra abreviada.</p>
+    <p><gi>abbr</gi> (abreviação) contém uma abreviação de qualquer tipo.</p>
+    <p><gi>am</gi> (abbreviation marker - marcador de abreviação) contém uma sequência de letras ou
+        sinais presentes em uma abreviação que são omitidos ou substituídos nas versão expandida da
+        abreviação</p>
+    <p><gi>g</gi> (caracter ou glifo) representa um caracter ou glifo fora do padrão;
+            <att>type</att> indica o nome do símbolo decorativo. como folha.</p>
+    <p><gi>ex</gi> (expansão editorial) contém uma sequência de letras acrescentadas pelo editor ou
+        transcritor quando expande uma abreviação.</p>
+    <p><gi>hi</gi> (highlighted) marca uma palavra ou frase como graficamente distinta do texto que
+        a cerca, sem que seja feita qualquer declaração a respeito das razõesdesta diferença.</p>
+    <p>Quando um símbolo Chi-Rho aparece, ele pode ter uma série de diferentes valores semânticos
+        (abreviação ou logograma para "Cristo" ou "Cristão"; uma indicação geral e não-verbal de fé
+        ou afiliação; ligadura do Χ e do Ρ for a de qualquer contexto cristão), ou o editos pode
+        preferir não dar qualquer interpretação a respeito do símbolo. Os exemplos abaixo mostram
+        algumasdas maneiras de se lidar com esta variedade.</p>
+    <p>Um valor Unicode (por exemplo U+2627) pode ser usado dentrodo elemento <gi>g</gi>, se
+        desejado.</p>
+    <cit>
+        <quote>☧</quote>
+        <bibl corresp="#ddbdp"/>
+    </cit>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp panciera" corresp="#ddbdp">
+        <g type="chi-rho"/>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp">
+        <g type="chi-rho">☧</g>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <expan>
+            <abbr>
+                <am>
+                    <g type="chi-rho"/>
+                </am>
+            </abbr>
+            <ex>Χρίστος</ex>
+        </expan>
+    </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <expan>
+            <abbr>
+                <am>
+                    <g type="chi-rho"/>
+                </am>
+            </abbr>
+            <ex>Christ</ex>
+        </expan>opher </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="ddbdp" corresp="#ddbdp">
+        <hi rend="ligature">Χρ</hi>υσοφόρος </egXML>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT863.html"> Α<g type="chi-rho"/>Ω </egXML>
+    <!-- No DDBDP examples -->
+    <divGen type="seealso"/>
+    <div xml:id="trans-symbolchirho-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Charlotte Tupman</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>autor</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt></bibl>
+            <bibl><respStmt>
+                    <resp>traduzido para o Português por</resp>
+                    <name>Assunção Medeiros</name>
+                </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
