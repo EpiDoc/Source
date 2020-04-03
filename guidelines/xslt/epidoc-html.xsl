@@ -109,6 +109,22 @@
                                  <xsl:value-of select="$filename"/>
                              </xsl:element>
                          </xsl:when>
+                         <xsl:when test="starts-with(@corresp, 'https://igcyr.unibo.it/gvcyr')">
+                             <xsl:text>GVCyr: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'https://igcyr.unibo.it/')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="$filename"/>
+                             </xsl:element>
+                         </xsl:when>
+                         <xsl:when test="starts-with(@corresp, 'https://igcyr.unibo.it/igcyr')">
+                             <xsl:text>IGCyr: </xsl:text>
+                             <xsl:variable name="filename" select="substring-after(@corresp,'https://igcyr.unibo.it/')"/>
+                             <xsl:element name="a">
+                                 <xsl:attribute name="href" select="@corresp"/>
+                                 <xsl:value-of select="$filename"/>
+                             </xsl:element>
+                         </xsl:when>
                          <xsl:when test="starts-with(@corresp,'#') and //tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]">
                              <xsl:for-each select="//tei:bibl[@xml:id = substring-after(current()/@corresp, '#')]/tei:author">
                                  <xsl:value-of select="if(tei:name) then tei:name else ."/>

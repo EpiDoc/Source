@@ -24,6 +24,7 @@
             <xsl:apply-templates select="$context//tei:egXML">
                 <xsl:with-param name="parm-edition-type" select="$edition-type" tunnel="yes"/>
                 <xsl:with-param name="parm-leiden-style" select="$leiden-style" tunnel="yes"/>
+                <xsl:with-param name="parm-verse-lines" select="$verse-lines" tunnel="yes"/>
             </xsl:apply-templates>
         </egXMLs>
     </xsl:template>

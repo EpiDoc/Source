@@ -56,11 +56,16 @@
                                     <xsl:when test=". = 'seg'">
                                         <xsl:text>SEG</xsl:text>
                                     </xsl:when>
+                                    <xsl:when test=". = 'verse'">
+                                        <xsl:text>verse parameter on: </xsl:text>
+                                    </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="."/>
                                     </xsl:otherwise>
                                 </xsl:choose>
-                              <xsl:text> style:</xsl:text>
+                                <xsl:if test=". != 'verse'">
+                                    <xsl:text> style:</xsl:text>
+                                </xsl:if>
                             </strong>
                             <xsl:text> </xsl:text>
                             <xsl:apply-templates select="document(concat('../xml/views/', ., '/examples.xml'))//tei:egXML[@xml:id=concat($cur-div-id,'#',$cur-num)]/node()"

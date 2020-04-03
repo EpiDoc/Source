@@ -30,7 +30,8 @@ End license statement: do not remove -->
     <p><!--gloss--></p>
     <p><specList>
             <specDesc key="lg"/>
-            <specDesc key="l"/>
+        <specDesc key="l"/>
+        <specDesc key="metDecl"/>
         </specList>
         <!--<listRef>
             <ptr target="a"/>
@@ -45,10 +46,97 @@ End license statement: do not remove -->
     <p>Within the verse lines, however, the start of each line of text on the support still needs to
         be marked with an <gi>lb</gi>. In other words, <gi>lg</gi> and <gi>l</gi> are
         replacing the containing <gi>ab</gi>, but not the <gi>lb</gi>s.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london verse"
+        corresp="http://inslib.kcl.ac.uk/irt2009/IRT918.html">
+        <l><lb n="1"/>Quaesii multum quot <lb n="2"/>memoriae tradere</l>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london verse"
+        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010131.html">
+        <lg>
+            <lb n="1"/>
+            <l><unclear reason="damage">τ</unclear>ῆς μεγάλης ἀ<lb n="2" break="no"/>ρετῆς τοῦτον<lb
+                n="3"/>μέγαν ἡγεμον<unclear reason="damage">ῆ</unclear>α
+            </l>
+            <lb n="4"/>
+            <l>Ἑλλάδιον <lb n="5"/><supplied reason="lost">Κ</supplied>ᾶρες στῆ<supplied
+                reason="lost">σα</supplied>ν<lb n="6"/><supplied reason="lost"
+                    >ἀ</supplied><unclear reason="undefined">μ</unclear>ειβ<unclear reason="damage"
+                        >ό</unclear>μ<supplied reason="lost">ενο</supplied><unclear reason="damage"
+                            >ι</unclear>.
+            </l>
+        </lg>
+    </egXML>
 
-    <p>The line-group and line elements may contain attributes recording metre, execution, rhyme,
-        etc.</p>
+    <p>The verse line-group may contain attributes recording number of group (e.g. 
+        <att>n</att> with a value of "1", "2", "a", "b", etc.) 
+        and conventional metrical structure by means 
+        of either a standard term for the metrical unit (e.g. <att>met</att> with value "elegiac couplet"; 
+      or "iambic trimeters") or a representation for the metrical pattern 
+        (e.g. for the iambic trimeter <att>met</att>="±+|-+|±+|-+|±+|-±"). In 
+        verse systems where rhyme exists, an attribute <att>rhyme</att> may be added 
+        to specify the rhyme scheme applicable to a group of verse lines.</p>
+    
+    <p>The The verse line elements may contain attributes recording 
+        number of line (e.g. <att>n</att> with a value of "1", "2", etc.); conventional metrical 
+        structure by means of either a standard term for the metrical unit 
+        (e.g. <att>met</att> with value "hexameter"; <att>met</att> with value "pentameter") 
+        or a representation 
+        for the metrical pattern (e.g. for the hexameter <att>met</att> with value "+--|+--|+--|+--|+--|+±"); 
+        realization of metrical structure (e.g. <att>real</att> with value "-+|-+|-+|-+|++|-+", 
+        for iambic trimeter; <att>real</att> with value "+--|++|+--|+--|+--|+-" for hexameter; 
+        <att>real</att> with value "+--|++|+|+--|+--|+" for pentameter). </p>
+    
+    <p>When using a <att>met</att> and a <att>real</att>, the notation used 
+        should be documented by a <gi>metDecl</gi> element within the 
+            <gi>encodingDesc</gi> of the associated header.</p>
 
+    <p>When a verse line is fragmentary and cannot be restored, the metrical 
+        values or pattern of the lacuna is marked using a seg 
+        element with an attribute <att>met</att> (see Lost Characters, 
+        Metre Known/Reconstructed), while the metrical values 
+        or pattern of the extant portion of the verse line may be 
+        marked using a seg element with an attribute <att>real</att>.</p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera verse"
+    corresp="https://igcyr.unibo.it/gvcyr007">
+    <lg n="a" met="elegiac couplet">
+        <l n="1" met="hexameter" real="+--|+--|+--|++|+--|+-">
+            <lb n="1"/>Δεύτερον εἰς λυκάβαντα
+            <lb n="2"/>καὶ ἰκοστόν με περῶσαν</l>
+        <l n="2" met="pentameter" real="+--|++|+|+--|+--|+">
+            <lb n="3"/>λυγρὸς ἀφ᾿ ἱμερτῶν εἷλε
+            <lb n="4"/>μόρος θαλάμων <space quantity="4" unit="character"/></l></lg>              
+    <lg n="b" met="elegiac couplet">
+        <l n="3" met="hexameter" real="+--|++|+--|+--|++|+-">
+            <lb n="5"/>ούδ᾿ ὅλον εἰς πλειῶνα γά<lb
+                n="6" break="no"/>μοις ἐπιγηθήσασαν·<space quantity="3" unit="character"/></l>
+        <l n="4" met="pentameter" real="+--|++|+|+--|+--|-">
+            <lb n="7"/>ἤματι δ᾿ὧι παστὸν καὶ <space quantity="2" unit="character"/>
+            <lb n="8"/>σποδίην ἔλαχον, <space quantity="5" unit="character"/></l></lg>
+    <lg n="c" met="elegiac couplet">
+        <l n="5" met="hexameter" real="+--|+--|+--|+--|--|++">
+            <lb n="9"/> Στλακκίη αἰνοδάκρυτος·
+            <lb n="10"/>ἀμαυροτέρηι δ᾿ ὑπὸ λύπηι</l>
+        <l n="6" met="pentameter" real="++|++|+|+--|+--|+">
+            <lb n="11"/>θνήσκω τὴν μούνην σοι,
+            <lb n="12"/>πόσι, παρθεμένη <g type="leaf">❧</g>
+        </l>
+    </lg>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"
+        corresp="https://igcyr.unibo.it/gvcyr001" rend="panciera verse">
+        <l n="1" met="hexameter">
+            <seg real="++|++|+">
+                <lb n="1" rend="right-to-left"/><unclear>Κ</unclear>οίσōνος 
+                    στάλα</seg> 
+            <seg met="--|+--|+--|+±"><gap 
+                        reason="lost" extent="unknown" unit="character"></gap>
+             </seg>
+        </l>
+    </egXML>
 
     <cit>
         <quote><!-- conventional rendering --></quote>
@@ -60,25 +148,6 @@ End license statement: do not remove -->
         <bibl corresp="#iaph"/>
     </cit>
 
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
-        corresp="http://inslib.kcl.ac.uk/irt2009/IRT918.html">
-        <l><lb n="1"/>Quaesii multum quot <lb n="2"/>memoriae tradere</l>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london"
-        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010131.html">
-        <lg>
-            <lb n="1"/>
-            <l><unclear reason="damage">τ</unclear>ῆς μεγάλης ἀ<lb n="2" break="no"/>ρετῆς τοῦτον<lb
-                    n="3"/>μέγαν ἡγεμον<unclear reason="damage">ῆ</unclear>α</l>
-            <lb n="4"/>
-            <l>Ἑλλάδιον <lb n="5"/><supplied reason="lost">Κ</supplied>ᾶρες στῆ<supplied
-                    reason="lost">σα</supplied>ν<lb n="6"/><supplied reason="lost"
-                    >ἀ</supplied><unclear reason="undefined">μ</unclear>ειβ<unclear reason="damage"
-                    >ό</unclear>μ<supplied reason="lost">ενο</supplied><unclear reason="damage"
-                    >ι</unclear>.</l>
-        </lg>
-    </egXML>
 
     <!--Could not find any examples of <l> in DDBDP-->
 
@@ -88,16 +157,27 @@ End license statement: do not remove -->
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
+            <bibl>
+                <respStmt>
+                <resp>author</resp>
+                <name>Alice Bencivenni</name>
+                <name/>
+            </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
                     <resp>author</resp>
                     <name>Gabriel Bodard</name>
                     <name/>
-                </respStmt></bibl>
-            <bibl><respStmt>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
                     <resp>author</resp>
                     <name>Charlotte Tupman</name>
                     <name/>
-                </respStmt></bibl>
+                </respStmt>
+            </bibl>
         </listBibl>
     </div>
 </div>

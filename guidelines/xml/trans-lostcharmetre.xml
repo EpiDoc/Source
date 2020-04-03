@@ -28,7 +28,12 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-lostcharmetre" xml:lang="en">
     <head>Lost Characters, Metre Known/Reconstructed</head>
     <p>When characters are lost and cannot be restored, but the text is in verse and the metrical values
-        or pattern of the lacuna can be given.
+        or pattern of the lacuna can be given, the lost portion of the verse line 
+        is marked using a <gi>seg</gi> element. The <gi>seg</gi> 
+            element may contain an attribute recording conventional 
+            metrical structure by means of either a standard term for 
+            the metrical unit (e.g. <att>met</att> with value "dactylic") 
+        or a representation for the metrical pattern (e.g. <att>met</att> with value "--|+--|+--|+±").
     </p>
     <p>
         <specList>
@@ -46,9 +51,20 @@ End license statement: do not remove -->
         </bibl>-->
     </cit>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera london">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera verse">
         χαλκέοισι κάδοις δέχεται
         <seg met="--+"><gap reason="lost" quantity="7" unit="character" precision="low"/></seg>
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr.unibo.it/gvcyr035" rend="panciera london">
+        <lg met="elegiac couplets">
+            <l n="1" met="hexameter"><lb n="15"/><seg met="+--|+--|+-"><gap reason="lost" extent="unknown" unit="character"/></seg> <supplied reason="lost">ἀρ</supplied>ιστοπάτωρ βεβόαται</l>
+            <l n="2" met="pentameter"><lb n="16"/><seg met="+--|+--|+"><gap reason="lost" extent="unknown" unit="character"/></seg> <supplied reason="lost">ἔ</supplied>ξοχε Δεινομένη.</l>
+            <l n="3" met="hexameter"><lb n="17"/><seg met="+--|+--|+-"><gap reason="lost" extent="unknown" unit="character"/></seg> <unclear>τ</unclear>εὰ πατρὶς οὐκ ἐπὶ μούναι</l>
+            <l n="4" met="pentameter"><lb n="18"/><seg met="+--|+--|+"><gap reason="lost" extent="unknown" unit="character"/></seg> <supplied reason="lost">εἵ</supplied>νεκεν ἀγλαΐας.</l>
+            <l n="5" met="hexameter"><lb n="19"/><seg met="+--|+--|+--|+"><gap reason="lost" extent="unknown" unit="character"/></seg> <choice><unclear>χ</unclear><unclear>κ</unclear></choice>μεα τᾶιδε σε μέλπει</l>
+            <l n="6" met="pentameter"><lb n="20"/><seg met="+--|+--|+"><gap reason="lost" extent="unknown" unit="character"/></seg> <supplied reason="lost">π</supplied>ρᾶτον ἐν ἠϊθέοις.</l>
+        </lg>
     </egXML>
     
     
