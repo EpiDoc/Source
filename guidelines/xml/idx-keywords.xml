@@ -26,45 +26,24 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-keywords" xml:lang="en">
-    <head>Type of text, general keywords, other taxonomies</head>
-    <p>
+    <head>Type of text, other taxonomies, general keywords</head>
+   
+        <p>
         <specList>
             <specDesc key="msContents"/>
             <specDesc key="summary"/>
             <specDesc key="textClass"/>
             <specDesc key="keywords"/>
             <specDesc key="rs"/>
-            <specDesc key="seg"/>
             <specDesc key="term"/>
         </specList>
     </p>
 
-    <p>There is no specific <term target="#TEI">TEI</term> tag for the category or type of text, so
-        different projects have found different approaches to the encoding of this information. One
-        approach was to use a bespoke <gi>rs</gi> (reference string) element, with <att>type</att>
-        of "textType", around the relevant word in the edition, often in the title:</p>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"
-        corresp="http://insaph.kcl.ac.uk/iaph2007/iAph040311.html">
-        <title><rs type="textType">Honours</rs> for an emperor</title>
-    </egXML>
-
-    <p>Another approach is to include the category of text in a list of keywords in
-            <gi>msContents</gi>/<gi>summary</gi>:</p>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <msContents>
-            <summary corresp="#doc1 #doc4">
-                <seg>Building inscription</seg>
-                <seg>Demonstrative</seg>
-            </summary>
-        </msContents>
-        <!-- example from IOSPE V 2 -->
-    </egXML>
-
-    <p>Perhaps the most TEI-compliant, although least specific, solution would be to include text
-        category information in <gi>textClass</gi>/<gi>keywords</gi>:</p>
-
+     <div>
+        <head>Type of text</head>
+         <p>Although there is no specific <term target="#TEI">TEI</term> tag for the category or type of text, EpiDoc recommends the 
+             inclusion of text type information in <gi>textClass</gi>/<gi>keywords</gi>:</p> 
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/hgv/28115">
         <textClass>
             <keywords scheme="hgv">
@@ -72,40 +51,87 @@ End license statement: do not remove -->
             </keywords>
         </textClass>
     </egXML>
-
-    <p>General keywords or index terms of any other kind can be tagged (by default using
-        <gi>rs</gi>, but any other semantically appropriate element may be captured for this
-        purpose) anywhere in the document where they appear in running text: e.g. in the Greek or
-        Latin edition, translations, commentary, or any of the descriptive fields in the header.
-        Depending on the needs of a particular project and any internal or external taxonomies in
-        use, such a tag might look something like:</p>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <provenance type="observed">
-            <p>Outside the <rs type="monuList" key="db934">Cyrene Sculpture Museum</rs>.</p>
-        </provenance>
-    </egXML>
-
-    <p>The above examples could be indexed using project-specific code for the purpose of generating
-        indices, a search form, or for sorting or filtering texts. If a taxonomy is also in use, the
-            <gi>rs</gi> may carry <att>ref</att> for the purpose of normalizing to a term in this
-        taxonomy. In the example below, normalization is to the <term ref="#eagle">EDR</term>
-        vocabulary for materials (see <ref
-            target="https://docs.google.com/spreadsheet/ccc?key=0AnmDUyfP6SvFcGh2dmVydWZ6NW5zSGJmOEtOQWE4TFE#gid=0"
-            >Rei Material GoogleDoc</ref>):</p>
+    
+    <p>The use of <att>ref</att> in <gi>term</gi> for pointing to the related term in an internal authority list or external vocabulary 
+        is not required but recommended:</p>
+         
+         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+             <textClass>
+                 <keywords>
+                     <term ref="#texttype1">Dedication</term>
+                     <term ref="#texttype2">Decree</term>
+                 </keywords>
+             </textClass>
+         </egXML>
+    
+    <p>The element content is recommended but not required:</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <material ref="edr:marmor">Blue-veined white marble.</material>
+        <textClass>
+            <keywords>
+                <term ref="#texttype1"/>
+                <term ref="#texttype2"/>
+            </keywords>
+        </textClass>
     </egXML>
 
-    <p>You can align your definitions by aligning to a local or to an external <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p>
+         <p>If different types of text have to be linked to specific text parts, <gi>term</gi> can have a <att>corresp</att> 
+             pointing to the specific text part:</p>
+
+         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+             <textClass>
+                 <keywords>
+                     <term corresp="#textpart1">Dedication</term>
+                     <term corresp="#textpart2">Decree</term>
+                 </keywords>
+             </textClass>
+         </egXML>
+         
+         <p>If the <gi>keywords</gi> include also other <gi>term</gi>s used for different purposes (see below), 
+             a <att>type</att> can be used to specify what is the <gi>term</gi> used for:</p>
+         
+         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+             <textClass>
+                 <keywords>
+                     <term type="textType">Decree</term>
+                     <term type="keyword">Euergesia</term>
+                 </keywords>
+             </textClass>
+         </egXML>
+       </div>
     
-   
     <div>
-        <head>Subjects or keywords describing text</head>
+        <head>Other taxonomies</head>
+        <p>Index terms of any other kind can be tagged (by default using
+            <gi>rs</gi>, but any other semantically appropriate element may be captured for this
+            purpose) anywhere in the document where they appear in running text: e.g. in the Greek or
+            Latin edition, translations, commentary, or any of the descriptive fields in the header.
+            Depending on the needs of a particular project and any internal or external taxonomies in
+            use, such a tag might look something like:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <provenance type="observed">
+                <p>Outside the <rs type="monuList" key="db934">Cyrene Sculpture Museum</rs>.</p>
+            </provenance>
+        </egXML>
+        
+        <p>If a taxonomy is also in use, the <gi>rs</gi> may carry <att>ref</att> for the purpose of normalizing to a term in this
+            taxonomy. In the example below, normalization is to the <term ref="#eagle">EDR</term>
+            vocabulary for materials (see <ref
+                target="https://docs.google.com/spreadsheet/ccc?key=0AnmDUyfP6SvFcGh2dmVydWZ6NW5zSGJmOEtOQWE4TFE#gid=0"
+                >Rei Material GoogleDoc</ref>):</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <material ref="edr:marmor">Blue-veined white marble.</material>
+        </egXML>
+        
+        <p>You can align your definitions by aligning to a local or to an external <ref target="idx-nontei.html">Controlled Vocabulary</ref>.</p></div>
+    
+    <div>
+        <head>General keywords</head>
         <p>General keywords that do not belong in any particular part of the text or supporting data
-            of the edition may be gathered conveniently in a <gi>keywords</gi> element in the
-            header. These keywords will generally be used only for purposes of search, indexing, or
+            of the edition may be gathered conveniently in a <gi>keywords</gi> element in <gi>textClass</gi>.
+            These keywords will generally be used only for purposes of search, indexing, or
             compatibility within a larger collection, rather than appearing in the human-readable
             part of the edition.</p>
 
@@ -119,26 +145,16 @@ End license statement: do not remove -->
                         <placeName type="modernCountry" ref="iso3166-1:LY">Libya</placeName>
                     </term>
                     <term>
-                        <placeName type="modernFindspot" ref="http://sws.geonames.org/81584">Marsa
-                            Suza</placeName>
+                        <placeName type="modernFindspot" ref="http://sws.geonames.org/81584">Marsa Suza</placeName>
                     </term>
                 </keywords>
             </textClass>
         </egXML>
-
-        <p>For keywords, subject terms or descriptions that apply specifically to the categorization
-            or definition of the text, the <gi>msContents</gi> and <gi>summary</gi> may be used to
-            contain either a list of terms or general prose description, as in the examples
-            below:</p>
-
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <msContents>
-                <summary corresp="edr:oper-publ-priv-que">
-                    <seg xml:lang="ru">Строительная надпись.</seg>
-                    <seg xml:lang="en">Building inscription.</seg>
-                </summary>
-            </msContents>
-        </egXML>
+    </div>
+    
+    <div>
+        <head>Prose description of the text</head>
+        <p>For general prose descriptions of the text, the <gi>msContents</gi> and <gi>summary</gi> may be used:</p>
 
         <egXML xmlns="http://www.tei-c.org/ns/Examples"
             corresp="http://papyri.info/apis/hermitage.apis.17">
@@ -148,7 +164,6 @@ End license statement: do not remove -->
                     a deficit in the "embola," or grain tax</summary>
             </msContents>
         </egXML>
-
     </div>
     
     <divGen type="seealso"/>
@@ -166,6 +181,12 @@ End license statement: do not remove -->
                 <respStmt>
                     <resp>author</resp>
                     <name>Simona Stoyanova</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Irene Vagionakis</name>
                 </respStmt>
             </bibl>
         </listBibl>
