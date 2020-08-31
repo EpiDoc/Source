@@ -29,35 +29,112 @@ End license statement: do not remove -->
     <head>Non-Structural Text-Parts</head>
     <p>Non-structural text-parts, e.g. between blocks</p>
     <p><specList>
+        <specDesc key="cb"/>
             <specDesc key="milestone"/>
         </specList>
         <!--<listRef>
             <ptr target="a"/>
             </listRef>--></p>
-
-    <p>A <gi>milestone</gi> is used to describe the support, rather than the structure, of the text.
-        It can be used to mark a point in the text at which the support changes in some respect, for
-        instance where a text is inscribed across a series of blocks and the editor wants to show
-        the point at which one block ends and another begins. This can be represented by giving the
-            <gi>milestone</gi> element a <att>unit</att> value of "block". Each
-            <gi>milestone</gi> can also be given an <att>n</att> to allow the blocks (or
-        whatever non-structural textpart is being described) to be numbered.</p>
-
-    <cit>
-        <quote>κ<milestone unit="block"/>αὶ</quote>
-        <bibl corresp="#london"/>
-    </cit>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london"> 
-        ὁ Ῥωμαίω<milestone unit="block" n="iii"/>ν καθὼς καὶ τὰ
-    </egXML>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010174.html">
-        <unclear reason="damage">τ</unclear><milestone unit="block"/><supplied reason="lost">οῦ</supplied>
-    </egXML>
+    <p>When a physical break in the support does not coincide with a major semantic break in the text and
+    the physical division of the text does not need to be part of the citation scheme for the text as a whole, 
+    the <gi>milestone</gi> or the <gi>cb</gi> elements should be used (instead of <tag>div type="textpart"</tag>) to mark the
+    point at which a break in the support occurs.</p>
     
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT534.html">
-        Clau<milestone unit="unspecified" rend="bay"/>dio</egXML>
+    <div>
+        <head>Text flowing through successive zones</head>
+        <p>This can be the case of text laid out in consecutively readable zones (e.g. text split in two or more consecutive columns), 
+            or on multiple faces of an object, or on multiple linked objects.</p>
+        
+        <p>If a text is split in two (or more) consecutive columns, the <gi>cb</gi> (column beginning) element should be used. 
+            It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>cb</gi>.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+            <ab>
+                <cb n="i"/>
+                <lb n="1"/>...
+                <lb n="2"/>...
+                <cb n="ii"/>
+                <lb n="3"/>...
+                <lb n="4"/>...
+            </ab>
+        </egXML>
+        
+        <p>If a text is split in more consecutively readable zones (not columns), the <gi>milestone</gi> element should be used.
+            In this case, it is highly recommended to provide both an <att>n</att> attribute specifying an identifier for each 
+            <gi>milestone</gi> and a <att>unit</att> attribute specifying the kind of subdivision of text being recorded 
+            (common values for the <att>unit</att> attribute might be "face", "area", "zone", "item", etc.).</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+            <ab>
+                <milestone unit="face" n="a"/>
+                <lb n="1"/>...
+                <lb n="2"/>...
+                <milestone unit="face" n="b"/>
+                <lb n="3"/>...
+                <lb n="4"/>...
+            </ab>
+        </egXML>
+    </div>
+    
+    <div>
+        <head>Text running across contiguous zones</head>
+        <p>This can be the case of a surface vertically segmented into units where each line runs across two or more 
+            visually demarcated areas such as a surface with each line running across several building blocks, 
+            quasi-columns consisting of a metrical unit, a surface with each line running across two or more subsurfaces 
+            (e.g. two or more adjacent faces of a stele or pillar), a broken support where a fracture cuts across some or 
+            all lines (i.e. contiguous fragments).</p>
+        <p>In these cases, an iterated <gi>milestone</gi> should be used to show the points at which one zone ends and another begins. 
+            It is highly recommended to provide both an <att>n</att> attribute specifying an identifier for each 
+            <gi>milestone</gi> and a <att>unit</att> attribute specifying the kind of subdivision of text being recorded 
+            (common values for the <att>unit</att> attribute might be "block", "face", "area", "zone", "column", etc.).</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <ab>
+                <lb n="1"/><milestone unit="block" n="i"/>...<milestone unit="block" n="ii"/> ...
+                <lb n="2"/><milestone unit="block" n="i"/>...<milestone unit="block" n="ii"/> ...
+                <lb n="3"/><milestone unit="block" n="i"/>...<milestone unit="block" n="ii"/> ...
+            </ab>
+        </egXML>
+        
+        <!--<cit>
+            <quote>κ<milestone unit="block"/>αὶ</quote>
+            <bibl corresp="#london"/>
+        </cit>-->
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london"> 
+            ὁ Ῥωμαίω<milestone unit="block" n="iii"/>ν καθὼς καὶ τὰ
+        </egXML>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://insaph.kcl.ac.uk/iaph2007/iAph010174.html">
+            <unclear reason="damage">τ</unclear><milestone unit="block"/><supplied reason="lost">οῦ</supplied>
+        </egXML>
+        
+        <!--<egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london" corresp="http://inslib.kcl.ac.uk/irt2009/IRT534.html">
+            Clau<milestone unit="unspecified" rend="bay"/>dio</egXML>-->
+        
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <lg>
+            <l><lb n="1"/><milestone unit="zone" n="a"/>...</l>
+            <l><milestone unit="zone" n="b"/>...</l>
+        </lg>
+        <lg>
+            <l><lb n="2"/><milestone unit="zone" n="a"/>...</l>
+            <l><milestone unit="zone" n="b"/>...</l>
+        </lg>
+        </egXML>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <ab>
+            <lb n="1"/><milestone unit="fragment" n="a"/>...<gap reason="lost" quantity="3" unit="character"/><milestone unit="fragment" n="b"/>...
+            <lb n="2"/><milestone unit="fragment" n="a"/>...<gap reason="lost" quantity="2" unit="character"/><milestone unit="fragment" n="b"/>...
+            <lb n="3"/><milestone unit="fragment" n="a"/>...<gap reason="lost" quantity="1" unit="character"/><milestone unit="fragment" n="b"/>...
+            <lb n="4"/><milestone unit="fragment" n="a"/>...<milestone unit="fragment" n="b"/>...
+        </ab>
+        </egXML>
+        
+    </div>
 
     <divGen type="seealso"/>
 
@@ -75,6 +152,11 @@ End license statement: do not remove -->
                     <name>Charlotte Tupman</name>
                     <name/>
                 </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Irene Vagionakis</name>
+                <name/>
+            </respStmt></bibl>
         </listBibl>
     </div>
 </div>

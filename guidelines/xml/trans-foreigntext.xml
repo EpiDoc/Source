@@ -40,10 +40,10 @@ End license statement: do not remove -->
     </p> 
     
     <div>
-        <head>1. Foreign words</head>
+        <head>1. Foreign words or phrases</head>
         <p>The <gi>foreign</gi> element identifies a word or phrase as belonging to a language
-            other than that of the surrounding text. It is usually useful to apply the attribute
-            <att>xml:lang</att> with a language code (see <ref target="supp-language.html">Languages and Scripts</ref>)
+            other than that of the surrounding text, either in the inscription text or in other parts of the edition. It is usually useful to apply 
+            the attribute <att>xml:lang</att> with a language code (see <ref target="supp-language.html">Languages and Scripts</ref>)
             to identify the language of the embedded word.</p>
         <!--<cit>
             <quote><hi rend="italic">lapis philosophicus</hi></quote>
@@ -60,42 +60,65 @@ End license statement: do not remove -->
     </egXML>
     </div>
     
-    <div><head>2. Meaningful divisions</head>
-    <p>Where significantly sized and meaningfully divided passages of the text and in different languages,
-    it is advisable to use <tag>div type="textpart"</tag> with an <att>xml:lang</att> on each, perhaps rather than
-    declaring a single default language on the <tag>div type="edition"</tag>.</p>
+    <div><head>2. Multilingual text sections</head>
+        <p>Where significantly sized passages of the inscription text are in different languages, it is advisable to choose a single language as the 
+            default one and to declare it with an <att>xml:lang</att> attribute on the <tag>div type="edition"</tag>, and then, for any other sections 
+            in a different language, to declare it by adding an <att>xml:lang</att> attribute to the block-level containers of that text
+            (e.g. <gi>ab</gi>, <gi>lg</gi>, <gi>seg</gi>, or <tag>div type="textpart"</tag> when the language shift coincides with a semantic and physical break).</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT481.html">
-            <div type="edition" xml:space="preserve">
-                <div type="textpart" xml:lang="la" n="a">
-                    <ab><lb/>Caecilius Diodorus <gap reason="lost"/>
-                        <lb/>Caesaris delubrum a<gap reason="lost"/></ab>
+            <div type="edition" xml:space="preserve" xml:lang="la">
+                <ab>
+                    <lb/><gap reason="lost"/>dium murum supra<gap reason="lost"/>
+                    <lb/><gap reason="lost"/>tribunicia potestate<gap reason="lost"/>
+                </ab>
+                <ab xml:lang="grc">
+                    <lb/><gap reason="lost"/>υς μόνος τὸν ναὸν <gap reason="lost"/>
+                    <lb/><gap reason="lost"/>δεων αὐτοκράτορ<gap reason="lost"/>
+                </ab>
+            </div>
+        </egXML>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT481.html">
+            <div type="edition" xml:space="preserve" xml:lang="la">
+                <div type="textpart" n="a">
+                    <ab>
+                        <lb/>Caecilius Diodorus <gap reason="lost"/>
+                        <lb/>Caesaris delubrum a<gap reason="lost"/>
+                    </ab>
                 </div>
-                <div type="textpart" xml:lang="grc" n="b">
-                    <ab><lb/>Καικίλιος Διόδωρος ἅμα <gap reason="lost"/>
-                       <lb/>ἐκ τῶν ἰδίων εὔξατο θ<gap reason="lost"/></ab>
+                <div type="textpart" n="b" xml:lang="grc">
+                    <ab>
+                        <lb/>Καικίλιος Διόδωρος ἅμα <gap reason="lost"/>
+                        <lb/>ἐκ τῶν ἰδίων εὔξατο θ<gap reason="lost"/>
+                    </ab>
                 </div>
             </div>
         </egXML>
         
-    </div>
-    
-    <div><head>3. Arbitrary blocks</head>
-    <p>Where significant, multiline blocks of text are in each of two or more languages, but these blocks
-    are not considered otherwise meaningful or part of the citation scheme of the document, 
-    it is enough to tag each block with an <gi>ab</gi>, to which the <att>xml:lang</att> may be added.</p>
-        
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT481.html">
-            <div type="edition" xml:space="preserve">
-                <ab xml:lang="la"><lb/><gap reason="lost"/>dium murum supra<gap reason="lost"/>
-                   <lb/><gap reason="lost"/>tribunicia potestate<gap reason="lost"/></ab>
-                <ab xml:lang="grc"><lb/><gap reason="lost"/>υς μόνος τὸν ναὸν <gap reason="lost"/>
-                   <lb/><gap reason="lost"/>δεων αὐτοκράτορ<gap reason="lost"/></ab>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="edition" xml:space="preserve" xml:lang="grc">
+                <div type="textpart" n="a">
+                    <ab>
+                        <milestone unit="face" n="a"/><lb n="1"/>Greek verse
+                        <lb n="2"/>Greek verse
+                        <lb n="3"/>Greek verse
+                        <lb n="4"/>Greek verse
+                        <milestone unit="face" n="b"/><lb n="5"/>Greek verse
+                        <lb n="6"/>Greek verse
+                    </ab>
+                </div>
+                <div type="textpart" n="b" xml:lang="la">
+                    <ab>
+                        <lb n="1"/>Latin prose
+                        <lb n="2"/>Latin prose
+                    </ab>
+                </div>
             </div>
         </egXML>
     </div>
     
-    <div><head>4. Glosses and dictionaries</head>
+    <div><head>3. Glosses and dictionaries</head>
     <p>A text that is made up of words or phrases in one language, and glosses or translations in
     one or more others, may be tagged with a series of <gi>term</gi> and <gi>gloss</gi> elements,
     inline, and each bearing the <att>xml:lang</att> specifying the language of the short phrase.
@@ -125,6 +148,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>contributor</resp><name>Arlo Griffiths</name></respStmt></bibl>
             <bibl><respStmt><resp>contributor</resp><name>Marc Miyaki</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Irene Vagionakis</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>

@@ -30,6 +30,7 @@ End license statement: do not remove -->
     <p>Divisions of the edited text such as fragments, columns, chapters or versions in different languages.</p>
     <p>
         <specList>
+            <specDesc key="ab"/>
             <specDesc key="div"/>
             <specDesc key="milestone"/>
         </specList>
@@ -41,11 +42,36 @@ End license statement: do not remove -->
         numbered on the same basis in EpiDoc. The use of XML should not change the need for
         dividing and numbering the text in a way that makes semantic and intuitive sense to the editor.</p>
         
-        <p>Each division containing a separate section of text should be wrapped in a
-            separate <gi>ab</gi> inside a <gi>div</gi> with an <att>type</att>="textpart". It is often useful
-            (although not obligatory) also to provide a <att>subtype</att> attribute naming the kind of subdivision
-            of text being recorded here; <att>subtype</att> is not constrained, but common values might include
-            "fragment", "column", "section", etc.</p>
+    <p>When a physical break in the support coincides with a major semantic break in the text,
+        each text section should be wrapped in a separate <gi>ab</gi> inside a <gi>div</gi> with a <att>type</att>="textpart".
+        This can be the case of non-contiguous fragments, inscriptions consisting of physically distinct parts with the same text in more 
+        languages, or columns with loosely related content.</p>
+    <p>It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <tag>div type="textpart"</tag>.
+        It is often useful (although not obligatory) also to provide a <att>subtype</att> attribute naming the kind of subdivision
+        of text being recorded; <att>subtype</att> is not constrained, but common values might include
+        "fragment", "column", "face", "section", etc.
+    </p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="fragment" n="a">
+            <ab>
+                <lb n="1"/>...
+                <lb n="2"/>...
+            </ab>
+        </div>
+        <div type="textpart" subtype="fragment" n="b">
+            <ab>
+                <lb n="1"/>...
+                <lb n="2"/>...
+            </ab>
+        </div>
+        <div type="textpart" subtype="fragment" n="c">
+            <ab>
+                <lb n="1"/>...
+                <lb n="2"/>...
+            </ab>
+        </div>
+    </egXML>
 
     <p>These units may, of course, nest in almost any combination. If there are non-hierarchical
         overlaps between units (e.g. sections and columns) then one unit has to be selected as the
@@ -53,43 +79,59 @@ End license statement: do not remove -->
         broken divisions may be connected using the <att>n</att> attribute or a <gi>link</gi>
         element.</p>
 
-    <p>Where a unit within a single, continuous text need to be marked (for example, multiple blocks
-        in a long relief text) the <gi>milestone</gi> element should be used instead to mark the
-        point at which a break in the support occurs.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <div type="textpart" subtype="section" n="i">
+            <div type="textpart" subtype="fragment" n="a">
+                <ab>
+                    <lb n="1"/>...
+                    <lb n="2"/>...
+                </ab>
+            </div>
+            <div type="textpart" subtype="fragment" n="b">
+                <ab>
+                    <lb n="1"/>...
+                    <lb n="2"/>...
+                </ab>
+            </div>
+        </div>
+        <div type="textpart" subtype="section" n="ii">
+            <div type="textpart" subtype="fragment" n="c">
+                <ab>
+                    <lb n="1"/>...
+                    <lb n="2"/>...
+                </ab>
+            </div>
+            <div type="textpart" subtype="fragment" n="d">
+                <ab>
+                    <lb n="1"/>...
+                    <lb n="2"/>...
+                </ab>
+            </div>
+        </div>
+    </egXML>
     
     <p>Where two distinct texts appear on one support (e.g. two distinct inscriptions on one stone),
         they can either be encoded in one single EpiDoc file or in two separate files. This is an editorial decision and EpiDoc
         does not dictate the use of one method over the other. If encoding the two texts in a single file,
-    two separate <gi>div</gi>s with <att>type</att> of "textpart" should be used within the edition division.
+        two separate <gi>div</gi>s with <att>type</att> of "textpart" should be used within the edition division.
         Each translation, commentary, bibliography etc. should also be divided into two textparts in order to record information
         separately about each text. If encoding the texts in two separate files, a link can be provided (or at the least a mention can be made)
         in the commentary directing the reader to the other text that appears on the same support.</p>
-
-    <cit>
+    
+    <p>When a physical break in the support does not coincide with a major semantic break in the text and
+        the physical division of the text does not need to be part of the citation scheme for the text as a whole 
+        (for example, multiple blocks in a long relief text, or text split in two consecutive columns), 
+        the <gi>milestone</gi> or the <gi>cb</gi> elements should be used instead to mark the
+        point at which a break in the support occurs.</p>
+    
+    <!--<cit>
         <quote>Section A</quote>
         <bibl corresp="#london"/>
     </cit>
 
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#london">
         <div type="textpart" subtype="section" n="A"/>
-    </egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <div type="textpart" subtype="fragment" n="a"><ab/></div>
-        <div type="textpart" subtype="fragment" n="b"><ab/></div>
-        <div type="textpart" subtype="fragment" n="c"><ab/></div>
-    </egXML>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <div type="textpart" subtype="section" n="i">
-            <div type="textpart" subtype="fragment" n="a"><ab/></div>
-            <div type="textpart" subtype="fragment" n="b"><ab/></div>
-        </div>
-        <div type="textpart" subtype="section" n="ii">
-            <div type="textpart" subtype="fragment" n="c"><ab/></div>
-            <div type="textpart" subtype="fragment" n="d"><ab/></div>
-        </div>
-    </egXML>
+    </egXML>-->
     
     <divGen type="seealso"/>
     
@@ -99,6 +141,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Irene Vagionakis</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
