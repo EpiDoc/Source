@@ -50,10 +50,6 @@ End license statement: do not remove -->
         <p>If a text is split in two (or more) consecutive columns, the <gi>cb</gi> (column beginning) element should be used. 
             It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>cb</gi>.</p>
         
-        <p>Similarly, if a text is split in two (or more) consecutive zones that could be considered as "pages", 
-            the <gi>pb</gi> (page beginning) element should be used. 
-            It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>pb</gi>.</p>
-        
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
             <ab>
                 <cb n="i"/>
@@ -65,7 +61,33 @@ End license statement: do not remove -->
             </ab>
         </egXML>
         
-        <p>If a text is split in more consecutively readable zones (not columns or "pages"), the <gi>milestone</gi> element should be used.
+        <p>If a text is split in two (or more) consecutive zones that could be considered as pages, 
+            the <gi>pb</gi> (page beginning) element should be used.
+            It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>pb</gi>.
+            This can be the case of Indian copper plates bound together with a ring passed through a hole on each plate 
+            (a photo of one of these copper plates sets can be found here: 
+            <ref target="https://commons.wikimedia.org/wiki/File:BLL826_INDCH64R_01_L.jpg">https://commons.wikimedia.org/wiki/File:BLL826_INDCH64R_01_L.jpg</ref>).
+            Here an example from the DHARMA project:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="san-Latn">
+                <ab>
+                    <pb n="1v"/><lb n="1"/>svasti śrīmaT-calukya-kula-jalanidhi-samudito nr̥pati-niśākaraḥ sva<lb
+                            n="2" break="no"/>... 
+                    ...
+                    <lb n="5" break="no"/>... yuvatiṣu madanāyamāna-cāru-śarīratvān makara-dhvajaḥ
+                    <pb n="2r"/><lb n="6"/>sva-dānārṇṇaveṣu parimagna-kali-prabhāvaḥ ...
+                    ... 
+                    <lb n="10" break="no"/>... brahmaśarmmaṇaḥ pautrābhyāṁ Adhi<pb n="2v" break="no"/><lb 
+                        n="11" break="no"/>gata-sva-śākhā-codita-sva-karmmānuṣṭhāna-tatparasya ...
+                    ...
+                    <lb n="15" break="no"/>... grāmo yaṁ dattaḥ Asya <pb n="3r"/><lb 
+                        n="16"/>kaiścid api na bādhā karaṇīyā ...
+                </ab>
+            </div>
+        </egXML>
+        
+        <p>If a text is split in more consecutively readable zones (not columns or pages), the <gi>milestone</gi> element should be used.
             In this case, it is highly recommended to provide both an <att>n</att> attribute specifying an identifier for each 
             <gi>milestone</gi> and a <att>unit</att> attribute specifying the kind of subdivision of text being recorded 
             (common values for the <att>unit</att> attribute might be "face", "area", "zone", "item", etc.).</p>
