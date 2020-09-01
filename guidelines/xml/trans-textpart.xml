@@ -72,6 +72,26 @@ End license statement: do not remove -->
             </ab>
         </div>
     </egXML>
+    
+    <p>In the following example from DHARMA, a set of inscribed copper plates with an inscribed seal attached to the ring that binds the plates together:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">        
+        <div type="edition" xml:lang="san-Latn">
+            <div type="textpart" n="A">
+                <head xml:lang="en">Seal</head>
+                <ab>
+                    <lb n="1"/>śrī-tribhuvanāṁkuśa
+                </ab>
+            </div>
+            <div type="textpart" n="B">
+                <head xml:lang="en">Plates</head>
+                <ab>
+                    <lb n="1"/>svasti śrīmatāṁ sakala-bhuvana-saṁstūyamāna-mānavya-sagotrānāṁ 
+                    <lb n="2"/>...
+                </ab>
+            </div>
+        </div>
+    </egXML>
 
     <p>These units may, of course, nest in almost any combination. If there are non-hierarchical
         overlaps between units (e.g. sections and columns) then one unit has to be selected as the
@@ -121,7 +141,7 @@ End license statement: do not remove -->
     <p>When a physical break in the support does not coincide with a major semantic break in the text and
         the physical division of the text does not need to be part of the citation scheme for the text as a whole 
         (for example, multiple blocks in a long relief text, or text split in two consecutive columns), 
-        the <gi>milestone</gi> or the <gi>cb</gi> elements should be used instead to mark the
+        the <gi>milestone</gi> or <gi>cb</gi> or <gi>pb</gi> elements should be used instead to mark the
         point at which a break in the support occurs.</p>
     
     <!--<cit>

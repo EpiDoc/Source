@@ -30,7 +30,8 @@ End license statement: do not remove -->
     <p>Non-structural text-parts, e.g. between blocks</p>
     <p><specList>
         <specDesc key="cb"/>
-            <specDesc key="milestone"/>
+        <specDesc key="milestone"/>
+        <specDesc key="pb"/>
         </specList>
         <!--<listRef>
             <ptr target="a"/>
@@ -38,7 +39,7 @@ End license statement: do not remove -->
     
     <p>When a physical break in the support does not coincide with a major semantic break in the text and
     the physical division of the text does not need to be part of the citation scheme for the text as a whole, 
-    the <gi>milestone</gi> or the <gi>cb</gi> elements should be used (instead of <tag>div type="textpart"</tag>) to mark the
+    the <gi>milestone</gi> or <gi>cb</gi> or <gi>pb</gi> elements should be used (instead of <tag>div type="textpart"</tag>) to mark the
     point at which a break in the support occurs.</p>
     
     <div>
@@ -48,6 +49,10 @@ End license statement: do not remove -->
         
         <p>If a text is split in two (or more) consecutive columns, the <gi>cb</gi> (column beginning) element should be used. 
             It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>cb</gi>.</p>
+        
+        <p>Similarly, if a text is split in two (or more) consecutive zones that could be considered as "pages", 
+            the <gi>pb</gi> (page beginning) element should be used. 
+            It is highly recommended to provide an <att>n</att> attribute specifying an identifier for each <gi>pb</gi>.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
             <ab>
@@ -60,7 +65,7 @@ End license statement: do not remove -->
             </ab>
         </egXML>
         
-        <p>If a text is split in more consecutively readable zones (not columns), the <gi>milestone</gi> element should be used.
+        <p>If a text is split in more consecutively readable zones (not columns or "pages"), the <gi>milestone</gi> element should be used.
             In this case, it is highly recommended to provide both an <att>n</att> attribute specifying an identifier for each 
             <gi>milestone</gi> and a <att>unit</att> attribute specifying the kind of subdivision of text being recorded 
             (common values for the <att>unit</att> attribute might be "face", "area", "zone", "item", etc.).</p>
@@ -74,6 +79,46 @@ End license statement: do not remove -->
                 <lb n="3"/>...
                 <lb n="4"/>...
             </ab>
+        </egXML>
+        
+        <p>In the following example from DHARMA, two connected fragments where the break is fortuitously between lines, so that no epigraphic line is interrupted by the fracture. The text on the second fragment is the continuation of that on the first, so textparts were not deemed appropriate here:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="san-Latn">
+                <ab><lb n="1"/><milestone unit="fragment" n="A"/>siddhaM</ab>
+                <lg n="1" met="anuṣṭubh">
+                    <l n="a">sahasra-śirase tasmai</l>
+                    <l n="b">...</l>
+                </lg>
+                <!--more <lg>s here-->
+                <lg n="14" met="anuṣṭubh">
+                    <l n="a">duhitur bbalaśūrāyā<supplied reason="omitted">ḥ</supplied></l>
+                    <l n="b">satputro jayamit<unclear>r</unclear>a<unclear>y</unclear>ā</l>
+                    <l n="c"><lb n="10"/><milestone unit="fragment" n="B"/>gārggāyaṇa-sagotro vai</l>
+                    <l n="d">jāti<unclear>ta</unclear><supplied reason="lost">ḥ</supplied> <seg met="=-+-="><gap reason="lost" quantity="5" unit="character"/></seg></l>
+                </lg>
+                <!--more <lg>s here-->
+            </div>
+        </egXML>
+        
+        
+        <p>In the following example from DHARMA, the text is inscribed on two separate doorjambs, continuing from the bottom of one to the top of the other. The inscription begins with a series of verses in Sanskrit, followed by Khmer prose (starting at some point on the second doorjamb):</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="x-oldkhmer-Latn">
+            <lg n="1" met="vasantatilakā" xml:lang="san-Latn">
+                <l n="a"><milestone unit="item" n="S"/><label xml:lang="en">Southern Doorjamb</label><lb n="S1"/>jejīyatāṁ vraja <seg met="-+--+-+="><gap reason="lost" quantity="8" unit="character"/></seg></l>
+                <l n="b">...</l>
+            </lg>
+            <!--more <lg>s here-->
+            <lg n="17" met="vasantatilakā" xml:lang="san-Latn">
+                <l n="a"><milestone unit="item" n="N"/><label xml:lang="en">Northern Doorjamb</label><lb n="N1"/>Agre-saraḥ prathita-puṇyavatāṁ sva-puṇyaiś</l>
+                <l n="b">...</l>
+            </lg>
+            <!--more <lg>s here, then a prose section in Khmer-->
+            <ab><lb n="N17"/>ta duk· śloka neḥ mratāñ· śrī Indrapaṇ<orig>d</orig>ita</ab>
+            <!--more <ab>s here-->
+        </div>
         </egXML>
     </div>
     
@@ -133,6 +178,33 @@ End license statement: do not remove -->
             <lb n="4"/><milestone unit="fragment" n="a"/>...<milestone unit="fragment" n="b"/>...
         </ab>
         </egXML>
+        
+        <p>In the following example from DHARMA, two fragments with the break cutting across lines, so that the milestone for fragment A is iterated at the beginning of each epigraphic line, and that for fragment B at some point within each epigraphic line:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="san-Latn">
+            <lg n="1" met="anuṣṭubh">
+                <l n="a"><lb n="1"/><milestone unit="fragment" n="A"/>guptānāṁ samatikrānte</l>
+                <l n="b">sapta-paṁcāśad-uttare</l>
+                <l n="c">śate samānāṁ pr̥thivīṁ</l>
+                <l n="d">budhagu<supplied reason="lost">pte</supplied> <milestone unit="fragment" n="B"/>praśāsati<unclear>||</unclear></l>
+            </lg>
+            <lg n="2" met="anuṣṭubh">
+                <l n="a">vaiśākha-māsa-saptamyāṁ</l>
+                <l n="b">mūle śma<lb n="2" break="no"/><milestone unit="fragment" n="A"/>-<unclear cert="low">pragate</unclear> <lb n="2"/>mayā</l>
+                <l n="c"><unclear cert="low">kāritābhayamitreṇa</unclear></l>
+                <l n="d">pratimā śākya-bhikṣuṇā||</l>
+            </lg>
+            <lg n="3" met="anuṣṭubh">
+                <l n="a" enjamb="yes">imām <supplied reason="lost" cert="low">uddhasta-sa</supplied><milestone unit="fragment" n="B"/> <unclear>ccha</unclear>ttra</l>
+                <l n="b">-padmāsana-vibhūṣitāṁ</l>
+                <l n="c">deva-puttravato <unclear>divyāṁ</unclear></l>
+                <l n="d"><lb n="3"/><milestone unit="fragment" n="A"/>...</l>
+            </lg>
+            <!--etc.-->
+        </div>
+        </egXML>
+        
         
     </div>
 

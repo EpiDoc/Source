@@ -116,6 +116,49 @@ End license statement: do not remove -->
                 </div>
             </div>
         </egXML>
+        
+        
+        <p>In the following example from DHARMA, inscription text in Sanskrit, with a chunk in Telugu:</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="san-Latn">
+                <ab>
+                    <lb n="1"/>svasti śrīmatāṁ sakala-bhuvana-saṁstūyamāna-mānavya-sagotrānāṁ
+                    <lb n="2"/>...
+                </ab>
+                <!--text continues in Sanskrit, then switches to Telugu-->
+                <ab xml:lang="tel">
+                    <lb n="29"/>puṭṭi-nirugu saveraṁ Iruvadinālgu vuṭla-ni<lb 
+                        n="30" break="no"/>ṇḍṟāyam padu-gaṇḍu padeḻ dumu tamulaṁmula-tūmeṇḍu
+                </ab>
+                <!--switches back to Sanskrit-->
+                <ab>
+                    <lb n="30"/>Asyopari na 
+                    <lb n="31"/>kenacid bā<space type="binding-hole"/>dhā karttavyā yaḥ karoti sa paṁca-mahā-pātaka-saṁyu<lb 
+                        n="32" break="no"/>kto bhavati…
+                </ab>
+                <!--text continues in Sanskrit-->
+            </div>
+        </egXML>
+        
+        <p>In the following example from DHARMA, the text is inscribed on two separate doorjambs, continuing from the bottom of one to the top of the other. The inscription begins with a series of verses in Sanskrit, followed by Khmer prose (starting at some point on the second doorjamb):</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="#DHARMA">
+            <div type="edition" xml:lang="x-oldkhmer-Latn">
+                <lg n="1" met="vasantatilakā" xml:lang="san-Latn">
+                    <l n="a"><milestone unit="item" n="S"/><label xml:lang="en">Southern Doorjamb</label><lb n="S1"/>jejīyatāṁ vraja <seg met="-+--+-+="><gap reason="lost" quantity="8" unit="character"/></seg></l>
+                    <l n="b">...</l>
+                </lg>
+                <!--more <lg>s here-->
+                <lg n="17" met="vasantatilakā" xml:lang="san-Latn">
+                    <l n="a"><milestone unit="item" n="N"/><label xml:lang="en">Northern Doorjamb</label><lb n="N1"/>Agre-saraḥ prathita-puṇyavatāṁ sva-puṇyaiś</l>
+                    <l n="b">...</l>
+                </lg>
+                <!--more <lg>s here, then a prose section in Khmer-->
+                <ab><lb n="N17"/>ta duk· śloka neḥ mratāñ· śrī Indrapaṇ<orig>d</orig>ita</ab>
+                <!--more <ab>s here-->
+            </div>
+        </egXML>
     </div>
     
     <div><head>3. Glosses and dictionaries</head>
