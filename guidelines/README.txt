@@ -80,6 +80,7 @@ How to use it:
 		* Generate RIB Examples
 		* Generate Seg Examples
 		* Generate Verse Examples
+		* Generate Copy Example Template
         6. Run the guidelines generation XSLT scenario against it (Scenario called:
            "EpiDoc P5 Guidelines HTML")
         7. Results of the transformation will be output to guidelines/output/

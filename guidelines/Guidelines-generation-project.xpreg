@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="20.0">
+<project version="22.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="20.0" xml:space="preserve">
+            <serialized version="22.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>scenario.associations</String>
@@ -14,12 +14,47 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>EpiDoc P5 Guidelines HTML</String>
+                                        <String>Generate DDBDP Examples</String>
+                                        <String>Generate Dohnicht Examples</String>
+                                        <String>Generate EDH Web Examples</String>
+                                        <String>Generate Iospe Examples</String>
+                                        <String>Generate London Examples</String>
+                                        <String>Generate Panciera Examples</String>
+                                        <String>Generate Petrae Examples</String>
+                                        <String>Generate RIB Examples</String>
+                                        <String>Generate Seg Examples</String>
+                                        <String>Generate Verse Examples</String>
+                                        <String>Generate Copy Example Template</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XSL</String>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -51,6 +86,18 @@
                                         <String>XSL</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -64,6 +111,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -81,6 +133,11 @@
                                         <String>XSL</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -96,6 +153,11 @@
                                         <String>XSL</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -109,6 +171,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -159,9 +226,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -246,9 +310,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>../output/index.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>../output/index.html</String>
                                 </field>
@@ -298,6 +359,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -319,6 +383,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -338,6 +405,9 @@
                                                 <String>true</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -395,9 +465,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>../../guidelines/schema/tei-epidoc-examples.rng</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>../../guidelines/schema/tei-epidoc-examples.rng</String>
@@ -482,9 +549,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/ddbdp/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/ddbdp/examples.xml</String>
                                 </field>
@@ -532,6 +596,9 @@
                                                 <String>ddbdp</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -590,9 +657,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/dohnicht/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/dohnicht/examples.xml</String>
                                 </field>
@@ -640,6 +704,9 @@
                                                 <String>dohnicht</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -698,9 +765,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/edh-web/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/edh-web/examples.xml</String>
                                 </field>
@@ -748,6 +812,9 @@
                                                 <String>edh-web</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -806,9 +873,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/iospe/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/iospe/examples.xml</String>
                                 </field>
@@ -856,6 +920,9 @@
                                                 <String>iospe</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -914,9 +981,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/london/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/london/examples.xml</String>
                                 </field>
@@ -964,6 +1028,9 @@
                                                 <String>london</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1021,9 +1088,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>./views/panciera/examples.xml</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>./views/panciera/examples.xml</String>
@@ -1108,9 +1172,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/petrae/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/petrae/examples.xml</String>
                                 </field>
@@ -1158,6 +1219,9 @@
                                                 <String>petrae</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1216,9 +1280,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/rib/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/rib/examples.xml</String>
                                 </field>
@@ -1266,6 +1327,9 @@
                                                 <String>rib</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1324,9 +1388,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/seg/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/seg/examples.xml</String>
                                 </field>
@@ -1374,6 +1435,9 @@
                                                 <String>seg</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1432,9 +1496,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>./views/verse/examples.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>./views/verse/examples.xml</String>
                                 </field>
@@ -1484,6 +1545,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                     </list>
                                 </field>
@@ -1497,6 +1561,110 @@
                                     <String-array/>
                                 </field>
                             </scenario>
+                            <xprocScenario>
+                                <field name="inputPorts">
+                                    <xprocInputPort-array/>
+                                </field>
+                                <field name="outputPorts">
+                                    <xprocOutputPort-array/>
+                                </field>
+                                <field name="xprocOptions">
+                                    <xprocOption-array/>
+                                </field>
+                                <field name="xprocParameters">
+                                    <xprocParameterPort-array>
+                                        <xprocParameterPort>
+                                            <field name="portName">
+                                                <String>*</String>
+                                            </field>
+                                            <field name="parameters">
+                                                <xprocParameter-array/>
+                                            </field>
+                                        </xprocParameterPort>
+                                    </xprocParameterPort-array>
+                                </field>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>Generate Copy Example Template</String>
+                                </field>
+                                <field name="baseURL">
+                                    <null/>
+                                </field>
+                                <field name="footerURL">
+                                    <null/>
+                                </field>
+                                <field name="fOPMethod">
+                                    <null/>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <null/>
+                                </field>
+                                <field name="headerURL">
+                                    <null/>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${pdu}/xpl/template-file-copy.xpl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String></String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XPROC</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Add-on for Calabash XProc Engine</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </xprocScenario>
                             <scenario>
                                 <field name="advancedOptionsMap">
                                     <null/>
@@ -1539,9 +1707,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -1626,9 +1791,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1711,9 +1873,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -1798,9 +1957,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1884,9 +2040,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1936,6 +2089,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -1957,6 +2113,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -1976,6 +2135,9 @@
                                                 <String>true</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -2001,7 +2163,7 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="Guidelines-generation-project-copia.xpr">
+    <projectTree name="Guidelines-generation-project.xpr">
         <folder path="xml/"/>
         <file name="xml/driver.xml"/>
     </projectTree>
