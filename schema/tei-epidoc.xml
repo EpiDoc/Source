@@ -51,6 +51,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#SV" when="2020-09-14">added suggested values for biblScope[@unit] (as per FR #129)</change>
             <change who="#GB" when="2020-02-18">added or normalised few desc elements on attributes under tei:hi and tei:place</change>
             <change who="#HC" when="2020-02-17">added schema refs, and added dates/languages etc. to several elements throughout ODD</change>
             <change who="#GB" when="2020-01-20">added "undefined" as a permissible value of gap/@reason</change>
@@ -179,7 +180,7 @@ End license statement: do not remove -->
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI teiCorpus" xml:lang="en"
-                source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml">
+                source="https://www.tei-c.org/Vault/P5/4.1.0/xml/tei/odd/p5subset.xml">
 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -264,8 +265,79 @@ End license statement: do not remove -->
                     </attList>
                 </elementSpec>
 
+                <!-- suggested attribute values for biblScope/@unit -->
+                <elementSpec ident="biblScope" module="core" mode="change">
+                    <attList>
+                        <attDef ident="unit" mode="replace" usage="opt">
+                            <datatype maxOccurs="6">
+                                <dataRef key="teidata.word"/>
+                            </datatype>
+                            <valList type="semi">
+                                <!-- includes TEI suggested values (as of v.4.1.0) -->
+                                <valItem ident="appendix">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies an appendix.</desc>
+                                </valItem>
+                                <valItem ident="book">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a book number.</desc>
+                                </valItem>
+                                <valItem ident="chapter">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a chapter indication (number and/or title)</desc>
+                                </valItem>
+                                <valItem ident="column">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies a column.</desc>
+                                </valItem>
+                                <valItem ident="database-id">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains an identifier from a database.</desc>
+                                </valItem>
+                                <valItem ident="entry">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies an entry number or label in a list of entries.</desc>
+                                </valItem>
+                                <valItem ident="fascicle">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies a fascicle.</desc>
+                                </valItem>
+                                <valItem ident="figure">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a numbered figure or other illustration.</desc>
+                                </valItem>
+                                <valItem ident="folio">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a folio number, e.g., from a manuscript.</desc>
+                                </valItem>
+                                <valItem ident="issue">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains an issue number, or volume and issue numbers.</desc>
+                                </valItem>
+                                <valItem ident="item">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies an item.</desc>
+                                </valItem>
+                                <valItem ident="line">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a line number or line range.</desc>
+                                </valItem>
+                                <valItem ident="note">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies a note.</desc>
+                                </valItem>
+                                <valItem ident="page">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a page number or page range.</desc>
+                                </valItem>
+                                <valItem ident="part">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies a part of a book or collection.</desc>
+                                </valItem>
+                                <valItem ident="plate">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a plate.</desc>
+                                </valItem>
+                                <valItem ident="section">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a section reference.</desc>
+                                </valItem>
+                                <valItem ident="verse">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element identifies a verse.</desc>
+                                </valItem>
+                                <valItem ident="volume">
+                                    <desc xml:lang="en" versionDate="2020-09-14">the element contains a volume number.</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
                 <!-- constraining values of div/@type -->
-                <elementSpec ident="div" mode="change" module="textstructure">
+                <elementSpec ident="div" module="textstructure" mode="change">
                     <constraintSpec scheme="schematron" ident="div">
                         <constraint>
                             <sch:rule context="tei:div">
@@ -282,7 +354,7 @@ End license statement: do not remove -->
                                     <desc xml:lang="en" versionDate="2020-02-17">to contain apparatus criticus or textual notes</desc>
                                 </valItem>
                                 <valItem ident="bibliography">
-                                    <desc xml:lang="en" versionDate="2020-02-17">to contain bibliographical information, previous publications, etc.</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">to contain iographical information, previous publications, etc.</desc>
                                 </valItem>
                                 <valItem ident="commentary">
                                     <desc xml:lang="en" versionDate="2020-02-17">to contain all editorial commentary, historical/prosopographical discussion, etc.</desc>
@@ -340,8 +412,7 @@ End license statement: do not remove -->
                         <attDef ident="reason" mode="replace" usage="req">
                             <valList type="closed">
                                 <valItem ident="lost">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text completely lost from the surface and
-                                        unrecoverable</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text completely lost from the surface and unrecoverable</desc>
                                 </valItem>
                                 <valItem ident="illegible">
                                     <desc xml:lang="en" versionDate="2020-02-17">Traces of text remains on the surface but cannot be interpreted</desc>
@@ -353,7 +424,7 @@ End license statement: do not remove -->
                                     <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)</desc>
                                 </valItem>
                                 <valItem ident="undefined">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor  without specification of current state of this text (NB this should not be possible with valid Leiden Conventions)</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor without specification of current state of this text (NB this should not be possible with valid Leiden Conventions)</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -418,6 +489,9 @@ End license statement: do not remove -->
                                 <valItem ident="small">
                                     <desc xml:lang="en" versionDate="2020-02-17">characters smaller than those around them</desc>
                                 </valItem>
+                                <valItem ident="stacked">
+                                    <desc xml:lang="en" versionDate="2020-02-17">a character written directly above another character (as opposed to superscript)</desc>
+                                </valItem>
                                 <valItem ident="subscript">
                                     <desc xml:lang="en" versionDate="2020-02-17">characters written lower than the surrounding text</desc>
                                 </valItem>
@@ -432,9 +506,6 @@ End license statement: do not remove -->
                                 </valItem>
                                 <valItem ident="underline">
                                     <desc xml:lang="en" versionDate="2020-02-17">text written with solid line beneath</desc>
-                                </valItem>
-                                <valItem ident="stacked">
-                                    <desc xml:lang="en" versionDate="2020-02-17">a character written directly above another character (as opposed to superscript)</desc>
                                 </valItem>
                             </valList>
                         </attDef>
@@ -459,7 +530,6 @@ End license statement: do not remove -->
                         </attDef>
                     </attList>
                 </elementSpec>
-
 
                 <!-- suggested attribute values for origDate/@evidence -->
                 <elementSpec ident="origDate" module="msdescription" mode="change">

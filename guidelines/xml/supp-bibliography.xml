@@ -35,6 +35,7 @@ End license statement: do not remove -->
             <specDesc key="listBibl"/>
             <specDesc key="bibl"/>
             <specDesc key="biblStruct"/>
+            <specDesc key="biblScope"/>
             <specDesc key="citedRange"/>
         </specList>
         <listRef>
@@ -143,7 +144,8 @@ End license statement: do not remove -->
         <p>This is testable using the parameter <emph>edn-structure=eagle</emph> parameter.</p>
         <p>The following example, adapted from the Beta Maṣāḥǝft project, shows the encoding using
                 <gi>bibl</gi> and a <gi>ptr</gi> with <att>target</att> equal to the Zotero tag, in
-            two different contexts, the bibliography and a citation in the edition. The following explanation will clarify the settings and the output.</p>
+            two different contexts, the bibliography and a citation in the edition. The following
+            explanation will clarify the settings and the output.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <div type="edition">
                 <bibl>
@@ -281,17 +283,25 @@ End license statement: do not remove -->
         </egXML>
     </div>
 
+    <div>
+        <head>Customization of biblScope unit attribute</head>
+        <p>The TEI allows bibliographical references in <gi>bibl</gi> or <gi>biblStruct</gi> elements
+            to be constrained to one or more subdivisions using the <att>unit</att> attribute. A number
+            of recommended values are provided (e.g., chapter, volume). An additional set of values 
+            common to epigraphical publications supplements the TEI list. N.B., this list merely 
+            represents an open list of <emph>suggested</emph> values. While you are not obligated to 
+            use these values, or, in fact, any value at all, consistent application of <att>unit</att> 
+            attributes should be considered a best practice.</p>
+    </div>
+
     <divGen type="seealso"/>
 
     <div xml:id="supp-bibliography-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt>
-                    <resp>author</resp>
-                <name>Gabriel Bodard</name>
-                </respStmt></bibl>
-            
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>Author</resp><name>Pietro Liuzzo</name></respStmt></bibl>
+            <bibl><respStmt><resp>Author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
