@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-keywords" xml:lang="en">
-    <head>Type of text, other taxonomies, general keywords</head>
+    <head>Other taxonomies, general keywords</head>
    
         <p>
         <specList>
@@ -39,71 +39,10 @@ End license statement: do not remove -->
         </specList>
     </p>
 
-     <div>
-        <head>Type of text</head>
-         <p>Although there is no specific <term target="#TEI">TEI</term> tag for the category or type of text, EpiDoc recommends the 
-             inclusion of text type information in <gi>textClass</gi>/<gi>keywords</gi>:</p> 
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/hgv/28115">
-        <textClass>
-            <keywords scheme="hgv">
-                <term>Brief (privat)</term>
-            </keywords>
-        </textClass>
-    </egXML>
-    
-    <p>The use of <att>ref</att> in <gi>term</gi> for pointing to the related term in an internal authority list or external vocabulary 
-        is not required but recommended:</p>
-         
-         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-             <textClass>
-                 <keywords>
-                     <term ref="#texttype1">Dedication</term>
-                     <term ref="#texttype2">Decree</term>
-                 </keywords>
-             </textClass>
-         </egXML>
-    
-    <p>The element content is recommended but not required:</p>
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <textClass>
-            <keywords>
-                <term ref="#texttype1"/>
-                <term ref="#texttype2"/>
-            </keywords>
-        </textClass>
-    </egXML>
-
-         <p>If different types of text have to be linked to specific text parts, <gi>term</gi> can have a <att>corresp</att> 
-             pointing to the specific text part:</p>
-
-         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-             <textClass>
-                 <keywords>
-                     <term corresp="#textpart1">Dedication</term>
-                     <term corresp="#textpart2">Decree</term>
-                 </keywords>
-             </textClass>
-         </egXML>
-         
-         <p>If the <gi>keywords</gi> include also other <gi>term</gi>s used for different purposes (see below), 
-             a <att>type</att> can be used to specify what is the <gi>term</gi> used for:</p>
-         
-         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-             <textClass>
-                 <keywords>
-                     <term type="textType">Decree</term>
-                     <term type="keyword">Euergesia</term>
-                 </keywords>
-             </textClass>
-         </egXML>
-       </div>
-    
     <div>
-        <head>Other taxonomies</head>
-        <p>Index terms of any other kind can be tagged (by default using
-            <gi>rs</gi>, but any other semantically appropriate element may be captured for this
+        <head>Taxonomies for Attributes Not Described By Specific Elements in the Header</head>
+        <p>Index terms of any kind can be tagged (by default using <gi>rs</gi>, but any other
+            semantically appropriate element may be captured for this
             purpose) anywhere in the document where they appear in running text: e.g. in the Greek or
             Latin edition, translations, commentary, or any of the descriptive fields in the header.
             Depending on the needs of a particular project and any internal or external taxonomies in
@@ -187,6 +126,12 @@ End license statement: do not remove -->
                 <respStmt>
                     <resp>author</resp>
                     <name>Irene Vagionakis</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Scott Vanderbilt</name>
                 </respStmt>
             </bibl>
         </listBibl>
