@@ -51,6 +51,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#SV" when="2020-09-14">aligned schema with TEI v. 4.1.0 in anticipation of release 9.2</change>
             <change who="#SV" when="2020-09-14">added suggested values for biblScope[@unit] (as per FR #129)</change>
             <change who="#GB" when="2020-02-18">added or normalised few desc elements on attributes under tei:hi and tei:place</change>
             <change who="#HC" when="2020-02-17">added schema refs, and added dates/languages etc. to several elements throughout ODD</change>
@@ -201,7 +202,7 @@ End license statement: do not remove -->
                     langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
                 <moduleRef key="textcrit"
                     except="lacunaEnd lacunaStart listWit witDetail witEnd witStart witness"/>
-                <moduleRef key="figures" except="cell formula row table"/>
+                <moduleRef key="figures" except="formula"/>
                 <moduleRef key="spoken"
                     except="broadcast equipment incident kinesic pause recording recordingStmt
                     scriptStmt shift u vocal writing"/>
