@@ -289,8 +289,9 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="tei:divGen[@type='chardecl']">
-        <!--        imports in variable charDecl from Stylesheets repository-->
+    <!--to be uncommented after PR#4 is merged:
+        <xsl:template match="tei:divGen[@type='chardecl']">
+        <!-\-        imports in variable charDecl from Stylesheets repository-\->
         <xsl:variable name="chardecl" select="doc('https://raw.githubusercontent.com/EpiDoc/Stylesheets/g/charDecl.xml')"/>
         <xsl:variable name="g-">
             <xsl:for-each select="distinct-values($chardecl//tei:localName)">
@@ -325,7 +326,7 @@
             </table>
             
         </div>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template name="javascriptHook">
         <!-- overriding template in Sebastian's XSLT in order to import Google Analytics code -->

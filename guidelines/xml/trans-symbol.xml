@@ -28,22 +28,23 @@
     <head>Symbol (non meaning-bearing)</head>
         <p><specList>
             <specDesc key="g"/>
-            <specDesc key="glyph"/>
+            <!-- <specDesc key="glyph"/>
             <specDesc key="charDecl"/>
-            <specDesc key="prefixDef"/>
+            <specDesc key="prefixDef"/>-->
             </specList>
-            <listRef>
+            <!--<listRef>
                 <ptr target="a"/>
-            </listRef></p>
+            </listRef>--></p>
         <p><gi>g</gi> (character or glyph) represents a non-standard character or glyph.</p>
         <p>Where a symbol is non meaning-bearing, it should be represented using the element
             <gi>g</gi>, with the following attribute: </p>
         <list type="bulleted">
-            <item><att>ref</att> pointing to a <gi>glyph</gi> listed in <gi>charDecl</gi>.</item>
+            <item><att>ref</att><!-- pointing to a <gi>glyph</gi> listed in <gi>charDecl</gi>-->.</item>
             <item>in the past many projects used <att>type</att>.</item>
         </list>
         <p>A Unicode character representing the symbol may also appear inside the <gi>g</gi> if desired.</p>
-    <p>The <att>ref</att> attribute in <gi>g</gi> can be used in various ways.</p>
+    
+    <!-- <p>The <att>ref</att> attribute in <gi>g</gi> can be used in various ways.</p>
     
    <p> The following encoding  </p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" >
@@ -72,7 +73,7 @@
         ...
         <g ref="glyph:crux"/>
     </egXML>
-    <p>The full path or prefixed method allows also to define different sources for your <gi>charDecl</gi>, so that you may only have to add the one which are missing, unless you want to contribute them directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>
+    <p>The full path or prefixed method allows also to define different sources for your <gi>charDecl</gi>, so that you may only have to add the one which are missing, unless you want to contribute them directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>-->
     <cit>
         <quote>((crux))</quote><bibl corresp="#panciera"><biblScope>19</biblScope></bibl> 
     </cit>
@@ -106,7 +107,7 @@
      </egXML>
     
     
-    <divGen type="chardecl"/>
+    <!--<divGen type="chardecl"/>-->
     
     <divGen type="seealso"/>
     
