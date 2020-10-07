@@ -1,0 +1,65 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-app-inline-pt-br" xml:lang="pt-br">
+    <head>Apparatus criticus em linha</head>
+    <p>As tags que podem ser utilizadas dentro da divisão de transcrição de texto, a partir das
+        quais um apparatus criticus pode ser gerado em pós-processamento.</p>
+    <p><specList>
+            <specDesc key="app"/>
+            <specDesc key="lem"/>
+            <specDesc key="rdg"/>
+        </specList></p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/bgu;1;154">
+        <app type="editorial"><lem source="#BL_3.8">ἡ<supplied reason="lost"
+                            ><expan>προγ<ex>εγραμμένη</ex></expan></supplied></lem><rdg>ὡ<supplied
+                    reason="lost">ς <expan><ex>ἐτῶν</ex></expan> ιϛ</supplied></rdg></app>
+    </egXML>
+    <note>generates aparatus: 23. BL 3.8 : ὡ[ς (ἐτῶν) ιϛ] prev. ed.</note>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://papyri.info/ddbdp/cpr;4;171">
+        <app type="alternative"><lem><expan>Λευκ<ex>ο</ex>γ<ex>ίου</ex></expan></lem><rdg>Λευκῶ<add
+                    place="above">ν</add></rdg></app>
+    </egXML>
+    <note>generates apparatus: r.17. or Λευκῶ\ν/</note>
+    <p>Apenas alguns projetos EpiDoc usam marcação em linha para gerar um apparatus criticus. <term
+            target="#ddb">DDbDP</term> contribuiu com o <term target="#xslt">XSLT</term> para os
+            <term target="#epidoc-stylesheets">Exemplos de Folhas de Estilo EpiDoc</term> que dão
+        suporte a isto. <ref target="supp-app-stylesheets.html">Esta página </ref> explica as opções
+        que você pode usar nos <term target="#epidoc-stylesheets">Exemplos de Folhas de Estilo
+            EpiDoc</term> e o que tem cobertura no momento. </p>
+    <divGen type="seealso"/>
+    <div xml:id="supp-app-inline-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                <resp>traduzido para o Português por</resp>
+                <name>Assunção Medeiros</name>
+            </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

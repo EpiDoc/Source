@@ -1,0 +1,81 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-descletters-pt-br" xml:lang="pt-br">
+    <head>Descrição de mãos e de letras</head>
+    <p rend="page-gloss">Informações descritivas sobre mãos, paleografia ou estilos de escrita
+        usados no texto devem ser codificadas dentro de uma seção <gi>handDesc</gi> do header do
+        documento.</p>
+    <div rend="tag-defs">
+        <head>Elemento relevante de documentação:</head>
+        <p>
+            <specList>
+                <specDesc key="handDesc"/>
+                <specDesc key="handNote"/>
+                <specDesc key="height"/>
+                <specDesc key="hi"/>
+            </specList>
+        </p>
+    </div>
+    <div>
+        <p>A descrição de mão(s) pode incluir informação sobre formas de letra e alturas (ou outras
+            dimensões, como altura de linha), características paleográficas que incluem datação,
+            ligaduras, marcas de abreviatura, caracteres incomuns e outros símbolos ou
+            característica textuais. No todo, só as alturas de letra recebem marcação nesta seção
+            (com <gi>height</gi>), apesar da datação também, em teoria, poder ser marcada (se for
+            diferente da informação registrada em <gi>origDate</gi>). </p>
+        <p> Ligaduras, apesar de algumas vezes listadas manualmente aqui, podem ser melhor
+            capturadas com a marcação no texto transcrito como <gi>hi</gi> com <att>rend</att> com
+            valor "ligature", gerando mecanicamente uma lista de instâncias de saída. Veja também
+                <ref target="trans-ligature.html">Ligaduras</ref>. </p>
+        <p>Se múltiplas mãos são descritas, cada uma deve receber, separadamente, um
+                <gi>handNote</gi>, cada um recebendo um <att>n</att> (correspondente a uma seção
+            numerada no texto transcrito), ou um <att>xml:id</att> que pode apontar para um elemento
+                <gi>handShift</gi> na transcrição. Veja também <ref target="trans-handshift.html"
+                >Mudança de mão ou escriba</ref>. </p>
+        <p>Veja também <ref target="supp-descdimensions.html">Dimensões</ref> para maiores
+            informações de marcação de dimensões de objeto, campus ou letra.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <handDesc>
+                <handNote>
+                    <height unit="metre">0.015</height>; lunate sigma and epsilon; ligatured ΜΝ in
+                    l. 3. </handNote>
+            </handDesc>
+        </egXML>
+    </div>
+    <divGen type="seealso"/>
+    <div xml:id="supp-descletters-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt>
+                <resp>traduzido para o Português por</resp>
+                <name>Assunção Medeiros</name>
+            </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-description-pt-br" xml:lang="pt-br">
+    <head>Descrição física</head>
+    <div rend="tag-defs">
+        <head>Elemento relevante de documentação:</head>
+        <p>
+            <specList>
+                <specDesc key="physDesc"/>
+            </specList>
+        </p>
+    </div>
+    <div>
+        <p>A informação que descreve os aspectos físicos de uma inscrição é codificada no elemento
+                <gi>physDesc</gi>, que é parte do <gi>teiHeader</gi>.</p>
+        <p>As seguintes subseções destas normas tratam dos aspectos específicos desta
+            codificação:</p>
+        <list style="clear:both">
+            <item>
+                <ref target="supp-descobject.html">Descrição e dimensões de monumento ou
+                    objeto</ref>
+            </item>
+            <item>
+                <ref target="supp-desctext.html">Descrição e layout de campo de texto ou
+                    campus</ref>
+            </item>
+            <item>
+                <ref target="supp-descletters.html">Descrição de letras ou mãos</ref>
+            </item>
+            <item>
+                <ref target="supp-descdecor.html">Decoração ou iconografia</ref>
+            </item>
+            <item>
+                <ref target="supp-descdimensions.html">Dimensões (de objecto, campus ou
+                    letras)</ref>
+            </item>
+        </list>
+        <p>Se, em vez de desmembrar a descrição de vários aspectos do suporte, o editor preferir uma
+            passagem única e não estruturada de texto em prosa, descrevendo o objeto, o
+                <gi>physDesc</gi> pode conter um ou mais elementos <gi>p</gi> (parágrafo) como
+            alternativa aos (mas não em adição aos) elementos estruturados descritos nas seções
+            linkadas acima.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <physDesc>
+                <objectDesc>
+                    <supportDesc>
+                        <support>
+                            <p><material>Bronze</material> Sextarius</p>
+                        </support>
+                    </supportDesc>
+                    <layoutDesc>
+                        <layout>inscribed on the outside just below the rim</layout>
+                    </layoutDesc>
+                </objectDesc>
+                <handDesc>
+                    <handNote>Fourth-century A.D. script; <height>0.02</height>
+                    </handNote>
+                </handDesc>
+            </physDesc>
+        </egXML>
+        <p>Você pode alinhar suas definições, alinhando-as a um <ref target="idx-nontei.html"
+                >Vocabulário Controlado</ref> local ou externo.</p>
+    </div>
+    <divGen type="seealso"/>
+    <div xml:id="supp-description-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt><resp>autor</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt>
+                <resp>traduzido para o Português por</resp>
+                <name>Assunção Medeiros</name>
+            </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>

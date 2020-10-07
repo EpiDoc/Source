@@ -1,0 +1,120 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histfound-pt-br" xml:lang="pt-br">
+    <head>Contexto de descoberta (Findspot)</head>
+    <p>Todos os assuntos relativos à proveniência de um documento são codificados na parte de
+        Descrição de Manuscrito (<gi>msDesc</gi>) do header TEI. Mais exatamente, eles são colocados
+        dentro da subseção <gi>history</gi> (veja mais em <ref target="supp-history.html">Datas e
+            locais de obsrvações modernas</ref>).</p>
+    <div rend="tag-defs">
+        <head>Elemento relevante de documentação (TEI):</head>
+        <p>
+            <specList>
+                <specDesc key="history"/>
+                <specDesc key="msDesc"/>
+                <specDesc key="persName"/>
+                <specDesc key="placeName"/>
+                <specDesc key="provenance"/>
+                <specDesc key="rs"/>
+                <specDesc key="teiHeader"/>
+            </specList>
+        </p>
+    </div>
+    <div>
+        <p>Arquivos padrão EpiDoc incluem toda a informação espacial, temporal e circunstancial
+            sobre a descoberta inicial de um objeto portador de texto numa tag <gi>provenance</gi>
+            com um atributo <att>type</att> que recebe o valor "found". Geralmente haverá apenas um
+            elemento destes, a não ser que fragmentos separados do documento tenham sido encontrados
+            em locais diferentes. Valores opcionais recomendados para <att>subtype</att> estão
+            disponíveis se houver necessidade de fazer distinções computacionais práticas entre
+            diferentes circunstâncias de descoberta (veja lista em <ref
+                target="supp-histlocations.html">Datas e locais de observações modernas</ref>).</p>
+        <p>A informação dentro de cada elemento <gi>provenance</gi> pode ter a forma de um ou mais
+            parágrafos em prosa, ou a de uma lista (com o uso de tags TEI apropriadas quando
+            necessário). Algumas vezes, ciscunstâncias e enfoque editorial farão com que o conteúdo
+            do elemento <gi>provenance</gi> seja principalmente prosa; em outras ocasiões, um
+            enfoque de codificação mais orientado para dados pode ser indicado. De qualquer forma, a
+            melhor prática é codificar apropriadamente nomes de lugares e qualquer outra informação
+            que valha a pena indexar, linkar ou consultar (por exemplo, com <gi>persName</gi>,
+                <gi>placeName</gi>, etc.).</p>
+        <div>
+            <head>Examples</head>
+            <!-- NB: DO NOT REFORMAT THE FOLLOWING EXAMPLES: WHITESPACE MATTERS HERE! -->
+            <p>Aqui temos um exemplo adaptado de um marco miliário publicado em <ref
+                    target="http://inslib.kcl.ac.uk/irt2009/index.html">The Inscriptions of Roman
+                    Tripolitania</ref>:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><provenance type="found">
+ <placeName key="db648">Coast Road: Oea-Lepcis Magna</placeName>: 
+ <rs type="monuList" key="db669">Gasr Garabulli</rs>: in the Concessione Gherardi, 1 km. West of 
+ the village.
+</provenance>
+</egXML>
+            <p>E um outro adaptado de um óstraco publicado em <ref target="http://papyri.info"
+                    >Papyri.info</ref>:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><provenance type="found">
+ Roman dump at <placeName ref="http://pleiades.stoa.org/places/785986">Berenike</placeName>.
+</provenance>
+</egXML>
+            <p>E um terceiro do projeto <ref
+                    target="http://isaw.nyu.edu/publications/inscriptions/campa/">Corpus of the
+                    Inscriptions of Cāmpa</ref>, demonstrando o uso de atributos padrão de datas
+                TEI, para indicar o tempo da dsescoberta:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><provenance type="found" notAfter="1999">
+ <ab>It seems that this piece was part of the private collection of Mr. Vũ Kim Lộc in Hồ Chí 
+ Minh City at least until 1999, when Anne-Valérie Schweyer published a study of other objects 
+ in the same collection (<ref target="C0205.xml">C. 205</ref>, 
+ <ref target="C0206.xml">C. 206</ref>, <ref target="C0207.xml">C. 207</ref>) although without 
+ mentioning the present item and <ref target="C0209.xml">C. 209</ref>.</ab>
+</provenance>
+</egXML>
+        </div>
+        <div>
+            <head>Linkando o local de origem com o local de descoberta</head>
+            <p>Muitas vezes é desejável, quando se acredita que objetos foram encontrados in situ,
+                indicar a relação entre o local de descoberta e o local de origem. Ajuda e exemplos
+                são encontrados na seção sobre <ref target="supp-historigin.html">Local original do
+                    objeto portador de texto</ref>.</p>
+        </div>
+    </div>
+    <divGen type="seealso"/>
+    <div xml:id="intro-histfound-responsibility">
+        <head>Responsabilidade por esta seção</head>
+        <listBibl>
+            <bibl><respStmt><resp>autor</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Joyce Reynolds</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Arlo Griffiths</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>James Cowey</name></respStmt></bibl>
+            <bibl><respStmt><resp>autor</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt>
+                <resp>traduzido para o Português por</resp>
+                <name>Assunção Medeiros</name>
+            </respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
