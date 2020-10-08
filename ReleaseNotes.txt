@@ -1,8 +1,30 @@
-﻿RELEASE NOTES
+RELEASE NOTES
 =============
 
 Latest version
 -------------------------
+9.2 - Candidate release 2020-10-08
+    * Release technician: Irene Vagionakis
+
+   * Schema: aligned schema with TEI v. 4.1.0
+   * Schema: allowed `<table>`, `<row>`, and `<cell>` elements
+   * Schema: added additional suggested values for biblScope[@unit]
+   * Schema: added "undefined" as a permissible value of gap/@reason
+   * Schema: added p5odds schema refs
+
+   * Guidelines: revised guidelines on text type, keywords, textparts, verse, apparatus, symbols, gap, apices and diacritics
+   * Guidelines: added additional suggested values for biblScope[@unit]
+   * Guidelines: added Brazilian Portuguese translations
+   * Guidelines: added shorter version of the Leiden and EpiDoc Quick Reference
+   * Guidelines: updated schema url to new epidoc.stoa.org address in ex-epidoctemplate.xml
+   * Guidelines: added XProc transformation scenario for generating the guidelines with OxygenXML >= 22.0
+
+   * XSLT: fixed rendering of paragraphos
+   * XSLT: fixed issue with consecutive gaps and adjacent brackets
+   * XSLT: fixed bug in teicertainty.xsl
+   * XSLT: fixed bugs in txt-teisupplied.xsl
+   * XSLT: added position() to @id to ensure uniqueness when multiple textparts have same @n value
+   * XSLT: added files for XSL-FO transformation
 
 9.1 - Announced to MARKUP 2019-10-31 [email](https://lsv.uky.edu/scripts/wa.exe?A2=ind1910&L=MARKUP&P=70787)
     * Release technicians: Scott Vanderbilt and Laura Löser
