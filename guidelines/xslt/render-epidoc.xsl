@@ -23,7 +23,7 @@
 
         <xsl:if test="@rend">
             <div class="rend">
-                <p>Transformation using the example EpiDoc P5 stylesheets:</p>
+                <p>Transformation using the EpiDoc Reference stylesheets:</p>
                 <ul>
                     <xsl:for-each select="tokenize(@rend, ' ')">
                         <li>
