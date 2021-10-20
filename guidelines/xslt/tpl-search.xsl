@@ -17,7 +17,7 @@ $(window).load(function() {
   var go =  $("#searchBtn");
   go.click(function(evt){
       var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
-      window.open("https://www.google.com/?gws_rd=ssl#q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
+        window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
     });
 });
     </script>
