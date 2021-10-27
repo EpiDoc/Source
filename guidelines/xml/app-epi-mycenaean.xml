@@ -1,0 +1,103 @@
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!-- $Id: app-epi-mycenaean.xml 2790 2020-10-10 09:45:42Z irenevagionakis $ -->
+<?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-mycenaean" xml:lang="en">
+    <head>Appendix: Aligning EpiDoc with Mycenaean usage (Wingspread Conventions)</head>
+    
+    <table>
+        <row>
+            <cell rend="label">Description</cell>
+            <cell rend="label">Wingspread</cell>
+            <cell rend="label">DAMOS</cell>
+            <cell rend="label">EpiDoc example</cell>
+            <cell rend="label">EpiDoc Guideline(s)</cell>
+        </row>
+        <!--    e.g.
+            <row>
+                <cell>Modern expansion of an abbreviation</cell>
+                <cell>α(βγ)</cell>
+                <cell>α<(βγ)></cell>
+                <cell></cell>
+                <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+            </row>-->
+        <row rend="bold"><cell cols="4">Characters and glyphs</cell></row>
+        <row>
+            <cell>syllabogram</cell>
+            <cell>pa or ro<hi rend="subscript">2</hi></cell>
+            <cell>pa or ro2</cell>
+            <cell><tag>c type="syllabogram"</tag>pa<tag type="end">gi</tag>
+                <lb/><tag>c type="syllabogram"</tag>ro2<tag type="end">gi</tag></cell>
+            <cell>tba</cell>
+        </row>
+        <row>
+            <cell>logogram</cell>
+            <cell><hi rend="small">OLE</hi></cell>
+            <cell>OLE</cell>
+            <cell><tag>c type="logogram"</tag>OLE<tag type="end">c</tag></cell>
+            <cell>tba</cell>
+        </row>
+        <row>
+            <cell>syllabogram used as logogram</cell>
+            <cell><hi rend="italic">PA</hi></cell>
+            <cell>PA</cell>
+            <cell><tag>c type="syllabogram-as-logogram"</tag>PA<tag type="end">c</tag></cell>
+            <cell>tba</cell>
+        </row>
+        <row>
+            <cell>Monogram</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell><ref target=""></ref></cell>
+        </row>
+        <row>
+            <cell rend="bold">Ligatured logograms</cell>
+            <cell><hi rend="small">TELA</hi>+<hi rend="italic">PO</hi></cell>
+            <cell>TELA+PO</cell>
+            <cell><tag>hi rend="ligature"</tag>TELA+PO<tag type="end">hi</tag></cell>
+            <cell><ref target="trans-ligature.html"></ref></cell>
+        </row>
+        <row><cell cols="4">Editorial interventions and observations</cell></row>
+        <row><cell>to be added</cell></row>
+        <!--<row>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell><ref target=""></ref></cell>
+        </row>-->
+    </table>
+    
+    
+    <div xml:id="app-epi-oracc-responsibility">
+    <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Federico Aurora</name></respStmt></bibl>
+        </listBibl>
+    </div>
+</div>
