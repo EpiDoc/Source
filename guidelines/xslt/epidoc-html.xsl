@@ -292,7 +292,7 @@
    
         <xsl:template match="tei:divGen[@type='chardecl']">
         <!--        imports in variable charDecl from Stylesheets repository-->
-        <xsl:variable name="chardecl" select="doc('https://raw.githubusercontent.com/EpiDoc/Stylesheets/g/charDecl.xml')"/>
+        <xsl:variable name="chardecl" select="doc('../../example-p5-xslt/charDecl.xml')"/>
         <xsl:variable name="g-">
             <xsl:for-each select="distinct-values($chardecl//tei:glyph/t:mapping/@type)">
                 <xsl:sort select="."/>
@@ -369,13 +369,6 @@
 	<xsl:template name="previousLink"/>
 	
 	<xsl:template name="nextLink"/>
-	
-	<!--
-	    <xsl:template match="*[@xml:lang]">
-	    <xsl:attribute name="lang"><xsl:value-of select="."/></xsl:attribute>
-	        <xsl:apply-templates/>
-	</xsl:template>
-	-->
 
     <xsl:template match="tei:cell">
         <xsl:variable name="cellname">
@@ -454,6 +447,28 @@
             </xsl:if>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <!-- overriding TEI Stylesheets to correct behaviour of "tag" element -->
+    
+    <xsl:template match="tei:tag">
+        <span class="tag">
+            <xsl:text>&lt;</xsl:text>
+            <xsl:choose>
+                <xsl:when test="@type='end'"><xsl:text>/</xsl:text></xsl:when>
+                <xsl:when test="@type='pi'"><xsl:text>?</xsl:text></xsl:when>
+                <xsl:when test="@type='comment'"><xsl:text>!--</xsl:text></xsl:when>
+                <xsl:when test="@type='ms'"><xsl:text>[CDATA[</xsl:text></xsl:when>
+            </xsl:choose>
+            <xsl:apply-templates />
+            <xsl:choose>
+                <xsl:when test="@type='empty'"><xsl:text>/</xsl:text></xsl:when>
+                <xsl:when test="@type='pi'"><xsl:text>?</xsl:text></xsl:when>
+                <xsl:when test="@type='comment'"><xsl:text>--</xsl:text></xsl:when>
+                <xsl:when test="@type='ms'"><xsl:text>]]</xsl:text></xsl:when>
+            </xsl:choose>
+            <xsl:text>&gt;</xsl:text>
+        </span>
     </xsl:template>
     
 </xsl:stylesheet>
