@@ -80,17 +80,56 @@ End license statement: do not remove -->
     
     <div>
         <head>Signaling the languages and scripts used in the texts and translations being presented</head>
+        <p>The primary and secondary language(s) of an inscription should be declared in the <tag>textLang</tag> element contained in the TEI header; the primary language should be contained within the <att>mainLang</att> attribute and any other languages should be listed in the <att>otherLangs</att> attribute.
+        Note that the languages included here should only refer to the languages or writing systems contained within the text itself, rather than those throughout the edition itself.
+        If the script differs from the default script of the language (e.g., Greek transliterated into Latin), this should also be indicated using the appropriate language codes, where available.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <textLang mainLang="grc" otherLangs="grc-Latn la">
                 Inscription in ancient Greek with some words transcribed in Latin characters, and
                 later annotation in Latin.
             </textLang>
         </egXML>
+        <p>The languages for a given translation of a text should not be included in the <tag>textLang</tag> element; instead, they should be included as an <att>xml:lang</att> attribute on <tag>div type="translation"</tag></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <div type="translation" xml:lang="en">
+                <p>To the Divine Spirits. Quintus Rutilius Faustio lived for twenty-one years
+                    (and) twenty-six days. (His) parents (made this) for (their) most beloved son.</p>
+            </div>
+        </egXML>
     </div>
     
     <div>
         <head>Marking transitions in language and/or script in the text</head>
-        <p>tba</p>
+        <p>A single language should be indicated as the default for a text by including it in the <att>mainLang</att> attribute on the <tag>textLang</tag> element. The default script for a given language is assumed unless otherwise indicated (i.e. Greek will be written in the Greek alphabet, etc.).
+            When transitions can between languages and/or script are limited in scope (i.e. a single word, a short phrase, etc. in a language differing from that declare in the <att>mainLang</att> attribute in the header), the word or words should be contained within a <tag>foreign</tag> element (see <ref target="trans-foreigntext.xml">Multi-Language Texts</ref>). 
+            Language and/or script may be identified by including the attribute <att>xml:lang</att>. In the following brief example from the US Epigraphy Project, the inscription begins in Latin but transitions 
+        to Greek which is written in the Latin script:</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://usepigraphy.brown.edu/projects/usep/inscription/NY.NY.MMA.LG.18.145.5/">
+            <div type="edition">
+                <ab>
+                    <lb n="1"/>Cum tu<unclear>i</unclear>s <foreign xml:lang="grc-Latn">pie zeses</foreign>.
+                </ab> 
+            </div>
+        </egXML>
+        <p>If longer passages of the text are in different languages and/or scripts, the default language may be further specified with an <att>xml:lang</att> attribute on the <tag>div type="edition"</tag> and if other sections are in different languages/scripts, these should be declared by adding a <att>xml:lang</att> attribute to the block-level containers of that text (e.g. <tag>ab</tag>, <tag>lg</tag>, <tag>seg</tag>, or <tag>div type="textpart"</tag>.
+            (Compare the examples given at <ref target="trans-foreigntext.xml">Multi-Language Texts</ref> under point 2.) One may also indicate shifts in script in the same fashion; that is, a hypothetical inscription that is entirely in Greek but also includes Greek transliterated into the Roman alphabet would declare its default language ("grc") in the <att>xml:lang</att> attribute and transliterated passages would be marked with the <att>xml:lang</att> attribute with a value of "grc-Latn".
+            It may also be desirable to indicate a change in hand when the script and/or language changes using the <tag>handShift</tag> element, if such a shift is discernible; further details about the script can be included in the <tag>handNote</tag> elements of the manuscript description.
+            Compare the following example from the US Epigraphy Project, which begins in Latin and then contains a translation of the text in Greek:
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://usepigraphy.brown.edu/projects/usep/inscription/CA.Malibu.JPGM.GL.80.AA.52/">
+            <div type="edition" xml:lang="lat">
+                <ab>
+                    <lb n="1"/>Divi <persName><name type="cognomen" key="Augustus"><expan><abbr>Aug</abbr><ex>usti</ex></expan></name></persName> liberti
+                    <lb n="2"/><persName><name type="cognomen" key="Calyx">Calycis</name></persName> <persName><name type="cognomen" key="Hygeia">Hygeiae</name></persName>.
+                </ab>
+                <ab xml:lang="grc">
+                    <lb n="3"/><handShift n="2"/> Θεοῦ Σεβαστοῦ
+                    <lb n="4"/>ἀπελευθέρου
+                    <lb n="5"/><persName><name type="cognomen" key="Calyx">Καλύκος</name></persName> ἀπελευ
+                    <lb n="6" break="no"/>θέρα <persName><name type="cognomen" key="Hygeia">Ὑγεῖα</name></persName>.
+                </ab>
+            </div>
+        </egXML>
     </div>
     
     <divGen type="seealso"/>
@@ -100,6 +139,7 @@ End license statement: do not remove -->
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
