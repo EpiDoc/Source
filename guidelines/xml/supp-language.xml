@@ -53,7 +53,9 @@ End license statement: do not remove -->
             <item>grc-Latn = Ancient Greek Language (to 1453), rendered in Latin script</item>
         </list>
         <p>When the IANA registry does not provide appropriate codes, then an EpiDoc project may devise "private use subtags", so long as they are internally defined in the EpiDoc file as outlined in the following paragraph and so long as they conform syntactically to the specifications laid out in RFC 5646, sections <ref target="http://tools.ietf.org/html/rfc5646#section-2.1">2.1: Syntax</ref> and <ref target="http://tools.ietf.org/html/rfc5646#section-4.6">4.6: Considerations for Private Use Subtags</ref>. For example, the Campā Inscriptions team determined that the two Cham language subtags (cja = Western Cham and cjm = Eastern Cham) and the associated script subtag (Cham) were substantively different from the ancient Cham language and script represented in the inscriptions. Therefore the private use subtag "x-oldcam-latn-ci" was invented and given the project-specific meaning "Old Cam language in Old Cam script transliterated in Latin characters." Whenever possible, EpiDoc projects and practitioners should undertake to register new subtags with the IANA for the benefit of others. A procedure for same is set out in RFC 5646 <ref target="http://tools.ietf.org/html/rfc5646#section-3.5">Section 3.5</ref>.</p>
-        <p>Describe langUsage here.</p>
+        
+        <!--<p>Describe langUsage here.</p>-->
+        
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <langUsage>
                 <language ident="ar">Arabic</language>
@@ -80,8 +82,8 @@ End license statement: do not remove -->
     
     <div>
         <head>Signaling the languages and scripts used in the texts and translations being presented</head>
-        <p>The primary and secondary language(s) of an inscription should be declared in the <tag>textLang</tag> element contained in the TEI header; the primary language should be contained within the <att>mainLang</att> attribute and any other languages should be listed in the <att>otherLangs</att> attribute.
-        Note that the languages included here should only refer to the languages or writing systems contained within the text itself, rather than those throughout the edition itself.
+        <p>The primary and secondary language(s) of an inscription should be declared in the <gi>textLang</gi> element contained in the TEI header; the primary language should be contained within the <att>mainLang</att> attribute and any other languages should be listed in the <att>otherLangs</att> attribute.
+        Note that the languages included here should only refer to the languages or writing systems contained within the text itself, rather than those throughout the edition.
         If the script differs from the default script of the language (e.g., Greek transliterated into Latin), this should also be indicated using the appropriate language codes, where available.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <textLang mainLang="grc" otherLangs="grc-Latn la">
@@ -89,7 +91,7 @@ End license statement: do not remove -->
                 later annotation in Latin.
             </textLang>
         </egXML>
-        <p>The languages for a given translation of a text should not be included in the <tag>textLang</tag> element; instead, they should be included as an <att>xml:lang</att> attribute on <tag>div type="translation"</tag></p>
+        <p>The language·s for a given translation of a text should not be included in the <gi>textLang</gi> element; instead, they should be included as an <att>xml:lang</att> attribute on <tag>div type="translation"</tag> or nested <tag>div type="textpart"</tag>s within it.</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <div type="translation" xml:lang="en">
                 <p>To the Divine Spirits. Quintus Rutilius Faustio lived for twenty-one years
@@ -100,10 +102,7 @@ End license statement: do not remove -->
     
     <div>
         <head>Marking transitions in language and/or script in the text</head>
-        <p>A single language should be indicated as the default for a text by including it in the <att>mainLang</att> attribute on the <tag>textLang</tag> element. The default script for a given language is assumed unless otherwise indicated (i.e. Greek will be written in the Greek alphabet, etc.).
-            When transitions can between languages and/or script are limited in scope (i.e. a single word, a short phrase, etc. in a language differing from that declare in the <att>mainLang</att> attribute in the header), the word or words should be contained within a <tag>foreign</tag> element (see <ref target="trans-foreigntext.xml">Multi-Language Texts</ref>). 
-            Language and/or script may be identified by including the attribute <att>xml:lang</att>. In the following brief example from the US Epigraphy Project, the inscription begins in Latin but transitions 
-        to Greek which is written in the Latin script:</p>
+        <p>A single language should be indicated as the default for a text by including it in the <att>mainLang</att> attribute on the <gi>textLang</gi> element. The default script for a given language is assumed unless otherwise indicated (i.e. Greek will be written in the Greek alphabet, etc.). When transitions can between languages and/or script are limited in scope (i.e. a single word, a short phrase, etc. in a language differing from that declare in the <att>mainLang</att> attribute in the header), the word or words should be contained within a <gi>foreign</gi> element (see <ref target="trans-foreigntext.xml">Multi-Language Texts</ref>). Language and/or script may be identified by including the attribute <att>xml:lang</att>. In the following brief example from the US Epigraphy Project, the inscription begins in Latin but transitions to Greek which is written in the Latin script:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://usepigraphy.brown.edu/projects/usep/inscription/NY.NY.MMA.LG.18.145.5/">
             <div type="edition">
                 <ab>
@@ -111,9 +110,9 @@ End license statement: do not remove -->
                 </ab> 
             </div>
         </egXML>
-        <p>If longer passages of the text are in different languages and/or scripts, the default language may be further specified with an <att>xml:lang</att> attribute on the <tag>div type="edition"</tag> and if other sections are in different languages/scripts, these should be declared by adding a <att>xml:lang</att> attribute to the block-level containers of that text (e.g. <tag>ab</tag>, <tag>lg</tag>, <tag>seg</tag>, or <tag>div type="textpart"</tag>.
+        <p>If longer passages of the text are in different languages and/or scripts, the default language may be further specified with an <att>xml:lang</att> attribute on the <tag>div type="edition"</tag> and if other sections are in different languages/scripts, these should be declared by adding a <att>xml:lang</att> attribute to the block-level containers of that text (e.g. <gi>ab</gi>, <gi>lg</gi>, <gi>seg</gi>, or <tag>div type="textpart"</tag>.
             (Compare the examples given at <ref target="trans-foreigntext.xml">Multi-Language Texts</ref> under point 2.) One may also indicate shifts in script in the same fashion; that is, a hypothetical inscription that is entirely in Greek but also includes Greek transliterated into the Roman alphabet would declare its default language ("grc") in the <att>xml:lang</att> attribute and transliterated passages would be marked with the <att>xml:lang</att> attribute with a value of "grc-Latn".
-            It may also be desirable to indicate a change in hand when the script and/or language changes using the <tag>handShift</tag> element, if such a shift is discernible; further details about the script can be included in the <tag>handNote</tag> elements of the manuscript description.
+            It may also be desirable to indicate a change in hand when the script and/or language changes using the <gi>handShift</gi> element, if such a shift is discernible; further details about the script can be included in the <gi>handNote</gi> elements of the manuscript description.
             Compare the following example from the US Epigraphy Project, which begins in Latin and then contains a translation of the text in Greek:
         </p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://usepigraphy.brown.edu/projects/usep/inscription/CA.Malibu.JPGM.GL.80.AA.52/">
