@@ -49,7 +49,7 @@ End license statement: do not remove -->
             publication or project (whether including discussions or only previous publications of
             texts) be encoded in a separate, single file. This might validate to the EpiDoc schema
             or to a generic TEI bibliographic schema, or could even be a free-standing database, or
-            a HTML page with an <att>id</att> for each bibliographical entry.</p>
+            an HTML page with an <att>id</att> for each bibliographical entry.</p>
 
         <p>If encoding in TEI, the bibliography should comprise a structured list either of
                 <gi>bibl</gi> elements (recommended) or <gi>biblStruct</gi> elements (probably
@@ -88,9 +88,7 @@ End license statement: do not remove -->
                 </biblStruct>
             </listBibl>
         </egXML>
-
-
-
+        
     </div>
     <div>
         <head>Master bibliography in Zotero</head>
@@ -190,13 +188,29 @@ End license statement: do not remove -->
             in a <gi>listBibl</gi> if the citations are a simple (or numbered) list. </p>
 
         <p>Some projects prefer to create multiple <tag>div type="bibliography"</tag> sections for
-            each text in order to group bibliographic citations thematically (e.g., prior editions,
-            derivative editions, available illustrations, and the like. The <att>subtype</att> may
+            each text in order to group bibliographic citations thematically (e.g., primary editions, prior editions,
+            derivative editions, translations, available illustrations, and the like. The <att>subtype</att> may
             be used to distinguish between them and to facilitate processing. In particular, lists
             of images published on-line or in print by third parties are sometimes encoded within
                 <tag>div type="bibliography" subtype="illustrations"</tag>, regarding which see
             further <ref target="supp-images.html">Images, figures, and facsimile</ref>.</p>
-
+        
+        <p>An alternative to creating multiple <tag>div</tag>s as described above, it is also possible to 
+            use the <att>type</att> attribute on a <tag>bibl</tag> element to indicate the nature of the source. 
+            Suggested values are: 
+            <list>
+                <item>principalEdition or editioPrinceps</item>
+                    <item>secondary (secondary source)</item>
+                    <item>edition (any edition other than princeps)</item>
+                    <item>ancientEdition</item>
+                    <item>modernEdition </item>
+                    <item>citation (text or object is cited in the source)</item>
+                    <item>corrections</item>
+                    <item>illustrations</item>
+                    <item>otherPublications</item>
+                    <item>translation</item>
+            </list> </p>
+        
         <p>Each bibliographic citation may be encoded relatively simply in a <gi>bibl</gi> element
             in the form that is desired in the online (or print) edition, be that a full
             bibliographic reference or abbreviated author + date or similar. It is often useful,
