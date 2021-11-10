@@ -85,7 +85,7 @@ End license statement: do not remove -->
         <head>Interaction with editorial markup</head>
         <p>The <gi>w</gi> element may contain further editorial tags, such as expansions of abbreviations. Wherever possible the <gi>w</gi> element should remain
             intact (cf. <ref target="trans-lacunasegmented.html">Editorial restoration: Segmented or adjacent lacunae</ref>).</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <!--corresp="SigiDoc_TM_05"-->
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://sigidoc.raketadesign.com/en/seals/TM_05.html">
             <w lemma="Κύριος" lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=kurie&amp;la=greek">
                 <expan><abbr>Κ</abbr><ex>ύρι</ex>ε</expan>
             </w> 
@@ -94,13 +94,13 @@ End license statement: do not remove -->
             </w>
         </egXML>
         <p>displayed in the edition as: Κ(ύρι)ε β(οή)θ(ει); or some restored text:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <!--corresp="SigiDoc_TM_04"-->
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://sigidoc.raketadesign.com/en/seals/TM_04.html">
             <w lemma="σός" lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=sw&amp;la=greek">
                 <supplied reason="lost">σ</supplied>ῷ
             </w>
         </egXML>
         <p>displayed in the edition as: [σ]ῷ; a slighly more complicated situation could be the following, with a lemma written across two lines:</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"> <!--corresp="TO BE DONE-TM_35"-->
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://sigidoc.raketadesign.com/en/seals/TM_35.html">
             <w lemma="φέρω" lemmaRef="http://www.perseus.tufts.edu/hopper/morph?l=ferousa&amp;la=greek">
                 φ<supplied reason="lost">έ
                     <lb n="6" break="no"/>ρ</supplied>ουσα
