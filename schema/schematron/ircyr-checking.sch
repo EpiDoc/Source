@@ -19,8 +19,8 @@
     <pattern name="Test space attributes">
         <rule context="//t:space">
             <report test="(@extent and @quantity)">conflict: @quantity and @extent both present on <name/></report>
-            <report test="(@reason='lost' or @reason='omitted') and not(@extent or @quantity or (@atleast and @atMost))"><name/> needs one of @extent, @quantity or both @atLeast and @atMost</report>
-            <report test="(@reason='lost' or @reason='omitted') and not(@unit)"><name/> lost or omitted needs @unit</report>
+            <report test="not(@extent or @quantity or (@atleast and @atMost))"><name/> needs one of @extent, @quantity or both @atLeast and @atMost</report>
+            <report test="not(@unit)"><name/> lost or omitted needs @unit</report>
         </rule>
     </pattern>
     <pattern name="Check for gaps in supplied">
@@ -39,8 +39,7 @@
     </pattern>
     <pattern name="Check for untagged words">
         <rule context="//t:div[@type='edition']">
-            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:geogName or ancestor::t:num or ancestor::t:surplus
-                or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;··:','')),' ','')='')]">
+            <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:geogName or ancestor::t:addName or ancestor::t:num or ancestor::t:surplus or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;··:','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
         </rule>
@@ -50,7 +49,7 @@
             <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
         </rule>
         <rule context="//t:div[@type='edition']//t:persName">
-            <report test="not(@type=('divine','emperor','ruler','consul','attested','other'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other'</report>
+            <report test="not(@type=('divine','emperor','ruler','consul','attested','other','office','eponym'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other'</report>
         </rule>
     </pattern>
     <pattern name="Problems with abbreviations/expansions">
