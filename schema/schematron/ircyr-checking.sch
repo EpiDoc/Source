@@ -20,7 +20,7 @@
         <rule context="//t:space">
             <report test="(@extent and @quantity)">conflict: @quantity and @extent both present on <name/></report>
             <report test="not(@extent or @quantity or (@atleast and @atMost))"><name/> needs one of @extent, @quantity or both @atLeast and @atMost</report>
-            <report test="not(@unit)"><name/> lost or omitted needs @unit</report>
+            <report test="not(@unit)"><name/> needs @unit</report>
         </rule>
     </pattern>
     <pattern name="Check for gaps in supplied">
@@ -49,7 +49,7 @@
             <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
         </rule>
         <rule context="//t:div[@type='edition']//t:persName">
-            <report test="not(@type=('divine','emperor','ruler','consul','attested','other','office','eponym'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other'</report>
+            <report test="not(@type=('divine','emperor','ruler','consul','attested','other','office','eponym'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other','office','eponym'</report>
         </rule>
     </pattern>
     <pattern name="Problems with abbreviations/expansions">
