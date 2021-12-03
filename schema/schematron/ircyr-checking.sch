@@ -46,7 +46,7 @@
     </pattern>
     <pattern name="Check for problems with names and persnames">
         <rule context="//t:div[@type='edition']//t:name">
-            <report test="not(ancestor::t:persName or ancestor::t:placeName)"><name/> needs to be inside persName or placeName</report>
+            <report test="not(ancestor::t:persName or ancestor::t:placeName or ancestor::t:orgName)"><name/> needs to be inside persName, placeName or orgName</report>
         </rule>
         <rule context="//t:div[@type='edition']//t:persName">
             <report test="not(@type=('divine','emperor','ruler','consul','attested','other','office','eponym'))"><name/> @type needs to be one of 'divine','emperor','ruler',consul','attested','other','office','eponym'</report>
