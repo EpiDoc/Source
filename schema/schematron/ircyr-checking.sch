@@ -53,11 +53,11 @@
         </rule>
     </pattern>
     <pattern name="Problems with abbreviations/expansions">
-        <rule context="//t:ex">
+        <rule context="//t:div[@type='edition']//t:ex">
             <report test="not(ancestor::t:expan)"><name/> should only appear inside expan</report>
             <report test="parent::t:abbr"><name/> should not be a child of abbr</report>
         </rule>
-        <rule context="//t:expan">
+        <rule context="//t:div[@type='edition']//t:expan">
             <report test="not(descendant::t:ex)"><name/> should contain ex</report>
             <report test="descendant::text()[not(translate(normalize-space(.),' ','')='')][not(ancestor::t:ex or ancestor::t:abbr)]">all text in expan should be in abbr or ex</report>
         </rule>
