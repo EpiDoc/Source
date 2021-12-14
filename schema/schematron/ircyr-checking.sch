@@ -31,14 +31,14 @@
     <pattern name="checking for Leiden sigla">
         <!-- the regexes below will only work if you have Schematron set to XPATH version 2.0 in your local environment -->
         <!-- in Oxygen: Options > Preferences > XML > XML Parser > Schematron -->
-        <rule context="//t:div[@type='edition']">
+        <rule context="//t:div[@type='edition']//t:ab | //t:div[@type='edition']//t:l | //t:div[@type='edition']//t:p">
             <report test="descendant::text()[not(ancestor::t:desc or ancestor::t:note)][matches(.,'[\[\]\(\)]')]">Brackets and parentheses in epigraphic text</report>
             <report test="descendant::text()[not(ancestor::t:desc or ancestor::t:note)][matches(.,'&#x0323;|&#xE1C0;')]">Underdots in epigraphic text</report>
             <report test="descendant::text()[not(ancestor::t:desc or ancestor::t:note)][matches(.,'&lt;|&gt;')]">Angle brackets in epigraphic text</report>
         </rule>
     </pattern>
     <pattern name="Check for untagged words">
-        <rule context="//t:div[@type='edition']">
+        <rule context="//t:div[@type='edition']//t:ab | //t:div[@type='edition']//t:l | //t:div[@type='edition']//t:p">
             <report test="descendant::text()[not(ancestor::t:w or ancestor::t:name or ancestor::t:placeName or ancestor::t:geogName or ancestor::t:addName or ancestor::t:num or ancestor::t:surplus or ancestor::t:orig or ancestor::t:desc or ancestor::t:note or ancestor::t:head or ancestor::t:g or ancestor::t:abbr[not(ancestor::t:expan)])][not(translate(normalize-space(translate(.,',.;··:','')),' ','')='')]">
                 Character content needs to be tagged as word or name or number or undefined etc.
             </report>
