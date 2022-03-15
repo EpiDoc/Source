@@ -270,21 +270,29 @@
     
     <xsl:template match="tei:divGen[@type='seealso']">
         <xsl:variable name="curpage" select="generate-id(ancestor::tei:div[parent::tei:body])"/>
+        <xsl:variable name="curid" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
         <div class="seealso">
-            <h3>See also:</h3>
+            <h3>See also: {{<xsl:value-of select="$curid"/>}}</h3>
             <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
-                <xsl:if test="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
-                    <p>Other pages describing &lt;<xsl:value-of select="@key"/>&gt;:</p>
+                <p>Other pages describing &lt;<xsl:value-of select="@key"/>&gt;:</p>
                     <ul>
                         <xsl:for-each select="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]">
+                            <xsl:variable name="instanceid" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
+                            <xsl:if test="ancestor::tei:body/tei:div[generate-id() != $curpage]//tei:specList/tei:specDesc[@key = current()/@key]
+                            and (
+                            (contains($curid,'-pt-br') and contains($instanceid,'-pt-br'))
+                            or
+                            (not(contains($curid,'-pt-br')) and not(contains($instanceid,'-pt-br')))
+                            )">
                         <li>
                             <a href="{concat(ancestor::tei:div[parent::tei:body]/@xml:id,'.html')}">
                                 <xsl:value-of select="ancestor::tei:div[parent::tei:body]/tei:head[1]"/>
                             </a>
                         </li>
+                        </xsl:if>
                     </xsl:for-each>
                 </ul>
-             </xsl:if>
+             
             </xsl:for-each>
         </div>
     </xsl:template>
