@@ -45,8 +45,8 @@ End license statement: do not remove -->
         (historic) creation and publication of the object (the <gi>origDate</gi> and <gi>origPlace</gi> elements are
         provided for each of these purposes). After the <gi>origin</gi> element, the editor may create one or more <gi>provenance</gi> elements, each of which
         describes a discrete event in the history of the object, capturing whatever is known and relevant in the way of
-        temporal and spatial information. Examples of provenance events include: (modern) place and date of finding or
-        subsequent observation and recording.</p>
+        temporal and spatial information. Examples of provenance events include: (modern) place and date of finding, 
+        subsequent observation and recording, or transfers, gifts and sales.</p>
     <p>Here is an example adapted from the 
         <ref target="http://insaph.kcl.ac.uk/iaph2007/">Inscriptions of Aphrodisias</ref> project:</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -92,6 +92,7 @@ End license statement: do not remove -->
             <gi>msDesc</gi> (a sibling element of <gi>history</gi> called <gi>msIdentifier</gi>). The encoding of this
         information is described in the <ref target="supp-histinvno.html">Inventory numbers and repositories</ref>
         section.</p>
+    <p>The TEI offers a separate set of elements <tag>custodialHist</tag> and <tag>custEvent</tag> to record information about custodial actions such as photography, conservation and loans, also encoded in a separate part of <gi>msDesc</gi>  (a sibling element of <gi>history</gi> called <gi>additional</gi>). See: <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msadch">Availability and Custodial History</ref>.</p>
     
     <divGen type="seealso"/>
 
@@ -101,6 +102,9 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
+            
         </listBibl>
     </div>
 </div>

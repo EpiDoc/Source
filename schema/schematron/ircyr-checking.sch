@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.ascc.net/xml/schematron" xmlns:t="http://www.tei-c.org/ns/1.0">
+<schema xmlns="http://www.ascc.net/xml/schematron" 
+    xmlns:t="http://www.tei-c.org/ns/1.0">
     <ns uri="http://www.tei-c.org/ns/1.0" prefix="t"/>
     <!--<pattern name="Print both cases">
         <rule context="AAA">

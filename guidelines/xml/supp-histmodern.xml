@@ -47,7 +47,7 @@ End license statement: do not remove -->
  
  <div>
     <p>When producing a scholarly edition of a pre-modern text, it is often essential to encode what is known about the
-        modern history of observation and recording. Ideally, this account begins with <ref target="supp-histfound.html"
+        modern history of observation and recording, as well as transactions involving the object. Ideally, this account begins with <ref target="supp-histfound.html"
             >the discovery of the text-bearing object (findspot)</ref>, details each substantive subsequent instance of
         reporting, and culminates in a report of the last-known or last-observed location. Such a history can provide
         important insight into the likely original location of the object. It places both published bibliography and
@@ -72,6 +72,17 @@ End license statement: do not remove -->
          <item><tag>provenance type="transferred"</tag> is used to encode information about documentable modern relocations of the text-bearing object</item>
      </list>
      <p>Recommended, optional values for <att>subtype</att> are available if there is a need to make computationally actionable distinctions between different circumstances of finding (see list in <ref target="supp-histlocations.html">Dates and locations of modern observations</ref>). NB: the old recommendation of <tag>provenance type="autopsy"</tag> as a special case of <tag>provenance type="observed"</tag> is now deprecated in favor of <tag>provenance type="observed" subtype="autopsied"</tag>.</p>
+     <p>The following values are recommended for <att>subtype</att> when using <tag>provenance type="transferred"</tag>.</p>
+     
+     <list>
+         <item>"moved"</item>
+         <item>"sold"</item>
+        <item> "given"</item>
+         <item>"loaned"</item>
+         <item>"purchased"</item>
+         <item>"acquired"</item>
+        <item>"donated"</item>
+     </list>
 
 <!-- ATTENTION: DO NOT REFORMAT THE FOLLOWING EXAMPLES: WHITESPACE MATTERS! -->
 <p>Here is an example adapted from the <ref target="http://insaph.kcl.ac.uk/iaph2007/index.html">Inscriptions
@@ -221,6 +232,26 @@ End license statement: do not remove -->
  </provenance>
 </history>
 </egXML>
+     
+     <p>Here is an <ref target="https://usepigraphy.brown.edu/projects/usep/inscription/MA.Camb.HU.Sack.L.1977.216.1903/">example</ref> from the US Epigraphy Project showing a series of transfers of ownership and marking transaction details such as names and roles of responsible parties.</p>
+     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+       <history>  
+         <origin>
+             <date evidence="#formulae #palaeography" notBefore="0075" notAfter="0125">late
+                 first-early second century CE</date>
+             <placeName ref="europe.italy.rome">Italy, Rome, Porta Salaria</placeName>
+         </origin>
+         <provenance type="found" subtype="discovered">
+             <p>Reportedly found in <date when="1886">1886</date> in a graveyard outside the Porta Salaria between the Via Salaria and the Via Pinciana</p>
+         </provenance>
+         <provenance type="transferred" subtype="purchased">
+             <p>purchased in <placeName>Rome</placeName> by <persName role="purchaser"><name key="Clifford Moore">Clifford Moore</name></persName> for the <orgName>Harvard Department of Classics</orgName>, <date notBefore="1905" notAfter="1906">1905-1906</date></p>
+         </provenance>
+         <provenance type="transferred" subtype="moved">
+             <p>internally transferred from the <orgName>Harvard Department of Classics</orgName> to the <orgName>Sackler Museum</orgName>, <date when="1977">1977</date></p>
+         </provenance>
+       </history>
+     </egXML>
 
  </div>
     
@@ -230,12 +261,14 @@ End license statement: do not remove -->
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>Tom Elliott</resp><name>author</name></respStmt></bibl>
-            <bibl><respStmt><resp>Gabriel Bodard</resp><name>author</name></respStmt></bibl>
-            <bibl><respStmt><resp>Charlotte Roueché</resp><name>author</name></respStmt></bibl>
-            <bibl><respStmt><resp>Arlo Griffiths</resp><name>author</name></respStmt></bibl>
+            <bibl><respStmt><name>Tom Elliott</name><resp>author</resp></respStmt></bibl>
+            <bibl><respStmt><name>Gabriel Bodard</name><resp>author</resp></respStmt></bibl>
+            <bibl><respStmt><name>Charlotte Roueché</name><resp>author</resp></respStmt></bibl>
+            <bibl><respStmt><name>Arlo Griffiths</name><resp>author</resp></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>James Cowey</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
