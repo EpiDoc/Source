@@ -27,7 +27,6 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-histmodern" xml:lang="en">
     <head>Modern or last known locations</head>
-    <!-- can have div's or p's  here. Divs are for subsections. -->
 
     <p>All matters related to the provenance of a document are encoded in the Manuscript Description (<gi>msDesc</gi>)
         portion of the TEI header. In particular, they are placed within the <gi>history</gi> subsection (see further
@@ -38,9 +37,8 @@ End license statement: do not remove -->
   <p>
    <specList>
     <specDesc key="history"/>
-    <specDesc key="msDesc"/>
+    <specDesc key="origin"/>
     <specDesc key="provenance"/>
-    <specDesc key="teiHeader"/>
    </specList>
   </p>
  </div>
@@ -87,7 +85,7 @@ End license statement: do not remove -->
 <!-- ATTENTION: DO NOT REFORMAT THE FOLLOWING EXAMPLES: WHITESPACE MATTERS! -->
 <p>Here is an example adapted from the <ref target="http://insaph.kcl.ac.uk/iaph2007/index.html">Inscriptions
  of Aphrodisias</ref>:</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples"><history>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><history>
  
  <origin>
   <origDate 
@@ -163,7 +161,7 @@ End license statement: do not remove -->
 </egXML>
 
 <p>Here is another example, adapted from the <ref  target="http://isaw.nyu.edu/publications/inscriptions/campa/">Corpus of the Inscriptions of Campā</ref>:</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples"><history>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><history>
 
  <origin>
   <origPlace type="location">
