@@ -13,7 +13,11 @@
 $(window).load(function() {
   $("body")
     .append('<xsl:copy-of select="$form"/>');
-  $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
+  if (document.querySelector("div.main-content")) {
+    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
+  } else {
+    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
+  }
   var go =  $("#searchBtn");
   go.click(function(evt){
       var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
