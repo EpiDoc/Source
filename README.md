@@ -4,14 +4,14 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 
 **[Latest Release of all EpiDoc code: 9.3](https://sourceforge.net/p/epidoc/wiki/LatestRelease/)** (November 2021)
 
-#####Core EpiDoc Components#####
+### Core EpiDoc Components
 
 * [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/latest/): recommendations for markup of transcription, descriptive features, etc. ([About](Guidelines))
 * [EpiDoc Schema](Schema): the TEI-derived schema against which EpiDoc XML should be validated
 <li id="xslt">[EpiDoc Reference Stylesheets](Stylesheets): for transforming EpiDoc XML to HTML, text or ODF</li>
 * [EFES](https://github.com/EpiDoc/EFES): a low-barrier EpiDoc publication platform
 
-#####Learn more#####
+### Learn more
 
 * [About EpiDoc](About)
 * [Learn EpiDoc](Training): events, tutorials and summer schools
@@ -26,7 +26,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 * [EpiDoc IRC Chatroom](EpiDoc IRC Chatroom): for realtime EpiDoc support and chat
 * [EpiDoc on Facebook](https://www.facebook.com/EpiDoc)
 
-#####Miscellanea#####
+### Miscellanea
 
 * [Technical Documents and Policies](TechDocs)
 * [Boilerplate descriptions of EpiDoc](Boilerplate)
