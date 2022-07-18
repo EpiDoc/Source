@@ -1,0 +1,162 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (7)-->
+      <title>TEI data teidata.language </title>
+      <meta name="author" content=""/>
+      <meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets"/>
+      <meta name="DC.Title" content="TEI data teidata.language"/>
+      <meta name="DC.Type" content="Text"/>
+      <meta name="DC.Format" content="text/html"/>
+      <link href="css/epidoc.css" rel="stylesheet" type="text/css"/>
+      <link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" media="print" type="text/css" href="https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css"/><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43203560-1', 'stoa.org');
+  ga('send', 'pageview');
+  </script><script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script><script type="text/javascript">
+$(window).load(function() {
+  $("body")
+    .append('<div id="search"><form><input type="text" name="search" id="searchBox"/> <button value="search" name="go" id="searchBtn">search</button></form></div>');
+  if (document.querySelector("div.main-content")) {
+    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
+  } else {
+    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
+  }
+  var go =  $("#searchBtn");
+  go.click(function(evt){
+      var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
+        window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
+    });
+});
+    </script></head>
+   <body id="TOP">
+      <div class="main-content">
+         <div>
+            <h3 class="oddSpec" id="teidata.language">teidata.language</h3>
+            <table class="wovenodd">
+               <tr>
+                  <td colspan="2"><span class="label">teidata.language</span> defines the range of attribute values used to identify a particular combination of
+                     human language and writing system. [6.1. Language Identification]</td>
+               </tr>
+               <tr>
+                  <td class="wovenodd-col1"><span class="label" xml:lang="en">Module</span></td>
+                  <td class="wovenodd-col2">tei</td>
+               </tr>
+               <tr>
+                  <td class="wovenodd-col1"><span class="label" xml:lang="en">Used by</span></td>
+                  <td class="wovenodd-col2">
+                     <div class="parent"><span xml:lang="en">Element: </span><ul>
+                           <li><a class="link_odd_elementSpec" title="(language) characterizes a single language or sublanguage used within a text." href="ref-language.html">language</a>/@ident</li>
+                           <li><a class="link_odd_elementSpec" title="(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description." href="ref-textLang.html">textLang</a>/@mainLang</li>
+                           <li><a class="link_odd_elementSpec" title="(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description." href="ref-textLang.html">textLang</a>/@otherLangs</li>
+                        </ul>
+                     </div>
+                  </td>
+               </tr>
+               
+               
+               
+               
+               
+               
+               
+               
+               <tr>
+                  <td class="wovenodd-col1"><span class="label" xml:lang="en">Content model</span></td>
+                  <td class="wovenodd-col2">
+                     <pre class="eg"><span class="element">&lt;content&gt;</span><br/> <span class="element">&lt;alternate&gt;</span><br/>  <span class="element">&lt;dataRef <span class="attribute">name</span>="<span class="attributevalue">language</span>"/&gt;</span><br/>  <span class="element">&lt;valList&gt;</span><br/>   <span class="element">&lt;valItem <span class="attribute">ident</span>="<span class="attributevalue"></span>"/&gt;</span><br/>  <span class="element">&lt;/valList&gt;</span><br/> <span class="element">&lt;/alternate&gt;</span><br/><span class="element">&lt;/content&gt;</span></pre>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="wovenodd-col1"><span class="label" xml:lang="en">Declaration</span></td>
+                  <td class="wovenodd-col2">
+                     <pre class="eg">
+tei_teidata.language = xsd:language | ( "" )</pre>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td class="wovenodd-col1"><span class="label" xml:lang="en">Note</span></td>
+                  <td class="wovenodd-col2"><!-- -->
+                     <p>The values for this attribute are language ‘tags’ as defined in <a class="link_ref" href="https://tools.ietf.org/html/bcp47">BCP 47</a>. Currently BCP 47 comprises RFC 5646 and RFC 4647; over time, other IETF documents
+                        may succeed these as the best current practice.</p>
+                     <p>A ‘language tag’, per BCP 47, is assembled from a sequence of components or <span class="term">subtags</span> separated by the hyphen character (<span class="mentioned">-</span>, U+002D). The tag is made of the following subtags, in the following order. Every
+                        subtag except the first is optional. If present, each occurs only once, except the
+                        fourth and fifth components (variant and extension), which are repeatable. </p>
+                     <dl>
+                        <dt><span>language</span></dt>
+                        <dd>The IANA-registered code for the language. This is almost always the same as the ISO
+                           639 2-letter language code if there is one. The list of available registered language
+                           subtags can be found at <a class="link_ptr" href="http://www.iana.org/assignments/language-subtag-registry"><span>http://www.iana.org/assignments/language-subtag-registry</span></a>. It is recommended that this code be written in lower case.</dd>
+                        <dt><span>script</span></dt>
+                        <dd>The ISO 15924 code for the script. These codes consist of 4 letters, and it is recommended
+                           they be written with an initial capital, the other three letters in lower case. The
+                           canonical list of codes is maintained by the Unicode Consortium, and is available
+                           at <a class="link_ptr" href="http://unicode.org/iso15924/iso15924-codes.html"><span>http://unicode.org/iso15924/iso15924-codes.html</span></a>. The IETF recommends this code be omitted unless it is necessary to make a distinction
+                           you need.</dd>
+                        <dt><span>region</span></dt>
+                        <dd>Either an ISO 3166 country code or a UN M.49 region code that is registered with IANA
+                           (not all such codes are registered, e.g. UN codes for economic groupings or codes
+                           for countries for which there is already an ISO 3166 2-letter code are not registered).
+                           The former consist of 2 letters, and it is recommended they be written in upper case;
+                           the list of codes can be searched or browsed at <a class="link_ptr" href="https://www.iso.org/obp/ui/#search/code/"><span>https://www.iso.org/obp/ui/#search/code/</span></a>. The latter consist of 3 digits; the list of codes can be found at <a class="link_ptr" href="http://unstats.un.org/unsd/methods/m49/m49.htm"><span>http://unstats.un.org/unsd/methods/m49/m49.htm</span></a>.</dd>
+                        <dt><span>variant</span></dt>
+                        <dd>An IANA-registered variation. These codes <span class="quoted">are used to indicate additional, well-recognized variations that define a language
+                              or its dialects that are not covered by other available subtags</span>.</dd>
+                        <dt><span>extension</span></dt>
+                        <dd>An extension has the format of a single letter followed by a hyphen followed by additional
+                           subtags. These exist to allow for future extension to BCP 47, but as of this writing
+                           no such extensions are in use.</dd>
+                        <dt><span>private use</span></dt>
+                        <dd>An extension that uses the initial subtag of the single letter <span class="mentioned">x</span> (i.e., starts with <code>x-</code>) has no meaning except as negotiated among the parties involved. These should be
+                           used with great care, since they interfere with the interoperability that use of RFC
+                           4646 is intended to promote. In order for a document that makes use of these subtags
+                           to be TEI-conformant, a corresponding <a class="gi" title="(language) characterizes a single language or sublanguage used within a text." href="ref-language.html">language</a> element must be present in the TEI header.</dd>
+                     </dl>
+                     <p>There are two exceptions to the above format. First, there are language tags in the
+                        <a class="link_ref" href="http://www.iana.org/assignments/language-subtag-registry">IANA registry</a> that do not match the above syntax, but are present because they have been ‘grandfathered’
+                        from previous specifications.</p>
+                     <p>Second, an entire language tag can consist of only a private use subtag. These tags
+                        start with <code>x-</code>, and do not need to follow any further rules established by the IETF and endorsed
+                        by these Guidelines. Like all language tags that make use of private use subtags,
+                        the language in question must be documented in a corresponding <a class="gi" title="(language) characterizes a single language or sublanguage used within a text." href="ref-language.html">language</a> element in the TEI header.</p>
+                     <p>Examples include </p>
+                     <dl>
+                        <dt><span><span class="val">sn</span></span></dt>
+                        <dd>Shona</dd>
+                        <dt><span><span class="val">zh-TW</span></span></dt>
+                        <dd>Taiwanese</dd>
+                        <dt><span><span class="val">zh-Hant-HK</span></span></dt>
+                        <dd>Chinese written in traditional script as used in Hong Kong</dd>
+                        <dt><span><span class="val">en-SL</span></span></dt>
+                        <dd>English as spoken in Sierra Leone</dd>
+                        <dt><span><span class="val">pl</span></span></dt>
+                        <dd>Polish</dd>
+                        <dt><span><span class="val">es-MX</span></span></dt>
+                        <dd>Spanish as spoken in Mexico</dd>
+                        <dt><span><span class="val">es-419</span></span></dt>
+                        <dd>Spanish as spoken in Latin America</dd>
+                     </dl>
+                     <p>The W3C Internationalization Activity has published a useful introduction to BCP 47,
+                        <a class="link_ref" href="https://www.w3.org/International/articles/language-tags/Overview.en.php">Language tags in HTML and XML</a>.</p>
+                  </td>
+               </tr>
+               
+               
+               
+               </table>
+         </div>
+      </div>
+      <div xmlns="" class="stdfooter">
+         <address>
+            <p class="version">EpiDoc version: 9.4</p>
+            <p class="creationdate">Date: 2022-07-18</p>
+         </address>
+      </div>
+   </body>
+</html>
