@@ -26,16 +26,16 @@ jobs:
       - name: "Build Guidelines"
         run: |
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.html leiden-style="ddbdp"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.html leiden-style="dohnicht"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/edh-web/examples.html leiden-style="edh-web"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/iospe/examples.html leiden-style="iospe"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/london/examples.html leiden-style="london"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/panciera/examples.html
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/petrae/examples.html leiden-style="petrae"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/rib/examples.html leiden-style="rib"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/seg/examples.html leiden-style="seg"
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.html verse-lines="on"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/edh-web/examples.xml leiden-style="edh-web"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/iospe/examples.xml leiden-style="iospe"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/london/examples.xml leiden-style="london"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/panciera/examples.xml
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/petrae/examples.xml leiden-style="petrae"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/rib/examples.xml leiden-style="rib"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/seg/examples.xml leiden-style="seg"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
           rsync -av --mkpath guidelines/output/ gh-pages/gl/dev/
       - name: "Push to gh-pages branch"
