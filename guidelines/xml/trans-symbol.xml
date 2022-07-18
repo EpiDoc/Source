@@ -68,7 +68,7 @@
         <g ref="/path/to/your/chardecl.xml#crux"/>
     </egXML>
     <p>If you use prefixes, defined in <gi>prefixDef</gi>, you may use a shorthand. Assuming you have defined this prefix to be glyph, you may use</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" >
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <prefixDef ident="glyph" matchPattern="([a-zA-Z0-9]+)" replacementPattern="/path/to/your/chardecl.xml#$1"/>
         ...
         <g ref="glyph:crux"/>
