@@ -1,0 +1,57 @@
+name: Build EpiDoc Development Guidelines
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: teic/teidev-docker:latest
+
+    steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v2
+        with: 
+          submodules: recursive
+          fetch-depth: 0
+      - name: "Checkout gh-pages branch"
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: "Build Guidelines"
+        run: |
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/edh-web/examples.xml leiden-style="edh-web"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/iospe/examples.xml leiden-style="iospe"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/london/examples.xml leiden-style="london"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/panciera/examples.xml
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/petrae/examples.xml leiden-style="petrae"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/rib/examples.xml leiden-style="rib"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/seg/examples.xml leiden-style="seg"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
+          rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
+          guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
+          guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
+          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
+          mkdir -p gh-pages/schema/latest
+          cp schema/tei-epidoc.* gh-pages/schema/latest/
+      - name: "Push to gh-pages branch"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: gh-pages
+          branch: gh-pages
+          commit_message: "Published ${{ env.RELEASE_VERSION }} release ."
+
+
+
+
+
+
