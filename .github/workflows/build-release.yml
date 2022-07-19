@@ -40,7 +40,6 @@ jobs:
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           mkdir -p gh-pages/schema/latest
           cp schema/tei-epidoc.* gh-pages/schema/latest/
       - name: "Push to gh-pages branch"
