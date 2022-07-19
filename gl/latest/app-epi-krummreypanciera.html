@@ -1,0 +1,206 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)-->
+      <title>Appendix: Aligning EpiDoc with Krummrey-Panciera 1980</title>
+      <meta name="author" content=""/>
+      <meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets"/>
+      <meta name="DC.Title" content="Appendix: Aligning EpiDoc with Krummrey-Panciera 1980"/>
+      <meta name="DC.Type" content="Text"/>
+      <meta name="DC.Format" content="text/html"/>
+      <link href="css/epidoc.css" rel="stylesheet" type="text/css"/>
+      <link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" media="print" type="text/css" href="https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css"/><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43203560-1', 'stoa.org');
+  ga('send', 'pageview');
+  </script><script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script><script type="text/javascript">
+$(window).load(function() {
+  $("body")
+    .append('<div id="search"><form><input type="text" name="search" id="searchBox"/> <button value="search" name="go" id="searchBtn">search</button></form></div>');
+  if (document.querySelector("div.main-content")) {
+    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
+  } else {
+    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
+  }
+  var go =  $("#searchBtn");
+  go.click(function(evt){
+      var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
+        window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
+    });
+});
+    </script></head>
+   <body id="TOP">
+      <div class="teidiv">
+         <h1 class="maintitle"><a href="index.html">Appendix: Aligning EpiDoc with Krummrey-Panciera 1980</a></h1>
+         <h1 class="subtitle"><a href="index.html">2022-07-19</a></h1>
+         <div xml:lang="en" lang="en" class="teidiv1" id="app-epi-krummreypanciera">
+            <p>The diacritical signs as enumerated in <a xmlns="" class="glossary" href="app-bibliography.html#krummreypanciera" title="Krummrey Panciera 1980: Hans Krummrey and Silvio Panciera, Criteri di edizione e segni diacritici in Tituli 2 (1980), 205-215">Krummrey Panciera 1980</a>, with links to EpiDoc guidance for encoding each semantic distinction expressed thereby
+               in <a xmlns="" class="glossary" href="app-glossary.html#TEI" title="TEI: Text Encoding Initiative. Guidelines and tools for the encoding of literary and historical texts in XML. It is the format on which EpiDoc is based. The latest TEI Guidelines can be found online at http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index-toc.html.">TEI</a> XML.</p>
+            <div class="teidiv1" id="index-body.1_div.24_div.1">
+               <h2><span class="head">I. Praemonenda</span></h2>
+               <dl>
+                  <dt><span>1. (print diplomatic transcription if no photograph available)</span></dt>
+                  <dd>Not applicable. A single EpIDoc-encoded edition can be used to generate both interpretive
+                     and diplomatic views via different stylesheet transformations. (No reference to diplomatic
+                     transcription in Gudielines?)</dd>
+                  <dt><span>2. (close square brackets at beginning and end of lines, unless in linear presentation)</span></dt>
+                  <dd>Same recommendation applies to <a class="gi" title="(supplied) signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe." href="ref-supplied.html">supplied</a> elements in EpiDoc. (Not in Guidelines?)</dd>
+                  <dt><span>3. (don't use italics or underline for notes in text)</span></dt>
+                  <dd>Not applicable.</dd>
+                  <dt><span>4. (don't add spacing between or around diacritical signs when within a word)</span></dt>
+                  <dd>Same recommendation applies to EpiDoc. (Not in Guidelines?)</dd>
+                  <dt><span>5. (not all combinations of diacritical notes have been given; just nest them)</span></dt>
+                  <dd>Same applies to EpiDoc, but no specific guidance required.</dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.2">
+               <h2><span class="head">II. Versuum paginarumque diuisio</span></h2>
+               <dl>
+                  <dt><span>1. abc /<sup>5</sup> abc</span></dt>
+                  <dd><a class="link_ref" href="trans-linebreak.html">Lines and line breaks</a></dd>
+                  <dt><span>2. abc // abc</span></dt>
+                  <dd><a class="link_ref" href="trans-textpart.html">Columns, fragments, sections, pages and other breaks</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.3">
+               <h2><span class="head">III. Literae Communes</span></h2>
+               <dl>
+                  <dt><span>1. abc</span></dt>
+                  <dd><a class="link_ref" href="trans-cleartext.html">Clear text</a></dd>
+                  <dt><span>2. ABC</span></dt>
+                  <dd><a class="link_ref" href="trans-uninterpreted.html">Uninterpreted characters</a></dd>
+                  <dt><span>3. ạḅc̣</span></dt>
+                  <dd><a class="link_ref" href="trans-ambiguous.html">Ambiguous characters</a></dd>
+                  <dt><span>4. +++</span></dt>
+                  <dd><a class="link_ref" href="trans-illegiblecharknown.html">Illegible characters, quantity known</a></dd>
+                  <dt><span>5. <span style="text-decoration:underline">abc</span></span></dt>
+                  <dd><a class="link_ref" href="trans-previouseditor.html">Text visible to previous editor</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.4">
+               <h2><span class="head">IV. Litterarum formae notabiliores</span></h2>
+               <dl>
+                  <dt><span>1. á, é, í, ó, ú</span></dt>
+                  <dd><a class="link_ref" href="trans-apices.html">Apices</a></dd>
+                  <dt><span>2. <span class="supraline">abc</span>, <span class="trans-supralinearetc.html">V</span></span></dt>
+                  <dd><a class="link_ref" href="trans-supraline">Supralinear line, etc.</a></dd>
+                  <dt><span>3, ((y)), ((bs)), ((ps)), ((v))</span></dt>
+                  <dd><a class="link_ref" href="trans-claudian.html">Claudian letters</a></dd>
+                  <dt><span>4. a͡b, a͡bc</span></dt>
+                  <dd><a class="link_ref" href="trans-ligature.html">Ligatures</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.5">
+               <h2><span class="head">V. Litterae erasae</span></h2>
+               <dl>
+                  <dt><span>1. 〚abc〛 aut 〚ABC〛 aut 〚ạḅc̣〛</span></dt>
+                  <dd><a class="link_ref" href="trans-erased.html">Erased but legible text</a></dd>
+                  <dt><span>2. 〚[abc]〛</span></dt>
+                  <dd><a class="link_ref" href="trans-erasedillegible.html">Erased and illegible but restored</a></dd>
+                  <dt><span>3. 〚[...]〛aut 〚[<sup><sup style="text-decoration:underline">c. 5 </sup></sup>]〛 aut 〚[- - -]〛</span></dt>
+                  <dd><a class="link_ref" href="trans-erasedlost.html">Erased and lost</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.6">
+               <h2><span class="head">VI. Literae in litura scriptae</span></h2>
+               <dl>
+                  <dt><span>1. «abc» aut «ABC» aut «ạḅc̣»</span></dt>
+                  <dd><a class="link_ref" href="trans-struckovererasure.html">Text struck over erasure</a> and <a class="link_ref" href="trans-erased.html">Erased but legible text</a></dd>
+                  <dt><span>2. «[abc]»</span></dt>
+                  <dd><a class="link_ref" href="trans-struckovererasure.html">Text struck over erasure</a> and <a class="link_ref" href="trans-erasedillegible.html">Erased and illegible but restored</a></dd>
+                  <dt><span>3. «[...]»aut «[<sup><sup style="text-decoration:underline">c. 5 </sup></sup>]» aut «[- - -]»</span></dt>
+                  <dd><a class="link_ref" href="trans-struckovererasure.html">Text struck over erasure</a> and <a class="link_ref" href="trans-erasedlost.html">Erased and lost</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.7">
+               <h2><span class="head">VII. Additamenta antiqua</span></h2>
+               <dl>
+                  <dt><span>1. `abc´</span></dt>
+                  <dd><a class="link_ref" href="trans-addition.html">Text added by ancient hand</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.8">
+               <h2><span class="head">VIII. Litterae deperditae</span></h2>
+               <dl>
+                  <dt><span>1. [abc]</span></dt>
+                  <dd><a class="link_ref" href="trans-restored.html">Restored text</a></dd>
+                  <dt><span>2. [...]</span></dt>
+                  <dd><a class="link_ref" href="trans-lostcharknown.html">Lost characters, quantity known</a></dd>
+                  <dt><span>3. [<sup><sup style="text-decoration:underline">c. 5 </sup></sup>] aut [- - -]</span></dt>
+                  <dd><a class="link_ref" href="trans-lostcharapprox.html">Lost characters, quantity approximate</a> and <a class="link_ref" href="trans-lostcharunknown.html">Lost characters, quantity unknown</a></dd>
+                  <dt><span>4. [ - ]</span></dt>
+                  <dd><a class="link_ref" href="trans-lostcharpraenomen.html">Lost characters, quantity extrapolated (e.g. praenomen or number)</a></dd>
+                  <dt><span>5. [ - - - - - - ]</span></dt>
+                  <dd><a class="link_ref" href="trans-lostlineknown.html">Lost lines, quantity known</a></dd>
+                  <dt><span>6. - - - - - -</span></dt>
+                  <dd><a class="link_ref" href="trans-lostlineunknown.html">Lost lines, quantity unknown</a></dd>
+                  <dt><span>7. [ - - - ?], [ - ?], [- - - - - - ?], - - - - - - ?</span></dt>
+                  <dd><a class="link_ref" href="trans-possiblylost.html">Lines possibly lost / text possibly breaks</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.9">
+               <h2><span class="head">IX. Litterae ab editore expunctae adiectae correctae</span></h2>
+               <dl>
+                  <dt><span>1. {abc}</span></dt>
+                  <dd><a class="link_ref" href="trans-superfluous.html">Superfluous characters</a></dd>
+                  <dt><span>2. &lt;abc&gt;</span></dt>
+                  <dd><a class="link_ref" href="trans-omitted.html">Supplement of omitted characters</a></dd>
+                  <dt><span>3. ⸢abc⸣</span></dt>
+                  <dd><a class="link_ref" href="trans-erroneoussubstitution.html">Erroneous substitution</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.10">
+               <h2><span class="head">X. Verba breviata notae verba subaudita inscriptiones non finitae</span></h2>
+               <dl>
+                  <dt><span>1. a(bc)</span></dt>
+                  <dd><a class="link_ref" href="trans-abbrevfully.html">Abbreviation fully expanded</a></dd>
+                  <dt><span>2. a(- - -)</span></dt>
+                  <dd><a class="link_ref" href="trans-abbrevnotex.html">Abbreviation not expanded at all</a></dd>
+                  <dt><span>3. (abc)</span></dt>
+                  <dd><a class="link_ref" href="trans-abbrevsymbol.html">Expansion of symbol to word</a></dd>
+                  <dt><span>4. (<span style="font-style:italic">scil.</span> abc)</span></dt>
+                  <dd><a class="link_ref" href="trans-subaudible.html">Editor makes subaudible word manifest</a></dd>
+                  <dt><span>5. (- - -)</span></dt>
+                  <dd><a class="link_ref" href="trans-textnotcompleted.html">Text not completed (omission not restored)</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="index-body.1_div.24_div.11">
+               <h2><span class="head">XI. Aliae notae editoris</span></h2>
+               <dl>
+                  <dt><span>1. (!)</span></dt>
+                  <dd><a class="link_ref" href="trans-editorsnote.html">Editor's note</a></dd>
+                  <dt><span>2. <sup>vac.3</sup> aut <sup>vac.c.3</sup> aut <sup>vac.</sup></span></dt>
+                  <dd><a class="link_ref" href="trans-vacatchar.html">vacat measured in characters (horizontal space)</a></dd>
+                  <dt><span>3. <sup>vac.?</sup></span></dt>
+                  <dd><a class="link_ref" href="trans-possiblevacat.html">Possible vacat</a></dd>
+                  <dt><span>4. ... , [...]</span></dt>
+                  <dd><a class="link_ref" href="trans-ellipsis.html">Words omitted by editor</a></dd>
+               </dl>
+            </div>
+            <div class="teidiv1" id="app-epi-krummreypanciera-responsibility">
+               <h2><span class="head">Responsibility for this section</span></h2>
+               <ol class="listBibl">
+                  <li id="index-bibl-d43e5626">
+                     <div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div>
+                  </li>
+                  <li id="index-bibl-d43e5630">
+                     <div class="biblfree"><span class="name">Hugh Cayless</span>, help deciphering Hans Krummrey's Latin  </div>
+                  </li>
+               </ol>
+            </div>
+         </div>
+         <nav class="left"></nav>
+         <div xmlns="" class="stdfooter">
+            <address>
+               <p class="version">EpiDoc version: 9.4</p>
+               <p class="creationdate">Date: 2022-07-19</p>
+            </address>
+         </div>
+      </div>
+   </body>
+</html>
