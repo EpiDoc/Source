@@ -1,4 +1,4 @@
-name: Build EpiDoc Development Guidelines
+name: Build EpiDoc Development Schema
 
 on:
   push:
@@ -27,7 +27,6 @@ jobs:
         run: |
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
-          saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           mkdir -p gh-pages/schema/dev
           cp schema/tei-epidoc.* gh-pages/schema/dev/
       - name: "Push to gh-pages branch"
