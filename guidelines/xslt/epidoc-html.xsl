@@ -16,7 +16,7 @@
     <xsl:import href="tpl-analytic.xsl"/>
     <xsl:import href="tpl-search.xsl"/>
     
-    <xsl:output encoding="utf-8" method="xml" doctype-public="-//W3C//DTD XHTML 1.1//EN"/>
+    <xsl:output encoding="utf-8" method="xhtml" indent="no"/>
     <xsl:param name="STDOUT">false</xsl:param>
     <xsl:param name="splitLevel">0</xsl:param>
     <xsl:param name="autoToc">false</xsl:param>
