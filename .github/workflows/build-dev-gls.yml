@@ -39,6 +39,7 @@ jobs:
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
           rsync -av --mkpath guidelines/output/ gh-pages/gl/dev/
+          cp guidelines/schema/epidoc-odd.css gh-pages/gl/dev/css/
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
