@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Inventory numbers and repository</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Inventory numbers and repository</a></h1><div lang="en" class="teidiv" id="supp-histinvno"><p>Recording in an edition the past and present inventory and catalog numbers associated with a text-bearing object can provide users of the edition essential information for locating the object for autopsy and for correlating references in publications and archival materials. Accordingly, TEI/EpiDoc requires some kind of manuscript identifier (<span class="gi">&lt;msIdentifier&gt;</span>) to be encoded as part of the manuscript description in any edition, as described in the <a class="link_ref" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msid">TEI Guidelines section on the manuscript identifier</a> and illustrated in the examples below.</p><p>Whenever possible, the <span class="gi">&lt;msIdentifier&gt;</span> will include information about the name and location of the instition or repository holding the object (using the <span class="gi">&lt;settlement&gt;</span> and <span class="gi">&lt;repository&gt;</span> elements), along with its inventory number (<span class="gi">&lt;idno&gt;</span>) and/or conventional name (<span class="gi">&lt;msName&gt;</span>). When the text-bearing object is not held in an institutional, civic, or site collection, as is often the case with inscriptions, it may only be possible to provide very minimal information. When a research institution has compiled and maintained a regional or thematic inventory for materials that are spread across a range of institutions or sites, this number may be preferred and the individual institutional, expedition, or site inventory numbers recorded also with the <span class="gi">&lt;altIdentifier&gt;</span> element. Note that, in the absence of an institutional inventory number (or to augment the institutional information provided) an <span class="gi">&lt;altIdentifer&gt;</span> may be added with <span class="tag">&lt;idno type="URI"&gt;</span> pointing to a Wikipedia article or other stable web resource about the object.</p><p>The following example illustrates the use of the <span class="gi">&lt;settlement&gt;</span>, <span class="gi">&lt;repository&gt;</span> and <span class="gi">&lt;idno&gt;</span> elements in a minimal inventory declaration for an item in a controlled collection:</p><div id="index-egXML-d39e3869" class="pre egXML_valid"><span class="element">&lt;msIdentifier&gt;</span><br /> <span class="element">&lt;settlement&gt;</span>Sevastopol<span class="element">&lt;/settlement&gt;</span><br /> <span class="element">&lt;repository&gt;</span>National Preserve of Tauric Chersonesos (НЗХТ)<span class="element">&lt;/repository&gt;</span><br /> <span class="element">&lt;idno&gt;</span>80/36504<span class="element">&lt;/idno&gt;</span><br /><span class="element">&lt;/msIdentifier&gt;</span></div><p>This next example treats the famous Rosetta Stone, expanding on the approach used above by providing the conventional name for the inscription, as well as a prior inventory number once used by the museum:</p><div id="index-egXML-d39e3879" class="pre egXML_valid"><span class="element">&lt;msIdentifier&gt;</span><br /> <span class="element">&lt;settlement&gt;</span>London<span class="element">&lt;/settlement&gt;</span><br /> <span class="element">&lt;repository&gt;</span>The British Museum<span class="element">&lt;/repository&gt;</span><br /> <span class="element">&lt;idno&gt;</span>E24<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;msName&gt;</span>The Rosetta Stone<span class="element">&lt;/msName&gt;</span><br /> <span class="element">&lt;altIdentifier&gt;</span><br />  <span class="element">&lt;idno&gt;</span>BS.24<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;/altIdentifier&gt;</span><br /><span class="element">&lt;/msIdentifier&gt;</span></div><p>The following example treats a free-standing monument (Trajan's Column) and illustrates the optional use of a Wikipedia URI to augment the information provided in the main portion of the <span class="gi">&lt;msIdentifer&gt;</span> element:</p><div id="index-egXML-d39e3897" class="pre egXML_valid"><span class="element">&lt;msIdentifier&gt;</span><br /> <span class="element">&lt;settlement&gt;</span>Rome<span class="element">&lt;/settlement&gt;</span><br /> <span class="element">&lt;msName&gt;</span>The Column of Trajan<span class="element">&lt;/msName&gt;</span><br /> <span class="element">&lt;altIdentifier&gt;</span><br />  <span class="element">&lt;idno <span class="attribute">type</span>="<span class="attributevalue">URI</span>"&gt;</span>http://en.wikipedia.org/wiki/Trajan's_Column<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;/altIdentifier&gt;</span><br /><span class="element">&lt;/msIdentifier&gt;</span></div><p>The following example, drawn from the <a class="link_ref" href="http://isaw.nyu.edu/publications/inscriptions/campa/">Corpus of the Inscriptions of Campā</a>, illustrates several advanced, optional features in the encoding of object identifiers. These include:</p><ul><li>the use for primary inventory number and "collection" of a regional/thematic inventory compiled by an institution (in this case the inventory of Campā inscriptions maintained by the École française d'Extrême-Orient or EFEO)</li><li>the assignment of <span class="att">xml:id</span> attribute values to some of the inventory numbers so that they can be connected (using e.g., <span class="gi">&lt;ref&gt;</span>) to bibliographic listings and commentary elsewhere in the edition as needed, and to support index generation</li><li>use of <span class="att">type</span> values on <span class="gi">&lt;altIdentifier&gt;</span> to organize and distinguish them</li></ul><div id="index-egXML-d39e3931" class="pre egXML_valid"><span class="element">&lt;msIdentifier&gt;</span><br /> <span class="element">&lt;institution&gt;</span>EFEO<span class="element">&lt;/institution&gt;</span><br /> <span class="element">&lt;idno <span class="attribute">xml:id</span>="<span class="attributevalue">inv-general</span>"&gt;</span>C. 152<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;altIdentifier <span class="attribute">type</span>="<span class="attributevalue">cancelled</span>"&gt;</span><br />  <span class="element">&lt;institution&gt;</span>EFEO<span class="element">&lt;/institution&gt;</span><br />  <span class="element">&lt;idno&gt;</span>C. 166<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;/altIdentifier&gt;</span><br /> <span class="element">&lt;altIdentifier <span class="attribute">type</span>="<span class="attributevalue">museum-inventory</span>"&gt;</span><br />  <span class="element">&lt;settlement&gt;</span>Đà Nẵng<span class="element">&lt;/settlement&gt;</span><br />  <span class="element">&lt;repository&gt;</span>BTC<span class="element">&lt;/repository&gt;</span><br />  <span class="element">&lt;idno <span class="attribute">xml:id</span>="<span class="attributevalue">inv-btc</span>"&gt;</span>BTC 86<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;/altIdentifier&gt;</span><br /> <span class="element">&lt;altIdentifier <span class="attribute">type</span>="<span class="attributevalue">museum-inventory-former</span>"&gt;</span><br />  <span class="element">&lt;settlement&gt;</span>Đà Nẵng<span class="element">&lt;/settlement&gt;</span><br />  <span class="element">&lt;repository&gt;</span>Musée Parmentier<span class="element">&lt;/repository&gt;</span><br />  <span class="element">&lt;idno <span class="attribute">xml:id</span>="<span class="attributevalue">inv-musee-parmentier</span>"&gt;</span>45,2<span class="element">&lt;/idno&gt;</span><br /> <span class="element">&lt;/altIdentifier&gt;</span><br /><span class="element">&lt;/msIdentifier&gt;</span></div><div class="teidiv1" id="index-body.1_div.29_div.1"><h2><span class="head">Related sections in the TEI Guidelines</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msIdentifier.html">msIdentifier</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msName.html">msName</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html">repository</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html">idno</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-altIdentifier.html">altIdentifier</a></li></ul></div><div class="teidiv1" id="supp-histinvno-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e3972"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d39e3978"><div class="biblfree"><span class="name">Tom Elliott</span>, author  </div></li><li id="index-bibl-d39e3984"><div class="biblfree"><span class="name">Arlo Griffiths</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-histmodern.html">Modern or last known locations</a><span class="nextLink"> Next</span><a class="navigation" href="supp-publication.html">Publication information</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-histinvno.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

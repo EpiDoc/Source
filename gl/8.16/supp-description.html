@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Physical description</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Physical description</a></h1><div lang="en" class="teidiv" id="supp-description"><div class="tag-defs" id="index-body.1_div.17_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation:</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-physDesc.html">physDesc</a></li></ul></div><div class="teidiv1" id="index-body.1_div.17_div.2"><p>Information describing the physical aspects of an inscription is encoded in the <span class="gi">&lt;physDesc&gt;</span> element, which is part of the <span class="gi">&lt;teiHeader&gt;</span>.</p><p>The following subsections of these guidelines address specific aspects of this encoding:</p><ul style="clear:both"><li><a class="link_ref" href="supp-descobject.html">Description and dimensions of monument or object</a></li><li><a class="link_ref" href="supp-desctext.html">Description and layout of text field or campus</a></li><li><a class="link_ref" href="supp-descletters.html">Description of letters or hands</a></li><li><a class="link_ref" href="supp-descdecor.html">Decoration or iconography</a></li><li><a class="link_ref" href="supp-descdimensions.html">Dimensions (of object, campus or letters)</a></li></ul><p>If, rather than breaking down the description of various aspects of the support, the editor prefers a single unstructured prose passage describing the object, the <span class="gi">&lt;physDesc&gt;</span> may contain one or more <span class="gi">&lt;p&gt;</span> (paragraph) elements as an alternative to (but not in addition to) the structured elements described in the sections linked above.</p><div id="index-egXML-d39e2235" class="pre egXML_valid"><span class="element">&lt;physDesc&gt;</span><br /> <span class="element">&lt;objectDesc&gt;</span><br />  <span class="element">&lt;supportDesc&gt;</span><br />   <span class="element">&lt;support&gt;</span><br />    <span class="element">&lt;p&gt;</span><br />     <span class="element">&lt;material&gt;</span>Bronze<span class="element">&lt;/material&gt;</span> Sextarius<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/support&gt;</span><br />  <span class="element">&lt;/supportDesc&gt;</span><br />  <span class="element">&lt;layoutDesc&gt;</span><br />   <span class="element">&lt;layout&gt;</span>inscribed on the outside just below the rim<span class="element">&lt;/layout&gt;</span><br />  <span class="element">&lt;/layoutDesc&gt;</span><br /> <span class="element">&lt;/objectDesc&gt;</span><br /> <span class="element">&lt;handDesc&gt;</span><br />  <span class="element">&lt;handNote&gt;</span>Fourth-century A.D. script; <span class="element">&lt;height&gt;</span>0.02<span class="element">&lt;/height&gt;</span><br />  <span class="element">&lt;/handNote&gt;</span><br /> <span class="element">&lt;/handDesc&gt;</span><br /><span class="element">&lt;/physDesc&gt;</span></div></div><div class="teidiv1" id="intro-faq-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e2256"><div class="biblfree"><span class="name">Tom Elliott</span>, author  </div></li><li id="index-bibl-d39e2264"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d39e2270"><div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-structure.html">Structure of an EpiDoc edition</a><span class="nextLink"> Next</span><a class="navigation" href="supp-descobject.html">Description of object or support</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-description.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

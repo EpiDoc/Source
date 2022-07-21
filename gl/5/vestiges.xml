@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /cvsroot/epidoc/guidelines/src/vestiges.xml,v 1.10 2006/10/30 12:05:36 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude" id="vestiges">
+    <head>Transcription wherein vestiges of characters remain, but they cannot be recognized (extent
+        certain or nearly so)</head>
+    <ab><rs type="conformance">leiden</rs></ab>
+    
+    <p><note>This section of the guidelines requires revision in concert with DTD changes to realize the
+        solution reached in long, painful discussions on the markup and tei lists. What follows now
+        is almost surely deprecated.</note></p>
+    <div id="vestiges-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list type="unordered">
+            <item><bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#panciera"
+                            >Panciera</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >17</biblScope></bibl>; <bibl><title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#dohnicht"
+                            >Dohnicht</xref>
+                    </title>, <abbr expan="page">p.</abbr><biblScope type="pages"
+                >3</biblScope></bibl>: <list type="ordered">
+                    <item id="TypoEx-1">+++</item>
+                    <item id="TypoEx-2">+ 10 +</item>
+                    <item id="TypoEx-3">+ c.10 +</item>
+                    <item id="TypoEx-4">+ 4.2cm +</item>
+                </list></item>
+            <item>
+                <bibl>
+                    <title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#seg" targOrder="Y"
+                            to="DITTO">SEG</xref>
+                    </title>
+                </bibl>
+                <list type="ordered">
+                    <item id="TypoEx-5">[...]</item>
+                </list>
+            </item>
+            <item>
+                <bibl>
+                    <title level="a" type="abbreviated">
+                        <xref href="bibliography.xml#poxy" targOrder="Y"
+                            to="DITTO">POxy</xref>
+                    </title>
+                </bibl>
+                <list type="ordered">
+                    <item id="TypoEx-6">…</item>
+                    <item id="TypoEx-7">..........</item>
+                </list>
+            </item>
+        </list>
+    </div>
+    <div id="vestiges-regex" type="gl-regextest">
+        <head>Regular Expression Test</head>
+        <list>
+            <item id="Regex-1"> blah</item>
+            <item id="Regex-2"> blah</item>
+            <item id="Regex-3"> blah</item>
+            <item id="Regex-4"> blah</item>
+            <item id="Regex-5"> blah</item>
+        </list>
+        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1" />
+    </div>
+    <div id="vestiges-edition" lang="la" type="gl-edition">
+        <head lang="en">EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item id="EncEx-1">
+                <gap reason="illegible" extent="3" unit="character" />
+            </item>
+            <item id="EncEx-2">
+                <gap reason="illegible" extent="10" unit="character" />
+            </item>
+            <item id="EncEx-3">
+                <gap id="gap24" reason="illegible" extent="10" unit="character" />
+                <certainty target="gap24" locus="extent" degree="low" />
+            </item>
+            <item id="EncEx-4">
+                <gap id="gap25" reason="illegible" extent="4.2" unit="cm" />
+            </item>
+            <item id="EncEx-5">
+                <app>
+                    <rdg n="default">
+                        <gap reason="illegible" extent="1" unit="character" />
+                    </rdg>
+                    <rdg>
+                        <unclear cert="high" reason="undefined">E</unclear>
+                    </rdg>
+                    <rdg>
+                        <unclear cert="high" reason="undefined">F</unclear>
+                    </rdg>
+                </app>
+            </item>
+        </list>
+    </div>
+    <div id="vestiges-notes" type="gl-notes">
+        <head>Notes</head>
+        <div id="vestiges-readings">
+            <head>Alternative readings</head>
+            <p>In cases where a letter trace is compatible with a range of characters and the
+                context does not offer an unambiguous choice but the editor wishes to record the
+                possibilities, the alternative interpretations may be offered in a series of
+                    <tag>rdg</tag> elements within an <tag>app</tag>. In addition, a <tag>rdg</tag>
+                with the attribute <att>n</att>='default' should contain the <tag>gap
+                    reason="illegible"</tag> (see e.g. 5 above).</p>
+            <p>It is also envisaged that the possibility will exist to record the general shape of
+                the surviving traces using embedded SVG or similar elements which could then be
+                rendered as a drawing.</p>
+            <p>Where the editor wishes to indicate a preferred reading, see <xref href="unclear.xml"
+                    >unclear</xref>.</p>
+        </div>
+    </div>
+    <div id="vestiges-tei-p4links" type="gl-tei-p4links">
+        <head>TEI P4 links</head>
+        <list type="simple">
+            <item>
+                <xref href="http://www.tei-c.org/P4X/ref-GAP.html"
+                    >
+                    <tag>gap</tag>
+                </xref>
+            </item>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/CE.html#CECECE"
+                    >17.1.2 Structured Indications of Uncertainty</xref>
+            </item>
+            <item>
+                <xref href="http://www.tei-c.org/P4X/PH.html#PHCOMB"
+                    >18.2.4 The Use of the Gap, Del, Damage, Unclear and
+                    Supplied Tags in Combination</xref>
+            </item>
+        </list>
+    </div>
+    <div id="vestiges-responsibility" type="gl-responsibility" org="uniform" part="N"
+        sample="complete">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="vestiges-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="vestiges-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+                cert="high" part="N">$Revision: 1.10 $</seg></p>
+        <p id="vestiges-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+                cert="high" part="N">$Name: r-5 $</seg></p>
+        <p id="vestiges-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high"
+                part="N">$Date: 2006/10/30 12:05:36 $</seg></p>
+        <p id="vestiges-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+                cert="high" part="N">$Author: paregorios $</seg></p>
+    </div>
+</div>

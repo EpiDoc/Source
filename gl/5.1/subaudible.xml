@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/subaudible.xml,v 1.11 2006-10-30 12:05:36 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="subaudible"><head>Editorial supplement in which the editor makes a "subaudible" word manifest</head>
+<div id="subaudible-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="simple">
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>: 
+            <list type="ordered" lang="la">
+               <item id="TypoEx-1">clarissima (scil. femina) Iulia</item>
+            </list></item>
+      </list>
+   </div><div id="subaudible-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="subaudible-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">clarissima 
+            <supplied reason="subaudible" cert="high">femina</supplied> Iulia</item>
+      </list>
+   </div><div id="subaudible-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="simple">
+         <item>The distinction here from a correction may vary from editor to editor</item>
+      </list>
+   </div><div id="subaudible-questions" type="gl-questions">
+      <head>Questions and issues</head>
+      <list type="unordered">
+         <item><name>GB</name> (<date>2006-03-14</date>): in my experience, the use of (scil.) or (sc.) is less common than simple (femina); this is of course down to rendering conventions, but we might want to mention this in the guidelines?</item><item><name>GB</name> (<date>2006-07-16</date>): more to the point, though, this kind of supplement is more common in translations than in the Greek/Latin. Is that relevant?</item>
+      </list>
+   </div><div id="subaudible-tei-p4links">
+      <head>TEI P4 links</head>
+      <list type="simple">
+         <item><xref href="http://www.tei-c.org/P4X/ref-SUPPLIED.html" ><tag>supplied</tag></xref></item>
+         <item><xref href="http://www.tei-c.org/P4X/PH.html#PHDA" >18.2.3 Damage, Illegibility, and Supplied Text</xref></item>
+      </list>
+   </div><div id="subaudible-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="subaudible-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="subaudible-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 860 $</seg></p>
+      <p id="subaudible-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="subaudible-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+      <p id="subaudible-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

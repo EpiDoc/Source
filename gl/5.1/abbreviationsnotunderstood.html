@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Identification of abbreviations not understood by the editor"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="abbreviationsnotunderstood.html"/>
+  <title>Identification of abbreviations not understood by the editor</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Identification of abbreviations not understood by the editor</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="abbreviationsnotunderstood.xml">xml version</a> || id: abbreviationsnotunderstood|| <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-regex">regular expression test</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-notes">notes</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-questions">questions and issues</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="abbreviationsnotunderstood.html#abbreviationsnotunderstood-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on abbreviationsnotunderstood.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/abbreviationsnotunderstood.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="abbreviationsnotunderstood-typographic" class="gl-typographic">  
+    <h3 id="abbreviationsnotunderstood-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1">  <a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a>  </span>, <abbr title="page">p.</abbr>17</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-A"><span xml:lang="la" lang="la">a(- - -) </span></li>  
+      <li id="item-2"><span xml:lang="en" lang="en">Not addressed</span></li>  
+      <li id="item-3"><span xml:lang="en" lang="en">Not addressed</span></li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-A">&lt;abbr&gt;a&lt;/abbr&gt;</li>
+     <li id="EncEx-B">&lt;abbr&gt;pr&lt;/abbr&gt;</li>
+     <li id="EncEx-C">&lt;abbr&gt;p&lt;/abbr&gt; &lt;abbr&gt;r&lt;/abbr&gt;</li>
+    </ol>
+   </div>
+   <div id="abbreviationsnotunderstood-edition" xml:lang="la" lang="la" class="gl-edition">  
+    <h3 id="abbreviationsnotunderstood-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-A"><span class="epigraphic-abbreviation-not-understood" title="a">a(- - -)</span></li>
+     <li id="EncEx-B"><span class="epigraphic-abbreviation-not-understood" title="pr">pr(- - -)</span></li>
+     <li id="EncEx-C"><span class="epigraphic-abbreviation-not-understood" title="p">p(- - -)</span>  <span class="epigraphic-abbreviation-not-understood" title="r">r(- - -)</span></li>  
+    </ol>  
+   </div>
+   <div id="abbreviationsnotunderstood-notes" class="gl-notes">  
+    <h3 id="abbreviationsnotunderstood-notes-head">Notes</h3>  
+    <ul id="list-5">  
+     <li id="item-9">Examples 2. and 3. indicate the difference between a group of letters representing a single abbreviated word, and an abbreviated phrase or formula. If an abbreviation is not understood and its nature as single word or phrase cannot be determined, the procedure for <a class="xref" href="http://www.stoa.org/epidoc/gl/5.1/.html" id="xref-2">uncertainty</a> should be followed.</li>  
+    </ul>  
+    <div id="abbreviationsnotunderstood-questions" class="gl-questions">  
+     <h4 id="abbreviationsnotunderstood-questions-head">Questions and issues</h4>  
+     <ul id="list-6">  
+      <li id="item-10">None</li>  
+     </ul>  
+    </div>
+   </div>
+   <div id="abbreviationsnotunderstood-responsibility" class="gl-responsibility">  
+    <h3 id="abbreviationsnotunderstood-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Tom Elliott</span></li>  
+     <li id="bibl-3"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-4"><span class="respStmt">author: John Bodel</span></li>  
+    </ul>  
+   </div>
+   <div id="abbreviationsnotunderstood-cvs" class="gl-cvs">  
+    <h3 id="abbreviationsnotunderstood-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="abbreviationsnotunderstood-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="abbreviationsnotunderstood-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="abbreviationsnotunderstood-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="abbreviationsnotunderstood-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

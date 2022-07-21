@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-edition.xml,v 1.7 2007-05-30 13:48:23 ctupman Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="div-edition" lang="en">
+   <head>  Edition</head>
+    <ab><rs type="conformance">aiegl</rs></ab>
+   <p>Presenting the epigraphic text itself (tei:div type="edition")</p>
+   <div>
+      <head>General</head>
+      <p>This section describes the division in which the edition of the epigraphic text itself is
+         encoded. The edition of an inscription consists of the transcribed inscription with
+         editorial interventions such as spacing, mixed case, accentuation, and the like, that regularize the text so that it can be read more easily. </p>
+      <p>The detailed guidelines concerning the markup of traditionally transcribed issues are found
+         under the heading of <xref id="taggingtext.xml">Tagging the Inscribed Text</xref>. The essential rule behind the EpiDoc ethos is that at a minimum every distinction that is traditionally made in Leiden-style transcription can also be made unambiguously in XML.</p>
+   </div>
+   <div>
+      <head>Particulars</head>
+      <p>An edition is tagged using the <tag>div @type='edition'</tag> element. There can be
+         multiple editions of the same text; each edition should be enclosed in its own separate
+            <tag>div @type='edition'</tag>.</p>
+      <p>Authority for each edition is recorded in the corresponding <xref href="div-history.xml">source
+            section of history</xref>, and in the corresponding external <xref href="div-apparatus.xml">apparatus criticus</xref>. The edition is linked to its
+         corresponding sections <note>(how?)</note>; if there is but a single edition, the link may be considered
+         to be implicit.</p>
+      <p>The edition division can also be used to record a consolidated edition (similar to an
+         eclectic manuscript edition—e.g. brick-stamps, coins, Diocletian's Prices Edict, <title>Res
+            Gestae</title>, Athenian Standards Decree, etc.). This is likely to require more
+         involved apparatus and references. The individual inscriptions that form the basis of this
+         edition should be documented in the 'source' division.</p>
+   </div>
+    <div id="div-edition-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Elli Mylonas</name>
+                </respStmt></bibl><bibl><respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="div-edition-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="div-edition-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 860 $</seg></p>
+        <p id="div-edition-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="div-edition-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+        <p id="div-edition-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+    </div>
+</div>

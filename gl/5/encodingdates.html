@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Dates"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="encodingdates.html"/>
+  <title>Dates</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Dates</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="encodingdates.xml">xml version</a> || id: encodingdates|| <a class="htmlnavigation" href="encodingdates.html#encodingdates-regex-1">regular expression test</a> | <a class="htmlnavigation" href="encodingdates.html#encodingdates-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="encodingdates.html#encodingdates-tei-p4links">tei p4 links</a> | <a class="htmlnavigation" href="encodingdates.html#encodingdates-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="encodingdates.html#encodingdates-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on encodingdates.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/encodingdates.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for aiegl <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">divcount mismatch</p>
+   <p id="p-2">Dates may be identified in the ancient text (consular years, olympiads, etc.), or in editorial discussion. The date element contains a date in any format. There are basically three contexts in which an expression might be tagged as a date in an EpiDoc file:</p>
+   <ul id="list-1">  
+    <li id="item-1">a regular date expression in a bibliographical citation or editorial discussion;</li>  
+    <li id="item-2">any kind of date expression in the original text of an inscription;</li>  
+    <li id="item-3">the editor's dating of an inscription or monument, either by a specific date or a span of years or centuries.</li>  
+   </ul>
+   <p id="p-3">(Note: A year or regular date in the Gregorian calendar may simply be tagged as a <span class="tag">&lt;date&gt;</span> with no further information required from attribute values. If the date or span of dates is expressed in prose, in ancient terms, or in a different calendar, further information may be given using the following attributes.)</p>
+   <p id="p-4">There are two groups of attributes which add information to the date element. The attributes 'value' and 'precision' express a single date, exactly or approximately, whereas 'notBefore', 'notAfter', and 'exact' define a span of possible dates within which the date in question may be located.</p>
+   <ul id="list-2">  
+    <li id="item-4"><span class="att">value</span>: in an ancient date expression this attribute may indicate the regularised date in the Julian calendar; if the date is already numerical and unproblematic, it may be ommitted;</li>  
+    <li id="item-5"><span class="att">precision</span>: the level of accuracy to be assigned to "value", e.g. "approx" or "exact";</li>  
+   </ul>
+   <p class="abstract" id="ab-2">versus:</p>
+   <ul id="list-3">  
+    <li id="item-6"><span class="att">notBefore</span>: beginning of a span of possible dates;</li>  
+    <li id="item-7"><span class="att">notAfter</span>: end of span of possible dates;</li>  
+    <li id="item-8"><span class="att">exact</span>: refers to the previous two attributes; values include 'notBefore', 'notAfter', 'both' and 'none'.</li>  
+   </ul>
+   <p id="p-5">Date expressions should be given in the form recommended by ISO 8601:2000, i.e. 'yyyy-mm-dd'. This means that years below 1000 (either BCE or CE) need leading zeroes to make them up to four digits. (See examples below.) When a date is not known to the very day the shortened forms 'yyyy-mm' and 'yyyy' may be used. Dates BCE should be indicated by the placement of a minus sign (hyphen) before the date expression. (Unlike ISO 8601:2000 we do not assume the existance of a year zero in the Gregorian calendar, so 44 BCE is "-0044" not "-0043".)</p>
+   <p id="p-6">There is also an additional attribute <span class="att">calendar</span>, which may be used to express the non-regular dating system in the case of dates in the original text. Example values include: 'Attic', 'A.U.C.', 'Julian', 'Amphictionic', 'Macedonian', etc.</p>
+   <p id="p-7">(Note: the difference between a single date <strong>within</strong> a span of possibilities (marked by the <span class="att">notBefore</span> and <span class="att">notAfter</span> attributes of <span class="tag">&lt;date&gt;</span>, as above) and an expression indicating a time period (such as the reign of an emperor). For the latter EpiDoc recommends the use of <span class="tag">&lt;dateRange&gt;</span>, as documented in the TEI Guidelines.)</p>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">&lt;date notBefore="-0399" notAfter="-0398" exact="both"&gt;399/8 BCE&lt;/date&gt;</li>
+     <li id="EncEx-2">&lt;date notBefore="0201" notAfter="0225" exact="none"&gt;First quarter third century CE&lt;/date&gt;</li>
+     <li id="EncEx-3">&lt;date notBefore="0014-08-19" notAfter="0045" exact="notBefore"&gt;Early Julio-Claudian&lt;/date&gt;</li>
+     <li id="EncEx-4">&lt;date notAfter="-0027-01-16" notBefore="-0100" exact="notAfter"&gt;Late Republican&lt;/date&gt;</li>
+     <li id="EncEx-5">&lt;date value="-0044-03-15" precision="exact"&gt;the Ides of March 44&lt;/date&gt; (Note the use of Julian calendar!)</li>
+     <li id="EncEx-6">&lt;date value="0523-02-14" precision="exact"&gt;&#7984;&#957;&#948;&#953;&#954;&#964;&#8055;&#969;&#957;&#959;&#962; &#945;&#180; &#956;&#951;&#957;&#8056;&#962; &#946;&#180;, &#953;&#948;&#180;, &#7969;&#956;&#8051;&#961;&#945; &#964;&#961;&#8055;&#964;&#951;&lt;/date&gt;</li>
+     <li id="EncEx-7">&lt;bibl&gt;&lt;author&gt;Rouech&#233;&lt;/author&gt; (&lt;date&gt;1989&lt;/date&gt;), no. 22&lt;/bibl&gt;</li>
+    </ol>
+   </div>
+   <div id="encodingdates-edition" class="gl-edition">  
+    <h3 id="encodingdates-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-5">  
+     <li id="EncEx-1">399/8 BCE</li>  
+     <li id="EncEx-2">First quarter third century CE</li>  
+     <li id="EncEx-3">Early Julio-Claudian</li>
+     <li id="EncEx-4">Late Republican</li>  
+     <li id="EncEx-5">the Ides of March 44 (Note the use of Julian calendar!)</li>  
+     <li id="EncEx-6"><span xml:lang="grc" lang="grc">&#7984;&#957;&#948;&#953;&#954;&#964;&#8055;&#969;&#957;&#959;&#962; &#945;&#180; &#956;&#951;&#957;&#8056;&#962; &#946;&#180;, &#953;&#948;&#180;, &#7969;&#956;&#8051;&#961;&#945; &#964;&#961;&#8055;&#964;&#951;</span></li>  
+     <li id="EncEx-7"><span id="bibl-1" class="bibliographiccitation"><span class="author" id="author-1">Rouech&#233;</span> (1989), no. 22</span></li>
+    </ol>  
+   </div>
+   <div id="encodingdates-tei-p4links" class="gl-tei-p4links">  
+    <h3 id="encodingdates-tei-p4links-head">TEI P4 links</h3>  
+    <ul id="list-6">  
+     <li id="item-23"><a class="xref" href="http://www.tei-c.org/P4X/ref-DATE.html" id="xref-1"><span class="tag">&lt;date&gt;</span></a></li>  
+     <li id="item-24"><a class="xref" href="http://www.tei-c.org/P4X/CO.html#CONADA" id="xref-2">6.4.4. Dates and Times</a></li>  
+     <li id="item-25"><a class="xref" href="http://www.tei-c.org/P4X/ND.html#NDDATE" id="xref-3">20.4 Dates and Time</a></li>  
+    </ul>  
+   </div>
+   <div id="encodingdates-responsibility" class="gl-responsibility">  
+    <h3 id="encodingdates-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-3"><span class="respStmt">author: John Bodel</span></li>  
+     <li id="bibl-4"><span class="respStmt">re-encoded from xwiki to TEI-ish: Tom Elliott</span></li>  
+    </ul>  
+   </div>
+   <div id="encodingdates-cvs" class="gl-cvs">  
+    <h3 id="encodingdates-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="encodingdates-cvs-revision-number">Revision number: $Revision: 1.1 $</p>  
+    <p id="encodingdates-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="encodingdates-cvs-revision-date">Revision date: $Date: 2006/12/06 21:33:09 $</p>  
+    <p id="encodingdates-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

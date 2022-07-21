@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Transcription wherein the character would not be unambiguous outside its context"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="unclear.html"/>
+  <title>Transcription wherein the character would not be unambiguous outside its context</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Transcription wherein the character would not be unambiguous outside its context</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="unclear.xml">xml version</a> || id: unclear|| <a class="htmlnavigation" href="unclear.html#unclear-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="unclear.html#unclear-regex">regular expression test</a> | <a class="htmlnavigation" href="unclear.html#unclear-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="unclear.html#unclear-notes">notes</a> | <a class="htmlnavigation" href="unclear.html#unclear-usage">usage</a> | <a class="htmlnavigation" href="unclear.html#unclear-reason">the reason attribute</a> | <a class="htmlnavigation" href="unclear.html#unclear-readings">alternative readings</a> | <a class="htmlnavigation" href="unclear.html#unclear-tei-p4links">tei p4 links</a> | <a class="htmlnavigation" href="unclear.html#unclear-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="unclear.html#unclear-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on unclear.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/unclear.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">Note: depending on your font, browser, browser settings, operating system and other factors, the subscript dots used in examples in this section may display after the character instead of beneath it.</p>
+   <div id="unclear-typographic" class="gl-typographic">  
+    <h3 id="unclear-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="page">p.</abbr>17</span>; <span id="bibl-2" class="bibliographiccitation"><a href="bibliography.html#Dohnicht" class="title-a-abbreviated" id="title-2">Dohnicht</a>, <abbr title="page">p.</abbr>3</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1">  <span class="italic">a&#803;b&#803;c&#803;</span>  </li>  
+     </ul></li>  
+     <li id="item-3">Alternative example: 
+     <ul id="list-2">  
+      <li id="TypoEx-2">M&#803;</li>  
+     </ul></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1"> &lt;unclear reason="undefined" cert="high"&gt;abc&lt;/unclear&gt; </li>
+     <li id="EncEx-2"> &lt;unclear reason="undefined" cert="high"&gt;a&lt;/unclear&gt;&lt;unclear reason="undefined" cert="high"&gt;b&lt;/unclear&gt;&lt;unclear reason="undefined" cert="high"&gt;c&lt;/unclear&gt; </li>
+     <li id="EncEx-3"> &lt;unclear reason="damage" cert="high"&gt;abc&lt;/unclear&gt; </li>
+     <li id="EncEx-4"> &lt;unclear reason="execution" cert="high"&gt;abc&lt;/unclear&gt; </li>
+     <li id="EncEx-5"> &lt;unclear reason="undefined" cert="high"&gt;abc&lt;/unclear&gt; </li>
+     <li id="EncEx-6"> &lt;app&gt; &lt;rdg&gt; &lt;unclear cert="high" reason="undefined"&gt;N&lt;/unclear&gt; &lt;/rdg&gt; &lt;rdg n="default"&gt; &lt;unclear cert="high" reason="undefined"&gt;M&lt;/unclear&gt; &lt;/rdg&gt; &lt;rdg&gt; &lt;unclear cert="high" reason="undefined"&gt;H&lt;/unclear&gt; &lt;/rdg&gt; &lt;/app&gt; </li>
+    </ul>
+   </div>
+   <div id="unclear-edition" xml:lang="la" lang="la" class="gl-edition">  
+    <h3 id="unclear-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <p id="p-2" xml:lang="en" lang="en">Note that TEI provides the option of being more specific than Leiden about the details of of the difficulty (note final example). Without the deliberate encoding of <a class="xref" href="div-apparatus.html" id="xref-1">an apparatus component</a> to pick up and display the extra distinctions, the effort of full markup may be lost.</p>  
+    <ul id="list-5">  
+     <li id="EncEx-1">  <span class="unclear-undefined" title="reason: undefined" id="unclear-1">a&#803;b&#803;c&#803;</span>  </li>  
+     <li id="EncEx-2">  <span class="unclear-undefined" title="reason: undefined" id="unclear-2">a&#803;</span><span class="unclear-undefined" title="reason: undefined" id="unclear-3">b&#803;</span><span class="unclear-undefined" title="reason: undefined" id="unclear-4">c&#803;</span>  </li>  
+     <li id="EncEx-3">  <span class="unclear-damage" title="reason: damage" id="unclear-5">a&#803;b&#803;c&#803;</span>  </li>  
+     <li id="EncEx-4">  <span class="unclear-execution" title="reason: execution" id="unclear-6">a&#803;b&#803;c&#803;</span>  </li>  
+     <li id="EncEx-5">  <span class="unclear-undefined" title="reason: undefined" id="unclear-7">a&#803;b&#803;c&#803;</span>  </li>  
+     <li id="EncEx-6"> : <span class="unclear-undefined" title="reason: undefined" id="unclear-9">M&#803;</span>  </li>  
+    </ul>  
+   </div>
+   <div id="unclear-notes" class="gl-notes">  
+    <h3 id="unclear-notes-head">Notes</h3>  
+    <div id="unclear-usage">  
+     <h4 id="unclear-usage-head">Usage</h4>  
+     <p id="p-3">The EpiDoc DTD permits only the appearance of character data and the <span class="tag">&lt;g/&gt;</span> element within <span class="tag">&lt;unclear&gt;</span><span class="tag">&lt;/unclear&gt;</span>. When an editor or encoder encounters a continuous string of unclear characters in a text, two encoding options are available: each character may be encapsulated within its own <span class="tag">&lt;unclear&gt;</span><span class="tag">&lt;/unclear&gt;</span> or the entire string may be encapsulated within a single <span class="tag">&lt;unclear&gt;</span><span class="tag">&lt;/unclear&gt;</span>. No other markup may appear inside <span class="tag">&lt;unclear&gt;</span><span class="tag">&lt;/unclear&gt;</span>, so if other aspects of a long string of unclear characters warrant additional tagging internal to the string, the per-character solution may be preferable or even required. For background on this issue, see a discussion on the <a class="xref" href="http://lsv.uky.edu/archives/markup.html" id="xref-2">markup list</a> in July and August of 2005, subject: EpiDoc DTD issues [1: unclear].</p>  
+    </div>  
+    <div id="unclear-reason">  
+     <h4 id="unclear-reason-head">The <span class="att">reason</span> Attribute</h4>  
+     <p id="p-4">TEI defines a <span class="att">reason</span> attribute for the <span class="tag">&lt;unclear&gt;</span> element. In the EpiDoc DTD, this attribute has three possible values: "damage", "execution" and "undefined." "Undefined" is designated as the default/automatic value. See further the markup list discussion referenced above. The default stylesheets render all instances of <span class="tag">&lt;unclear&gt;</span> with the standard subscript dot, regardless of the value of the <span class="att">reason</span> attribute.</p>  
+    </div>  
+    <div id="unclear-readings">  
+     <h4 id="unclear-readings-head">Alternative readings</h4>  
+     <p id="p-5">In cases where a letter trace is compatible with a range of characters but the context does not offer an unambiguous choice but the editor wishes to offer a default value, the alternative interpretations may be offered in a series of <span class="tag">&lt;rdg&gt;</span> elements within an <span class="tag">&lt;app&gt;</span>; in which case the particular reading to be rendered must be labelled with an attribute <span class="att">n</span>='default' (see e.g. 6 above).</p>  
+     <p id="p-6">It is also envisaged that the possibility will exist to record the general shape of the surviving traces using embedded SVG or similar elements which could then be rendered as a drawing.</p>  
+     <p id="p-7">Where the editor is not willing to commit to a default reading, see <a class="xref" href="vestiges.html" id="xref-3">vestiges</a>.</p>  
+    </div>  
+   </div>
+   <div id="unclear-tei-p4links" class="gl-tei-p4links">  
+    <h3 id="unclear-tei-p4links-head">TEI P4 links</h3>  
+    <ul id="list-6">  
+     <li id="item-12">  <a class="xref" href="http://www.tei-c.org/P4X/ref-UNCLEAR.html" id="xref-4">  <span class="tag">&lt;unclear&gt;</span>  </a>  </li>  
+     <li id="item-13">  <a class="xref" href="http://www.tei-c.org/P4X/CE.html#CECECE" id="xref-5">17.1.2 Structured Indications of Uncertainty</a>  </li>  
+     <li id="item-14">  <a class="xref" href="http://www.tei-c.org/P4X/PH.html#PHCOMB" id="xref-6">18.2.4 The Use of the Gap, Del, Damage, Unclear and Supplied Tags in Combination</a>  </li>  
+    </ul>  
+   </div>
+   <div id="unclear-responsibility" class="gl-responsibility">  
+    <h3 id="unclear-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+     <li id="bibl-4">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-5">  <span class="respStmt">author: Charles Crowther</span>  </li>  
+     <li id="bibl-6">  <span class="respStmt">contributor: Hugh Cayless</span>  </li>  
+     <li id="bibl-7">  <span class="respStmt">contributor: Tim Finney</span>  </li>  
+     <li id="bibl-8">  <span class="respStmt">contributor: Chris Lilley</span>  </li>  
+    </ul>  
+   </div>
+   <div id="unclear-cvs" class="gl-cvs">  
+    <h3 id="unclear-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="unclear-cvs-revision-number">Revision number: $Revision: 1.11 $</p>  
+    <p id="unclear-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="unclear-cvs-revision-date">Revision date: $Date: 2007/05/11 11:36:53 $</p>  
+    <p id="unclear-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

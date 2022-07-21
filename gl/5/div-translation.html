@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Translation"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="div-translation.html"/>
+  <title>Translation</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Translation</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="div-translation.xml">xml version</a> || id: div-translation|| <a class="htmlnavigation" href="div-translation.html#div-translation-div1">general</a> | <a class="htmlnavigation" href="div-translation.html#div-translation-div2">particulars</a> | <a class="htmlnavigation" href="div-translation.html#div-translation-teidiv-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="div-translation.html#div-translation-teidiv-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on div-translation.xml">post a comment</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for aiegl <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1"> (tei:div type="translation")</p>
+   <div id="div-translation-div1">  
+    <h3 id="head-2">General</h3>  
+    <p id="p-2">This section describes the division in which the translation of the inscription is encoded.</p>  
+    <p id="p-3">A minimal translation contains plain text rendering the inscription into the desired language.</p>  
+    <p id="p-4">A project may also choose to tag the text features within the translation, in which case the detailed guidelines concerning the markup of traditionally transcribed issues are found under the heading of <a class="xref" href="http://www.stoa.org/epidoc/gl/5/.html" id="taggingtext.xml">Tagging the Inscribed Text</a>.</p>  
+   </div>
+   <div id="div-translation-div2">  
+    <h3 id="head-3">Particulars</h3>  
+    <p id="p-5">An edition is tagged using the <span class="tag">&lt;div @type='translation'&gt;</span> element. There can be multiple translations of the same text, for example into different languages or by different translators; each translation should be enclosed in its own separate <span class="tag">&lt;div @type='translation'&gt;</span>.</p>  
+    <p id="p-6">Authority for each translation is recorded in where?.</p>  
+   </div>
+   <div id="div-translation-teidiv-responsibility" class="gl-responsibility">  
+    <h3 id="teidiv-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Elli Mylonas</span></li>
+     <li id="bibl-2"><span class="respStmt">author: Gabriel Bodard</span>  </li>  
+    </ul>  
+   </div>
+   <div id="div-translation-teidiv-cvs" class="gl-cvs">  
+    <h3 id="teidiv-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="teidiv-cvs-revision-number">Revision number: $Revision: 1.7 $</p>  
+    <p id="teidiv-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="teidiv-cvs-revision-date">Revision date: $Date: 2006/12/03 16:19:02 $</p>  
+    <p id="teidiv-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Letters joined (ligature)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="ligature.html"/>
+  <title>Letters joined (ligature)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Letters joined (ligature)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="ligature.xml">xml version</a> || id: ligature|| <a class="htmlnavigation" href="ligature.html#ligature-typeographic">traditional typographic representation</a> | <a class="htmlnavigation" href="ligature.html#ligature-regex">regular expression test</a> | <a class="htmlnavigation" href="ligature.html#ligature-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="ligature.html#ligature-notes">notes</a> | <a class="htmlnavigation" href="ligature.html#ligature-questions">questions and issues</a> | <a class="htmlnavigation" href="ligature.html#ligature-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="ligature.html#ligature-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on ligature.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/ligature.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters, such as adjacent M and N, but more broadly any two joined or superimposed characters.</p>
+   <div id="ligature-typeographic" class="gl-typographic">  
+    <h3 id="ligature-typeographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a></span>, <abbr title="page">p.</abbr>17</span>; <span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2"><a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a></span>, <abbr title="page">p.</abbr>3</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1">ab&#865;</li>  
+      <li id="TypoEx-2">ab&#865;c&#865;</li>
+      <li id="item-3">not addressed</li>  
+     </ul></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1">&lt;hi rend="ligature"&gt;ab&lt;/hi&gt;</li>
+     <li id="EncEx-2">&lt;hi rend="ligature"&gt;abc&lt;/hi&gt;</li>
+     <li id="">&#7936;&#961;&#967;&#953;&#949;&#961;&#8051;&#969;&lt;hi rend="ligature" id="hi1"&gt;&#957;&lt;/hi&gt; &lt;hi rend="ligature" id="hi2"&gt;&#7952;&lt;/hi&gt;&#954;&#947;&#8057;&#957;&#959;&#965; &lt;link targets="hi1 hi2" /&gt;</li>
+    </ul>
+   </div>
+   <div id="ligature-edition" class="gl-edition">  
+    <h3 id="ligature-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-4">  
+     <li id="EncEx-1"><span xml:lang="la" lang="la"><span class="ligature" title="Ligature: these characters are joined">ab</span></span></li>  
+     <li id="EncEx-2"><span xml:lang="la" lang="la"><span class="ligature" title="Ligature: these characters are joined">abc</span></span></li>
+     <li id="item-9"><span xml:lang="grc" lang="grc">&#7936;&#961;&#967;&#953;&#949;&#961;&#8051;&#969;<span class="ligature" title="Ligature: these characters are joined">&#957;</span>  <span class="ligature" title="Ligature: these characters are joined">&#7952;</span>&#954;&#947;&#8057;&#957;&#959;&#965; </span></li>  
+    </ul>  
+   </div>
+   <div id="ligature-notes" class="gl-notes">  
+    <h3 id="ligature-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-10">The standard stylesheets deliberately do not reproduce the corresponding typographic examples.</li>
+     <li id="item-11">Example 3 demonstrates the tagging of ligatures across words, which may cause problems with embedded tagging such as of personal names, <span class="tag">&lt;w&gt;</span>, etc. Display of these ligatures is unsatisfactory, as it is in traditional typography, but for indexing etc. such linking is essential.</li>  
+    </ol>  
+   </div>
+   <div id="ligature-questions" class="gl-questions">  
+    <h3 id="ligature-questions-head">Questions and issues</h3>  
+    <ul id="list-6">  
+     <li id="item-12">Gabriel Bodard (15 Feb 2006): most epigraphic editions describe ligatures rather than rendering them with the linking bar. So in InsAph while we do tag ligatures, our display stylesheets don't do anything with them at present (though we do index them).</li>  
+    </ul>  
+   </div>
+   <div id="ligature-responsibility" class="gl-responsibility">  
+    <h3 id="ligature-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-4"><span class="respStmt">author: Tom Elliott</span></li>  
+    </ul>  
+   </div>
+   <div id="ligature-cvs" class="gl-cvs">  
+    <h3 id="ligature-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="ligature-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="ligature-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="ligature-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="ligature-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

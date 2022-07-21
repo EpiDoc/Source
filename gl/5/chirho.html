@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Chi-Rho (&#9767;)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="chirho.html"/>
+  <title>Chi-Rho (&#9767;)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Chi-Rho (&#9767;)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="chirho.xml">xml version</a> || id: chirho|| <a class="htmlnavigation" href="chirho.html#chirho-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="chirho.html#chirho-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="chirho.html#chirho-notes">notes</a> | <a class="htmlnavigation" href="chirho.html#chirho-notations-questions">questions and issues</a> | <a class="htmlnavigation" href="chirho.html#chirho-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="chirho.html#chirho-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on chirho.xml">post a comment</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">divcount mismatch</p>
+   <p id="p-2">The chi-rho symbol, whether representing a ligature of <span class="foreign" id="foreign-1" xml:lang="grc" lang="grc">&#967;&#961;</span>, a monogram for Christ, or a generic Christian logo.</p>
+   <div id="chirho-typographic" class="gl-typographic">  
+    <h3 id="chirho-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1">Not addressed. Possibly expanded or printed as a symbol.</li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1">&lt;seg cert="high" part="N"&gt;&lt;orig&gt;&#9767;&lt;/orig&gt;&lt;reg&gt;&lt;hi rend="ligature"&gt;&#967;&#961;&lt;/hi&gt;&lt;/reg&gt;&lt;/seg&gt;&#8053;&#956;&#945;&#964;&#945;</li>
+     <li id="EncEx-2">&lt;expan&gt;&lt;abbr&gt;&lt;seg cert="high" part="N"&gt;&lt;orig&gt;&#9767;&lt;/orig&gt; &lt;reg&gt;&lt;g type="chirho" rend="&#9767;" /&gt;&lt;/reg&gt; &lt;reg&gt;&lt;hi rend="ligature"&gt;&#935;&#961;&lt;/hi&gt;&lt;/reg&gt;&lt;/seg&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;ist&lt;/supplied&gt;&lt;/expan&gt;ofer</li>
+     <li id="EncEx-3">&lt;expan&gt;&lt;abbr&gt;&lt;orig&gt;&lt;orig&gt;&#9767;&lt;/orig&gt;&lt;/orig&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;Christ&lt;/supplied&gt;&lt;/expan&gt;ofer</li>
+     <li id="EncEx-4">&lt;seg cert="high" part="N"&gt;&lt;orig&gt;&#9767;&lt;/orig&gt;&lt;/seg&gt; (as, e.g., at the head of a Christian Latin epitaph where the editor has reason to believe it was not necessarily understood as an abbreviation for the word Ch&lt;supplied reason="abbreviation" cert="high"&gt;ristos&lt;/supplied&gt; but simply as a symbol of the Christian faith)</li>
+    </ul>
+   </div>
+   <div id="chirho-edition" class="gl-edition">  
+    <h3 id="chirho-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-2">  
+     <li id="EncEx-1">&#9767;<span class="ligature" title="Ligature: these characters are joined">&#967;&#961;</span>&#8053;&#956;&#945;&#964;&#945;</li>  
+     <li id="EncEx-2"><span class="epigraphic-abbreviation-understood" title="&#9767;  &#935;&#961;ist"><span class="original-characters">  <span class="mark" title="mark: chirho" id="g-1">((chirho))</span>  <span class="ligature" title="Ligature: these characters are joined">&#935;&#961;</span></span>(<span class="supplied-characters">ist</span>)</span>ofer</li>  
+     <li id="EncEx-3"><span class="epigraphic-abbreviation-understood" title="&#9767;"><span class="original-characters"/>(<span class="supplied-characters">Christ</span>)</span>ofer</li>
+     <li id="EncEx-4">&#9767; (as, e.g., at the head of a Christian Latin epitaph where the editor has reason to believe it was not necessarily understood as an abbreviation for the word Ch(<span class="supplied-characters">ristos</span>) but simply as a symbol of the Christian faith)</li>  
+    </ul>  
+   </div>
+   <div id="chirho-notes" class="gl-notes">  
+    <h3 id="chirho-notes-head">Notes</h3>  
+    <p id="p-3">The distinctive &#9767; can be interpreted and rendered in at least three different ways. Since several Unicode characters closely represent the symbol&#8212;no. 2627 (Greek chi rho), 2CE9 (Coptic chi rho), and no. 2CE8 (Coptic tau rho&#8212;similar to the vertical cross chi rho)--it can be easily represented in either of its characteristic forms as a single character (&#9767;, &#11497;, &#11496;), or it can be rendered as a ligature &#9767;, or it can be spelled out ("chi-rho"). Similarly, as &#9767; is used in ancient texts, it can be understood in at least three different ways&#8249;as a simple ligature, as an abbreviation, and as a symbol (as in the examples above).</p>
+    <p id="p-4"> For example: [xp]hmata = ligature [xp](isto)fer = abbreviation [xp] = symbol (as, e.g., at the head of a Christian Latin epitaph where the editor has reason to believe it was not originally understood as an abbreviation for the word Ch(ristos) but simply as a symbol of the Christian faith)</p>
+    <p id="p-5">As always, the issues of semantic markup and rendering (output) are independent and can be used in conjunction with each other to represent an editor's interpretation of the {xp} in context in whatever fashion is preferred. The simplest way to ensure consistent indexing and rendering within a text (or series of texts) in which more than one of the interpretations occurs is to embed within each semantic encoding of the {xp} the full string of possible representations, and to have the xsl stylesheet render each systematically according to its semantic interpretation. For example, the ligature might be represented as {xp lig], the abbreviaton as (chi-rho), and the symbol as {xp}.</p>  
+   </div>
+   <div id="chirho-notations-questions" class="gl-questions">  
+    <h3 id="notations-questions-head">Questions and issues</h3>  
+    <ul id="list-3">  
+     <li id="item-6">None</li>  
+    </ul>  
+   </div>
+   <div id="chirho-responsibility" class="gl-responsibility">  
+    <h3 id="chirho-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-2"><span class="respStmt">author: John Bodel</span></li>
+     <li id="bibl-3"><span class="respStmt">author: Charles Crowther</span></li>  
+    </ul>  
+   </div>
+   <div id="chirho-cvs" class="gl-cvs">  
+    <h3 id="chirho-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="notations-cvs-revision-number">Revision number: $Revision: 1.5 $</p>  
+    <p id="notations-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="notations-cvs-revision-date">Revision date: $Date: 2007/05/11 11:36:53 $</p>  
+    <p id="notations-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Raised/Lowered characters</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Raised/Lowered characters</a></h1><h2 class="subtitle">Raised/Lowered characters</h2><section lang="en" class="teidiv" id="trans-raisedlowered"><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html">hi</a> ; EpiDoc-specific
+                        customization: <a href="ref-hi.html">hi</a></li></ul><p>
+        </p><span class="cit"><span class="quote">‘’</span><span class="ref">Silvio Panciera</span> 
+            ...
+        <span class="ref">Josh Sosin</span> </span><div id="index-egXML-d38e8838" class="pre egXML_valid"> ab<span class="element">&lt;hi rend="<span class="attributevalue">superscript</span>"&gt;</span>c<span class="element">&lt;/hi&gt;</span><span class="ref"></span></div><div id="index-egXML-d38e8842" class="pre egXML_valid"> ab<span class="element">&lt;hi rend="<span class="attributevalue">subscript</span>"&gt;</span>c<span class="element">&lt;/hi&gt;</span><span class="ref"></span></div><div id="index-egXML-d38e8846" class="pre egXML_valid"><span class="element">&lt;expan&gt;</span>πρ<span class="element">&lt;hi rend="<span class="attributevalue">superscript</span>"&gt;</span>οσ<span class="element">&lt;/hi&gt;</span><br/> <span class="element">&lt;ex&gt;</span>γίνεται<span class="element">&lt;/ex&gt;</span><br/><span class="element">&lt;/expan&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-raisedlowered#3">  πρ<span xmlns="" style="vertical-align:super;">οσ</span>(γίνεται)  </egXML></li></ul><span class="ref">DDbDP: <a href="http://papyri.info/ddbdp/bgu;14;2432">bgu.14.2432</a></span></div><div id="index-egXML-d38e8853" class="pre egXML_valid"><span class="element">&lt;hi rend="<span class="attributevalue">subscript</span>"&gt;</span><br/> <span class="element">&lt;num value="<span class="attributevalue">10</span>"&gt;</span>ι<span class="element">&lt;/num&gt;</span><br/> <span class="element">&lt;num value="<span class="attributevalue">1/16</span>" rend="<span class="attributevalue">tick</span>"&gt;</span>ιϛ<span class="element">&lt;/num&gt;</span><br/><span class="element">&lt;/hi&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-raisedlowered#4">  
+      <span xmlns="" style="vertical-align:sub;">
+         <span title="number: 10">ι</span> 
+         <span title="fraction: 1/16">ιϛ´</span>
+      </span>  
+   </egXML></li></ul><span class="ref">DDbDP: <a href="http://papyri.info/ddbdp/bgu;1;153">bgu.1.153</a></span></div><section class="teidiv1" id="trans-raisedlowered-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e8864"><div class="biblfree"><span class="name"></span><span class="name"></span>, author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-quotation.html">Quotation Marks</a><span class="nextLink"> Next</span><a class="navigation" href="trans-regularization.html">Regularization</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-raisedlowered.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Specifying available languages and scripts"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="teilangusage.html"/>
+  <title>Specifying available languages and scripts</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Specifying available languages and scripts</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="teilangusage.xml">xml version</a> || id: teilangusage|| <a class="htmlnavigation" href="teilangusage.html#teilangusage-notes">notes</a> | <a class="htmlnavigation" href="teilangusage.html#teilangusage-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="teilangusage.html#teilangusage-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on teilangusage.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1"> Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>. </p>
+   <p id="p-1">The TEI provides a <span class="tag">&lt;langUsage&gt;</span> element in the <span class="tag">&lt;teiHeader&gt;</span> whereby the languages and scripts used in a given document or project must be declared before they may be used in the document itself. The <span class="tag">&lt;langUsage&gt;</span> contains a list of language-and-script codes, drawn from international standards (see: <a class="xref" href="http://www.w3.org/International/articles/language-tags/" id="xref-1">Language tags in HTML and XML</a>; the standards document itself is <a class="xref" href="ftp://ftp.rfc-editor.org/in-notes/rfc4646.txt" id="xref-2">RFC 4646: Tags for Identifying Languages (September 2006)</a>). Each such code may be glossed with an appropriate description (at the discretion of the project or editor). Examples follow:</p>
+   <ul id="list-1">  
+    <li id="item-1"><span class="tag">&lt;language id="la"&gt;</span>Latin<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-2"><span class="tag">&lt;language id="grc"&gt;</span>Ancient Greek<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-3"><span class="tag">&lt;language id="en"&gt;</span>English<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-4"><span class="tag">&lt;language id="el"&gt;</span>Modern Greek<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-5"><span class="tag">&lt;language id="cop"&gt;</span>Coptic<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-6"><span class="tag">&lt;language id="grc-Latn"&gt;</span>Ancient Greek in Latin characters<span class="tag">&lt;/language&gt;</span></li>  
+    <li id="item-7"><span class="tag">&lt;language id="la-Grek"&gt;</span>Latin in Ancient Greek characters<span class="tag">&lt;/language&gt;</span></li>  
+   </ul>
+   <p id="p-2">The <span class="att">id</span> of each <span class="tag">&lt;language&gt;</span> should contain the 2-letter ISO language code, where one is available, or the 3-digit code where one is not (as in the case of ancient Greek). The four-letter, case-sensitive script code should not be added as a subtag unless it is not the usual (default) script for the language in question. These languages are then available to be referred to by the <span class="att">lang</span> or <span class="att">xml:lang</span> attribute on any element in the file. See <span class="tag">&lt;tei:foreign&gt;</span> and <a class="xref" href="languages.html" id="xref-3">languages.xml</a>.</p>
+   <p id="p-3">Note that established practice of looking up language codes in various ISO-sponsored lists is now deprecated. These lists function as the source for only some of the full set; The Internet Assigned Numbers Authority (IANA) is the final aggregator and arbiter for language codes. IANA's lists of language/script codes and related information are available at:</p>
+   <ul id="list-2">  
+    <li id="item-8">  <a class="xref" href="http://www.iana.org/assignments/language-subtag-registry" id="xref-4">IANA Language Subtag Registry</a>  </li>  
+    <li id="item-9">  <a class="xref" href="http://www.iana.org/assignments/language-tag-extensions-registry" id="xref-5">IANA Language Tag Extensions Registry</a>  </li>  
+   </ul>
+   <p id="p-4">Note that, by definition, language subtags are case-neutral and all processing environments are required to treat them in a case-insensitive manner. There is, however, a <strong>recommended</strong> captialization scheme &#8212; intended to help human readers &#8212; which is reflected in the IANA registry. Note, however, that the TEI P4 DTD defines the standard <span class="att">lang</span> attribute as an IDREF; this means that &#8212; in order for the file to be valid &#8212; there must be one, and only one, exact copy of each language code value in an <span class="att">id</span> attribute somewhere in the file (i.e., on a <span class="tag">&lt;language&gt;</span> element in the header, as described above). EpiDoc users therefore must ensure that they make consistent use of capitalization in language tags across their project, and preferably across the EpiDoc world.</p>
+   <p id="p-5">One possible safeguard might be to produce a modification of the EpiDoc DTD to constrain the legal values for the <span class="att">lang</span> attribute so that they match the codes used in the <span class="att">id</span> attributes of the <span class="tag">&lt;language&gt;</span> tags in the header. So, for example, the default EpiDoc DTD defines <span class="att">lang</span> as follows: </p>
+   <ul id="list-3">  
+    <li id="item-10">lang IDREF #IMPLIED</li>  
+   </ul>
+   <p id="p-6">To match the example language code declarations above, this definition could be altered as follows:</p>
+   <ul id="list-4">  
+    <li id="item-11">lang (la | grc | en | el | cop | grc-Latn | la-Grek) "en"</li>  
+   </ul>
+   <div id="teilangusage-notes" class="gl-notes">  
+    <h3 id="teilangusage-notes-head">Notes</h3>  
+    <ul id="list-5">  
+     <li id="item-12"> GB (2007-10-18): a working-group is currently discussing the proposal of various codes for Ancient Greek dialects to the IANA language group. Results and outcomes will be incorporated into the Guidelines here. </li>  
+    </ul>  
+   </div>
+   <div id="teilangusage-responsibility" class="gl-responsibility">  
+    <h3 id="teilangusage-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-2">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="teilangusage-cvs" class="gl-cvs">  
+    <h3 id="teilangusage-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="teilangusage-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="teilangusage-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="teilangusage-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="teilangusage-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Lines"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="lines.html"/>
+  <title>Lines</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Lines</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="lines.xml">xml version</a> || id: lines|| <a class="htmlnavigation" href="lines.html#lines-div1">epigraphic lines</a> | <a class="htmlnavigation" href="lines.html#lines-div2">verse lines</a> | <a class="htmlnavigation" href="lines.html#lines-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="lines.html#lines-regex">regular expression test</a> | <a class="htmlnavigation" href="lines.html#lines-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="lines.html#lines-notes">notes</a> | <a class="htmlnavigation" href="lines.html#lines-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="lines.html#lines-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on lines.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/lines.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="lines-div1">
+    <h3 id="head-2">Epigraphic lines</h3>
+    <p id="p-1">EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <span class="tag">&lt;lb&gt;</span> (line-breakGB 2007-05-23: though I use the expansion "line-begins" when presenting this to students) empty element to mark the point at which the line breaks.</p>
+    <p id="p-2">Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition of an entire line need to be marked in an attribute on the preceeding <span class="tag">&lt;lb&gt;</span>. For this reason, therefore, it is our convention to place an <span class="tag">&lt;lb&gt;</span> at the beginning of every epigraphic line in the edition, including the first. Any rend or numbering attributes on that <span class="tag">&lt;lb&gt;</span> refer to all text between the current at the following line-break. (See example 1 below.)</p>
+    <p id="p-3">An <span class="tag">&lt;lb&gt;</span> that occurs mid-word should be given an attribute <span class="att">type</span>="worddiv" (this, among other things, generates the hyphen at the end of the preceding line in XSLT).</p>
+    <p id="p-4">See also <a class="xref" href="directionoftext.html" id="xref-1">direction of text</a>.</p>
+   </div>
+   <div id="lines-div2">
+    <h3 id="head-3">Verse lines</h3>
+    <p id="p-5">In addition to marking epigraphic lines, which is obligatory in any case, an editor may choose to tag verse groups and lines using the TEI <span class="tag">&lt;lg&gt;</span> (line-group) and <span class="tag">&lt;l&gt;</span> (line) elements. Within the verse lines, however, the start of each line of text on the support still needs to be marked with an <span class="tag">&lt;lb&gt;</span> element. In other words, <span class="tag">&lt;lg&gt;</span> and <span class="tag">&lt;l&gt;</span> are replacing the containing <span class="tag">&lt;ab&gt;</span>, but not the <span class="tag">&lt;lb&gt;</span>s. (See example 3 below.)</p>
+    <p id="p-6">See also <a class="xref" href="verse.html" id="xref-2">verse inscriptions</a>.</p>
+   </div>
+   <div id="lines-typographic" class="gl-typographic">  
+    <h3 id="lines-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="page">p.</abbr>...</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1">abc / abc</li>  
+      <li id="TypoEx-2">not addressed</li>
+      <li id="TypoEx-3">not addressed</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">abc &lt;lb /&gt; abc</li>
+     <li id="EncEx-2">&lt;ab&gt;&lt;lb n="0" /&gt;&lt;supplied reason="lost"&gt;&#7969; &lt;rs reg="city" key="city" type="subject"&gt;&#960;&#8057;&#955;&#953;&#962;&lt;/rs&gt;&lt;/supplied&gt;&lt;lb n="1" /&gt;&lt;gap reason="lost" unit="character" extent="6" /&gt;&#959;&#957; &#923;&#953;&lt;lb n="2" type="worddiv" /&gt;&lt;supplied reason="lost"&gt;&#954;&#8055;&#957;&#957;&#953;&#959;&lt;/supplied&gt;&lt;unclear reason="damage"&gt;&#957;&lt;/unclear&gt; &#927;&#8016;&#945;&lt;space extent="1" unit="character" /&gt;&lt;lb n="3" type="worddiv" /&gt;&#955;&#949;&#961;&#953;&#945;&#957;&#8056;&#957;&lt;/ab&gt;</li>
+     <li id="EncEx-3">&lt;lg met="hexameter"&gt;&lt;lb n="1" /&gt;&lt;l&gt;&#964;&#8134;&#962; &#956;&#949;&#947;&#8049;&#955;&#951;&#962; &#7936;&lt;lb n="2" type="worddiv" /&gt;&#961;&#949;&#964;&#8134;&#962; &#964;&#959;&#8166;&#964;&#959;&#957;&lt;lb n="3" /&gt;&#956;&#8051;&#947;&#945;&#957; &#7969;&#947;&#949;&#956;&#959;&#957;&#8134;&#945;&lt;/l&gt;&lt;lb n="4" /&gt;&lt;l&gt;&lt;space dim="horizontal" /&gt; &#7961;&#955;&#955;&#8049;&#948;&#953;&#959;&#957; &lt;space dim="horizontal" /&gt;&lt;lb n="5" /&gt;&#922;&#8118;&#961;&#949;&#962; &#963;&#964;&#8134;&#963;&#945;&#957;&lt;lb n="6" /&gt;&#7936;&#956;&#949;&#953;&#946;&#8057;&#956;&#949;&#957;&#959;&#953;&lt;/l&gt; &lt;/lg&gt; </li>
+    </ol>
+   </div>
+   <div id="lines-edition" class="gl-edition">  
+    <h3 id="lines-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1">abc 
+     <br id="lb-1"/> abc</li>
+     <li id="EncEx-2">
+     <p class="abstract" id="ab-2">  
+      <br id="line-0"/><span class="linenumber" lang="" xml:lang="">0</span>[&#7969; &#960;&#8057;&#955;&#953;&#962;] 
+      <br id="line-1"/><span class="gap-lost" title="put title here!">[&#160;&#183;&#160;6&#160;&#183;&#160;]</span>&#959;&#957; &#923;&#953;- 
+      <br id="line-2"/>[&#954;&#8055;&#957;&#957;&#953;&#959;]<span class="unclear-damage" title="reason: damage" id="unclear-1">&#957;&#803;</span> &#927;&#8016;&#945;<span class="space" title="vacat = blank space">- (vac. 1)</span>  
+      <br id="line-3"/>&#955;&#949;&#961;&#953;&#945;&#957;&#8056;&#957;</p></li>  
+     <li id="EncEx-3">  
+     <br id="line-1"/>&#964;&#8134;&#962; &#956;&#949;&#947;&#8049;&#955;&#951;&#962; &#7936;- 
+     <br id="line-2"/>&#961;&#949;&#964;&#8134;&#962; &#964;&#959;&#8166;&#964;&#959;&#957; 
+     <br id="line-3"/>&#956;&#8051;&#947;&#945;&#957; &#7969;&#947;&#949;&#956;&#959;&#957;&#8134;&#945; 
+     <br id="line-4"/><span class="space" title="vacat = blank space">(vac.)</span> &#7961;&#955;&#955;&#8049;&#948;&#953;&#959;&#957; <span class="space" title="vacat = blank space">(vac.)</span>  
+     <br id="line-5"/><span class="linenumber" lang="" xml:lang="">5</span>&#922;&#8118;&#961;&#949;&#962; &#963;&#964;&#8134;&#963;&#945;&#957; 
+     <br id="line-6"/>&#7936;&#956;&#949;&#953;&#946;&#8057;&#956;&#949;&#957;&#959;&#953; </li>  
+    </ol>  
+   </div>
+   <div id="lines-notes" class="gl-notes">  
+    <h3 id="lines-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-11">The standard EpiDoc stylesheets represent the line-breaks in the more usual form as new lines in the edition, rather than the continuous text with '/' separating epigraphic lines as in Krummrey-Panciera.</li>
+     <li id="item-12">If a line breaks a word and ends with a vacat or a non-textual symbol ( i.e. <span class="tag">&lt;space&gt;</span> or <span class="tag">&lt;g&gt;</span>), the hyphen should appear immediately after the text, not after the intervening element.</li>
+     <li id="item-13">The standard XSL does not currently distinguish between verse and prose inscriptions: the verse tagging demonstrated above could be rendered either as epigraphic or as verse lines according to preference. (See <a class="xref" href="http://insaph.kcl.ac.uk/ala2004/inscription/eAla016.html" id="xref-3"><span class="italic">ala2004</span>  <strong>16</strong></a> or <a class="xref" href="http://insaph.kcl.ac.uk/iaph2007/iAph010131.html" id="xref-4"><span class="italic">IAph2007</span>  <strong>1.131</strong>.ii</a> for the alternative.)</li>  
+    </ol>  
+   </div>
+   <div id="lines-responsibility" class="gl-responsibility">  
+    <h3 id="lines-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Gabriel Bodard</span></li>  
+    </ul>  
+   </div>
+   <div id="lines-cvs" class="gl-cvs">  
+    <h3 id="lines-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="lines-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="lines-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="lines-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="lines-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

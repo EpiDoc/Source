@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Describing the type of inscribed object (the support)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="description-support.html"/>
+  <title>Describing the type of inscribed object (the support)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Describing the type of inscribed object (the support)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="description-support.xml">xml version</a> || id: description-support|| <a class="htmlnavigation" href="description-support.html#description-support-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="description-support.html#description-support-additional">gl-additional</a> | <a class="htmlnavigation" href="description-support.html#description-support-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="description-support.html#description-support-cvs">revision information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on description-support.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1"> Implementation of the guidance in this section is <strong>required</strong> for aiegl <a href="conformance.html">conformance</a>. </p>
+   <p id="p-1">Rigorous epigraphic publications indicate the type of object or monument on which the inscribed text appears. EpiDoc documents must include this information if they aim for EAGLE-conformance.</p>
+   <p id="p-2">Editors may include this information in their documents, either as <span class="tag">&lt;keyword&gt;</span>  <span class="tag">&lt;term&gt;</span>s in the <span class="tag">&lt;textClass&gt;</span> portion of the <span class="tag">&lt;teiHeader&gt;</span> element, or, in the form of prose or text paragraphs, encapsulated in a <span class="tag">&lt;div type="description"&gt;</span> element. If an editor wishes to use multiple <span class="tag">&lt;div type="description"&gt;</span> elements for different descriptive aspects of the edition, the description element containing the material information should be specifically indicated by using the &#8220;subtype&#8221; attribute, and giving it a value of &#8220;support&#8221;.</p>
+   <p id="p-3">Whether information about the support is placed in the <span class="tag">&lt;teiHeader&gt;</span> or in a <span class="tag">&lt;div type="description"&gt;</span>, the following tagging examples must be followed closely for EAGLE conformance:</p>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="">Support: &lt;rs type="objectType" key="ara"&gt;altar&lt;/rs&gt; </li>
+     <li id="">&lt;rs type="objectType" key="gradus, theatrum"&gt;theater seats &lt;/rs&gt;</li>
+     <li id="">&lt;rs type="objectType" key="tintinnabulum"&gt;bell&lt;/rs&gt; </li>
+    </ol>
+   </div>
+   <div id="description-support-edition" class="gl-edition">  
+    <h3 id="description-support-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-1">  
+     <li id="item-1">Support: altar </li>  
+     <li id="item-2">theater seats </li>  
+     <li id="item-3">bell </li>  
+    </ol>  
+   </div>
+   <div id="description-support-additional" class="gl-additional">  
+    <p id="p-4">For EAGLE conformance, the values used in the "key" attribute must be drawn from the <a class="xref" href="rerum-inscriptarum-distributio.html" id="xref-1">EAGLE/EpiDoc Object Type Vocabulary</a>. Values used in the text node of the <span class="tag">&lt;rs&gt;</span> element are at the discretion of the editor. Projects are encouraged to control the values in both the key attribute and the text node using DTD or schema modifications (or some other method) to speed data entry, reduce error and ensure uniformity across all documents in a publication or project.</p>  
+   </div>
+   <div id="description-support-responsibility" class="gl-responsibility">  
+    <h3 id="description-support-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-2">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="description-support-cvs" class="gl-cvs">  
+    <h3 id="description-support-cvs-head">Revision Information</h3>  
+    <p id="description-support-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="description-support-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="description-support-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="description-support-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Numbers with Non-sequential Values</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Numbers with Non-sequential Values</a></h1><h2 class="subtitle">Numbers with Non-sequential Values</h2><section lang="en" class="teidiv" id="trans-numnoncongruent"><p>Numbers with possible values that cannot be expressed as a range.</p><p>
+        </p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-certainty.html">certainty</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-num.html">num</a></li></ul><p>
+    </p><p>Some numbers, especially if they are damaged or incomplete, can be partially but not completely interpreted.
+    Unlike those whose possible values can be expressed as a <a class="link_ref" href="trans-numrange.html">numerical range</a>,
+    the examples offered here are of numbers whose values are non-sequential; for instance, a two-digit number where
+    the units value survives, but the tens unit does not.</p><p>No example rendering in standard epigraphic conventions.</p><div id="index-egXML-d38e8099" class="pre egXML_valid"> Φαῶφι <span class="element">&lt;num value="<span class="attributevalue">11</span>"&gt;</span><br/> <span class="element">&lt;gap reason="<span class="attributevalue">lost</span>" quantity="<span class="attributevalue">1</span>" unit="<span class="attributevalue">character</span>"/&gt;</span>α<br/><span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">21</span>"/&gt;</span><br/><span class="element">&lt;/num&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-numnoncongruent#1"> Φαῶφι <span xmlns="" title="number: 11(?)">[  ̣]α </span>  
+   </egXML></li></ul></div><div id="index-egXML-d38e8105" class="pre egXML_valid"><span class="element">&lt;num value="<span class="attributevalue">4</span>"&gt;</span><br/> <span class="element">&lt;gap reason="<span class="attributevalue">lost</span>" quantity="<span class="attributevalue">1</span>" unit="<span class="attributevalue">character</span>"/&gt;</span>III<br/><span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">8</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">13</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">53</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">103</span>"/&gt;</span><br/><span class="element">&lt;/num&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-numnoncongruent#2">  
+      <span xmlns="" class="latinnum">[.]III         </span>  
+   </egXML></li></ul></div><div id="index-egXML-d38e8113" class="pre egXML_valid"><span class="element">&lt;num value="<span class="attributevalue">1</span>"&gt;</span><br/> <span class="element">&lt;gap reason="<span class="attributevalue">lost</span>" quantity="<span class="attributevalue">1</span>" unit="<span class="attributevalue">character</span>"/&gt;</span>α<br/><span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">11</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">21</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">31</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">41</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">51</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">61</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">71</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">81</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">91</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">101</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">201</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">301</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">401</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">501</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">601</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">701</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">801</span>"/&gt;</span><br/> <span class="element">&lt;certainty match="<span class="attributevalue">../@value</span>" locus="<span class="attributevalue">value</span>" assertedValue="<span class="attributevalue">901</span>"/&gt;</span><br/><span class="element">&lt;/num&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-numnoncongruent#3">  
+      <span xmlns="" title="number: 1(?)">[  ̣]α                                     </span> 
+   </egXML></li></ul><span class="ref">DDbDP: <a href="http://papyri.info/ddbdp/bgu;3;734">bgu.3.734</a></span></div><section class="teidiv1" id="trans-numnoncongruent-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e8140"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-numknown.html">Numbers/numerals of Known Value</a><span class="nextLink"> Next</span><a class="navigation" href="trans-numrange.html">Numbers With a Range of Values</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-numnoncongruent.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

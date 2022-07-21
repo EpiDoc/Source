@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Apparatus Criticus"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="div-apparatus.html"/>
+  <title>Apparatus Criticus</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Apparatus Criticus</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="div-apparatus.xml">xml version</a> || id: div-apparatus|| <a class="htmlnavigation" href="div-apparatus.html#div-apparatus-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="div-apparatus.html#div-apparatus-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="div-apparatus.html#div-apparatus-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on div-apparatus.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">Structuring comments on the epigraphic text (tei:div type="apparatus") </p>
+   <p id="p-2">Provides information on readings and conjectures. A portion of this is captured in the markup (test this), so it can be generated. But the apparatus criticus has to handle "out of line" or more general comments. Perhaps stubs can be created for each line that has conjectures in a CHET-C type conversion. This can then be edited by hand, the way CHET-C output is. There also needs to be a provision for plain text sections, which can appear interspersed with the more structured sections, or added to the line stubs.</p>
+   <p id="p-3">Refer to use of <span class="tag">&lt;app&gt;</span> in TEI. Refer to markup of text content in epidoc. Discussion of <span class="tag">&lt;app&gt;</span> on Markup and TEI-L, and new P5 content model based on our recommendations.</p>
+   <p id="p-4">A structured apparatus criticus or epigraphic commentary may in principle consist of four types of entries:</p>
+   <ol id="list-1">
+    <li id="item-1">General comments on the text, not tied to a particular line or section; these may be tagged as <span class="tag">&lt;note&gt;</span> within <span class="tag">&lt;app&gt;</span>, but without linking information.</li>
+    <li id="item-2">Comments on a particular line or lines of the text; these should be linked to the lines in question using the mechanism specified: <span class="tag">&lt;app loc=""&gt;</span>. The <span class="tag">&lt;lem&gt;</span> element is optional in this context; the comment should be contained in a <span class="tag">&lt;note&gt;</span>, either in the <span class="tag">&lt;lem&gt;</span>, if present, or in the <span class="tag">&lt;app&gt;</span>, if not.</li>
+    <li id="item-3">Record of variant readings or alternative restorations of problematic lines (this is the only meaning of apparatus as understood by the original <span class="tag">&lt;tei:app&gt;</span> element in P4, although P5 now explicitly permits our other usages); these items should be structured with <span class="tag">&lt;app&gt;</span>, <span class="tag">&lt;lem&gt;</span>, <span class="tag">&lt;rdg&gt;</span>, and possibly <span class="tag">&lt;note&gt;</span> elements.</li>
+    <li id="item-4">Record of an comment on variants or complex layered text, similar to 3. above, but calling on the content of an <span class="tag">&lt;app&gt;</span> or <span class="tag">&lt;choice&gt;</span> element in the tagged text. The <span class="tag">&lt;app&gt;</span> element should then contain only a <span class="tag">&lt;ptr&gt;</span>, with the <span class="att">id</span> attribute of the target element in the <span class="tag">&lt;ptr&gt;</span>'s <span class="att">target</span>, and an optional <span class="tag">&lt;note&gt;</span>.</li>
+   </ol>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="">&lt;p&gt;&lt;app&gt;&lt;note&gt;The squeeze is faint and inadequate where the right-hand ends of lines is concerned.&lt;/note&gt;&lt;/app&gt;&lt;/p&gt;</li>
+     <li id="">&lt;p&gt; &lt;app loc="line 3"&gt;&lt;note&gt;The erasure in this line is indubitably deliberate but illegible.&lt;/note&gt;&lt;/app&gt;&lt;/p&gt;</li>
+     <li id="">&lt;app loc="a 3"&gt;&lt;lem&gt;&#7936;&#956;&#949;&#953;&#946;&#8057;&#956;&#949;&#957;&#959;&#953;&lt;/lem&gt;&lt;rdg resp="Cormack"&gt;&lt;supplied reason="lost"&gt;&#7952;&lt;/supplied&gt;|&lt;supplied reason="lost"&gt;&#947;&#949;&#961;&lt;/supplied&gt;&lt;unclear reason="damage"&gt;&#963;&#953;&lt;/unclear&gt;&#946;&lt;unclear reason="damage"&gt;&#8057;&lt;/unclear&gt;&lt;supplied reason="lost"&gt;&#945;&#953;&lt;/supplied&gt; &lt;note&gt;rejected by Robert&lt;/note&gt;&lt;/rdg&gt;&lt;rdg resp="Drew-Bear"&gt;&lt;supplied reason="lost"&gt;&#7936;&lt;/supplied&gt;&#956;&#949;&#953;&#946;&lt;unclear reason="damage"&gt;&#8057;&lt;/unclear&gt;&#956;&lt;supplied reason="lost"&gt;&#949;&#957;&#959;&lt;/supplied&gt;&#953;&lt;/rdg&gt;&lt;/app&gt;</li>
+     <li id="">&lt;choice id="choice3" /&gt;&lt;app&gt;&lt;ptr target="choice3" /&gt;&lt;note&gt;so Mommsen&lt;/note&gt;&lt;/app&gt;</li>
+    </ol>
+   </div>
+   <div id="div-apparatus-edition" class="gl-edition">  
+    <h3 id="div-apparatus-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-2">
+     <li id="item-5">
+     <p id="p-5">The squeeze is faint and inadequate where the right-hand ends of lines is concerned.</p></li>
+     <li id="item-6">
+     <p id="p-6"> line 3&#160;The erasure in this line is indubitably deliberate but illegible.</p></li>
+     <li id="item-7">a 3&#160;&#7936;&#956;&#949;&#953;&#946;&#8057;&#956;&#949;&#957;&#959;&#953;&#160; Cormack: [&#7952;]|[&#947;&#949;&#961;]<span class="unclear-damage" title="reason: damage" id="unclear-1">&#963;&#803;&#953;&#803;</span>&#946;<span class="unclear-damage" title="reason: damage" id="unclear-2">&#8057;&#803;</span>[&#945;&#953;] (rejected by Robert); Drew-Bear: [&#7936;]&#956;&#949;&#953;&#946;<span class="unclear-damage" title="reason: damage" id="unclear-3">&#8057;&#803;</span>&#956;[&#949;&#957;&#959;]&#953;</li>
+     <li id="item-8">so Mommsen</li>
+    </ol>  
+   </div>
+   <div id="div-apparatus-responsibility" class="gl-responsibility">  
+    <h3 id="div-apparatus-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">Gabriel Bodard: author</span>  </li>
+     <li id="bibl-2">  <span class="respStmt">Tom Elliott: author</span>  </li>  
+    </ul>  
+   </div>
+   <div id="div-apparatus-cvs" class="gl-cvs">  
+    <h3 id="div-apparatus-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="div-apparatus-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="div-apparatus-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="div-apparatus-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="div-apparatus-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

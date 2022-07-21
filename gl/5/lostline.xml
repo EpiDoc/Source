@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /cvsroot/epidoc/guidelines/src/lostline.xml,v 1.15 2007/06/06 16:45:54 gabrielbodard Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="lostline"><head>An entire line completely lost (extent certain or uncertain)</head>
+            <ab><rs type="conformance">leiden</rs></ab>
+<div id="lostline-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="simple">
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">18</biblScope></bibl>; <bibl><title level="a" type="abbreviated">Dohnicht</title>, <abbr expan="page">p.</abbr><biblScope type="pages">4</biblScope></bibl>: 
+            <list type="ordered">
+               <item id="TypoEx-1">[ - - - - - - - - - - - - - - - - - - ] /</item>
+               <item>not addressed</item>
+            
+					<item id="TypoEx-3">- - - - - - - - - - - - - - - - -</item>
+				<item>not addressed</item></list></item>
+      </list>
+   </div><div id="lostline-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+   	<list><item id="Regex-1"><![CDATA[(^\[(\s*(-(\s*))+)\s*\])  =   <gap reason="lost" extent="1" unit="line"/>]]></item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lostline-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">
+            <gap reason="lost" extent="1" unit="line"/></item>
+         <item id="EncEx-2">
+            <gap reason="lost" unit="line" extent="unknown"/></item><item id="EncEx-3">
+            <gap reason="lost" unit="line" extent="unknown" dim="top"/></item><item id="EncEx-4">
+            <gap reason="lost" unit="line" extent="unknown" dim="bottom"/></item>
+      </list>
+   </div><div id="lostline-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="ordered">
+         <item>The first example indicates complete certainty that a single, entire line of text has been lost.</item>
+         <item>The second example indicates complete certainty that some unknown number of entire lines of text have been lost.</item><item>The third and fourth examples indicate that some number of lines have been lost from the top or bottom of the text respectively (Krummrey-Panciera do not distinguist between these two cases, although some transcription schemes do). These cases were previously grouped under a separate heading ("One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)") in an older version of the Guidelines.</item>
+         <item>For indications of uncertainty about whether lines of text have been lost or not, see <xref href="possiblylost.xml">Possibility that letters have been completely lost</xref>.</item>
+         <item>NB: values of extent greater than 1, when combined with unit="line" are unsupported by the standard xslts; therefore, each separate lost line should be encoded as a separate <tag>gap</tag>, with appropriate line breaks (vel sim.) separating them.</item>
+      </list>
+   </div><div id="lostline-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl><bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="lostline-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="lostline-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 1.15 $</seg></p>
+      <p id="lostline-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: r-5 $</seg></p>
+      <p id="lostline-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2007/06/06 16:45:54 $</seg></p>
+      <p id="lostline-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: gabrielbodard $</seg></p>
+   </div></div>
+

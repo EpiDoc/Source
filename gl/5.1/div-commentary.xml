@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/div-commentary.xml,v 1.4 2006-07-12 13:44:06 gabrielbodard Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" id="div-commentary" lang="en">
+   <head>Commentary (prosopographical/historical)</head>
+   <p>Structuring comments on the epigraphic text (tei:div type="commentary") </p>
+   <p>Generally this is prose commentary, although it may have XML structure in some cases. Historical, prosopographical, and other scholarly comments on the text, its context or implications, dating, etc. May also include references to bibliography.</p><p>Cf. "physical commentary" which belongs in a <tag>div</tag> with @type='description'—the @type of the div in EpiDoc does not prejudice the name or label an editor chooses to give to this division of the edition.</p>
+    <div id="div-commentary-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="div-commentary-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="div-commentary-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 860 $</seg></p>
+        <p id="div-commentary-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: not supported by cvs2svn $</seg></p>
+        <p id="div-commentary-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+        <p id="div-commentary-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: paregorios $</seg></p>
+    </div></div>

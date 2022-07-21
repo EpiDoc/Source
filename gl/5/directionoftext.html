@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Indication of the direction of script (e.g. right-to-left)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="directionoftext.html"/>
+  <title>Indication of the direction of script (e.g. right-to-left)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Indication of the direction of script (e.g. right-to-left)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="directionoftext.xml">xml version</a> || id: directionoftext|| <a class="htmlnavigation" href="directionoftext.html#directionoftext-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="directionoftext.html#directionoftext-regex">regular expression test</a> | <a class="htmlnavigation" href="directionoftext.html#directionoftext-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="directionoftext.html#directionoftext-notes">notes</a> | <a class="htmlnavigation" href="directionoftext.html#directionoftext-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="directionoftext.html#directionoftext-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on directionoftext.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/directionoftext.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="directionoftext-typographic" class="gl-typographic">  
+    <h3 id="directionoftext-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#seg" id="xref-1">SEG</a></span></span>  
+     <ol id="list-1">  
+      <li id="TypoEx-1"> abc &#8592;</li>
+      <li id="TypoEx-2">Not addressed</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1"> &lt;lb rend="right-to-left" /&gt;abc&lt;lb /&gt;</li>
+     <li id="EncEx-2"> &lt;lb rend="left-to-right" /&gt;def&lt;lb /&gt;</li>
+    </ol>
+   </div>
+   <div id="directionoftext-edition" xml:lang="la" lang="la" class="gl-edition">  
+    <h3 id="directionoftext-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1">  
+     <br id="lb-1"/>abc &#8592; 
+     <br id="lb-2"/></li>
+     <li id="EncEx-2">  
+     <br id="lb-3"/>def &#8594; 
+     <br id="lb-4"/></li>  
+    </ol>  
+   </div>
+   <div id="directionoftext-notes" class="gl-notes">  
+    <h3 id="directionoftext-notes-head">Notes</h3>  
+    <ol id="list-5">
+     <li id="item-7">As each line in an EpiDoc encoded inscription begins with an <span class="tag">&lt;lb/&gt;</span>, attributes on this tag can be understood to refer to the content of that line, i.e. all text before the following <span class="tag">&lt;lb/&gt;</span>. (See also <a class="xref" href="lines.html" id="xref-2">lines</a>.)</li>
+     <li id="item-8">In the case of most inscriptions, left-to-right aligned text does not need to be flagged, as it is the default direction. One might need to use a <span class="att">rend</span> attribute as in example 2, above, in the case of boustrophedon text, for instance.</li>
+     <li id="item-9">Other values of the <span class="att">rend</span> attribute can be created in the case of texts written vertically, in a circle or spiral, or otherwise unusually.</li>
+    </ol>  
+   </div>
+   <div id="directionoftext-responsibility" class="gl-responsibility">  
+    <h3 id="directionoftext-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Ilaria Marchesi</span></li>  
+     <li id="bibl-3"><span class="respStmt">author: Gabriel Bodard</span></li>  
+    </ul>  
+   </div>
+   <div id="directionoftext-cvs" class="gl-cvs">  
+    <h3 id="directionoftext-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="vestiges-cvs-revision-number">Revision number: $Revision: 1.5 $</p>  
+    <p id="vestiges-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="vestiges-cvs-revision-date">Revision date: $Date: 2007/05/23 16:43:29 $</p>  
+    <p id="vestiges-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

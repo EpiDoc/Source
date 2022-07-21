@@ -1,0 +1,83 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Expansion of abbreviation including symbol/characters</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Expansion of abbreviation including symbol/characters</a></h1><h2 class="subtitle">Expansion of abbreviation including symbol/characters</h2><section lang="en" class="teidiv" id="trans-abbrevmark"><p>When the abbreviated form contains a marker that does not exist in the expanded form, such as
+        an additional letter or punctuation, best practice is to put these inside an <span class="gi">&lt;am&gt;</span> element,
+        which the standard stylesheets will omit when rendering the expanded form.</p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-expan.html">expan</a> ; EpiDoc-specific
+                        customization: <a href="ref-expan.html">expan</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ex.html">ex</a> ; EpiDoc-specific
+                        customization: <a href="ref-ex.html">ex</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-am.html">am</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-abbr.html">abbr</a></li></ul><p>
+        </p><span class="cit"><span class="quote">‘’</span><span class="ref">Silvio Panciera</span> 
+            ...
+        <span class="ref">Josh Sosin</span> </span><div id="index-egXML-d38e4483" class="pre egXML_valid"><span class="element">&lt;expan&gt;</span><br/> <span class="element">&lt;abbr&gt;</span>Aug<span class="element">&lt;am&gt;</span>g<span class="element">&lt;/am&gt;</span><br/> <span class="element">&lt;/abbr&gt;</span><br/> <span class="element">&lt;ex&gt;</span>usti duo<span class="element">&lt;/ex&gt;</span><br/><span class="element">&lt;/expan&gt;</span><span class="ref"></span></div><div id="index-egXML-d38e4491" class="pre egXML_valid"><span class="element">&lt;expan&gt;</span><br/> <span class="element">&lt;abbr&gt;</span><br/>  <span class="element">&lt;am&gt;</span><br/>   <span class="element">&lt;g type="<span class="attributevalue">sestertius</span>"/&gt;</span><br/>  <span class="element">&lt;/am&gt;</span><br/> <span class="element">&lt;/abbr&gt;</span><br/> <span class="element">&lt;ex&gt;</span>sestertios<span class="element">&lt;/ex&gt;</span><br/><span class="element">&lt;/expan&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>London style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevmark#2">  (sestertios)  </egXML></li></ul><span class="ref">IRT: <a href="http://irt.kcl.ac.uk/irt2009/IRT788.html#3">788</a></span></div><div id="index-egXML-d38e4498" class="pre egXML_valid"><span class="element">&lt;expan&gt;</span><br/> <span class="element">&lt;abbr&gt;</span><br/>  <span class="element">&lt;am&gt;</span><br/>   <span class="element">&lt;g type="<span class="attributevalue">dot</span>"/&gt;</span><br/>   <span class="element">&lt;g type="<span class="attributevalue">reverse-slanting-stroke</span>"/&gt;</span><br/>  <span class="element">&lt;/am&gt;</span><br/> <span class="element">&lt;/abbr&gt;</span><br/> <span class="element">&lt;ex cert="<span class="attributevalue">low</span>"&gt;</span>ὡς ἐτῶν<span class="element">&lt;/ex&gt;</span><br/><span class="element">&lt;/expan&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-abbrevmark#3">  (ὡς ἐτῶν(?))  </egXML></li></ul><span class="ref">DDbDP: <a href="http://papyri.info/ddbdp/sb;14;11692#1">sb.14.11692#1</a></span></div><section class="teidiv1" id="trans-abbrevmark-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e4510"><div class="biblfree"><span class="name">Scott Vanderbilt</span><span class="name"></span>, author  </div></li><li id="index-bibl-d38e4517"><div class="biblfree"><span class="name">Charlotte Tupman</span><span class="name"></span>, author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-abbrevfully.html">Abbreviation fully expanded</a><span class="nextLink"> Next</span><a class="navigation" href="trans-abbrevnotex.html">Abbreviation not expanded at all</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-abbrevmark.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

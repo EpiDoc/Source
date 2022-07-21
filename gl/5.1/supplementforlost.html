@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Editorial supplement for characters wholly lost"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="supplementforlost.html"/>
+  <title>Editorial supplement for characters wholly lost</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Editorial supplement for characters wholly lost</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="supplementforlost.xml">xml version</a> || id: supplementforlost|| <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-regex">regular expression test</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-notes">notes</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-questions">questions and issues</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-tei-p4links">tei p4 links</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="supplementforlost.html#supplementforlost-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on supplementforlost.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/supplementforlost.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="supplementforlost-typographic" class="gl-typographic">  
+    <h3 id="supplementforlost-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a></span>, <abbr title="page">p.</abbr>18</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="la" lang="la">iug[er]a</span></li>
+      <li id="item-2"><span xml:lang="en" lang="en">not addressed</span></li>
+      <li id="item-3"><span xml:lang="en" lang="en">not addressed</span></li>
+      <li id="item-4"><span xml:lang="en" lang="en">not addressed</span></li>  
+     </ol></li>  
+    </ul>
+    <ul id="list-3">
+     <li id="item-6">Other conventions:
+     <ol id="list-3">
+      <li id="item-6">n/a</li>
+      <li id="TypoEx-2"><span class="foreign" id="foreign-1" xml:lang="la" lang="la">[V?]III</span> or <span class="foreign" id="foreign-2" xml:lang="la" lang="la">[V(?)]III</span> or <span class="foreign" id="foreign-3" xml:lang="la" lang="la">[?V]III</span></li>
+      <li id="TypoEx-3"><span xml:lang="grc" lang="grc">&#964;[&#959;&#8058;&#962; &#183; &#183; &#183;]</span></li>
+      <li id="TypoEx-4"><span xml:lang="grc" lang="grc">&#964;&#8056;[&#957; &#916;&#953;&#959;]&#947;&#8051;&#957;&#951;&#957;</span></li>
+     </ol></li>
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">iug&lt;supplied reason="lost" cert="high"&gt;er&lt;/supplied&gt;a</li>
+     <li id="EncEx-2">&lt;supplied reason="lost" cert="low"&gt;V&lt;/supplied&gt;III</li>
+     <li id="EncEx-3">&#964;&lt;supplied reason="lost"&gt;&#959;&#8058;&#962;&lt;/supplied&gt; &lt;gap reason="lost" extent="3" unit="character" /&gt;</li>
+     <li id="">&#964;&#8056;&lt;supplied reason="lost"&gt;&#957;&lt;/supplied&gt; &lt;persName&gt;&lt;supplied reason="lost"&gt;&#916;&#953;&#959;&lt;/supplied&gt;&#947;&#8051;&#957;&#951;&#957;&lt;/persName&gt;</li>
+    </ol>
+   </div>
+   <div id="supplementforlost-edition" class="gl-edition">  
+    <h3 id="supplementforlost-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-6">  
+     <li id="EncEx-1"><span xml:lang="la" lang="la">iug[er]a</span></li>  
+     <li id="EncEx-2"><span xml:lang="la" lang="la">[V?]III</span></li>
+     <li id="EncEx-3"><span xml:lang="grc" lang="grc">&#964;[&#959;&#8058;&#962;] <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</span></span></li>
+     <li id="item-15"><span xml:lang="grc" lang="grc">&#964;&#8056;[&#957;] <span class="personal-name" id="persName-1">&#916;&#953;&#959;]&#947;&#8051;&#957;&#951;&#957;</span></span></li>  
+    </ol>  
+   </div>
+   <div id="supplementforlost-notes" class="gl-notes">  
+    <h3 id="supplementforlost-notes-head">Notes</h3>  
+    <ul id="list-7">  
+     <li id="item-16">Example 2 is the case of a restoration flagged as uncertain by the editor. Local preferences as to placement of the question mark may vary: the standard XSLTs replicate the most common practice, but this is easily customised by individual projects.</li>
+     <li id="item-17">Examples 3 and 4 are to demonstrate standard XSLT handling of partially restored lacunae, and supplements divided by embedded markup, respectively. This handling has been designed not to interfere with standard markup if these rules are not required.</li>  
+    </ul>  
+    <div id="supplementforlost-questions" class="gl-questions">  
+     <h4 id="supplementforlost-questions-head">Questions and issues</h4>  
+     <ul id="list-8">  
+      <li id="item-18">none</li>  
+     </ul>  
+    </div>
+   </div>
+   <div id="supplementforlost-tei-p4links">  
+    <h3 id="supplementforlost-tei-p4links-head">TEI P4 links</h3>  
+    <ul id="list-9">  
+     <li id="item-19"><a class="xref" href="http://www.tei-c.org/P4X/ref-SUPPLIED.html" id="xref-2"><span class="tag">&lt;supplied&gt;</span></a></li>  
+     <li id="item-20"><a class="xref" href="http://www.tei-c.org/P4X/PH.html#PHDA" id="xref-3">18.2.3 Damage, Illegibility, and Supplied Text</a></li>  
+    </ul>  
+   </div>
+   <div id="supplementforlost-responsibility" class="gl-responsibility">  
+    <h3 id="supplementforlost-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Tom Elliott</span></li>
+     <li id="bibl-3"><span class="respStmt">author: Gabriel Bodard</span></li>  
+    </ul>  
+   </div>
+   <div id="supplementforlost-cvs" class="gl-cvs">  
+    <h3 id="supplementforlost-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="supplementforlost-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="supplementforlost-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="supplementforlost-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="supplementforlost-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

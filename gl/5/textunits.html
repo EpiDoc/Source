@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Units of the text (fragments, columns, sections)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="textunits.html"/>
+  <title>Units of the text (fragments, columns, sections)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Units of the text (fragments, columns, sections)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="textunits.xml">xml version</a> || id: textunits|| <a class="htmlnavigation" href="textunits.html#textunits-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="textunits.html#textunits-regex">regular expression test</a> | <a class="htmlnavigation" href="textunits.html#textunits-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="textunits.html#textunits-EncEx-1">textunits-EncEx-1</a> | <a class="htmlnavigation" href="textunits.html#textunits-div3">textpart_fragment</a> | <a class="htmlnavigation" href="textunits.html#textunits-div4">textpart_fragment</a> | <a class="htmlnavigation" href="textunits.html#textunits-div6">textunits-div6</a> | <a class="htmlnavigation" href="textunits.html#textunits-notes">notes</a> | <a class="htmlnavigation" href="textunits.html#textunits-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="textunits.html#textunits-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on textunits.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/textunits.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">Units of the text that are separated and usually numbered independently by epigraphers&#8212;including fragments, columns, sections, chapters, independent texts on a single stone, marks, stamps, or graffiti grouped together, etc.&#8212;should be similarly divided and numbered in EpiDoc. Each division containing a separate unit of text should be wrapped in a separate <span class="tag">&lt;ab&gt;</span> inside a <span class="tag">&lt;div type="textpart"&gt;</span> (the <span class="att">type</span> attribute may also name the kind of text-part being encoded in the form, e.g., <span class="tag">&lt;div type="textpart_fragment"&gt;</span>.</p>
+   <p id="p-2">These units may, of course, nest in almost any combination. If there are non-hierarchical overlaps between units (e.g. sections and columns) then one unit has to be selected as the "top level" division, and the other broken up between the larger division. These smaller, broken divisions may be connected using the <span class="att">n</span> attribute or a <span class="tag">&lt;link&gt;</span> element.</p>
+   <p id="p-3">Where unit within a single, continuous text need to be marked (for example, multiple blocks in a long relief text) the <span class="tag">&lt;milestone&gt;</span> element should be used instead to mark the point at which a break in the support occurs.</p>
+   <div id="textunits-typographic" class="gl-typographic">  
+    <h3 id="textunits-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="page">p.</abbr>...</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1">abc // abc</li>  
+      <li id="TypoEx-2">not addressed</li>
+      <li id="TypoEx-3">not addressed</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+    </ul>
+   </div>
+   <div id="textunits-edition" class="gl-edition">  
+    <h3 id="textunits-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <div id="textunits-EncEx-1"><span class="textparthead">fragment&#160;a</span>
+     <br/>
+     <p class="abstract" id="ab-2">  
+      <br id="lb-1"/>abc</p><span class="textparthead">fragment&#160;b</span>
+     <br/>
+     <p class="abstract" id="ab-3">  
+      <br id="lb-2"/>abc</p>
+    </div>  
+    <div id="textunits-div6">
+     <ul id="list-4">
+      <li id="EncEx-2"> &#918;&#969;&#8147;&#955;&#959;&#962; &#952;&#949;&#959;&#8166; &#7992;&#959;&#965;&#955;&#8055;&#959;&#965; &#965;&#7985;&#959;&#8166; &#922;&#945;&#8055;&#963;&#945;&#961;&#959;&#962;</li>
+     </ul>
+    </div>
+   </div>
+   <div id="textunits-notes" class="gl-notes">  
+    <h3 id="textunits-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-9">The EpiDoc Standard XSLTs do not current support the 'textpart' div, at least not in the Guidelines pages.</li>  
+    </ol>  
+   </div>
+   <div id="textunits-responsibility" class="gl-responsibility">  
+    <h3 id="textunits-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Gabriel Bodard</span></li>  
+    </ul>  
+   </div>
+   <div id="textunits-cvs" class="gl-cvs">  
+    <h3 id="textunits-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="textunits-cvs-revision-number">Revision number: $Revision: 1.4 $</p>  
+    <p id="textunits-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="textunits-cvs-revision-date">Revision date: $Date: 2007/05/25 16:02:53 $</p>  
+    <p id="textunits-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

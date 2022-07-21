@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Releasing CHETC-JS"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="releasechetc-js.html"/>
+  <title>Releasing CHETC-JS</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Releasing CHETC-JS</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="releasechetc-js.xml">xml version</a> || id: releasechetc-js|| <a class="htmlnavigation" href="releasechetc-js.html#releasechetc-js-releasefullwebapp-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="releasechetc-js.html#releasechetc-js-releasefullwebapp-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on releasechetc-js.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">This is incomplete ... </p>
+   <ol id="list-1">  
+    <li id="item-1">Update (or checkout a new copy) of the &#8220;chetc-js&#8221; module from CVS and verify that it works as expected for the purposes of the current release</li>  
+    <li id="item-2">Using your CVS client, create a new tag in the repository corresponding to the current release (see <a class="xref" href="http://www.stoa.org/epidoc/gl/5.1/releasetagguide.html" id="xref-1">Release Tag Guide</a> for policy on tag syntax)</li>  
+    <li id="item-3">Export (not checkout or update) the &#8220;chetc-js&#8221; module from CVS, using the tag value you just created, into the root directory of a volume (this will create a &#8220;chetc-js&#8221; directory containing files and sub-directories)</li>  
+    <li id="item-4">Create a zip file, being sure to include path information for subdirectories, with the following name style: 
+    <br id="lb-1"/>chetc-js-NEW-TAG-HERE.zip</li>  
+    <li id="item-5">Upload the zip file to sourceforge: 
+    <ol id="list-1">  
+     <li id="item-5">Using an FTP client, connect to upload.sourceforge.net (username: anonymous; password: your email address) and then change directories to &#8220;incoming&#8221;</li>  
+     <li id="item-6">After setting the file transfer mode to &#8220;binary&#8221;, put the zip file only in the &#8220;incoming directory&#8221; and make a note of the filename, because you'll need it again later in the process</li>  
+    </ol></li>  
+    <li id="item-8">Set up the release information on sourceforge: 
+    <ol id="list-2">  
+     <li id="item-8">Login to sourceforge and navigate to the <a class="xref" href="https://sourceforge.net/projects/epidoc/" id="xref-2">EpiDoc project page</a>  </li>  
+     <li id="item-9">Select the &#8220;Admin&#8221; link, then the &#8220;File Releases&#8221; link</li>  
+     <li id="item-10">Scroll down the page to the &#8220;File Release Packages&#8221; list, and select therein the &#8220;Add Release&#8221; link associated with the &#8220;chetc-js&#8221; package</li>  
+     <li id="item-11">On the &#8220;Create a File Release&#8221; page, enter the appropriate release designation in the text box labeled &#8220;New release name&#8221; (this will usually be the CVS tag value for the release, minus the leading &#8220;r-&#8221;)</li>  
+     <li id="item-12">Select the &#8220;Create This Release&#8221; button.</li>  
+     <li id="item-13">On the resulting page, under the heading &#8220;Step 1: Edit Existing Release&#8221;: 
+     <ol id="list-2">  
+      <li id="item-13">((( eventually we need policy and instructions on release notes and change logs, but for now, skip it )))</li>  
+     </ol></li>  
+     <li id="item-15">Under the heading &#8220;Step 2: Add Files To This Release&#8221;: 
+     <ol id="list-3">  
+      <li id="item-15">Select the zip file that you previously uploaded and select the &#8220;Add Files and/or Refresh View&#8221; button (if you do not see the zip file in the list, select the button to refresh the list)</li>  
+     </ol>  </li>  
+     <li id="item-17">Under the heading &#8220;Step 3: Edit Files In This Release&#8221;: 
+     <ol id="list-4">  
+      <li id="item-17">Set the &#8220;Processor&#8221; combo box to read &#8220;Platform-Independent&#8221;</li>  
+      <li id="item-18">Set the &#8220;File Type&#8221; combo box to read &#8220;source .zip&#8221;</li>  
+      <li id="item-19">Leave the default settings for the &#8220;Release&#8221; combo box and &#8220;Release Date&#8221; text box</li>  
+      <li id="item-20">Select the &#8220;Update/Refresh&#8221; button</li>  
+     </ol>  </li>  
+     <li id="item-22">Select the &#8220;Files&#8221; link to verify that the release package is now in place and publicly visible.</li>  
+    </ol>  </li>  
+   </ol>
+   <div id="releasechetc-js-releasefullwebapp-responsibility" class="gl-responsibility">  
+    <h3 id="releasefullwebapp-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="releasechetc-js-releasefullwebapp-cvs" class="gl-cvs">  
+    <h3 id="releasefullwebapp-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="releasefullwebapp-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="releasefullwebapp-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="releasefullwebapp-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="releasefullwebapp-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

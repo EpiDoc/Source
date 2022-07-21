@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Deletion and overstruck addition of text in antiquity"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="overstruck.html"/>
+  <title>Deletion and overstruck addition of text in antiquity</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Deletion and overstruck addition of text in antiquity</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="overstruck.xml">xml version</a> || id: overstruck|| <a class="htmlnavigation" href="overstruck.html#overstruck-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="overstruck.html#overstruck-regex">regular expression test</a> | <a class="htmlnavigation" href="overstruck.html#overstruck-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="overstruck.html#overstruck-notes">notes</a> | <a class="htmlnavigation" href="overstruck.html#overstruck-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="overstruck.html#overstruck-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on overstruck.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/overstruck.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">for divset 1: encodingitemcount != editionitemcount</p>
+   <div id="overstruck-typographic" class="gl-typographic">  
+    <h3 id="overstruck-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="pages">pp.</abbr>18-19</span>; <span id="bibl-2" class="bibliographiccitation"><a href="bibliography.html#Dohnicht" class="title-a-abbreviated" id="title-2">Dohnicht</a>, <abbr title="page">p.</abbr>4</span>: 
+     <p id="p-2">Letters, inscribed in place of earlier letters that have been erased, which are plainly or reasonably readable.</p>  
+     <ol id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="la" lang="la">&lt;&lt;abc&gt;&gt; <span class="note" id="note-1" xml:lang="en" lang="en">  
+      <br id="lb-1"/>(the added text can be clearly read)</span></span></li>  
+      <li id="TypoEx-2"><span xml:lang="la" lang="la">&lt;&lt;ABC&gt;&gt; <span class="note" id="note-2" xml:lang="en" lang="en">  
+      <br id="lb-2"/>(the added <a class="xref" href="nonsensical.html" id="xref-1">text can be clearly read, but those characters do not make sense</a>)</span></span></li>  
+      <li id="TypoEx-3"><span xml:lang="la" lang="la">&lt;&lt;a&#803;b&#803;c&#803;&gt;&gt; <span class="note" id="note-3" xml:lang="en" lang="en">  
+      <br id="lb-3"/>(the added <a class="xref" href="unclear.html" id="xref-2">characters are degraded in some way that would render their identity ambiguous if encountered outside their present context</a>)</span></span></li>  
+     </ol></li>  
+     <li id="item-5"><span id="bibl-3" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-3">Panciera</a>, <abbr title="page">p.</abbr>19</span>: 
+     <p id="p-3">Letters, inscribed in place of earlier letters that have been erased, which by virtue of damage to the surface or fracture, are wholly lost</p>  
+     <ul id="list-2">  
+      <li id="TypoEx-4"><span xml:lang="la" lang="la">&lt;&lt;[abc]&gt;&gt; <span class="note" id="note-4" xml:lang="en" lang="en">  
+      <br id="lb-4"/>(editor supplements lost added characters with full confidence; see: <a class="xref" href="supplementforlost.html" id="xref-3">Editorial supplement for characters wholly lost</a>)</span></span></li>  
+      <li id="TypoEx-5"><span xml:lang="la" lang="la">&lt;&lt;[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]&gt;&gt; <span class="note" id="note-5" xml:lang="en" lang="en">  
+      <br id="lb-5"/>(editor cannot supplement lost added characters, but is certain of the number of missing characters; see: <a class="xref" href="lostcertain.html" id="xref-4">Letters completely lost</a>)</span></span></li>  
+      <li id="TypoEx-6"><span xml:lang="la" lang="la">&lt;&lt;[&#160;&#183;&#160;c.5&#160;&#183;&#160;]&gt;&gt; <span class="note" id="note-6" xml:lang="en" lang="en">  
+      <br id="lb-6"/>(editor cannot supplement lost added characters, and is not fully certain of the number of missing characters, see: <a class="xref" href="lostcertain.html" id="xref-5">Letters completely lost</a>)</span></span></li>  
+      <li id="TypoEx-7"><span xml:lang="la" lang="la">&lt;&lt;[ - - - ]&gt;&gt; <span class="note" id="note-7" xml:lang="en" lang="en">  
+      <br id="lb-7"/>(editor cannot supplement lost added characters, and cannot be certain of the number of missing characters due to wide variation in the size of characters elsewhere in the inscription; see: <a class="xref" href="lostlesscertain.html" id="xref-6">Letters completely lost (extent less certain)</a>)</span></span></li>  
+     </ul>  </li>  
+     <li id="item-10">Not explicitly addressed elsewhere: 
+     <ul id="list-3">  
+      <li id="item-10"><span xml:lang="la" lang="la">legio XIII &lt;&lt;g&gt;&gt;emina <span class="note" id="note-8" xml:lang="en" lang="en">  
+      <br id="lb-8"/>(text has been added over a deletion, the added text can be clearly read and the deleted text is utterly unrecoverable)</span></span></li>  
+      <li id="item-11"><span xml:lang="la" lang="la">legio XIII &lt;&lt;g&gt;&gt;emina <span class="note" id="note-9" xml:lang="en" lang="en">  
+      <br id="lb-9"/>(text has been added over a deletion, the added text can be clearly read and the deleted text can also be clearly read: a note would be added in the apparatus indicating that the original character was "f")</span></span></li>  
+     </ul>  </li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">&lt;subst&gt;&lt;del status="unremarkable"&gt;&lt;gap reason="lost" extent="3" unit="character" /&gt;&lt;/del&gt;&lt;add place="overstrike"&gt;abc&lt;/add&gt;&lt;/subst&gt;</li>
+     <li id="EncEx-2">&lt;subst&gt;&lt;del status="unremarkable"&gt;&lt;gap reason="lost" extent="3" unit="character" /&gt;&lt;/del&gt;&lt;add place="overstrike"&gt;&lt;sic n="unintelligible"&gt;ABC&lt;/sic&gt;&lt;/add&gt;&lt;/subst&gt;</li>
+     <li id="EncEx-3">&lt;subst&gt;&lt;del status="unremarkable"&gt;&lt;gap reason="lost" extent="3" unit="character" /&gt;&lt;/del&gt;&lt;add place="overstrike"&gt;&lt;unclear cert="high" reason="undefined"&gt;abc&lt;/unclear&gt;&lt;/add&gt;&lt;/subst&gt;</li>
+     <li id="EncEx-4">legio XIII &lt;subst&gt;&lt;del status="unremarkable"&gt; &lt;gap reason="lost" extent="1" unit="character" /&gt;&lt;/del&gt;&lt;add place="overstrike"&gt;g&lt;/add&gt;&lt;/subst&gt;emina</li>
+     <li id="EncEx-5">legio XIII &lt;subst&gt;&lt;del status="unremarkable"&gt;&lt;unclear reason="damage" cert="high"&gt;f&lt;/unclear&gt;&lt;/del&gt;&lt;add place="overstrike"&gt;g&lt;/add&gt;&lt;/subst&gt;emina</li>
+    </ol>
+   </div>
+   <div id="overstruck-edition" class="gl-edition">  
+    <h3 id="overstruck-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-6">  
+     <li id="EncEx-1"><span xml:lang="la" lang="la"><span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</span><span class="addition" title="overstrike addition in antiquity">`abc&#180;</span></span></li>  
+     <li id="EncEx-2"><span xml:lang="la" lang="la"><span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</span><span class="addition" title="overstrike addition in antiquity">`ABC&#180;</span></span></li>  
+     <li id="EncEx-3"><span xml:lang="la" lang="la"><span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</span><span class="addition" title="overstrike addition in antiquity">`<span class="unclear-undefined" title="reason: undefined" id="unclear-1">a&#803;b&#803;c&#803;</span>&#180;</span></span></li>  
+     <li id="EncEx-4"><span xml:lang="la" lang="la">legio XIII <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;]</span><span class="addition" title="overstrike addition in antiquity">`g&#180;</span>emina</span></li>  
+     <li id="EncEx-5"><span xml:lang="la" lang="la">legio XIII <span class="unclear-damage" title="reason: damage" id="unclear-2">f&#803;</span><span class="addition" title="overstrike addition in antiquity">`g&#180;</span>emina</span></li>  
+    </ol>  
+   </div>
+   <div id="overstruck-notes" class="gl-notes">  
+    <h3 id="overstruck-notes-head">Notes</h3>  
+    <p id="p-4"><span class="tag">&lt;subst&gt;</span> is a new element from TEI P5 that we have added to the EpiDoc DTD for this purpose.</p>
+   </div>
+   <div id="overstruck-responsibility" class="gl-responsibility">  
+    <h3 id="overstruck-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-4"><span class="respStmt">author: Tom Elliott</span></li>
+     <li id="bibl-5"><span class="respStmt">author: Valentina Asciutti</span></li>  
+    </ul>  
+   </div>
+   <div id="overstruck-cvs" class="gl-cvs">  
+    <h3 id="overstruck-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="overstruck-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="overstruck-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="overstruck-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="overstruck-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

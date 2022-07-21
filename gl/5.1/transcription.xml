@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/transcription.xml,v 1.11 2006-04-18 21:19:01 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="transcription" lang="en" rend="multipart">
+   <head>Transcription of characters and sigla on the stone</head>
+   <xi:include href="noproblems.xml"/>
+   <xi:include href="nonsensical.xml"/>
+   <xi:include href="unclear.xml"/>
+   <xi:include href="vestiges.xml"/>
+   <xi:include href="lost.xml"/>
+   <xi:include href="previouslyread.xml"/>
+   <xi:include href="vacat.xml"/>
+    <div id="transcription-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>to be added</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="transcription-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="transcription-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 860 $</seg></p>
+        <p id="transcription-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="transcription-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+        <p id="transcription-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>   
+</div>

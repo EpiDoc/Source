@@ -1,0 +1,80 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Claudian letters</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Claudian letters</a></h1><div lang="en" class="teidiv" id="trans-claudian"><p>Three characters created by the Emperor Claudius to represent sounds or sound combinations that were not unambiguously represented by existing Latin characters: Ↄ(Unicode 2183: antisigma, representing PS or BS); Ⱶ (Unicode 2C75: sonus medius, representing vowel bwteen U and I; later represented with Y); Ⅎ (Unicode 2132: digamma inversum, representing consonantal U).</p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-g.html">g</a></li></ul><p>Before these characters were represented by Unicode codepoints, Latin epigraphers were in the habit of transcribing these using the Latin characters to which they correspond (PS, BS, Y or V respectively). When transcribing such an edition, <span class="gi">&lt;g&gt;</span> should be used with the expansion in the <span class="att">type</span> (preceded by "claudian_"). When the character itself is simply included in a Latin word, the Unicode character may simply be included in the text with no markup. Or <span class="gi">&lt;g&gt;</span> might be wrapped around the Unicode character.</p><p>It might also be a good idea, for the sake of indexing and parsing words, to regularize (using <span class="gi">&lt;choice&gt;</span>, <span class="gi">&lt;orig&gt;</span> and <span class="gi">&lt;reg&gt;</span>) words containing these letters to their more conventional Latin spellings (see final example below, and cf. <a class="link_ref" href="trans-regularization.html">Regularization</a>).</p><span class="cit"><span class="quote">‘y, bs, ps, v’</span><span class="ref">Hans Krummrey/Silvio Panciera</span> IV.3<span class="ref">Silvio Panciera</span> 19</span><span class="cit"><span class="quote">‘Nymphabus Y; privatis V’</span><span class="ref">Hans Krummrey/Silvio Panciera</span> IV.3</span><span class="cit"><span class="quote">‘⊂y⊃, ⊂bs⊃, ⊂ps⊃, ⊂v⊃’</span><span class="ref">Marcus Dohnicht</span> 3</span><div class="cit"><span class="quote">‘Ⱶ, Ↄ, Ↄ, Ⅎ’</span></div><div id="index-egXML-d39e6299" class="pre egXML_valid"><span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_y</span>"/&gt;</span>, <span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_bs</span>"/&gt;</span>, <span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_ps</span>"/&gt;</span>, <br /><span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_v</span>"/&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#1">  ((claudian_y)), ((claudian_bs)), ((claudian_ps)), ((claudian_v))  </egXML></li><li><strong>Dohnicht style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#1">  ⊂claudian_y⊃, ⊂claudian_bs⊃, ⊂claudian_ps⊃, ⊂claudian_v⊃  </egXML></li></ul><span class="ref"></span></div><div id="index-egXML-d39e6307" class="pre cdata egXML_valid"> Ⱶ, Ↄ, Ↄ, Ⅎ<br /><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#2"> Ⱶ, Ↄ, Ↄ, Ⅎ </egXML></li><li><strong>Dohnicht style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#2"> Ⱶ, Ↄ, Ↄ, Ⅎ </egXML></li><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#2"> Ⱶ, Ↄ, Ↄ, Ⅎ </egXML></li></ul></div><div id="index-egXML-d39e6310" class="pre egXML_valid"><span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_y</span>"&gt;</span>Ⱶ<span class="element">&lt;/g&gt;</span>, <span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_bs</span>"&gt;</span>Ↄ<span class="element">&lt;/g&gt;</span>, <span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_ps</span>"&gt;</span>Ↄ<span class="element">&lt;/g&gt;</span>, <br /><span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_v</span>"&gt;</span>Ⅎ<span class="element">&lt;/g&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#3">  ((claudian_y)), ((claudian_bs)), ((claudian_ps)), ((claudian_v))  </egXML></li><li><strong>Dohnicht style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#3">  ⊂claudian_y⊃, ⊂claudian_bs⊃, ⊂claudian_ps⊃, ⊂claudian_v⊃  </egXML></li><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#3">  
+      <text xmlns=""> ((</text>claudian_y<text xmlns="">)) </text>, <text xmlns=""> ((</text>claudian_bs<text xmlns="">)) </text>, <text xmlns=""> ((</text>claudian_ps<text xmlns="">)) </text>, <text xmlns=""> ((</text>claudian_v<text xmlns="">)) </text>  
+   </egXML></li></ul></div><div id="index-egXML-d39e6322" class="pre egXML_valid"> N<span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_y</span>"&gt;</span>Ⱶ<span class="element">&lt;/g&gt;</span>mphabus;<br /> pri<span class="element">&lt;g <span class="attribute">type</span>="<span class="attributevalue">claudian_v</span>"&gt;</span>Ⅎ<span class="element">&lt;/g&gt;</span>atis<br /><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#4"> N((claudian_y))mphabus; pri((claudian_v))atis </egXML></li><li><strong>Dohnicht style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#4"> N⊂claudian_y⊃mphabus; pri⊂claudian_v⊃atis </egXML></li></ul><span class="ref"></span></div><div id="index-egXML-d39e6330" class="pre egXML_valid"><span class="element">&lt;choice&gt;</span><br /> <span class="element">&lt;orig&gt;</span>NⱵmphabus<span class="element">&lt;/orig&gt;</span><br /> <span class="element">&lt;reg&gt;</span>Nymphabus<span class="element">&lt;/reg&gt;</span><br /><span class="element">&lt;/choice&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#5">  NⱵmphabus  </egXML></li><li><strong>Dohnicht style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#5">  NⱵmphabus  </egXML></li><li><strong>DDbDP style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-claudian#5">  NⱵmphabus  </egXML></li></ul><span class="ref"></span></div><div class="teidiv1" id="trans-claudian-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e6341"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-charactershighlighted.html">Characters highlighted or set apart in some way</a><span class="nextLink"> Next</span><a class="navigation" href="trans-cleartext.html">Clear text</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-claudian.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

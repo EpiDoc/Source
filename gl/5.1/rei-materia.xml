@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<!-- Start license statement: do not remove 
+    
+    EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+    Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+    Additional contributors' copyright may be designated in individual source files.
+    
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    
+    Information about the EpiDoc community can be obtained via 
+    http://epidoc.sf.net.
+    
+    End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/rei-materia.xml,v 1.1 2006-12-08 14:02:33 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="rei-materia" lang="en" >
+    <head>EAGLE/EpiDoc Material Vocabulary</head>
+    <ab>
+        <rs type="conformance">aiegl</rs>
+    </ab>
+    <p>The EpiDoc community is collaborating to produce a standard, multilingual vocabulary
+        to describe and classify the material of the monuments and objects bearing inscribed texts.
+        This effort is being coordinated with the direction of the EAGLE constituent databases
+        to ensure compatibilty for EAGLE-conformant EpiDoc. For tagging guidance, see <xref href="description-material.xml">Describing the material of the inscribed object</xref> 
+    </p>
+    <p>The current draft version of the full vocabulary is maintained in a GoogleDoc spreadsheet
+    for ready access by all collaborators. The following list of keys and English terms is provided here only
+    for example. Parties who wish to review or contribute to the full vocabulary should
+    enquire on the Markup List.</p>
+    
+    
+    <list type="definition">
+        <item>EAGLE term (Latin, used in "key" attribute on <tag>rs type="material"</tag>) = English term</item>
+        <item>aes = bronze</item>
+        <item>arenatum = fresh mortar</item>
+        <item>argentum = silver</item>
+        <item>aurum = gold</item>
+        <item>cera	 = wax</item>
+        <item>creta = terracotta</item>
+        <item>ferrum = iron</item>
+        <item>lapis = stone</item>
+        <item>lignum = wood</item>
+        <item>marmor = marble</item>
+        <item>musivum = mosaic</item>
+        <item>plumbum = lead</item>
+        <item>tectorium = stucco</item>
+        <item>vitrum = glass</item>
+        
+    </list>
+    
+    <div id="rei-materia-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="rei-materia-cvs" type="gl-cvs">
+        <head>Revision Information</head>
+        <p id="rei-materia-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 860 $</seg></p>
+        <p id="rei-materia-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: not supported by cvs2svn $</seg></p>
+        <p id="rei-materia-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+        <p id="rei-materia-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>EpiDoc Guidelines</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">EpiDoc Guidelines</a></h1><h2 class="subtitle">EpiDoc Guidelines</h2><section lang="en" class="teidiv" id="toc"><p>This is the proposed table of contents for the Epidoc Guidelines.</p><p>The Introductory Matter provides information pertaining to using the guidelines themselves as well as setting up and managing an encoding project.</p><p>The Encoding Guidelines themselves contain descriptions of the elements and attributes that make up Epidoc. They are divided into two sections: elements and
+        attributes used to encode transcriptions of epigraphic and other texts, and the elements and attributes used to encode information abaout
+        the document. Within each major section, elements and their attributes are organized thematically.</p><p>In order to make it easier for different disciplinary groups or communities of practice to use the Epidoc Guidelines, this section 
+        provides targetted approaches. These provide customized strategies and overall structures, as well as specific mappings to known conventions.</p><div class="listhead">Introductory Matter</div><ul><li><a class="link_ref" href="intro-intro.html">General Introduction</a></li><li><a class="link_ref" href="intro-eps.html">Introduction for Epigraphers</a></li><li><a class="link_ref" href="intro-faq.html">FAQ</a></li><li><a class="link_ref" href="intro-howto.html">How to use these Guidelines</a></li><li><a class="link_ref" href="intro-step.html">Step by step</a></li><li><a class="link_ref" href="intro-team.html">Assembling a team</a></li><li><a class="link_ref" href="intro-qstart.html">Quickstart</a></li><li><a class="link_ref" href="intro-wflow.html">Workflow</a></li></ul><div class="listhead">Encoding Guidelines </div><ul><li><a class="link_ref" href="app-allsupp.html">All Descriptive Data Guidelines</a></li><li><a class="link_ref" href="app-alltrans.html">All Transcription Guidelines</a></li></ul><div class="listhead">Communities of Practice</div><ul><li><a class="link_ref" href="app-epi.html">Epigraphers</a>
+            <ul><li><a class="link_ref" href="app-epi-panciera.html">Aligning EpiDoc transcription according to Krummrey-Panciera 1980</a></li><li><a class="link_ref" href="app-epi-petrae.html">Aligning EpiDoc transcription according to PETRAE</a></li><li><a class="link_ref" href="app-epi-edh.html">Aligning EpiDoc supporting data according to EDH</a></li></ul>
+        </li><li><a class="link_ref" href="app-papy.html">Papyrologists</a>
+            <ul><li><a class="link_ref" href="app-papy-ddbdp.html">Aligning EpiDoc transcription according to DDbDP</a></li><li><a class="link_ref" href="app-papy-ddbdp.html">Aligning EpiDoc supporting data according to HGV</a></li><li><a class="link_ref" href="app-papy-ddbdp.html">Aligning EpiDoc supporting data according to APIS</a></li></ul>
+        </li><li><a class="link_ref" href="app-sigi.html">Sigillographers</a></li><li><a class="link_ref" href="app-numi.html">Numismatists</a></li><li><a class="link_ref" href="app-nonWestern.html">Non-western documentary material</a></li><li><a class="link_ref" href="http://www.stoa.org/epidoc/gl/8-beta/app-DocHist.html">Documentary historians</a></li></ul><div class="listhead">Appendices</div><ul><li><a class="link_ref" href="app-vocab.html">Controlled vocabularies</a></li><li><a class="link_ref" href="app-unicode.html">Unicode</a></li><li><a class="link_ref" href="app-bibliography.html">Bibliography</a></li><li><a class="link_ref" href="app-glossary.html">Glossary</a></li></ul><section class="teidiv1" id="toc-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e133"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d38e139"><div class="biblfree"><span class="name">Elli Mylonas</span>, edited  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="nextLink"> Next</span><a class="navigation" href="intro-intro.html">Introduction</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="index.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

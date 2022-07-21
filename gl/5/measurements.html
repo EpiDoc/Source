@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Measurements"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="measurements.html"/>
+  <title>Measurements</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Measurements</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="measurements.xml">xml version</a> || id: measurements|| <a class="htmlnavigation" href="measurements.html#measurements-monuments">monuments, matrices, etc.</a> | <a class="htmlnavigation" href="measurements.html#measurements-monuments-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="measurements.html#measurements-regex-1">regular expression test</a> | <a class="htmlnavigation" href="measurements.html#measurements-monuments-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="measurements.html#measurements-letters">letter heights, etc.</a> | <a class="htmlnavigation" href="measurements.html#measurements-letters-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="measurements.html#measurements-regex-2">regular expression test</a> | <a class="htmlnavigation" href="measurements.html#measurements-letters-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="measurements.html#measurements-tei-p4links">tei p4 links</a> | <a class="htmlnavigation" href="measurements.html#measurements-questions">questions and issues</a> | <a class="htmlnavigation" href="measurements.html#measurements-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="measurements.html#measurements-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on measurements.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/measurements.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for aiegl <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">for divset 1: encodingitemcount != editionitemcount</p>
+   <p id="p-2">no matching typographic div[2]</p>
+   <p id="p-3">This section includes examples for two types of measurements commonly included in epigraphic editions: </p>
+   <ul id="list-1">  
+    <li id="item-1"><a class="ref" href="measurements.html#measurements-monuments" id="ref-1">monuments, matrices, etc.</a></li>  
+    <li id="item-2"><a class="ref" href="measurements.html#measurements-letters" id="ref-2">letter heights</a></li>  
+   </ul>
+   <p id="p-4">NOTE: it is assumed unless a value is given for <span class="att">unit</span>, that measurements of type length are given in metres.</p>
+   <div id="measurements-monuments">  
+    <h3 id="measurements-monuments-head">Monuments, matrices, etc.</h3>  
+    <div id="measurements-monuments-typographic" class="gl-typographic">  
+     <h4 id="measurements-monuments-typographic-head">Traditional typographic representation</h4>  
+     <ol id="list-2">  
+      <li id="item-3">[1.15 x 0.76 x 0.285]</li>  
+      <li id="item-4">[c. 1.2 x c. 0.75 x c. 0.3]</li>
+     </ol>  
+    </div>  
+    <div class="gl-encoding">
+     <h3>EpiDoc Encoding</h3>
+     <ol>
+      <li id="EncEx-1">[&lt;measure type="length" dim="height" value="1.15" unit="metre"&gt;1.15&lt;/measure&gt; &#215; &lt;measure type="length" dim="width" value="0.76" unit="metre"&gt;0.76&lt;/measure&gt; &#215; &lt;measure type="length" dim="depth" value="0.285" unit="metre"&gt;0.285&lt;/measure&gt;]</li>
+      <li id="EncEx-2">[&lt;measure type="length" dim="height" value="1.15" precision="circa" unit="metre"&gt;1.2&lt;/measure&gt; &#215; &lt;measure type="length" dim="width" value="0.76" unit="metre" precision="circa"&gt;0.75&lt;/measure&gt; &#215; &lt;measure type="length" dim="depth" value="0.285" unit="metre" precision="circa"&gt;0.3&lt;/measure&gt;]</li>
+     </ol>
+    </div>
+    <div id="measurements-monuments-edition" class="gl-edition">  
+     <h4 id="measurements-monuments-edition-head">EpiDoc appearance with standard XSLT</h4>  
+     <ol id="list-4">  
+      <li id="EncEx-1">[<span title="height">1.15</span> &#215; <span title="width">0.76</span> &#215; <span title="depth">0.285</span>]</li>
+      <li id="EncEx-2">[
+      <em>c. </em><span title="height">1.2</span> &#215; 
+      <em>c. </em><span title="width">0.75</span> &#215; 
+      <em>c. </em><span title="depth">0.3</span>]</li>  
+     </ol>  
+    </div>  
+   </div>
+   <div id="measurements-letters">  
+    <h3 id="measurements-letters-head">Letter heights, etc.</h3>  
+    <div id="measurements-letters-typographic" class="gl-typographic">  
+     <h4 id="measurements-letters-typographic-head">Traditional typographic representation</h4>  
+     <ol id="list-5">  
+      <li id="item-9">0.025</li>  
+     </ol>  
+    </div>  
+    <div class="gl-encoding">
+     <h3>EpiDoc Encoding</h3>
+     <ol>
+      <li id="EncEx-1">&lt;measure type="length" dim="height" value="0.025" unit="metre"&gt;0.025&lt;/measure&gt;</li>
+     </ol>
+    </div>
+    <div id="measurements-letters-edition" class="gl-edition">  
+     <h4 id="measurements-letters-edition-head">EpiDoc appearance with standard XSLT</h4>  
+     <ol id="list-7">  
+      <li id="EncEx-1"><span title="height">0.025</span></li>  
+     </ol>  
+    </div>  
+   </div>
+   <div id="measurements-tei-p4links" class="gl-tei-p4links">  
+    <h3 id="measurements-tei-p4links-head">TEI P4 links</h3>  
+    <ul id="list-8">  
+     <li id="item-12"><a class="xref" href="http://www.tei-c.org/P4X/ref-MEASURE.html" id="xref-1"><span class="tag">&lt;measure&gt;</span></a></li>  
+     <li id="item-13"><a class="xref" href="http://www.tei-c.org/P4X/CO.html#CONANU" id="xref-2">6.4.3 Numbers and Measures</a></li>  
+    </ul>  
+   </div>
+   <div id="measurements-questions" class="gl-questions">  
+    <h3 id="measurements-questions-head">Questions and issues</h3>  
+    <ul id="list-9">  
+     <li id="item-14">Gabriel Bodard (16 Mar 2006): There are a couple of important issues with measurements that need to be addressed in order to get our crosswalks to (e.g.) EDH working. (1) is the fact that in EDH the stone dimensions need to (a) be literally numerical, and (b) a single number, not multiple numbers, a range, circa, vel sim.; (letter-heights, on the other hand, can be a text field). (2) is the question of tagging the dimensions within a single element -- I'd strongly suggest <span class="tag">&lt;rs type="dimensions"&gt;</span> -- so that it can be extracted by the crosswalk wherever this data appears, even in the teiHeader.</li>  
+    </ul>  
+   </div>
+   <div id="measurements-responsibility" class="gl-responsibility">  
+    <h3 id="measurements-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1"><span class="respStmt">author: Gabriel Bodard</span></li>  
+     <li id="bibl-2"><span class="respStmt">converted from xwiki to xml: Tom Elliott</span></li>  
+    </ul>  
+   </div>
+   <div id="measurements-cvs" class="gl-cvs">  
+    <h3 id="measurements-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="measurements-cvs-revision-number">Revision number: $Revision: 1.12 $</p>  
+    <p id="measurements-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="measurements-cvs-revision-date">Revision date: $Date: 2006/10/30 12:05:36 $</p>  
+    <p id="measurements-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

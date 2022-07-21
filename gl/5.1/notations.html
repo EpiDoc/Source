@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Special Characters"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="notations.html"/>
+  <title>Special Characters</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Special Characters</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="notations.xml">xml version</a> || id: notations|| <a class="htmlnavigation" href="notations.html#notations-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="notations.html#notations-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="notations.html#notations-notes">notes</a> | <a class="htmlnavigation" href="notations.html#notations-questions">questions and issues</a> | <a class="htmlnavigation" href="notations.html#notations-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="notations.html#notations-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on notations.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">divcount mismatch</p>
+   <p id="p-2">Notations for words or numbers (e.g., for "centurion", acrophonic numerals, anaglyphs, etc.)</p>
+   <div id="notations-typographic" class="gl-typographic">  
+    <h3 id="notations-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1">  <a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a>  </span>, <abbr title="page">p.</abbr>19</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1">((crux))</li>  
+     </ul></li>  
+    </ul>  
+    <ul id="list-3">  
+     <li id="item-3"><span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2">  <a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a>  </span>, <abbr title="page">p.</abbr>4</span>: 
+     <ul id="list-3">  
+      <li id="TypoEx-2">&#8834;crux&#8835;</li>  
+     </ul></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1"> &lt;g type="crux" /&gt; </li>
+    </ul>
+   </div>
+   <div id="notations-edition" class="gl-edition">  
+    <h3 id="notations-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-5">  
+     <li id="EncEx-1">  <span class="mark" title="mark: crux" id="g-1">((crux))</span>  </li>  
+    </ul>  
+   </div>
+   <div id="notations-notes" class="gl-notes">  
+    <h3 id="notations-notes-head">Notes</h3>  
+    <p id="p-3">It is sometimes necessary to represent a mark in the original text that is not readily handled by conventional type or fonts (e.g., does not correspond to a Unicode code point) but is not really an illustration. Some examples of symbols that might be recorded in this way include: scroll, chi-rho, cross, stop, leaf, star, centurion, denarius, fish. In conventional typographic editions, these 'odd characters' can only be shown "in consuetam formam reducta" with doubled parentheses and a note in the apparatus. The distinction between character rectification and naming of a symbol or glyph is made by using italics. In digital editions, projects are free to define character entities for this purpose, but searching for these items as a class of material dictated the use of an XML element. TEI P4 provides no element for this purpose, and so EpiDoc recommends the extension of TEI for epigraphic work with the use of the <span class="tag">&lt;g&gt;</span> element. It has one attribute, type, which is required. The type attribute can have any value the editor deems necessary.</p>  
+    <p id="p-4"> GB (2007-05-11): <span class="tag">&lt;g&gt;</span> is a TEI P5 element that replaces <span class="tag">&lt;mark&gt;</span>, which was created for EpiDoc to fill a perceived gap in the P4 Guidelines. <span class="tag">&lt;mark&gt;</span> is now deprecated, and will be removed from the DTD in six months time. </p>  
+   </div>
+   <div id="notations-questions" class="gl-questions">  
+    <h3 id="notations-questions-head">Questions and issues</h3>  
+    <ul id="list-6">  
+     <li id="item-6">GB (2006-07-16): I recall having a conversation about the special case of 'denarius' at the April 2006 sprint, but I don't find any reference to this in my notes. I'll try to reconstruct.</li>  
+    </ul>  
+   </div>
+   <div id="notations-responsibility" class="gl-responsibility">  
+    <h3 id="notations-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-4">  <span class="respStmt">author: John Bodel</span>  </li>  
+     <li id="bibl-5">  <span class="respStmt">author: Charles Crowther</span>  </li>  
+     <li id="bibl-6">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="notations-cvs" class="gl-cvs">  
+    <h3 id="notations-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="notations-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="notations-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="notations-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="notations-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Acrophonic numerals"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="acrophonic.html"/>
+  <title>Acrophonic numerals</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Acrophonic numerals</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="acrophonic.xml">xml version</a> || id: acrophonic|| <a class="htmlnavigation" href="acrophonic.html#acrophonic-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="acrophonic.html#acrophonic-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="acrophonic.html#acrophonic-notes">notes</a> | <a class="htmlnavigation" href="acrophonic.html#acrophonic-questions">questions and issues</a> | <a class="htmlnavigation" href="acrophonic.html#acrophonic-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="acrophonic.html#acrophonic-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on acrophonic.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">divcount mismatch</p>
+   <p id="p-2">Acrophonic numeral signs use the first letter of certain numbers and currency values to stand for the whole: pi stands for &#960;&#8051;&#957;&#964;&#949;, delta for &#948;&#8051;&#954;&#945;, heta for &#7953;&#954;&#945;&#964;&#8057;&#957;, and so on. Individual signs may be combined within a single character to represent compund values: the value 50, for example, in the acrophonic system is represented by a delta (&#948;&#8051;&#954;&#945;: 10) written within a pi (&#960;&#8051;&#957;&#964;&#949;: 5), to indicate 5 x 10.</p>
+   <div id="acrophonic-typographic" class="gl-typographic">  
+    <h3 id="acrophonic-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1">Not addressed. In older editions the symbol may have been printed.</li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1">&lt;measure type="currency" unit="stater" value="50"&gt;&lt;num value="50" type="acrophonic"&gt;&#65873;&lt;/num&gt;&lt;/measure&gt;&#160;</li>
+    </ul>
+   </div>
+   <div id="acrophonic-edition" class="gl-edition">  
+    <h3 id="acrophonic-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-2">  
+     <li id="EncEx-1"><span xml:lang="grc" lang="grc"><span title="">&#65873;</span>&#160;</span></li>  
+    </ul>  
+   </div>
+   <div id="acrophonic-notes" class="gl-notes">  
+    <h3 id="acrophonic-notes-head">Notes</h3>  
+    <p id="p-3">The Greek acrophonic numerals are now in Unicode, and EpiDoc recommend that these characters now be used and simply tagged as any other <a class="xref" href="numbersandnumerals.html" id="xref-1">numeral</a> or currency <a class="xref" href="measurements.html" id="xref-2">measure</a>.</p>  
+   </div>
+   <div id="acrophonic-questions" class="gl-questions">  
+    <h3 id="acrophonic-questions-head">Questions and issues</h3>  
+    <ul id="list-3">  
+     <li id="item-3">None</li>  
+    </ul>  
+   </div>
+   <div id="acrophonic-responsibility" class="gl-responsibility">  
+    <h3 id="acrophonic-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-2"><span class="respStmt">author: John Bodel</span></li>
+     <li id="bibl-3"><span class="respStmt">author: Charles Crowther</span></li>  
+    </ul>  
+   </div>
+   <div id="acrophonic-cvs" class="gl-cvs">  
+    <h3 id="acrophonic-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="notations-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="notations-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="notations-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="notations-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

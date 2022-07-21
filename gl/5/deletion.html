@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Deletion of text in antiquity"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="deletion.html"/>
+  <title>Deletion of text in antiquity</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Deletion of text in antiquity</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="deletion.xml">xml version</a> || id: deletion|| <a class="htmlnavigation" href="deletion.html#deletion-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="deletion.html#deletion-regex">regular expression test</a> | <a class="htmlnavigation" href="deletion.html#deletion-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="deletion.html#deletion-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="deletion.html#deletion-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on deletion.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/deletion.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <div id="deletion-typographic" class="gl-typographic">  
+    <h3 id="deletion-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1">  <a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a>  </span>, <abbr title="page">p.</abbr>18-19</span>; <span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2">  <a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a>  </span>, <abbr title="page">p.</abbr>4</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="lat" lang="lat">et [[Getae Caesari]] ob rem publicam</span></li>  
+      <li id="item-2"><span xml:lang="lat" lang="lat">et [[G&#803;e&#803;t&#803;a&#803;e&#803; Caesari]] ob rem publicam</span></li>  
+      <li id="item-3"><span xml:lang="lat" lang="lat">et [[ + c.11 + ]] ob rem publicam</span></li>  
+      <li id="item-4"><span xml:lang="lat" lang="lat">et [[ [&#183; c.11 &#183; ] ]] ob rem publicam</span></li>  
+      <li id="item-5"><span xml:lang="lat" lang="lat">et [[ [ - - - - - - - - - - - ] ]] ob rem publicam</span></li>  
+     </ul></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="EncEx-1">et &lt;del rend="erasure" status="unremarkable"&gt;Getae Caesari&lt;/del&gt; ob rem publicam</li>
+     <li id="">et &lt;del rend="erasure" status="unremarkable"&gt;&lt;unclear reason="damage" cert="high"&gt;Getae&lt;/unclear&gt; Caesari&lt;/del&gt; ob rem publicam</li>
+     <li id="">et &lt;del rend="erasure" status="unremarkable"&gt; &lt;gap id="gap20" reason="illegible" extent="11" unit="character" /&gt; &lt;certainty target="gap20" locus="extent" degree="low" /&gt; &lt;/del&gt; ob rem publicam</li>
+     <li id="">et &lt;del rend="erasure" status="unremarkable"&gt; &lt;gap id="gap21" reason="lost" extent="11" unit="character" /&gt; &lt;certainty target="gap21" locus="extent" degree="low" /&gt; &lt;/del&gt; ob rem publicam</li>
+     <li id="">et &lt;del rend="erasure" status="unremarkable"&gt; &lt;gap id="gap22" reason="lost" extent="11" unit="character" /&gt; &lt;certainty target="gap22" locus="unit" degree="low" /&gt; &lt;/del&gt; ob rem publicam</li>
+    </ul>
+   </div>
+   <div id="deletion-edition" xml:lang="lat" lang="lat" class="gl-edition">  
+    <h3 id="deletion-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-4">  
+     <li id="EncEx-1">et <span class="deletion">[[Getae Caesari]]</span> ob rem publicam</li>  
+     <li id="item-9">et <span class="deletion">[[<span class="unclear-damage" title="reason: damage" id="unclear-1">G&#803;e&#803;t&#803;a&#803;e&#803;</span> Caesari]]</span> ob rem publicam</li>  
+     <li id="item-10">et <span class="deletion">[[ <span class="illegible" title="put title here!">&#160;+&#160;11&#160;+&#160;</span> ]]</span> ob rem publicam</li>  
+     <li id="item-11">et <span class="deletion">[[ <span class="gap-lost" title="put title here!">&#160;[&#160;&#183;&#160;11&#160;&#183;&#160;]&#160;</span> ]]</span> ob rem publicam</li>  
+     <li id="item-12">et <span class="deletion">[[ <span class="gap-lost" title="put title here!">&#160;[&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;]&#160;</span> ]]</span> ob rem publicam</li>  
+    </ul>  
+   </div>
+   <div id="deletion-responsibility" class="gl-responsibility">  
+    <h3 id="deletion-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+     <li id="bibl-4">  <span class="respStmt">converted XML: Gabriel Bodard</span>  </li>  
+    </ul>  
+   </div>
+   <div id="deletion-cvs" class="gl-cvs">  
+    <h3 id="deletion-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="deletion-cvs-revision-number">Revision number: $Revision: 1.12 $</p>  
+    <p id="deletion-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="deletion-cvs-revision-date">Revision date: $Date: 2006/12/03 18:15:35 $</p>  
+    <p id="deletion-cvs-revision-author">Revision committed by: $Author: hcayless $</p>  
+   </div>
+  </div>
+ </body>
+</html>

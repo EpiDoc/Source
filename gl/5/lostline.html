@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="An entire line completely lost (extent certain or uncertain)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="lostline.html"/>
+  <title>An entire line completely lost (extent certain or uncertain)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>An entire line completely lost (extent certain or uncertain)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="lostline.xml">xml version</a> || id: lostline|| <a class="htmlnavigation" href="lostline.html#lostline-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="lostline.html#lostline-regex">regular expression test</a> | <a class="htmlnavigation" href="lostline.html#lostline-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="lostline.html#lostline-notes">notes</a> | <a class="htmlnavigation" href="lostline.html#lostline-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="lostline.html#lostline-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on lostline.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/lostline.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="lostline-typographic" class="gl-typographic">  
+    <h3 id="lostline-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="page">p.</abbr>18</span>; <span id="bibl-2" class="bibliographiccitation"><a href="bibliography.html#Dohnicht" class="title-a-abbreviated" id="title-2">Dohnicht</a>, <abbr title="page">p.</abbr>4</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1">[ - - - - - - - - - - - - - - - - - - ] /</li>  
+      <li id="item-2">not addressed</li>  
+      <li id="TypoEx-3">- - - - - - - - - - - - - - - - -</li>  
+      <li id="item-4">not addressed</li>
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1"> &lt;gap reason="lost" extent="1" unit="line" /&gt;</li>
+     <li id="EncEx-2"> &lt;gap reason="lost" unit="line" extent="unknown" /&gt;</li>
+     <li id="EncEx-3"> &lt;gap reason="lost" unit="line" extent="unknown" dim="top" /&gt;</li>
+     <li id="EncEx-4"> &lt;gap reason="lost" unit="line" extent="unknown" dim="bottom" /&gt;</li>
+    </ol>
+   </div>
+   <div id="lostline-edition" class="gl-edition">  
+    <h3 id="lostline-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;]</li>  
+     <li id="EncEx-2"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;]</li>
+     <li id="EncEx-3"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;]</li>
+     <li id="EncEx-4"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;]</li>  
+    </ol>  
+   </div>
+   <div id="lostline-notes" class="gl-notes">  
+    <h3 id="lostline-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-11">The first example indicates complete certainty that a single, entire line of text has been lost.</li>  
+     <li id="item-12">The second example indicates complete certainty that some unknown number of entire lines of text have been lost.</li>
+     <li id="item-13">The third and fourth examples indicate that some number of lines have been lost from the top or bottom of the text respectively (Krummrey-Panciera do not distinguist between these two cases, although some transcription schemes do). These cases were previously grouped under a separate heading ("One or more lines completely lost at the beginning or end of a text or fragment (extent uncertain)") in an older version of the Guidelines.</li>  
+     <li id="item-14">For indications of uncertainty about whether lines of text have been lost or not, see <a class="xref" href="possiblylost.html" id="xref-1">Possibility that letters have been completely lost</a>.</li>  
+     <li id="item-15">NB: values of extent greater than 1, when combined with unit="line" are unsupported by the standard xslts; therefore, each separate lost line should be encoded as a separate <span class="tag">&lt;gap&gt;</span>, with appropriate line breaks (vel sim.) separating them.</li>  
+    </ol>  
+   </div>
+   <div id="lostline-responsibility" class="gl-responsibility">  
+    <h3 id="lostline-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-4"><span class="respStmt">author: Tom Elliott</span></li>  
+    </ul>  
+   </div>
+   <div id="lostline-cvs" class="gl-cvs">  
+    <h3 id="lostline-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="lostline-cvs-revision-number">Revision number: $Revision: 1.15 $</p>  
+    <p id="lostline-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="lostline-cvs-revision-date">Revision date: $Date: 2007/06/06 16:45:54 $</p>  
+    <p id="lostline-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

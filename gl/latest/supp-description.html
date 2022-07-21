@@ -1,16 +1,7 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)-->
-      <title>Physical description</title>
-      <meta name="author" content=""/>
-      <meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets"/>
-      <meta name="DC.Title" content="Physical description"/>
-      <meta name="DC.Type" content="Text"/>
-      <meta name="DC.Format" content="text/html"/>
-      <link href="css/epidoc.css" rel="stylesheet" type="text/css"/>
-      <link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css"/>
-      <link rel="stylesheet" media="print" type="text/css" href="https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css"/><script>
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)--><title>Physical description</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -21,76 +12,13 @@
   </script><script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script><script type="text/javascript">
 $(window).load(function() {
   $("body")
-    .append('<div id="search"><form><input type="text" name="search" id="searchBox"/> <button value="search" name="go" id="searchBtn">search</button></form></div>');
-  if (document.querySelector("div.main-content")) {
-    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
-  } else {
-    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
-  }
+    .append('<div id="search"><form><input type="text" name="search" id="searchBox" /> <button value="search" name="go" id="searchBtn">search</button></form></div>');
+  $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
   var go =  $("#searchBtn");
   go.click(function(evt){
       var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
         window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
     });
 });
-    </script></head>
-   <body id="TOP">
-      <div class="teidiv">
-         <h1 class="maintitle"><a href="index.html">Physical description</a></h1>
-         <h1 class="subtitle"><a href="index.html">2022-07-19</a></h1>
-         <div xml:lang="en" lang="en" class="teidiv1" id="supp-description">
-            <div class="tag-defs" id="index-body.1_div.49_div.1">
-               <h2 class="tag-defs"><span class="head">Relevant element documentation:</span></h2>
-               <p>
-                  <ul xmlns="" class="speclit">
-                     <li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-physDesc.html">physDesc</a> ; EpiDoc-specific
-                        customization: <a href="ref-physDesc.html">physDesc</a></li>
-                  </ul>
-               </p>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.49_div.2">
-               <p>Information describing the physical aspects of an inscription is encoded in the <a class="gi" title="(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class." href="ref-physDesc.html">physDesc</a> element, which is part of the <a class="gi" title="(TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources." href="ref-teiHeader.html">teiHeader</a>.</p>
-               <p>The following subsections of these guidelines address specific aspects of this encoding:</p>
-               <ul style="clear:both">
-                  <li class="item"><a class="link_ref" href="supp-descobject.html">Description and dimensions of monument or object</a></li>
-                  <li class="item"><a class="link_ref" href="supp-desctext.html">Description and layout of text field or campus</a></li>
-                  <li class="item"><a class="link_ref" href="supp-descletters.html">Description of letters or hands</a></li>
-                  <li class="item"><a class="link_ref" href="supp-descdecor.html">Decoration or iconography</a></li>
-                  <li class="item"><a class="link_ref" href="supp-descdimensions.html">Dimensions (of object, campus or letters)</a></li>
-               </ul>
-               <p>If, rather than breaking down the description of various aspects of the support, the
-                  editor prefers a single unstructured prose passage describing the object, the <a class="gi" title="(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class." href="ref-physDesc.html">physDesc</a> may contain one or more <a class="gi" title="(paragraph) marks paragraphs in prose." href="ref-p.html">p</a> (paragraph) elements as an alternative to (but not in addition to) the structured
-                  elements described in the sections linked above.</p>
-               <div id="index-egXML-d43e10760" class="pre egXML_valid"><span class="element">&lt;physDesc&gt;</span><br/> <span class="element">&lt;objectDesc&gt;</span><br/>  <span class="element">&lt;supportDesc&gt;</span><br/>   <span class="element">&lt;support&gt;</span><br/>    <span class="element">&lt;p&gt;</span><br/>     <span class="element">&lt;material&gt;</span>Bronze<span class="element">&lt;/material&gt;</span> Sextarius<span class="element">&lt;/p&gt;</span><br/>   <span class="element">&lt;/support&gt;</span><br/>  <span class="element">&lt;/supportDesc&gt;</span><br/>  <span class="element">&lt;layoutDesc&gt;</span><br/>   <span class="element">&lt;layout&gt;</span>inscribed on the outside just below the rim<span class="element">&lt;/layout&gt;</span><br/>  <span class="element">&lt;/layoutDesc&gt;</span><br/> <span class="element">&lt;/objectDesc&gt;</span><br/> <span class="element">&lt;handDesc&gt;</span><br/>  <span class="element">&lt;handNote&gt;</span>Fourth-century A.D. script; <span class="element">&lt;height&gt;</span>0.02<span class="element">&lt;/height&gt;</span><br/>  <span class="element">&lt;/handNote&gt;</span><br/> <span class="element">&lt;/handDesc&gt;</span><br/><span class="element">&lt;/physDesc&gt;</span></div>
-               <p>You can align your definitions by aligning to a local or to an external <a class="link_ref" href="idx-nontei.html">Controlled Vocabulary</a>.</p>
-            </div>
-            <div xmlns="" class="seealso">
-               <h3>See also: {{supp-description}}</h3>
-               <p>Other pages describing &lt;physDesc&gt;:</p>
-               <ul></ul>
-            </div>
-            <div class="teidiv1" id="supp-description-responsibility">
-               <h2><span class="head">Responsibility for this section</span></h2>
-               <ol class="listBibl">
-                  <li id="index-bibl-d43e10786">
-                     <div class="biblfree"><span class="name">Tom Elliott</span>, author  </div>
-                  </li>
-                  <li id="index-bibl-d43e10790">
-                     <div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div>
-                  </li>
-                  <li id="index-bibl-d43e10794">
-                     <div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div>
-                  </li>
-               </ol>
-            </div>
-         </div>
-         <nav class="left"></nav>
-         <div xmlns="" class="stdfooter">
-            <address>
-               <p class="version">EpiDoc version: 9.4</p>
-               <p class="creationdate">Date: 2022-07-19</p>
-            </address>
-         </div>
-      </div>
-   </body>
-</html>
+    </script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Physical description</a></h1><h1 class="subtitle"><a href="index.html">2021-11-18</a></h1><div lang="en" class="teidiv" id="supp-description"><div class="tag-defs" id="index-body.1_div.49_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation:</span></h2><p><ul xmlns="" class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-physDesc.html">physDesc</a> ; EpiDoc-specific
+                        customization: <a href="ref-physDesc.html">physDesc</a></li></ul></p></div><div class="teidiv1" id="index-body.1_div.49_div.2"><p>Information describing the physical aspects of an inscription is encoded in the <a class="gi" title="(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class." href="ref-physDesc.html">physDesc</a> element, which is part of the <a class="gi" title="(TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources." href="ref-teiHeader.html">teiHeader</a>.</p><p>The following subsections of these guidelines address specific aspects of this encoding:</p><ul style="clear:both"><li class="item"><a class="link_ref" href="supp-descobject.html">Description and dimensions of monument or object</a></li><li class="item"><a class="link_ref" href="supp-desctext.html">Description and layout of text field or campus</a></li><li class="item"><a class="link_ref" href="supp-descletters.html">Description of letters or hands</a></li><li class="item"><a class="link_ref" href="supp-descdecor.html">Decoration or iconography</a></li><li class="item"><a class="link_ref" href="supp-descdimensions.html">Dimensions (of object, campus or letters)</a></li></ul><p>If, rather than breaking down the description of various aspects of the support, the editor prefers a single unstructured prose passage describing the object, the <a class="gi" title="(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class." href="ref-physDesc.html">physDesc</a> may contain one or more <a class="gi" title="(paragraph) marks paragraphs in prose." href="ref-p.html">p</a> (paragraph) elements as an alternative to (but not in addition to) the structured elements described in the sections linked above.</p><div id="index-egXML-d43e12144" class="pre egXML_valid"><span class="element">&lt;physDesc&gt;</span><br /> <span class="element">&lt;objectDesc&gt;</span><br />  <span class="element">&lt;supportDesc&gt;</span><br />   <span class="element">&lt;support&gt;</span><br />    <span class="element">&lt;p&gt;</span><br />     <span class="element">&lt;material&gt;</span>Bronze<span class="element">&lt;/material&gt;</span> Sextarius<span class="element">&lt;/p&gt;</span><br />   <span class="element">&lt;/support&gt;</span><br />  <span class="element">&lt;/supportDesc&gt;</span><br />  <span class="element">&lt;layoutDesc&gt;</span><br />   <span class="element">&lt;layout&gt;</span>inscribed on the outside just below the rim<span class="element">&lt;/layout&gt;</span><br />  <span class="element">&lt;/layoutDesc&gt;</span><br /> <span class="element">&lt;/objectDesc&gt;</span><br /> <span class="element">&lt;handDesc&gt;</span><br />  <span class="element">&lt;handNote&gt;</span>Fourth-century A.D. script; <span class="element">&lt;height&gt;</span>0.02<span class="element">&lt;/height&gt;</span><br />  <span class="element">&lt;/handNote&gt;</span><br /> <span class="element">&lt;/handDesc&gt;</span><br /><span class="element">&lt;/physDesc&gt;</span></div><p>You can align your definitions by aligning to a local or to an external <a class="link_ref" href="idx-nontei.html">Controlled Vocabulary</a>.</p></div><div xmlns="" class="seealso"><h3>See also:</h3><p>Other pages describing &lt;physDesc&gt;:</p><ul><li><a href="supp-description-pt-br.html">Descrição física</a></li></ul></div><div class="teidiv1" id="supp-description-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d43e12171"><div class="biblfree"><span class="name">Tom Elliott</span>, author  </div></li><li id="index-bibl-d43e12177"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d43e12183"><div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div></li></ol></div></div><nav class="left"></nav><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: 9.3</p><p class="creationdate">Date: 2021-11-18</p></address></div></div></body></html>

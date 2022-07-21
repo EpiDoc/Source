@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Dimensions of object or campus</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Dimensions of object or campus</a></h1><div lang="en" class="teidiv" id="supp-descdimensions"><p>The <span class="gi">&lt;dimensions&gt;</span> element, generally placed within the <span class="gi">&lt;support&gt;</span> or <span class="gi">&lt;layout&gt;</span> or their descendents, may be used to record the dimensions, in any appropriate unit, of the monument, support, fragment, text field, or other aspect of the text or object being described.</p><div class="tag-defs" id="index-body.1_div.22_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation:</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dimensions.html">dimensions</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-height.html">height</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-width.html">width</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-depth.html">depth</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dim.html">dim</a></li></ul></div><div class="teidiv1" id="index-body.1_div.22_div.2"><p>The most common uses for dimensions in an epigraphic/papyrological edition are to record (a) the dimensions of the text-bearing object, usually giving height, width and depth/thickness, or (b) those of the text field, usually giving only height and width. For these the TEI element <span class="gi">&lt;dimensions&gt;</span> should be used; this element must contain <em>only</em> the individual elements <span class="gi">&lt;height&gt;</span>, <span class="gi">&lt;width&gt;</span> and <span class="gi">&lt;depth&gt;</span> (or, for dimensions other than the three linear ones, <span class="gi">&lt;dim&gt;</span>, which may take an <span class="att">type</span> such as "diameter", "arc", etc.).</p><p>If normalization is desired, the <span class="att">quantity</span> attribute on each dimension may be used to contain a mathematically actionable expression of the value (fraction expressed as decimal, or inches expressed as metric, for example). Approximate dimensions (often indicated "circa", "c." or "ca." in print) should be tagged with the attribute <span class="att">precision</span>="low". Dimensions that vary across the object (e.g. a tapering column wider at the base than at the top), should be given <span class="att">min</span> and <span class="att">max</span> attributes, rather than <span class="att">quantity</span>.</p><p>If <span class="att">precision</span> is used in combination with <span class="att">min</span> and <span class="att">max</span>, the low precision is understood to refer to both these values. For more complicated expressions, the <span class="gi">&lt;precision&gt;</span> element may be used to make different precision statements about each of these attributes.</p><div id="index-egXML-d39e2684" class="pre egXML_valid"><span class="element">&lt;dimensions <span class="attribute">unit</span>="<span class="attributevalue">cm</span>"&gt;</span><br /> <span class="element">&lt;height&gt;</span>196<span class="element">&lt;/height&gt;</span><br /> <span class="element">&lt;width&gt;</span>71<span class="element">&lt;/width&gt;</span><br /> <span class="element">&lt;depth <span class="attribute">precision</span>="<span class="attributevalue">low</span>"&gt;</span>17<span class="element">&lt;/depth&gt;</span><br /><span class="element">&lt;/dimensions&gt;</span></div><div id="index-egXML-d39e2692" class="pre egXML_valid"><span class="element">&lt;support&gt;</span> Colonnette of marble, spirally fluted and tapering to a point<br /> (<span class="element">&lt;dimensions&gt;</span><br />  <span class="element">&lt;dim<br />    <span class="attribute">unit</span>="<span class="attributevalue">metre</span>"<br />    <span class="attribute">min</span>="<span class="attributevalue">0.24</span>"<br />    <span class="attribute">max</span>="<span class="attributevalue">0.11</span>"<br />    <span class="attribute">type</span>="<span class="attributevalue">diameter</span>"&gt;</span>0.24-0.11<span class="element">&lt;/dim&gt;</span><br />  <span class="element">&lt;height <span class="attribute">unit</span>="<span class="attributevalue">metre</span>" <span class="attribute">quantity</span>="<span class="attributevalue">0.55</span>"&gt;</span>0.55<span class="element">&lt;/height&gt;</span><br /> <span class="element">&lt;/dimensions&gt;</span>).<br /><span class="element">&lt;/support&gt;</span></div><div id="index-egXML-d39e2701" class="pre egXML_valid"><span class="element">&lt;handNote&gt;</span> Letter heights:<br /><span class="element">&lt;height <span class="attribute">min</span>="<span class="attributevalue">0.01</span>" <span class="attribute">max</span>="<span class="attributevalue">0.015</span>"&gt;</span>0.01 - c. 0.015<span class="element">&lt;/height&gt;</span><br /> <span class="element">&lt;precision <span class="attribute">match</span>="<span class="attributevalue">preceding::height/@min</span>" <span class="attribute">precision</span>="<span class="attributevalue">high</span>"/&gt;</span><br /> <span class="element">&lt;precision <span class="attribute">match</span>="<span class="attributevalue">preceding::height/@max</span>" <span class="attribute">precision</span>="<span class="attributevalue">low</span>"/&gt;</span><br /><span class="element">&lt;/handNote&gt;</span></div></div><div class="teidiv1" id="supp-descdimensions-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e2712"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-descdecor.html">Description of decoration or iconography</a><span class="nextLink"> Next</span><a class="navigation" href="supp-history.html">Provenance of the text-bearing object</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-descdimensions.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

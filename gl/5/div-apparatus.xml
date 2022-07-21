@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /cvsroot/epidoc/guidelines/src/div-apparatus.xml,v 1.7 2007/06/06 20:55:56 gabrielbodard Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="div-apparatus" lang="en">
+   <head>Apparatus Criticus</head>
+    <ab><rs type="conformance">leiden</rs></ab>
+   <p>Structuring comments on the epigraphic text (tei:div type="apparatus") </p>
+   <p>Provides information on readings and conjectures. A portion of this is
+      captured in the markup (test this), so it can be generated. But the
+      apparatus criticus has to handle "out of line" or more general comments.
+      Perhaps stubs can be created for each line that has conjectures in a
+      CHET-C type conversion. This can then be edited by hand, the way CHET-C
+      output is. There also needs to be a provision for plain text sections,
+      which can appear interspersed with the more structured sections, or added to
+      the line stubs.</p>
+   <p><note>Refer to use of <tag>app</tag> in TEI. Refer to markup of text content in epidoc. Discussion of <tag>app</tag> on Markup and TEI-L, and new P5 content model based on our recommendations.</note></p><p>A structured apparatus criticus or epigraphic commentary may in principle consist of four types of entries:</p>
+    <list type="ordered"><item>General comments on the text, not tied to a particular line or section; these may be tagged as <tag>note</tag> within <tag>app</tag>, but without linking information.</item><item>Comments on a particular line or lines of the text; these should be linked to the lines in question using the mechanism specified: <tag>app loc=""</tag>. The <tag>lem</tag> element is optional in this context; the comment should be contained in a <tag>note</tag>, either in the <tag>lem</tag>, if present, or in the <tag>app</tag>, if not.</item><item>Record of variant readings or alternative restorations of problematic lines (this is the only meaning of apparatus as understood by the original <tag>tei:app</tag> element in P4, although P5 now explicitly permits our other usages); these items should be structured with <tag>app</tag>, <tag>lem</tag>, <tag>rdg</tag>, and possibly <tag>note</tag> elements.</item><item>Record of an comment on variants or complex layered text, similar to 3. above, but calling on the content of an <tag>app</tag> or <tag>choice</tag> element in the tagged text. The <tag>app</tag> element should then contain only a <tag>ptr</tag>, with the <att>id</att> attribute of the target element in the <tag>ptr</tag>'s <att>target</att>, and an optional <tag>note</tag>.</item></list><div id="div-apparatus-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered"><item><p><app><note>The squeeze is faint and inadequate where the right-hand ends of lines is concerned.</note></app></p></item><item><p> <app loc="line 3"><note>The erasure in this line is indubitably deliberate but illegible.</note></app></p></item><item><app loc="a 3"><lem>ἀμειβόμενοι</lem><rdg resp="Cormack"><supplied reason="lost">ἐ</supplied>|<supplied reason="lost">γερ</supplied><unclear reason="damage">σι</unclear>β<unclear reason="damage">ό</unclear><supplied reason="lost">αι</supplied> <note>rejected by Robert</note></rdg><rdg resp="Drew-Bear"><supplied reason="lost">ἀ</supplied>μειβ<unclear reason="damage">ό</unclear>μ<supplied reason="lost">ενο</supplied>ι</rdg></app></item><item><choice id="choice3"></choice><app><ptr target="choice3"/><note>so Mommsen</note></app></item></list>
+    </div>
+    <div id="div-apparatus-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>Gabriel Bodard</resp>
+                    <name>author</name>
+                </respStmt>
+            </bibl><bibl>
+                <respStmt>
+                    <resp>Tom Elliott</resp>
+                    <name>author</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div><div id="div-apparatus-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="div-apparatus-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.7 $</seg></p>
+        <p id="div-apparatus-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: r-5 $</seg></p>
+        <p id="div-apparatus-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2007/06/06 20:55:56 $</seg></p>
+        <p id="div-apparatus-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
+    </div></div>

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Ligatured letters</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Ligatured letters</a></h1><div lang="en" class="teidiv" id="trans-ligature"><p>Letters joined in ligature, technically those which share a single stroke (usually an upright) forming part of both characters, such as adjacent M and N, but more broadly any two joined or superimposed characters.</p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html">hi</a> ; EpiDoc-specific
+                        customization: <a href="ref-hi.html">hi</a></li></ul><span class="cit"><span class="quote">‘a͡b’</span><span class="quote">‘a͡bc’</span><span class="ref">Silvio Panciera</span> IV.4</span><div id="index-egXML-d39e7699" class="pre egXML_valid"><span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>"&gt;</span>ab<span class="element">&lt;/hi&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature#1">  
+      <span xmlns="" class="ligature" title="Ligature: these characters are joined">ab</span>  
+   </egXML></li></ul><span class="ref"></span></div><div id="index-egXML-d39e7702" class="pre egXML_valid"><span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>"&gt;</span>abc<span class="element">&lt;/hi&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>Default style (Panciera) style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature#2">  
+      <span xmlns="" class="ligature" title="Ligature: these characters are joined">abc</span>  
+   </egXML></li></ul><span class="ref"></span></div><div id="index-egXML-d39e7705" class="pre egXML_valid"><span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>"&gt;</span>ae<span class="element">&lt;/hi&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>London style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature#3">  
+      <span xmlns="" class="ligature" title="Ligature: these characters are joined">ae</span>  
+   </egXML></li></ul><span class="ref">IRT: <a href="http://irt.kcl.ac.uk/irt2009/IRT991.html">991</a></span></div><div id="index-egXML-d39e7708" class="pre egXML_valid"><br /><span class="comment">&lt;!-- example from IOSPE Byz. 18 --&gt;</span><br /> Εὐ<span class="element">&lt;supplied <span class="attribute">reason</span>="<span class="attributevalue">omitted</span>"&gt;</span>σ<span class="element">&lt;/supplied&gt;</span>εβί<br /><span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>"&gt;</span>ου<span class="element">&lt;/hi&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>petrae style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature#4"> Εὐ&lt;σ&gt;εβί<span xmlns="" class="petraeligature" title="Ligature: these characters are joined">ου</span>  
+   </egXML></li></ul></div><div id="index-egXML-d39e7716" class="pre egXML_valid"> ἀρχιερέω<span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>" <span class="attribute">xml:id</span>="<span class="attributevalue">hi1</span>"&gt;</span>ν<span class="element">&lt;/hi&gt;</span><br /><span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">ligature</span>" <span class="attribute">xml:id</span>="<span class="attributevalue">hi2</span>"&gt;</span>ἐ<span class="element">&lt;/hi&gt;</span>κγόνου <br /><span class="element">&lt;link <span class="attribute">targets</span>="<span class="attributevalue">hi1 hi2</span>"/&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>London style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-ligature#5"> ἀρχιερέω<span xmlns="" class="ligature" title="Ligature: these characters are joined">ν</span> 
+      <span xmlns="" class="ligature" title="Ligature: these characters are joined">ἐ</span>κγόνου   </egXML></li></ul><span class="ref">InsAph: <a href="http://insaph.kcl.ac.uk/iaph2007/iAph010189.html">1.189</a></span></div><div class="teidiv1" id="trans-ligature-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e7728"><div class="biblfree"><span class="name">Scott Vanderbilt</span>, author  </div></li><li id="index-bibl-d39e7734"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d39e7740"><div class="biblfree"><span class="name">Charlotte Tupman</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-illegibleotherunits.html">Illegible text, other units (e.g. cm)</a><span class="nextLink"> Next</span><a class="navigation" href="trans-linebreak.html">Line breaks</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-ligature.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

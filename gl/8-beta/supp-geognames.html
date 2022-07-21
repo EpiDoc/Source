@@ -1,0 +1,94 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Place names and geographical terms mentioned in the text</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Place names and geographical terms mentioned in the text</a></h1><h2 class="subtitle">Place names and geographical terms mentioned in the text</h2><section lang="en" class="teidiv" id="supp-geognames"><p>Elements used for identifying references to places and other geographical features.</p><p>
+        </p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-placeName.html">placeName</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-geogName.html">geogName</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-place.html">place</a></li></ul><p>
+    </p><p>References to places (such as settlements, regions, nations), peoples (such as ethnic groups, civic populations)
+        and other geographical features (such as seas, mountains, rivers) can be identified in the transcribed text using
+        the elements <span class="gi">&lt;placeName&gt;</span> (for mostly political entities: cities, nations, etc.) or <span class="gi">&lt;geogName&gt;</span> (for
+        physical features: rivers, mountains, etc.).
+    </p><div id="index-egXML-d38e4089" class="pre egXML_valid"><span class="element">&lt;placeName&gt;</span>Συρίας<span class="element">&lt;/placeName&gt;</span></div><div id="index-egXML-d38e4092" class="pre egXML_valid"><span class="element">&lt;geogName&gt;</span>Tamesis<span class="element">&lt;/geogName&gt;</span></div><p>
+        Further information about the kind of geographical entity being named may be specified using a <span class="att">type</span>
+        attribute, for example identifying ethnic names as opposed to the place names themselves; or sub-categorising
+        geographic names as the type of physical entity being names.
+    </p><p>
+        Names may be linked using the attribute <span class="att">nymRef</span>, which will contain a URL or other URI pointing to the standard
+        form of this name (nominative singular; normalized spelling) in a local XML table or database or online onomasticon.
+        More usefully the names may be linked using the <span class="att">ref</span> attribute to a place identifier, via a pointer to a local place
+        database or online gazzetteer such as Pleiades.
+    </p><div id="index-egXML-d38e4108" class="pre egXML_valid"><span class="element">&lt;placeName<br/>  type="<span class="attributevalue">ethnic</span>"<br/>  nymRef="<span class="attributevalue">placenames.xml#Cyrenensis</span>"<br/>  ref="<span class="attributevalue">mentionedplace.xml#cyrene</span>"&gt;</span>Cyrenensium<span class="element">&lt;/placeName&gt;</span></div><div id="index-egXML-d38e4111" class="pre egXML_valid"><span class="element">&lt;geogName<br/>  type="<span class="attributevalue">river</span>"<br/>  nymRef="<span class="attributevalue">placenames.xml#Εὐφράτης</span>"<br/>  ref="<span class="attributevalue">http://pleiades.stoa.org/places/912849</span>"&gt;</span>Εὐφράτης<span class="element">&lt;/geogName&gt;</span></div><p>
+        Personifications of places, for example, may be tagged as both <span class="gi">&lt;placeName&gt;</span> and <span class="gi">&lt;persName&gt;</span>, so they may
+        be indexed or searched in either category.
+    </p><div id="index-egXML-d38e4123" class="pre egXML_valid"><span class="element">&lt;persName type="<span class="attributevalue">divine</span>" ref="<span class="attributevalue">divinities.xml#phison</span>"&gt;</span><br/> <span class="element">&lt;geogName ref="<span class="attributevalue">http://pleiades.stoa.org/places/59851</span>"&gt;</span>Φίσων<span class="element">&lt;/geogName&gt;</span><br/><span class="element">&lt;/persName&gt;</span></div><section class="teidiv1" id="intro-faq-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e4131"><div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div></li><li id="index-bibl-d38e4137"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-prosopography.html">Personal names and prosopographical links</a><span class="nextLink"> Next</span><a class="navigation" href="supp-titlesoffices.html">Titles, offices, political posts, honorifics, occupations</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-geognames.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

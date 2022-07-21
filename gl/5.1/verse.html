@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Verse Inscriptions"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="verse.html"/>
+  <title>Verse Inscriptions</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Verse Inscriptions</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="verse.xml">xml version</a> || id: verse|| <a class="htmlnavigation" href="verse.html#verse-notes">notes</a> | <a class="htmlnavigation" href="verse.html#verse-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="verse.html#verse-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on verse.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <span class="tag">&lt;lb&gt;</span> (line-break) empty element to mark the point at which the line breaks. (see <a class="xref" href="lines.html" id="xref-1">Lines</a>.) In addition to marking epigraphic lines, which is obligatory, an editor may choose to tag verse groups and lines using the TEI <span class="tag">&lt;lg&gt;</span> (line-group) and <span class="tag">&lt;l&gt;</span> (line) elements.</p>
+   <p id="p-2">Within the verse lines, however, the start of each line of text on the support still needs to be marked with an <span class="tag">&lt;lb&gt;</span> element. In other words, <span class="tag">&lt;lg&gt;</span> and <span class="tag">&lt;l&gt;</span> are replacing the containing <span class="tag">&lt;ab&gt;</span>, but not the <span class="tag">&lt;lb&gt;</span>s. (See example 2 below.)</p>
+   <p id="p-3">The line-group and line elements may contain attributes recording metre, execution, rhyme, etc.</p>
+   <p id="p-4">(Examples to be added)</p>
+   <div id="verse-notes" class="gl-notes">  
+    <h3 id="verse-notes-head">Notes</h3>  
+    <ol id="list-1">  
+     <li id="item-1">The standard XSL does not currently distinguish between verse and prose inscriptions: verse inscriptions are therefore shown transcribed 'diplomatically', i.e. with epigraphic line-breaks but not verse lines.</li>  
+    </ol>  
+   </div>
+   <div id="verse-responsibility" class="gl-responsibility">  
+    <h3 id="verse-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1"><span class="respStmt">author: Gabriel Bodard</span></li>  
+    </ul>  
+   </div>
+   <div id="verse-cvs" class="gl-cvs">  
+    <h3 id="verse-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="lines-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="lines-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="lines-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="lines-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

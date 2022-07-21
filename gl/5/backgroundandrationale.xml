@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /cvsroot/epidoc/guidelines/src/backgroundandrationale.xml,v 1.3 2007/07/11 17:42:17 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="backgroundandrationale" lang="en" rend="integral">
+        <head>Background and Rationale</head>
+    <p>One of the great achievements of the 1931 Leiden meeting was the establishment of a set of
+        common notational practices for epigraphic and papyrological transcription. In the 21st
+        century, the next hurdle/challenge to be met is of the same sort: to migrate these practices
+        into the digital arena and extend them in a way that takes advantage of the functional
+        opportunities offered by the new medium. The goal of the <xref href="http://epidoc.sf.net"
+            >EpiDoc Community</xref> is to do just this (see further: <xref
+            href="introeps.xml">Introduction for Epigraphers</xref>). The toolkit 
+        provided by the EpiDoc Community includes a <xref href="conformance-tei.xml">TEI-conformant</xref> markup language, a set of XML tools to assist in
+        transcription and publication (see <xref href="epidev.xml">EpiDoc Development</xref>, and
+        full documentation of how to use both. </p>
+        <p>The EpiDoc toolkit is useful in a number of ways. It can help make basic activities such
+            as transcription and sharing of documents much easier. For projects using standard XML
+            tools and TEI/EpiDoc markup, sharing documents between projects becomes as simple as
+            telling the software where to find the new file. For projects engaged in converting
+            materials from Leiden notation to XML, manual conversion of data and re-entering of
+            texts will become a thing of the past; the EpiDoc tools can convert directly from Leiden
+            notation to EpiDoc markup without manual intervention. </p> 
+        <p>But beyond the tremendous practical benefits to be realized from automated conversion and
+            project-to-project data sharing, individual projects can gain other advantages from
+            adopting EpiDoc techniques. One of the most significant is the ability to produce much
+            more powerful user interfaces, which can be adapted easily to the needs of different
+            user groups. One can imagine a website in which customizable user preferences dictate
+            whether standard glosses for the various division types are presented to or hidden from
+            the user (i.e., a helpful, student-oriented interface vs. a compact, streamlined view
+            for scholars). Printed output in a variety of formats is also easy to produce from the
+            EpiDoc-encoded source. Another important advantage is the ability to provide more
+            nuanced searching, using the EpiDoc markup to identify specific search contexts and
+            terms. Users can search for date ranges found only in 'description' divisions, for Latin
+            abbreviations found only in 'edition' divisions, or for English words appearing only in
+            'translation' divisions. In assembling a large database of inscriptions, an automated
+            process could easily be put to the task of reading all the entries from the
+            'bibliography' divisions of hundreds of individual texts prepared by a number of
+            different projects, then collating the citations into a single master bibliography file
+            for the entire database (for the major divisions of an EpiDoc document, see <xref
+                href="documentstructure.xml">Document Structure</xref>).</p>
+
+    <div id="backgroundandrationale-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <p>n/a</p>
+    </div>
+    <div id="backgroundandrationale-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="backgroundandrationale-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+            >$Revision: 1.3 $</seg></p>
+        <p id="backgroundandrationale-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+            >$Name: r-5 $</seg></p>
+        <p id="backgroundandrationale-cvs-revision-date">Revision date: <seg n="cvs-revision-date"
+            >$Date: 2007/07/11 17:42:17 $</seg></p>
+        <p id="backgroundandrationale-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+            >$Author: paregorios $</seg></p>
+    </div>
+</div>

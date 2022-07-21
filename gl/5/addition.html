@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Addition of text in antiquity"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="addition.html"/>
+  <title>Addition of text in antiquity</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Addition of text in antiquity</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="addition.xml">xml version</a> || id: addition|| <a class="htmlnavigation" href="addition.html#addition-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="addition.html#addition-regex">regular expression test</a> | <a class="htmlnavigation" href="addition.html#addition-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="addition.html#addition-notes">notes</a> | <a class="htmlnavigation" href="addition.html#addition-questions">questions and issues</a> | <a class="htmlnavigation" href="addition.html#addition-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="addition.html#addition-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on addition.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/addition.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <div id="addition-typographic" class="gl-typographic">  
+    <h3 id="addition-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1">  <a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a>  </span>, <abbr title="page">p.</abbr>18-19</span>; <span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2">  <a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a>  </span>, <abbr title="page">p.</abbr>4</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="lat" lang="lat">Imperator `Caesar&#180; Augustus</span></li>  
+      <li id="item-2"><span xml:lang="lat" lang="lat">Livia `clarissima&#180; femina</span></li>  
+     </ul></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ul>
+     <li id="">Imperator &lt;add place="supralinear"&gt;Caesar&lt;/add&gt; Augustus</li>
+     <li id="EncEx-1">Imperator &lt;add&gt;Caesar&lt;/add&gt; Augustus</li>
+     <li id="">Livia &lt;add place="infralinear"&gt;clarissima&lt;/add&gt; femina</li>
+     <li id="">&lt;add place="left"&gt;&#931;&#945;&#956;&#959;&#965;&#951;&#955;&lt;/add&gt; &#7992;&#945;&#951;&#955;</li>
+    </ul>
+   </div>
+   <div id="addition-edition" class="gl-edition">  
+    <h3 id="addition-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ul id="list-4">  
+     <li id="item-5"><span xml:lang="lat" lang="lat">Imperator <span class="addition" title="supralinear addition in antiquity">`Caesar&#180;</span> Augustus</span></li>  
+     <li id="EncEx-1"><span xml:lang="lat" lang="lat">Imperator <span class="addition" title=" addition in antiquity">`Caesar&#180;</span> Augustus</span></li>  
+     <li id="item-7"><span xml:lang="lat" lang="lat">Livia <span class="addition" title="infralinear addition in antiquity">`clarissima&#180;</span> femina</span></li>  
+     <li id="item-8"><span xml:lang="grc" lang="grc"><span class="addition" title="left addition in antiquity">`&#931;&#945;&#956;&#959;&#965;&#951;&#955;&#180;</span> &#7992;&#945;&#951;&#955;</span></li>  
+    </ul>  
+   </div>
+   <div id="addition-notes" class="gl-notes">  
+    <h3 id="addition-notes-head">Notes</h3>  
+    <ul id="list-5">  
+     <li id="item-9">In traditional Lejden the place of added text is not specified in the transcription, but noted in the apparatus or commentary. This added information, recorded here by use of the <span class="att">place</span> attribute, is therefore optional and may be omitted without harm.</li>  
+    </ul>  
+    <div id="addition-questions" class="gl-questions">  
+     <h4 id="addition-questions-head">Questions and issues</h4>  
+     <ul id="list-6">  
+      <li id="item-10">none</li>  
+     </ul>  
+    </div>  
+   </div>
+   <div id="addition-responsibility" class="gl-responsibility">  
+    <h3 id="addition-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+     <li id="bibl-4">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+    </ul>  
+   </div>
+   <div id="addition-cvs" class="gl-cvs">  
+    <h3 id="addition-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="addition-cvs-revision-number">Revision number: $Revision: 1.13 $</p>  
+    <p id="addition-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="addition-cvs-revision-date">Revision date: $Date: 2006/12/03 18:15:35 $</p>  
+    <p id="addition-cvs-revision-author">Revision committed by: $Author: hcayless $</p>  
+   </div>
+  </div>
+ </body>
+</html>

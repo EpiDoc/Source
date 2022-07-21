@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Introduction to EpiDoc Document Structure"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="documentstructureintro.html"/>
+  <title>Introduction to EpiDoc Document Structure</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Introduction to EpiDoc Document Structure</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="documentstructureintro.xml">xml version</a> || id: documentstructureintro|| <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-example1">example 1</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-basicdocumentstructure">basic document structure</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-example2">example 2: elements within the teiheader</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-div4">the teiheader</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-example3">example 3: outline of epidoc usage</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-div6">the text element and its subordinate divs</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="documentstructureintro.html#documentstructureintro-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on documentstructureintro.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <div id="documentstructureintro-example1" class="gl-example">  
+    <h3 id="example1-head">Example 1</h3>  
+    <p class="abstract" id="ab-1"><span class="tag">&lt;TEI.2&gt;</span>  
+     <br id="lb-1"/>  <span class="tag">&lt;teiHeader&gt;</span> ... <span class="tag">&lt;/teiHeader&gt;</span>  
+     <br id="lb-2"/>  <span class="tag">&lt;text&gt;</span> ... <span class="tag">&lt;/text&gt;</span>  
+     <br id="lb-3"/>  <span class="tag">&lt;/TEI.2&gt;</span></p>  
+   </div>
+   <div id="documentstructureintro-basicdocumentstructure">  
+    <h3 id="basicdocumentstructure-head">Basic document structure</h3>  
+    <p id="p-1">The basic document structure recommended by EpiDoc follows exactly that laid out for TEI.2. There are two main sections of the document, both of which are required: the <span class="tag">&lt;teiHeader&gt;</span> and the <span class="tag">&lt;text&gt;</span>. The <span class="tag">&lt;teiHeader&gt;</span> is essentially the title page and descriptive catalog record for the electronic version of the text, providing information about the source of the text, the way it is digitally represented and any revisions it has undergone. The <span class="tag">&lt;text&gt;</span> element, on the other hand, embodies the structure and content of the text itself, including introduction, textual edition, translation, critical apparatus, commentary, notes and the like. The basic, top-level structure of any such TEI document would look like that sketched in <a class="ref" href="documentstructureintro.html#example1" id="ref-1">Example 1</a>. </p>  
+    <p id="p-2">This simple representation of the top-level tagging hides the structural complexity and semantic power that can be achieved with TEI. Within each of the two major elements, TEI permits (and sometimes requires) the use of a wide range of other elements. Some of these elements have very precise rules governing their use. Others permit adaptation to meet the needs of particular projects or types of textual materials. </p>  
+   </div>
+   <div id="documentstructureintro-example2" class="gl-example">  
+    <h3 id="example2-head">Example 2: Elements within the <span class="tag">&lt;teiHeader&gt;</span></h3>  
+    <p class="abstract" id="ab-2"><span class="tag">&lt;TEI.2&gt;</span>  
+     <br id="lb-4"/>  <span class="tag">&lt;teiHeader&gt;</span>  
+     <br id="lb-5"/>  <span class="tag">&lt;fileDesc&gt;</span> ... <span class="tag">&lt;/fileDesc&gt;</span>  
+     <br id="lb-6"/>  <span class="tag">&lt;encodingDesc&gt;</span> ... <span class="tag">&lt;/encodingDesc&gt;</span>  
+     <br id="lb-7"/>  <span class="tag">&lt;profileDesc&gt;</span> ... <span class="tag">&lt;/profileDesc&gt;</span>  
+     <br id="lb-8"/>  <span class="tag">&lt;revisionDesc&gt;</span> ... <span class="tag">&lt;/revisionDesc&gt;</span>  
+     <br id="lb-9"/>  <span class="tag">&lt;/teiHeader&gt;</span>  
+     <br id="lb-10"/>  <span class="tag">&lt;text&gt;</span> ... <span class="tag">&lt;/text&gt;</span>  
+     <br id="lb-11"/>  <span class="tag">&lt;/TEI.2&gt;</span></p>  
+   </div>
+   <div id="documentstructureintro-div4">  
+    <h3 id="head-5">The <span class="tag">&lt;teiHeader&gt;</span></h3>  
+    <p id="p-3">For example, the <span class="tag">&lt;teiHeader&gt;</span> (see <a class="ref" href="documentstructureintro.html#example2" id="ref-2">Example 2</a>) has a very explicit content model, requiring the presence of certain subordinate elements in a particular order. It contains the following: </p>  
+    <ul id="list-1">  
+     <li id="item-1"><span class="tag">&lt;fileDesc&gt;</span>, which provides a full bibliographical description of the computer file itself </li>  
+     <li id="item-2"><span class="tag">&lt;encodingDesc&gt;</span>, which describes the relationship between an electronic text and its source(s) </li>  
+     <li id="item-3"><span class="tag">&lt;profileDesc&gt;</span> (or 'text profile'), containing classificatory and contextual information about the text, such as its subject matter, the situation in which it was produced, the individuals described by or participating in producing it, and so forth. </li>  
+     <li id="item-4"><span class="tag">&lt;revisionDesc&gt;</span> (or 'revision history'), which allows the encoder to provide a history of changes made during the development of the electronic text </li>  
+    </ul>  
+    <p id="p-4">The use of each of these elements in encoding epigraphic editions (each with its own specific content model) is discussed below. In general, see TEI, <a class="xref" href="http://www.tei-c.org/P4X/HD.html" id="xref-1">Section 5: The TEI Header for more details</a>. </p>  
+   </div>
+   <div id="documentstructureintro-example3" class="gl-example">  
+    <h3 id="example3-head">Example 3: Outline of EpiDoc usage</h3>  
+    <p id="p-5">To be completed</p>  
+   </div>
+   <div id="documentstructureintro-div6">  
+    <h3 id="head-7">The <span class="tag">&lt;text&gt;</span> element and its subordinate <span class="tag">&lt;div&gt;</span>s</h3>  
+    <p id="p-6">When compared with the <span class="tag">&lt;teiHeader&gt;</span>, the top-level <span class="tag">&lt;text&gt;</span> element has a more flexible content model, as do many of its subordinate elements. This flexibility is necessary to accomodate the wide range of textual materials that might require digitization. <a class="ref" href="documentstructureintro.html#example3" id="ref-3">Example 3</a> provides an abbreviated EpiDoc representation of a boundary marker for an imperial estate in North Africa.</p>  
+    <p id="p-7">Within the <span class="tag">&lt;text&gt;</span> element of <a class="ref" href="documentstructureintro.html#example3" id="ref-4">Example 3</a>, one finds the mandatory TEI <span class="tag">&lt;body&gt;</span> element. TEI provides that this element can be subdivided further into any number of logical divisions using the <span class="tag">&lt;div&gt;</span> element. TEI specifies the use of the <span class="tag">&lt;div&gt;</span> element for the hierarchical grouping of divisions and subdivisions within a text. Depending on the genre of the text, these 'groups' can have different common names, such as 'chapter' in a novel, 'scene' in a play, or 'book' in an ancient literary work. Rather than elaborate differently named elements for each and every possible such grouping, TEI employs the generic <span class="tag">&lt;div&gt;</span> element for all such divisions. The TEI specification for the <span class="tag">&lt;div&gt;</span> element provides a standard attribute named <span class="att">type</span>. This attribute is used to categorize these <span class="tag">&lt;div&gt;</span> elements independently of their hierarchical relationships using a set of attribute values appropriate to the genre and audience of the text. In this way, the nesting of <span class="tag">&lt;div&gt;</span> elements can be used to indicate the hierarchical relationship between a chapter and a subsection, while the <span class="att">type</span> attribute can be used simultaneously to indicate the semantic difference between a chapter and an appendix. Note: <a class="ref" href="documentstructureintro.html#example3" id="ref-5">Example 3</a> does not 'nest' its <span class="tag">&lt;div&gt;</span> elements, so there are not any significant hierarchical relationships between divisions of this particular text. But there are significant semantic differences, as indicated by the use of the <span class="att">type</span> attribute. </p>  
+    <p id="p-8">In this example, the <span class="att">type</span> attribute of the <span class="tag">&lt;div&gt;</span> element is used to distinguish between six different types of divisions: </p>  
+    <p id="p-9">a description of the text and/or monument; </p>  
+    <p id="p-10">the edition of the epigraphic text itself; </p>  
+    <p id="p-11">a translation of that text; </p>  
+    <p id="p-12">a scholarly commentary related to the text and its unique problems and items of interest; </p>  
+    <p id="p-13">a history of the discovery, documentation, and interpretation of the text leading to its present publication; and </p>  
+    <p id="p-14">a bibliography relevent to this text. </p>  
+    <p id="p-15">These attribute values (and two more: metadata and diplomatic) have been introduced as part of the EpiDoc standard (see Section 5.5: EpiDoc divisions (tei:div) of the text element (tei:text) for the formal definition of the <span class="tag">&lt;div/&gt;</span> element and its attributes). TEI places no limits or requirements on the use of the <span class="att">type</span> attribute; it merely makes <span class="att">type</span> available "to provide a name or description for the division." We have deliberately kept the number of EpiDoc values for <span class="att">type</span> small to ensure the greatest possible degree of smooth interchange between EpiDoc-conformant projects. </p>  
+    <p id="p-16">EpiDoc exploits the flexibility and specificity of the <span class="tag">&lt;div/&gt;</span> element and its <span class="att">type</span> attribute to distinguish between the various components commonly found in the scholarly presentation of epigraphic texts. Compare the conventional print representation of ALA 2 (Example 4) with the XML version in Example 3. Although styles and presentation differ from one scholarly epigraphic publication to the next, at a basic level, this example is representative of the historiographic genre. Typographic cues are generally used to alert the reader to a change in the character of information being presented for each text, but the exact nature of such changes is often simply implied. We assume that our reader understands the conventions of epigraphic publication. In the XML counterpart, the semantic differences between each division are made explicit using standard values for the <span class="att">type</span> attribute. </p>  
+    <p id="p-17">These semantic distinctions, encoded into a digital text from its creation, facilitate a number of important possibilities when the time comes to prepare the text for presentation to a user or incorporate it into another publication or project. Standard XML software can use combinations of element and attribute values to select, compare, combine and reformat semantically discrete portions of documents in complex ways, providing the semantic distinctions have been explicitly encoded in a standard manner. The typed divisions of TEI, when categorized according to a generally-agreed and epigraphically relevant scheme, constitute such a standard. </p>  
+    <p id="p-18">Divisions with the same type attribute value can be repeated as necessary, and further semantic distinctions between them drawn at the editor's discretion using the standard TEI attribute <span class="att">n</span>. These arrangements permit extensive, project-specific flexibility in searching, formatting and reusing documents. There are no EpiDoc-mandated values for n, but projects are encouraged to develop standard usage and publish documentation thereof as part of their dataset. The EPAPP project has developed such a system of attribute values, as demonstrated by the text in Example 5. The EPAPP system of values for n on the <span class="tag">&lt;div&gt;</span> element has been adopted by these guidelines as a recommendation for projects which find it helpful. </p>
+   </div>
+   <div id="documentstructureintro-responsibility" class="gl-responsibility">  
+    <h3 id="documentstructureintro-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: to be added</span>  </li>  
+    </ul>  
+   </div>
+   <div id="documentstructureintro-cvs" class="gl-cvs">  
+    <h3 id="documentstructureintro-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="documentstructureintro-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="documentstructureintro-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="documentstructureintro-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="documentstructureintro-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

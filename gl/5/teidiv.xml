@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /cvsroot/epidoc/guidelines/src/teidiv.xml,v 1.9 2006/07/12 13:44:06 gabrielbodard Exp $ -->
+<!-- End CVS information: do not remove -->
+<div xmlns="http://www.tei-c.org/ns/1.0" id="teidiv" lang="en" rend="multipart">
+    <head>EpiDoc divisions (tei:div) of the text element (tei:text)</head>
+    <p>The structure of an XML file containing the edition of an inscription or group of inscriptions marked up according to the EpiDoc standard is very flexible. Unlike a database or a single corpus, there is no requirement to follow a set pattern or page layout in an EpiDoc project. Some projects will focus more on some aspects of an inscriptions than others; some will distinguish object description from campus, others will have controlled vocabularies for object type or date. The only thing of importance in EpiDoc is that information of a certain type—where it is included—be explicitly identifiable by XML structure.</p><p>This is achieved by having a series of typed divisions available for use, each of which can contain a certain category of information. These divisions may appear in any order (although a project may wish to impose further consistency on this matter), may be omitted, duplicated, or nested as necessary, and may be given headings with any values as chosen by the individual project (in any language, needless to say). The divisions available are the following:
+</p>
+    <xi:include href="div-edition.xml"/>
+    <xi:include href="div-translation.xml"/>
+    <xi:include href="div-apparatus.xml"/>
+    <xi:include href="div-commentary.xml"/>
+    <xi:include href="div-description.xml"/>
+    <xi:include href="div-history.xml"/>
+    <xi:include href="div-bibliography.xml"/>
+    <xi:include href="div-figure.xml"/>
+    <div id="teidiv-responsibility" type="gl-responsibility">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl><bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Elli Mylonas</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="teidiv-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="teidiv-cvs-revision-number">Revision number: <seg n="cvs-revision-number">$Revision: 1.9 $</seg></p>
+        <p id="teidiv-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name">$Name: r-5 $</seg></p>
+        <p id="teidiv-cvs-revision-date">Revision date: <seg n="cvs-revision-date">$Date: 2006/07/12 13:44:06 $</seg></p>
+        <p id="teidiv-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author">$Author: gabrielbodard $</seg></p>
+    </div>
+</div>

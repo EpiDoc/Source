@@ -1,16 +1,7 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)-->
-      <title>Words and Lemmatization</title>
-      <meta name="author" content=""/>
-      <meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets"/>
-      <meta name="DC.Title" content="Words and Lemmatization"/>
-      <meta name="DC.Type" content="Text"/>
-      <meta name="DC.Format" content="text/html"/>
-      <link href="css/epidoc.css" rel="stylesheet" type="text/css"/>
-      <link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css"/>
-      <link rel="stylesheet" media="print" type="text/css" href="https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css"/><script>
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)--><title>Words and Lemmatization</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -21,111 +12,13 @@
   </script><script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script><script type="text/javascript">
 $(window).load(function() {
   $("body")
-    .append('<div id="search"><form><input type="text" name="search" id="searchBox"/> <button value="search" name="go" id="searchBtn">search</button></form></div>');
-  if (document.querySelector("div.main-content")) {
-    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
-  } else {
-    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
-  }
+    .append('<div id="search"><form><input type="text" name="search" id="searchBox" /> <button value="search" name="go" id="searchBtn">search</button></form></div>');
+  $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
   var go =  $("#searchBtn");
   go.click(function(evt){
       var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
         window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
     });
 });
-    </script></head>
-   <body id="TOP">
-      <div class="teidiv">
-         <h1 class="maintitle"><a href="index.html">Words and Lemmatization</a></h1>
-         <h1 class="subtitle"><a href="index.html">2022-07-19</a></h1>
-         <div xml:lang="en" lang="en" class="teidiv1" id="idx-wordslemmata">
-            <p>Tagging lexical words in the text and/or linking to lemmata for purposes of indexing
-               or search.</p>
-            <p>
-               <ul xmlns="" class="speclit">
-                  <li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html">w</a> ; EpiDoc-specific
-                     customization: <a href="ref-w.html">w</a></li>
-               </ul>
-            </p>
-            <p>Explicit markup of words (tokenization) and identification of their dictionary headwords
-               (lemmatization) are both optional. Many projects simply leave these features unmarked,
-               or rely on automated processes in search software to detect word-breaks and link to
-               lemmatizing tools such as <span class="term">Morpheus</span>. (The Papyrological Navigator, Perseus, and the TLG all use methods similar to this.)</p>
-            <p>To explicitly mark-up lexical words in a papyrological or epigraphic text, however,
-               each word in the text should be enclosed in a <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element. (For ease of processing, it is advised that inter-word spacing, punctuation
-               and other features be left outside of this element, and if possible there should be
-               no spaces or carriage returns within the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element.)</p>
-            <div id="index-egXML-d43e17902" class="pre egXML_valid"><span class="element">&lt;w&gt;</span>maximo<span class="element">&lt;/w&gt;</span><br/><span class="element">&lt;w&gt;</span>tribunicia<span class="element">&lt;/w&gt;</span><br/><span class="element">&lt;w&gt;</span>potestate<span class="element">&lt;/w&gt;</span><br/><span class="element">&lt;num&gt;</span>XXIIII<span class="element">&lt;/num&gt;</span><br/><span class="element">&lt;w&gt;</span>imperatori<span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref">IRT: <a href="http://inslib.kcl.ac.uk/irt2009/IRT022.html">22</a></span>)</div>
-            </div>
-            <p>To record the lemma or dictionary headword of the word in question, the simplest solution
-               is to enter the uninflected form in a <span class="att">lemma</span> attribute, which may be used, for example, to generate the entries in a lexical index
-               to the corpus.</p>
-            <div id="index-egXML-d43e17917" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">ἵστημι</span>"&gt;</span>ἕστηκα<span class="element">&lt;/w&gt;</span></div>
-            <p>A slightly more sophisticated solution is to enter in a <span class="att">lemmaRef</span> attribute a URL or other URI that points to the entry for the word in question in
-               a database or online dictionary. This solution allows for better disambiguation of
-               homonymous words, for example, or linking to morphological and statistical information
-               about the word.</p>
-            <div id="index-egXML-d43e17924" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=fero&amp;amp;la=la</span>"&gt;</span>tulisti<span class="element">&lt;/w&gt;</span></div>
-            <div class="teidiv1" id="index-body.1_div.98_div.1">
-               <h2><span class="head">Multiple lemmata</span></h2>
-               <p>If a single word tag contains more than one indexable word (e.g. "populusque" in Latin
-                  or "κἀκ" in Greek), or an incomplete word is ambiguous and might correspond to either
-                  of two or more lemmata (e.g. ΕΚΦΕΥΞ), then all lemmata that should be indexed may
-                  be included in the <span class="att">lemma</span> attribute, separated by spaces:</p>
-               <div id="index-egXML-d43e17933" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">suus que</span>"&gt;</span>suisque<span class="element">&lt;/w&gt;</span></div>
-               <div id="index-egXML-d43e17936" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">καὶ ἐκ</span>"&gt;</span>κἀκ<span class="element">&lt;/w&gt;</span></div>
-               <div id="index-egXML-d43e17939" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">ἔκφευξις ἐκφεύγω</span>" <span class="attribute">part</span>="<span class="attributevalue">I</span>"&gt;</span>ΕΚΦΕΥΞ<span class="element">&lt;/w&gt;</span><br/><span class="element">&lt;gap <span class="attribute">reason</span>="<span class="attributevalue">lost</span>" <span class="attribute">extent</span>="<span class="attributevalue">unknown</span>"<br/> <span class="attribute">unit</span>="<span class="attributevalue">character</span>"/&gt;</span></div>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.98_div.2">
-               <h2><span class="head">Interaction with editorial markup</span></h2>
-               <p>The <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element may contain further editorial tags, such as expansions of abbreviations.
-                  Wherever possible the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element should remain intact (cf. <a class="link_ref" href="trans-lacunasegmented.html">Editorial restoration: Segmented or adjacent lacunae</a>).</p>
-               <div id="index-egXML-d43e17956" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">Κύριος</span>"<br/> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=kurie&amp;amp;la=greek</span>"&gt;</span><br/> <span class="element">&lt;expan&gt;</span><br/>  <span class="element">&lt;abbr&gt;</span>Κ<span class="element">&lt;/abbr&gt;</span><br/>  <span class="element">&lt;ex&gt;</span>ύρι<span class="element">&lt;/ex&gt;</span>ε<span class="element">&lt;/expan&gt;</span><br/><span class="element">&lt;/w&gt;</span><br/><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">βοηθέω</span>"<br/> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=bohqei&amp;amp;la=greek</span>"&gt;</span><br/> <span class="element">&lt;expan&gt;</span><br/>  <span class="element">&lt;abbr&gt;</span>β<span class="element">&lt;/abbr&gt;</span><br/>  <span class="element">&lt;ex&gt;</span>οή<span class="element">&lt;/ex&gt;</span><br/>  <span class="element">&lt;abbr&gt;</span>θ<span class="element">&lt;/abbr&gt;</span><br/>  <span class="element">&lt;ex&gt;</span>ει<span class="element">&lt;/ex&gt;</span><br/> <span class="element">&lt;/expan&gt;</span><br/><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_05.html">Source</a></span>)</div>
-               </div>
-               <p>displayed in the edition as: Κ(ύρι)ε β(οή)θ(ει); or some restored text:</p>
-               <div id="index-egXML-d43e17975" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">σός</span>"<br/> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=sw&amp;amp;la=greek</span>"&gt;</span><br/> <span class="element">&lt;supplied <span class="attribute">reason</span>="<span class="attributevalue">lost</span>"&gt;</span>σ<span class="element">&lt;/supplied&gt;</span>ῷ<br/><br/><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_04.html">Source</a></span>)</div>
-               </div>
-               <p>displayed in the edition as: [σ]ῷ; a slighly more complicated situation could be the
-                  following, with a lemma written across two lines:</p>
-               <div id="index-egXML-d43e17981" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">φέρω</span>"<br/> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=ferousa&amp;amp;la=greek</span>"&gt;</span> φ<span class="element">&lt;supplied <span class="attribute">reason</span>="<span class="attributevalue">lost</span>"&gt;</span>έ<br/> <span class="element">&lt;lb <span class="attribute">n</span>="<span class="attributevalue">6</span>" <span class="attribute">break</span>="<span class="attributevalue">no</span>"/&gt;</span>ρ<span class="element">&lt;/supplied&gt;</span>ουσα<br/><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_35.html">Source</a></span>)</div>
-               </div>
-               <p>displayed as: <br/>φ[έ- <br/>6 ρ]ουσα</p>
-               <p>It should be noticed that in all these examples the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element overlaps the other tags.</p>
-            </div>
-            <div xmlns="" class="seealso">
-               <h3>See also: {{idx-wordslemmata}}</h3>
-               <p>Other pages describing &lt;w&gt;:</p>
-               <ul>
-                  <li><a href="idx-titlesoffices.html">Titles, offices, political posts, honorifics, occupations</a></li>
-                  <li><a href="idx-socialterms.html">Military, religious, socio-economic terminology</a></li>
-                  <li><a href="trans-restoredincomplete.html">Editorial restoration: Word incompletely restored</a></li>
-               </ul>
-            </div>
-            <div class="teidiv1" id="idx-wordslemmata-responsibility">
-               <h2><span class="head">Responsibility for this section</span></h2>
-               <ol class="listBibl">
-                  <li id="index-bibl-d43e18003">
-                     <div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div>
-                  </li>
-                  <li id="index-bibl-d43e18007">
-                     <div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div>
-                  </li>
-                  <li id="index-bibl-d43e18011">
-                     <div class="biblfree"><span class="name">Alessio Sopracasa</span>, author  </div>
-                  </li>
-                  <li id="index-bibl-d43e18015">
-                     <div class="biblfree"><span class="name">Martina Filosa</span>, author  </div>
-                  </li>
-               </ol>
-            </div>
-         </div>
-         <nav class="left"></nav>
-         <div xmlns="" class="stdfooter">
-            <address>
-               <p class="version">EpiDoc version: 9.4</p>
-               <p class="creationdate">Date: 2022-07-19</p>
-            </address>
-         </div>
-      </div>
-   </body>
-</html>
+    </script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Words and Lemmatization</a></h1><h1 class="subtitle"><a href="index.html">2021-11-18</a></h1><div lang="en" class="teidiv" id="idx-wordslemmata"><p>Tagging lexical words in the text and/or linking to lemmata for purposes of indexing or search.</p><p><ul xmlns="" class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html">w</a> ; EpiDoc-specific
+                        customization: <a href="ref-w.html">w</a></li></ul></p><p>Explicit markup of words (tokenization) and identification of their dictionary headwords (lemmatization) are both optional. Many projects simply leave these features unmarked, or rely on automated processes in search software to detect word-breaks and link to lemmatizing tools such as <span class="term">Morpheus</span>. (The Papyrological Navigator, Perseus, and the TLG all use methods similar to this.)</p><p>To explicitly mark-up lexical words in a papyrological or epigraphic text, however, each word in the text should be enclosed in a <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element. (For ease of processing, it is advised that inter-word spacing, punctuation and other features be left outside of this element, and if possible there should be no spaces or carriage returns within the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element.)</p><div id="index-egXML-d43e20278" class="pre egXML_valid"><span class="element">&lt;w&gt;</span>maximo<span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;w&gt;</span>tribunicia<span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;w&gt;</span>potestate<span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;num&gt;</span>XXIIII<span class="element">&lt;/num&gt;</span><br /><span class="element">&lt;w&gt;</span>imperatori<span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref">IRT: <a href="http://inslib.kcl.ac.uk/irt2009/IRT022.html">22</a></span>)</div></div><p>To record the lemma or dictionary headword of the word in question, the simplest solution is to enter the uninflected form in a <span class="att">lemma</span> attribute, which may be used, for example, to generate the entries in a lexical index to the corpus.</p><div id="index-egXML-d43e20294" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">ἵστημι</span>"&gt;</span>ἕστηκα<span class="element">&lt;/w&gt;</span></div><p>A slightly more sophisticated solution is to enter in a <span class="att">lemmaRef</span> attribute a URL or other URI that points to the entry for the word in question in a database or online dictionary. This solution allows for better disambiguation of homonymous words, for example, or linking to morphological and statistical information about the word.</p><div id="index-egXML-d43e20302" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=fero&amp;amp;la=la</span>"&gt;</span>tulisti<span class="element">&lt;/w&gt;</span></div><div class="teidiv1" id="index-body.1_div.98_div.1"><h2><span class="head">Multiple lemmata</span></h2><p>If a single word tag contains more than one indexable word (e.g. "populusque" in Latin or "κἀκ" in Greek), or an incomplete word is ambiguous and might correspond to either of two or more lemmata (e.g. ΕΚΦΕΥΞ), then all lemmata that should be indexed may be included in the <span class="att">lemma</span> attribute, separated by spaces:</p><div id="index-egXML-d43e20313" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">suus que</span>"&gt;</span>suisque<span class="element">&lt;/w&gt;</span></div><div id="index-egXML-d43e20316" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">καὶ ἐκ</span>"&gt;</span>κἀκ<span class="element">&lt;/w&gt;</span></div><div id="index-egXML-d43e20319" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">ἔκφευξις ἐκφεύγω</span>" <span class="attribute">part</span>="<span class="attributevalue">I</span>"&gt;</span>ΕΚΦΕΥΞ<span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;gap <span class="attribute">reason</span>="<span class="attributevalue">lost</span>" <span class="attribute">extent</span>="<span class="attributevalue">unknown</span>"<br /> <span class="attribute">unit</span>="<span class="attributevalue">character</span>"/&gt;</span></div></div><div class="teidiv1" id="index-body.1_div.98_div.2"><h2><span class="head">Interaction with editorial markup</span></h2><p>The <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element may contain further editorial tags, such as expansions of abbreviations. Wherever possible the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element should remain intact (cf. <a class="link_ref" href="trans-lacunasegmented.html">Editorial restoration: Segmented or adjacent lacunae</a>).</p><div id="index-egXML-d43e20339" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">Κύριος</span>"<br /> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=kurie&amp;amp;la=greek</span>"&gt;</span><br /> <span class="element">&lt;expan&gt;</span><br />  <span class="element">&lt;abbr&gt;</span>Κ<span class="element">&lt;/abbr&gt;</span><br />  <span class="element">&lt;ex&gt;</span>ύρι<span class="element">&lt;/ex&gt;</span>ε<span class="element">&lt;/expan&gt;</span><br /><span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">βοηθέω</span>"<br /> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=bohqei&amp;amp;la=greek</span>"&gt;</span><br /> <span class="element">&lt;expan&gt;</span><br />  <span class="element">&lt;abbr&gt;</span>β<span class="element">&lt;/abbr&gt;</span><br />  <span class="element">&lt;ex&gt;</span>οή<span class="element">&lt;/ex&gt;</span><br />  <span class="element">&lt;abbr&gt;</span>θ<span class="element">&lt;/abbr&gt;</span><br />  <span class="element">&lt;ex&gt;</span>ει<span class="element">&lt;/ex&gt;</span><br /> <span class="element">&lt;/expan&gt;</span><br /><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_05.html">Source</a></span>)</div></div><p>displayed in the edition as: Κ(ύρι)ε β(οή)θ(ει); or some restored text:</p><div id="index-egXML-d43e20359" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">σός</span>"<br /> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=sw&amp;amp;la=greek</span>"&gt;</span><br /> <span class="element">&lt;supplied <span class="attribute">reason</span>="<span class="attributevalue">lost</span>"&gt;</span>σ<span class="element">&lt;/supplied&gt;</span>ῷ<br /><br /><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_04.html">Source</a></span>)</div></div><p>displayed in the edition as: [σ]ῷ; a slighly more complicated situation could be the following, with a lemma written across two lines:</p><div id="index-egXML-d43e20366" class="pre egXML_valid"><span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">φέρω</span>"<br /> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.perseus.tufts.edu/hopper/morph?l=ferousa&amp;amp;la=greek</span>"&gt;</span> φ<span class="element">&lt;supplied <span class="attribute">reason</span>="<span class="attributevalue">lost</span>"&gt;</span>έ<br /> <span class="element">&lt;lb <span class="attribute">n</span>="<span class="attributevalue">6</span>" <span class="attribute">break</span>="<span class="attributevalue">no</span>"/&gt;</span>ρ<span class="element">&lt;/supplied&gt;</span>ουσα<br /><span class="element">&lt;/w&gt;</span><div xmlns="" class="rend">(<span class="ref"><a href="https://sigidoc.raketadesign.com/en/seals/TM_35.html">Source</a></span>)</div></div><p>displayed as: <br />φ[έ- <br />6 ρ]ουσα</p><p>It should be noticed that in all these examples the <a class="gi" title="(word) represents a grammatical (not necessarily orthographic) word." href="ref-w.html">w</a> element overlaps the other tags.</p></div><div xmlns="" class="seealso"><h3>See also:</h3><p>Other pages describing &lt;w&gt;:</p><ul><li><a href="idx-titlesoffices.html">Titles, offices, political posts, honorifics, occupations</a></li><li><a href="idx-socialterms.html">Military, religious, socio-economic terminology</a></li><li><a href="trans-restoredincomplete.html">Editorial restoration: Word incompletely restored</a></li><li><a href="trans-restoredincomplete-pt-br.html">Restauração Editorial: palavra com restauro incompleto</a></li></ul></div><div class="teidiv1" id="idx-wordslemmata-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d43e20390"><div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div></li><li id="index-bibl-d43e20396"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li><li id="index-bibl-d43e20402"><div class="biblfree"><span class="name">Alessio Sopracasa</span>, author  </div></li><li id="index-bibl-d43e20408"><div class="biblfree"><span class="name">Martina Filosa</span>, author  </div></li></ol></div></div><nav class="left"></nav><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: 9.3</p><p class="creationdate">Date: 2021-11-18</p></address></div></div></body></html>

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Structure of an EpiDoc edition</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Structure of an EpiDoc edition</a></h1><h2 class="subtitle">Structure of an EpiDoc edition</h2><section lang="en" class="teidiv" id="supp-structure"><p>This section introduces the structure and shape of an EpiDoc edition, 
+        introducing the TEI P5 approach to manuscript description and history,
+        the divisions in the body, etc.</p><p>
+        </p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html">msDesc</a></li></ul><p>
+    </p><p>Most of the features that most commonly occur in an epigraphic/papyrological edition are catered for
+        by specific locations in an EpiDoc file. This document aims to give an overview of those locations.
+        Individual pages in the <a class="link_ref" href="app-allsupp.html">Supporting Data</a> section of the Guidelines
+        will give more detailed information on each of these elements and features.</p><p>A relatively simple EpiDoc file containing descriptive and historical information about an
+        inscription might look something like:</p><div id="index-egXML-d38e2477" class="pre egXML_valid"><span class="element">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"&gt;</span><br/> <span class="element">&lt;teiHeader&gt;</span><br/>  <span class="element">&lt;fileDesc&gt;</span><br/>   <span class="element">&lt;titleStmt&gt;</span><br/>    <span class="element">&lt;title&gt;</span>title of inscription<span class="element">&lt;/title&gt;</span><br/>   <span class="element">&lt;/titleStmt&gt;</span><br/>   <span class="element">&lt;publicationStmt&gt;</span><br/>    <span class="element">&lt;idno type="<span class="attributevalue">filename</span>"/&gt;</span><br/>   <span class="element">&lt;/publicationStmt&gt;</span><br/>   <span class="element">&lt;sourceDesc&gt;</span><br/>    <span class="element">&lt;msDesc&gt;</span><br/>     <span class="element">&lt;msIdentifier&gt;</span><br/>      <span class="element">&lt;repository&gt;</span>museum/archive<span class="element">&lt;/repository&gt;</span><br/>      <span class="element">&lt;idno&gt;</span>inventory number<span class="element">&lt;/idno&gt;</span><br/>     <span class="element">&lt;/msIdentifier&gt;</span><br/>     <span class="element">&lt;physDesc&gt;</span><br/>      <span class="element">&lt;objectDesc&gt;</span><br/>       <span class="element">&lt;supportDesc&gt;</span><br/>        <span class="element">&lt;support&gt;</span>description of object/monument (likely to include <span class="element">&lt;material/&gt;</span><br/>                 and <span class="element">&lt;objectType/&gt;</span> information, <span class="element">&lt;dimensions/&gt;</span>, etc.)<span class="element">&lt;/support&gt;</span><br/>       <span class="element">&lt;/supportDesc&gt;</span><br/>       <span class="element">&lt;layoutDesc&gt;</span><br/>        <span class="element">&lt;layout&gt;</span>description of text field/campus<span class="element">&lt;/layout&gt;</span><br/>       <span class="element">&lt;/layoutDesc&gt;</span><br/>      <span class="element">&lt;/objectDesc&gt;</span><br/>      <span class="element">&lt;handDesc&gt;</span><br/>       <span class="element">&lt;handNote&gt;</span>description of letters, possibly including <span class="element">&lt;height&gt;</span>letter-heights<span class="element">&lt;/height&gt;</span><br/>       <span class="element">&lt;/handNote&gt;</span><br/>      <span class="element">&lt;/handDesc&gt;</span><br/>     <span class="element">&lt;/physDesc&gt;</span><br/>     <span class="element">&lt;history&gt;</span><br/>      <span class="element">&lt;origin&gt;</span><br/>       <span class="element">&lt;origPlace&gt;</span>Place of origin<span class="element">&lt;/origPlace&gt;</span><br/>       <span class="element">&lt;origDate&gt;</span>Date of origin<span class="element">&lt;/origDate&gt;</span><br/>      <span class="element">&lt;/origin&gt;</span><br/>      <span class="element">&lt;provenance type="<span class="attributevalue">found</span>"&gt;</span> Findspot and circumstances/context<br/>      <span class="element">&lt;/provenance&gt;</span><br/>      <span class="element">&lt;provenance type="<span class="attributevalue">observed</span>"&gt;</span> modern location(s) (if different from repository, above)<br/>      <span class="element">&lt;/provenance&gt;</span><br/>     <span class="element">&lt;/history&gt;</span><br/>    <span class="element">&lt;/msDesc&gt;</span><br/>   <span class="element">&lt;/sourceDesc&gt;</span><br/>  <span class="element">&lt;/fileDesc&gt;</span><br/> <span class="element">&lt;/teiHeader&gt;</span><br/> <span class="element">&lt;facsimile&gt;</span><br/>  <span class="element">&lt;graphic url="<span class="attributevalue">photograph of text or monument</span>"/&gt;</span><br/> <span class="element">&lt;/facsimile&gt;</span><br/> <span class="element">&lt;text&gt;</span><br/>  <span class="element">&lt;body&gt;</span><br/>   <span class="element">&lt;div type="<span class="attributevalue">edition</span>"&gt;</span><br/>    <span class="element">&lt;ab&gt;</span>Greek or Latin (etc.) text here<span class="element">&lt;/ab&gt;</span><br/>   <span class="element">&lt;/div&gt;</span><br/>   <span class="element">&lt;div type="<span class="attributevalue">apparatus</span>"&gt;</span><br/>    <span class="element">&lt;p&gt;</span>external apparatus criticus (if applicable)<span class="element">&lt;/p&gt;</span><br/>   <span class="element">&lt;/div&gt;</span><br/>   <span class="element">&lt;div type="<span class="attributevalue">translation</span>"&gt;</span><br/>    <span class="element">&lt;p&gt;</span>translation(s)<span class="element">&lt;/p&gt;</span><br/>   <span class="element">&lt;/div&gt;</span><br/>   <span class="element">&lt;div type="<span class="attributevalue">commentary</span>"&gt;</span><br/>    <span class="element">&lt;p&gt;</span>commentary<span class="element">&lt;/p&gt;</span><br/>   <span class="element">&lt;/div&gt;</span><br/>   <span class="element">&lt;div type="<span class="attributevalue">bibliography</span>"&gt;</span><br/>    <span class="element">&lt;p&gt;</span>bibliography of previous editions, discussion, etc.<span class="element">&lt;/p&gt;</span><br/>   <span class="element">&lt;/div&gt;</span><br/>  <span class="element">&lt;/body&gt;</span><br/> <span class="element">&lt;/text&gt;</span><br/><span class="element">&lt;/TEI&gt;</span></div><section class="teidiv1" id="supp-structure-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e2545"><div class="biblfree"><span class="name">Gabriel Bodard</span>, Author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="encode-metadata.html">Supporting data about the text</a><span class="nextLink"> Next</span><a class="navigation" href="supp-description.html">Physical description</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-structure.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

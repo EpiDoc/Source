@@ -1,16 +1,7 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)-->
-      <title>Estrutura de uma edição EpiDoc</title>
-      <meta name="author" content=""/>
-      <meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets"/>
-      <meta name="DC.Title" content="Estrutura de uma edição EpiDoc"/>
-      <meta name="DC.Type" content="Text"/>
-      <meta name="DC.Format" content="text/html"/>
-      <link href="css/epidoc.css" rel="stylesheet" type="text/css"/>
-      <link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css"/>
-      <link rel="stylesheet" media="print" type="text/css" href="https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css"/><script>
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!--THIS FILE IS GENERATED FROM AN XML MASTER. DO NOT EDIT (2)--><title>Estrutura de uma edição EpiDoc</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -21,179 +12,82 @@
   </script><script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script><script type="text/javascript">
 $(window).load(function() {
   $("body")
-    .append('<div id="search"><form><input type="text" name="search" id="searchBox"/> <button value="search" name="go" id="searchBtn">search</button></form></div>');
-  if (document.querySelector("div.main-content")) {
-    $("#search").css({"position":"absolute","top":"1.3em","right":"1.3em"});
-  } else {
-    $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
-  }
+    .append('<div id="search"><form><input type="text" name="search" id="searchBox" /> <button value="search" name="go" id="searchBtn">search</button></form></div>');
+  $("#search").css({"position":"absolute","top":"2.5em","right":"12em"});
   var go =  $("#searchBtn");
   go.click(function(evt){
       var url = window.location.host + window.location.pathname.replace(/\/[^/]+$/, "");
         window.open("https://www.google.com/search?q=" + $("#searchBox").val() + "%20site%3A" + encodeURIComponent(url));
     });
 });
-    </script></head>
-   <body id="TOP">
-      <div class="teidiv">
-         <h1 class="maintitle"><a href="index.html">Estrutura de uma edição EpiDoc</a></h1>
-         <h1 class="subtitle"><a href="index.html">2022-07-19</a></h1>
-         <div xml:lang="pt-br" lang="pt-br" class="teidiv1" id="supp-structure-pt-br">
-            <p>Esta seção apresenta a forma e estrutura de uma edição EpiDoc, apresentando o enfoque
-               TEI P5 para descrição e histórico de manuscritos, as divisões no corpo, etc.</p>
-            <p>
-               <ul xmlns="" class="speclit">
-                  <li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html">msDesc</a> ; EpiDoc-specific
-                     customization: <a href="ref-msDesc.html">msDesc</a></li>
-               </ul>
-            </p>
-            <p>A maior parte das características que comumente aparecem numa edição epigráfica/papirológica
-               são tratadas em locais específicos num arquivo EpiDoc. Este documento pretende dar
-               uma visão geral destes locais. Páginas individuais na seção <a class="link_ref" href="app-allsupp.html">Dados de Suporte</a> das Normas darão informação mais detalhada sobre cada um destes elementos e características.</p>
-            <p>Um arquivo EpiDoc relativamente simples, contendo informação descritiva e histórica
-               sobre uma inscrição, pode parecer com o exemplo a seguir. Uma versão deste exemplo,
-               ligado à versão mais atualizada do schema EpiDoc e apropriado ao uso como template
-               de projeto, pode ser baixada do site EpiDoc:<a class="link_ref" href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/xml/ex-epidoctemplate.xml?format=raw">ex-epidoctemplate.xml</a>.</p>
-            <div id="index-egXML-d43e10478" class="pre egXML_valid"><span class="element">&lt;TEI <span class="attribute">xml:space</span>="<span class="attributevalue">preserve</span>" <span class="attribute">xml:lang</span>="<span class="attributevalue">en</span>" xmlns="http://www.tei-c.org/ns/1.0"&gt;</span>
-                   <span class="element">&lt;teiHeader&gt;</span>
-                       <span class="element">&lt;fileDesc&gt;</span>
-                           <span class="element">&lt;titleStmt&gt;</span>
-                               <span class="element">&lt;title&gt;</span>title of document<span class="element">&lt;/title&gt;</span>
-                           <span class="element">&lt;/titleStmt&gt;</span>
-                           <span class="element">&lt;publicationStmt&gt;</span>
-                               <span class="element">&lt;authority/&gt;</span>
-                               <span class="element">&lt;idno <span class="attribute">type</span>="<span class="attributevalue">filename</span>"/&gt;</span>
-                           <span class="element">&lt;/publicationStmt&gt;</span>
-                           <span class="element">&lt;sourceDesc&gt;</span>
-                               <span class="element">&lt;msDesc&gt;</span>
-                                   <span class="element">&lt;msIdentifier&gt;</span>
-                                       <span class="element">&lt;repository&gt;</span>museum/archive<span class="element">&lt;/repository&gt;</span>
-                                       <span class="element">&lt;idno&gt;</span>inventory number<span class="element">&lt;/idno&gt;</span>
-                                   <span class="element">&lt;/msIdentifier&gt;</span>
-                                   <span class="element">&lt;physDesc&gt;</span>
-                                       <span class="element">&lt;objectDesc&gt;</span>
-                                           <span class="element">&lt;supportDesc&gt;</span>
-                                               <span class="element">&lt;support&gt;</span>description of object/monument (likely to include <span class="element">&lt;material/&gt;</span>
-                                                   and <span class="element">&lt;objectType/&gt;</span> information, <span class="element">&lt;dimensions/&gt;</span>, etc.)<span class="element">&lt;/support&gt;</span>
-                                           <span class="element">&lt;/supportDesc&gt;</span>
-                                           <span class="element">&lt;layoutDesc&gt;</span>
-                                               <span class="element">&lt;layout&gt;</span>description of text field/campus<span class="element">&lt;/layout&gt;</span>
-                                           <span class="element">&lt;/layoutDesc&gt;</span>
-                                       <span class="element">&lt;/objectDesc&gt;</span>
-                                       <span class="element">&lt;handDesc&gt;</span>
-                                           <span class="element">&lt;handNote&gt;</span>description of letters, possibly including <span class="element">&lt;height&gt;</span>letter-heights<span class="element">&lt;/height&gt;</span>
-                                           <span class="element">&lt;/handNote&gt;</span>
-                                       <span class="element">&lt;/handDesc&gt;</span>
-                                   <span class="element">&lt;/physDesc&gt;</span>
-                                   <span class="element">&lt;history&gt;</span>
-                                       <span class="element">&lt;origin&gt;</span>
-                                           <span class="element">&lt;origPlace&gt;</span>Place of origin<span class="element">&lt;/origPlace&gt;</span>
-                                           <span class="element">&lt;origDate&gt;</span>Date of origin<span class="element">&lt;/origDate&gt;</span>
-                                       <span class="element">&lt;/origin&gt;</span>
-                                       <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">found</span>"&gt;</span> Findspot and circumstances/context
-                                       <span class="element">&lt;/provenance&gt;</span>
-                                       <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">observed</span>"&gt;</span>Modern location(s) (if different from repository, above)
-                                       <span class="element">&lt;/provenance&gt;</span>
-                                   <span class="element">&lt;/history&gt;</span>
-                               <span class="element">&lt;/msDesc&gt;</span>
-                           <span class="element">&lt;/sourceDesc&gt;</span>
-                       <span class="element">&lt;/fileDesc&gt;</span>
-                   <span class="element">&lt;/teiHeader&gt;</span>
-                   <span class="element">&lt;facsimile&gt;</span>
-                       <span class="element">&lt;graphic <span class="attribute">url</span>="<span class="attributevalue">photograph of text or monument</span>"/&gt;</span>
-                   <span class="element">&lt;/facsimile&gt;</span>
-                   <span class="element">&lt;text&gt;</span>
-                       <span class="element">&lt;body&gt;</span>
-                           <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">edition</span>" <span class="attribute">xml:space</span>="<span class="attributevalue">preserve</span>"&gt;</span>
-                               <span class="element">&lt;ab&gt;</span>
-                                   <span class="element">&lt;lb <span class="attribute">n</span>="<span class="attributevalue">1</span>"/&gt;</span>Greek or Latin (etc.) text here
-                               <span class="element">&lt;/ab&gt;</span>
-                           <span class="element">&lt;/div&gt;</span>
-                           <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">apparatus</span>"&gt;</span>
-                               <span class="element">&lt;p&gt;</span>external apparatus criticus (if applicable)<span class="element">&lt;/p&gt;</span>
-                           <span class="element">&lt;/div&gt;</span>
-                           <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">translation</span>"&gt;</span>
-                               <span class="element">&lt;p&gt;</span>translation(s)<span class="element">&lt;/p&gt;</span>
-                           <span class="element">&lt;/div&gt;</span>
-                           <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">commentary</span>"&gt;</span>
-                               <span class="element">&lt;p&gt;</span>commentary<span class="element">&lt;/p&gt;</span>
-                           <span class="element">&lt;/div&gt;</span>
-                           <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">bibliography</span>"&gt;</span>
-                               <span class="element">&lt;p&gt;</span>bibliography of previous editions, discussion, etc.<span class="element">&lt;/p&gt;</span>
-                           <span class="element">&lt;/div&gt;</span>
-                       <span class="element">&lt;/body&gt;</span>
-                   <span class="element">&lt;/text&gt;</span>
-               <br/><span class="element">&lt;/TEI&gt;</span></div>
-            <div class="teidiv1" id="index-body.1_div.48_div.1">
-               <h2><span class="head">Edição</span></h2>
-               <p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "edição". A divisão de edição contém o texto epigráfico, papirológico, etc. em
-                  si, bem como intervenções editoriais (por exemplo, representações em EpiDoc da sigla
-                  Leiden) que devem ser aplicadas ao texto. Equivalência ao Leiden é o mínimo necessário;
-                  maiores detalhes sobre intervenções editoriais podem ser incluídos, se preciso. <span class="att">xml:lang</span> é um atributo necessário, a não ser que textparts tenham línguas diferentes (veja
-                  imediatamente abaixo).</p>
-               <p>A divisão de edição pode ser separada usando elementos <a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com um <span class="att">type</span> de "textpart", que é um valor restrito. Se textparts têm línguas diferentes, <span class="att">xml:lang</span> deve ser adicionado a cada textpart. Uma edição pode ter qualquer número de textparts,
-                  que podem ser subdivididos utilizando <span class="att">subtype</span> com valores não restritos (como "fragmento", "coluna" ou qualquer descrição que seja
-                  relevante para aquele texto em particular). Para uma discussão detalhada e exemplos,
-                  veja a <a class="link_ref" href="app-alltrans.html">Lista de Todas as Normas de Transcrição</a>.</p>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.48_div.2">
-               <h2><span class="head">Tradução</span></h2>
-               <p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "tradução". A divisão de tradução segue as mesmas regras que a de edição, mas
-                  geralmente vai conter uma quantidade menor de marcação, e provavelmente terá uma estrutura
-                  mais simples. A linguagem da divisão tradução pode ser codificada utilizando <span class="att">lang</span> (com códigos de idiomas de duas ou três letras, como "pt", "fr", "en").A fonte ou
-                  responsabilidade pela tradução pode ser codificada utilizando<span class="att">source</span> ou <span class="att">resp</span>. A divisão de tradução pode receber um <span class="att">subtype</span> (irrestrito) para descrevê-la melhor, como "literal", "literária", "pedagógica",
-                  etc. Para uma discussão detalhada e exemplos, veja<a class="link_ref" href="supp-translation.html">Tradução</a></p>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.48_div.3">
-               <h2><span class="head">Aparato </span></h2>
-               <p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "aparato". O módulo de aparato TEI é feito para o <span style="font-style:italic">apparatus criticus</span> lachmanniano, que permite múltiplos testemunhos para um texto.O <span style="font-style:italic">apparatus criticus</span> epigráfico provavelmente incluirá comentários sobre formas de letras; suplementos;
-                  interpretações; e as leituras de editores anteriores. Para uma discussão detalhada
-                  e exemplos, veja <a class="link_ref" href="supp-apparatus.html">Apparatus Criticus</a>.</p>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.48_div.4">
-               <h2><span class="head">Comentário</span></h2>
-               <p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "comentário". A divisão comentário será geralmente escrita em prosa e pode conter
-                  uma discussão geral do contexto do texto ou do suporte, maiores informaçãoes sobre
-                  critério de datação, referências externas, comentários sobre seções específicas do
-                  texto, etc.</p>
-            </div>
-            <div class="teidiv1" id="index-body.1_div.48_div.5">
-               <h2><span class="head">Bibliografia</span></h2>
-               <p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "bibliografia". A divisão bibliografia pode ter tanto conteúdo independente quanto
-                  links para a bibliografia principal, utilizando <a class="gi" title="(citation list) contains a list of bibliographic citations of any kind." href="ref-listBibl.html">listBibl</a> com qualquer número de elementos <a class="gi" title="(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged." href="ref-bibl.html">bibl</a>.Esta divisão pode ser subdividida utilizando <span class="att">subtype</span> com valores irrestritos que podem incluir "principal", "derivado", "discussão", etc.
-                  Para uma discussão detalhada e exemplos, veja <a class="link_ref" href="supp-bibliography.html">Codificando a Bibliografia</a>.</p>
-            </div>
-            <div xmlns="" class="seealso">
-               <h3>See also: {{supp-structure-pt-br}}</h3>
-               <p>Other pages describing &lt;msDesc&gt;:</p>
-               <ul>
-                  <li><a href="supp-historigin-pt-br.html">Local original do objeto portador de texto</a></li>
-                  <li><a href="supp-histfound-pt-br.html">Contexto de descoberta (Findspot)</a></li>
-                  <li><a href="supp-histmodern-pt-br.html">Localização moderna ou última conhecida</a></li>
-               </ul>
-            </div>
-            <div class="teidiv1" id="supp-structure-responsibility">
-               <h2><span class="head">Responsabilidade por esta seção</span></h2>
-               <ol class="listBibl">
-                  <li id="index-bibl-d43e10695">
-                     <div class="biblfree"><span class="name">Gabriel Bodard</span>, Autor  </div>
-                  </li>
-                  <li id="index-bibl-d43e10699">
-                     <div class="biblfree"><span class="name">Charlotte Tupman</span>, Autor  </div>
-                  </li>
-                  <li id="index-bibl-d43e10703">
-                     <div class="biblfree"><span class="name">Assunção Medeiros</span>, traduzido para o Português por  </div>
-                  </li>
-               </ol>
-            </div>
-         </div>
-         <nav class="left"></nav>
-         <div xmlns="" class="stdfooter">
-            <address>
-               <p class="version">EpiDoc version: 9.4</p>
-               <p class="creationdate">Date: 2022-07-19</p>
-            </address>
-         </div>
-      </div>
-   </body>
-</html>
+    </script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Estrutura de uma edição EpiDoc</a></h1><h1 class="subtitle"><a href="index.html">2021-11-18</a></h1><div lang="pt-br" class="teidiv" id="supp-structure-pt-br"><p>Esta seção apresenta a forma e estrutura de uma edição EpiDoc, apresentando o enfoque TEI P5 para descrição e histórico de manuscritos, as divisões no corpo, etc.</p><p><ul xmlns="" class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html">msDesc</a> ; EpiDoc-specific
+                        customization: <a href="ref-msDesc.html">msDesc</a></li></ul></p><p>A maior parte das características que comumente aparecem numa edição epigráfica/papirológica são tratadas em locais específicos num arquivo EpiDoc. Este documento pretende dar uma visão geral destes locais. Páginas individuais na seção <a class="link_ref" href="app-allsupp.html">Dados de Suporte</a> das Normas darão informação mais detalhada sobre cada um destes elementos e características.</p><p>Um arquivo EpiDoc relativamente simples, contendo informação descritiva e histórica sobre uma inscrição, pode parecer com o exemplo a seguir. Uma versão deste exemplo, ligado à versão mais atualizada do schema EpiDoc e apropriado ao uso como template de projeto, pode ser baixada do site EpiDoc:<a class="link_ref" href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/xml/ex-epidoctemplate.xml?format=raw">ex-epidoctemplate.xml</a>.</p><div id="index-egXML-d43e11821" class="pre egXML_valid"><span class="element">&lt;TEI <span class="attribute">xml:space</span>="<span class="attributevalue">preserve</span>" <span class="attribute">xml:lang</span>="<span class="attributevalue">en</span>"<br /> <span class="attribute">xml:base</span>="<span class="attributevalue">ex-epidoctemplate.xml</span>" xmlns="http://www.tei-c.org/ns/1.0"&gt;</span>
+    <span class="element">&lt;teiHeader&gt;</span>
+        <span class="element">&lt;fileDesc&gt;</span>
+            <span class="element">&lt;titleStmt&gt;</span>
+                <span class="element">&lt;title&gt;</span>title of document<span class="element">&lt;/title&gt;</span>
+            <span class="element">&lt;/titleStmt&gt;</span>
+            <span class="element">&lt;publicationStmt&gt;</span>
+                <span class="element">&lt;authority/&gt;</span>
+                <span class="element">&lt;idno <span class="attribute">type</span>="<span class="attributevalue">filename</span>"/&gt;</span>
+            <span class="element">&lt;/publicationStmt&gt;</span>
+            <span class="element">&lt;sourceDesc&gt;</span>
+                <span class="element">&lt;msDesc&gt;</span>
+                    <span class="element">&lt;msIdentifier&gt;</span>
+                        <span class="element">&lt;repository&gt;</span>museum/archive<span class="element">&lt;/repository&gt;</span>
+                        <span class="element">&lt;idno&gt;</span>inventory number<span class="element">&lt;/idno&gt;</span>
+                    <span class="element">&lt;/msIdentifier&gt;</span>
+                    <span class="element">&lt;physDesc&gt;</span>
+                        <span class="element">&lt;objectDesc&gt;</span>
+                            <span class="element">&lt;supportDesc&gt;</span>
+                                <span class="element">&lt;support&gt;</span>description of object/monument (likely to include <span class="element">&lt;material/&gt;</span>
+                                    and <span class="element">&lt;objectType/&gt;</span> information, <span class="element">&lt;dimensions/&gt;</span>, etc.)<span class="element">&lt;/support&gt;</span>
+                            <span class="element">&lt;/supportDesc&gt;</span>
+                            <span class="element">&lt;layoutDesc&gt;</span>
+                                <span class="element">&lt;layout&gt;</span>description of text field/campus<span class="element">&lt;/layout&gt;</span>
+                            <span class="element">&lt;/layoutDesc&gt;</span>
+                        <span class="element">&lt;/objectDesc&gt;</span>
+                        <span class="element">&lt;handDesc&gt;</span>
+                            <span class="element">&lt;handNote&gt;</span>description of letters, possibly including <span class="element">&lt;height&gt;</span>letter-heights<span class="element">&lt;/height&gt;</span>
+                            <span class="element">&lt;/handNote&gt;</span>
+                        <span class="element">&lt;/handDesc&gt;</span>
+                    <span class="element">&lt;/physDesc&gt;</span>
+                    <span class="element">&lt;history&gt;</span>
+                        <span class="element">&lt;origin&gt;</span>
+                            <span class="element">&lt;origPlace&gt;</span>Place of origin<span class="element">&lt;/origPlace&gt;</span>
+                            <span class="element">&lt;origDate&gt;</span>Date of origin<span class="element">&lt;/origDate&gt;</span>
+                        <span class="element">&lt;/origin&gt;</span>
+                        <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">found</span>"&gt;</span> Findspot and circumstances/context
+                        <span class="element">&lt;/provenance&gt;</span>
+                        <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">observed</span>"&gt;</span>Modern location(s) (if different from repository, above)
+                        <span class="element">&lt;/provenance&gt;</span>
+                    <span class="element">&lt;/history&gt;</span>
+                <span class="element">&lt;/msDesc&gt;</span>
+            <span class="element">&lt;/sourceDesc&gt;</span>
+        <span class="element">&lt;/fileDesc&gt;</span>
+    <span class="element">&lt;/teiHeader&gt;</span>
+    <span class="element">&lt;facsimile&gt;</span>
+        <span class="element">&lt;graphic <span class="attribute">url</span>="<span class="attributevalue">photograph of text or monument</span>"/&gt;</span>
+    <span class="element">&lt;/facsimile&gt;</span>
+    <span class="element">&lt;text&gt;</span>
+        <span class="element">&lt;body&gt;</span>
+            <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">edition</span>" <span class="attribute">xml:space</span>="<span class="attributevalue">preserve</span>"&gt;</span>
+                <span class="element">&lt;ab&gt;</span>
+                    <span class="element">&lt;lb <span class="attribute">n</span>="<span class="attributevalue">1</span>"/&gt;</span>Greek or Latin (etc.) text here
+                <span class="element">&lt;/ab&gt;</span>
+            <span class="element">&lt;/div&gt;</span>
+            <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">apparatus</span>"&gt;</span>
+                <span class="element">&lt;p&gt;</span>external apparatus criticus (if applicable)<span class="element">&lt;/p&gt;</span>
+            <span class="element">&lt;/div&gt;</span>
+            <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">translation</span>"&gt;</span>
+                <span class="element">&lt;p&gt;</span>translation(s)<span class="element">&lt;/p&gt;</span>
+            <span class="element">&lt;/div&gt;</span>
+            <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">commentary</span>"&gt;</span>
+                <span class="element">&lt;p&gt;</span>commentary<span class="element">&lt;/p&gt;</span>
+            <span class="element">&lt;/div&gt;</span>
+            <span class="element">&lt;div <span class="attribute">type</span>="<span class="attributevalue">bibliography</span>"&gt;</span>
+                <span class="element">&lt;p&gt;</span>bibliography of previous editions, discussion, etc.<span class="element">&lt;/p&gt;</span>
+            <span class="element">&lt;/div&gt;</span>
+        <span class="element">&lt;/body&gt;</span>
+    <span class="element">&lt;/text&gt;</span>
+<span class="element">&lt;/TEI&gt;</span></div><div class="teidiv1" id="index-body.1_div.48_div.1"><h2><span class="head">Edição</span></h2><p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "edição". A divisão de edição contém o texto epigráfico, papirológico, etc. em si, bem como intervenções editoriais (por exemplo, representações em EpiDoc da sigla Leiden) que devem ser aplicadas ao texto. Equivalência ao Leiden é o mínimo necessário; maiores detalhes sobre intervenções editoriais podem ser incluídos, se preciso. <span class="att">xml:lang</span> é um atributo necessário, a não ser que textparts tenham línguas diferentes (veja imediatamente abaixo).</p><p>A divisão de edição pode ser separada usando elementos <a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com um <span class="att">type</span> de "textpart", que é um valor restrito. Se textparts têm línguas diferentes, <span class="att">xml:lang</span> deve ser adicionado a cada textpart. Uma edição pode ter qualquer número de textparts, que podem ser subdivididos utilizando <span class="att">subtype</span> com valores não restritos (como "fragmento", "coluna" ou qualquer descrição que seja relevante para aquele texto em particular). Para uma discussão detalhada e exemplos, veja a <a class="link_ref" href="app-alltrans.html">Lista de Todas as Normas de Transcrição</a>.</p></div><div class="teidiv1" id="index-body.1_div.48_div.2"><h2><span class="head">Tradução</span></h2><p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "tradução". A divisão de tradução segue as mesmas regras que a de edição, mas geralmente vai conter uma quantidade menor de marcação, e provavelmente terá uma estrutura mais simples. A linguagem da divisão tradução pode ser codificada utilizando <span class="att">lang</span> (com códigos de idiomas de duas ou três letras, como "pt", "fr", "en").A fonte ou responsabilidade pela tradução pode ser codificada utilizando<span class="att">source</span> ou <span class="att">resp</span>. A divisão de tradução pode receber um <span class="att">subtype</span> (irrestrito) para descrevê-la melhor, como "literal", "literária", "pedagógica", etc. Para uma discussão detalhada e exemplos, veja<a class="link_ref" href="supp-translation.html">Tradução</a></p></div><div class="teidiv1" id="index-body.1_div.48_div.3"><h2><span class="head">Aparato </span></h2><p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "aparato". O módulo de aparato TEI é feito para o <span style="font-style:italic">apparatus criticus</span> lachmanniano, que permite múltiplos testemunhos para um texto.O <span style="font-style:italic">apparatus criticus</span> epigráfico provavelmente incluirá comentários sobre formas de letras; suplementos; interpretações; e as leituras de editores anteriores. Para uma discussão detalhada e exemplos, veja <a class="link_ref" href="supp-apparatus.html">Apparatus Criticus</a>.</p></div><div class="teidiv1" id="index-body.1_div.48_div.4"><h2><span class="head">Comentário</span></h2><p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "comentário". A divisão comentário será geralmente escrita em prosa e pode conter uma discussão geral do contexto do texto ou do suporte, maiores informaçãoes sobre critério de datação, referências externas, comentários sobre seções específicas do texto, etc.</p></div><div class="teidiv1" id="index-body.1_div.48_div.5"><h2><span class="head">Bibliografia</span></h2><p><a class="gi" title="(text division) contains a subdivision of the front, body, or back of a text." href="ref-div.html">div</a> com <span class="att">type</span> de "bibliografia". A divisão bibliografia pode ter tanto conteúdo independente quanto links para a bibliografia principal, utilizando <a class="gi" title="(citation list) contains a list of bibliographic citations of any kind." href="ref-listBibl.html">listBibl</a> com qualquer número de elementos <a class="gi" title="(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged." href="ref-bibl.html">bibl</a>.Esta divisão pode ser subdividida utilizando <span class="att">subtype</span> com valores irrestritos que podem incluir "principal", "derivado", "discussão", etc. Para uma discussão detalhada e exemplos, veja <a class="link_ref" href="supp-bibliography.html">Codificando a Bibliografia</a>.</p></div><div xmlns="" class="seealso"><h3>See also:</h3><p>Other pages describing &lt;msDesc&gt;:</p><ul><li><a href="supp-structure.html">Structure of an EpiDoc edition</a></li><li><a href="supp-historigin.html">Original location of the text-bearing object</a></li><li><a href="supp-historigin-pt-br.html">Local original do objeto portador de texto</a></li><li><a href="supp-histfound.html">Findspot and find context</a></li><li><a href="supp-histfound-pt-br.html">Contexto de descoberta (Findspot)</a></li><li><a href="supp-histmodern.html">Modern or last known locations</a></li><li><a href="supp-histmodern-pt-br.html">Localização moderna ou última conhecida</a></li></ul></div><div class="teidiv1" id="supp-structure-responsibility"><h2><span class="head">Responsabilidade por esta seção</span></h2><ol class="listBibl"><li id="index-bibl-d43e12066"><div class="biblfree"><span class="name">Gabriel Bodard</span>, Autor  </div></li><li id="index-bibl-d43e12072"><div class="biblfree"><span class="name">Charlotte Tupman</span>, Autor  </div></li><li id="index-bibl-d43e12078"><div class="biblfree"><span class="name">Assunção Medeiros</span>, traduzido para o Português por  </div></li></ol></div></div><nav class="left"></nav><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: 9.3</p><p class="creationdate">Date: 2021-11-18</p></address></div></div></body></html>

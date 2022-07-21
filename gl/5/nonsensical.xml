@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /cvsroot/epidoc/guidelines/src/nonsensical.xml,v 1.9 2006/10/30 12:05:36 paregorios Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude" id="nonsensical">
+    <head>Transcription with no uncertainty about the form of the character(s), but the editor
+        prefers not to resolve them.</head>
+    <ab><rs type="conformance">leiden</rs></ab>
+    
+    <p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p>
+    
+    <div id="nonsensical-typographic" type="gl-typographic">
+        <head>Traditional typographic representation</head>
+        <list type="simple">
+            <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#panciera">Panciera</xref></title>, 
+                    <abbr expan="page">p.</abbr><biblScope type="pages">17</biblScope></bibl>; 
+                <bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, 
+                    <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+                <list type="ordered">
+                    <item id="TypoEx-1"><hi rend="italic">ABC</hi></item>
+                </list></item>
+            <item><bibl><title level="a" type="abbreviated"><xref href="bibliography.xml#dohnicht">Dohnicht</xref></title>, 
+                    <abbr expan="page">p.</abbr><biblScope type="pages">3</biblScope></bibl>: 
+                <list type="ordered">
+                    <item id="TypoEx-2"><hi rend="italic">V</hi></item>
+                </list></item>
+            <item>Standard Greek examples:
+                <list type="unordered">
+                    <item id="TypoEx-3">ΑΒΓ</item>
+                    <item id="TypoEx-4">Σ</item>
+                </list>
+            </item>
+        </list>
+    </div>
+    
+    <div id="nonsensical-regex" type="gl-regextest">
+        <head>Regular Expression Test</head>
+        <!-- commenting these out will cause validation failure, thereby alerting us to incompleteness 
+            <list>
+            <item id="Regex-1"> blah</item>
+            <item id="Regex-2"> blah</item>
+            <item id="Regex-3"> blah</item>
+            <item id="Regex-4"> blah</item>
+        </list> -->
+        <link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1" />
+       
+    </div>
+    
+    <div id="nonsensical-edition" type="gl-edition">
+        <head>EpiDoc appearance with standard XSLT</head>
+        <list type="ordered">
+            <item id="EncEx-1">
+                <orig lang="la" n="unresolved">abc</orig>
+            </item>
+            <item id="EncEx-2">
+                <orig lang="la" n="unresolved_vocality">v</orig>
+            </item>
+            <item id="EncEx-3">
+                <orig lang="grc" n="unresolved">αβγ</orig>
+            </item>
+            <item id="EncEx-4">
+                <orig lang="grc" n="unresolved_context">σ</orig>
+            </item>
+        </list>
+    </div>
+    
+    <div id="nonsensical-questions" type="gl-questions">
+        <head>Questions and issues</head>
+        <list type="simple">
+            <item>None.</item>
+        </list>
+        <div id="nonsensical-notes" type="gl-notes">
+            <head>Notes</head>
+            <list type="simple">
+                <item>The general case of unresolved characters is handled by the use of the
+                        <tag>orig</tag> element with the <att>n</att> attribute containing
+                    "unresolved". For more particular cases, such as the Latin <foreign lang="la"
+                    >V</foreign> identified by Dohnicht as ambiguously vocalic or consonantal, the
+                    attribute may be further specified with the addition of "_vocality", <foreign
+                        lang="la">vel sim.</foreign></item>
+            </list>
+        </div>
+    </div>
+    
+    <div id="nonsensical-responsibility" type="gl-responsibility" org="uniform" part="N"
+        sample="complete">
+        <head>Responsibility for this section</head>
+        <listBibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Tom Elliott</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Gabriel Bodard</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Julia Flanders</name>
+                </respStmt>
+            </bibl>
+            <bibl>
+                <respStmt>
+                    <resp>author</resp>
+                    <name>Ilaria Marchesi</name>
+                </respStmt>
+            </bibl>
+        </listBibl>
+    </div>
+    <div id="nonsensical-cvs" type="gl-cvs">
+        <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+        <p id="nonsensical-cvs-revision-number">Revision number: <seg n="cvs-revision-number"
+                cert="high" part="N">$Revision: 1.9 $</seg></p>
+        <p id="nonsensical-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name"
+                cert="high" part="N">$Name: r-5 $</seg></p>
+        <p id="nonsensical-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high"
+                part="N">$Date: 2006/10/30 12:05:36 $</seg></p>
+        <p id="nonsensical-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author"
+                cert="high" part="N">$Author: paregorios $</seg></p>
+    </div>
+</div>

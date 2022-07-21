@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Using tei:fileDesc"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="teifiledesc.html"/>
+  <title>Using tei:fileDesc</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Using tei:fileDesc</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="teifiledesc.xml">xml version</a> || id: teifiledesc|| <a class="htmlnavigation" href="teifiledesc.html#teifiledesc-div1">gl-example</a> | <a class="htmlnavigation" href="teifiledesc.html#teifiledesc-responsibility">responsibility for this section</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on teifiledesc.xml">post a comment</a></p>
+   <p>Revised since last release or tag: </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">The TEI element <span class="tag">&lt;fileDesc&gt;</span> is the first child of the <span class="tag">&lt;teiHeader&gt;</span> and encodes descriptive information about the XML file itself. The principle contents of the <span class="tag">&lt;fileDesc&gt;</span> are:</p>
+   <ol id="list-1">
+    <li id="item-1">  <span class="tag">&lt;titleStmt&gt;</span> (title statement), which includes <span class="tag">&lt;title&gt;</span>, <span class="tag">&lt;editor&gt;</span>, and the like</li>
+    <li id="item-2"><span class="tag">&lt;publicationStmt&gt;</span> (publication statement), which may include <span class="tag">&lt;date&gt;</span>, <span class="tag">&lt;availablity&gt;</span>, <span class="tag">&lt;publisher&gt;</span>, <span class="tag">&lt;distributor&gt;</span>, and/or a copyright notice</li>
+    <li id="item-3"><span class="tag">&lt;sourceDesc&gt;</span> (source description), which should include bibliographical information on the original source of the content, or a statement to the effect that the content was born digital</li>
+   </ol>
+   <p id="p-2">A sample <span class="tag">&lt;fileDesc&gt;</span> from an EpiDoc file of the Inscriptions of Aphrodisias project might read:</p>
+   <div id="teifiledesc-div1" class="gl-example">
+    <p id="p-3"><span class="tag">&lt;fileDesc&gt;</span>  
+     <br id="lb-1"/><span class="tag">&lt;titleStmt&gt;</span>  
+     <br id="lb-2"/><span class="tag">&lt;title&gt;</span>Honours for Cornelia Salonina<span class="tag">&lt;/title&gt;</span>  
+     <br id="lb-3"/><span class="tag">&lt;editor&gt;</span>Charlotte M. Rouech&#233;<span class="tag">&lt;/editor&gt;</span>  
+     <br id="lb-4"/><span class="tag">&lt;/titleStmt&gt;</span>  
+     <br id="lb-5"/><span class="tag">&lt;publicationStmt&gt;</span>  
+     <br id="lb-6"/><span class="tag">&lt;date&gt;</span>2004<span class="tag">&lt;/date&gt;</span>  
+     <br id="lb-7"/><span class="tag">&lt;availability&gt;</span>  
+     <br id="lb-8"/><span class="tag">&lt;p&gt;</span>Creative Commons licence Attribution 2.5 (http://creativecommons.org/licenses/by/2.5/). 
+     <br id="lb-9"/>All reuse or distribution of this work must contain somewhere a link back to the URL http://insaph.kcl.ac.uk/<span class="tag">&lt;/p&gt;</span>  
+     <br id="lb-10"/><span class="tag">&lt;/availability&gt;</span>  
+     <br id="lb-11"/><span class="tag">&lt;/publicationStmt&gt;</span>  
+     <br id="lb-12"/><span class="tag">&lt;sourceDesc&gt;</span>  
+     <br id="lb-13"/><span class="tag">&lt;p&gt;</span>Born digital.<span class="tag">&lt;/p&gt;</span>  
+     <br id="lb-14"/><span class="tag">&lt;/sourceDesc&gt;</span>  
+     <br id="lb-15"/><span class="tag">&lt;/fileDesc&gt;</span></p>
+   </div>
+   <div id="teifiledesc-responsibility" class="gl-responsibility">  
+    <h3 id="teifiledesc-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+    </ul>  
+   </div>
+  </div>
+ </body>
+</html>

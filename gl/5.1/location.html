@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Describing past and present locations of the inscribed object"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="location.html"/>
+  <title>Describing past and present locations of the inscribed object</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Describing past and present locations of the inscribed object</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="location.xml">xml version</a> || id: location|| <a class="htmlnavigation" href="location.html#location-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="location.html#location-additional">additional guidance</a> | <a class="htmlnavigation" href="location.html#location-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="location.html#location-cvs">revision information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on location.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1"> Implementation of the guidance in this section is <strong>required</strong> for aiegl <a href="conformance.html">conformance</a>. </p>
+   <p id="p-1">Rigorous epigraphic publications provide detailed information on the geographic aspects of each inscription, insofar as these are known to the editor or can be recovered. Apart from any geographic content inherent or implicit in the text itself (e.g., place names, for which see <a class="xref" href="geographicnames.html" id="xref-1">Geographic Names</a>), epigraphic editions normally provide users with information about the modern place of finding (and the name of any associated ancient settlement), as well as the last known or observed location (complete with any appropriate inventory numbers). EpiDoc documents must include this information, insofar as it is known, if they aim for EAGLE-conformance.</p>
+   <p id="p-2">Editors may include this information in their documents, either as &lt;keyword&gt; &lt;term&gt;s in the &lt;textClass&gt; portion of the &lt;teiHeader&gt; element, or, in the form of prose or text paragraphs, encapsulated in a &lt;div type="description"&gt; element. If an editor wishes to use multiple &lt;div type="description"&gt; elements for different descriptive aspects of the edition, the description element containing the location information should be specifically indicated by using the &#8220;subtype&#8221; attribute, and giving it a value of &#8220;location&#8221;.</p>
+   <p id="p-3">Whether location information is placed in the &lt;teiHeader&gt; or in a &lt;div type="description"&gt;, the following tagging guidance must be followed closely for EAGLE conformance:</p>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="">Modern settlement where the inscription was found: &lt;placeName type="modernFindspot" key="http://www.geonames.org/88319/banghazi.html"&gt;Benghazi&lt;/placeName&gt; </li>
+     <li id="">Ancient name associated with the modern place of finding: &lt;placeName type="ancientFindspot" key="http://pleiades.stoa.org/places/373757"&gt;Berenike&lt;/placeName&gt; </li>
+     <li id="">Greater detail concerning the modern place of finding: &lt;rs type="found"&gt;Via Mentana, Columbarium B&lt;/rs&gt;</li>
+     <li id="">Modern location where the item was last observed: &lt;rs type="lastLocation"&gt;Speed Museum, Louisville, Kentucky, USA; &lt;rs type="InvNo"&gt;BQ773127&lt;/rs&gt;&lt;/rs&gt;</li>
+    </ol>
+   </div>
+   <div id="location-edition" class="gl-edition">  
+    <h3 id="location-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-1">  
+     <li id="item-1">Modern settlement where the inscription was found: <a class="place-name" id="placeName-1" href="http://www.stoa.org/epidoc/gl/5.1/places.html#http://www.geonames.org/88319/banghazi.html">Benghazi</a>  </li>  
+     <li id="item-2">Ancient name associated with the modern place of finding: <a class="place-name" id="placeName-2" href="http://www.stoa.org/epidoc/gl/5.1/places.html#http://pleiades.stoa.org/places/373757">Berenike</a>  </li>  
+     <li id="item-3">Greater detail concerning the modern place of finding: Via Mentana, Columbarium B</li>  
+     <li id="item-4">Modern location where the item was last observed: Speed Museum, Louisville, Kentucky, USA; BQ773127</li>  
+    </ol>  
+   </div>
+   <div id="location-additional" class="gl-additional">  
+    <h3 id="location-additional-head">Additional guidance</h3>
+    <p id="p-4">Although it is not required for EAGLE conformance, editors who wish to encode information about the original location of the inscription may use, e.g., &lt;rs type="originalLocation"&gt;theater&lt;/rs&gt;.</p>  
+    <p id="p-5">Wherever possible, geographic information should be controlled using the &#8220;key&#8221; attribute on the appropriate &lt;rs&gt; or &lt;placeName&gt; elements as outlined in the Guidelines section on <a class="xref" href="geography.html" id="xref-2">Geography</a>.</p>  
+   </div>
+   <div id="location-responsibility" class="gl-responsibility">  
+    <h3 id="location-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="location-cvs" class="gl-cvs">  
+    <h3 id="location-cvs-head">Revision Information</h3>  
+    <p id="location-cvs-revision-number">Revision number: $Revision: 898 $</p>  
+    <p id="location-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="location-cvs-revision-date">Revision date: $Date: 2008-06-25 11:49:30 -0500 (Wed, 25 Jun 2008) $</p>  
+    <p id="location-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

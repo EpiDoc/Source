@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+<!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/lines.xml,v 1.5 2007-09-12 13:28:16 gabrielbodard Exp $ -->
+<!-- End CVS information: do not remove -->
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="lines">
+    <head>Lines</head>
+    <ab><rs type="conformance">leiden</rs></ab>
+    
+    <div><head>Epigraphic lines</head><p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <tag>lb</tag> (line-break<note>GB 2007-05-23: though I use the expansion "line-begins" when presenting this to students</note>) empty element to mark the point at which the line breaks.</p><p>Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition of an entire line need to be marked in an attribute on the preceeding <tag>lb</tag>. For this reason, therefore, it is our convention to place an <tag>lb</tag> at the <emph>beginning</emph> of every epigraphic line in the edition, including the first. Any rend or numbering attributes on that <tag>lb</tag> refer to all text between the current at the following line-break. (See example 1 below.)</p><p>An <tag>lb</tag> that occurs mid-word should be given an attribute <att>type</att>="worddiv" (this, among other things, generates the hyphen at the end of the preceding line in XSLT).</p><p>See also <xref href="directionoftext.xml">direction of text</xref>.</p></div><div><head>Verse lines</head><p><emph>In addition to</emph> marking epigraphic lines, which is obligatory in any case, an editor may choose to tag verse groups and lines using the TEI <tag>lg</tag> (line-group) and <tag>l</tag> (line) elements. Within the verse lines, however, the start of each line of text on the support still needs to be marked with an <tag>lb</tag> element. In other words, <tag>lg</tag> and <tag>l</tag> are replacing the containing <tag>ab</tag>, but <emph>not</emph> the <tag>lb</tag>s. (See example 3 below.)</p><p>See also <xref href="verse.xml">verse inscriptions</xref>.</p></div>
+<div id="lines-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <list type="simple">
+         <item><bibl><title level="a" type="abbreviated">Panciera</title>, <abbr expan="page">p.</abbr><biblScope type="pages">...</biblScope></bibl>: 
+            <list type="ordered">
+               <item id="TypoEx-1">abc / abc</item>
+               <item id="TypoEx-2">not addressed</item><item id="TypoEx-3">not addressed</item>
+               </list></item>
+      </list>
+   </div><div id="lines-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item><item id="Regex-3">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="lines-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">abc <lb/> abc</item><item id="EncEx-2"><ab><lb n="0"/><supplied reason="lost">ἡ <rs reg="city" key="city" type="subject">πόλις</rs></supplied><lb n="1"/><gap reason="lost" unit="character" extent="6"/>ον Λι<lb n="2" type="worddiv"/><supplied reason="lost">κίννιο</supplied><unclear reason="damage">ν</unclear> Οὐα<space extent="1" unit="character"/><lb n="3" type="worddiv"/>λεριανὸν</ab></item>
+         <item id="EncEx-3"><lg met="hexameter"><lb n="1"/><l>τῆς μεγάλης ἀ<lb n="2" type="worddiv"/>ρετῆς τοῦτον<lb n="3"/>μέγαν ἡγεμονῆα</l><lb n="4"/><l><space dim="horizontal"/> Ἑλλάδιον <space dim="horizontal"/><lb n="5"/>Κᾶρες στῆσαν<lb n="6"/>ἀμειβόμενοι</l>
+</lg>
+            </item>
+         
+      </list>
+   </div><div id="lines-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="ordered">
+         <item>The standard EpiDoc stylesheets represent the line-breaks in the more usual form as new lines in the edition, rather than the continuous text with '/' separating epigraphic lines as in Krummrey-Panciera.</item><item>If a line breaks a word and ends with a vacat or a non-textual symbol ( i.e. <tag>space</tag> or <tag>g</tag>), the hyphen should appear immediately after the text, not after the intervening element.</item><item>The standard XSL does not currently distinguish between verse and prose inscriptions: the verse tagging demonstrated above could be rendered either as epigraphic or as verse lines according to preference. (See <xref type="external" href="http://insaph.kcl.ac.uk/ala2004/inscription/eAla016.html"><hi rend="italic">ala2004</hi> <hi rend="strong">16</hi></xref> or <xref type="external" href="http://insaph.kcl.ac.uk/iaph2007/iAph010131.html"><hi rend="italic">IAph2007</hi> <hi rend="strong">1.131</hi>.ii</xref> for the alternative.)</item>
+         
+      </list>
+   </div><div id="lines-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         
+         <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+         
+      </listBibl>
+   </div><div id="lines-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="lines-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 860 $</seg></p>
+      <p id="lines-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="lines-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+      <p id="lines-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>

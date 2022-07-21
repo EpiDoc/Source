@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Appendix: Aligning EpiDoc transcription with PETRAE</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Appendix: Aligning EpiDoc transcription with PETRAE</a></h1><div lang="en" class="teidiv" id="app-epi-petrae"><p>See PETRAE conventions at <a class="link_ref" href="http://petrae.tge-adonis.fr/index.php/inscriptions/aide">http://petrae.tge-adonis.fr/index.php/inscriptions/aide</a>.</p><div class="teidiv1" id="index-body.1_div.5_div.1"><h2><span class="head">Conventions for epigraphic transcription</span></h2><div class="table"><table><tr><td>[ ]</td><td>Restitution des lettres disparues</td><td><a class="link_ref" href="trans-restored.html">Editorial restoration: Characters lost but restored by modern editor</a></td></tr><tr><td>( )</td><td>Résolution d'abbréviation</td><td><a class="link_ref" href="trans-abbrevfully.html">Abbreviation fully expanded</a></td></tr><tr><td>〚 〛</td><td>Érasure</td><td><a class="link_ref" href="trans-erased.html">Erased but legible text</a> and <a class="link_ref" href="trans-erasedillegible.html">Erased and illegible but restored</a></td></tr><tr><td>`Aug´</td><td>Lettres ligaturées</td><td><a class="link_ref" href="trans-ligature.html">Ligatured letters</a></td></tr><tr><td>{ }</td><td>Suppression de lettres gravées par erreur</td><td><a class="link_ref" href="trans-superfluous.html">Superfluous characters</a></td></tr><tr><td>&lt; &gt;</td><td>Inclusion de lettres qui n'étaient pas présentes dans la pierre</td><td><a class="link_ref" href="trans-omitted.html">Supplement of omitted characters</a></td></tr><tr><td>˹ ˺</td><td>Lettres corrigées d'après une copie ou un manuscrit peu fiable</td><td>???</td></tr><tr><td>+</td><td>Lettre non identifiable</td><td><a class="link_ref" href="trans-illegiblecharknown.html">Illegible characters, quantity known</a> and <a class="link_ref" href="trans-illegiblecharunknown.html">Illegible characters, quantity unknown</a></td></tr><tr><td>[...]</td><td>Lacune non restituable de longueur déterminée : chaque point indique une lettre manquante</td><td><a class="link_ref" href="trans-lostcharknown.html">Lost characters, quantity known</a></td></tr><tr><td>[ - - - ]</td><td>Lacune de longueur indéterminée dans une ligne ou, ligne manquante, mais certaine</td><td><a class="link_ref" href="trans-lostcharunknown.html">Lost characters, quantity unknown</a> and <a class="link_ref" href="trans-lostlineknown.html">Lost lines, quantity known</a></td></tr><tr><td>- - -</td><td>Ligne(s) manquante(s) non restituable(s) en nombre indéterminé</td><td><a class="link_ref" href="trans-lostlineunknown.html">Lost lines, quantity unknown</a></td></tr><tr><td>▴</td><td>Point de séparation</td><td><a class="link_ref" href="trans-symbolinterpunct.html">Symbols: interpuncts</a></td></tr><tr><td>❦</td><td>Hedera</td><td><a class="link_ref" href="trans-symbol.html">Symbols</a></td></tr><tr><td>ẹṭ </td><td>Lettre pointée : lettre qui ne se lit pas entièrement sur la pierre</td><td><a class="link_ref" href="trans-ambiguous.html">Ambiguous characters</a></td></tr><tr><td>uac.</td><td>uacat</td><td><a class="link_ref" href="trans-vacatchar.html">Vacat, characters</a> and <a class="link_ref" href="trans-vacatline.html">Vacat, lines</a></td></tr></table></div></div><div class="teidiv1" id="index-body.1_div.5_div.2"><h2><span class="head">Supporting and descriptive fields</span></h2><dl><dt id="index-item-d39e804"><span id="index-label-d39e802">Numéro PETRAE (numéro absolu) : par ex. 16/1/14/xxx où 16 désigne les Gaules, 1 la province d'Aquitaine, 14 la cité de Périgueux</span></dt><dd><a class="link_ref" href="supp-publication.html">Title and publication information</a> and <a class="link_ref" href="supp-histinvno.html">Inventory numbers and repository</a></dd><dt id="index-item-d39e812"><span id="index-label-d39e810">Lieu de découverte (nom antique et nom moderne) et une présentation succinte qui tient lieu de titre.</span></dt><dd><a class="link_ref" href="supp-histfound.html">Place and context of finding</a></dd><dt id="index-item-d39e817"><span id="index-label-d39e815">Description de la pierre : indication de la nature du support et du matériau, état de conservation du monument, élément de décoration</span></dt><dd><a class="link_ref" href="supp-descobject.html">Description and dimensions of monument or object</a></dd><dt id="index-item-d39e822"><span id="index-label-d39e820">Date, circonstances, lieu et contexte local de découverte</span></dt><dd><a class="link_ref" href="supp-histfound.html">Place and context of finding</a></dd><dt id="index-item-d39e827"><span id="index-label-d39e825">Lieu et institution de conservation avec indication du n° d'inventaire dans le musée ou la collection</span></dt><dd><a class="link_ref" href="supp-histmodern.html">Modern locations</a> and <a class="link_ref" href="supp-histinvno.html">Inventory numbers and repository</a></dd><dt id="index-item-d39e836"><span id="index-label-d39e833">Dimension du monument (longueur/largeur/hauteur)</span></dt><dd><a class="link_ref" href="supp-descdimensions.html">Dimensions</a></dd><dt id="index-item-d39e841"><span id="index-label-d39e839">Description du champ épigraphique, avec la (ou les) face(s) du support où se trouve le champ, les dimensions (éventuellement)</span></dt><dd><a class="link_ref" href="supp-desctext.html">Description and layout of text field or campus</a></dd><dt id="index-item-d39e846"><span id="index-label-d39e844">Datation du texte</span></dt><dd><a class="link_ref" href="supp-historigdate.html">Date of origin</a></dd><dt id="index-item-d39e851"><span id="index-label-d39e849">Commentaires sur la mise en page, définition de l'écriture et commentaire sur la forme et la qualité des lettres (s'il y a lieu)</span></dt><dd><a class="link_ref" href="supp-descletters.html">Description of letters or hands</a></dd><dt id="index-item-d39e856"><span id="index-label-d39e854">Bibliographie: sauf exception, on ne donne pas la bibliographie antérieure au CIL.</span></dt><dd><a class="link_ref" href="supp-bibliography.html">Bibliography</a></dd><dt id="index-item-d39e861"><span id="index-label-d39e859">Texte : on donne d'abord ligne par ligne, avec alignement à gauche, le texte en capitales avec les signes séparatifs. Il permet de se faire clairement une idée de ce qui a été lu et doit être considéré comme un état de l'information scientifique. On transcrit ensuite, ligne par ligne, avec alignement à gauche, l'inscription en minuscules, sans redonner les signes séparatifs, mais avec la ponctuation ordinaire d'un texte littéraire latin.</span></dt><dd><a class="link_ref" href="app-alltrans.html">Transcription guidelines</a></dd><dt id="index-item-d39e867"><span id="index-label-d39e865">Apparat critique : on ne donne ordinairement pas les lectures antérieures au CIL, sauf lorqu'elles mérite quelques considérations, notamment pour les inscriptions aujourd'hui perdues</span></dt><dd><a class="link_ref" href="supp-apparatus.html">External apparatus criticus</a></dd><dt id="index-item-d39e872"><span id="index-label-d39e870">Traduction</span></dt><dd><a class="link_ref" href="supp-translation.html">Translation</a></dd><dt id="index-item-d39e877"><span id="index-label-d39e875">Photos</span></dt><dd><a class="link_ref" href="supp-images.html">Figures or facsimile</a></dd></dl></div><div class="teidiv1" id="app-epi-petrae-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e885"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="app-epi-panciera.html">Appendix: Aligning EpiDoc with Krummrey-Panciera 1980</a><span class="nextLink"> Next</span><a class="navigation" href="app-epi-edh.html">Appendix: Aligning EpiDoc transcription and supporting data with EDH</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="app-epi-petrae.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

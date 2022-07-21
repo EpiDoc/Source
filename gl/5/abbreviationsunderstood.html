@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Identification and expansion of abbreviations understood by the editor"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="abbreviationsunderstood.html"/>
+  <title>Identification and expansion of abbreviations understood by the editor</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Identification and expansion of abbreviations understood by the editor</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="abbreviationsunderstood.xml">xml version</a> || id: abbreviationsunderstood|| <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-regex">regular expression test</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-notes">notes</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-questions">questions and issues</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="abbreviationsunderstood.html#abbreviationsunderstood-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on abbreviationsunderstood.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/abbreviationsunderstood.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="abbreviationsunderstood-typographic" class="gl-typographic">  
+    <h3 id="abbreviationsunderstood-typographic-head">Traditional typographic representation</h3>  
+    <ol id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a></span>, <abbr title="page">p.</abbr>17</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="la" lang="la">co(n)s(ul)</span></li>  
+      <li id="TypoEx-2"><span xml:lang="la" lang="la">Aug(ustus)</span></li>  
+      <li id="TypoEx-3"><span xml:lang="la" lang="la">Not covered</span></li>  
+      <li id="TypoEx-4"><span xml:lang="la" lang="la">Not covered</span></li>  
+      <li id="TypoEx-5"><span xml:lang="la" lang="la">Not covered</span></li>  
+      <li id="TypoEx-6"><span xml:lang="la" lang="la">Not covered</span></li>
+      <li id="TypoEx-7"><span xml:lang="la" lang="la">Not covered</span></li>
+      <li id="TypoEx-8"><span xml:lang="la" lang="la">Not covered</span></li>  
+     </ol></li>  
+    </ol>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">&lt;expan&gt;co&lt;supplied reason="abbreviation" cert="high"&gt;n&lt;/supplied&gt;s&lt;supplied reason="abbreviation" cert="high"&gt;ul&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-2">&lt;expan&gt;Aug&lt;supplied reason="abbreviation" cert="high"&gt;ustus&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-3">&lt;expan&gt;&lt;abbr&gt;Aug&lt;orig&gt;g&lt;/orig&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;usti duo&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-4">&lt;expan&gt;&lt;abbr&gt;pr&lt;orig&gt;&lt;g type="stop" /&gt;&lt;/orig&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;esbyter&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-5">&lt;expan&gt;D&lt;supplied reason="abbreviation" cert="high"&gt;is&lt;/supplied&gt; M&lt;supplied reason="abbreviation" cert="high"&gt;anibus&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-6">&lt;expan&gt;D&lt;supplied reason="abbreviation" cert="high"&gt;is&lt;/supplied&gt;&lt;/expan&gt; &lt;expan&gt;M&lt;supplied reason="abbreviation" cert="high"&gt;anibus&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-7">&lt;expan&gt;&lt;abbr&gt;H&lt;orig&gt;&lt;space extent="2" dim="horizontal" unit="character" /&gt;&lt;/orig&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;ic&lt;/supplied&gt; &lt;abbr&gt;s&lt;orig&gt;&lt;space extent="2" dim="horizontal" unit="character" /&gt;&lt;/orig&gt;&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;itus&lt;/supplied&gt; &lt;abbr&gt;e&lt;/abbr&gt;&lt;supplied reason="abbreviation" cert="high"&gt;st&lt;/supplied&gt;&lt;/expan&gt;</li>
+     <li id="EncEx-8">&lt;expan&gt;&lt;abbr&gt;&lt;orig&gt;&lt;g type="monogram" /&gt;&lt;/orig&gt;&lt;/abbr&gt; &lt;supplied reason="abbreviation" cert="high"&gt;&#920;&#949;&#959;&#967;&#8049;&#961;&#951;&#962;&lt;/supplied&gt;&lt;/expan&gt;</li>
+    </ol>
+   </div>
+   <div id="abbreviationsunderstood-edition" xml:lang="la" lang="la" class="gl-edition">  
+    <h3 id="abbreviationsunderstood-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1"><span class="epigraphic-abbreviation-understood" title="consul">co(<span class="supplied-characters">n</span>)s(<span class="supplied-characters">ul</span>)</span></li>  
+     <li id="EncEx-2"><span class="epigraphic-abbreviation-understood" title="Augustus">Aug(<span class="supplied-characters">ustus</span>)</span></li>  
+     <li id="EncEx-3"><span class="epigraphic-abbreviation-understood" title="Augg"><span class="original-characters">Aug</span>(<span class="supplied-characters">usti duo</span>)</span></li>  
+     <li id="EncEx-4"><span class="epigraphic-abbreviation-understood" title="pr"><span class="original-characters">pr</span>(<span class="supplied-characters">esbyter</span>)</span></li>  
+     <li id="EncEx-5"><span class="epigraphic-abbreviation-understood" title="Dis Manibus">D(<span class="supplied-characters">is</span>) M(<span class="supplied-characters">anibus</span>)</span></li>  
+     <li id="EncEx-6"><span class="epigraphic-abbreviation-understood" title="Dis">D(<span class="supplied-characters">is</span>)</span>  <span class="epigraphic-abbreviation-understood" title="Manibus">M(<span class="supplied-characters">anibus</span>)</span></li>
+     <li id="EncEx-7"><span class="epigraphic-abbreviation-understood" title="Hse"><span class="original-characters">H</span>(<span class="supplied-characters">ic</span>) <span class="original-characters">s</span>(<span class="supplied-characters">itus</span>) <span class="original-characters">e</span>(<span class="supplied-characters">st</span>)</span></li>  
+     <li id="EncEx-8"><span class="epigraphic-abbreviation-understood" title=""><span class="original-characters"/> (<span class="supplied-characters">&#920;&#949;&#959;&#967;&#8049;&#961;&#951;&#962;</span>)</span></li>
+    </ol>  
+   </div>
+   <div id="abbreviationsunderstood-notes" class="gl-notes">  
+    <h3 id="abbreviationsunderstood-notes-head">Notes</h3>  
+    <ul id="list-5">  
+     <li id="item-26">An <span class="tag">&lt;abbr&gt;</span> element within the <span class="tag">&lt;expan&gt;</span> containing the abbreviated form of the word is available but optional. It may be useful when the abbreviation contains additional markers not in the expanded form (cf. <a class="ref" href="abbreviationsunderstood.html#EncEx-3" id="ref-1">Augg</a> and <a class="ref" href="abbreviationsunderstood.html#EncEx-4" id="ref-2">pr.</a> above), but might require additional linking in cases where the abbreviation must be expanded by interpolation (<a class="ref" href="abbreviationsunderstood.html#EncEx-2" id="ref-3">cf. co(n)s(ul)</a>)</li>  
+     <li id="item-27">When the abbreviated form contains markers not in the expanded form, such as <a class="ref" href="abbreviationsunderstood.html#EncEx-3" id="ref-4">additional letters</a> or <a class="ref" href="abbreviationsunderstood.html#EncEx-4" id="ref-5">punctuation</a>, best practice is to put these in <span class="tag">&lt;orig&gt;</span> elements, which the standard stylesheets will omit when rendering the expanded form.</li>  
+     <li id="item-28">Abbreviated phrases (<abbr title="for example = exempli gratia">e.g.</abbr>, <span class="foreign" id="foreign-1" xml:lang="la" lang="la">D(is) M(anibus)</span>) should properly be marked-up as a group, as illustrated in <a class="ref" href="abbreviationsunderstood.html#EncEx-5" id="ref-6">the example above</a>, but marking them as single words is not incorrect (see <a class="ref" href="abbreviationsunderstood.html#EncEx-6" id="ref-7">the second example</a>).</li>  
+    </ul>  
+   </div>
+   <div id="abbreviationsunderstood-questions" class="gl-questions">  
+    <h3 id="abbreviationsunderstood-questions-head">Questions and issues</h3>  
+    <ul id="list-6">  
+     <li id="item-29">None.</li>  
+    </ul>  
+   </div>
+   <div id="abbreviationsunderstood-responsibility" class="gl-responsibility">  
+    <h3 id="abbreviationsunderstood-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-2"><span class="respStmt">author: Gabriel Bodard</span></li>  
+     <li id="bibl-3"><span class="respStmt">author: Hugh Cayless</span></li>
+     <li id="bibl-4"><span class="respStmt">author: John Bodel</span></li>  
+    </ul>  
+   </div>
+   <div id="abbreviationsunderstood-cvs" class="gl-cvs">  
+    <h3 id="abbreviationsunderstood-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="abbreviationsunderstood-cvs-revision-number">Revision number: $Revision: 1.18 $</p>  
+    <p id="abbreviationsunderstood-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="abbreviationsunderstood-cvs-revision-date">Revision date: $Date: 2007/05/23 15:32:42 $</p>  
+    <p id="abbreviationsunderstood-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

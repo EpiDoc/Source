@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Transcription where a vacat is evident or suspected"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="vacat.html"/>
+  <title>Transcription where a vacat is evident or suspected</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Transcription where a vacat is evident or suspected</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="vacat.xml">xml version</a> || id: vacat|| <a class="htmlnavigation" href="vacat.html#vacat-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="vacat.html#vacat-regex">regular expression test</a> | <a class="htmlnavigation" href="vacat.html#vacat-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="vacat.html#vacat-notes">notes</a> | <a class="htmlnavigation" href="vacat.html#vacat-questions">questions and issues</a> | <a class="htmlnavigation" href="vacat.html#vacat-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="vacat.html#vacat-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on vacat.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/vacat.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">for divset 1: editionitemcount != typographicitemcount</p>
+   <p id="p-2">The element <span class="tag">&lt;space/&gt;</span> should be used where a blank space on the stone is considered significant.</p>
+   <div id="vacat-typographic" class="gl-typographic">  
+    <h3 id="vacat-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a></span>, <abbr title="page">p.</abbr>17</span>  
+     <ol id="list-1">  
+      <li id="TypoEx-1"><span xml:lang="la" lang="la">Imperator <span class="normal">(vac.)</span> Caesar </span></li>  
+      <li id="TypoEx-2"><span xml:lang="la" lang="la">Valeria <span class="normal">(vac. ?)</span> Atticilla </span></li>  
+      <li id="TypoEx-3"><span xml:lang="la" lang="la">not addressed </span></li>  
+      <li id="TypoEx-4"><span xml:lang="la" lang="la">not addressed </span></li>  
+     </ol></li>  
+     <li id="item-6"><span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2"><a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a></span>, <abbr title="page">p.</abbr>3</span>: 
+     <ol id="list-2">  
+      <li id="TypoEx-5"><span xml:lang="la" lang="la">Imperator (vac. 3) Caesar </span></li>  
+      <li id="TypoEx-6"><span xml:lang="la" lang="la">Valeria (vac. ?) Atticilla </span></li>  
+      <li id="TypoEx-7"><span xml:lang="la" lang="la">senatus (vac. 3?) populusque </span></li>  
+      <li id="TypoEx-8"><span xml:lang="la" lang="la">not addressed </span></li>  
+     </ol></li>  
+     <li id="item-11"><span id="bibl-3" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-3"><a class="xref" href="bibliography.html#dow" id="xref-3">Dow</a></span></span>: 
+     <ol id="list-3">  
+      <li id="TypoEx-9">Imperator 
+      <sup>vvv.</sup> Caesar </li>  
+      <li id="TypoEx-10">Valeria 
+      <sup>vvv.?</sup> Atticilla </li>  
+      <li id="TypoEx-11">not addressed </li>  
+      <li id="TypoEx-12">not addressed </li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">Imperator &lt;space dim="horizontal" extent="3" unit="character" /&gt; Caesar </li>
+     <li id="EncEx-2">Valeria &lt;space id="space1" dim="horizontal" extent="3" unit="character" /&gt; &lt;certainty target="space1" locus="#gi" degree="low" /&gt; Atticilla </li>
+     <li id="EncEx-3">senatus &lt;space id="space2" dim="horizontal" extent="3" unit="character" precision="circa" /&gt; populusque </li>
+     <li id="EncEx-4">dona &lt;space id="space3" dim="horizontal" extent="5" unit="character" precision="circa" /&gt; &lt;certainty target="space3" locus="#gi" degree="low" /&gt; nobis pacem </li>
+    </ol>
+   </div>
+   <div id="vacat-edition" xml:lang="la" lang="la" class="gl-edition">  
+    <h3 id="vacat-edition-head" xml:lang="en" lang="en">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-6">  
+     <li id="EncEx-1">Imperator <span class="space" title="vacat = blank space">(vac. 3)</span> Caesar </li>  
+     <li id="EncEx-2">Valeria <span class="space" title="vacat = blank space">(vac. 3)</span> Atticilla </li>  
+     <li id="EncEx-3">senatus <span class="space" title="vacat = blank space">(vac.? 3)</span> populusque </li>  
+     <li id="EncEx-4">dona <span class="space" title="vacat = blank space">(vac.? 5)</span> nobis pacem </li>  
+    </ol>  
+   </div>
+   <div id="vacat-notes" class="gl-notes">  
+    <h3 id="vacat-notes-head">Notes</h3>  
+    <ol id="list-7">
+     <li id="item-24">The use of the <span class="tag">&lt;certainty&gt;</span> element in these examples conforms to the consensus reached in a protacted discussion on the <a class="xref" href="http://lsv.uky.edu/archives/markup.html" id="xref-4">Markup list</a> under the rubrics "REQ COMMENT: lacuna/vacat and uncertainty" and "Certainty etc." ( 1-10 June 2002).</li>
+     <li id="item-25"><span class="tag">&lt;certainty target="extent"/&gt;</span> has, however, been replaced by <span class="att">precision</span> attribute on <span class="tag">&lt;space/&gt;</span> as of Spring 2007.</li>
+    </ol>  
+   </div>
+   <div id="vacat-questions" class="gl-questions">  
+    <h3 id="vacat-questions-head">Questions and issues</h3>  
+    <ol id="list-8">  
+     <li id="item-26">GB (2006-07-19): This section also impinges on the "whitespace" discussion. Ideally, all space on stone should be marked up the same way in the XML (using <span class="tag">&lt;space/&gt;</span>), with contextual stylesheets rendering some as (vac.) and others with whitespace&#8212;dependent of course on the desires of the project: USEP want more whitespace; InsAph want more (
+     <sup>vv.</sup>).</li>  
+    </ol>  
+   </div>
+   <div id="vacat-responsibility" class="gl-responsibility">  
+    <h3 id="vacat-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-4"><span class="respStmt">author: Tom Elliott</span></li>  
+     <li id="bibl-5"><span class="respStmt">author: Gabriel Bodard</span></li>
+     <li id="bibl-6"><span class="respStmt">author: John Bodel</span></li>  
+    </ul>  
+   </div>
+   <div id="vacat-cvs" class="gl-cvs">  
+    <h3 id="vacat-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="vacat-cvs-revision-number">Revision number: $Revision: 1.14 $</p>  
+    <p id="vacat-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="vacat-cvs-revision-date">Revision date: $Date: 2007/06/06 16:22:17 $</p>  
+    <p id="vacat-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

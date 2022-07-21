@@ -1,0 +1,79 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Description of hands and letters</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Description of hands and letters</a></h1><div lang="en" class="teidiv" id="supp-descletters"><p class="page-gloss">Descriptive information about the hands, palaeography or writing styles used in the text should be encoded within the <span class="gi">&lt;handDesc&gt;</span> section of the document header.</p><div class="tag-defs" id="index-body.1_div.20_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation:</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handDesc.html">handDesc</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handNote.html">handNote</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-height.html">height</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html">hi</a> ; EpiDoc-specific
+                        customization: <a href="ref-hi.html">hi</a></li></ul></div><div class="teidiv1" id="index-body.1_div.20_div.2"><p>The description of hand(s) may include information on letterforms and heights (or other dimensions, such as line-heights), palaeographic features including dating, ligatures, abbreviation marks, unusual characters and other symbols or textual features. On the whole only letterheights are tagged in this section (with <span class="gi">&lt;height&gt;</span>), although dating may also be marked in principle (if it is different from the information recorded in <a class="gi" href="ref-origDate.html">origDate</a>).</p><p>Ligatures, while sometimes listed here manually, may be better captured by tagging in the transcribed text as <a class="gi" href="ref-hi.html">hi</a> with <span class="att">rend</span> of "ligature" and mechanically generating a list of instances in the output. See also <a class="link_ref" href="trans-ligature.html">Ligatures</a>.</p><p>If multiple hands are described, each should be given a separate <span class="gi">&lt;handNote&gt;</span>, each bearing either an <span class="att">n</span> (corresponding to a numbered section in the transcribed text), or an <span class="att">xml:id</span> to which a <span class="gi">&lt;handShift&gt;</span> element in the transcription may point. See also <a class="link_ref" href="trans-handshift.html">Change of hand or scribe</a>.</p><p>See also <a class="link_ref" href="supp-descdimensions.html">Dimensions</a> for more information on tagging object, campus or letter dimensions.</p><div id="index-egXML-d39e2531" class="pre egXML_valid"><span class="element">&lt;handDesc&gt;</span><br /> <span class="element">&lt;handNote&gt;</span><br />  <span class="element">&lt;height <span class="attribute">unit</span>="<span class="attributevalue">metre</span>"&gt;</span>0.015<span class="element">&lt;/height&gt;</span>; lunate sigma and epsilon; ligatured ΜΝ in l. 3.<br /> <span class="element">&lt;/handNote&gt;</span><br /><span class="element">&lt;/handDesc&gt;</span></div></div><div class="teidiv1" id="intro-faq-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e2541"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-desctext.html">Description and layout of text field or campus</a><span class="nextLink"> Next</span><a class="navigation" href="supp-descdecor.html">Description of decoration or iconography</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-descletters.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

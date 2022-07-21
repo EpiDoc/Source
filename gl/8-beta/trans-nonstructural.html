@@ -1,0 +1,83 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Non-Structural Text-Parts</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Non-Structural Text-Parts</a></h1><h2 class="subtitle">Non-Structural Text-Parts</h2><section lang="en" class="teidiv" id="trans-nonstructural"><p>Non-structural text-parts, e.g. between blocks</p><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-milestone.html">milestone</a></li></ul><p>
+        </p><p>A <span class="gi">&lt;milestone&gt;</span> is used to describe the support, rather than the structure, of the text.
+        It can be used to mark a point in the text at which the support changes in some respect, for
+        instance where a text is inscribed across a series of blocks and the editor wants to show
+        the point at which one block ends and another begins. This can be represented by giving the
+            <span class="gi">&lt;milestone&gt;</span> element a <span class="att">unit</span> value of "block". Each
+            <span class="gi">&lt;milestone&gt;</span> can also be given an <span class="att">n</span> to allow the blocks (or
+        whatever non-structural textpart is being described) to be numbered.</p><span class="cit"><span class="quote">‘καὶ’</span> </span><div id="index-egXML-d38e7927" class="pre egXML_valid"> <br/> ὁ Ῥωμαίω<span class="element">&lt;milestone unit="<span class="attributevalue">block</span>" n="<span class="attributevalue">iii</span>"/&gt;</span>ν καθὼς καὶ τὰ<br/><span class="ref"></span></div><div id="index-egXML-d38e7931" class="pre egXML_valid"><span class="element">&lt;unclear reason="<span class="attributevalue">damage</span>"&gt;</span>τ<span class="element">&lt;/unclear&gt;</span><br/><span class="element">&lt;milestone unit="<span class="attributevalue">block</span>"/&gt;</span><br/><span class="element">&lt;supplied reason="<span class="attributevalue">lost</span>"&gt;</span>οῦ<span class="element">&lt;/supplied&gt;</span><p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>London style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-nonstructural#2">  τ̣ | [οῦ]  </egXML></li></ul><span class="ref">InsAph: <a href="http://insaph.kcl.ac.uk/iaph2007/iAph010174.html">1.174</a></span></div><div id="index-egXML-d38e7937" class="pre egXML_valid"> Clau<span class="element">&lt;milestone unit="<span class="attributevalue">unspecified</span>" rend="<span class="attributevalue">bay</span>"/&gt;</span>dio<p xmlns="">Transformation using the example EpiDoc P5 stylesheets:</p><ul xmlns=""><li><strong>London style:</strong><egXML xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-nonstructural#3"> Clau<br xmlns=""></br>baydio</egXML></li></ul><span class="ref">IRT: <a href="http://irt.kcl.ac.uk/irt2009/IRT534.html">534</a></span></div><section class="teidiv1" id="trans-nonstructural-responsibility"><header><h2><span class="head">Responsibility for this section</span></h2></header><ol class="listBibl"><li id="index-bibl-d38e7945"><div class="biblfree"><span class="name">Scott Vanderbilt</span><span class="name"></span>, author  </div></li><li id="index-bibl-d38e7952"><div class="biblfree"><span class="name">Charlotte Tupman</span><span class="name"></span>, author  </div></li></ol></section></section><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="trans-metricalfragment.html">Metrical Fragments</a><span class="nextLink"> Next</span><a class="navigation" href="trans-numacrophonic.html">Acrophonic Numbers</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="trans-nonstructural.html#">Feedback</a></div><address>Date: 2013-01-21<br /><!--
+	  Generated  using an XSLT version 2.0 stylesheet
+	  based on http://www.tei-c.org/Stylesheets/
+	  on 2013-01-21T16:59:16Z--></address></div></div></body></html>

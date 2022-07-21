@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Ancient and modern languages and scripts"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="languages.html"/>
+  <title>Ancient and modern languages and scripts</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Ancient and modern languages and scripts</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="languages.xml">xml version</a> || id: languages|| <a class="htmlnavigation" href="languages.html#languages-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="languages.html#languages-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="languages.html#languages-tei-p4links">tei p4 links</a> | <a class="htmlnavigation" href="languages.html#languages-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="languages.html#languages-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on languages.xml">post a comment</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <p id="p-1">The language of a document, or a subsection of a document, must be explicitly indicated by means of TEI-standard mechanisms and internationally agreed codes for the identification of languages and scripts (see: <a class="xref" href="http://www.w3.org/International/articles/language-tags/" id="xref-1">Language tags in HTML and XML</a>). All codes for language and script combinations to be used in the document must be locally declared in the <span class="tag">&lt;profileDesc&gt;</span> sub-element of the <span class="tag">&lt;teiHeader&gt;</span>. See further: <a class="xref" href="teilangusage.html" id="xref-2">Specifying available languages and scripts</a></p>
+   <p id="p-2">Once all the needed language and script combinations have been defined, the primary (default) language of a document must be indicated. This is accomplished by placing the TEI <span class="att">lang</span> attribute on the top-level tag (document element) and populating it with the appropriate language/script code. For projects producing full EpiDoc XML documents, this will commonly be the <span class="tag">&lt;TEI.2&gt;</span>, although in some instances a first-level <span class="tag">&lt;div&gt;</span> element will be more appropriate. For projects that are using EpiDoc solely for textual transcription (i.e., <a class="xref" href="conformance-leiden-list.html" id="xref-3">Leiden-conformant EpiDoc</a> only), the lang attribute must be placed on the outermost (top-level) tag.</p>
+   <p id="p-3">Text in a language other than the default language of the document should also be indicated by the use of the <span class="att">lang</span> attribute, attached to the most appropriate encapsulating element. When there is no element that adequately brackets only the text in the secondary language or script, the TEI <span class="tag">&lt;foreign&gt;</span> element (together with the <span class="att">lang</span> attribute) can be introduced to serve this purpose.</p>
+   <div id="languages-typographic" class="gl-typographic">  
+    <h3 id="languages-typographic-head">Traditional typographic representation</h3>  
+    <ol id="list-1">  
+     <li id="TypoEx-1"><span xml:lang="en" lang="en">The recipient cannot be identified from his <span class="italic">nomen</span> alone</span></li>  
+     <li id="TypoEx-2">It may be that the word &#954;&#959;&#953;&#957;&#8182;&#957; stood in l. 18</li>  
+     <li id="TypoEx-3">By the authority of the emperor <span class="italic">Aelius Hadrianus Antoninus Augustus Pius</span>, father of the country, verdict rendered by <span class="italic">Tuscenius Felix</span>, <span class="italic">primus pilus</span> (for the second time), with <span class="italic">Blesius Taurinus</span>, soldier of Praetorian Cohors 6, land surveyor, carrying out the survey. <span class="italic">Terminus</span> of the <span class="italic">Ardeatini</span>.</li>  
+    </ol>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">The recipient cannot be identified from his &lt;foreign lang="la"&gt;nomen&lt;/foreign&gt; alone</li>
+     <li id="EncEx-2">It may be that the word &lt;foreign lang="grc"&gt;&#954;&#959;&#953;&#957;&#8182;&#957;&lt;/foreign&gt; stood in l. 18</li>
+     <li id="EncEx-3">&lt;ab lang="en"&gt;By the authority of the emperor &lt;persName lang="la"&gt;Aelius Hadrianus Antoninus Augustus Pius&lt;/persName&gt;, father of the country, verdict rendered by &lt;persName lang="la"&gt;Tuscenius Felix&lt;/persName&gt;, &lt;rs type="rank" lang="la"&gt;primus pilus&lt;/rs&gt; (for the second time), with &lt;persName lang="la"&gt;Blesius Taurinus&lt;/persName&gt;, soldier of Praetorian Cohors 6, land surveyor, carrying out the survey. &lt;foreign lang="la"&gt;Terminus&lt;/foreign&gt; of the &lt;geogName type="ethnic" lang="la"&gt;Ardeatini&lt;/geogName&gt;.&lt;/ab&gt;</li>
+    </ol>
+   </div>
+   <div id="languages-edition" class="gl-edition">  
+    <h3 id="languages-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-2">  
+     <li id="EncEx-1">The recipient cannot be identified from his <span class="foreign" id="foreign-1" xml:lang="la" lang="la">nomen</span> alone</li>  
+     <li id="EncEx-2">It may be that the word <span class="foreign" id="foreign-2" xml:lang="grc" lang="grc">&#954;&#959;&#953;&#957;&#8182;&#957;</span> stood in l. 18</li>  
+     <li id="EncEx-3">
+     <p class="abstract" id="ab-2" xml:lang="en" lang="en">By the authority of the emperor <span class="personal-name" id="persName-1" xml:lang="la" lang="la">Aelius Hadrianus Antoninus Augustus Pius</span>, father of the country, verdict rendered by <span class="personal-name" id="persName-2" xml:lang="la" lang="la">Tuscenius Felix</span>, primus pilus (for the second time), with <span class="personal-name" id="persName-3" xml:lang="la" lang="la">Blesius Taurinus</span>, soldier of Praetorian Cohors 6, land surveyor, carrying out the survey. <span class="foreign" id="foreign-3" xml:lang="la" lang="la">Terminus</span> of the Ardeatini.</p></li>  
+    </ol>  
+   </div>
+   <div id="languages-tei-p4links" class="gl-tei-p4links">  
+    <h3 id="languages-tei-p4links-head">TEI P4 links</h3>  
+    <ul id="list-3">  
+     <li id="item-7">  <a class="xref" href="http://www.tei-c.org/P4X/ref-FOREIGN.html" id="xref-4">  <span class="tag">&lt;foreign&gt;</span>  </a>  </li>  
+     <li id="item-8">  <a class="xref" href="http://www.tei-c.org/P4X/HD.html#HD41" id="xref-5">5.4.2 Language Usage</a>  </li>  
+    </ul>  
+   </div>
+   <div id="languages-responsibility" class="gl-responsibility">  
+    <h3 id="languages-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-1">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-2">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+    </ul>  
+   </div>
+   <div id="languages-cvs" class="gl-cvs">  
+    <h3 id="languages-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="languages-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="languages-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="languages-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="languages-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

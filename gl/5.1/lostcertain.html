@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Letters completely lost (extent certain or not certain)"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="lostcertain.html"/>
+  <title>Letters completely lost (extent certain or not certain)</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Letters completely lost (extent certain or not certain)</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="lostcertain.xml">xml version</a> || id: lostcertain|| <a class="htmlnavigation" href="lostcertain.html#lostcertain-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="lostcertain.html#lostcertain-regex">regular expression test</a> | <a class="htmlnavigation" href="lostcertain.html#lostcertain-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="lostcertain.html#lostcertain-notes">notes</a> | <a class="htmlnavigation" href="lostcertain.html#lostcertain-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="lostcertain.html#lostcertain-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on lostcertain.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/lostcertain.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="lostcertain-typographic" class="gl-typographic">  
+    <h3 id="lostcertain-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><a href="bibliography.html#Panciera" class="title-a-abbreviated" id="title-1">Panciera</a>, <abbr title="page">p.</abbr>18</span>; <span id="bibl-2" class="bibliographiccitation"><a href="bibliography.html#Dohnicht" class="title-a-abbreviated" id="title-2">Dohnicht</a>, <abbr title="page">p.</abbr>4</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</li>  
+      <li id="TypoEx-2">[&#160;&#183;&#160;10&#160;&#183;&#160;]</li>  
+      <li id="TypoEx-3"> [&#160;&#183;&#160;c.10&#160;&#183;&#160;]</li>  
+      <li id="TypoEx-4"> [&#160;-&#160;4.2cm&#160;-&#160;]</li>  
+      <li id="TypoEx-5">not addressed</li>
+      <li id="TypoEx-6">not addressed</li>
+      <li id="TypoEx-7">not addressed</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1"> &lt;gap reason="lost" extent="3" unit="character" /&gt;</li>
+     <li id="EncEx-2"> &lt;gap reason="lost" extent="10" unit="character" /&gt;</li>
+     <li id="EncEx-3"> &lt;gap reason="lost" extent="10" unit="character" precision="circa" /&gt;</li>
+     <li id="EncEx-4"> &lt;gap reason="lost" extent="4.2" unit="cm" /&gt;</li>
+     <li id="EncEx-5"> &lt;gap reason="lost" extent="2" unit="character" precision="circa" /&gt;</li>
+     <li id="EncEx-6">&lt;gap extent="22" reason="lost" unit="character" extentmax="28" /&gt;</li>
+     <li id="EncEx-7">&lt;name type="praenomen"&gt;&lt;gap extent="1" reason="lost" unit="character" extentmax="3" /&gt;&lt;/name&gt;</li>
+    </ol>
+   </div>
+   <div id="lostcertain-edition" class="gl-edition">  
+    <h3 id="lostcertain-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;]</span></li>  
+     <li id="EncEx-2">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;10&#160;&#183;&#160;]</span></li>  
+     <li id="EncEx-3">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;10&#160;&#183;&#160;]</span></li>  
+     <li id="EncEx-4">  <span class="gap-lost" title="put title here!">[&#160;-&#160;4.2cm&#160;-&#160;]</span></li>  
+     <li id="EncEx-5">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;]</span></li>
+     <li id="EncEx-6"><span class="gap-lost" title="put title here!">[&#160;&#183;&#160;22-28&#160;&#183;&#160;]</span></li>
+     <li id="EncEx-7"><span class="gap-lost" title="put title here!">[&#160;-&#160;1-3&#160;-&#160;]</span></li>  
+    </ol> 2007-04-11: updated usage to include the <span class="att">precision</span> attribute. XSLT needs to be updated to support this.
+   </div>
+   <div id="lostcertain-notes" class="gl-notes">  
+    <h3 id="lostcertain-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-23">The first example indicates the certain loss of exactly 3 characters.</li>  
+     <li id="item-24">The second example indicates the certain loss of exactly 10 characters.</li>  
+     <li id="item-25">The third example indicates the certain loss of approximately 10 characters, using the new <span class="att">precision</span> attribute with a value of "circa".</li>  
+     <li id="item-26">The fourth example indicates the certain loss of 4.2cm of text.</li>  
+     <li id="item-27">The fifth example indicates the certain loss of approximately 2 characters (where exactly 2 characters would give [&#160;&#183;&#160;&#183;&#160;] <span class="foreign" id="foreign-1" xml:lang="la" lang="la">vel sim.</span>).</li>
+     <li id="item-28">The sixth example indicates the certain loss of between 22 and 28 characters. If the <span class="att">extentmax</span> attribute is used (for the maximum value of the extent range), then the <span class="att">extent</span> is taken to indicate the minimum value of this range.</li>
+     <li id="item-29">The seventh example indicates the certain loss of between 1 and 3 characters (constituting a <span class="foreign" id="foreign-2" xml:lang="la" lang="la">praenomen</span>).</li>  
+     <li id="item-30">If a unit of measurement other than "character" or "line" is used for the "unit" attribute on <span class="tag">&lt;gap&gt;</span>, then no <span class="tag">&lt;certainty locus="extent" degree="low"&gt;</span> element should be associated with the <span class="tag">&lt;gap&gt;</span>. GB: Why not? are we not confusing certainty with precision again? And even then, could we not have c. 4.2 cm lost?</li>  
+    </ol>  
+   </div>
+   <div id="lostcertain-responsibility" class="gl-responsibility">  
+    <h3 id="lostcertain-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3"><span class="respStmt">author: Tom Elliott</span></li>  
+     <li id="bibl-4"><span class="respStmt">author: Gabriel Bodard</span></li>  
+     <li id="bibl-5"><span class="respStmt">author: John Bodel</span></li>  
+    </ul>  
+   </div>
+   <div id="lostcertain-cvs" class="gl-cvs">  
+    <h3 id="lostcertain-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="lostcertain-cvs-revision-number">Revision number: $Revision: 860 $</p>  
+    <p id="lostcertain-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="lostcertain-cvs-revision-date">Revision date: $Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</p>  
+    <p id="lostcertain-cvs-revision-author">Revision committed by: $Author: paregorios $</p>  
+   </div>
+  </div>
+ </body>
+</html>

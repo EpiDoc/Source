@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Original date of text and/or object</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Original date of text and/or object</a></h1><div lang="en" class="teidiv" id="supp-historigdate"><p>This section of the EpiDoc Guidelines provides direction for encoding the date of origin of the text (or in some cases, of the object or some other feature, decoration, or reuse of it), whether the result of the editor's analysis or an explicit, internal date. Guidance is also provided on recording possible ranges of dates, degrees of precision and dating criteria.</p><div class="tag-defs" id="index-body.1_div.24_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation (TEI):</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origDate.html">origDate</a> ; EpiDoc-specific
+                        customization: <a href="ref-origDate.html">origDate</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-precision.html">precision</a></li></ul></div><div class="teidiv1" id="index-body.1_div.24_div.2"><p>The date of orgin of the text (or object, if different) should be recorded in an <a class="gi" href="ref-origDate.html">origDate</a> element in the <span class="gi">&lt;origin&gt;</span> section of the manuscript description area (see <a class="link_ref" href="supp-history.html">the general section on provenance</a> for context). If different dates need to be recorded for text and object, different texts on the same support, or different interventions in the same text, the <a class="gi" href="ref-origDate.html">origDate</a> may be repeated, or the entire <span class="gi">&lt;history&gt;</span> may be embedded in multiple <span class="gi">&lt;msPart&gt;</span>s.</p><p>It is generally recommended to encode the dating information in numerical form, following the proleptic Julian calendar, using the att.datable.custom attributes on the <a class="gi" href="ref-origDate.html">origDate</a> element. These "custom" date attributes are required because the default dating system assumed by the basic TEI date attributes (att.datable) is the Gregorian calendar. Moreover, therefore, the dating element should always carry a <span class="att">datingMethod</span> attribute pointing to a <span class="gi">&lt;calendar&gt;</span> element in the header--or to an external authority for the Julian calendar, such as http://en.wikipedia.org/wiki/Julian_calendar.</p><p>A specific date, whether a single day, month, or year in the Julian calendar, can be expressed using the <span class="att">when-custom</span> attribute, which should be laid out in the same form as an <a class="link_ref" href="http://www.w3.org/TR/NOTE-datetime">ISO 8601/W3C date</a> (albeit in the Julian, not Gregorian calendar). In other words: </p><ol><li>A year should be encoded in four digits, with leading zeroes as necessary (i.e. 14 C.E. should be "0014")</li><li>B.C.E./B.C. dates should be recorded as negative numbers (i.e. preceded by "-"); NB there is no year "0"</li><li>Month and day should be encoded in two digits, with leading zero as necessary (i.e. January 7th should be "--01-07")</li><li>A year may appear without months or day; a year+month may appear without day</li></ol><p>A date within a range (such as the reign of an emperor, or a century for e.g. palaeographically dated text) should be encoded using the <span class="att">notBefore-custom</span> and <span class="att">notAfter-custom</span> attributes, marking the beginning and end of the possible span of dates. The date formats of these attributes are the same as for <span class="gi">&lt;when-custom&gt;</span>.</p><p>This example encodes a simple Julian date:</p><div id="index-egXML-d39e2929" class="pre egXML_valid"><span class="element">&lt;origDate <span class="attribute">when-custom</span>="<span class="attributevalue">0139</span>" <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span>139 C.E.<span class="element">&lt;/origDate&gt;</span></div><p>This example encodes a date range, again in Julian calendar:</p><div id="index-egXML-d39e2934" class="pre egXML_valid"><span class="element">&lt;origDate<br />  <span class="attribute">notBefore-custom</span>="<span class="attributevalue">-0020-12-11</span>"<br />  <span class="attribute">notAfter-custom</span>="<span class="attributevalue">-0019-12-10</span>"<br />  <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span>December 11th, 20 to December 10th, 19 B.C.E.<span class="element">&lt;/origDate&gt;</span></div><p>This example uses the custom dating attributes on the <a class="gi" href="ref-origDate.html">origDate</a> element to express a date in the Julian calendar that is derived from a date recorded on an inscription in the <a class="link_ref" href="http://en.wikipedia.org/wiki/Shalivahana_era">Śaka era</a>.</p><div id="index-egXML-d39e2945" class="pre egXML_valid"><span class="element">&lt;origDate<br /> <span class="attribute">notBefore-custom</span>="<span class="attributevalue">1409</span>"<br /> <span class="attribute">notAfter-custom</span>="<span class="attributevalue">1410</span>"<br /> <span class="attribute">datingMethod</span>="<span class="attributevalue">http://en.wikipedia.org/wiki/Julian_calendar</span>"&gt;</span>The text records a composition 
+  date of <span class="element">&lt;date<br /> <span class="attribute">calendar</span>="<span class="attributevalue">http://en.wikipedia.org/wiki/Shalivahana_era</span>"&gt;</span>1331<span class="element">&lt;/date&gt;</span>(Śaka)<span class="element">&lt;/origDate&gt;</span>
+</div><div class="teidiv2" id="index-body.1_div.24_div.2_div.1"><h3><span class="head">Certainty and precision</span></h3><p>Not all texts are dated confidently to a specific year or firm span of years. If a date given is flagged explicitly as less certain than usual (for example, either with a "?" or a formulation such as "just possibly") the <a class="gi" href="ref-origDate.html">origDate</a> may be given a <span class="att">cert</span> attribute with a value of "low". If a date is flagged as approximate (which is different from being uncertain; often written "circa", "ca." or "c.") <a class="gi" href="ref-origDate.html">origDate</a> should be given an <span class="att">precision</span> with a value of low. If a date range is specified (with <span class="att">notBefore-custom</span> and <span class="att">notAfter-custom</span>) whose start and end points are essentially arbitrary, such as a century or half-century for a palaeographical date, then a <span class="att">precision</span> of "medium" should be given, to indicate that the start and end-points are both notional.</p><p>In a few cases, a text may be dated within a span of dates with a notional end-point but a firm <span lang="la" class="foreign">terminus post quem</span>. To record this in XML, a <span class="gi">&lt;precision&gt;</span> element may be placed inside the <a class="gi" href="ref-origDate.html">origDate</a> to point to whichever of the attributes represents the less concrete end-point. (See third example below.)</p><div id="index-egXML-d39e2990" class="pre egXML_valid"><span class="element">&lt;origDate<br />  <span class="attribute">notBefore-custom</span>="<span class="attributevalue">-0100</span>"<br />  <span class="attribute">notAfter-custom</span>="<span class="attributevalue">0100</span>"<br />  <span class="attribute">precision</span>="<span class="attributevalue">medium</span>"<br />  <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span> First century B.C. to first century A.D. <span class="element">&lt;/origDate&gt;</span></div><div id="index-egXML-d39e2993" class="pre egXML_valid"><span class="element">&lt;origDate<br />  <span class="attribute">when-custom</span>="<span class="attributevalue">-0355</span>"<br />  <span class="attribute">precision</span>="<span class="attributevalue">low</span>"<br />  <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span> Circa 355 B.C.E. <span class="element">&lt;/origDate&gt;</span></div><div id="index-egXML-d39e2996" class="pre egXML_valid"><span class="element">&lt;origDate<br /> <span class="attribute">notBefore-custom</span>="<span class="attributevalue">0015</span>"<br /> <span class="attribute">notAfter-custom</span>="<span class="attributevalue">0050</span>"<br /> <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span>First half first century C.E., but certainly after the death of Augustus. 
+  <span class="element">&lt;precision <span class="attribute">match</span>="<span class="attributevalue">../@notBefore-custom</span>" <span class="attribute">precision</span>="<span class="attributevalue">high</span>"/&gt;</span>
+  <span class="element">&lt;precision <span class="attribute">match</span>="<span class="attributevalue">../@notAfter-custom</span>" <span class="attribute">precision</span>="<span class="attributevalue">medium</span>"/&gt;</span>
+<span class="element">&lt;/origDate&gt;</span>
+</div></div><div class="teidiv2" id="index-body.1_div.24_div.2_div.2"><h3><span class="head">Dating criteria</span></h3><p>... @evidence, suggest typology, example values ...</p><p>Cf <a class="link_ref" href="https://docs.google.com/spreadsheet/ccc?key=0As1AGmWRrRdUdGNJWm9HdDhsQ0RkRFc4dkQwZGZQRVE">EpiDoc dating criteria vocabulary</a> (Google Spreadsheet)</p><div id="index-egXML-d39e3015" class="pre egXML_valid"><span class="element">&lt;origDate<br />  <span class="attribute">notBefore-custom</span>="<span class="attributevalue">0367</span>"<br />  <span class="attribute">notAfter-custom</span>="<span class="attributevalue">0400</span>"<br />  <span class="attribute">precision</span>="<span class="attributevalue">medium</span>"<br />  <span class="attribute">evidence</span>="<span class="attributevalue">lettering nomenclature</span>"<br />  <span class="attribute">datingMethod</span>="<span class="attributevalue">#julian</span>"&gt;</span> Late fourth century (lettering and nomenclature). <span class="element">&lt;/origDate&gt;</span></div></div></div><div class="teidiv1" id="intro-faq-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e3022"><div class="biblfree"><span class="name">Gabriel Bodard</span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-history.html">Provenance of the text-bearing object</a><span class="nextLink"> Next</span><a class="navigation" href="supp-histlocations.html">Dates and locations of modern observations</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-historigdate.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

@@ -1,0 +1,128 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--THIS IS A GENERATED FILE. DO NOT EDIT (2)--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Original location of the text-bearing object</title><meta name="author" content="" /><meta name="generator" content="Text Encoding Initiative Consortium XSLT stylesheets" /><meta charset="utf-8" /><link href="css/epidoc.css" rel="stylesheet" type="text/css" /><link href="../schema/epidoc-odd.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" media="print" type="text/css" href="http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css" /><script type="text/javascript"><!--
+var displayXML=0;
+states=new Array()
+states[0]="element-a"
+states[1]="element-b"
+states[2]="element-c"
+states[3]="element-d"
+states[4]="element-e"
+states[5]="element-f"
+states[6]="element-g"
+states[7]="element-h"
+states[8]="element-i"
+states[9]="element-j"
+states[10]="element-k"
+states[11]="element-l"
+states[12]="element-m"
+states[13]="element-n"
+states[14]="element-o"
+states[15]="element-p"
+states[16]="element-q"
+states[17]="element-r"
+states[18]="element-s"
+states[19]="element-t"
+states[20]="element-u"
+states[21]="element-v"
+states[22]="element-w"
+states[23]="element-x"
+states[24]="element-y"
+states[25]="element-z"
+
+function startUp() {
+
+}
+
+function hideallExcept(elm) {
+for (var i = 0; i < states.length; i++) {
+ var layer;
+ if (layer = document.getElementById(states[i]) ) {
+  if (states[i] != elm) {
+    layer.style.display = "none";
+  }
+  else {
+   layer.style.display = "block";
+      }
+  }
+ }
+ var mod;
+ if ( mod = document.getElementById('byMod') ) {
+     mod.style.display = "none";
+ }
+}
+
+function showall() {
+ for (var i = 0; i < states.length; i++) {
+   var layer;
+   if (layer = document.getElementById(states[i]) ) {
+      layer.style.display = "block";
+      }
+  }
+}
+
+function showByMod() {
+  hideallExcept('');
+  var mod;
+  if (mod = document.getElementById('byMod') ) {
+     mod.style.display = "block";
+     }
+}
+
+	--></script></head><body id="TOP"><div class="teidiv"><h1 class="maintitle"><a href="index.html">Original location of the text-bearing object</a></h1><div lang="en" class="teidiv" id="supp-historigin"><p>As discussed in <a class="link_ref" href="supp-history.html">the general section on provenance</a>, information about the origin and subsequent history of a text-bearing object is collected in a <span class="gi">&lt;history&gt;</span> element that is part of the <span class="gi">&lt;msDesc&gt;</span> in the <span class="gi">&lt;teiHeader&gt;</span>. An <span class="gi">&lt;origin&gt;</span> element is used within <span class="gi">&lt;history&gt;</span>, and its child element <span class="gi">&lt;origPlace&gt;</span> is used for topographic and geographic assertions associated with the object's origin. <span class="gi">&lt;origPlace&gt;</span> is normally accompanied by an <a class="gi" href="ref-origDate.html">origDate</a> element (<a class="link_ref" href="supp-historigdate.html">q.v.</a>), which is used to encode information about the date of origin.</p><div class="tag-defs" id="index-body.1_div.26_div.1"><h2 class="tag-defs"><span class="head">Relevant element documentation (TEI):</span></h2><ul class="speclit"><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html">history</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html">msDesc</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html">origin</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origDate.html">origDate</a> ; EpiDoc-specific
+                        customization: <a href="ref-origDate.html">origDate</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origPlace.html">origPlace</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-p.html">p</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-placeName.html">placeName</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-provenance.html">provenance</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html">rs</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html">seg</a></li><li>TEI definition: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiHeader.html">teiHeader</a></li></ul></div><div class="teidiv1" id="index-body.1_div.26_div.2"><p><span class="gi">&lt;origPlace&gt;</span> has the same basic content model in the TEI as a <span class="gi">&lt;p&gt;</span> (paragraph) tag, so its contents can range from plain text to highly structured and cross-linked data (or a combination of both). The following examples illustrate some of the options.</p><div class="teidiv2" id="index-body.1_div.26_div.2_div.1"><h3><span class="head">Plain-text examples</span></h3><p>A simple, plain-text example that assumes a narrow topographic context implied by the framing publication or corpus:</p><div id="index-egXML-d39e3187" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>Probably from the cella wall.<span class="element">&lt;/origPlace&gt;</span></div><p>A more expanded example providing geographic context might be written thus:</p><div id="index-egXML-d39e3192" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>Probably from the cella wall of the temple of Aphrodite at Aphrodisias.<span class="element">&lt;/origPlace&gt;</span></div><p>A plain-text assertion that the place of origin is coincident with the <a class="link_ref" href="supp-histfound.html">place of finding</a> (which is presumably described appropriately in a <span class="gi">&lt;provenance&gt;</span> element elsewhere in the <span class="gi">&lt;history&gt;</span>):</p><div id="index-egXML-d39e3206" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>Findspot.<span class="element">&lt;/origPlace&gt;</span></div><p>TEI markup can be added to deal with a wide variety of details, as in this example where multiple languages and writing systems are used:</p><div id="index-egXML-d39e3211" class="pre egXML_valid"><span class="element">&lt;origPlace <span class="attribute">ref</span>="<span class="attributevalue">origPlace.xml#p003</span>" <span class="attribute">n</span>="<span class="attributevalue">1</span>"&gt;</span><br /> <span class="element">&lt;seg <span class="attribute">xml:lang</span>="<span class="attributevalue">ru</span>"&gt;</span>Херсон<span class="element">&lt;/seg&gt;</span><br /> <span class="element">&lt;seg <span class="attribute">xml:lang</span>="<span class="attributevalue">en</span>"&gt;</span>Chersonesos<span class="element">&lt;/seg&gt;</span><br /><span class="element">&lt;/origPlace&gt;</span></div></div><div class="teidiv2" id="index-body.1_div.26_div.2_div.2"><h3><span class="head">Structured data and links to gazetteers and other controlled vocabularies</span></h3><p>Best practice is to mark placenames as such, using the appropriate TEI <span class="gi">&lt;placeName&gt;</span> element:</p><div id="index-egXML-d39e3225" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>All commentators agree that the altar must originally have been placed somewhere on the<br /> site of ancient <span class="element">&lt;placeName <span class="attribute">type</span>="<span class="attributevalue">ancient</span>"&gt;</span>Veii<span class="element">&lt;/placeName&gt;</span>.<span class="element">&lt;/origPlace&gt;</span></div><p>The information in the <span class="gi">&lt;origPlace&gt;</span> could be linked to an internal list of places/monuments with a <span class="att">key</span></p><div id="index-egXML-d39e3238" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>Perhaps <span class="element">&lt;rs <span class="attribute">type</span>="<span class="attributevalue">monuList</span>" <span class="attribute">key</span>="<span class="attributevalue">db1047</span>"&gt;</span>Shrine of the<br />   Dioscuri<span class="element">&lt;/rs&gt;</span><br /><span class="element">&lt;/origPlace&gt;</span></div><p>The <span class="att">ref</span> attribute can be used to link to a project-specific or external list or gazetteer that makes use of HTTP Uniform Resource Identifiers (URIs) to identify individual structures or places:</p><div id="index-egXML-d39e3248" class="pre egXML_valid"><span class="element">&lt;origPlace&gt;</span>Perhaps from the <span class="element">&lt;rs <span class="attribute">type</span>="<span class="attributevalue">monuList</span>" <span class="attribute">key</span>="<span class="attributevalue">db1047</span>"&gt;</span>Shrine of the Dioscuri<span class="element">&lt;/rs&gt;</span> <br /> at <span class="element">&lt;placeName<br />   <span class="attribute">ref</span>="<span class="attributevalue">http://pleiades.stoa.org/places/423025</span>"&gt;</span>Rome<span class="element">&lt;/placeName&gt;</span>.<span class="element">&lt;/origPlace&gt;</span></div></div><div class="teidiv2" id="index-body.1_div.26_div.2_div.3"><h3><span class="head">Linking place of origin to place of finding</span></h3><p>In one of the simple examples above, the word "Findspot" was put inside <span class="gi">&lt;origPlace&gt;</span> to assert that the text-bearing object was found <span lang="la" class="foreign">in situ</span>. Some projects may want to be able to use software to programmatically identify and exploit such situations for fuller output, map-making, index creation, and the like. It is possible to write a script or transform that, upon encountering such a construct, attempts to look up a <span class="gi">&lt;provenance&gt;</span> element with the standard <span class="att">type</span>="found" attribute value in the same file; however, it is not difficult to make such a cross reference more readily machine actionable in the XML. By using the <span class="att">corresp</span> attribute to link <span class="gi">&lt;origPlace&gt;</span> to a <span class="gi">&lt;provenance&gt;</span> element that carries an <span class="att">xml:id</span> attribute with a matching value, such connections are rendered more consistent and reliable. Note that any corresponding ID value could be used; "findspot" was chosen for this example because it is readily meaningful to the human reader.</p><div id="index-egXML-d39e3287" class="pre egXML_valid"><span class="element">&lt;history&gt;</span><br /> <span class="element">&lt;origin&gt;</span><br />  <span class="element">&lt;origPlace <span class="attribute">corresp</span>="<span class="attributevalue">#findspot</span>"&gt;</span>Findspot.<span class="element">&lt;/origPlace&gt;</span><br /> <span class="element">&lt;/origin&gt;</span><br /> <span class="element">&lt;provenance <span class="attribute">xml:id</span>="<span class="attributevalue">findspot</span>" <span class="attribute">type</span>="<span class="attributevalue">found</span>"&gt;</span>Found in the Carrer de Llibreteria,<br />   Barcelona<span class="element">&lt;/provenance&gt;</span><br /><span class="element">&lt;/history&gt;</span></div><p>The same technique is used in this extended example:</p><div id="index-egXML-d39e3296" class="pre egXML_valid">
+<span class="element">&lt;history&gt;</span>
+ 
+ <span class="element">&lt;origin&gt;</span>
+  <span class="element">&lt;origPlace <span class="attribute">corresp</span>="<span class="attributevalue">#findspot</span>"&gt;</span>
+   The shrine of  <span class="element">&lt;placeName <span class="attribute">type</span>="<span class="attributevalue">modern</span>" <span class="attribute">key</span>="<span class="attributevalue">cic-geo:drang-lai</span>"&gt;</span>Drang Lai<span class="element">&lt;/placeName&gt;</span> 
+   in the town (<span class="element">&lt;foreign&gt;</span>thị xã<span class="element">&lt;/foreign&gt;</span>) of Ayun Pa (formerly Cheo Reo), in the modern 
+   province of Gia Lai.
+  <span class="element">&lt;/origPlace&gt;</span>
+ <span class="element">&lt;/origin&gt;</span>
+ 
+ <span class="element">&lt;provenance<br /> <span class="attribute">xml:id</span>="<span class="attributevalue">findspot</span>"<br /> <span class="attribute">type</span>="<span class="attributevalue">found</span>"<br /> <span class="attribute">notAfter</span>="<span class="attributevalue">1901</span>"&gt;</span>
+  <span class="element">&lt;ab&gt;</span>The inscription was first mentioned as being at 
+   <span class="element">&lt;placeName <span class="attribute">type</span>="<span class="attributevalue">modern</span>" <span class="attribute">key</span>="<span class="attributevalue">cic-geo:drang-lai</span>"&gt;</span>Cheo Reo<span class="element">&lt;/placeName&gt;</span> in a report, 
+   based on observations of <span class="element">&lt;quote&gt;</span>an annamite<span class="element">&lt;/quote&gt;</span>, from missionary J.-B. Guerlach 
+   cited in BEFEO 1 (1901), p. 413.<span class="element">&lt;/ab&gt;</span>
+ <span class="element">&lt;/provenance&gt;</span>
+ 
+ <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">observed</span>" <span class="attribute">when</span>="<span class="attributevalue">1902</span>"&gt;</span>
+  <span class="element">&lt;ab&gt;</span>It was observed again by a certain Stenger (see BEFEO and 2 (1902), p. 227); 
+   presence at “Cheo Reo” described by <span class="element">&lt;bibl&gt;</span><span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">cic-bibl:parmentier-1902</span>"/&gt;</span>: 
+   282<span class="element">&lt;/bibl&gt;</span>; proper provenance ascertained by Prosper Odend’hal in 1903 (see 
+   <span class="element">&lt;bibl&gt;</span><span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">cic-bibl:finot-1904b</span>"/&gt;</span>: 535<span class="element">&lt;/bibl&gt;</span>). The stela was described in 
+   <span class="element">&lt;bibl&gt;</span><span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">cic-bibl:parmentier-1909</span>"/&gt;</span>: 562-563<span class="element">&lt;/bibl&gt;</span>.<span class="element">&lt;note&gt;</span>Two published 
+   photographs show the stela when it was placed at the temple of Yang Mum: fig. 129 on 
+   <span class="element">&lt;bibl&gt;</span><span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">cic-bibl:parmentier-1909</span>"/&gt;</span>: 561<span class="element">&lt;/bibl&gt;</span> and photo 181 in 
+   <span class="element">&lt;bibl&gt;</span><span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">cic-bibl:ghesquiere-2005</span>"/&gt;</span><span class="element">&lt;/bibl&gt;</span>.<span class="element">&lt;/note&gt;</span><span class="element">&lt;/ab&gt;</span>
+ <span class="element">&lt;/provenance&gt;</span>
+ 
+ <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">observed</span>" <span class="attribute">when</span>="<span class="attributevalue">1927</span>"&gt;</span>
+  <span class="element">&lt;ab&gt;</span>It was received at the EFEO Museum in Tourane in 1927, as reported in BEFEO 27, 
+   p. 460.<span class="element">&lt;note&gt;</span><span class="element">&lt;quote&gt;</span>Le Musée a reçu par les soins du Résident de Kontum les sculptures 
+   et inscriptions provenant de Draṅ-lai et de Yaṅ Mum qui avaient été groupées à la 
+   Résidence. C’est ainsi que la grande statue de Çiva qui trônait sur l’autel du temple 
+   de Yaṅ Mum (<span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">italic</span>"&gt;</span>IC.<span class="element">&lt;/hi&gt;</span>, I, p. 561), le Çiva sur Nandin, le petit Çiva 
+   assis devant un chevet inscrit au dos, et la stèle inscrite sur trois faces 
+   (<span class="element">&lt;hi <span class="attribute">rend</span>="<span class="attributevalue">italic</span>"&gt;</span>ibid.<span class="element">&lt;/hi&gt;</span>, p. 562, Liste Cœdès, C. 42-43), ces trois dernières 
+   pièces provenant de Draṅ-lai, ont trouvé au Musée un asile plus sûr que celui qu’il 
+   avait été possible de leur assurer jusqu’ici.<span class="element">&lt;/quote&gt;</span><span class="element">&lt;/note&gt;</span><span class="element">&lt;/ab&gt;</span>
+ <span class="element">&lt;/provenance&gt;</span>
+ 
+ <span class="element">&lt;provenance <span class="attribute">type</span>="<span class="attributevalue">observed</span>" <span class="attribute">when</span>="<span class="attributevalue">1986</span>"&gt;</span>
+  <span class="element">&lt;ab&gt;</span>The stela was removed from the Museum under unknown circumstances at an unknown 
+   point of time, no doubt during the turbulent period between WW II and Vietnamese 
+   reunification in 1975. It resurfaced when it was acquired by the Museum of Fine Art 
+   in Boston (USA) in 1986, where it was recorded under <span class="element">&lt;ptr <span class="attribute">target</span>="<span class="attributevalue">#inv-MFA</span>"/&gt;</span>.<span class="element">&lt;/ab&gt;</span>
+ <span class="element">&lt;/provenance&gt;</span>
+ 
+<span class="element">&lt;/history&gt;</span>
+</div></div></div><div class="teidiv1" id="supp-historigin-responsibility"><h2><span class="head">Responsibility for this section</span></h2><ol class="listBibl"><li id="index-bibl-d39e3379"><div class="biblfree"><span class="name">Simona Stoyanova</span>, author  </div></li><li id="index-bibl-d39e3387"><div class="biblfree"><span class="name">Tom Elliott</span><span class="name"></span>, author  </div></li><li id="index-bibl-d39e3396"><div class="biblfree"><span class="name">Arlo Griffiths</span><span class="name"></span>, author  </div></li></ol></div></div><nav class="left"><span class="upLink"> Up</span><a class="navigation" href="index.html">Home</a><span class="previousLink"> Previous</span><a class="navigation" href="supp-histlocations.html">Dates and locations of modern observations</a><span class="nextLink"> Next</span><a class="navigation" href="supp-histfound.html">Findspot and find context</a></nav><div class="stdfooter"><div class="footer"><a class="plain" href="http://www.example.com/"></a> | <a class="plain" href="index.html">Home</a> | <a class="plain" href="supp-historigin.html#">Feedback</a></div><address>Date: 2013-05-28<br /><!--
+	  Generated  using XSLT stylesheets 
+	       based on http://www.tei-c.org/Stylesheets/
+	       on 2013-05-28T13:42:53Z.
+	       SAXON PE 9.4.0.6.
+		 --></address></div></div></body></html>

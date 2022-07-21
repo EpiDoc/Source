@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Letters erroneously substituted or incorrectly executed in the text, which the editor corrects"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5.1/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="erroneoussubstitution.html"/>
+  <title>Letters erroneously substituted or incorrectly executed in the text, which the editor corrects</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5.1/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Letters erroneously substituted or incorrectly executed in the text, which the editor corrects</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="erroneoussubstitution.xml">xml version</a> || id: erroneoussubstitution|| <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-regex">regular expression test</a> | <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-questions">questions and issues</a> | <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="erroneoussubstitution.html#erroneoussubstitution-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on erroneoussubstitution.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5.1/erroneoussubstitution.test" target="_blank">test this page</a></p>
+   <p>Release or development version: not supported by cvs2svn </p>
+  </div>
+  <div id="htmlcontent">
+   <p class="abstract" id="ab-1"> Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>. </p>
+   <p id="p-1">for divset 1: editionitemcount != typographicitemcount</p>
+   <div id="erroneoussubstitution-typographic" class="gl-typographic">  
+    <h3 id="erroneoussubstitution-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1">  <a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a>  </span>, <abbr title="page">p.</abbr>19</span>: 
+     <ul id="list-1">  
+      <li id="TypoEx-1">Valeri&#8988;an&#8989;us</li>  
+      <li id="TypoEx-2">Not addressed</li>  
+     </ul></li>  
+    </ul>  
+    <ul id="list-3">  
+     <li id="item-4"><span id="bibl-2" class="bibliographiccitation">  <span class="title-a-abbreviated" id="title-2">  <a class="xref" href="bibliography.html#seg" id="xref-2">SEG</a>  </span>  </span>, <span id="bibl-3" class="bibliographiccitation">  <span class="title-a-abbreviated" id="title-3">  <a class="xref" href="bibliography.html#poxy" id="xref-3">POxy</a>  </span>  </span>  
+     <ol id="list-3">  
+      <li id="TypoEx-3">Valeri&lt;an&gt;us</li>  
+      <li id="TypoEx-4">Valeria&lt;n&gt;us</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1">Valeri&lt;choice&gt; &lt;sic&gt;na&lt;/sic&gt; &lt;corr&gt;an&lt;/corr&gt; &lt;/choice&gt;us</li>
+     <li id="EncEx-2">Valeria&lt;choice&gt; &lt;sic&gt;m&lt;/sic&gt; &lt;corr&gt;n&lt;/corr&gt; &lt;/choice&gt;us</li>
+    </ol>
+   </div>
+   <div id="erroneoussubstitution-edition" class="gl-edition">  
+    <h3 id="erroneoussubstitution-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-6">  
+     <li id="EncEx-1">Valeri na an us</li>  
+     <li id="EncEx-2">Valeria m n us</li>  
+    </ol>  
+   </div>
+   <div id="erroneoussubstitution-questions" class="gl-questions">  
+    <h3 id="erroneoussubstitution-questions-head">Questions and issues</h3>  
+    <ul id="list-7">  
+     <li id="item-11">An earlier version of the EpiDoc guidelines incorrectly distinguished between these two types of correction, which are not so distinguished in Panciera or other conventions.</li>  
+     <li id="item-12">GB (2006-07-16): I'm going to suggest we quit using the Janus pair of sic/corr elements and attributes, and start using <span class="tag">&lt;choice&gt;</span> here (even in P4 land). Not fixed in GL yet because XSLT doesn't yet handle it. See e.g. 3 above.</li>  
+     <li id="item-13">GB (2006-10-25): we now do this in both examples!</li>  
+     <li id="item-14">GB (2008-04-24): deprecated choice/@type, since we only use choice for sic/corr and orig/reg pairs, so there's not much complexity for XSL to deal with.</li>  
+    </ul>  
+   </div>
+   <div id="erroneoussubstitution-responsibility" class="gl-responsibility">  
+    <h3 id="erroneoussubstitution-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-4">  <span class="respStmt">author: Tom Elliott</span>  </li>  
+     <li id="bibl-5">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+     <li id="bibl-6">  <span class="respStmt">author: Ilaria Marchesi</span>  </li>  
+    </ul>  
+   </div>
+   <div id="erroneoussubstitution-cvs" class="gl-cvs">  
+    <h3 id="erroneoussubstitution-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="erroneoussubstitution-cvs-revision-number">Revision number: $Revision: 885 $</p>  
+    <p id="erroneoussubstitution-cvs-revision-name">Revision name (if any): $Name: not supported by cvs2svn $</p>  
+    <p id="erroneoussubstitution-cvs-revision-date">Revision date: $Date: 2008-04-24 10:45:49 -0500 (Thu, 24 Apr 2008) $</p>  
+    <p id="erroneoussubstitution-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>

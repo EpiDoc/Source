@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Start license statement: do not remove 
+
+EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
+Copyright (C) 2000-2006 by all contributors listed in <div type="gl-responsibility">, below.
+Additional contributors' copyright may be designated in individual source files.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Information about the EpiDoc community can be obtained via 
+http://epidoc.sf.net.
+
+End license statement: do not remove -->
+<!DOCTYPE div SYSTEM "../dtd/tei-epidoc.dtd">
+<!-- Start CVS information: do not remove -->
+
+        <!-- $Header: /data/epidoc/cvs/epidoc-cvsbackup/guidelines/src/tallcharacters.xml,v 1.8 2006-10-30 12:05:36 paregorios Exp $ -->
+
+        <!-- End CVS information: do not remove -->
+
+        <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" id="tallcharacters"><head>Tall characters</head>
+<p n="regexerror">for divset 1: editionitemcount != typographicitemcount</p><div id="tallcharacters-typographic" type="gl-typographic">
+      <head>Traditional typographic representation</head>
+      <p>not addressed?</p>
+   </div><div id="tallcharacters-regex" type="gl-regextest">
+  <head>Regular Expression Test</head>
+            <list><item id="Regex-1">
+            blah</item>
+<item id="Regex-2">
+            blah</item>
+</list><link id="TestLink-1" type="regextest" targets="TypoEx-1 EncEx-1 Regex-1"/></div><div id="tallcharacters-edition" type="gl-edition">
+      <head>EpiDoc appearance with standard XSLT</head>
+      <list type="ordered">
+         <item id="EncEx-1">d<hi rend="tall">i</hi>s manibus</item>
+         <item id="EncEx-2">Amaran<hi rend="tall">t</hi>ho Agathemeris soror pro meri<hi rend="tall">t</hi>is <hi rend="tall">t</hi>ribu<unclear reason="damage" cert="high">i</unclear><unclear reason="damage" cert="high">t</unclear></item>
+      </list>
+   </div><div id="tallcharacters-notes" type="gl-notes">
+      <head>Notes</head>
+      <list type="ordered">
+         <item>Marking a character as "tall" is purely descriptive. Editorial observations concerning the significance of the character height should be marked up separately. See, e.g., <xref href="vowelquantity.xml" >Vowel Quantity</xref>.</item>
+         <item>See also: <xref href="smallcharacters.xml" >Small Characters</xref>.</item>
+      </list>
+   </div><div id="tallcharacters-responsibility" type="gl-responsibility">
+      <head>Responsibility for this section</head>
+      <listBibl>
+         <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
+         <bibl><respStmt><resp>assistance</resp><name>John Bodel</name></respStmt></bibl>
+         <bibl><respStmt><resp>assistance</resp><name>Lisa Anderson</name></respStmt></bibl>
+      </listBibl>
+   </div><div id="tallcharacters-cvs" type="gl-cvs">
+      <head><abbr expan="Concurrent Versioning System">CVS</abbr> Information</head>
+      <p id="tallcharacters-cvs-revision-number">Revision number: <seg n="cvs-revision-number" cert="high" part="N">$Revision: 860 $</seg></p>
+      <p id="tallcharacters-cvs-revision-name">Revision name (if any): <seg n="cvs-revision-name" cert="high" part="N">$Name: not supported by cvs2svn $</seg></p>
+      <p id="tallcharacters-cvs-revision-date">Revision date: <seg n="cvs-revision-date" cert="high" part="N">$Date: 2008-04-15 15:44:21 -0500 (Tue, 15 Apr 2008) $</seg></p>
+      <p id="tallcharacters-cvs-revision-author">Revision committed by: <seg n="cvs-revision-author" cert="high" part="N">$Author: paregorios $</seg></p>
+   </div></div>
+

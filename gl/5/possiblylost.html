@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+  <link rel="schema.DC" href="http://purl.org/dc"/>
+  <meta name="DC.title" content="Possibility that letters have been completely lost"/>
+  <link rel="shortcut icon" href="http://www.stoa.org/epidoc/gl/5/img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="possiblylost.html"/>
+  <title>Possibility that letters have been completely lost</title>
+  <style type="text/css" media="screen"> @import "epidocscreen.css"; </style>
+  <style type="text/css" media="print"> @import "http://www.stoa.org/epidoc/gl/5/epidocprint.css"; </style>
+ </head>
+ <body>
+  <div id="htmlheader">
+   <h1>Possibility that letters have been completely lost</h1>
+  </div>
+  <div id="htmlnavigation">
+   <p class="abstract"><a href="possiblylost.xml">xml version</a> || id: possiblylost|| <a class="htmlnavigation" href="possiblylost.html#possiblylost-typographic">traditional typographic representation</a> | <a class="htmlnavigation" href="possiblylost.html#possiblylost-regex">regular expression test</a> | <a class="htmlnavigation" href="possiblylost.html#possiblylost-edition">epidoc appearance with standard xslt</a> | <a class="htmlnavigation" href="possiblylost.html#possiblylost-notes">notes</a> | <a class="htmlnavigation" href="possiblylost.html#possiblylost-responsibility">responsibility for this section</a> | <a class="htmlnavigation" href="possiblylost.html#possiblylost-cvs">cvs information</a> || <a href="mailto:markup@lsv.uky.edu?subject=guidelines comment on possiblylost.xml">post a comment</a> || <a href="http://www.stoa.org/epidoc/gl/5/possiblylost.test" target="_blank">test this page</a></p>
+   <p>Release or development version: r-5 </p>
+  </div>
+  <div id="htmlcontent">
+   <p id="p-1">for divset 1: encodingitemcount != editionitemcount</p>
+   <p class="abstract" id="ab-1">Implementation of the guidance in this section is <strong>required</strong> for leiden <a href="conformance.html">conformance</a>.</p>
+   <div id="possiblylost-typographic" class="gl-typographic">  
+    <h3 id="possiblylost-typographic-head">Traditional typographic representation</h3>  
+    <ul id="list-1">  
+     <li id="item-1"><span id="bibl-1" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-1"><a class="xref" href="bibliography.html#panciera" id="xref-1">Panciera</a></span>, <abbr title="page">p.</abbr>18</span>; <span id="bibl-2" class="bibliographiccitation"><span class="title-a-abbreviated" id="title-2"><a class="xref" href="bibliography.html#dohnicht" id="xref-2">Dohnicht</a></span>, <abbr title="page">p.</abbr>4</span>: 
+     <ol id="list-1">  
+      <li id="TypoEx-1">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;?&#160;] </li>  
+      <li id="TypoEx-2">[&#160;&#183;&#160;c.3&#160;&#183;&#160;?&#160;] </li>  
+      <li id="TypoEx-3">[&#160;&#183;&#160;10&#160;&#183;&#160;?&#160;]</li>  
+      <li id="TypoEx-4">[&#160;&#183;&#160;c.10&#160;&#183;&#160;?&#160;]</li>  
+      <li id="TypoEx-5">[&#160;-&#160;4.2cm&#160;-&#160;?&#160;] </li>  
+      <li id="TypoEx-6">[&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;]</li>  
+      <li id="TypoEx-7">&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;</li>  
+     </ol></li>  
+    </ul>  
+   </div>
+   <div class="gl-encoding">
+    <h3>EpiDoc Encoding</h3>
+    <ol>
+     <li id="EncEx-1"> &lt;gap id="gap1" reason="lost" extent="3" unit="character" /&gt; &lt;certainty target="gap1" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-2"> &lt;gap id="gap2" reason="lost" extent="3" unit="character" precision="circa" /&gt; &lt;certainty target="gap2" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-3"> &lt;gap id="gap3" reason="lost" extent="10" unit="character" /&gt; &lt;certainty target="gap3" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-4"> &lt;gap id="gap4" reason="lost" extent="10" unit="character" precision="circa" /&gt; &lt;certainty target="gap4" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-5"> &lt;gap id="gap5" reason="lost" extent="4.2" unit="cm" /&gt; &lt;certainty target="gap5" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-6"> &lt;gap id="gap6" reason="lost" extent="1" unit="line" /&gt; &lt;certainty target="gap6" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+     <li id="EncEx-7"> &lt;gap id="gap7" reason="lost" unit="line" extent="unknown" /&gt; &lt;certainty target="gap7" locus="#gi" assertedValue="space" degree="low" /&gt;</li>
+    </ol>
+   </div>
+   <div id="possiblylost-edition" class="gl-edition">  
+    <h3 id="possiblylost-edition-head">EpiDoc appearance with standard XSLT</h3>  
+    <ol id="list-4">  
+     <li id="EncEx-1">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;&#183;&#160;&#183;&#160;?&#160;]</span>  </li>  
+     <li id="EncEx-2">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;c.3&#160;&#183;&#160;?&#160;]</span>  </li>  
+     <li id="EncEx-3">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;10&#160;&#183;&#160;?&#160;]</span>  </li>  
+     <li id="EncEx-4">  <span class="gap-lost" title="put title here!">[&#160;&#183;&#160;c.10&#160;&#183;&#160;?&#160;]</span>  </li>  
+     <li id="EncEx-5">  <span class="gap-lost" title="put title here!">[&#160;-&#160;4.2cm&#160;-&#160;?&#160;]</span>  </li>  
+     <li id="EncEx-6"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;] </li>  
+     <li id="EncEx-7"> [&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;-&#160;?&#160;] </li>  
+    </ol>  
+   </div>
+   <div id="possiblylost-notes" class="gl-notes">  
+    <h3 id="possiblylost-notes-head">Notes</h3>  
+    <ol id="list-5">  
+     <li id="item-24">The first example indicates the <strong>possible</strong> loss of exactly three characters (the alternative possibility is that there was originally a vacat in this space.</li>  
+     <li id="item-25">The second example indicates the <strong>possible</strong> loss of circa three characters.</li>  
+     <li id="item-26">The third example indicates the <strong>possible</strong> loss of exactly 10 characters.</li>  
+     <li id="item-27">The fourth example indicates the <strong>possible</strong> loss of circa 10 characters.</li>  
+     <li id="item-28">The fifth example indicates the <strong>possible</strong> loss of text in a horizontal span of 4.2cm.</li>  
+     <li id="item-29">The sixth example indicates the <strong>possible</strong> loss of exactly one line of text.</li>  
+     <li id="item-30">The seventh example indicates the <strong>possible</strong> loss of one or more lines of text.</li>  
+     <li id="item-31">For cases wherein the editor is certain that text has been lost and the only ambiguity, if any, pertains to the number of characters thus lost, see <a class="xref" href="lostcertain.html" id="xref-3">Letters completely lost (extent certain or not certain)</a>.</li>  
+    </ol>  
+   </div>
+   <div id="possiblylost-responsibility" class="gl-responsibility">  
+    <h3 id="possiblylost-responsibility-head">Responsibility for this section</h3>  
+    <ul>  
+     <li id="bibl-3"><span class="respStmt">author: Tom Elliott</span></li>  
+     <li id="bibl-4">  <span class="respStmt">author: Gabriel Bodard</span>  </li>  
+    </ul>  
+   </div>
+   <div id="possiblylost-cvs" class="gl-cvs">  
+    <h3 id="possiblylost-cvs-head"><abbr title="Concurrent Versioning System">CVS</abbr> Information</h3>  
+    <p id="possiblylost-cvs-revision-number">Revision number: $Revision: 1.15 $</p>  
+    <p id="possiblylost-cvs-revision-name">Revision name (if any): $Name: r-5 $</p>  
+    <p id="possiblylost-cvs-revision-date">Revision date: $Date: 2007/06/06 20:55:56 $</p>  
+    <p id="possiblylost-cvs-revision-author">Revision committed by: $Author: gabrielbodard $</p>  
+   </div>
+  </div>
+ </body>
+</html>
