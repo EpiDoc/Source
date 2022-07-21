@@ -29,6 +29,7 @@ jobs:
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           mkdir -p gh-pages/schema/dev
           cp schema/tei-epidoc.* gh-pages/schema/dev/
+          tree -H '.' -T 'schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
