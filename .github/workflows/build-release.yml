@@ -30,8 +30,7 @@ jobs:
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           mkdir -p "gh-pages/schema/$RELEASE_VERSION"
           cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
-          unlink gh-pages/schema/latest
-          ln -s "gh-pages/schema/$RELEASE_VERSION" gh-pages/schema/latest
+          rsync -av --mkpath "gh-pages/schema/$RELEASE_VERSION/" gh-pages/schema/latest/
           tree -H '.' -T 'schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
           tree -H '.' -T "$RELEASE_VERSION/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
