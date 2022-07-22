@@ -24,15 +24,16 @@ jobs:
           path: gh-pages
       - name: "Build Guidelines and Schema"
         run: |
-          echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          export RELEASE_VERSION=${GITHUB_REF#refs/*/}
+          echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
-          mkdir -p "gh-pages/schema/${{ env.RELEASE_VERSION }}"
-          cp schema/tei-epidoc.* "gh-pages/schema/${{ env.RELEASE_VERSION }}"
+          mkdir -p "gh-pages/schema/$RELEASE_VERSION"
+          cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
           unlink gh-pages/schema/latest
-          ln -s gh-pages/schema/${{ env.RELEASE_VERSION }} gh-pages/schema/latest
+          ln -s "gh-pages/schema/$RELEASE_VERSION" gh-pages/schema/latest
           tree -H '.' -T 'schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
-          tree -H '.' -T "${{ env.RELEASE_VERSION }}/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/${{ env.RELEASE_VERSION }}/index.html" "gh-pages/schema/${{ env.RELEASE_VERSION }}"
+          tree -H '.' -T "$RELEASE_VERSION/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
@@ -53,9 +54,3 @@ jobs:
           repository: gh-pages
           branch: gh-pages
           commit_message: "Published ${{ env.RELEASE_VERSION }} release ."
-
-
-
-
-
-
