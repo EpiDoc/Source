@@ -8,7 +8,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 
 * [EpiDoc Guidelines](http://www.stoa.org/epidoc/gl/latest/): recommendations for markup of transcription, descriptive features, etc. ([About](Guidelines))
 * [EpiDoc Schema](Schema): the TEI-derived schema against which EpiDoc XML should be validated
-<li id="xslt">[EpiDoc Reference Stylesheets](Stylesheets): for transforming EpiDoc XML to HTML, text or ODF</li>
+* [EpiDoc Reference Stylesheets](Stylesheets): for transforming EpiDoc XML to HTML, text or ODF</li>
 * [EFES](https://github.com/EpiDoc/EFES): a low-barrier EpiDoc publication platform
 
 ### Learn more
