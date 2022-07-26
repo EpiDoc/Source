@@ -29,10 +29,12 @@ jobs:
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           mkdir -p "gh-pages/schema/$RELEASE_VERSION"
+          rm -rf "gh-pages/schema/latest"
           cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
           rsync -av --mkpath "gh-pages/schema/$RELEASE_VERSION/" gh-pages/schema/latest/
-          tree -H '.' -T 'schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
-          tree -H '.' -T "$RELEASE_VERSION/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
+          tree -H '.' -T 'Index of schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
+          tree -H '.' -T "Index of latest/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/latest/index.html" "gh-pages/schema/latest"
+          tree -H '.' -T "Index of $RELEASE_VERSION/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
@@ -46,10 +48,16 @@ jobs:
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
-          tree -H '.' -T 'gl/' -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
+          tree -H '.' -T 'Index of gl/' -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           repository: gh-pages
           branch: gh-pages
-          commit_message: "Published ${{ env.RELEASE_VERSION }} release ."
+          commit_message: "Published ${{ env.RELEASE_VERSION }} release."
+
+
+
+
+
+
