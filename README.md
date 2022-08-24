@@ -36,6 +36,6 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 
 Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders’ [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
 
-To cite this website, please use the following information:
+To cite this website, please use the following information: 
 
 **Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2021), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**
