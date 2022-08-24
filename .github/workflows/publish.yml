@@ -1,0 +1,40 @@
+name: Build EpiDoc Development Guidelines
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: teic/teidev-docker:latest
+
+    steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v2
+      - name: "Checkout gh-pages branch"
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: "Publish MarkDown"
+        uses: docker://pandoc/core:2.9
+        with: >-
+          --standalone
+          -f gfm
+          -t html
+          --output=gh-pages/index.html
+          README.md
+      - name: "Push to gh-pages branch"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: gh-pages
+          branch: gh-pages
+          commit_message: "Published README."
+
+
+
+
+
+
