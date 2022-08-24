@@ -21,10 +21,10 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 * [Learn EpiDoc](https://sourceforge.net/p/epidoc/wiki/Training/): events, tutorials and summer schools
 * [Markup List](https://sourceforge.net/p/epidoc/wiki/MarkupList/): email list for discussions, questions, and help with EpiDoc issues
 * Other mailing lists:
-    * [EnCoWS](https://groups.google.com/forum/#!forum/encows): Encoding Complex Writing Systems in TEI/EpiDoc
-    * [Ancient-People](https://groups.google.com/forum/#!forum/ancient-people): for discussion of SNAP and other prosopographical projects
-    * [Epigraphic Ontology](https://groups.google.com/forum/#!forum/epont): for discussion of ontology, LOD, etc. for epigraphy, and especially relationships with EpiDoc and EDH data.
-    * [EFES Users](https://groups.google.com/forum/#!forum/efes-users): technical support group for users of [EFES](https://github.com/EpiDoc/EFES)
+  * [EnCoWS](https://groups.google.com/forum/#!forum/encows): Encoding Complex Writing Systems in TEI/EpiDoc
+  * [Ancient-People](https://groups.google.com/forum/#!forum/ancient-people): for discussion of SNAP and other prosopographical projects
+  * [Epigraphic Ontology](https://groups.google.com/forum/#!forum/epont): for discussion of ontology, LOD, etc. for epigraphy, and especially relationships with EpiDoc and EDH data.
+  * [EFES Users](https://groups.google.com/forum/#!forum/efes-users): technical support group for users of [EFES](https://github.com/EpiDoc/EFES)
 * [Software and Tools](https://sourceforge.net/p/epidoc/wiki/Software/) for working with XML and EpiDoc
 * [Example Projects and Files](https://sourceforge.net/p/epidoc/wiki/Examples/)
 * [EpiDoc IRC Chatroom](EpiDoc IRC Chatroom): for realtime EpiDoc support and chat
