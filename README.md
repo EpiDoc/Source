@@ -4,7 +4,7 @@ date: August 24, 2022
 ---
 ![EpiDoc: Epigraphic Documents in TEI XML](https://sourceforge.net/p/epidoc/wiki/Images/attachment/new-banner.jpg)
 
-EpiDoc is an international, collaborative effort that provides guidelines and tools for encoding scholarly and educational editions of ancient documents. It uses a subset of the [Text Encoding Initiative](https://www.tei-c.org/)'s standard for the representation of texts in digital form and was developed initially for the publication of digital editions of ancient inscriptions (e.g. [Inscriptions of Aphrodisias](https://insaph.kcl.ac.uk/insaph/), [Vindolanda Tablets](http://vindolanda.csad.ox.ac.uk/)). Its domain has expanded to include the publication of papyri and manuscripts (e.g. [Papyri.info](https://papyri.info/)). It addresses not only the transcription and editorial treatment of texts themselves, but also the history and materiality of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other text-bearing objects).
+EpiDoc is an international, collaborative effort that provides guidelines and tools for encoding scholarly and educational editions of ancient documents. It uses a subset of the [Text Encoding Initiative](https://www.tei-c.org/)’s standard for the representation of texts in digital form and was developed initially for the publication of digital editions of ancient inscriptions (e.g. [Inscriptions of Aphrodisias](https://insaph.kcl.ac.uk/insaph/), [Vindolanda Tablets](http://vindolanda.csad.ox.ac.uk/)). Its domain has expanded to include the publication of papyri and manuscripts (e.g. [Papyri.info](https://papyri.info/)). It addresses not only the transcription and editorial treatment of texts themselves, but also the history and materiality of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other text-bearing objects).
 
 **[Latest Release of all EpiDoc code: 9.3](https://sourceforge.net/p/epidoc/wiki/LatestRelease/)** (November 2021)
 
@@ -34,7 +34,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 * [Technical Documents and Policies](https://sourceforge.net/p/epidoc/wiki/TechDocs/)
 * [Boilerplate descriptions of EpiDoc](https://sourceforge.net/p/epidoc/wiki/Boilerplate/)
 
-Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders' [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
+Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders’ß [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
 
 To cite this website, please use the following information:
 
