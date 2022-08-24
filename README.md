@@ -34,7 +34,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 * [Technical Documents and Policies](https://sourceforge.net/p/epidoc/wiki/TechDocs/)
 * [Boilerplate descriptions of EpiDoc](https://sourceforge.net/p/epidoc/wiki/Boilerplate/)
 
-Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders’ß [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
+Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders’ [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
 
 To cite this website, please use the following information:
 
