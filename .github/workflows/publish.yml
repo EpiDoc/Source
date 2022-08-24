@@ -3,6 +3,8 @@ name: Build EpiDoc Development Guidelines
 on:
   push:
     branches: [ main ]
+    paths: 
+      README.md
 
 jobs:
   build:
