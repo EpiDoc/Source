@@ -27,7 +27,6 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
   * [EFES Users](https://groups.google.com/forum/#!forum/efes-users): technical support group for users of [EFES](https://github.com/EpiDoc/EFES)
 * [Software and Tools](https://sourceforge.net/p/epidoc/wiki/Software/) for working with XML and EpiDoc
 * [Example Projects and Files](https://sourceforge.net/p/epidoc/wiki/Examples/)
-* [EpiDoc IRC Chatroom](EpiDoc IRC Chatroom): for realtime EpiDoc support and chat
 * [EpiDoc on Facebook](https://www.facebook.com/EpiDoc)
 
 ### Miscellanea
