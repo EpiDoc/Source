@@ -21,7 +21,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
       - name: "Publish MarkDown"
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/core:2.19
         with: 
           args: >-
             --standalone
