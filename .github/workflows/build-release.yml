@@ -12,20 +12,23 @@ jobs:
       image: teic/teidev-docker:latest
 
     steps:
+      - name: "Setup env"
+        run: |
+          export RELEASE_VERSION=${GITHUB_REF#refs/*/}
+          echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
       - name: "Checkout repo"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with: 
           submodules: recursive
           fetch-depth: 0
+        run: git checkout ${{ env.RELEASE_VERSION }}
       - name: "Checkout gh-pages branch"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: gh-pages
       - name: "Build Guidelines and Schema"
         run: |
-          export RELEASE_VERSION=${GITHUB_REF#refs/*/}
-          echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           mkdir -p "gh-pages/schema/$RELEASE_VERSION"
