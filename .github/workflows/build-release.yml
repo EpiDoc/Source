@@ -21,7 +21,7 @@ jobs:
         with: 
           submodules: recursive
           fetch-depth: 0
-        run: git checkout ${{ env.RELEASE_VERSION }}
+      - run: git checkout ${{ env.RELEASE_VERSION }}
       - name: "Checkout gh-pages branch"
         uses: actions/checkout@v3
         with:
