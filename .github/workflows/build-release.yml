@@ -16,7 +16,6 @@ jobs:
         run: |
           export RELEASE_VERSION=${GITHUB_REF#refs/*/}
           echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
-          echo "RELEASE_NOTES=$(sed '/Previous versions/q' ReleaseNotes.txt | sed '$d')" >> $GITHUB_ENV
       - name: "Checkout repo"
         uses: actions/checkout@v3
         with: 
@@ -56,6 +55,7 @@ jobs:
           mkdir gh-pages/gl/latest
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
           tree -H '.' -T 'Index of gl/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
+          sed '/Previous versions/q' ReleaseNotes.txt | sed '$d' > release_notes
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -64,12 +64,15 @@ jobs:
           commit_message: "Published ${{ env.RELEASE_VERSION }} release."
       - name: "Create release artifacts"
         run: |
-          zip -r "Schema-$RELEASE_VERSION.zip" "gh-pages/schema/$RELEASE_VERSION"
-          zip -r "Guidelines-$RELEASE_VERSION.zip" "gh-pages/gl/latest"
+          cd gh-pages/schema
+          zip -r "Schema-$RELEASE_VERSION.zip" "$RELEASE_VERSION"
+          cd ../gl
+          zip -r "Guidelines-$RELEASE_VERSION.zip" "latest"
+          cd ../..
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body: ${{ env.RELEASE_NOTES }}
+          body_path: release_notes
           files: |
             Schema-${{ env.RELEASE_VERSION }}.zip
             Guidelines-${{ env.RELEASE_VERSION }}.zip
