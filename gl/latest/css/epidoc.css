@@ -1,7 +1,7 @@
 /* 
 ** Copyright 2007-2016 the authors
 
-$Id: epidoc.css 2831 2021-11-15 17:45:20Z gabrielbodard $
+$Id$
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -194,7 +194,6 @@ h3 {
    line-height: 18pt;
    font-weight: bold;
    font-style: italic;
-   color: #BB3300;
    clear: both;
 }
 
@@ -389,7 +388,7 @@ div.pre,pre	{
  font-family: monospace ;
  margin: 5px;
  padding: 6px;
- white-space: pre;
+ white-space: pre-line;
 }
 
 div.pre_eg,pre.eg {
@@ -403,7 +402,6 @@ div.pre_eg,pre.eg {
 div.rend {
    font-family: Arial,Helvetica,sans-serif;
 }
-
 
 /* table of contents */
 ul.toc {list-style: none;}
@@ -609,11 +607,11 @@ body > div.teidiv, body.simple {
     margin: 0px;
     padding: 2em;
 }
-body > div.teidiv > div.teidiv, body > div.tei_body {
+body > div.teidiv > div.teidiv1, body > div.tei_body {
     padding: 0.8em 2em;
     margin: 1em;
     background-color: #FEFEFE;
-        border-radius: 0.4em;
+    border-radius: 0.4em;
     border: 1px solid grey;
 }
 
