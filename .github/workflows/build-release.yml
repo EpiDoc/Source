@@ -16,6 +16,7 @@ jobs:
         run: |
           export RELEASE_VERSION=${GITHUB_REF#refs/*/}
           echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
+          echo "RELEASE_NOTES=$(sed '/Previous versions/q' ReleaseNotes.txt | sed '$d')" >> $GITHUB_ENV
       - name: "Checkout repo"
         uses: actions/checkout@v3
         with: 
@@ -31,6 +32,7 @@ jobs:
         run: |
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
+          rm -rf "gh-pages/schema/$RELEASE_VERSION"
           mkdir -p "gh-pages/schema/$RELEASE_VERSION"
           rm -rf "gh-pages/schema/latest"
           cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
@@ -50,6 +52,8 @@ jobs:
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/seg/examples.xml leiden-style="seg"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
+          rm -rf gh-pages/gl/previous && mv gh-pages/gl/latest gh-pages/gl/previous
+          mkdir gh-pages/gl/latest
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
           tree -H '.' -T 'Index of gl/' -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
       - name: "Push to gh-pages branch"
@@ -58,6 +62,19 @@ jobs:
           repository: gh-pages
           branch: gh-pages
           commit_message: "Published ${{ env.RELEASE_VERSION }} release."
+      - name: "Create release artifacts"
+          run: |
+            zip -r "Schema-$RELEASE_VERSION.zip" "gh-pages/schema/$RELEASE_VERSION"
+            zip -r "Guidelines-$RELEASE_VERSION.zip" "gh-pages/gl/latest"
+      - name: Release
+          uses: softprops/action-gh-release@v1
+          with:
+            body: ${{ env.RELEASE_NOTES }}
+            files: |
+              Schema-${{ env.RELEASE_VERSION }}.zip
+              Guidelines-${{ env.RELEASE_VERSION }}.zip
+            tag_name: ${{ env.RELEASE_VERSION }}
+
 
 
 
