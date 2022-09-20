@@ -38,6 +38,7 @@ jobs:
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/seg/examples.xml leiden-style="seg"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/verse/examples.xml verse-lines="on"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/epidoc-html.xsl -o:guidelines/output/index.html analytics="on" attsOnSameLine="2" ignoreXmlBase="true"
+          rm -rf gh-pages/gl/dev/
           rsync -av --mkpath guidelines/output/ gh-pages/gl/dev/
           cp guidelines/schema/epidoc-odd.css gh-pages/gl/dev/css/
           tree -H '.' -T 'gl/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl

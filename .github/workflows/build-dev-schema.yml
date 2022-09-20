@@ -27,6 +27,7 @@ jobs:
         run: |
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
+          rm -rf gh-pages/schema/dev
           mkdir -p gh-pages/schema/dev
           cp schema/tei-epidoc.* gh-pages/schema/dev/
           tree -H '.' -T 'schema/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
