@@ -63,17 +63,17 @@ jobs:
           branch: gh-pages
           commit_message: "Published ${{ env.RELEASE_VERSION }} release."
       - name: "Create release artifacts"
-          run: |
-            zip -r "Schema-$RELEASE_VERSION.zip" "gh-pages/schema/$RELEASE_VERSION"
-            zip -r "Guidelines-$RELEASE_VERSION.zip" "gh-pages/gl/latest"
+        run: |
+          zip -r "Schema-$RELEASE_VERSION.zip" "gh-pages/schema/$RELEASE_VERSION"
+          zip -r "Guidelines-$RELEASE_VERSION.zip" "gh-pages/gl/latest"
       - name: Release
-          uses: softprops/action-gh-release@v1
-          with:
-            body: ${{ env.RELEASE_NOTES }}
-            files: |
-              Schema-${{ env.RELEASE_VERSION }}.zip
-              Guidelines-${{ env.RELEASE_VERSION }}.zip
-            tag_name: ${{ env.RELEASE_VERSION }}
+        uses: softprops/action-gh-release@v1
+        with:
+          body: ${{ env.RELEASE_NOTES }}
+          files: |
+            Schema-${{ env.RELEASE_VERSION }}.zip
+            Guidelines-${{ env.RELEASE_VERSION }}.zip
+          tag_name: ${{ env.RELEASE_VERSION }}
 
 
 
