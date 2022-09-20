@@ -53,7 +53,6 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change who="#HC" when="2022-06-01">release 9.4: Aligned schema with TEI v. 4.4.0</change>
             <change who="#MF" when="2021-11-18">release 9.3: Aligned schema with TEI v. 4.3.0</change>
             <change who="#IV" when="2020-10-13">release 9.2: Aligned schema with TEI v. 4.1.0</change>
             <change who="#SV" when="2020-09-14">aligned schema with TEI v. 4.1.0 in anticipation of release 9.2</change>
@@ -186,7 +185,7 @@ End license statement: do not remove -->
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI teiCorpus" xml:lang="en"
-                source="https://www.tei-c.org/Vault/P5/4.4.0/xml/tei/odd/p5subset.xml">
+                source="https://www.tei-c.org/Vault/P5/4.3.0/xml/tei/odd/p5subset.xml">
 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -218,7 +217,7 @@ End license statement: do not remove -->
                     entryFree etym gram gramGrp hom hyph iType lbl mood number oRef orth pRef
                     per pos pron re sense stress subc superEntry syll tns usg xr"/>
 
-                <!--        CHANGED ELEMENT SPECS        --> 
+                <!--        CHANGED ELEMENT SPECS        -->
                 <elementSpec ident="add" module="core" mode="change">
                     <attList>
                         <!-- constraining values of add/@place -->
