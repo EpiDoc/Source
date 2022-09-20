@@ -37,9 +37,9 @@ jobs:
           rm -rf "gh-pages/schema/latest"
           cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
           rsync -av --mkpath "gh-pages/schema/$RELEASE_VERSION/" gh-pages/schema/latest/
-          tree -H '.' -T 'Index of schema/' -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
-          tree -H '.' -T "Index of latest/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/latest/index.html" "gh-pages/schema/latest"
-          tree -H '.' -T "Index of $RELEASE_VERSION/" -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
+          tree -H '.' -T 'Index of schema/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
+          tree -H '.' -T "Index of latest/" -I index.html -L 1 --noreport --charset utf-8 -o "gh-pages/schema/latest/index.html" "gh-pages/schema/latest"
+          tree -H '.' -T "Index of $RELEASE_VERSION/" -I index.html -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
@@ -55,7 +55,7 @@ jobs:
           rm -rf gh-pages/gl/previous && mv gh-pages/gl/latest gh-pages/gl/previous
           mkdir gh-pages/gl/latest
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
-          tree -H '.' -T 'Index of gl/' -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
+          tree -H '.' -T 'Index of gl/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
