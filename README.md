@@ -1,6 +1,5 @@
 ---
 title: "EpiDoc: Epigraphic Documents in TEI XML"
-date: August 24, 2022
 ---
 ![EpiDoc: Epigraphic Documents in TEI XML](https://sourceforge.net/p/epidoc/wiki/Images/attachment/new-banner.jpg)
 
@@ -38,4 +37,4 @@ Scholars and students of antiquity who are new to EpiDoc and the idea of text ma
 
 To cite this website, please use the following information: 
 
-**Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2021), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**
+**Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2022), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**

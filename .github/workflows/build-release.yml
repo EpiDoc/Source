@@ -3,7 +3,7 @@ name: Build EpiDoc Release
 on:
   push:
     tags:
-      - '*.*'
+      - 'v*.*'
 
 jobs:
   build:
@@ -27,18 +27,24 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+      - name: "Checkout latest branch"
+        uses: actions/checkout@v3
+        with:
+          ref: latest
+          path: latest
       - name: "Build Guidelines and Schema"
         run: |
+          export RELEASE_DIR=${echo $RELEASE_VERSION | sed 's/^v//'}
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
-          rm -rf "gh-pages/schema/$RELEASE_VERSION"
-          mkdir -p "gh-pages/schema/$RELEASE_VERSION"
+          rm -rf "gh-pages/schema/$RELEASE_DIR"
+          mkdir -p "gh-pages/schema/$RELEASE_DIR"
           rm -rf "gh-pages/schema/latest"
-          cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_VERSION"
-          rsync -av --mkpath "gh-pages/schema/$RELEASE_VERSION/" gh-pages/schema/latest/
+          cp schema/tei-epidoc.* "gh-pages/schema/$RELEASE_DIR"
+          rsync -av --mkpath "gh-pages/schema/$RELEASE_DIR/" gh-pages/schema/latest/
           tree -H '.' -T 'Index of schema/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/schema/index.html gh-pages/schema
           tree -H '.' -T "Index of latest/" -I index.html -L 1 --noreport --charset utf-8 -o "gh-pages/schema/latest/index.html" "gh-pages/schema/latest"
-          tree -H '.' -T "Index of $RELEASE_VERSION/" -I index.html -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_VERSION/index.html" "gh-pages/schema/$RELEASE_VERSION"
+          tree -H '.' -T "Index of $RELEASE_DIR/" -I index.html -L 1 --noreport --charset utf-8 -o "gh-pages/schema/$RELEASE_DIR/index.html" "gh-pages/schema/$RELEASE_DIR"
           xmllint --xinclude guidelines/xml/driver.xml > guidelines/xml/driver-ex.xml
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/ddbdp/examples.xml leiden-style="ddbdp"
           saxon -s:guidelines/xml/driver-ex.xml -xsl:guidelines/xslt/createEpidocViews.xsl -o:guidelines/xml/views/dohnicht/examples.xml leiden-style="dohnicht"
@@ -56,12 +62,23 @@ jobs:
           rsync -av --mkpath guidelines/output/ gh-pages/gl/latest/
           tree -H '.' -T 'Index of gl/' -I index.html -L 1 --noreport --charset utf-8 -o gh-pages/gl/index.html gh-pages/gl
           sed '/Previous versions/q' ReleaseNotes.txt | sed '$d' > release_notes
+      - name: "Update latest branch"
+        run: |
+          cd latest
+          git reset --hard "$GITHUB_SHA"
+          cd ..
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           repository: gh-pages
           branch: gh-pages
           commit_message: "Published ${{ env.RELEASE_VERSION }} release."
+      - name: "Push to latest branch"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: latest
+          branch: latest
+          commit_message: "Updated latest to ${{ env.RELEASE_VERSION }} release."
       - name: "Create release artifacts"
         run: |
           cd gh-pages/schema
@@ -72,6 +89,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          name: "EpiDoc Release ${{ env.RELEASE_VERSION }}"
           body_path: release_notes
           files: |
             Schema-${{ env.RELEASE_VERSION }}.zip
