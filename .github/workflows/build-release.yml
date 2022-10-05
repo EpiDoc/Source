@@ -64,9 +64,7 @@ jobs:
           sed '/Previous versions/q' ReleaseNotes.txt | sed '$d' > release_notes
       - name: "Update latest branch"
         run: |
-          cd latest
-          git reset --hard "$GITHUB_SHA"
-          cd ..
+          git --git-dir latest reset --hard "$GITHUB_SHA"
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
