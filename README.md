@@ -12,7 +12,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 * [EpiDoc Guidelines](https://epidoc.stoa.org/gl/latest/): recommendations for markup of transcription, descriptive features, etc. ([About](https://sourceforge.net/p/epidoc/wiki/Guidelines/))
 * [EpiDoc Schema](https://sourceforge.net/p/epidoc/wiki/Schema/): the TEI-derived schema against which EpiDoc XML should be validated
 * [EpiDoc Reference Stylesheets](https://sourceforge.net/p/epidoc/wiki/Stylesheets/): for transforming EpiDoc XML to HTML, text or ODF
-* [EFES](https://github.com/EpiDoc/EFES): a low-barrier EpiDoc publication platform 
+* [EFES](https://github.com/EpiDoc/EFES): a low-barrier EpiDoc publication platform
 
 ### Learn more
 
@@ -35,6 +35,6 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 
 Scholars and students of antiquity who are new to EpiDoc and the idea of text markup are encouraged to read Charlotte Roueché and Julia Flanders’ [Introduction for Epigraphers](https://epidoc.stoa.org/gl/latest/intro-eps.html).
 
-To cite this website, please use the following information: 
+To cite this website, please use the following information:
 
 **Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2022), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**
