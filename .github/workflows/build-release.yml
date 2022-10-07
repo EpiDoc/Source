@@ -36,6 +36,7 @@ jobs:
       - name: "Build Guidelines and Schema"
         run: |
           export RELEASE_DIR=$(echo "$RELEASE_VERSION" | sed 's/^v//')
+          echo "RELEASE_DIR=$RELEASE_DIR" >> $GITHUB_ENV
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           rm -rf "gh-pages/schema/$RELEASE_DIR"
@@ -83,7 +84,7 @@ jobs:
       - name: "Create release artifacts"
         run: |
           cd gh-pages/schema
-          zip -r "Schema-$RELEASE_VERSION.zip" "$RELEASE_VERSION"
+          zip -r "Schema-$RELEASE_VERSION.zip" "$RELEASE_DIR"
           cd ../gl
           zip -r "Guidelines-$RELEASE_VERSION.zip" "latest"
           cd ../..
