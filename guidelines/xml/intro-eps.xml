@@ -27,6 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="intro-eps" xml:lang="en">
     <head>Gentle Introduction to Mark-up for Epigraphers</head>
+    <note>The original version of this chapter written by Julia Flanders and Charlotte Roueché in 2006 has been archived at the <ref target="https://blog.stoa.org/archives/4084">Stoa Review</ref>.</note>
     <p>The concepts behind EpiDoc bring together, for epigraphers, traditional and entirely modern editorial methods and conventions.</p>
     <div xml:id="IntroEpigraphers-conventions">
         <head>Epigraphic conventions</head>
@@ -35,7 +36,7 @@ End license statement: do not remove -->
             common, and publishers did not demonstrate a parallel willingness to provide a full photographic record of every text. The conventions
             which have been painfully developed to indicate missing text, abbreviations, etc. have been more or less generally agreed since the 1930s
             and overlap, to some extent, with those used in papyrology and palaeography. All epigraphers have had to deal with the issues involved in
-            moving this to an electronic environment - for example, finding a font which will permit underdotting; but most of us have now adjusted to
+            moving this to an electronic environment—for example, finding a font which will permit underdotting; but most of us have now adjusted to
             these new constraints.</p>
         <p>The difficulty of rendering such conventions and, in particular, Greek characters in consistent fonts and on the Web has tended to delay
             the publication of full epigraphic texts online; instead, enormously rich search collections have been created, most notably:
@@ -61,7 +62,7 @@ End license statement: do not remove -->
         <p>See also: <ref target="https://epidoc.stoa.org/gl/5/conformance.html">Conformance (EpiDoc Compatibility)</ref>.</p>
         <p>All these developments have therefore been determined by the state of the existing technologies, as these have evolved over the 20th
             century. The object of EpiDoc is to exploit new and rich technologies for the traditional purposes of epigraphy. Many of the processes
-            described above have involved struggling agaist the technological standards - for example, in print publications - in order to accommodate
+            described above have involved struggling agaist the technological standards—for example, in print publications—in order to accommodate
             as many of our requirements as possible. Over the period it has become steadily more difficult to persuade conventional publishers to meet
             our requirements for inserting meta-textual information, unless at prohibitive expense. At the same time, the expectations as to the
             volume of information which should accompany a text have risen greatly; as well as information about physical circumstances, photographic
@@ -69,14 +70,14 @@ End license statement: do not remove -->
         <p>In the last 15 years scholars generally have been dealing with similar requirements to incorporate meta-data within texts in their
             electronic form, and tools have emerged which make this increasingly easy and make the results increasingly valuable. The word-processing
             software that has been familiar since the 1980s allows us to control the formatting of our texts, using markup which by now is invisibly
-            embedded by the software. The more demanding requirements of large-scale document collections - legal papers, industrial documentation,
-            commercial publishing - led in the 1980s to the investigation of ways to insert a wider range of information and instructions within
+            embedded by the software. The more demanding requirements of large-scale document collections—legal papers, industrial documentation,
+            commercial publishing—led in the 1980s to the investigation of ways to insert a wider range of information and instructions within
             electronic texts. At first the emphasis was on inserting formatting instructions, but there soon emerged methods of including more complex
             semantic information concerning document structure and even content. A simple example is marking up a book title as a title, rather than
             simply marking it as being italicized. The use of this more abstract markup permits a separation of structure and presentation, where
             structure is comparatively fundamental to the document's genre, while presentation may be varied depending on the form of publication. In
             a way, this shift represents a return to an earlier mode in which authors dealt with the substance of the text and all details of
-            presentation were handled in the publishing process - a distinction which has been lost in the days of camera-ready copy.</p>
+            presentation were handled in the publishing process—a distinction which has been lost in the days of camera-ready copy.</p>
         <p>The protocols which emerged from this latter effort were standardized in the late 1980s as the Standard Generalized Markup Language, and
             more recently were given a simpler and more flexible form for use in the world-wide web as XML: the <ref target="http://www.w3.org/XML/">Extensible Markup Language</ref>. XML is now widely used by scholars in a broad range of humanistic disciplines to capture/represent
             and preserve research materials for a wide range of purposes.</p>
@@ -85,12 +86,11 @@ End license statement: do not remove -->
             missing (so only definitely attested terms). Uncertain letters can be marked up as such, and a decision made later as to whether to render
             them with an underdot or in another way. Words can be lemmatised during editing, to create indices which grow as the collection grows.
             What is important, however, at this juncture is to repeat the 'Leyden' exercise; that is, to agree electronic equivalents of the various
-            sigla that we use. Firstly, this is valuable simply in order to save time and trouble; but also consistency - without imposing uniformity
-            - continues to be valuable. Not only does it support the user, as on the printed page; but documents edited in this way and published
+            sigla that we use. Firstly, this is valuable simply in order to save time and trouble; but also consistency—without imposing uniformity—continues to be valuable. Not only does it support the user, as on the printed page; but documents edited in this way and published
             electronically will then be exploitable together, even if they have been prepared separately.</p>
         <p>The need for agreed standards is not limited to epigraphy. Since 1987 an international consortium of scholars principally in the humanities
             has been working together to develop and refine a set of guidelines for describing the structure and content of documents. The results of
-            this endeavour have produced an encoding language, realized in XML and described by the name of the group - TEI, the <ref target="http://www.tei-c.org/">Text Encoding Initiatve</ref>.</p>
+            this endeavour have produced an encoding language, realized in XML and described by the name of the group—TEI, the <ref target="http://www.tei-c.org/">Text Encoding Initiatve</ref>.</p>
     </div>
     <div xml:id="IntroEpigraphers-TEI">
         <head>TEI for Epigraphers: What is it, why use it?</head>
@@ -182,10 +182,10 @@ End license statement: do not remove -->
     <div xml:id="intro-epig-responsibility" type="gl-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Roueché</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Julia Flanders</name><name/></respStmt></bibl>
-            <bibl><respStmt><resp>coerced from TEI-Lite and various reformatting edits</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>fixed and updated many links</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp> <name>Charlotte Roueché</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp> <name>Julia Flanders</name><name/></respStmt></bibl>
+            <bibl><respStmt><resp>coerced from TEI-Lite and various reformatting edits</resp> <name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>fixed and updated many links</resp> <name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
