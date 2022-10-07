@@ -65,7 +65,7 @@ jobs:
       - name: "Update latest branch"
         run: |
           cd latest
-          git reset --hard "$RELEASE_VERSION"
+          git merge main
           cd ..
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
