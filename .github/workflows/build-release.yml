@@ -65,7 +65,7 @@ jobs:
           sed '/Previous versions/q' ReleaseNotes.txt | sed '$d' > release_notes
       - name: "Update latest branch"
         run: |
-          cp 
+          cd latest
           git merge --ff-only main
           cd ..
       - name: "Push to gh-pages branch"
