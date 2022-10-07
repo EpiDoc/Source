@@ -66,7 +66,7 @@ jobs:
       - name: "Update latest branch"
         run: |
           cd latest
-          git merge --ff-only main
+          git merge --ff-only origin/main
           cd ..
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
