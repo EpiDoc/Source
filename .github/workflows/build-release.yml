@@ -34,7 +34,7 @@ jobs:
           path: latest
       - name: "Build Guidelines and Schema"
         run: |
-          export RELEASE_DIR=${echo "$RELEASE_VERSION" | sed 's/^v//'}
+          export RELEASE_DIR=$(echo "$RELEASE_VERSION" | sed 's/^v//')
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
           guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
           rm -rf "gh-pages/schema/$RELEASE_DIR"
