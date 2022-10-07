@@ -30,6 +30,7 @@ jobs:
       - name: "Checkout latest branch"
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           ref: latest
           path: latest
       - name: "Build Guidelines and Schema"
@@ -64,8 +65,8 @@ jobs:
           sed '/Previous versions/q' ReleaseNotes.txt | sed '$d' > release_notes
       - name: "Update latest branch"
         run: |
-          cd latest
-          git merge main
+          cp 
+          git merge --ff-only main
           cd ..
       - name: "Push to gh-pages branch"
         uses: stefanzweifel/git-auto-commit-action@v4
