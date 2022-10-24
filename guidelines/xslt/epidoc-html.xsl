@@ -272,7 +272,7 @@
         <xsl:variable name="curpage" select="generate-id(ancestor::tei:div[parent::tei:body])"/>
         <xsl:variable name="curid" select="ancestor::tei:div[parent::tei:body]/@xml:id"/>
         <div class="seealso">
-            <h3>See also: {{<xsl:value-of select="$curid"/>}}</h3>
+            <h3>See also:</h3>
             <xsl:for-each select="ancestor::tei:div[parent::tei:body]//tei:specList/tei:specDesc">
                 <p>Other pages describing &lt;<xsl:value-of select="@key"/>&gt;:</p>
                     <ul>
