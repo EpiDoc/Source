@@ -38,7 +38,7 @@ End license statement: do not remove -->
             </listRef>--></p>
 
     <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines)
-        using the <gi>lb</gi> (line-break) empty element to mark the point at which the line breaks
+        using the <gi>lb</gi> (line-begins) empty element to mark the point at which the line breaks
         (or begins - see <ref target="trans-linebreak.html">Line breaks</ref>.) In addition to marking
         epigraphic lines, which is obligatory, an editor may choose to tag verse groups and lines
         using the <gi>lg</gi> (line-group) and <gi>l</gi> (line) elements.</p>
@@ -49,7 +49,7 @@ End license statement: do not remove -->
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london verse"
         corresp="http://inslib.kcl.ac.uk/irt2009/IRT918.html">
-        <l><lb n="1"/>Quaesii multum quot <lb n="2"/>memoriae tradere</l>
+        <lg><l><lb n="1"/>Quaesii multum quot <lb n="2"/>memoriae tradere</l></lg>
     </egXML>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london verse"
