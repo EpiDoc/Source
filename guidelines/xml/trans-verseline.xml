@@ -83,6 +83,15 @@ End license statement: do not remove -->
         The plus sign constitutes a long (in quantitative meter) or stressed (in accentuating meter) syllable and
         the minus sign stands for a short (quantitative) or unstressed (accentuating) syllable.</p>
     
+    <p>The verse’s feet may be indicated with a vertical bar (|) inside the <att>met</att> and
+        <att>real</att> attributes. There are two possibilities of encoding caesurae and diaeresis
+        (the specific kind of caesura which occurs on a foot boundary):
+        (1) they could be inserted in the <att>real</att> attribute with a slash (/) for caesura
+        and a double vertical bar (||) for the dieresis;
+        (2) alternatively (or additionally) pauses could be represented within the text using
+        the TEI empty element <gi>caesura</gi> (see **Metrical Elements**).
+</p>
+    
     <p>The verse line elements may contain attributes recording 
         number of line (e.g. <att>n</att> with a value of "1", "2", etc.); conventional metrical 
         structure by means of either a standard term for the metrical unit 
@@ -166,6 +175,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriël De Klerk</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Francesco Tecca</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
