@@ -78,6 +78,29 @@ End license statement: do not remove -->
         verse systems where rhyme exists, an attribute <att>rhyme</att> may be added 
         to specify the rhyme scheme applicable to a group of verse lines.</p>
     
+    <p>The rhythm of a verse line, both conventional and realised, may be represented in the <att>met</att>,
+        and <att>real</att> attributes respectively, by a sequence of alternating plus signs (+) and minus signs (-).
+        The plus sign constitutes a long (in quantitative meter) or stressed (in accentuating meter) syllable and
+        the minus sign stands for a short (quantitative) or unstressed (accentuating) syllable.</p>
+    
+    <p>The verse’s feet may be indicated with a vertical bar (|) inside the <att>met</att> and
+        <att>real</att> attributes. There are two possibilities of encoding caesurae and diaeresis
+        (the specific kind of caesura which occurs on a foot boundary):
+        (1) they could be inserted in the <att>real</att> attribute with a slash (/) for caesura
+        and a double vertical bar (||) for the dieresis;
+        (2) alternatively (or additionally) pauses could be represented within the text using
+        the TEI empty element <gi>caesura</gi> (see <ref target="trans-metricalelements.html">Metrical Elements</ref>).
+</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera verse"
+    corresp="https://edh.ub.uni-heidelberg.de/edh/inschrift/HD043765">
+<lg met=”#dactylic.elegaic”>
+   <l met=”#dactylic.hexameter” real=”++|+/+|+/--|+/+|+--|+-”><lb/>Caelestis mul<lb break=”no”/>sa propria<lb/> placabitur ara</l>
+   <l met=”#dactylic.pentameter” real”++|+--|+||+--|+--|-”><lb/>hac divis aliis <lb/> tura merumq(ue) <lb/> damus</l>
+</lg>
+
+    </egXML>
+    
     <p>The verse line elements may contain attributes recording 
         number of line (e.g. <att>n</att> with a value of "1", "2", etc.); conventional metrical 
         structure by means of either a standard term for the metrical unit 
@@ -157,27 +180,12 @@ End license statement: do not remove -->
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl>
-                <respStmt>
-                <resp>author</resp>
-                <name>Alice Bencivenni</name>
-                <name/>
-            </respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Gabriel Bodard</name>
-                    <name/>
-                </respStmt>
-            </bibl>
-            <bibl>
-                <respStmt>
-                    <resp>author</resp>
-                    <name>Charlotte Tupman</name>
-                    <name/>
-                </respStmt>
-            </bibl>
+            <bibl><respStmt><resp>author</resp><name>Alice Bencivenni</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriël De Klerk</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Chiara Cenati</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Marta Fogagnolo</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
