@@ -38,6 +38,104 @@ End license statement: do not remove -->
             </listRef>--></p>
 
     <p>....</p>
+    
+    <p>Example of a taxonomy of types of metre and some metrical features:</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <classDecl xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+            <taxonomy xml:id="verse">
+                <category xml:id="dactylic">
+                    <catDesc>
+                        <gloss>Dactylic</gloss>
+                    </catDesc>
+                    <category xml:id="dactylic.hexameter">
+                        <catDesc>
+                            <gloss>Dactylic hexameter</gloss>
+                        </catDesc>
+                    </category>
+                    <category xml:id="dactylic.pentameter">
+                        <catDesc>
+                            <gloss>Dactylic pentameter</gloss>
+                        </catDesc>
+                    </category>
+                    <category xml:id="dactylic.elegiac">
+                        <catDesc>
+                            <gloss>Dactylic: elegiac</gloss>
+                        </catDesc>
+                    </category>
+                </category>
+                <category xml:id="iambo-trochaic">
+                    <catDesc>
+                        <gloss>Iambo-trochaic</gloss>
+                    </catDesc>
+                    <category xml:id="iambo-trochaic.senarius">
+                        <catDesc>
+                            <gloss>Iambic senarius</gloss>
+                        </catDesc>
+                    </category>
+                    <category xml:id="iambo-trochaic.septenarius">
+                        <catDesc>
+                            <gloss>Trochaic septenarius</gloss>
+                        </catDesc>
+                    </category>
+                </category>
+                <category xml:id="nonstandard">
+                    <catDesc>
+                        <gloss>Nonstandard metre</gloss>
+                    </catDesc>
+                </category>
+            </taxonomy>
+            <taxonomy xml:id="scheme">
+                <category xml:id="quantitative">
+                    <catDesc>
+                        <gloss>Quantitative</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="accentuating">
+                    <catDesc>
+                        <gloss>Accentuating</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="mixed">
+                    <catDesc>
+                        <gloss>mixed</gloss>
+                    </catDesc>
+                </category>
+            </taxonomy>
+            <taxonomy xml:id="pause">
+                <category xml:id="caesura">
+                    <catDesc>
+                        <gloss>Caesura</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="diaeresis">
+                    <catDesc>
+                        <gloss>Diaeresis</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="penthemimeral">
+                    <catDesc>
+                        <gloss>Penthemimeral</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="trithemimeral">
+                    <catDesc>
+                        <gloss>Trithemimeral</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="hephthemimeral">
+                    <catDesc>
+                        <gloss>Hephthemimeral</gloss>
+                    </catDesc>
+                </category>
+                <category xml:id="trochaic">
+                    <catDesc>
+                        <gloss>Trochaic</gloss>
+                    </catDesc>
+                </category>
+            </taxonomy>
+        </classDecl>
+    </egXML>
 
     <!--Could not find any examples of <l> in DDBDP-->
 
@@ -50,7 +148,7 @@ End license statement: do not remove -->
             <bibl>
                 <respStmt>
                 <resp>author</resp>
-                <name>Alice Bencivenni</name>
+                <name>Simona Stoyanova</name>
                 <name/>
             </respStmt>
             </bibl>
