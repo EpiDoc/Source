@@ -85,8 +85,10 @@ jobs:
         run: |
           cd gh-pages/schema
           zip -r "Schema-$RELEASE_VERSION.zip" "$RELEASE_DIR"
+          mv "Schema-$RELEASE_VERSION.zip" ../../
           cd ../gl
           zip -r "Guidelines-$RELEASE_VERSION.zip" "latest"
+          mv "Guidelines-$RELEASE_VERSION.zip" ../../
           cd ../..
       - name: Release
         uses: softprops/action-gh-release@v1
