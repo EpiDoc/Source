@@ -66,8 +66,8 @@ End license statement: do not remove -->
     
     <div>
         <head>Multiple lemmata</head>
-        <p>If a single word tag contains more than one indexable word (e.g. "populusque" in Latin or 
-        "κἀκ" in Greek), or an incomplete word is ambiguous and might correspond to either of two or more lemmata
+        <p>If a single word tag contains more than one indexable word (e.g. "populusque" in Latin, 
+            "κἀκ" in Greek or "gudrotæn" and "hlkuþrs" in Old Danish), or an incomplete word is ambiguous and might correspond to either of two or more lemmata
         (e.g. ΕΚΦΕΥΞ), then all lemmata that should be indexed may be included in the <att>lemma</att>
             attribute, separated by spaces:</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -78,6 +78,12 @@ End license statement: do not remove -->
         </egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <w lemma="ἔκφευξις ἐκφεύγω" part="I">ΕΚΦΕΥΞ</w><gap reason="lost" extent="unknown" unit="character"/>
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w lemma="Guð dróttin">gud drotæn</w> 
+        </egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <w lemma="helgu Guðs">hlku kuþrs</w> 
         </egXML>
     </div>
     

@@ -34,6 +34,7 @@ End license statement: do not remove -->
             <cell rend="label">Wingspread</cell>
             <cell rend="label">DAMOS</cell>
             <cell rend="label">EpiDoc example</cell>
+            <cell rend="label">DAMOS example</cell>
             <cell rend="label">EpiDoc Guidelines</cell>
         </row>
         <!--    e.g.
@@ -41,129 +42,197 @@ End license statement: do not remove -->
                 <cell>Modern expansion of an abbreviation</cell>
                 <cell>α(βγ)</cell>
                 <cell>α<(βγ)></cell>
-                <cell></cell>
+                <cell><tag>abbr</tag>α<tag type="end">abbr</tag></cell>
+                <cell><ref target="https://damos.hf.uio.no/1234">1234</ref></cell>
                 <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
             </row>-->
-        <row rend="bold"><cell cols="4">Characters and glyphs</cell></row>
+        <row rend="bold"><cell cols="6">Characters and glyphs</cell></row>
         <row>
-            <cell>syllabogram</cell>
-            <cell>pa or ro<hi rend="subscript">2</hi></cell>
-            <cell>pa or ro2</cell>
-            <cell><tag>c type="syllabogram"</tag>pa<tag type="end">c</tag>
-                <lb/><tag>c type="syllabogram"</tag>ro2<tag type="end">c</tag></cell>
-            <cell>Not covered.</cell>
+            <cell>syllabogram (in a syllabic word)</cell>
+            <cell>pa- or -ro<hi rend="subscript">2</hi></cell>
+            <cell>pa- or -ro2</cell>
+            <cell>pa-
+                <lb/>-ro2</cell>
+            <cell><ref target="https://damos.hf.uio.no/4327">4327 (PY An(6) 35)</ref>; <ref target="https://damos.hf.uio.no/4471">4471</ref>; <ref target="https://damos.hf.uio.no/4626">4626</ref></cell>
+            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-cleartext.html">Clear text</ref></cell>
+        </row>
+        <row>
+            <cell>syllabic word</cell>
+            <cell>da-mo-de</cell>
+            <cell>da-mo-de</cell>
+            <cell><tag>w xml:id=""</tag>da-mo-de<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4579">4579</ref></cell>
+            <cell><ref target="https://epidoc.stoa.org/gl/latest/idx-wordslemmata.html">Words and lemmata</ref></cell>
         </row>
         <row>
             <cell>logogram</cell>
             <cell><hi rend="small">OLE</hi></cell>
             <cell>OLE</cell>
-            <cell><tag>c type="logogram"</tag>OLE<tag type="end">c</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag>w type="logogram" xml:id=""</tag>OLE<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4560">4560</ref></cell>
+            <cell>Not yet covered.</cell>
         </row>
         <row>
-            <cell>syllabogram used as logogram</cell>
+            <cell>syllabogram used as logogram (i.e. adjectival logogram)</cell>
             <cell><hi rend="italic">PA</hi></cell>
             <cell>PA</cell>
-            <cell><tag>c type="syllabogram-as-logogram"</tag>PA<tag type="end">c</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag>w type="syllabogram-as-logogram" xml:id=""</tag>PA<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4960">4960</ref></cell>
+            <cell>Not yet covered.</cell>
         </row>
         <row>
-            <cell>Monogram (i.e. ligatured syllabograms)</cell>
+            <cell>Monogram (i.e. ligatured syllabograms used as logogram)</cell>
             <cell><hi rend="italic">MERI</hi></cell>
             <cell>ME±RI</cell>
-            <cell><tag>hi rend="monogram"</tag>MERI<tag type="end">hi</tag></cell>
+            <cell><tag>w type="monogram" xml:id=""</tag>ME±RI<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/2">2</ref></cell>
             <cell>Not covered.</cell>
         </row>
         <row>
             <cell rend="bold">Ligatured logograms</cell>
             <cell><hi rend="small">TELA</hi>+<hi rend="italic">PO</hi></cell>
             <cell>TELA+PO</cell>
-            <cell><tag>hi rend="ligature"</tag>TELA+PO<tag type="end">hi</tag></cell>
-            <cell><ref target="trans-ligature.html">Ligatured Letters</ref></cell>
+            <cell><tag>w type="ligature" xml:id=""</tag>TELA+PO<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/681">681</ref></cell>
+            <cell>cf. <ref target="trans-ligature.html">Ligatured Letters</ref></cell>
         </row>
         <row>
             <cell>Metrogram</cell>
             <cell><hi rend="small">S</hi></cell>
             <cell>S</cell>
-            <cell><tag>c type="metrogram"</tag>S<tag type="end">c</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag>w type="metrogram" xml:id=""</tag>S<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4214">4214</ref></cell>
+            <cell>Not yet covered.</cell>
         </row>
         <row>
             <cell>Arithmogram</cell>
             <cell>1</cell>
             <cell>1</cell>
-            <cell><tag>num</tag>1<tag type="end">num</tag></cell>
+            <cell><tag>num xml:id=""</tag>1<tag type="end">num</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4170">4170</ref></cell>
             <cell><ref target="trans-numknown.html">Numbers/Numerals Of Known Value</ref></cell>
         </row>
         <row>
             <cell>Syllabogram as abbreviation</cell>
             <cell><hi rend="italic">o</hi></cell>
             <cell>o</cell>
-            <cell><tag>abbr</tag>o<tag type="end">abbr</tag></cell>
+            <cell><tag>w xml:id=""</tag><tag>abbr</tag>o<tag type="end">abbr</tag><tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/380">380</ref></cell>
             <cell><ref target="trans-abbrevnotex.html">Abbreviation not Expanded at All</ref></cell>
         </row>
         <row>
             <cell>Word divider</cell>
             <cell>,</cell>
             <cell>,</cell>
-            <cell><tag>pc</tag><tag type="empty">g ref="#div"</tag><tag type="end">pc</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag>pc xml:id=""</tag><tag type="empty">g ref="#word-divider"</tag><tag type="end">pc</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4421">4421</ref></cell>
+            <cell>cf. <ref target="https://epidoc.stoa.org/gl/latest/trans-symbolinterpunct.html">Symbol: interpuncts</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (syllabogram)</cell>
+            <cell>Dividing line</cell>
+            <cell>:</cell>
+            <cell>:</cell>
+            <cell><tag>pc xml:id=""</tag><tag type="empty">g ref="#dividing-line"</tag><tag type="end">pc</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/5096">5096</ref></cell>
+            <cell>cf. <ref target="https://epidoc.stoa.org/gl/latest/trans-symbolinterpunct.html">Symbol: interpuncts</ref></cell>
+        </row>
+        <row>
+            <cell>Uninterpreted glyph (syllabogram)</cell>
             <cell><hi rend="italic">*47</hi></cell>
             <cell>*47</cell>
-            <cell><tag type="empty">g ref="#s47"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag>w</tag><tag type="empty">g ref="#s47"</tag><tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/5034">5034</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (logogram)</cell>
+            <cell>Uninterpreted glyph (logogram)</cell>
             <cell><hi rend="italic">*123</hi></cell>
             <cell>*123</cell>
             <cell><tag type="empty">g ref="#l123"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><ref target="https://damos.hf.uio.no/4364">4364</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (vase logogram)</cell>
+            <cell>Uninterpreted glyph (vase logogram)</cell>
             <cell><hi rend="italic">*155</hi><hi rend="superscript">VAS</hi></cell>
             <cell>*155VAS</cell>
-            <cell><tag type="empty">g ref="#l155vas"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag type="empty">g ref="#l155vas"</tag><tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4976">4976</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
         </row>
         <row>
             <cell>Gender specifier</cell>
             <cell><hi rend="superscript">m</hi> or <hi rend="superscript">f</hi></cell>
             <cell>:m or :f</cell>
-            <cell><tag>c type="specifier"</tag>m<tag type="end">c</tag></cell>
+            <cell><tag>m type="specifier"</tag>m<tag type="end">m</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4374">4374</ref></cell>
             <cell>Not covered.</cell>
         </row>
         <row>
             <cell>Other specifier</cell>
             <cell><hi rend="superscript">1</hi></cell>
             <cell>;1</cell>
-            <cell><tag>c type="specifier"</tag>1<tag type="end">c</tag></cell>
+            <cell><tag>m type="specifier"</tag>1<tag type="end">m</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/469">469</ref></cell>
             <cell>Not covered.</cell>
         </row>
-        <row><cell cols="4">Editorial interventions and observations</cell></row>
-        <row><cell cols="4"><hi rend="italic">to be added</hi></cell></row>
+        <row rend="bold"><cell cols="6">Editorial interventions and observations</cell></row>
+        <row>
+            <cell>Restorations</cell>
+            <cell>[pa] or [pa-]</cell>
+            <cell>[pa] or [pa-]</cell>
+            <cell><tag>supplied reason="lost"</tag>pa<tag type="end">supplied</tag> or <tag>supplied reason="lost"</tag>pa-<tag type="end">supplied</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/2216">2216</ref></cell>
+            <cell><ref target="trans-restored.html">Editorial restoration</ref></cell>
+        </row>
+        <row>
+            <cell>Characters restored tentatively</cell>
+            <cell>[pa?] or [?pa]</cell>
+            <cell>[pa?] or [?pa]</cell>
+            <cell><tag>supplied reason="lost" cert="low"</tag>pa<tag type="end">supplied</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4401">4401</ref></cell>
+            <cell><ref target="trans-restoreduncert.html">Editorial restoration, tentative</ref></cell>
+        </row>
+        <row>
+            <cell>Syllabic word incomplete</cell>
+            <cell>]-pa or pa-[</cell>
+            <cell>]-pa or pa-[</cell>
+            <cell><tag>w part="I"</tag>pa-<tag type="end">w</tag><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag> or <tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag><tag>w part="F"</tag>-pa<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4338">4338</ref></cell>
+            <cell><ref target="trans-restoredincomplete.html">Word incompletely restored</ref></cell>
+        </row>
+        <row>
+            <cell>Syllabic word possibly incomplete</cell>
+            <cell>]ko-wa or ko-wa[</cell>
+            <cell>]ko-wa or ko-wa[</cell>
+            <cell><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag><tag>w part="F"</tag>ko-wa<tag type="end">w</tag>
+                or
+                <tag>w part="F"</tag>ko-wa<tag type="end">w</tag><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/2154">2154</ref>, <ref target="https://damos.hf.uio.no/4254">4254</ref></cell>
+            <cell><!--<ref target=""></ref>--></cell>
+        </row>
+        <row><cell cols="6"><hi rend="italic">to be added</hi></cell></row>
         <!--<row>
             <cell></cell>
             <cell></cell>
             <cell></cell>
             <cell></cell>
             <cell><ref target=""></ref></cell>
-            <cell>Not covered.</cell>
+            <cell><ref target=""></ref></cell>
         </row>-->
     </table>
+    
+    <p>Note: for the purposes of the DAMOS database, all words and other units of text should be identified with a unique <att>xml:id</att> (which will be assigned by DAMOS). This may not be required for all Mycenaean EpiDoc projects.</p>
     
     <!--<p>Add bibiographic reference to a good Wingspread handbook</p>-->
     
     
-    <div xml:id="app-epi-oracc-responsibility">
+    <div xml:id="app-epi-mycenaean-responsibility">
     <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Federico Aurora</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Nora White</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
