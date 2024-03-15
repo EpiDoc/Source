@@ -1,5 +1,15 @@
 ---
 title: "EpiDoc: Epigraphic Documents in TEI XML"
+header-includes: |
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VG4P09KL4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1VG4P09KL4');
+  </script>
 ---
 ![EpiDoc: Epigraphic Documents in TEI XML](https://sourceforge.net/p/epidoc/wiki/Images/attachment/new-banner.jpg)
 
