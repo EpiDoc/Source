@@ -84,7 +84,7 @@ End license statement: do not remove -->
             <cell>Monogram (i.e. ligatured syllabograms used as logogram)</cell>
             <cell><hi rend="italic">MERI</hi></cell>
             <cell>ME±RI</cell>
-            <cell><tag>w type="monogram" xml:id=""</tag>MERI<tag type="end">w</tag></cell>
+            <cell><tag>w type="monogram" xml:id=""</tag>ME±RI<tag type="end">w</tag></cell>
             <cell><ref target="https://damos.hf.uio.no/2">2</ref></cell>
             <cell>Not covered.</cell>
         </row>
@@ -124,46 +124,93 @@ End license statement: do not remove -->
             <cell>Word divider</cell>
             <cell>,</cell>
             <cell>,</cell>
-            <cell><tag>pc xml:id=""</tag><tag type="empty">g ref="#div"</tag><tag type="end">pc</tag></cell>
+            <cell><tag>pc xml:id=""</tag><tag type="empty">g ref="#word-divider"</tag><tag type="end">pc</tag></cell>
             <cell><ref target="https://damos.hf.uio.no/4421">4421</ref></cell>
             <cell>cf. <ref target="https://epidoc.stoa.org/gl/latest/trans-symbolinterpunct.html">Symbol: interpuncts</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (syllabogram)</cell>
-            <cell><hi rend="italic">*47</hi></cell>
-            <cell>*47</cell>
-            <cell><tag type="empty">g ref="#s47"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell>Dividing line</cell>
+            <cell>:</cell>
+            <cell>:</cell>
+            <cell><tag>pc xml:id=""</tag><tag type="empty">g ref="#dividing-line"</tag><tag type="end">pc</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/5096">5096</ref></cell>
+            <cell>cf. <ref target="https://epidoc.stoa.org/gl/latest/trans-symbolinterpunct.html">Symbol: interpuncts</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (logogram)</cell>
+            <cell>Uninterpreted glyph (syllabogram)</cell>
+            <cell><hi rend="italic">*47</hi></cell>
+            <cell>*47</cell>
+            <cell><tag>w</tag><tag type="empty">g ref="#s47"</tag><tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/5034">5034</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
+        </row>
+        <row>
+            <cell>Uninterpreted glyph (logogram)</cell>
             <cell><hi rend="italic">*123</hi></cell>
             <cell>*123</cell>
             <cell><tag type="empty">g ref="#l123"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><ref target="https://damos.hf.uio.no/4364">4364</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
         </row>
         <row>
-            <cell>Undeciphered glyph (vase logogram)</cell>
+            <cell>Uninterpreted glyph (vase logogram)</cell>
             <cell><hi rend="italic">*155</hi><hi rend="superscript">VAS</hi></cell>
             <cell>*155VAS</cell>
-            <cell><tag type="empty">g ref="#l155vas"</tag></cell>
-            <cell>Not covered.</cell>
+            <cell><tag type="empty">g ref="#l155vas"</tag><tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4976">4976</ref></cell>
+            <cell>Cf. <ref target="trans-symbol.html">Symbol (non meaning-bearing)</ref></cell>
         </row>
         <row>
             <cell>Gender specifier</cell>
             <cell><hi rend="superscript">m</hi> or <hi rend="superscript">f</hi></cell>
             <cell>:m or :f</cell>
-            <cell><tag>c type="specifier"</tag>m<tag type="end">c</tag></cell>
+            <cell><tag>m type="specifier"</tag>m<tag type="end">m</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4374">4374</ref></cell>
             <cell>Not covered.</cell>
         </row>
         <row>
             <cell>Other specifier</cell>
             <cell><hi rend="superscript">1</hi></cell>
             <cell>;1</cell>
-            <cell><tag>c type="specifier"</tag>1<tag type="end">c</tag></cell>
+            <cell><tag>m type="specifier"</tag>1<tag type="end">m</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/469">469</ref></cell>
             <cell>Not covered.</cell>
         </row>
-        <row><cell cols="4">Editorial interventions and observations</cell></row>
+        <row rend="bold"><cell cols="4">Editorial interventions and observations</cell></row>
+        <row>
+            <cell>Restorations</cell>
+            <cell>[pa] or [pa-]</cell>
+            <cell>[pa] or [pa-]</cell>
+            <cell><tag>supplied reason="lost"</tag>pa<tag type="end">supplied</tag> or <tag>supplied reason="lost"</tag>pa-<tag type="end">supplied</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/2216">2216</ref></cell>
+            <cell><ref target="trans-restored.html">Editorial restoration</ref></cell>
+        </row>
+        <row>
+            <cell>Characters restored tentatively</cell>
+            <cell>[pa?] or [?pa]</cell>
+            <cell>[pa?] or [?pa]</cell>
+            <cell><tag>supplied reason="lost" cert="low"</tag>pa<tag type="end">supplied</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4401">4401</ref></cell>
+            <cell><ref target="trans-restoreduncert.html">Editorial restoration, tentative</ref></cell>
+        </row>
+        <row>
+            <cell>Syllabic word incomplete</cell>
+            <cell>]-pa or pa-[</cell>
+            <cell>]-pa or pa-[</cell>
+            <cell><tag>w part="I"</tag>pa-<tag type="end">w</tag><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag> or <tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag><tag>w part="F"</tag>-pa<tag type="end">w</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/4338">4338</ref></cell>
+            <cell><ref target="trans-restoredincomplete.html">Word incompletely restored</ref></cell>
+        </row>
+        <row>
+            <cell>Syllabic word possibly incomplete</cell>
+            <cell>]ko-wa or ko-wa[</cell>
+            <cell>]ko-wa or ko-wa[</cell>
+            <cell><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag><tag>w part="F"</tag>ko-wa<tag type="end">w</tag>
+                or
+                <tag>w part="F"</tag>ko-wa<tag type="end">w</tag><tag type="empty">gap reason="lost" extent="unknown" unit="character"</tag></cell>
+            <cell><ref target="https://damos.hf.uio.no/2154">2154</ref>, <ref target="https://damos.hf.uio.no/4254">4254</ref></cell>
+            <cell><!--<ref target=""></ref>--></cell>
+        </row>
         <row><cell cols="4"><hi rend="italic">to be added</hi></cell></row>
         <!--<row>
             <cell></cell>
