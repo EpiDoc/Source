@@ -38,7 +38,7 @@ jobs:
           export RELEASE_DIR=$(echo "$RELEASE_VERSION" | sed 's/^v//')
           echo "RELEASE_DIR=$RELEASE_DIR" >> $GITHUB_ENV
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
-          guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
+          guidelines/xslt/TEI-Stylesheets/bin/teitorng schema/tei-epidoc.xml schema/tei-epidoc.rng
           rm -rf "gh-pages/schema/$RELEASE_DIR"
           mkdir -p "gh-pages/schema/$RELEASE_DIR"
           rm -rf "gh-pages/schema/latest"

@@ -26,7 +26,7 @@ jobs:
       - name: "Build Schema"
         run: |
           guidelines/xslt/TEI-Stylesheets/bin/teitoodd schema/tei-epidoc.xml schema/tei-epidoc.compiled.xml
-          guidelines/xslt/TEI-Stylesheets/bin/teitorelaxng schema/tei-epidoc.xml schema/tei-epidoc.rng
+          guidelines/xslt/TEI-Stylesheets/bin/teitorng schema/tei-epidoc.xml schema/tei-epidoc.rng
           rm -rf gh-pages/schema/dev
           mkdir -p gh-pages/schema/dev
           cp schema/tei-epidoc.* gh-pages/schema/dev/
