@@ -16,19 +16,20 @@ jobs:
         run: |
           export RELEASE_VERSION=${GITHUB_REF#refs/*/}
           echo "RELEASE_VERSION=$RELEASE_VERSION" >> $GITHUB_ENV
+          sh -c "git config --global --add safe.directory $PWD"
       - name: "Checkout repo"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: 
           submodules: recursive
           fetch-depth: 0
       - run: git checkout ${{ env.RELEASE_VERSION }}
       - name: "Checkout gh-pages branch"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: gh-pages
       - name: "Checkout latest branch"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: latest
