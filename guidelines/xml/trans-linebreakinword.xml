@@ -26,14 +26,14 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreakinword" xml:lang="en">
-    <head>Line Breaks In Words</head>
+    <head>Line Breaks in Words</head>
     <p><specList>
         <specDesc key="lb"/>
     </specList>
     </p> 
-    <p>Words divided across lines (i.e. where the line-break does not indicate a word-break) 
-        should be indicated by <gi>lb</gi> with a <att>break</att> with a value of "no".
-        This, among other things, allows the XSLT to generate the hyphen at the end of the preceding line. For further explanation of the <gi>lb</gi> element, see the guidance for <ref target="trans-linebreak.html">Line Breaks</ref>.</p>
+    <p>Words divided across lines (i.e. where the line-break does not indicate a word-break) should be indicated by the <gi>lb</gi> marking the new line with a <att>break</att> with a value of "no".</p>
+    <p>This, among other things, allows the XSLT to generate the hyphen at the end of the preceding line. In some processing environments, the appearance of the hyphen will be improved by ensuring that there is no whitespace (spaces or new lines) before the <gi>lb</gi>.</p>
+    <p>For further explanation of the <gi>lb</gi> element, see the guidance for <ref target="trans-linebreak.html">Line Breaks</ref>.</p>
     
     <cit>
         <quote>proc-<lb/>
@@ -54,9 +54,9 @@ End license statement: do not remove -->
     
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
