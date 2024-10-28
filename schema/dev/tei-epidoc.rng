@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-03-15T20:10:30Z. . 
+Schema generated from ODD source 2024-10-28T14:39:44Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -4608,6 +4608,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="tei_classDecl"/>
          <ref name="tei_geoDecl"/>
          <ref name="tei_unitDecl"/>
+         <ref name="tei_metDecl"/>
          <ref name="tei_charDecl"/>
          <ref name="tei_variantEncoding"/>
          <ref name="tei_transcriptionDesc"/>
@@ -10584,6 +10585,65 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
             </data>
          </attribute>
       </optional>
+   </define>
+   <define name="tei_metDecl">
+      <element name="metDecl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(metrical notation declaration) documents the notation employed to represent a metrical pattern when this is specified as the value of a <code xmlns="http://www.w3.org/1999/xhtml">@met</code>, <code xmlns="http://www.w3.org/1999/xhtml">@real</code>, or <code xmlns="http://www.w3.org/1999/xhtml">@rhyme</code> attribute on any structural element of a metrical text (e.g. <code xmlns="http://www.w3.org/1999/xhtml">&lt;lg&gt;</code>, <code xmlns="http://www.w3.org/1999/xhtml">&lt;l&gt;</code>, or <code xmlns="http://www.w3.org/1999/xhtml">&lt;seg&gt;</code>). [6.6. Metrical Notation Declaration 6.4. Rhyme and Metrical Analysis]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <choice>
+                  <ref name="tei_model.pLike"/>
+                  <ref name="tei_model.noteLike"/>
+               </choice>
+            </oneOrMore>
+         </choice>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.declarable.attributes"/>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="type"
+                       a:defaultValue="met real">
+               <a:documentation>indicates whether the notation conveys the abstract metrical form, its actual prosodic realization, or the rhyme scheme, or some combination thereof.</a:documentation>
+               <list>
+                  <choice>
+                     <value>met</value>
+                     <a:documentation>(met attribute) declaration applies to the abstract metrical form recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@met</code> attribute</a:documentation>
+                     <value>real</value>
+                     <a:documentation>(real attribute) declaration applies to the actual realization of the conventional metrical structure recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@real</code> attribute</a:documentation>
+                     <value>rhyme</value>
+                     <a:documentation>declaration applies to the rhyme scheme recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@rhyme</code> attribute</a:documentation>
+                  </choice>
+                  <optional>
+                     <choice>
+                        <value>met</value>
+                        <a:documentation>(met attribute) declaration applies to the abstract metrical form recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@met</code> attribute</a:documentation>
+                        <value>real</value>
+                        <a:documentation>(real attribute) declaration applies to the actual realization of the conventional metrical structure recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@real</code> attribute</a:documentation>
+                        <value>rhyme</value>
+                        <a:documentation>declaration applies to the rhyme scheme recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@rhyme</code> attribute</a:documentation>
+                     </choice>
+                  </optional>
+                  <optional>
+                     <choice>
+                        <value>met</value>
+                        <a:documentation>(met attribute) declaration applies to the abstract metrical form recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@met</code> attribute</a:documentation>
+                        <value>real</value>
+                        <a:documentation>(real attribute) declaration applies to the actual realization of the conventional metrical structure recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@real</code> attribute</a:documentation>
+                        <value>rhyme</value>
+                        <a:documentation>declaration applies to the rhyme scheme recorded on the <code xmlns="http://www.w3.org/1999/xhtml">@rhyme</code> attribute</a:documentation>
+                     </choice>
+                  </optional>
+               </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="pattern">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(regular expression pattern) specifies a regular expression defining any value that is legal for this notation.</a:documentation>
+               <data type="token"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
    </define>
    <define name="tei_att.lexicographic.normalized.attributes">
       <ref name="tei_att.lexicographic.normalized.attribute.norm"/>
