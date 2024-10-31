@@ -28,7 +28,7 @@ EpiDoc is an international, collaborative effort that provides guidelines and to
 
 * [About EpiDoc](https://sourceforge.net/p/epidoc/wiki/About/)
 * [Learn EpiDoc](https://sourceforge.net/p/epidoc/wiki/Training/): events, tutorials and summer schools
-* [Markup List](https://sourceforge.net/p/epidoc/wiki/MarkupList/): email list for discussions, questions, and help with EpiDoc issues
+* [EpiDoc-Markup List](https://sourceforge.net/p/epidoc/wiki/MarkupList/): email list for discussions, questions, and help with EpiDoc issues
 * Other mailing lists:
   * [EnCoWS](https://groups.google.com/forum/#!forum/encows): Encoding Complex Writing Systems in TEI/EpiDoc
   * [Ancient-People](https://groups.google.com/forum/#!forum/ancient-people): for discussion of SNAP and other prosopographical projects
