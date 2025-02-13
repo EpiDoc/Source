@@ -3,6 +3,32 @@ RELEASE NOTES
 
 Latest version
 -------------------------
+
+9.7 – Announced to MARKUP on 2025-02-03 [email](https://www.jiscmail.ac.uk/cgi-bin/wa-jisc.exe?A2=ind2502&L=EPIDOC-MARKUP&O=D&X=D48176E8BFF1499CE3&Y=emmanuelle.morlock%40mom.fr&P=59
+
+ * Release technicians: Emmanuelle Morlock, Nicolas Souchon
+
+ * Schema: Aligned schema with TEI v. 4.9.0
+ * Schema: Stopped omitting <metDecl> from the verse module
+
+ * Guidelines: Added <textClass>/<keywords> in <profileDesc> of ex-epidoctemplate.xml
+ * Guidelines: Clarified explanatory text for line breaks in words (trans-linebreakinword.xml)
+
+ * XSLT: Fix default behavior for milestones (no <br/> inserted anymore) and other minor improvements (htm-teimilestone.xsl)
+ * XSLT: Added custom apparatus for MedCyprus, several adjustments and improvements for apparatus and general MedCyprus html display
+ * XSLT: <bibl> in <listBibl>: default transformation now use <li> elements in <ul>
+ * XSLT: <orig>: minor correction of the default behavior
+ * XSLT: README.md: many small corrections, clarifications and enhancements
+
+ * EFES: Submodule creation for EpiDoc Stylesheets, maintenance and typo correction in README
+ * EFES: Release 2025-02, aligned with EpiDoc 9.7
+
+
+
+Previous versions
+-------------------------
+
+
 9.6 - Announced to MARKUP on 2024-03-21 [email] (https://lsv.uky.edu/scripts/wa.exe?A2=MARKUP;8072c553.2403&S=)
  * Release technicians: Gabriel Bodard, Martina Filosa, Nora White
  
@@ -22,9 +48,6 @@ Latest version
  * EFES: added cookies policy 
  * EFES: implemented handling of right-to-left scripts
 
-
-Previous versions
--------------------------
 
 9.5
  * Release technicians: Hugh Cayless, Elli Mylonas
