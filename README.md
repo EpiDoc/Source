@@ -47,4 +47,4 @@ Scholars and students of antiquity who are new to EpiDoc and the idea of text ma
 
 To cite this website, please use the following information:
 
-**Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2024), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**
+**Tom Elliott, Gabriel Bodard, Hugh Cayless _et al._ (2006-2025), _EpiDoc: Epigraphic Documents in TEI XML._ Online material, available: `<https://epidoc.stoa.org/>`.**
