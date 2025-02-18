@@ -15,7 +15,7 @@ header-includes: |
 
 EpiDoc is an international, collaborative effort that provides guidelines and tools for encoding scholarly and educational editions of ancient documents. It uses a subset of the [Text Encoding Initiative](https://www.tei-c.org/)’s standard for the representation of texts in digital form and was developed initially for the publication of digital editions of ancient inscriptions (e.g. [Inscriptions of Aphrodisias](https://insaph.kcl.ac.uk/insaph/), [Vindolanda Tablets](http://vindolanda.csad.ox.ac.uk/)). Its domain has expanded to include the publication of papyri and manuscripts (e.g. [Papyri.info](https://papyri.info/)). It addresses not only the transcription and editorial treatment of texts themselves, but also the history and materiality of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other text-bearing objects).
 
-**[Latest Release of all EpiDoc code: 9.6](https://sourceforge.net/p/epidoc/wiki/LatestRelease/)** (March 2024)
+**[Latest Release of all EpiDoc code: 9.7](https://sourceforge.net/p/epidoc/wiki/LatestRelease/)** (Debruary 2025)
 
 ### Core EpiDoc Components
 
