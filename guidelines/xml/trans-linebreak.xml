@@ -35,14 +35,13 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
    
-    <p>EpiDoc follows TEI practice in marking line breaks on the support (as opposed to verse lines) using the <gi>lb</gi>,
-        though the expansion "line-begins" is in many ways a more useful way of thinking about this element.  <gi>lb</gi> is an empty element
-        to mark the point at which the line breaks (or begins).</p>
+    <p>EpiDoc follows TEI practice in marking line beginnings on the support (as opposed to verse lines) using the <gi>lb</gi>.
+        <gi>lb</gi> is an empty element to mark the point at which the line begins.</p>
 
     <p>Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition
-        of an entire line needs to be marked in an attribute on the preceding <gi>lb</gi>. For this reason, therefore, it is
+        of an entire line needs to be marked in an attribute in the <gi>lb</gi>. For this reason, therefore, it is
         our convention to place an <gi>lb</gi> at the beginning of every epigraphic line in the edition, including the first.
-        Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current and the following line-break.
+        Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current and the following line-begin.
         (See example below.)</p>
 
     <cit>
@@ -78,6 +77,10 @@ End license statement: do not remove -->
                 <name>Charlotte Tupman</name>
                 <name/>
             </respStmt></bibl>
+            <bibl><respStmt>
+                <resp>author</resp>
+                <name>Thomas Kollatz</name>
+                <name/>
         </listBibl>
     </div>
 </div>
