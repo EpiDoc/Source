@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-02-18T17:46:58Z. . 
+Schema generated from ODD source 2025-12-12T12:05:28Z. . 
 TEI Edition: P5 Version 4.9.0. Last updated on 24th January 2025, revision f73186978 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.9.0/ 
   
@@ -12301,7 +12301,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <optional>
             <attribute name="evidence">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Suggested values include: 1] archaeological-context; 2] internal-date; 3] lettering; 4] material-context; 5] nomenclature; 6] office; 7] prosopography; 8] textual-context; 9] titulature</a:documentation>
+Suggested values include: 1] archaeological-context; 2] internal-date; 3] lettering; 4] material-context; 5] nomenclature; 6] office; 7] prosopography; 8] textual-context; 9] titulature; 10] iconography; 11] artistic-style</a:documentation>
                <list>
                   <choice>
                      <value>archaeological-context</value>
@@ -12309,19 +12309,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                      <value>internal-date</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                      <value>lettering</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                      <value>material-context</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                      <value>nomenclature</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                      <value>office</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                      <value>prosopography</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                      <value>textual-context</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                      <value>titulature</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                     <value>iconography</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                     <value>artistic-style</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                      <data type="token">
                         <param name="pattern">[^\p{C}\p{Z}]+</param>
                      </data>
@@ -12333,19 +12337,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                         <value>internal-date</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                         <value>lettering</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                         <value>material-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                         <value>nomenclature</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                         <value>office</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                         <value>prosopography</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                         <value>textual-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                         <value>titulature</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                        <value>iconography</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                        <value>artistic-style</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>
@@ -12358,19 +12366,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                         <value>internal-date</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                         <value>lettering</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                         <value>material-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                         <value>nomenclature</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                         <value>office</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                         <value>prosopography</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                         <value>textual-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                         <value>titulature</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                        <value>iconography</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                        <value>artistic-style</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>
@@ -12383,19 +12395,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                         <value>internal-date</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                         <value>lettering</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                         <value>material-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                         <value>nomenclature</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                         <value>office</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                         <value>prosopography</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                         <value>textual-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                         <value>titulature</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                        <value>iconography</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                        <value>artistic-style</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>
@@ -12408,19 +12424,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                         <value>internal-date</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                         <value>lettering</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                         <value>material-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                         <value>nomenclature</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                         <value>office</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                         <value>prosopography</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                         <value>textual-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                         <value>titulature</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                        <value>iconography</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                        <value>artistic-style</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>
@@ -12433,19 +12453,23 @@ Suggested values include: 1] archaeological-context; 2] internal-date; 3] letter
                         <value>internal-date</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by explicit internal date</a:documentation>
                         <value>lettering</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated palaeographically</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated palaeographically</a:documentation>
                         <value>material-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the material, iconographic or other physical context of the object itself</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by material, technique or other physical context of the object itself</a:documentation>
                         <value>nomenclature</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by nomenclature or onomastics</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by nomenclature or onomastics</a:documentation>
                         <value>office</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by an office or rank, e.g. the reign of an emperor or other ruler</a:documentation>
                         <value>prosopography</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Text dated by known persons named or implied within it</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by known persons named or implied within the text</a:documentation>
                         <value>textual-context</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date or titles)</a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated via textual or linguistic context (other than explicit date, names or titles)</a:documentation>
                         <value>titulature</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the use of official titles</a:documentation>
+                        <value>iconography</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by the subject or theme depicted in the art associated with the inscription</a:documentation>
+                        <value>artistic-style</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dated by stylistic or decorative features of the art associated with the inscription</a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>

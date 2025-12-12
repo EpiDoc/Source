@@ -4,7 +4,7 @@
 <!-- Start license statement: do not remove 
     
 EpiDoc Schema
-Copyright (c) 2008-2014 by all contributors listed in <titleStmt>, below.
+Copyright (c) 2008-2025 by all contributors listed in <titleStmt>, below.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -53,6 +53,7 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2025-12-12">updated open list of values for origDate/@evidence (as per EpiDoc-Markup discussion)</change>
             <change who="#EMo" when="2025-02-18">release 9.7: Aligned schema with TEI v. 4.9.0</change>
             <change who="#GB" when="2024-10-28">stopped omitting `metDecl` from verse module (as per Bug #192)</change>
             <change who="#MF" when="2024-03-15">release 9.6: Aligned schema with TEI v. 4.7.0</change>
@@ -556,25 +557,31 @@ End license statement: do not remove -->
                                     <desc xml:lang="en" versionDate="2020-02-17">Dated by explicit internal date</desc>
                                 </valItem>
                                 <valItem ident="lettering">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated palaeographically</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated palaeographically</desc>
                                 </valItem>
                                 <valItem ident="material-context">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Dated by the material, iconographic or other physical context of the object itself</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by material, technique or other physical context of the object itself</desc>
                                 </valItem>
                                 <valItem ident="nomenclature">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by nomenclature or onomastics</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by nomenclature or onomastics</desc>
                                 </valItem>
                                 <valItem ident="office">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by an office or rank, e.g. the reign of an emperor or other ruler</desc>
                                 </valItem>
                                 <valItem ident="prosopography">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Text dated by known persons named or implied within it</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by known persons named or implied within the text</desc>
                                 </valItem>
                                 <valItem ident="textual-context">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Dated via textual or linguistic context (other than explicit date or titles)</desc>
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated via textual or linguistic context (other than explicit date, names or titles)</desc>
                                 </valItem>
                                 <valItem ident="titulature">
                                     <desc xml:lang="en" versionDate="2020-02-17">Dated by the use of official titles</desc>
+                                </valItem>
+                                <valItem ident="iconography">
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by the subject or theme depicted in the art associated with the inscription</desc>
+                                </valItem>
+                                <valItem ident="artistic-style">
+                                    <desc xml:lang="en" versionDate="2025-12-12">Dated by stylistic or decorative features of the art associated with the inscription</desc>
                                 </valItem>
                             </valList>
                         </attDef>
