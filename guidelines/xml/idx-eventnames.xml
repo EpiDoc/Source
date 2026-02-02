@@ -25,35 +25,34 @@ End license statement: do not remove -->
 <!-- $Id$ -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
-<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-events" xml:lang="en">
-    <head>Events</head>
-    <p>A list of historical events (battles, coronations, conversions, marriages, etc.)</p>
+<div xmlns="http://www.tei-c.org/ns/1.0" xml:id="idx-eventnames" xml:lang="en">
+    <head>Names of Events</head>
+    <p>Tagging of events named in the transcribed text or elsewhere, usually for the purposes of indexing or searching the corpus.</p>
     <p>
         <specList>
-            <specDesc key="listEvent"/>
-            <specDesc key="event"/>
             <specDesc key="eventName"/>
-            <specDesc key="label"/>
+            <specDesc key="event"/>
+            <specDesc key="listEvent"/>
         </specList>
     </p>
     
+    <p>Event names may be tagged using the <gi>eventName</gi> element. It may be advisable to attach a <att>nymRef</att> or <att>key</att>
+        attribute point to an <ref target="idx-other.html">authority list</ref> in a <gi>listEvent</gi> elsewhere in the project,
+        or use the <att>ref</att> attribute point to an external authority.</p>
+    
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <listEvent>
-            <event xml:id="event0" from="0161" to="0166"><label>Parthian War</label></event>
-            <event xml:id="event1" when="0212"><label>Citizenship Edict of Caracalla</label></event>
-            <event xml:id="event2" from="0222-03-13" to="0235-03-18"><label>Reign of Severus Alexander</label></event>
-            <event xml:id="event3" when="0583"><label>Birth of the "New Theodosius"</label></event>
-        </listEvent>
+        <eventName nymRef="eventslist.xml#bellumDacicum">bellum Dacicum</eventName> <!-- CIL VIII 1026, EDH HD051091 -->
+    </egXML>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        <eventName ref="https://www.wikidata.org/wiki/Q650197">Lupercalia</eventName> <!-- CIL IV 06882 -->
     </egXML>
     
     <divGen type="seealso"/>
     
-    
-    <div xml:id="idx-events-responsibility">
+    <div xml:id="idx-eventnames-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
         </listBibl>
     </div>
