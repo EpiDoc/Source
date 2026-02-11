@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xml:base="file:/__w/Source/Source/schema/tei-epidoc.xml" xml:lang="en"><?TEIVERSION P5 Version 4.10.2. Last updated on
         4th September 2025, revision bcfa98f42?>
-    <teiHeader>
-        <fileDesc>
+    <teiHeader><fileDesc>
             <titleStmt>
                 <title>EpiDoc schema</title>
                 <author xml:id="GB">Gabriel Bodard</author>
@@ -25,8 +24,14 @@
             <sourceDesc>
                 <p>created electronically</p>
             </sourceDesc>
-        </fileDesc>
-        <revisionDesc>
+        </fileDesc><tei:encodingDesc><tei:constraintDecl scheme="schematron" queryBinding="xslt2">
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="rng" uri="http://relaxng.org/ns/structure/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="rna" uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" prefix="sch1x" uri="http://www.ascc.net/xml/schematron"/>
+      </tei:constraintDecl></tei:encodingDesc><revisionDesc>
             <change who="#SV" when="2026-01-26">release 9.8: Aligned schema with TEI v. 4.10.2</change>
             <change who="#GB" when="2025-12-12">updated open list of values for origDate/@evidence (as per EpiDoc-Markup discussion)</change>
             <change who="#EMo" when="2025-02-18">release 9.7: Aligned schema with TEI v. 4.9.0</change>
@@ -157,8 +162,7 @@
             <change who="#ML" when="2009-07-12">stop omitting few tags: orgName element</change>
             <change who="#GB" when="2009-06-10">removed dummy 'precision' element</change>
             <change who="#GB" when="2008-11-20">Created bare ODD from Roma</change>
-        </revisionDesc>
-    </teiHeader>
+        </revisionDesc></teiHeader>
     <text>
         <front>
             <divGen type="toc"/>

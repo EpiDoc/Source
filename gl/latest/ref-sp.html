@@ -30,7 +30,7 @@ $(window).load(function() {
    tei_att.written.attributes,
    (
       tei_model.global*,
-      ( tei_model.stageLike, tei_model.global* )*,
+      ( ( tei_model.stageLike, tei_model.global* )* ),
       (
          (
             ( tei_speaker, tei_model.global* ),
@@ -61,15 +61,17 @@ $(window).load(function() {
       ),
       (
          (
-            tei_lg
-          | tei_model.lLike
-          | tei_model.pLike
-          | tei_model.listLike
-          | tei_model.attributable
-          | tei_q
-          | tei_model.stageLike
-         ),
-         tei_model.global*
-      )*
+            (
+               tei_lg
+             | tei_model.lLike
+             | tei_model.pLike
+             | tei_model.listLike
+             | tei_model.attributable
+             | tei_q
+             | tei_model.stageLike
+            ),
+            tei_model.global*
+         )*
+      )
    )
-}</pre></td></tr></table></div></div><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: 9.8</p><p class="creationdate">Date: 2026-02-10</p></address></div></body></html>
+}</pre></td></tr></table></div></div><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: post 9.8 dev</p><p class="creationdate">Date: 2026-02-11</p></address></div></body></html>
