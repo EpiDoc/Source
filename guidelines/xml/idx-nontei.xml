@@ -29,10 +29,7 @@ End license statement: do not remove -->
     <head>External Vocabularies (non TEI)</head>
     <p>Controlled Vocabularies and Authority Lists available online, or maintained in a non-TEI environment.</p>
     
-<p>If you want to link to a specific definition of an information as a reference, you might want to
-        point to external vocabularies, contribute in those with new terms and align where possible.
-        In your Epidoc file you can insert references to these Authority Lists or Controlled
-        Vocabularies.</p>
+<p>If you want to link to a specific definition of an information as a reference, you might want to point to external vocabularies, contribute in those with new terms and align where possible. In your Epidoc file you can insert references to these authority lists or controlled vocabularies.</p>
     
    <p>The easiest way to do this is by inserting a stable uri into the element with a <att>ref</att> as in the following example.</p> 
     
@@ -40,57 +37,51 @@ End license statement: do not remove -->
         <objectType ref="http://www.eagle-network.eu/voc/objtyp/lod/29">Altar</objectType>    
     </egXML>
     
-    <p>The information contained in the TEI header which contains the type of monument
-        on which the inscription is written. The uri in the <att>ref</att> points to an external vocabulary,
-        which in this case is a vocabulary developed by the EAGLE consortium.</p>
+    <p>The information contained in the <tag>supportDesc</tag> which contains the type of monument on which the inscription is written. The uri in the <att>ref</att> points to an external vocabulary, which in this case is a vocabulary developed by the EAGLE consortium.</p>
     
-    <p>These are the elements in which you might like to refer to an external source of information to align you definition.</p>
-    
-    <p>For each of these there might be many external vocabularies, which are listed below each one.</p>
+    <p>Herebelow are some fields for which you might like to refer to an external source of information to align your term or concept. For each of these there might be many external vocabularies, some of which are listed for each.</p>
     
     <list>
         <item>
-            <ref target="idx-keywords.html">Type of Inscription</ref>
+            Type of Inscription (<ref target="idx-keywords.html">gl</ref>)
             <list>
                 <item><ref target="http://www.eagle-network.eu/voc/typeins.html">EAGLE Type of Inscription Vocabulary</ref></item>
+                <item><ref target="https://ontology.inscriptiones.org/type_of_inscription">FAIR Epigraphic Vocabularies: Type of Inscription</ref></item>
             </list>
         </item>
         <item>
-            <ref target="supp-descobject.html">Object Type</ref>
+            Object Type (<ref target="supp-descobject.html">gl</ref>)
             <list>
-                <item><ref target="http://www.eagle-network.eu/voc/objtyp.html">EAGLE Object Type Vocabulary (including monuments)</ref>
-                </item>
+                <item><ref target="http://www.eagle-network.eu/voc/objtyp.html">EAGLE Object Type Vocabulary (including monuments)</ref></item>
                 <item><ref target="http://www.getty.edu/research/tools/vocabularies/aat/">Getty Museum</ref></item>
-                <!--  <item><ref target="">English Heritage</ref></item>-->
             </list>
         </item>
         <item>
-            <ref target="supp-desctext.html">Engraving Technique</ref>
+            Engraving Technique (<ref target="supp-desctext.html">gl</ref>)
             <list>
-                <item><ref target="http://www.eagle-network.eu/voc/writing.html">EAGLE Engraving Technique Vocabulary</ref>
-                </item>
+                <item><ref target="http://www.eagle-network.eu/voc/writing.html">EAGLE Engraving Technique Vocabulary</ref></item>
+                <item><ref target="https://ontology.inscriptiones.org/execution_technique">FAIR Epigraphic Vocabularies: Execution Technique</ref></item>
             </list>
         </item>
        <item>
-           <ref target="supp-description.html">Material</ref>
+           Material (<ref target="supp-description.html">gl</ref>)
            <list>
-               <item><ref target="http://www.eagle-network.eu/voc/material.html">EAGLE Material Vocabulary. 
-                   This Vocabulary integrates values from the first three 
-                   hierarchical levels of the Salzburg Simplified Petrography</ref>
+               <item><ref target="http://www.eagle-network.eu/voc/material.html">EAGLE Material Vocabulary</ref>
+                   (integrates values from the first three hierarchical levels of the Salzburg Simplified Petrography, below)
                </item>
                <item><ref target="http://chc.sbg.ac.at/sri/thesaurus/">Salzburg Simplified Petrography</ref></item>
            </list>
         </item>
         <item>
-            <ref target="supp-historigdate.html">Date of Origin</ref>
+            Date of Origin (<ref target="supp-historigdate.html">gl</ref>)
             <list>
-                <item><ref target="http://www.eagle-network.eu/voc/dates.html">EAGLE Dating Criteria Vocabulary</ref>
-                </item>
+                <item><ref target="http://www.eagle-network.eu/voc/dates.html">EAGLE Dating Criteria Vocabulary</ref></item>
                 <item><ref target="http://perio.do/specs/">PeriodO</ref></item>
+                <item><ref target="https://chronontology.dainst.org/timeline?fq=tags:%22roman_chronology%22&amp;q=*&amp;from=0">ChronOntology</ref> (Roman chronological terms shown as an example)</item>
             </list>
         </item>
         <item>
-            <ref target="supp-description.html">State of preservation</ref>
+            State of preservation (<ref target="supp-description.html">gl</ref>)
             <list>
                 <item>
                     <ref target="http://www.eagle-network.eu/voc/statepreserv.html">EAGLE State of Preservation vocabulary</ref>
@@ -98,7 +89,7 @@ End license statement: do not remove -->
             </list>
         </item>
         <item>
-            <ref target="supp-descdecor.html">Decoration</ref>
+            Decoration (<ref target="supp-descdecor.html">gl</ref>)
             <list>
                 <item>
                     <ref target="http://www.eagle-network.eu/voc/decor.html">EAGLE Decoration vocabulary</ref>
@@ -107,23 +98,23 @@ End license statement: do not remove -->
         </item>
     </list>
     
-    <p>To link to the EAGLE Vocabularies, you can browse them on Tematres and then insert the 
-    uri which is built in the following form: <code>http://www.eagle-network.eu/voc/objtyp/lod/63</code></p>
+    <p>To link to the EAGLE Vocabularies, you can browse them on Tematres and then insert the uri which is built in the following form: <code>http://www.eagle-network.eu/voc/objtyp/lod/63</code>. If you already have XML files in EpiDoc and want to insert EAGLE Vocabulary links, you might find useful the XSLT (still under development) used by the Epigraphic Database Heidelberg, which you can find <ref target="https://github.com/EAGLE-BPN/epidocupconversion/blob/master/edh/popwithvoc.xsl">here</ref>.</p>
     
-    <p>If you already have XML files in EpiDoc and want to 
-        insert the links, you might find useful the XSLT (still under development)
-        used by the Epigraphic Database Heidelberg, which you can find
-        <ref target="https://github.com/EAGLE-BPN/epidocupconversion/blob/master/edh/popwithvoc.xsl
-">here</ref>
-    </p>
+    <div>
+        <head>General vocabularies or ontologies</head>
+        <list>
+            <item><ref target="https://www.wikidata.org/wiki/Wikidata:WikiProject_IDEA/Inscriptions">Recommendations for Epigraphic Metadata in Wikidata</ref> (from IDEA project)</item>
+            <item><ref target="https://www.wikidata.org/wiki/User:Anna_Clara_Maniero_Azzolini/Altinum">Mapping EDR fields and values with Wikidata</ref> (by Anna Clara Maniero Azzolini)</item>
+            <item><ref target="https://greek-metrical-inscriptions.wikibase.cloud/wiki/Main_Page">Linked Open Data and Greek Metrical Inscriptions</ref> (by Pietro Ortimini)</item>
+        </list>
+    </div>
         
     <div xml:id="idx-nontei-responsibility">
-
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Pietro Liuzzo</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Pietro Liuzzo</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
