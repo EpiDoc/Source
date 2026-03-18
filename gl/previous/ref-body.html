@@ -28,25 +28,38 @@ $(window).load(function() {
    tei_att.declaring.attributes,
    (
       tei_model.global*,
-      ( tei_model.divTop, ( tei_model.global | tei_model.divTop )* )?,
-      ( tei_model.divGenLike, ( tei_model.global | tei_model.divGenLike )* )?,
+      ( ( tei_model.divTop, ( tei_model.global | tei_model.divTop )* )? ),
       (
-         ( tei_model.divLike, ( tei_model.global | tei_model.divGenLike )* )+
-       | ( tei_model.div1Like, ( tei_model.global | tei_model.divGenLike )* )+
+         ( tei_model.divGenLike, ( tei_model.global | tei_model.divGenLike )* )?
+      ),
+      (
+         (
+            ( tei_model.divLike, ( tei_model.global | tei_model.divGenLike )* )+
+         )
        | (
-            ( ( schemaSpec | tei_model.common ), tei_model.global* )+,
+            (
+               tei_model.div1Like,
+               ( tei_model.global | tei_model.divGenLike )*
+            )+
+         )
+       | (
+            ( ( ( schemaSpec | tei_model.common ), tei_model.global* )+ ),
             (
                (
-                  tei_model.divLike,
-                  ( tei_model.global | tei_model.divGenLike )*
-               )+
+                  (
+                     tei_model.divLike,
+                     ( tei_model.global | tei_model.divGenLike )*
+                  )+
+               )
              | (
-                  tei_model.div1Like,
-                  ( tei_model.global | tei_model.divGenLike )*
-               )+
+                  (
+                     tei_model.div1Like,
+                     ( tei_model.global | tei_model.divGenLike )*
+                  )+
+               )
             )?
          )
       ),
-      ( tei_model.divBottom, tei_model.global* )*
+      ( ( tei_model.divBottom, tei_model.global* )* )
    )
-}</pre></td></tr></table></div></div><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: 9.8</p><p class="creationdate">Date: 2026-02-10</p></address></div></body></html>
+}</pre></td></tr></table></div></div><div xmlns="" class="stdfooter"><address><p class="version">EpiDoc version: post 9.8 dev</p><p class="creationdate">Date: 2026-02-11</p></address></div></body></html>
