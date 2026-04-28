@@ -35,19 +35,13 @@ End license statement: do not remove -->
             <ptr target="a"/>
             </listRef>--></p> 
    
-    <p>EpiDoc follows TEI practice in marking line beginnings on the support (as opposed to verse lines) using the <gi>lb</gi>.
-        <gi>lb</gi> is an empty element to mark the point at which the line begins.</p>
+    <p>EpiDoc follows TEI practice in marking line beginnings on the support (as opposed to verse lines or other semantic lines) using the element <gi>lb</gi>. <gi>lb</gi> is an empty element to mark the point at which the line begins.</p>
 
-    <p>Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition
-        of an entire line needs to be marked in an attribute in the <gi>lb</gi>. For this reason, therefore, it is
-        our convention to place an <gi>lb</gi> at the beginning of every epigraphic line in the edition, including the first.
-        Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current and the following line-begin.
-        (See example below.)</p>
+    <p>Because there is no containing element encapsulating lines, any information about the numbering, rendition, or condition of an entire line needs to be marked in an attribute in the <gi>lb</gi>. For this reason, therefore, it is our convention to place an <gi>lb</gi> at the beginning of every epigraphic line in the edition, including the first. Any <att>rend</att> or numbering attributes on that <gi>lb</gi> refer to all text between the current and the following line-begins, or the end of the containing <gi>ab</gi>, <gi>p</gi> or <gi>l</gi> (etc.). (See example below.)</p>
 
     <cit>
         <quote>5</quote>
-        <bibl corresp="#london"/>
-        
+        <bibl corresp="#london"/>        
     </cit>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="london">

@@ -29,54 +29,46 @@ End license statement: do not remove -->
     <head>Line Breaks: Direction of Text</head>
     <p rend="tag-defs">
         <specList>
-                <specDesc key="lb"/>
-            </specList>
+            <specDesc key="lb"/>
+        </specList>
     </p>
-    <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi>, attributes on this
-        element can be understood to refer to the content of that line, i.e. all text before the
-        following <gi>lb</gi> (see also <ref target="trans-linebreak.html">Line Breaks</ref>). 
-    At present, therefore, EpiDoc recommends the use of the following values in the <att>style</att>
-    attribute on the <gi>lb</gi> immediately preceding the line of text in question:</p>
+    <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi> (see <ref target="trans-linebreak.html">Line Breaks</ref>), most attributes on this element should be understood to refer to the content of that line, i.e. all text before the following <gi>lb</gi> or the end of the containing <gi>ab</gi>, <gi>l</gi>, etc.</p>
+    
+    <div><head>Text direction</head>
+        
+        <cit>
+            <quote>abc  ← </quote>
+            <bibl corresp="#seg"/>
+        </cit>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
+            <ab><lb style="direction:rtl"/>abc</ab>
+        </egXML>
+        
+    <p>In most inscriptions, the direction of text is a feature of the language and writing system. Greek and Latin and usually written left-to-right; Arabic and Hebrew are usually written right-to-left. Some inscriptions are exceptions to this, but nonetheless well-defined, such a boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. In these cases, nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
+    <p>Where a line of text is unexpectedly or unpredictably in a different direction or orientation than usual, this information may be indicated in Leiden with an arrow in the right margin of the text; pointing left in the case of right-to-left text, or right in the case of unexpectedly left-to-right text. Examples might include a line of right-to-left Greek or Latin in an otherwise unidirectional text; two subsequext left-to-right lines in an otherwise regular boustrophedon; writing in dipinti on an archaic Greek vase, which annotates human figures in a variety of orientations. In all cases, the text woud generally be transcribed according to the usual direction of the writing system used—left to right for Greek or Latin.</p>
+    <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left).</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <lb style="text-direction:l-to-r"/>
-        <lb style="text-direction:r-to-l"/>
+        <lb style="direction:ltr"/>a line of left to right text
+        <lb style="direction:rtl"/>a line of right to left text
     </egXML>
-
-    <p>Note that including the directionality of the text on <gi>lb</gi> is a customized usage of the element, which is an empty element in TEI. The direction of texts can also be indicated on higher-level elements, including <gi>div</gi>, if the <att>style</att> attribute applies to all text within that element.</p> 
-    <p>In the case of most inscriptions, left-to-right aligned text does not need to be flagged, if
-        it is the default direction of the script in question. One might need to use <att>style</att> in the case of boustrophedon text, for instance.</p>
-
+        
+<egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
+            <ab>
+                <lb n="1" style="direction:rtl"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb n="2" break="no" style="direction:ltr"/><supplied reason="lost">θ</supplied>ανόντος ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb n="3" break="no" style="direction:rtl"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
+            </ab>
+        </egXML>
+    </div>
+    
+    <div><head>Text orientation</head>
+        <p>to be added</p>
+        
     <p>Other values of <att>style</att> can be created in the case of texts written vertically, in
         a circle or spiral, or otherwise unusually. (But these values are not currently handled by the Example Stylesheets.)</p>
+        
+    </div>
     
-    <!--<p>Note: as of 31 May 2013, the EpiDoc Example Stylesheets do not provide any support for the handling of these
-        recommended values. There is a bug report (<ref target="https://sourceforge.net/p/epidoc/bugs/118/">Ticket no.
-            118</ref>) open against the stylesheets for this reason, which should be consulted for the current state of
-        affairs. If this deficiency still obtained at the time this guidelines page was last generated, it is surely
-        reflected in the rendering of the examples below.</p>-->
-
-
-    <cit>
-        <quote>abc  ← </quote>
-        <bibl corresp="#seg"/></cit>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-        <ab><lb/>abc</ab></egXML>
-
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-        <ab><lb style="text-direction:r-to-l"/>abc</ab>
-    </egXML>
-
-    
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
-        <ab>
-            <lb n="1" style="text-direction:r-to-l"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb
-                n="2" break="no" style="text-direction:l-to-r"/><supplied reason="lost">θ</supplied>ανόντος
-            ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb
-                n="3" break="no" style="text-direction:r-to-l"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
-        </ab>
-    </egXML>
     
     <divGen type="seealso"/>
     
@@ -84,8 +76,11 @@ End license statement: do not remove -->
 
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Anna Loro</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Nicolas Souchon</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
