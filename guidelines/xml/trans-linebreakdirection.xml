@@ -47,7 +47,13 @@ End license statement: do not remove -->
         </egXML>
         
     <p>In most inscriptions, the direction of text is a feature of the language and writing system. Greek and Latin are usually written left-to-right; Arabic and Hebrew are usually written right-to-left. Some inscriptions are exceptions to this, but nonetheless well-defined, such a boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. In these cases, nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
-    <p>Where a line of text is unexpectedly or unpredictably in a different direction or orientation than usual, this information may be indicated in Leiden with an arrow in the right margin of the text; pointing left in the case of right-to-left text, or right in the case of unexpectedly left-to-right text. Examples might include a line of right-to-left Greek or Latin in an otherwise unidirectional text; two subsequent left-to-right lines in an otherwise regular boustrophedon; writing in dipinti on an archaic Greek vase, which annotates human figures in a variety of orientations. In all cases, the text would generally be transcribed according to the usual direction of the writing system used—left to right for Greek or Latin.</p>
+        
+        <!-- * (direction of sense vs. facing of characters? ==> usage may differ between disciplines)
+                     * in Greek/Latin, horizontal arrows represent direction of reading
+                     * in Egyptian, horizontal arrows represent facing of characters
+                     * in Ogham, no horizontal arrows needed (? CHECK NORA ?) -->
+        
+    <p>Where a line of text is unexpectedly or unpredictably in a different direction than usual, this information may be indicated in Leiden with an arrow in the right margin of the text; pointing left in the case of right-to-left text, or right in the case of unexpectedly left-to-right text. Examples might include a line of right-to-left Greek or Latin in an otherwise unidirectional text; two subsequent left-to-right lines in an otherwise regular boustrophedon; writing in dipinti on an archaic Greek vase, which annotates human figures in a variety of both directions and orientations. In all cases, the text would generally be transcribed according to the usual direction of the writing system used—left to right for Greek or Latin.</p>
     <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left).</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -56,7 +62,7 @@ End license statement: do not remove -->
     </egXML>
         
 <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
-            <ab>
+            <ab rend="boustrophedon">
                 <lb n="1" style="direction:rtl"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb n="2" break="no" style="direction:ltr"/><supplied reason="lost">θ</supplied>ανόντος ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb n="3" break="no" style="direction:rtl"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
             </ab>
         </egXML>
@@ -64,6 +70,16 @@ End license statement: do not remove -->
     
     <div><head>Text orientation</head>
         <p>to be added</p>
+        
+        <!-- * define "orientation" = layout/rotation of lines on surface
+                * (as opposed to direction)
+                * (and therefore often in association with direction)
+                * features that we have implemented (for dipinti/Egyptian/Ogham): up/down/diagonal/circle
+                * if you need more, customise
+                * examples below
+                * as with direction, orientation should only be recorded if it is relevant to you, e.g. in unusual, unexpected or unpredictable cases
+        -->
+        
         
     <p>Other values of <att>style</att> can be created in the case of texts written vertically, in
         a circle or spiral, or otherwise unusually. (But these values are not currently handled by the Example Stylesheets.)</p>
