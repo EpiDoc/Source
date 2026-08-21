@@ -53,9 +53,7 @@ End license statement: do not remove -->
             <item>grc-Latn = Ancient Greek Language (to 1453), rendered in Latin script</item>
         </list>
         <p>When the IANA registry does not provide appropriate codes, then an EpiDoc project may devise "private use subtags", so long as they are internally defined in the EpiDoc file as outlined in the following paragraph and so long as they conform syntactically to the specifications laid out in RFC 5646, sections <ref target="http://tools.ietf.org/html/rfc5646#section-2.1">2.1: Syntax</ref> and <ref target="http://tools.ietf.org/html/rfc5646#section-4.6">4.6: Considerations for Private Use Subtags</ref>. For example, the Campā Inscriptions team determined that the two Cham language subtags (cja = Western Cham and cjm = Eastern Cham) and the associated script subtag (Cham) were substantively different from the ancient Cham language and script represented in the inscriptions. Therefore the private use subtag "x-oldcam-latn-ci" was invented and given the project-specific meaning "Old Cam language in Old Cam script transliterated in Latin characters." Whenever possible, EpiDoc projects and practitioners should undertake to register new subtags with the IANA for the benefit of others. A procedure for same is set out in RFC 5646 <ref target="http://tools.ietf.org/html/rfc5646#section-3.5">Section 3.5</ref>.</p>
-        
         <!--<p>Describe langUsage here.</p>-->
-        
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <langUsage>
                 <language ident="ar">Arabic</language>
@@ -75,13 +73,33 @@ End license statement: do not remove -->
     </div>
     <div>
         <head>Character Encodings and Fonts</head>
+        <p>The encoding used to represent the XML document is indicated in the XML declaration using the <att>encoding</att> attribute. For EpiDoc documents, UTF-8 encoding is generally used.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="">
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        </egXML>
         <p>tba</p>
     </div>
     <div>
         <head>Indicating the modern language and script used throughout the EpiDoc file</head>
-        <p>tba</p>
+        <p>The modern language predominantly used in an EpiDoc document can be indicated at the level of the <tag>TEI</tag> element using the <att>xml:lang</att> attribute. When necessary, this attribute can also specify the script used by means of a script subtag conforming to <ref target="http://tools.ietf.org/html/rfc5646">RFC 5646: <title>Tags for Identifying Languages</title></ref>.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr2.unibo.it/en/gvcyr003">
+            <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">...</TEI>
+        </egXML>
+        <p>If an element contains text written in a language different from that defined by the <att>xml:lang</att> attribute of the <tag>TEI</tag> element, this language can be declared with its own <att>xml:lang</att> attribute. If only a passage is written in a different language, this passage can be marked using the <tag>foreign</tag> element and its <att>xml:lang</att> attribute.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr2.unibo.it/en/gvcyr003">
+            <div type="commentary">
+                <p>For <foreign xml:lang="grc">μναμῆιον</foreign> and <foreign xml:lang="grc">σαμῆιον</foreign>, at ll. 2 and 5, instead of an epic reading with diaeresis, the reading of suffixe <foreign xml:lang="grc">ῆιο</foreign> as dissyllabic along with the dialect is more plausible. See <bibl><ptr target="#cdl2000"/>, pp. <citedRange>22-24</citedRange></bibl>. Both words are placed so as to create a meaningful echo. Those words would well appear in a funerary context and Peek's restorations clearly rely on such an interpretation. However the support of funerary verse is normally a base or a stele. A panel might better fit a honorific monument.</p>
+            </div>
+        </egXML>
+        <p>In a multilingual document, it is possible to indicate the document's default language at the level of the <tag>TEI</tag> element using <att>xml:lang</att>. Elements whose content belongs to a different language can then carry their own <att>xml:lang</att> value.</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://iospe.kcl.ac.uk/1.1.html">
+            <handNote>
+                <seg xml:lang="ru">Буквы вырезаны аккуратно, украшены небольшими апексами. Тета с точкой. Тета и омикрон уменьшенного размера. Ню с короткой правой гастой. Верхний и нижний штрихи сигмы по большей части параллельны друг другу, но иногда слегка рвзведены.</seg>
+                <seg xml:lang="en">Letters are carefully cut, with light serifs. Dotted theta; theta and omicron smaller than other letters; nu with short right hasta; top and bottom strokes of sigma are for the most part horizontal, but occasionally slightly splayed.</seg>
+                <height unit="cm">0,6</height>
+            </handNote>
+        </egXML>
     </div>
-    
     <div>
         <head>Signaling the languages and scripts used in the texts and translations being presented</head>
         <p>The primary and secondary language(s) of an inscription should be declared in the <gi>textLang</gi> element contained in the TEI header; the primary language should be contained within the <att>mainLang</att> attribute and any other languages should be listed in the <att>otherLangs</att> attribute.
@@ -101,7 +119,6 @@ End license statement: do not remove -->
             </div>
         </egXML>
     </div>
-    
     <div>
         <head>Marking transitions in language and/or script in the text</head>
         <p>A single language should be indicated as the default for a text by including it in the <att>mainLang</att> attribute on the <gi>textLang</gi> element. The default script for a given language is assumed unless otherwise indicated (i.e. Greek will be written in the Greek alphabet, etc.). When transitions can between languages and/or script are limited in scope (i.e. a single word, a short phrase, etc. in a language differing from that declare in the <att>mainLang</att> attribute in the header), the word or words should be contained within a <gi>foreign</gi> element (see <ref target="trans-foreigntext.xml">Multi-Language Texts</ref>). Language and/or script may be identified by including the attribute <att>xml:lang</att>. In the following brief example from the US Epigraphy Project, the inscription begins in Latin but transitions to Greek which is written in the Latin script:</p>
@@ -151,15 +168,15 @@ End license statement: do not remove -->
             </div>
         </egXML>
     </div>
-    
     <divGen type="seealso"/>
-    
+
     <div xml:id="supp-title-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Nicolas Souchon</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
