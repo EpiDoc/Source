@@ -1,7 +1,7 @@
 <!-- Start license statement: do not remove 
 
 EpiDoc: Guidelines for Structured Markup of Epigraphic Texts in TEI
-Edition 8 copyright © 2008–2016 by all contributors listed in <div type="gl-responsibility">, below.
+Edition 9 copyright © 2008–2026 by all contributors listed in <div type="gl-responsibility">, below.
 Additional contributors' copyright may be designated in individual source files.
 
 This program is free software; you can redistribute it and/or
@@ -27,7 +27,7 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-commentary" xml:lang="en">
     <head>Commentary</head>
-    <p>The <tag>div</tag> with <att>type="commentary"</att> is intended to contain commentary written in prose, of any kind, concerning a text or its support, the dating criteria of either, specific parts of the text, external references, named persons and entities mentioned, etc. These commentaries can be divided into several paragraphs <tag>p</tag> or blocks <tag>ab</tag>.</p>
+    <p>The <gi>div</gi> with <att>type</att>="commentary" is intended to contain commentary written in prose, of any kind, concerning a text or its support, the dating criteria of either, specific parts of the text, external references, named persons and entities mentioned, etc. These commentaries can be divided into several paragraphs, <gi>p</gi>, or blocks, <gi>ab</gi> or <tag>div type="textpart"</tag>. In general, running prose such as this will require less inline markup than most sections of the EpiDoc file, but some features may benefit from specific encoding, a few of which are discussed below.</p>
     <div rend="tag-defs">
         <head>Relevant element documentation:</head>
         <p>
@@ -44,43 +44,46 @@ End license statement: do not remove -->
             </specList>
         </p>
     </div>
-    <div>
-        <head>Foreign-language sections</head>
-        <p>Words, expressions, or passages written in another language can be encoded using the <tag>foreign</tag> element, whose <att>xml:lang</att> attribute defines the language used (see <ref target="https://epidoc.stoa.org/gl/latest/trans-foreigntext.html">Multi-Language Texts</ref>).</p>
+    <div><head>Line-by-line commentary</head>
+        <p>As well as running prose commentary, some may include line-by-line commentary, in which the editors record epigraphic, philological, prosopographical or historical observations or analysis of specific words in the text. These sections may be encoded, depending on display preference and the length of each entry, either as a series of paragraphs, <gi>p</gi>, or as a <gi>list</gi> with one <gi>item</gi> for each entry. Each entry would generally begin with a [sometimes section and] line reference to the part of the text the commentry addresses; this may be as simple as plain text in the body of the element (<tag>p</tag>l. 6: …<tag>/p</tag>), but a more explicit encoding such as a canonical reference in <att>n</att> (<tag>p n="6"</tag>) might be desirable; the most unambiguous of all would be to use internal pointers to the lines in the text using the <att>corresp</att> attribute (the line in the text to which this line of commentary corresponds), e.g. <tag>p corresp="#sect1-line6"</tag>, assuming that each <gi>lb</gi> in the text has a unique <att>xml:id</att> that can be pointed to in this way.
+        </p>
+    </div>
+    <div>        <head>Foreign-language sections</head>
+        <p>Words, expressions, or passages written in another language may be encoded using the <gi>foreign</gi> element, whose <att>xml:lang</att> attribute defines the language used (see <ref target="trans-foreigntext.html">Multi-Language Texts</ref>).</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr.unibo.it/gvcyr008">
             <div type="commentary">
                 <p>About the rare word <foreign xml:lang="grc">καλυβός</foreign>, see commentary at <ref type="inscription">GVCyr005</ref>.</p>
             </div>
         </egXML>
+        <p>Note that in a language well-supported by Unicode such as Ancient Greek, the use of <gi>foreign</gi> is only necessary if some processing or encoding of the quoted words is anticipated.</p>
     </div>
-    <div>
-        <head>Quotes</head>
-        <p>Quotes from other references can be encoded using the <tag>quote</tag> element. The corresponding reference can be indicated with a <tag>bibl</tag> element pointing to the bibliographic reference, placed immediately after (see <ref target="https://epidoc.stoa.org/gl/latest/supp-bibliography.html">Encoding the Bibliography</ref>).</p>
+    <div>        <head>Quotes</head>
+        <p>Quotes from other references can be encoded using the <gi>quote</gi> element. The corresponding reference can be indicated with a <gi>bibl</gi> element pointing to the bibliographic reference, placed immediately after (see <ref target="supp-bibliography.html">Encoding the Bibliography</ref>).</p>
     </div>
-    <div>
-        <head>Cross-references</head>
-        <p>The <tag>ref</tag> element can be used to encode internal cross-references (to a part of the document) or external ones (to another document). Its <att>target</att> attribute contains either the value of the <att>xml:id</att> attribute of the linked element preceded by # (internal reference), or the URI or path to another document, optionally supplemented with the value of the <att>xml:id</att> attribute of the linked element (external reference).</p>
+    <div>        <head>Cross-references</head>
+        <p>The <gi>ref</gi> element can be used to encode internal cross-references (to a part of the document) or external ones (to another document). Its <att>target</att> attribute contains either the value of the <att>xml:id</att> attribute of the linked element preceded by # (internal reference), or the URI or path to another document, optionally supplemented with the value of the <att>xml:id</att> attribute of the linked element (external reference).</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://isaw.nyu.edu/publications/inscriptions/campa/inscriptions/C0224.html">
             <div type="commentary">
                 <ab>This is not the only instance of an unfinished inscription: see <ref target="C0128.xml">C. 128</ref>.</ab>
             </div>
         </egXML>
     </div>
-    <div>
-        <head>Bibliographic references</head>
-        <p>Bibliographic references cited in commentaries can be encoded with the <tag>bibl</tag> element (see <ref target="https://epidoc.stoa.org/gl/latest/supp-bibliography.html">Encoding the Bibliography</ref>).</p>
+    <div>        <head>Bibliographic references</head>
+        <p>Bibliographic references cited in commentaries can be encoded with the <gi>bibl</gi> element (see <ref target="supp-bibliography.html">Encoding the Bibliography</ref>).</p>
         <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr2.unibo.it/en/gvcyr002">
             <div type="commentary">
                 <p>This well made epigram develops the theme of malediction by playing on the name of the deceased woman 'Arata', which etymologically means 'accursed', directly through the use of <foreign xml:lang="grc">ἀρά</foreign> and indirectly through two puns based on the assonance with the interrogative particle <foreign xml:lang="grc">ἇρα</foreign> and with <foreign xml:lang="grc">ἀρετά</foreign> 'virtue'. More at <bibl><ptr target="#cdl2018"/></bibl>.</p>
             </div>
         </egXML>
     </div>
+   
     <divGen type="seealso"/>
     
     <div xml:id="supp-commentary-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
             <bibl><respStmt><resp>author</resp><name>Nicolas Souchon</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Gabriel Bodard</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
