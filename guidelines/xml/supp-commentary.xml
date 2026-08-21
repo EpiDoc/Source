@@ -27,24 +27,60 @@ End license statement: do not remove -->
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="supp-commentary" xml:lang="en">
     <head>Commentary</head>
-    <p>gloss</p>
+    <p>The <tag>div</tag> with <att>type="commentary"</att> is intended to contain commentary written in prose, of any kind, concerning a text or its support, the dating criteria of either, specific parts of the text, external references, named persons and entities mentioned, etc. These commentaries can be divided into several paragraphs <tag>p</tag> or blocks <tag>ab</tag>.</p>
     <div rend="tag-defs">
         <head>Relevant element documentation:</head>
         <p>
             <specList>
                 <specDesc key="div"/>
+                <specDesc key="p"/>
+                <specDesc key="ab"/>
+                <specDesc key="foreign"/>
+                <specDesc key="quote"/>
+                <specDesc key="bibl"/>
+                <specDesc key="citedRange"/>
+                <specDesc key="ref"/>
+                <specDesc key="ptr"/>
             </specList>
         </p>
     </div>
-    
-    <!-- can have div's or p's  here. Divs are for subsections. -->
-    
+    <div>
+        <head>Foreign-language sections</head>
+        <p>Words, expressions, or passages written in another language can be encoded using the <tag>foreign</tag> element, whose <att>xml:lang</att> attribute defines the language used (see <ref target="https://epidoc.stoa.org/gl/latest/trans-foreigntext.html">Multi-Language Texts</ref>).</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr.unibo.it/gvcyr008">
+            <div type="commentary">
+                <p>About the rare word <foreign xml:lang="grc">καλυβός</foreign>, see commentary at <ref type="inscription">GVCyr005</ref>.</p>
+            </div>
+        </egXML>
+    </div>
+    <div>
+        <head>Quotes</head>
+        <p>Quotes from other references can be encoded using the <tag>quote</tag> element. The corresponding reference can be indicated with a <tag>bibl</tag> element pointing to the bibliographic reference, placed immediately after (see <ref target="https://epidoc.stoa.org/gl/latest/supp-bibliography.html">Encoding the Bibliography</ref>).</p>
+    </div>
+    <div>
+        <head>Cross-references</head>
+        <p>The <tag>ref</tag> element can be used to encode internal cross-references (to a part of the document) or external ones (to another document). Its <att>target</att> attribute contains either the value of the <att>xml:id</att> attribute of the linked element preceded by # (internal reference), or the URI or path to another document, optionally supplemented with the value of the <att>xml:id</att> attribute of the linked element (external reference).</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://isaw.nyu.edu/publications/inscriptions/campa/inscriptions/C0224.html">
+            <div type="commentary">
+                <ab>This is not the only instance of an unfinished inscription: see <ref target="C0128.xml">C. 128</ref>.</ab>
+            </div>
+        </egXML>
+    </div>
+    <div>
+        <head>Bibliographic references</head>
+        <p>Bibliographic references cited in commentaries can be encoded with the <tag>bibl</tag> element (see <ref target="https://epidoc.stoa.org/gl/latest/supp-bibliography.html">Encoding the Bibliography</ref>).</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://igcyr2.unibo.it/en/gvcyr002">
+            <div type="commentary">
+                <p>This well made epigram develops the theme of malediction by playing on the name of the deceased woman 'Arata', which etymologically means 'accursed', directly through the use of <foreign xml:lang="grc">ἀρά</foreign> and indirectly through two puns based on the assonance with the interrogative particle <foreign xml:lang="grc">ἇρα</foreign> and with <foreign xml:lang="grc">ἀρετά</foreign> 'virtue'. More at <bibl><ptr target="#cdl2018"/></bibl>.</p>
+            </div>
+        </egXML>
+    </div>
     <divGen type="seealso"/>
     
-  <div xml:id="supp-commentary-responsibility">
+    <div xml:id="supp-commentary-responsibility">
         <head>Responsibility for this section</head>
         <listBibl>
-            <bibl><respStmt><resp>author</resp><name>xx</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Nicolas Souchon</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
