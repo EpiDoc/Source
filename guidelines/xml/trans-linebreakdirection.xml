@@ -36,6 +36,7 @@ End license statement: do not remove -->
     
     <div><head>Text direction</head>
         
+        <p>The only case of text-direction defined in most versions of the Leiden System (e.g. Panciera and SEG) is that of Latin or Greek written in right-to-left direction, rendered with a left-facing arrow in the right margin.</p>
         <cit>
             <quote>abc  ← </quote>
             <bibl corresp="#seg"/>
@@ -45,16 +46,15 @@ End license statement: do not remove -->
             <ab><lb style="direction:rtl"/>abc
                 <lb/></ab>
         </egXML>
+       
+       <p>In the following text, we use “direction” to indicate the reading order of a line of text and “orientation” to indicate the layout in which the string or line of characters is displayed on the surface.</p>
         
-    <p>In most inscriptions, the direction of text is a feature of the language and writing system. Greek and Latin are usually written left-to-right; Arabic and Hebrew are usually written right-to-left. Some inscriptions are exceptions to this, but nonetheless well-defined, such boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. In these cases, nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
+        <p>In most inscriptions, the reading direction and the direction in which the characters are facing are features of the language and writing system. Greek and Latin are usually read left-to-right; Arabic and Hebrew are usually read right-to-left and the characters have a conventional orientation. Some inscriptions are exceptions to this, but nonetheless well-defined, such as boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. If this is completely predictable or normal, then nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
         
-        <!-- * (direction of sense vs. facing of characters? ==> usage may differ between disciplines)
-                     * in Greek/Latin, horizontal arrows represent direction of reading
-                     * in Egyptian, horizontal arrows represent facing of characters
-                     * in Ogham, no horizontal arrows needed (? CHECK NORA ?) -->
+        <p>Different disciplines may use similar arrows to indicate reading order or character orientation, according to their own disciplinary conventions. For example: (1) in Greek, Latin, Hebrew or Arabic, horizontal arrows represent (unusual) direction of reading; in Hieroglyphic Egyptian, horizontal arrows represent the facing (=reading direction) of characters; in Ogham script, horizontal arrows are conventionally not used to indicate reading order, because it is seldom unusual.</p>        
         
         <p>Where the direction or orientation of a line of text needs to be specified because it would not otherwise be clear, this information may be indicated in Leiden with an arrow in the right margin of the text; pointing left in the case of right-to-left text, or right in the case of unexpectedly left-to-right text. Examples might include a line of right-to-left Greek or Latin in an otherwise unidirectional text; two subsequent left-to-right lines in an otherwise regular boustrophedon; writing in dipinti on an archaic Greek vase, which annotates human figures in a variety of both directions and orientations. In all cases, the text would generally be transcribed according to the usual direction of the writing system used—left to right for Greek or Latin.</p>
-    <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left).</p>
+        <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left), i.e. <tag type="empty">lb style="direction:ltr"</tag>.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <lb style="direction:ltr"/>a line of left to right text
@@ -97,11 +97,13 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Anna Loro</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Nicolas Souchon</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Tom Elliott</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Ilaria Marchesi</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Scott DiGiulio</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Nora White</name></respStmt></bibl>
+            <bibl><respStmt><resp>author</resp><name>Campbell Rosener</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Scott Vanderbilt</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Charlotte Tupman</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Tom Elliott</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Ilaria Marchesi</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Scott DiGiulio</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
