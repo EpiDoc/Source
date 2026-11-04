@@ -34,6 +34,8 @@ End license statement: do not remove -->
     </p>
     <p>As each line in an EpiDoc encoded inscription begins with an <gi>lb</gi> (see <ref target="trans-linebreak.html">Line Breaks</ref>), most attributes on this element should be understood to refer to the content of that line, i.e. all text before the following <gi>lb</gi> or the end of the containing <gi>ab</gi>, <gi>l</gi>, etc.</p>
     
+    <p>In the following text, we use “direction” to indicate the reading order of a line of text and “orientation” to indicate the layout in which the string or line of characters is displayed on the surface.</p>
+    
     <div><head>Text direction</head>
         
         <p>The only case of text-direction defined in most versions of the Leiden System (e.g. Panciera and SEG) is that of Latin or Greek written in right-to-left direction, rendered with a left-facing arrow in the right margin.</p>
@@ -47,7 +49,6 @@ End license statement: do not remove -->
                 <lb/></ab>
         </egXML>
        
-       <p>In the following text, we use “direction” to indicate the reading order of a line of text and “orientation” to indicate the layout in which the string or line of characters is displayed on the surface.</p>
         
         <p>In most inscriptions, the reading direction and the direction in which the characters are facing are features of the language and writing system. Greek and Latin are usually read left-to-right; Arabic and Hebrew are usually read right-to-left and the characters have a conventional orientation. Some inscriptions are exceptions to this, but nonetheless well-defined, such as boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. If this is completely predictable or normal, then nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
         
