@@ -51,9 +51,7 @@ End license statement: do not remove -->
        <lb/>
         
         <p>In most inscriptions, the reading direction and the direction in which the characters are facing are features of the language and writing system. Greek and Latin are usually read left-to-right; Arabic and Hebrew are usually read right-to-left and the characters have a conventional orientation. Some inscriptions are exceptions to this, but nonetheless well-defined, such as boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. If this is completely predictable or normal, then nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
-        
-        <p>Different disciplines may use similar arrows to indicate reading order or character orientation, according to their own disciplinary conventions. For example: (1) in Greek, Latin, Hebrew or Arabic, horizontal arrows represent (unusual) direction of reading; in Hieroglyphic Egyptian, horizontal arrows represent the facing (=reading direction) of characters; in Ogham script, horizontal arrows are conventionally not used to indicate reading order, because it is seldom unusual.</p>        
-        
+        <p>Reading order and the facing of characters in a string are assumed to match. Individual characters that are reversed (or “retrograde”) may be indicated using <gi>hi</gi>. The EpiDoc Guidelines currently make no recommendation for encoding an entire line or text of retrograde characters, as none of the epigraphic traditions we know of indicate this in the text.</p>
         <p>Where the direction or orientation of a line of text needs to be specified because it would not otherwise be clear, this information may be indicated in Leiden with an arrow in the right margin of the text; pointing left in the case of right-to-left text, or right in the case of unexpectedly left-to-right text. Examples might include a line of right-to-left Greek or Latin in an otherwise unidirectional text; two subsequent left-to-right lines in an otherwise regular boustrophedon; writing in dipinti on an archaic Greek vase, which annotates human figures in a variety of both directions and orientations. In all cases, the text would generally be transcribed according to the usual direction of the writing system used—left to right for Greek or Latin.</p>
         <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left), i.e. <tag type="empty">lb style="direction:ltr"</tag>.</p>
         <table>
@@ -91,20 +89,97 @@ End license statement: do not remove -->
     </div>
     
     <div><head>Text orientation</head>
-        <p>to be added</p>
+        <p>This section uses the term “orientation” to indicate the layout in which the string or line of characters is displayed on the surface, as in rotated text, vertical or diagonal writing, or lines written in a circle, spiral, etc. This is distinct from the reading direction of individual lines, and therefore may be encoded in association with text direction—but either may be indicated independently as appropriate.</p>
         
-        <!-- * define "orientation" = layout/rotation of lines on surface
-                * (as opposed to direction)
-                * (and therefore often in association with direction)
-                * features that we have implemented (for dipinti/Egyptian/Ogham): up/down/diagonal/circle
-                * if you need more, customise
-                * examples below
-                * as with direction, orientation should only be recorded if it is relevant to you, e.g. in unusual, unexpected or unpredictable cases
-        -->
+        <p>A few common text orientations are defined in these Guidelines, as required by epigraphic disciplines including dipinti on Greek vases, Egyptian Hieroglyphs, Ogham and Etruscan.</p>
+        
+        <p>To explicitly record the orientation of a line of text, EpiDoc again recommends the <att>style</att> attribute on the <gi>lb</gi> preceding the line, containing the CSS class “writing-mode” (used as a descriptor, not a processing instruction), with values such as “vertical” (line rotated so text is written top to bottom); “verticalup” (line rotates so text is written bottom to top); “diagonalnw” (text written bottom-right to top-left); “diagonalne”, “diagonalse”, “diagonalsw”. Values such as “circlecw”, “circleccw” and “spiralcw”, “spiralccw” are also proposed, but not yet implemented. A fuller list is given in the table below.</p>
+        
+        <p>If you need more variations of these or other types of orientation, feel free to follow this model and invent them, bearing in mind you will also need to customise the Reference Stylesheets to render any arrows or similar. As with direction, orientation need only be recorded if it is relevant to your edition, e.g. in line with unusual, unexpected or unpredictable orientations.</p>
         
         
-    <p>Other values of <att>style</att> can be created in the case of texts written vertically, in
-        a circle or spiral, or otherwise unusually. (But these values are not currently handled by the Example Stylesheets.)</p>
+        <div>
+            <head>Summary of text orientation values</head>
+            
+            <table>
+                <head>Vertical text</head>
+                <row>
+                    <cell rend="label">Feature</cell>
+                    <cell rend="label">Markup</cell>
+                    <cell rend="label">Display</cell>
+                </row>
+                <row>
+                    <cell>Writing runs vertically, read top to bottom</cell>
+                    <cell>@style="writing-mode:vertical"</cell>
+                    <cell>↓</cell>
+                </row>
+                <row>
+                    <cell>Writing runs vertically, read bottom to top</cell>
+                    <cell>@style="writing-mode:verticalup"</cell>
+                    <cell>↑</cell>
+                </row>
+            </table>
+            
+            <table>
+                <head>Diagonal text</head>
+                <row>
+                    <cell rend="label">Feature</cell>
+                    <cell rend="label">Markup</cell>
+                    <cell rend="label">Display</cell>
+                </row>
+                <row>
+                    <cell>Writing runs diagonally, bottom-right to top-left (“northwestward”)</cell>
+                    <cell>@style="writing-mode:diagonalnw"</cell>
+                    <cell>↖</cell>
+                </row>
+                <row>
+                    <cell>Writing runs bottom-left to top-right (“northeastward”)</cell>
+                    <cell>@style="writing-mode:diagonalne"</cell>
+                    <cell>↗</cell>
+                </row>
+                <row>
+                    <cell>Writing runs top-left to bottom-right (“southeastward”)</cell>
+                    <cell>@style="writing-mode:diagonalse"</cell>
+                    <cell>↘</cell>
+                </row>
+                <row>
+                    <cell>Writing runs top-right to bottom-left (“southwestward”)</cell>
+                    <cell>@style="writing-mode:diagonalsw"</cell>
+                    <cell>↙</cell>
+                </row>
+            </table>
+            
+            <table>
+                <head>Circular and spiral text</head>
+                <row>
+                    <cell rend="label">Feature</cell>
+                    <cell rend="label">Markup</cell>
+                    <cell rend="label">Display</cell>
+                </row>
+                <row>
+                    <cell>Writing running in a circle or arc, read counter-clockwise</cell>
+                    <cell>@style="writing-mode:circleccw"</cell>
+                    <cell>↺</cell>
+                </row>
+                <row>
+                    <cell>Writing running in a circle or arc, read clockwise</cell>
+                    <cell>@style="writing-mode:circlecw"</cell>
+                    <cell>↻</cell>
+                </row>
+                <row>
+                    <cell>Writing running in a spiral, read clockwise</cell>
+                    <cell>@style="writing-mode:spiralcw"</cell>
+                    <cell>𖦹</cell>
+                </row>
+                <row>
+                    <cell>Writing running in a spiral, read counter-clockwise</cell>
+                    <cell>@style="writing-mode:spiralccw"</cell>
+                    <cell>꩜</cell>
+                </row>
+            </table>
+            
+            
+        </div>
         
     </div>
     
