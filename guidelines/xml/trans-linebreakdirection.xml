@@ -26,7 +26,7 @@ End license statement: do not remove -->
 <?oxygen NVDLSchema="../schema/epidoc.nvdl"?>
 
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="trans-linebreakdirection" xml:lang="en">
-    <head>Line Beginnings: Direction of Text</head>
+    <head>Line Beginnings: Direction and Orientation of Text</head>
     <p rend="tag-defs">
         <specList>
             <specDesc key="lb"/>
@@ -45,10 +45,8 @@ End license statement: do not remove -->
         </cit>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera">
-            <ab><lb style="direction:rtl"/>abc
-                <lb/></ab>
+            <ab><lb style="direction:rtl"/>abc</ab>
         </egXML>
-       <lb/>
         
         <p>In most inscriptions, the reading direction and the direction in which the characters are facing are features of the language and writing system. Greek and Latin are usually read left-to-right; Arabic and Hebrew are usually read right-to-left and the characters have a conventional orientation. Some inscriptions are exceptions to this, but nonetheless well-defined, such as boustrophedon Greek inscriptions, in which odd-numbered lines are left-to-right, even-numbered right-to-left. If this is completely predictable or normal, then nothing special needs to be indicated in the Leiden edition nor in the EpiDoc markup.</p>
         <p>Reading order and the facing of characters in a string are assumed to match. Individual characters that are reversed (or “retrograde”) may be indicated using <gi>hi</gi>. The EpiDoc Guidelines currently make no recommendation for encoding an entire line or text of retrograde characters, as none of the epigraphic traditions we know of indicate this in the text.</p>
@@ -78,14 +76,12 @@ End license statement: do not remove -->
         <lb style="direction:ltr"/>a line of left to right text
         <lb style="direction:rtl"/>a line of right to left text
     </egXML>
-        <lb/>
         
 <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="panciera" corresp="http://epigraphy.packhum.org/inscriptions/oi?ikey=1357">
             <ab rend="boustrophedon">
                 <lb n="1" style="direction:rtl"/>Χαιρεδέμο ⋮ τόδε σε̑μα ⋮ πατὲρ ἔστε<supplied reason="lost">σε</supplied><lb n="2" break="no" style="direction:ltr"/><supplied reason="lost">θ</supplied>ανόντος ⋮ Ἀνφιχάρ<supplied reason="omitted">ες</supplied> ⋮ ἀγαθὸν ⋮ παῖδα ὀ<lb n="3" break="no" style="direction:rtl"/>λοφυρόμενο<supplied reason="lost">ς. ⋮</supplied> Φαίδιμος ἐποίε.
             </ab>
         </egXML>
-<lb/>
     </div>
     
     <div><head>Text orientation</head>
