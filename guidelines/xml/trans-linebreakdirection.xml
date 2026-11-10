@@ -58,10 +58,10 @@ End license statement: do not remove -->
         <p>To explicitly record the non-standard direction of a line of writing in an inscription or other text, therefore, EpiDoc recommends the use of the <att>style</att> attribute on the <gi>lb</gi> immediately preceding the line of text in question. The value of <att>style</att> is based on the CSS class "direction" (although note that this is not intended as a processing instruction to render the text, but rather as a description of the source), with values "ltr" (left-to-right) or "rtl" (right-to-left), i.e. <tag type="empty">lb style="direction:ltr"</tag>.</p>
         <table>
             <head>Summary of writing direction values</head>
-            <row rend="header">
-                <cell>Feature</cell>
-                <cell>Markup</cell>
-                <cell>Display</cell>
+            <row>
+                <cell rend="label">Feature</cell>
+                <cell rend="label">Markup</cell>
+                <cell rend="label">Display</cell>
             </row>
             <row>
                 <cell>Left-to-right reading direction</cell>
