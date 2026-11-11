@@ -28,7 +28,7 @@
     <head>Symbol (non meaning-bearing)</head>
         <p><specList>
             <specDesc key="g"/>
-             <specDesc key="glyph"/>
+            <specDesc key="glyph"/>
             <specDesc key="mapping"/>
             <specDesc key="prefixDef"/>
             </specList>
@@ -36,12 +36,11 @@
                 <ptr target="a"/>
             </listRef>--></p>
         <p><gi>g</gi> (character or glyph) represents a non-standard character or glyph.</p>
-        <p>Where a symbol is non meaning-bearing, it should be represented using the element
-            <gi>g</gi>, with the following attribute: </p>
-        <list type="bulleted">
-            <item><att>ref</att> pointing to a <gi>glyph</gi> listed in <gi>charDecl</gi>.</item>
-            <item>in the past many projects used <att>type</att>.</item>
-        </list>
+        <p>Where a symbol is non meaning-bearing, it should be represented using
+            <tag>g[@ref]</tag>. The <att>ref</att> points to a <gi>glyph</gi> element in the <gi>charDecl</gi> section of the <gi>teiHeader</gi> which contains descrptive information about the glyph such as its name and character mappings that may be used to represent it. The TEI Guidelines chapter <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/WD.html">5. Characters, Glyphs and Writing Modes</ref> provides a detailed explanation..
+        </p>
+      
+    <p>Note that in the past, many projects used <att>type</att>.</p>
         <p>A Unicode character representing the symbol may also appear inside the <gi>g</gi> if desired.</p>
     
      <p>The <att>ref</att> attribute in <gi>g</gi> can be used in various ways.</p>
@@ -50,7 +49,7 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" >
         <g ref="#crux"/>
     </egXML>
-    <p>exepcts that a <gi>charDecl</gi> is present in the document. This will look like the following.</p>
+    <p>exepcts that a <gi>charDecl</gi> is present in the <tag>teiHeader/encodingDesc</tag> of your document. This will look like the following.</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" >
         <charDecl>
             <glyph xml:id="crux">
@@ -60,20 +59,21 @@
             </glyph>
         </charDecl>
     </egXML>
-    <p>You may add this to your files, or include it as appropriate. 
-        A list is available with the example stylesheets 
-        (with variable solutions according to the parameters settings), which is used as a default where <gi>charDecl</gi> is not explicitly added in the XML file.</p>
-    <p>You may wish to point to this list of glyphs in a separate file, in which case you can use in <att>ref</att> of <gi>g</gi> a path to this resource.</p>
+    <p>You may add this to your files, or include it as am extermal resource, as appropriate. 
+        The existing charDecl.xml file in the example stylesheets 
+        is used as a default where <gi>charDecl</gi> is not explicitly added in the XML file. The character mappings
+        in this file can be resolved according to the parameters settings), </p> 
+    <p>You mainatain this list of glyphs in an external file, in which case you will have to prepend a path to the charDecl.xml file in the <tag>g/@ref</tag>.</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <g ref="/path/to/your/chardecl.xml#crux"/>
     </egXML>
-    <p>If you use prefixes, defined in <gi>prefixDef</gi>, you may use a shorthand. Assuming you have defined this prefix to be glyph, you may use</p>
+    <p>You can create shortcuts when using pointers to external files, as defined by the TEI <gi>prefixDef</gi> mechanism. If you define a prefix to be <term>glyph</term>, you may then use the following prefix definition, which maps your path to the prefix "glyph." </p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <prefixDef ident="glyph" matchPattern="([a-zA-Z0-9]+)" replacementPattern="/path/to/your/chardecl.xml#$1"/>
         ...
         <g ref="glyph:crux"/>
     </egXML>
-    <p>The full path or prefixed method allows also to define different sources for your <gi>charDecl</gi>, so that you may only have to add the one which are missing, unless you want to contribute them directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>
+    <p>You may use external multiple sources, such as the EpiDoc charDecl.xml file together with a project specific file that defines missing symbols. Alternatively, you may contribute new symbols directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>
     <cit>
         <quote>((crux))</quote><bibl corresp="#panciera"><biblScope>19</biblScope></bibl> 
     </cit>
@@ -89,7 +89,7 @@
     
     
     <p>The projects providing the following examples used <att>type</att> when 
-        this was the suggested way of encoding.</p>
+        this was the suggested way of encoding. They would now be encoded using <tag>g/@ref</tag> where the value of the <att>ref</att> is a pointer.</p>
     
     <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="http://inslib.kcl.ac.uk/irt2009/IRT203.html#al1" 
         rend="panciera dohnicht">
@@ -106,7 +106,7 @@
          <g type="scroll"/>
      </egXML>
     
-    
+    <p>Symbols currently handled by the EpiDoc charDecl.xml: </p>
     <divGen type="chardecl"/>
     
     <divGen type="seealso"/>
@@ -115,6 +115,7 @@
         
         <head>Responsibility for this section</head>
         <listBibl>
+            <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Charlotte Tupman</name><name/></respStmt></bibl>
             <bibl><respStmt><resp>Added g/@ref as per FR 81</resp><name>Pietro Maria Liuzzo</name><name/></respStmt></bibl>
         </listBibl>
