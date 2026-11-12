@@ -646,11 +646,11 @@ tr.label td {
 span.label {
     font-weight: bold;
 }
-
+/* the following makes tables look nicer in trans-linebreakdirection. use @rend="padding"*/
 td.padding {
-    border: 1px;
+    border: 1px solid black;
     border-collapse: collapse;
-    padding: 1em;
+    padding: .5em;
 }
 
 h5 {    
