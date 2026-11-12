@@ -49,7 +49,7 @@
     <egXML xmlns="http://www.tei-c.org/ns/Examples" >
         <g ref="#crux"/>
     </egXML>
-    <p>exepcts that a <gi>charDecl</gi> is present in the <tag>teiHeader/encodingDesc</tag> of your document. This will look like the following.</p>
+    <p>expects that <gi>charDecl</gi> in the <tag>teiHeader/encodingDesc</tag> of the document. This will look like the following.</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" >
         <charDecl>
             <glyph xml:id="crux">
@@ -59,21 +59,21 @@
             </glyph>
         </charDecl>
     </egXML>
-    <p>You may add this to your files, or include it as am extermal resource, as appropriate. 
+    <p>The <gi>charDecl</gi> may be added in the file header, or included as am extermal resource. 
         The existing charDecl.xml file in the example stylesheets 
-        is used as a default where <gi>charDecl</gi> is not explicitly added in the XML file. The character mappings
-        in this file can be resolved according to the parameters settings), </p> 
-    <p>You mainatain this list of glyphs in an external file, in which case you will have to prepend a path to the charDecl.xml file in the <tag>g/@ref</tag>.</p>
+        is used as a default where <gi>charDecl</gi> is not explicitly encoded in the XML file. The character mappings
+        in this file can accommodate parameters.</p> 
+    <p>The list of glyphs may be maintained in an external file, in which case it is necessarty to specify the path to the charDecl.xml file in the <tag>g/@ref</tag>.</p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <g ref="/path/to/your/chardecl.xml#crux"/>
     </egXML>
-    <p>You can create shortcuts when using pointers to external files, as defined by the TEI <gi>prefixDef</gi> mechanism. If you define a prefix to be <term>glyph</term>, you may then use the following prefix definition, which maps your path to the prefix "glyph." </p>
+    <p>It is also possible to create shortcuts to external files, as defined by the TEI <gi>prefixDef</gi> mechanism. The  following example maps the file path to the prefix "glyph." </p>
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
         <prefixDef ident="glyph" matchPattern="([a-zA-Z0-9]+)" replacementPattern="/path/to/your/chardecl.xml#$1"/>
         ...
         <g ref="glyph:crux"/>
     </egXML>
-    <p>You may use external multiple sources, such as the EpiDoc charDecl.xml file together with a project specific file that defines missing symbols. Alternatively, you may contribute new symbols directly to the default <gi>charDecl</gi> in the stylesheet repository.</p>
+    <p>It is possible to use multiple sources, such as the EpiDoc charDecl.xml file together with a project specific file that defines additional symbols. Alternatively, a project may contribute new symbols to the default <gi>charDecl</gi> in the stylesheet repository.</p>
     <cit>
         <quote>((crux))</quote><bibl corresp="#panciera"><biblScope>19</biblScope></bibl> 
     </cit>
@@ -106,7 +106,7 @@
          <g type="scroll"/>
      </egXML>
     
-    <p>Symbols currently handled by the EpiDoc charDecl.xml: </p>
+    <p>Symbol currently handled by the EpiDoc charDecl.xml, listed by their <att>xml:id</att>: </p>
     <divGen type="chardecl"/>
     
     <divGen type="seealso"/>
