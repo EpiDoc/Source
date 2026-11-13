@@ -28,7 +28,7 @@ End license statement: do not remove -->
 <div xmlns="http://www.tei-c.org/ns/1.0" xml:id="app-epi-oracc" xml:lang="en">
     <head>Appendix: Aligning EpiDoc with ORACC</head>
     
-    <table>
+    <table rend="border">
         <row>
             <cell rend="label">Description</cell>
             <cell rend="label">Conventional display</cell>
@@ -37,106 +37,106 @@ End license statement: do not remove -->
         </row>
         <!--    e.g.
             <row>
-                <cell>Modern expansion of an abbreviation</cell>
-                <cell>α(βγ)</cell>
-                <cell>α<(βγ)></cell>
-                <cell><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+                <cell rend="padding">Modern expansion of an abbreviation</cell>
+                <cell rend="padding">α(βγ)</cell>
+                <cell rend="padding">α<(βγ)></cell>
+                <cell rend="padding"><ref target="trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
             </row>-->
         <row>
-            <cell>Correction of sign</cell>
-            <cell>AB<hi rend="superscript">!</hi></cell>
-            <cell>AB!</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-correction.html">Correction (without specification)</ref></cell>
+            <cell rend="padding">Correction of sign</cell>
+            <cell rend="padding">AB<hi rend="superscript">!</hi></cell>
+            <cell rend="padding">AB!</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-correction.html">Correction (without specification)</ref></cell>
         </row>
         <row>
-            <cell>Correction of sign (original shown)</cell>
-            <cell>AB<hi rend="superscript">!</hi>(BA)</cell>
-            <cell>AB!(BA)</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-erroneoussubstitution.html">Erroneous substitution</ref></cell>
+            <cell rend="padding">Correction of sign (original shown)</cell>
+            <cell rend="padding">AB<hi rend="superscript">!</hi>(BA)</cell>
+            <cell rend="padding">AB!(BA)</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-erroneoussubstitution.html">Erroneous substitution</ref></cell>
         </row>
         <row>
-            <cell>Damage to sign</cell>
-            <cell>bi-<hi rend="superscript">⌈</hi>it-su<hi rend="superscript">⌉</hi></cell>
-            <cell>bi-it#-su#</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-ambiguous.html">Ambiguous characters (Leiden underdot)</ref></cell>
+            <cell rend="padding">Damage to sign</cell>
+            <cell rend="padding">bi-<hi rend="superscript">⌈</hi>it-su<hi rend="superscript">⌉</hi></cell>
+            <cell rend="padding">bi-it#-su#</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-ambiguous.html">Ambiguous characters (Leiden underdot)</ref></cell>
         </row>
         <row>
-            <cell>Unknown number of characters lost</cell>
-            <cell>[...]</cell>
-            <cell>[...]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharunknown.html">Lost characters, quantity unknown</ref></cell>
+            <cell rend="padding">Unknown number of characters lost</cell>
+            <cell rend="padding">[...]</cell>
+            <cell rend="padding">[...]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharunknown.html">Lost characters, quantity unknown</ref></cell>
         </row>
         <row>
-            <cell>One character lost</cell>
-            <cell>[x]</cell>
-            <cell>[x]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
+            <cell rend="padding">One character lost</cell>
+            <cell rend="padding">[x]</cell>
+            <cell rend="padding">[x]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
         </row>
         <row>
-            <cell>Six characters lost</cell>
-            <cell>[x x x x x x]</cell>
-            <cell>[x x x x x x]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
+            <cell rend="padding">Six characters lost</cell>
+            <cell rend="padding">[x x x x x x]</cell>
+            <cell rend="padding">[x x x x x x]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharknown.html">Lost characters, quantity known</ref></cell>
         </row>
         <row>
-            <cell>Three to six characters lost</cell>
-            <cell>[x x x (x x x)]</cell>
-            <cell>[x x x (x x x)]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
+            <cell rend="padding">Three to six characters lost</cell>
+            <cell rend="padding">[x x x (x x x)]</cell>
+            <cell rend="padding">[x x x (x x x)]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-lostcharapprox.html">Lost characters, quantity approximate</ref></cell>
         </row>
         <row>
-            <cell>Restored lost characters</cell>
-            <cell>[AB]</cell>
-            <cell>[AB]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-restored.html">Editorial restoration</ref></cell>
+            <cell rend="padding">Restored lost characters</cell>
+            <cell rend="padding">[AB]</cell>
+            <cell rend="padding">[AB]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-restored.html">Editorial restoration</ref></cell>
         </row>
         <row>
-            <cell>Uncertainly restored lost characters</cell>
-            <cell>[AB<hi rend="superscript">?</hi>]</cell>
-            <cell>[AB?]</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-restoreduncert.html">Editorial restoration, uncertain</ref></cell>
+            <cell rend="padding">Uncertainly restored lost characters</cell>
+            <cell rend="padding">[AB<hi rend="superscript">?</hi>]</cell>
+            <cell rend="padding">[AB?]</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-restoreduncert.html">Editorial restoration, uncertain</ref></cell>
         </row>
         <row>
-            <cell>Restoration of accidental omission</cell>
-            <cell>&lt;ab&gt;</cell>
-            <cell>&lt;ab&gt;</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-omitted.html">Supplement of omitted characters</ref></cell>
+            <cell rend="padding">Restoration of accidental omission</cell>
+            <cell rend="padding">&lt;ab&gt;</cell>
+            <cell rend="padding">&lt;ab&gt;</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-omitted.html">Supplement of omitted characters</ref></cell>
         </row>
         <row>
-            <cell>Restoration of intentional omission</cell>
-            <cell>bi-it-&lt;(su)&gt;</cell>
-            <cell>bi-it-&lt;(su)&gt;</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
+            <cell rend="padding">Restoration of intentional omission</cell>
+            <cell rend="padding">bi-it-&lt;(su)&gt;</cell>
+            <cell rend="padding">bi-it-&lt;(su)&gt;</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-abbrevfully.html">Abbreviation fully expanded</ref></cell>
         </row>
         <row>
-            <cell>Characters rejected by editor</cell>
-            <cell>&lt;&lt;ab&gt;&gt;</cell>
-            <cell>&lt;&lt;ab&gt;&gt;</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-superfluous.html">Superfluous characters</ref></cell>
+            <cell rend="padding">Characters rejected by editor</cell>
+            <cell rend="padding">&lt;&lt;ab&gt;&gt;</cell>
+            <cell rend="padding">&lt;&lt;ab&gt;&gt;</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-superfluous.html">Superfluous characters</ref></cell>
         </row>
         <row>
-            <cell>Unclear sign</cell>
-            <cell>x</cell>
-            <cell>x</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-illegiblecharknown.html">Illegible characters, quantity known</ref></cell>
+            <cell rend="padding">Unclear sign</cell>
+            <cell rend="padding">x</cell>
+            <cell rend="padding">x</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-illegiblecharknown.html">Illegible characters, quantity known</ref></cell>
         </row>
         <row>
-            <cell>Clear but uninterpreted sign</cell>
-            <cell>AB</cell>
-            <cell>$AB</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-uninterpreted.html">Uninterpreted characters (Leiden uppercase)</ref></cell>
+            <cell rend="padding">Clear but uninterpreted sign</cell>
+            <cell rend="padding">AB</cell>
+            <cell rend="padding">$AB</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-uninterpreted.html">Uninterpreted characters (Leiden uppercase)</ref></cell>
         </row>
         <row>
-            <cell>Ligature or compound grapheme</cell>
-            <cell>a+na</cell>
-            <cell>a+na</cell>
-            <cell><ref target="https://epidoc.stoa.org/gl/latest/trans-ligature.html">Ligatures</ref></cell>
+            <cell rend="padding">Ligature or compound grapheme</cell>
+            <cell rend="padding">a+na</cell>
+            <cell rend="padding">a+na</cell>
+            <cell rend="padding"><ref target="https://epidoc.stoa.org/gl/latest/trans-ligature.html">Ligatures</ref></cell>
         </row>
         <!--<row>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell><ref target=""></ref></cell>
+            <cell rend="padding"></cell>
+            <cell rend="padding"></cell>
+            <cell rend="padding"></cell>
+            <cell rend="padding"><ref target=""></ref></cell>
         </row>-->
     </table>
     <p>Cf. also <bibl>Steve Tinney and Eleanor Robson, 
