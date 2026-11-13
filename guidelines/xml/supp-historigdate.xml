@@ -172,8 +172,7 @@ End license statement: do not remove -->
             "Byzantine" or "Early Dynastic." If desired, the historical period may be encoded in the 
             <gi>origDate</gi> element using the <att>period</att> attribute, pointing to the <term>URI</term>
             of a vocabulary for historical periods such as <ref target="http://perio.do/">PeriodO</ref>
-                or a <ref target="https://www.wikidata.org/wiki/Q11514315#inverseclaims">Wikidata entity</ref>. (This period need not correspond precisely to the numerical date range
-            offered, if any.)</p>
+                or a <ref target="https://www.wikidata.org/wiki/Q11514315#inverseclaims">Wikidata entity</ref>. (This period need not correspond precisely to the numerical date range offered, if any.)</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <origDate notBefore="-0332" notAfter="-0200" precision="medium"
@@ -257,11 +256,11 @@ End license statement: do not remove -->
                 e.g., “palaeography” instead of lettering or “onomastics” instead of nomenclature, or indeed use several terms that are more specific subcategories of “material context”. In any case it would be more advisable to maintain an internal table of dating criteria
                 values, with the terms mapped to human-readable language (which might, for
                 example, not be in English). Most projects will define their own lists, or use external LOD vocabularies such as <ref target="https://www.eagle-network.eu/resources/vocabularies/">EAGLE</ref>, <ref target="https://ontology.inscriptiones.org/">FAIR Epigraphy</ref>, <ref target="https://thesaurus.mom.fr/?idt=th61">Biblissima EpiVoc</ref> or <ref target="https://www.wikidata.org/wiki/Wikidata:WikiProject_Epigraphy">Wikidata</ref>.</p>
-            <p>Cf. <list><item><ref
+            <!--<p>Cf. <list><item><ref
                     target="https://docs.google.com/spreadsheet/ccc?key=0As1AGmWRrRdUdGNJWm9HdDhsQ0RkRFc4dkQwZGZQRVE"
                     >EpiDoc dating criteria vocabularies</ref> (Google Spreadsheet)</item>
                 <item><ref target="http://www.eagle-network.eu/voc/dates.html">EAGLE vocabulary - Dating Criteria</ref> (SKOS)</item>
-            </list></p>
+            </list></p>-->
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <origDate notBefore-custom="0367" notAfter-custom="0400" precision="medium"
@@ -271,7 +270,7 @@ End license statement: do not remove -->
 
             <p>This example encodes a certain date within a particular consular year:</p>
 
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" corresp="https://romaninscriptionsofbritain.org/inscriptions/309">
                 <origDate when-custom="0152-08-23" precision="high" evidence="consulship"
                     datingMethod="#julian">23 August 152 C.E.</origDate>
                 <!-- ... Glabrione et H[om]ulo co(n)s(ulibus) (a(nte) d(iem)) X K(alendas) Sept(embres)
@@ -290,7 +289,7 @@ End license statement: do not remove -->
             <bibl><respStmt><resp>author</resp><name>Nora White</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Scott Vanderbilt</name></respStmt></bibl>
             <bibl><respStmt><resp>author</resp><name>Elli Mylonas</name></respStmt></bibl>
-            <bibl><respStmt><resp>author</resp><name>Simona Stoyanova</name></respStmt></bibl>
+            <bibl><respStmt><resp>contributor</resp><name>Simona Stoyanova</name></respStmt></bibl>
         </listBibl>
     </div>
 </div>
