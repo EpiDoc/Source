@@ -312,7 +312,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>xml:id</th>
+                        
                         <xsl:for-each select="$g-/g">
                             <th><xsl:value-of select="."/></th>
                         </xsl:for-each>
