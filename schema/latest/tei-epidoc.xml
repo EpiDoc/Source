@@ -53,6 +53,8 @@ End license statement: do not remove -->
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <change who="#GB" when="2026-11-06">(for release 9.9) Aligned schema with TEI v. 4.12.0</change>
+            <change who="#GB" when="2026-09-28">Added "unparsed" to legal values of gap/@reason (for Cypro-Aegean)</change>
             <change who="#SV" when="2026-01-26">release 9.8: Aligned schema with TEI v. 4.10.2</change>
             <change who="#GB" when="2025-12-12">updated open list of values for origDate/@evidence (as per EpiDoc-Markup discussion)</change>
             <change who="#EMo" when="2025-02-18">release 9.7: Aligned schema with TEI v. 4.9.0</change>
@@ -192,7 +194,7 @@ End license statement: do not remove -->
         <body>
             <p>EpiDoc TEI Customization starts with modules tei, core, textstructure and header</p>
             <schemaSpec ident="tei-epidoc" docLang="en" prefix="tei_" start="TEI teiCorpus" xml:lang="en"
-                source="https://www.tei-c.org/Vault/P5/4.10.2/xml/tei/odd/p5subset.xml">
+                source="https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/odd/p5subset.xml">
 
                 <!--       MODULES USED BY THE EPIDOC SCHEMA       -->
                 <moduleRef key="core"/>
@@ -427,13 +429,16 @@ End license statement: do not remove -->
                                     <desc xml:lang="en" versionDate="2020-02-17">Text completely lost from the surface and unrecoverable</desc>
                                 </valItem>
                                 <valItem ident="illegible">
-                                    <desc xml:lang="en" versionDate="2020-02-17">Traces of text remains on the surface but cannot be interpreted</desc>
+                                    <desc xml:lang="en" versionDate="2020-02-17">Traces of text remain on the surface but are not interpreted</desc>
                                 </valItem>
                                 <valItem ident="omitted">
                                     <desc xml:lang="en" versionDate="2020-02-17">Text erroneously omitted from the surface by the scribe/cutter</desc>
                                 </valItem>
                                 <valItem ident="ellipsis">
                                     <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor, for whatever reason (brevity, context, language, etc.)</desc>
+                                </valItem>
+                                <valItem ident="unparsed">
+                                    <desc xml:lang="en" versionDate="2026-09-28">Text is present but cannot be interpreted as a particular or known glyph or may not exist</desc>
                                 </valItem>
                                 <valItem ident="undefined">
                                     <desc xml:lang="en" versionDate="2020-02-17">Text omitted from the edition by the editor without specification of current state of this text (NB this should not be possible with valid Leiden Conventions)</desc>
